@@ -1,8 +1,29 @@
 phpPgAdmin History
 ------------------
 
+Version 7.13.0
+--------------
+
+Released: November 7th, 2020
+
+Features:
+* Add support for Postgres 13
+* Add provisional support for Postgres 14
+* Upgrade Jquery library to 3.4.1 (Nirgal)
+* Allow users to see group owned databases when using "owned only"
+
+Bugs:
+* Fix bug where sorting on selects dumped you to the table screen (MichaMEG)
+
+Incompatibilities:
+* This release drops support for PHP 7.1
+* This will be the last release to support PHP 7.2
+
+
 Version 7.12.1
 --------------
+
+Released: December 10th, 2019
 
 Features:
 * Add support for granting USAGE on sequences

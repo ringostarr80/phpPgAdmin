@@ -11,7 +11,7 @@ include_once('./classes/database/ADODB_base.php');
 
 class Postgres extends ADODB_base {
 
-	var $major_version = 12;
+	var $major_version = 14;
 	// Max object name length
 	var $_maxNameLen = 63;
 	// Store the current schema
@@ -419,7 +419,7 @@ class Postgres extends ADODB_base {
 	}
 
 	function getHelpPages() {
-		include_once('./help/PostgresDoc95.php');
+		include_once('./help/PostgresDoc14.php');
 		return $this->help_page;
 	}
 
@@ -450,7 +450,7 @@ class Postgres extends ADODB_base {
 		if (isset($conf['owned_only']) && $conf['owned_only'] && !$this->isSuperUser()) {
 			$username = $server_info['username'];
 			$this->clean($username);
-			$clause = " AND pr.rolname='{$username}'";
+			$clause = " AND pg_has_role('{$username}'::name,pr.rolname,'USAGE')";
 		}
 		else $clause = '';
 

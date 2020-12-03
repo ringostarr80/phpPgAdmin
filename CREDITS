@@ -79,7 +79,7 @@ Contributors
 - Leonardo Augusto Sapiras (Improve phpPgAdmin ergonomy during the GSoC 2010, with ioguix as mentor)
 - Julien Rouhaud, aka. rjuju (nested groups)
 - Felipe Figueroa aka. amenadiel
-
+- Jean-Michel Vourgère (nirgal)
 
 Third Party Libraries
 
@@ -97,5 +97,6 @@ Past Feature Sponsors:
 - Google Summer of Code (http://code.google.com/soc/2006/pgsql/appinfo.html?csaid=DB096D908B948D89) - phpPgAdmin Improvements
 - Google Summer of Code (http://code.google.com/soc/2007/postgres/appinfo.html?csaid=E89B3D5E2DC4170A) - Full Text Search in PostgreSQL GUI Tools
 - Google Summer of Code (http://code.google.com/p/google-summer-of-code-2010-postgres/downloads/detail?name=Leonardo_Augusto_Sapiras.tar.gz) - Improve phpPgAdmin ergonomy
-- Dalibo ( http://dalibo.com ) - sponsored development as Jehan-Guillaume (ioguix) de Rorthais employer
-- OmniTI (https://omniti.com ) - sponsored development as Robert Treat employer 
+- Dalibo (http://dalibo.com) - sponsored development as Jehan-Guillaume (ioguix) de Rorthais employer
+- OmniTI (https://omniti.com) - sponsored development as Robert Treat employer 
+- credativ (https://credativ.com) - sponsored php development / review

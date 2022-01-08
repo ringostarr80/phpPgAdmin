@@ -261,8 +261,12 @@
 			if (isset($params['clip']) && $params['clip'] === true) {
 				$maxlen = isset($params['cliplen']) && is_integer($params['cliplen']) ? $params['cliplen'] : $conf['max_chars'];
 				$ellipsis = isset($params['ellipsis']) ? $params['ellipsis'] : $lang['strellipsis'];
-				if (mb_strlen($str, 'UTF-8') > $maxlen) {
+				if (mb_strlen($str, 'UTF-8') > $maxlen + mb_strlen($ellipsis)) {
+					$full_str = $ellipsis . mb_substr($str, $maxlen-1, $maxlen*8, 'UTF-8');
 					$str = mb_substr($str, 0, $maxlen-1, 'UTF-8') . $ellipsis;
+				} elseif (strlen($str) > 19 and substr($type, 0, 9) == 'timestamp') {
+					$full_str = substr($str, 19, $maxlen*8);
+					$str = substr($str, 0, 19);
 				}
 			}
 
@@ -307,6 +311,10 @@
 					$tag = 'div';
 					$class = 'pre';
 					$out = $data->escapeBytea($str);
+					break;
+				case 'macaddr':
+					$tag = 'tt';
+					$out = $str;
 					break;
 				case 'errormsg':
 					$tag = 'pre';
@@ -373,8 +381,10 @@
 						$tag = 'pre';
 						$class = 'data';
 						$out = htmlspecialchars($str);
+						if (isset($full_str)) $out = '<abbr title="' . htmlspecialchars($full_str) . "\">$out</abbr>";
 					} else {
 						$out = nl2br(htmlspecialchars($str));
+						if (isset($full_str)) $out = '<abbr title="' . nl2br(htmlspecialchars($full_str)) . "\">$out</abbr>";
 					}
 			}
 

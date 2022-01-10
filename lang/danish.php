@@ -609,7 +609,6 @@
 	$lang['strtablespacealteredbad'] = 'Ændring af tabelområde lykkedes ikke.';
 	
 	// Miscellaneous
-	$lang['strtimefmt'] = 'jS M, Y g:iA';
 	$lang['strhelp'] = 'Hjælp';
 	$lang['strhelpicon'] = '?';
 

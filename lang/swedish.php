@@ -558,7 +558,6 @@
 	$lang['strrows2'] = 'Rader';
 
 	// Miscellaneous
-	$lang['strtimefmt'] = 'jS M, Y g:iA';
 	$lang['strhelp'] = 'Hjälp';
 
 ?>

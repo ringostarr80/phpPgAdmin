@@ -187,6 +187,10 @@ class Postgres extends ADODB_base {
 		return $str;
 	}
 
+	function escapeIdentifier($str){
+		return pg_escape_identifier($this->conn->_connectionID, $str);
+	}
+
 	/**
 	 * Cleans (escapes) an object name (eg. table, field)
 	 * @param $str The string to clean, by reference
@@ -219,7 +223,7 @@ class Postgres extends ADODB_base {
 	function arrayClean(&$arr) {
 		foreach ($arr as $k => $v) {
 			if ($v === null) continue;
-			$arr[$k] = pg_escape_string($v);
+			$arr[$k] = pg_escape_string($this->conn->_connectionID, $v);
 		}
 		return $arr;
 	}
@@ -257,11 +261,11 @@ class Postgres extends ADODB_base {
 				elseif ($value == 'false') $value = 'f';
 
 				// If value is null, 't' or 'f'...
-				if ($value === null || $value == 't' || $value == 'f') {
+				if ($value === null || $value === 't' || $value === 'f') {
 					echo "<select name=\"", htmlspecialchars($name), "\"{$extra_str}>\n";
 					echo "<option value=\"\"", ($value === null) ? ' selected="selected"' : '', "></option>\n";
-					echo "<option value=\"t\"", ($value == 't') ? ' selected="selected"' : '', ">{$lang['strtrue']}</option>\n";
-					echo "<option value=\"f\"", ($value == 'f') ? ' selected="selected"' : '', ">{$lang['strfalse']}</option>\n";
+					echo "<option value=\"t\"", ($value === 't') ? ' selected="selected"' : '', ">{$lang['strtrue']}</option>\n";
+					echo "<option value=\"f\"", ($value === 'f') ? ' selected="selected"' : '', ">{$lang['strfalse']}</option>\n";
 					echo "</select>\n";
 				}
 				else {
@@ -363,24 +367,24 @@ class Postgres extends ADODB_base {
 
 		// If the first character is an underscore, it's an array type
 		$is_array = false;
-		if (substr($typname, 0, 1) == '_') {
+		if (substr($typname, 0, 1) === '_') {
 			$is_array = true;
 			$typname = substr($typname, 1);
 		}
 
 		// Show lengths on bpchar and varchar
-		if ($typname == 'bpchar') {
+		if ($typname === 'bpchar') {
 			$len = $typmod - $varhdrsz;
 			$temp = 'character';
 			if ($len > 1)
 				$temp .= "({$len})";
 		}
-		elseif ($typname == 'varchar') {
+		elseif ($typname === 'varchar') {
 			$temp = 'character varying';
 			if ($typmod != -1)
 				$temp .= "(" . ($typmod - $varhdrsz) . ")";
 		}
-		elseif ($typname == 'numeric') {
+		elseif ($typname === 'numeric') {
 			$temp = 'numeric';
 			if ($typmod != -1) {
 				$tmp_typmod = $typmod - $varhdrsz;
@@ -1277,8 +1281,8 @@ class Postgres extends ADODB_base {
 			$sql .= "    \"{$atts->fields['attname']}\"";
 			// Dump SERIAL and BIGSERIAL columns correctly
 			if ($this->phpBool($atts->fields['attisserial']) &&
-					($atts->fields['type'] == 'integer' || $atts->fields['type'] == 'bigint')) {
-				if ($atts->fields['type'] == 'integer')
+					($atts->fields['type'] === 'integer' || $atts->fields['type'] === 'bigint')) {
+				if ($atts->fields['type'] === 'integer')
 					$sql .= " SERIAL";
 				else
 					$sql .= " BIGSERIAL";
@@ -1445,7 +1449,7 @@ class Postgres extends ADODB_base {
 				$nongrant = array_diff($v[2], $v[4]);
 
 				// Skip empty or owner ACEs
-				if (sizeof($v[2]) == 0 || ($v[0] == 'user' && $v[1] == $t->fields['relowner'])) continue;
+				if (sizeof($v[2]) == 0 || ($v[0] === 'user' && $v[1] == $t->fields['relowner'])) continue;
 
 				// Change user if necessary
 				if ($this->hasGrantOption() && $v[3] != $t->fields['relowner']) {
@@ -1654,7 +1658,7 @@ class Postgres extends ADODB_base {
 					if ($length[$i] != '') $sql .= "({$length[$i]})";
 			}
 			// Add array qualifier if necessary
-			if ($array[$i] == '[]') $sql .= '[]';
+			if ($array[$i] === '[]') $sql .= '[]';
 			// Add other qualifiers
 			if (!isset($primarykey[$i])) {
  				if (isset($uniquekey[$i])) $sql .= " UNIQUE";
@@ -4261,11 +4265,11 @@ class Postgres extends ADODB_base {
 		$temp = array();
 
 		// Volatility
-		if ($f['provolatile'] == 'v')
+		if ($f['provolatile'] === 'v')
 			$temp[] = 'VOLATILE';
-		elseif ($f['provolatile'] == 'i')
+		elseif ($f['provolatile'] === 'i')
 			$temp[] = 'IMMUTABLE';
-		elseif ($f['provolatile'] == 's')
+		elseif ($f['provolatile'] === 's')
 			$temp[] = 'STABLE';
 		else
 			return -1;
@@ -4708,7 +4712,7 @@ class Postgres extends ADODB_base {
 					if ($length[$i] != '') $sql .= "({$length[$i]})";
 			}
 			// Add array qualifier if necessary
-			if ($array[$i] == '[]') $sql .= '[]';
+			if ($array[$i] === '[]') $sql .= '[]';
 
 			if ($colcomment[$i] != '') $comment_sql .= "COMMENT ON COLUMN \"{$f_schema}\".\"{$name}\".\"{$field[$i]}\" IS '{$colcomment[$i]}';\n";
 
@@ -5752,7 +5756,7 @@ class Postgres extends ADODB_base {
 
  			$sql = "ALTER TEXT SEARCH CONFIGURATION \"{$f_schema}\".\"{$ftscfg}\" {$whatToDo} MAPPING FOR ";
  			$sql .= implode(",", $mapping);
- 			if ($action != 'drop' && !empty($dictname)) {
+ 			if ($action !== 'drop' && !empty($dictname)) {
  				$sql .= " WITH {$dictname}";
  			}
 
@@ -6518,14 +6522,14 @@ class Postgres extends ADODB_base {
 
 		if (empty($usename)) {
 			$val = pg_parameter_status($this->conn->_connectionID, 'is_superuser');
-			if ($val !== false) return $val == 'on';
+			if ($val !== false) return $val === 'on';
 		}
 
 		$sql = "SELECT usesuper FROM pg_user WHERE usename='{$username}'";
 
 		$usesuper = $this->selectField($sql, 'usesuper');
 		if ($usesuper == -1) return false;
-		else return $usesuper == 't';
+		else return $usesuper === 't';
 	}
 
 	/**
@@ -6688,9 +6692,9 @@ class Postgres extends ADODB_base {
 			// If current char is a double quote and it's not escaped, then
 			// enter quoted bit
 			$char = substr($acl, $i, 1);
-			if ($char == '"' && ($i == 0 || substr($acl, $i - 1, 1) != '\\'))
+			if ($char === '"' && ($i == 0 || substr($acl, $i - 1, 1) !== '\\'))
 				$in_quotes = !$in_quotes;
-			elseif ($char == ',' && !$in_quotes) {
+			elseif ($char === ',' && !$in_quotes) {
 				// Add text so far to the array
 				$aces[] = substr($acl, $j, $i - $j);
 				$j = $i + 1;
@@ -6739,14 +6743,14 @@ class Postgres extends ADODB_base {
 				// enter quoted bit
 				$char = substr($v, $i, 1);
 				$next_char = substr($v, $i + 1, 1);
-				if ($char == '"' && ($i == 0 || $next_char != '"')) {
+				if ($char === '"' && ($i == 0 || $next_char !== '"')) {
 					$in_quotes = !$in_quotes;
 				}
 				// Skip over escaped double quotes
-				elseif ($char == '"' && $next_char == '"') {
+				elseif ($char === '"' && $next_char === '"') {
 					$i++;
 				}
-				elseif ($char == '=' && !$in_quotes) {
+				elseif ($char === '=' && !$in_quotes) {
 					// Split on current equals sign
 					$entity = substr($v, 0, $i);
 					$chars = substr($v, $i + 1);
@@ -6766,13 +6770,13 @@ class Postgres extends ADODB_base {
 			$row = array($atype, $entity, array(), '', array());
 
 			// Loop over chars and add privs to $row
-			for ($i = 0; $i < strlen($chars); $i++) {
+			for ($i = 0, $iMax = strlen($chars); $i < $iMax; $i++) {
 				// Append to row's privs list the string representing
 				// the privilege
 				$char = substr($chars, $i, 1);
-				if ($char == '*')
+				if ($char === '*')
 					$row[4][] = $this->privmap[substr($chars, $i - 1, 1)];
-				elseif ($char == '/') {
+				elseif ($char === '/') {
 					$grantor = substr($chars, $i + 1);
 					// Check for quoting
 					if (strpos($grantor, '"') === 0) {
@@ -6893,12 +6897,12 @@ class Postgres extends ADODB_base {
 		if (!is_array($privileges) || sizeof($privileges) == 0) return -3;
 		if (!is_array($usernames) || !is_array($groupnames) ||
 			(!$public && sizeof($usernames) == 0 && sizeof($groupnames) == 0)) return -4;
-		if ($mode != 'GRANT' && $mode != 'REVOKE') return -5;
+		if ($mode !== 'GRANT' && $mode !== 'REVOKE') return -5;
 
 		$sql = $mode;
 
 		// Grant option
-		if ($this->hasGrantOption() && $mode == 'REVOKE' && $grantoption) {
+		if ($this->hasGrantOption() && $mode === 'REVOKE' && $grantoption) {
 			$sql .= ' GRANT OPTION FOR';
 		}
 
@@ -6953,7 +6957,7 @@ class Postgres extends ADODB_base {
 
 		// Dump PUBLIC
 		$first = true;
-		$sql .= ($mode == 'GRANT') ? ' TO ' : ' FROM ';
+		$sql .= ($mode === 'GRANT') ? ' TO ' : ' FROM ';
 		if ($public) {
 			$sql .= 'PUBLIC';
 			$first = false;
@@ -6980,12 +6984,12 @@ class Postgres extends ADODB_base {
 		}
 
 		// Grant option
-		if ($this->hasGrantOption() && $mode == 'GRANT' && $grantoption) {
+		if ($this->hasGrantOption() && $mode === 'GRANT' && $grantoption) {
 			$sql .= ' WITH GRANT OPTION';
 		}
 
 		// Cascade revoke
-		if ($this->hasGrantOption() && $mode == 'REVOKE' && $cascade) {
+		if ($this->hasGrantOption() && $mode === 'REVOKE' && $cascade) {
 			$sql .= ' CASCADE';
 		}
 
@@ -7332,9 +7336,9 @@ class Postgres extends ADODB_base {
 		// Clean
 		$pid = (int)$pid;
 
-		if ($signal == 'CANCEL')
+		if ($signal === 'CANCEL')
 			$sql = "SELECT pg_catalog.pg_cancel_backend({$pid}) AS val";
-		elseif ($signal == 'KILL')
+		elseif ($signal === 'KILL')
 			$sql = "SELECT pg_catalog.pg_terminate_backend({$pid}) AS val";
 		else
 			return -1;
@@ -7497,7 +7501,7 @@ class Postgres extends ADODB_base {
     		for ($i = 0; $i < $len; $this->advance_1($i, $prevlen, $thislen)) {
 
     			/* was the previous character a backslash? */
-    			if ($i > 0 && substr($line, $i - $prevlen, 1) == '\\')
+    			if ($i > 0 && substr($line, $i - $prevlen, 1) === '\\')
     				$bslash_count++;
     			else
     				$bslash_count = 0;
@@ -7516,7 +7520,7 @@ class Postgres extends ADODB_base {
     				 * backslashes don't count for double quotes, though.
     				 */
     				if (substr($line, $i, 1) == $in_quote &&
-    					($bslash_count % 2 == 0 || $in_quote == '"'))
+    					($bslash_count % 2 == 0 || $in_quote === '"'))
     					$in_quote = 0;
     			}
 
@@ -7524,14 +7528,14 @@ class Postgres extends ADODB_base {
 				else if ($dol_quote) {
 					if (strncmp(substr($line, $i), $dol_quote, strlen($dol_quote)) == 0) {
 						$this->advance_1($i, $prevlen, $thislen);
-						while(substr($line, $i, 1) != '$')
+						while(substr($line, $i, 1) !== '$')
 							$this->advance_1($i, $prevlen, $thislen);
 						$dol_quote = null;
 					}
 				}
 
     			/* start of extended comment? */
-    			else if (substr($line, $i, 2) == '/*')
+    			else if (substr($line, $i, 2) === '/*')
     			{
     				$in_xcomment++;
     				if ($in_xcomment == 1)
@@ -7541,12 +7545,12 @@ class Postgres extends ADODB_base {
     			/* in or end of extended comment? */
     			else if ($in_xcomment)
     			{
-    				if (substr($line, $i, 2) == '*/' && !--$in_xcomment)
+    				if (substr($line, $i, 2) === '*/' && !--$in_xcomment)
     					$this->advance_1($i, $prevlen, $thislen);
     			}
 
     			/* start of quote? */
-    			else if (substr($line, $i, 1) == '\'' || substr($line, $i, 1) == '"') {
+    			else if (substr($line, $i, 1) === '\'' || substr($line, $i, 1) === '"') {
     				$in_quote = substr($line, $i, 1);
     		    }
 
@@ -7557,7 +7561,7 @@ class Postgres extends ADODB_base {
 					$dol_end = strpos(substr($line, $i + 1), '$');
 					$dol_quote = substr($line, $i, $dol_end + 1);
 					$this->advance_1($i, $prevlen, $thislen);
-					while (substr($line, $i, 1) != '$') {
+					while (substr($line, $i, 1) !== '$') {
 						$this->advance_1($i, $prevlen, $thislen);
 					}
 
@@ -7571,16 +7575,16 @@ class Postgres extends ADODB_base {
     			}
 
     			/* count nested parentheses */
-				else if (substr($line, $i, 1) == '(') {
+				else if (substr($line, $i, 1) === '(') {
     				$paren_level++;
 				}
 
-    			else if (substr($line, $i, 1) == ')' && $paren_level > 0) {
+    			else if (substr($line, $i, 1) === ')' && $paren_level > 0) {
     				$paren_level--;
     			}
 
     			/* semicolon? then send query */
-    			else if (substr($line, $i, 1) == ';' && !$bslash_count && !$paren_level)
+    			else if (substr($line, $i, 1) === ';' && !$bslash_count && !$paren_level)
     			{
     			    $subline = substr(substr($line, 0, $i), $query_start);
     				/* is there anything else on the line? */
@@ -7611,7 +7615,7 @@ class Postgres extends ADODB_base {
             					$copy = fgets($fd, 32768);
             					$lineno++;
             					pg_put_line($conn, $copy);
-            					if ($copy == "\\.\n" || $copy == "\\.\r\n") {
+            					if ($copy === "\\.\n" || $copy === "\\.\r\n") {
             						pg_end_copy($conn);
             						break;
             					}
@@ -7673,7 +7677,7 @@ class Postgres extends ADODB_base {
 					$copy = fgets($fd, 32768);
 					$lineno++;
 					pg_put_line($conn, $copy);
-					if ($copy == "\\.\n" || $copy == "\\.\r\n") {
+					if ($copy === "\\.\n" || $copy === "\\.\r\n") {
 						pg_end_copy($conn);
 						break;
 					}
@@ -7729,7 +7733,7 @@ class Postgres extends ADODB_base {
 		$first = true;
 		if (is_array($values) && sizeof($values) > 0) {
 			foreach ($values as $k => $v) {
-				if ($v != '' || $this->selectOps[$ops[$k]] == 'p') {
+				if ($v != '' || $this->selectOps[$ops[$k]] === 'p') {
 					$this->fieldClean($k);
 					if ($first) {
 						$sql .= " WHERE ";
@@ -7776,7 +7780,7 @@ class Postgres extends ADODB_base {
 					$this->fieldClean($k);
 					$sql .= '"' . $k . '"';
 				}
-				if (strtoupper($v) == 'DESC') $sql .= " DESC";
+				if (strtoupper($v) === 'DESC') $sql .= " DESC";
 			}
 		}
 
@@ -7817,7 +7821,7 @@ class Postgres extends ADODB_base {
 				// Trim query
 				$query = trim($query);
 				// Trim off trailing semi-colon if there is one
-				if (substr($query, strlen($query) - 1, 1) == ';')
+				if (substr($query, strlen($query) - 1, 1) === ';')
 					$query = substr($query, 0, strlen($query) - 1);
 				break;
 			default:

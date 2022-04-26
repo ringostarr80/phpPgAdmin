@@ -1065,7 +1065,7 @@ class Postgres extends ADODB_base {
 			FROM pg_catalog.pg_class c
 			     LEFT JOIN pg_catalog.pg_user u ON u.usesysid = c.relowner
 			     LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
-			WHERE c.relkind IN ('r', 'f')
+			WHERE c.relkind IN ('r', 'f', 'p')
 			      AND n.nspname = '{$c_schema}'
 			      AND n.oid = c.relnamespace
 			      AND c.relname = '{$table}'";
@@ -1095,7 +1095,7 @@ class Postgres extends ADODB_base {
 							WHERE pt.oid=c.reltablespace) END AS tablespace
 					FROM pg_catalog.pg_class c
 					LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
-					WHERE c.relkind IN ('r', 'm', 'f')
+					WHERE c.relkind IN ('r', 'm', 'f', 'p')
 					AND nspname='{$c_schema}'
 					ORDER BY c.relname";
 		}

@@ -7805,15 +7805,15 @@ class Postgres extends ADODB_base {
 	 * @return -4 unknown type
 	 * @return -5 failed setting transaction read only
 	 */
-	function browseQuery($type, $table, $query, $sortkey, $sortdir, $page, $page_size, &$max_pages) {
+	function browseQuery($type, $table, $query, $sortkey, $sortdir, $page, $page_size, &$max_pages, $sort_pkey = null) {
 		// Check that we're not going to divide by zero
 		if (!is_numeric($page_size) || $page_size != (int)$page_size || $page_size <= 0) return -3;
 
 		// If $type is TABLE, then generate the query
 		switch ($type) {
 			case 'TABLE':
-				if (preg_match('/^[0-9]+$/', $sortkey) && $sortkey > 0) $orderby = array($sortkey => $sortdir);
-				else $orderby = array();
+				if (preg_match('/^[0-9]+$/', $sortkey) && $sortkey > 0) $orderby = array($sortkey => $sortdir, $sort_pkey ?: '1' => $sortdir);
+				else $orderby = array($sort_pkey ?: '1' => 'DESC');
 				$query = $this->getSelectSQL($table, array(), array(), array(), $orderby);
 				break;
 			case 'QUERY':

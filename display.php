@@ -283,6 +283,7 @@
 
 						$fkey_information['byfield'][$constr['p_field']][] = $constr['conid'];
 					}
+					elseif ($constr['contype'] == 'p') $fkey_information['pkey'] = $constr['p_field'];
 					$constraints->moveNext();
 				}
 			}
@@ -494,14 +495,15 @@
 			}
 		}
 
+		$fkey_information =& getFKInfo();
+
 		// Retrieve page from query.  $max_pages is returned by reference.
 		$rs = $data->browseQuery($type,
 			isset($object) ? $object : null,
 			isset($_SESSION['sqlquery']) ? $_SESSION['sqlquery'] : null,
 			$_REQUEST['sortkey'], $_REQUEST['sortdir'], $_REQUEST['page'],
-			$conf['max_rows'], $max_pages);
-
-		$fkey_information =& getFKInfo();
+			$conf['max_rows'], $max_pages,
+			isset($fkey_information['pkey']) ? $fkey_information['pkey'] : null);
 
 		// Build strings for GETs in array
 		$_gets = array(

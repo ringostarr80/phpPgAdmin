@@ -558,8 +558,6 @@
 	$lang['strrows2'] = 'Rader';
 
 	// Miscellaneous
-	$lang['strtopbar'] = '%s Körs på %s:%s -- Du är inloggad som användare "%s", %s';
-	$lang['strtimefmt'] = 'jS M, Y g:iA';
 	$lang['strhelp'] = 'Hjälp';
 
 ?>

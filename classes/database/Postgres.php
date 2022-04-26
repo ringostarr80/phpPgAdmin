@@ -1061,11 +1061,11 @@ class Postgres extends ADODB_base {
 			SELECT
 			  c.relname, n.nspname, u.usename AS relowner,
 			  pg_catalog.obj_description(c.oid, 'pg_class') AS relcomment,
-			  (SELECT spcname FROM pg_catalog.pg_tablespace pt WHERE pt.oid=c.reltablespace) AS tablespace
+			  (SELECT spcname FROM pg_catalog.pg_tablespace pt WHERE pt.oid=c.reltablespace) AS tablespace, c.relkind
 			FROM pg_catalog.pg_class c
 			     LEFT JOIN pg_catalog.pg_user u ON u.usesysid = c.relowner
 			     LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
-			WHERE c.relkind = 'r'
+			WHERE c.relkind IN ('r', 'f')
 			      AND n.nspname = '{$c_schema}'
 			      AND n.oid = c.relnamespace
 			      AND c.relname = '{$table}'";
@@ -1091,10 +1091,11 @@ class Postgres extends ADODB_base {
 			$sql = "SELECT c.relname, pg_catalog.pg_get_userbyid(c.relowner) AS relowner,
 						pg_catalog.obj_description(c.oid, 'pg_class') AS relcomment,
 						reltuples::bigint,
-						(SELECT spcname FROM pg_catalog.pg_tablespace pt WHERE pt.oid=c.reltablespace) AS tablespace
+						CASE c.relkind WHEN 'm' THEN '[MV]' WHEN 'f' THEN '[FDW]@'||n.nspname ELSE (SELECT spcname FROM pg_catalog.pg_tablespace pt
+							WHERE pt.oid=c.reltablespace) END AS tablespace
 					FROM pg_catalog.pg_class c
 					LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
-					WHERE c.relkind = 'r'
+					WHERE c.relkind IN ('r', 'm', 'f')
 					AND nspname='{$c_schema}'
 					ORDER BY c.relname";
 		}
@@ -1879,7 +1880,9 @@ class Postgres extends ADODB_base {
 		$this->fieldArrayClean($tblrs->fields);
 
 		// Comment
-		$status = $this->setComment('TABLE', '', $tblrs->fields['relname'], $comment);
+		if($tblrs->fields['relkind'] == 'f')
+		$status = $this->setComment('FOREIGN TABLE', '', $tblrs->fields['relname'], $comment); else
+		$status = $this->setComment(        'TABLE', '', $tblrs->fields['relname'], $comment);
 		if ($status != 0) return -4;
 
 		// Owner
@@ -3333,7 +3336,7 @@ class Postgres extends ADODB_base {
 
 		$sql = "
 			SELECT c2.relname AS indname, i.indisprimary, i.indisunique, i.indisclustered,
-				pg_catalog.pg_get_indexdef(i.indexrelid, 0, true) AS inddef
+				pg_catalog.pg_get_indexdef(i.indexrelid, 0, true) AS inddef, i.indpred IS NOT NULL AS indpred, i.indisexclusion
 			FROM pg_catalog.pg_class c, pg_catalog.pg_class c2, pg_catalog.pg_index i
 			WHERE c.relname = '{$table}' AND pg_catalog.pg_table_is_visible(c.oid)
 				AND c.oid = i.indrelid AND i.indexrelid = c2.oid
@@ -4184,11 +4187,11 @@ class Postgres extends ADODB_base {
 				pg_catalog.format_type(prorettype, NULL) as proresult, prosrc,
 				probin, proretset, proisstrict, provolatile, prosecdef,
 				pg_catalog.oidvectortypes(pc.proargtypes) AS proarguments,
-				proargnames AS proargnames,
+				proargnames, proargmodes,
 				pg_catalog.obj_description(pc.oid, 'pg_proc') AS procomment,
 				proconfig,
-				(select array_agg( (select typname from pg_type pt
-					where pt.oid = p.oid) ) from unnest(proallargtypes) p)
+				(SELECT ARRAY_AGG( (SELECT typname FROM pg_type pt
+					WHERE pt.oid = p.oid) ) FROM UNNEST(proallargtypes) p)
 				AS proallarguments,
 				proargmodes
 			FROM
@@ -7376,6 +7379,7 @@ class Postgres extends ADODB_base {
 */
 
 		switch ($obj_type) {
+			case 'FOREIGN TABLE':
 			case 'TABLE':
 				$sql .= "\"{$f_schema}\".\"{$table}\" IS ";
 				break;

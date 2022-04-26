@@ -247,8 +247,12 @@
 				$rowdata->fields['+constraints'] = $lang['strprimarykey'];
 				$actions['drop']['disable'] = true;
 			}
-			elseif ($data->phpBool($rowdata->fields['indisunique'])) {
+			elseif ($data->phpBool($rowdata->fields['indisunique']) and !$data->phpBool($rowdata->fields['indpred'])) {
 				$rowdata->fields['+constraints'] = $lang['struniquekey'];
+				$actions['drop']['disable'] = true;
+			}
+			elseif ($data->phpBool($rowdata->fields['indisexclusion'])) {
+				$rowdata->fields['+constraints'] = 'Exclusion';
 				$actions['drop']['disable'] = true;
 			}
 			else

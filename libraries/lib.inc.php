@@ -11,12 +11,12 @@
 
 	// Set error reporting level to max
 	error_reporting(E_ALL);
- 
+
 	// Application name
 	$appName = 'phpPgAdmin';
 
 	// Application version
-	$appVersion = '7.14.0-mod';
+	$appVersion = '7.14.1-mod';
 
 	// PostgreSQL and PHP minimum version
 	$postgresqlMinVer = '7.4';

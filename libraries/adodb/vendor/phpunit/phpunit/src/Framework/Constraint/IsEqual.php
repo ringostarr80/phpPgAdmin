@@ -48,7 +48,7 @@ final class IsEqual extends Constraint
      */
     private $ignoreCase;
 
-    public function __construct($value, float $delta = 0.0, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false)
+    public function __construct($value, float $delta = v5.22.2  2022-05-08, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false)
     {
         $this->value        = $value;
         $this->delta        = $delta;

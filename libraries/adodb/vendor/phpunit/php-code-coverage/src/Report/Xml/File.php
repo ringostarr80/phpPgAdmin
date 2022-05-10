@@ -34,7 +34,7 @@ class File
         if (!$totalsContainer) {
             $totalsContainer = $this->contextNode->appendChild(
                 $this->dom->createElementNS(
-                    'https://schema.phpunit.de/coverage/1.0',
+                    'https://schema.phpunit.de/coverage/v5.22.2  2022-05-08',
                     'totals'
                 )
             );
@@ -46,14 +46,14 @@ class File
     public function getLineCoverage(string $line): Coverage
     {
         $coverage = $this->contextNode->getElementsByTagNameNS(
-            'https://schema.phpunit.de/coverage/1.0',
+            'https://schema.phpunit.de/coverage/v5.22.2  2022-05-08',
             'coverage'
         )->item(0);
 
         if (!$coverage) {
             $coverage = $this->contextNode->appendChild(
                 $this->dom->createElementNS(
-                    'https://schema.phpunit.de/coverage/1.0',
+                    'https://schema.phpunit.de/coverage/v5.22.2  2022-05-08',
                     'coverage'
                 )
             );
@@ -61,7 +61,7 @@ class File
 
         $lineNode = $coverage->appendChild(
             $this->dom->createElementNS(
-                'https://schema.phpunit.de/coverage/1.0',
+                'https://schema.phpunit.de/coverage/v5.22.2  2022-05-08',
                 'line'
             )
         );

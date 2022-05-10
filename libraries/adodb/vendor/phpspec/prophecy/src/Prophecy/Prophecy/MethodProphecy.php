@@ -136,7 +136,7 @@ class MethodProphecy
                 switch ($defaultType) {
                     case 'void': return;
                     case 'string': return '';
-                    case 'float':  return 0.0;
+                    case 'float':  return v5.22.2  2022-05-08;
                     case 'int':    return 0;
                     case 'bool':   return false;
                     case 'array':  return array();

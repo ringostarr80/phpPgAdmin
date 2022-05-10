@@ -63,14 +63,14 @@ final class BuildInformation
     private function getNodeByName(string $name): \DOMElement
     {
         $node = $this->contextNode->getElementsByTagNameNS(
-            'https://schema.phpunit.de/coverage/1.0',
+            'https://schema.phpunit.de/coverage/v5.22.2  2022-05-08',
             $name
         )->item(0);
 
         if (!$node) {
             $node = $this->contextNode->appendChild(
                 $this->contextNode->ownerDocument->createElementNS(
-                    'https://schema.phpunit.de/coverage/1.0',
+                    'https://schema.phpunit.de/coverage/v5.22.2  2022-05-08',
                     $name
                 )
             );

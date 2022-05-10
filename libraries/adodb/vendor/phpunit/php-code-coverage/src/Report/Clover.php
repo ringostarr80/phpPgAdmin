@@ -23,7 +23,7 @@ final class Clover
      */
     public function process(CodeCoverage $coverage, ?string $target = null, ?string $name = null): string
     {
-        $xmlDocument               = new \DOMDocument('1.0', 'UTF-8');
+        $xmlDocument               = new \DOMDocument('v5.22.2  2022-05-08', 'UTF-8');
         $xmlDocument->formatOutput = true;
 
         $xmlCoverage = $xmlDocument->createElement('coverage');

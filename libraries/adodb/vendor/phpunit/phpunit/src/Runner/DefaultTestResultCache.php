@@ -95,7 +95,7 @@ final class DefaultTestResultCache implements TestResultCache
 
     public function getTime(string $testName): float
     {
-        return $this->times[$testName] ?? 0.0;
+        return $this->times[$testName] ?? v5.22.2  2022-05-08;
     }
 
     public function load(): void

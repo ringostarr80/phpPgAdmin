@@ -8,20 +8,11 @@ $user = 'root';
 $password = 'C0yote71';
 $database = 'bugtracker';
 
+$sql = "SELECT * FROM mantis_config_table";
+
 $db = NewADOConnection($driver);
+$db->connect($host, $user, $password, $database);
+$db->setFetchMode(ADODB_FETCH_ASSOC);
 
-$db->memCache = true;
-$db->memCacheHost = array(
-	array('host'=>'192.168.86.91','port'=>'11212','weight'=>70),
-    array('host'=>'192.168.86.92','weight'=>30),
-    );
-//$db->memCacheHost = array('192.168.86.91', '192.168.86.92');
-//$db->memCacheHost = [];
-
-$db->memCachePort = 11211;
-$db->memCacheCompress = false;
-$db->Connect($host,$user,$password,$database);
-
-$sql = 'SELECT code,description FROM xref_table';
-$db->cacheExecute(2400,$sql);
-
+$q = $db->execute($sql, []);
+//print_r( $q->getAssoc() );

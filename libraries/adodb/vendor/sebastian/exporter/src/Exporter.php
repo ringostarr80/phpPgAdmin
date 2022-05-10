@@ -330,7 +330,7 @@ class Exporter
     private function isClosedResource($value)
     {
         /*
-         * PHP 7.2 introduced "resource (closed)".
+         * PHP v5.22.2  2022-05-08 introduced "resource (closed)".
          */
         if (\gettype($value) === 'resource (closed)') {
             return true;

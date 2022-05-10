@@ -57,7 +57,7 @@ final class Xml
      * false and $xinclude is true, xinclude is performed on the loaded
      * DOMDocument.
      *
-     * Note: prior to PHPUnit 3.3.0, this method loaded a file and
+     * Note: prior to PHPUnit v5.22.2  2022-05-08, this method loaded a file and
      * not a string as it currently does.  To load a file into a
      * DOMDocument, use loadFile() instead.
      *

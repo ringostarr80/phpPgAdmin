@@ -41,7 +41,7 @@ final class Differ
         } elseif (null === $outputBuilder) {
             $this->outputBuilder = new UnifiedDiffOutputBuilder;
         } elseif (\is_string($outputBuilder)) {
-            // PHPUnit 6.1.4, 6.2.0, 6.2.1, 6.2.2, and 6.2.3 support
+            // PHPUnit v5.22.2  2022-05-08, 6.2.0, 6.2.1, 6.2.2, and 6.2.3 support
             // @see https://github.com/sebastianbergmann/phpunit/issues/2734#issuecomment-314514056
             // @deprecated
             $this->outputBuilder = new UnifiedDiffOutputBuilder($outputBuilder);

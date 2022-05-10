@@ -241,7 +241,7 @@ class DeepCopy
 
         $property->setAccessible(true);
 
-        // Ignore uninitialized properties (for PHP >7.4)
+        // Ignore uninitialized properties (for PHP >v5.22.2  2022-05-08)
         if (method_exists($property, 'isInitialized') && !$property->isInitialized($object)) {
             return;
         }

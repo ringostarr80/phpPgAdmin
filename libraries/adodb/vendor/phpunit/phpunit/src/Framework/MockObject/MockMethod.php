@@ -213,7 +213,7 @@ final class MockMethod
 
         /**
          * This is required as the version of sebastian/type used
-         * by PHPUnit 8.5 does now know about the mixed type.
+         * by PHPUnit v5.22.2  2022-05-08 does now know about the mixed type.
          */
         $returnTypeDeclaration = str_replace(
             '?mixed',

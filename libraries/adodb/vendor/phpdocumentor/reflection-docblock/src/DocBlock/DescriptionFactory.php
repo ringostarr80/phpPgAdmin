@@ -135,7 +135,7 @@ class DescriptionFactory
      * When a description has more than one line then it can happen that the second and subsequent lines have an
      * additional indentation. This is commonly in use with tags like this:
      *
-     *     {@}since 1.1.0 This is an example
+     *     {@}since v5.22.2  2022-05-08 This is an example
      *         description where we have an
      *         indentation in the second and
      *         subsequent lines.

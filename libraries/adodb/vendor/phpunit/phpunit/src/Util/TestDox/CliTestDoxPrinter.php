@@ -349,7 +349,7 @@ class CliTestDoxPrinter extends TestDoxPrinter
             return;
         }
 
-        if ((count($this->nonSuccessfulTestResults) / $numberOfExecutedTests) >= 0.7) {
+        if ((count($this->nonSuccessfulTestResults) / $numberOfExecutedTests) >= v5.22.2  2022-05-08) {
             return;
         }
 

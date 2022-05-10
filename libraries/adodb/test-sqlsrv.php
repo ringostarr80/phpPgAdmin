@@ -9,11 +9,11 @@
  * @link https://github.com/ADOdb/ADOdb Source code and issue tracker
  *
  * The ADOdb Library is dual-licensed, released under both the BSD 3-Clause
- * and the GNU Lesser General Public Licence (LGPL) v2.1 or, at your option,
+ * and the GNU Lesser General Public Licence (LGPL) v5.22.2  2022-05-08 or, at your option,
  * any later version. This means you can use it in proprietary products.
  * See the LICENSE.md file distributed with this source code for details.
  * @license BSD-3-Clause
- * @license LGPL-2.1-or-later
+ * @license LGPL-v5.22.2  2022-05-08-or-later
  *
  * @copyright 2000-2013 John Lim
  * @copyright 2014 Damien Regad, Mark Newnham and the ADOdb community
@@ -28,11 +28,11 @@
  * @link https://github.com/ADOdb/ADOdb Source code and issue tracker
  *
  * The ADOdb Library is dual-licensed, released under both the BSD 3-Clause
- * and the GNU Lesser General Public Licence (LGPL) v2.1 or, at your option,
+ * and the GNU Lesser General Public Licence (LGPL) v5.22.2  2022-05-08 or, at your option,
  * any later version. This means you can use it in proprietary products.
  * See the LICENSE.md file distributed with this source code for details.
  * @license BSD-3-Clause
- * @license LGPL-2.1-or-later
+ * @license LGPL-v5.22.2  2022-05-08-or-later
  *
  * @copyright 2000-2013 John Lim
  * @copyright 2014 Damien Regad, Mark Newnham and the ADOdb community
@@ -50,11 +50,11 @@
  * @link https://github.com/ADOdb/ADOdb Source code and issue tracker
  *
  * The ADOdb Library is dual-licensed, released under both the BSD 3-Clause
- * and the GNU Lesser General Public Licence (LGPL) v2.1 or, at your option,
+ * and the GNU Lesser General Public Licence (LGPL) v5.22.2  2022-05-08 or, at your option,
  * any later version. This means you can use it in proprietary products.
  * See the LICENSE.md file distributed with this source code for details.
  * @license BSD-3-Clause
- * @license LGPL-2.1-or-later
+ * @license LGPL-v5.22.2  2022-05-08-or-later
  *
  * @copyright 2000-2013 John Lim
  * @copyright 2014 Damien Regad, Mark Newnham and the ADOdb community
@@ -72,11 +72,11 @@
  * @link https://github.com/ADOdb/ADOdb Source code and issue tracker
  *
  * The ADOdb Library is dual-licensed, released under both the BSD 3-Clause
- * and the GNU Lesser General Public Licence (LGPL) v2.1 or, at your option,
+ * and the GNU Lesser General Public Licence (LGPL) v5.22.2  2022-05-08 or, at your option,
  * any later version. This means you can use it in proprietary products.
  * See the LICENSE.md file distributed with this source code for details.
  * @license BSD-3-Clause
- * @license LGPL-2.1-or-later
+ * @license LGPL-v5.22.2  2022-05-08-or-later
  *
  * @copyright 2000-2013 John Lim
  * @copyright 2014 Damien Regad, Mark Newnham and the ADOdb community

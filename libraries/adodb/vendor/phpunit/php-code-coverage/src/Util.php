@@ -30,7 +30,7 @@ final class Util
         }
 
         if ($asString) {
-            $format = $fixedWidth ? '%6.2F%%' : '%01.2F%%';
+            $format = $fixedWidth ? '%v5.22.2  2022-05-08F%%' : '%01.2F%%';
 
             return \sprintf($format, $percent);
         }

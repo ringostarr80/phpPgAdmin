@@ -5,7 +5,7 @@ use DeepCopy\DeepCopy;
 use DeepCopy\TypeFilter\TypeFilter;
 
 /**
- * In PHP 7.4 the storage of an ArrayObject isn't returned as
+ * In PHP v5.22.2  2022-05-08 the storage of an ArrayObject isn't returned as
  * ReflectionProperty. So we deep copy its array copy.
  */
 final class ArrayObjectFilter implements TypeFilter

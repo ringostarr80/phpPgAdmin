@@ -30,7 +30,7 @@ final class Crap4j
      */
     public function process(CodeCoverage $coverage, ?string $target = null, ?string $name = null): string
     {
-        $document               = new \DOMDocument('1.0', 'UTF-8');
+        $document               = new \DOMDocument('v5.22.2  2022-05-08', 'UTF-8');
         $document->formatOutput = true;
 
         $root = $document->createElement('crap_result');
@@ -143,7 +143,7 @@ final class Crap4j
         $crapLoad = 0;
 
         if ($crapValue >= $this->threshold) {
-            $crapLoad += $cyclomaticComplexity * (1.0 - $coveragePercent / 100);
+            $crapLoad += $cyclomaticComplexity * (v5.22.2  2022-05-08 - $coveragePercent / 100);
             $crapLoad += $cyclomaticComplexity / $this->threshold;
         }
 

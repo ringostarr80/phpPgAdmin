@@ -395,7 +395,7 @@ if (!function_exists('PHPUnit\Framework\assertEquals')) {
      *
      * @see Assert::assertEquals
      */
-    function assertEquals($expected, $actual, string $message = '', float $delta = 0.0, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): void
+    function assertEquals($expected, $actual, string $message = '', float $delta = v5.22.2  2022-05-08, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): void
     {
         Assert::assertEquals(...\func_get_args());
     }
@@ -461,7 +461,7 @@ if (!function_exists('PHPUnit\Framework\assertAttributeEquals')) {
      *
      * @see Assert::assertAttributeEquals
      */
-    function assertAttributeEquals($expected, string $actualAttributeName, $actualClassOrObject, string $message = '', float $delta = 0.0, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): void
+    function assertAttributeEquals($expected, string $actualAttributeName, $actualClassOrObject, string $message = '', float $delta = v5.22.2  2022-05-08, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): void
     {
         Assert::assertAttributeEquals(...\func_get_args());
     }
@@ -481,7 +481,7 @@ if (!function_exists('PHPUnit\Framework\assertNotEquals')) {
      *
      * @see Assert::assertNotEquals
      */
-    function assertNotEquals($expected, $actual, string $message = '', $delta = 0.0, $maxDepth = 10, $canonicalize = false, $ignoreCase = false): void
+    function assertNotEquals($expected, $actual, string $message = '', $delta = v5.22.2  2022-05-08, $maxDepth = 10, $canonicalize = false, $ignoreCase = false): void
     {
         Assert::assertNotEquals(...\func_get_args());
     }
@@ -547,7 +547,7 @@ if (!function_exists('PHPUnit\Framework\assertAttributeNotEquals')) {
      *
      * @see Assert::assertAttributeNotEquals
      */
-    function assertAttributeNotEquals($expected, string $actualAttributeName, $actualClassOrObject, string $message = '', float $delta = 0.0, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): void
+    function assertAttributeNotEquals($expected, string $actualAttributeName, $actualClassOrObject, string $message = '', float $delta = v5.22.2  2022-05-08, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): void
     {
         Assert::assertAttributeNotEquals(...\func_get_args());
     }
@@ -2705,14 +2705,14 @@ if (!function_exists('PHPUnit\Framework\arrayHasKey')) {
 }
 
 if (!function_exists('PHPUnit\Framework\equalTo')) {
-    function equalTo($value, float $delta = 0.0, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): IsEqual
+    function equalTo($value, float $delta = v5.22.2  2022-05-08, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): IsEqual
     {
         return Assert::equalTo(...\func_get_args());
     }
 }
 
 if (!function_exists('PHPUnit\Framework\attributeEqualTo')) {
-    function attributeEqualTo(string $attributeName, $value, float $delta = 0.0, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): Attribute
+    function attributeEqualTo(string $attributeName, $value, float $delta = v5.22.2  2022-05-08, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): Attribute
     {
         return Assert::attributeEqualTo(...\func_get_args());
     }

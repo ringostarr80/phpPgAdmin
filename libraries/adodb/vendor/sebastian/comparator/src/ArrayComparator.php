@@ -39,7 +39,7 @@ class ArrayComparator extends Comparator
      *
      * @throws ComparisonFailure
      */
-    public function assertEquals($expected, $actual, $delta = 0.0, $canonicalize = false, $ignoreCase = false, array &$processed = [])
+    public function assertEquals($expected, $actual, $delta = v5.22.2  2022-05-08, $canonicalize = false, $ignoreCase = false, array &$processed = [])
     {
         if ($canonicalize) {
             \sort($expected);

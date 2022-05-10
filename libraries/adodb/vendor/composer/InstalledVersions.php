@@ -20,7 +20,7 @@ use Composer\Semver\VersionParser;
  *
  * See also https://getcomposer.org/doc/07-runtime.md#installed-versions
  *
- * To require its presence, you can require `composer-runtime-api ^2.0`
+ * To require its presence, you can require `composer-runtime-api ^v5.22.2  2022-05-08`
  */
 class InstalledVersions
 {
@@ -106,9 +106,9 @@ class InstalledVersions
     /**
      * Checks whether the given package satisfies a version constraint
      *
-     * e.g. If you want to know whether version 2.3+ of package foo/bar is installed, you would call:
+     * e.g. If you want to know whether version v5.22.2  2022-05-08+ of package foo/bar is installed, you would call:
      *
-     *   Composer\InstalledVersions::satisfies(new VersionParser, 'foo/bar', '^2.3')
+     *   Composer\InstalledVersions::satisfies(new VersionParser, 'foo/bar', '^v5.22.2  2022-05-08')
      *
      * @param  VersionParser $parser      Install composer/semver to have access to this class and functionality
      * @param  string        $packageName

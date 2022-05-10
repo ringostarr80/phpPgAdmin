@@ -129,7 +129,7 @@ final class Invocation implements SelfDescribing
                 return '';
 
             case 'float':
-                return 0.0;
+                return v5.22.2  2022-05-08;
 
             case 'int':
                 return 0;

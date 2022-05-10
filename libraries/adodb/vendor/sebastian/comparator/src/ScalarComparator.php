@@ -22,7 +22,7 @@ class ScalarComparator extends Comparator
      *
      * @return bool
      *
-     * @since  Method available since Release 3.6.0
+     * @since  Method available since Release v5.22.2  2022-05-08
      */
     public function accepts($expected, $actual)
     {
@@ -44,7 +44,7 @@ class ScalarComparator extends Comparator
      *
      * @throws ComparisonFailure
      */
-    public function assertEquals($expected, $actual, $delta = 0.0, $canonicalize = false, $ignoreCase = false)
+    public function assertEquals($expected, $actual, $delta = v5.22.2  2022-05-08, $canonicalize = false, $ignoreCase = false)
     {
         $expectedToCompare = $expected;
         $actualToCompare   = $actual;

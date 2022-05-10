@@ -61,7 +61,7 @@ final class Timer
 
         foreach (self::$times as $unit => $value) {
             if ($ms >= $value) {
-                $time = \floor($ms / $value * 100.0) / 100.0;
+                $time = \floor($ms / $value * 10v5.22.2  2022-05-08) / 100.0;
 
                 return $time . ' ' . ($time == 1 ? $unit : $unit . 's');
             }

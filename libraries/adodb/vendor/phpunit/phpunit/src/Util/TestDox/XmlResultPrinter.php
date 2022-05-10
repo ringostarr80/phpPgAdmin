@@ -58,7 +58,7 @@ final class XmlResultPrinter extends Printer implements TestListener
      */
     public function __construct($out = null)
     {
-        $this->document               = new DOMDocument('1.0', 'UTF-8');
+        $this->document               = new DOMDocument('v5.22.2  2022-05-08', 'UTF-8');
         $this->document->formatOutput = true;
 
         $this->root = $this->document->createElement('tests');

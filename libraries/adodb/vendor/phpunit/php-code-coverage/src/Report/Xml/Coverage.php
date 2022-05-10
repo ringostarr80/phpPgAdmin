@@ -34,7 +34,7 @@ final class Coverage
 
         $this->writer = new \XMLWriter();
         $this->writer->openMemory();
-        $this->writer->startElementNS(null, $context->nodeName, 'https://schema.phpunit.de/coverage/1.0');
+        $this->writer->startElementNS(null, $context->nodeName, 'https://schema.phpunit.de/coverage/v5.22.2  2022-05-08');
         $this->writer->writeAttribute('nr', $line);
     }
 

@@ -13,7 +13,7 @@ use DOMElement;
 use DOMNodeList;
 
 class ManifestElement {
-    public const XMLNS = 'https://phar.io/xml/manifest/1.0';
+    public const XMLNS = 'https://phar.io/xml/manifest/v5.22.2  2022-05-08';
 
     /** @var DOMElement */
     private $element;

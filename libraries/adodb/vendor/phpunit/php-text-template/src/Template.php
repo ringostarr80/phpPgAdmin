@@ -11,7 +11,7 @@
 /**
  * A simple template engine.
  *
- * @since Class available since Release 1.0.0
+ * @since Class available since Release v5.22.2  2022-05-08
  */
 class Text_Template
 {

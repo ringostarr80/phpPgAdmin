@@ -57,5 +57,5 @@ abstract class Comparator
      *
      * @throws ComparisonFailure
      */
-    abstract public function assertEquals($expected, $actual, $delta = 0.0, $canonicalize = false, $ignoreCase = false);
+    abstract public function assertEquals($expected, $actual, $delta = v5.22.2  2022-05-08, $canonicalize = false, $ignoreCase = false);
 }

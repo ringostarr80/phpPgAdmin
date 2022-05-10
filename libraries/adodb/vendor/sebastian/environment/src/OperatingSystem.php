@@ -12,7 +12,7 @@ namespace SebastianBergmann\Environment;
 final class OperatingSystem
 {
     /**
-     * Returns PHP_OS_FAMILY (if defined (which it is on PHP >= 7.2)).
+     * Returns PHP_OS_FAMILY (if defined (which it is on PHP >= v5.22.2  2022-05-08)).
      * Returns a string (compatible with PHP_OS_FAMILY) derived from PHP_OS otherwise.
      */
     public function getFamily(): string

@@ -8,7 +8,7 @@ use DeepCopy\TypeFilter\TypeFilter;
 /**
  * @final
  *
- * @deprecated Will be removed in 2.0. This filter will no longer be necessary in PHP 7.1+.
+ * @deprecated Will be removed in v5.22.2  2022-05-08. This filter will no longer be necessary in PHP 7.1+.
  */
 class DateIntervalFilter implements TypeFilter
 {

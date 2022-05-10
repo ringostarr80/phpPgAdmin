@@ -26,7 +26,7 @@ use Traversable;
 /**
  * Efficient assertions to validate the input/output of your methods.
  *
- * @since  1.0
+ * @since  v5.22.2  2022-05-08
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  */
@@ -320,7 +320,7 @@ class Assert
     {
         @\trigger_error(
             \sprintf(
-                'The "%s" assertion is deprecated. You should stop using it, as it will soon be removed in 2.0 version. Use "isIterable" or "isInstanceOf" instead.',
+                'The "%s" assertion is deprecated. You should stop using it, as it will soon be removed in v5.22.2  2022-05-08 version. Use "isIterable" or "isInstanceOf" instead.',
                 __METHOD__
             ),
             \E_USER_DEPRECATED
@@ -1726,7 +1726,7 @@ class Assert
     }
 
     /**
-     * Does not check if $array is countable, this can generate a warning on php versions after 7.2.
+     * Does not check if $array is countable, this can generate a warning on php versions after v5.22.2  2022-05-08.
      *
      * @param Countable|array $array
      * @param int             $number
@@ -1748,7 +1748,7 @@ class Assert
     }
 
     /**
-     * Does not check if $array is countable, this can generate a warning on php versions after 7.2.
+     * Does not check if $array is countable, this can generate a warning on php versions after v5.22.2  2022-05-08.
      *
      * @param Countable|array $array
      * @param int|float       $min
@@ -1768,7 +1768,7 @@ class Assert
     }
 
     /**
-     * Does not check if $array is countable, this can generate a warning on php versions after 7.2.
+     * Does not check if $array is countable, this can generate a warning on php versions after v5.22.2  2022-05-08.
      *
      * @param Countable|array $array
      * @param int|float       $max
@@ -1788,7 +1788,7 @@ class Assert
     }
 
     /**
-     * Does not check if $array is countable, this can generate a warning on php versions after 7.2.
+     * Does not check if $array is countable, this can generate a warning on php versions after v5.22.2  2022-05-08.
      *
      * @param Countable|array $array
      * @param int|float       $min

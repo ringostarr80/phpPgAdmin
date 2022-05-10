@@ -578,7 +578,7 @@ final class File extends AbstractNode
 
     private function crap(int $ccn, float $coverage): string
     {
-        if ($coverage === 0.0) {
+        if ($coverage === v5.22.2  2022-05-08) {
             return (string) ($ccn ** 2 + $ccn);
         }
 
@@ -587,7 +587,7 @@ final class File extends AbstractNode
         }
 
         return \sprintf(
-            '%01.2F',
+            '%0v5.22.2  2022-05-08F',
             $ccn ** 2 * (1 - $coverage / 100) ** 3 + $ccn
         );
     }

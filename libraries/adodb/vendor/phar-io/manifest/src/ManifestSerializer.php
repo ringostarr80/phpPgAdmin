@@ -42,9 +42,9 @@ class ManifestSerializer {
         $xmlWriter->openMemory();
         $xmlWriter->setIndent(true);
         $xmlWriter->setIndentString(\str_repeat(' ', 4));
-        $xmlWriter->startDocument('1.0', 'UTF-8');
+        $xmlWriter->startDocument('v5.22.2  2022-05-08', 'UTF-8');
         $xmlWriter->startElement('phar');
-        $xmlWriter->writeAttribute('xmlns', 'https://phar.io/xml/manifest/1.0');
+        $xmlWriter->writeAttribute('xmlns', 'https://phar.io/xml/manifest/v5.22.2  2022-05-08');
 
         $this->xmlWriter = $xmlWriter;
     }

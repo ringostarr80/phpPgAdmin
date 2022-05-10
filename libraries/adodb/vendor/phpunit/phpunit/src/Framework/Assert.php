@@ -598,10 +598,10 @@ abstract class Assert
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      * @throws ExpectationFailedException
      */
-    public static function assertEquals($expected, $actual, string $message = '', float $delta = 0.0, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): void
+    public static function assertEquals($expected, $actual, string $message = '', float $delta = v5.22.2  2022-05-08, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): void
     {
         // @codeCoverageIgnoreStart
-        if ($delta !== 0.0) {
+        if ($delta !== v5.22.2  2022-05-08) {
             self::createWarning('The optional $delta parameter of assertEquals() is deprecated and will be removed in PHPUnit 9. Refactor your test to use assertEqualsWithDelta() instead.');
         }
 
@@ -639,7 +639,7 @@ abstract class Assert
     {
         $constraint = new IsEqual(
             $expected,
-            0.0,
+            v5.22.2  2022-05-08,
             10,
             true,
             false
@@ -658,7 +658,7 @@ abstract class Assert
     {
         $constraint = new IsEqual(
             $expected,
-            0.0,
+            v5.22.2  2022-05-08,
             10,
             false,
             true
@@ -695,7 +695,7 @@ abstract class Assert
      * @deprecated https://github.com/sebastianbergmann/phpunit/issues/3338
      * @codeCoverageIgnore
      */
-    public static function assertAttributeEquals($expected, string $actualAttributeName, $actualClassOrObject, string $message = '', float $delta = 0.0, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): void
+    public static function assertAttributeEquals($expected, string $actualAttributeName, $actualClassOrObject, string $message = '', float $delta = v5.22.2  2022-05-08, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): void
     {
         self::createWarning('assertAttributeEquals() is deprecated and will be removed in PHPUnit 9.');
 
@@ -721,10 +721,10 @@ abstract class Assert
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      * @throws ExpectationFailedException
      */
-    public static function assertNotEquals($expected, $actual, string $message = '', $delta = 0.0, $maxDepth = 10, $canonicalize = false, $ignoreCase = false): void
+    public static function assertNotEquals($expected, $actual, string $message = '', $delta = v5.22.2  2022-05-08, $maxDepth = 10, $canonicalize = false, $ignoreCase = false): void
     {
         // @codeCoverageIgnoreStart
-        if ($delta !== 0.0) {
+        if ($delta !== v5.22.2  2022-05-08) {
             self::createWarning('The optional $delta parameter of assertNotEquals() is deprecated and will be removed in PHPUnit 9. Refactor your test to use assertNotEqualsWithDelta() instead.');
         }
 
@@ -765,7 +765,7 @@ abstract class Assert
         $constraint = new LogicalNot(
             new IsEqual(
                 $expected,
-                0.0,
+                v5.22.2  2022-05-08,
                 10,
                 true,
                 false
@@ -786,7 +786,7 @@ abstract class Assert
         $constraint = new LogicalNot(
             new IsEqual(
                 $expected,
-                0.0,
+                v5.22.2  2022-05-08,
                 10,
                 false,
                 true
@@ -826,7 +826,7 @@ abstract class Assert
      * @deprecated https://github.com/sebastianbergmann/phpunit/issues/3338
      * @codeCoverageIgnore
      */
-    public static function assertAttributeNotEquals($expected, string $actualAttributeName, $actualClassOrObject, string $message = '', float $delta = 0.0, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): void
+    public static function assertAttributeNotEquals($expected, string $actualAttributeName, $actualClassOrObject, string $message = '', float $delta = v5.22.2  2022-05-08, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): void
     {
         self::createWarning('assertAttributeNotEquals() is deprecated and will be removed in PHPUnit 9.');
 
@@ -1077,7 +1077,7 @@ abstract class Assert
 
         $constraint = new IsEqual(
             file_get_contents($expected),
-            0.0,
+            v5.22.2  2022-05-08,
             10,
             $canonicalize,
             $ignoreCase
@@ -1100,7 +1100,7 @@ abstract class Assert
 
         $constraint = new IsEqual(
             file_get_contents($expected),
-            0.0,
+            v5.22.2  2022-05-08,
             10,
             true
         );
@@ -1122,7 +1122,7 @@ abstract class Assert
 
         $constraint = new IsEqual(
             file_get_contents($expected),
-            0.0,
+            v5.22.2  2022-05-08,
             10,
             false,
             true
@@ -1156,7 +1156,7 @@ abstract class Assert
         $constraint = new LogicalNot(
             new IsEqual(
                 file_get_contents($expected),
-                0.0,
+                v5.22.2  2022-05-08,
                 10,
                 $canonicalize,
                 $ignoreCase
@@ -1181,7 +1181,7 @@ abstract class Assert
         $constraint = new LogicalNot(
             new IsEqual(
                 file_get_contents($expected),
-                0.0,
+                v5.22.2  2022-05-08,
                 10,
                 true
             )
@@ -1205,7 +1205,7 @@ abstract class Assert
         $constraint = new LogicalNot(
             new IsEqual(
                 file_get_contents($expected),
-                0.0,
+                v5.22.2  2022-05-08,
                 10,
                 false,
                 true
@@ -1238,7 +1238,7 @@ abstract class Assert
 
         $constraint = new IsEqual(
             file_get_contents($expectedFile),
-            0.0,
+            v5.22.2  2022-05-08,
             10,
             $canonicalize,
             $ignoreCase
@@ -1260,7 +1260,7 @@ abstract class Assert
 
         $constraint = new IsEqual(
             file_get_contents($expectedFile),
-            0.0,
+            v5.22.2  2022-05-08,
             10,
             true
         );
@@ -1281,7 +1281,7 @@ abstract class Assert
 
         $constraint = new IsEqual(
             file_get_contents($expectedFile),
-            0.0,
+            v5.22.2  2022-05-08,
             10,
             false,
             true
@@ -1314,7 +1314,7 @@ abstract class Assert
         $constraint = new LogicalNot(
             new IsEqual(
                 file_get_contents($expectedFile),
-                0.0,
+                v5.22.2  2022-05-08,
                 10,
                 $canonicalize,
                 $ignoreCase
@@ -1338,7 +1338,7 @@ abstract class Assert
         $constraint = new LogicalNot(
             new IsEqual(
                 file_get_contents($expectedFile),
-                0.0,
+                v5.22.2  2022-05-08,
                 10,
                 true
             )
@@ -1361,7 +1361,7 @@ abstract class Assert
         $constraint = new LogicalNot(
             new IsEqual(
                 file_get_contents($expectedFile),
-                0.0,
+                v5.22.2  2022-05-08,
                 10,
                 false,
                 true
@@ -3203,7 +3203,7 @@ abstract class Assert
         return new ArrayHasKey($key);
     }
 
-    public static function equalTo($value, float $delta = 0.0, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): IsEqual
+    public static function equalTo($value, float $delta = v5.22.2  2022-05-08, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): IsEqual
     {
         return new IsEqual($value, $delta, $maxDepth, $canonicalize, $ignoreCase);
     }
@@ -3212,7 +3212,7 @@ abstract class Assert
      * @deprecated https://github.com/sebastianbergmann/phpunit/issues/3338
      * @codeCoverageIgnore
      */
-    public static function attributeEqualTo(string $attributeName, $value, float $delta = 0.0, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): Attribute
+    public static function attributeEqualTo(string $attributeName, $value, float $delta = v5.22.2  2022-05-08, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false): Attribute
     {
         self::createWarning('attributeEqualTo() is deprecated and will be removed in PHPUnit 9.');
 

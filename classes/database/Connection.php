@@ -11,10 +11,10 @@ include_once('./classes/database/ADODB_base.php');
 class Connection {
 
 	var $conn;
-	
+
 	// The backend platform.  Set to UNKNOWN by default.
 	var $platform = 'UNKNOWN';
-	
+
 	/**
 	 * Creates a new connection.  Will actually make a database connection.
 	 * @param $fetchMode Defaults to associative.  Override for different behaviour
@@ -54,38 +54,38 @@ class Connection {
 
 		$v = pg_version($this->conn->_connectionID);
 		if (isset($v['server'])) $version = $v['server'];
-		
+
 		// If we didn't manage to get the version without a query, query...
 		if (!isset($version)) {
 			$adodb = new ADODB_base($this->conn);
-	
+
 			$sql = "SELECT VERSION() AS version";
 			$field = $adodb->selectField($sql, 'version');
-	
+
 			// Check the platform, if it's mingw, set it
 			if (preg_match('/ mingw /i', $field))
 				$this->platform = 'MINGW';
-	
+
 			$params = explode(' ', $field);
 			if (!isset($params[1])) return -3;
-	
+
 			$version = $params[1]; // eg. 8.4.4
 		}
-		
+
 		$description = "PostgreSQL {$version}";
 
 		// Detect version and choose appropriate database driver
-        switch (substr($version,0,2)) {
-            case '14': return 'Postgres';break;
-            case '13': return 'Postgres13';break;
-            case '12': return 'Postgres12';break;
-            case '11': return 'Postgres11';break;
-            case '10': return 'Postgres10';break;
-        }    
+		switch (substr($version,0,2)) {
+			case '14': return 'Postgres'; break;
+			case '13': return 'Postgres13'; break;
+			case '12': return 'Postgres12'; break;
+			case '11': return 'Postgres11'; break;
+			case '10': return 'Postgres10'; break;
+		}
 
 		switch (substr($version,0,3)) {
-            case '9.6': return 'Postgres96'; break;
-            case '9.5': return 'Postgres95'; break;
+			case '9.6': return 'Postgres96'; break;
+			case '9.5': return 'Postgres95'; break;
 			case '9.4': return 'Postgres94'; break;
 			case '9.3': return 'Postgres93'; break;
 			case '9.2': return 'Postgres92'; break;
@@ -101,21 +101,22 @@ class Connection {
 		}
 
 		/* All <7.4 versions are not supported */
-		// if major version is 7 or less and wasn't cought in the
+		// if major version is 7 or less and wasn't caught in the
 		// switch/case block, we have an unsupported version.
-		if ((int)substr($version, 0, 1) < 8)
+		$floatVer = floatval(explode(' ', $version)[0]);
+		if ($floatVer < 7.4) {
 			return null;
+		}
 
 		// If unknown version, then default to latest driver
 		return 'Postgres';
-
 	}
 
-	/** 
+	/**
 	 * Get the last error in the connection
 	 * @return Error string
 	 */
-	function getLastError() {		
+	function getLastError() {
 		return pg_last_error($this->conn->_connectionID);
 	}
 }

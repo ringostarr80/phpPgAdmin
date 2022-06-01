@@ -12,7 +12,7 @@
 		var $form;
 
 		/* Constructor */
-		function __construct() { 
+		function __construct() {
 		}
 
 		/**
@@ -418,30 +418,6 @@
 		}
 
 		/**
-		 * A function to recursively strip slashes.  Used to
-		 * enforce magic_quotes_gpc being off.
-		 * @param &var The variable to strip
-		 */
-		function stripVar(&$var) {
-			if (is_array($var)) {
-				foreach($var as $k => $v) {
-					$this->stripVar($var[$k]);
-
-					/* magic_quotes_gpc escape keys as well ...*/
-					if (is_string($k)) {
-						$ek = stripslashes($k);
-						if ($ek !== $k) {
-							$var[$ek] = $var[$k];
-							unset($var[$k]);
-						}
-					}
-				}
-			}
-			else
-				$var = stripslashes($var);
-		}
-
-		/**
 		 * Print out the page heading and help link
 		 * @param $title Title, already escaped
 		 * @param $help (optional) The identifier for the help link
@@ -466,7 +442,7 @@
 		 * Creates a database accessor
 		 */
 		function getDatabaseAccessor($database, $server_id = null) {
-			global $lang, $conf, $misc, $_connection;
+			global $lang, $conf, $misc, $_connection, $postgresqlMinVer;
 
 			$server_info = $this->getServerInfo($server_id);
 

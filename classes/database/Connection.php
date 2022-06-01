@@ -51,7 +51,6 @@ class Connection {
 	 * @return -3 Database-specific failure
 	 */
 	function getDriver(&$description) {
-
 		$v = pg_version($this->conn->_connectionID);
 		if (isset($v['server'])) $version = $v['server'];
 

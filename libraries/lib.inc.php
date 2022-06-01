@@ -19,6 +19,7 @@
 	$appVersion = '7.14.1-mod';
 
 	// PostgreSQL and PHP minimum version
+	global $postgresqlMinVer;
 	$postgresqlMinVer = '7.4';
 	$phpMinVer = '7.2';
 
@@ -50,52 +51,43 @@
 	require_once('./classes/Misc.php');
 	$misc = new Misc();
 
-    // Session start: if extra_session_security is on, make sure cookie_samesite
-    // is on (exit if we fail); otherwise, just start the session
-    $our_session_name = 'PPA_ID';
-    if ($conf['extra_session_security']) {
-        if (version_compare(phpversion(), '7.3', '<')) {
-            exit('PHPPgAdmin cannot be fully secured while running under PHP versions before 7.3.  Please upgrade PHP if possible.  If you cannot upgrade, and you\'re willing to assume the risk of CSRF attacks, you can change the value of "extra_session_security" to false in your config.inc.php file.');
-        }
-        if (ini_get('session.auto_start')) {
-            // If session.auto_start is on, and the session doesn't have
-            // session.cookie_samesite set, destroy and re-create the session
-            if (session_name() !== $our_session_name) {
-                $setting = strtolower(ini_get('session.cookie_samesite'));
-                if ($setting !== 'lax' && $setting !== 'strict') {
-                    session_destroy();
-                    session_name($our_session_name);
-                    ini_set('session.cookie_samesite', 'Strict');
-                    session_start();
-                }
-            }
-        } else {
-            session_name($our_session_name);
-            ini_set('session.cookie_samesite', 'Strict');
-            session_start();
-        }
-    } else {
-        if (!ini_get('session.auto_start')) {
-            session_name($our_session_name);
-            session_start();
-        }
-    }
+	// Session start: if extra_session_security is on, make sure cookie_samesite
+	// is on (exit if we fail); otherwise, just start the session
+	$our_session_name = 'PPA_ID';
+	if ($conf['extra_session_security']) {
+		if (version_compare(phpversion(), '7.3', '<')) {
+			exit('PHPPgAdmin cannot be fully secured while running under PHP versions before 7.3.  Please upgrade PHP if possible.  If you cannot upgrade, and you\'re willing to assume the risk of CSRF attacks, you can change the value of "extra_session_security" to false in your config.inc.php file.');
+		}
 
-	// Do basic PHP configuration checks
-	if (ini_get('magic_quotes_gpc')) {
-		$misc->stripVar($_GET);
-		$misc->stripVar($_POST);
-		$misc->stripVar($_COOKIE);
-		$misc->stripVar($_REQUEST);
+		if (ini_get('session.auto_start')) {
+			// If session.auto_start is on, and the session doesn't have
+			// session.cookie_samesite set, destroy and re-create the session
+			if (session_name() !== $our_session_name) {
+				$setting = strtolower(ini_get('session.cookie_samesite'));
+
+				if ($setting !== 'lax' && $setting !== 'strict') {
+					session_destroy();
+					session_name($our_session_name);
+					ini_set('session.cookie_samesite', 'Strict');
+					session_start();
+				}
+			}
+		} else {
+			session_name($our_session_name);
+			ini_set('session.cookie_samesite', 'Strict');
+			session_start();
+		}
+	} else {
+		if (!ini_get('session.auto_start')) {
+			session_name($our_session_name);
+			session_start();
+		}
 	}
 
-	// This has to be deferred until after stripVar above
 	$misc->setHREF();
 	$misc->setForm();
 
 	// Enforce PHP environment
-	ini_set('magic_quotes_runtime', 0);
-	ini_set('magic_quotes_sybase', 0);
 	ini_set('arg_separator.output', '&amp;');
 
 	// If login action is set, then set session variables
@@ -293,11 +285,4 @@
 		}
 	}
 
-	if (!function_exists("htmlspecialchars_decode")) {
-		function htmlspecialchars_decode($string, $quote_style = ENT_COMPAT) {
-			return strtr($string, array_flip(get_html_translation_table(HTML_SPECIALCHARS, $quote_style)));
-		}
-	}
-
 	$plugin_manager = new PluginManager($_language);
-?>

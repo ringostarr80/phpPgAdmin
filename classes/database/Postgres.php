@@ -2502,10 +2502,18 @@ class Postgres extends ADODB_base {
 			// Build clause
 			if (count($values) > 0) {
 				// Escape all field names
-				$fields = array_map(array('Postgres','fieldClean'), $fields);
+				$clean_fields = array();
+
+				foreach ($fields as $field) {
+					array_push($clean_fields, $this->fieldClean($field));
+				}
+
+				$fields = $clean_fields;
+
 				$f_schema = $this->_schema;
 				$this->fieldClean($table);
 				$this->fieldClean($f_schema);
+
 
 				$sql = '';
 				foreach($values as $i => $value) {

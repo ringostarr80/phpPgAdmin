@@ -254,7 +254,7 @@ class Postgres extends ADODB_base {
 		// Determine actions string
 		$extra_str = '';
 		foreach ($extras as $k => $v) {
-			$extra_str .= " {$k}=\"" . htmlspecialchars($v) . "\"";
+			$extra_str .= " {$k}=\"" . htmlspecialchars($v ?? '') . "\"";
 		}
 
 		switch (substr($type,0,9)) {
@@ -266,14 +266,14 @@ class Postgres extends ADODB_base {
 
 				// If value is null, 't' or 'f'...
 				if ($value === null || $value === 't' || $value === 'f') {
-					echo "<select name=\"", htmlspecialchars($name), "\"{$extra_str}>\n";
+					echo "<select name=\"", htmlspecialchars($name ?? ''), "\"{$extra_str}>\n";
 					echo "<option value=\"\"", ($value === null) ? ' selected="selected"' : '', "></option>\n";
 					echo "<option value=\"t\"", ($value === 't') ? ' selected="selected"' : '', ">{$lang['strtrue']}</option>\n";
 					echo "<option value=\"f\"", ($value === 'f') ? ' selected="selected"' : '', ">{$lang['strfalse']}</option>\n";
 					echo "</select>\n";
 				}
 				else {
-					echo "<input name=\"", htmlspecialchars($name), "\" value=\"", htmlspecialchars($value), "\" size=\"35\"{$extra_str} />\n";
+					echo "<input name=\"", htmlspecialchars($name ?? ''), "\" value=\"", htmlspecialchars($value ?? ''), "\" size=\"35\"{$extra_str} />\n";
 				}
 				break;
 			case 'bytea':
@@ -290,7 +290,7 @@ class Postgres extends ADODB_base {
 				$n = substr_count($value, "\n");
 				$n = $n < 5 ? 5 : $n;
 				$n = $n > 20 ? 20 : $n;
-				echo "<textarea name=\"", htmlspecialchars($name), "\" rows=\"{$n}\" cols=\"75\"{$extra_str}>\n";
+				echo "<textarea name=\"", htmlspecialchars($name ?? ''), "\" rows=\"{$n}\" cols=\"75\"{$extra_str}>\n";
 				echo htmlspecialchars($value);
 				echo "</textarea>\n";
 				break;
@@ -299,12 +299,12 @@ class Postgres extends ADODB_base {
 				$n = substr_count($value, "\n");
 				$n = $n < 5 ? 5 : $n;
 				$n = $n > 20 ? 20 : $n;
-				echo "<textarea name=\"", htmlspecialchars($name), "\" rows=\"{$n}\" cols=\"35\"{$extra_str}>\n";
+				echo "<textarea name=\"", htmlspecialchars($name ?? ''), "\" rows=\"{$n}\" cols=\"35\"{$extra_str}>\n";
 				echo htmlspecialchars($value);
 				echo "</textarea>\n";
 				break;
 			default:
-				echo "<input name=\"", htmlspecialchars($name), "\" value=\"", htmlspecialchars($value), "\" size=\"35\"{$extra_str} />\n";
+				echo "<input name=\"", htmlspecialchars($name ?? ''), "\" value=\"", htmlspecialchars($value ?? ''), "\" size=\"35\"{$extra_str} />\n";
 				break;
 		}
 	}
@@ -2114,8 +2114,7 @@ class Postgres extends ADODB_base {
 	 * @return -5 comment error
 	 * @return -6 transaction error
 	 */
-	function alterColumn($table, $column, $name, $notnull, $oldnotnull, $default, $olddefault,
-		$type, $length, $array, $oldtype, $comment)
+	function alterColumn($table, $column, $name, $notnull, $oldnotnull, $default, $olddefault, $type, $length, $array, $oldtype, $comment)
 	{
 		// Begin transaction
 		$status = $this->beginTransaction();
@@ -2147,10 +2146,9 @@ class Postgres extends ADODB_base {
 
 		// Add default, if it has changed
 		if ($default != $olddefault) {
-			if ($default == '') {
+			if (empty($default)) {
 				$toAlter[] = "ALTER COLUMN \"{$name}\" DROP DEFAULT";
-			}
-			else {
+			} else {
 				$toAlter[] = "ALTER COLUMN \"{$name}\" SET DEFAULT {$default}";
 			}
 		}

@@ -523,21 +523,54 @@
 				if (strcasecmp($lang['applangdir'], 'ltr') != 0) echo " dir=\"", htmlspecialchars($lang['applangdir']), "\"";
 				echo ">\n";
 
-				echo "<head>\n";
-				echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n";
-				// Theme
-				echo "<link rel=\"stylesheet\" href=\"themes/{$conf['theme']}/global.css\" type=\"text/css\" id=\"csstheme\" />\n";
-				echo "<link rel=\"shortcut icon\" href=\"images/themes/{$conf['theme']}/Favicon.ico\" type=\"image/vnd.microsoft.icon\" />\n";
-				echo "<link rel=\"icon\" type=\"image/png\" href=\"images/themes/{$conf['theme']}/Introduction.png\" />\n";
-				echo "<script type=\"text/javascript\" src=\"libraries/js/jquery.js\"></script>";
-				echo "<script type=\"text/javascript\">// <!-- \n";
-				echo "$(function() { \n";
-				echo "  if (window.parent.frames.length > 1)\n";
-				echo "    $('#csstheme', window.parent.frames[0].document).attr('href','themes/{$conf['theme']}/global.css');\n";
-				echo "}); // --></script>\n";
-				echo "<title>", htmlspecialchars($appName);
-				if ($title != '') echo htmlspecialchars(" - {$title}");
-				echo "</title>\n";
+				$_formatTitle = '';
+				if (!empty($title)) {
+					$_formatTitle = htmlspecialchars($appName . ' - ' . $title);
+				} else {
+					$_formatTitle = htmlspecialchars($appName);
+				}
+
+				echo <<<EOL
+				<head>
+					<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+					<link rel="stylesheet" href="themes/{$conf['theme']}/global.css" type="text/css" id="csstheme" />
+					<link rel="shortcut icon" href="images/themes/{$conf['theme']}/Favicon.ico" type="image/vnd.microsoft.icon" />
+					<link rel="icon" type="image/png" href="images/themes/{$conf['theme']}/Introduction.png" />
+					<script type="text/javascript" src="libraries/js/jquery.js"></script>
+
+					<script type="text/javascript">
+						$(function() {
+							if (window.parent.frames.length > 1) {
+								$('#csstheme', window.parent.frames[0].document).attr('href','themes/{$conf['theme']}/global.css');
+							}
+						});
+
+				EOL;
+				if (!$frameset) echo <<<EOL
+
+						if ("{$_SERVER['REQUEST_METHOD']}" === "GET" && (window.self === window.top)) {
+							$.post(new URL('./', location.href).href, { _originalPath: location.href }, function (data) {
+								// GET request from outside frame. Reload encapsulated in our frameset.
+								document.write(data);
+
+								history.replaceState({}, '', new URL('./', location.href).href);
+							});
+						}
+
+						$(function() {
+							top.document.title = document.title;
+						});
+
+
+				EOL;
+
+				echo <<<EOL
+					</script>
+
+					<title>{$_formatTitle}</title>
+
+				EOL;
+
 
 				if ($script) echo "{$script}\n";
 

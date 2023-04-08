@@ -14,6 +14,111 @@ Older changelogs:
 
 --------------------------------------------------------------------------------
 
+## [5.22.5] - 2023-04-03
+
+### Removed
+
+- Obsolete ADOConnection::$databaseName property
+  [#932](https://github.com/ADOdb/ADOdb/issues/932)
+- Dead code related to safe_mode
+  [#934](https://github.com/ADOdb/ADOdb/issues/934)
+- pdo: remove unnecessary methods _init() and _affectedrows()
+  [#935](https://github.com/ADOdb/ADOdb/issues/935)
+
+### Fixed
+
+- ADODB_FETCH_DEFAULT should be treated as ASSOC in getAssoc()
+  [#886](https://github.com/ADOdb/ADOdb/issues/886)
+- Allow dynamic properties for ADOFieldObject class
+  [#906](https://github.com/ADOdb/ADOdb/issues/906)
+- Fix autoExecute() $where parameter type
+  [#915](https://github.com/ADOdb/ADOdb/issues/915)
+- Creation of dynamic property deprecated warning in PHP 8.2
+  [#904](https://github.com/ADOdb/ADOdb/issues/904)
+  [#907](https://github.com/ADOdb/ADOdb/issues/907)
+  [#908](https://github.com/ADOdb/ADOdb/issues/908)
+  [#909](https://github.com/ADOdb/ADOdb/issues/909)
+  [#911](https://github.com/ADOdb/ADOdb/issues/911)
+  [#912](https://github.com/ADOdb/ADOdb/issues/912)
+  [#913](https://github.com/ADOdb/ADOdb/issues/913)
+  [#917](https://github.com/ADOdb/ADOdb/issues/917)
+  [#926](https://github.com/ADOdb/ADOdb/issues/926)
+  [#933](https://github.com/ADOdb/ADOdb/issues/933)
+  [#935](https://github.com/ADOdb/ADOdb/issues/935)
+- Partially-supported callable deprecated warning in PHP 8.2
+  [#928](https://github.com/ADOdb/ADOdb/issues/928)
+- Passing null to non-nullable parameter is deprecated in PHP 8.1
+  [#938](https://github.com/ADOdb/ADOdb/issues/938)
+- Define adodbFetchMode property in base ADORecordSet class
+  [#923](https://github.com/ADOdb/ADOdb/issues/923)
+- mysql: uncaught exception calling execute() with empty SQL on PHP 8
+  [#945](https://github.com/ADOdb/ADOdb/issues/945)
+- oci8: Replace obsolete oci_free_cursor() function alias
+  [#937](https://github.com/ADOdb/ADOdb/issues/937)
+- pdo: Move setTransactionMode() to ADODB_pdo_sqlsrv class
+  [#939](https://github.com/ADOdb/ADOdb/issues/939)
+- pgsql: fix "column already exists" error when adding a new column
+  [#897](https://github.com/ADOdb/ADOdb/issues/897)
+- pgsql: undefined array key in metaIndexes() when column is an expression
+  [#940](https://github.com/ADOdb/ADOdb/issues/940)
+- pgsql: revert non-functional "Noblob optimization"
+  [#112](https://github.com/ADOdb/ADOdb/issues/112)
+- session: full table scan when accessing sessions table on MySQL
+  [#941](https://github.com/ADOdb/ADOdb/issues/941)
+- session: inconsistent DB provider check
+  [#943](https://github.com/ADOdb/ADOdb/issues/943)
+
+
+## [5.22.4] - 2022-10-28
+
+### Fixed
+
+- adodb_strip_order_by() throws deprecated warnings on PHP 8.1 
+  [#869](https://github.com/ADOdb/ADOdb/issues/869)
+- adodb_strip_order_by() shouldn't strip clause from subqueries 
+  [#870](https://github.com/ADOdb/ADOdb/issues/870)
+- mssql: Affected_Rows() not returning correct value
+  [#895](https://github.com/ADOdb/ADOdb/issues/895)
+- mysqli: Fix mysqli_result could not be converted to int
+  [#867](https://github.com/ADOdb/ADOdb/issues/867)
+- mysqli: regression on errorMsg()/errorCode()
+  [#872](https://github.com/ADOdb/ADOdb/issues/872)
+
+
+## [5.22.3] - 2022-09-06
+
+### Fixed
+
+- alterColumnSql() and changeTableSQL() produce different SQL
+  [#124](https://github.com/ADOdb/ADOdb/issues/124)
+  [#383](https://github.com/ADOdb/ADOdb/issues/383)
+  [#865](https://github.com/ADOdb/ADOdb/issues/865)
+- Fix PHP 8.1 deprecated warning in GetUpdateSQL()
+  [#844](https://github.com/ADOdb/ADOdb/issues/844)
+- Fix PHP 8.1 deprecated warning in tohtml.inc.php
+  [#850](https://github.com/ADOdb/ADOdb/issues/850)
+- Fix str_repeat() error in _adodb_backtrace()
+  [#852](https://github.com/ADOdb/ADOdb/issues/852)
+- firebird/ibase: Fix uncaught TypeError
+  [#858](https://github.com/ADOdb/ADOdb/issues/858)
+- mssql: Fix undefined variable when closing connection
+  [#835](https://github.com/ADOdb/ADOdb/issues/835)
+- mssql: insert_id returns false if value is out of range
+  [#853](https://github.com/ADOdb/ADOdb/issues/853)
+- mysql: Fix regression with portable bind arrays
+  [#838](https://github.com/ADOdb/ADOdb/issues/838)
+- mysql: Fix errorMsg() / errorNo() on MySQL 8
+  [#842](https://github.com/ADOdb/ADOdb/issues/842)
+- oci8po: Replace deprecated functions aliases
+  [#862](https://github.com/ADOdb/ADOdb/issues/862)
+- pdo: Fix uncaught TypeError on PHP 8 
+  [#840](https://github.com/ADOdb/ADOdb/issues/840)
+- pgsql: check for dummy query Id before closing recordset
+  [#848](https://github.com/ADOdb/ADOdb/issues/848)
+- active record: fix changing case of class properties in Native mode
+  [#837](https://github.com/ADOdb/ADOdb/issues/837)
+
+
 ## [5.22.2] - 2022-05-08
 
 ### Fixed
@@ -548,9 +653,9 @@ Includes all fixes from 5.20.19.
 
 ## [5.20.16] - 2020-01-12
 
--### Fixed
+### Fixed
 
- mssql: queries are not correctly closed
+- mssql: queries are not correctly closed
   [#590](https://github.com/ADOdb/ADOdb/issues/590)
 
 
@@ -1279,6 +1384,9 @@ Released together with [v4.95](changelog_v4.x.md#495---17-may-2007)
 - Adodb5 version,more error checking code now will use exceptions if available.
 
 
+[5.22.5]: https://github.com/adodb/adodb/compare/v5.22.4...v5.22.5
+[5.22.4]: https://github.com/adodb/adodb/compare/v5.22.3...v5.22.4
+[5.22.3]: https://github.com/adodb/adodb/compare/v5.22.2...v5.22.3
 [5.22.2]: https://github.com/adodb/adodb/compare/v5.22.1...v5.22.2
 [5.22.1]: https://github.com/adodb/adodb/compare/v5.22.0...v5.22.1
 [5.22.0]: https://github.com/adodb/adodb/compare/v5.21.4...v5.22.0

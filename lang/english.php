@@ -807,7 +807,7 @@
 	$lang['strloading'] = 'Loading...';
 	$lang['strerrorloading'] = 'Error Loading';
 	$lang['strclicktoreload'] = 'Click to reload';
-	$lang['sessionsecuritywarning'] = 'You are running phpPgAdmin without session security.';
+	$lang['sessionsecuritywarning'] = 'You are running phpPgAdmin without session security. Enable it in the config file.';
 
 	// Autovacuum
 	$lang['strautovacuum'] = 'Autovacuum';

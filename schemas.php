@@ -379,8 +379,8 @@
 		echo "</p>\n";
 		echo "<p><input type=\"hidden\" name=\"action\" value=\"export\" />\n";
 		echo "<input type=\"hidden\" name=\"subject\" value=\"schema\" />\n";
-        echo "<input type=\"hidden\" name=\"database\" value=\"", htmlspecialchars($_REQUEST['database']), "\" />\n";
-        echo "<input type=\"hidden\" name=\"schema\" value=\"", htmlspecialchars($_REQUEST['schema']), "\" />\n";
+		echo "<input type=\"hidden\" name=\"database\" value=\"", htmlspecialchars($_REQUEST['database']), "\" />\n";
+		echo "<input type=\"hidden\" name=\"schema\" value=\"", htmlspecialchars($_REQUEST['schema']), "\" />\n";
 		echo $misc->form;
 		echo "<input type=\"submit\" value=\"{$lang['strexport']}\" /></p>\n";
 		echo "</form>\n";
@@ -402,20 +402,22 @@
 			'text'   => field('nspname'),
 			'icon'   => 'Schema',
 			'toolTip'=> field('nspcomment'),
-			'action' => url('redirect.php',
-							$reqvars,
-							array(
-								'subject' => 'schema',
-								'schema'  => field('nspname')
-							)
-						),
-			'branch' => url('schemas.php',
-							$reqvars,
-							array(
-								'action'  => 'subtree',
-								'schema'  => field('nspname')
-							)
-						),
+			'action' => url(
+				'redirect.php',
+				$reqvars,
+				array(
+					'subject' => 'schema',
+					'schema'  => field('nspname')
+				)
+			),
+			'branch' => url(
+				'schemas.php',
+				$reqvars,
+				array(
+					'action'  => 'subtree',
+					'schema'  => field('nspname')
+				)
+			),
 		);
 
 		$misc->printTree($schemas, $attrs, 'schemas');
@@ -435,15 +437,17 @@
 		$attrs = array(
 			'text'   => field('title'),
 			'icon'   => field('icon'),
-			'action' => url(field('url'),
-							$reqvars,
-							field('urlvars', array())
-						),
-			'branch' => url(field('url'),
-							$reqvars,
-							field('urlvars'),
-							array('action' => 'tree')
-						)
+			'action' => url(
+				field('url'),
+				$reqvars,
+				field('urlvars', array())
+			),
+			'branch' => url(
+				field('url'),
+				$reqvars,
+				field('urlvars'),
+				array('action' => 'tree')
+			)
 		);
 
 		$misc->printTree($items, $attrs, 'schema');
@@ -480,5 +484,3 @@
 	}
 
 	$misc->printFooter();
-
-?>

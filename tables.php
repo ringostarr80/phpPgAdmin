@@ -255,7 +255,7 @@
 			if (!isset($_REQUEST['tablespace'])) $_REQUEST['tablespace'] = '';
 
 			$misc->printTrail('schema');
-		    $misc->printTitle($lang['strcreatetable'], 'pg.table.create');
+			$misc->printTitle($lang['strcreatetable'], 'pg.table.create');
 			$misc->printMsg($msg);
 
 			$tbltmp = $data->getTables(true);
@@ -332,7 +332,7 @@
 
 			$status = $data->createTableLike($_REQUEST['name'], unserialize($_REQUEST['like']), isset($_REQUEST['withdefaults']),
 				isset($_REQUEST['withconstraints']), isset($_REQUEST['withindexes']), $_REQUEST['tablespace']);
-				
+
 			if ($status == 0) {
 				$_reload_browser = true;
 				doDefault($lang['strtablecreated']);
@@ -461,7 +461,7 @@
 		if ($confirm) {
 			$misc->printTrail('table');
 			$misc->printTabs('table','insert');
-			
+
 			$misc->printMsg($msg);
 
 			$attrs = $data->getTableAttributes($_REQUEST['table']);
@@ -544,7 +544,7 @@
 				echo "<p><input type=\"submit\" name=\"insert\" value=\"{$lang['strinsert']}\" />\n";
 				echo "<input type=\"submit\" name=\"insertandrepeat\" accesskey=\"r\" value=\"{$lang['strinsertandrepeat']}\" />\n";
 				echo "<input type=\"submit\" name=\"cancel\" value=\"{$lang['strcancel']}\" />\n";
-				
+
 				if($fksprops !== false) {
 					if ($conf['autocomplete'] != 'default off')
 						echo "<input type=\"checkbox\" id=\"no_ac\" value=\"1\" checked=\"checked\" /><label for=\"no_ac\">{$lang['strac']}</label>\n";
@@ -553,7 +553,7 @@
 				}
 				echo "</p>\n";
 			}
-			else { 
+			else {
 				echo "<p>{$lang['strnofieldsforinsert']}</p>\n";
 				echo "<input type=\"submit\" name=\"cancel\" value=\"{$lang['strcancel']}\" />\n";
 			}
@@ -930,7 +930,7 @@
 		}
 		$misc->printNavLinks($navlinks, 'tables-tables', get_defined_vars());
 	}
-	
+
 	require('./admin.php');
 
 	/**
@@ -1052,5 +1052,3 @@
 	}
 
 	$misc->printFooter();
-
-?>

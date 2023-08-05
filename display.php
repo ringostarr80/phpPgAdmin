@@ -850,22 +850,20 @@
 				$lang['strtables'].': '.$_REQUEST[$_REQUEST['subject']],
 				$scripts
 			);
-		}
-		else if ($_REQUEST['subject'] == 'view') {
+		} else if ($_REQUEST['subject'] == 'view') {
 			$misc->printHeader(
 				$lang['strviews'].': '.$_REQUEST[$_REQUEST['subject']],
 				$scripts
 			);
+		} else if ($_REQUEST['subject'] == 'column') {
+			$misc->printHeader(
+				$lang['strcolumn'].': '.$_REQUEST[$_REQUEST['subject']],
+				$scripts
+			);
 		}
-        else if ($_REQUEST['subject'] == 'column') {
-            $misc->printHeader(
-                $lang['strcolumn'].': '.$_REQUEST[$_REQUEST['subject']],
-                $scripts
-            );
-        }
-	}
-	else
+	} else {
 		$misc->printHeader($lang['strqueryresults']);
+	}
 
 	$misc->printBody();
 
@@ -890,4 +888,3 @@
 	}
 
 	$misc->printFooter();
-?>

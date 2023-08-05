@@ -137,7 +137,7 @@
 						($schema == $_POST['formFuncSchema']) ? ' selected="selected"' : '', ">", htmlspecialchars($schema), "</option>\n";
 					$schemas->moveNext();
 				}
-			    echo "</select>\n";
+				echo "</select>\n";
 			}
 			else echo $fndata->fields['proschema'];
 			echo "</td>\n";
@@ -213,10 +213,10 @@
 				echo "</td></tr>\n";
 			}
 
-                        // function owner
-                        if ($data->hasFunctionAlterOwner()) {
-		            $users = $data->getUsers();
-                            echo "<tr><td class=\"data1\" colspan=\"5\">{$lang['strowner']}: <select name=\"formFuncOwn\">";
+			// function owner
+			if ($data->hasFunctionAlterOwner()) {
+				$users = $data->getUsers();
+				echo "<tr><td class=\"data1\" colspan=\"5\">{$lang['strowner']}: <select name=\"formFuncOwn\">";
 				while (!$users->EOF) {
 					$uname = $users->fields['usename'];
 					echo "<option value=\"", htmlspecialchars($uname), "\"",
@@ -224,9 +224,9 @@
 					$users->moveNext();
 				}
 				echo "</select>\n";
-			    echo "<input type=\"hidden\" name=\"original_owner\" value=\"", htmlspecialchars($fndata->fields['proowner']),"\" />\n";
-                            echo "</td></tr>\n";
-                        }
+				echo "<input type=\"hidden\" name=\"original_owner\" value=\"", htmlspecialchars($fndata->fields['proowner']),"\" />\n";
+				echo "</td></tr>\n";
+			}
 			echo "</table>\n";
 			echo "<p><input type=\"hidden\" name=\"action\" value=\"save_edit\" />\n";
 			echo "<input type=\"hidden\" name=\"function\" value=\"", htmlspecialchars($_REQUEST['function']), "\" />\n";
@@ -347,11 +347,12 @@
 				echo "</td></tr>\n";
 			}
 
-                        echo "<tr><td class=\"data1\" colspan=\"5\">{$lang['strowner']}: ", htmlspecialchars($funcdata->fields['proowner']),"\n";
-                        echo "</td></tr>\n";
+			echo "<tr><td class=\"data1\" colspan=\"5\">{$lang['strowner']}: ", htmlspecialchars($funcdata->fields['proowner']),"\n";
+			echo "</td></tr>\n";
 			echo "</table>\n";
+		} else {
+			echo "<p>{$lang['strnodata']}</p>\n";
 		}
-		else echo "<p>{$lang['strnodata']}</p>\n";
 
 		$navlinks = array(
 			'showall' => array (
@@ -666,7 +667,7 @@
 			echo "<tr><td class=\"data1\" colspan=\"4\"><textarea style=\"width:100%;\" rows=\"20\" cols=\"50\" name=\"formDefinition\">",
 				htmlspecialchars($_POST['formDefinition']), "</textarea></td></tr>\n";
 		}
-		
+
 		// Display function comment
 		echo "<tr><th class=\"data\" colspan=\"4\">{$lang['strcomment']}</th></tr>\n";
 		echo "<tr><td class=\"data1\" colspan=\"4\"><textarea style=\"width:100%;\" name=\"formComment\" rows=\"3\" cols=\"50\">",
@@ -984,14 +985,15 @@
 			'text'    => $proto,
 			'icon'    => 'Function',
 			'toolTip' => field('procomment'),
-			'action'  => url('redirect.php',
-							$reqvars,
-							array(
-								'action' => 'properties',
-								'function' => $proto,
-								'function_oid' => field('prooid')
-							)
-						)
+			'action'  => url(
+				'redirect.php',
+				$reqvars,
+				array(
+					'action' => 'properties',
+					'function' => $proto,
+					'function_oid' => field('prooid')
+				)
+			)
 		);
 
 		$misc->printTree($funcs, $attrs, 'functions');
@@ -1034,5 +1036,3 @@
 	}
 
 	$misc->printFooter();
-
-?>

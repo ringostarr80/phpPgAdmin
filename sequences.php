@@ -610,7 +610,7 @@
 				}
 				echo "</select></td></tr>\n";
 			}
-			
+
 			if ($data->hasAlterSequenceSchema()) {
 				$schemas = $data->getSchemas();
 				echo "<tr><th class=\"data left required\">{$lang['strschema']}</th>\n";
@@ -621,7 +621,7 @@
 						($schema == $_POST['newschema']) ? ' selected="selected"' : '', ">", htmlspecialchars($schema), "</option>\n";
 					$schemas->moveNext();
 				}
-			    echo "</select></td></tr>\n";
+				echo "</select></td></tr>\n";
 			}
 
 			echo "<tr><th class=\"data left\">{$lang['strcomment']}</th>\n";
@@ -724,5 +724,3 @@
 
 	// Print footer
 	$misc->printFooter();
-
-?>

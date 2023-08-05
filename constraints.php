@@ -639,5 +639,3 @@
 	}
 
 	$misc->printFooter();
-
-?>

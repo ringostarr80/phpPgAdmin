@@ -88,7 +88,7 @@
 				'content' => $lang['strftscreateconfig']
 			)
 		);
-			
+
 		$misc->printNavLinks($navlinks, 'fulltext-fulltext', get_defined_vars());
 	}
 
@@ -222,7 +222,7 @@
 			$data->fieldClean($ftsparsers->fields['schema']);
 			$data->fieldClean($ftsparsers->fields['name']);
 			$parsername = $ftsparsers->fields['schema'] .'.'. $ftsparsers->fields['name'];
-			
+
 			$ftsparsers_[$parsername] = serialize(array(
 				'parser' => $ftsparsers->fields['name'],
 				'schema' => $ftsparsers->fields['schema']
@@ -259,7 +259,7 @@
 
 		$err = '';
 		// Check that they've given a name
-		if ($_POST['formName'] == '') $err .= "{$lang['strftsconfigneedsname']}<br />";		
+		if ($_POST['formName'] == '') $err .= "{$lang['strftsconfigneedsname']}<br />";
 		if (($_POST['formParser'] != '') && ($_POST['formTemplate'] != ''))  $err .= "{$lang['strftscantparsercopy']}<br />";
 
 		if ($err != '') return doCreateConfig($err);
@@ -640,7 +640,7 @@
 		echo "<input type=\"submit\" name=\"cancel\" value=\"{$lang['strcancel']}\" />\n";
 		echo "</p>\n";
 		echo "</form>\n",
-			"<script type=\"text/javascript\">				
+			"<script type=\"text/javascript\">
 				function templateOpts() {
 					isTpl = document.getElementsByName('formIsTemplate')[0].checked;
 					document.getElementsByName('formTemplate')[0].disabled = isTpl;
@@ -648,7 +648,7 @@
 					document.getElementsByName('formLexize')[0].disabled = !isTpl;
 					document.getElementsByName('formInit')[0].disabled = !isTpl;
 				}
-				
+
 				document.getElementsByName('formIsTemplate')[0].onchange = templateOpts;
 
 				templateOpts();
@@ -673,12 +673,12 @@
 			if(!isset($_POST['formLexize'])) $_POST['formLexize'] = '';
 			if(!isset($_POST['formInit'])) $_POST['formInit'] = '';
 			if(!isset($_POST['formOption'])) $_POST['formOption'] = '';
-			
+
 			$status = $data->createFtsDictionary($_POST['formName'], $_POST['formIsTemplate'],
 				$formTemplate, $_POST['formLexize'],
 				$_POST['formInit'], $_POST['formOption'], $_POST['formComment']
 			);
-			
+
 			if ($status == 0) {
 				$_reload_browser = true;
 				doViewDicts($lang['strftsdictcreated']);
@@ -785,7 +785,7 @@
 
 			echo "<input type=\"hidden\" name=\"ftscfg\" value=\"{$_REQUEST['ftscfg']}\" />\n";
 			echo "<input type=\"hidden\" name=\"action\" value=\"dropmapping\" />\n";
-            echo "<input type=\"hidden\" name=\"prev_action\" value=\"viewconfig\" /></p>\n";            
+			echo "<input type=\"hidden\" name=\"prev_action\" value=\"viewconfig\" /></p>\n";
 			echo $misc->form;
 			echo "<input type=\"submit\" name=\"drop\" value=\"{$lang['strdrop']}\" />\n";
 			echo "<input type=\"submit\" name=\"cancel\" value=\"{$lang['strcancel']}\" />\n";
@@ -869,8 +869,8 @@
 			echo "</table>\n";
 			echo "<p><input type=\"hidden\" name=\"action\" value=\"altermapping\" />\n";
 			echo "<input type=\"hidden\" name=\"ftscfg\" value=\"", htmlspecialchars($_POST['ftscfg']), "\" />\n";
-            echo "<input type=\"hidden\" name=\"prev_action\" value=\"viewconfig\" /></p>\n";
-            
+			echo "<input type=\"hidden\" name=\"prev_action\" value=\"viewconfig\" /></p>\n";
+
 			echo $misc->form;
 			echo "<input type=\"submit\" name=\"alter\" value=\"{$lang['stralter']}\" />\n";
 			echo "<input type=\"submit\" name=\"cancel\" value=\"{$lang['strcancel']}\" /></p>\n";
@@ -1116,5 +1116,3 @@
 	}
 
 	$misc->printFooter();
-
-?>

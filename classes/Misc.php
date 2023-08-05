@@ -1350,7 +1350,7 @@
 			$server_info = $this->getServerInfo();
 			$reqvars = $this->getRequestVars('table');
 
-			if (!$conf['extra_session_security']) {
+			if (isset($conf['extra_session_security']) && $conf['extra_session_security'] === false) {
 				echo '<div class="alert-banner"><p><a href="https://www.php.net/manual/en/session.configuration.php#ini.session.cookie-samesite" target="_blank" rel="noopener noreferrer">', htmlspecialchars($lang['sessionsecuritywarning']), '</a></p></div>';
 			}
 

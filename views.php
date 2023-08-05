@@ -141,7 +141,7 @@
 			//If multi drop
 			if (isset($_REQUEST['ma'])) {
 				foreach($_REQUEST['ma'] as $v) {
-					$a = unserialize(htmlspecialchars_decode($v, ENT_QUOTES));
+					$a = safeUnserialize(htmlspecialchars_decode($v, ENT_QUOTES));
 					echo "<p>", sprintf($lang['strconfdropview'], $misc->printVal($a['view'])), "</p>\n";
 					echo '<input type="hidden" name="view[]" value="', htmlspecialchars($a['view']), "\" />\n";
 				}
@@ -214,9 +214,9 @@
 			$misc->printMsg($msg);
 
 			$tblCount = sizeof($_POST['formTables']);
-			//unserialize our schema/table information and store in arrSelTables
+			// Unserialize our schema/table information and store in arrSelTables
 			for ($i = 0; $i < $tblCount; $i++) {
-				$arrSelTables[] = unserialize($_POST['formTables'][$i]);
+				$arrSelTables[] = safeUnserialize($_POST['formTables'][$i]);
 			}
 
 			$linkCount = $tblCount;
@@ -446,7 +446,7 @@
 				$tmpHsh = array();
 
 			foreach ($_POST['formFields'] as $curField) {
-				$arrTmp = unserialize($curField);
+				$arrTmp = safeUnserialize($curField);
 				$data->fieldArrayClean($arrTmp);
 				if (! empty($_POST['dblFldMeth']) ) { // doublon control
 					if (empty($tmpHsh[$arrTmp['fieldname']])) { // field does not exist
@@ -486,8 +486,8 @@
 					while ($j < $count) {
 						foreach ($arrLinks as $curLink) {
 
-							$arrLeftLink = unserialize($curLink['leftlink']);
-							$arrRightLink = unserialize($curLink['rightlink']);
+							$arrLeftLink = safeUnserialize($curLink['leftlink']);
+							$arrRightLink = safeUnserialize($curLink['rightlink']);
 							$data->fieldArrayClean($arrLeftLink);
 							$data->fieldArrayClean($arrRightLink);
 
@@ -517,7 +517,7 @@
 			//just select from all selected tables - a cartesian join do a
 			if (!strlen($linkFields) ) {
 				foreach ($_POST['formTables'] as $curTable) {
-					$arrTmp = unserialize($curTable);
+					$arrTmp = safeUnserialize($curTable);
 					$data->fieldArrayClean($arrTmp);
 					$linkFields .= strlen($linkFields) ? ", \"{$arrTmp['schemaname']}\".\"{$arrTmp['tablename']}\"" : "\"{$arrTmp['schemaname']}\".\"{$arrTmp['tablename']}\"";
 				}
@@ -527,7 +527,7 @@
 			if (is_array($_POST['formCondition']) ) {
 				foreach ($_POST['formCondition'] as $curCondition) {
 					if (strlen($curCondition['field']) && strlen($curCondition['txt']) ) {
-						$arrTmp = unserialize($curCondition['field']);
+						$arrTmp = safeUnserialize($curCondition['field']);
 						$data->fieldArrayClean($arrTmp);
 						$addConditions .= strlen($addConditions) ? " AND \"{$arrTmp['schemaname']}\".\"{$arrTmp['tablename']}\".\"{$arrTmp['fieldname']}\" {$curCondition['operator']} '{$curCondition['txt']}' " 
 							: " \"{$arrTmp['schemaname']}\".\"{$arrTmp['tablename']}\".\"{$arrTmp['fieldname']}\" {$curCondition['operator']} '{$curCondition['txt']}' ";

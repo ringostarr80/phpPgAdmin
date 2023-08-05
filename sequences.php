@@ -297,18 +297,18 @@
 			doDefault($lang['strspecifysequencetodrop']);
 			exit();
 		}
-		
+
 		if ($confirm) {
 			$misc->printTrail('sequence');
 			$misc->printTitle($lang['strdrop'],'pg.sequence.drop');
 			$misc->printMsg($msg);
-			
+
 			echo "<form action=\"sequences.php\" method=\"post\">\n";
-			
+
 			//If multi drop
 			if (isset($_REQUEST['ma'])) {
 				foreach($_REQUEST['ma'] as $v) {
-					$a = unserialize(htmlspecialchars_decode($v, ENT_QUOTES));
+					$a = safeUnserialize(htmlspecialchars_decode($v, ENT_QUOTES));
 					echo "<p>", sprintf($lang['strconfdropsequence'], $misc->printVal($a['sequence'])), "</p>\n";
 					printf('<input type="hidden" name="sequence[]" value="%s" />', htmlspecialchars($a['sequence']));
 				}

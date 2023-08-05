@@ -330,7 +330,7 @@
 
 			if (!isset($_REQUEST['tablespace'])) $_REQUEST['tablespace'] = '';
 
-			$status = $data->createTableLike($_REQUEST['name'], unserialize($_REQUEST['like']), isset($_REQUEST['withdefaults']),
+			$status = $data->createTableLike($_REQUEST['name'], safeUnserialize($_REQUEST['like']), isset($_REQUEST['withdefaults']),
 				isset($_REQUEST['withconstraints']), isset($_REQUEST['withindexes']), $_REQUEST['tablespace']);
 
 			if ($status == 0) {
@@ -563,7 +563,7 @@
 		else {
 			if (!isset($_POST['values'])) $_POST['values'] = array();
 			if (!isset($_POST['nulls'])) $_POST['nulls'] = array();
-			$_POST['fields'] = unserialize(htmlspecialchars_decode($_POST['fields'], ENT_QUOTES));
+			$_POST['fields'] = safeUnserialize(htmlspecialchars_decode($_POST['fields'], ENT_QUOTES));
 
 			if ($_SESSION['counter']++ == $_POST['protection_counter']) {
 				$status = $data->insertRow($_POST['table'], $_POST['fields'], $_POST['values'],
@@ -604,7 +604,7 @@
 
 				echo "<form action=\"tables.php\" method=\"post\">\n";
 				foreach ($_REQUEST['ma'] as $v) {
-					$a = unserialize(htmlspecialchars_decode($v, ENT_QUOTES));
+					$a = safeUnserialize(htmlspecialchars_decode($v, ENT_QUOTES));
 					echo "<p>", sprintf($lang['strconfemptytable'], $misc->printVal($a['table'])), "</p>\n";
 					printf('<input type="hidden" name="table[]" value="%s" />', htmlspecialchars($a['table']));
 				}
@@ -669,7 +669,7 @@
 
 				echo "<form action=\"tables.php\" method=\"post\">\n";
 				foreach($_REQUEST['ma'] as $v) {
-					$a = unserialize(htmlspecialchars_decode($v, ENT_QUOTES));
+					$a = safeUnserialize(htmlspecialchars_decode($v, ENT_QUOTES));
 					echo "<p>", sprintf($lang['strconfdroptable'], $misc->printVal($a['table'])), "</p>\n";
 					printf('<input type="hidden" name="table[]" value="%s" />', htmlspecialchars($a['table']));
 				}

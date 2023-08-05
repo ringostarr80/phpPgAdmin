@@ -264,9 +264,9 @@
 
 		if ($err != '') return doCreateConfig($err);
 
-		if ($_POST['formParser'] != '') $formParser = unserialize($_POST['formParser']);
+		if ($_POST['formParser'] != '') $formParser = safeUnserialize($_POST['formParser']);
 		else $formParser = '';
-		if ($_POST['formTemplate'] != '') $formTemplate = unserialize($_POST['formTemplate']);
+		if ($_POST['formTemplate'] != '') $formTemplate = safeUnserialize($_POST['formTemplate']);
 		else $formTemplate = '';
 
 		$status = $data->createFtsConfiguration($_POST['formName'], $formParser, $formTemplate, $_POST['formComment']);
@@ -667,7 +667,7 @@
 
 			if(!isset($_POST['formIsTemplate'])) $_POST['formIsTemplate'] = false;
 			if(isset($_POST['formTemplate']))
-				$formTemplate = unserialize($_POST['formTemplate']);
+				$formTemplate = safeUnserialize($_POST['formTemplate']);
 			else
 				$formTemplate = '';
 			if(!isset($_POST['formLexize'])) $_POST['formLexize'] = '';
@@ -773,7 +773,7 @@
 			if (isset($_REQUEST['ma'])) {
 
 				foreach($_REQUEST['ma'] as $v) {
-					$a = unserialize(htmlspecialchars_decode($v, ENT_QUOTES));
+					$a = safeUnserialize(htmlspecialchars_decode($v, ENT_QUOTES));
 					echo "<p>", sprintf($lang['strconfdropftsmapping'], $misc->printVal($a['mapping']), $misc->printVal($_REQUEST['ftscfg'])), "</p>\n";
 					printf('<input type="hidden" name="mapping[]" value="%s" />', htmlspecialchars($a['mapping']));
 				}
@@ -835,7 +835,7 @@
 				$ma_mappings = array();
 				$ma_mappings_names = array();
 				foreach($_REQUEST['ma'] as $v) {
-					$a = unserialize(htmlspecialchars_decode($v, ENT_QUOTES));
+					$a = safeUnserialize(htmlspecialchars_decode($v, ENT_QUOTES));
 					printf('<input type="hidden" name="formMapping[]" value="%s" />', htmlspecialchars($a['mapping']));
 					$ma_mappings[] = $data->getFtsMappingByName($_POST['ftscfg'], $a['mapping']);
 					$ma_mappings_names[] = $a['mapping'];

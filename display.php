@@ -31,7 +31,7 @@
 		if (is_array($_REQUEST['key']))
 			$key = $_REQUEST['key'];
 		else
-			$key = unserialize(urldecode($_REQUEST['key']));
+			$key = safeUnserialize(urldecode($_REQUEST['key']));
 
 		if ($confirm) {
 			$misc->printTrail($_REQUEST['subject']);
@@ -238,7 +238,7 @@
 			echo "</form>\n";
 		}
 		else {
-			$status = $data->deleteRow($_POST['table'], unserialize(urldecode($_POST['key'])));
+			$status = $data->deleteRow($_POST['table'], safeUnserialize(urldecode($_POST['key'])));
 			if ($status == 0)
 				doBrowse($lang['strrowdeleted']);
 			elseif ($status == -2)

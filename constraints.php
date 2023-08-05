@@ -38,7 +38,7 @@
 					if (!isset($_POST['match'])) $_POST['match'] = null;
 					if (!isset($_POST['deferrable'])) $_POST['deferrable'] = null;
 					if (!isset($_POST['initially'])) $_POST['initially'] = null;
-					$_REQUEST['target'] = unserialize($_REQUEST['target']);
+					$_REQUEST['target'] = safeUnserialize($_REQUEST['target']);
 
 					$misc->printTrail('table');
 					$misc->printTitle($lang['straddfk'],'pg.constraint.foreign_key');
@@ -129,16 +129,16 @@
 				break;
 			case 3:
 				// Unserialize target
-				$_POST['target'] = unserialize($_POST['target']);
+				$_POST['target'] = safeUnserialize($_POST['target']);
 
 				// Check that they've given at least one column
-				if (isset($_POST['SourceColumnList'])) $temp = unserialize($_POST['SourceColumnList']);
+				if (isset($_POST['SourceColumnList'])) $temp = safeUnserialize($_POST['SourceColumnList']);
 				if (!isset($_POST['IndexColumnList']) || !is_array($_POST['IndexColumnList'])
 						|| sizeof($_POST['IndexColumnList']) == 0 || !isset($temp)
 						|| !is_array($temp) || sizeof($temp) == 0) addForeignKey(2, $lang['strfkneedscols']);
 				else {
 					$status = $data->addForeignKey($_POST['table'], $_POST['target']['schemaname'], $_POST['target']['tablename'],
-						unserialize($_POST['SourceColumnList']), $_POST['IndexColumnList'], $_POST['upd_action'], $_POST['del_action'],
+						safeUnserialize($_POST['SourceColumnList']), $_POST['IndexColumnList'], $_POST['upd_action'], $_POST['del_action'],
 						$_POST['match'], $_POST['deferrable'], $_POST['initially'], $_POST['name']);
 					if ($status == 0)
 						doDefault($lang['strfkadded']);

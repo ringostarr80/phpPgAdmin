@@ -548,7 +548,7 @@
 				EOL;
 				if (!$frameset) echo <<<EOL
 
-						if ("{$_SERVER['REQUEST_METHOD']}" === "GET" && (window.self === window.top)) {
+						if ("{$_SERVER['REQUEST_METHOD']}" === "GET" && (window.self === window.top) && (!window.opener)) {
 							$.post(new URL('./', location.href).href, { _originalPath: location.href }, function (data) {
 								// GET request from outside frame. Reload encapsulated in our frameset.
 								document.write(data);

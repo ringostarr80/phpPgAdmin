@@ -627,33 +627,33 @@
 			echo "<tr><th class=\"data left\">{$lang['strcomment']}</th>\n";
 			echo "<td class=\"data1\">";
 			echo "<textarea rows=\"3\" cols=\"32\" name=\"comment\">",
-				htmlspecialchars($_POST['comment']), "</textarea></td></tr>\n";
+				htmlspecialchars($_POST['comment'] ?? ''), "</textarea></td></tr>\n";
 
 			if ($data->hasAlterSequenceStart()) {
 				echo "<tr><th class=\"data left\">{$lang['strstartvalue']}</th>\n";
 				echo "<td class=\"data1\"><input name=\"formStartValue\" size=\"5\" value=\"",
-					htmlspecialchars($sequence->fields['start_value']), "\" /></td></tr>\n";
+					htmlspecialchars($sequence->fields['start_value'] ?? ''), "\" /></td></tr>\n";
 			}
 
 			echo "<tr><th class=\"data left\">{$lang['strrestartvalue']}</th>\n";
 			echo "<td class=\"data1\"><input name=\"formRestartValue\" size=\"5\" value=\"",
-				htmlspecialchars($sequence->fields['last_value']), "\" /></td></tr>\n";
+				htmlspecialchars($sequence->fields['last_value'] ?? ''), "\" /></td></tr>\n";
 
 			echo "<tr><th class=\"data left\">{$lang['strincrementby']}</th>\n";
 			echo "<td class=\"data1\"><input name=\"formIncrement\" size=\"5\" value=\"",
-				htmlspecialchars($sequence->fields['increment_by']), "\" /> </td></tr>\n";
+				htmlspecialchars($sequence->fields['increment_by'] ?? ''), "\" /> </td></tr>\n";
 
 			echo "<tr><th class=\"data left\">{$lang['strmaxvalue']}</th>\n";
 			echo "<td class=\"data1\"><input name=\"formMaxValue\" size=\"5\" value=\"",
-				htmlspecialchars($sequence->fields['max_value']), "\" /></td></tr>\n";
+				htmlspecialchars($sequence->fields['max_value'] ?? ''), "\" /></td></tr>\n";
 
 			echo "<tr><th class=\"data left\">{$lang['strminvalue']}</th>\n";
 			echo "<td class=\"data1\"><input name=\"formMinValue\" size=\"5\" value=\"",
-				htmlspecialchars($sequence->fields['min_value']), "\" /></td></tr>\n";
+				htmlspecialchars($sequence->fields['min_value'] ?? ''), "\" /></td></tr>\n";
 
 			echo "<tr><th class=\"data left\">{$lang['strcachevalue']}</th>\n";
 			echo "<td class=\"data1\"><input name=\"formCacheValue\" size=\"5\" value=\"",
-				htmlspecialchars($sequence->fields['cache_value']), "\" /></td></tr>\n";
+				htmlspecialchars($sequence->fields['cache_value'] ?? ''), "\" /></td></tr>\n";
 
 			echo "<tr><th class=\"data left\"><label for=\"formCycledValue\">{$lang['strcancycle']}</label></th>\n";
 			echo "<td class=\"data1\"><input type=\"checkbox\" id=\"formCycledValue\" name=\"formCycledValue\" ",
@@ -662,7 +662,7 @@
 			echo "</table>\n";
 			echo "<p><input type=\"hidden\" name=\"action\" value=\"alter\" />\n";
 			echo $misc->form;
-			echo "<input type=\"hidden\" name=\"sequence\" value=\"", htmlspecialchars($_REQUEST['sequence']), "\" />\n";
+			echo "<input type=\"hidden\" name=\"sequence\" value=\"", htmlspecialchars($_REQUEST['sequence'] ?? ''), "\" />\n";
 			echo "<input type=\"submit\" name=\"alter\" value=\"{$lang['stralter']}\" />\n";
 			echo "<input type=\"submit\" name=\"cancel\" value=\"{$lang['strcancel']}\" /></p>\n";
 			echo "</form>\n";

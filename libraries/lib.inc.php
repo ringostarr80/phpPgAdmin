@@ -9,8 +9,8 @@
 	include_once('./libraries/decorator.inc.php');
 	include_once('./lang/translations.php');
 
-	// Set error reporting level to max
-	error_reporting(E_ALL);
+	// Do not show depreciation warnings.
+	error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
 
 	// Application name
 	$appName = 'phpPgAdmin';

@@ -287,6 +287,7 @@ class Postgres extends ADODB_base {
 			case 'jsonb':
 			case 'xml':
 			case 'xml[]':
+				if ($value === null) $value = '';
 				$n = substr_count($value, "\n");
 				$n = $n < 5 ? 5 : $n;
 				$n = $n > 20 ? 20 : $n;
@@ -296,6 +297,7 @@ class Postgres extends ADODB_base {
 				break;
 			case 'character':
 			case 'character[]':
+				if ($value === null) $value = '';
 				$n = substr_count($value, "\n");
 				$n = $n < 5 ? 5 : $n;
 				$n = $n > 20 ? 20 : $n;
@@ -304,6 +306,7 @@ class Postgres extends ADODB_base {
 				echo "</textarea>\n";
 				break;
 			default:
+				if ($value === null) $value = '';
 				echo "<input name=\"", htmlspecialchars($name ?? ''), "\" value=\"", htmlspecialchars($value ?? ''), "\" size=\"35\"{$extra_str} />\n";
 				break;
 		}
@@ -2639,7 +2642,7 @@ class Postgres extends ADODB_base {
 		$this->fieldClean($sequence);
 		$this->clean($sequence);
 
-		$sql = "SELECT pg_catalog.has_sequence_privilege('{$f_schema}.{$sequence}','SELECT,USAGE') AS priv";
+		$sql = "SELECT pg_catalog.has_sequence_privilege((SELECT oid FROM pg_class WHERE relname ILIKE '{$f_schema}.{$sequence}'),'SELECT,USAGE') AS priv";
 
 		return $this->selectField($sql, 'priv');
 	}

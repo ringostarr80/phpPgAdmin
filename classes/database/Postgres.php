@@ -2642,7 +2642,7 @@ class Postgres extends ADODB_base {
 		$this->fieldClean($sequence);
 		$this->clean($sequence);
 
-		$sql = "SELECT pg_catalog.has_sequence_privilege((SELECT oid FROM pg_class WHERE relname ILIKE '{$f_schema}.{$sequence}'),'SELECT,USAGE') AS priv";
+		$sql = "SELECT pg_catalog.has_sequence_privilege((SELECT pg_class.oid FROM pg_class INNER JOIN pg_namespace ON pg_class.relnamespace = pg_namespace.oid WHERE pg_class.relname ILIKE '{$sequence}' AND pg_namespace.nspname ILIKE '{$f_schema}'),'SELECT,USAGE') AS priv";
 
 		return $this->selectField($sql, 'priv');
 	}

@@ -1,6 +1,105 @@
 phpPgAdmin History
 ------------------
 
+Version 7.14.7-mod
+--------------
+Released: December 16th, 2023
+
+Bugs:
+* Prevent passing NULL to htmlspecialchars() as this is depreciated. Fixes issue #16.
+* Fix "Last value" field on sequences. Fixes issue #19.
+* Fix AJAX browsing of foreign keys only working on one level. Fixes issue #23.
+* Fix broken composer.json.
+
+
+Version 7.14.6-mod
+--------------
+Released: October 13th, 2023
+
+Bugs:
+* Don't reload frameset on popups. Fixes issue #14.
+
+
+Version 7.14.5-mod
+--------------
+Released: August 29th, 2023
+
+Features:
+* Session security is now enabled by default.
+* Bump ADOdb to v5.22.6
+* Security fix: replace all cales to unserialize() with calls to the safeUnserialize() wrapper from phpMyAdmin
+
+Bugs:
+* Fix broken link in PHP session security banner.
+
+Licensing:
+* As this release adds code borrowed from the phpMyAdmin project, and phpMyAdmin is licensed under GPL 2.0 only,
+  instead of the GPL 2.0 or greater this project was under, it has been relicensed as GPL 2.0 only to remain in
+  compliance.
+
+
+Version 7.14.4-mod
+--------------
+Released: April 8th, 2023
+
+Features:
+* Adds support for PHP 8.2
+* Bump ADOdb to v5.22.5
+* Propagate title changes back to top-level window and reload orphan pages inside of the frameset.
+  This makes it nicer to use phpPgAdmin if you routinely open things inside of a new tab.
+
+
+Version 7.14.3-mod
+--------------
+Released: November 15th, 2022
+
+Bugs:
+* Fix CSV import generating a warning (upstream issue #165)
+
+
+Version 7.14.2-mod
+--------------
+Released: June 1st, 2022
+
+Features:
+* Adds support for PostgreSQL 15+
+
+Bugs:
+* Fix unknown 2-digit version numbers not defaulting to latest driver version.
+
+
+Version 7.14.1-mod
+--------------
+Released: May 9th, 2022
+
+Bugs:
+* Bump ADOdb to v5.22.2 to fix PHP 8.1 bug
+
+
+Version 7.14.0-mod
+--------------
+
+Released: April 16th, 2022
+
+Features:
+* Fix CSRF vulnerabilities using SameSite (rsterbin / upstream pull request #99, fixes upstream issue #94)
+* Add dark theme (xazzzz / upstream pull request #131)
+* Handy preview of clipped content (g0tar / upstream pull request #149)
+* Use TABLE's primary key for (second order) sorting (g0tar / upstream pull request #150)
+* Recognize new objects: materialized views [MV], foreign tables [FDW], and exclusion constraints (g0tar / upstream pull request #151)
+* Add support for partitioned tables (fixes upstream issue #143)
+
+Bugs:
+* Various fixes for PHP 8 compatibility:
+  * Fix for upstream issue #117 "Can't load tree" (idontusenumbers / upstream pull request #118)
+  * Remove obsolete each() (nirgal / upstream pull request #126, fixes upstream issue #91)
+  * Fix hasSequencePrivilege() actually using result (nirgal / upstream pull request #127)
+  * Use ADOdb ServerInfo() to get pg version (nirgal / upstream pull request #125, fixes new ADOdb necessary for PHP 8)
+  * Bump ADOdb to v5.22.1
+* Remove duplicate erroneous translation strings (peje66 / upstream pull request #152)
+* Various code formatting fixes
+
+
 Version 7.13.0
 --------------
 

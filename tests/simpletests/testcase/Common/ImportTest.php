@@ -77,7 +77,7 @@ class ImportTest extends PreconditionSet
         // Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['strimport']));
         // This assert will failed because SimpleTest1.0 doesn't support upload file.
-        $this->assertWantedText($lang['strfileimported']);
+        $this->assertText($lang['strfileimported']);
         
         return TRUE;
     }
@@ -111,7 +111,7 @@ class ImportTest extends PreconditionSet
         // Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['strimport']));
         // This assert will failed because SimpleTest1.0 doesn't support upload file.
-        $this->assertWantedText(sprintf($lang['strimporterrorline'], 2));
+        $this->assertText(sprintf($lang['strimporterrorline'], 2));
         
         return TRUE;
     }

@@ -63,8 +63,8 @@ class ReportsTest extends PreconditionSet
 
         //Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['strsave']));
-        $this->assertWantedText($lang['strreportcreated']);
-        $this->assertWantedText($this->_reportName);
+        $this->assertText($lang['strreportcreated']);
+        $this->assertText($this->_reportName);
 
         return TRUE;
     }
@@ -82,20 +82,20 @@ class ReportsTest extends PreconditionSet
         // Run the existing report and verify it.
 		$this->assertTrue($this->get("$webUrl/reports.php", array('server' => $SERVER)));
 		$this->assertTrue($this->clickLink($lang['strexecute']));
-        $this->assertWantedText($lang['strnodata']);
+        $this->assertText($lang['strnodata']);
 
 /* XXX there's no refresh link on report results page. see sql.php
 		$this->assertTrue($this->clickLink($lang['strrefresh']));
-        $this->assertWantedText($lang['strnodata']);
+        $this->assertText($lang['strnodata']);
  */
 /* XXX there's no expand-collapse link on report results page. see sql.php
         $this->assertTrue($this->clickLink($lang['strexpand']));
-        $this->assertWantedText($lang['strnodata']);
-        $this->assertWantedText($lang['strcollapse']);
+        $this->assertText($lang['strnodata']);
+        $this->assertText($lang['strcollapse']);
 
         $this->assertTrue($this->clickLink($lang['strcollapse']));
-        $this->assertWantedText($lang['strnodata']);
-		$this->assertWantedText($lang['strexpand']);
+        $this->assertText($lang['strnodata']);
+		$this->assertText($lang['strexpand']);
 */
 
 /* XXX btw, there's a "create report" link in the report results page o_O */
@@ -126,8 +126,8 @@ class ReportsTest extends PreconditionSet
 
         // Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['strsave']));
-        $this->assertWantedText($lang['strreportcreated']);
-        $this->assertWantedText($this->_reportName);
+        $this->assertText($lang['strreportcreated']);
+        $this->assertText($this->_reportName);
         
         return TRUE;
     }
@@ -148,7 +148,7 @@ class ReportsTest extends PreconditionSet
        
         // Confirm to drop the report and verify it.        
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
-        $this->assertWantedText($lang['strreportdropped']);
+        $this->assertText($lang['strreportdropped']);
         
         return TRUE;
     }

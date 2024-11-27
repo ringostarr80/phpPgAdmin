@@ -72,7 +72,7 @@ class OperatorTest extends PreconditionSet
         // Click the button "Go" to create a new operator.
         $this->assertTrue($this->clickSubmit($lang['strgo']));
         // Verify if the operator is created correctly.
-        $this->assertTrue($this->assertWantedText($lang['strsqlexecuted']));
+        $this->assertTrue($this->assertText($lang['strsqlexecuted']));
         
         return TRUE;
     } 
@@ -97,7 +97,7 @@ class OperatorTest extends PreconditionSet
         // Show the properties of the operator "===".
         $this->assertTrue($this->clickLink('==='));
         // Check the properties.
-        $this->assertTrue($this->assertWantedText('areasel')); 
+        $this->assertTrue($this->assertText('areasel')); 
         
         return TRUE;
     }
@@ -125,21 +125,21 @@ class OperatorTest extends PreconditionSet
         $this->assertTrue($this->setField('cascade', TRUE));
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
         // Verify whether the operator is dropped correctly.
-        $this->assertTrue($this->assertWantedText($lang['stroperatordropped'])); 
+        $this->assertTrue($this->assertText($lang['stroperatordropped'])); 
                 
         // Drop the second operator.        
         $this->assertTrue($this->clickLink($lang['strdrop']));
         $this->assertTrue($this->setField('cascade', TRUE));
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
         // Verify whether the operator is dropped correctly.
-        $this->assertTrue($this->assertWantedText($lang['stroperatordropped']));
+        $this->assertTrue($this->assertText($lang['stroperatordropped']));
                 
         // Drop the third operator.        
         $this->assertTrue($this->clickLink($lang['strdrop']));
         $this->assertTrue($this->setField('cascade', TRUE));
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
         // Verify whether the operator is dropped completely.
-        $this->assertTrue($this->assertWantedText($lang['strnooperators']));
+        $this->assertTrue($this->assertText($lang['strnooperators']));
         
         return TRUE;
     } 

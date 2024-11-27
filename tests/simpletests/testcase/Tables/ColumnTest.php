@@ -67,7 +67,7 @@ class ColumnTest extends PreconditionSet{
         $this->assertTrue($this->clickSubmit($lang['stradd']));
         
         // Verify if the column is created correctly.
-		$this->assertTrue($this->assertWantedText($lang['strcolumnadded'])); 
+		$this->assertTrue($this->assertText($lang['strcolumnadded'])); 
         
         return TRUE;             
     }
@@ -97,7 +97,7 @@ class ColumnTest extends PreconditionSet{
         $this->assertTrue($this->clickSubmit($lang['stradd']));
 
         // Make sure the operation failed
-        $this->assertTrue($this->assertWantedText($lang['strcolumnaddedbad']));
+        $this->assertTrue($this->assertText($lang['strcolumnaddedbad']));
 
         return TRUE;               
     }    
@@ -155,7 +155,7 @@ class ColumnTest extends PreconditionSet{
         $this->assertTrue($this->clickSubmit($lang['stralter']));
         
         // Verify if the column is altered correctly.
-        $this->assertTrue($this->assertWantedText($lang['strcolumnaltered']));
+        $this->assertTrue($this->assertText($lang['strcolumnaltered']));
         
         return TRUE;  
     }
@@ -187,7 +187,7 @@ class ColumnTest extends PreconditionSet{
         $this->assertTrue($this->clickSubmit($lang['stralter']));
         
         // Make sure the alteration failed.
-        $this->assertTrue($this->assertWantedText($lang['strcolumnalteredbad'])); 
+        $this->assertTrue($this->assertText($lang['strcolumnalteredbad'])); 
         
         return TRUE; 
     }
@@ -266,7 +266,7 @@ class ColumnTest extends PreconditionSet{
 		);
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
         // Verify if the column is dropped correctly.
-        $this->assertTrue($this->assertWantedText($lang['strcolumndropped']));
+        $this->assertTrue($this->assertText($lang['strcolumndropped']));
         
         return TRUE;          
     } 
@@ -298,7 +298,7 @@ class ColumnTest extends PreconditionSet{
         $this->assertTrue($this->clickSubmit($lang['stradd']));
         
         // Verify if the column is created correctly.
-        $this->assertTrue($this->assertWantedText($lang['strcolumnadded'])); 
+        $this->assertTrue($this->assertText($lang['strcolumnadded'])); 
         
         $this->logout();        
         $this->login($POWER_USER_NAME, $POWER_USER_PASSWORD, 
@@ -316,7 +316,7 @@ class ColumnTest extends PreconditionSet{
         $this->assertTrue($this->setField('cascade', TRUE));
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
         // Verify if the column is dropped correctly.
-        $this->assertTrue($this->assertWantedText($lang['strcolumndropped']));
+        $this->assertTrue($this->assertText($lang['strcolumndropped']));
         
         return TRUE;  
     }                       

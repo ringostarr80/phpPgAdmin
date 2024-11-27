@@ -127,7 +127,7 @@ class InfoTest extends PreconditionSet{
 		);
              
         $this->assertTrue($this->clickLink($lang['strproperties']));
-        $this->assertWantedText('FOREIGN KEY (dep_id) REFERENCES department(id) ' . 
+        $this->assertText('FOREIGN KEY (dep_id) REFERENCES department(id) ' . 
                                 'ON UPDATE RESTRICT ON DELETE RESTRICT'); 
         
         return TRUE;         

@@ -71,7 +71,7 @@ class IndexesTest extends PreconditionSet{
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
         
         // Verify if the index is created correctly.
-        $this->assertTrue($this->assertWantedText($lang['strindexcreated']));
+        $this->assertTrue($this->assertText($lang['strindexcreated']));
         
         return TRUE; 
     }
@@ -127,7 +127,7 @@ class IndexesTest extends PreconditionSet{
 					);
         
         // Verify if the index is reindexed correctly.
-        $this->assertTrue($this->assertWantedText($lang['strreindexgood']));
+        $this->assertTrue($this->assertText($lang['strreindexgood']));
         
         return TRUE;  
     }
@@ -153,8 +153,8 @@ class IndexesTest extends PreconditionSet{
         $this->assertTrue($this->setField('analyze', TRUE));
         $this->assertTrue($this->clickSubmit($lang['strcluster'])); 
         // Verify if the key is clustered correctly. 
-        $this->assertTrue($this->assertWantedText($lang['strclusteredgood']));
-        $this->assertTrue($this->assertWantedText($lang['stranalyzegood']));
+        $this->assertTrue($this->assertText($lang['strclusteredgood']));
+        $this->assertTrue($this->assertText($lang['stranalyzegood']));
         
         return TRUE; 
     }
@@ -180,7 +180,7 @@ class IndexesTest extends PreconditionSet{
         $this->assertTrue($this->setField('analyze', FALSE));
         $this->assertTrue($this->clickSubmit($lang['strcluster']));
         // Verify if the key is clustered correctly.
-        $this->assertTrue($this->assertWantedText($lang['strclusteredgood']));
+        $this->assertTrue($this->assertText($lang['strclusteredgood']));
         
         return TRUE;  
     }
@@ -252,7 +252,7 @@ class IndexesTest extends PreconditionSet{
         $this->assertField($this->setField('cascade', TRUE));
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
         // Verify if the index is dropped correctly.
-        $this->assertTrue($this->assertWantedText($lang['strindexdropped']));
+        $this->assertTrue($this->assertText($lang['strindexdropped']));
         
         return TRUE; 
     }

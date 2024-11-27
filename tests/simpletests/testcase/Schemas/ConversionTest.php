@@ -67,7 +67,7 @@ class ConversionTest extends PreconditionSet
         // Verify whether the conversions are displayed.
         // Normally, there should be conversions in this schema, but if there is no,
         // this assert will fail. Need to assert the normal case.
-        $this->assertTrue($this->assertWantedText($lang['strsourceencoding']));
+        $this->assertTrue($this->assertText($lang['strsourceencoding']));
 
         return TRUE;
     } 

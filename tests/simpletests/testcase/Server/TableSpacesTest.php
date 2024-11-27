@@ -67,7 +67,7 @@ class TableSpacesTest extends PreconditionSet
        
         // Then submit and verify it.
 		$this->assertTrue($this->clickSubmit($lang['strcreate']));
-		$this->assertWantedText($lang['strtablespacecreated']);
+		$this->assertText($lang['strtablespacecreated']);
         
         return TRUE;
     }
@@ -97,7 +97,7 @@ class TableSpacesTest extends PreconditionSet
 
         // Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['stralter']));
-        $this->assertWantedText($lang['strtablespacealtered']);
+        $this->assertText($lang['strtablespacealtered']);
 
         return TRUE;
     }
@@ -129,8 +129,8 @@ class TableSpacesTest extends PreconditionSet
        
         // Then submit and verifiy it.
         $this->assertTrue($this->clickSubmit($lang['strgrant']));
-        $this->assertWantedText($lang['strgranted']);
-        $this->assertWantedText($NORMAL_USER_NAME);
+        $this->assertText($lang['strgranted']);
+        $this->assertText($NORMAL_USER_NAME);
         
         return TRUE;
     }
@@ -160,7 +160,7 @@ class TableSpacesTest extends PreconditionSet
                
         // Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['strrevoke']));
-        $this->assertWantedText($lang['strgranted']);
+        $this->assertText($lang['strgranted']);
         $this->assertNoUnWantedText($NORMAL_USER_NAME);
         
         return TRUE;
@@ -191,7 +191,7 @@ class TableSpacesTest extends PreconditionSet
 
         // Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['strgrant']));
-        $this->assertWantedText($lang['strgrantbad']);
+        $this->assertText($lang['strgrantbad']);
         
         return TRUE;
     }
@@ -219,7 +219,7 @@ class TableSpacesTest extends PreconditionSet
 
         // Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['strrevoke']));
-        $this->assertWantedText($lang['strgrantbad']);
+        $this->assertText($lang['strgrantbad']);
         
         return TRUE;
     }
@@ -244,7 +244,7 @@ class TableSpacesTest extends PreconditionSet
 
         // Confirm to drop the user and verify it.
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
-        $this->assertWantedText($lang['strtablespacedropped']);
+        $this->assertText($lang['strtablespacedropped']);
         $this->assertNoUnWantedText($this->_tableSpaceName);  
         
         return TRUE;

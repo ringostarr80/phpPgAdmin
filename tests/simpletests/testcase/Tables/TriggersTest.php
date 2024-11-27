@@ -72,7 +72,7 @@ class TriggersTest extends PreconditionSet{
         
         $this->assertTrue($this->clickSubmit($lang['strcreate']));    
         // Verify if the trigger is created correctly.
-        $this->assertTrue($this->assertWantedText($lang['strtriggercreated']));
+        $this->assertTrue($this->assertText($lang['strtriggercreated']));
         
         return TRUE;              
     }   
@@ -131,7 +131,7 @@ class TriggersTest extends PreconditionSet{
         $this->assertTrue($this->setField('name', 'changed_trigger'));
         $this->assertTrue($this->clickSubmit($lang['strok']));
         // Verify if the trigger is altered correctly.
-        $this->assertTrue($this->assertWantedText($lang['strtriggeraltered']));
+        $this->assertTrue($this->assertText($lang['strtriggeraltered']));
         
         return TRUE;  
     }
@@ -206,7 +206,7 @@ class TriggersTest extends PreconditionSet{
         $this->assertTrue($this->setField('cascade', TRUE));
         $this->assertTrue($this->clickSubmit($lang['stryes']));
         // Verify if the trigger is dropped correctly.
-        $this->assertTrue($this->assertWantedText($lang['strtriggerdropped']));
+        $this->assertTrue($this->assertText($lang['strtriggerdropped']));
         
         return TRUE; 
     }                          

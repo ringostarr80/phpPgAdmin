@@ -66,7 +66,7 @@ class OpClassTest extends PreconditionSet
 					);
         
         // Verify whether all the op classes are displayed.
-        $this->assertTrue($this->assertWantedText($lang['straccessmethod']));
+        $this->assertTrue($this->assertText($lang['straccessmethod']));
         
         return TRUE;
     } 

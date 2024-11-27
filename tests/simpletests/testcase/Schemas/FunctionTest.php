@@ -80,7 +80,7 @@ class FunctionTest extends PreconditionSet
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
  
         // Verify whether the function is created successfully.
-        $this->assertTrue($this->assertWantedText($lang['strfunctioncreated'])); 
+        $this->assertTrue($this->assertText($lang['strfunctioncreated'])); 
  
         return TRUE;          
     } 
@@ -118,7 +118,7 @@ class FunctionTest extends PreconditionSet
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
         
         // Verify whether the function is created successfully.
-        $this->assertTrue($this->assertWantedText($lang['strfunctioncreated']));
+        $this->assertTrue($this->assertText($lang['strfunctioncreated']));
 
         return TRUE;   
     }
@@ -154,7 +154,7 @@ class FunctionTest extends PreconditionSet
         // Click the "Create"  button to create the C function.       
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
         // Verify whether the function is created successfully.
-        $this->assertTrue($this->assertWantedText($lang['strfunctioncreated']));
+        $this->assertTrue($this->assertText($lang['strfunctioncreated']));
         
         return TRUE;         
     }  
@@ -189,7 +189,7 @@ class FunctionTest extends PreconditionSet
         // Click the "Create"  button to alter the function.       
         $this->assertTrue($this->clickSubmit($lang['stralter']));
         // Verify whether the function is updated successfully.
-        $this->assertTrue($this->assertWantedText($lang['strfunctionupdated']));             
+        $this->assertTrue($this->assertText($lang['strfunctionupdated']));             
 
         return TRUE;    
     } 
@@ -220,7 +220,7 @@ class FunctionTest extends PreconditionSet
         // Click the "Drop" button to dorp the function.
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
         // Verify whether the function is dropped successfully.
-        $this->assertTrue($this->assertWantedText($lang['strfunctiondropped']));
+        $this->assertTrue($this->assertText($lang['strfunctiondropped']));
        
         // Drop the function "cfunction". 
         $this->assertTrue($this->clickLink('cfunction (text)'));        
@@ -230,7 +230,7 @@ class FunctionTest extends PreconditionSet
         // Click the "Drop" button to drop the function.
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
         // Verify whether the function is dropped successfully.
-        $this->assertTrue($this->assertWantedText($lang['strfunctiondropped'])); 
+        $this->assertTrue($this->assertText($lang['strfunctiondropped'])); 
         
         // Drop the function "internalfunction". 
         $this->assertTrue($this->clickLink('internalfunction (boolean)'));          
@@ -240,7 +240,7 @@ class FunctionTest extends PreconditionSet
         // Click the "Drop" button to drop the function.
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
         // Verify whether the function is dropped successfully.
-        $this->assertTrue($this->assertWantedText($lang['strfunctiondropped']));
+        $this->assertTrue($this->assertText($lang['strfunctiondropped']));
         
         return TRUE;
     } 

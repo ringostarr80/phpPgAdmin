@@ -171,7 +171,7 @@ class SqlTest extends PreconditionSet
 
         // Here $lang['strsqlexecuted'] is not fit for this situation. Because the "%s"
         // make the assertion failed.
-        $this->assertWantedText('Total runtime');
+        $this->assertText('Total runtime');
 
         return TRUE;
     }
@@ -202,7 +202,7 @@ class SqlTest extends PreconditionSet
 
         // Here $lang['strsqlexecuted'] is not fit for this situation. Because the "%s"
         // make the assertion failed.
-        $this->assertWantedText('Total runtime');
+        $this->assertText('Total runtime');
 
         return TRUE;
     }
@@ -236,7 +236,7 @@ class SqlTest extends PreconditionSet
 
 		$this->assertTrue($this->clickSubmit($lang['strexecute']));
 
-        $this->assertWantedText($lang['strsqlexecuted']);
+        $this->assertText($lang['strsqlexecuted']);
 
         return TRUE;
     }
@@ -259,7 +259,7 @@ class SqlTest extends PreconditionSet
 
         $this->assertTrue($this->clickSubmit($lang['strexecute']));
 
-        $this->assertWantedText($lang['strsqlexecuted']);
+        $this->assertText($lang['strsqlexecuted']);
 
         return true;
     }
@@ -283,10 +283,10 @@ class SqlTest extends PreconditionSet
         $this->assertTrue($this->clickSubmit($lang['strexecute']));
 
         $this->assertTrue($this->clickLink($lang['strexpand']));
-        $this->assertWantedText($lang['strnodata']);
+        $this->assertText($lang['strnodata']);
 
         $this->assertTrue($this->clickLink($lang['strcollapse']));
-        $this->assertWantedText($lang['strnodata']);
+        $this->assertText($lang['strnodata']);
 
         $this->assertTrue($this->clickLink($lang['strrefresh']));
 
@@ -316,7 +316,7 @@ class SqlTest extends PreconditionSet
 
         $this->assertTrue($this->clickSubmit($lang['strsave']));
 
-        $this->assertWantedText($lang['strreportcreated']);
+        $this->assertText($lang['strreportcreated']);
     }
 
 

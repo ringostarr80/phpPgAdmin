@@ -106,7 +106,7 @@ class DeadlockTest extends PreconditionSet{
         // Now turn to the first session, submit the "add check" operation
         $this->assertTrue($this->clickSubmit($lang['stradd']));      
         // Verify if the constraint is created correctly.
-        $this->assertTrue($this->assertWantedText($lang['strloginfailed']));
+        $this->assertTrue($this->assertText($lang['strloginfailed']));
         
         
         // Rollback the changes to return to the original state
@@ -191,7 +191,7 @@ class DeadlockTest extends PreconditionSet{
         // Now turn to the first session, submit the "create DB" operation
         $this->assertTrue ($this->clickSubmit($lang['strcreate']));       
         // Verify weather the database has been created.
-        $this->assertTrue ($this->assertWantedText($lang['strdatabasecreatedbad']));
+        $this->assertTrue ($this->assertText($lang['strdatabasecreatedbad']));
           
         // Rollback the changes to return to the original state
         $this->assertTrue($newBrowser->get("$webUrl/users.php"));
@@ -247,7 +247,7 @@ class DeadlockTest extends PreconditionSet{
         $this->assertTrue($this->setField('type', 'integer'));                
         $this->assertTrue($this->clickSubmit($lang['stradd']));
         // Verify if the column is created correctly.
-        $this->assertTrue($this->assertWantedText($lang['strcolumnadded']));
+        $this->assertTrue($this->assertText($lang['strcolumnadded']));
         
         
         // Try to alter the column as "ssid"
@@ -288,7 +288,7 @@ class DeadlockTest extends PreconditionSet{
         // Now turn to the first session, submit the "create DB" operation
          $this->assertTrue($this->clickSubmit($lang['stralter']));
         // Verify if the column is altered correctly.
-        $this->assertTrue($this->assertWantedText($lang['strcolumnalteredbad']));
+        $this->assertTrue($this->assertText($lang['strcolumnalteredbad']));
         
         return TRUE;          
     }
@@ -347,7 +347,7 @@ class DeadlockTest extends PreconditionSet{
         // Click the button "Create" to create the table
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
         // Verify if the table create correctly.
-        $this->assertTrue($this->assertWantedText($lang['strtablecreated']));
+        $this->assertTrue($this->assertText($lang['strtablecreated']));
         
         
         // Issue a SELECT query
@@ -389,9 +389,9 @@ class DeadlockTest extends PreconditionSet{
         // Display all the rows.        
         $this->assertTrue($this->clickSubmit($lang['strselect']));
         // Verify whether select successful.       
-        $this->assertTrue($this->assertWantedText($lang['strsqlerror']));
-        $this->assertTrue($this->assertWantedText('public.newtable'));
-        $this->assertTrue($this->assertWantedText('does not exist'));
+        $this->assertTrue($this->assertText($lang['strsqlerror']));
+        $this->assertTrue($this->assertText('public.newtable'));
+        $this->assertTrue($this->assertText('does not exist'));
         
         return TRUE;
     }

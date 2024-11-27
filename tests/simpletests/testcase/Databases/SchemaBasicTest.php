@@ -75,7 +75,7 @@ class SchemaBasicTest extends PreconditionSet
 
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
 
-        $this->assertWantedText($lang['strschemacreated']);
+        $this->assertText($lang['strschemacreated']);
 
         return TRUE;
     }
@@ -116,7 +116,7 @@ class SchemaBasicTest extends PreconditionSet
                                           'The comment has been changed.'));
         $this->assertTrue($this->clickSubmit('Alter'));
 
-        $this->assertWantedText($lang['strschemaaltered']);
+        $this->assertText($lang['strschemaaltered']);
 
         return TRUE;
     }
@@ -151,7 +151,7 @@ class SchemaBasicTest extends PreconditionSet
         $this->assertTrue($this->setField('cascade', TRUE));
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
 
-        $this->assertWantedText($lang['strschemadropped']);
+        $this->assertText($lang['strschemadropped']);
         
         return TRUE;
     }

@@ -64,7 +64,7 @@ class ProcessesTest extends PreconditionSet
 					   'action' => 'processes'))
 				   );
 
-        $this->assertWantedText($lang['strnodata']);
+        $this->assertText($lang['strnodata']);
 
         return TRUE;
     }

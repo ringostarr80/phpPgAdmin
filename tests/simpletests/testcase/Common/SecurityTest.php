@@ -49,14 +49,14 @@ class SecurityTest extends PreconditionSet
         $this->login('postgres', $this->_invalidPassword, "$webUrl/login.php");
         
         // Verify the error messages.
-        $this->assertWantedText($lang['strlogindisallowed']);
-		$this->assertWantedText($lang['strviewfaq']);
+        $this->assertText($lang['strlogindisallowed']);
+		$this->assertText($lang['strviewfaq']);
         // Login with special user name "postgres".
         $this->login($NORMAL_USER_NAME, '', "$webUrl/login.php");
         
         // Verify the error messages.
-        $this->assertWantedText($lang['strlogindisallowed']);
-        $this->assertWantedText($lang['strviewfaq']);
+        $this->assertText($lang['strlogindisallowed']);
+        $this->assertText($lang['strviewfaq']);
         
         return TRUE;
     }
@@ -76,13 +76,13 @@ class SecurityTest extends PreconditionSet
         $this->login($this->_invalidUserName, $this->_invalidPassword, "$webUrl/login.php");
         
         // Verify the error messages.
-        $this->assertWantedText($lang['strloginfailed']);
+        $this->assertText($lang['strloginfailed']);
         
         // Login with valid username and invalid password.
         $this->login($SUPER_USER_NAME, $this->_invalidPassword, "$webUrl/login.php");
         
         // Verify the error messages.
-        $this->assertWantedText($lang['strloginfailed']);
+        $this->assertText($lang['strloginfailed']);
         
         return TRUE;
     }
@@ -112,7 +112,7 @@ class SecurityTest extends PreconditionSet
        
         // Then submit and verify the error messages.
         $this->assertTrue($this->clickSubmit($lang['strok']));
-        $this->assertWantedText($lang['strpasswordconfirm']);
+        $this->assertText($lang['strpasswordconfirm']);
         
         // Enter the new password and confirm password.
         $this->assertTrue($this->setField('password', $NORMAL_USER_PASSWORD));
@@ -120,7 +120,7 @@ class SecurityTest extends PreconditionSet
        
         // Then submit and verify the messages.
         $this->assertTrue($this->clickSubmit($lang['strok']));
-        $this->assertWantedText($lang['strpasswordchanged']);
+        $this->assertText($lang['strpasswordchanged']);
         
         $this->logout();
         

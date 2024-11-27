@@ -69,7 +69,7 @@ class RulesTest extends PreconditionSet{
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
         
         // Verify if the rule is created correctly.
-        $this->assertTrue($this->assertWantedText($lang['strrulecreated']));
+        $this->assertTrue($this->assertText($lang['strrulecreated']));
         
         return TRUE;              
     }
@@ -152,7 +152,7 @@ class RulesTest extends PreconditionSet{
 		);
         $this->assertTrue($this->clickSubmit($lang['stryes']));
         // Verify if the rule is dropped correctly.
-        $this->assertTrue($this->assertWantedText($lang['strruledropped']));
+        $this->assertTrue($this->assertText($lang['strruledropped']));
         
         return TRUE; 
     }
@@ -187,7 +187,7 @@ class RulesTest extends PreconditionSet{
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
         
         // Verify if the rule is created correctly.
-        $this->assertTrue($this->assertWantedText($lang['strrulecreated']));  
+        $this->assertTrue($this->assertText($lang['strrulecreated']));  
         
         $this->logout();
         $this->login($POWER_USER_NAME, $POWER_USER_PASSWORD, 
@@ -207,7 +207,7 @@ class RulesTest extends PreconditionSet{
         $this->assertTrue($this->setField('cascade', TRUE)); 
         $this->assertTrue($this->clickSubmit($lang['stryes']));
         // Verify if the rule is dropped correctly.
-        $this->assertTrue($this->assertWantedText($lang['strruledropped']));
+        $this->assertTrue($this->assertText($lang['strruledropped']));
         
         return TRUE; 
     }                        

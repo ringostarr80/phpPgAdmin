@@ -62,8 +62,8 @@ class VariablesTest extends PreconditionSet
 						'action' => 'variables'))
 					);
         
-        $this->assertWantedText($lang['strname']);
-        $this->assertWantedText($lang['strsetting']);
+        $this->assertText($lang['strname']);
+        $this->assertText($lang['strsetting']);
 
         return TRUE;
     }

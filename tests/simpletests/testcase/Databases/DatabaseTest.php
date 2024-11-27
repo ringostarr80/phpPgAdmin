@@ -81,7 +81,7 @@ class DatabaseTest extends PreconditionSet
         // Because the phpPgAdmin cannot drop the currently open database.
         // this test case may be failed 
         // when running the testcase second time without removing the databases.
-        $this->assertWantedText($lang['strdatabasecreated']);
+        $this->assertText($lang['strdatabasecreated']);
 
         // Release the resource. 
 		// XXX In fact, this line does not work because of phpPgAdmin's bug.
@@ -129,7 +129,7 @@ class DatabaseTest extends PreconditionSet
         // Because the phpPgAdmin cannot drop the currently open database,
         // this test case may be failed 
         // when running the testcase second time without removing the databases.
-        $this->assertWantedText($lang['strdatabasecreated']);
+        $this->assertText($lang['strdatabasecreated']);
 
         // Release the resource.
 		// XXX In fact, this line does not work because of phpPgAdmin's bug (?)
@@ -166,7 +166,7 @@ class DatabaseTest extends PreconditionSet
 
         // Verify weather the database has been dropped.
         // There is an issue about PostgreSQL.  So let me difine the displayed text.
-        $this->assertWantedText($lang['strdatabasedropped']);
+        $this->assertText($lang['strdatabasedropped']);
 
         // XXX Release the resource.  The lines below failed in deed. (can't delete opened db)
         $this->dropDatabase('SpikeSource1');

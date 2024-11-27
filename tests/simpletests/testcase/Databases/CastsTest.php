@@ -63,9 +63,9 @@ class CastsTest extends PreconditionSet
 						'subject' => 'database'))
 					);
 
-        $this->assertWantedText($lang['strsourcetype']);
-        $this->assertWantedText($lang['strtargettype']);
-        $this->assertWantedText($lang['strimplicit']);
+        $this->assertText($lang['strsourcetype']);
+        $this->assertText($lang['strtargettype']);
+        $this->assertText($lang['strimplicit']);
         
 
         return TRUE;

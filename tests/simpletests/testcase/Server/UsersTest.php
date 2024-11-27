@@ -59,7 +59,7 @@ class UsersTest extends PreconditionSet
        
         // Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
-        $this->assertWantedText($this->_superUserName);
+        $this->assertText($this->_superUserName);
         
         return TRUE;
     }
@@ -85,7 +85,7 @@ class UsersTest extends PreconditionSet
 
         //Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
-        $this->assertWantedText($this->_powerUserName);
+        $this->assertText($this->_powerUserName);
 
         return TRUE;
     }
@@ -104,9 +104,9 @@ class UsersTest extends PreconditionSet
         
         // Get the users list page and verify it.
         $this->assertTrue($this->get("$webUrl/users.php", array('server' => $SERVER)));
-        $this->assertWantedText($SUPER_USER_NAME);
-        $this->assertWantedText($POWER_USER_NAME);
-        $this->assertWantedText($NORMAL_USER_NAME);
+        $this->assertText($SUPER_USER_NAME);
+        $this->assertText($POWER_USER_NAME);
+        $this->assertText($NORMAL_USER_NAME);
         
         return TRUE;
     }
@@ -138,7 +138,7 @@ class UsersTest extends PreconditionSet
 
         // Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['stralter']));
-        $this->assertWantedText($this->_superUserName);
+        $this->assertText($this->_superUserName);
 
         return TRUE;
     }    
@@ -200,7 +200,7 @@ class UsersTest extends PreconditionSet
 		$this->setBrowser($newBrowser);
 
         $this->assertTrue($this->clickLink($lang['strcreatedatabase']));
-        $this->assertWantedText($lang['strloginfailed']);
+        $this->assertText($lang['strloginfailed']);
         
         return TRUE;
     }
@@ -225,8 +225,8 @@ class UsersTest extends PreconditionSet
 
         // Confirm to drop the user and verify it.        
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
-        $this->assertWantedText($SUPER_USER_NAME);
-        $this->assertWantedText($lang['struserdroppedbad']);
+        $this->assertText($SUPER_USER_NAME);
+        $this->assertText($lang['struserdroppedbad']);
 
         return TRUE;
     }

@@ -67,7 +67,7 @@ class ConstraintsTest extends PreconditionSet{
         $this->assertTrue($this->clickSubmit($lang['stradd']));
         
         // Verify if the constraint is created correctly.
-        $this->assertTrue($this->assertWantedText($lang['strcheckadded']));
+        $this->assertTrue($this->assertText($lang['strcheckadded']));
         
         return TRUE;  
     }    
@@ -93,7 +93,7 @@ class ConstraintsTest extends PreconditionSet{
 		);
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
         // Verify if the constraint is dropped correctly.
-        $this->assertTrue($this->assertWantedText($lang['strconstraintdropped']));
+        $this->assertTrue($this->assertText($lang['strconstraintdropped']));
         
         return TRUE;  
     }
@@ -124,7 +124,7 @@ class ConstraintsTest extends PreconditionSet{
         
         $this->assertTrue($this->clickSubmit($lang['stradd']));
         // Verify if the constraint is created correctly.
-        $this->assertTrue($this->assertWantedText($lang['struniqadded']));
+        $this->assertTrue($this->assertText($lang['struniqadded']));
         
         return TRUE; 
     }
@@ -147,7 +147,7 @@ class ConstraintsTest extends PreconditionSet{
 
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
         // Verify if the constraint is dropped correctly.
-        $this->assertTrue($this->assertWantedText($lang['strconstraintdropped']));
+        $this->assertTrue($this->assertText($lang['strconstraintdropped']));
         
         return TRUE;  
     }
@@ -177,7 +177,7 @@ class ConstraintsTest extends PreconditionSet{
         $this->assertTrue($this->clickSubmit($lang['stradd']));
         
         // Verify if the constraint is created correctly.
-        $this->assertTrue($this->assertWantedText($lang['strpkadded']));
+        $this->assertTrue($this->assertText($lang['strpkadded']));
         
         return TRUE;                 
     }
@@ -199,7 +199,7 @@ class ConstraintsTest extends PreconditionSet{
 			'type' => 'p'))
 		);
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
-        $this->assertTrue($this->assertWantedText($lang['strconstraintdropped']));
+        $this->assertTrue($this->assertText($lang['strconstraintdropped']));
         
         return TRUE;  
     }
@@ -235,7 +235,7 @@ class ConstraintsTest extends PreconditionSet{
         $this->assertTrue($this->clickSubmit($lang['stradd']));
         
         // Verify if the constraint is created correctly.
-        $this->assertTrue($this->assertWantedText($lang['strfkadded']));
+        $this->assertTrue($this->assertText($lang['strfkadded']));
         
         return TRUE;          
     }
@@ -257,7 +257,7 @@ class ConstraintsTest extends PreconditionSet{
 			'type' => 'f'))
 		);
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
-        $this->assertTrue($this->assertWantedText($lang['strconstraintdropped']));
+        $this->assertTrue($this->assertText($lang['strconstraintdropped']));
         
         return TRUE; 
     }

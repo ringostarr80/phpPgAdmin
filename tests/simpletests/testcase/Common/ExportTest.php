@@ -60,7 +60,7 @@ class ExportTest extends PreconditionSet
        
         //Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['strexport']));
-        $this->assertWantedText("connect $DATABASE");
+        $this->assertText("connect $DATABASE");
         
         return TRUE;
     }
@@ -87,7 +87,7 @@ class ExportTest extends PreconditionSet
        
         //Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['strexport']));
-        $this->assertWantedText("connect $DATABASE");
+        $this->assertText("connect $DATABASE");
         
         return TRUE;
     }
@@ -115,7 +115,7 @@ class ExportTest extends PreconditionSet
        
         //Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['strexport']));
-        $this->assertWantedText('Data for Name: student');
+        $this->assertText('Data for Name: student');
         
         return TRUE;
     }
@@ -144,7 +144,7 @@ class ExportTest extends PreconditionSet
        
         //Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['strexport']));
-        $this->assertWantedText('CREATE TABLE student');
+        $this->assertText('CREATE TABLE student');
         
         return TRUE;
     }
@@ -177,7 +177,7 @@ class ExportTest extends PreconditionSet
 		$this->assertTrue($this->clickSubmit($lang['strinsert']));
 
         // Verify if the row insert successful.
-        $this->assertTrue($this->assertWantedText($lang['strrowinserted']));
+        $this->assertTrue($this->assertText($lang['strrowinserted']));
         
         // Turn to the export data page.
 		$this->assertTrue($this->get("$webUrl/tblproperties.php", array(
@@ -256,7 +256,7 @@ class ExportTest extends PreconditionSet
        
         //Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['strexport']));
-        $this->assertWantedText('CREATE TABLE student');
+        $this->assertText('CREATE TABLE student');
         
         return TRUE;
     }
@@ -285,7 +285,7 @@ class ExportTest extends PreconditionSet
        
         //Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['strexport']));
-        $this->assertWantedText('CREATE VIEW pg_user');
+        $this->assertText('CREATE VIEW pg_user');
         
         return TRUE;
     }

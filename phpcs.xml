@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<ruleset
+    name="phpMyAdmin Standard"
+    xmlns="https://pmd.sf.net/ruleset/1.0.0" 
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="https://pmd.sf.net/ruleset/1.0.0 https://pmd.sf.net/ruleset_xml_schema.xsd"
+    xsi:noNamespaceSchemaLocation="https://pmd.sf.net/ruleset_xml_schema.xsd">
+    <description>The coding standard for the phpMyAdmin project!</description>
+    <arg value="p"/>
+    <arg name="extensions" value="php"/>
+    <arg name="ignore" value="vendor"/>
+    <arg name="colors"/>
+    <rule ref="PSR12"/>
+</ruleset>

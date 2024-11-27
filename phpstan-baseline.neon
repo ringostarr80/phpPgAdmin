@@ -1,0 +1,1681 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Cannot unset offset ''vars'' on array\{content\: mixed, attr\: array\{href\: array\{url\: mixed, urlvars\: array\{subject\: mixed, action\: ''confdelautovac'', schema\: mixed, table\: mixed\}\}\}\}\.$#'
+			identifier: unset.offset
+			count: 1
+			path: admin.php
+
+		-
+			message: '#^Cannot unset offset ''vars'' on array\{content\: mixed, attr\: array\{href\: array\{url\: mixed, urlvars\: array\{subject\: mixed, action\: ''confeditautovac'', schema\: mixed, table\: mixed\}\}\}\}\.$#'
+			identifier: unset.offset
+			count: 1
+			path: admin.php
+
+		-
+			message: '#^Function doAddAutovacuum not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: admin.php
+
+		-
+			message: '#^Inner named functions are not supported by PHPStan\. Consider refactoring to an anonymous function, class method, or a top\-level\-defined function\. See issue \#165 \(https\://github\.com/phpstan/phpstan/issues/165\) for more details\.$#'
+			identifier: function.inner
+			count: 1
+			path: admin.php
+
+		-
+			message: '#^Inner named functions are not supported by PHPStan\. Consider refactoring to an anonymous function, class method, or a top\-level\-defined function\. See issue \#165 \(https\://github\.com/phpstan/phpstan/issues/165\) for more details\.$#'
+			identifier: function.inner
+			count: 1
+			path: casts.php
+
+		-
+			message: '#^Inner named functions are not supported by PHPStan\. Consider refactoring to an anonymous function, class method, or a top\-level\-defined function\. See issue \#165 \(https\://github\.com/phpstan/phpstan/issues/165\) for more details\.$#'
+			identifier: function.inner
+			count: 1
+			path: classes/Misc.php
+
+		-
+			message: '#^Path in include_once\(\) "\./classes/database/\-3\.php" is not a file or it does not exist\.$#'
+			identifier: includeOnce.fileNotFound
+			count: 1
+			path: classes/Misc.php
+
+		-
+			message: '#^Undefined variable\: \$column$#'
+			identifier: variable.undefined
+			count: 2
+			path: classes/Misc.php
+
+		-
+			message: '#^Access to an undefined property Plugin\:\:\$conf\.$#'
+			identifier: property.notFound
+			count: 1
+			path: classes/Plugin.php
+
+		-
+			message: '#^Access to an undefined property Plugin\:\:\$lang\.$#'
+			identifier: property.notFound
+			count: 1
+			path: classes/Plugin.php
+
+		-
+			message: '#^Access to an undefined property Plugin\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: classes/Plugin.php
+
+		-
+			message: '#^Undefined variable\: \$plugin_lang$#'
+			identifier: variable.undefined
+			count: 1
+			path: classes/Plugin.php
+
+		-
+			message: '#^Access to an undefined property XHtmlSimpleElement\:\:\$_attributeCollection\.$#'
+			identifier: property.notFound
+			count: 1
+			path: classes/class.select.php
+
+		-
+			message: '#^Class XHtmlElement referenced with incorrect case\: XHTMLElement\.$#'
+			identifier: class.nameCase
+			count: 1
+			path: classes/class.select.php
+
+		-
+			message: '#^Inner named functions are not supported by PHPStan\. Consider refactoring to an anonymous function, class method, or a top\-level\-defined function\. See issue \#165 \(https\://github\.com/phpstan/phpstan/issues/165\) for more details\.$#'
+			identifier: function.inner
+			count: 1
+			path: colproperties.php
+
+		-
+			message: '#^Class XHTML_Select referenced with incorrect case\: XHTML_select\.$#'
+			identifier: class.nameCase
+			count: 6
+			path: constraints.php
+
+		-
+			message: '#^Inner named functions are not supported by PHPStan\. Consider refactoring to an anonymous function, class method, or a top\-level\-defined function\. See issue \#165 \(https\://github\.com/phpstan/phpstan/issues/165\) for more details\.$#'
+			identifier: function.inner
+			count: 2
+			path: constraints.php
+
+		-
+			message: '#^Undefined variable\: \$max_pages$#'
+			identifier: variable.undefined
+			count: 3
+			path: display.php
+
+		-
+			message: '#^Undefined variable\: \$conf$#'
+			identifier: variable.undefined
+			count: 1
+			path: functions.php
+
+		-
+			message: '#^Class XHTML_Select referenced with incorrect case\: XHTML_select\.$#'
+			identifier: class.nameCase
+			count: 2
+			path: indexes.php
+
+		-
+			message: '#^Inner named functions are not supported by PHPStan\. Consider refactoring to an anonymous function, class method, or a top\-level\-defined function\. See issue \#165 \(https\://github\.com/phpstan/phpstan/issues/165\) for more details\.$#'
+			identifier: function.inner
+			count: 2
+			path: indexes.php
+
+		-
+			message: '#^File ends with a trailing whitespace\. This may cause problems when running the code in the web browser\. Remove the closing \?\> mark or remove the whitespace\.$#'
+			identifier: whitespace.fileEnd
+			count: 1
+			path: lang/afrikaans.php
+
+		-
+			message: '#^File ends with a trailing whitespace\. This may cause problems when running the code in the web browser\. Remove the closing \?\> mark or remove the whitespace\.$#'
+			identifier: whitespace.fileEnd
+			count: 1
+			path: lang/mongol.php
+
+		-
+			message: '#^Static access to instance property ADODB_Active_Record\:\:\$_quoteNames\.$#'
+			identifier: property.staticAccess
+			count: 1
+			path: libraries/adodb/adodb-active-record.inc.php
+
+		-
+			message: '#^Undefined variable\: \$table$#'
+			identifier: variable.undefined
+			count: 1
+			path: libraries/adodb/adodb-active-record.inc.php
+
+		-
+			message: '#^Call to an undefined method ADODB_Active_Record\:\:outp_throw\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: libraries/adodb/adodb-active-recordx.inc.php
+
+		-
+			message: '#^Instantiated class PEAR_Error not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: libraries/adodb/adodb-errorpear.inc.php
+
+		-
+			message: '#^Instantiated class PEAR_Error not found\.$#'
+			identifier: class.notFound
+			count: 2
+			path: libraries/adodb/adodb-pear.inc.php
+
+		-
+			message: '#^Method adodb_perf\:\:OptimizeTables\(\) should return bool but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: libraries/adodb/adodb-perf.inc.php
+
+		-
+			message: '#^Undefined variable\: \$sql2$#'
+			identifier: variable.undefined
+			count: 1
+			path: libraries/adodb/adodb-perf.inc.php
+
+		-
+			message: '#^Function adodb_daylight_sv not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/adodb-time.inc.php
+
+		-
+			message: '#^Method adoSchema\:\:SaveSQL\(\) should return bool but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: libraries/adodb/adodb-xmlschema.inc.php
+
+		-
+			message: '#^Method dbData\:\:addData\(\) should return string but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: libraries/adodb/adodb-xmlschema.inc.php
+
+		-
+			message: '#^Method dbData\:\:addField\(\) should return string but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: libraries/adodb/adodb-xmlschema.inc.php
+
+		-
+			message: '#^Undefined variable\: \$this$#'
+			identifier: variable.undefined
+			count: 1
+			path: libraries/adodb/adodb-xmlschema.inc.php
+
+		-
+			message: '#^Method adoSchema\:\:saveSQL\(\) should return bool but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: libraries/adodb/adodb-xmlschema03.inc.php
+
+		-
+			message: '#^Method dbData\:\:addField\(\) should return string but return statement is missing\.$#'
+			identifier: return.missing
+			count: 2
+			path: libraries/adodb/adodb-xmlschema03.inc.php
+
+		-
+			message: '#^Undefined variable\: \$this$#'
+			identifier: variable.undefined
+			count: 1
+			path: libraries/adodb/adodb-xmlschema03.inc.php
+
+		-
+			message: '#^Call to an undefined method ADOConnection\:\:_affectedrows\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: libraries/adodb/adodb.inc.php
+
+		-
+			message: '#^Call to an undefined method ADOConnection\:\:_close\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: libraries/adodb/adodb.inc.php
+
+		-
+			message: '#^Call to an undefined method ADOConnection\:\:_connect\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: libraries/adodb/adodb.inc.php
+
+		-
+			message: '#^Call to an undefined method ADOConnection\:\:_pconnect\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: libraries/adodb/adodb.inc.php
+
+		-
+			message: '#^Instantiated class PEAR_Error not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: libraries/adodb/adodb.inc.php
+
+		-
+			message: '#^Method ADORecordSet\:\:_fetch\(\) should return bool but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: libraries/adodb/adodb.inc.php
+
+		-
+			message: '#^Method ADORecordSet\:\:_seek\(\) should return bool but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: libraries/adodb/adodb.inc.php
+
+		-
+			message: '#^Result of method ADOConnection\:\:GetActiveRecordsClass\(\) \(void\) is used\.$#'
+			identifier: method.void
+			count: 1
+			path: libraries/adodb/adodb.inc.php
+
+		-
+			message: '#^Function ads_autocommit not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_binmode not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_close not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_columns not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_commit not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_error not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_errormsg not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_exec not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_execute not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_fetch_into not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_field_len not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_field_name not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_field_type not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_free_result not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_longreadlen not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_num_fields not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_num_rows not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_pconnect not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_prepare not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Function ads_rollback not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Method ADODB_ads\:\:ServerInfo\(\) should return array\<string\> but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: libraries/adodb/drivers/adodb-ads.inc.php
+
+		-
+			message: '#^Method ADODB_db2\:\:parameter\(\) should return bool but return statement is missing\.$#'
+			identifier: return.missing
+			count: 2
+			path: libraries/adodb/drivers/adodb-db2.inc.php
+
+		-
+			message: '#^Function fbsql_tablename not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-fbsql.inc.php
+
+		-
+			message: '#^Function ibase_prepare invoked with 2 parameters, 3 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: libraries/adodb/drivers/adodb-ibase.inc.php
+
+		-
+			message: '#^Function mssql_bind not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_close not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_connect not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_data_seek not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_execute not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_fetch_array not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_fetch_assoc not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_fetch_field not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_fetch_row not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_free_result not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_get_last_message not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_init not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_next_result not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_num_fields not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_num_rows not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_query not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_select_db not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Result of method ADORecordSet\:\:__construct\(\) \(void\) is used\.$#'
+			identifier: staticMethod.void
+			count: 1
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Undefined variable\: \$db$#'
+			identifier: variable.undefined
+			count: 1
+			path: libraries/adodb/drivers/adodb-mssql.inc.php
+
+		-
+			message: '#^Function mssql_init not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-mssqlpo.inc.php
+
+		-
+			message: '#^Class ADORecordset_oci8 referenced with incorrect case\: ADORecordSet_oci8\.$#'
+			identifier: class.nameCase
+			count: 1
+			path: libraries/adodb/drivers/adodb-oci8.inc.php
+
+		-
+			message: '#^Function adodb_movenext not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-oci8.inc.php
+
+		-
+			message: '#^Result of function odbc_close \(void\) is used\.$#'
+			identifier: function.void
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbc.inc.php
+
+		-
+			message: '#^Function odbtp_affected_rows not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_attach_param not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_bind_field not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_close not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_commit not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_connect not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_convert_datetime not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_data_seek not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_execute not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_fetch_array not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_fetch_assoc not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_fetch_row not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_field_bindtype not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_field_length not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_field_name not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_field_type not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_free_query not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_get_attr not found\.$#'
+			identifier: function.notFound
+			count: 8
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_input not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_last_error not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_last_error_state not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_next_result not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_num_fields not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_num_params not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_num_rows not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_param_bindtype not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_prepare not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_prepare_proc not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_query not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_rollback not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_select_db not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_set not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function odbtp_set_attr not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: libraries/adodb/drivers/adodb-odbtp.inc.php
+
+		-
+			message: '#^Function ora_close not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Function ora_columnname not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Function ora_columnsize not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Function ora_columntype not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Function ora_commit not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Function ora_commitoff not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Function ora_commiton not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Function ora_error not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Function ora_errorcode not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Function ora_exec not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Function ora_fetch_into not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Function ora_logoff not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Function ora_logon not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Function ora_numcols not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Function ora_open not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Function ora_parse not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Function ora_rollback not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-oracle.inc.php
+
+		-
+			message: '#^Class ADOConnection referenced with incorrect case\: ADOconnection\.$#'
+			identifier: class.nameCase
+			count: 1
+			path: libraries/adodb/drivers/adodb-pdo.inc.php
+
+		-
+			message: '#^Method ADODB_pdo\:\:InParameter\(\) should return bool but return statement is missing\.$#'
+			identifier: return.missing
+			count: 2
+			path: libraries/adodb/drivers/adodb-pdo.inc.php
+
+		-
+			message: '#^Method ADODB_pdo\:\:metaForeignKeys\(\) should return array\<string\>\|false but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: libraries/adodb/drivers/adodb-pdo.inc.php
+
+		-
+			message: '#^Method ADODB_pdo\:\:metaPrimaryKeys\(\) should return array\<string\> but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: libraries/adodb/drivers/adodb-pdo.inc.php
+
+		-
+			message: '#^Method ADORecordSet_pdo_firebird\:\:fetchField\(\) should return object but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: libraries/adodb/drivers/adodb-pdo_firebird.inc.php
+
+		-
+			message: '#^Result of function sqlite_close \(void\) is used\.$#'
+			identifier: function.void
+			count: 1
+			path: libraries/adodb/drivers/adodb-sqlite.inc.php
+
+		-
+			message: '#^Function sybase_close not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-sybase.inc.php
+
+		-
+			message: '#^Function sybase_data_seek not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-sybase.inc.php
+
+		-
+			message: '#^Function sybase_fetch_array not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-sybase.inc.php
+
+		-
+			message: '#^Function sybase_fetch_assoc not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-sybase.inc.php
+
+		-
+			message: '#^Function sybase_fetch_field not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-sybase.inc.php
+
+		-
+			message: '#^Function sybase_fetch_row not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-sybase.inc.php
+
+		-
+			message: '#^Function sybase_free_result not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-sybase.inc.php
+
+		-
+			message: '#^Function sybase_num_fields not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-sybase.inc.php
+
+		-
+			message: '#^Function sybase_num_rows not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-sybase.inc.php
+
+		-
+			message: '#^Function sybase_pconnect not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/drivers/adodb-sybase.inc.php
+
+		-
+			message: '#^Function sybase_query not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-sybase.inc.php
+
+		-
+			message: '#^Function sybase_select_db not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-sybase.inc.php
+
+		-
+			message: '#^Function sybase_unbuffered_query not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/drivers/adodb-sybase.inc.php
+
+		-
+			message: '#^Regex pattern is invalid\: Unknown modifier ''\\'' in pattern\: /\(\[A\-Za\-z\]\{3\}\)\[\-/\\\. \]\(\[0\-9 \]\{1,2\}\)\[\-/\\\. \]\(\[0\-9\]\{4\}\) \+\(\[0\-9\]\{1,2\}\)\:\(\[0\-9\]\{1,2\}\) \*\(\[apAP\]\{0,1\}\)/$#'
+			identifier: regexp.pattern
+			count: 1
+			path: libraries/adodb/drivers/adodb-sybase.inc.php
+
+		-
+			message: '#^Regex pattern is invalid\: Unknown modifier ''\\'' in pattern\: /\(\[A\-Za\-z\]\{3\}\)\[\-/\\\. \]\+\(\[0\-9\]\{1,2\}\)\[\-/\\\. \]\+\(\[0\-9\]\{4\}\)/$#'
+			identifier: regexp.pattern
+			count: 1
+			path: libraries/adodb/drivers/adodb-sybase.inc.php
+
+		-
+			message: '#^Method ADORecordSet_array\:\:__construct\(\) invoked with 0 parameters, 1\-2 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: libraries/adodb/drivers/adodb-text.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-ar.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-bg.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-ca.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-cn.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-cz.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-da.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-de.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-en.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-eo.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-es.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-fa.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-fr.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-hu.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-id.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-it.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-nl.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-oc.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-pl.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-pt-br.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-ro.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-ru.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-sv.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-th.inc.php
+
+		-
+			message: '#^Array has 2 duplicate keys with value \-25 \(\\DB_ERROR_EXTENSION_NOT_FOUND, \\DB_ERROR_NOSUCHDB\)\.$#'
+			identifier: array.duplicateKey
+			count: 1
+			path: libraries/adodb/lang/adodb-uk.inc.php
+
+		-
+			message: '#^Access to an undefined property Auth_Container_ADOdb\:\:\$_auth_obj\.$#'
+			identifier: property.notFound
+			count: 1
+			path: libraries/adodb/pear/Auth/Container/ADOdb.php
+
+		-
+			message: '#^Call to an undefined method Auth_Container_ADOdb\:\:verifyPassword\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: libraries/adodb/pear/Auth/Container/ADOdb.php
+
+		-
+			message: '#^Call to static method raiseError\(\) on an unknown class PEAR\.$#'
+			identifier: class.notFound
+			count: 10
+			path: libraries/adodb/pear/Auth/Container/ADOdb.php
+
+		-
+			message: '#^Call to static method setAuthData\(\) on an unknown class Auth\.$#'
+			identifier: class.notFound
+			count: 1
+			path: libraries/adodb/pear/Auth/Container/ADOdb.php
+
+		-
+			message: '#^Path in require_once\(\) "Auth/Container\.php" is not a file or it does not exist\.$#'
+			identifier: requireOnce.fileNotFound
+			count: 1
+			path: libraries/adodb/pear/Auth/Container/ADOdb.php
+
+		-
+			message: '#^Path in require_once\(\) "adodb\-errorpear\.inc\.php" is not a file or it does not exist\.$#'
+			identifier: requireOnce.fileNotFound
+			count: 1
+			path: libraries/adodb/pear/Auth/Container/ADOdb.php
+
+		-
+			message: '#^Path in require_once\(\) "adodb\-pear\.inc\.php" is not a file or it does not exist\.$#'
+			identifier: requireOnce.fileNotFound
+			count: 1
+			path: libraries/adodb/pear/Auth/Container/ADOdb.php
+
+		-
+			message: '#^Path in require_once\(\) "adodb\.inc\.php" is not a file or it does not exist\.$#'
+			identifier: requireOnce.fileNotFound
+			count: 1
+			path: libraries/adodb/pear/Auth/Container/ADOdb.php
+
+		-
+			message: '#^Static call to instance method DB\:\:isError\(\)\.$#'
+			identifier: method.staticCall
+			count: 4
+			path: libraries/adodb/pear/Auth/Container/ADOdb.php
+
+		-
+			message: '#^Instantiated class Auth not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: libraries/adodb/pear/auth_adodb_example.php
+
+		-
+			message: '#^Path in require_once\(\) "Auth/Auth\.php" is not a file or it does not exist\.$#'
+			identifier: requireOnce.fileNotFound
+			count: 1
+			path: libraries/adodb/pear/auth_adodb_example.php
+
+		-
+			message: '#^Static call to instance method ADODB_Session\:\:filter\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: libraries/adodb/session/adodb-cryptsession.php
+
+		-
+			message: '#^Static call to instance method ADODB_Session\:\:filter\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: libraries/adodb/session/adodb-cryptsession2.php
+
+		-
+			message: '#^Function mcrypt_create_iv not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/session/adodb-encrypt-mcrypt.php
+
+		-
+			message: '#^Function mcrypt_decrypt not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/session/adodb-encrypt-mcrypt.php
+
+		-
+			message: '#^Function mcrypt_encrypt not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/session/adodb-encrypt-mcrypt.php
+
+		-
+			message: '#^Function mcrypt_get_iv_size not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: libraries/adodb/session/adodb-encrypt-mcrypt.php
+
+		-
+			message: '#^Call to static method read\(\) on an unknown class Secret\.$#'
+			identifier: class.notFound
+			count: 1
+			path: libraries/adodb/session/adodb-encrypt-secret.php
+
+		-
+			message: '#^Call to static method write\(\) on an unknown class Secret\.$#'
+			identifier: class.notFound
+			count: 1
+			path: libraries/adodb/session/adodb-encrypt-secret.php
+
+		-
+			message: '#^Static call to instance method ADODB_Session\:\:clob\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: libraries/adodb/session/adodb-session-clob.php
+
+		-
+			message: '#^Static call to instance method ADODB_Session\:\:clob\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: libraries/adodb/session/adodb-session-clob2.php
+
+		-
+			message: '#^Static call to instance method ADODB_Session\:\:_conn\(\)\.$#'
+			identifier: method.staticCall
+			count: 2
+			path: libraries/adodb/session/adodb-session.php
+
+		-
+			message: '#^Static call to instance method ADODB_Session\:\:_init\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: libraries/adodb/session/adodb-session.php
+
+		-
+			message: '#^Static call to instance method ADODB_Session\:\:gc\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: libraries/adodb/session/adodb-session.php
+
+		-
+			message: '#^Static call to instance method ADODB_Session\:\:open\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: libraries/adodb/session/adodb-session.php
+
+		-
+			message: '#^Static call to instance method ADODB_Session\:\:table\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: libraries/adodb/session/adodb-session.php
+
+		-
+			message: '#^Static call to instance method ADODB_Session\:\:_conn\(\)\.$#'
+			identifier: method.staticCall
+			count: 2
+			path: libraries/adodb/session/adodb-session2.php
+
+		-
+			message: '#^Static call to instance method ADODB_Session\:\:_init\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: libraries/adodb/session/adodb-session2.php
+
+		-
+			message: '#^Static call to instance method ADODB_Session\:\:gc\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: libraries/adodb/session/adodb-session2.php
+
+		-
+			message: '#^Static call to instance method ADODB_Session\:\:open\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: libraries/adodb/session/adodb-session2.php
+
+		-
+			message: '#^Static call to instance method ADODB_Session\:\:table\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: libraries/adodb/session/adodb-session2.php
+
+		-
+			message: '#^Function session_register not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/session/old/adodb-session-clob.php
+
+		-
+			message: '#^Undefined variable\: \$qry$#'
+			identifier: variable.undefined
+			count: 1
+			path: libraries/adodb/session/old/adodb-session-clob.php
+
+		-
+			message: '#^Function session_register not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: libraries/adodb/session/old/adodb-session.php
+
+		-
+			message: '#^Static call to instance method ADODB_Session\:\:_conn\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: libraries/adodb/session/old/adodb-session.php
+
+		-
+			message: '#^Static call to instance method ADODB_Session\:\:table\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: libraries/adodb/session/old/adodb-session.php
+
+		-
+			message: '#^Argument \#3 \(\$case_insensitive\) is ignored since declaration of case\-insensitive constants is no longer supported\.$#'
+			identifier: argument.unused
+			count: 25
+			path: libraries/highlight.php
+
+		-
+			message: '#^Inner named functions are not supported by PHPStan\. Consider refactoring to an anonymous function, class method, or a top\-level\-defined function\. See issue \#165 \(https\://github\.com/phpstan/phpstan/issues/165\) for more details\.$#'
+			identifier: function.inner
+			count: 2
+			path: roles.php
+
+		-
+			message: '#^Inner named functions are not supported by PHPStan\. Consider refactoring to an anonymous function, class method, or a top\-level\-defined function\. See issue \#165 \(https\://github\.com/phpstan/phpstan/issues/165\) for more details\.$#'
+			identifier: function.inner
+			count: 1
+			path: servers.php
+
+		-
+			message: '#^Inner named functions are not supported by PHPStan\. Consider refactoring to an anonymous function, class method, or a top\-level\-defined function\. See issue \#165 \(https\://github\.com/phpstan/phpstan/issues/165\) for more details\.$#'
+			identifier: function.inner
+			count: 2
+			path: tblproperties.php
+
+		-
+			message: '#^Path in require\(\) "\./tests/selenium/config\.test\.php" is not a file or it does not exist\.$#'
+			identifier: require.fileNotFound
+			count: 1
+			path: tests/selenium/TestSuite.php
+
+		-
+			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
+			identifier: require.fileNotFound
+			count: 1
+			path: tests/selenium/src/01-roles.php
+
+		-
+			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
+			identifier: require.fileNotFound
+			count: 1
+			path: tests/selenium/src/04-database.php
+
+		-
+			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
+			identifier: require.fileNotFound
+			count: 1
+			path: tests/selenium/src/06-schema.php
+
+		-
+			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
+			identifier: require.fileNotFound
+			count: 1
+			path: tests/selenium/src/08-domaine.php
+
+		-
+			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
+			identifier: require.fileNotFound
+			count: 1
+			path: tests/selenium/src/10-table.php
+
+		-
+			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
+			identifier: require.fileNotFound
+			count: 1
+			path: tests/selenium/src/12-admin.php
+
+		-
+			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
+			identifier: require.fileNotFound
+			count: 1
+			path: tests/selenium/src/15-sequence.php
+
+		-
+			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
+			identifier: require.fileNotFound
+			count: 1
+			path: tests/selenium/src/20-constraint.php
+
+		-
+			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
+			identifier: require.fileNotFound
+			count: 1
+			path: tests/selenium/src/25-column.php
+
+		-
+			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
+			identifier: require.fileNotFound
+			count: 1
+			path: tests/selenium/src/30-view.php
+
+		-
+			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
+			identifier: require.fileNotFound
+			count: 1
+			path: tests/selenium/src/35-index.php
+
+		-
+			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
+			identifier: require.fileNotFound
+			count: 1
+			path: tests/selenium/src/99-cleantests.php
+
+		-
+			message: '#^Access to an undefined property TestBuilder\:\:\$data\.$#'
+			identifier: property.notFound
+			count: 2
+			path: tests/selenium/testBuilder.class.php
+
+		-
+			message: '#^Access to an undefined property TestBuilder\:\:\$server\.$#'
+			identifier: property.notFound
+			count: 4
+			path: tests/selenium/testBuilder.class.php
+
+		-
+			message: '#^Access to an undefined property TestBuilder\:\:\$title\.$#'
+			identifier: property.notFound
+			count: 1
+			path: tests/selenium/testBuilder.class.php
+
+		-
+			message: '#^Access to an undefined property TestBuilder\:\:\$webUrl\.$#'
+			identifier: property.notFound
+			count: 3
+			path: tests/selenium/testBuilder.class.php
+
+		-
+			message: '#^Path in require\(\) "\./tests/selenium/config\.test\.php" is not a file or it does not exist\.$#'
+			identifier: require.fileNotFound
+			count: 1
+			path: tests/selenium/testBuilder.class.php
+
+		-
+			message: '#^Call to an undefined method CommonGroupTest\:\:GroupTest\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/simpletests/testcase/Common/CommonGroupTest.php
+
+		-
+			message: '#^Call to an undefined method CommonGroupTest\:\:addTestClass\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: tests/simpletests/testcase/Common/CommonGroupTest.php
+
+		-
+			message: '#^Call to an undefined method ExportTest\:\:assertWantedPattern\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: tests/simpletests/testcase/Common/ExportTest.php
+
+		-
+			message: '#^Call to an undefined method DatabaseGroupTest\:\:GroupTest\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/simpletests/testcase/Databases/DatabaseGroupTest.php
+
+		-
+			message: '#^Call to an undefined method DatabaseGroupTest\:\:addTestClass\(\)\.$#'
+			identifier: method.notFound
+			count: 10
+			path: tests/simpletests/testcase/Databases/DatabaseGroupTest.php
+
+		-
+			message: '#^Call to an undefined method LanguageTest\:\:assertWantedPattern\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/simpletests/testcase/Databases/LanguageTest.php
+
+		-
+			message: '#^Call to an undefined method SqlTest\:\:assertWantedPattern\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/simpletests/testcase/Databases/SqlTest.php
+
+		-
+			message: '#^Call to an undefined method SchemasGroupTest\:\:GroupTest\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/simpletests/testcase/Schemas/SchemasGroupTest.php
+
+		-
+			message: '#^Call to an undefined method SchemasGroupTest\:\:addTestClass\(\)\.$#'
+			identifier: method.notFound
+			count: 10
+			path: tests/simpletests/testcase/Schemas/SchemasGroupTest.php
+
+		-
+			message: '#^Call to an undefined method ServerGroupTest\:\:GroupTest\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/simpletests/testcase/Server/ServerGroupTest.php
+
+		-
+			message: '#^Call to an undefined method ServerGroupTest\:\:addTestClass\(\)\.$#'
+			identifier: method.notFound
+			count: 4
+			path: tests/simpletests/testcase/Server/ServerGroupTest.php
+
+		-
+			message: '#^Call to an undefined method TableSpacesTest\:\:assertNoUnWantedText\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: tests/simpletests/testcase/Server/TableSpacesTest.php
+
+		-
+			message: '#^Call to an undefined method UsersTest\:\:assertNoUnWantedText\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: tests/simpletests/testcase/Server/UsersTest.php
+
+		-
+			message: '#^Path in require_once\(\) "Public/SetPrecondition\.php" is not a file or it does not exist\.$#'
+			identifier: requireOnce.fileNotFound
+			count: 1
+			path: tests/simpletests/testcase/Server/UsersTest.php
+
+		-
+			message: '#^Call to an undefined method TableGroupTest\:\:GroupTest\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/simpletests/testcase/Tables/TableGroupTest.php
+
+		-
+			message: '#^Call to an undefined method TableGroupTest\:\:addTestClass\(\)\.$#'
+			identifier: method.notFound
+			count: 7
+			path: tests/simpletests/testcase/Tables/TableGroupTest.php
+
+		-
+			message: '#^Instantiated class HtmlCoverageReporter not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: tests/simpletests/testcase/coveragephpPgAdminMain.php
+
+		-
+			message: '#^Instantiated class RemoteCoverageRecorder not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: tests/simpletests/testcase/coveragephpPgAdminMain.php
+
+		-
+			message: '#^Path in require_once\(\) "lang/recoded/english\.php" is not a file or it does not exist\.$#'
+			identifier: requireOnce.fileNotFound
+			count: 1
+			path: tests/simpletests/testcase/coveragephpPgAdminMain.php
+
+		-
+			message: '#^Path in require_once\(\) "remote/RemoteCoverageRecorder\.php" is not a file or it does not exist\.$#'
+			identifier: requireOnce.fileNotFound
+			count: 1
+			path: tests/simpletests/testcase/coveragephpPgAdminMain.php
+
+		-
+			message: '#^Path in require_once\(\) "reporter/HtmlCoverageReporter\.php" is not a file or it does not exist\.$#'
+			identifier: requireOnce.fileNotFound
+			count: 1
+			path: tests/simpletests/testcase/coveragephpPgAdminMain.php
+
+		-
+			message: '#^Path in require_once\(\) "simpletest/reporter\.php" is not a file or it does not exist\.$#'
+			identifier: requireOnce.fileNotFound
+			count: 1
+			path: tests/simpletests/testcase/coveragephpPgAdminMain.php
+
+		-
+			message: '#^Path in require_once\(\) "simpletest/web_tester\.php" is not a file or it does not exist\.$#'
+			identifier: requireOnce.fileNotFound
+			count: 1
+			path: tests/simpletests/testcase/coveragephpPgAdminMain.php
+
+		-
+			message: '#^Function parse_str invoked with 1 parameter, 2 required\.$#'
+			identifier: arguments.count
+			count: 3
+			path: tests/simpletests/testcase/phpcoverage.inc.php
+
+		-
+			message: '#^Function parse_str invoked with 1 parameter, 2 required\.$#'
+			identifier: arguments.count
+			count: 2
+			path: tests/simpletests/testcase/simpletest.inc.php
+
+		-
+			message: '#^Call to an undefined method phpPgAdminGroupTest\:\:GroupTest\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: tests/simpletests/testcase/testphpPgAdminMain.php
+
+		-
+			message: '#^Call to an undefined method phpPgAdminGroupTest\:\:addTestClass\(\)\.$#'
+			identifier: method.notFound
+			count: 5
+			path: tests/simpletests/testcase/testphpPgAdminMain.php
+
+		-
+			message: '#^Inner named functions are not supported by PHPStan\. Consider refactoring to an anonymous function, class method, or a top\-level\-defined function\. See issue \#165 \(https\://github\.com/phpstan/phpstan/issues/165\) for more details\.$#'
+			identifier: function.inner
+			count: 1
+			path: triggers.php
+
+		-
+			message: '#^Cannot unset offset ''enum'' on array\{create\: array\{attr\: array\{href\: array\{url\: ''types\.php'', urlvars\: array\{action\: ''create'', server\: mixed, database\: mixed, schema\: mixed\}\}\}, content\: mixed\}, createcomp\: array\{attr\: array\{href\: array\{url\: ''types\.php'', urlvars\: array\{action\: ''create_comp'', server\: mixed, database\: mixed, schema\: mixed\}\}\}, content\: mixed\}, createenum\: array\{attr\: array\{href\: array\{url\: ''types\.php'', urlvars\: array\{action\: ''create_enum'', server\: mixed, database\: mixed, schema\: mixed\}\}\}, content\: mixed\}\}\.$#'
+			identifier: unset.offset
+			count: 1
+			path: types.php
+
+		-
+			message: '#^Inner named functions are not supported by PHPStan\. Consider refactoring to an anonymous function, class method, or a top\-level\-defined function\. See issue \#165 \(https\://github\.com/phpstan/phpstan/issues/165\) for more details\.$#'
+			identifier: function.inner
+			count: 1
+			path: types.php
+
+		-
+			message: '#^Inner named functions are not supported by PHPStan\. Consider refactoring to an anonymous function, class method, or a top\-level\-defined function\. See issue \#165 \(https\://github\.com/phpstan/phpstan/issues/165\) for more details\.$#'
+			identifier: function.inner
+			count: 1
+			path: users.php
+
+		-
+			message: '#^Inner named functions are not supported by PHPStan\. Consider refactoring to an anonymous function, class method, or a top\-level\-defined function\. See issue \#165 \(https\://github\.com/phpstan/phpstan/issues/165\) for more details\.$#'
+			identifier: function.inner
+			count: 1
+			path: viewproperties.php
+
+		-
+			message: '#^Function mktime invoked with 0 parameters, 1\-6 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: views.php

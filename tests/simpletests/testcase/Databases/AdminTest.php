@@ -64,7 +64,7 @@ class AdminTest extends PreconditionSet
         $this->assertTrue($this->setField('vacuum_analyze', TRUE));
         $this->assertTrue($this->setField('vacuum_full', TRUE));
         $this->assertTrue($this->clickSubmit($lang['strvacuum']));
-        $this->assertWantedText($lang['strvacuumgood']);
+        $this->assertText($lang['strvacuumgood']);
 
         return TRUE;
     }
@@ -87,7 +87,7 @@ class AdminTest extends PreconditionSet
 		);
         $this->assertTrue($this->setField('vacuum_freeze', TRUE));
         $this->assertTrue($this->clickSubmit($lang['strvacuum']));
-        $this->assertWantedText($lang['strvacuumgood']);
+        $this->assertText($lang['strvacuumgood']);
 
         return TRUE;
     }
@@ -109,7 +109,7 @@ class AdminTest extends PreconditionSet
 				'server' => $SERVER))
 		);
         $this->assertTrue($this->clickSubmit($lang['stranalyze']));
-        $this->assertWantedText($lang['stranalyzegood']);
+        $this->assertText($lang['stranalyzegood']);
 
         return TRUE;
     }
@@ -131,7 +131,7 @@ class AdminTest extends PreconditionSet
 				'action' => 'admin'))
 		);
         $this->assertTrue($this->clickSubmit($lang['strcluster']));
-        $this->assertWantedText($lang['strclusteredgood']);
+        $this->assertText($lang['strclusteredgood']);
 
         return TRUE;
     }
@@ -154,7 +154,7 @@ class AdminTest extends PreconditionSet
 		);
         $this->assertTrue($this->setField('reindex_force', TRUE));
         $this->assertTrue($this->clickSubmit($lang['strreindex']));
-        $this->assertWantedText($lang['strreindexgood']);
+        $this->assertText($lang['strreindexgood']);
 
         return TRUE;
     }

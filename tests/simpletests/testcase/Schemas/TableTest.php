@@ -87,7 +87,7 @@ class TableTest extends PreconditionSet
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
         
         // Verify whether the table is created correctly.
-        $this->assertTrue($this->assertWantedText($lang['strtablecreated']));
+        $this->assertTrue($this->assertText($lang['strtablecreated']));
         
         // Drop the table which is created in the testcase.
         $this->dropTable($DATABASE, 'newtable', 'public');
@@ -117,7 +117,7 @@ class TableTest extends PreconditionSet
         //$this->assertTrue($this->clickSubmit($lang['strnext']));
         // If we do not hardcoded it here, it will cause fail. Encoding issue.
         $this->assertTrue($this->clickSubmit('Next >'));
-        $this->assertTrue($this->assertWantedText($lang['strtableneedsname']));
+        $this->assertTrue($this->assertText($lang['strtableneedsname']));
                
         // Enter the table name and field number.        
         $this->assertTrue($this->setField('name', 'badtable'));    
@@ -126,7 +126,7 @@ class TableTest extends PreconditionSet
         //$this->assertTrue($this->clickSubmit($lang['strnext']));
         // If we do not hardcoded it here, it will cause fail. Encoding issue.
         $this->assertTrue($this->clickSubmit('Next >'));
-        $this->assertTrue($this->assertWantedText($lang['strtableneedscols']));
+        $this->assertTrue($this->assertText($lang['strtableneedscols']));
                 
         // Enter illegal field number.            
         $this->assertTrue($this->setField('fields', 'illegalnumber'));
@@ -138,7 +138,7 @@ class TableTest extends PreconditionSet
         $this->assertTrue($this->clickSubmit('Next >'));
         
         //Verify whether the table creation fialed.
-        $this->assertTrue($this->assertWantedText($lang['strtableneedscols']));
+        $this->assertTrue($this->assertText($lang['strtableneedscols']));
                
         return TRUE;          
     }
@@ -187,7 +187,7 @@ class TableTest extends PreconditionSet
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
           
         //Verify whether the table creation failed.
-        $this->assertTrue($this->assertWantedText($lang['strtableneedsfield']));
+        $this->assertTrue($this->assertText($lang['strtableneedsfield']));
                 
         return TRUE;           
     }
@@ -222,7 +222,7 @@ class TableTest extends PreconditionSet
         // Click the "Insert" button to insert a row.
         $this->assertTrue($this->clickSubmit($lang['strinsert']));
         // Verify whether the row is inserted successfully.
-        $this->assertTrue($this->assertWantedText($lang['strrowinserted']));    
+        $this->assertTrue($this->assertText($lang['strrowinserted']));    
 
         return TRUE;   
     }
@@ -256,7 +256,7 @@ class TableTest extends PreconditionSet
         // If we do not hardcoded it here, it will cause fail. Encoding issue.
         $this->assertTrue($this->clickSubmit('Insert & Repeat'));
         // Verify whether the row is inserted successfully.
-        $this->assertTrue($this->assertWantedText($lang['strrowinserted']));
+        $this->assertTrue($this->assertText($lang['strrowinserted']));
           
         // Set the value of the fields again.        
         $this->assertTrue($this->setField('values[field0]', 'row3column1'));
@@ -266,7 +266,7 @@ class TableTest extends PreconditionSet
         // Click the "Insert" button to insert a row.
         $this->assertTrue($this->clickSubmit($lang['strinsert']));
         // Verify whether the row is inserted successfully.
-        $this->assertTrue($this->assertWantedText($lang['strrowinserted']));
+        $this->assertTrue($this->assertText($lang['strrowinserted']));
         
         return TRUE;       
     }
@@ -302,7 +302,7 @@ class TableTest extends PreconditionSet
         // Click the "Insert" button to insert a row.
         $this->assertTrue($this->clickSubmit($lang['strinsert']));
         // Verify whether the row insertion failed.
-        $this->assertTrue($this->assertWantedText($lang['strrowinsertedbad']));
+        $this->assertTrue($this->assertText($lang['strrowinsertedbad']));
         
         return TRUE;   
     } 
@@ -340,7 +340,7 @@ class TableTest extends PreconditionSet
         // Click the "Save" button and save the edits.           
         $this->assertTrue($this->clickSubmit($lang['strsave']));
         // Verify whether the edit is done successfully.
-        $this->assertTrue($this->assertWantedText('updatecolumn0'));
+        $this->assertTrue($this->assertText('updatecolumn0'));
 
         return TRUE;
     } 
@@ -397,7 +397,7 @@ class TableTest extends PreconditionSet
 					);
                                      
         // Verify whether the rows are displayed.         
-        $this->assertTrue($this->assertWantedText($lang['strrows'])); 
+        $this->assertTrue($this->assertText($lang['strrows'])); 
         
         // Click the links in the display page.
         $this->assertTrue($this->clickLink('field0'));
@@ -438,7 +438,7 @@ class TableTest extends PreconditionSet
         // Display all the rows.        
         $this->assertTrue($this->clickSubmit($lang['strselect'])); 
         // Verify whether select successful.       
-        $this->assertTrue($this->assertWantedText('row'));
+        $this->assertTrue($this->assertText('row'));
 
         return TRUE;
     }
@@ -473,7 +473,7 @@ class TableTest extends PreconditionSet
         // Click the "Select" button.
         $this->assertTrue($this->clickSubmit($lang['strselect']));
         // Verify whether select successful.       
-        $this->assertTrue($this->assertWantedText('row'));
+        $this->assertTrue($this->assertText('row'));
         return TRUE;
     } 
      
@@ -503,7 +503,7 @@ class TableTest extends PreconditionSet
         // Click the "Select" button.
         $this->assertTrue($this->clickSubmit($lang['strselect']));
         // Verify whether select successful.       
-        $this->assertTrue($this->assertWantedText($lang['strselectneedscol']));
+        $this->assertTrue($this->assertText($lang['strselectneedscol']));
         
         return TRUE;
     }
@@ -530,7 +530,7 @@ class TableTest extends PreconditionSet
         // Click the "Vacuum" button.        
         $this->assertTrue($this->clickSubmit($lang['strvacuum'])); 
         // Verify whether vacuum successfully.       
-        $this->assertTrue($this->assertWantedText($lang['strvacuumgood'])); 
+        $this->assertTrue($this->assertText($lang['strvacuumgood'])); 
         
         return TRUE;   
     } 
@@ -561,7 +561,7 @@ class TableTest extends PreconditionSet
         // Click the "Vacuum" button.        
         $this->assertTrue($this->clickSubmit($lang['strvacuum']));
         // Verify whether vacuum successfully.       
-        $this->assertTrue($this->assertWantedText($lang['strvacuumgood']));
+        $this->assertTrue($this->assertText($lang['strvacuumgood']));
         
         return TRUE;   
     }  
@@ -596,7 +596,7 @@ class TableTest extends PreconditionSet
         $this->assertTrue($this->clickSubmit($lang['strempty']));
         
         // Verify whether the table is emptied successfully.
-        $this->assertTrue($this->assertWantedText($lang['strtableemptied']));
+        $this->assertTrue($this->assertText($lang['strtableemptied']));
         
         return TRUE;       
     }   
@@ -632,7 +632,7 @@ class TableTest extends PreconditionSet
         $this->assertTrue($this->setField('tablespace', 'pg_default'));
         
         $this->assertTrue($this->clickSubmit($lang['stralter']));
-        $this->assertTrue($this->assertWantedText($lang['strtablealtered']));
+        $this->assertTrue($this->assertText($lang['strtablealtered']));
     
         return TRUE;
     }
@@ -661,7 +661,7 @@ class TableTest extends PreconditionSet
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
         
         // Verify whether the table is dropped successfully.
-        $this->assertTrue($this->assertWantedText($lang['strtabledropped']));
+        $this->assertTrue($this->assertText($lang['strtabledropped']));
         
         return TRUE;   
     } 

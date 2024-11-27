@@ -69,7 +69,7 @@ class AggregateTest extends PreconditionSet
         // Click the button "Go" to create a new aggregate.
         $this->assertTrue($this->clickSubmit($lang['strgo']));        
         // Verify whether the aggregates is created correctly.
-        $this->assertTrue($this->assertWantedText($lang['strsqlexecuted'])); 
+        $this->assertTrue($this->assertText($lang['strsqlexecuted'])); 
 
        return TRUE;
     } 
@@ -93,7 +93,7 @@ class AggregateTest extends PreconditionSet
 					));
 
         // Verify whether the aggregates is displayed correctly.
-        $this->assertTrue($this->assertWantedText('complex_sum'));       
+        $this->assertTrue($this->assertText('complex_sum'));       
     }    
 
     /**
@@ -119,7 +119,7 @@ class AggregateTest extends PreconditionSet
         // Click the button "Go" to drop the aggregate.
         $this->assertTrue($this->clickSubmit($lang['strgo']));
         // Verify whether the aggregates is dropped correctly.
-        $this->assertTrue($this->assertWantedText($lang['strsqlexecuted']));
+        $this->assertTrue($this->assertText($lang['strsqlexecuted']));
         
         return TRUE;
     } 

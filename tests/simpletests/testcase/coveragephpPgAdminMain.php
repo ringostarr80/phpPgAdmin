@@ -23,11 +23,11 @@ require_once('Schemas/SchemasGroupTest.php');
 require_once('Tables/TableGroupTest.php');
 require_once('Common/CommonGroupTest.php');
 
-$testServer = &new ServerGroupTest();
-$testDatabase = &new DatabaseGroupTest();
-$testSchema = &new SchemasGroupTest();
-$testTable = &new TableGroupTest();
-$testCommon = &new CommonGroupTest();
+$testServer = new ServerGroupTest();
+$testDatabase = new DatabaseGroupTest();
+$testSchema = new SchemasGroupTest();
+$testTable = new TableGroupTest();
+$testCommon = new CommonGroupTest();
 
 require_once 'phpcoverage.inc.php';
 require_once 'remote/RemoteCoverageRecorder.php';

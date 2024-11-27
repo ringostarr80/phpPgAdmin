@@ -78,7 +78,7 @@ class SequenceTest extends PreconditionSet
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
         
         // Verify whether the sequence is created successfully.
-        $this->assertTrue($this->assertWantedText($lang['strsequencecreated']));
+        $this->assertTrue($this->assertText($lang['strsequencecreated']));
 
         return TRUE;           
     }
@@ -106,7 +106,7 @@ class SequenceTest extends PreconditionSet
         $this->assertTrue($this->clickLink($lang['strreset']));
                
         // Verify whether the sequence is reset successfully.
-        $this->assertTrue($this->assertWantedText($lang['strsequencereset']));
+        $this->assertTrue($this->assertText($lang['strsequencereset']));
         // Display all the sequence.
         $this->assertTrue($this->clickLink($lang['strshowallsequences']));
         
@@ -135,7 +135,7 @@ class SequenceTest extends PreconditionSet
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
 
         // Verify if the sequence dropped successful.
-        $this->assertTrue($this->assertWantedText($lang['strsequencedropped']));
+        $this->assertTrue($this->assertText($lang['strsequencedropped']));
         
         return TRUE;   
     }

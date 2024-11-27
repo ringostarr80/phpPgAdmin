@@ -100,7 +100,7 @@ class TypeTest extends PreconditionSet
         //$this->assertTrue($this->clickSubmit($lang['strnext']));
         // If we do not hardcoded it here, it will cause fail. Encoding issue.
         $this->assertTrue($this->clickSubmit('Next >'));
-        $this->assertTrue($this->assertWantedText($lang['strtypeneedsname'])); 
+        $this->assertTrue($this->assertText($lang['strtypeneedsname'])); 
         
         // Enter the name of the new composite type.
         $this->assertTrue($this->setField('name', 'compositetype')); 
@@ -109,7 +109,7 @@ class TypeTest extends PreconditionSet
         //$this->assertTrue($this->clickSubmit($lang['strnext']));
         // If we do not hardcoded it here, it will cause fail. Encoding issue.
         $this->assertTrue($this->clickSubmit('Next >'));
-        $this->assertTrue($this->assertWantedText($lang['strtypeneedscols']));
+        $this->assertTrue($this->assertText($lang['strtypeneedscols']));
                  
         $this->assertTrue($this->setField('fields', '2'));  
         $this->assertTrue($this->setField('typcomment', 'Create in testcase'));  
@@ -119,7 +119,7 @@ class TypeTest extends PreconditionSet
         
         // Create the composite type without the definition of fields.
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
-        $this->assertTrue($this->assertWantedText($lang['strtypeneedsfield']));
+        $this->assertTrue($this->assertText($lang['strtypeneedsfield']));
         
         // Enter the fields information.
         $this->assertTrue($this->setField('field[0]', 'firstfield'));  
@@ -130,7 +130,7 @@ class TypeTest extends PreconditionSet
         // Click the "Create" button to create the composite type.  
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
         // Verify if the type create correctly.
-        $this->assertTrue($this->assertWantedText($lang['strtypecreated']));   
+        $this->assertTrue($this->assertText($lang['strtypecreated']));   
     
         return TRUE;    
     } 
@@ -156,7 +156,7 @@ class TypeTest extends PreconditionSet
         // Show the properties of general type.
         $this->assertTrue($this->clickLink('integer'));
         // Verify whether the properties are displayed correctly.
-        $this->assertTrue($this->assertWantedText('int4'));  
+        $this->assertTrue($this->assertText('int4'));  
         
         
         // Turn to "Types" page.
@@ -170,7 +170,7 @@ class TypeTest extends PreconditionSet
         // Show the properties of a composite type "compositetype".
         $this->assertTrue($this->clickLink('compositetype'));
         // Verify whether the properties are displayed correctly.
-        $this->assertTrue($this->assertWantedText('firstfield'));     
+        $this->assertTrue($this->assertText('firstfield'));     
         
         return TRUE;
     }
@@ -199,7 +199,7 @@ class TypeTest extends PreconditionSet
         // Click the "Drop" button to drop the type.  
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
         // Verify whether the type is dropped correctly.
-        $this->assertTrue($this->assertWantedText($lang['strtypedropped']));
+        $this->assertTrue($this->assertText($lang['strtypedropped']));
         
         return TRUE;
     } 

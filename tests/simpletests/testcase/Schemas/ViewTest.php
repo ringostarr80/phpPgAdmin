@@ -77,7 +77,7 @@ class ViewTest extends PreconditionSet
         $this->assertTrue($this->clickSubmit($lang['strcreate']));    
          
         // Verify whether the view is created correctly.
-        $this->assertTrue($this->assertWantedText($lang['strviewcreated']));
+        $this->assertTrue($this->assertText($lang['strviewcreated']));
         
         return TRUE;   
     }
@@ -147,7 +147,7 @@ class ViewTest extends PreconditionSet
         $this->assertTrue($this->clickSubmit($lang['strcreate']));    
          
         // Verify whether the view is created correctly.
-        $this->assertTrue($this->assertWantedText($lang['strviewcreatedbad']));
+        $this->assertTrue($this->assertText($lang['strviewcreatedbad']));
         
         return TRUE;   
     } 
@@ -183,7 +183,7 @@ class ViewTest extends PreconditionSet
 
         // Click "Create" button for creating the view.
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
-        $this->assertTrue($this->assertWantedText($lang['strviewneedsfields']));
+        $this->assertTrue($this->assertText($lang['strviewneedsfields']));
                 
         return TRUE;   
     }
@@ -243,7 +243,7 @@ class ViewTest extends PreconditionSet
         $this->assertTrue($this->setField('values[field1]', 'no'));
                     
         $this->assertTrue($this->clickSubmit($lang['strselect']));
-        $this->assertTrue($this->assertWantedText($lang['strnodata']));
+        $this->assertTrue($this->assertText($lang['strnodata']));
         
         return TRUE;   
     } 
@@ -276,7 +276,7 @@ class ViewTest extends PreconditionSet
          // Click the "Alter" button to alter the properties.  
          $this->assertTrue($this->clickSubmit($lang['stralter']));         
          // Verify whether the properties are altered.  
-         $this->assertTrue($this->assertWantedText($lang['strcolumnaltered'])); 
+         $this->assertTrue($this->assertText($lang['strcolumnaltered'])); 
         
          return TRUE;
      }
@@ -313,7 +313,7 @@ class ViewTest extends PreconditionSet
         // Click the "Alter" button.
         $this->assertTrue($this->clickSubmit($lang['stralter']));
         //Verify whether the definition is altered.
-        $this->assertTrue($this->assertWantedText($lang['strviewupdated'])); 
+        $this->assertTrue($this->assertText($lang['strviewupdated'])); 
 
         return TRUE;
     }
@@ -341,7 +341,7 @@ class ViewTest extends PreconditionSet
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
          
         // Verify whether the view is dropped successfully.
-        $this->assertTrue($this->assertWantedText($lang['strviewdropped']));
+        $this->assertTrue($this->assertText($lang['strviewdropped']));
         
         // Drop the table which is created in setUp().
         $this->dropTable($DATABASE, 'viewtest', 'public');

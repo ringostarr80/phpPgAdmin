@@ -20,7 +20,7 @@ if (is_dir('../Public')) {
 class GroupsTest extends PreconditionSet
 {
     // Declare the member variable for group name.
-    private $_groupName = "testgroup";
+    private $groupName = "testgroup";
 
     public function setUp(): bool
     {
@@ -52,18 +52,17 @@ class GroupsTest extends PreconditionSet
         global $lang, $SERVER;
 
         // Turn to create group page.
-        print "$webUrl/groups.php";
         $this->assertTrue($this->get("$webUrl/groups.php", array('server' => $SERVER)));
         $this->assertTrue($this->clickLink($lang['strcreategroup']));
 
         // Enter the information for creating group.
-        $this->assertTrue($this->setField('name', $this->_groupName));
+        $this->assertTrue($this->setField('name', $this->groupName));
         $this->assertTrue($this->setField('members[]', array($POWER_USER_NAME, $NORMAL_USER_NAME)));
 
         // Then submit and verify it.
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
         $this->assertText($lang['strgroupcreated']);
-        $this->assertText($this->_groupName);
+        $this->assertText($this->groupName);
 
         return true;
     }
@@ -86,7 +85,7 @@ class GroupsTest extends PreconditionSet
         $this->assertTrue($this->get(
             "$webUrl/groups.php",
             array('action' => 'properties',
-                'group' => $this->_groupName,
+                'group' => $this->groupName,
                 'server' => $SERVER)
         ));
 
@@ -122,7 +121,7 @@ class GroupsTest extends PreconditionSet
         $this->assertTrue($this->get(
             "$webUrl/groups.php",
             array('action' => 'properties',
-                'group' => $this->_groupName,
+                'group' => $this->groupName,
                 'server' => $SERVER)
         ));
 
@@ -150,13 +149,13 @@ class GroupsTest extends PreconditionSet
             "$webUrl/groups.php",
             array('server' => $SERVER,
                 'action' => 'confirm_drop',
-                'group' => $this->_groupName)
+                'group' => $this->groupName)
         ));
 
         // Confirm to drop the group and verify it.
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
         $this->assertText($lang['strgroupdropped']);
-        $this->assertNoText($this->_groupName);
+        $this->assertNoText($this->groupName);
 
         return true;
     }

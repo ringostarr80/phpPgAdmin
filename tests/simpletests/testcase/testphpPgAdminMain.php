@@ -10,8 +10,8 @@
 // Import necessary library files to setup the testcase.
 // And for web testcase, the library web_tester.php should be included.
 
-require_once "$PHP_SIMPLETEST_HOME/web_tester.php";
-require_once "$PHP_SIMPLETEST_HOME/reporter.php";
+require_once "$PHP_SIMPLETEST_HOME/src/web_tester.php";
+require_once "$PHP_SIMPLETEST_HOME/src/reporter.php";
 require_once 'Public/SetPrecondition.php';
 require_once 'Server/ServerGroupTest.php';
 require_once 'Databases/DatabaseGroupTest.php';

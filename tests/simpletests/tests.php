@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 
 require_once '../../conf/config.inc.php';

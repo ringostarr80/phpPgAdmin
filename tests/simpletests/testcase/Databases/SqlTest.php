@@ -1,8 +1,9 @@
 <?php
+
 /**
  * Function area     : Database.
  * Sub Function area : Sql.
- * 
+ *
  * @author     Augmentum SpikeSource Team
  * @copyright  Copyright (c) 2005 by Augmentum, Inc.
  */
@@ -26,10 +27,12 @@ class SqlTest extends PreconditionSet
         global $SUPER_USER_NAME;
         global $SUPER_USER_PASSWORD;
 
-        $this->login($SUPER_USER_NAME, $SUPER_USER_PASSWORD,
-            "$webUrl/login.php");
-
-        return TRUE;
+        $this->login(
+            $SUPER_USER_NAME,
+            $SUPER_USER_PASSWORD,
+            "$webUrl/login.php"
+        );
+        return true;
     }
 
 
@@ -40,8 +43,7 @@ class SqlTest extends PreconditionSet
     {
         // Logout this system.
         $this->logout();
-
-        return TRUE;
+        return true;
     }
 
 
@@ -55,17 +57,16 @@ class SqlTest extends PreconditionSet
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
 
-		$this->assertTrue($this->get("$webUrl/database.php", 
-			array('database' => $DATABASE,
-				'subject' => 'database',
-				'action' => 'sql',
-				'server' => $SERVER))
-		);
+        $this->assertTrue($this->get(
+            "$webUrl/database.php",
+            array('database' => $DATABASE,
+                'subject' => 'database',
+                'action' => 'sql',
+                'server' => $SERVER)
+        ));
         $this->assertTrue($this->setFieldById(0, "select id from student;"));
-        
         $this->assertTrue($this->clickSubmit($lang['strexecute']));
-
-        return TRUE;
+        return true;
     }
 
 
@@ -78,18 +79,14 @@ class SqlTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-
-		$this->assertTrue($this->get("$webUrl/database.php", array(
-			'server' => $SERVER,
-			'database' => $DATABASE,
-			'subject' => 'database',
-			'action' => 'sql'))
-		);
+        $this->assertTrue($this->get("$webUrl/database.php", array(
+            'server' => $SERVER,
+            'database' => $DATABASE,
+            'subject' => 'database',
+            'action' => 'sql')));
         $this->assertTrue($this->setField('query', 'delete from "student";'));
-        
         $this->assertTrue($this->clickSubmit($lang['strexecute']));
-
-        return TRUE;
+        return true;
     }
 
 
@@ -101,20 +98,18 @@ class SqlTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-
-		$this->assertTrue($this->get("$webUrl/database.php", array(
-			'server' => $SERVER,
-			'database' => $DATABASE,
-			'subject' => 'database',
-			'action' => 'sql'))
-		);
-        $this->assertTrue($this->setField('query',
-                                          "insert into studen t values " .
+        $this->assertTrue($this->get("$webUrl/database.php", array(
+            'server' => $SERVER,
+            'database' => $DATABASE,
+            'subject' => 'database',
+            'action' => 'sql')));
+        $this->assertTrue($this->setField(
+            'query',
+            "insert into studen t values " .
                                           "(nextval('public.student_id_seq'::text)" .
-                                          ", 'test2', now(), 'test2 is a student.');"));
-        
+            ", 'test2', now(), 'test2 is a student.');"
+        ));
         $this->assertTrue($this->clickSubmit($lang['strexecute']));
-
         return true;
     }
 
@@ -128,20 +123,18 @@ class SqlTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-
-		$this->assertTrue($this->get("$webUrl/database.php", array(
-			'database' => $DATABASE,
-			'server' => $SERVER,
-			'subject' => 'database',
-			'action' => 'sql'))
-		);
-        $this->assertTrue($this->setField('query',
-                                          'update public."student" ' .
-                                          'set "birthday" = now();'));
-        
+        $this->assertTrue($this->get("$webUrl/database.php", array(
+            'database' => $DATABASE,
+            'server' => $SERVER,
+            'subject' => 'database',
+            'action' => 'sql')));
+        $this->assertTrue($this->setField(
+            'query',
+            'update public."student" ' .
+            'set "birthday" = now();'
+        ));
         $this->assertTrue($this->clickSubmit($lang['strexecute']));
-
-        return TRUE;
+        return true;
     }
 
 
@@ -154,26 +147,22 @@ class SqlTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
+        $this->assertTrue($this->get("$webUrl/database.php", array(
+            'server' => $SERVER,
+            'database' => $DATABASE,
+            'subject' => 'database',
+            'action' => 'sql')));
 
-		$this->assertTrue($this->get("$webUrl/database.php", array(
-			'server' => $SERVER,
-			'database' => $DATABASE,
-			'subject' => 'database',
-			'action' => 'sql'))
-		);
-
-        $this->assertTrue($this->setField('query',
-                                          'select "id" from "student";'));
-
-        $this->assertTrue($this->setField('paginate', TRUE));
-
+        $this->assertTrue($this->setField(
+            'query',
+            'select "id" from "student";'
+        ));
+        $this->assertTrue($this->setField('paginate', true));
         $this->assertTrue($this->clickSubmit($lang['strexplain']));
-
-        // Here $lang['strsqlexecuted'] is not fit for this situation. Because the "%s"
+// Here $lang['strsqlexecuted'] is not fit for this situation. Because the "%s"
         // make the assertion failed.
         $this->assertText('Total runtime');
-
-        return TRUE;
+        return true;
     }
 
 
@@ -186,25 +175,21 @@ class SqlTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-
-		$this->assertTrue($this->get("$webUrl/database.php", array(
-			'database' => $DATABASE,
-			'server' => $SERVER,
-			'subject' => 'database',
-			'action' => 'sql'))
-		);
-        $this->assertTrue($this->setField('query',
-                                          'select "id" from "student";'));
-
-        $this->assertTrue($this->setField('paginate', TRUE));
-
+        $this->assertTrue($this->get("$webUrl/database.php", array(
+            'database' => $DATABASE,
+            'server' => $SERVER,
+            'subject' => 'database',
+            'action' => 'sql')));
+        $this->assertTrue($this->setField(
+            'query',
+            'select "id" from "student";'
+        ));
+        $this->assertTrue($this->setField('paginate', true));
         $this->assertTrue($this->clickSubmit($lang['strexplainanalyze']));
-
-        // Here $lang['strsqlexecuted'] is not fit for this situation. Because the "%s"
+// Here $lang['strsqlexecuted'] is not fit for this situation. Because the "%s"
         // make the assertion failed.
         $this->assertText('Total runtime');
-
-        return TRUE;
+        return true;
     }
 
 
@@ -221,24 +206,17 @@ class SqlTest extends PreconditionSet
 
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-
-		$this->assertTrue($this->get("$webUrl/database.php", array(
-			'server' => $SERVER,
-			'database' => $DATABASE,
-			'subject' => 'database',
-			'action' => 'sql'))
-		);
-
+        $this->assertTrue($this->get("$webUrl/database.php", array(
+            'server' => $SERVER,
+            'database' => $DATABASE,
+            'subject' => 'database',
+            'action' => 'sql')));
         $webServerUrl = getcwd();
         $sqlScriptUrl = getcwd() . "/data/select.sql";
-
-        $this->assertTrue ($this->setField('script', $sqlScriptUrl));
-
-		$this->assertTrue($this->clickSubmit($lang['strexecute']));
-
+        $this->assertTrue($this->setField('script', $sqlScriptUrl));
+        $this->assertTrue($this->clickSubmit($lang['strexecute']));
         $this->assertText($lang['strsqlexecuted']);
-
-        return TRUE;
+        return true;
     }
 
 
@@ -251,16 +229,11 @@ class SqlTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-
         $this->get("$webUrl/sqledit.php", array('action' => 'sql', 'server' => $SERVER));
-
         $this->assertTrue($this->setField('database', $DATABASE));
         $this->assertTrue($this->setField('query', 'select * from student;'));
-
         $this->assertTrue($this->clickSubmit($lang['strexecute']));
-
         $this->assertText($lang['strsqlexecuted']);
-
         return true;
     }
 
@@ -274,23 +247,17 @@ class SqlTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-
         $this->get("$webUrl/sqledit.php", array('action' => 'sql', 'server' => $SERVER));
-
         $this->assertTrue($this->setField('database', $DATABASE));
         $this->assertTrue($this->setField('query', 'select * from student;'));
-        $this->assertTrue($this->setField('paginate', TRUE));
+        $this->assertTrue($this->setField('paginate', true));
         $this->assertTrue($this->clickSubmit($lang['strexecute']));
-
         $this->assertTrue($this->clickLink($lang['strexpand']));
         $this->assertText($lang['strnodata']);
-
         $this->assertTrue($this->clickLink($lang['strcollapse']));
         $this->assertText($lang['strnodata']);
-
         $this->assertTrue($this->clickLink($lang['strrefresh']));
-
-        return TRUE;
+        return true;
     }
 
 
@@ -303,19 +270,14 @@ class SqlTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-
-		$this->assertTrue($this->get("$webUrl/reports.php", array(
-			'action' => 'create',
-			'server' => $SERVER,
-			'db_name' => $DATABASE,
-			'report_sql' => 'select id from student;')
-		));
-
+        $this->assertTrue($this->get("$webUrl/reports.php", array(
+            'action' => 'create',
+            'server' => $SERVER,
+            'db_name' => $DATABASE,
+            'report_sql' => 'select id from student;')));
         $this->assertTrue($this->setField('report_name', 'ppasimpletestreport'));
         $this->assertTrue($this->setField('descr', 'ppasimpletest tests'));
-
         $this->assertTrue($this->clickSubmit($lang['strsave']));
-
         $this->assertText($lang['strreportcreated']);
     }
 
@@ -329,21 +291,14 @@ class SqlTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-
-		$this->assertTrue($this->get("$webUrl/dataexport.php", array(
-			'server' => $SERVER,
-			'query' => 'select+id+from+student%3B',
-			'database' => $DATABASE))
-		);
-
+        $this->assertTrue($this->get("$webUrl/dataexport.php", array(
+            'server' => $SERVER,
+            'query' => 'select+id+from+student%3B',
+            'database' => $DATABASE)));
         $this->assertTrue($this->setField('d_format', 'XML'));
         $this->assertTrue($this->setField('output', 'show'));
-
         $this->assertTrue($this->clickSubmit($lang['strexport']));
-
-        // Here anything about xml cannot be found in English.php so hard code.
+// Here anything about xml cannot be found in English.php so hard code.
         $this->assertWantedPattern('/<?xml/');
     }
 }
-
-?>

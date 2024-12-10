@@ -1,13 +1,14 @@
 <?php
+
  /**
   * Function area:       Schemas
   * Subfunction area:    Type
-  * @author     Augmentum SpikeSource Team 
+  * @author     Augmentum SpikeSource Team
   * @copyright  2005 by Augmentum, Inc.
   */
- 
+
 // Import the precondition class.
-if(is_dir('../Public')) {
+if (is_dir('../Public')) {
     require_once('../Public/SetPrecondition.php');
 }
 
@@ -26,27 +27,28 @@ class TypeTest extends PreconditionSet
         global $webUrl;
         global $SUPER_USER_NAME;
         global $SUPER_USER_PASSWORD;
-        
+
         // Login the system.
-        $this->login($SUPER_USER_NAME, $SUPER_USER_PASSWORD, 
-                     "$webUrl/login.php"); 
-        
-        return TRUE;           
+        $this->login(
+            $SUPER_USER_NAME,
+            $SUPER_USER_PASSWORD,
+            "$webUrl/login.php"
+        );
+        return true;
     }
-    
-    
+
+
     /**
-     * Clean up all the result. 
+     * Clean up all the result.
      */
     function tearDown()
     {
         // Logout from the system.
-        $this->logout(); 
-        
-        return TRUE;
+        $this->logout();
+        return true;
     }
-    
-    
+
+
     /**
      * TestCaseID: HCT01
      * Create a type.
@@ -55,87 +57,73 @@ class TypeTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Turn to "Types" page.
-		$this->assertTrue($this->get("$webUrl/types.php", array(
-			'server' => $SERVER,
-			'database' => $DATABASE,
-			'schema' => 'public',
-			'subject' => 'schema'))
-		);
+// Turn to "Types" page.
+        $this->assertTrue($this->get("$webUrl/types.php", array(
+            'server' => $SERVER,
+            'database' => $DATABASE,
+            'schema' => 'public',
+            'subject' => 'schema')));
         $this->assertTrue($this->clickLink($lang['strcreatetype']));
-        
-        // Enter the definition of the type.
-        $this->assertTrue($this->setField('typname', 'complex')); 
-        $this->assertTrue($this->setField('typin', 'abs')); 
-        $this->assertTrue($this->setField('typout', 'abs')); 
-        $this->assertTrue($this->setField('typlen', '2')); 
-        
-        // Click the "Create" button to create a type.  
+// Enter the definition of the type.
+        $this->assertTrue($this->setField('typname', 'complex'));
+        $this->assertTrue($this->setField('typin', 'abs'));
+        $this->assertTrue($this->setField('typout', 'abs'));
+        $this->assertTrue($this->setField('typlen', '2'));
+// Click the "Create" button to create a type.
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
-        
-        return TRUE;
-    } 
-    
-    
+        return true;
+    }
+
+
     /**
      * TestCaseID: HCT02
-     * Create a composite type. 
+     * Create a composite type.
      */
     function testCreateCompositeType()
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Turn to "Types" page.
-		$this->assertTrue($this->get("$webUrl/types.php", array(
-			            'server' => $SERVER,
-						'database' => $DATABASE,
-						'schema' => 'public',
-						'subject' => 'schema'))
-					);
+// Turn to "Types" page.
+        $this->assertTrue($this->get("$webUrl/types.php", array(
+                        'server' => $SERVER,
+                        'database' => $DATABASE,
+                        'schema' => 'public',
+                        'subject' => 'schema')));
         $this->assertTrue($this->clickLink($lang['strcreatecomptype']));
-
-        // Create without composite type name.
+// Create without composite type name.
         //$this->assertTrue($this->clickSubmit($lang['strnext']));
         // If we do not hardcoded it here, it will cause fail. Encoding issue.
         $this->assertTrue($this->clickSubmit('Next >'));
-        $this->assertTrue($this->assertText($lang['strtypeneedsname'])); 
-        
-        // Enter the name of the new composite type.
-        $this->assertTrue($this->setField('name', 'compositetype')); 
-        
-        // Create without composite type field.
+        $this->assertTrue($this->assertText($lang['strtypeneedsname']));
+// Enter the name of the new composite type.
+        $this->assertTrue($this->setField('name', 'compositetype'));
+// Create without composite type field.
         //$this->assertTrue($this->clickSubmit($lang['strnext']));
         // If we do not hardcoded it here, it will cause fail. Encoding issue.
         $this->assertTrue($this->clickSubmit('Next >'));
         $this->assertTrue($this->assertText($lang['strtypeneedscols']));
-                 
-        $this->assertTrue($this->setField('fields', '2'));  
-        $this->assertTrue($this->setField('typcomment', 'Create in testcase'));  
+        $this->assertTrue($this->setField('fields', '2'));
+        $this->assertTrue($this->setField('typcomment', 'Create in testcase'));
         $this->assertTrue($this->clickSubmit('Next >'));
-        // If we do not hardcoded it here, it will cause fail. Encoding issue.
+// If we do not hardcoded it here, it will cause fail. Encoding issue.
         //$this->assertTrue($this->clickSubmit('Next >'));
-        
+
         // Create the composite type without the definition of fields.
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
         $this->assertTrue($this->assertText($lang['strtypeneedsfield']));
-        
-        // Enter the fields information.
-        $this->assertTrue($this->setField('field[0]', 'firstfield'));  
-        $this->assertTrue($this->setField('type[0]', 'bigint'));  
-        $this->assertTrue($this->setField('field[1]', 'secondfield'));  
+// Enter the fields information.
+        $this->assertTrue($this->setField('field[0]', 'firstfield'));
+        $this->assertTrue($this->setField('type[0]', 'bigint'));
+        $this->assertTrue($this->setField('field[1]', 'secondfield'));
         $this->assertTrue($this->setField('type[1]', 'bigint'));
-        
-        // Click the "Create" button to create the composite type.  
+// Click the "Create" button to create the composite type.
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
-        // Verify if the type create correctly.
-        $this->assertTrue($this->assertText($lang['strtypecreated']));   
-    
-        return TRUE;    
-    } 
-    
-    
+// Verify if the type create correctly.
+        $this->assertTrue($this->assertText($lang['strtypecreated']));
+        return true;
+    }
+
+
     /**
      * TestCaseID: HTP01
      * Show the properties of the specified type.
@@ -144,38 +132,30 @@ class TypeTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Turn to "Types" page.
-		$this->assertTrue($this->get("$webUrl/types.php", array(
-			            'server' => $SERVER,
-						'database' => $DATABASE,
-						'schema' => 'pg_catalog',
-						'subject' => 'schema'))
-					);
-                
-        // Show the properties of general type.
+// Turn to "Types" page.
+        $this->assertTrue($this->get("$webUrl/types.php", array(
+                        'server' => $SERVER,
+                        'database' => $DATABASE,
+                        'schema' => 'pg_catalog',
+                        'subject' => 'schema')));
+// Show the properties of general type.
         $this->assertTrue($this->clickLink('integer'));
-        // Verify whether the properties are displayed correctly.
-        $this->assertTrue($this->assertText('int4'));  
-        
-        
-        // Turn to "Types" page.
-		$this->assertTrue($this->get("$webUrl/types.php", array(
-			            'server' => $SERVER,
-						'database' => $DATABASE,
-						'schema' => 'public',
-						'subject' => 'schema'))
-					);
-                
-        // Show the properties of a composite type "compositetype".
+// Verify whether the properties are displayed correctly.
+        $this->assertTrue($this->assertText('int4'));
+// Turn to "Types" page.
+        $this->assertTrue($this->get("$webUrl/types.php", array(
+                        'server' => $SERVER,
+                        'database' => $DATABASE,
+                        'schema' => 'public',
+                        'subject' => 'schema')));
+// Show the properties of a composite type "compositetype".
         $this->assertTrue($this->clickLink('compositetype'));
-        // Verify whether the properties are displayed correctly.
-        $this->assertTrue($this->assertText('firstfield'));     
-        
-        return TRUE;
+// Verify whether the properties are displayed correctly.
+        $this->assertTrue($this->assertText('firstfield'));
+        return true;
     }
-    
-    
+
+
     /**
      * TestCaseID: HDT01
      * Drop the type.
@@ -184,24 +164,18 @@ class TypeTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Turn to type-dropped confirm page.
-		$this->assertTrue($this->get("$webUrl/types.php", array(
-			            'server' => $SERVER,
-						'action' => 'confirm_drop',
-						'database' => $DATABASE,
-						'schema' => 'public',
-						'type' => 'compositetype'))
-					);
-                
-        $this->assertTrue($this->setField('cascade', TRUE));        
-                
-        // Click the "Drop" button to drop the type.  
+// Turn to type-dropped confirm page.
+        $this->assertTrue($this->get("$webUrl/types.php", array(
+                        'server' => $SERVER,
+                        'action' => 'confirm_drop',
+                        'database' => $DATABASE,
+                        'schema' => 'public',
+                        'type' => 'compositetype')));
+        $this->assertTrue($this->setField('cascade', true));
+// Click the "Drop" button to drop the type.
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
-        // Verify whether the type is dropped correctly.
+// Verify whether the type is dropped correctly.
         $this->assertTrue($this->assertText($lang['strtypedropped']));
-        
-        return TRUE;
-    } 
-}    
-?>
+        return true;
+    }
+}

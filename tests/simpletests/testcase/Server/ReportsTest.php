@@ -1,15 +1,15 @@
 <?php
+
 /**
  * Function area: Server
  * Sub function area: Reports
  *
- * @author     Augmentum SpikeSource Team 
+ * @author     Augmentum SpikeSource Team
  * @copyright  2005 by Augmentum, Inc.
  */
 
 // Import the precondition class.
-if(is_dir('../Public')) 
-{
+if (is_dir('../Public')) {
     require_once('../Public/SetPrecondition.php');
 }
 
@@ -17,42 +17,42 @@ if(is_dir('../Public'))
  * This class is to test the report management.
  * It includes create/drop/edit/list/run reports.
  */
-class ReportsTest extends PreconditionSet 
+class ReportsTest extends PreconditionSet
 {
     // Declare the member variable for report name.
     private $_reportName = "testReport";
-    
+
     function setUp()
     {
         global $webUrl;
         global $SUPER_USER_NAME;
         global $SUPER_USER_PASSWORD;
-        
+
         $this->login($SUPER_USER_NAME, $SUPER_USER_PASSWORD, "$webUrl/login.php");
-        
-        return TRUE;
+
+        return true;
     }
-    
-    
+
+
     function tearDown()
     {
         $this->logout();
-        
-        return TRUE;
+
+        return true;
     }
-   
-   
+
+
     /*
      * TestCaseID: SCR01
      * Test to create report.
      */
-    function testCreate() 
+    function testCreate()
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
 
         // Turn to the create report page.
-		$this->assertTrue($this->get("$webUrl/reports.php", array('server' => $SERVER)));
+        $this->assertTrue($this->get("$webUrl/reports.php", array('server' => $SERVER)));
         $this->assertTrue($this->clickLink($lang['strcreatereport']));
 
         // Enter information for creating a report.
@@ -66,7 +66,7 @@ class ReportsTest extends PreconditionSet
         $this->assertText($lang['strreportcreated']);
         $this->assertText($this->_reportName);
 
-        return TRUE;
+        return true;
     }
 
 
@@ -74,18 +74,18 @@ class ReportsTest extends PreconditionSet
      * TestCaseID: SRR01
      * Test to run existing report.
      */
-    function testRun() 
+    function testRun()
     {
         global $webUrl;
         global $lang, $SERVER;
 
         // Run the existing report and verify it.
-		$this->assertTrue($this->get("$webUrl/reports.php", array('server' => $SERVER)));
-		$this->assertTrue($this->clickLink($lang['strexecute']));
+        $this->assertTrue($this->get("$webUrl/reports.php", array('server' => $SERVER)));
+        $this->assertTrue($this->clickLink($lang['strexecute']));
         $this->assertText($lang['strnodata']);
 
 /* XXX there's no refresh link on report results page. see sql.php
-		$this->assertTrue($this->clickLink($lang['strrefresh']));
+        $this->assertTrue($this->clickLink($lang['strrefresh']));
         $this->assertText($lang['strnodata']);
  */
 /* XXX there's no expand-collapse link on report results page. see sql.php
@@ -95,20 +95,20 @@ class ReportsTest extends PreconditionSet
 
         $this->assertTrue($this->clickLink($lang['strcollapse']));
         $this->assertText($lang['strnodata']);
-		$this->assertText($lang['strexpand']);
+        $this->assertText($lang['strexpand']);
 */
 
 /* XXX btw, there's a "create report" link in the report results page o_O */
 
-        return TRUE;
+        return true;
     }
 
 
     /*
      * TestCaseID: SER01
-     * Test to edit existing report. 
+     * Test to edit existing report.
      */
-    function testEdit() 
+    function testEdit()
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
@@ -128,16 +128,16 @@ class ReportsTest extends PreconditionSet
         $this->assertTrue($this->clickSubmit($lang['strsave']));
         $this->assertText($lang['strreportcreated']);
         $this->assertText($this->_reportName);
-        
-        return TRUE;
+
+        return true;
     }
-    
-    
+
+
     /*
      * TestCaseID: SDR01
      * Test to drop existing report.
      */
-    function testDrop() 
+    function testDrop()
     {
         global $webUrl;
         global $lang, $SERVER;
@@ -145,12 +145,11 @@ class ReportsTest extends PreconditionSet
         // Turn to the drop report page.
         $this->assertTrue($this->get("$webUrl/reports.php", array('server' => $SERVER)));
         $this->assertTrue($this->clickLink($lang['strdrop']));
-       
-        // Confirm to drop the report and verify it.        
+
+        // Confirm to drop the report and verify it.
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
         $this->assertText($lang['strreportdropped']);
-        
-        return TRUE;
+
+        return true;
     }
 }
-?>

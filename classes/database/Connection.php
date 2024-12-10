@@ -24,7 +24,7 @@ class Connection
         $this->conn = ADONewConnection('postgres');
         $this->conn->setFetchMode($fetchMode);
 
-		// Ignore host if null
+        // Ignore host if null
         if ($host === null || $host == '') {
             if ($port !== null && $port != '') {
                 $pghost = ':' . $port;

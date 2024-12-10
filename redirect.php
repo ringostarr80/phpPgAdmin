@@ -1,23 +1,25 @@
 <?php
-	$subject = isset($_REQUEST['subject']) ? $_REQUEST['subject'] : 'root';
 
-	if ($subject == 'root')
-		$_no_db_connection = true;
+    $subject = isset($_REQUEST['subject']) ? $_REQUEST['subject'] : 'root';
 
-	include_once('./libraries/lib.inc.php');
+if ($subject == 'root') {
+    $_no_db_connection = true;
+}
 
-	$url = $misc->getLastTabURL($subject);
+    include_once('./libraries/lib.inc.php');
 
-	// Load query vars into superglobal arrays
-	if (isset($url['urlvars'])) {
-		$urlvars = array();
+    $url = $misc->getLastTabURL($subject);
 
-		foreach($url['urlvars'] as $k => $urlvar) {
-			$urlvars[$k] = value($urlvar, $_REQUEST);
-		}
+    // Load query vars into superglobal arrays
+if (isset($url['urlvars'])) {
+    $urlvars = array();
 
-		$_REQUEST = array_merge($_REQUEST, $urlvars);
-		$_GET = array_merge($_GET, $urlvars);
-	}
+    foreach ($url['urlvars'] as $k => $urlvar) {
+        $urlvars[$k] = value($urlvar, $_REQUEST);
+    }
 
-	require $url['url'];
+    $_REQUEST = array_merge($_REQUEST, $urlvars);
+    $_GET = array_merge($_GET, $urlvars);
+}
+
+    require $url['url'];

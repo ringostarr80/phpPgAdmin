@@ -1,17 +1,17 @@
 <?php
+
 /**
  * Function area     : Database.
  * Sub Function area : Admin.
- * 
+ *
  * @author     Augmentum SpikeSource Team
  * @copyright  Copyright (c) 2005 by Augmentum, Inc.
  */
 
 // Import the precondition class.
-if (is_dir('../Public'))
-{
+if (is_dir('../Public')) {
     require_once('../Public/SetPrecondition.php');
-} 
+}
 
 /**
  * This class is to test the Admin about PostgreSql implementation.
@@ -27,10 +27,13 @@ class AdminTest extends PreconditionSet
         global $webUrl;
         global $SUPER_USER_NAME;
         global $SUPER_USER_PASSWORD;
-        $this->login($SUPER_USER_NAME, $SUPER_USER_PASSWORD,
-                     "$webUrl/login.php");
+        $this->login(
+            $SUPER_USER_NAME,
+            $SUPER_USER_PASSWORD,
+            "$webUrl/login.php"
+        );
 
-        return TRUE;
+        return true;
     }
 
 
@@ -42,7 +45,7 @@ class AdminTest extends PreconditionSet
         // Logout this system.
         $this->logout();
 
-        return TRUE;
+        return true;
     }
 
 
@@ -53,20 +56,21 @@ class AdminTest extends PreconditionSet
     function testAdminVacuumAna()
     {
         global $webUrl, $lang, $SERVER, $DATABASE;
-        
+
         // Locate the list page of admin.
-		$this->assertTrue($this->get("$webUrl/database.php",
-			array('database' => $DATABASE,
-				'subject' => 'database',
-				'action' => 'admin',
-				'server' => $SERVER))
-		);
-        $this->assertTrue($this->setField('vacuum_analyze', TRUE));
-        $this->assertTrue($this->setField('vacuum_full', TRUE));
+        $this->assertTrue($this->get(
+            "$webUrl/database.php",
+            array('database' => $DATABASE,
+                'subject' => 'database',
+                'action' => 'admin',
+                'server' => $SERVER)
+        ));
+        $this->assertTrue($this->setField('vacuum_analyze', true));
+        $this->assertTrue($this->setField('vacuum_full', true));
         $this->assertTrue($this->clickSubmit($lang['strvacuum']));
         $this->assertText($lang['strvacuumgood']);
 
-        return TRUE;
+        return true;
     }
 
 
@@ -77,19 +81,20 @@ class AdminTest extends PreconditionSet
     function testAdminFreeze()
     {
         global $webUrl, $lang, $SERVER, $DATABASE;
-        
+
         // Locate the list page of admin.
-		$this->assertTrue($this->get("$webUrl/database.php",
-			array('database' => $DATABASE,
-				'subject' => 'database',
-				'action' => 'admin',
-				'server' => $SERVER))
-		);
-        $this->assertTrue($this->setField('vacuum_freeze', TRUE));
+        $this->assertTrue($this->get(
+            "$webUrl/database.php",
+            array('database' => $DATABASE,
+                'subject' => 'database',
+                'action' => 'admin',
+                'server' => $SERVER)
+        ));
+        $this->assertTrue($this->setField('vacuum_freeze', true));
         $this->assertTrue($this->clickSubmit($lang['strvacuum']));
         $this->assertText($lang['strvacuumgood']);
 
-        return TRUE;
+        return true;
     }
 
 
@@ -100,18 +105,19 @@ class AdminTest extends PreconditionSet
     function testAdminAnalyze()
     {
         global $webUrl, $lang, $SERVER, $DATABASE;
-        
+
         // Locate the list page of admin.
-		$this->assertTrue($this->get("$webUrl/database.php",
-			array('database' => $DATABASE,
-				'subject' => 'database',
-				'action' => 'admin',
-				'server' => $SERVER))
-		);
+        $this->assertTrue($this->get(
+            "$webUrl/database.php",
+            array('database' => $DATABASE,
+                'subject' => 'database',
+                'action' => 'admin',
+                'server' => $SERVER)
+        ));
         $this->assertTrue($this->clickSubmit($lang['stranalyze']));
         $this->assertText($lang['stranalyzegood']);
 
-        return TRUE;
+        return true;
     }
 
 
@@ -122,18 +128,17 @@ class AdminTest extends PreconditionSet
     function testAdminCluster()
     {
         global $webUrl, $lang, $SERVER, $DATABASE;
-        
+
         // Locate the list page of admin.
-		$this->assertTrue($this->get("$webUrl/database.php", array(
-				'server' => $SERVER,
-				'database' => $DATABASE,
-				'subject' => 'database',
-				'action' => 'admin'))
-		);
+        $this->assertTrue($this->get("$webUrl/database.php", array(
+                'server' => $SERVER,
+                'database' => $DATABASE,
+                'subject' => 'database',
+                'action' => 'admin')));
         $this->assertTrue($this->clickSubmit($lang['strcluster']));
         $this->assertText($lang['strclusteredgood']);
 
-        return TRUE;
+        return true;
     }
 
 
@@ -146,18 +151,15 @@ class AdminTest extends PreconditionSet
         global $webUrl, $lang, $SERVER, $DATABASE;
 
         // Locate the list page of admin.
-		$this->assertTrue($this->get("$webUrl/database.php", array(
-				'database' => $DATABASE,
-				'subject' => 'database',
-				'action' => 'admin',
-				'server' => $SERVER))
-		);
-        $this->assertTrue($this->setField('reindex_force', TRUE));
+        $this->assertTrue($this->get("$webUrl/database.php", array(
+                'database' => $DATABASE,
+                'subject' => 'database',
+                'action' => 'admin',
+                'server' => $SERVER)));
+        $this->assertTrue($this->setField('reindex_force', true));
         $this->assertTrue($this->clickSubmit($lang['strreindex']));
         $this->assertText($lang['strreindexgood']);
 
-        return TRUE;
+        return true;
     }
 }
-
-?>

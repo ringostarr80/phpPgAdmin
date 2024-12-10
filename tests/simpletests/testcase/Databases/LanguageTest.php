@@ -1,15 +1,15 @@
 <?php
+
 /**
  * Function area     : Database.
  * Sub Function area : Language.
- * 
+ *
  * @author     Augmentum SpikeSource Team
  * @copyright  Copyright (c) 2005 by Augmentum, Inc.
  */
 
 // Import the precondition class.
-if (is_dir('../Public'))
-{
+if (is_dir('../Public')) {
     require_once('../Public/SetPrecondition.php');
 }
 
@@ -28,10 +28,12 @@ class LanguageTest extends PreconditionSet
         global $SUPER_USER_NAME;
         global $SUPER_USER_PASSWORD;
 
-        $this->login($SUPER_USER_NAME, $SUPER_USER_PASSWORD,
-                     "$webUrl/login.php");
-
-        return TRUE;
+        $this->login(
+            $SUPER_USER_NAME,
+            $SUPER_USER_PASSWORD,
+            "$webUrl/login.php"
+        );
+        return true;
     }
 
 
@@ -42,8 +44,7 @@ class LanguageTest extends PreconditionSet
     {
         // Logout this system.
         $this->logout();
-
-        return TRUE;
+        return true;
     }
 
 
@@ -53,19 +54,13 @@ class LanguageTest extends PreconditionSet
      */
     function testLanguage()
     {
-		global $webUrl, $SERVER, $DATABASE;
-
-        // Locate the list page of language.
-		$this->assertTrue($this->get("$webUrl/languages.php", array(
-			            'server' => $SERVER,
-						'database' => $DATABASE,
-						'subject' => 'database'))
-					);
-
+        global $webUrl, $SERVER, $DATABASE;
+// Locate the list page of language.
+        $this->assertTrue($this->get("$webUrl/languages.php", array(
+                        'server' => $SERVER,
+                        'database' => $DATABASE,
+                        'subject' => 'database')));
         $this->assertWantedPattern('/sql/');
-
-        return TRUE;
+        return true;
     }
 }
-
-?>

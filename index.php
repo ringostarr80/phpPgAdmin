@@ -13,32 +13,36 @@ $misc->printHeader('', null, true);
 
 $rtl = (strcasecmp($lang['applangdir'], 'rtl') == 0);
 
-$cols = $rtl ? '*,'.$conf['left_width'] : $conf['left_width'].',*';
+$cols = $rtl ? '*,' . $conf['left_width'] : $conf['left_width'] . ',*';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['_originalPath'])) {
-	$newPath = basename($_POST['_originalPath']);
-	$mainframe = '<frame src="' . $newPath . '" name="detail" id="detail" frameborder="0" />';
+    $newPath = basename($_POST['_originalPath']);
+    $mainframe = '<frame src="' . $newPath . '" name="detail" id="detail" frameborder="0" />';
 } else {
-	$mainframe = '<frame src="intro.php" name="detail" id="detail" frameborder="0" />';
+    $mainframe = '<frame src="intro.php" name="detail" id="detail" frameborder="0" />';
 }
 ?>
 <frameset cols="<?php echo $cols; ?>">
 
-<?php if ($rtl) echo $mainframe; ?>
+<?php if ($rtl) {
+    echo $mainframe;
+} ?>
 
-	<frame src="browser.php" name="browser" id="browser" frameborder="0" />
+    <frame src="browser.php" name="browser" id="browser" frameborder="0" />
 
-<?php if (!$rtl) echo $mainframe; ?>
+<?php if (!$rtl) {
+    echo $mainframe;
+} ?>
 
-	<noframes>
-	<body>
-		<?php echo $lang['strnoframes'] ?><br />
-		<a href="intro.php"><?php echo $lang['strnoframeslink'] ?></a>
-	</body>
-	</noframes>
+    <noframes>
+    <body>
+        <?php echo $lang['strnoframes'] ?><br />
+        <a href="intro.php"><?php echo $lang['strnoframeslink'] ?></a>
+    </body>
+    </noframes>
 
 </frameset>
 
 <?php
-	$misc->printFooter(false);
+    $misc->printFooter(false);
 ?>

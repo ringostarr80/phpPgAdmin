@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Function area     : Database.
  * Sub Function area : Help.
@@ -8,8 +9,7 @@
  */
 
 // Import the precondition class.
-if (is_dir('../Public'))
-{
+if (is_dir('../Public')) {
     require_once('../Public/SetPrecondition.php');
 }
 
@@ -28,10 +28,13 @@ class HelpTest extends PreconditionSet
         global $SUPER_USER_NAME;
         global $SUPER_USER_PASSWORD;
 
-        $this->login($SUPER_USER_NAME, $SUPER_USER_PASSWORD,
-            "$webUrl/login.php");
+        $this->login(
+            $SUPER_USER_NAME,
+            $SUPER_USER_PASSWORD,
+            "$webUrl/login.php"
+        );
 
-        return TRUE;
+        return true;
     }
 
 
@@ -43,7 +46,7 @@ class HelpTest extends PreconditionSet
         // Logout this system.
         $this->logout();
 
-        return TRUE;
+        return true;
     }
 
 
@@ -60,11 +63,10 @@ class HelpTest extends PreconditionSet
         global $lang, $SERVER, $DATABASE;
 
         // Locate the list page of database.
-		$this->assertTrue($this->get("$webUrl/database.php", array(
-		               'server' => $SERVER,
-					   'database' => $DATABASE,
-					   'subject' => 'database'))
-				   );
+        $this->assertTrue($this->get("$webUrl/database.php", array(
+                       'server' => $SERVER,
+                       'database' => $DATABASE,
+                       'subject' => 'database')));
 
         // Click the link about help.
         $this->assertTrue($this->get("$webUrl/help.php"));
@@ -76,7 +78,7 @@ class HelpTest extends PreconditionSet
         // hyperlink outside
         // $this->assertWantedPattern('/"Schemas"/');
 
-        return TRUE;
+        return true;
     }
 
 
@@ -89,21 +91,19 @@ class HelpTest extends PreconditionSet
         global $webUrl, $SERVER, $DATABASE;
 
         // Locate the list page of language.
-		$this->assertTrue($this->get("$webUrl/database.php", array(
-			'server' => $SERVER,
-			'database' => $DATABASE,
-			'subject' => 'database'))
-		);
+        $this->assertTrue($this->get("$webUrl/database.php", array(
+            'server' => $SERVER,
+            'database' => $DATABASE,
+            'subject' => 'database')));
 
-        $this->assertTrue($this->get("$webUrl/help.php", array('server' => $SERVER)));        
+        $this->assertTrue($this->get("$webUrl/help.php", array('server' => $SERVER)));
 
-		// XXX fail because of the version number in the URL
-		$this->assertTrue($this->clickLink(/*'http://www.postgresql.org/docs/8.0/' .*/
-                                           'interactive/sql-expressions.html' .
-                                           '#SQL-SYNTAX-TYPE-CASTS'));
+        // XXX fail because of the version number in the URL
+        $this->assertTrue($this->clickLink(/*'http://www.postgresql.org/docs/8.0/' .*/
+            'interactive/sql-expressions.html' .
+            '#SQL-SYNTAX-TYPE-CASTS'
+        ));
 
-        return TRUE;
+        return true;
     }
 }
-
-?>

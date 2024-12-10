@@ -1,14 +1,14 @@
 <?php
+
  /**
   * Function area:       Table
   * Subfunction area:    Info
-  * @author     Augmentum SpikeSource Team 
+  * @author     Augmentum SpikeSource Team
   * @copyright  2005 by Augmentum, Inc.
   */
 
 // Import the precondition class.
-if(is_dir('../Public')) 
-{
+if (is_dir('../Public')) {
     require_once('../Public/SetPrecondition.php');
 }
 
@@ -16,10 +16,10 @@ if(is_dir('../Public'))
 /**
  * A test case suite for testing INFO feature in phpPgAdmin
  */
-class InfoTest extends PreconditionSet{
-    
+class InfoTest extends PreconditionSet
+{
     /**
-     * Set up the preconditon. 
+     * Set up the preconditon.
      */
     function setUp()
     {
@@ -27,110 +27,99 @@ class InfoTest extends PreconditionSet{
         global $lang;
         global $POWER_USER_NAME;
         global $POWER_USER_PASSWORD;
-        
-        $this->login($POWER_USER_NAME, $POWER_USER_PASSWORD, 
-                     "$webUrl/login.php");
-        
-        return TRUE;
+
+        $this->login(
+            $POWER_USER_NAME,
+            $POWER_USER_PASSWORD,
+            "$webUrl/login.php"
+        );
+        return true;
     }
-    
+
     /**
-     * Clean up all the result. 
-     */ 
-    function tearDown(){
-        $this->logout(); 
-        
-        return TRUE;
-    }    
-    
+     * Clean up all the result.
+     */
+    function tearDown()
+    {
+
+        $this->logout();
+        return true;
+    }
+
     /**
      * TestCaseID: TSI01
      * List the performance info of the parent table -- student
-     */ 
+     */
     function testListParentTableInfo()
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Go to the Rules page
-		$this->assertTrue($this->get("$webUrl/info.php", array(
-			            'server' => $SERVER,
-						'database' => $DATABASE,
-						'schema' => 'public',
-						'table' => 'student',
-						'subject' => 'table'))
-					);
-        
-        return TRUE;            
+// Go to the Rules page
+        $this->assertTrue($this->get("$webUrl/info.php", array(
+                        'server' => $SERVER,
+                        'database' => $DATABASE,
+                        'schema' => 'public',
+                        'table' => 'student',
+                        'subject' => 'table')));
+        return true;
     }
-    
-    
+
+
     /**
      * TestCaseID: TSI02
      * List the performance info of the children table -- college_student
-     */ 
+     */
     function testListChildrenTableInfo()
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Go to the Rules page
-		$this->assertTrue($this->get("$webUrl/info.php", array(
-			            'server' => $SERVER,
-						'database' => $DATABASE,
-						'schema' => 'public',
-						'table' => 'college_student',
-						'subject' => 'table'))
-					); 
-        
-        return TRUE;          
+// Go to the Rules page
+        $this->assertTrue($this->get("$webUrl/info.php", array(
+                        'server' => $SERVER,
+                        'database' => $DATABASE,
+                        'schema' => 'public',
+                        'table' => 'college_student',
+                        'subject' => 'table')));
+        return true;
     }
-    
-    
+
+
     /**
      * TestCaseID: TSI03
      * List the performance info of the foreign table -- department
-     */ 
+     */
     function testListForeignTableInfo()
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Go to the Rules page
-		$this->assertTrue($this->get("$webUrl/info.php", array(
-			            'server' => $SERVER,
-						'database' => $DATABASE,
-						'schema' => 'public',
-						'table' => 'department',
-						'subject' => 'table'))
-					);
-        
-        return TRUE;
+// Go to the Rules page
+        $this->assertTrue($this->get("$webUrl/info.php", array(
+                        'server' => $SERVER,
+                        'database' => $DATABASE,
+                        'schema' => 'public',
+                        'table' => 'department',
+                        'subject' => 'table')));
+        return true;
     }
 
     /**
      * TestCaseID: TSP01
      * Show the properties of the foreign key constraint
-     */ 
+     */
     function testShowForeignKeyProperties()
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Go to the Rules page
-		$this->assertTrue($this->get("$webUrl/info.php?", array(
+// Go to the Rules page
+        $this->assertTrue($this->get("$webUrl/info.php?", array(
             'server' => $SERVER,
-			'database' => $DATABASE,
-			'schema' => 'public',
-			'table' => 'department',
-			'subject' => 'table'))
-		);
-             
+            'database' => $DATABASE,
+            'schema' => 'public',
+            'table' => 'department',
+            'subject' => 'table')));
         $this->assertTrue($this->clickLink($lang['strproperties']));
-        $this->assertText('FOREIGN KEY (dep_id) REFERENCES department(id) ' . 
-                                'ON UPDATE RESTRICT ON DELETE RESTRICT'); 
-        
-        return TRUE;         
-    }    
+        $this->assertText('FOREIGN KEY (dep_id) REFERENCES department(id) ' .
+                                'ON UPDATE RESTRICT ON DELETE RESTRICT');
+        return true;
+    }
 }
-?>

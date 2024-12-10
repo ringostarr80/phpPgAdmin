@@ -1,13 +1,14 @@
 <?php
+
  /**
   * Function area:       Schemas
   * Subfunction area:    Operator
-  * @author     Augmentum SpikeSource Team 
+  * @author     Augmentum SpikeSource Team
   * @copyright  2005 by Augmentum, Inc.
   */
- 
+
 // Import the precondition class.
-if(is_dir('../Public')) {
+if (is_dir('../Public')) {
     require_once('../Public/SetPrecondition.php');
 }
 
@@ -19,34 +20,35 @@ if(is_dir('../Public')) {
 class OperatorTest extends PreconditionSet
 {
     /**
-     * Set up the precondition. 
+     * Set up the precondition.
      */
     function setUp()
     {
         global $webUrl;
         global $SUPER_USER_NAME;
         global $SUPER_USER_PASSWORD;
-        
-        // Login the system.
-        $this->login($SUPER_USER_NAME, $SUPER_USER_PASSWORD, 
-                     "$webUrl/login.php"); 
 
-        return TRUE;           
+        // Login the system.
+        $this->login(
+            $SUPER_USER_NAME,
+            $SUPER_USER_PASSWORD,
+            "$webUrl/login.php"
+        );
+        return true;
     }
-    
-    
+
+
     /**
-     * Clean up all the result. 
+     * Clean up all the result.
      */
     function tearDown()
-    {        
+    {
         // Logout from the system.
-        $this->logout(); 
-        
-        return TRUE;
+        $this->logout();
+        return true;
     }
-    
-    
+
+
     /**
      * TestCaseID: HCO01
      * Create a operator.
@@ -55,29 +57,25 @@ class OperatorTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Turn to "sql" page.
-		$this->assertTrue($this->get("$webUrl/database.php", array(
-			            'server' => $SERVER,
-						'database' => $DATABASE,
-						'subject' => 'database',
-						'action' => 'sql'))
-					);
-        // Enter the definition of the new operator.
+// Turn to "sql" page.
+        $this->assertTrue($this->get("$webUrl/database.php", array(
+                        'server' => $SERVER,
+                        'database' => $DATABASE,
+                        'subject' => 'database',
+                        'action' => 'sql')));
+// Enter the definition of the new operator.
         $this->assertTrue($this->setField('query', 'CREATE OPERATOR === (' .
                                           'LEFTARG = box, RIGHTARG = box, PROCEDURE = box_above, ' .
                                           'COMMUTATOR = ==, NEGATOR = !==, RESTRICT = areasel, JOIN ' .
                                           '= areajoinsel);'));
-                
-        // Click the button "Go" to create a new operator.
+// Click the button "Go" to create a new operator.
         $this->assertTrue($this->clickSubmit($lang['strgo']));
-        // Verify if the operator is created correctly.
+// Verify if the operator is created correctly.
         $this->assertTrue($this->assertText($lang['strsqlexecuted']));
-        
-        return TRUE;
-    } 
-    
-    
+        return true;
+    }
+
+
     /**
      * TestCaseID: HSP01
      * Show the properties of the specified operator.
@@ -86,23 +84,20 @@ class OperatorTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Turn to "Operators" page.
-		$this->assertTrue($this->get("$webUrl/operators.php", array(
-		               'server' => $SERVER,
-					   'database' => $DATABASE,
-					   'schema' => 'public',
-					   'subject' => 'schema'))
-				   );
-        // Show the properties of the operator "===".
+// Turn to "Operators" page.
+        $this->assertTrue($this->get("$webUrl/operators.php", array(
+                       'server' => $SERVER,
+                       'database' => $DATABASE,
+                       'schema' => 'public',
+                       'subject' => 'schema')));
+// Show the properties of the operator "===".
         $this->assertTrue($this->clickLink('==='));
-        // Check the properties.
-        $this->assertTrue($this->assertText('areasel')); 
-        
-        return TRUE;
+// Check the properties.
+        $this->assertTrue($this->assertText('areasel'));
+        return true;
     }
-    
-    
+
+
     /**
      * TestCaseID: HDO01
      * Drop the operators.
@@ -111,38 +106,30 @@ class OperatorTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Turn to "Operators" page.
-		$this->assertTrue($this->get("$webUrl/operators.php", array(
-		               'server' => $SERVER,
-						'database' => $DATABASE,
-						'schema' => 'public',
-						'subject' => 'schema'))
-					);
-                
-        // Drop the first operator.        
+// Turn to "Operators" page.
+        $this->assertTrue($this->get("$webUrl/operators.php", array(
+                       'server' => $SERVER,
+                        'database' => $DATABASE,
+                        'schema' => 'public',
+                        'subject' => 'schema')));
+// Drop the first operator.
         $this->assertTrue($this->clickLink($lang['strdrop']));
-        $this->assertTrue($this->setField('cascade', TRUE));
+        $this->assertTrue($this->setField('cascade', true));
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
-        // Verify whether the operator is dropped correctly.
-        $this->assertTrue($this->assertText($lang['stroperatordropped'])); 
-                
-        // Drop the second operator.        
-        $this->assertTrue($this->clickLink($lang['strdrop']));
-        $this->assertTrue($this->setField('cascade', TRUE));
-        $this->assertTrue($this->clickSubmit($lang['strdrop']));
-        // Verify whether the operator is dropped correctly.
+// Verify whether the operator is dropped correctly.
         $this->assertTrue($this->assertText($lang['stroperatordropped']));
-                
-        // Drop the third operator.        
+// Drop the second operator.
         $this->assertTrue($this->clickLink($lang['strdrop']));
-        $this->assertTrue($this->setField('cascade', TRUE));
+        $this->assertTrue($this->setField('cascade', true));
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
-        // Verify whether the operator is dropped completely.
+// Verify whether the operator is dropped correctly.
+        $this->assertTrue($this->assertText($lang['stroperatordropped']));
+// Drop the third operator.
+        $this->assertTrue($this->clickLink($lang['strdrop']));
+        $this->assertTrue($this->setField('cascade', true));
+        $this->assertTrue($this->clickSubmit($lang['strdrop']));
+// Verify whether the operator is dropped completely.
         $this->assertTrue($this->assertText($lang['strnooperators']));
-        
-        return TRUE;
-    } 
+        return true;
+    }
 }
-
-?>

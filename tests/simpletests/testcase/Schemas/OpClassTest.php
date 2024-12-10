@@ -1,14 +1,14 @@
 <?php
+
  /**
   * Function area:       Schemas
   * Subfunction area:    Op Classes.
-  * @author     Augmentum SpikeSource Team 
+  * @author     Augmentum SpikeSource Team
   * @copyright  2005 by Augmentum, Inc.
   */
- 
- 
+
 // Import the precondition class.
-if(is_dir('../Public')) {
+if (is_dir('../Public')) {
     require_once('../Public/SetPrecondition.php');
 }
 
@@ -20,34 +20,35 @@ if(is_dir('../Public')) {
 class OpClassTest extends PreconditionSet
 {
     /**
-     * Set up the precondition. 
+     * Set up the precondition.
      */
     function setUp()
     {
         global $webUrl;
         global $SUPER_USER_NAME;
         global $SUPER_USER_PASSWORD;
-        
+
         // Login the system.
-        $this->login($SUPER_USER_NAME, $SUPER_USER_PASSWORD, 
-                     "$webUrl/login.php");  
-        
-        return TRUE;          
+        $this->login(
+            $SUPER_USER_NAME,
+            $SUPER_USER_PASSWORD,
+            "$webUrl/login.php"
+        );
+        return true;
     }
-    
-    
+
+
     /**
-     * Clean up all the result. 
+     * Clean up all the result.
      */
     function tearDown()
     {
         // Logout from the system.
-        $this->logout(); 
-        
-        return TRUE;
+        $this->logout();
+        return true;
     }
-    
-    
+
+
     /**
      * TestCaseID: HBC01
      * Browse all the op classes.
@@ -56,20 +57,14 @@ class OpClassTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Turn to schema "pg_catalog" page.
-		$this->assertTrue($this->get("$webUrl/opclasses.php", array(
-			            'server' => $SERVER,
-						'database' => $DATABASE,
-						'schema' => 'pg_catalog',
-						'subject' => 'schema'))
-					);
-        
-        // Verify whether all the op classes are displayed.
+// Turn to schema "pg_catalog" page.
+        $this->assertTrue($this->get("$webUrl/opclasses.php", array(
+                        'server' => $SERVER,
+                        'database' => $DATABASE,
+                        'schema' => 'pg_catalog',
+                        'subject' => 'schema')));
+// Verify whether all the op classes are displayed.
         $this->assertTrue($this->assertText($lang['straccessmethod']));
-        
-        return TRUE;
-    } 
-}    
-
-?>
+        return true;
+    }
+}

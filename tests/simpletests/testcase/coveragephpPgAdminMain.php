@@ -1,8 +1,9 @@
 <?php
+
 /**
  * This is entrance to run all the test suites and generate a report for code coverage.
  *
- * @author     Augmentum SpikeSource Team 
+ * @author     Augmentum SpikeSource Team
  * @copyright  2005 by Augmentum, Inc.
  */
 
@@ -39,8 +40,8 @@ global $PHPCOVERAGE_REPORT_DIR, $PHPCOVERAGE_APPBASE_PATH;
 $cov_weburl = $webUrl . "/phpcoverage.remote.top.inc.php";
 
 // Initialize RemoteCoverageRecorder
-file_get_contents($cov_weburl . "?phpcoverage-action=init&cov-file-name=" . 
-                  urlencode("TestphpPgAdmin.xml") . "&tmp-dir=". urlencode("/tmp"));
+file_get_contents($cov_weburl . "?phpcoverage-action=init&cov-file-name=" .
+                  urlencode("TestphpPgAdmin.xml") . "&tmp-dir=" . urlencode("/tmp"));
 
 // Run the simpletest test cases
 $testServer->run(new TextReporter());
@@ -55,16 +56,14 @@ $xml = file_get_contents($cov_weburl . "?phpcoverage-action=get-coverage-xml");
 // Cleanup the recording
 file_get_contents($cov_weburl . "?phpcoverage-action=cleanup");
 
-$reporter = new HtmlCoverageReporter("phpPgAdmin Code coverage report","","$PHPCOVERAGE_REPORT_DIR");
+$reporter = new HtmlCoverageReporter("phpPgAdmin Code coverage report", "", "$PHPCOVERAGE_REPORT_DIR");
 
 // Sets the directories or file paths to be included in the code coverage recording.
 $includePaths = array(realpath($PHPCOVERAGE_APPBASE_PATH));
-$excludePaths = array(realpath($PHPCOVERAGE_APPBASE_PATH)."/lang", realpath($PHPCOVERAGE_APPBASE_PATH)."/libraries/adodb/drivers");
+$excludePaths = array(realpath($PHPCOVERAGE_APPBASE_PATH) . "/lang", realpath($PHPCOVERAGE_APPBASE_PATH) . "/libraries/adodb/drivers");
 $cov = new RemoteCoverageRecorder($includePaths, $excludePaths, $reporter);
-    
+
 // Generate the code coverage report
 $cov->generateReport($xml);
 
 $reporter->printTextSummary();
-
-?>

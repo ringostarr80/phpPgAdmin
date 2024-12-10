@@ -7,63 +7,64 @@
 
 include_once('./classes/database/Postgres11.php');
 
-class Postgres10 extends Postgres11 {
+class Postgres10 extends Postgres11
+{
+    var $major_version = 10;
 
-	var $major_version = 10;
+    /**
+     * Constructor
+     * @param $conn The database connection
+     */
+    function __construct($conn)
+    {
+        parent::__construct($conn);
+    }
 
-	/**
-	 * Constructor
-	 * @param $conn The database connection
-	 */
-	function __construct($conn) {
-		parent::__construct($conn);
-	}
 
+    /**
+     * Searches all system catalogs to find objects that match a certain name.
+     * @param $term The search term
+     * @param $filter The object type to restrict to ('' means no restriction)
+     * @return A recordset
+     */
+    function findObject($term, $filter)
+    {
+        global $conf;
 
-	/**
-	 * Searches all system catalogs to find objects that match a certain name.
-	 * @param $term The search term
-	 * @param $filter The object type to restrict to ('' means no restriction)
-	 * @return A recordset
-	 */
-	function findObject($term, $filter) {
-		global $conf;
+        /*about escaping:
+         * SET standard_conforming_string is not available before 8.2
+         * So we must use PostgreSQL specific notation :/
+         * E'' notation is not available before 8.1
+         * $$ is available since 8.0
+         * Nothing specific from 7.4
+         **/
 
-		/*about escaping:
-		 * SET standard_conforming_string is not available before 8.2
-		 * So we must use PostgreSQL specific notation :/
-		 * E'' notation is not available before 8.1
-		 * $$ is available since 8.0
-		 * Nothing specific from 7.4
-		 **/
+        // Escape search term for ILIKE match
+        $this->clean($term);
+        $this->clean($filter);
+        $term = str_replace('_', '\_', $term);
+        $term = str_replace('%', '\%', $term);
 
-		// Escape search term for ILIKE match
-		$this->clean($term);
-		$this->clean($filter);
-		$term = str_replace('_', '\_', $term);
-		$term = str_replace('%', '\%', $term);
+        // Exclude system relations if necessary
+        if (!$conf['show_system']) {
+            // XXX: The mention of information_schema here is in the wrong place, but
+            // it's the quickest fix to exclude the info schema from 7.4
+            $where = " AND pn.nspname NOT LIKE \$_PATTERN_\$pg\_%\$_PATTERN_\$ AND pn.nspname != 'information_schema'";
+            $lan_where = "AND pl.lanispl";
+        } else {
+            $where = '';
+            $lan_where = '';
+        }
 
-		// Exclude system relations if necessary
-		if (!$conf['show_system']) {
-			// XXX: The mention of information_schema here is in the wrong place, but
-			// it's the quickest fix to exclude the info schema from 7.4
-			$where = " AND pn.nspname NOT LIKE \$_PATTERN_\$pg\_%\$_PATTERN_\$ AND pn.nspname != 'information_schema'";
-			$lan_where = "AND pl.lanispl";
-		}
-		else {
-			$where = '';
-			$lan_where = '';
-		}
+        // Apply outer filter
+        $sql = '';
+        if ($filter != '') {
+            $sql = "SELECT * FROM (";
+        }
 
-		// Apply outer filter
-		$sql = '';
-		if ($filter != '') {
-			$sql = "SELECT * FROM (";
-		}
+        $term = "\$_PATTERN_\$%{$term}%\$_PATTERN_\$";
 
-		$term = "\$_PATTERN_\$%{$term}%\$_PATTERN_\$";
-
-		$sql .= "
+        $sql .= "
 			SELECT 'SCHEMA' AS type, oid, NULL AS schemaname, NULL AS relname, nspname AS name
 				FROM pg_catalog.pg_namespace pn WHERE nspname ILIKE {$term} {$where}
 			UNION ALL
@@ -121,9 +122,9 @@ class Postgres10 extends Postgres11 {
 		";
 
 
-		// Add advanced objects if show_advanced is set
-		if ($conf['show_advanced']) {
-			$sql .= "
+        // Add advanced objects if show_advanced is set
+        if ($conf['show_advanced']) {
+            $sql .= "
 				UNION ALL
 				SELECT CASE WHEN pt.typtype='d' THEN 'DOMAIN' ELSE 'TYPE' END, pt.oid, pn.nspname, NULL,
 					pt.typname FROM pg_catalog.pg_type pt, pg_catalog.pg_namespace pn
@@ -148,10 +149,10 @@ class Postgres10 extends Postgres11 {
 					pg_catalog.pg_namespace pn WHERE po.opcnamespace=pn.oid
 					AND po.opcname ILIKE {$term} {$where}
 			";
-		}
-		// Otherwise just add domains
-		else {
-			$sql .= "
+        }
+        // Otherwise just add domains
+        else {
+            $sql .= "
 				UNION ALL
 				SELECT 'DOMAIN', pt.oid, pn.nspname, NULL,
 					pt.typname FROM pg_catalog.pg_type pt, pg_catalog.pg_namespace pn
@@ -159,42 +160,42 @@ class Postgres10 extends Postgres11 {
 					AND (pt.typrelid = 0 OR (SELECT c.relkind = 'c' FROM pg_catalog.pg_class c WHERE c.oid = pt.typrelid))
 					{$where}
 			";
-		}
+        }
 
-		if ($filter != '') {
-			// We use like to make RULE, CONSTRAINT and COLUMN searches work
-			$sql .= ") AS sub WHERE type LIKE '{$filter}%' ";
-		}
+        if ($filter != '') {
+            // We use like to make RULE, CONSTRAINT and COLUMN searches work
+            $sql .= ") AS sub WHERE type LIKE '{$filter}%' ";
+        }
 
-		$sql .= "ORDER BY type, schemaname, relname, name";
+        $sql .= "ORDER BY type, schemaname, relname, name";
 
-		return $this->selectSet($sql);
-	}
+        return $this->selectSet($sql);
+    }
 
-	/**
-	 * Returns a list of all functions in the database
-	 * @param $all If true, will find all available functions, if false just those in search path
-	 * @param $type If not null, will find all functions with return value = type
-	 *
-  	 * @return All functions
-	 */
-	function getFunctions($all = false, $type = null) {
-		if ($all) {
-			$where = 'pg_catalog.pg_function_is_visible(p.oid)';
-			$distinct = 'DISTINCT ON (p.proname)';
+    /**
+     * Returns a list of all functions in the database
+     * @param $all If true, will find all available functions, if false just those in search path
+     * @param $type If not null, will find all functions with return value = type
+     *
+     * @return All functions
+     */
+    function getFunctions($all = false, $type = null)
+    {
+        if ($all) {
+            $where = 'pg_catalog.pg_function_is_visible(p.oid)';
+            $distinct = 'DISTINCT ON (p.proname)';
 
-			if ($type) {
-				$where .= " AND p.prorettype = (select oid from pg_catalog.pg_type p where p.typname = 'trigger') ";
-			}
-		}
-		else {
-			$c_schema = $this->_schema;
-			$this->clean($c_schema);
-			$where = "n.nspname = '{$c_schema}'";
-			$distinct = '';
-		}
+            if ($type) {
+                $where .= " AND p.prorettype = (select oid from pg_catalog.pg_type p where p.typname = 'trigger') ";
+            }
+        } else {
+            $c_schema = $this->_schema;
+            $this->clean($c_schema);
+            $where = "n.nspname = '{$c_schema}'";
+            $distinct = '';
+        }
 
-		$sql = "
+        $sql = "
 			SELECT
 				{$distinct}
 				p.oid AS prooid,
@@ -216,22 +217,23 @@ class Postgres10 extends Postgres11 {
 			ORDER BY p.proname, proresult
 			";
 
-		return $this->selectSet($sql);
-	}
+        return $this->selectSet($sql);
+    }
 
-	/**
-	 * Gets all information for an aggregate
-	 * @param $name The name of the aggregate
-	 * @param $basetype The input data type of the aggregate
-	 * @return A recordset
-	 */
-	function getAggregate($name, $basetype) {
-		$c_schema = $this->_schema;
-		$this->clean($c_schema);
-		$this->fieldclean($name);
-		$this->fieldclean($basetype);
+    /**
+     * Gets all information for an aggregate
+     * @param $name The name of the aggregate
+     * @param $basetype The input data type of the aggregate
+     * @return A recordset
+     */
+    function getAggregate($name, $basetype)
+    {
+        $c_schema = $this->_schema;
+        $this->clean($c_schema);
+        $this->fieldclean($name);
+        $this->fieldclean($basetype);
 
-		$sql = "
+        $sql = "
 			SELECT p.proname, CASE p.proargtypes[0]
 				WHEN 'pg_catalog.\"any\"'::pg_catalog.regtype THEN NULL
 				ELSE pg_catalog.format_type(p.proargtypes[0], NULL) END AS proargtypes,
@@ -246,32 +248,32 @@ class Postgres10 extends Postgres11 {
 					ELSE pg_catalog.format_type(p.proargtypes[0], NULL)
 				END ='" . $basetype . "'";
 
-		return $this->selectSet($sql);
-	}
+        return $this->selectSet($sql);
+    }
 
-	/**
-	 * Gets all aggregates
-	 * @return A recordset
-	 */
-	function getAggregates() {
-		$c_schema = $this->_schema;
-		$this->clean($c_schema);
-		$sql = "SELECT p.proname, CASE p.proargtypes[0] WHEN 'pg_catalog.\"any\"'::pg_catalog.regtype THEN NULL ELSE
+    /**
+     * Gets all aggregates
+     * @return A recordset
+     */
+    function getAggregates()
+    {
+        $c_schema = $this->_schema;
+        $this->clean($c_schema);
+        $sql = "SELECT p.proname, CASE p.proargtypes[0] WHEN 'pg_catalog.\"any\"'::pg_catalog.regtype THEN NULL ELSE
 			   pg_catalog.format_type(p.proargtypes[0], NULL) END AS proargtypes, a.aggtransfn, u.usename,
 			   pg_catalog.obj_description(p.oid, 'pg_proc') AS aggrcomment
 			   FROM pg_catalog.pg_proc p, pg_catalog.pg_namespace n, pg_catalog.pg_user u, pg_catalog.pg_aggregate a
 			   WHERE n.oid = p.pronamespace AND p.proowner=u.usesysid AND p.oid=a.aggfnoid
 			   AND p.proisagg AND n.nspname='{$c_schema}' ORDER BY 1, 2";
 
-		return $this->selectSet($sql);
-	}
+        return $this->selectSet($sql);
+    }
 
-	// Help functions
+    // Help functions
 
-	function getHelpPages() {
-		include_once('./help/PostgresDoc10.php');
-		return $this->help_page;
-	}
-
+    function getHelpPages()
+    {
+        include_once('./help/PostgresDoc10.php');
+        return $this->help_page;
+    }
 }
-?>

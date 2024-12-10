@@ -3,6 +3,8 @@ includes:
 
 parameters:
     level: 0
+    scanDirectories:
+        - /usr/local/share/pear
     paths:
         - .
     excludePaths:

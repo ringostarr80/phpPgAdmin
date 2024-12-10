@@ -1,15 +1,15 @@
 <?php
+
 /**
  * Function area     : Database.
  * Sub Function area : Casts.
- * 
+ *
  * @author     Augmentum SpikeSource Team
  * @copyright  Copyright (c) 2005 by Augmentum, Inc.
  */
 
 // Import the precondition class.
-if (is_dir('../Public'))
-{
+if (is_dir('../Public')) {
     require_once('../Public/SetPrecondition.php');
 }
 
@@ -26,10 +26,13 @@ class CastsTest extends PreconditionSet
         global $webUrl;
         global $SUPER_USER_NAME;
         global $SUPER_USER_PASSWORD;
-        $this->login($SUPER_USER_NAME, $SUPER_USER_PASSWORD,
-                     "$webUrl/login.php");
+        $this->login(
+            $SUPER_USER_NAME,
+            $SUPER_USER_PASSWORD,
+            "$webUrl/login.php"
+        );
 
-        return TRUE;
+        return true;
     }
 
 
@@ -41,7 +44,7 @@ class CastsTest extends PreconditionSet
         // Logout this system.
         $this->logout();
 
-        return TRUE;
+        return true;
     }
 
 
@@ -57,19 +60,16 @@ class CastsTest extends PreconditionSet
         global $lang, $SERVER, $DATABASE;
 
         // Locate the list page of language.
-		$this->assertTrue($this->get("$webUrl/casts.php", array(
-			            'server' => $SERVER,
-						'database' => $DATABASE,
-						'subject' => 'database'))
-					);
+        $this->assertTrue($this->get("$webUrl/casts.php", array(
+                        'server' => $SERVER,
+                        'database' => $DATABASE,
+                        'subject' => 'database')));
 
         $this->assertText($lang['strsourcetype']);
         $this->assertText($lang['strtargettype']);
         $this->assertText($lang['strimplicit']);
-        
 
-        return TRUE;
+
+        return true;
     }
 }
-
-?>

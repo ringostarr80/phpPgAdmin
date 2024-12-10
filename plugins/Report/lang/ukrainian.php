@@ -1,4 +1,5 @@
 <?php
+
         /**
          * Ukrainian KOI8-U language file.
          */
@@ -20,4 +21,3 @@
         $plugin_lang['strreportneedsdef'] = 'Вам необх╕дно вказати SQL-запит для Вашого зв╕ту.';
         $plugin_lang['strreportcreated'] = 'Зв╕т збережено.';
         $plugin_lang['strreportcreatedbad'] = 'Збереження зв╕ту перервано.';
-?>

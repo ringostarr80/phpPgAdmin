@@ -1,14 +1,14 @@
 <?php
+
  /**
   * Function area:       Schemas
   * Subfunction area:    Sequence
-  * @author     Augmentum SpikeSource Team 
+  * @author     Augmentum SpikeSource Team
   * @copyright  2005 by Augmentum, Inc.
   */
- 
- 
+
 // Import the precondition class.
-if(is_dir('../Public')) {
+if (is_dir('../Public')) {
     require_once('../Public/SetPrecondition.php');
 }
 
@@ -20,34 +20,35 @@ if(is_dir('../Public')) {
 class SequenceTest extends PreconditionSet
 {
     /**
-     * Set up the precondition. 
+     * Set up the precondition.
      */
     function setUp()
     {
         global $webUrl;
         global $SUPER_USER_NAME;
         global $SUPER_USER_PASSWORD;
-    
+
         // Login the system.
-        $this->login($SUPER_USER_NAME, $SUPER_USER_PASSWORD, 
-                     "$webUrl/login.php"); 
-        
-        return TRUE;          
+        $this->login(
+            $SUPER_USER_NAME,
+            $SUPER_USER_PASSWORD,
+            "$webUrl/login.php"
+        );
+        return true;
     }
-    
-    
+
+
     /**
-     * Clean up all the result. 
+     * Clean up all the result.
      */
     function tearDown()
     {
         // Logout from the system.
-        $this->logout(); 
-        
-        return TRUE;
+        $this->logout();
+        return true;
     }
-    
-    
+
+
     /**
      * TestCaseID: HCS01
      * Create a sequence.
@@ -56,34 +57,28 @@ class SequenceTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Turn to the "Create sequence" page.
-		$this->assertTrue($this->get("$webUrl/sequences.php", array(
-			            'server' => $SERVER,
-						'action' => 'create',
-						'database' => $DATABASE,
-						'schema' => 'public'))
-					);
-                
-        // Enter the detail information of a sequence.
-        $this->assertTrue($this->setField('formSequenceName', 'createsequence'));    
-        $this->assertTrue($this->setField('formIncrement', '1'));    
-        $this->assertTrue($this->setField('formMinValue', '1000'));    
-        $this->assertTrue($this->setField('formMaxValue', '10000'));    
-        $this->assertTrue($this->setField('formStartValue', '1000'));    
+// Turn to the "Create sequence" page.
+        $this->assertTrue($this->get("$webUrl/sequences.php", array(
+                        'server' => $SERVER,
+                        'action' => 'create',
+                        'database' => $DATABASE,
+                        'schema' => 'public')));
+// Enter the detail information of a sequence.
+        $this->assertTrue($this->setField('formSequenceName', 'createsequence'));
+        $this->assertTrue($this->setField('formIncrement', '1'));
+        $this->assertTrue($this->setField('formMinValue', '1000'));
+        $this->assertTrue($this->setField('formMaxValue', '10000'));
+        $this->assertTrue($this->setField('formStartValue', '1000'));
         $this->assertTrue($this->setField('formCacheValue', '5'));
-        $this->assertTrue($this->setField('formCycledValue', TRUE));
-        
-        // Click the "Create" button to create a sequence.
+        $this->assertTrue($this->setField('formCycledValue', true));
+// Click the "Create" button to create a sequence.
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
-        
-        // Verify whether the sequence is created successfully.
+// Verify whether the sequence is created successfully.
         $this->assertTrue($this->assertText($lang['strsequencecreated']));
-
-        return TRUE;           
+        return true;
     }
-    
-    
+
+
     /**
      * TestCaseID: HRS01
      * Reset an existing sequence.
@@ -92,28 +87,24 @@ class SequenceTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Turn to the sequence-display page.
-		$this->assertTrue($this->get("$webUrl/sequences.php", array(
-			            'server' => $SERVER,
-						'database' => $DATABASE,
-						'schema' => 'public',
-						'subject' => 'schema'))
-					);
-        // Browse the specified sequence.
-        $this->assertTrue($this->clickLink('createsequence')); 
-        // Reset the sequence.
+// Turn to the sequence-display page.
+        $this->assertTrue($this->get("$webUrl/sequences.php", array(
+                        'server' => $SERVER,
+                        'database' => $DATABASE,
+                        'schema' => 'public',
+                        'subject' => 'schema')));
+// Browse the specified sequence.
+        $this->assertTrue($this->clickLink('createsequence'));
+// Reset the sequence.
         $this->assertTrue($this->clickLink($lang['strreset']));
-               
-        // Verify whether the sequence is reset successfully.
+// Verify whether the sequence is reset successfully.
         $this->assertTrue($this->assertText($lang['strsequencereset']));
-        // Display all the sequence.
+// Display all the sequence.
         $this->assertTrue($this->clickLink($lang['strshowallsequences']));
-        
-        return TRUE;
+        return true;
     }
-    
-     
+
+
     /**
      * TestCaseID: HDS01
      * Drop a sequence.
@@ -122,22 +113,16 @@ class SequenceTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-		$this->assertTrue($this->get("$webUrl/sequences.php", array(
-			            'server' => $SERVER,
-						'action' => 'confirm_drop',
-						'database' => $DATABASE,
-						'schema' => 'public',
-						'sequence' => 'createsequence'))
-					);
-
-        $this->assertTrue($this->setField('cascade', TRUE));
+        $this->assertTrue($this->get("$webUrl/sequences.php", array(
+                        'server' => $SERVER,
+                        'action' => 'confirm_drop',
+                        'database' => $DATABASE,
+                        'schema' => 'public',
+                        'sequence' => 'createsequence')));
+        $this->assertTrue($this->setField('cascade', true));
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
-
-        // Verify if the sequence dropped successful.
+// Verify if the sequence dropped successful.
         $this->assertTrue($this->assertText($lang['strsequencedropped']));
-        
-        return TRUE;   
+        return true;
     }
 }
-?>

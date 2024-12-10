@@ -1,14 +1,14 @@
 <?php
+
  /**
   * Function area:       Table
   * Subfunction area:    Index
-  * @author     Augmentum SpikeSource Team 
+  * @author     Augmentum SpikeSource Team
   * @copyright  2005 by Augmentum, Inc.
   */
 
 // Import the precondition class.
-if(is_dir('../Public')) 
-{
+if (is_dir('../Public')) {
     require_once('../Public/SetPrecondition.php');
 }
 
@@ -17,94 +17,90 @@ if(is_dir('../Public'))
  * A test case suite for testing INDEX feature in phpPgAdmin, including cases
  * for creating, clustering, reindexing and dropping indexes.
  */
-class IndexesTest extends PreconditionSet{
-    
+class IndexesTest extends PreconditionSet
+{
     /**
-     * Set up the preconditon. 
+     * Set up the preconditon.
      */
     function setUp()
     {
         global $webUrl;
         global $SUPER_USER_NAME;
         global $SUPER_USER_NAME;
-        
-        $this->login($SUPER_USER_NAME, $SUPER_USER_NAME, 
-                     "$webUrl/login.php");
-        
-        return TRUE;
+
+        $this->login(
+            $SUPER_USER_NAME,
+            $SUPER_USER_NAME,
+            "$webUrl/login.php"
+        );
+        return true;
     }
-    
+
     /**
-     * Clean up all the result. 
-     */ 
-    function tearDown(){
-        $this->logout(); 
-        
-        return TRUE;
+     * Clean up all the result.
+     */
+    function tearDown()
+    {
+
+        $this->logout();
+        return true;
     }
-    
+
     /**
      * TestCaseID: TCI01
      * Test creating indexes in a table
      */
-    function testCreateIndex(){
+    function testCreateIndex()
+    {
+
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Go to the Indexes page
-		$this->assertTrue($this->get("$webUrl/indexes.php", array(
-			'server' => $SERVER,
-			'action' => 'create_index',
-			'database' => $DATABASE,
-			'schema' => 'public',
-			'table' => 'student'))
-		);
-        
-        // Set properties for the new index    
+// Go to the Indexes page
+        $this->assertTrue($this->get("$webUrl/indexes.php", array(
+            'server' => $SERVER,
+            'action' => 'create_index',
+            'database' => $DATABASE,
+            'schema' => 'public',
+            'table' => 'student')));
+// Set properties for the new index
         $this->assertTrue($this->setField('formIndexName', 'stu_name_idx'));
         $this->assertTrue($this->setField('TableColumnList', array('name')));
-        $this->assertTrue($this->setField('IndexColumnList[]', 'name'));     
-        $this->assertTrue($this->setField('formIndexType', 'BTREE')); 
-        $this->assertTrue($this->setField('formUnique', FALSE));
-        $this->assertTrue($this->setField('formSpc', 'pg_default'));                
-        
+        $this->assertTrue($this->setField('IndexColumnList[]', 'name'));
+        $this->assertTrue($this->setField('formIndexType', 'BTREE'));
+        $this->assertTrue($this->setField('formUnique', false));
+        $this->assertTrue($this->setField('formSpc', 'pg_default'));
         $this->assertTrue($this->clickSubmit($lang['strcreate']));
-        
-        // Verify if the index is created correctly.
+// Verify if the index is created correctly.
         $this->assertTrue($this->assertText($lang['strindexcreated']));
-        
-        return TRUE; 
+        return true;
     }
-    
+
 
     /**
      * TestCaseID: TCI02
      * Cancel creating index
      */
-    function testCancelCreateIndex(){
+    function testCancelCreateIndex()
+    {
+
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Go to the Indexes page
-		$this->assertTrue($this->get("$webUrl/indexes.php", array(
-			            'server' => $SERVER,
-						'action' => 'create_index',
-						'database' => $DATABASE,
-						'schema' => 'public',
-						'table' => 'student'))
-					);
-        
-        // Set properties for the new index    
+// Go to the Indexes page
+        $this->assertTrue($this->get("$webUrl/indexes.php", array(
+                        'server' => $SERVER,
+                        'action' => 'create_index',
+                        'database' => $DATABASE,
+                        'schema' => 'public',
+                        'table' => 'student')));
+// Set properties for the new index
         $this->assertTrue($this->setField('formIndexName', 'stu_name_idx'));
         $this->assertTrue($this->setField('TableColumnList', array('name')));
-        $this->assertTrue($this->setField('IndexColumnList[]', 'name'));        
-        $this->assertTrue($this->setField('formIndexType', 'BTREE')); 
-        $this->assertTrue($this->setField('formUnique', TRUE));
-        $this->assertTrue($this->setField('formSpc', 'pg_default'));                
-        
+        $this->assertTrue($this->setField('IndexColumnList[]', 'name'));
+        $this->assertTrue($this->setField('formIndexType', 'BTREE'));
+        $this->assertTrue($this->setField('formUnique', true));
+        $this->assertTrue($this->setField('formSpc', 'pg_default'));
         $this->assertTrue($this->clickSubmit($lang['strcancel']));
-        
-        return TRUE; 
+        return true;
     }
 
     /**
@@ -115,24 +111,20 @@ class IndexesTest extends PreconditionSet{
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-        // Go to the Indexes page
-		$this->assertTrue($this->get("$webUrl/indexes.php", array(
-			            'server' => $SERVER,
-						'action' => 'reindex',
-						'database' => $DATABASE,
-						'schema' => 'public',
-						'table' => 'student',
-						'index' => 'stu_name_idx'))
-					);
-        
-        // Verify if the index is reindexed correctly.
+// Go to the Indexes page
+        $this->assertTrue($this->get("$webUrl/indexes.php", array(
+                        'server' => $SERVER,
+                        'action' => 'reindex',
+                        'database' => $DATABASE,
+                        'schema' => 'public',
+                        'table' => 'student',
+                        'index' => 'stu_name_idx')));
+// Verify if the index is reindexed correctly.
         $this->assertTrue($this->assertText($lang['strreindexgood']));
-        
-        return TRUE;  
+        return true;
     }
-    
-    
+
+
     /**
      * TestCaseID: TCP01
      * Test clustering and analyzing the primary key in a table
@@ -141,25 +133,22 @@ class IndexesTest extends PreconditionSet{
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-		$this->assertTrue($this->get("$webUrl/indexes.php", array(
-			            'server' => $SERVER,
-						'action' => 'confirm_cluster_index',
-						'database' => $DATABASE,
-						'schema' => 'public',
-						'table' => 'student',
-						'index' => 'student_pkey'))
-					);
-        $this->assertTrue($this->setField('analyze', TRUE));
-        $this->assertTrue($this->clickSubmit($lang['strcluster'])); 
-        // Verify if the key is clustered correctly. 
+        $this->assertTrue($this->get("$webUrl/indexes.php", array(
+                        'server' => $SERVER,
+                        'action' => 'confirm_cluster_index',
+                        'database' => $DATABASE,
+                        'schema' => 'public',
+                        'table' => 'student',
+                        'index' => 'student_pkey')));
+        $this->assertTrue($this->setField('analyze', true));
+        $this->assertTrue($this->clickSubmit($lang['strcluster']));
+// Verify if the key is clustered correctly.
         $this->assertTrue($this->assertText($lang['strclusteredgood']));
         $this->assertTrue($this->assertText($lang['stranalyzegood']));
-        
-        return TRUE; 
+        return true;
     }
-    
-    
+
+
     /**
      * TestCaseID: TCP02
      * Test clustering the primary key without analyzing in a table
@@ -168,24 +157,21 @@ class IndexesTest extends PreconditionSet{
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-		$this->assertTrue($this->get("$webUrl/indexes.php", array(
-			            'server' => $SERVER,
-						'action' => 'confirm_cluster_index',
-						'database' => $DATABASE,
-						'schema' => 'public',
-						'table' => 'student',
-						'index' => 'student_pkey'))
-					);
-        $this->assertTrue($this->setField('analyze', FALSE));
+        $this->assertTrue($this->get("$webUrl/indexes.php", array(
+                        'server' => $SERVER,
+                        'action' => 'confirm_cluster_index',
+                        'database' => $DATABASE,
+                        'schema' => 'public',
+                        'table' => 'student',
+                        'index' => 'student_pkey')));
+        $this->assertTrue($this->setField('analyze', false));
         $this->assertTrue($this->clickSubmit($lang['strcluster']));
-        // Verify if the key is clustered correctly.
+// Verify if the key is clustered correctly.
         $this->assertTrue($this->assertText($lang['strclusteredgood']));
-        
-        return TRUE;  
+        return true;
     }
-    
-    
+
+
     /**
      * TestCaseID: TCP03
      * Test cancelling clustering the primary key in a table
@@ -194,19 +180,16 @@ class IndexesTest extends PreconditionSet{
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-		$this->assertTrue($this->get("$webUrl/indexes.php", array(
-			            'server' => $SERVER,
-						'action' => 'confirm_cluster_index',
-						'database' => $DATABASE,
-						'schema' => 'public',
-						'table' => 'student',
-						'constraint' => 'student_pkey'))
-					);
-        $this->assertTrue($this->setField('analyze', TRUE));
+        $this->assertTrue($this->get("$webUrl/indexes.php", array(
+                        'server' => $SERVER,
+                        'action' => 'confirm_cluster_index',
+                        'database' => $DATABASE,
+                        'schema' => 'public',
+                        'table' => 'student',
+                        'constraint' => 'student_pkey')));
+        $this->assertTrue($this->setField('analyze', true));
         $this->assertTrue($this->clickSubmit($lang['strcancel']));
-        
-        return TRUE; 
+        return true;
     }
 
     /**
@@ -217,19 +200,16 @@ class IndexesTest extends PreconditionSet{
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-		$this->assertTrue($this->get("$webUrl/indexes.php", array(
-			            'server' => $SERVER,
-						'action' => 'confirm_drop_index',
-						'database' => $DATABASE,
-						'schema' => 'public',
-						'table' => 'student',
-						'index' => 'stu_name_idx'))
-					);
-        $this->assertField($this->setField('cascade', FALSE));
+        $this->assertTrue($this->get("$webUrl/indexes.php", array(
+                        'server' => $SERVER,
+                        'action' => 'confirm_drop_index',
+                        'database' => $DATABASE,
+                        'schema' => 'public',
+                        'table' => 'student',
+                        'index' => 'stu_name_idx')));
+        $this->assertField($this->setField('cascade', false));
         $this->assertTrue($this->clickSubmit($lang['strcancel']));
-        
-        return TRUE; 
+        return true;
     }
 
     /**
@@ -240,20 +220,17 @@ class IndexesTest extends PreconditionSet{
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-        
-		$this->assertTrue($this->get("$webUrl/indexes.php", array(
-			            'server' => $SERVER,
-						'action' => 'confirm_drop_index',
-						'database' => $DATABASE,
-						'schema' => 'public',
-						'table' => 'student',
-						'index' => 'stu_name_idx'))
-					);
-        $this->assertField($this->setField('cascade', TRUE));
+        $this->assertTrue($this->get("$webUrl/indexes.php", array(
+                        'server' => $SERVER,
+                        'action' => 'confirm_drop_index',
+                        'database' => $DATABASE,
+                        'schema' => 'public',
+                        'table' => 'student',
+                        'index' => 'stu_name_idx')));
+        $this->assertField($this->setField('cascade', true));
         $this->assertTrue($this->clickSubmit($lang['strdrop']));
-        // Verify if the index is dropped correctly.
+// Verify if the index is dropped correctly.
         $this->assertTrue($this->assertText($lang['strindexdropped']));
-        
-        return TRUE; 
+        return true;
     }
 }

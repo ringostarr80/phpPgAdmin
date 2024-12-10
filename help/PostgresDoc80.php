@@ -24,5 +24,3 @@ $this->help_page['pg.domain'] = 'extend-type-system.html#AEN27940';
 $this->help_page['pg.function'][2] = 'sql-expressions.html#AEN1652';
 
 $this->help_page['pg.operator'][2] = 'sql-expressions.html#AEN1623';
-
-?>

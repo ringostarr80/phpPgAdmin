@@ -1,22 +1,22 @@
 <?php
+
 /**
  * Function area     : Database.
  * Sub Function area : Variables.
- * 
+ *
  * @author     Augmentum SpikeSource Team
  * @copyright  Copyright (c) 2005 by Augmentum, Inc.
  */
- 
+
 // Import the precondition class.
-if (is_dir('../Public'))
-{
+if (is_dir('../Public')) {
     require_once('../Public/SetPrecondition.php');
-} 
+}
 
 /**
  * This class is to test the Variables about phpPgAdmin implementation.
  */
-class VariablesTest extends PreconditionSet 
+class VariablesTest extends PreconditionSet
 {
     /**
      * Set up the preconditon.
@@ -27,11 +27,13 @@ class VariablesTest extends PreconditionSet
         global $SUPER_USER_NAME;
         global $SUPER_USER_PASSWORD;
 
-        $this->login($SUPER_USER_NAME, $SUPER_USER_PASSWORD,
-            "$webUrl/login.php");
-            
-        return TRUE;
-    } 
+        $this->login(
+            $SUPER_USER_NAME,
+            $SUPER_USER_PASSWORD,
+            "$webUrl/login.php"
+        );
+        return true;
+    }
 
 
     /**
@@ -41,11 +43,10 @@ class VariablesTest extends PreconditionSet
     {
         // Logout this system.
         $this->logout();
-
-        return TRUE;
+        return true;
     }
 
-    
+
     /**
      * TestCaseId: DVA001
      * This test is used to display the list of Processes.
@@ -54,19 +55,13 @@ class VariablesTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER, $DATABASE;
-
-		$this->assertTrue($this->get("$webUrl/database.php", array(
-			            'server' => $SERVER,
-						'database' => $DATABASE,
-						'subject' => 'database',
-						'action' => 'variables'))
-					);
-        
+        $this->assertTrue($this->get("$webUrl/database.php", array(
+                        'server' => $SERVER,
+                        'database' => $DATABASE,
+                        'subject' => 'database',
+                        'action' => 'variables')));
         $this->assertText($lang['strname']);
         $this->assertText($lang['strsetting']);
-
-        return TRUE;
+        return true;
     }
 }
-
-?>

@@ -157,18 +157,6 @@ parameters:
 			path: libraries/adodb/adodb-active-recordx.inc.php
 
 		-
-			message: '#^Instantiated class PEAR_Error not found\.$#'
-			identifier: class.notFound
-			count: 1
-			path: libraries/adodb/adodb-errorpear.inc.php
-
-		-
-			message: '#^Instantiated class PEAR_Error not found\.$#'
-			identifier: class.notFound
-			count: 2
-			path: libraries/adodb/adodb-pear.inc.php
-
-		-
 			message: '#^Method adodb_perf\:\:OptimizeTables\(\) should return bool but return statement is missing\.$#'
 			identifier: return.missing
 			count: 1
@@ -249,12 +237,6 @@ parameters:
 		-
 			message: '#^Call to an undefined method ADOConnection\:\:_pconnect\(\)\.$#'
 			identifier: method.notFound
-			count: 1
-			path: libraries/adodb/adodb.inc.php
-
-		-
-			message: '#^Instantiated class PEAR_Error not found\.$#'
-			identifier: class.notFound
 			count: 1
 			path: libraries/adodb/adodb.inc.php
 
@@ -1135,24 +1117,6 @@ parameters:
 			path: libraries/adodb/lang/adodb-uk.inc.php
 
 		-
-			message: '#^Access to an undefined property Auth_Container_ADOdb\:\:\$_auth_obj\.$#'
-			identifier: property.notFound
-			count: 1
-			path: libraries/adodb/pear/Auth/Container/ADOdb.php
-
-		-
-			message: '#^Call to an undefined method Auth_Container_ADOdb\:\:verifyPassword\(\)\.$#'
-			identifier: method.notFound
-			count: 1
-			path: libraries/adodb/pear/Auth/Container/ADOdb.php
-
-		-
-			message: '#^Call to static method raiseError\(\) on an unknown class PEAR\.$#'
-			identifier: class.notFound
-			count: 10
-			path: libraries/adodb/pear/Auth/Container/ADOdb.php
-
-		-
 			message: '#^Call to static method setAuthData\(\) on an unknown class Auth\.$#'
 			identifier: class.notFound
 			count: 1
@@ -1375,84 +1339,6 @@ parameters:
 			path: tblproperties.php
 
 		-
-			message: '#^Path in require\(\) "\./tests/selenium/config\.test\.php" is not a file or it does not exist\.$#'
-			identifier: require.fileNotFound
-			count: 1
-			path: tests/selenium/TestSuite.php
-
-		-
-			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
-			identifier: require.fileNotFound
-			count: 1
-			path: tests/selenium/src/01-roles.php
-
-		-
-			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
-			identifier: require.fileNotFound
-			count: 1
-			path: tests/selenium/src/04-database.php
-
-		-
-			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
-			identifier: require.fileNotFound
-			count: 1
-			path: tests/selenium/src/06-schema.php
-
-		-
-			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
-			identifier: require.fileNotFound
-			count: 1
-			path: tests/selenium/src/08-domaine.php
-
-		-
-			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
-			identifier: require.fileNotFound
-			count: 1
-			path: tests/selenium/src/10-table.php
-
-		-
-			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
-			identifier: require.fileNotFound
-			count: 1
-			path: tests/selenium/src/12-admin.php
-
-		-
-			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
-			identifier: require.fileNotFound
-			count: 1
-			path: tests/selenium/src/15-sequence.php
-
-		-
-			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
-			identifier: require.fileNotFound
-			count: 1
-			path: tests/selenium/src/20-constraint.php
-
-		-
-			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
-			identifier: require.fileNotFound
-			count: 1
-			path: tests/selenium/src/25-column.php
-
-		-
-			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
-			identifier: require.fileNotFound
-			count: 1
-			path: tests/selenium/src/30-view.php
-
-		-
-			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
-			identifier: require.fileNotFound
-			count: 1
-			path: tests/selenium/src/35-index.php
-
-		-
-			message: '#^Path in require\(\) "\.\./config\.test\.php" is not a file or it does not exist\.$#'
-			identifier: require.fileNotFound
-			count: 1
-			path: tests/selenium/src/99-cleantests.php
-
-		-
 			message: '#^Access to an undefined property TestBuilder\:\:\$data\.$#'
 			identifier: property.notFound
 			count: 2
@@ -1474,12 +1360,6 @@ parameters:
 			message: '#^Access to an undefined property TestBuilder\:\:\$webUrl\.$#'
 			identifier: property.notFound
 			count: 3
-			path: tests/selenium/testBuilder.class.php
-
-		-
-			message: '#^Path in require\(\) "\./tests/selenium/config\.test\.php" is not a file or it does not exist\.$#'
-			identifier: require.fileNotFound
-			count: 1
 			path: tests/selenium/testBuilder.class.php
 
 		-

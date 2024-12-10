@@ -1,13 +1,14 @@
 <?php
+
  /**
   * Function area:       Schemas
   * Subfunction area:    Conversion
-  * @author     Augmentum SpikeSource Team 
+  * @author     Augmentum SpikeSource Team
   * @copyright  2005 by Augmentum, Inc.
   */
- 
+
 // Import the precondition class.
-if(is_dir('../Public')) {
+if (is_dir('../Public')) {
     require_once('../Public/SetPrecondition.php');
 }
 
@@ -19,32 +20,33 @@ if(is_dir('../Public')) {
 class ConversionTest extends PreconditionSet
 {
     /**
-     * Set up the precondition. 
+     * Set up the precondition.
      */
     function setUp()
     {
         global $webUrl;
         global $SUPER_USER_NAME;
         global $SUPER_USER_PASSWORD;
-        
-        // Login the system.
-        $this->login($SUPER_USER_NAME, $SUPER_USER_PASSWORD, 
-                     "$webUrl/login.php"); 
 
-        return TRUE;           
+        // Login the system.
+        $this->login(
+            $SUPER_USER_NAME,
+            $SUPER_USER_PASSWORD,
+            "$webUrl/login.php"
+        );
+        return true;
     }
 
     /**
-     * Clean up all the result. 
+     * Clean up all the result.
      */
     function tearDown()
     {
         // Logout from the system.
-        $this->logout(); 
-        
-        return TRUE;
+        $this->logout();
+        return true;
     }
-    
+
     /**
      * TestCaseID: HBC01
      * Browse the conversions.
@@ -53,24 +55,18 @@ class ConversionTest extends PreconditionSet
     {
         global $webUrl;
         global $lang, $SERVER;
-
-        // Turn to schema "pg_catalog" page.
-		$this->assertTrue($this->get("$webUrl/redirect.php", array(
-			            'server' => $SERVER,
-						'section' => 'schema',
-						'database' => 'template1',
-						'schema' => 'pg_catalog'))
-					);
-        // Click the "Conversions" hyper link.
+// Turn to schema "pg_catalog" page.
+        $this->assertTrue($this->get("$webUrl/redirect.php", array(
+                        'server' => $SERVER,
+                        'section' => 'schema',
+                        'database' => 'template1',
+                        'schema' => 'pg_catalog')));
+// Click the "Conversions" hyper link.
         $this->assertTrue($this->clickLink($lang['strconversions']));
-
-        // Verify whether the conversions are displayed.
+// Verify whether the conversions are displayed.
         // Normally, there should be conversions in this schema, but if there is no,
         // this assert will fail. Need to assert the normal case.
         $this->assertTrue($this->assertText($lang['strsourceencoding']));
-
-        return TRUE;
-    } 
-}    
-
-?>
+        return true;
+    }
+}

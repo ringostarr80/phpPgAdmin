@@ -544,16 +544,8 @@ class Misc
 
         if (!isset($_no_output)) {
             header("Content-Type: text/html; charset=utf-8");
-            // Send XHTML headers, or regular XHTML strict headers
-            echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
-            if ($frameset == true) {
-                echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Frameset//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd\">\n";
-            } elseif (isset($conf['use_xhtml_strict']) && $conf['use_xhtml_strict']) {
-                echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-Strict.dtd\">\n";
-            } else {
-                echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n";
-            }
-            echo "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"{$lang['applocale']}\" lang=\"{$lang['applocale']}\"";
+            echo "<!DOCTYPE html>\n";
+            echo "<html xml:lang=\"{$lang['applocale']}\" lang=\"{$lang['applocale']}\"";
             if (strcasecmp($lang['applangdir'], 'ltr') != 0) {
                 echo " dir=\"", htmlspecialchars($lang['applangdir']), "\"";
             }

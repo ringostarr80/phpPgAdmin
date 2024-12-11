@@ -149,8 +149,8 @@
                 }
                 echo "\\.\n";
             } elseif ($format == 'html') {
-                echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n";
-                echo "<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n";
+                echo "<!DOCTYPE html>\r\n";
+                echo "<html>\r\n";
                 echo "<head>\r\n";
                 echo "\t<title></title>\r\n";
                 echo "\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\r\n";

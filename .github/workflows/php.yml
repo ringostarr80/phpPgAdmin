@@ -43,5 +43,5 @@ jobs:
         with:
           php-version: ${{ matrix.version }}
 
-      - name: Run PHP Syntax Checker (phpcs)
+      - name: Run PHP Syntax Checker
         run: composer run-script dev:lint:php

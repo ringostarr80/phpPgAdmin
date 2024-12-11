@@ -23,7 +23,7 @@
             "@dev:lint:php",
             "@dev:lint:phpcs"
         ],
-        "dev:lint:php": "parallel-lint .",
+        "dev:lint:php": "parallel-lint --exclude vendor .",
         "dev:lint:phpcs": "phpcs -d memory_limit=256M ."
     },
     "require-dev": {

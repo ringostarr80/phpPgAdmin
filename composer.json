@@ -15,12 +15,21 @@
     },
     "minimum-stability": "stable",
     "scripts": {
-        "phpcs": "phpcs -d memory_limit=256M .",
-        "phpstan": "phpstan analyse --configuration=phpstan.neon --memory-limit=512M"
+        "dev:analyze": [
+            "@dev:analyze:phpstan"
+        ],
+        "dev:analyze:phpstan": "phpstan analyse --configuration=phpstan.neon --memory-limit=512M",
+        "dev:lint": [
+            "@dev:lint:php",
+            "@dev:lint:phpcs"
+        ],
+        "dev:lint:php": "parallel-lint .",
+        "dev:lint:phpcs": "phpcs -d memory_limit=256M ."
     },
     "require-dev": {
         "phpstan/phpstan": "^2.0",
         "squizlabs/php_codesniffer": "^3.11",
-        "simpletest/simpletest": "dev-main"
+        "simpletest/simpletest": "dev-main",
+        "php-parallel-lint/php-parallel-lint": "^1.4"
     }
 }

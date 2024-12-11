@@ -1,22 +1,22 @@
 <?php
 
-    /**
-     * Manage types in a database
-     *
-     * $Id: types.php,v 1.42 2007/11/30 15:25:23 soranzo Exp $
-     */
+/**
+ * Manage types in a database
+ *
+ * $Id: types.php,v 1.42 2007/11/30 15:25:23 soranzo Exp $
+ */
 
-    // Include application functions
-    include_once('./libraries/lib.inc.php');
+// Include application functions
+include_once './libraries/lib.inc.php';
 
-    $action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : '';
+$action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : '';
 if (!isset($msg)) {
     $msg = '';
 }
 
-    /**
-     * Show read only properties for a type
-     */
+/**
+ * Show read only properties for a type
+ */
 function doProperties($msg = '')
 {
     global $data, $misc;
@@ -63,6 +63,7 @@ function doProperties($msg = '')
                 break;
             case 'e':
                 $vals = $data->getEnumValues($typedata->fields['typname']);
+                // no break
             default:
                 $byval = $data->phpBool($typedata->fields['typbyval']);
                 echo "<table>\n";

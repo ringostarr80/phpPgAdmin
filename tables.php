@@ -1,19 +1,19 @@
 <?php
 
-    /**
-     * List tables in a database
-     *
-     * $Id: tables.php,v 1.112 2008/06/16 22:38:46 ioguix Exp $
-     */
+/**
+ * List tables in a database
+ *
+ * $Id: tables.php,v 1.112 2008/06/16 22:38:46 ioguix Exp $
+ */
 
-    // Include application functions
-    include_once('./libraries/lib.inc.php');
+// Include application functions
+include_once('./libraries/lib.inc.php');
 
-    $action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : '';
+$action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : '';
 
-    /**
-     * Displays a screen where they can enter a new table
-     */
+/**
+ * Displays a screen where they can enter a new table
+ */
 function doCreate($msg = '')
 {
     global $data, $misc;
@@ -696,8 +696,7 @@ function doEmpty($confirm)
                 echo "<p>", sprintf($lang['strconfemptytable'], $misc->printVal($a['table'])), "</p>\n";
                 printf('<input type="hidden" name="table[]" value="%s" />', htmlspecialchars($a['table']));
             }
-        } // END multi empty
-        else {
+        } else {
             $misc->printTrail('table');
             $misc->printTitle($lang['strempty'], 'pg.table.empty');
 
@@ -711,8 +710,7 @@ function doEmpty($confirm)
         echo $misc->form;
         echo "<input type=\"submit\" name=\"empty\" value=\"{$lang['strempty']}\" /> <input type=\"submit\" name=\"cancel\" value=\"{$lang['strcancel']}\" />\n";
         echo "</form>\n";
-    } // END if confirm
-    else { // Do Empty
+    } else { // Do Empty
         if (is_array($_REQUEST['table'])) {
             $msg = '';
             foreach ($_REQUEST['table'] as $t) {
@@ -725,8 +723,7 @@ function doEmpty($confirm)
                 }
             }
             doDefault($msg);
-        } // END multi empty
-        else {
+        } else {
             $status = $data->emptyTable($_POST['table']);
             if ($status == 0) {
                 doDefault($lang['strtableemptied']);
@@ -737,9 +734,9 @@ function doEmpty($confirm)
     } // END do Empty
 }
 
-    /**
-     * Show confirmation of drop and perform actual drop
-     */
+/**
+ * Show confirmation of drop and perform actual drop
+ */
 function doDrop($confirm)
 {
     global $data, $misc;
@@ -778,8 +775,7 @@ function doDrop($confirm)
         echo "<input type=\"submit\" name=\"drop\" value=\"{$lang['strdrop']}\" />\n";
         echo "<input type=\"submit\" name=\"cancel\" value=\"{$lang['strcancel']}\" />\n";
         echo "</form>\n";
-    } // END confirm
-    else {
+    } else {
         //If multi drop
         if (is_array($_REQUEST['table'])) {
             $msg = '';
@@ -813,11 +809,11 @@ function doDrop($confirm)
             }
         }
     } // END DROP
-}// END Function
+}
 
-    /**
-     * Show default list of tables in the database
-     */
+/**
+ * Show default list of tables in the database
+ */
 function doDefault($msg = '')
 {
     global $data, $conf, $misc, $data;

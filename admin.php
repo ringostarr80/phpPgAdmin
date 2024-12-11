@@ -25,8 +25,7 @@ function doCluster($type, $confirm = false)
                 echo "<p>", sprintf($lang['strconfclustertable'], $misc->printVal($a['table'])), "</p>\n";
                 echo "<input type=\"hidden\" name=\"table[]\" value=\"", htmlspecialchars($a['table']), "\" />\n";
             }
-        } // END if multi cluster
-        else {
+        } else {
             $misc->printTrail($type);
             $misc->printTitle($lang['strclusterindex'], 'pg.index.cluster');
 
@@ -47,8 +46,7 @@ function doCluster($type, $confirm = false)
         echo "<input type=\"submit\" name=\"cluster\" value=\"{$lang['strcluster']}\" />\n"; //TODO
         echo "<input type=\"submit\" name=\"cancel\" value=\"{$lang['strcancel']}\" />\n";
         echo "</form>\n";
-    } // END single cluster
-    else {
+    } else {
         //If multi table cluster
         if ($type == 'table') { // cluster one or more table
             if (is_array($_REQUEST['table'])) {
@@ -83,9 +81,9 @@ function doCluster($type, $confirm = false)
     }
 }
 
-    /**
-     * Show confirmation of reindex and perform reindex
-     */
+/**
+ * Show confirmation of reindex and perform reindex
+ */
 function doReindex($type, $confirm = false)
 {
     global $script, $data, $misc, $lang, $_reload_browser;
@@ -106,8 +104,7 @@ function doReindex($type, $confirm = false)
                 echo "<p>", sprintf($lang['strconfreindextable'], $misc->printVal($a['table'])), "</p>\n";
                 echo "<input type=\"hidden\" name=\"table[]\" value=\"", htmlspecialchars($a['table']), "\" />\n";
             }
-        } // END if multi reindex
-        else {
+        } else {
             $misc->printTrail($type);
             $misc->printTitle($lang['strreindex'], 'pg.reindex');
 
@@ -132,8 +129,7 @@ function doReindex($type, $confirm = false)
         echo "<input type=\"submit\" name=\"reindex\" value=\"{$lang['strreindex']}\" />\n"; //TODO
         echo "<input type=\"submit\" name=\"cancel\" value=\"{$lang['strcancel']}\" />\n";
         echo "</form>\n";
-    } // END single reindex
-    else {
+    } else {
         //If multi table reindex
         if (($type == 'table') && is_array($_REQUEST['table'])) {
             $msg = '';
@@ -161,9 +157,9 @@ function doReindex($type, $confirm = false)
     }
 }
 
-    /**
-     * Show confirmation of analyze and perform analyze
-     */
+/**
+ * Show confirmation of analyze and perform analyze
+ */
 function doAnalyze($type, $confirm = false)
 {
     global $script, $data, $misc, $lang, $_reload_browser;
@@ -184,8 +180,7 @@ function doAnalyze($type, $confirm = false)
                 echo "<p>", sprintf($lang['strconfanalyzetable'], $misc->printVal($a['table'])), "</p>\n";
                 echo "<input type=\"hidden\" name=\"table[]\" value=\"", htmlspecialchars($a['table']), "\" />\n";
             }
-        } // END if multi analyze
-        else {
+        } else {
             $misc->printTrail($type);
             $misc->printTitle($lang['stranalyze'], 'pg.analyze');
 
@@ -205,8 +200,7 @@ function doAnalyze($type, $confirm = false)
         echo "<input type=\"submit\" name=\"analyze\" value=\"{$lang['stranalyze']}\" />\n"; //TODO
         echo "<input type=\"submit\" name=\"cancel\" value=\"{$lang['strcancel']}\" />\n";
         echo "</form>\n";
-    } // END single analyze
-    else {
+    } else {
         //If multi table analyze
         if (($type == 'table') && is_array($_REQUEST['table'])) {
             $msg = '';
@@ -235,9 +229,9 @@ function doAnalyze($type, $confirm = false)
     }
 }
 
-    /**
-     * Show confirmation of vacuum and perform actual vacuum
-     */
+/**
+ * Show confirmation of vacuum and perform actual vacuum
+ */
 function doVacuum($type, $confirm = false)
 {
     global $script, $data, $misc, $lang, $_reload_browser;
@@ -258,8 +252,7 @@ function doVacuum($type, $confirm = false)
                 echo "<p>", sprintf($lang['strconfvacuumtable'], $misc->printVal($a['table'])), "</p>\n";
                 echo "<input type=\"hidden\" name=\"table[]\" value=\"", htmlspecialchars($a['table']), "\" />\n";
             }
-        } // END if multi vacuum
-        else {
+        } else {
             $misc->printTrail($type);
             $misc->printTitle($lang['strvacuum'], 'pg.vacuum');
 
@@ -281,8 +274,7 @@ function doVacuum($type, $confirm = false)
         echo "<input type=\"submit\" name=\"vacuum\" value=\"{$lang['strvacuum']}\" />\n";
         echo "<input type=\"submit\" name=\"cancel\" value=\"{$lang['strcancel']}\" />\n";
         echo "</form>\n";
-    } // END single vacuum
-    else {
+    } else {
         //If multi drop
         if (is_array($_REQUEST['table'])) {
             $msg = '';
@@ -295,9 +287,9 @@ function doVacuum($type, $confirm = false)
                     return;
                 }
             }
-             // Everything went fine, back to the Default page....
-             $_reload_browser = true;
-             doDefault($msg);
+            // Everything went fine, back to the Default page....
+            $_reload_browser = true;
+            doDefault($msg);
         } else {
             //we must pass table here. When empty, vacuum the whole db
             $status = $data->vacuumDB($_REQUEST['table'], isset($_REQUEST['vacuum_analyze']), isset($_REQUEST['vacuum_full']), isset($_REQUEST['vacuum_freeze']));
@@ -311,9 +303,9 @@ function doVacuum($type, $confirm = false)
     }
 }
 
-    /**
-     * Add or Edit autovacuum params and save them
-     */
+/**
+ * Add or Edit autovacuum params and save them
+ */
 function doEditAutovacuum($type, $confirm, $msg = '')
 {
     global $script, $data, $misc, $lang;
@@ -728,9 +720,7 @@ function adminActions($action, $type)
         case 'cluster':
             if (isset($_POST['cluster'])) {
                 doCluster($type);
-            }
-            // if multi-action from table canceled: back to the schema default page
-            elseif (($type == 'table') && is_array($_REQUEST['object'])) {
+            } elseif (($type == 'table') && is_array($_REQUEST['object'])) { // if multi-action from table canceled: back to the schema default page
                 doDefault();
             } else {
                 doAdmin($type);
@@ -739,9 +729,7 @@ function adminActions($action, $type)
         case 'reindex':
             if (isset($_POST['reindex'])) {
                 doReindex($type);
-            }
-            // if multi-action from table canceled: back to the schema default page
-            elseif (($type == 'table') && is_array($_REQUEST['object'])) {
+            } elseif (($type == 'table') && is_array($_REQUEST['object'])) { // if multi-action from table canceled: back to the schema default page
                 doDefault();
             } else {
                 doAdmin($type);
@@ -750,9 +738,7 @@ function adminActions($action, $type)
         case 'analyze':
             if (isset($_POST['analyze'])) {
                 doAnalyze($type);
-            }
-            // if multi-action from table canceled: back to the schema default page
-            elseif (($type == 'table') && is_array($_REQUEST['object'])) {
+            } elseif (($type == 'table') && is_array($_REQUEST['object'])) { // if multi-action from table canceled: back to the schema default page
                 doDefault();
             } else {
                 doAdmin($type);
@@ -761,9 +747,7 @@ function adminActions($action, $type)
         case 'vacuum':
             if (isset($_POST['vacuum'])) {
                 doVacuum($type);
-            }
-            // if multi-action from table canceled: back to the schema default page
-            elseif (($type == 'table') && is_array($_REQUEST['object'])) {
+            } elseif (($type == 'table') && is_array($_REQUEST['object'])) { // if multi-action from table canceled: back to the schema default page
                 doDefault();
             } else {
                 doAdmin($type);
@@ -777,9 +761,6 @@ function adminActions($action, $type)
             break;
         case 'confdelautovac':
             doDropAutovacuum($type, true);
-            break;
-        case 'confaddautovac':
-            doAddAutovacuum(true);
             break;
         case 'editautovac':
             if (isset($_POST['save'])) {

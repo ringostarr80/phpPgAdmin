@@ -105,9 +105,7 @@ function doChangePassword($confirm, $msg = '')
         // Check that password is minimum length
         if (strlen($_POST['password']) < $conf['min_password_length']) {
             doChangePassword(true, $lang['strpasswordshort']);
-        }
-        // Check that password matches confirmation password
-        elseif ($_POST['password'] != $_POST['confirm']) {
+        } elseif ($_POST['password'] != $_POST['confirm']) {
             doChangePassword(true, $lang['strpasswordconfirm']);
         } else {
             $status = $data->changePassword(

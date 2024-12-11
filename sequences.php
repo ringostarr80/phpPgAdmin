@@ -1,22 +1,22 @@
 <?php
 
-    /**
-     * Manage sequences in a database
-     *
-     * $Id: sequences.php,v 1.49 2007/12/15 22:21:54 ioguix Exp $
-     */
+/**
+ * Manage sequences in a database
+ *
+ * $Id: sequences.php,v 1.49 2007/12/15 22:21:54 ioguix Exp $
+ */
 
-    // Include application functions
-    include_once('./libraries/lib.inc.php');
+// Include application functions
+include_once './libraries/lib.inc.php';
 
-    $action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : '';
+$action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : '';
 if (!isset($msg)) {
     $msg = '';
 }
 
-    /**
-     * Display list of all sequences in the database/schema
-     */
+/**
+ * Display list of all sequences in the database/schema
+ */
 function doDefault($msg = '')
 {
     global $data, $conf, $misc;
@@ -324,10 +324,13 @@ function doDrop($confirm, $msg = '')
             }
         } else {
             echo "<p>", sprintf($lang['strconfdropsequence'], $misc->printVal($_REQUEST['sequence'])), "</p>\n";
-            echo "<input type=\"hidden\" name=\"sequence\" value=\"", htmlspecialchars($_REQUEST['sequence']), "\" />\n";
+            echo "<input type=\"hidden\" name=\"sequence\" value=\"",
+                htmlspecialchars($_REQUEST['sequence']),
+                "\" />\n";
         }
 
-        echo "<p><input type=\"checkbox\" id=\"cascade\" name=\"cascade\" /> <label for=\"cascade\">{$lang['strcascade']}</label></p>\n";
+        echo "<p><input type=\"checkbox\" id=\"cascade\" name=\"cascade\" /> ";
+        echo "<label for=\"cascade\">{$lang['strcascade']}</label></p>\n";
         echo "<p><input type=\"hidden\" name=\"action\" value=\"drop\" />\n";
         echo $misc->form;
         echo "<input type=\"submit\" name=\"drop\" value=\"{$lang['strdrop']}\" />\n";
@@ -341,10 +344,21 @@ function doDrop($confirm, $msg = '')
                 foreach ($_POST['sequence'] as $s) {
                     $status = $data->dropSequence($s, isset($_POST['cascade']));
                     if ($status == 0) {
-                        $msg .= sprintf('%s: %s<br />', htmlentities($s, ENT_QUOTES, 'UTF-8'), $lang['strsequencedropped']);
+                        $msg .= sprintf(
+                            '%s: %s<br />',
+                            htmlentities($s, ENT_QUOTES, 'UTF-8'),
+                            $lang['strsequencedropped']
+                        );
                     } else {
                         $data->endTransaction();
-                        doDefault(sprintf('%s%s: %s<br />', $msg, htmlentities($s, ENT_QUOTES, 'UTF-8'), $lang['strsequencedroppedbad']));
+                        doDefault(
+                            sprintf(
+                                '%s%s: %s<br />',
+                                $msg,
+                                htmlentities($s, ENT_QUOTES, 'UTF-8'),
+                                $lang['strsequencedroppedbad']
+                            )
+                        );
                         return;
                     }
                 }
@@ -564,9 +578,9 @@ function doSetval($msg = '')
     }
 }
 
-    /**
-     * Function to save after altering a sequence
-     */
+/**
+ * Function to save after altering a sequence
+ */
 function doSaveAlter()
 {
     global $data, $lang, $_reload_browser, $misc;
@@ -633,9 +647,9 @@ function doSaveAlter()
     }
 }
 
-    /**
-     * Function to allow altering of a sequence
-     */
+/**
+ * Function to allow altering of a sequence
+ */
 function doAlter($msg = '')
 {
     global $data, $misc;
@@ -697,8 +711,13 @@ function doAlter($msg = '')
             echo "<td class=\"data1\"><select name=\"newschema\">";
             while (!$schemas->EOF) {
                 $schema = $schemas->fields['nspname'];
-                echo "<option value=\"", htmlspecialchars($schema), "\"",
-                    ($schema == $_POST['newschema']) ? ' selected="selected"' : '', ">", htmlspecialchars($schema), "</option>\n";
+                echo "<option value=\"",
+                    htmlspecialchars($schema),
+                    "\"",
+                    ($schema == $_POST['newschema']) ? ' selected="selected"' : '',
+                    ">",
+                    htmlspecialchars($schema),
+                    "</option>\n";
                 $schemas->moveNext();
             }
             echo "</select></td></tr>\n";
@@ -742,7 +761,9 @@ function doAlter($msg = '')
         echo "</table>\n";
         echo "<p><input type=\"hidden\" name=\"action\" value=\"alter\" />\n";
         echo $misc->form;
-        echo "<input type=\"hidden\" name=\"sequence\" value=\"", htmlspecialchars($_REQUEST['sequence'] ?? ''), "\" />\n";
+        echo "<input type=\"hidden\" name=\"sequence\" value=\"",
+            htmlspecialchars($_REQUEST['sequence'] ?? ''),
+            "\" />\n";
         echo "<input type=\"submit\" name=\"alter\" value=\"{$lang['stralter']}\" />\n";
         echo "<input type=\"submit\" name=\"cancel\" value=\"{$lang['strcancel']}\" /></p>\n";
         echo "</form>\n";
@@ -755,9 +776,9 @@ if ($action == 'tree') {
     doTree();
 }
 
-    // Print header
-    $misc->printHeader($lang['strsequences']);
-    $misc->printBody();
+// Print header
+$misc->printHeader($lang['strsequences']);
+$misc->printBody();
 
 switch ($action) {
     case 'create':
@@ -817,5 +838,5 @@ switch ($action) {
         break;
 }
 
-    // Print footer
-    $misc->printFooter();
+// Print footer
+$misc->printFooter();

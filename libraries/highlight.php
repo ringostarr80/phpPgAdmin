@@ -573,7 +573,7 @@ function lparen_putback_rtrim1($span, $lang, $ch)
 
 function prepend_xml_opentag($span, $lang, $ch)
 {
-    return '<span class="xml_tag">&lt;' . $span;
+    return '<span class="XML_TAG">&lt;' . $span;
 }
 
 function proc_void($span, $lang, $ch)
@@ -593,109 +593,109 @@ function syntax_highlight($text, $language)
         return $text;
     }
 
-    define("normal_text", 1, true);
-    define("dq_literal", 2, true);
-    define("dq_escape", 3, true);
-    define("sq_literal", 4, true);
-    define("sq_escape", 5, true);
-    define("slash_begin", 6, true);
-    define("star_comment", 7, true);
-    define("star_end", 8, true);
-    define("line_comment", 9, true);
-    define("html_entity", 10, true);
-    define("lc_escape", 11, true);
-    define("block_comment", 12, true);
-    define("paren_begin", 13, true);
-    define("dash_begin", 14, true);
-    define("bt_literal", 15, true);
-    define("bt_escape", 16, true);
-    define("xml_tag_begin", 17, true);
-    define("xml_tag", 18, true);
-    define("xml_pi", 19, true);
-    define("sch_normal", 20, true);
-    define("sch_stresc", 21, true);
-    define("sch_idexpr", 22, true);
-    define("sch_numlit", 23, true);
-    define("sch_chrlit", 24, true);
-    define("sch_strlit", 25, true);
+    define("NORMAL_TEXT", 1, true);
+    define("DQ_LITERAL", 2, true);
+    define("DQ_ESCAPE", 3, true);
+    define("SQ_LITERAL", 4, true);
+    define("SQ_ESCAPE", 5, true);
+    define("SLASH_BEGIN", 6, true);
+    define("STAR_COMMENT", 7, true);
+    define("STAR_END", 8, true);
+    define("LINE_COMMENT", 9, true);
+    define("HTML_ENTITY", 10, true);
+    define("LC_ESCAPE", 11, true);
+    define("BLOCK_COMMENT", 12, true);
+    define("PAREN_BEGIN", 13, true);
+    define("DASH_BEGIN", 14, true);
+    define("BT_LITERAL", 15, true);
+    define("BT_ESCAPE", 16, true);
+    define("XML_TAG_BEGIN", 17, true);
+    define("XML_TAG", 18, true);
+    define("XML_PI", 19, true);
+    define("SCH_NORMAL", 20, true);
+    define("SCH_STRESC", 21, true);
+    define("SCH_IDEXPR", 22, true);
+    define("SCH_NUMLIT", 23, true);
+    define("SCH_CHRLIT", 24, true);
+    define("SCH_STRLIT", 25, true);
 
-    $initial_state["Scheme"] = sch_normal;
+    $initial_state["Scheme"] = SCH_NORMAL;
 
-    $sch[sch_normal][0]     = sch_normal;
-    $sch[sch_normal]['"']   = sch_strlit;
-    $sch[sch_normal]["#"]   = sch_chrlit;
-    $sch[sch_normal]["0"]   = sch_numlit;
-    $sch[sch_normal]["1"]   = sch_numlit;
-    $sch[sch_normal]["2"]   = sch_numlit;
-    $sch[sch_normal]["3"]   = sch_numlit;
-    $sch[sch_normal]["4"]   = sch_numlit;
-    $sch[sch_normal]["5"]   = sch_numlit;
-    $sch[sch_normal]["6"]   = sch_numlit;
-    $sch[sch_normal]["7"]   = sch_numlit;
-    $sch[sch_normal]["8"]   = sch_numlit;
-    $sch[sch_normal]["9"]   = sch_numlit;
+    $sch[SCH_NORMAL][0]     = SCH_NORMAL;
+    $sch[SCH_NORMAL]['"']   = SCH_STRLIT;
+    $sch[SCH_NORMAL]["#"]   = SCH_CHRLIT;
+    $sch[SCH_NORMAL]["0"]   = SCH_NUMLIT;
+    $sch[SCH_NORMAL]["1"]   = SCH_NUMLIT;
+    $sch[SCH_NORMAL]["2"]   = SCH_NUMLIT;
+    $sch[SCH_NORMAL]["3"]   = SCH_NUMLIT;
+    $sch[SCH_NORMAL]["4"]   = SCH_NUMLIT;
+    $sch[SCH_NORMAL]["5"]   = SCH_NUMLIT;
+    $sch[SCH_NORMAL]["6"]   = SCH_NUMLIT;
+    $sch[SCH_NORMAL]["7"]   = SCH_NUMLIT;
+    $sch[SCH_NORMAL]["8"]   = SCH_NUMLIT;
+    $sch[SCH_NORMAL]["9"]   = SCH_NUMLIT;
 
-    $sch[sch_strlit]['"']   = sch_normal;
-    $sch[sch_strlit]["\n"]  = sch_normal;
-    $sch[sch_strlit]["\\"]  = sch_stresc;
-    $sch[sch_strlit][0]     = sch_strlit;
+    $sch[SCH_STRLIT]['"']   = SCH_NORMAL;
+    $sch[SCH_STRLIT]["\n"]  = SCH_NORMAL;
+    $sch[SCH_STRLIT]["\\"]  = SCH_STRESC;
+    $sch[SCH_STRLIT][0]     = SCH_STRLIT;
 
-    $sch[sch_chrlit][" "]   = sch_normal;
-    $sch[sch_chrlit]["\t"]  = sch_normal;
-    $sch[sch_chrlit]["\n"]  = sch_normal;
-    $sch[sch_chrlit]["\r"]  = sch_normal;
-    $sch[sch_chrlit][0]     = sch_chrlit;
+    $sch[SCH_CHRLIT][" "]   = SCH_NORMAL;
+    $sch[SCH_CHRLIT]["\t"]  = SCH_NORMAL;
+    $sch[SCH_CHRLIT]["\n"]  = SCH_NORMAL;
+    $sch[SCH_CHRLIT]["\r"]  = SCH_NORMAL;
+    $sch[SCH_CHRLIT][0]     = SCH_CHRLIT;
 
-    $sch[sch_numlit][" "]   = sch_normal;
-    $sch[sch_numlit]["\t"]  = sch_normal;
-    $sch[sch_numlit]["\n"]  = sch_normal;
-    $sch[sch_numlit]["\r"]  = sch_normal;
-    $sch[sch_numlit][0]     = sch_numlit;
+    $sch[SCH_NUMLIT][" "]   = SCH_NORMAL;
+    $sch[SCH_NUMLIT]["\t"]  = SCH_NORMAL;
+    $sch[SCH_NUMLIT]["\n"]  = SCH_NORMAL;
+    $sch[SCH_NUMLIT]["\r"]  = SCH_NORMAL;
+    $sch[SCH_NUMLIT][0]     = SCH_NUMLIT;
 
     //
     // State transitions for C
     //
-    $c89[normal_text]["\""] = dq_literal;
-    $c89[normal_text]["'"]  = sq_literal;
-    $c89[normal_text]["/"]  = slash_begin;
-    $c89[normal_text][0]    = normal_text;
+    $c89[NORMAL_TEXT]["\""] = DQ_LITERAL;
+    $c89[NORMAL_TEXT]["'"]  = SQ_LITERAL;
+    $c89[NORMAL_TEXT]["/"]  = SLASH_BEGIN;
+    $c89[NORMAL_TEXT][0]    = NORMAL_TEXT;
 
-    $c89[dq_literal]["\""]  = normal_text;
-    $c89[dq_literal]["\n"]  = normal_text;
-    $c89[dq_literal]["\\"]  = dq_escape;
-    $c89[dq_literal][0]     = dq_literal;
+    $c89[DQ_LITERAL]["\""]  = NORMAL_TEXT;
+    $c89[DQ_LITERAL]["\n"]  = NORMAL_TEXT;
+    $c89[DQ_LITERAL]["\\"]  = DQ_ESCAPE;
+    $c89[DQ_LITERAL][0]     = DQ_LITERAL;
 
-    $c89[dq_escape][0]      = dq_literal;
+    $c89[DQ_ESCAPE][0]      = DQ_LITERAL;
 
-    $c89[sq_literal]["'"]   = normal_text;
-    $c89[sq_literal]["\n"]  = normal_text;
-    $c89[sq_literal]["\\"]  = sq_escape;
-    $c89[sq_literal][0]     = sq_literal;
+    $c89[SQ_LITERAL]["'"]   = NORMAL_TEXT;
+    $c89[SQ_LITERAL]["\n"]  = NORMAL_TEXT;
+    $c89[SQ_LITERAL]["\\"]  = SQ_ESCAPE;
+    $c89[SQ_LITERAL][0]     = SQ_LITERAL;
 
-    $c89[sq_escape][0]      = sq_literal;
+    $c89[SQ_ESCAPE][0]      = SQ_LITERAL;
 
-    $c89[slash_begin]["*"]  = star_comment;
-    $c89[slash_begin][0]    = normal_text;
+    $c89[SLASH_BEGIN]["*"]  = STAR_COMMENT;
+    $c89[SLASH_BEGIN][0]    = NORMAL_TEXT;
 
-    $c89[star_comment]["*"] = star_end;
-    $c89[star_comment][0]   = star_comment;
+    $c89[STAR_COMMENT]["*"] = STAR_END;
+    $c89[STAR_COMMENT][0]   = STAR_COMMENT;
 
-    $c89[star_end]["/"]     = normal_text;
-    $c89[star_end]["*"]     = star_end;
-    $c89[star_end][0]       = star_comment;
+    $c89[STAR_END]["/"]     = NORMAL_TEXT;
+    $c89[STAR_END]["*"]     = STAR_END;
+    $c89[STAR_END][0]       = STAR_COMMENT;
 
     //
     // State transitions for C++
     // Inherit transitions from C, and add line comment support
     //
     $cpp = $c89;
-    $cpp[slash_begin]["/"]   = line_comment;
-    $cpp[line_comment]["\n"] = normal_text;
-    $cpp[line_comment]["\\"] = lc_escape;
-    $cpp[line_comment][0]    = line_comment;
+    $cpp[SLASH_BEGIN]["/"]   = LINE_COMMENT;
+    $cpp[LINE_COMMENT]["\n"] = NORMAL_TEXT;
+    $cpp[LINE_COMMENT]["\\"] = LC_ESCAPE;
+    $cpp[LINE_COMMENT][0]    = LINE_COMMENT;
 
-    $cpp[lc_escape]["\r"]    = lc_escape;
-    $cpp[lc_escape][0]       = line_comment;
+    $cpp[LC_ESCAPE]["\r"]    = LC_ESCAPE;
+    $cpp[LC_ESCAPE][0]       = LINE_COMMENT;
 
     //
     // State transitions for C99.
@@ -711,44 +711,44 @@ function syntax_highlight($text, $language)
     // State transitions for PHP
     // Inherit transitions from C++, and add perl-style line comment support
     $php = $cpp;
-    $php[normal_text]["#"]   = line_comment;
-    $php[sq_literal]["\n"]   = sq_literal;
-    $php[dq_literal]["\n"]   = dq_literal;
+    $php[NORMAL_TEXT]["#"]   = LINE_COMMENT;
+    $php[SQ_LITERAL]["\n"]   = SQ_LITERAL;
+    $php[DQ_LITERAL]["\n"]   = DQ_LITERAL;
 
     //
     // State transitions for Perl
-    $perl[normal_text]["#"]  = line_comment;
-    $perl[normal_text]["\""] = dq_literal;
-    $perl[normal_text]["'"]  = sq_literal;
-    $perl[normal_text][0]    = normal_text;
+    $perl[NORMAL_TEXT]["#"]  = LINE_COMMENT;
+    $perl[NORMAL_TEXT]["\""] = DQ_LITERAL;
+    $perl[NORMAL_TEXT]["'"]  = SQ_LITERAL;
+    $perl[NORMAL_TEXT][0]    = NORMAL_TEXT;
 
-    $perl[dq_literal]["\""]  = normal_text;
-    $perl[dq_literal]["\\"]  = dq_escape;
-    $perl[dq_literal][0]     = dq_literal;
+    $perl[DQ_LITERAL]["\""]  = NORMAL_TEXT;
+    $perl[DQ_LITERAL]["\\"]  = DQ_ESCAPE;
+    $perl[DQ_LITERAL][0]     = DQ_LITERAL;
 
-    $perl[dq_escape][0]      = dq_literal;
+    $perl[DQ_ESCAPE][0]      = DQ_LITERAL;
 
-    $perl[sq_literal]["'"]   = normal_text;
-    $perl[sq_literal]["\\"]  = sq_escape;
-    $perl[sq_literal][0]     = sq_literal;
+    $perl[SQ_LITERAL]["'"]   = NORMAL_TEXT;
+    $perl[SQ_LITERAL]["\\"]  = SQ_ESCAPE;
+    $perl[SQ_LITERAL][0]     = SQ_LITERAL;
 
-    $perl[sq_escape][0]      = sq_literal;
+    $perl[SQ_ESCAPE][0]      = SQ_LITERAL;
 
-    $perl[line_comment]["\n"] = normal_text;
-    $perl[line_comment][0]    = line_comment;
+    $perl[LINE_COMMENT]["\n"] = NORMAL_TEXT;
+    $perl[LINE_COMMENT][0]    = LINE_COMMENT;
 
-    $mirc[normal_text]["\""] = dq_literal;
-    $mirc[normal_text][";"]  = line_comment;
-    $mirc[normal_text][0]    = normal_text;
+    $mirc[NORMAL_TEXT]["\""] = DQ_LITERAL;
+    $mirc[NORMAL_TEXT][";"]  = LINE_COMMENT;
+    $mirc[NORMAL_TEXT][0]    = NORMAL_TEXT;
 
-    $mirc[dq_literal]["\""]  = normal_text;
-    $mirc[dq_literal]["\\"]  = dq_escape;
-    $mirc[dq_literal][0]     = dq_literal;
+    $mirc[DQ_LITERAL]["\""]  = NORMAL_TEXT;
+    $mirc[DQ_LITERAL]["\\"]  = DQ_ESCAPE;
+    $mirc[DQ_LITERAL][0]     = DQ_LITERAL;
 
-    $mirc[dq_escape][0]      = dq_literal;
+    $mirc[DQ_ESCAPE][0]      = DQ_LITERAL;
 
-    $mirc[line_comment]["\n"] = normal_text;
-    $mirc[line_comment][0]   = line_comment;
+    $mirc[LINE_COMMENT]["\n"] = NORMAL_TEXT;
+    $mirc[LINE_COMMENT][0]   = LINE_COMMENT;
 
     $ruby = $perl;
 
@@ -757,96 +757,96 @@ function syntax_highlight($text, $language)
     $java = $cpp;
 
     $vb = $perl;
-    $vb[normal_text]["#"] = normal_text;
-    $vb[normal_text]["'"] = line_comment;
+    $vb[NORMAL_TEXT]["#"] = NORMAL_TEXT;
+    $vb[NORMAL_TEXT]["'"] = LINE_COMMENT;
 
     $cs = $java;
 
     $pascal = $c89;
-    $pascal[normal_text]["("]  = paren_begin;
-    $pascal[normal_text]["/"]  = slash_begin;
-    $pascal[normal_text]["{"]  = block_comment;
+    $pascal[NORMAL_TEXT]["("]  = PAREN_BEGIN;
+    $pascal[NORMAL_TEXT]["/"]  = SLASH_BEGIN;
+    $pascal[NORMAL_TEXT]["{"]  = BLOCK_COMMENT;
 
-    $pascal[paren_begin]["*"]  = star_comment;
-    $pascal[paren_begin]["'"]  = sq_literal;
-    $pascal[paren_begin]['"']  = dq_literal;
-    $pascal[paren_begin][0]    = normal_text;
+    $pascal[PAREN_BEGIN]["*"]  = STAR_COMMENT;
+    $pascal[PAREN_BEGIN]["'"]  = SQ_LITERAL;
+    $pascal[PAREN_BEGIN]['"']  = DQ_LITERAL;
+    $pascal[PAREN_BEGIN][0]    = NORMAL_TEXT;
 
-    $pascal[slash_begin]["'"]  = sq_literal;
-    $pascal[slash_begin]['"']  = dq_literal;
-    $pascal[slash_begin]['/']  = line_comment;
-    $pascal[slash_begin][0]    = normal_text;
+    $pascal[SLASH_BEGIN]["'"]  = SQ_LITERAL;
+    $pascal[SLASH_BEGIN]['"']  = DQ_LITERAL;
+    $pascal[SLASH_BEGIN]['/']  = LINE_COMMENT;
+    $pascal[SLASH_BEGIN][0]    = NORMAL_TEXT;
 
-    $pascal[star_comment]["*"] = star_end;
-    $pascal[star_comment][0]   = star_comment;
+    $pascal[STAR_COMMENT]["*"] = STAR_END;
+    $pascal[STAR_COMMENT][0]   = STAR_COMMENT;
 
-    $pascal[block_comment]["}"] = normal_text;
-    $pascal[block_comment][0]   = block_comment;
+    $pascal[BLOCK_COMMENT]["}"] = NORMAL_TEXT;
+    $pascal[BLOCK_COMMENT][0]   = BLOCK_COMMENT;
 
-    $pascal[line_comment]["\n"] = normal_text;
-    $pascal[line_comment][0]    = line_comment;
+    $pascal[LINE_COMMENT]["\n"] = NORMAL_TEXT;
+    $pascal[LINE_COMMENT][0]    = LINE_COMMENT;
 
-    $pascal[star_end][")"]     = normal_text;
-    $pascal[star_end]["*"]     = star_end;
-    $pascal[star_end][0]       = star_comment;
+    $pascal[STAR_END][")"]     = NORMAL_TEXT;
+    $pascal[STAR_END]["*"]     = STAR_END;
+    $pascal[STAR_END][0]       = STAR_COMMENT;
 
-    $sql[normal_text]['"']     = dq_literal;
-    $sql[normal_text]["'"]     = sq_literal;
-    $sql[normal_text]['`']     = bt_literal;
-    $sql[normal_text]['-']     = dash_begin;
-    $sql[normal_text][0]       = normal_text;
+    $sql[NORMAL_TEXT]['"']     = DQ_LITERAL;
+    $sql[NORMAL_TEXT]["'"]     = SQ_LITERAL;
+    $sql[NORMAL_TEXT]['`']     = BT_LITERAL;
+    $sql[NORMAL_TEXT]['-']     = DASH_BEGIN;
+    $sql[NORMAL_TEXT][0]       = NORMAL_TEXT;
 
-    $sql[dq_literal]['"']      = normal_text;
-    $sql[dq_literal]['\\']     = dq_escape;
-    $sql[dq_literal][0]        = dq_literal;
+    $sql[DQ_LITERAL]['"']      = NORMAL_TEXT;
+    $sql[DQ_LITERAL]['\\']     = DQ_ESCAPE;
+    $sql[DQ_LITERAL][0]        = DQ_LITERAL;
 
-    $sql[sq_literal]["'"]      = normal_text;
-    $sql[sq_literal]['\\']     = sq_escape;
-    $sql[sq_literal][0]        = sq_literal;
+    $sql[SQ_LITERAL]["'"]      = NORMAL_TEXT;
+    $sql[SQ_LITERAL]['\\']     = SQ_ESCAPE;
+    $sql[SQ_LITERAL][0]        = SQ_LITERAL;
 
-    $sql[bt_literal]['`']      = normal_text;
-    $sql[bt_literal]['\\']     = bt_escape;
-    $sql[bt_literal][0]        = bt_literal;
+    $sql[BT_LITERAL]['`']      = NORMAL_TEXT;
+    $sql[BT_LITERAL]['\\']     = BT_ESCAPE;
+    $sql[BT_LITERAL][0]        = BT_LITERAL;
 
-    $sql[dq_escape][0]         = dq_literal;
-    $sql[sq_escape][0]         = sq_literal;
-    $sql[bt_escape][0]         = bt_literal;
+    $sql[DQ_ESCAPE][0]         = DQ_LITERAL;
+    $sql[SQ_ESCAPE][0]         = SQ_LITERAL;
+    $sql[BT_ESCAPE][0]         = BT_LITERAL;
 
-    $sql[dash_begin]["-"]      = line_comment;
-    $sql[dash_begin][0]        = normal_text;
+    $sql[DASH_BEGIN]["-"]      = LINE_COMMENT;
+    $sql[DASH_BEGIN][0]        = NORMAL_TEXT;
 
-    $sql[line_comment]["\n"]   = normal_text;
-    $sql[line_comment]["\\"]   = lc_escape;
-    $sql[line_comment][0]      = line_comment;
+    $sql[LINE_COMMENT]["\n"]   = NORMAL_TEXT;
+    $sql[LINE_COMMENT]["\\"]   = LC_ESCAPE;
+    $sql[LINE_COMMENT][0]      = LINE_COMMENT;
 
-    $sql[lc_escape]["\r"]      = lc_escape;
-    $sql[lc_escape][0]         = line_comment;
+    $sql[LC_ESCAPE]["\r"]      = LC_ESCAPE;
+    $sql[LC_ESCAPE][0]         = LINE_COMMENT;
 
-    $xml[normal_text]["<"]     = xml_tag_begin;
-    $xml[normal_text]["&"]     = html_entity;
-    $xml[normal_text][0]       = normal_text;
-    $xml[html_entity][";"]     = normal_text;
-    $xml[html_entity]["<"]     = xml_tag_begin;
-    $xml[html_entity][0]       = html_entity;
-    $xml[xml_tag_begin]["?"]   = xml_pi;
-    $xml[xml_tag_begin]["!"]   = line_comment;
-    $xml[xml_tag_begin][0]     = xml_tag;
-    $xml[xml_tag][">"]         = normal_text;
-    $xml[xml_tag]["\""]        = dq_literal;
-    $xml[xml_tag]["'"]         = sq_literal;
-    $xml[xml_tag][0]           = xml_tag;
-    $xml[xml_pi][">"]          = normal_text;
-    $xml[xml_pi][0]            = xml_tag;
-    $xml[line_comment][">"]    = normal_text;
-    $xml[line_comment][0]      = line_comment;
-    $xml[dq_literal]["\""]     = xml_tag;
-    $xml[dq_literal]["&"]      = dq_escape;
-    $xml[dq_literal][0]        = dq_literal;
-    $xml[sq_literal]["'"]      = xml_tag;
-    $xml[sq_literal]["&"]      = sq_escape;
-    $xml[sq_literal][0]        = sq_literal;
-    $xml[dq_escape][";"]       = dq_literal;
-    $xml[dq_escape][0]         = dq_escape;
+    $xml[NORMAL_TEXT]["<"]     = XML_TAG_BEGIN;
+    $xml[NORMAL_TEXT]["&"]     = HTML_ENTITY;
+    $xml[NORMAL_TEXT][0]       = NORMAL_TEXT;
+    $xml[HTML_ENTITY][";"]     = NORMAL_TEXT;
+    $xml[HTML_ENTITY]["<"]     = XML_TAG_BEGIN;
+    $xml[HTML_ENTITY][0]       = HTML_ENTITY;
+    $xml[XML_TAG_BEGIN]["?"]   = XML_PI;
+    $xml[XML_TAG_BEGIN]["!"]   = LINE_COMMENT;
+    $xml[XML_TAG_BEGIN][0]     = XML_TAG;
+    $xml[XML_TAG][">"]         = NORMAL_TEXT;
+    $xml[XML_TAG]["\""]        = DQ_LITERAL;
+    $xml[XML_TAG]["'"]         = SQ_LITERAL;
+    $xml[XML_TAG][0]           = XML_TAG;
+    $xml[XML_PI][">"]          = NORMAL_TEXT;
+    $xml[XML_PI][0]            = XML_TAG;
+    $xml[LINE_COMMENT][">"]    = NORMAL_TEXT;
+    $xml[LINE_COMMENT][0]      = LINE_COMMENT;
+    $xml[DQ_LITERAL]["\""]     = XML_TAG;
+    $xml[DQ_LITERAL]["&"]      = DQ_ESCAPE;
+    $xml[DQ_LITERAL][0]        = DQ_LITERAL;
+    $xml[SQ_LITERAL]["'"]      = XML_TAG;
+    $xml[SQ_LITERAL]["&"]      = SQ_ESCAPE;
+    $xml[SQ_LITERAL][0]        = SQ_LITERAL;
+    $xml[DQ_ESCAPE][";"]       = DQ_LITERAL;
+    $xml[DQ_ESCAPE][0]         = DQ_ESCAPE;
 
     //
     // Main state transition table
@@ -874,48 +874,48 @@ function syntax_highlight($text, $language)
     //
     // Process functions
     //
-    $process["C89"][normal_text][sq_literal] = "rtrim1";
-    $process["C89"][normal_text][dq_literal] = "rtrim1";
-    $process["C89"][normal_text][slash_begin] = "rtrim1";
-    $process["C89"][normal_text][0] = "syn_proc";
+    $process["C89"][NORMAL_TEXT][SQ_LITERAL] = "rtrim1";
+    $process["C89"][NORMAL_TEXT][DQ_LITERAL] = "rtrim1";
+    $process["C89"][NORMAL_TEXT][SLASH_BEGIN] = "rtrim1";
+    $process["C89"][NORMAL_TEXT][0] = "syn_proc";
 
-    $process["C89"][slash_begin][star_comment] = "rtrim1";
-    $process["C89"][slash_begin][0] = "slash_putback";
+    $process["C89"][SLASH_BEGIN][STAR_COMMENT] = "rtrim1";
+    $process["C89"][SLASH_BEGIN][0] = "slash_putback";
 
-    $process["Scheme"][sch_normal][sch_strlit] = "sch_rtrim1";
-    $process["Scheme"][sch_normal][sch_chrlit] = "sch_rtrim1";
-    $process["Scheme"][sch_normal][sch_numlit] = "sch_rtrim1";
+    $process["Scheme"][SCH_NORMAL][SCH_STRLIT] = "sch_rtrim1";
+    $process["Scheme"][SCH_NORMAL][SCH_CHRLIT] = "sch_rtrim1";
+    $process["Scheme"][SCH_NORMAL][SCH_NUMLIT] = "sch_rtrim1";
 
-    $process["SQL"][normal_text][sq_literal] = "rtrim1";
-    $process["SQL"][normal_text][dq_literal] = "rtrim1";
-    $process["SQL"][normal_text][bt_literal] = "rtrim1";
-    $process["SQL"][normal_text][dash_begin] = "rtrim1";
-    $process["SQL"][normal_text][0] = "syn_proc";
+    $process["SQL"][NORMAL_TEXT][SQ_LITERAL] = "rtrim1";
+    $process["SQL"][NORMAL_TEXT][DQ_LITERAL] = "rtrim1";
+    $process["SQL"][NORMAL_TEXT][BT_LITERAL] = "rtrim1";
+    $process["SQL"][NORMAL_TEXT][DASH_BEGIN] = "rtrim1";
+    $process["SQL"][NORMAL_TEXT][0] = "syn_proc";
 
-    $process["SQL"][dash_begin][line_comment] = "rtrim1";
-    $process["SQL"][dash_begin][0] = "dash_putback";
+    $process["SQL"][DASH_BEGIN][LINE_COMMENT] = "rtrim1";
+    $process["SQL"][DASH_BEGIN][0] = "dash_putback";
 
     $process["PL/I"] = $process["C89"];
 
     $process["C++"] = $process["C89"];
-    $process["C++"][slash_begin][line_comment] = "rtrim1";
+    $process["C++"][SLASH_BEGIN][LINE_COMMENT] = "rtrim1";
 
     $process["C"] = $process["C++"];
 
     $process["PHP"] = $process["C++"];
-    $process["PHP"][normal_text][line_comment] = "rtrim1";
+    $process["PHP"][NORMAL_TEXT][LINE_COMMENT] = "rtrim1";
 
-    $process["Perl"][normal_text][sq_literal] = "rtrim1";
-    $process["Perl"][normal_text][dq_literal] = "rtrim1";
-    $process["Perl"][normal_text][line_comment] = "rtrim1";
-    $process["Perl"][normal_text][0] = "syn_proc";
+    $process["Perl"][NORMAL_TEXT][SQ_LITERAL] = "rtrim1";
+    $process["Perl"][NORMAL_TEXT][DQ_LITERAL] = "rtrim1";
+    $process["Perl"][NORMAL_TEXT][LINE_COMMENT] = "rtrim1";
+    $process["Perl"][NORMAL_TEXT][0] = "syn_proc";
 
     $process["Ruby"] = $process["Perl"];
     $process["Python"] = $process["Perl"];
 
-    $process["mIRC"][normal_text][dq_literal] = "rtrim1";
-    $process["mIRC"][normal_text][line_comment] = "rtrim1";
-    $process["mIRC"][normal_text][0] = "syn_proc";
+    $process["mIRC"][NORMAL_TEXT][DQ_LITERAL] = "rtrim1";
+    $process["mIRC"][NORMAL_TEXT][LINE_COMMENT] = "rtrim1";
+    $process["mIRC"][NORMAL_TEXT][0] = "syn_proc";
 
     $process["VB"] = $process["Perl"];
 
@@ -924,29 +924,29 @@ function syntax_highlight($text, $language)
     $process["C#"] = $process["Java"];
 
     $process["Pascal"] = $process["C++"];
-    $process["Pascal"][normal_text][line_comment] = "rtrim1";
-    $process["Pascal"][normal_text][block_comment] = "rtrim1";
-    $process["Pascal"][normal_text][paren_begin] = "rtrim1";
-    $process["Pascal"][slash_begin][sq_literal] = "slash_putback_rtrim1";
-    $process["Pascal"][slash_begin][dq_literal] = "slash_putback_rtrim1";
-    $process["Pascal"][slash_begin][0] = "slash_putback";
-    $process["Pascal"][paren_begin][sq_literal] = "lparen_putback_rtrim1";
-    $process["Pascal"][paren_begin][dq_literal] = "lparen_putback_rtrim1";
-    $process["Pascal"][paren_begin][star_comment] = "rtrim1";
-    $process["Pascal"][paren_begin][0] = "lparen_putback";
+    $process["Pascal"][NORMAL_TEXT][LINE_COMMENT] = "rtrim1";
+    $process["Pascal"][NORMAL_TEXT][BLOCK_COMMENT] = "rtrim1";
+    $process["Pascal"][NORMAL_TEXT][PAREN_BEGIN] = "rtrim1";
+    $process["Pascal"][SLASH_BEGIN][SQ_LITERAL] = "slash_putback_rtrim1";
+    $process["Pascal"][SLASH_BEGIN][DQ_LITERAL] = "slash_putback_rtrim1";
+    $process["Pascal"][SLASH_BEGIN][0] = "slash_putback";
+    $process["Pascal"][PAREN_BEGIN][SQ_LITERAL] = "lparen_putback_rtrim1";
+    $process["Pascal"][PAREN_BEGIN][DQ_LITERAL] = "lparen_putback_rtrim1";
+    $process["Pascal"][PAREN_BEGIN][STAR_COMMENT] = "rtrim1";
+    $process["Pascal"][PAREN_BEGIN][0] = "lparen_putback";
 
-    $process["XML"][normal_text][xml_tag_begin] = "rtrim1";
-    $process["XML"][normal_text][html_entity] = "rtrim1";
-    $process["XML"][html_entity][xml_tag_begin] = "rtrim1";
-    $process["XML"][html_entity][0] = "proc_void";
-    $process["XML"][xml_tag_begin][xml_tag] = "prepend_xml_opentag";
-    $process["XML"][xml_tag_begin][xml_pi] = "rtrim1";
-    $process["XML"][xml_tag_begin][line_comment] = "rtrim1";
-    $process["XML"][line_comment][normal_text] = "rtrim1_htmlesc";
-    $process["XML"][xml_tag][normal_text] = "rtrim1";
-    $process["XML"][xml_tag][dq_literal] = "rtrim1";
-    $process["XML"][dq_literal][xml_tag] = "rtrim1";
-    $process["XML"][dq_literal][dq_escape] = "rtrim1";
+    $process["XML"][NORMAL_TEXT][XML_TAG_BEGIN] = "rtrim1";
+    $process["XML"][NORMAL_TEXT][HTML_ENTITY] = "rtrim1";
+    $process["XML"][HTML_ENTITY][XML_TAG_BEGIN] = "rtrim1";
+    $process["XML"][HTML_ENTITY][0] = "proc_void";
+    $process["XML"][XML_TAG_BEGIN][XML_TAG] = "prepend_xml_opentag";
+    $process["XML"][XML_TAG_BEGIN][XML_PI] = "rtrim1";
+    $process["XML"][XML_TAG_BEGIN][LINE_COMMENT] = "rtrim1";
+    $process["XML"][LINE_COMMENT][NORMAL_TEXT] = "rtrim1_htmlesc";
+    $process["XML"][XML_TAG][NORMAL_TEXT] = "rtrim1";
+    $process["XML"][XML_TAG][DQ_LITERAL] = "rtrim1";
+    $process["XML"][DQ_LITERAL][XML_TAG] = "rtrim1";
+    $process["XML"][DQ_LITERAL][DQ_ESCAPE] = "rtrim1";
 
     $process_end["C89"] = "syntax_highlight_helper";
     $process_end["C++"] = $process_end["C89"];
@@ -965,88 +965,88 @@ function syntax_highlight($text, $language)
     $process_end["Scheme"] = "sch_syntax_helper";
 
 
-    $edges["C89"][normal_text . "," . dq_literal]   = '<span class="literal">"';
-    $edges["C89"][normal_text . "," . sq_literal]   = '<span class="literal">\'';
-    $edges["C89"][slash_begin . "," . star_comment] = '<span class="comment">/*';
-    $edges["C89"][dq_literal . "," . normal_text]   = '</span>';
-    $edges["C89"][sq_literal . "," . normal_text]   = '</span>';
-    $edges["C89"][star_end . "," . normal_text]     = '</span>';
+    $edges["C89"][NORMAL_TEXT . "," . DQ_LITERAL]   = '<span class="literal">"';
+    $edges["C89"][NORMAL_TEXT . "," . SQ_LITERAL]   = '<span class="literal">\'';
+    $edges["C89"][SLASH_BEGIN . "," . STAR_COMMENT] = '<span class="comment">/*';
+    $edges["C89"][DQ_LITERAL . "," . NORMAL_TEXT]   = '</span>';
+    $edges["C89"][SQ_LITERAL . "," . NORMAL_TEXT]   = '</span>';
+    $edges["C89"][STAR_END . "," . NORMAL_TEXT]     = '</span>';
 
-    $edges["Scheme"][sch_normal . "," . sch_strlit] = '<span class="sch_str">"';
-    $edges["Scheme"][sch_normal . "," . sch_numlit] = '<span class="sch_num">';
-    $edges["Scheme"][sch_normal . "," . sch_chrlit] = '<span class="sch_chr">#';
-    $edges["Scheme"][sch_strlit . "," . sch_normal] = '</span>';
-    $edges["Scheme"][sch_numlit . "," . sch_normal] = '</span>';
-    $edges["Scheme"][sch_chrlit . "," . sch_normal] = '</span>';
+    $edges["Scheme"][SCH_NORMAL . "," . SCH_STRLIT] = '<span class="sch_str">"';
+    $edges["Scheme"][SCH_NORMAL . "," . SCH_NUMLIT] = '<span class="sch_num">';
+    $edges["Scheme"][SCH_NORMAL . "," . SCH_CHRLIT] = '<span class="sch_chr">#';
+    $edges["Scheme"][SCH_STRLIT . "," . SCH_NORMAL] = '</span>';
+    $edges["Scheme"][SCH_NUMLIT . "," . SCH_NORMAL] = '</span>';
+    $edges["Scheme"][SCH_CHRLIT . "," . SCH_NORMAL] = '</span>';
 
-    $edges["SQL"][normal_text . "," . dq_literal]   = '<span class="literal">"';
-    $edges["SQL"][normal_text . "," . sq_literal]   = '<span class="literal">\'';
-    $edges["SQL"][dash_begin . "," . line_comment] = '<span class="comment">--';
-    $edges["SQL"][normal_text . "," . bt_literal]   = '`';
-    $edges["SQL"][dq_literal . "," . normal_text]   = '</span>';
-    $edges["SQL"][sq_literal . "," . normal_text]   = '</span>';
-    $edges["SQL"][line_comment . "," . normal_text] = '</span>';
+    $edges["SQL"][NORMAL_TEXT . "," . DQ_LITERAL]   = '<span class="literal">"';
+    $edges["SQL"][NORMAL_TEXT . "," . SQ_LITERAL]   = '<span class="literal">\'';
+    $edges["SQL"][DASH_BEGIN . "," . LINE_COMMENT] = '<span class="comment">--';
+    $edges["SQL"][NORMAL_TEXT . "," . BT_LITERAL]   = '`';
+    $edges["SQL"][DQ_LITERAL . "," . NORMAL_TEXT]   = '</span>';
+    $edges["SQL"][SQ_LITERAL . "," . NORMAL_TEXT]   = '</span>';
+    $edges["SQL"][LINE_COMMENT . "," . NORMAL_TEXT] = '</span>';
 
     $edges["PL/I"] = $edges["C89"];
 
     $edges["C++"] = $edges["C89"];
-    $edges["C++"][slash_begin . "," . line_comment] = '<span class="comment">//';
-    $edges["C++"][line_comment . "," . normal_text] = '</span>';
+    $edges["C++"][SLASH_BEGIN . "," . LINE_COMMENT] = '<span class="comment">//';
+    $edges["C++"][LINE_COMMENT . "," . NORMAL_TEXT] = '</span>';
 
     $edges["C"] = $edges["C++"];
 
     $edges["PHP"] = $edges["C++"];
-    $edges["PHP"][normal_text . "," . line_comment] = '<span class="comment">#';
+    $edges["PHP"][NORMAL_TEXT . "," . LINE_COMMENT] = '<span class="comment">#';
 
-    $edges["Perl"][normal_text . "," . dq_literal]   = '<span class="literal">"';
-    $edges["Perl"][normal_text . "," . sq_literal]   = '<span class="literal">\'';
-    $edges["Perl"][dq_literal . "," . normal_text]   = '</span>';
-    $edges["Perl"][sq_literal . "," . normal_text]   = '</span>';
-    $edges["Perl"][normal_text . "," . line_comment] = '<span class="comment">#';
-    $edges["Perl"][line_comment . "," . normal_text] = '</span>';
+    $edges["Perl"][NORMAL_TEXT . "," . DQ_LITERAL]   = '<span class="literal">"';
+    $edges["Perl"][NORMAL_TEXT . "," . SQ_LITERAL]   = '<span class="literal">\'';
+    $edges["Perl"][DQ_LITERAL . "," . NORMAL_TEXT]   = '</span>';
+    $edges["Perl"][SQ_LITERAL . "," . NORMAL_TEXT]   = '</span>';
+    $edges["Perl"][NORMAL_TEXT . "," . LINE_COMMENT] = '<span class="comment">#';
+    $edges["Perl"][LINE_COMMENT . "," . NORMAL_TEXT] = '</span>';
 
     $edges["Ruby"] = $edges["Perl"];
 
     $edges["Python"] = $edges["Perl"];
 
-    $edges["mIRC"][normal_text . "," . dq_literal] = '<span class="literal">"';
-    $edges["mIRC"][normal_text . "," . line_comment] = '<span class="comment">;';
-    $edges["mIRC"][dq_literal . "," . normal_text] = '</span>';
-    $edges["mIRC"][line_comment . "," . normal_text] = '</span>';
+    $edges["mIRC"][NORMAL_TEXT . "," . DQ_LITERAL] = '<span class="literal">"';
+    $edges["mIRC"][NORMAL_TEXT . "," . LINE_COMMENT] = '<span class="comment">;';
+    $edges["mIRC"][DQ_LITERAL . "," . NORMAL_TEXT] = '</span>';
+    $edges["mIRC"][LINE_COMMENT . "," . NORMAL_TEXT] = '</span>';
 
     $edges["VB"] = $edges["Perl"];
-    $edges["VB"][normal_text . "," . line_comment] = '<span class="comment">\'';
+    $edges["VB"][NORMAL_TEXT . "," . LINE_COMMENT] = '<span class="comment">\'';
 
     $edges["Java"] = $edges["C++"];
 
     $edges["C#"] = $edges["Java"];
 
     $edges["Pascal"] = $edges["C89"];
-    $edges["Pascal"][paren_begin . "," . star_comment] = '<span class="comment">(*';
-    $edges["Pascal"][paren_begin . "," . dq_literal]   = '<span class="literal">"';
-    $edges["Pascal"][paren_begin . "," . sq_literal]   = '<span class="literal">\'';
-    $edges["Pascal"][slash_begin . "," . dq_literal]   = '<span class="literal">"';
-    $edges["Pascal"][slash_begin . "," . sq_literal]   = '<span class="literal">\'';
-    $edges["Pascal"][slash_begin . "," . line_comment] = '<span class="comment">//';
-    $edges["Pascal"][normal_text . "," . block_comment] = '<span class="comment">{';
-    $edges["Pascal"][line_comment . "," . normal_text] = '</span>';
-    $edges["Pascal"][block_comment . "," . normal_text] = '</span>';
+    $edges["Pascal"][PAREN_BEGIN . "," . STAR_COMMENT] = '<span class="comment">(*';
+    $edges["Pascal"][PAREN_BEGIN . "," . DQ_LITERAL]   = '<span class="literal">"';
+    $edges["Pascal"][PAREN_BEGIN . "," . SQ_LITERAL]   = '<span class="literal">\'';
+    $edges["Pascal"][SLASH_BEGIN . "," . DQ_LITERAL]   = '<span class="literal">"';
+    $edges["Pascal"][SLASH_BEGIN . "," . SQ_LITERAL]   = '<span class="literal">\'';
+    $edges["Pascal"][SLASH_BEGIN . "," . LINE_COMMENT] = '<span class="comment">//';
+    $edges["Pascal"][NORMAL_TEXT . "," . BLOCK_COMMENT] = '<span class="comment">{';
+    $edges["Pascal"][LINE_COMMENT . "," . NORMAL_TEXT] = '</span>';
+    $edges["Pascal"][BLOCK_COMMENT . "," . NORMAL_TEXT] = '</span>';
 
-    $edges["XML"][normal_text . "," . html_entity] = '<span class="html_entity">&amp;';
-    $edges["XML"][html_entity . "," . normal_text] = '</span>';
-    $edges["XML"][html_entity . "," . xml_tag_begin] = '</span>';
-    $edges["XML"][xml_tag . "," . normal_text] = '&gt;</span>';
-    $edges["XML"][xml_tag_begin . "," . xml_pi] = '<span class="xml_pi">&lt;?';
-    $edges["XML"][xml_tag_begin . "," . line_comment] = '<span class="comment">&lt;!';
-    $edges["XML"][line_comment . "," . normal_text] = '&gt;</span>';
-    $edges["XML"][xml_tag . "," . dq_literal]   = '<span class="literal">"';
-    $edges["XML"][dq_literal . "," . xml_tag] = '"</span>';
-    $edges["XML"][dq_literal . "," . dq_escape] = '<span class="html_entity">&amp;';
-    $edges["XML"][dq_escape . "," . dq_literal] = '</span>';
-    $edges["XML"][xml_tag . "," . sq_literal]   = '<span class="literal">\'';
-    $edges["XML"][sq_literal . "," . xml_tag] = '\'</span>';
-    $edges["XML"][sq_literal . "," . sq_escape] = '<span class="html_entity">&amp;';
-    $edges["XML"][sq_escape . "," . sq_literal] = '</span>';
+    $edges["XML"][NORMAL_TEXT . "," . HTML_ENTITY] = '<span class="HTML_ENTITY">&amp;';
+    $edges["XML"][HTML_ENTITY . "," . NORMAL_TEXT] = '</span>';
+    $edges["XML"][HTML_ENTITY . "," . XML_TAG_BEGIN] = '</span>';
+    $edges["XML"][XML_TAG . "," . NORMAL_TEXT] = '&gt;</span>';
+    $edges["XML"][XML_TAG_BEGIN . "," . XML_PI] = '<span class="XML_PI">&lt;?';
+    $edges["XML"][XML_TAG_BEGIN . "," . LINE_COMMENT] = '<span class="comment">&lt;!';
+    $edges["XML"][LINE_COMMENT . "," . NORMAL_TEXT] = '&gt;</span>';
+    $edges["XML"][XML_TAG . "," . DQ_LITERAL]   = '<span class="literal">"';
+    $edges["XML"][DQ_LITERAL . "," . XML_TAG] = '"</span>';
+    $edges["XML"][DQ_LITERAL . "," . DQ_ESCAPE] = '<span class="HTML_ENTITY">&amp;';
+    $edges["XML"][DQ_ESCAPE . "," . DQ_LITERAL] = '</span>';
+    $edges["XML"][XML_TAG . "," . SQ_LITERAL]   = '<span class="literal">\'';
+    $edges["XML"][SQ_LITERAL . "," . XML_TAG] = '\'</span>';
+    $edges["XML"][SQ_LITERAL . "," . SQ_ESCAPE] = '<span class="HTML_ENTITY">&amp;';
+    $edges["XML"][SQ_ESCAPE . "," . SQ_LITERAL] = '</span>';
 
     //
     // The State Machine
@@ -1054,7 +1054,7 @@ function syntax_highlight($text, $language)
     if (array_key_exists($language, $initial_state)) {
         $state = $initial_state[$language];
     } else {
-        $state = normal_text;
+        $state = NORMAL_TEXT;
     }
     $output = "";
     $span = "";
@@ -1096,18 +1096,18 @@ function syntax_highlight($text, $language)
         }
     }
 
-    if (array_key_exists($language, $process_end) && $state == normal_text) {
+    if (array_key_exists($language, $process_end) && $state == NORMAL_TEXT) {
         $output .= $process_end[$language]($span, $language);
     } else {
         $output .= $span;
     }
 
-    if ($state != normal_text) {
+    if ($state != NORMAL_TEXT) {
         if (
             array_key_exists($language, $edges) &&
-            array_key_exists("$state," . normal_text, $edges[$language])
+            array_key_exists("$state," . NORMAL_TEXT, $edges[$language])
         ) {
-            $output .= $edges[$language]["$state," . normal_text];
+            $output .= $edges[$language]["$state," . NORMAL_TEXT];
         }
     }
 

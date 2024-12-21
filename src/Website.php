@@ -6,6 +6,10 @@ namespace PhpPgAdmin;
 
 abstract class Website
 {
+    public const APP_NAME = 'phpPgAdmin';
+
+    protected string $title = '';
+
     public function __construct()
     {
         putenv('LC_ALL=en_US.UTF-8');

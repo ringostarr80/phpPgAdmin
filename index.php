@@ -4,9 +4,11 @@ use PhpPgAdmin\Website\Index;
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'autoload.php';
 
-//$index = new Index();
-//echo $index->buildHtmlString();
-//die();
+/*
+$index = new Index();
+echo $index->buildHtmlString();
+die();
+//*/
 
 // Include application functions
 $_no_db_connection = true;

@@ -15,7 +15,8 @@
         "php": ">=8.0",
         "ext-gettext": "*",
 		"ext-pgsql": "*",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "symfony/yaml": "^5.4"
     },
     "minimum-stability": "stable",
     "scripts": {

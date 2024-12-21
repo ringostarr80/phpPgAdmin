@@ -22,6 +22,6 @@ class Themes
 
     public static function cssExists(string $theme): bool
     {
-        return is_file(__DIR__ . "/Themes/{$theme}/global.css");
+        return is_file(dirname(__DIR__) . "/themes/{$theme}/global.css");
     }
 }

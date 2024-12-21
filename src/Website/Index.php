@@ -8,6 +8,33 @@ use PhpPgAdmin\{Config, Website};
 
 class Index extends Website
 {
+    protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
+    {
+        $body = parent::buildHtmlBody($dom);
+        $body->setAttribute('style', 'position: absolute; top: 0; bottom: 0; left: 0; right: 0;');
+
+        $div = $dom->createElement('div');
+        $div->setAttribute('style', 'display: flex; height: 100%;');
+        $browserIFrame = $dom->createElement('iframe');
+        $browserIFrame->setAttribute('src', 'browser.php');
+        $browserIFrame->setAttribute('style', 'width: 200px;');
+        $browserIFrame->setAttribute('title', 'browser');
+        $browserIFrame->setAttribute('name', 'browser');
+        $browserIFrame->setAttribute('id', 'browser');
+        $browserIFrame->setAttribute('frameborder', '0');
+        $div->appendChild($browserIFrame);
+        $detailIFrame = $dom->createElement('iframe');
+        $detailIFrame->setAttribute('src', 'intro.php');
+        $detailIFrame->setAttribute('style', 'width: 100%;');
+        $detailIFrame->setAttribute('name', 'detail');
+        $detailIFrame->setAttribute('id', 'detail');
+        $detailIFrame->setAttribute('frameborder', '0');
+        $div->appendChild($detailIFrame);
+        $body->appendChild($div);
+
+        return $body;
+    }
+
     protected function buildHtmlHead(\DOMDocument $dom): \DOMElement
     {
         $head = parent::buildHtmlHead($dom);
@@ -17,13 +44,53 @@ class Index extends Website
         $meta->setAttribute('content', 'text/html; charset=utf-8');
         $head->appendChild($meta);
 
+        $theme = Config::theme();
+
         $link = $dom->createElement('link');
         $link->setAttribute('rel', 'stylesheet');
-        $theme = Config::theme();
         $link->setAttribute('href', "themes/{$theme}/global.css");
         $link->setAttribute('type', 'text/css');
         $link->setAttribute('id', 'csstheme');
         $head->appendChild($link);
+
+        $link = $dom->createElement('link');
+        $link->setAttribute('rel', 'shortcut icon');
+        $link->setAttribute('href', "images/themes/{$theme}/Favicon.ico");
+        $link->setAttribute('type', 'image/vnd.microsoft.icon');
+        $head->appendChild($link);
+
+        $link = $dom->createElement('link');
+        $link->setAttribute('rel', 'icon');
+        $link->setAttribute('type', 'image/png');
+        $link->setAttribute('href', "images/themes/{$theme}/Introduction.png");
+        $head->appendChild($link);
+
+        $script = $dom->createElement('script');
+        $script->setAttribute('type', 'text/javascript');
+        $script->setAttribute('src', 'libraries/js/jquery.js');
+        $head->appendChild($script);
+
+        $script = $dom->createElement('script');
+        $script->setAttribute('type', 'text/javascript');
+        $scriptContent = '' . PHP_EOL;
+        $scriptContent .= '$(function() {' . PHP_EOL;
+        $scriptContent .= '    if (window.parent.frames.length > 1) {' . PHP_EOL;
+        $scriptContent .= "        $('#csstheme', window.parent.frames[0].document)" . PHP_EOL;
+        $scriptContent .= "            .attr('href','themes/{$theme}/global.css')" . PHP_EOL;
+        $scriptContent .= '    }' . PHP_EOL;
+        $scriptContent .= '});' . PHP_EOL;
+        $script->appendChild($dom->createTextNode($scriptContent));
+        $head->appendChild($script);
+
+        $formatTitle = '';
+        if (!empty($this->title)) {
+            $formatTitle = self::APP_NAME . ' - ' . $this->title;
+        } else {
+            $formatTitle = self::APP_NAME;
+        }
+        $title = $dom->createElement('title');
+        $title->appendChild($dom->createTextNode($formatTitle));
+        $head->appendChild($title);
 
         return $head;
     }

@@ -12,8 +12,9 @@ abstract class Website
 
     public function __construct()
     {
-        putenv('LC_ALL=en_US.UTF-8');
-        setlocale(LC_ALL, ['en_US.UTF-8', 'en_US', 'en']);
+        $locale = Config::locale();
+        putenv("LC_ALL={$locale}.UTF-8");
+        setlocale(LC_ALL, ["{$locale}.UTF-8", $locale, substr($locale, 0, 2)]);
         bindtextdomain('messages', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'locale');
         textdomain('messages');
     }

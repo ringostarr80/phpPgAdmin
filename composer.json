@@ -30,7 +30,12 @@
         ],
         "dev:lint:php": "parallel-lint --exclude vendor .",
         "dev:lint:phpcs": "phpcs -d memory_limit=256M src/",
-        "locale": "msgfmt locale/en_US/LC_MESSAGES/messages.po -o locale/en_US/LC_MESSAGES/messages.mo"
+        "locale": [
+            "@locale-de_DE",
+            "@locale-en_US"
+        ],
+        "locale-de_DE": "msgfmt locale/de_DE/LC_MESSAGES/messages.po -o locale/de_DE/LC_MESSAGES/messages.mo",
+        "locale-en_US": "msgfmt locale/en_US/LC_MESSAGES/messages.po -o locale/en_US/LC_MESSAGES/messages.mo"
     },
     "require-dev": {
         "php-parallel-lint/php-parallel-lint": "^1.4",

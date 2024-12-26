@@ -1,7 +1,5 @@
 parameters:
     level: max
-    scanDirectories:
-        - /usr/local/share/pear
     paths:
         - src/
     excludePaths:

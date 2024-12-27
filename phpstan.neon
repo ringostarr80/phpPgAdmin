@@ -1,11 +1,6 @@
-includes:
-	- phpstan-baseline.neon
-
 parameters:
-    level: 0
-    scanDirectories:
-        - /usr/local/share/pear
+    level: max
     paths:
-        - .
+        - src/
     excludePaths:
         - vendor/

@@ -2,9 +2,9 @@ name: PHP
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "dev" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "dev" ]
 
 permissions:
   contents: read
@@ -45,3 +45,9 @@ jobs:
 
       - name: Run PHP Syntax Checker
         run: composer run-script dev:lint:php
+
+      - name: Run PHP Style Checker
+        run: composer run-script dev:lint:phpcs
+
+      - name: Run PHP Static Analysis
+        run: composer run-script dev:analyze:phpstan

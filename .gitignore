@@ -1,3 +1,5 @@
+conf/config.yml
+conf/config.yaml
 selenium/tests/config.inc.php
 tests/selenium/config.test.php
 vendor/

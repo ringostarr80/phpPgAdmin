@@ -7,7 +7,11 @@ namespace PhpPgAdmin;
 use Symfony\Component\Yaml\Parser as YamlParser;
 
 /**
- * @phpstan-type ConfigData=array{'default_lang'?: string, 'servers'?: array<mixed>}
+ * @phpstan-type ConfigData=array{
+ *  'default_lang'?: string,
+ *  'left_width'?: int,
+ *  'servers'?: array<mixed>
+ * }
  */
 class Config
 {
@@ -89,6 +93,12 @@ class Config
             'ukrainian' => 'uk_UA',
             default => null,
         };
+    }
+
+    public static function leftWidth(): int
+    {
+        $conf = self::tryGetConfigFileData();
+        return $conf['left_width'] ?? 200;
     }
 
     public static function locale(): string
@@ -275,6 +285,9 @@ class Config
                 if (is_array($yaml)) {
                     if (isset($yaml['default_lang']) && is_string($yaml['default_lang'])) {
                         self::$conf['default_lang'] = $yaml['default_lang'];
+                    }
+                    if (isset($yaml['left_width']) && is_int($yaml['left_width'])) {
+                        self::$conf['left_width'] = $yaml['left_width'];
                     }
                 }
             }

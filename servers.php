@@ -1,16 +1,16 @@
 <?php
 
-    /**
-     * Manage servers
-     *
-     * $Id: servers.php,v 1.12 2008/02/18 22:20:26 ioguix Exp $
-     */
+/**
+ * Manage servers
+ *
+ * $Id: servers.php,v 1.12 2008/02/18 22:20:26 ioguix Exp $
+ */
 
-    // Include application functions
-    $_no_db_connection = true;
-    include_once('./libraries/lib.inc.php');
+// Include application functions
+$_no_db_connection = true;
+include_once('./libraries/lib.inc.php');
 
-    $action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : '';
+$action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : '';
 if (!isset($msg)) {
     $msg = '';
 }
@@ -167,9 +167,9 @@ if ($action == 'tree') {
     doTree();
 }
 
-    $misc->printHeader($lang['strservers']);
-    $misc->printBody();
-    $misc->printTrail('root');
+$misc->printHeader($lang['strservers']);
+$misc->printBody();
+$misc->printTrail('root');
 
 switch ($action) {
     case 'logout':
@@ -180,4 +180,4 @@ switch ($action) {
         break;
 }
 
-    $misc->printFooter();
+$misc->printFooter();

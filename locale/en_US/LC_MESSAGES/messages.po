@@ -19,3 +19,18 @@ msgstr "ltr"
 
 msgid "applocale"
 msgstr "en-US"
+
+msgid "strclicktoreload"
+msgstr "Click to reload"
+
+msgid "strerrorloading"
+msgstr "Error Loading"
+
+msgid "strloading"
+msgstr "Loading..."
+
+msgid "strrefresh"
+msgstr "Refresh"
+
+msgid "strservers"
+msgstr "Servers"

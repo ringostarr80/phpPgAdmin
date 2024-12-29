@@ -8,6 +8,14 @@ abstract class Website
 {
     public const APP_NAME = 'phpPgAdmin';
 
+    /**
+     * @var array<string, array{'src': string, 'type'?: 'text/javascript'|'module'}>
+     */
+    protected array $scripts = [
+        'jquery' => [
+            'src' => 'libraries/js/jquery.js'
+        ]
+    ];
     protected string $title = '';
 
     public function __construct()
@@ -43,7 +51,52 @@ abstract class Website
 
     protected function buildHtmlHead(\DOMDocument $dom): \DOMElement
     {
-        return $dom->createElement('head');
+        $head = $dom->createElement('head');
+
+        $meta = $dom->createElement('meta');
+        $meta->setAttribute('http-equiv', 'Content-Type');
+        $meta->setAttribute('content', 'text/html; charset=utf-8');
+        $head->appendChild($meta);
+
+        $formatTitle = '';
+        if (!empty($this->title)) {
+            $formatTitle = self::APP_NAME . ' - ' . $this->title;
+        } else {
+            $formatTitle = self::APP_NAME;
+        }
+        $title = $dom->createElement('title');
+        $title->appendChild($dom->createTextNode($formatTitle));
+        $head->appendChild($title);
+
+        $theme = Config::theme();
+
+        $link = $dom->createElement('link');
+        $link->setAttribute('rel', 'stylesheet');
+        $link->setAttribute('href', "themes/{$theme}/global.css");
+        $link->setAttribute('type', 'text/css');
+        $link->setAttribute('id', 'csstheme');
+        $head->appendChild($link);
+
+        $link = $dom->createElement('link');
+        $link->setAttribute('rel', 'shortcut icon');
+        $link->setAttribute('href', "images/themes/{$theme}/Favicon.ico");
+        $link->setAttribute('type', 'image/vnd.microsoft.icon');
+        $head->appendChild($link);
+
+        $link = $dom->createElement('link');
+        $link->setAttribute('rel', 'icon');
+        $link->setAttribute('type', 'image/png');
+        $link->setAttribute('href', "images/themes/{$theme}/Introduction.png");
+        $head->appendChild($link);
+
+        foreach ($this->scripts as $script) {
+            $scriptElement = $dom->createElement('script');
+            $scriptElement->setAttribute('src', $script['src']);
+            $scriptElement->setAttribute('type', $script['type'] ?? 'text/javascript');
+            $head->appendChild($scriptElement);
+        }
+
+        return $head;
     }
 
     public function buildHtmlString(): string

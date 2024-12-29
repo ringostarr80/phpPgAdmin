@@ -48,51 +48,10 @@ class Index extends Website
     {
         $head = parent::buildHtmlHead($dom);
 
-        $meta = $dom->createElement('meta');
-        $meta->setAttribute('http-equiv', 'Content-Type');
-        $meta->setAttribute('content', 'text/html; charset=utf-8');
-        $head->appendChild($meta);
-
-        $theme = Config::theme();
-
-        $link = $dom->createElement('link');
-        $link->setAttribute('rel', 'stylesheet');
-        $link->setAttribute('href', "themes/{$theme}/global.css");
-        $link->setAttribute('type', 'text/css');
-        $link->setAttribute('id', 'csstheme');
-        $head->appendChild($link);
-
-        $link = $dom->createElement('link');
-        $link->setAttribute('rel', 'shortcut icon');
-        $link->setAttribute('href', "images/themes/{$theme}/Favicon.ico");
-        $link->setAttribute('type', 'image/vnd.microsoft.icon');
-        $head->appendChild($link);
-
-        $link = $dom->createElement('link');
-        $link->setAttribute('rel', 'icon');
-        $link->setAttribute('type', 'image/png');
-        $link->setAttribute('href', "images/themes/{$theme}/Introduction.png");
-        $head->appendChild($link);
-
-        $script = $dom->createElement('script');
-        $script->setAttribute('type', 'text/javascript');
-        $script->setAttribute('src', 'libraries/js/jquery.js');
-        $head->appendChild($script);
-
         $script = $dom->createElement('script');
         $script->setAttribute('type', 'text/javascript');
         $script->setAttribute('src', 'js/main.js');
         $head->appendChild($script);
-
-        $formatTitle = '';
-        if (!empty($this->title)) {
-            $formatTitle = self::APP_NAME . ' - ' . $this->title;
-        } else {
-            $formatTitle = self::APP_NAME;
-        }
-        $title = $dom->createElement('title');
-        $title->appendChild($dom->createTextNode($formatTitle));
-        $head->appendChild($title);
 
         return $head;
     }

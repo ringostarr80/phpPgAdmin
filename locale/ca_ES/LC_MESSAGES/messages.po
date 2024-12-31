@@ -1,0 +1,2482 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ca_ES\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "Català"
+
+msgid "applocale"
+msgstr "ca-ES"
+
+msgid "applangdir"
+msgstr "ltr"
+
+# Welcome
+msgid "strintro"
+msgstr "Benvingut a phpPgAdmin."
+
+msgid "strppahome"
+msgstr "Pàgina web de phpPgAdmin"
+
+msgid "strpgsqlhome"
+msgstr "Pàgina web de PostgreSQL"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "Documentació PostgreSQL (local)"
+
+msgid "strreportbug"
+msgstr "Reportar un Bug"
+
+msgid "strviewfaq"
+msgstr "Veure FAQ online"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+#Basic strings
+msgid "strlogin"
+msgstr "Entrada"
+
+msgid "strloginfailed"
+msgstr "Entrada fallida"
+
+msgid "strlogindisallowed"
+msgstr "Entrada rebutjada per raons de seguretat."
+
+msgid "strserver"
+msgstr "Servidor"
+
+msgid "strservers"
+msgstr "Servidors"
+
+msgid "strgroupservers"
+msgstr "Servidors en el grup \"%s\""
+
+msgid "strallservers"
+msgstr "Tots els servidors"
+
+msgid "strintroduction"
+msgstr "Introducció"
+
+msgid "strhost"
+msgstr "Host"
+
+msgid "strport"
+msgstr "Port"
+
+msgid "strlogout"
+msgstr "Sortida"
+
+msgid "strowner"
+msgstr "Propietari"
+
+msgid "straction"
+msgstr "Acció"
+
+msgid "stractions"
+msgstr "Accions"
+
+msgid "strname"
+msgstr "Nom"
+
+msgid "strdefinition"
+msgstr "Definició"
+
+msgid "strproperties"
+msgstr "Propietats"
+
+msgid "strbrowse"
+msgstr "Navega"
+
+msgid "strenable"
+msgstr "Habilita"
+
+msgid "strdisable"
+msgstr "Inhabilita"
+
+msgid "strdrop"
+msgstr "Elimina"
+
+msgid "strdropped"
+msgstr "Eliminat"
+
+msgid "strnull"
+msgstr "Nul"
+
+msgid "strnotnull"
+msgstr "No Nul"
+
+msgid "strprev"
+msgstr "< Previ"
+
+msgid "strnext"
+msgstr "Següent >"
+
+msgid "strfirst"
+msgstr "<< Primer"
+
+msgid "strlast"
+msgstr "Últim >>"
+
+msgid "strfailed"
+msgstr "Fallat"
+
+msgid "strcreate"
+msgstr "Crea"
+
+msgid "strcreated"
+msgstr "Creat"
+
+msgid "strcomment"
+msgstr "Comentari"
+
+msgid "strlength"
+msgstr "Longitud"
+
+msgid "strdefault"
+msgstr "Predeterminat"
+
+msgid "stralter"
+msgstr "Modifica"
+
+msgid "strok"
+msgstr "D'acord"
+
+msgid "strcancel"
+msgstr "Cancel·la"
+
+msgid "strkill"
+msgstr "Mata"
+
+msgid "strac"
+msgstr "Habilita AutoCompletat"
+
+msgid "strsave"
+msgstr "Desa"
+
+msgid "strreset"
+msgstr "Restableix"
+
+msgid "strrestart"
+msgstr "Reinicia"
+
+msgid "strinsert"
+msgstr "Inserta"
+
+msgid "strselect"
+msgstr "Selecciona"
+
+msgid "strdelete"
+msgstr "Elimina"
+
+msgid "strupdate"
+msgstr "Actualitza"
+
+msgid "strreferences"
+msgstr "Referències"
+
+msgid "stryes"
+msgstr "Sí"
+
+msgid "strno"
+msgstr "No"
+
+msgid "strtrue"
+msgstr "Cert"
+
+msgid "strfalse"
+msgstr "Fals"
+
+msgid "stredit"
+msgstr "Edita"
+
+msgid "strcolumn"
+msgstr "Columna"
+
+msgid "strcolumns"
+msgstr "Columnes"
+
+msgid "strrows"
+msgstr "fila(es)"
+
+msgid "strrowsaff"
+msgstr "fila/es afectada/es."
+
+msgid "strobjects"
+msgstr "objecte(s)"
+
+msgid "strback"
+msgstr "Enrere"
+
+msgid "strqueryresults"
+msgstr "Resultat de la Consulta"
+
+msgid "strshow"
+msgstr "Mostra"
+
+msgid "strempty"
+msgstr "Buida"
+
+msgid "strlanguage"
+msgstr "Idioma"
+
+msgid "strencoding"
+msgstr "Codificació"
+
+msgid "strvalue"
+msgstr "Valor"
+
+msgid "strunique"
+msgstr "Únic"
+
+msgid "strprimary"
+msgstr "Primari"
+
+msgid "strexport"
+msgstr "Exporta"
+
+msgid "strimport"
+msgstr "Importa"
+
+msgid "strallowednulls"
+msgstr "Caràcters NULL Permesos"
+
+msgid "strbackslashn"
+msgstr "\\N"
+
+msgid "stremptystring"
+msgstr "Cadena o camp buit"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "stradmin"
+msgstr "Admin"
+
+msgid "strvacuum"
+msgstr "Vacuum"
+
+msgid "stranalyze"
+msgstr "Analyze"
+
+msgid "strclusterindex"
+msgstr "Clúster"
+
+msgid "strclustered"
+msgstr "Clusteritzat?"
+
+msgid "strreindex"
+msgstr "Reindex"
+
+msgid "strexecute"
+msgstr "Executa"
+
+msgid "stradd"
+msgstr "Agrega"
+
+msgid "strevent"
+msgstr "Event"
+
+msgid "strwhere"
+msgstr "On"
+
+msgid "strinstead"
+msgstr "Fes en el seu lloc"
+
+msgid "strwhen"
+msgstr "Quan"
+
+msgid "strformat"
+msgstr "Format"
+
+msgid "strdata"
+msgstr "Dades"
+
+msgid "strconfirm"
+msgstr "Confirma"
+
+msgid "strexpression"
+msgstr "Expressió"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strseparator"
+msgstr ": "
+
+msgid "strexpand"
+msgstr "Expandeix"
+
+msgid "strcollapse"
+msgstr "Colapsa"
+
+msgid "strfind"
+msgstr "Cerca"
+
+msgid "stroptions"
+msgstr "Opcions"
+
+msgid "strrefresh"
+msgstr "Refresca"
+
+msgid "strdownload"
+msgstr "Baixa"
+
+msgid "strdownloadgzipped"
+msgstr "Baixa comprimit amb gzip"
+
+msgid "strinfo"
+msgstr "Informació"
+
+msgid "stroids"
+msgstr "OIDs"
+
+msgid "stradvanced"
+msgstr "Avançat"
+
+msgid "strvariables"
+msgstr "Variables"
+
+msgid "strprocess"
+msgstr "Procés"
+
+msgid "strprocesses"
+msgstr "Processos"
+
+msgid "strsetting"
+msgstr "Ajustament"
+
+msgid "streditsql"
+msgstr "Edita SQL"
+
+msgid "strruntime"
+msgstr "Total temps d'execució: %s ms"
+
+msgid "strpaginate"
+msgstr "Pagina els resultats"
+
+msgid "struploadscript"
+msgstr "o carrega un script SQL:"
+
+msgid "strstarttime"
+msgstr "Hora d'Inici"
+
+msgid "strfile"
+msgstr "Fitxer"
+
+msgid "strfileimported"
+msgstr "Fitxer importat."
+
+msgid "strtrycred"
+msgstr "Usa aquestes credencials a tots els servidors"
+
+msgid "strconfdropcred"
+msgstr "Per raons de seguretat, la desconnexió eliminarà la informació d'entrada compartida. Està segur de voler desconnectar ?"
+
+msgid "stractionsonmultiplelines"
+msgstr "Accions a múltiples línies"
+
+msgid "strselectall"
+msgstr "Seleccina'ls tots"
+
+msgid "strunselectall"
+msgstr "No en seleccionis cap"
+
+msgid "strlocale"
+msgstr "Local"
+
+msgid "strcollation"
+msgstr "Col·lació"
+
+msgid "strctype"
+msgstr "Tipus de caràcter"
+
+msgid "strdefaultvalues"
+msgstr "Valors per defecte"
+
+msgid "strnewvalues"
+msgstr "Valors nous"
+
+msgid "strstart"
+msgstr "Comença"
+
+msgid "strstop"
+msgstr "Para"
+
+msgid "strgotoppage"
+msgstr "Torna al principi"
+
+msgid "strtheme"
+msgstr "Tema"
+
+msgid "strcluster"
+msgstr "Clúster"
+
+# Admin
+msgid "stradminondatabase"
+msgstr "Les següents tasques administratives s'apliquen a tota la base de dades %s."
+
+msgid "stradminontable"
+msgstr "Les següents tasques administratives s'apliquen a la taula %s."
+
+# User-supplied SQL history
+msgid "strhistory"
+msgstr "Història"
+
+msgid "strnohistory"
+msgstr "No hi ha història."
+
+msgid "strclearhistory"
+msgstr "Neteja la història"
+
+msgid "strdelhistory"
+msgstr "Elimina de la història"
+
+msgid "strconfdelhistory"
+msgstr "Realment vol eliminar aquesta petició de la història?"
+
+msgid "strconfclearhistory"
+msgstr "Realment vol elimnar la història?"
+
+msgid "strnodatabaseselected"
+msgstr "Si us plau, seleccioni una base de dades."
+
+# Database Sizes
+msgid "strnoaccess"
+msgstr "Sense Accés"
+
+msgid "strsize"
+msgstr "Tamany"
+
+msgid "strbytes"
+msgstr "bytes"
+
+msgid "strkb"
+msgstr "kB"
+
+msgid "strmb"
+msgstr "MB"
+
+msgid "strgb"
+msgstr "GB"
+
+msgid "strtb"
+msgstr "TB"
+
+# Error handling
+msgid "strnoframes"
+msgstr "Aquesta aplicació treballa millor en un navegador amb suport per frames, però es pot usar sense seguint el link de sota."
+
+msgid "strnoframeslink"
+msgstr "Usa sense frames"
+
+msgid "strbadconfig"
+msgstr "El seu config.inc.php no està actualitzat. Necessitarà regenerar-lo a partir del nou config.inc.php-dist."
+
+msgid "strnotloaded"
+msgstr "La seva instal·lació de PHP no suporta la PostgreSQL. Necessita recompilar el PHP usant la opció de configuració --with-pgsql."
+
+msgid "strpostgresqlversionnotsupported"
+msgstr "Versió de PostgreSQL no suportada. Si su plau actualitzi a la versió %s o posterior."
+
+msgid "strbadschema"
+msgstr "Esquema especificat invàlid."
+
+msgid "strbadencoding"
+msgstr "Error al fixar la codificació del client a la base de dades."
+
+msgid "strsqlerror"
+msgstr "Error SQL:"
+
+msgid "strinstatement"
+msgstr "En la sentència:"
+
+msgid "strinvalidparam"
+msgstr "Paràmetres del script invàlids."
+
+msgid "strnodata"
+msgstr "No s'han trobat files."
+
+msgid "strnoobjects"
+msgstr "No s'han trobat objectes."
+
+msgid "strrownotunique"
+msgstr "No hi ha un identificador únic per aquesta fila."
+
+msgid "strnouploads"
+msgstr "La pujada de fitxers està deshabilitada."
+
+msgid "strimporterror"
+msgstr "Error d'importació."
+
+msgid "strimporterror-fileformat"
+msgstr "Error d'importació: Error al determinar automàticament el format del fitxer."
+
+msgid "strimporterrorline"
+msgstr "Error d'importació a la línia %s."
+
+msgid "strimporterrorline-badcolumnnum"
+msgstr "Error d'importació a la línia %s: La línia no té el número correcte de columnes."
+
+msgid "strimporterror-uploadedfile"
+msgstr "Error d'importació: El fitxer no s'ha pogut pujar al servidor"
+
+msgid "strcannotdumponwindows"
+msgstr "El volcat de dades amb noms complexos de taules i esquemes en Windows no és suportada."
+
+msgid "strinvalidserverparam"
+msgstr "Intent de connexió amb un paràmetre del servidor invàlid, possiblement algú està provant d'entrar al sistema."
+
+msgid "strnoserversupplied"
+msgstr "No s'ha proporcionat cap servidor!"
+
+msgid "strbadpgdumppath"
+msgstr "Error d'exportació: Fallada en l'execució de pg_dump (path definit a conf/config.inc.php : %s ). Sisplau, arregli el path en la configuració."
+
+msgid "strbadpgdumpallpath"
+msgstr "Error d'exportació: Fallada en l'execució de pg_dumpall (path definit a conf/config.inc.php : %s ). Sisplau, arregli el path en la configuració."
+
+msgid "strconnectionfail"
+msgstr "No hi ha connexió amb el servidor."
+
+# Tables
+msgid "strtable"
+msgstr "Taula"
+
+msgid "strtables"
+msgstr "Taules"
+
+msgid "strshowalltables"
+msgstr "Mostra totes les taules"
+
+msgid "strnotables"
+msgstr "No s'han trobat taules."
+
+msgid "strnotable"
+msgstr "No s'ha trobat la taula."
+
+msgid "strcreatetable"
+msgstr "Crea una taula"
+
+msgid "strcreatetablelike"
+msgstr "Crea una taula com a"
+
+msgid "strcreatetablelikeparent"
+msgstr "Taula origen"
+
+msgid "strcreatelikewithdefaults"
+msgstr "INCLUDE DEFAULTS"
+
+msgid "strcreatelikewithconstraints"
+msgstr "INCLUDE CONSTRAINTS"
+
+msgid "strcreatelikewithindexes"
+msgstr "INCLUDE INDEXES"
+
+msgid "strtablename"
+msgstr "Nom de la taula"
+
+msgid "strtableneedsname"
+msgstr "Ha d'anomenar la taula."
+
+msgid "strtablelikeneedslike"
+msgstr "Ha de donar una taula d'on copiar les propietats."
+
+msgid "strtableneedsfield"
+msgstr "Ha d'especificar almenys un camp."
+
+msgid "strtableneedscols"
+msgstr "Ha d'especificar un número vàlid de columnes."
+
+msgid "strtablecreated"
+msgstr "Taula creada."
+
+msgid "strtablecreatedbad"
+msgstr "No s'ha pogut crear la taula."
+
+msgid "strconfdroptable"
+msgstr "Està segur de voler eliminar la taula \"%s\"?"
+
+msgid "strtabledropped"
+msgstr "Taula eliminada."
+
+msgid "strtabledroppedbad"
+msgstr "No s'ha pogut eliminar la taula."
+
+msgid "strconfemptytable"
+msgstr "Està segur que vol buidar la taula \"%s\"?"
+
+msgid "strtableemptied"
+msgstr "Taula buidada."
+
+msgid "strtableemptiedbad"
+msgstr "No s'ha pogut buidar la taula."
+
+msgid "strinsertrow"
+msgstr "Inserta una fila"
+
+msgid "strrowinserted"
+msgstr "Fila insertada."
+
+msgid "strrowinsertedbad"
+msgstr "No s'ha pogut insertar la taula."
+
+msgid "strnofkref"
+msgstr "No hi ha cap valor coincident en la foreign key %s."
+
+msgid "strrowduplicate"
+msgstr "Inserció de la taula fallada, intentant fer una inserció duplicada."
+
+msgid "streditrow"
+msgstr "Edita la fila"
+
+msgid "strrowupdated"
+msgstr "Fila actualitzada."
+
+msgid "strrowupdatedbad"
+msgstr "No s'ha pogut actualitzar la fila."
+
+msgid "strdeleterow"
+msgstr "Elimina la fila"
+
+msgid "strconfdeleterow"
+msgstr "Està segur que vol eliminar aquesta fila?"
+
+msgid "strrowdeleted"
+msgstr "Fila eliminada."
+
+msgid "strrowdeletedbad"
+msgstr "No s'ha pogut eliminar la fila."
+
+msgid "strinsertandrepeat"
+msgstr "Inserta & Repeteix"
+
+msgid "strnumcols"
+msgstr "Nombre de columnes"
+
+msgid "strcolneedsname"
+msgstr "Ha d'especificar un nom per la columna"
+
+msgid "strselectallfields"
+msgstr "Selecciona tots els camps"
+
+msgid "strselectneedscol"
+msgstr "Ha de mostrar almenys una columna."
+
+msgid "strselectunary"
+msgstr "Els operadors unaris no poden tenir valors."
+
+msgid "strcolumnaltered"
+msgstr "Columna modificada."
+
+msgid "strcolumnalteredbad"
+msgstr "No s'ha pogut modificar la columna."
+
+msgid "strconfdropcolumn"
+msgstr "Està segur d'eliminar la columna \"%s\" de la taula \"%s\"?"
+
+msgid "strcolumndropped"
+msgstr "Columna eliminada."
+
+msgid "strcolumndroppedbad"
+msgstr "No s'ha pogut eliminar la columna."
+
+msgid "straddcolumn"
+msgstr "Agrega una columna"
+
+msgid "strcolumnadded"
+msgstr "Columna agregada."
+
+msgid "strcolumnaddedbad"
+msgstr "No s'ha pogut agregar la columna."
+
+msgid "strcascade"
+msgstr "EN CASCADA"
+
+msgid "strtablealtered"
+msgstr "Taula modificada."
+
+msgid "strtablealteredbad"
+msgstr "No s'ha pogut modificar la columna."
+
+msgid "strdataonly"
+msgstr "Només dades"
+
+msgid "strstructureonly"
+msgstr "Nomes estructura"
+
+msgid "strstructureanddata"
+msgstr "Estructura i dades"
+
+msgid "strtabbed"
+msgstr "Tabulat"
+
+msgid "strauto"
+msgstr "Automàtic"
+
+msgid "strconfvacuumtable"
+msgstr "Està segur de voler un vacuum \"%s\"?"
+
+msgid "strconfanalyzetable"
+msgstr "Està segur de voler un analyze \"%s\"?"
+
+msgid "strconfreindextable"
+msgstr "Està segur de voler un reindex \"%s\"?"
+
+msgid "strconfclustertable"
+msgstr "Està sergur de voler un cluster \"%s\"?"
+
+msgid "strestimatedrowcount"
+msgstr "Nombre estimat de files"
+
+msgid "strspecifytabletoanalyze"
+msgstr "Ha d'especificar almenys una taula per l'analyze."
+
+msgid "strspecifytabletoempty"
+msgstr "Ha d'especificar almenys una taula per buidar."
+
+msgid "strspecifytabletodrop"
+msgstr "Ha d'especificar almenys una taula per eliminar."
+
+msgid "strspecifytabletovacuum"
+msgstr "Ha d'especificar almenys una taula pel vacuum."
+
+msgid "strspecifytabletoreindex"
+msgstr "Ha d'especifiar almenys una taula pel reindex."
+
+msgid "strspecifytabletocluster"
+msgstr "Ha d'especificar almenys una taula pel cluster."
+
+msgid "strnofieldsforinsert"
+msgstr "No es pot insertar una fila a una taula sense cap columna."
+
+# Columns
+msgid "strcolprop"
+msgstr "Propietats de la Columna"
+
+msgid "strnotableprovided"
+msgstr "No s'ha proporcionat cap taula!"
+
+# Users
+msgid "struser"
+msgstr "Usuari"
+
+msgid "strusers"
+msgstr "Usuaris"
+
+msgid "strusername"
+msgstr "Usuari"
+
+msgid "strpassword"
+msgstr "Contrasenya"
+
+msgid "strsuper"
+msgstr "Superusuari?"
+
+msgid "strcreatedb"
+msgstr "Crear DB?"
+
+msgid "strexpires"
+msgstr "Expira"
+
+msgid "strsessiondefaults"
+msgstr "Valors predeterminats de la sessió"
+
+msgid "strnousers"
+msgstr "No s'han trobat usuaris."
+
+msgid "struserupdated"
+msgstr "Usuari actualitzat."
+
+msgid "struserupdatedbad"
+msgstr "L'actualització de l'usuari ha fallat."
+
+msgid "strshowallusers"
+msgstr "Mostra tots els usuaris"
+
+msgid "strcreateuser"
+msgstr "Crea un usuari"
+
+msgid "struserneedsname"
+msgstr "Ha de donar un nom a l'usuari."
+
+msgid "strusercreated"
+msgstr "Usuari creat."
+
+msgid "strusercreatedbad"
+msgstr "Error al crear l'usuari."
+
+msgid "strconfdropuser"
+msgstr "Està segur de voler eliminar l'usuari \"%s\"?"
+
+msgid "struserdropped"
+msgstr "Usuari eliminat."
+
+msgid "struserdroppedbad"
+msgstr "Error a l'eliminar l'usuari."
+
+msgid "straccount"
+msgstr "Compte"
+
+msgid "strchangepassword"
+msgstr "Canvia la contrasenya"
+
+msgid "strpasswordchanged"
+msgstr "Contrasenya canviada."
+
+msgid "strpasswordchangedbad"
+msgstr "Error al canviar la contrasenya."
+
+msgid "strpasswordshort"
+msgstr "Contrasenya massa curta."
+
+msgid "strpasswordconfirm"
+msgstr "La contrasenya no coincideix amb la confirmació."
+
+# Groups
+msgid "strgroup"
+msgstr "Grup"
+
+msgid "strgroups"
+msgstr "Grups"
+
+msgid "strshowallgroups"
+msgstr "Mostra tots els grups"
+
+msgid "strnogroup"
+msgstr "Grup no trobat."
+
+msgid "strnogroups"
+msgstr "No s'han trobat grups."
+
+msgid "strcreategroup"
+msgstr "Crea un grup"
+
+msgid "strgroupneedsname"
+msgstr "Ha de donar un nom al grup."
+
+msgid "strgroupcreated"
+msgstr "Grup creat."
+
+msgid "strgroupcreatedbad"
+msgstr "No s'ha pogut crear el grup."
+
+msgid "strconfdropgroup"
+msgstr "Està segur de voler eliminar el grup \"%s\"?"
+
+msgid "strgroupdropped"
+msgstr "Grup eliminat."
+
+msgid "strgroupdroppedbad"
+msgstr "No s'ha pogut eliminar el grup."
+
+msgid "strmembers"
+msgstr "Membres"
+
+msgid "strmemberof"
+msgstr "Membre de"
+
+msgid "stradminmembers"
+msgstr "Membres administradors"
+
+msgid "straddmember"
+msgstr "Afegeix un membre"
+
+msgid "strmemberadded"
+msgstr "Membre afegit."
+
+msgid "strmemberaddedbad"
+msgstr "No s'ha pogut afegir el membre."
+
+msgid "strdropmember"
+msgstr "Elimina el membre"
+
+msgid "strconfdropmember"
+msgstr "Està segur de voler eliminar el membre \"%s\" del grup \"%s\"?"
+
+msgid "strmemberdropped"
+msgstr "Membre eliminat."
+
+msgid "strmemberdroppedbad"
+msgstr "No s'ha pogut eliminar el membre."
+
+# Roles
+msgid "strrole"
+msgstr "Rol"
+
+msgid "strroles"
+msgstr "Rols"
+
+msgid "strshowallroles"
+msgstr "Mostra tots els rols"
+
+msgid "strnoroles"
+msgstr "No s'han trobat rols."
+
+msgid "strinheritsprivs"
+msgstr "Hereda privilegis?"
+
+msgid "strcreaterole"
+msgstr "Crea un rol"
+
+msgid "strcancreaterole"
+msgstr "Crear el rol?"
+
+msgid "strrolecreated"
+msgstr "Rol creat."
+
+msgid "strrolecreatedbad"
+msgstr "No s'ha pogut crear el rol."
+
+msgid "strrolealtered"
+msgstr "Rol modificat."
+
+msgid "strrolealteredbad"
+msgstr "No s'ha pogut modificar el rol."
+
+msgid "strcanlogin"
+msgstr "Pot entrar?"
+
+msgid "strconnlimit"
+msgstr "Límit de la connexió"
+
+msgid "strdroprole"
+msgstr "Elimina el rol"
+
+msgid "strconfdroprole"
+msgstr "Està segur de voler eliminar el rol '%s'?"
+
+msgid "strroledropped"
+msgstr "Rol eliminat."
+
+msgid "strroledroppedbad"
+msgstr "No s'ha pogut eliminar el rol."
+
+msgid "strnolimit"
+msgstr "Sense límit"
+
+msgid "strnever"
+msgstr "Mai"
+
+msgid "strroleneedsname"
+msgstr "Ha de donar un nom al rol."
+
+# Privileges
+msgid "strprivilege"
+msgstr "Privilegi"
+
+msgid "strprivileges"
+msgstr "Privilegis"
+
+msgid "strnoprivileges"
+msgstr "Aquest objecte té els privilegis predeterminats."
+
+msgid "strgrant"
+msgstr "Concedeix"
+
+msgid "strrevoke"
+msgstr "Revoca"
+
+msgid "strgranted"
+msgstr "Privilegis canviats."
+
+msgid "strgrantfailed"
+msgstr "Ha fallat el canvi de privilegis."
+
+msgid "strgrantbad"
+msgstr "Ha d'especificar almenys un usuari o grup i almenys un privilegi."
+
+msgid "strgrantor"
+msgstr "Cedent"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "Base de dades"
+
+msgid "strdatabases"
+msgstr "Bases de dades"
+
+msgid "strshowalldatabases"
+msgstr "Mostra totes les bases de dades"
+
+msgid "strnodatabases"
+msgstr "No s'han trobat bases de dades."
+
+msgid "strcreatedatabase"
+msgstr "Crea una base de dades"
+
+msgid "strdatabasename"
+msgstr "Nom de la base de dades"
+
+msgid "strdatabaseneedsname"
+msgstr "Ha de donar un nom a la base de dades."
+
+msgid "strdatabasecreated"
+msgstr "Base de dades creada."
+
+msgid "strdatabasecreatedbad"
+msgstr "No s'ha pogut crear la base de dades."
+
+msgid "strconfdropdatabase"
+msgstr "Està segur de voler eliminar la base de dades \"%s\"?"
+
+msgid "strdatabasedropped"
+msgstr "Base de dades eliminada."
+
+msgid "strdatabasedroppedbad"
+msgstr "No s'ha pogut eliminar la base de dades."
+
+msgid "strentersql"
+msgstr "Entri la sentència SQL per executar a sota:"
+
+msgid "strsqlexecuted"
+msgstr "SQL executat."
+
+msgid "strvacuumgood"
+msgstr "Vacuum completat."
+
+msgid "strvacuumbad"
+msgstr "Vacuum ha fallat."
+
+msgid "stranalyzegood"
+msgstr "Analyze completat."
+
+msgid "stranalyzebad"
+msgstr "Analyze ha fallat."
+
+msgid "strreindexgood"
+msgstr "Reindex completat."
+
+msgid "strreindexbad"
+msgstr "Reindex ha fallat."
+
+msgid "strfull"
+msgstr "Ple"
+
+msgid "strfreeze"
+msgstr "Congelat"
+
+msgid "strforce"
+msgstr "Força"
+
+msgid "strsignalsent"
+msgstr "Senyal enviat."
+
+msgid "strsignalsentbad"
+msgstr "L'enviament del senyal ha fallat."
+
+msgid "strallobjects"
+msgstr "Tots els objectes"
+
+msgid "strdatabasealtered"
+msgstr "Base de dades modificada."
+
+msgid "strdatabasealteredbad"
+msgstr "No s'ha pogut modificar la base de dades."
+
+msgid "strspecifydatabasetodrop"
+msgstr "Ha d'especificar almenys una base de dades per eliminar."
+
+msgid "strtemplatedb"
+msgstr "Plantilla"
+
+msgid "strconfanalyzedatabase"
+msgstr "Està segur de voler un analyze de totes les taules de la base de dades \"%s\"?"
+
+msgid "strconfvacuumdatabase"
+msgstr "Està segur de voler un vacuum de totes les taules de la base de dades \"%s\"?"
+
+msgid "strconfreindexdatabase"
+msgstr "Està segur de voler un reindex de totes les taules de la base de dades \"%s\"?"
+
+msgid "strconfclusterdatabase"
+msgstr "Està segur de voler un clúster de totes les taules de la base de dades \"%s\"?"
+
+# Views
+msgid "strview"
+msgstr "Vista"
+
+msgid "strviews"
+msgstr "Vistes"
+
+msgid "strshowallviews"
+msgstr "Mostra totes les vistes"
+
+msgid "strnoview"
+msgstr "No s'ha trobat la vista."
+
+msgid "strnoviews"
+msgstr "No s'han trobat vistes."
+
+msgid "strcreateview"
+msgstr "Crea una vista"
+
+msgid "strviewname"
+msgstr "Nom de la vista"
+
+msgid "strviewneedsname"
+msgstr "Ha d'anomenar la vista."
+
+msgid "strviewneedsdef"
+msgstr "Ha de donar una definició a la vista."
+
+msgid "strviewneedsfields"
+msgstr "Ha de seleccionar les columnes de la vista."
+
+msgid "strviewcreated"
+msgstr "Vista creada."
+
+msgid "strviewcreatedbad"
+msgstr "No s'ha pogut crear la vista."
+
+msgid "strconfdropview"
+msgstr "Està segur de voler eliminar la vista \"%s\"?"
+
+msgid "strviewdropped"
+msgstr "Vista eliminada."
+
+msgid "strviewdroppedbad"
+msgstr "No s'ha pogut eliminar la vista."
+
+msgid "strviewupdated"
+msgstr "Vista actualitzada."
+
+msgid "strviewupdatedbad"
+msgstr "No s'ha pogut actualitzar la vista."
+
+msgid "strviewlink"
+msgstr "Enllaçant claus"
+
+msgid "strviewconditions"
+msgstr "Condicions addicionals"
+
+msgid "strcreateviewwiz"
+msgstr "Crea una vista amb l'assistent"
+
+msgid "strrenamedupfields"
+msgstr "Reanomena els camps duplicats"
+
+msgid "strdropdupfields"
+msgstr "Elimina els camps duplicats"
+
+msgid "strerrordupfields"
+msgstr "Error en els camps duplicats"
+
+msgid "strviewaltered"
+msgstr "Vista modificada."
+
+msgid "strviewalteredbad"
+msgstr "No s'ha pogut modificar la vista."
+
+msgid "strspecifyviewtodrop"
+msgstr "Ha d'especificar almenys una vista per eliminar."
+
+# Sequences
+msgid "strsequence"
+msgstr "Seqüència"
+
+msgid "strsequences"
+msgstr "Seqüències"
+
+msgid "strshowallsequences"
+msgstr "Mostra totes les seqüències"
+
+msgid "strnosequence"
+msgstr "No s'ha trobat la seqüencia."
+
+msgid "strnosequences"
+msgstr "No s'han trobat seqüencies."
+
+msgid "strcreatesequence"
+msgstr "Crea una seqüència"
+
+msgid "strlastvalue"
+msgstr "Últim valor"
+
+msgid "strincrementby"
+msgstr "Incrementar en"
+
+msgid "strstartvalue"
+msgstr "Valor inicial"
+
+msgid "strrestartvalue"
+msgstr "Valor al reiniciar"
+
+msgid "strmaxvalue"
+msgstr "Valor màxim"
+
+msgid "strminvalue"
+msgstr "Valor mínim"
+
+msgid "strcachevalue"
+msgstr "Valor de cache"
+
+msgid "strlogcount"
+msgstr "Compte del registre"
+
+msgid "strcancycle"
+msgstr "Pot completar un cicle?"
+
+msgid "striscalled"
+msgstr "Vol incrementar l'últim valor abans de retornar el següent valor (is_called)?"
+
+msgid "strsequenceneedsname"
+msgstr "Ha d'especificar un nom per la seqüència."
+
+msgid "strsequencecreated"
+msgstr "Seqüència creada."
+
+msgid "strsequencecreatedbad"
+msgstr "No s'ha pogut crear la seqüència."
+
+msgid "strconfdropsequence"
+msgstr "Està segur de voler eliminar la seqüència \"%s\"?"
+
+msgid "strsequencedropped"
+msgstr "Seqüència eliminada."
+
+msgid "strsequencedroppedbad"
+msgstr "No s'ha pogut eliminar la seqüència."
+
+msgid "strsequencerestart"
+msgstr "Seqüència reiniciada."
+
+msgid "strsequencerestartbad"
+msgstr "No s'ha pogut reiniciar la seqüència."
+
+msgid "strsequencereset"
+msgstr "Seqüència reiniciada."
+
+msgid "strsequenceresetbad"
+msgstr "No s'ha pogut reiniciar la seqüència."
+
+msgid "strsequencealtered"
+msgstr "Seqüència modificada."
+
+msgid "strsequencealteredbad"
+msgstr "No s'ha pogut modificar la seqüència."
+
+msgid "strsetval"
+msgstr "Fixa el valor"
+
+msgid "strsequencesetval"
+msgstr "Valor de la seqüència fixat."
+
+msgid "strsequencesetvalbad"
+msgstr "No s'ha pogut fixar el valor de la seqüencia."
+
+msgid "strnextval"
+msgstr "Valor incremental"
+
+msgid "strsequencenextval"
+msgstr "Seqüència incrementada."
+
+msgid "strsequencenextvalbad"
+msgstr "No s'ha pogut incrementar la seqüència."
+
+msgid "strspecifysequencetodrop"
+msgstr "Ha d'especificar almenys una seqüència per eliminar."
+
+# Indexes
+msgid "strindex"
+msgstr "Índex"
+
+msgid "strindexes"
+msgstr "Índexs"
+
+msgid "strindexname"
+msgstr "Nom de l'índex"
+
+msgid "strshowallindexes"
+msgstr "Mostra tots els índexs"
+
+msgid "strnoindex"
+msgstr "No s'ha trobat l'índex."
+
+msgid "strnoindexes"
+msgstr "No s'han trobat índexs."
+
+msgid "strcreateindex"
+msgstr "Crea un índex"
+
+msgid "strtabname"
+msgstr "Nom de la pestanya"
+
+msgid "strcolumnname"
+msgstr "Nom de la columna"
+
+msgid "strindexneedsname"
+msgstr "Ha d'anomenar l'índex."
+
+msgid "strindexneedscols"
+msgstr "Els índexs requereixen un número vàlid de columnes."
+
+msgid "strindexcreated"
+msgstr "Índex creat"
+
+msgid "strindexcreatedbad"
+msgstr "No s'ha pogut crear l'índex."
+
+msgid "strconfdropindex"
+msgstr "Està segur de voler eliminar l'índex \"%s\"?"
+
+msgid "strindexdropped"
+msgstr "Índex eliminat."
+
+msgid "strindexdroppedbad"
+msgstr "No s'ha pogut eliminar l'índex."
+
+msgid "strkeyname"
+msgstr "Nom de la clau"
+
+msgid "struniquekey"
+msgstr "Clau única"
+
+msgid "strprimarykey"
+msgstr "Clau primària"
+
+msgid "strindextype"
+msgstr "Tipus d'índex"
+
+msgid "strtablecolumnlist"
+msgstr "Columnes a la taula"
+
+msgid "strindexcolumnlist"
+msgstr "Columnes a l'índex"
+
+msgid "strclusteredgood"
+msgstr "Clúster completat."
+
+msgid "strclusteredbad"
+msgstr "No s'ha pogut crear el clúster."
+
+msgid "strconcurrently"
+msgstr "Actualment"
+
+msgid "strnoclusteravailable"
+msgstr "No hi ha el clúster disponible en l'índex."
+
+# Rules
+msgid "strrules"
+msgstr "Regles"
+
+msgid "strrule"
+msgstr "Regla"
+
+msgid "strshowallrules"
+msgstr "Mostra totes les regles"
+
+msgid "strnorule"
+msgstr "No s'ha trobat la regla."
+
+msgid "strnorules"
+msgstr "No s'han trobat regles."
+
+msgid "strcreaterule"
+msgstr "Crea una regla"
+
+msgid "strrulename"
+msgstr "Nom de la regla"
+
+msgid "strruleneedsname"
+msgstr "Ha d'especificar un nom per la regla"
+
+msgid "strrulecreated"
+msgstr "Regla creada."
+
+msgid "strrulecreatedbad"
+msgstr "No s'ha pogut crear la regla."
+
+msgid "strconfdroprule"
+msgstr "Està segur de voler eliminar la regla \"%s\" a \"%s\"?"
+
+msgid "strruledropped"
+msgstr "Regla eliminada."
+
+msgid "strruledroppedbad"
+msgstr "No s'ha pogut eliminar la regla."
+
+# Constraints
+msgid "strconstraint"
+msgstr "Restricció"
+
+msgid "strconstraints"
+msgstr "Restriccions"
+
+msgid "strshowallconstraints"
+msgstr "Mostra totes les restriccions"
+
+msgid "strnoconstraints"
+msgstr "No s'han trobat restriccions."
+
+msgid "strcreateconstraint"
+msgstr "Crea una restricció"
+
+msgid "strconstraintcreated"
+msgstr "Restricció creada."
+
+msgid "strconstraintcreatedbad"
+msgstr "No s'ha pogut crear la restricció."
+
+msgid "strconfdropconstraint"
+msgstr "Està segur de voler eliminar la restricció \"%s\" de \"%s\"?"
+
+msgid "strconstraintdropped"
+msgstr "Restricció eliminada."
+
+msgid "strconstraintdroppedbad"
+msgstr "No s'ha pogut eliminar la restricció."
+
+msgid "straddcheck"
+msgstr "Agrega un control"
+
+msgid "strcheckneedsdefinition"
+msgstr "La restricció de control necessita una definició."
+
+msgid "strcheckadded"
+msgstr "Restricció de control agregada."
+
+msgid "strcheckaddedbad"
+msgstr "No s'ha pogut agregar la restricció de control."
+
+msgid "straddpk"
+msgstr "Agrega una clau primària"
+
+msgid "strpkneedscols"
+msgstr "La clau primària requereix almenys una columna."
+
+msgid "strpkadded"
+msgstr "Clau primària agregada."
+
+msgid "strpkaddedbad"
+msgstr "No s'ha pogut agregar la clau primària."
+
+msgid "stradduniq"
+msgstr "Agrega una clau única"
+
+msgid "struniqneedscols"
+msgstr "La clau única requereix almenys una columna."
+
+msgid "struniqadded"
+msgstr "Clau única agregada."
+
+msgid "struniqaddedbad"
+msgstr "No s'ha pogut agregar la clau única."
+
+msgid "straddfk"
+msgstr "Agrega una clau externa"
+
+msgid "strfkneedscols"
+msgstr "La clau externa requereix almenys una columna."
+
+msgid "strfkneedstarget"
+msgstr "La clau externa requereix una taula de referència."
+
+msgid "strfkadded"
+msgstr "Clau externa agregada."
+
+msgid "strfkaddedbad"
+msgstr "No s'ha pogut agregar la clau externa."
+
+msgid "strfktarget"
+msgstr "Taula de destí"
+
+msgid "strfkcolumnlist"
+msgstr "Columnes a la clau"
+
+msgid "strondelete"
+msgstr "A L'ELIMINAR"
+
+msgid "stronupdate"
+msgstr "A L'ACTUALITZAR"
+
+# Functions
+msgid "strfunction"
+msgstr "Funció"
+
+msgid "strfunctions"
+msgstr "Funcions"
+
+msgid "strshowallfunctions"
+msgstr "Mostra totes les funcions"
+
+msgid "strnofunction"
+msgstr "No s'ha trobat la funció."
+
+msgid "strnofunctions"
+msgstr "No s'han trobat funcions"
+
+msgid "strcreateplfunction"
+msgstr "Crea una funció SQL/PL"
+
+msgid "strcreateinternalfunction"
+msgstr "Crea una funció interna"
+
+msgid "strcreatecfunction"
+msgstr "Crea una funció C"
+
+msgid "strfunctionname"
+msgstr "Nom de la funció"
+
+msgid "strreturns"
+msgstr "Retorna"
+
+msgid "strproglanguage"
+msgstr "Llenguatge de programació"
+
+msgid "strfunctionneedsname"
+msgstr "Ha de donar un nom a la funció."
+
+msgid "strfunctionneedsdef"
+msgstr "Ha de donar una definició a la funció."
+
+msgid "strfunctioncreated"
+msgstr "Funció creada."
+
+msgid "strfunctioncreatedbad"
+msgstr "No s'ha pogut crear la funció."
+
+msgid "strconfdropfunction"
+msgstr "Està segur de voler eliminar la funció \"%s\"?"
+
+msgid "strfunctiondropped"
+msgstr "Funció eliminada."
+
+msgid "strfunctiondroppedbad"
+msgstr "No s'ha pogut eliminar la funció."
+
+msgid "strfunctionupdated"
+msgstr "Funció actualitzada."
+
+msgid "strfunctionupdatedbad"
+msgstr "No s'ha pogut actualitzar la funció."
+
+msgid "strobjectfile"
+msgstr "Fitxer objecte"
+
+msgid "strlinksymbol"
+msgstr "Enllaç simbòlic"
+
+msgid "strarguments"
+msgstr "Arguments"
+
+msgid "strargmode"
+msgstr "Mode"
+
+msgid "strargtype"
+msgstr "Tipus"
+
+msgid "strargadd"
+msgstr "Afegeix un altre argument"
+
+msgid "strargremove"
+msgstr "Elimina aquest argument"
+
+msgid "strargnoargs"
+msgstr "Aquesta funció no tindrà arguments."
+
+msgid "strargenableargs"
+msgstr "Habilita els arguments passats a aquesta funció."
+
+msgid "strargnorowabove"
+msgstr "Hi ha d'haver una fila sobre aquesta fila."
+
+msgid "strargnorowbelow"
+msgstr "Hi ha d'haver una fila sota aquesta fila."
+
+msgid "strargraise"
+msgstr "Mou amunt."
+
+msgid "strarglower"
+msgstr "Mou avall."
+
+msgid "strargremoveconfirm"
+msgstr "Està segur de voler eliminar aquest argument? Això NO es pot desfer."
+
+msgid "strfunctioncosting"
+msgstr "Funció de Cost"
+
+msgid "strresultrows"
+msgstr "Files Resultants"
+
+msgid "strexecutioncost"
+msgstr "Cost de l'Execució"
+
+msgid "strspecifyfunctiontodrop"
+msgstr "Ha d'especificar almenys una funció per eliminar."
+
+# Triggers
+msgid "strtrigger"
+msgstr "Disparador"
+
+msgid "strtriggers"
+msgstr "Disparadors"
+
+msgid "strshowalltriggers"
+msgstr "Mostrar tots els disparadors"
+
+msgid "strnotrigger"
+msgstr "No s'ha trobat el disparador."
+
+msgid "strnotriggers"
+msgstr "No s'han trobat disparadors."
+
+msgid "strcreatetrigger"
+msgstr "Crea un disparador"
+
+msgid "strtriggerneedsname"
+msgstr "Ha de donar un nom al disparador."
+
+msgid "strtriggerneedsfunc"
+msgstr "Ha d'especificar una funció pel disparador."
+
+msgid "strtriggercreated"
+msgstr "Disparador creat."
+
+msgid "strtriggercreatedbad"
+msgstr "No s'ha pogut crear el disparador."
+
+msgid "strconfdroptrigger"
+msgstr "Està segur de voler eliminar el disparador \"%s\" de \"%s\"?"
+
+msgid "strconfenabletrigger"
+msgstr "Està segur de voler habilitar el disparador \"%s\" a \"%s\"?"
+
+msgid "strconfdisabletrigger"
+msgstr "Està segur de voler inhabilitar el disparador \"%s\" a \"%s\"?"
+
+msgid "strtriggerdropped"
+msgstr "Disparador eliminat."
+
+msgid "strtriggerdroppedbad"
+msgstr "No s'ha pogut eliminar el disparador."
+
+msgid "strtriggerenabled"
+msgstr "Disparador habilitat."
+
+msgid "strtriggerenabledbad"
+msgstr "No s'ha pogut habilitar el disparador."
+
+msgid "strtriggerdisabled"
+msgstr "Disparador inhabilitat."
+
+msgid "strtriggerdisabledbad"
+msgstr "No s'ha pogut inhabilitar el disparador."
+
+msgid "strtriggeraltered"
+msgstr "Disparador modificat."
+
+msgid "strtriggeralteredbad"
+msgstr "No s'ha pogut modificar el disparador."
+
+msgid "strforeach"
+msgstr "Per cada"
+
+# Types
+msgid "strtype"
+msgstr "Tipus"
+
+msgid "strtypes"
+msgstr "Tipus"
+
+msgid "strshowalltypes"
+msgstr "Mostrar tots els tipus"
+
+msgid "strnotype"
+msgstr "No s'ha trobat el tipus."
+
+msgid "strnotypes"
+msgstr "No s'han trobat els tipus."
+
+msgid "strcreatetype"
+msgstr "Crea un tipus"
+
+msgid "strcreatecomptype"
+msgstr "Crea un tipus compost"
+
+msgid "strcreateenumtype"
+msgstr "Crea un tipus d'enumeració"
+
+msgid "strtypeneedsfield"
+msgstr "Ha d'especificar almenys un camp."
+
+msgid "strtypeneedsvalue"
+msgstr "Ha d'especificar almenys un valor."
+
+msgid "strtypeneedscols"
+msgstr "Ha d'especificar un número vàlid de camps."
+
+msgid "strtypeneedsvals"
+msgstr "Ha d'especificar un número vàlid de valors."
+
+msgid "strinputfn"
+msgstr "Funció d'entrada"
+
+msgid "stroutputfn"
+msgstr "Funció de sortida"
+
+msgid "strpassbyval"
+msgstr "Passat per valor?"
+
+msgid "stralignment"
+msgstr "Alineament"
+
+msgid "strelement"
+msgstr "Element"
+
+msgid "strdelimiter"
+msgstr "Delimitador"
+
+msgid "strstorage"
+msgstr "Emmagatzemament"
+
+msgid "strfield"
+msgstr "Camp"
+
+msgid "strnumfields"
+msgstr "Num. de camps"
+
+msgid "strnumvalues"
+msgstr "Num. de valors"
+
+msgid "strtypeneedsname"
+msgstr "Ha de donar un nom al tipus."
+
+msgid "strtypeneedslen"
+msgstr "Ha de donar una longitud al tipus."
+
+msgid "strtypecreated"
+msgstr "Tipus creat"
+
+msgid "strtypecreatedbad"
+msgstr "No s'ha pogut crear el tipus."
+
+msgid "strconfdroptype"
+msgstr "Està segur de voler eliminar el tipus \"%s\"?"
+
+msgid "strtypedropped"
+msgstr "Tipus eliminat."
+
+msgid "strtypedroppedbad"
+msgstr "No s'ha pogut eliminar el tipus."
+
+msgid "strflavor"
+msgstr "Varietat"
+
+msgid "strbasetype"
+msgstr "Base"
+
+msgid "strcompositetype"
+msgstr "Compost"
+
+msgid "strpseudotype"
+msgstr "Pseudo"
+
+msgid "strenum"
+msgstr "Enumeració"
+
+msgid "strenumvalues"
+msgstr "Valors de l'enumeració"
+
+# Schemas
+msgid "strschema"
+msgstr "Esquema"
+
+msgid "strschemas"
+msgstr "Esquemes"
+
+msgid "strshowallschemas"
+msgstr "Mostra tots els esquemes"
+
+msgid "strnoschema"
+msgstr "No s'ha trobat l'esquema."
+
+msgid "strnoschemas"
+msgstr "No s'han trobat esquemes."
+
+msgid "strcreateschema"
+msgstr "Crea un esquema"
+
+msgid "strschemaname"
+msgstr "Nom de l'esquema"
+
+msgid "strschemaneedsname"
+msgstr "Ha d'anomenar l'esquema."
+
+msgid "strschemacreated"
+msgstr "Esquema creat"
+
+msgid "strschemacreatedbad"
+msgstr "No s'ha pogut crear l'esquema."
+
+msgid "strconfdropschema"
+msgstr "Està segur de voler eliminar l'esquema \"%s\"?"
+
+msgid "strschemadropped"
+msgstr "Esquema eliminat."
+
+msgid "strschemadroppedbad"
+msgstr "No s'ha pogut eliminar l'esquema."
+
+msgid "strschemaaltered"
+msgstr "Esquema modificat."
+
+msgid "strschemaalteredbad"
+msgstr "No s'ha pogut modificar l'esquema."
+
+msgid "strsearchpath"
+msgstr "Camí de cerca de l'esquema"
+
+msgid "strspecifyschematodrop"
+msgstr "Ha d'especificar almenys un esquema per eliminar."
+
+# Reports
+
+# Domains
+msgid "strdomain"
+msgstr "Domini"
+
+msgid "strdomains"
+msgstr "Dominis"
+
+msgid "strshowalldomains"
+msgstr "Mostrar tots els dominis"
+
+msgid "strnodomains"
+msgstr "No s'han trobat dominis."
+
+msgid "strcreatedomain"
+msgstr "Crea un domini"
+
+msgid "strdomaindropped"
+msgstr "Domini eliminat."
+
+msgid "strdomaindroppedbad"
+msgstr "No s'ha pogut eliminar el domini."
+
+msgid "strconfdropdomain"
+msgstr "Està segur de voler eliminar el domini \"%s\"?"
+
+msgid "strdomainneedsname"
+msgstr "Ha d'anomenar el domini."
+
+msgid "strdomaincreated"
+msgstr "Domini creat."
+
+msgid "strdomaincreatedbad"
+msgstr "No s'ha pogut crear el domini."
+
+msgid "strdomainaltered"
+msgstr "Domini modificat."
+
+msgid "strdomainalteredbad"
+msgstr "No s'ha pogut modificar el domini."
+
+# Operators
+msgid "stroperator"
+msgstr "Operador"
+
+msgid "stroperators"
+msgstr "Operadors"
+
+msgid "strshowalloperators"
+msgstr "Mostra tots els operadors"
+
+msgid "strnooperator"
+msgstr "No s'ha trobat l'operador."
+
+msgid "strnooperators"
+msgstr "No s'han trobat operadors."
+
+msgid "strcreateoperator"
+msgstr "Crea un operador"
+
+msgid "strleftarg"
+msgstr "Tipus de l'arg. esquerre"
+
+msgid "strrightarg"
+msgstr "Tipus de l'arg. dret"
+
+msgid "strcommutator"
+msgstr "Commutador"
+
+msgid "strnegator"
+msgstr "Negació"
+
+msgid "strrestrict"
+msgstr "Restringeix"
+
+msgid "strjoin"
+msgstr "Unieix"
+
+msgid "strhashes"
+msgstr "Hash"
+
+msgid "strmerges"
+msgstr "Fussiona"
+
+msgid "strleftsort"
+msgstr "Sort esquerre"
+
+msgid "strrightsort"
+msgstr "Sort dret"
+
+msgid "strlessthan"
+msgstr "Menor que"
+
+msgid "strgreaterthan"
+msgstr "Major que"
+
+msgid "stroperatorneedsname"
+msgstr "Ha d'anomenar l'operador."
+
+msgid "stroperatorcreated"
+msgstr "Operador creat"
+
+msgid "stroperatorcreatedbad"
+msgstr "No s'ha pogut crear l'operador."
+
+msgid "strconfdropoperator"
+msgstr "Està segur de voler eliminar l'operador \"%s\"?"
+
+msgid "stroperatordropped"
+msgstr "Operador eliminat."
+
+msgid "stroperatordroppedbad"
+msgstr "No s'ha pogut eliminar l'operador."
+
+# Casts
+msgid "strcasts"
+msgstr "Conversió de tipus"
+
+msgid "strnocasts"
+msgstr "No s'han trobat conversions."
+
+msgid "strsourcetype"
+msgstr "Tipus inicial"
+
+msgid "strtargettype"
+msgstr "Tipus final"
+
+msgid "strimplicit"
+msgstr "Implícit"
+
+msgid "strinassignment"
+msgstr "En assignació"
+
+msgid "strbinarycompat"
+msgstr "(Compatible amb binari)"
+
+# Conversions
+msgid "strconversions"
+msgstr "Conversions"
+
+msgid "strnoconversions"
+msgstr "No s'han trobat conversions."
+
+msgid "strsourceencoding"
+msgstr "Codificació inicial"
+
+msgid "strtargetencoding"
+msgstr "Codificació final"
+
+# Languages
+msgid "strlanguages"
+msgstr "Llenguatges"
+
+msgid "strnolanguages"
+msgstr "No s'han trobat llenguatges."
+
+msgid "strtrusted"
+msgstr "Fiable"
+
+# Info
+msgid "strnoinfo"
+msgstr "No hi ha informació disponible."
+
+msgid "strreferringtables"
+msgstr "Referent a les taules"
+
+msgid "strparenttables"
+msgstr "Taules pare"
+
+msgid "strchildtables"
+msgstr "Taules fill"
+
+# Aggregates
+msgid "straggregate"
+msgstr "Agregat"
+
+msgid "straggregates"
+msgstr "Agregats"
+
+msgid "strnoaggregates"
+msgstr "No s'han trobat agregats"
+
+msgid "stralltypes"
+msgstr "(Tots els tipus)"
+
+msgid "strcreateaggregate"
+msgstr "Crea un agregat"
+
+msgid "straggrbasetype"
+msgstr "Tipus de dades d'entrada"
+
+msgid "straggrsfunc"
+msgstr "Funció de la transició de l'estat"
+
+msgid "straggrstype"
+msgstr "Tipus de dades pel valor de l'estat"
+
+msgid "straggrffunc"
+msgstr "Funció final"
+
+msgid "straggrinitcond"
+msgstr "Condició inicial"
+
+msgid "straggrsortop"
+msgstr "Operador ordre"
+
+msgid "strconfdropaggregate"
+msgstr "Està segur de voler elimnar l'agregat '%s'?"
+
+msgid "straggregatedropped"
+msgstr "Agregat eliminat."
+
+msgid "straggregatedroppedbad"
+msgstr "No s'ha pogut eliminar l'agregat."
+
+msgid "straggraltered"
+msgstr "Agregat modificat."
+
+msgid "straggralteredbad"
+msgstr "No s'ha pogut modificar l'agregat."
+
+msgid "straggrneedsname"
+msgstr "Ha d'especificar un nom per l'agregat"
+
+msgid "straggrneedsbasetype"
+msgstr "Ha d'especificar el tipus de dades d'entrada per l'agregat"
+
+msgid "straggrneedssfunc"
+msgstr "Ha d'especificar el nom de la funció de transició de l'estat per l'agregat"
+
+msgid "straggrneedsstype"
+msgstr "Ha d'especificar el tipus de dades pel valor de l'estat de l'agregat"
+
+msgid "straggrcreated"
+msgstr "Agregat creat."
+
+msgid "straggrcreatedbad"
+msgstr "No s'ha pogut crear l\agregat."
+
+msgid "straggrshowall"
+msgstr "Mostra tots els agregats"
+
+# Operator Classes
+msgid "stropclasses"
+msgstr "Classes d'operadors"
+
+msgid "strnoopclasses"
+msgstr "No s'han trobat classes d'operadors."
+
+msgid "straccessmethod"
+msgstr "Mètode d'accés"
+
+# Stats and performance
+msgid "strrowperf"
+msgstr "Row Performance"
+
+msgid "strioperf"
+msgstr "I/O Performance"
+
+msgid "stridxrowperf"
+msgstr "Index Row Performance"
+
+msgid "stridxioperf"
+msgstr "Index I/O Performance"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "Sequential"
+
+msgid "strscan"
+msgstr "Scan"
+
+msgid "strread"
+msgstr "Read"
+
+msgid "strfetch"
+msgstr "Fetch"
+
+msgid "strheap"
+msgstr "Heap"
+
+msgid "strtoast"
+msgstr "TOAST"
+
+msgid "strtoastindex"
+msgstr "TOAST Index"
+
+msgid "strcache"
+msgstr "Cache"
+
+msgid "strdisk"
+msgstr "Disk"
+
+msgid "strrows2"
+msgstr "Rows"
+
+# Tablespaces
+msgid "strtablespace"
+msgstr "Tablespace"
+
+msgid "strtablespaces"
+msgstr "Tablespaces"
+
+msgid "strshowalltablespaces"
+msgstr "Mostrar tots els tablespaces"
+
+msgid "strnotablespaces"
+msgstr "No s'han trobat tablespaces"
+
+msgid "strcreatetablespace"
+msgstr "Crea un tablespace"
+
+msgid "strlocation"
+msgstr "Localització"
+
+msgid "strtablespaceneedsname"
+msgstr "Ha de donar un nom al tablespace."
+
+msgid "strtablespaceneedsloc"
+msgstr "Ha de donar un directori on crear el tablespace."
+
+msgid "strtablespacecreated"
+msgstr "Tablespace creat."
+
+msgid "strtablespacecreatedbad"
+msgstr "No s'ha pogut crear el Tablespace."
+
+msgid "strconfdroptablespace"
+msgstr "Està segur de voler eliminar el tablespace \"%s\"?"
+
+msgid "strtablespacedropped"
+msgstr "Tablespace eliminat."
+
+msgid "strtablespacedroppedbad"
+msgstr "No s'ha pogut eliminar el tablespace."
+
+msgid "strtablespacealtered"
+msgstr "Tablespace modificat."
+
+msgid "strtablespacealteredbad"
+msgstr "No s'ha pogut modifcar el tablespace."
+
+# Miscellaneous
+msgid "strtopbar"
+msgstr "%s corrent a %s:%s -- Ha entrat com a usuari \"%s\""
+
+msgid "strtimefmt"
+msgstr "jS M, Y g:iA"
+
+msgid "strhelp"
+msgstr "Ajuda"
+
+msgid "strhelpicon"
+msgstr "?"
+
+msgid "strhelppagebrowser"
+msgstr "Cercador de pàgines d'ajuda"
+
+msgid "strselecthelppage"
+msgstr "Selecciona una pàgina d'ajuda"
+
+msgid "strinvalidhelppage"
+msgstr "Pàgina d'ajuda invàlida."
+
+msgid "strlogintitle"
+msgstr "Entrar a %s"
+
+msgid "strlogoutmsg"
+msgstr "Sortir de %s"
+
+msgid "strloading"
+msgstr "Carregant..."
+
+msgid "strerrorloading"
+msgstr "Error Carregant"
+
+msgid "strclicktoreload"
+msgstr "Clicar per recarregar"
+
+# Autovacuum
+msgid "strautovacuum"
+msgstr "Autovacuum"
+
+msgid "strturnedon"
+msgstr "Activat"
+
+msgid "strturnedoff"
+msgstr "Desactivat"
+
+msgid "strenabled"
+msgstr "Habilitat"
+
+msgid "strnovacuumconf"
+msgstr "No s'ha trobat la configuració de l'autovacuum."
+
+msgid "strvacuumbasethreshold"
+msgstr "Llindar Base del Vacuum"
+
+msgid "strvacuumscalefactor"
+msgstr "Factor d'Escala del Vacuum"
+
+msgid "stranalybasethreshold"
+msgstr "Llindar Base de l'Analyze"
+
+msgid "stranalyzescalefactor"
+msgstr "Factor d'Escala de l'Analyze"
+
+msgid "strvacuumcostdelay"
+msgstr "Cost del Retard del Vacuum"
+
+msgid "strvacuumcostlimit"
+msgstr "Límit de Cost del Vacuum"
+
+msgid "strvacuumpertable"
+msgstr "Configuració de l'autovacuum per taula"
+
+msgid "straddvacuumtable"
+msgstr "Afegeix la configuració de l'autovacuum per una taula"
+
+msgid "streditvacuumtable"
+msgstr "Edita la configuració de l'autovacuum de la taula %s"
+
+msgid "strdelvacuumtable"
+msgstr "Vol eliminar la configuració de l'autovacuum de la taula %s ?"
+
+msgid "strvacuumtablereset"
+msgstr "S'ha inicialitzat la configuració de l'autovacuum de la taula %s als valors per defecte"
+
+msgid "strdelvacuumtablefail"
+msgstr "No s'ha pogut eliminar la configuració de l'autovacuum de la taula %s"
+
+msgid "strsetvacuumtablesaved"
+msgstr "Configuració de l'autovacuum de la taula %s desada."
+
+msgid "strsetvacuumtablefail"
+msgstr "Ha fallat la configuració de l'autovacuum de la taula %s."
+
+msgid "strspecifydelvacuumtable"
+msgstr "Ha d'especificar la taula d'on vol eliminar els paràmetres de l'autovacuum."
+
+msgid "strspecifyeditvacuumtable"
+msgstr "Ha d'especificar la taula d'on vol editar els paràmetres de l'autovacuum."
+
+msgid "strnotdefaultinred"
+msgstr "Els paràmetres no per defecte en vermell."
+
+# Table-level Locks
+msgid "strlocks"
+msgstr "Bloquejos"
+
+msgid "strtransaction"
+msgstr "ID de la Transacció"
+
+msgid "strvirtualtransaction"
+msgstr "ID de la Transacció Virtual"
+
+msgid "strprocessid"
+msgstr "ID del Procés"
+
+msgid "strmode"
+msgstr "Mode de Bloqueig"
+
+msgid "strislockheld"
+msgstr "S'aguanta el bloqueig?"
+
+# Prepared transactions
+msgid "strpreparedxacts"
+msgstr "Transaccions preparades"
+
+msgid "strxactid"
+msgstr "ID de la Transacció"
+
+msgid "strgid"
+msgstr "ID Global"
+
+# Fulltext search
+msgid "strfulltext"
+msgstr "Cerca del Text Completa (FTS)"
+
+msgid "strftsconfig"
+msgstr "Configuració FTS"
+
+msgid "strftsconfigs"
+msgstr "Configuracions"
+
+msgid "strftscreateconfig"
+msgstr "Crea una configuració FTS"
+
+msgid "strftscreatedict"
+msgstr "Crea un diccionari"
+
+msgid "strftscreatedicttemplate"
+msgstr "Crea una plantilla d'un diccionari"
+
+msgid "strftscreateparser"
+msgstr "Crea un analitzador"
+
+msgid "strftsnoconfigs"
+msgstr "No s'ha trobat cap configuració FTS."
+
+msgid "strftsconfigdropped"
+msgstr "Configuració FTS eliminada."
+
+msgid "strftsconfigdroppedbad"
+msgstr "No s'ha pogut eliminar la configuració FTS."
+
+msgid "strconfdropftsconfig"
+msgstr "Està segur de voler eliminar la configuració FTS \"%s\"?"
+
+msgid "strconfdropftsdict"
+msgstr "Està segur de voler eliminar el diccionari FTS \"%s\"?"
+
+msgid "strconfdropftsmapping"
+msgstr "Està segur de voler eliminar el traçat \"%s\" de la configuració FTS \"%s\"?"
+
+msgid "strftstemplate"
+msgstr "Plantilla"
+
+msgid "strftsparser"
+msgstr "Analitzador"
+
+msgid "strftsconfigneedsname"
+msgstr "Ha de donar un nom a la configuració FTS."
+
+msgid "strftsconfigcreated"
+msgstr "Configuració FTS creada."
+
+msgid "strftsconfigcreatedbad"
+msgstr "No s'ha pogut crear la configuració FTS."
+
+msgid "strftsmapping"
+msgstr "Traçat"
+
+msgid "strftsdicts"
+msgstr "Diccionaris"
+
+msgid "strftsdict"
+msgstr "Diccionari"
+
+msgid "strftsemptymap"
+msgstr "Mapa de la configuració FTS buida."
+
+msgid "strftsconfigaltered"
+msgstr "Configuració FTS modificada."
+
+msgid "strftsconfigalteredbad"
+msgstr "No s'ha pogut modificar la configuració FTS."
+
+msgid "strftsconfigmap"
+msgstr "Mapa de la configuració FTS"
+
+msgid "strftsparsers"
+msgstr "Analitzadors FTS"
+
+msgid "strftsnoparsers"
+msgstr "No hi ha analitzadors FTS disponibles."
+
+msgid "strftsnodicts"
+msgstr "No hi ha diccionaris FTS disponibles."
+
+msgid "strftsdictcreated"
+msgstr "Diccionari FTS creat."
+
+msgid "strftsdictcreatedbad"
+msgstr "No s'ha pogut crear el diccionari FTS."
+
+msgid "strftslexize"
+msgstr "Lexize"
+
+msgid "strftsinit"
+msgstr "Inicialitzador"
+
+msgid "strftsoptionsvalues"
+msgstr "Opcions i valors"
+
+msgid "strftsdictneedsname"
+msgstr "Ha de donar un nom al diccionari FTS."
+
+msgid "strftsdictdropped"
+msgstr "Diccionari FTS eliminat."
+
+msgid "strftsdictdroppedbad"
+msgstr "No s'ha pogut eliminar el diccionari FTS."
+
+msgid "strftsdictaltered"
+msgstr "Diccionari FTS modificat."
+
+msgid "strftsdictalteredbad"
+msgstr "No s'ha pogut modificar el diccionari FTS."
+
+msgid "strftsaddmapping"
+msgstr "Afegeix un nou traçat"
+
+msgid "strftsspecifymappingtodrop"
+msgstr "Ha d'especificar almenys un traçat per eliminar."
+
+msgid "strftsspecifyconfigtoalter"
+msgstr "Ha d'especificar la configuració FTS per modificar"
+
+msgid "strftsmappingdropped"
+msgstr "Traçat FTS eliminat."
+
+msgid "strftsmappingdroppedbad"
+msgstr "No s'ha pogut eliminar el traçat FTS."
+
+msgid "strftsnodictionaries"
+msgstr "No s'han trobat diccionaris."
+
+msgid "strftsmappingaltered"
+msgstr "Traçat FTS modificat."
+
+msgid "strftsmappingalteredbad"
+msgstr "No s'ha pogut modificar el traçat FTS."
+
+msgid "strftsmappingadded"
+msgstr "Traçat FTS afegit."
+
+msgid "strftsmappingaddedbad"
+msgstr "No s'ha pogut afegir el traçat FTS."
+
+msgid "strftstabconfigs"
+msgstr "Configuracions"
+
+msgid "strftstabdicts"
+msgstr "Diccionaris"
+
+msgid "strftstabparsers"
+msgstr "Analitzadors"
+
+msgid "strftscantparsercopy"
+msgstr "No es pot especificar alhora un analitzador i una plantilla durant la creació de la configuració de la cerca de text."

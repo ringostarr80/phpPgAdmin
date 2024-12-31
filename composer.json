@@ -39,11 +39,17 @@
         ],
         "dev:lint:php": "parallel-lint --exclude vendor .",
         "dev:lint:phpcs": "phpcs -d memory_limit=256M src/ index.php browser.php",
-        "locale": [
-            "@locale-de_DE",
-            "@locale-en_US"
+        "build-locales": [
+            "@build-locale-af_ZA",
+            "@build-locale-ar",
+            "@build-locale-ca_ES",
+            "@build-locale-de_DE",
+            "@build-locale-en_US"
         ],
-        "locale-de_DE": "msgfmt locale/de_DE/LC_MESSAGES/messages.po -o locale/de_DE/LC_MESSAGES/messages.mo",
-        "locale-en_US": "msgfmt locale/en_US/LC_MESSAGES/messages.po -o locale/en_US/LC_MESSAGES/messages.mo"
+        "build-locale-af_ZA": "msgfmt locale/af_ZA/LC_MESSAGES/messages.po -o locale/af_ZA/LC_MESSAGES/messages.mo",
+        "build-locale-ar": "msgfmt locale/ar/LC_MESSAGES/messages.po -o locale/ar/LC_MESSAGES/messages.mo",
+        "build-locale-ca_ES": "msgfmt locale/ca_ES/LC_MESSAGES/messages.po -o locale/ca_ES/LC_MESSAGES/messages.mo",
+        "build-locale-de_DE": "msgfmt locale/de_DE/LC_MESSAGES/messages.po -o locale/de_DE/LC_MESSAGES/messages.mo",
+        "build-locale-en_US": "msgfmt locale/en_US/LC_MESSAGES/messages.po -o locale/en_US/LC_MESSAGES/messages.mo"
     }
 }

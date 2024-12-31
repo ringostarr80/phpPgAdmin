@@ -1,0 +1,1693 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: af_ZA\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "Afrikaans"
+
+msgid "applocale"
+msgstr "af-ZA"
+
+msgid "applangdir"
+msgstr "ltr"
+
+# Welcome
+msgid "strintro"
+msgstr "Welkom by phpPgAdmin."
+
+msgid "strppahome"
+msgstr "phpPgAdmin Tuisblad"
+
+msgid "strpgsqlhome"
+msgstr "PostgreSQL Tuisblad"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "PostgreSQL Dokumentasie (lokaal)"
+
+msgid "strreportbug"
+msgstr "Meld 'n fout aan"
+
+msgid "strviewfaq"
+msgstr "Bekyk FAQ op internet"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "Aanteken"
+
+msgid "strloginfailed"
+msgstr "Aantekening het misluk"
+
+msgid "strlogindisallowed"
+msgstr "Aantekening nie toegelaat nie"
+
+msgid "strserver"
+msgstr "Bediener"
+
+msgid "strlogout"
+msgstr "Teken af"
+
+msgid "strowner"
+msgstr "Eienaar"
+
+msgid "straction"
+msgstr "Aksie"
+
+msgid "stractions"
+msgstr "Aksies"
+
+msgid "strname"
+msgstr "Naam"
+
+msgid "strdefinition"
+msgstr "Definisie"
+
+msgid "strproperties"
+msgstr "Eienskappe"
+
+msgid "strbrowse"
+msgstr "Bekyk"
+
+msgid "strdrop"
+msgstr "Verwyder"
+
+msgid "strdropped"
+msgstr "Is verwyder"
+
+msgid "strnull"
+msgstr "Null"
+
+msgid "strnotnull"
+msgstr "Nie Null"
+
+msgid "strprev"
+msgstr "Vorige"
+
+msgid "strnext"
+msgstr "Volgende"
+
+msgid "strfirst"
+msgstr "<< Eerste"
+
+msgid "strlast"
+msgstr "Laaste >>"
+
+msgid "strfailed"
+msgstr "Het misluk"
+
+msgid "strcreate"
+msgstr "Skep"
+
+msgid "strcreated"
+msgstr "Geskep"
+
+msgid "strcomment"
+msgstr "Kommentaar"
+
+msgid "strlength"
+msgstr "Lengte"
+
+msgid "strdefault"
+msgstr "Standaard"
+
+msgid "stralter"
+msgstr "Wysig"
+
+msgid "strok"
+msgstr "OK"
+
+msgid "strcancel"
+msgstr "Kanselleer"
+
+msgid "strsave"
+msgstr "Bewaar"
+
+msgid "strreset"
+msgstr "Herstel"
+
+msgid "strinsert"
+msgstr "Voeg in"
+
+msgid "strselect"
+msgstr "Selekteer"
+
+msgid "strdelete"
+msgstr "Verwyder"
+
+msgid "strupdate"
+msgstr "Verfris"
+
+msgid "strreferences"
+msgstr "Verwysings"
+
+msgid "stryes"
+msgstr "Ja"
+
+msgid "strno"
+msgstr "Nee"
+
+msgid "strtrue"
+msgstr "WAAR"
+
+msgid "strfalse"
+msgstr "VALS"
+
+msgid "stredit"
+msgstr "Redigeer"
+
+msgid "strcolumn"
+msgstr "Kolom"
+
+msgid "strcolumns"
+msgstr "Kolomme"
+
+msgid "strrows"
+msgstr "ry(e)"
+
+msgid "strrowsaff"
+msgstr "ry(e) het verander."
+
+msgid "strobjects"
+msgstr "objek(te)"
+
+msgid "strback"
+msgstr "Terug"
+
+msgid "strqueryresults"
+msgstr "Navraagresultate"
+
+msgid "strshow"
+msgstr "Wys"
+
+msgid "strempty"
+msgstr "Leeg"
+
+msgid "strlanguage"
+msgstr "Taal"
+
+msgid "strencoding"
+msgstr "Enkodering"
+
+msgid "strvalue"
+msgstr "Waarde"
+
+msgid "strunique"
+msgstr "Uniek"
+
+msgid "strprimary"
+msgstr "Primêr"
+
+msgid "strexport"
+msgstr "Eksporteer"
+
+msgid "strimport"
+msgstr "Importeer"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "stradmin"
+msgstr "Admin"
+
+msgid "strvacuum"
+msgstr "Stofsuig"
+
+msgid "stranalyze"
+msgstr "Analiseer"
+
+msgid "strcluster"
+msgstr "Kluster"
+
+msgid "strclustered"
+msgstr "In klusters?"
+
+msgid "strreindex"
+msgstr "Herindekseer"
+
+msgid "strrun"
+msgstr "Loop"
+
+msgid "stradd"
+msgstr "Voeg by"
+
+msgid "strevent"
+msgstr "Gebeurtenis"
+
+msgid "strwhere"
+msgstr "Waar"
+
+msgid "strinstead"
+msgstr "Doen eerder"
+
+msgid "strwhen"
+msgstr "Wanneer"
+
+msgid "strformat"
+msgstr "Formaat"
+
+msgid "strdata"
+msgstr "Data"
+
+msgid "strconfirm"
+msgstr "Bevestig"
+
+msgid "strexpression"
+msgstr "Uitdrukking"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strseparator"
+msgstr ": "
+
+msgid "strexpand"
+msgstr "Vou oop"
+
+msgid "strcollapse"
+msgstr "Vou toe"
+
+msgid "strexplain"
+msgstr "Verduidelik"
+
+msgid "strexplainanalyze"
+msgstr "Verduidelik Analise"
+
+msgid "strfind"
+msgstr "Soek"
+
+msgid "stroptions"
+msgstr "Opsies"
+
+msgid "strrefresh"
+msgstr "Verfris"
+
+msgid "strdownload"
+msgstr "Laai af"
+
+msgid "strdownloadgzipped"
+msgstr "Laai af ... saamgepers met gzip"
+
+msgid "strinfo"
+msgstr "Info"
+
+msgid "stroids"
+msgstr "OIDs"
+
+msgid "stradvanced"
+msgstr "Gevorderd"
+
+msgid "strvariables"
+msgstr "Veranderlikes"
+
+msgid "strprocess"
+msgstr "Proses"
+
+msgid "strprocesses"
+msgstr "Prosesse"
+
+msgid "strsetting"
+msgstr "Instelling"
+
+msgid "streditsql"
+msgstr "Redigeer SQL"
+
+msgid "strruntime"
+msgstr "Totale looptyd: %s ms"
+
+msgid "strpaginate"
+msgstr "Resultate per bladsy"
+
+msgid "struploadscript"
+msgstr "of laai 'n SQL skrip in:"
+
+msgid "strstarttime"
+msgstr "Begintyd"
+
+msgid "strfile"
+msgstr "Lêer"
+
+msgid "strfileimported"
+msgstr "Lêer is ingetrek."
+
+# Error handling
+msgid "strnoframes"
+msgstr "Hierdie toepassing maak gebruik van HTML-rame. U het 'n blaaier nodig wat rame ondersteun om hierdie toepassing te kan gebruik."
+
+msgid "strbadconfig"
+msgstr "Die lêer config.inc.php is verouderd. Jy kan  verbeterde weergawe aflei van die lêer config.inc.php-dist."
+
+msgid "strnotloaded"
+msgstr "Hierdie PHP-installasie is sonder ondersteuning van hierdie tipe database nie gekompileerd."
+
+msgid "strpostgresqlversionnotsupported"
+msgstr "Weergawe van  PostgreSQL word nie ondersteun nie. Probeer asb. weergawe %s of later."
+
+msgid "strbadschema"
+msgstr "Ongeldige skema gespesifiseer."
+
+msgid "strbadencoding"
+msgstr "Die kliëntenkodering kon nie in die databasis geplaas word nie."
+
+msgid "strsqlerror"
+msgstr "SQL-fout:"
+
+msgid "strinstatement"
+msgstr "In stelling:"
+
+msgid "strinvalidparam"
+msgstr "Ongeldige parameters."
+
+msgid "strnodata"
+msgstr "Geen rye gevind."
+
+msgid "strnoobjects"
+msgstr "Geen objekte gevind."
+
+msgid "strrownotunique"
+msgstr "Geen unieke identifiseerder vir hierdie ry."
+
+msgid "strnouploads"
+msgstr "Oplaaiing van lêers is afgeskakel."
+
+msgid "strimporterror"
+msgstr "Inleesfout."
+
+msgid "strimporterrorline"
+msgstr "Inleesfout op reël %s."
+
+msgid "strcannotdumponwindows"
+msgstr "Weergee van komplekse tabel- en skemaname word nie op Windows ondersteun nie.  Kyk asb. in die FAQ."
+
+# Tables
+msgid "strtable"
+msgstr "Tabel"
+
+msgid "strtables"
+msgstr "Tabelle"
+
+msgid "strshowalltables"
+msgstr "Wys alle tabelle"
+
+msgid "strnotables"
+msgstr "Geen tabelle gevind."
+
+msgid "strnotable"
+msgstr "Geen tabel gevind."
+
+msgid "strcreatetable"
+msgstr "Skep tabel"
+
+msgid "strtablename"
+msgstr "Tabelnaam"
+
+msgid "strtableneedsname"
+msgstr "Jy moet die tabel 'n naam gee."
+
+msgid "strtableneedsfield"
+msgstr "Jy moet ten minste een veld spesifiseer."
+
+msgid "strtableneedscols"
+msgstr "Jy moet die tabel 'n geldige aantal kolomme gee."
+
+msgid "strtablecreated"
+msgstr "Tabel geskep."
+
+msgid "strtablecreatedbad"
+msgstr "Die tabel kon nie geskep word nie."
+
+msgid "strconfdroptable"
+msgstr "Is jy seker dat dat jy die tabel \"%s\" wil verwyder?"
+
+msgid "strtabledropped"
+msgstr "Tabel is verwyder."
+
+msgid "strtabledroppedbad"
+msgstr "Die tabel kon nie verwyder word nie."
+
+msgid "strconfemptytable"
+msgstr "Is jy seker dat jy alle rye uit tabel \"%s\" wil verwyder?"
+
+msgid "strtableemptied"
+msgstr "Alle ryen is uit die tabel verwyder."
+
+msgid "strtableemptiedbad"
+msgstr "Die rye kon nie verwyder word nie."
+
+msgid "strinsertrow"
+msgstr "Voeg 'n ry by"
+
+msgid "strrowinserted"
+msgstr "Ry is bygevoeg."
+
+msgid "strrowinsertedbad"
+msgstr "Die ry kon nie bygevoeg word nie."
+
+msgid "streditrow"
+msgstr "Wysig ry"
+
+msgid "strrowupdated"
+msgstr "Ry is opgedateer."
+
+msgid "strrowupdatedbad"
+msgstr "Die opdatering van die ry het misluk."
+
+msgid "strdeleterow"
+msgstr "Verwyder ry"
+
+msgid "strconfdeleterow"
+msgstr "Is jy seker dat jy hierdie ry wil verwyder?"
+
+msgid "strrowdeleted"
+msgstr "Ry is verwyder."
+
+msgid "strrowdeletedbad"
+msgstr "Die ry kon nie verwyder word nie."
+
+msgid "strinsertandrepeat"
+msgstr "Voeg in & Herhaal"
+
+msgid "strnumcols"
+msgstr "Aantal kolomme"
+
+msgid "strcolneedsname"
+msgstr "Jy moet die kolom 'n naam gee"
+
+msgid "strselectallfields"
+msgstr "Selekteer alle velde"
+
+msgid "strselectneedscol"
+msgstr "Jy moet ten minste één kolom as uitvoer hê"
+
+msgid "strselectunary"
+msgstr "Unêre operatore kan nie waardes kry nie."
+
+msgid "straltercolumn"
+msgstr "Wysig kolom"
+
+msgid "strcolumnaltered"
+msgstr "Kolom is gewysig."
+
+msgid "strcolumnalteredbad"
+msgstr "Die kolom kon nie gewysig word nie."
+
+msgid "strconfdropcolumn"
+msgstr "Is jy seker dat jy die kolom \"%s\" wil verwyder uit tabel \"%s\"?"
+
+msgid "strcolumndropped"
+msgstr "Kolom is verwyder."
+
+msgid "strcolumndroppedbad"
+msgstr "Die kolom kon nie verwyder word nie."
+
+msgid "straddcolumn"
+msgstr "Voeg kolom by"
+
+msgid "strcolumnadded"
+msgstr "Kolom is bygevoeg."
+
+msgid "strcolumnaddedbad"
+msgstr "Die kolom kon nie bygevoeg word nie."
+
+msgid "strcascade"
+msgstr "CASCADE"
+
+msgid "strtablealtered"
+msgstr "Tabel is gewysig."
+
+msgid "strtablealteredbad"
+msgstr "Tabelwysiging het misluk."
+
+msgid "strdataonly"
+msgstr "Slegs data"
+
+msgid "strstructureonly"
+msgstr "Slegs struktuur"
+
+msgid "strstructureanddata"
+msgstr "Struktuur en data"
+
+msgid "strtabbed"
+msgstr "Tabbed"
+
+msgid "strauto"
+msgstr "Auto"
+
+msgid "strconfvacuumtable"
+msgstr "Is jy seker jy wil VACUUM \"%s\"?"
+
+msgid "strestimatedrowcount"
+msgstr "Geskatte aantal rye"
+
+# Users
+msgid "struser"
+msgstr "Gebruiker"
+
+msgid "strusers"
+msgstr "Gebruikers"
+
+msgid "strusername"
+msgstr "Gebruikersnaam"
+
+msgid "strpassword"
+msgstr "Wagwoord"
+
+msgid "strsuper"
+msgstr "Supergebruiker?"
+
+msgid "strcreatedb"
+msgstr "Skep DB?"
+
+msgid "strexpires"
+msgstr "Verval"
+
+msgid "strsessiondefaults"
+msgstr "Verstekwaardes van sessie"
+
+msgid "strnousers"
+msgstr "Geen gebruikers gevind."
+
+msgid "struserupdated"
+msgstr "Gebruiker is opgedateer."
+
+msgid "struserupdatedbad"
+msgstr "Gebruiker kon nie opgedateer word nie."
+
+msgid "strshowallusers"
+msgstr "Wys alle gebruikers"
+
+msgid "strcreateuser"
+msgstr "Skep gebruiker"
+
+msgid "struserneedsname"
+msgstr "Jy moet 'n naam gee vir die gebruiker."
+
+msgid "strusercreated"
+msgstr "Gebruiker geskep."
+
+msgid "strusercreatedbad"
+msgstr "Die gebruiker kon nie geskep word nie."
+
+msgid "strconfdropuser"
+msgstr "Is jy seker dat jy die gebruiker \"%s\" wil verwyder?"
+
+msgid "struserdropped"
+msgstr "Gebruiker is verwyder."
+
+msgid "struserdroppedbad"
+msgstr "Verwydering van die gebruiker het misluk."
+
+msgid "straccount"
+msgstr "Gebruiker"
+
+msgid "strchangepassword"
+msgstr "Verander wagwoord"
+
+msgid "strpasswordchanged"
+msgstr "Wagwoord is verander."
+
+msgid "strpasswordchangedbad"
+msgstr "Wagwoordverandering het misluk."
+
+msgid "strpasswordshort"
+msgstr "Wagwoord is te kort."
+
+msgid "strpasswordconfirm"
+msgstr "Wagwoord verskil van bevestigings-wagwoord."
+
+# Groups
+msgid "strgroup"
+msgstr "Groep"
+
+msgid "strgroups"
+msgstr "Groepe"
+
+msgid "strnogroup"
+msgstr "Groep nie gevind."
+
+msgid "strnogroups"
+msgstr "Geen groepe gevind."
+
+msgid "strcreategroup"
+msgstr "Skep groep"
+
+msgid "strshowallgroups"
+msgstr "Wys alle groepe"
+
+msgid "strgroupneedsname"
+msgstr "Jy moet die groep 'n naam gee."
+
+msgid "strgroupcreated"
+msgstr "Groep geskep."
+
+msgid "strgroupcreatedbad"
+msgstr "Die groep kon nie geskep word nie."
+
+msgid "strconfdropgroup"
+msgstr "Is jy seker dat jy die groep \"%s\" wil verwyder?"
+
+msgid "strgroupdropped"
+msgstr "Groep is verwyder."
+
+msgid "strgroupdroppedbad"
+msgstr "Verwydering van die groep het misluk."
+
+msgid "strmembers"
+msgstr "Lede"
+
+msgid "straddmember"
+msgstr "Voeg 'n groeplid by"
+
+msgid "strmemberadded"
+msgstr "Groeplid is bygevoeg."
+
+msgid "strmemberaddedbad"
+msgstr "Toevoeging van groeplid het misluk."
+
+msgid "strdropmember"
+msgstr "Verwyder groeplid"
+
+msgid "strconfdropmember"
+msgstr "Is jy seker dat jy \"%s\" uit groep \"%s\" wil verwyder?"
+
+msgid "strmemberdropped"
+msgstr "Groeplid is verwyder."
+
+msgid "strmemberdroppedbad"
+msgstr "Verwydering van groeplid het misluk."
+
+# Privileges
+msgid "strprivilege"
+msgstr "Voorregte"
+
+msgid "strprivileges"
+msgstr "Voorregte"
+
+msgid "strnoprivileges"
+msgstr "Hierdie objek het verstekeienaarvoorregte."
+
+msgid "strgrant"
+msgstr "Staan toe"
+
+msgid "strrevoke"
+msgstr "Ontneem"
+
+msgid "strgranted"
+msgstr "Voorregte is bygevoeg."
+
+msgid "strgrantfailed"
+msgstr "Voorregte kon nie bygevoeg word nie."
+
+msgid "strgrantbad"
+msgstr "Jy moet minstens een gebruiker of groep en minstens een voorreg aandui."
+
+msgid "strgrantor"
+msgstr "Grantor"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "Databasis"
+
+msgid "strdatabases"
+msgstr "Databasisse"
+
+msgid "strshowalldatabases"
+msgstr "Wys alle databasisse"
+
+msgid "strnodatabase"
+msgstr "Geen databasis gevind."
+
+msgid "strnodatabases"
+msgstr "Geen databasis gevind."
+
+msgid "strcreatedatabase"
+msgstr "Skep databasis"
+
+msgid "strdatabasename"
+msgstr "Databasisnaam"
+
+msgid "strdatabaseneedsname"
+msgstr "Jy moet die databasis 'n naam gee."
+
+msgid "strdatabasecreated"
+msgstr "Databasis is geskep."
+
+msgid "strdatabasecreatedbad"
+msgstr "Die databasis kon nie geskep word nie."
+
+msgid "strconfdropdatabase"
+msgstr "Is jy seker dat jy die databasis \"%s\" wil verwyder?"
+
+msgid "strdatabasedropped"
+msgstr "Databasis is verwyder."
+
+msgid "strdatabasedroppedbad"
+msgstr "Databasisverwydering het misluk."
+
+msgid "strentersql"
+msgstr "Tik hieronder die SQL in wat uitgevoer moet word:"
+
+msgid "strsqlexecuted"
+msgstr "SQL uitgevoer."
+
+msgid "strvacuumgood"
+msgstr "Vacuum-bewerking is klaar."
+
+msgid "strvacuumbad"
+msgstr "Vacuum-bewerking het misluk."
+
+msgid "stranalyzegood"
+msgstr "Analise is voltooi."
+
+msgid "stranalyzebad"
+msgstr "Analise het misluk."
+
+msgid "strreindexgood"
+msgstr "Herindeksering is voltooi."
+
+msgid "strreindexbad"
+msgstr "Herindeksering het misluk."
+
+msgid "strfull"
+msgstr "Volledig"
+
+msgid "strfreeze"
+msgstr "Vries"
+
+msgid "strforce"
+msgstr "Forseer"
+
+msgid "strsignalsent"
+msgstr "Sein gestuur."
+
+msgid "strsignalsentbad"
+msgstr "Stuur van sein het misluk."
+
+msgid "strallobjects"
+msgstr "Alle objekte"
+
+# Views
+msgid "strview"
+msgstr "Aansig"
+
+msgid "strviews"
+msgstr "Aansigte"
+
+msgid "strshowallviews"
+msgstr "Wys alle aansigte"
+
+msgid "strnoview"
+msgstr "Geen aansigte gevind."
+
+msgid "strnoviews"
+msgstr "Geen aansigte gevind."
+
+msgid "strcreateview"
+msgstr "Skep aansig"
+
+msgid "strviewname"
+msgstr "Aansignaam"
+
+msgid "strviewneedsname"
+msgstr "Jy moet die aansig 'n naam gee."
+
+msgid "strviewneedsdef"
+msgstr "Jy moet die aansig definieer."
+
+msgid "strviewneedsfields"
+msgstr "Jy moet sê watter kolomme gekies moet wees in hierdie aansig."
+
+msgid "strviewcreated"
+msgstr "Aansig is geskep."
+
+msgid "strviewcreatedbad"
+msgstr "Die aansig kon nie geskep word nie."
+
+msgid "strconfdropview"
+msgstr "Is jy seker dat jy die aansig \"%s\" wil verwyder?"
+
+msgid "strviewdropped"
+msgstr "Aansig is verwyder."
+
+msgid "strviewdroppedbad"
+msgstr "Die aansig kon nie verwyder word nie."
+
+msgid "strviewupdated"
+msgstr "Aansig is opgedateer."
+
+msgid "strviewupdatedbad"
+msgstr "Opdatering van aansig het misluk."
+
+msgid "strviewlink"
+msgstr "Sleutels word verbind"
+
+msgid "strviewconditions"
+msgstr "Addisionele voorwaardes"
+
+msgid "strcreateviewwiz"
+msgstr "Skep 'n aansig met behulp van 'n toergids"
+
+# Sequences
+msgid "strsequence"
+msgstr "Reeks"
+
+msgid "strsequences"
+msgstr "Reekse"
+
+msgid "strshowallsequences"
+msgstr "Wys alle reekse"
+
+msgid "strnosequence"
+msgstr "Geen reeks gevind."
+
+msgid "strnosequences"
+msgstr "Geen reekse gevind."
+
+msgid "strcreatesequence"
+msgstr "Skep  reeks"
+
+msgid "strlastvalue"
+msgstr "Laaste waarde"
+
+msgid "strincrementby"
+msgstr "Verhoog met"
+
+msgid "strstartvalue"
+msgstr "Aanvangswaarde"
+
+msgid "strmaxvalue"
+msgstr "maks_waarde"
+
+msgid "strminvalue"
+msgstr "min_waarde"
+
+msgid "strcachevalue"
+msgstr "Kasgeheue-waarde"
+
+msgid "strlogcount"
+msgstr "Boekstaaftelling"
+
+msgid "striscycled"
+msgstr "is_siklies ?"
+
+msgid "strsequenceneedsname"
+msgstr "Jy moet 'n naam gee vir die reeks."
+
+msgid "strsequencecreated"
+msgstr "Reeks is geskep."
+
+msgid "strsequencecreatedbad"
+msgstr "Die reeks kon nie geskep word nie."
+
+msgid "strconfdropsequence"
+msgstr "Is jy seker dat jy die reeks \"%s\" wil verwyder?"
+
+msgid "strsequencedropped"
+msgstr "Reeks is verwyder."
+
+msgid "strsequencedroppedbad"
+msgstr "Verwydering van die reeks het misluk."
+
+msgid "strsequencereset"
+msgstr "Herstel reeks."
+
+msgid "strsequenceresetbad"
+msgstr "Herstel van reeks het misluk."
+
+# Indexes
+msgid "strindex"
+msgstr "Indeks"
+
+msgid "strindexes"
+msgstr "Indekse"
+
+msgid "strindexname"
+msgstr "Indeksnaam"
+
+msgid "strshowallindexes"
+msgstr "Wys alle indekse"
+
+msgid "strnoindex"
+msgstr "Geen indeks gevind."
+
+msgid "strnoindexes"
+msgstr "Geen indekse gevind."
+
+msgid "strcreateindex"
+msgstr "Skep 'n indeks"
+
+msgid "strtabname"
+msgstr "Tab-naam"
+
+msgid "strcolumnname"
+msgstr "Kolomnaam"
+
+msgid "strindexneedsname"
+msgstr "Jy moet 'n naam gee vir die index."
+
+msgid "strindexneedscols"
+msgstr "Indekse moet ten minste uit één kolom bestaan."
+
+msgid "strindexcreated"
+msgstr "Indeks is geskep"
+
+msgid "strindexcreatedbad"
+msgstr "Die indeks kon nie geskep word nie."
+
+msgid "strconfdropindex"
+msgstr "Is jy seker dat jy die indeks \"%s\" wil verwyder?"
+
+msgid "strindexdropped"
+msgstr "Indeks is verwyder."
+
+msgid "strindexdroppedbad"
+msgstr "Verwydering van die indeks het misluk."
+
+msgid "strkeyname"
+msgstr "Sleutelnaam"
+
+msgid "struniquekey"
+msgstr "Unieke sleutel"
+
+msgid "strprimarykey"
+msgstr "Primêre sleutel"
+
+msgid "strindextype"
+msgstr "Tipe van die indeks"
+
+msgid "strtablecolumnlist"
+msgstr "Kolomme in tabel"
+
+msgid "strindexcolumnlist"
+msgstr "Kolomme in indeks"
+
+msgid "strconfcluster"
+msgstr "Is jy seker jy wil 'n kluster maak van \"%s\"?"
+
+msgid "strclusteredgood"
+msgstr "Kluster is voltooi."
+
+msgid "strclusteredbad"
+msgstr "Kluster het misluk."
+
+# Rules
+msgid "strrules"
+msgstr "Reëls"
+
+msgid "strrule"
+msgstr "Reël"
+
+msgid "strshowallrules"
+msgstr "Wys alle reëls"
+
+msgid "strnorule"
+msgstr "Geen reël gevind."
+
+msgid "strnorules"
+msgstr "Geen reëls gevind."
+
+msgid "strcreaterule"
+msgstr "Skep 'n reël"
+
+msgid "strrulename"
+msgstr "Reëlnaam"
+
+msgid "strruleneedsname"
+msgstr "Jy moet 'n naam gee vir die reël."
+
+msgid "strrulecreated"
+msgstr "Reël is geskep."
+
+msgid "strrulecreatedbad"
+msgstr "Die reël kon nie geskep word nie."
+
+msgid "strconfdroprule"
+msgstr "Is jy seker dat jy die reël \"%s\" op \"%s\" wil verwyder?"
+
+msgid "strruledropped"
+msgstr "Reël is verwyder."
+
+msgid "strruledroppedbad"
+msgstr "Verwydering van die reël het misluk."
+
+# Constraints
+msgid "strconstraints"
+msgstr "Beperkings"
+
+msgid "strshowallconstraints"
+msgstr "Wys alle beperkings"
+
+msgid "strnoconstraints"
+msgstr "Geen beperkings gevind."
+
+msgid "strcreateconstraint"
+msgstr "Skep beperking"
+
+msgid "strconstraintcreated"
+msgstr "Beperking is geskep."
+
+msgid "strconstraintcreatedbad"
+msgstr "Die beperking kon nie geskep word nie."
+
+msgid "strconfdropconstraint"
+msgstr "Is jy seker dat jy die beperking \"%s\" op \"%s\" wil verwyder?"
+
+msgid "strconstraintdropped"
+msgstr "Beperking is verwyder."
+
+msgid "strconstraintdroppedbad"
+msgstr "Verwydering van die beperking het misluk."
+
+msgid "straddcheck"
+msgstr "Voeg 'n kontrole by"
+
+msgid "strcheckneedsdefinition"
+msgstr "Kontrolebeperking moet gedefinieer wees."
+
+msgid "strcheckadded"
+msgstr "Kontrolebeperking is bygevoeg."
+
+msgid "strcheckaddedbad"
+msgstr "Kontrolebeperking kon nie bygevoeg word nie."
+
+msgid "straddpk"
+msgstr "Voeg primêre sleutel by"
+
+msgid "strpkneedscols"
+msgstr "Primêre sleutel moet minstens één kolom hê."
+
+msgid "strpkadded"
+msgstr "Primêre sleutel bygevoeg."
+
+msgid "strpkaddedbad"
+msgstr "Primêre sleutel kon nie bygevoeg word nie."
+
+msgid "stradduniq"
+msgstr "Voeg unieke sleutel by."
+
+msgid "struniqneedscols"
+msgstr "Unieke sleutel moet minstens één kolom hê."
+
+msgid "struniqadded"
+msgstr "Unieke sleutel is bygevoeg."
+
+msgid "struniqaddedbad"
+msgstr "Unieke sleutel kon nie bygevoeg word nie."
+
+msgid "straddfk"
+msgstr "Voeg vreemdesleutel toe"
+
+msgid "strfkneedscols"
+msgstr "Vreemdesleutel moet minstens één kolom hê."
+
+msgid "strfkneedstarget"
+msgstr "Vreemdesleutel moet 'n doeltabel hê."
+
+msgid "strfkadded"
+msgstr "Vreemdesleutel is bygevoeg."
+
+msgid "strfkaddedbad"
+msgstr "Vreemdesleutel kon nie bygevoeg word nie."
+
+msgid "strfktarget"
+msgstr "Doeltabel"
+
+msgid "strfkcolumnlist"
+msgstr "Kolomme in sleutel"
+
+msgid "strondelete"
+msgstr "ON DELETE"
+
+msgid "stronupdate"
+msgstr "ON UPDATE"
+
+# Functions
+msgid "strfunction"
+msgstr "Funksie"
+
+msgid "strfunctions"
+msgstr "Funksies"
+
+msgid "strshowallfunctions"
+msgstr "Wys alle funksies"
+
+msgid "strnofunction"
+msgstr "Geen funksies gevind."
+
+msgid "strnofunctions"
+msgstr "Geen funksies gevind."
+
+msgid "strcreateplfunction"
+msgstr "Skep SQL/PL funksie"
+
+msgid "strcreateinternalfunction"
+msgstr "Skep interne funksie"
+
+msgid "strcreatecfunction"
+msgstr "Skep C funksie"
+
+msgid "strfunctionname"
+msgstr "Funksienaam"
+
+msgid "strreturns"
+msgstr "Gee terug"
+
+msgid "strarguments"
+msgstr "Argumente"
+
+msgid "strproglanguage"
+msgstr "Programmeertaal"
+
+msgid "strfunctionneedsname"
+msgstr "Jy moet die funksie 'n naam gee."
+
+msgid "strfunctionneedsdef"
+msgstr "Jy moet die funksie definieer."
+
+msgid "strfunctioncreated"
+msgstr "Funksie is geskep."
+
+msgid "strfunctioncreatedbad"
+msgstr "Die funksie kon nie geskep word nie."
+
+msgid "strconfdropfunction"
+msgstr "Is jy seker dat jy die funksie \"%s\" wil verwyder?"
+
+msgid "strfunctiondropped"
+msgstr "Funksie is verwyder."
+
+msgid "strfunctiondroppedbad"
+msgstr "Verwydering van die funksie het misluk."
+
+msgid "strfunctionupdated"
+msgstr "Funksie is opgedateer."
+
+msgid "strfunctionupdatedbad"
+msgstr "Opdatering van die funksie het misluk."
+
+msgid "strobjectfile"
+msgstr "Objeklêer"
+
+msgid "strlinksymbol"
+msgstr "Skakelsimbool"
+
+# Triggers
+msgid "strtrigger"
+msgstr "Snellers"
+
+msgid "strtriggers"
+msgstr "Snellers"
+
+msgid "strshowalltriggers"
+msgstr "Wys alle snellers"
+
+msgid "strnotrigger"
+msgstr "Geen sneller gevind."
+
+msgid "strnotriggers"
+msgstr "Geen snellers gevind."
+
+msgid "strcreatetrigger"
+msgstr "skep trigger"
+
+msgid "strtriggerneedsname"
+msgstr "Jy moet vir die sneller 'n naam gee."
+
+msgid "strtriggerneedsfunc"
+msgstr "Jy moet vir die sneller 'n funksie gee."
+
+msgid "strtriggercreated"
+msgstr "Sneller is geskep."
+
+msgid "strtriggercreatedbad"
+msgstr "Die sneller kon nie geskep word nie."
+
+msgid "strconfdroptrigger"
+msgstr "Is jy seker dat jy die sneller \"%s\" op \"%s\" wil verwyder?"
+
+msgid "strtriggerdropped"
+msgstr "Sneller is verwyder."
+
+msgid "strtriggerdroppedbad"
+msgstr "Verwydering van sneller misluk."
+
+msgid "strtriggeraltered"
+msgstr "Sneller is gewysig."
+
+msgid "strtriggeralteredbad"
+msgstr "Snellerwysiging het misluk."
+
+# Types
+msgid "strtype"
+msgstr "Tipe"
+
+msgid "strtypes"
+msgstr "Tipes"
+
+msgid "strshowalltypes"
+msgstr "Wys alle tipes"
+
+msgid "strnotype"
+msgstr "Geen tipe gevind."
+
+msgid "strnotypes"
+msgstr "Geen tipes gevind."
+
+msgid "strcreatetype"
+msgstr "skep tipe"
+
+msgid "strcreatecomptype"
+msgstr "Skep saamgestelde tipe"
+
+msgid "strtypeneedsfield"
+msgstr "Jy moet ten minste een veld spesifiseer."
+
+msgid "strtypeneedscols"
+msgstr "Jy 'n geldige aantal velde spesifiseer."
+
+msgid "strtypename"
+msgstr "Tipenaam"
+
+msgid "strinputfn"
+msgstr "Toevoerfunksie"
+
+msgid "stroutputfn"
+msgstr "Afvoerfunksie"
+
+msgid "strpassbyval"
+msgstr "Aangestuur per waarde?"
+
+msgid "stralignment"
+msgstr "Belyning"
+
+msgid "strelement"
+msgstr "Element"
+
+msgid "strdelimiter"
+msgstr "Skeidingsteken"
+
+msgid "strstorage"
+msgstr "Berging"
+
+msgid "strfield"
+msgstr "Veld"
+
+msgid "strnumfields"
+msgstr "Aantal velde"
+
+msgid "strtypeneedsname"
+msgstr "Jy moet die tipe 'n naam gee."
+
+msgid "strtypeneedslen"
+msgstr "Jy moet die tipe 'n lengte gee."
+
+msgid "strtypecreated"
+msgstr "Tipe geskep"
+
+msgid "strtypecreatedbad"
+msgstr "Tipeskepping het misluk."
+
+msgid "strconfdroptype"
+msgstr "Is jy seker dat jy die tipe \"%s\" wil verwyder?"
+
+msgid "strtypedropped"
+msgstr "Tipe is verwyder."
+
+msgid "strtypedroppedbad"
+msgstr "Verwydering van die tipe het misluk."
+
+msgid "strflavor"
+msgstr "Geur"
+
+msgid "strbasetype"
+msgstr "Basis"
+
+msgid "strcompositetype"
+msgstr "Saamgestel"
+
+msgid "strpseudotype"
+msgstr "Pseudo"
+
+# Schemas
+msgid "strschema"
+msgstr "Skema"
+
+msgid "strschemas"
+msgstr "Skemas"
+
+msgid "strshowallschemas"
+msgstr "Wys alle skemas"
+
+msgid "strnoschema"
+msgstr "Geen skema gevind."
+
+msgid "strnoschemas"
+msgstr "Geen skemas gevind."
+
+msgid "strcreateschema"
+msgstr "Skep skema"
+
+msgid "strschemaname"
+msgstr "Skemanaam"
+
+msgid "strschemaneedsname"
+msgstr "Jy moet 'n naam gee vir die skema."
+
+msgid "strschemacreated"
+msgstr "Skema is geskep"
+
+msgid "strschemacreatedbad"
+msgstr "Die skema kon nie geskep word nie."
+
+msgid "strconfdropschema"
+msgstr "Is jy seker dat jy die skema \"%s\" wil verwyder?"
+
+msgid "strschemadropped"
+msgstr "Skema is verwyder."
+
+msgid "strschemadroppedbad"
+msgstr "Verwydering van die skema het misluk."
+
+msgid "strschemaaltered"
+msgstr "Skema is gewysig."
+
+msgid "strschemaalteredbad"
+msgstr "Skemawysiging het misluk."
+
+msgid "strsearchpath"
+msgstr "Skema-soekpad"
+
+# Reports
+
+# Domains
+msgid "strdomain"
+msgstr "Domein"
+
+msgid "strdomains"
+msgstr "Domeine"
+
+msgid "strshowalldomains"
+msgstr "Wys alle domeine"
+
+msgid "strnodomains"
+msgstr "Geen domeine is gevind nie."
+
+msgid "strcreatedomain"
+msgstr "Skep domein"
+
+msgid "strdomaindropped"
+msgstr "Domein is verwyder."
+
+msgid "strdomaindroppedbad"
+msgstr "Verwydering van domein het misluk."
+
+msgid "strconfdropdomain"
+msgstr "Is jy seker dat jy die domein \"%s\" wil verwyder?"
+
+msgid "strdomainneedsname"
+msgstr "Jy moet 'n naam gee vir die domein."
+
+msgid "strdomaincreated"
+msgstr "Domein is geskep."
+
+msgid "strdomaincreatedbad"
+msgstr "Domeinskepping het misluk."
+
+msgid "strdomainaltered"
+msgstr "Domein is gewysig."
+
+msgid "strdomainalteredbad"
+msgstr "Wysiging van die domein het misluk."
+
+# Operators
+msgid "stroperator"
+msgstr "Operator"
+
+msgid "stroperators"
+msgstr "Operatore"
+
+msgid "strshowalloperators"
+msgstr "Wys alle operators"
+
+msgid "strnooperator"
+msgstr "Geen operator is gevind nie."
+
+msgid "strnooperators"
+msgstr "Geen operators is gevind nie."
+
+msgid "strcreateoperator"
+msgstr "Skep operator"
+
+msgid "strleftarg"
+msgstr "Linkerargumenttipe"
+
+msgid "strrightarg"
+msgstr "Regterargumenttipe"
+
+msgid "strcommutator"
+msgstr "Kommutator"
+
+msgid "strnegator"
+msgstr "Negeerder"
+
+msgid "strrestrict"
+msgstr "Beperk"
+
+msgid "strjoin"
+msgstr "Join"
+
+msgid "strhashes"
+msgstr "Hashes"
+
+msgid "strmerges"
+msgstr "Merges"
+
+msgid "strleftsort"
+msgstr "Linkssorteer"
+
+msgid "strrightsort"
+msgstr "Regssorteer"
+
+msgid "strlessthan"
+msgstr "Kleiner as"
+
+msgid "strgreaterthan"
+msgstr "Groter as"
+
+msgid "stroperatorneedsname"
+msgstr "Jy moet 'n naam gee vir die operator."
+
+msgid "stroperatorcreated"
+msgstr "Operator is geskep"
+
+msgid "stroperatorcreatedbad"
+msgstr "Operatorskepping het misluk."
+
+msgid "strconfdropoperator"
+msgstr "Is jy seker dat jy die operator \"%s\" wil verwyder?"
+
+msgid "stroperatordropped"
+msgstr "Operator is verwyder."
+
+msgid "stroperatordroppedbad"
+msgstr "Verwydering van die operator het misluk."
+
+# Casts
+msgid "strcasts"
+msgstr "Ekwivalente"
+
+msgid "strnocasts"
+msgstr "Geen ekwivalente gevind."
+
+msgid "strsourcetype"
+msgstr "Brontipe"
+
+msgid "strtargettype"
+msgstr "Doeltipe"
+
+msgid "strimplicit"
+msgstr "Implisiet"
+
+msgid "strinassignment"
+msgstr "Tydens toekenning"
+
+msgid "strbinarycompat"
+msgstr "(Binêr-versoenbaar)"
+
+# Conversions
+msgid "strconversions"
+msgstr "Omskakelings"
+
+msgid "strnoconversions"
+msgstr "Geen omskakelings gevind."
+
+msgid "strsourceencoding"
+msgstr "Bron-enkodering"
+
+msgid "strtargetencoding"
+msgstr "Doel-enkodering"
+
+# Languages
+msgid "strlanguages"
+msgstr "Tale"
+
+msgid "strnolanguages"
+msgstr "Geen tale gevind."
+
+msgid "strtrusted"
+msgstr "Betroubaar"
+
+# Info
+msgid "strnoinfo"
+msgstr "Geen inligting beskikbaar."
+
+msgid "strreferringtables"
+msgstr "Verwysende tabelle"
+
+msgid "strparenttables"
+msgstr "Parent-tabelle"
+
+msgid "strchildtables"
+msgstr "Child-tabelle"
+
+# Aggregates
+msgid "straggregates"
+msgstr "Opsommers"
+
+msgid "strnoaggregates"
+msgstr "Geen opsommers gevind."
+
+msgid "stralltypes"
+msgstr "(Alle tipes)"
+
+# Operator Classes
+msgid "stropclasses"
+msgstr "Operatorklasse"
+
+msgid "strnoopclasses"
+msgstr "Geen operatorklasse gevind."
+
+msgid "straccessmethod"
+msgstr "Toegangmetode"
+
+# Stats and performance
+msgid "strrowperf"
+msgstr "Ry werkverrigting"
+
+msgid "strioperf"
+msgstr "T/A werkverrigting"
+
+msgid "stridxrowperf"
+msgstr "Indekseer-ry werkverrigting"
+
+msgid "stridxioperf"
+msgstr "Indeks T/A werkverrigting"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "Sekwensieel"
+
+msgid "strscan"
+msgstr "Deursoek"
+
+msgid "strread"
+msgstr "Lees"
+
+msgid "strfetch"
+msgstr "Gaan haal"
+
+msgid "strheap"
+msgstr "Hoop"
+
+msgid "strtoast"
+msgstr "TOAST"
+
+msgid "strtoastindex"
+msgstr "TOAST-indeks"
+
+msgid "strcache"
+msgstr "Kasgeheue"
+
+msgid "strdisk"
+msgstr "Skyf"
+
+msgid "strrows2"
+msgstr "Rye"
+
+# Tablespaces
+msgid "strtablespace"
+msgstr "Tabelruimte"
+
+msgid "strtablespaces"
+msgstr "Tabelruimtes"
+
+msgid "strshowalltablespaces"
+msgstr "Wys alle tabelruimtes"
+
+msgid "strnotablespaces"
+msgstr "Geen tabelruimtes gevind."
+
+msgid "strcreatetablespace"
+msgstr "Skep tabelruimte"
+
+msgid "strlocation"
+msgstr "Plek"
+
+msgid "strtablespaceneedsname"
+msgstr "Jy moet 'n naam gee vir jou tabelruimte."
+
+msgid "strtablespaceneedsloc"
+msgstr "Jy moet 'n gids gee om jou tabelruimte in te skep."
+
+msgid "strtablespacecreated"
+msgstr "Tabelruimte geskep."
+
+msgid "strtablespacecreatedbad"
+msgstr "Skep van tabelruimte het misluk."
+
+msgid "strconfdroptablespace"
+msgstr "Is jy seker jy wil die tabelruimte \"%s\" uitvee?"
+
+msgid "strtablespacedropped"
+msgstr "Tabelruimte is uitgevee."
+
+msgid "strtablespacedroppedbad"
+msgstr "Uitvee van tabelruimte het misluk."
+
+msgid "strtablespacealtered"
+msgstr "Tabelruimte gewysig."
+
+msgid "strtablespacealteredbad"
+msgstr "Wysiging van tabelruimte het misluk."
+
+# Miscellaneous
+msgid "strtopbar"
+msgstr "%s loop op %s:%s -- Jy is aangeteken as gebruiker \"%s\""
+
+msgid "strtimefmt"
+msgstr "jS M, Y g:iA"
+
+msgid "strhelp"
+msgstr "Hulp"
+
+msgid "strhelpicon"
+msgstr "?"

@@ -43,13 +43,23 @@
             "@build-locale-af_ZA",
             "@build-locale-ar",
             "@build-locale-ca_ES",
+            "@build-locale-cs_CZ",
+            "@build-locale-da_DK",
             "@build-locale-de_DE",
-            "@build-locale-en_US"
+            "@build-locale-en_US",
+            "@build-locale-nl_NL",
+            "@build-locale-zh_CN",
+            "@build-locale-zh_TW"
         ],
         "build-locale-af_ZA": "msgfmt locale/af_ZA/LC_MESSAGES/messages.po -o locale/af_ZA/LC_MESSAGES/messages.mo",
         "build-locale-ar": "msgfmt locale/ar/LC_MESSAGES/messages.po -o locale/ar/LC_MESSAGES/messages.mo",
         "build-locale-ca_ES": "msgfmt locale/ca_ES/LC_MESSAGES/messages.po -o locale/ca_ES/LC_MESSAGES/messages.mo",
+        "build-locale-cs_CZ": "msgfmt locale/cs_CZ/LC_MESSAGES/messages.po -o locale/cs_CZ/LC_MESSAGES/messages.mo",
+        "build-locale-da_DK": "msgfmt locale/da_DK/LC_MESSAGES/messages.po -o locale/da_DK/LC_MESSAGES/messages.mo",
         "build-locale-de_DE": "msgfmt locale/de_DE/LC_MESSAGES/messages.po -o locale/de_DE/LC_MESSAGES/messages.mo",
-        "build-locale-en_US": "msgfmt locale/en_US/LC_MESSAGES/messages.po -o locale/en_US/LC_MESSAGES/messages.mo"
+        "build-locale-en_US": "msgfmt locale/en_US/LC_MESSAGES/messages.po -o locale/en_US/LC_MESSAGES/messages.mo",
+        "build-locale-nl_NL": "msgfmt locale/nl_NL/LC_MESSAGES/messages.po -o locale/nl_NL/LC_MESSAGES/messages.mo",
+        "build-locale-zh_CN": "msgfmt locale/zh_CN/LC_MESSAGES/messages.po -o locale/zh_CN/LC_MESSAGES/messages.mo",
+        "build-locale-zh_TW": "msgfmt locale/zh_TW/LC_MESSAGES/messages.po -o locale/zh_TW/LC_MESSAGES/messages.mo"
     }
 }

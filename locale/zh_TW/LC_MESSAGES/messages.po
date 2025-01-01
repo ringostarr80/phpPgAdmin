@@ -1,0 +1,2328 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "正體中文（UTF-8）"
+
+msgid "applocale"
+msgstr "zh-TW"
+
+msgid "applangdir"
+msgstr "ltr"
+
+# Welcome
+msgid "strintro"
+msgstr "歡迎使用 phpPgAdmin。"
+
+msgid "strppahome"
+msgstr "phpPgAdmin 首頁"
+
+msgid "strpgsqlhome"
+msgstr "PostgreSQL 首頁"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "PostgreSQL 文件 (本機)"
+
+msgid "strreportbug"
+msgstr "通報程式 Bug"
+
+msgid "strviewfaq"
+msgstr "檢視線上 FAQ"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "登入"
+
+msgid "strloginfailed"
+msgstr "登入失敗"
+
+msgid "strlogindisallowed"
+msgstr "出於安全原因禁止登入。"
+
+msgid "strserver"
+msgstr "伺服器"
+
+msgid "strservers"
+msgstr "伺服器"
+
+msgid "strintroduction"
+msgstr "介紹"
+
+msgid "strhost"
+msgstr "主機"
+
+msgid "strport"
+msgstr "埠號"
+
+msgid "strlogout"
+msgstr "登出"
+
+msgid "strowner"
+msgstr "擁有人"
+
+msgid "straction"
+msgstr "動作"
+
+msgid "stractions"
+msgstr "動作"
+
+msgid "strname"
+msgstr "名稱"
+
+msgid "strdefinition"
+msgstr "定義"
+
+msgid "strproperties"
+msgstr "屬性"
+
+msgid "strbrowse"
+msgstr "瀏覽"
+
+msgid "strenable"
+msgstr "啟用"
+
+msgid "strdisable"
+msgstr "停用"
+
+msgid "strdrop"
+msgstr "移除"
+
+msgid "strdropped"
+msgstr "已移除"
+
+msgid "strnull"
+msgstr "空值"
+
+msgid "strnotnull"
+msgstr "不允許空值"
+
+msgid "strprev"
+msgstr "< 上一步"
+
+msgid "strnext"
+msgstr "下一步 >"
+
+msgid "strfirst"
+msgstr "<< 最前一步"
+
+msgid "strlast"
+msgstr "最後一步 >>"
+
+msgid "strfailed"
+msgstr "失敗"
+
+msgid "strcreate"
+msgstr "建立"
+
+msgid "strcreated"
+msgstr "已建立"
+
+msgid "strcomment"
+msgstr "註釋"
+
+msgid "strlength"
+msgstr "長度"
+
+msgid "strdefault"
+msgstr "預設值"
+
+msgid "stralter"
+msgstr "修改"
+
+msgid "strok"
+msgstr "確定"
+
+msgid "strcancel"
+msgstr "取消"
+
+msgid "strac"
+msgstr "啟用自動完成"
+
+msgid "strsave"
+msgstr "儲存"
+
+msgid "strreset"
+msgstr "重設"
+
+msgid "strinsert"
+msgstr "插入"
+
+msgid "strselect"
+msgstr "選取"
+
+msgid "strdelete"
+msgstr "刪除"
+
+msgid "strupdate"
+msgstr "更新"
+
+msgid "strreferences"
+msgstr "參照"
+
+msgid "stryes"
+msgstr "是"
+
+msgid "strno"
+msgstr "否"
+
+msgid "strtrue"
+msgstr "真(TRUE)"
+
+msgid "strfalse"
+msgstr "假(FALSE)"
+
+msgid "stredit"
+msgstr "編輯"
+
+msgid "strcolumn"
+msgstr "欄位"
+
+msgid "strcolumns"
+msgstr "欄位"
+
+msgid "strrows"
+msgstr "資料列"
+
+msgid "strrowsaff"
+msgstr "資料列受影響。"
+
+msgid "strobjects"
+msgstr "物件"
+
+msgid "strback"
+msgstr "返回"
+
+msgid "strqueryresults"
+msgstr "查詢結果"
+
+msgid "strshow"
+msgstr "顯示"
+
+msgid "strempty"
+msgstr "清空"
+
+msgid "strlanguage"
+msgstr "語言"
+
+msgid "strencoding"
+msgstr "字元編碼"
+
+msgid "strunique"
+msgstr "唯一值"
+
+msgid "strprimary"
+msgstr "主鍵(PK)"
+
+msgid "strexport"
+msgstr "匯出"
+
+msgid "strimport"
+msgstr "匯入"
+
+msgid "strallowednulls"
+msgstr "允許空字串"
+
+msgid "strbackslashn"
+msgstr "\\N"
+
+msgid "stremptystring"
+msgstr "空 字串/欄位"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "stradmin"
+msgstr "管理"
+
+msgid "strvacuum"
+msgstr "清理(Vacuum)"
+
+msgid "stranalyze"
+msgstr "分析"
+
+msgid "strclusterindex"
+msgstr "叢集"
+
+msgid "strclustered"
+msgstr "已叢集?"
+
+msgid "strreindex"
+msgstr "重建索引"
+
+msgid "strrun"
+msgstr "執行"
+
+msgid "stradd"
+msgstr "新增"
+
+msgid "strevent"
+msgstr "事件"
+
+msgid "strwhere"
+msgstr "條件"
+
+msgid "strinstead"
+msgstr "已被取代"
+
+msgid "strwhen"
+msgstr "當"
+
+msgid "strformat"
+msgstr "格式"
+
+msgid "strdata"
+msgstr "資料"
+
+msgid "strconfirm"
+msgstr "確認"
+
+msgid "strexpression"
+msgstr "表達式"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strseparator"
+msgstr ": "
+
+msgid "strexpand"
+msgstr "展開"
+
+msgid "strcollapse"
+msgstr "摺疊"
+
+msgid "strfind"
+msgstr "尋找"
+
+msgid "stroptions"
+msgstr "選項"
+
+msgid "strrefresh"
+msgstr "重新整理"
+
+msgid "strdownload"
+msgstr "下載"
+
+msgid "strdownloadgzipped"
+msgstr "以 gzip 壓縮並下載"
+
+msgid "strinfo"
+msgstr "資訊"
+
+msgid "stroids"
+msgstr "OIDs"
+
+msgid "stradvanced"
+msgstr "進階"
+
+msgid "strvariables"
+msgstr "變數"
+
+msgid "strprocess"
+msgstr "進程"
+
+msgid "strprocesses"
+msgstr "進程"
+
+msgid "strsetting"
+msgstr "設定"
+
+msgid "streditsql"
+msgstr "編輯 SQL"
+
+msgid "strruntime"
+msgstr "總共執行時間: %s ms"
+
+msgid "strpaginate"
+msgstr "分頁顯示結果"
+
+msgid "struploadscript"
+msgstr "或是上傳一個 SQL 稿本檔: "
+
+msgid "strstarttime"
+msgstr "啟動時間"
+
+msgid "strfile"
+msgstr "檔案"
+
+msgid "strfileimported"
+msgstr "檔案已匯入。"
+
+msgid "strtrycred"
+msgstr "使用這些憑證給全部伺服器"
+
+msgid "stractionsonmultiplelines"
+msgstr "動作在多個行列上"
+
+msgid "strcheckall"
+msgstr "檢查全部"
+
+msgid "struncheckall"
+msgstr "不檢查全部"
+
+msgid "strcluster"
+msgstr "叢集"
+
+# User-supplied SQL history
+msgid "strhistory"
+msgstr "歷程"
+
+msgid "strnohistory"
+msgstr "無歷程。"
+
+msgid "strclearhistory"
+msgstr "清空歷程"
+
+msgid "strdelhistory"
+msgstr "從歷程刪除"
+
+msgid "strconfdelhistory"
+msgstr "確實要從歷程刪除嗎 ?"
+
+msgid "strconfclearhistory"
+msgstr "確實要清空歷程嗎 ?"
+
+msgid "strnodatabaseselected"
+msgstr "請選擇一個資料庫。"
+
+# Database sizes
+msgid "strsize"
+msgstr "容量"
+
+msgid "strbytes"
+msgstr "位元組"
+
+msgid "strkb"
+msgstr "kB"
+
+msgid "strmb"
+msgstr "MB"
+
+msgid "strgb"
+msgstr "GB"
+
+msgid "strtb"
+msgstr "TB"
+
+# Error handling
+msgid "strnoframes"
+msgstr "這個應用最好以一個能啟用框架頁(frame)的瀏覽器運作，但也能夠被使用在沒有框架頁下接繼運作，請按下面的連結。"
+
+msgid "strnoframeslink"
+msgstr "使用不包括框架頁(frame)"
+
+msgid "strbadconfig"
+msgstr "您的 config.inc.php 是過時的。您將需要從新的 config.inc.php-dist 重建它。"
+
+msgid "strnotloaded"
+msgstr "您的 PHP 環境未安裝 PostgreSQL 必要的支持。您必需重新編譯 PHP 使用 --with-pgsql 組態選項。"
+
+msgid "strpostgresqlversionnotsupported"
+msgstr "版本的 PostgreSQL 未被支持。請升級版本到 %s 或是更高者。"
+
+msgid "strbadschema"
+msgstr "無效的架構模式被指定。"
+
+msgid "strbadencoding"
+msgstr "在資料庫中設定客戶端字元編碼失敗。"
+
+msgid "strsqlerror"
+msgstr "SQL 錯誤: "
+
+msgid "strinstatement"
+msgstr "在區塊內: "
+
+msgid "strinvalidparam"
+msgstr "無效的稿本變數。"
+
+msgid "strnodata"
+msgstr "找不到資料列。"
+
+msgid "strnoobjects"
+msgstr "找不到物件。"
+
+msgid "strrownotunique"
+msgstr "該資料列無唯一約束。"
+
+msgid "strnouploads"
+msgstr "上傳檔案功能是已停用。"
+
+msgid "strimporterror"
+msgstr "匯入錯誤。"
+
+msgid "strimporterror-fileformat"
+msgstr "匯入錯誤: 自動識別檔案格式已失敗。"
+
+msgid "strimporterrorline"
+msgstr "匯入錯誤發生在第 %s 行。"
+
+msgid "strimporterrorline-badcolumnnum"
+msgstr "匯入錯誤發生在第 %s 行:  該行不具備正確的欄位編號。"
+
+msgid "strimporterror-uploadedfile"
+msgstr "匯入錯誤: 檔案無法被上傳到這伺服器"
+
+msgid "strcannotdumponwindows"
+msgstr "複雜的資料表與架構模式名稱轉儲在 Windows 是未被支持的。"
+
+msgid "strinvalidserverparam"
+msgstr "試圖用無效的伺服器參數連結, 可能有人正試圖攻擊您的系統。"
+
+msgid "strnoserversupplied"
+msgstr "沒有選擇資料庫!"
+
+# Tables
+msgid "strtable"
+msgstr "資料表"
+
+msgid "strtables"
+msgstr "資料表"
+
+msgid "strshowalltables"
+msgstr "顯示全部資料表"
+
+msgid "strnotables"
+msgstr "找不到資料表。"
+
+msgid "strnotable"
+msgstr "找不到任何資料表。"
+
+msgid "strcreatetable"
+msgstr "建立新資料表"
+
+msgid "strtablename"
+msgstr "資料表名"
+
+msgid "strtableneedsname"
+msgstr "您必需為您的資料表命名。"
+
+msgid "strtableneedsfield"
+msgstr "您至少應指定一個欄位。"
+
+msgid "strtableneedscols"
+msgstr "您必需指定一個合法的欄位數量。"
+
+msgid "strtablecreated"
+msgstr "資料表已建立。"
+
+msgid "strtablecreatedbad"
+msgstr "建立資料表作業已失敗。"
+
+msgid "strconfdroptable"
+msgstr "您確定要移除資料表 \"%s\"?"
+
+msgid "strtabledropped"
+msgstr "資料表已移除。"
+
+msgid "strtabledroppedbad"
+msgstr "資料表移除已失敗。"
+
+msgid "strconfemptytable"
+msgstr "您確定要清空資料表 \"%s\"?"
+
+msgid "strtableemptied"
+msgstr "資料表已清空。"
+
+msgid "strtableemptiedbad"
+msgstr "資料表清空已失敗。"
+
+msgid "strinsertrow"
+msgstr "插入資料列"
+
+msgid "strrowinserted"
+msgstr "資料列已插入。"
+
+msgid "strrowinsertedbad"
+msgstr "資料列插入已失敗。"
+
+msgid "strrowduplicate"
+msgstr "資料列插入失敗, 試圖做複製品插入。"
+
+msgid "streditrow"
+msgstr "編輯資料列"
+
+msgid "strrowupdated"
+msgstr "資料列已更新。"
+
+msgid "strrowupdatedbad"
+msgstr "資料列更新已失敗。"
+
+msgid "strdeleterow"
+msgstr "刪除資料列"
+
+msgid "strconfdeleterow"
+msgstr "您確定要刪除這些資料列??"
+
+msgid "strrowdeleted"
+msgstr "資料列已刪除。"
+
+msgid "strrowdeletedbad"
+msgstr "資料列刪除已失敗。"
+
+msgid "strinsertandrepeat"
+msgstr "插入與重作"
+
+msgid "strnumcols"
+msgstr "欄位數量"
+
+msgid "strcolneedsname"
+msgstr "您必需為這個欄位特定一個名稱"
+
+msgid "strselectallfields"
+msgstr "選擇全部欄位"
+
+msgid "strselectneedscol"
+msgstr "您必需至少顯示一資料列。"
+
+msgid "strselectunary"
+msgstr "一元運算子不能有值。"
+
+msgid "straltercolumn"
+msgstr "修改資料列"
+
+msgid "strcolumnaltered"
+msgstr "資料列已修改。"
+
+msgid "strcolumnalteredbad"
+msgstr "資料列修改已失敗。"
+
+msgid "strconfdropcolumn"
+msgstr "您確定要移除欄位 \"%s\" 從資料表 \"%s\"?"
+
+msgid "strcolumndropped"
+msgstr "欄位已移除。"
+
+msgid "strcolumndroppedbad"
+msgstr "欄位移除已失敗。"
+
+msgid "straddcolumn"
+msgstr "新增欄位"
+
+msgid "strcolumnadded"
+msgstr "欄位已新增。"
+
+msgid "strcolumnaddedbad"
+msgstr "欄位新增已失敗。"
+
+msgid "strcascade"
+msgstr "附屬串聯(CASCADE)"
+
+msgid "strtablealtered"
+msgstr "資料表已修改。"
+
+msgid "strtablealteredbad"
+msgstr "資料表修改已失敗。"
+
+msgid "strdataonly"
+msgstr "只有資料"
+
+msgid "strstructureonly"
+msgstr "只有結構"
+
+msgid "strstructureanddata"
+msgstr "結構和資料"
+
+msgid "strtabbed"
+msgstr "固定(Tabbed)"
+
+msgid "strauto"
+msgstr "自動"
+
+msgid "strconfvacuumtable"
+msgstr "您確定將要清理(vacuum) \"%s\" 嗎?"
+
+msgid "strconfanalyzetable"
+msgstr "確定要分析 \"%s\" 嗎?"
+
+msgid "strestimatedrowcount"
+msgstr "估計的資料列數"
+
+msgid "strspecifytabletoanalyze"
+msgstr "必須至少選擇一個資料表來分析"
+
+msgid "strspecifytabletoempty"
+msgstr "必須至少選擇一個資料表來清空"
+
+msgid "strspecifytabletodrop"
+msgstr "必須至少選擇一個資料表來移除"
+
+msgid "strspecifytabletovacuum"
+msgstr "必須至少選擇一個資料表來清理(vacuum)"
+
+# Columns
+msgid "strcolprop"
+msgstr "欄位屬性"
+
+msgid "strnotableprovided"
+msgstr "沒有指定資料表!"
+
+# Users
+msgid "struser"
+msgstr "使用者"
+
+msgid "strusers"
+msgstr "使用者"
+
+msgid "strusername"
+msgstr "使用者名稱"
+
+msgid "strpassword"
+msgstr "密碼"
+
+msgid "strsuper"
+msgstr "超級使用者?"
+
+msgid "strcreatedb"
+msgstr "能建立資料庫?"
+
+msgid "strexpires"
+msgstr "失效逾期"
+
+msgid "strsessiondefaults"
+msgstr "Session 預設"
+
+msgid "strnousers"
+msgstr "找不到此使用者。"
+
+msgid "struserupdated"
+msgstr "使用者已更新。"
+
+msgid "struserupdatedbad"
+msgstr "使用者更新已失敗。"
+
+msgid "strshowallusers"
+msgstr "顯示所有使用者"
+
+msgid "strcreateuser"
+msgstr "建立新使用者"
+
+msgid "struserneedsname"
+msgstr "您必需為您的使用者命名。"
+
+msgid "strusercreated"
+msgstr "使用者已建立。"
+
+msgid "strusercreatedbad"
+msgstr "使用者建立已失敗。"
+
+msgid "strconfdropuser"
+msgstr "您確定您要移除這個使用者 \"%s\"?"
+
+msgid "struserdropped"
+msgstr "使用者已移除。"
+
+msgid "struserdroppedbad"
+msgstr "使用者移除已失敗。"
+
+msgid "straccount"
+msgstr "帳戶"
+
+msgid "strchangepassword"
+msgstr "變更密碼"
+
+msgid "strpasswordchanged"
+msgstr "密碼已變更。"
+
+msgid "strpasswordchangedbad"
+msgstr "密碼變更已失敗。"
+
+msgid "strpasswordshort"
+msgstr "密碼太簡短。"
+
+msgid "strpasswordconfirm"
+msgstr "所輸入的確認密碼不符。"
+
+# Groups
+msgid "strgroup"
+msgstr "群組"
+
+msgid "strgroups"
+msgstr "群組"
+
+msgid "strshowallgroups"
+msgstr "顯示全部群組"
+
+msgid "strnogroup"
+msgstr "找不到群組。"
+
+msgid "strnogroups"
+msgstr "找不到任何群組。"
+
+msgid "strcreategroup"
+msgstr "建立群組"
+
+msgid "strgroupneedsname"
+msgstr "您必需為您的群組命名。"
+
+msgid "strgroupcreated"
+msgstr "群組已建立。"
+
+msgid "strgroupcreatedbad"
+msgstr "群組建立已失敗。"
+
+msgid "strconfdropgroup"
+msgstr "您確定您要移除這個群組 \"%s\"?"
+
+msgid "strgroupdropped"
+msgstr "群組已移除。"
+
+msgid "strgroupdroppedbad"
+msgstr "群組移除已失敗。"
+
+msgid "strmembers"
+msgstr "成員"
+
+msgid "strmemberof"
+msgstr "成員屬於"
+
+msgid "stradminmembers"
+msgstr "管理員成員"
+
+msgid "straddmember"
+msgstr "增加成員"
+
+msgid "strmemberadded"
+msgstr "成員已加入。"
+
+msgid "strmemberaddedbad"
+msgstr "成員加入已失敗。"
+
+msgid "strdropmember"
+msgstr "移除成員"
+
+msgid "strconfdropmember"
+msgstr "您確定您要移除這個成員 \"%s\" 從這個群組 \"%s\"?"
+
+msgid "strmemberdropped"
+msgstr "成員已移除。"
+
+msgid "strmemberdroppedbad"
+msgstr "成員移除已失敗。"
+
+# Roles
+msgid "strrole"
+msgstr "角色"
+
+msgid "strroles"
+msgstr "角色"
+
+msgid "strshowallroles"
+msgstr "顯示全部角色"
+
+msgid "strnoroles"
+msgstr "找不到任何角色。"
+
+msgid "strinheritsprivs"
+msgstr "繼承特權?"
+
+msgid "strcreaterole"
+msgstr "建立角色"
+
+msgid "strcancreaterole"
+msgstr "能建立角色?"
+
+msgid "strrolecreated"
+msgstr "角色已建立。"
+
+msgid "strrolecreatedbad"
+msgstr "角色建立已失敗。"
+
+msgid "stralterrole"
+msgstr "修改角色"
+
+msgid "strrolealtered"
+msgstr "角色被修改。"
+
+msgid "strrolealteredbad"
+msgstr "角色修改已失敗。"
+
+msgid "strcanlogin"
+msgstr "可以登入?"
+
+msgid "strconnlimit"
+msgstr "連線限制"
+
+msgid "strdroprole"
+msgstr "移除角色"
+
+msgid "strconfdroprole"
+msgstr "您確定您要移除這個角色 \"%s\"?"
+
+msgid "strroledropped"
+msgstr "角色已移除。"
+
+msgid "strroledroppedbad"
+msgstr "角色移除已失敗。"
+
+msgid "strnolimit"
+msgstr "不限制"
+
+msgid "strnever"
+msgstr "從末"
+
+msgid "strroleneedsname"
+msgstr "您必需為這個角色命名。"
+
+# Privileges
+msgid "strprivilege"
+msgstr "特權"
+
+msgid "strprivileges"
+msgstr "特權"
+
+msgid "strnoprivileges"
+msgstr "這個物件有預設的擁有人特權。"
+
+msgid "strgrant"
+msgstr "賦予"
+
+msgid "strrevoke"
+msgstr "撤回"
+
+msgid "strgranted"
+msgstr "特權已變更。"
+
+msgid "strgrantfailed"
+msgstr "特權變更失敗。"
+
+msgid "strgrantbad"
+msgstr "您必需至少在一名使用者或群組中指定至少一項特權。"
+
+msgid "strgrantor"
+msgstr "授權者"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "資料庫"
+
+msgid "strdatabases"
+msgstr "資料庫"
+
+msgid "strshowalldatabases"
+msgstr "顯示全部資料庫"
+
+msgid "strnodatabases"
+msgstr "找不到任何資料庫。"
+
+msgid "strcreatedatabase"
+msgstr "建立資料庫"
+
+msgid "strdatabasename"
+msgstr "資料庫名稱"
+
+msgid "strdatabaseneedsname"
+msgstr "您必需為您的資料庫給一個名稱。"
+
+msgid "strdatabasecreated"
+msgstr "資料庫已建立。"
+
+msgid "strdatabasecreatedbad"
+msgstr "資料庫建立失敗。"
+
+msgid "strconfdropdatabase"
+msgstr "您確定您要移除這個資料庫 \"%s\"?"
+
+msgid "strdatabasedropped"
+msgstr "資料庫已移除。"
+
+msgid "strdatabasedroppedbad"
+msgstr "資料庫移除失敗。"
+
+msgid "strentersql"
+msgstr "在下方輸入 SQL 來執行: "
+
+msgid "strsqlexecuted"
+msgstr "SQL 已執行。"
+
+msgid "strvacuumgood"
+msgstr "清理完成。"
+
+msgid "strvacuumbad"
+msgstr "清理失敗。"
+
+msgid "stranalyzegood"
+msgstr "分析完成。"
+
+msgid "stranalyzebad"
+msgstr "分析失敗。"
+
+msgid "strreindexgood"
+msgstr "重建索引完成。"
+
+msgid "strreindexbad"
+msgstr "重建索引失敗。"
+
+msgid "strfull"
+msgstr "全部性"
+
+msgid "strfreeze"
+msgstr "凍結"
+
+msgid "strforce"
+msgstr "強制"
+
+msgid "strsignalsent"
+msgstr "訊號傳遞。"
+
+msgid "strsignalsentbad"
+msgstr "傳遞訊號失敗。"
+
+msgid "strallobjects"
+msgstr "全部物件"
+
+msgid "strdatabasealtered"
+msgstr "資料庫已修改。"
+
+msgid "strdatabasealteredbad"
+msgstr "資料庫修改已失敗。"
+
+msgid "strspecifydatabasetodrop"
+msgstr "必須至少指定一個資料庫來移除"
+
+# Views
+msgid "strview"
+msgstr "視觀表"
+
+msgid "strviews"
+msgstr "視觀表"
+
+msgid "strshowallviews"
+msgstr "顯示全部視觀表"
+
+msgid "strnoview"
+msgstr "找不到視觀表。"
+
+msgid "strnoviews"
+msgstr "找不到任何視觀表。"
+
+msgid "strcreateview"
+msgstr "建立視觀表"
+
+msgid "strviewname"
+msgstr "視觀表名稱"
+
+msgid "strviewneedsname"
+msgstr "您必需為您的視觀表給一個名稱。"
+
+msgid "strviewneedsdef"
+msgstr "您必需為你的視觀表給一個定義。"
+
+msgid "strviewneedsfields"
+msgstr "您必需在您的視觀表中選擇給這個欄位。"
+
+msgid "strviewcreated"
+msgstr "視觀表已建立。"
+
+msgid "strviewcreatedbad"
+msgstr "視觀表建立已失敗。"
+
+msgid "strconfdropview"
+msgstr "您確定您要移除這個視觀表 \"%s\" 嗎?"
+
+msgid "strviewdropped"
+msgstr "視觀表已移除。"
+
+msgid "strviewdroppedbad"
+msgstr "視觀表移除已失敗。"
+
+msgid "strviewlink"
+msgstr "連結鍵(Linking keys)"
+
+msgid "strviewconditions"
+msgstr "附加的條件限制"
+
+msgid "strcreateviewwiz"
+msgstr "建立視觀表精靈"
+
+msgid "strrenamedupfields"
+msgstr "重新命名複製的字串"
+
+msgid "strdropdupfields"
+msgstr "移除複制的字串"
+
+msgid "strerrordupfields"
+msgstr "複製字串時發生錯誤"
+
+msgid "strviewupdated"
+msgstr "視觀表已更新。"
+
+msgid "strviewupdatedbad"
+msgstr "視觀表更新已失敗。"
+
+msgid "strspecifyviewtodrop"
+msgstr "必须至少指定一个视图来移除"
+
+# Sequences
+msgid "strsequence"
+msgstr "序列數"
+
+msgid "strsequences"
+msgstr "序列數"
+
+msgid "strshowallsequences"
+msgstr "顯示全部序列數"
+
+msgid "strnosequence"
+msgstr "找不到序列數。"
+
+msgid "strnosequences"
+msgstr "找不到任何序列數。"
+
+msgid "strcreatesequence"
+msgstr "建立序列數"
+
+msgid "strlastvalue"
+msgstr "最後值"
+
+msgid "strincrementby"
+msgstr "遞增量"
+
+msgid "strstartvalue"
+msgstr "初始值"
+
+msgid "strmaxvalue"
+msgstr "最大值"
+
+msgid "strminvalue"
+msgstr "最小值"
+
+msgid "strcachevalue"
+msgstr "快取值"
+
+msgid "strlogcount"
+msgstr "日誌計數"
+
+msgid "striscycled"
+msgstr "可循環?"
+
+msgid "striscalled"
+msgstr "將在返回下一個值前遞增最後的值(is_called)嗎？"
+
+msgid "strsequenceneedsname"
+msgstr "您必需為您的序列數給一個名稱。"
+
+msgid "strsequencecreated"
+msgstr "序列數已建立。"
+
+msgid "strsequencecreatedbad"
+msgstr "序列數建立失敗。"
+
+msgid "strconfdropsequence"
+msgstr "您確定您要移除這個序列數 \"%s\"?"
+
+msgid "strsequencedropped"
+msgstr "序列數已移除。"
+
+msgid "strsequencedroppedbad"
+msgstr "序列數移除已失敗。"
+
+msgid "strsequencereset"
+msgstr "序列數重置。"
+
+msgid "strsequenceresetbad"
+msgstr "序列數重置已失敗。"
+
+msgid "straltersequence"
+msgstr "修改序列數"
+
+msgid "strsequencealtered"
+msgstr "序列數已修改。"
+
+msgid "strsequencealteredbad"
+msgstr "序列數修改已失敗。"
+
+msgid "strsetval"
+msgstr "設定序列數值"
+
+msgid "strsequencesetval"
+msgstr "序列數值已設定。"
+
+msgid "strsequencesetvalbad"
+msgstr "序列數值設定已失敗。"
+
+msgid "strnextval"
+msgstr "遞增量"
+
+msgid "strsequencenextval"
+msgstr "序列數已遞增。"
+
+msgid "strsequencenextvalbad"
+msgstr "序列數已遞增失敗。"
+
+msgid "strspecifysequencetodrop"
+msgstr "必須至少指定一個序列數來刪除"
+
+# Indexes
+msgid "strindex"
+msgstr "索引"
+
+msgid "strindexes"
+msgstr "索引"
+
+msgid "strindexname"
+msgstr "索引名稱"
+
+msgid "strshowallindexes"
+msgstr "顯示全部索引"
+
+msgid "strnoindex"
+msgstr "找不到索引。"
+
+msgid "strnoindexes"
+msgstr "找不到任何索引。"
+
+msgid "strcreateindex"
+msgstr "建立索引"
+
+msgid "strtabname"
+msgstr "資料表名稱"
+
+msgid "strcolumnname"
+msgstr "欄位名稱"
+
+msgid "strindexneedsname"
+msgstr "您必需為您的索引給一個名稱。"
+
+msgid "strindexneedscols"
+msgstr "索引要求一個有效欄位數量。"
+
+msgid "strindexcreated"
+msgstr "索引已建立"
+
+msgid "strindexcreatedbad"
+msgstr "索引建立失敗。"
+
+msgid "strconfdropindex"
+msgstr "您確定您要移除這個索引 \"%s\" 嗎?"
+
+msgid "strindexdropped"
+msgstr "索引已移除。"
+
+msgid "strindexdroppedbad"
+msgstr "索引移除失敗。"
+
+msgid "strkeyname"
+msgstr "鍵名"
+
+msgid "struniquekey"
+msgstr "唯一鍵"
+
+msgid "strprimarykey"
+msgstr "主鍵(pkey)"
+
+msgid "strindextype"
+msgstr "索引類型"
+
+msgid "strtablecolumnlist"
+msgstr "資料表欄位"
+
+msgid "strindexcolumnlist"
+msgstr "索引欄位"
+
+msgid "strconfcluster"
+msgstr "您確定您要叢集化 \"%s\" 嗎?"
+
+msgid "strclusteredgood"
+msgstr "叢集完成。"
+
+msgid "strclusteredbad"
+msgstr "叢集已失敗。"
+
+# Rules
+msgid "strrules"
+msgstr "規則"
+
+msgid "strrule"
+msgstr "規則"
+
+msgid "strshowallrules"
+msgstr "顯示全部規則"
+
+msgid "strnorule"
+msgstr "找不到規則。"
+
+msgid "strnorules"
+msgstr "找不到任何規則。"
+
+msgid "strcreaterule"
+msgstr "建立規則"
+
+msgid "strrulename"
+msgstr "規則名稱"
+
+msgid "strruleneedsname"
+msgstr "您必需為您的規則給一個名稱。"
+
+msgid "strrulecreated"
+msgstr "規則已建立。"
+
+msgid "strrulecreatedbad"
+msgstr "規則建立已失敗。"
+
+msgid "strconfdroprule"
+msgstr "您確定您要移除這個規則 \"%s\" 在 \"%s\"上嗎?"
+
+msgid "strruledropped"
+msgstr "規則規則已移除。"
+
+msgid "strruledroppedbad"
+msgstr "規則移除已失敗。"
+
+# Constraints
+msgid "strconstraint"
+msgstr "約束限制"
+
+msgid "strconstraints"
+msgstr "約束限制"
+
+msgid "strshowallconstraints"
+msgstr "顯示全部約束限制"
+
+msgid "strnoconstraints"
+msgstr "找不到任何約束限制。"
+
+msgid "strcreateconstraint"
+msgstr "建立約束限制"
+
+msgid "strconstraintcreated"
+msgstr "約束限制已建立。"
+
+msgid "strconstraintcreatedbad"
+msgstr "約束限制建立已失敗。"
+
+msgid "strconfdropconstraint"
+msgstr "您確定您要移除這約束限制 \"%s\" 在 \"%s\" 上嗎?"
+
+msgid "strconstraintdropped"
+msgstr "約束限制已移除。"
+
+msgid "strconstraintdroppedbad"
+msgstr "約束限制移除已失敗。"
+
+msgid "straddcheck"
+msgstr "增加約束檢查(Check)"
+
+msgid "strcheckneedsdefinition"
+msgstr "約束檢查(Check)限制需要定義。"
+
+msgid "strcheckadded"
+msgstr "約束檢查限制已增加。"
+
+msgid "strcheckaddedbad"
+msgstr "增加約束檢查限制已失敗。"
+
+msgid "straddpk"
+msgstr "增加主鍵(pkey)"
+
+msgid "strpkneedscols"
+msgstr "主鍵(pkey)要求最少一個欄位。"
+
+msgid "strpkadded"
+msgstr "主鍵(pkey)已增加。"
+
+msgid "strpkaddedbad"
+msgstr "增加主鍵(pkey)已失敗。"
+
+msgid "stradduniq"
+msgstr "增加唯一約束限制"
+
+msgid "struniqneedscols"
+msgstr "唯一約束限制要求最少一個欄位。"
+
+msgid "struniqadded"
+msgstr "唯一約束限制已增加。"
+
+msgid "struniqaddedbad"
+msgstr "增加唯一約束限制已失敗。"
+
+msgid "straddfk"
+msgstr "增加外部鍵(fkey)"
+
+msgid "strfkneedscols"
+msgstr "外部鍵(fkey)要求最少一個欄位。"
+
+msgid "strfkneedstarget"
+msgstr "外部鍵(fkey)要求一個資料表。"
+
+msgid "strfkadded"
+msgstr "外部鍵(fkey)已增加。"
+
+msgid "strfkaddedbad"
+msgstr "增加外部鍵(fkey)已失敗。"
+
+msgid "strfktarget"
+msgstr "目標資料表"
+
+msgid "strfkcolumnlist"
+msgstr "鍵欄位"
+
+msgid "strondelete"
+msgstr "ON DELETE"
+
+msgid "stronupdate"
+msgstr "ON UPDATE"
+
+# Functions
+msgid "strfunction"
+msgstr "函數"
+
+msgid "strfunctions"
+msgstr "函數"
+
+msgid "strshowallfunctions"
+msgstr "顯示全部函數"
+
+msgid "strnofunction"
+msgstr "找不到函數。"
+
+msgid "strnofunctions"
+msgstr "找不到任何函數。"
+
+msgid "strcreateplfunction"
+msgstr "建立 SQL/PL 函數"
+
+msgid "strcreateinternalfunction"
+msgstr "建立內部函數"
+
+msgid "strcreatecfunction"
+msgstr "建立 C 函數"
+
+msgid "strfunctionname"
+msgstr "函數名稱"
+
+msgid "strreturns"
+msgstr "遞回"
+
+msgid "strproglanguage"
+msgstr "程序語言"
+
+msgid "strfunctionneedsname"
+msgstr "您必需為您的函數給一個名稱。"
+
+msgid "strfunctionneedsdef"
+msgstr "您必需為您的函數給一個定義。"
+
+msgid "strfunctioncreated"
+msgstr "函數已建立。"
+
+msgid "strfunctioncreatedbad"
+msgstr "函數建立已失敗。"
+
+msgid "strconfdropfunction"
+msgstr "您確定您要移除這個函數 \"%s\"?"
+
+msgid "strfunctiondropped"
+msgstr "函數已移除。"
+
+msgid "strfunctiondroppedbad"
+msgstr "函數移除已失敗。"
+
+msgid "strfunctionupdated"
+msgstr "函數已更新。"
+
+msgid "strfunctionupdatedbad"
+msgstr "函數更新已失敗。"
+
+msgid "strobjectfile"
+msgstr "物件檔案"
+
+msgid "strlinksymbol"
+msgstr "連結物件標記"
+
+msgid "strarguments"
+msgstr "引數"
+
+msgid "strargmode"
+msgstr "方式"
+
+msgid "strargtype"
+msgstr "類型"
+
+msgid "strargadd"
+msgstr "增加作者引數"
+
+msgid "strargremove"
+msgstr "移除這個引數"
+
+msgid "strargnoargs"
+msgstr "這個函數將不能工作任何引數。"
+
+msgid "strargenableargs"
+msgstr "啟用引數已被傳遞到這個函數。"
+
+msgid "strargnorowabove"
+msgstr "需要資料列在這資料列之上。"
+
+msgid "strargnorowbelow"
+msgstr "需要資料列在這資料列之前。"
+
+msgid "strargraise"
+msgstr "向上移。"
+
+msgid "strarglower"
+msgstr "向下移。"
+
+msgid "strargremoveconfirm"
+msgstr "您確定你要移除這個引數? 這個作業未能完成。"
+
+msgid "strfunctioncosting"
+msgstr "函數成本"
+
+msgid "strresultrows"
+msgstr "结果集資料行數"
+
+msgid "strexecutioncost"
+msgstr "執行成本"
+
+msgid "strspecifyfunctiontodrop"
+msgstr "必須至少指定一個函數來刪除"
+
+# Triggers
+msgid "strtrigger"
+msgstr "觸發器"
+
+msgid "strtriggers"
+msgstr "觸發器"
+
+msgid "strshowalltriggers"
+msgstr "顯示全部觸發器"
+
+msgid "strnotrigger"
+msgstr "找不到觸發器。"
+
+msgid "strnotriggers"
+msgstr "找不到任何觸發器。"
+
+msgid "strcreatetrigger"
+msgstr "建立觸發器"
+
+msgid "strtriggerneedsname"
+msgstr "您必需為您的觸發器明確指定一個名稱。"
+
+msgid "strtriggerneedsfunc"
+msgstr "您必需為您的觸發器明確指定一個函數。"
+
+msgid "strtriggercreated"
+msgstr "觸發器已建立。"
+
+msgid "strtriggercreatedbad"
+msgstr "觸發器建立已失敗。"
+
+msgid "strconfdroptrigger"
+msgstr "您確定您要移除這個觸發器 \"%s\" on \"%s\"?"
+
+msgid "strconfenabletrigger"
+msgstr "您確定您要啟用這個觸發器觸發器 \"%s\" 在 \"%s\" 上?"
+
+msgid "strconfdisabletrigger"
+msgstr "您確定您要停用這個觸發器觸發器 \"%s\" on \"%s\" 上?"
+
+msgid "strtriggerdropped"
+msgstr "觸發器已移除。"
+
+msgid "strtriggerdroppedbad"
+msgstr "觸發器移除已失敗。"
+
+msgid "strtriggerenabled"
+msgstr "觸發器啟用。"
+
+msgid "strtriggerenabledbad"
+msgstr "觸發器啟用已失敗。"
+
+msgid "strtriggerdisabled"
+msgstr "觸發器停用。"
+
+msgid "strtriggerdisabledbad"
+msgstr "觸發器停用已失敗。"
+
+msgid "strtriggeraltered"
+msgstr "觸發器已修改。"
+
+msgid "strtriggeralteredbad"
+msgstr "觸發器修改已失敗。"
+
+msgid "strforeach"
+msgstr "給每個"
+
+# Types
+msgid "strtype"
+msgstr "類型"
+
+msgid "strtypes"
+msgstr "類型"
+
+msgid "strshowalltypes"
+msgstr "顯示全部類型"
+
+msgid "strnotype"
+msgstr "找不到類型。"
+
+msgid "strnotypes"
+msgstr "找不到任何類型。"
+
+msgid "strcreatetype"
+msgstr "建立類型"
+
+msgid "strcreatecomptype"
+msgstr "建立合成類型"
+
+msgid "strcreateenumtype"
+msgstr "建立列舉類型"
+
+msgid "strtypeneedsfield"
+msgstr "您必須明確指定最少一個欄位。"
+
+msgid "strtypeneedsvalue"
+msgstr "您必須明確指定最少一個值。"
+
+msgid "strtypeneedscols"
+msgstr "您必須明確指定有效的欄位數。"
+
+msgid "strtypeneedsvals"
+msgstr "您必須明確指定一個有效的欄位數。"
+
+msgid "strinputfn"
+msgstr "輸入類型"
+
+msgid "stroutputfn"
+msgstr "輸出類型"
+
+msgid "strpassbyval"
+msgstr "以值傳送?"
+
+msgid "stralignment"
+msgstr "列隊組合"
+
+msgid "strelement"
+msgstr "元素"
+
+msgid "strdelimiter"
+msgstr "分隔符號"
+
+msgid "strstorage"
+msgstr "儲藏所"
+
+msgid "strfield"
+msgstr "欄位"
+
+msgid "strvalue"
+msgstr "值"
+
+msgid "strnumfields"
+msgstr "欄位數. "
+
+msgid "strnumvalues"
+msgstr "值數"
+
+msgid "strtypeneedsname"
+msgstr "您必需為您的類型給一個名稱。"
+
+msgid "strtypeneedslen"
+msgstr "您必需為您的類型給一個長度。"
+
+msgid "strtypecreated"
+msgstr "類型已建立"
+
+msgid "strtypecreatedbad"
+msgstr "類型建立已失敗。"
+
+msgid "strconfdroptype"
+msgstr "您確定您要移除這個類型 \"%s\" 嗎?"
+
+msgid "strtypedropped"
+msgstr "類型已移除。"
+
+msgid "strtypedroppedbad"
+msgstr "類型移除已失敗。"
+
+msgid "strflavor"
+msgstr "風格(Flavor)"
+
+msgid "strbasetype"
+msgstr "基礎"
+
+msgid "strcompositetype"
+msgstr "合成"
+
+msgid "strpseudotype"
+msgstr "偽(Pseudo)"
+
+msgid "strenum"
+msgstr "Enum"
+
+msgid "strenumvalues"
+msgstr "列舉類型"
+
+# Schemas
+msgid "strschema"
+msgstr "架構模式"
+
+msgid "strschemas"
+msgstr "架構模式"
+
+msgid "strshowallschemas"
+msgstr "顯示全部架構模式"
+
+msgid "strnoschema"
+msgstr "找不到架構模式。"
+
+msgid "strnoschemas"
+msgstr "找不到任何架構模式。"
+
+msgid "strcreateschema"
+msgstr "建立架構模式"
+
+msgid "strschemaname"
+msgstr "架構模式名稱"
+
+msgid "strschemaneedsname"
+msgstr "您必需為您的架構模式給一個名稱。"
+
+msgid "strschemacreated"
+msgstr "架構模式已建立"
+
+msgid "strschemacreatedbad"
+msgstr "架構模式建立已失敗。"
+
+msgid "strconfdropschema"
+msgstr "您確定您要移除這個架構模式 \"%s\" 嗎?"
+
+msgid "strschemadropped"
+msgstr "架構模式已移除。"
+
+msgid "strschemadroppedbad"
+msgstr "架構模式移除失敗。"
+
+msgid "strschemaaltered"
+msgstr "架構模式已修改。"
+
+msgid "strschemaalteredbad"
+msgstr "架構模式修改已失敗。"
+
+msgid "strsearchpath"
+msgstr "架構模式搜尋路徑"
+
+msgid "strspecifyschematodrop"
+msgstr "您必須至少指定一個架構模式來刪除"
+
+# Reports
+
+# Domains
+msgid "strdomain"
+msgstr "共同值域"
+
+msgid "strdomains"
+msgstr "共同值域"
+
+msgid "strshowalldomains"
+msgstr "顯示全部共同值域"
+
+msgid "strnodomains"
+msgstr "找不到任何共同值域。"
+
+msgid "strcreatedomain"
+msgstr "建立共同值域"
+
+msgid "strdomaindropped"
+msgstr "共同值域已移除。"
+
+msgid "strdomaindroppedbad"
+msgstr "共同值域移除已失敗。"
+
+msgid "strconfdropdomain"
+msgstr "您確定您要移除這個共同值域 \"%s\"?"
+
+msgid "strdomainneedsname"
+msgstr "您必需為您的共同值域給一個名稱。。"
+
+msgid "strdomaincreated"
+msgstr "共同值域已建立。"
+
+msgid "strdomaincreatedbad"
+msgstr "共同值域建立已失敗。"
+
+msgid "strdomainaltered"
+msgstr "共同值域已修改。"
+
+msgid "strdomainalteredbad"
+msgstr "共同值域修改已失敗。"
+
+# Operators
+msgid "stroperator"
+msgstr "運算子"
+
+msgid "stroperators"
+msgstr "運算子"
+
+msgid "strshowalloperators"
+msgstr "顯示全部運算子"
+
+msgid "strnooperator"
+msgstr "找不到運算子。"
+
+msgid "strnooperators"
+msgstr "找不到任何運算子。"
+
+msgid "strcreateoperator"
+msgstr "建立運算子"
+
+msgid "strleftarg"
+msgstr "左引數類型"
+
+msgid "strrightarg"
+msgstr "右引數類型"
+
+msgid "strcommutator"
+msgstr "轉換器"
+
+msgid "strnegator"
+msgstr "否定器"
+
+msgid "strrestrict"
+msgstr "限制"
+
+msgid "strjoin"
+msgstr "結合"
+
+msgid "strhashes"
+msgstr "雜湊(Hashes)"
+
+msgid "strmerges"
+msgstr "合併"
+
+msgid "strleftsort"
+msgstr "左排序"
+
+msgid "strrightsort"
+msgstr "右排序"
+
+msgid "strlessthan"
+msgstr "小於"
+
+msgid "strgreaterthan"
+msgstr "大於"
+
+msgid "stroperatorneedsname"
+msgstr "您必需為您的運算子給一個名稱。"
+
+msgid "stroperatorcreated"
+msgstr "運算子已建立"
+
+msgid "stroperatorcreatedbad"
+msgstr "運算子建立已失敗。"
+
+msgid "strconfdropoperator"
+msgstr "您確定您要移除這個運算子 \"%s\" 嗎?"
+
+msgid "stroperatordropped"
+msgstr "運算子已移除。"
+
+msgid "stroperatordroppedbad"
+msgstr "運算子移除已失敗。"
+
+# Casts
+msgid "strcasts"
+msgstr "類型轉換"
+
+msgid "strnocasts"
+msgstr "找不到任何類型轉換。"
+
+msgid "strsourcetype"
+msgstr "來源類型"
+
+msgid "strtargettype"
+msgstr "目標類型"
+
+msgid "strimplicit"
+msgstr "隱含"
+
+msgid "strinassignment"
+msgstr "在指派中"
+
+msgid "strbinarycompat"
+msgstr "(二進制碼相容)"
+
+# Conversions
+msgid "strconversions"
+msgstr "編碼轉換"
+
+msgid "strnoconversions"
+msgstr "找不到任何編碼轉換。"
+
+msgid "strsourceencoding"
+msgstr "來源編碼"
+
+msgid "strtargetencoding"
+msgstr "目標編碼"
+
+# Languages
+msgid "strlanguages"
+msgstr "程序語言"
+
+msgid "strnolanguages"
+msgstr "找不到任何程序語言。"
+
+msgid "strtrusted"
+msgstr "被信任的"
+
+# Info
+msgid "strnoinfo"
+msgstr "無資訊可用。"
+
+msgid "strreferringtables"
+msgstr "參照中資料表"
+
+msgid "strparenttables"
+msgstr "父資料表"
+
+msgid "strchildtables"
+msgstr "子資料表"
+
+# Aggregates
+msgid "straggregate"
+msgstr "聚集函數"
+
+msgid "straggregates"
+msgstr "聚集函數"
+
+msgid "strnoaggregates"
+msgstr "找不到任何聚集函數。"
+
+msgid "stralltypes"
+msgstr "(全部類型)"
+
+msgid "strcreateaggregate"
+msgstr "建立聚集函數"
+
+msgid "straggrbasetype"
+msgstr "輸入資料類型"
+
+msgid "straggrsfunc"
+msgstr "狀態過渡函數"
+
+msgid "straggrstype"
+msgstr "狀態類型"
+
+msgid "straggrffunc"
+msgstr "最終函數"
+
+msgid "straggrinitcond"
+msgstr "最初條件"
+
+msgid "straggrsortop"
+msgstr "排序運算子"
+
+msgid "strconfdropaggregate"
+msgstr "您確定您要移除這個聚集函數 \"%s\" 嗎?"
+
+msgid "straggregatedropped"
+msgstr "聚集函數已移除。"
+
+msgid "straggregatedroppedbad"
+msgstr "聚集函數移除已失敗。"
+
+msgid "straggraltered"
+msgstr "聚集函數已修改。"
+
+msgid "straggralteredbad"
+msgstr "聚集函數修改已失敗。"
+
+msgid "straggrneedsname"
+msgstr "您必需具體指定一個名稱給這個聚集函數。"
+
+msgid "straggrneedsbasetype"
+msgstr "您必需具體指定這聚集函數的進入資料類型。"
+
+msgid "straggrneedssfunc"
+msgstr "您必需具體指定這這聚集函數的狀態過渡函數名稱。"
+
+msgid "straggrneedsstype"
+msgstr "您必需具體指定這聚集函數群狀態值的資料類型"
+
+msgid "straggrcreated"
+msgstr "聚集函數已建立。"
+
+msgid "straggrcreatedbad"
+msgstr "聚集函數建立已失敗。"
+
+msgid "straggrshowall"
+msgstr "顯示全部聚集函數"
+
+# Operator Classes
+msgid "stropclasses"
+msgstr "運算子類別"
+
+msgid "strnoopclasses"
+msgstr "找不到任何運算子類別。"
+
+msgid "straccessmethod"
+msgstr "存取方法"
+
+# Stats and performance
+msgid "strrowperf"
+msgstr "資料列性能"
+
+msgid "strioperf"
+msgstr "I/O 性能"
+
+msgid "stridxrowperf"
+msgstr "索引資料列性能"
+
+msgid "stridxioperf"
+msgstr "索引 I/O 性能"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "順序性"
+
+msgid "strscan"
+msgstr "掃描"
+
+msgid "strread"
+msgstr "讀取"
+
+msgid "strfetch"
+msgstr "取得"
+
+msgid "strheap"
+msgstr "堆疊"
+
+msgid "strtoast"
+msgstr "TOAST"
+
+msgid "strtoastindex"
+msgstr "TOAST 索引"
+
+msgid "strcache"
+msgstr "快取"
+
+msgid "strdisk"
+msgstr "磁碟"
+
+msgid "strrows2"
+msgstr "資料列"
+
+# Tablespaces
+msgid "strtablespace"
+msgstr "表空間"
+
+msgid "strtablespaces"
+msgstr "表空間"
+
+msgid "strshowalltablespaces"
+msgstr "顯示全部表空間"
+
+msgid "strnotablespaces"
+msgstr "找不到任何表空間。"
+
+msgid "strcreatetablespace"
+msgstr "建立表空間"
+
+msgid "strlocation"
+msgstr "所在位置"
+
+msgid "strtablespaceneedsname"
+msgstr "您必需為您的表空間給一個名稱。"
+
+msgid "strtablespaceneedsloc"
+msgstr "您必需給一個目錄夾來建立表空間。"
+
+msgid "strtablespacecreated"
+msgstr "表空間已建立。"
+
+msgid "strtablespacecreatedbad"
+msgstr "表空間建立已失敗。"
+
+msgid "strconfdroptablespace"
+msgstr "您確定您要移除這個表空間 \"%s\"?"
+
+msgid "strtablespacedropped"
+msgstr "表空間已移除。"
+
+msgid "strtablespacedroppedbad"
+msgstr "表空間移除已失敗。"
+
+msgid "strtablespacealtered"
+msgstr "表空間已修改。"
+
+msgid "strtablespacealteredbad"
+msgstr "表空間修改已失敗。"
+
+# Miscellaneous
+msgid "strtopbar"
+msgstr "%s 運作於 %s: %s -- 您是已登入的使用者 \"%s\""
+
+msgid "strtimefmt"
+msgstr "jS M, Y g: iA"
+
+msgid "strhelp"
+msgstr "說明"
+
+msgid "strhelpicon"
+msgstr "?"
+
+msgid "strhelppagebrowser"
+msgstr "說明頁瀏覽器"
+
+msgid "strselecthelppage"
+msgstr "選擇一個說明頁"
+
+msgid "strinvalidhelppage"
+msgstr "無效說明頁。"
+
+msgid "strlogintitle"
+msgstr "登入到 %s"
+
+msgid "strlogoutmsg"
+msgstr "登出 %s"
+
+msgid "strloading"
+msgstr "載入中..."
+
+msgid "strerrorloading"
+msgstr "載入中錯誤"
+
+msgid "strclicktoreload"
+msgstr "點擊到重新載入"
+
+# Autovacuum
+msgid "strautovacuum"
+msgstr "自動清理(Autovacuum)"
+
+msgid "strturnedon"
+msgstr "已轉動 - 開啟"
+
+msgid "strturnedoff"
+msgstr "已轉動 - 關閉"
+
+msgid "strenabled"
+msgstr "啟用"
+
+msgid "strvacuumbasethreshold"
+msgstr "Vacuum 基本門檻"
+
+msgid "strvacuumscalefactor"
+msgstr "Vacuum 換算係數"
+
+msgid "stranalybasethreshold"
+msgstr "Analyze 基本門檻"
+
+msgid "stranalyzescalefactor"
+msgstr "Analyze 換算係數"
+
+msgid "strvacuumcostdelay"
+msgstr "Vacuum 成本延遲"
+
+msgid "strvacuumcostlimit"
+msgstr "Vacuum 成本限制"
+
+# Table-level Locks
+msgid "strlocks"
+msgstr "鎖定"
+
+msgid "strtransaction"
+msgstr "事務交易 ID"
+
+msgid "strvirtualtransaction"
+msgstr "虛擬事務交易 ID"
+
+msgid "strprocessid"
+msgstr "進程 ID"
+
+msgid "strmode"
+msgstr "鎖定模式"
+
+msgid "strislockheld"
+msgstr "是鎖定執(held)?"
+
+# Prepared transactions
+msgid "strpreparedxacts"
+msgstr "已準備事務交易"
+
+msgid "strxactid"
+msgstr "事務交易 ID"
+
+msgid "strgid"
+msgstr "Global ID"
+
+# Fulltext search
+msgid "strfulltext"
+msgstr "全文檢索"
+
+msgid "strftsconfig"
+msgstr "全文檢索組態"
+
+msgid "strftsconfigs"
+msgstr "組態"
+
+msgid "strftscreateconfig"
+msgstr "新建全文檢索組態"
+
+msgid "strftscreatedict"
+msgstr "新建字典"
+
+msgid "strftscreatedicttemplate"
+msgstr "新建字典模板"
+
+msgid "strftscreateparser"
+msgstr "新建分析器"
+
+msgid "strftsnoconfigs"
+msgstr "沒有找到全文檢索組態。"
+
+msgid "strftsconfigdropped"
+msgstr "全文檢索組態已移除。"
+
+msgid "strftsconfigdroppedbad"
+msgstr "全文檢索移除失敗。"
+
+msgid "strconfdropftsconfig"
+msgstr "確定要移除全文檢索檢索組態 \"%s\" 嗎?"
+
+msgid "strconfdropftsdict"
+msgstr "確定要移除全文檢索字典 \"%s\" 嗎?"
+
+msgid "strconfdropftsmapping"
+msgstr "確定要將映射 \"%s\" 從全文檢索組態 \"%s\" 中移除嗎?"
+
+msgid "strftstemplate"
+msgstr "模板"
+
+msgid "strftsparser"
+msgstr "分析器"
+
+msgid "strftsconfigneedsname"
+msgstr "必須指定全文檢索組態名稱。"
+
+msgid "strftsconfigcreated"
+msgstr "全文檢索組態已創建"
+
+msgid "strftsconfigcreatedbad"
+msgstr "全文檢索組態創建失敗。"
+
+msgid "strftsmapping"
+msgstr "映射"
+
+msgid "strftsdicts"
+msgstr "字典"
+
+msgid "strftsdict"
+msgstr "字典"
+
+msgid "strftsemptymap"
+msgstr "空的全文檢索組態映射。"
+
+msgid "strftswithmap"
+msgstr "附帶映射（With map）"
+
+msgid "strftsmakedefault"
+msgstr "為本地化作成默認值"
+
+msgid "strftsconfigaltered"
+msgstr "全文檢索已修改。"
+
+msgid "strftsconfigalteredbad"
+msgstr "全文檢索修改失敗。"
+
+msgid "strftsconfigmap"
+msgstr "全文檢索組態映射"
+
+msgid "strftsparsers"
+msgstr "全文檢索分析器"
+
+msgid "strftsnoparsers"
+msgstr "無有效的全文檢索分析器。"
+
+msgid "strftsnodicts"
+msgstr "無有效的全文檢索字典。"
+
+msgid "strftsdictcreated"
+msgstr "全文檢索字典已創建"
+
+msgid "strftsdictcreatedbad"
+msgstr "全文檢索字典創建失敗。"
+
+msgid "strftslexize"
+msgstr "詞彙"
+
+msgid "strftsinit"
+msgstr "初始化"
+
+msgid "strftsoptionsvalues"
+msgstr "選項和值"
+
+msgid "strftsdictneedsname"
+msgstr "必須指定全文檢索字典名稱。"
+
+msgid "strftsdictdropped"
+msgstr "全文檢索字典已移除。"
+
+msgid "strftsdictdroppedbad"
+msgstr "全文檢索字典移除失敗。"
+
+msgid "strftsdictaltered"
+msgstr "全文檢索字典已修改。"
+
+msgid "strftsdictalteredbad"
+msgstr "全文檢索字典修改失敗。"
+
+msgid "strftsaddmapping"
+msgstr "增加映射"
+
+msgid "strftsspecifymappingtodrop"
+msgstr "必须最少指定一个映射来移除"
+
+msgid "strftsspecifyconfigtoalter"
+msgstr "必须指定一个全文检索組態来修改"
+
+msgid "strftsnodictionaries"
+msgstr "查无字典。"
+
+msgid "strftsmappingaltered"
+msgstr "全文检索映射已修改。"
+
+msgid "strftsmappingalteredbad"
+msgstr "全文检索映射修改失败。"
+
+msgid "strftsmappingadded"
+msgstr "全文检索映射已增加。"
+
+msgid "strftsmappingaddedbad"
+msgstr "全文检索映射增加失败。"
+
+msgid "strftsmappingdropped"
+msgstr "全文检索映射已删除。"
+
+msgid "strftsmappingdroppedbad"
+msgstr "全文检索映射移除失败。"
+
+msgid "strftstabconfigs"
+msgstr "組態"
+
+msgid "strftstabdicts"
+msgstr "字典"
+
+msgid "strftstabparsers"
+msgstr "分析器"

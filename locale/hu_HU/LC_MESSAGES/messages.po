@@ -1,0 +1,2482 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hu_HU\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "Magyar"
+
+msgid "applocale"
+msgstr "hu-HU"
+
+msgid "applangdir"
+msgstr "ltr"
+
+# Welcome
+msgid "strintro"
+msgstr "Üdvözli a phpPgAdmin!"
+
+msgid "strppahome"
+msgstr "A phpPgAdmin honlapja"
+
+msgid "strpgsqlhome"
+msgstr "A PostgreSQL honlapja"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "A PostgreSQL (helyi) dokumentációja"
+
+msgid "strreportbug"
+msgstr "Hibajelentés feladása"
+
+msgid "strviewfaq"
+msgstr "GYIK megtekintése"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "Bejelentkezés"
+
+msgid "strloginfailed"
+msgstr "Nem sikerült bejelentkezni"
+
+msgid "strlogindisallowed"
+msgstr "Biztonsági okból engedélyezettlen a bejelentkezés."
+
+msgid "strserver"
+msgstr "Szolgáló"
+
+msgid "strservers"
+msgstr "Szolgálók"
+
+msgid "strgroupservers"
+msgstr "Szolgálók „%s” csoportban"
+
+msgid "strallservers"
+msgstr "Minden szolgáló"
+
+msgid "strintroduction"
+msgstr "Bevezető"
+
+msgid "strhost"
+msgstr "Gazda"
+
+msgid "strport"
+msgstr "Kapu"
+
+msgid "strlogout"
+msgstr "Kilépés"
+
+msgid "strowner"
+msgstr "Tulajdonos"
+
+msgid "straction"
+msgstr "Művelet"
+
+msgid "stractions"
+msgstr "Műveletek"
+
+msgid "strname"
+msgstr "Név"
+
+msgid "strdefinition"
+msgstr "Definíció"
+
+msgid "strproperties"
+msgstr "Tulajdonságok"
+
+msgid "strbrowse"
+msgstr "Tallóz"
+
+msgid "strenable"
+msgstr "Enged"
+
+msgid "strdisable"
+msgstr "Tilt"
+
+msgid "strdrop"
+msgstr "Töröl"
+
+msgid "strdropped"
+msgstr "Törlölve"
+
+msgid "strnull"
+msgstr "Null"
+
+msgid "strnotnull"
+msgstr "Not Null"
+
+msgid "strprev"
+msgstr "< Előző"
+
+msgid "strnext"
+msgstr "Következő >"
+
+msgid "strfirst"
+msgstr "<< Első"
+
+msgid "strlast"
+msgstr "Utolsó >>"
+
+msgid "strfailed"
+msgstr "Sikertelen"
+
+msgid "strcreate"
+msgstr "Teremt"
+
+msgid "strcreated"
+msgstr "Megteremtve"
+
+msgid "strcomment"
+msgstr "Megjegyzés"
+
+msgid "strlength"
+msgstr "Hossz"
+
+msgid "strdefault"
+msgstr "Alapértelmezés"
+
+msgid "stralter"
+msgstr "Módosít"
+
+msgid "strok"
+msgstr "OK"
+
+msgid "strcancel"
+msgstr "Mégsem"
+
+msgid "strkill"
+msgstr "Öl"
+
+msgid "strac"
+msgstr "Önműködő kiegészítés engedélyezése"
+
+msgid "strsave"
+msgstr "Ment"
+
+msgid "strreset"
+msgstr "Újra"
+
+msgid "strrestart"
+msgstr "Újraindít"
+
+msgid "strinsert"
+msgstr "Beszúr"
+
+msgid "strselect"
+msgstr "Kiválaszt"
+
+msgid "strdelete"
+msgstr "Töröl"
+
+msgid "strupdate"
+msgstr "Időszerűsít"
+
+msgid "strreferences"
+msgstr "Hivatkozások"
+
+msgid "stryes"
+msgstr "Igen"
+
+msgid "strno"
+msgstr "Nem"
+
+msgid "strtrue"
+msgstr "IGAZ"
+
+msgid "strfalse"
+msgstr "HAMIS"
+
+msgid "stredit"
+msgstr "Szerkeszt"
+
+msgid "strcolumn"
+msgstr "Oszlop"
+
+msgid "strcolumns"
+msgstr "Oszlopok"
+
+msgid "strrows"
+msgstr "sor"
+
+msgid "strrowsaff"
+msgstr "sor érintett."
+
+msgid "strobjects"
+msgstr "objektum"
+
+msgid "strback"
+msgstr "Vissza"
+
+msgid "strqueryresults"
+msgstr "Lekérdezés eredményei"
+
+msgid "strshow"
+msgstr "Megjelenít"
+
+msgid "strempty"
+msgstr "Ürít"
+
+msgid "strlanguage"
+msgstr "Nyelv"
+
+msgid "strencoding"
+msgstr "Kódolás"
+
+msgid "strvalue"
+msgstr "Érték"
+
+msgid "strunique"
+msgstr "egyedi"
+
+msgid "strprimary"
+msgstr "Elsődleges"
+
+msgid "strexport"
+msgstr "Kivisz"
+
+msgid "strimport"
+msgstr "Behoz"
+
+msgid "strallowednulls"
+msgstr "Engedélyezett NULL betűk"
+
+msgid "strbackslashn"
+msgstr "\\N"
+
+msgid "stremptystring"
+msgstr "Üres szöveg/mező"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "stradmin"
+msgstr "Gazda"
+
+msgid "strvacuum"
+msgstr "Takarít"
+
+msgid "stranalyze"
+msgstr "Elemez"
+
+msgid "strclusterindex"
+msgstr "Fürtöz"
+
+msgid "strclustered"
+msgstr "Fürtözve?"
+
+msgid "strreindex"
+msgstr "Újraindexel"
+
+msgid "strexecute"
+msgstr "Végrehajt"
+
+msgid "stradd"
+msgstr "Bővít"
+
+msgid "strevent"
+msgstr "Esemény"
+
+msgid "strwhere"
+msgstr "Hol"
+
+msgid "strinstead"
+msgstr "Inkább"
+
+msgid "strwhen"
+msgstr "Mikor"
+
+msgid "strformat"
+msgstr "Alak"
+
+msgid "strdata"
+msgstr "Adatok"
+
+msgid "strconfirm"
+msgstr "Megerősít"
+
+msgid "strexpression"
+msgstr "Kifejezés"
+
+msgid "strellipsis"
+msgstr "…"
+
+msgid "strseparator"
+msgstr ": "
+
+msgid "strexpand"
+msgstr "Kinyit"
+
+msgid "strcollapse"
+msgstr "Összecsuk"
+
+msgid "strfind"
+msgstr "Keres"
+
+msgid "stroptions"
+msgstr "Részletek"
+
+msgid "strrefresh"
+msgstr "Frissít"
+
+msgid "strdownload"
+msgstr "Letöltés"
+
+msgid "strdownloadgzipped"
+msgstr "Gzippel tömörített letöltés"
+
+msgid "strinfo"
+msgstr "Infó"
+
+msgid "stroids"
+msgstr "OID-k"
+
+msgid "stradvanced"
+msgstr "Haladó"
+
+msgid "strvariables"
+msgstr "Változók"
+
+msgid "strprocess"
+msgstr "Folyamat"
+
+msgid "strprocesses"
+msgstr "Folyamatok"
+
+msgid "strsetting"
+msgstr "Beállítás"
+
+msgid "streditsql"
+msgstr "SQL-szerkesztés"
+
+msgid "strruntime"
+msgstr "Teljes futási idő: %s ms"
+
+msgid "strpaginate"
+msgstr "Oldalakra tördelés"
+
+msgid "struploadscript"
+msgstr "vagy egy SQL-írás feltöltése:"
+
+msgid "strstarttime"
+msgstr "Kezdés ideje"
+
+msgid "strfile"
+msgstr "Fájl"
+
+msgid "strfileimported"
+msgstr "Fájl behozva."
+
+msgid "strtrycred"
+msgstr "Használja minden kiszolgálóhoz e beállításokat"
+
+msgid "strconfdropcred"
+msgstr "Biztonság okán a szétválás megszünteti a megosztott bejelentkező adatait. Biztosan szét akar válni?"
+
+msgid "stractionsonmultiplelines"
+msgstr "Több soros műveletek"
+
+msgid "strselectall"
+msgstr "Mindent kiválaszt"
+
+msgid "strunselectall"
+msgstr "Semmit sem választ ki"
+
+msgid "strlocale"
+msgstr "Helyszín"
+
+msgid "strcollation"
+msgstr "Összerakás"
+
+msgid "strctype"
+msgstr "Betűtípus"
+
+msgid "strdefaultvalues"
+msgstr "Alapértékek"
+
+msgid "strnewvalues"
+msgstr "Új értékek"
+
+msgid "strstart"
+msgstr "Indít"
+
+msgid "strstop"
+msgstr "Leállít"
+
+msgid "strgotoppage"
+msgstr "vissza a tetejére"
+
+msgid "strtheme"
+msgstr "Téma"
+
+msgid "strcluster"
+msgstr "Fürt"
+
+# Admin
+msgid "stradminondatabase"
+msgstr "A következő adminisztratív feladatok %s adatbázis egészére vonatkoznak."
+
+msgid "stradminontable"
+msgstr "A következő adminisztratív feladatok %s táblára vonatkoznak."
+
+# User-supplied SQL history
+msgid "strhistory"
+msgstr "Előzmények"
+
+msgid "strnohistory"
+msgstr "Nincs előzmény."
+
+msgid "strclearhistory"
+msgstr "Előzményeket töröl"
+
+msgid "strdelhistory"
+msgstr "Előzményekből töröl"
+
+msgid "strconfdelhistory"
+msgstr "Tényleg töröli e kérelmet az előzményekből?"
+
+msgid "strconfclearhistory"
+msgstr "Tényleg töröli az előzményeket?"
+
+msgid "strnodatabaseselected"
+msgstr "Ki kell választani az adatbázist."
+
+# Database sizes
+msgid "strnoaccess"
+msgstr "Nincs hozzáférés"
+
+msgid "strsize"
+msgstr "Méret"
+
+msgid "strbytes"
+msgstr "bájt"
+
+msgid "strkb"
+msgstr "kB"
+
+msgid "strmb"
+msgstr "MB"
+
+msgid "strgb"
+msgstr "GB"
+
+msgid "strtb"
+msgstr "TB"
+
+# Error handling
+msgid "strnoframes"
+msgstr "Ez alkalmazás legjobban kereteket támogató böngészővel működik, de használható keretek nélkül is az alábbi hivatkozásra kattintva."
+
+msgid "strnoframeslink"
+msgstr "Keretek nélküli használat"
+
+msgid "strbadconfig"
+msgstr "A config.inc.php elavult. Újra kell teremteni az új config.inc.php-dist fájlból."
+
+msgid "strnotloaded"
+msgstr "Az ön PHP rendszere nem támogatja a PostgreSQL-t."
+
+msgid "strpostgresqlversionnotsupported"
+msgstr "A PostgreSQL e változata nem megfelelő. Kérem telepítse a %s változatot, vagy újabbat!"
+
+msgid "strbadschema"
+msgstr "A megadott séma érvénytelen."
+
+msgid "strbadencoding"
+msgstr "Az ügyfél oldali kódolás beállítása az adatbázisban nem sikerült."
+
+msgid "strsqlerror"
+msgstr "SQL hiba:"
+
+msgid "strinstatement"
+msgstr "A következő kifejezésben:"
+
+msgid "strinvalidparam"
+msgstr "Érvénytelen paraméterek."
+
+msgid "strnodata"
+msgstr "Nincsenek sorok."
+
+msgid "strnoobjects"
+msgstr "Nincsenek objektumok."
+
+msgid "strrownotunique"
+msgstr "Nincs egyedi azonosító ehhez a sorhoz."
+
+msgid "strnouploads"
+msgstr "Fájl feltöltése letiltva."
+
+msgid "strimporterror"
+msgstr "Behozatali hiba."
+
+msgid "strimporterror-fileformat"
+msgstr "Behozatali hiba: nem sikerült automatikusan megállapítani a fájl formátumát."
+
+msgid "strimporterrorline"
+msgstr "Behozatali hiba a %s. sorban."
+
+msgid "strimporterrorline-badcolumnnum"
+msgstr "Behozatali hiba a(z) %s. számú sorban:  A sor nem tartalmazza a megfelelő számú sort."
+
+msgid "strimporterror-uploadedfile"
+msgstr "Behozatali hiba: A fájlt nem sikerült feltülteni a kiszolgálóra."
+
+msgid "strcannotdumponwindows"
+msgstr "Összetett tábla ömlesztése és séma nevek Windows-on nem támogatottak."
+
+msgid "strinvalidserverparam"
+msgstr "Érvénytelen kiszolgáló paraméterrel próbáltak csatlakozni. Lehet, hogy valaki betörni próbál a rendszerbe."
+
+msgid "strnoserversupplied"
+msgstr "Nincs megadva kiszolgáló!"
+
+msgid "strbadpgdumppath"
+msgstr "Kiviteli hiba: Elbukott a pg_dump végrehajtása (conf/config.inc.php fájlban megadott ösvény: %s). Kérem, javítsa ki ezt a beállításban, és ismételjen."
+
+msgid "strbadpgdumpallpath"
+msgstr "Kiviteli hiba: Elbukott a pg_dumpall végrehajtása (conf/config.inc.php fájlban megadott ösvény: %s). Kérem, javítsa ki ezt a beállításban, és ismételjen."
+
+msgid "strconnectionfail"
+msgstr "Nem csatlakozhatok a szolgálóhoz."
+
+# Tables
+msgid "strtable"
+msgstr "Tábla"
+
+msgid "strtables"
+msgstr "Táblák"
+
+msgid "strshowalltables"
+msgstr "Minden tábla megjelenítése"
+
+msgid "strnotables"
+msgstr "Nincsenek táblák."
+
+msgid "strnotable"
+msgstr "Nincs tábla."
+
+msgid "strcreatetable"
+msgstr "Táblát teremt"
+
+msgid "strcreatetablelike"
+msgstr "Táblát teremt mint"
+
+msgid "strcreatetablelikeparent"
+msgstr "Forrás tábla"
+
+msgid "strcreatelikewithdefaults"
+msgstr "ALAPÉRTELMEZÉSEKKEL"
+
+msgid "strcreatelikewithconstraints"
+msgstr "MEGSZORÍTÁSOKKAL"
+
+msgid "strcreatelikewithindexes"
+msgstr "INDEXEKKEL"
+
+msgid "strtablename"
+msgstr "Tábla neve"
+
+msgid "strtableneedsname"
+msgstr "Meg kell adni a tábla nevét."
+
+msgid "strtablelikeneedslike"
+msgstr "Meg kell adni a tábla nevét, ahonnan tulajdonságokat lehet másolni."
+
+msgid "strtableneedsfield"
+msgstr "Legalább egy oszlopot meg kell adni."
+
+msgid "strtableneedscols"
+msgstr "A táblának érvényes számú oszlop kell."
+
+msgid "strtablecreated"
+msgstr "A tábla megteremtve."
+
+msgid "strtablecreatedbad"
+msgstr "Nem sikerült táblát teremteni."
+
+msgid "strconfdroptable"
+msgstr "Biztosan törölni kívánja „%s” táblát?"
+
+msgid "strtabledropped"
+msgstr "A tábla törölve."
+
+msgid "strtabledroppedbad"
+msgstr "Nem sikerült a táblát törölni."
+
+msgid "strconfemptytable"
+msgstr "Biztosan ki akarja üríteni „%s” táblát?"
+
+msgid "strtableemptied"
+msgstr "A tábla kiürítve."
+
+msgid "strtableemptiedbad"
+msgstr "Nem sikerült a táblát kiüríteni."
+
+msgid "strinsertrow"
+msgstr "Sor beszúrása"
+
+msgid "strrowinserted"
+msgstr "A sor beszúrva."
+
+msgid "strrowinsertedbad"
+msgstr "Nem sikerült a sort beszúrni."
+
+msgid "strnofkref"
+msgstr "Nincs %s idegen kulcshoz illő érték."
+
+msgid "strrowduplicate"
+msgstr "Nem sikerült sort beszúrni. Dupla beszúrási kísérlet."
+
+msgid "streditrow"
+msgstr "Sor szerkesztése"
+
+msgid "strrowupdated"
+msgstr "A sor időszerűsítve."
+
+msgid "strrowupdatedbad"
+msgstr "Nem sikerült a sort időszerűsíteni."
+
+msgid "strdeleterow"
+msgstr "Sor törlése"
+
+msgid "strconfdeleterow"
+msgstr "Biztosan törölni kívánja ezt a sort?"
+
+msgid "strrowdeleted"
+msgstr "A sor törölve."
+
+msgid "strrowdeletedbad"
+msgstr "Nem sikerült a sort törölni."
+
+msgid "strinsertandrepeat"
+msgstr "Beszúrás & Ismétlés"
+
+msgid "strnumcols"
+msgstr "Oszlopok száma"
+
+msgid "strcolneedsname"
+msgstr "Meg kell adnia az oszlop nevét"
+
+msgid "strselectallfields"
+msgstr "Minden oszlop kijelölése"
+
+msgid "strselectneedscol"
+msgstr "Ki kell választani egy oszlopot"
+
+msgid "strselectunary"
+msgstr "Egyváltozós műveleteknek nem lehetnek értékei"
+
+msgid "strcolumnaltered"
+msgstr "Az oszlop megváltoztatva."
+
+msgid "strcolumnalteredbad"
+msgstr "Nem sikerült az oszlopot megváltoztatni."
+
+msgid "strconfdropcolumn"
+msgstr "Biztosan törölni kívánja „%s” oszlopot „%s” táblából?"
+
+msgid "strcolumndropped"
+msgstr "Az oszlop törölve."
+
+msgid "strcolumndroppedbad"
+msgstr "Nem sikerült az oszlopot törölni."
+
+msgid "straddcolumn"
+msgstr "Oszloppal bővítés"
+
+msgid "strcolumnadded"
+msgstr "Oszloppal bővítve."
+
+msgid "strcolumnaddedbad"
+msgstr "Nem sikerült az oszloppal bővíteni."
+
+msgid "strcascade"
+msgstr "ZUHATAG"
+
+msgid "strtablealtered"
+msgstr "A tábla megváltoztatva."
+
+msgid "strtablealteredbad"
+msgstr "Nem sikerült a táblát megváltoztatni."
+
+msgid "strdataonly"
+msgstr "Csak adatok"
+
+msgid "strstructureonly"
+msgstr "Csak struktúra"
+
+msgid "strstructureanddata"
+msgstr "Struktúra és adatok"
+
+msgid "strtabbed"
+msgstr "Füles"
+
+msgid "strauto"
+msgstr "Autó"
+
+msgid "strconfvacuumtable"
+msgstr "Biztosan ki akarja takarítani „%s” táblát?"
+
+msgid "strconfanalyzetable"
+msgstr "Biztosan elemezzük „%s” táblát?"
+
+msgid "strconfreindextable"
+msgstr "Biztosan újra akarja indexelni „%s” táblát?"
+
+msgid "strconfclustertable"
+msgstr "Biztosan fürtözni akarja „%s” táblát?"
+
+msgid "strestimatedrowcount"
+msgstr "Becsült sorok száma"
+
+msgid "strspecifytabletoanalyze"
+msgstr "Legalább egy elemzendő táblát meg kell adni."
+
+msgid "strspecifytabletoempty"
+msgstr "Legalább egy ürítendő táblát meg kell adni."
+
+msgid "strspecifytabletodrop"
+msgstr "Legalább egy törlendő táblát meg kell adni."
+
+msgid "strspecifytabletovacuum"
+msgstr "Legalább egy takarítandó táblát meg kell adni."
+
+msgid "strspecifytabletoreindex"
+msgstr "Legalább egy indexelendő táblát meg kell adni."
+
+msgid "strspecifytabletocluster"
+msgstr "Legalább egy fürtözendő táblát meg kell adni."
+
+msgid "strnofieldsforinsert"
+msgstr "Oszloptalan táblába nem szúrhat be sort."
+
+# Columns
+msgid "strcolprop"
+msgstr "Tábla tulajdonságai"
+
+msgid "strnotableprovided"
+msgstr "Nincs tábla megadva!"
+
+# Users
+msgid "struser"
+msgstr "Használó"
+
+msgid "strusers"
+msgstr "Használók"
+
+msgid "strusername"
+msgstr "Használó neve"
+
+msgid "strpassword"
+msgstr "Jelszó"
+
+msgid "strsuper"
+msgstr "Rendszergazda?"
+
+msgid "strcreatedb"
+msgstr "Létrehozhat AB-t?"
+
+msgid "strexpires"
+msgstr "Lejár"
+
+msgid "strsessiondefaults"
+msgstr "Munkamenet alapértékei"
+
+msgid "strnousers"
+msgstr "Nincsenek használók."
+
+msgid "struserupdated"
+msgstr "Használó időszerűsítve."
+
+msgid "struserupdatedbad"
+msgstr "Nem sikerült a használót időszerűsíteni."
+
+msgid "strshowallusers"
+msgstr "Minden használó megjelenítése"
+
+msgid "strcreateuser"
+msgstr "Használó teremtése"
+
+msgid "struserneedsname"
+msgstr "A használónak nevet kell adni."
+
+msgid "strusercreated"
+msgstr "A használó megteremtve."
+
+msgid "strusercreatedbad"
+msgstr "Nem sikerült a használót megteremteni."
+
+msgid "strconfdropuser"
+msgstr "Biztosan törölni akarja „%s” használót?"
+
+msgid "struserdropped"
+msgstr "A használó törölve."
+
+msgid "struserdroppedbad"
+msgstr "Nem sikerült a használót törölni."
+
+msgid "straccount"
+msgstr "Számla"
+
+msgid "strchangepassword"
+msgstr "Jelszó megváltoztatása"
+
+msgid "strpasswordchanged"
+msgstr "A jelszó megváltoztatva."
+
+msgid "strpasswordchangedbad"
+msgstr "Nem sikerült a jelszót megváltoztatni."
+
+msgid "strpasswordshort"
+msgstr "A jelszó túl rövid."
+
+msgid "strpasswordconfirm"
+msgstr "A jelszó nem egyezik a megerősítéssel."
+
+# Groups
+msgid "strgroup"
+msgstr "Csoport"
+
+msgid "strgroups"
+msgstr "Csoportok"
+
+msgid "strshowallgroups"
+msgstr "Minden csoportot megjelenít"
+
+msgid "strnogroup"
+msgstr "Nincs csoport."
+
+msgid "strnogroups"
+msgstr "Nincsenek csoportok."
+
+msgid "strcreategroup"
+msgstr "Csoportot teremt"
+
+msgid "strgroupneedsname"
+msgstr "A csoportnak nevet kell adni."
+
+msgid "strgroupcreated"
+msgstr "A csoport megteremtve."
+
+msgid "strgroupcreatedbad"
+msgstr "Nem sikerült a csoportot megteremteni."
+
+msgid "strconfdropgroup"
+msgstr "Biztosan törölni kívánja „%s” csoportot?"
+
+msgid "strgroupdropped"
+msgstr "A csoport törölve."
+
+msgid "strgroupdroppedbad"
+msgstr "Nem sikerült a csoportot törölni."
+
+msgid "strmembers"
+msgstr "Tagok"
+
+msgid "strmemberof"
+msgstr "Tagja "
+
+msgid "stradminmembers"
+msgstr "Admin tagok"
+
+msgid "straddmember"
+msgstr "Tagot vesz fel"
+
+msgid "strmemberadded"
+msgstr "Tag felvéve."
+
+msgid "strmemberaddedbad"
+msgstr "Nem sikerült tagot felvenni."
+
+msgid "strdropmember"
+msgstr "Tag kicsapása"
+
+msgid "strconfdropmember"
+msgstr "Biztosan ki akarja csapni „%s” tagot „%s” csoportból?"
+
+msgid "strmemberdropped"
+msgstr "A tag kicsapva."
+
+msgid "strmemberdroppedbad"
+msgstr "Nem sikerült a tagot kicsapni."
+
+# Roles
+msgid "strrole"
+msgstr "Szerep"
+
+msgid "strroles"
+msgstr "Szerepek"
+
+msgid "strshowallroles"
+msgstr "Minden szerepet megjelenít"
+
+msgid "strnoroles"
+msgstr "Nincs szerep."
+
+msgid "strinheritsprivs"
+msgstr "Jogosultságokat örököl?"
+
+msgid "strcreaterole"
+msgstr "Szerepet teremt"
+
+msgid "strcancreaterole"
+msgstr "Teremthet szerepet?"
+
+msgid "strrolecreated"
+msgstr "Szerep megteremtve."
+
+msgid "strrolecreatedbad"
+msgstr "Nem sikerült szerepet teremteni."
+
+msgid "strrolealtered"
+msgstr "Szerep megváltoztatva."
+
+msgid "strrolealteredbad"
+msgstr "Nem sikerült szerepet változtatni."
+
+msgid "strcanlogin"
+msgstr "Beléphet?"
+
+msgid "strconnlimit"
+msgstr "Kapcsolat korlátja"
+
+msgid "strdroprole"
+msgstr "Szerepet töröl"
+
+msgid "strconfdroprole"
+msgstr "Biztosan töröljük „%s” szerepet?"
+
+msgid "strroledropped"
+msgstr "Szerep törölve."
+
+msgid "strroledroppedbad"
+msgstr "Nem sikerült szerepet törölni."
+
+msgid "strnolimit"
+msgstr "Nincs korlát"
+
+msgid "strnever"
+msgstr "Soha"
+
+msgid "strroleneedsname"
+msgstr "Nevet kell adni a szerepnek."
+
+# Privileges
+msgid "strprivilege"
+msgstr "Jogosultság"
+
+msgid "strprivileges"
+msgstr "Jogosultságok"
+
+msgid "strnoprivileges"
+msgstr "Ez objektum alap-jogosultságokkal rendelkezik."
+
+msgid "strgrant"
+msgstr "Feljogosít"
+
+msgid "strrevoke"
+msgstr "Jogosultságot megvon"
+
+msgid "strgranted"
+msgstr "A jogosultságok megváltoztatva."
+
+msgid "strgrantfailed"
+msgstr "Nem sikerült a jogosultságokat megváltoztatni."
+
+msgid "strgrantbad"
+msgstr "Legalább egy felhasználót és jogosultságot ki kell választani."
+
+msgid "strgrantor"
+msgstr "Jogosító"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "Adatbázis"
+
+msgid "strdatabases"
+msgstr "Adatbázisok"
+
+msgid "strshowalldatabases"
+msgstr "Minden adatbázist megjelenít"
+
+msgid "strnodatabases"
+msgstr "Nincs adatbázis."
+
+msgid "strcreatedatabase"
+msgstr "Adatbázist teremt"
+
+msgid "strdatabasename"
+msgstr "Adatbázisnév"
+
+msgid "strdatabaseneedsname"
+msgstr "Meg kell adni az adatbázis nevét."
+
+msgid "strdatabasecreated"
+msgstr "Az adatbázis megteremtve."
+
+msgid "strdatabasecreatedbad"
+msgstr "Nem sikerült megteremteni az adatbázist."
+
+msgid "strconfdropdatabase"
+msgstr "Biztosan törölni akarja „%s” adatbázist?"
+
+msgid "strdatabasedropped"
+msgstr "Az adatbázis törölve."
+
+msgid "strdatabasedroppedbad"
+msgstr "Nem sikerült törölni az adatbázist."
+
+msgid "strentersql"
+msgstr "Írja be a végrehajtandó SQL-kifejezéseket ide:"
+
+msgid "strsqlexecuted"
+msgstr "Az SQL-kifejezések végrehajtva."
+
+msgid "strvacuumgood"
+msgstr "A takarítás kész."
+
+msgid "strvacuumbad"
+msgstr "Nem sikerült kitakarítani."
+
+msgid "stranalyzegood"
+msgstr "Az elemzés kész."
+
+msgid "stranalyzebad"
+msgstr "Nem sikerült kielemezni."
+
+msgid "strreindexgood"
+msgstr "Újraindexelés kész."
+
+msgid "strreindexbad"
+msgstr "Nem sikerült az újraindexelés."
+
+msgid "strfull"
+msgstr "Teljes"
+
+msgid "strfreeze"
+msgstr "Befagyaszt"
+
+msgid "strforce"
+msgstr "Kényszerít"
+
+msgid "strsignalsent"
+msgstr "Jelzés elküldve."
+
+msgid "strsignalsentbad"
+msgstr "Nem sikerült jelzést küldeni."
+
+msgid "strallobjects"
+msgstr "Minden objektum"
+
+msgid "strdatabasealtered"
+msgstr "Adatbázis megváltoztatva."
+
+msgid "strdatabasealteredbad"
+msgstr "Nem sikerült az adatbázist megváltoztatni."
+
+msgid "strspecifydatabasetodrop"
+msgstr "Meg kell adni a törlendő adatbázist"
+
+msgid "strtemplatedb"
+msgstr "Sablon"
+
+msgid "strconfanalyzedatabase"
+msgstr "Biztosan elemezni akarja „%s” adatbázis minden tábláját?"
+
+msgid "strconfvacuumdatabase"
+msgstr "Biztosan takarítani akarja „%s” adatbázis minden tábláját?"
+
+msgid "strconfreindexdatabase"
+msgstr "Biztosan indexelni akarja „%s” adatbázis minden tábláját?"
+
+msgid "strconfclusterdatabase"
+msgstr "Biztosan fürtözni akarja „%s” adatbázis minden tábláját?"
+
+# Views
+msgid "strview"
+msgstr "Nézet"
+
+msgid "strviews"
+msgstr "Nézetek"
+
+msgid "strshowallviews"
+msgstr "Minden nézetet megjelenít"
+
+msgid "strnoview"
+msgstr "Nincs nézet."
+
+msgid "strnoviews"
+msgstr "Nincsenek nézetek."
+
+msgid "strcreateview"
+msgstr "Nézetet teremt"
+
+msgid "strviewname"
+msgstr "Nézetnév"
+
+msgid "strviewneedsname"
+msgstr "Meg kell adni a nézetnevet."
+
+msgid "strviewneedsdef"
+msgstr "Meg kell adni a nézet definícióját."
+
+msgid "strviewneedsfields"
+msgstr "Meg kell adnia a oszlopokat, amiket ki akar jelölni a nézetben."
+
+msgid "strviewcreated"
+msgstr "A nézet megteremtve."
+
+msgid "strviewcreatedbad"
+msgstr "Nem sikerült megteremteni a nézetet."
+
+msgid "strconfdropview"
+msgstr "Biztosan törölni kívánja „%s” nézetet?"
+
+msgid "strviewdropped"
+msgstr "A nézet törölve."
+
+msgid "strviewdroppedbad"
+msgstr "Nem sikerült törölni a nézetet."
+
+msgid "strviewupdated"
+msgstr "A nézet időszerűsítve."
+
+msgid "strviewupdatedbad"
+msgstr "Nem sikerült időszerűsíteni a nézetet."
+
+msgid "strviewlink"
+msgstr "Hivatkozások"
+
+msgid "strviewconditions"
+msgstr "További feltételek"
+
+msgid "strcreateviewwiz"
+msgstr "Nézetet teremt varázslóval"
+
+msgid "strrenamedupfields"
+msgstr "Másolt mezőket nevez át"
+
+msgid "strdropdupfields"
+msgstr "Másolt mezőket töröl"
+
+msgid "strerrordupfields"
+msgstr "Hiba a másolt mezőkben"
+
+msgid "strviewaltered"
+msgstr "Nézet megváltoztatva."
+
+msgid "strviewalteredbad"
+msgstr "Nem sikerült megváltoztatni a nézetet."
+
+msgid "strspecifyviewtodrop"
+msgstr "Meg kell adni a törlendő nézetet"
+
+# Sequences
+msgid "strsequence"
+msgstr "Sorozat"
+
+msgid "strsequences"
+msgstr "Sorozatok"
+
+msgid "strshowallsequences"
+msgstr "Minden sorozatot megjelenít"
+
+msgid "strnosequence"
+msgstr "Nincs sorozat."
+
+msgid "strnosequences"
+msgstr "Nincsenek sorozatok."
+
+msgid "strcreatesequence"
+msgstr "Sorozatot teremt"
+
+msgid "strlastvalue"
+msgstr "Utolsó érték"
+
+msgid "strincrementby"
+msgstr "Növekmény"
+
+msgid "strstartvalue"
+msgstr "Kezdő érték"
+
+msgid "strrestartvalue"
+msgstr "Újrakezdő érték"
+
+msgid "strmaxvalue"
+msgstr "Felső korlát"
+
+msgid "strminvalue"
+msgstr "Alsó korlát"
+
+msgid "strcachevalue"
+msgstr "Gyorstár értéke"
+
+msgid "strlogcount"
+msgstr "Számláló"
+
+msgid "strcancycle"
+msgstr "Körbejárhat?"
+
+msgid "striscalled"
+msgstr "Növekedjék mielőtt visszatér a következő értékkel (is_called)?"
+
+msgid "strsequenceneedsname"
+msgstr "Meg kell adni a sorozatnevet."
+
+msgid "strsequencecreated"
+msgstr "A sorozat megteremtve."
+
+msgid "strsequencecreatedbad"
+msgstr "Nem sikerült megteremteni a sorozatot."
+
+msgid "strconfdropsequence"
+msgstr "Biztosan törölni kívánja „%s” sorozatot?"
+
+msgid "strsequencedropped"
+msgstr "A sorozat törölve."
+
+msgid "strsequencedroppedbad"
+msgstr "Nem sikerült törölni a sorozatot."
+
+msgid "strsequencerestart"
+msgstr "Sorozat újrakezdve."
+
+msgid "strsequencerestartbad"
+msgstr "Nem sikerült újrakezdeni a sorozatot."
+
+msgid "strsequencereset"
+msgstr "Sorozat nullázása."
+
+msgid "strsequenceresetbad"
+msgstr "Nem sikerült nullázni a sorozatot."
+
+msgid "strsequencealtered"
+msgstr "Sorozat megváltoztatva."
+
+msgid "strsequencealteredbad"
+msgstr "Nem sikerült megváltoztatni a sorozatot."
+
+msgid "strsetval"
+msgstr "Értéket ad"
+
+msgid "strsequencesetval"
+msgstr "Érték megadva."
+
+msgid "strsequencesetvalbad"
+msgstr "Nem sikerült az értékadás."
+
+msgid "strnextval"
+msgstr "Növekmény"
+
+msgid "strsequencenextval"
+msgstr "Sorozat megnövelve."
+
+msgid "strsequencenextvalbad"
+msgstr "Nem sikerült megnövelni a sorozatot."
+
+msgid "strspecifysequencetodrop"
+msgstr "Meg kell adnia a törlendő sorozatot"
+
+# Indexes
+msgid "strindex"
+msgstr "Index"
+
+msgid "strindexes"
+msgstr "Indexek"
+
+msgid "strindexname"
+msgstr "Indexnév"
+
+msgid "strshowallindexes"
+msgstr "Minden indexet megjelenít"
+
+msgid "strnoindex"
+msgstr "Nincs index."
+
+msgid "strnoindexes"
+msgstr "Nincsenek indexek."
+
+msgid "strcreateindex"
+msgstr "Indexet teremt"
+
+msgid "strtabname"
+msgstr "Táblanév"
+
+msgid "strcolumnname"
+msgstr "Oszlopnév"
+
+msgid "strindexneedsname"
+msgstr "Meg kell adni az index nevét."
+
+msgid "strindexneedscols"
+msgstr "Meg kell adni az oszlopok (érvényes) számát."
+
+msgid "strindexcreated"
+msgstr "Az index megteremtve"
+
+msgid "strindexcreatedbad"
+msgstr "Nem sikerült megteremteni az indexet."
+
+msgid "strconfdropindex"
+msgstr "Biztosan törölni kívánja „%s” indexet?"
+
+msgid "strindexdropped"
+msgstr "Az index törölve."
+
+msgid "strindexdroppedbad"
+msgstr "Nem sikerült törölni az indexet."
+
+msgid "strkeyname"
+msgstr "Kulcsnév"
+
+msgid "struniquekey"
+msgstr "Egyedi kulcs"
+
+msgid "strprimarykey"
+msgstr "Elsődleges kulcs"
+
+msgid "strindextype"
+msgstr "Indextípus"
+
+msgid "strtablecolumnlist"
+msgstr "A tábla oszlopai"
+
+msgid "strindexcolumnlist"
+msgstr "Az index oszlopai"
+
+msgid "strclusteredgood"
+msgstr "Fürtözés kész."
+
+msgid "strclusteredbad"
+msgstr "Nem sikerült fürtözni."
+
+msgid "strconcurrently"
+msgstr "Egyszerre"
+
+msgid "strnoclusteravailable"
+msgstr "A tábla nincs indexre fürtözve."
+
+# Rules
+msgid "strrules"
+msgstr "Szabályok"
+
+msgid "strrule"
+msgstr "Szabály"
+
+msgid "strshowallrules"
+msgstr "Minden szabályt megjelenít"
+
+msgid "strnorule"
+msgstr "Nincs szabály."
+
+msgid "strnorules"
+msgstr "Nincsenek szabályok."
+
+msgid "strcreaterule"
+msgstr "Szabályt teremt"
+
+msgid "strrulename"
+msgstr "Szabálynév"
+
+msgid "strruleneedsname"
+msgstr "Meg kell adni a szabálynevet."
+
+msgid "strrulecreated"
+msgstr "A szabály megteremtve."
+
+msgid "strrulecreatedbad"
+msgstr "Nem sikerült megteremteni a szabályt."
+
+msgid "strconfdroprule"
+msgstr "Biztosan törölni kívánja „%s” szabályt „%s” táblában?"
+
+msgid "strruledropped"
+msgstr "A szabály törölve."
+
+msgid "strruledroppedbad"
+msgstr "Nem sikerült törölni a szabályt."
+
+# Constraints
+msgid "strconstraint"
+msgstr "Megszorítás"
+
+msgid "strconstraints"
+msgstr "Megszorítások"
+
+msgid "strshowallconstraints"
+msgstr "Minden megszorítást megjelenít"
+
+msgid "strnoconstraints"
+msgstr "Nincsenek megszorítások."
+
+msgid "strcreateconstraint"
+msgstr "Megszorítást teremt"
+
+msgid "strconstraintcreated"
+msgstr "A megszorítás megteremtve."
+
+msgid "strconstraintcreatedbad"
+msgstr "Nem sikerült megteremteni a megszorítást."
+
+msgid "strconfdropconstraint"
+msgstr "Biztosan törölni kívánja „%s” megszorítást „%s” táblában?"
+
+msgid "strconstraintdropped"
+msgstr "A megszorítás törölve."
+
+msgid "strconstraintdroppedbad"
+msgstr "Nem sikerült törölni a megszorítást."
+
+msgid "straddcheck"
+msgstr "Ellenőrzést ad hozzá"
+
+msgid "strcheckneedsdefinition"
+msgstr "Meg kell adni az ellenőrzés definícióját."
+
+msgid "strcheckadded"
+msgstr "Az ellenőrzés hozzáadva."
+
+msgid "strcheckaddedbad"
+msgstr "Nem sikerült hozzáadni az ellenőrzést."
+
+msgid "straddpk"
+msgstr "Elsődleges kulcsot ad hozzá"
+
+msgid "strpkneedscols"
+msgstr "Legalább egy oszlopot meg kell adni elsődleges kulcsnak."
+
+msgid "strpkadded"
+msgstr "Elsődleges kulcs hozzáadva."
+
+msgid "strpkaddedbad"
+msgstr "Nem sikerült hozzáadni az elsődleges kulcsot."
+
+msgid "stradduniq"
+msgstr "Egyedi kulcsot ad hozzá"
+
+msgid "struniqneedscols"
+msgstr "Legalább egy oszlopot meg kell adni egyedi kulcsnak."
+
+msgid "struniqadded"
+msgstr "Az egyedi kulcs hozzáadva."
+
+msgid "struniqaddedbad"
+msgstr "Nem sikerült hozzáadni az egyedi kulcsot."
+
+msgid "straddfk"
+msgstr "Külső kulcsot ad hozzá"
+
+msgid "strfkneedscols"
+msgstr "Legalább egy oszlopot meg kell adni külső kulcsnak."
+
+msgid "strfkneedstarget"
+msgstr "Meg kell adni a céltáblát a külső kulcsnak."
+
+msgid "strfkadded"
+msgstr "A külső kulcs hozzáadva."
+
+msgid "strfkaddedbad"
+msgstr "Nem sikerült hozzáadni a külső kulcsot."
+
+msgid "strfktarget"
+msgstr "Céltábla"
+
+msgid "strfkcolumnlist"
+msgstr "Kulcsoszlopok"
+
+msgid "strondelete"
+msgstr "TÖRLÉSKOR"
+
+msgid "stronupdate"
+msgstr "VÁLTOZTATÁSKOR"
+
+# Functions
+msgid "strfunction"
+msgstr "Függvény"
+
+msgid "strfunctions"
+msgstr "Függvények"
+
+msgid "strshowallfunctions"
+msgstr "Minden függvényt megjelenít"
+
+msgid "strnofunction"
+msgstr "Nincs függvény."
+
+msgid "strnofunctions"
+msgstr "Nincsenek függvények."
+
+msgid "strcreateplfunction"
+msgstr "SQL/PL függvényt teremt"
+
+msgid "strcreateinternalfunction"
+msgstr "Belső függvényt teremt"
+
+msgid "strcreatecfunction"
+msgstr "C függvényt teremt"
+
+msgid "strfunctionname"
+msgstr "Függvénynév"
+
+msgid "strreturns"
+msgstr "Visszatérő érték"
+
+msgid "strproglanguage"
+msgstr "Programnyelv"
+
+msgid "strfunctionneedsname"
+msgstr "Meg kell adni a függvény nevét."
+
+msgid "strfunctionneedsdef"
+msgstr "Meg kell adni a függvény definícióját."
+
+msgid "strfunctioncreated"
+msgstr "A függvény megteremtve."
+
+msgid "strfunctioncreatedbad"
+msgstr "Nem sikerült megteremteni a függvényt."
+
+msgid "strconfdropfunction"
+msgstr "Biztosan törölni kívánja „%s” függvényt?"
+
+msgid "strfunctiondropped"
+msgstr "A függvény törölve."
+
+msgid "strfunctiondroppedbad"
+msgstr "Nem sikerült törölni a függvényt."
+
+msgid "strfunctionupdated"
+msgstr "A függvény időszerűsítve."
+
+msgid "strfunctionupdatedbad"
+msgstr "Nem sikerült a függvényt időszerűsíteni."
+
+msgid "strobjectfile"
+msgstr "Célkód fájl"
+
+msgid "strlinksymbol"
+msgstr "Szerkesztő szimbólum"
+
+msgid "strarguments"
+msgstr "Argumentumok"
+
+msgid "strargmode"
+msgstr "Mód"
+
+msgid "strargtype"
+msgstr "Típus"
+
+msgid "strargadd"
+msgstr "Más argumentumot ad hozzá"
+
+msgid "strargremove"
+msgstr "Argumentumot töröl"
+
+msgid "strargnoargs"
+msgstr "E függvénynek nincsenek argumentumai."
+
+msgid "strargenableargs"
+msgstr "E függvénynek átadott argumentumok engedélyezése."
+
+msgid "strargnorowabove"
+msgstr "Egy sornak kell lennie e fölött."
+
+msgid "strargnorowbelow"
+msgstr "Egy sornak kell lennie ez alatt."
+
+msgid "strargraise"
+msgstr "Mozgás fel."
+
+msgid "strarglower"
+msgstr "Mozgás le."
+
+msgid "strargremoveconfirm"
+msgstr "Biztosan töröljük ez argumentumot? Ez VISSZAVONHATATLAN."
+
+msgid "strfunctioncosting"
+msgstr "Függvény költségei"
+
+msgid "strresultrows"
+msgstr "Eredmény sorok"
+
+msgid "strexecutioncost"
+msgstr "Végrehajtás költsége"
+
+msgid "strspecifyfunctiontodrop"
+msgstr "Legalább egy törlendő függvényt meg kell adni"
+
+# Triggers
+msgid "strtrigger"
+msgstr "Ravasz"
+
+msgid "strtriggers"
+msgstr "Ravaszok"
+
+msgid "strshowalltriggers"
+msgstr "Minden ravaszt megjelenít"
+
+msgid "strnotrigger"
+msgstr "Nincs ravasz."
+
+msgid "strnotriggers"
+msgstr "Nincsenek ravaszok."
+
+msgid "strcreatetrigger"
+msgstr "Ravaszt teremt"
+
+msgid "strtriggerneedsname"
+msgstr "Meg kell adni a ravasz nevét."
+
+msgid "strtriggerneedsfunc"
+msgstr "Meg kell adni egy függvény nevét a ravaszhoz."
+
+msgid "strtriggercreated"
+msgstr "Ravasz megteremtve."
+
+msgid "strtriggercreatedbad"
+msgstr "Nem sikerült megteremteni a ravaszt."
+
+msgid "strconfdroptrigger"
+msgstr "Biztosan törölni kívánja „%s” ravaszt „%s” táblában?"
+
+msgid "strconfenabletrigger"
+msgstr "Biztosan engedélyezzük „%s” ravaszt „%s” elemre?"
+
+msgid "strconfdisabletrigger"
+msgstr "Biztosan letiltsuk „%s” ravaszt „%s” elemre?"
+
+msgid "strtriggerdropped"
+msgstr "Ravasz törölve."
+
+msgid "strtriggerdroppedbad"
+msgstr "Nem sikerült törölni a ravaszt."
+
+msgid "strtriggerenabled"
+msgstr "Ravasz engedélyezve."
+
+msgid "strtriggerenabledbad"
+msgstr "Nem sikerült a ravaszt engedélyezni."
+
+msgid "strtriggerdisabled"
+msgstr "Ravasz letiltva."
+
+msgid "strtriggerdisabledbad"
+msgstr "Nem sikerült a ravaszt letiltani."
+
+msgid "strtriggeraltered"
+msgstr "Ravasz megváltoztatva."
+
+msgid "strtriggeralteredbad"
+msgstr "Nem sikerült megváltoztatni a triggert."
+
+msgid "strforeach"
+msgstr "Mindegyik"
+
+# Types
+msgid "strtype"
+msgstr "Típus"
+
+msgid "strtypes"
+msgstr "Típusok"
+
+msgid "strshowalltypes"
+msgstr "Minden típust megjelenít"
+
+msgid "strnotype"
+msgstr "Nincs típus."
+
+msgid "strnotypes"
+msgstr "Nincsenek típusok."
+
+msgid "strcreatetype"
+msgstr "Típust teremt"
+
+msgid "strcreatecomptype"
+msgstr "Összetett típust teremt"
+
+msgid "strcreateenumtype"
+msgstr "Felsorolás típust teremt"
+
+msgid "strtypeneedsfield"
+msgstr "Legalább egy oszlopot meg kell adnia."
+
+msgid "strtypeneedsvalue"
+msgstr "Legalább egy értéket meg kell adni."
+
+msgid "strtypeneedscols"
+msgstr "Érvényes oszlopszámot kell megadnia."
+
+msgid "strtypeneedsvals"
+msgstr "Érvényes értékszámot kell megadni."
+
+msgid "strinputfn"
+msgstr "Beviteli függvény"
+
+msgid "stroutputfn"
+msgstr "Kiviteli függvény"
+
+msgid "strpassbyval"
+msgstr "Érték szerinti átadás?"
+
+msgid "stralignment"
+msgstr "Igazít"
+
+msgid "strelement"
+msgstr "Elem"
+
+msgid "strdelimiter"
+msgstr "Határoló"
+
+msgid "strstorage"
+msgstr "Tár"
+
+msgid "strfield"
+msgstr "Oszlop"
+
+msgid "strnumfields"
+msgstr "Oszlopok száma"
+
+msgid "strnumvalues"
+msgstr "Értékek száma"
+
+msgid "strtypeneedsname"
+msgstr "Típusnevet kell megadni."
+
+msgid "strtypeneedslen"
+msgstr "Meg kell adni a típus hosszát."
+
+msgid "strtypecreated"
+msgstr "Típus megteremtve"
+
+msgid "strtypecreatedbad"
+msgstr "Nem sikerült megteremteni a típust."
+
+msgid "strconfdroptype"
+msgstr "Biztosan törölni kívánja „%s” típust?"
+
+msgid "strtypedropped"
+msgstr "Típus törölve."
+
+msgid "strtypedroppedbad"
+msgstr "Nem sikerült törölni a típust."
+
+msgid "strflavor"
+msgstr "Fajta"
+
+msgid "strbasetype"
+msgstr "Alap"
+
+msgid "strcompositetype"
+msgstr "Összetett"
+
+msgid "strpseudotype"
+msgstr "Ál"
+
+msgid "strenum"
+msgstr "Felsorolás"
+
+msgid "strenumvalues"
+msgstr "Felsorolás értékei"
+
+# Schemas
+msgid "strschema"
+msgstr "Séma"
+
+msgid "strschemas"
+msgstr "Sémák"
+
+msgid "strshowallschemas"
+msgstr "Minden sémát megjelenít"
+
+msgid "strnoschema"
+msgstr "Nincs séma."
+
+msgid "strnoschemas"
+msgstr "Nincsenek sémák."
+
+msgid "strcreateschema"
+msgstr "Sémát teremt"
+
+msgid "strschemaname"
+msgstr "Sémanév"
+
+msgid "strschemaneedsname"
+msgstr "Meg kell adni a sémanevet."
+
+msgid "strschemacreated"
+msgstr "A séma megteremtve"
+
+msgid "strschemacreatedbad"
+msgstr "Nem sikerült a sémát megteremteni."
+
+msgid "strconfdropschema"
+msgstr "Biztosan törölni kívánja „%s” sémát?"
+
+msgid "strschemadropped"
+msgstr "A séma törölve."
+
+msgid "strschemadroppedbad"
+msgstr "Nem sikerült a sémát törölni."
+
+msgid "strschemaaltered"
+msgstr "Séma megváltoztatva."
+
+msgid "strschemaalteredbad"
+msgstr "Nem sikerült a sémát megváltoztatni."
+
+msgid "strsearchpath"
+msgstr "Séma keresési útvonala"
+
+msgid "strspecifyschematodrop"
+msgstr "Meg kell adni a törlendő sémát"
+
+# Reports
+
+# Domains
+msgid "strdomain"
+msgstr "Tartomány"
+
+msgid "strdomains"
+msgstr "Tartományok"
+
+msgid "strshowalldomains"
+msgstr "Minden tartományt megjelenít"
+
+msgid "strnodomains"
+msgstr "Nincsnek tartományok."
+
+msgid "strcreatedomain"
+msgstr "Tartományt teremt"
+
+msgid "strdomaindropped"
+msgstr "A tartomány törölve."
+
+msgid "strdomaindroppedbad"
+msgstr "Nem sikerült törölni a tartományt."
+
+msgid "strconfdropdomain"
+msgstr "Biztosan törölni kívánja „%s” tartományt?"
+
+msgid "strdomainneedsname"
+msgstr "Meg kell adni a tartománynevet."
+
+msgid "strdomaincreated"
+msgstr "A tartomány megteremtve."
+
+msgid "strdomaincreatedbad"
+msgstr "Nem sikerült megteremteni a tartományt."
+
+msgid "strdomainaltered"
+msgstr "A tartomány megváltoztatva."
+
+msgid "strdomainalteredbad"
+msgstr "Nem sikerült megváltoztatni a tartományt."
+
+# Operators
+msgid "stroperator"
+msgstr "Operátor"
+
+msgid "stroperators"
+msgstr "Operátorok"
+
+msgid "strshowalloperators"
+msgstr "Minden operátort megjelenít"
+
+msgid "strnooperator"
+msgstr "Nincs operátor."
+
+msgid "strnooperators"
+msgstr "Nincsenek operátorok."
+
+msgid "strcreateoperator"
+msgstr "Operátort teremt"
+
+msgid "strleftarg"
+msgstr "Bal arg típus"
+
+msgid "strrightarg"
+msgstr "Jobb arg típus"
+
+msgid "strcommutator"
+msgstr "Kommutátor"
+
+msgid "strnegator"
+msgstr "Tagadó"
+
+msgid "strrestrict"
+msgstr "Megszorítás"
+
+msgid "strjoin"
+msgstr "Összekapcsolás"
+
+msgid "strhashes"
+msgstr "Hasít"
+
+msgid "strmerges"
+msgstr "Összefésül"
+
+msgid "strleftsort"
+msgstr "Balrendezés"
+
+msgid "strrightsort"
+msgstr "Jobbrendezés"
+
+msgid "strlessthan"
+msgstr "Kisebb mint"
+
+msgid "strgreaterthan"
+msgstr "Nagyobb mint"
+
+msgid "stroperatorneedsname"
+msgstr "Meg kell adni az operátornevet."
+
+msgid "stroperatorcreated"
+msgstr "Az operátor megteremtve"
+
+msgid "stroperatorcreatedbad"
+msgstr "Nem sikerült megteremteni az operátort."
+
+msgid "strconfdropoperator"
+msgstr "Biztosan törölni kívánja „%s” operátort?"
+
+msgid "stroperatordropped"
+msgstr "Az operátor törölve."
+
+msgid "stroperatordroppedbad"
+msgstr "Nem sikerült törölni az operátort."
+
+# Casts
+msgid "strcasts"
+msgstr "Kasztok"
+
+msgid "strnocasts"
+msgstr "Nincsenek kasztok."
+
+msgid "strsourcetype"
+msgstr "Forrástípus"
+
+msgid "strtargettype"
+msgstr "Céltípus"
+
+msgid "strimplicit"
+msgstr "Implicit"
+
+msgid "strinassignment"
+msgstr "Értékadásban"
+
+msgid "strbinarycompat"
+msgstr "(Binárisan kompatibilis)"
+
+# Conversions
+msgid "strconversions"
+msgstr "Átalakítások"
+
+msgid "strnoconversions"
+msgstr "Nincsenek átalakítások."
+
+msgid "strsourceencoding"
+msgstr "Forráskódolás"
+
+msgid "strtargetencoding"
+msgstr "Célkódolás"
+
+# Languages
+msgid "strlanguages"
+msgstr "Nyelvek"
+
+msgid "strnolanguages"
+msgstr "Nincsenek nyelvek."
+
+msgid "strtrusted"
+msgstr "Hiteles"
+
+# Info
+msgid "strnoinfo"
+msgstr "Nincs elérhető információ."
+
+msgid "strreferringtables"
+msgstr "Kapcsolódó táblák"
+
+msgid "strparenttables"
+msgstr "Szülőtáblák"
+
+msgid "strchildtables"
+msgstr "Gyerektáblák"
+
+# Aggregates
+msgid "straggregate"
+msgstr "Aggregálás"
+
+msgid "straggregates"
+msgstr "Aggregálások"
+
+msgid "strnoaggregates"
+msgstr "Nincsenek aggregálások."
+
+msgid "stralltypes"
+msgstr "(Minden típus)"
+
+msgid "strcreateaggregate"
+msgstr "Aggregálást teremt"
+
+msgid "straggrbasetype"
+msgstr "Bemenő adattípus"
+
+msgid "straggrsfunc"
+msgstr "Állapotátmeneti függvény"
+
+msgid "straggrstype"
+msgstr "Állapotérték adattípusa"
+
+msgid "straggrffunc"
+msgstr "Végső függvény"
+
+msgid "straggrinitcond"
+msgstr "Kezdő feltétel"
+
+msgid "straggrsortop"
+msgstr "Rendező művelet"
+
+msgid "strconfdropaggregate"
+msgstr "Biztosan töröljük „%s” aggregálást?"
+
+msgid "straggregatedropped"
+msgstr "Aggregálás törölve."
+
+msgid "straggregatedroppedbad"
+msgstr "Nem sikerült törölni az aggregálást."
+
+msgid "straggraltered"
+msgstr "Aggregálás megváltoztatva."
+
+msgid "straggralteredbad"
+msgstr "Nem sikerült az aggregálást megváltoztatni."
+
+msgid "straggrneedsname"
+msgstr "Meg kell adni az aggregálás nevét."
+
+msgid "straggrneedsbasetype"
+msgstr "Meg kell adni az aggregálás bemenő adattípusát."
+
+msgid "straggrneedssfunc"
+msgstr "Meg kell adni az aggregálás állapotátmeneti függvényének nevét."
+
+msgid "straggrneedsstype"
+msgstr "Meg kell adni az aggregálás állapotértékének adattípusát."
+
+msgid "straggrcreated"
+msgstr "Aggregálás megteremtve."
+
+msgid "straggrcreatedbad"
+msgstr "Nem sikerült megteremteni az aggregálást."
+
+msgid "straggrshowall"
+msgstr "Minden aggregálás megjelenítése"
+
+# Operator Classes
+msgid "stropclasses"
+msgstr "Operátor-osztályok"
+
+msgid "strnoopclasses"
+msgstr "Nincsenek operátor-osztályok."
+
+msgid "straccessmethod"
+msgstr "Hozzáférés módja"
+
+# Stats and performance
+msgid "strrowperf"
+msgstr "Sorteljesítmény"
+
+msgid "strioperf"
+msgstr "I/O-teljesítmény"
+
+msgid "stridxrowperf"
+msgstr "Indexsor-teljesítmény"
+
+msgid "stridxioperf"
+msgstr "Index-I/O-teljesítmény"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "Szekvenciális"
+
+msgid "strscan"
+msgstr "Keresés"
+
+msgid "strread"
+msgstr "Olvasás"
+
+msgid "strfetch"
+msgstr "Lehívás"
+
+msgid "strheap"
+msgstr "Kupac"
+
+msgid "strtoast"
+msgstr "TOAST"
+
+msgid "strtoastindex"
+msgstr "TOAST Index"
+
+msgid "strcache"
+msgstr "Gyorstár"
+
+msgid "strdisk"
+msgstr "Lemez"
+
+msgid "strrows2"
+msgstr "Sorok"
+
+# Tablespaces
+msgid "strtablespace"
+msgstr "Táblahely"
+
+msgid "strtablespaces"
+msgstr "Táblahelyek"
+
+msgid "strshowalltablespaces"
+msgstr "Minden táblahelyet megjelenít"
+
+msgid "strnotablespaces"
+msgstr "Nincsenek táblahelyek."
+
+msgid "strcreatetablespace"
+msgstr "Táblahelyet teremt"
+
+msgid "strlocation"
+msgstr "Hely"
+
+msgid "strtablespaceneedsname"
+msgstr "Nevet kell adnia a táblahelynek."
+
+msgid "strtablespaceneedsloc"
+msgstr "Meg kell adnia egy mappát, ahol a táblahelyet teremti."
+
+msgid "strtablespacecreated"
+msgstr "Táblahely teremtve."
+
+msgid "strtablespacecreatedbad"
+msgstr "Nem sikerült táblahelyet teremteni."
+
+msgid "strconfdroptablespace"
+msgstr "Biztosan ki akarja dobni „%s” táblahelyet?"
+
+msgid "strtablespacedropped"
+msgstr "Táblahely kidobva."
+
+msgid "strtablespacedroppedbad"
+msgstr "Nem sikerült kidobni a táblahelyet."
+
+msgid "strtablespacealtered"
+msgstr "Táblahely megváltoztatva."
+
+msgid "strtablespacealteredbad"
+msgstr "Nem sikerült megváltoztatni a táblahelyet."
+
+# Miscellaneous
+msgid "strtopbar"
+msgstr "%s fut %s:%s címen — Ön „%s” néven jelentkezett be."
+
+msgid "strtimefmt"
+msgstr "Y.m.d. H:i"
+
+msgid "strhelp"
+msgstr "Súgó"
+
+msgid "strhelpicon"
+msgstr "?"
+
+msgid "strhelppagebrowser"
+msgstr "Súgólap böngésző"
+
+msgid "strselecthelppage"
+msgstr "Súgólapot választ"
+
+msgid "strinvalidhelppage"
+msgstr "Érvénytelen súgólap."
+
+msgid "strlogintitle"
+msgstr "Belépett %s helyre"
+
+msgid "strlogoutmsg"
+msgstr "Kilépett %s helyről"
+
+msgid "strloading"
+msgstr "Betöltök..."
+
+msgid "strerrorloading"
+msgstr "Betöltési hiba"
+
+msgid "strclicktoreload"
+msgstr "Kattintson az újratöltéshez"
+
+# Autovacuum
+msgid "strautovacuum"
+msgstr "Önműködő takarítás"
+
+msgid "strturnedon"
+msgstr "Bekapcsolva"
+
+msgid "strturnedoff"
+msgstr "Kikapcsolva"
+
+msgid "strenabled"
+msgstr "Engedélyezve"
+
+msgid "strnovacuumconf"
+msgstr "Nem találtam önműködő takarítást beállítva."
+
+msgid "strvacuumbasethreshold"
+msgstr "Takarítás alap küszbértéke"
+
+msgid "strvacuumscalefactor"
+msgstr "Takarítás méretező tényezője"
+
+msgid "stranalybasethreshold"
+msgstr "Alap küszöbértéket elemez"
+
+msgid "stranalyzescalefactor"
+msgstr "Méretező tényezőt elemez"
+
+msgid "strvacuumcostdelay"
+msgstr "Takarítás költségének késése"
+
+msgid "strvacuumcostlimit"
+msgstr "Takarítás költségének korlátja"
+
+msgid "strvacuumpertable"
+msgstr "Önműködő takarítás beállítása táblánként"
+
+msgid "straddvacuumtable"
+msgstr "Önműködő takarítást állít be egy táblára"
+
+msgid "streditvacuumtable"
+msgstr "Önműködő takarítást szerkeszt %s táblára"
+
+msgid "strdelvacuumtable"
+msgstr "Törli az önműködő takarítást %s tábláról?"
+
+msgid "strvacuumtablereset"
+msgstr "Az önműködő takarítást %s táblára visszaállítja az alap értékekre"
+
+msgid "strdelvacuumtablefail"
+msgstr "Nem sikerült törölni az önműködő takarítást %s tábláról"
+
+msgid "strsetvacuumtablesaved"
+msgstr "Önműködő takarítás %s táblára mentve."
+
+msgid "strsetvacuumtablefail"
+msgstr "Önműködő takarítást %s táblára nem sikerült beállítani."
+
+msgid "strspecifydelvacuumtable"
+msgstr "Meg kell adni a táblát, amiről törölni akarja az önműködő takarítás paramétereit."
+
+msgid "strspecifyeditvacuumtable"
+msgstr "Meg kell adni a táblát, amin szerkeszteni akarja az önműködő takarítás paramétereit."
+
+msgid "strnotdefaultinred"
+msgstr "A nem alap értékek pirosak."
+
+# Table-level Locks
+msgid "strlocks"
+msgstr "Zárak"
+
+msgid "strtransaction"
+msgstr "Tranzakció AZ"
+
+msgid "strvirtualtransaction"
+msgstr "Látszólagos tranzakció AZ"
+
+msgid "strprocessid"
+msgstr "Folyamat AZ"
+
+msgid "strmode"
+msgstr "Zármód"
+
+msgid "strislockheld"
+msgstr "Zár tartva?"
+
+# Prepared transactions
+msgid "strpreparedxacts"
+msgstr "Előkészített tranzakciók"
+
+msgid "strxactid"
+msgstr "Tranzakció AZ"
+
+msgid "strgid"
+msgstr "Globális AZ"
+
+# Fulltext search
+msgid "strfulltext"
+msgstr "Teljes szövegben keres"
+
+msgid "strftsconfig"
+msgstr "TSzK összeállítás"
+
+msgid "strftsconfigs"
+msgstr "Összeállítások"
+
+msgid "strftscreateconfig"
+msgstr "TSzK összeállítást teremt"
+
+msgid "strftscreatedict"
+msgstr "Szótárt teremt"
+
+msgid "strftscreatedicttemplate"
+msgstr "Szótársablont teremt"
+
+msgid "strftscreateparser"
+msgstr "Elemzőt teremt"
+
+msgid "strftsnoconfigs"
+msgstr "Nincs TSzK összeállítás."
+
+msgid "strftsconfigdropped"
+msgstr "TSzK összeállítás törölve."
+
+msgid "strftsconfigdroppedbad"
+msgstr "Nem sikerült törölni a TSzK összeállítást."
+
+msgid "strconfdropftsconfig"
+msgstr "Biztosan töröljük „%s” TSzK összeállítást?"
+
+msgid "strconfdropftsdict"
+msgstr "Biztosan töröljük „%s” TSzK szótárt?"
+
+msgid "strconfdropftsmapping"
+msgstr "Biztosan töröljük „%s” hozzárendelést „%s” TSzK összeállításból?"
+
+msgid "strftstemplate"
+msgstr "Sablon"
+
+msgid "strftsparser"
+msgstr "Elemző"
+
+msgid "strftsconfigneedsname"
+msgstr "Meg kell adni a TSzK összeállítás nevét."
+
+msgid "strftsconfigcreated"
+msgstr "TSzK összeállítás megteremtve."
+
+msgid "strftsconfigcreatedbad"
+msgstr "Nem sikerült megteremteni a TSzK összeállítást."
+
+msgid "strftsmapping"
+msgstr "Hozzárendel"
+
+msgid "strftsdicts"
+msgstr "Szótárak"
+
+msgid "strftsdict"
+msgstr "Szótár"
+
+msgid "strftsemptymap"
+msgstr "Üres hozzárendelés a TSzK összeállításban."
+
+msgid "strftsconfigaltered"
+msgstr "TSzK összeállítás megváltoztatva."
+
+msgid "strftsconfigalteredbad"
+msgstr "Nem sikerült a TSzK összeállítást megváltoztatni."
+
+msgid "strftsconfigmap"
+msgstr "TSzK összeállítás hozzárendelése"
+
+msgid "strftsparsers"
+msgstr "TSzK elemzők"
+
+msgid "strftsnoparsers"
+msgstr "Nincs TSzK elemző."
+
+msgid "strftsnodicts"
+msgstr "Nincs TSzK szótár."
+
+msgid "strftsdictcreated"
+msgstr "TSzK szótár megteremtve."
+
+msgid "strftsdictcreatedbad"
+msgstr "Nem sikerült a TSzK szótárt megteremteni."
+
+msgid "strftslexize"
+msgstr "Szókincs"
+
+msgid "strftsinit"
+msgstr "Kezdés"
+
+msgid "strftsoptionsvalues"
+msgstr "Opciók és értékek"
+
+msgid "strftsdictneedsname"
+msgstr "Meg kell adni a TSzK szótár nevét."
+
+msgid "strftsdictdropped"
+msgstr "TSzK szótár törölve."
+
+msgid "strftsdictdroppedbad"
+msgstr "Nem sikerült a TSzK szótárt törölni."
+
+msgid "strftsdictaltered"
+msgstr "TSzK szótár megváltoztatva."
+
+msgid "strftsdictalteredbad"
+msgstr "Nem sikerült a TSzK szótárt megváltoztatni."
+
+msgid "strftsaddmapping"
+msgstr "Új hozzárendelés hozzáadása"
+
+msgid "strftsspecifymappingtodrop"
+msgstr "Meg kell adni legalább egy törlendő TSzK hozzárendelést."
+
+msgid "strftsspecifyconfigtoalter"
+msgstr "Meg kell adni a megváltoztatandó TSzK összeállítást"
+
+msgid "strftsnodictionaries"
+msgstr "Nincs szótár."
+
+msgid "strftsmappingaltered"
+msgstr "TSzK hozzárendelés megváltoztatva."
+
+msgid "strftsmappingalteredbad"
+msgstr "Nem sikerült a TSzK hozzárendelést megváltoztatni."
+
+msgid "strftsmappingadded"
+msgstr "TSzK hozzárendelés hozzáadva."
+
+msgid "strftsmappingaddedbad"
+msgstr "Nem sikerült hozzáadni a TSzK hozzárendeléshez."
+
+msgid "strftsmappingdropped"
+msgstr "TSzK hozzárendelés törölve."
+
+msgid "strftsmappingdroppedbad"
+msgstr "Nem sikerült a TSzK hozzárendelést törölni."
+
+msgid "strftstabconfigs"
+msgstr "Összeállítások"
+
+msgid "strftstabdicts"
+msgstr "Szótárak"
+
+msgid "strftstabparsers"
+msgstr "Elemzők"
+
+msgid "strftscantparsercopy"
+msgstr "Nem állíthat be együtt elemzőt és sablont szövegkereső beállítás közben."

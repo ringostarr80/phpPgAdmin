@@ -1,0 +1,1678 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he_IL\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "Hebrew"
+
+msgid "applocale"
+msgstr "he-IL"
+
+msgid "applangdir"
+msgstr "rtl"
+
+# Welcome
+msgid "strintro"
+msgstr "ברוכים הבאים ל phpPgAdmin."
+
+msgid "strppahome"
+msgstr "עמוד הבית של phpPgAdmin."
+
+msgid "strpgsqlhome"
+msgstr "עמוד הבית של PostgreSQL."
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "תיעוד PostgreSQL (מקומי)"
+
+msgid "strreportbug"
+msgstr "דווח על באג"
+
+msgid "strviewfaq"
+msgstr "צפה ב FAQ מקוון"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "התחברות"
+
+msgid "strloginfailed"
+msgstr "התחברות נכשלה"
+
+msgid "strlogindisallowed"
+msgstr "התחברות מבוטלת בשל בעיות אבטחה."
+
+msgid "strserver"
+msgstr "שרת"
+
+msgid "strlogout"
+msgstr "התנתקות"
+
+msgid "strowner"
+msgstr "בעל"
+
+msgid "straction"
+msgstr "פעולה"
+
+msgid "stractions"
+msgstr "פעולות"
+
+msgid "strname"
+msgstr "שם"
+
+msgid "strdefinition"
+msgstr "הגדרה"
+
+msgid "strproperties"
+msgstr "העדפות"
+
+msgid "strbrowse"
+msgstr "דפדף"
+
+msgid "strdrop"
+msgstr "מחק"
+
+msgid "strdropped"
+msgstr "נמחק"
+
+msgid "strnull"
+msgstr "Null"
+
+msgid "strnotnull"
+msgstr "לא null"
+
+msgid "strprev"
+msgstr "קודם &lt;"
+
+msgid "strnext"
+msgstr "&gt; הבאה"
+
+msgid "strfirst"
+msgstr "ראשון &lt;&lt;"
+
+msgid "strlast"
+msgstr "&gt;&gt; אחרון"
+
+msgid "strfailed"
+msgstr "נכשל"
+
+msgid "strcreate"
+msgstr "צור"
+
+msgid "strcreated"
+msgstr "נוצר"
+
+msgid "strcomment"
+msgstr "הערה"
+
+msgid "strlength"
+msgstr "אורך"
+
+msgid "strdefault"
+msgstr "ברירת מחדל"
+
+msgid "stralter"
+msgstr "ערוך"
+
+msgid "strok"
+msgstr "OK"
+
+msgid "strcancel"
+msgstr "בטל"
+
+msgid "strsave"
+msgstr "שמור"
+
+msgid "strreset"
+msgstr "שחזר"
+
+msgid "strinsert"
+msgstr "הכנס"
+
+msgid "strselect"
+msgstr "בחר"
+
+msgid "strdelete"
+msgstr "מחק"
+
+msgid "strupdate"
+msgstr "עדכן"
+
+msgid "strreferences"
+msgstr "תיעודים"
+
+msgid "stryes"
+msgstr "כן"
+
+msgid "strno"
+msgstr "לא"
+
+msgid "strtrue"
+msgstr "אמת"
+
+msgid "strfalse"
+msgstr "שקר"
+
+msgid "stredit"
+msgstr "ערוך"
+
+msgid "strcolumns"
+msgstr "עמודות"
+
+msgid "strrows"
+msgstr "שורות"
+
+msgid "strrowsaff"
+msgstr "שורות מושפעות"
+
+msgid "strobjects"
+msgstr "נתונים"
+
+msgid "strexample"
+msgstr "דוגמה."
+
+msgid "strback"
+msgstr "קודם"
+
+msgid "strqueryresults"
+msgstr "תוצאות השאילתה"
+
+msgid "strshow"
+msgstr "הראה"
+
+msgid "strempty"
+msgstr "רוקן"
+
+msgid "strlanguage"
+msgstr "שפה"
+
+msgid "strencoding"
+msgstr "קידוד"
+
+msgid "strvalue"
+msgstr "ערך"
+
+msgid "strunique"
+msgstr "מיוחד"
+
+msgid "strprimary"
+msgstr "ראשי"
+
+msgid "strexport"
+msgstr "יצוא"
+
+msgid "strimport"
+msgstr "יבוא"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "strgo"
+msgstr "לך"
+
+msgid "stradmin"
+msgstr "מנהל"
+
+msgid "strvacuum"
+msgstr "ריק"
+
+msgid "stranalyze"
+msgstr "נתח"
+
+msgid "strclusterindex"
+msgstr "אשכול"
+
+msgid "strclustered"
+msgstr "מאושכל?"
+
+msgid "strreindex"
+msgstr "אנדקס מחדש"
+
+msgid "strrun"
+msgstr "הרץ"
+
+msgid "stradd"
+msgstr "הוסף"
+
+msgid "strevent"
+msgstr "אירוע"
+
+msgid "strwhere"
+msgstr "איפה"
+
+msgid "strinstead"
+msgstr "תעשה במקום"
+
+msgid "strwhen"
+msgstr "כש"
+
+msgid "strformat"
+msgstr "סוג"
+
+msgid "strdata"
+msgstr "מידע"
+
+msgid "strconfirm"
+msgstr "אשר"
+
+msgid "strexpression"
+msgstr "ביטוי"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strseparator"
+msgstr ": "
+
+msgid "strexpand"
+msgstr "הרחב"
+
+msgid "strcollapse"
+msgstr "צמצם"
+
+msgid "strexplain"
+msgstr "הסבק"
+
+msgid "strexplainanalyze"
+msgstr "הסבר נתיחה"
+
+msgid "strfind"
+msgstr "מצא"
+
+msgid "stroptions"
+msgstr "אפשרויות"
+
+msgid "strrefresh"
+msgstr "רענן"
+
+msgid "strdownload"
+msgstr "הורד"
+
+msgid "strdownloadgzipped"
+msgstr "הורד דחוס ב gzip"
+
+msgid "strinfo"
+msgstr "מידע"
+
+msgid "stroids"
+msgstr "OIDs"
+
+msgid "stradvanced"
+msgstr "מתקדם"
+
+msgid "strvariables"
+msgstr "משתנים"
+
+msgid "strprocess"
+msgstr "תהליך"
+
+msgid "strprocesses"
+msgstr "תהליכים"
+
+msgid "strsetting"
+msgstr "הגדרות"
+
+msgid "streditsql"
+msgstr "ערוך SQL"
+
+msgid "strruntime"
+msgstr "זמן-ריצה כולל: %s ms"
+
+msgid "strpaginate"
+msgstr "Paginate results"
+
+msgid "struploadscript"
+msgstr "או העלה תסריט SQL:"
+
+msgid "strstarttime"
+msgstr "זמן התחלה"
+
+msgid "strfile"
+msgstr "קובץ"
+
+msgid "strfileimported"
+msgstr "קובץ יובא"
+
+# Error handling
+msgid "strbadconfig"
+msgstr "קובץ ה config.inc.php שלך אינו מעודכן. אתה תיצטרך ליצור אחד חדש יותר מהקובץ config.inc.php-dist החדש"
+
+msgid "strnotloaded"
+msgstr "התקנת ה PHP שלך אינה תומכת ב PostgreSQL. אתה תיצטרך להדר אותה מחדש אם הפקודה --with-pqlsql בזמן ההגדרה"
+
+msgid "strphpversionnotsupported"
+msgstr "גירסת ה PHP שלך אינה ניתמכת. אנא עדכן אותה לגירסה %s או חדשה יותר."
+
+msgid "strpostgresqlversionnotsupported"
+msgstr "גערסת ה PostgrSQL שלך אינה ניתמכת. אנא עדכן אותה לגירסה %s או חדשה יותר."
+
+msgid "strbadschema"
+msgstr "תרשים שגוי צויין"
+
+msgid "strbadencoding"
+msgstr "נכשל בהתאמת קידוד משתמש למסד הנתונים."
+
+msgid "strsqlerror"
+msgstr "שגיאת SQL:"
+
+msgid "strinstatement"
+msgstr "בהצהרה:"
+
+msgid "strinvalidparam"
+msgstr "ממדי תסריט שגוי."
+
+msgid "strnodata"
+msgstr "לא נמצאו שורות."
+
+msgid "strnoobjects"
+msgstr "לא נמצאו נתונים."
+
+msgid "strrownotunique"
+msgstr "No unique identifier for this row."
+
+msgid "strnouploads"
+msgstr "העלאת קבצים בוטלה."
+
+msgid "strimporterror"
+msgstr "שגיאת יבוא."
+
+msgid "strimporterrorline"
+msgstr "שגיאת יבוא בשורה: %s."
+
+# Tables
+msgid "strtable"
+msgstr "טבלה"
+
+msgid "strtables"
+msgstr "טבלאות"
+
+msgid "strshowalltables"
+msgstr "הראה את כל הטבלאות."
+
+msgid "strnotables"
+msgstr "לא נמצאו טבלאות."
+
+msgid "strnotable"
+msgstr "טבלה לא נמצאה."
+
+msgid "strcreatetable"
+msgstr "צור טבלה"
+
+msgid "strtablename"
+msgstr "שם טבלה"
+
+msgid "strtableneedsname"
+msgstr "אתה חייב לתת שם לטבלה שלך."
+
+msgid "strtableneedsfield"
+msgstr "אתה חייב לציין לפחות שדה אחד."
+
+msgid "strtableneedscols"
+msgstr "אתה חייב לציין מספר תקין של עמודות."
+
+msgid "strtablecreated"
+msgstr "טבלה נוצרה."
+
+msgid "strtablecreatedbad"
+msgstr "יצירת טבלה נכשלה."
+
+msgid "strconfdroptable"
+msgstr "אתה בטוח שברצונך למחוק את הטבלה  \"%s\"?"
+
+msgid "strtabledropped"
+msgstr "טבלה נמחקה."
+
+msgid "strtabledroppedbad"
+msgstr "מחיקת טבלה נכשלה."
+
+msgid "strconfemptytable"
+msgstr "האם אתה בטוח שברצונך לרוקן את הטבלה \"%s\"?"
+
+msgid "strtableemptied"
+msgstr "טבלה רוקנה."
+
+msgid "strtableemptiedbad"
+msgstr "ריקון טבלה נכשל."
+
+msgid "strinsertrow"
+msgstr "הכנס שדה"
+
+msgid "strrowinserted"
+msgstr "שדה הוכנס."
+
+msgid "strrowinsertedbad"
+msgstr "הכנסת שדה נכשלה."
+
+msgid "streditrow"
+msgstr "ערוך שדה"
+
+msgid "strrowupdated"
+msgstr "שדה עודכן."
+
+msgid "strrowupdatedbad"
+msgstr "עידכון שדה נכשל."
+
+msgid "strdeleterow"
+msgstr "מחק שדה"
+
+msgid "strconfdeleterow"
+msgstr "האם אתה בטוח שברצונך למחוק את השדה הזה?"
+
+msgid "strrowdeleted"
+msgstr "שדה נמחק."
+
+msgid "strrowdeletedbad"
+msgstr "מחיקת שדה נכשל."
+
+msgid "strinsertandrepeat"
+msgstr "חזור &amp;הכנס "
+
+msgid "strfield"
+msgstr "שדה"
+
+msgid "strnumfields"
+msgstr "מספר השדות"
+
+msgid "strselectallfields"
+msgstr "בחר את כל השדות"
+
+msgid "strselectneedscol"
+msgstr "אתה חייב להראות לפחות שדה אחד"
+
+msgid "strselectunary"
+msgstr "Unary operators cannot have values."
+
+msgid "straltercolumn"
+msgstr "ערוך עמודה"
+
+msgid "strcolumnaltered"
+msgstr "עמודה נערכה"
+
+msgid "strcolumnalteredbad"
+msgstr "עריכת עמודה נכשלה."
+
+msgid "strconfdropcolumn"
+msgstr "האם אתה בטוח שברצונך למחוק את העמודה \"%s\" מהטבלה &quot;%squot;?"
+
+msgid "strcolumndropped"
+msgstr "עמודה נחמקה."
+
+msgid "strcolumndroppedbad"
+msgstr "מחיקת עמודה נכשלה."
+
+msgid "straddcolumn"
+msgstr "הוסף עמודה."
+
+msgid "strcolumnadded"
+msgstr "עמודה נוספה."
+
+msgid "strcolumnaddedbad"
+msgstr "הוספת עמודה נכשלה"
+
+msgid "strcascade"
+msgstr "CASCADE"
+
+msgid "strtablealtered"
+msgstr "טבלה נערכה."
+
+msgid "strtablealteredbad"
+msgstr "עריכת טבלה נכשלה."
+
+msgid "strdataonly"
+msgstr "מידע בלבד"
+
+msgid "strstructureonly"
+msgstr "מבנה בילבד"
+
+msgid "strstructureanddata"
+msgstr "מבנה ונתונים"
+
+msgid "strtabbed"
+msgstr "תוייק"
+
+msgid "strauto"
+msgstr "אוטומטי"
+
+# Users
+msgid "struser"
+msgstr "משתמש"
+
+msgid "strusers"
+msgstr "משתמשים"
+
+msgid "strusername"
+msgstr "שם משתמש"
+
+msgid "strpassword"
+msgstr "סיסמה"
+
+msgid "strsuper"
+msgstr "משתמש על?"
+
+msgid "strcreatedb"
+msgstr "יצירת בסיס נתונים?"
+
+msgid "strexpires"
+msgstr "Expires"
+
+msgid "strsessiondefaults"
+msgstr "הפעלת ברירת מחדל"
+
+msgid "strnousers"
+msgstr "לא נמצאו משתמשים"
+
+msgid "struserupdated"
+msgstr "משתמש עודכן."
+
+msgid "struserupdatedbad"
+msgstr "עדכון משתמש נכשל."
+
+msgid "strshowallusers"
+msgstr "הראה את כל המשתמשים."
+
+msgid "strcreateuser"
+msgstr "צור משתמש"
+
+msgid "struserneedsname"
+msgstr "אתה חייב לתת שם למשתמש שלך."
+
+msgid "strusercreated"
+msgstr "משתמש נוצר."
+
+msgid "strusercreatedbad"
+msgstr "יצירת משתמש נכשל."
+
+msgid "strconfdropuser"
+msgstr "אתה בטוח שברצונך למחוק את המשתמש \"%s\"?"
+
+msgid "struserdropped"
+msgstr "משתמש נמחק."
+
+msgid "struserdroppedbad"
+msgstr "מחיקת משתמש נכשל."
+
+msgid "straccount"
+msgstr "חשבון"
+
+msgid "strchangepassword"
+msgstr "שנה סיסמה"
+
+msgid "strpasswordchanged"
+msgstr "סיסמה שונתה."
+
+msgid "strpasswordchangedbad"
+msgstr "נכשל בשינוי סיסמה."
+
+msgid "strpasswordshort"
+msgstr "סיסמה קצרה מידי."
+
+msgid "strpasswordconfirm"
+msgstr "סיסמה אינה תואמת לאישורה."
+
+# Groups
+msgid "strgroup"
+msgstr "קבוצה"
+
+msgid "strgroups"
+msgstr "קבוצות"
+
+msgid "strnogroup"
+msgstr "קבוצה לא נמצאה."
+
+msgid "strnogroups"
+msgstr "לא נמצאו קבוצות."
+
+msgid "strcreategroup"
+msgstr "צור קבוצה"
+
+msgid "strshowallgroups"
+msgstr "הראה את כל הקבוצות"
+
+msgid "strgroupneedsname"
+msgstr "אתה חייב לתת שם לקבוצה שלך."
+
+msgid "strgroupcreated"
+msgstr "קבוצה נוצרה."
+
+msgid "strgroupcreatedbad"
+msgstr "יצירת קבוצה נכשלה."
+
+msgid "strconfdropgroup"
+msgstr "האם אתה בטוח שברצונך למחוק את הקבוצה \"%s\"?"
+
+msgid "strgroupdropped"
+msgstr "קבוצה נמחקה."
+
+msgid "strgroupdroppedbad"
+msgstr "מחיקת קבוצה נכשלה."
+
+msgid "strmembers"
+msgstr "חברים"
+
+msgid "straddmember"
+msgstr "הוסף חבר"
+
+msgid "strmemberadded"
+msgstr "חבר נוסף."
+
+msgid "strmemberaddedbad"
+msgstr "הוספת חבר נכשלה."
+
+msgid "strdropmember"
+msgstr "מחק חבר."
+
+msgid "strconfdropmember"
+msgstr "באם אתה בטוח שברצונך למחוק את החבר \"%s\" מהקבוצה \"%s\"?"
+
+msgid "strmemberdropped"
+msgstr "חבר נמחק."
+
+msgid "strmemberdroppedbad"
+msgstr "מחיקת חבר נכשלה."
+
+# Privileges
+msgid "strprivilege"
+msgstr "זכות"
+
+msgid "strprivileges"
+msgstr "זכויות"
+
+msgid "strnoprivileges"
+msgstr "לנתון זה יש זכויות ברירת מחדל של בעלים."
+
+msgid "strgrant"
+msgstr "Grant"
+
+msgid "strrevoke"
+msgstr "Revoke"
+
+msgid "strgranted"
+msgstr "זכויות שונו."
+
+msgid "strgrantfailed"
+msgstr "שינוי זכויות נכשל."
+
+msgid "strgrantbad"
+msgstr "אתה חייב לציין לפחות משתמש אחד אם קבוצה בעלי זכות."
+
+msgid "strgrantor"
+msgstr "Grantor"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "בסיס נתונים"
+
+msgid "strdatabases"
+msgstr "בסיסי נתונים"
+
+msgid "strshowalldatabases"
+msgstr "הראה את כל בסיסי הנתונים."
+
+msgid "strnodatabase"
+msgstr "בסיס נתונים לא נמצאה."
+
+msgid "strnodatabases"
+msgstr "לא נמצאו בסיסי נתונים."
+
+msgid "strcreatedatabase"
+msgstr "צור בסיס נתונים."
+
+msgid "strdatabasename"
+msgstr "שם בסיס הנתונים"
+
+msgid "strdatabaseneedsname"
+msgstr "אתה חייב לתת שם לבסיס הנתונים שלך"
+
+msgid "strdatabasecreated"
+msgstr "בסיס נתונים נוצר"
+
+msgid "strdatabasecreatedbad"
+msgstr "יצירת בסיס נתונים נכשלה."
+
+msgid "strconfdropdatabase"
+msgstr "אתה בטוח שברצונך למחוק את בסיס הנתונים \"%s\"?"
+
+msgid "strdatabasedropped"
+msgstr "מסד נתונים נמחק"
+
+msgid "strdatabasedroppedbad"
+msgstr "מחיקת מסד הנתונים נכשלה."
+
+msgid "strentersql"
+msgstr "הכנס את ה SQL כדאי להריץ אותו פה:"
+
+msgid "strsqlexecuted"
+msgstr "SQL הורץ."
+
+msgid "strvacuumgood"
+msgstr "ריק הושלם."
+
+msgid "strvacuumbad"
+msgstr "ריק נכשל."
+
+msgid "stranalyzegood"
+msgstr "ניתוח הושלם."
+
+msgid "stranalyzebad"
+msgstr "ניתוח נכשל."
+
+msgid "strreindexgood"
+msgstr "אנידוקס מחדש הושלם."
+
+msgid "strreindexbad"
+msgstr "אנידוקס מחדש נכשל."
+
+msgid "strfull"
+msgstr "מלא"
+
+msgid "strfreeze"
+msgstr "Freeze"
+
+msgid "strforce"
+msgstr "כוח"
+
+msgid "strsignalsent"
+msgstr "שלח אות."
+
+msgid "strsignalsentbad"
+msgstr "שליחת אות נכשלה."
+
+msgid "strallobjects"
+msgstr "כל העצמים"
+
+# Views
+msgid "strview"
+msgstr "צפייה"
+
+msgid "strviews"
+msgstr "צפיות"
+
+msgid "strshowallviews"
+msgstr "הראה את כל הצפיות"
+
+msgid "strnoview"
+msgstr "צפייה לא נמצאה."
+
+msgid "strnoviews"
+msgstr "צפיות לא נמצאו."
+
+msgid "strcreateview"
+msgstr "צור צפייה"
+
+msgid "strviewname"
+msgstr "שם הצפייה"
+
+msgid "strviewneedsname"
+msgstr "אתה חייב לתת שם לצפייה"
+
+msgid "strviewneedsdef"
+msgstr "אתה חייב לציין הגדרה לצפייה."
+
+msgid "strviewneedsfields"
+msgstr "אתה חייב לתת את העמודה אשר אתה רוצה לצפייה."
+
+msgid "strviewcreated"
+msgstr "צפייה נוצרה."
+
+msgid "strviewcreatedbad"
+msgstr "יצירת צפייה נכשלה."
+
+msgid "strconfdropview"
+msgstr "האם אתה בטוח שברצונך למחוק את הצפייה \"%s\""
+
+msgid "strviewdropped"
+msgstr "צפייה נמחקה."
+
+msgid "strviewdroppedbad"
+msgstr "מחיקת צפייה נכשלה."
+
+msgid "strviewupdated"
+msgstr "צפייה עודכנה."
+
+msgid "strviewupdatedbad"
+msgstr "עדכון צפייה נכשלה."
+
+msgid "strviewlink"
+msgstr "קישורי מפתח"
+
+msgid "strviewconditions"
+msgstr "Additional Conditions"
+
+msgid "strcreateviewwiz"
+msgstr "צור צפייה בעזרת אשף."
+
+# Sequences
+msgid "strsequence"
+msgstr "נוסחה"
+
+msgid "strsequences"
+msgstr "נוסחאות"
+
+msgid "strshowallsequences"
+msgstr "הראה את כל הנוסחאות."
+
+msgid "strnosequence"
+msgstr "נוסחה לא נמצאה."
+
+msgid "strnosequences"
+msgstr "לא נמצאו נוסחאות."
+
+msgid "strcreatesequence"
+msgstr "צור נוסחה"
+
+msgid "strlastvalue"
+msgstr "ערך אחרון"
+
+msgid "strincrementby"
+msgstr "Increment by"
+
+msgid "strstartvalue"
+msgstr "ערך התחלה"
+
+msgid "strmaxvalue"
+msgstr "ערך מקסימלי"
+
+msgid "strminvalue"
+msgstr "ערך מינימלי"
+
+msgid "strcachevalue"
+msgstr "ערך מטמון"
+
+msgid "strlogcount"
+msgstr "ספירת יומן"
+
+msgid "striscycled"
+msgstr "Is cycled?"
+
+msgid "strsequenceneedsname"
+msgstr "אתה חייב לציין שם לנוסחה שלך."
+
+msgid "strsequencecreated"
+msgstr "נוסחה נוצרה."
+
+msgid "strsequencecreatedbad"
+msgstr "יצירת נוסחה נכשלה."
+
+msgid "strconfdropsequence"
+msgstr "האם אתה בטוח שברצונך למחוק את הנוסחה \"%s\"?"
+
+msgid "strsequencedropped"
+msgstr "נוסחה נמחקה.."
+
+msgid "strsequencedroppedbad"
+msgstr "נחיקת נוסחה נכשלה."
+
+msgid "strsequencereset"
+msgstr "נוסחה אותחלה."
+
+msgid "strsequenceresetbad"
+msgstr "איתחול נוסחה נכשלה."
+
+# Indexes
+msgid "strindex"
+msgstr "אינדקס"
+
+msgid "strindexes"
+msgstr "אינדקסים"
+
+msgid "strindexname"
+msgstr "שם האינדקס"
+
+msgid "strshowallindexes"
+msgstr "צפה בכל האינדקסים"
+
+msgid "strnoindex"
+msgstr "אינדקס לא נמצאה."
+
+msgid "strnoindexes"
+msgstr "לא נמצאו אינדקסים."
+
+msgid "strcreateindex"
+msgstr "צור אינקדס."
+
+msgid "strtabname"
+msgstr "תקייה אינקדס"
+
+msgid "strcolumnname"
+msgstr "שם העמודה"
+
+msgid "strindexneedsname"
+msgstr "אתה חייב לציין שם לאינדקס."
+
+msgid "strindexneedscols"
+msgstr "אינדקסים דורשים מספר תקין של עמודות."
+
+msgid "strindexcreated"
+msgstr "אינדקס נוצר."
+
+msgid "strindexcreatedbad"
+msgstr "יצירת אינקדס נכשלה."
+
+msgid "strconfdropindex"
+msgstr "האם אתה בטוח שברצונל למחוק את האינקדס \"%s\"?"
+
+msgid "strindexdropped"
+msgstr "אינדקס נמחק."
+
+msgid "strindexdroppedbad"
+msgstr "מחיקת אינדקס נכשלה."
+
+msgid "strkeyname"
+msgstr "שם המפתח"
+
+msgid "struniquekey"
+msgstr "מםתח יחודי"
+
+msgid "strprimarykey"
+msgstr "מפתח ראשי"
+
+msgid "strindextype"
+msgstr "סוג האינדקס"
+
+msgid "strtablecolumnlist"
+msgstr "עמודות בטבלה"
+
+msgid "strindexcolumnlist"
+msgstr "עמודות באינדקס"
+
+msgid "strconfcluster"
+msgstr "האם אתה בטוח שברצונך למחוק את האשכול \"%s\"?"
+
+msgid "strclusteredgood"
+msgstr "אשכול הושלם."
+
+msgid "strclusteredbad"
+msgstr "אשכול נכשל."
+
+# Rules
+msgid "strrules"
+msgstr "חוקים"
+
+msgid "strrule"
+msgstr "חוק"
+
+msgid "strshowallrules"
+msgstr "הראה את כל החוקים"
+
+msgid "strnorule"
+msgstr "חוק לא נמצאה."
+
+msgid "strnorules"
+msgstr "לא נמצאו חוקים."
+
+msgid "strcreaterule"
+msgstr "צור חוק"
+
+msgid "strrulename"
+msgstr "שם החוק"
+
+msgid "strruleneedsname"
+msgstr "אתה חייב לציין שם לחוק."
+
+msgid "strrulecreated"
+msgstr "חוק נוצר."
+
+msgid "strrulecreatedbad"
+msgstr "יצירת חוק נכשלה."
+
+msgid "strconfdroprule"
+msgstr "האם אתה בטוח שברצונך למחוק את החוק \"%s\" מ &quotl%s&quot;?"
+
+msgid "strruledropped"
+msgstr "חוק נמחק."
+
+msgid "strruledroppedbad"
+msgstr "מחיקת חוק נכשלה."
+
+# Constraints
+msgid "strconstraints"
+msgstr "מבנים"
+
+msgid "strshowallconstraints"
+msgstr "הראה את כל המבנים."
+
+msgid "strnoconstraints"
+msgstr "לא נמצאו מבנים."
+
+msgid "strcreateconstraint"
+msgstr "צור מבנה"
+
+msgid "strconstraintcreated"
+msgstr "מבנה נוצר."
+
+msgid "strconstraintcreatedbad"
+msgstr "יצירת מבנה נכשלה."
+
+msgid "strconfdropconstraint"
+msgstr "האם אתה בטוח שברצונך למחוק את הבמנה \"%s\" מ \"%s\"?"
+
+msgid "strconstraintdropped"
+msgstr "מבנה נמחק."
+
+msgid "strconstraintdroppedbad"
+msgstr "מחיקת מבנה נכשלה."
+
+msgid "straddcheck"
+msgstr "הוסף בדיקה"
+
+msgid "strcheckneedsdefinition"
+msgstr "בדיקת מבנה זקוקה להגדרה."
+
+msgid "strcheckadded"
+msgstr "בדיקה מבנה נוספה."
+
+msgid "strcheckaddedbad"
+msgstr "בדיקת מבנה נכשלה."
+
+msgid "straddpk"
+msgstr "הוסף מפתח ראשי"
+
+msgid "strpkneedscols"
+msgstr "מפתח ראשי דורש לפחות עמודה אחת."
+
+msgid "strpkadded"
+msgstr "מפתח ראשי נוסף."
+
+msgid "strpkaddedbad"
+msgstr "הוספת מפתח ראשי נכשלה."
+
+msgid "stradduniq"
+msgstr "הוסף מפתח מיוחד."
+
+msgid "struniqneedscols"
+msgstr "מפתח מיוחד דורש לפחות עמודה אחת."
+
+msgid "struniqadded"
+msgstr "מפתח מיוחד נוסף."
+
+msgid "struniqaddedbad"
+msgstr "נוספת מפתח מיוחד נכשלה."
+
+msgid "straddfk"
+msgstr "הוסף מפתח זר"
+
+msgid "strfkneedscols"
+msgstr "מפתח זר דורש לפתוח עמודה אחת."
+
+msgid "strfkneedstarget"
+msgstr "מפתח זר דורש טבלת מטרה."
+
+msgid "strfkadded"
+msgstr "מפתח זר נוסף."
+
+msgid "strfkaddedbad"
+msgstr "יצירת מפתח זר נכשלה."
+
+msgid "strfktarget"
+msgstr "טבלת מטרה"
+
+msgid "strfkcolumnlist"
+msgstr "עמודות במפתח"
+
+msgid "strondelete"
+msgstr "DELETE ב"
+
+msgid "stronupdate"
+msgstr "UPDATE ב"
+
+# Functions
+msgid "strfunction"
+msgstr "פונקציה"
+
+msgid "strfunctions"
+msgstr "פונקציות"
+
+msgid "strshowallfunctions"
+msgstr "הראה את כל הפונקציות"
+
+msgid "strnofunction"
+msgstr "פונקציה לא נמצאה."
+
+msgid "strnofunctions"
+msgstr "לא נמצאו פונקציות."
+
+msgid "strcreateplfunction"
+msgstr "צור פונקצית SQL/PL"
+
+msgid "strcreateinternalfunction"
+msgstr "צור פונקציה פנימית"
+
+msgid "strcreatecfunction"
+msgstr "צור פונקצית C"
+
+msgid "strfunctionname"
+msgstr "שם הפונקציה"
+
+msgid "strreturns"
+msgstr "חזרות"
+
+msgid "strarguments"
+msgstr "ארגומנטים"
+
+msgid "strproglanguage"
+msgstr "שפת תיכנות"
+
+msgid "strfunctionneedsname"
+msgstr "אתה חייב לתת שם לפונקציה שלך."
+
+msgid "strfunctionneedsdef"
+msgstr "אתה חייב לציין הגדרה לפונקציה."
+
+msgid "strfunctioncreated"
+msgstr "פונקצייה נוצרה."
+
+msgid "strfunctioncreatedbad"
+msgstr "יצירת פונקצייה נכשלה."
+
+msgid "strconfdropfunction"
+msgstr "האם אתה בטוח שברצונך למחוק את הפונקצייה \"%s\"?"
+
+msgid "strfunctiondropped"
+msgstr "פונקצייה נמחקה."
+
+msgid "strfunctiondroppedbad"
+msgstr "מחיקת פונקציה נכשלה."
+
+msgid "strfunctionupdated"
+msgstr "פונקציה עודכנה."
+
+msgid "strfunctionupdatedbad"
+msgstr "עדכון פונקציה נכשל."
+
+msgid "strobjectfile"
+msgstr "קובץ אובייקט"
+
+msgid "strlinksymbol"
+msgstr "קישור סימלי"
+
+# Triggers
+msgid "strtrigger"
+msgstr "זרז"
+
+msgid "strtriggers"
+msgstr "זרזים"
+
+msgid "strshowalltriggers"
+msgstr "הראה את כל הזרזים"
+
+msgid "strnotrigger"
+msgstr "זרז לא נימצאה."
+
+msgid "strnotriggers"
+msgstr "לא נימצאו זרזים."
+
+msgid "strcreatetrigger"
+msgstr "צור זרז"
+
+msgid "strtriggerneedsname"
+msgstr "אתה חייב לציין שם לזרז."
+
+msgid "strtriggerneedsfunc"
+msgstr "אתה חייב לציין פונקציה לזרז."
+
+msgid "strtriggercreated"
+msgstr "זרז נוצר."
+
+msgid "strtriggercreatedbad"
+msgstr "יצירת זרז נכשלה."
+
+msgid "strconfdroptrigger"
+msgstr "האם אתה בטוח שברצונך למחוק את הזרז \"%s\" מ \"%s\"?"
+
+msgid "strtriggerdropped"
+msgstr "זרז נמחק."
+
+msgid "strtriggerdroppedbad"
+msgstr "מחיקת זרז נכשלה."
+
+msgid "strtriggeraltered"
+msgstr "זרז נערך."
+
+msgid "strtriggeralteredbad"
+msgstr "עריכת זרז נכשלה."
+
+# Types
+msgid "strtype"
+msgstr "סוג"
+
+msgid "strtypes"
+msgstr "סוגים"
+
+msgid "strshowalltypes"
+msgstr "הראה את כל הסוגים."
+
+msgid "strnotype"
+msgstr "סוג לא נמצאה."
+
+msgid "strnotypes"
+msgstr "לא נמצאו סוגים."
+
+msgid "strcreatetype"
+msgstr "צור סוג"
+
+msgid "strcreatecomptype"
+msgstr "Create composite type"
+
+msgid "strtypeneedsfield"
+msgstr "אתה חייב לציין לפחות שדה אחד."
+
+msgid "strtypeneedscols"
+msgstr "אתה חייב לציין מספר תקין של שדות."
+
+msgid "strtypename"
+msgstr "שם הסוג"
+
+msgid "strinputfn"
+msgstr "פונקצית קלט"
+
+msgid "stroutputfn"
+msgstr "פונקצית פלט"
+
+msgid "strpassbyval"
+msgstr "Passed by val?"
+
+msgid "stralignment"
+msgstr "Alignment"
+
+msgid "strelement"
+msgstr "אלמנט"
+
+msgid "strdelimiter"
+msgstr "Delimiter"
+
+msgid "strstorage"
+msgstr "אחסנה"
+
+msgid "strtypeneedsname"
+msgstr "אתה חייב לציין שם לסוג."
+
+msgid "strtypeneedslen"
+msgstr "אתה חייב לציין אורך לסוג."
+
+msgid "strtypecreated"
+msgstr "סוג נוצר."
+
+msgid "strtypecreatedbad"
+msgstr "יצירת סוג נכשלה."
+
+msgid "strconfdroptype"
+msgstr "האם אתה בטוח שברצונך למחוק את הסוג \"%s\"?"
+
+msgid "strtypedropped"
+msgstr "סוג נמחק."
+
+msgid "strtypedroppedbad"
+msgstr "מחיקת סוג נכשלה."
+
+msgid "strflavor"
+msgstr "Flavor"
+
+msgid "strbasetype"
+msgstr "בסיס"
+
+msgid "strcompositetype"
+msgstr "Composite"
+
+msgid "strpseudotype"
+msgstr "פאסדו"
+
+# Schemas
+msgid "strschema"
+msgstr "תרשים"
+
+msgid "strschemas"
+msgstr "תרשמים"
+
+msgid "strshowallschemas"
+msgstr "הראה את כל התרשימים"
+
+msgid "strnoschema"
+msgstr "תרשים לא נמצאה."
+
+msgid "strnoschemas"
+msgstr "לא נמצאו תרשימים."
+
+msgid "strcreateschema"
+msgstr "צור תרשים"
+
+msgid "strschemaname"
+msgstr "שם התרשים"
+
+msgid "strschemaneedsname"
+msgstr "אתה חייב לציין שם לתרשים."
+
+msgid "strschemacreated"
+msgstr "תרשים נוצר"
+
+msgid "strschemacreatedbad"
+msgstr "יצירת תרשים נכשלה."
+
+msgid "strconfdropschema"
+msgstr "האם אתה בטוח שברצונך למחוק את התרשים &quot;?&quot;?"
+
+msgid "strschemadropped"
+msgstr "תרשים נמחק."
+
+msgid "strschemadroppedbad"
+msgstr "מחיקת תרשים נכשלה."
+
+msgid "strschemaaltered"
+msgstr "תרשים נערך."
+
+msgid "strschemaalteredbad"
+msgstr "עריכת תרשים נכשלה."
+
+msgid "strsearchpath"
+msgstr "חיפוש מיקום התרשים."
+
+# Reports
+
+# Domains
+msgid "strdomain"
+msgstr "תחום"
+
+msgid "strdomains"
+msgstr "תחומים"
+
+msgid "strshowalldomains"
+msgstr "הראה את כל התחומים"
+
+msgid "strnodomains"
+msgstr "לא נמצאו תחומים."
+
+msgid "strcreatedomain"
+msgstr "צור תחום"
+
+msgid "strdomaindropped"
+msgstr "תחום נמחק."
+
+msgid "strdomaindroppedbad"
+msgstr "מחיקת תחום נכשלה."
+
+msgid "strconfdropdomain"
+msgstr "האם אתה בטוח שברצונך למחוק את התחום \"%s\"?"
+
+msgid "strdomainneedsname"
+msgstr "אתה חייב לציין שם לתחום שלך."
+
+msgid "strdomaincreated"
+msgstr "תחום נוצר."
+
+msgid "strdomaincreatedbad"
+msgstr "יצירת תחום נכשלה."
+
+msgid "strdomainaltered"
+msgstr "תחום נערך."
+
+msgid "strdomainalteredbad"
+msgstr "עריכת תחום נכשלה."
+
+# Operators
+msgid "stroperator"
+msgstr "מפעיל"
+
+msgid "stroperators"
+msgstr "מפעילים"
+
+msgid "strshowalloperators"
+msgstr "הראה את כל המפעילים"
+
+msgid "strnooperator"
+msgstr "מפעיל לא נמצאה."
+
+msgid "strnooperators"
+msgstr "לא נמצאו מפעילים."
+
+msgid "strcreateoperator"
+msgstr "צור מפעיל"
+
+msgid "strleftarg"
+msgstr "סידור סוג לשמאל"
+
+msgid "strrightarg"
+msgstr "סידור שמאל לימין"
+
+msgid "strcommutator"
+msgstr "Commutator"
+
+msgid "strnegator"
+msgstr "Negator"
+
+msgid "strrestrict"
+msgstr "Restrict"
+
+msgid "strjoin"
+msgstr "חבר"
+
+msgid "strhashes"
+msgstr "Hashes"
+
+msgid "strmerges"
+msgstr "Merges"
+
+msgid "strleftsort"
+msgstr "סידור לשמאל"
+
+msgid "strrightsort"
+msgstr "סידור לימין"
+
+msgid "strlessthan"
+msgstr "פחות מ"
+
+msgid "strgreaterthan"
+msgstr "גדול מ"
+
+msgid "stroperatorneedsname"
+msgstr "אתה חייב לציין שם למפעיל."
+
+msgid "stroperatorcreated"
+msgstr "מפעיל נוצר."
+
+msgid "stroperatorcreatedbad"
+msgstr "יצירת מפעיל נכשלה."
+
+msgid "strconfdropoperator"
+msgstr "האם אתה בטוח שברצונך למחוק את המפעיל \"%s\"?"
+
+msgid "stroperatordropped"
+msgstr "מפעיל נמחק."
+
+msgid "stroperatordroppedbad"
+msgstr "מחיקת מפעיל נכשלה."
+
+# Casts
+msgid "strcasts"
+msgstr "Casts"
+
+msgid "strnocasts"
+msgstr "No casts found."
+
+msgid "strsourcetype"
+msgstr "סוג המקור"
+
+msgid "strtargettype"
+msgstr "סוג המטרה"
+
+msgid "strimplicit"
+msgstr "Implicit"
+
+msgid "strinassignment"
+msgstr "In assignment"
+
+msgid "strbinarycompat"
+msgstr "(Binary compatible)"
+
+# Conversions
+msgid "strconversions"
+msgstr "המרה"
+
+msgid "strnoconversions"
+msgstr "לא נימצאה המרה."
+
+msgid "strsourceencoding"
+msgstr "סוג הקידוד של המקור"
+
+msgid "strtargetencoding"
+msgstr "סוג הקידוד של המטרה"
+
+# Languages
+msgid "strlanguages"
+msgstr "שפות"
+
+msgid "strnolanguages"
+msgstr "לא נמצאו שפות"
+
+msgid "strtrusted"
+msgstr "Trusted"
+
+# Info
+msgid "strnoinfo"
+msgstr "אין מידע זמין."
+
+msgid "strreferringtables"
+msgstr "Referring tables"
+
+msgid "strparenttables"
+msgstr "Parent tables"
+
+msgid "strchildtables"
+msgstr "Child tables"
+
+# Aggregates
+msgid "straggregates"
+msgstr "Aggregates"
+
+msgid "strnoaggregates"
+msgstr "No aggregates found."
+
+msgid "stralltypes"
+msgstr "(כל הסוגים)"
+
+# Operator Classes
+msgid "stropclasses"
+msgstr "Op Classes"
+
+msgid "strnoopclasses"
+msgstr "No operator classes found."
+
+msgid "straccessmethod"
+msgstr "שיטת גישה"
+
+# Stats and performance
+msgid "strrowperf"
+msgstr "תפקוד שדות"
+
+msgid "strioperf"
+msgstr "תפקוד קלט/פלט"
+
+msgid "stridxrowperf"
+msgstr "תפקוד אנדוקס שדה"
+
+msgid "stridxioperf"
+msgstr "תפקוד אנדוקס קלט/פלט"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "Sequential"
+
+msgid "strscan"
+msgstr "חיפוש"
+
+msgid "strread"
+msgstr "קרא"
+
+msgid "strfetch"
+msgstr "Fetch"
+
+msgid "strheap"
+msgstr "Heap"
+
+msgid "strtoast"
+msgstr "TOAST"
+
+msgid "strtoastindex"
+msgstr "TOAST Index"
+
+msgid "strcache"
+msgstr "מטמון"
+
+msgid "strdisk"
+msgstr "דיסק"
+
+msgid "strrows2"
+msgstr "שורה"
+
+# Tablespaces
+msgid "strtablespace"
+msgstr "מרחבון"
+
+msgid "strtablespaces"
+msgstr "מרחבונים"
+
+msgid "strshowalltablespaces"
+msgstr "הראה את כל המרחבונים"
+
+msgid "strnotablespaces"
+msgstr "לא נמצאו מרחבונים."
+
+msgid "strcreatetablespace"
+msgstr "צור מרחבון"
+
+msgid "strlocation"
+msgstr "מיקום"
+
+msgid "strtablespaceneedsname"
+msgstr "אתה חייב לציין שם למרחבון."
+
+msgid "strtablespaceneedsloc"
+msgstr "אתה חייב לציין תיקיה שבה יבצר המרחבון."
+
+msgid "strtablespacecreated"
+msgstr "מרחבון נוצר."
+
+msgid "strtablespacecreatedbad"
+msgstr "יצירת מרחבון נכשלה."
+
+msgid "strconfdroptablespace"
+msgstr "האם אתה בטוח שברצונך למחוק את המרחבון \"%s\"?"
+
+msgid "strtablespacedropped"
+msgstr "מרחבון נמחק."
+
+msgid "strtablespacedroppedbad"
+msgstr "מחיקת מרחבון נכשלה."
+
+msgid "strtablespacealtered"
+msgstr "מרחבון נערך."
+
+msgid "strtablespacealteredbad"
+msgstr "עריכת מרחבון מכשלה."
+
+# Miscellaneous
+msgid "strtopbar"
+msgstr "%s רץ על %s:%s -- אתה מחובר כמשתמש - \"%s\""
+
+msgid "strtimefmt"
+msgstr "jS M, Y g:iA"
+
+msgid "strhelp"
+msgstr "עזרה"

@@ -1,0 +1,2490 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: gl_ES\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "Galego"
+
+msgid "applocale"
+msgstr "gl-ES"
+
+msgid "applangdir"
+msgstr "ltr"
+
+# Welcome
+msgid "strintro"
+msgstr "Benvida ou benvido ao phpPgAdmin."
+
+msgid "strppahome"
+msgstr "Sitio web do phpPgAdmin"
+
+msgid "strpgsqlhome"
+msgstr "Sitio web de PostgreSQL"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "Documentación de PostgreSQL (local)"
+
+msgid "strreportbug"
+msgstr "Informar dun erro"
+
+msgid "strviewfaq"
+msgstr "Ver as preguntas máis frecuentes en liña"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "Identificarse"
+
+msgid "strloginfailed"
+msgstr "Non se puido levar a cabo a identificación."
+
+msgid "strlogindisallowed"
+msgstr "A identificación está desactivada por motivos de seguridade."
+
+msgid "strserver"
+msgstr "Servidor"
+
+msgid "strservers"
+msgstr "Servidores"
+
+msgid "strgroupservers"
+msgstr "Servidores no grupo «%s»"
+
+msgid "strallservers"
+msgstr "Todos os servidores"
+
+msgid "strintroduction"
+msgstr "Introdución"
+
+msgid "strhost"
+msgstr "Enderezo IP"
+
+msgid "strport"
+msgstr "Porto"
+
+msgid "strlogout"
+msgstr "Saír"
+
+msgid "strowner"
+msgstr "Propietario"
+
+msgid "straction"
+msgstr "Acción"
+
+msgid "stractions"
+msgstr "Accións"
+
+msgid "strname"
+msgstr "Nome"
+
+msgid "strdefinition"
+msgstr "Definición"
+
+msgid "strproperties"
+msgstr "Propiedades"
+
+msgid "strbrowse"
+msgstr "Navegar"
+
+msgid "strenable"
+msgstr "Activar"
+
+msgid "strdisable"
+msgstr "Desactivar"
+
+msgid "strdrop"
+msgstr "Eliminar"
+
+msgid "strdropped"
+msgstr "Eliminada"
+
+msgid "strnull"
+msgstr "Nulo"
+
+msgid "strnotnull"
+msgstr "Non nulo"
+
+msgid "strprev"
+msgstr "< Anterior"
+
+msgid "strnext"
+msgstr "Seguinte >"
+
+msgid "strfirst"
+msgstr "« Principio"
+
+msgid "strlast"
+msgstr "Final »"
+
+msgid "strfailed"
+msgstr "Fallou"
+
+msgid "strcreate"
+msgstr "Crear"
+
+msgid "strcreated"
+msgstr "Creada"
+
+msgid "strcomment"
+msgstr "Comentario"
+
+msgid "strlength"
+msgstr "Lonxitude"
+
+msgid "strdefault"
+msgstr "Predeterminado"
+
+msgid "stralter"
+msgstr "Cambiar"
+
+msgid "strok"
+msgstr "Aceptar"
+
+msgid "strcancel"
+msgstr "Cancelar"
+
+msgid "strkill"
+msgstr "Matar"
+
+msgid "strac"
+msgstr "Activar o completado automático"
+
+msgid "strsave"
+msgstr "Gardar"
+
+msgid "strreset"
+msgstr "Restablecer"
+
+msgid "strrestart"
+msgstr "Reiniciar"
+
+msgid "strinsert"
+msgstr "Inserir"
+
+msgid "strselect"
+msgstr "Seleccionar"
+
+msgid "strdelete"
+msgstr "Borrar"
+
+msgid "strupdate"
+msgstr "Actualizar"
+
+msgid "strreferences"
+msgstr "Fai referencia a"
+
+msgid "stryes"
+msgstr "Si"
+
+msgid "strno"
+msgstr "Non"
+
+msgid "strtrue"
+msgstr "CERTO"
+
+msgid "strfalse"
+msgstr "FALSO"
+
+msgid "stredit"
+msgstr "Editar"
+
+msgid "strcolumn"
+msgstr "Columna"
+
+msgid "strcolumns"
+msgstr "Columnas"
+
+msgid "strrows"
+msgstr "fila(s)"
+
+msgid "strrowsaff"
+msgstr "fila(s) afectadas."
+
+msgid "strobjects"
+msgstr "obxecto(s)"
+
+msgid "strback"
+msgstr "Volver"
+
+msgid "strqueryresults"
+msgstr "Resultados da consulta"
+
+msgid "strshow"
+msgstr "Amosar"
+
+msgid "strempty"
+msgstr "Baleiro"
+
+msgid "strlanguage"
+msgstr "Lingua"
+
+msgid "strencoding"
+msgstr "Codificación"
+
+msgid "strvalue"
+msgstr "Valor"
+
+msgid "strunique"
+msgstr "Único"
+
+msgid "strprimary"
+msgstr "Primaria"
+
+msgid "strexport"
+msgstr "Exportar"
+
+msgid "strimport"
+msgstr "Importar"
+
+msgid "strallowednulls"
+msgstr "Permitir valores nulos"
+
+msgid "strbackslashn"
+msgstr "\\N"
+
+msgid "stremptystring"
+msgstr "Cadea ou campo baleiro"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "stradmin"
+msgstr "Administración"
+
+msgid "strvacuum"
+msgstr "Purgar"
+
+msgid "stranalyze"
+msgstr "Analizar"
+
+msgid "strclusterindex"
+msgstr "Concentrar"
+
+msgid "strclustered"
+msgstr "Concentrada?"
+
+msgid "strreindex"
+msgstr "Indexar"
+
+msgid "strexecute"
+msgstr "Executar"
+
+msgid "stradd"
+msgstr "Engadir"
+
+msgid "strevent"
+msgstr "Evento"
+
+msgid "strwhere"
+msgstr "Onde"
+
+msgid "strinstead"
+msgstr "En vez de iso"
+
+msgid "strwhen"
+msgstr "Cando"
+
+msgid "strformat"
+msgstr "Formato"
+
+msgid "strdata"
+msgstr "Datos"
+
+msgid "strconfirm"
+msgstr "Confirmar"
+
+msgid "strexpression"
+msgstr "Expresión"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strseparator"
+msgstr ": "
+
+msgid "strexpand"
+msgstr "Expandir"
+
+msgid "strcollapse"
+msgstr "Colapsar"
+
+msgid "strfind"
+msgstr "Buscar"
+
+msgid "stroptions"
+msgstr "Opcións"
+
+msgid "strrefresh"
+msgstr "Actualizar"
+
+msgid "strdownload"
+msgstr "Descargar"
+
+msgid "strdownloadgzipped"
+msgstr "Descargar comprimida con gzip"
+
+msgid "strinfo"
+msgstr "Info"
+
+msgid "stroids"
+msgstr "OIDs"
+
+msgid "stradvanced"
+msgstr "Avanzado"
+
+msgid "strvariables"
+msgstr "Variables"
+
+msgid "strprocess"
+msgstr "Proceso"
+
+msgid "strprocesses"
+msgstr "Procesos"
+
+msgid "strsetting"
+msgstr "Configuración"
+
+msgid "streditsql"
+msgstr "Editar SQL"
+
+msgid "strruntime"
+msgstr "Tempo total funcionando: %s ms"
+
+msgid "strpaginate"
+msgstr "Amosar os resultados por páxinas"
+
+msgid "struploadscript"
+msgstr "ou cargue un guión en SQL:"
+
+msgid "strstarttime"
+msgstr "Hora de inicio"
+
+msgid "strfile"
+msgstr "Ficheiro"
+
+msgid "strfileimported"
+msgstr "Importouse o ficheiro."
+
+msgid "strtrycred"
+msgstr "Utilizar estas credenciais para todos os servidores"
+
+msgid "strconfdropcred"
+msgstr "Por motivos de seguridade, ao desconectarse destruirase a información compartida sobre a súa identidade. Está seguro de que quere desconectarse?"
+
+msgid "stractionsonmultiplelines"
+msgstr "Accións en varias liñas"
+
+msgid "strselectall"
+msgstr "Marcar todo"
+
+msgid "strunselectall"
+msgstr "Desmarcar todo"
+
+msgid "strlocale"
+msgstr "Configuración rexional"
+
+msgid "strcollation"
+msgstr "Recompilación"
+
+msgid "strctype"
+msgstr "Tipo de carácter"
+
+msgid "strdefaultvalues"
+msgstr "Valores predeterminados"
+
+msgid "strnewvalues"
+msgstr "Valores novos"
+
+msgid "strstart"
+msgstr "Iniciar"
+
+msgid "strstop"
+msgstr "Deter"
+
+msgid "strgotoppage"
+msgstr "Volver arriba"
+
+msgid "strtheme"
+msgstr "Tema visual"
+
+msgid "strcluster"
+msgstr "Concentrador"
+
+# Admin
+msgid "stradminondatabase"
+msgstr "As seguintes tarefas administrativas realizaranse en toda a base de datos «%s»."
+
+msgid "stradminontable"
+msgstr "As seguintes tarefas administrativas realizaranse na táboa «%s»."
+
+# User-supplied SQL history
+msgid "strhistory"
+msgstr "Historial"
+
+msgid "strnohistory"
+msgstr "Sen historial."
+
+msgid "strclearhistory"
+msgstr "Borrar o historial"
+
+msgid "strdelhistory"
+msgstr "Borrar do historial"
+
+msgid "strconfdelhistory"
+msgstr "Seguro que quere borrar esta solicitude do historial?"
+
+msgid "strconfclearhistory"
+msgstr "Seguro que quere borrar o historial?"
+
+msgid "strnodatabaseselected"
+msgstr "Escolla unha base de datos."
+
+# Database sizes
+msgid "strnoaccess"
+msgstr "Sen acceso"
+
+msgid "strsize"
+msgstr "Tamaño"
+
+msgid "strbytes"
+msgstr "bytes"
+
+msgid "strkb"
+msgstr "kiB"
+
+msgid "strmb"
+msgstr "MiB"
+
+msgid "strgb"
+msgstr "GiB"
+
+msgid "strtb"
+msgstr "TiB"
+
+# Error handling
+msgid "strnoframes"
+msgstr "Este aplicativo funciona mellor nos navegadores que permiten o uso de marcos, pero pode usalo sen eles premendo na ligazón que hai máis abaixo."
+
+msgid "strnoframeslink"
+msgstr "Utilizar sen marcos"
+
+msgid "strbadconfig"
+msgstr "O seu ficheiro de configuración «config.inc.php» está obsoleto. Terá que volvelo crear a partires do novo ficheiro «config.inc.php-dist»."
+
+msgid "strnotloaded"
+msgstr "A súa instalación de PHP non está preparada para utilizar PostgreSQL. Terá que compilar PHP de novo utilizando a opción de configuración «--with-pgsql»."
+
+msgid "strpostgresqlversionnotsupported"
+msgstr "Este aplicativo non é compatible coa versión de PostgreSQL que está a usar. Actualíceo á versión %s ou outra versión posterior."
+
+msgid "strbadschema"
+msgstr "O esquema especificado non era correcto."
+
+msgid "strbadencoding"
+msgstr "Non se deu establecida a codificación do cliente na base de datos."
+
+msgid "strsqlerror"
+msgstr "Erro de SQL:"
+
+msgid "strinstatement"
+msgstr "Na instrución:"
+
+msgid "strinvalidparam"
+msgstr "Os parámetros fornecidos ao guión non son correctos."
+
+msgid "strnodata"
+msgstr "Non se atopou fila algunha."
+
+msgid "strnoobjects"
+msgstr "Non se atopou obxecto algún."
+
+msgid "strrownotunique"
+msgstr "Esta fila non ten ningún identificador único."
+
+msgid "strnouploads"
+msgstr "A carga de ficheiros está desactivada."
+
+msgid "strimporterror"
+msgstr "Produciuse un erro ao importar."
+
+msgid "strimporterror-fileformat"
+msgstr "Produciuse un erro ao importar: non se puido determinar de maneira automática o formato do ficheiro."
+
+msgid "strimporterrorline"
+msgstr "Produciuse un erro ao importar, na liña %s."
+
+msgid "strimporterrorline-badcolumnnum"
+msgstr "Produciuse un erro ao importar, na liña %s: a liña non ten unha cantidade de columnas axeitada."
+
+msgid "strimporterror-uploadedfile"
+msgstr "Produciuse un erro ao importar: non se puido cargar o ficheiro no servidor."
+
+msgid "strcannotdumponwindows"
+msgstr "O envorcado de táboas complexas e mais nomes de esquemas non pode efectuarse en sistemas Microsoft Windows."
+
+msgid "strinvalidserverparam"
+msgstr "Produciuse un intento de conexión cun servidor non permitido como parámetro, é posible que alguén estea intentando atacar o seu sistema."
+
+msgid "strnoserversupplied"
+msgstr "Non se forneceu ningún servidor!"
+
+msgid "strbadpgdumppath"
+msgstr "Produciuse un erro ao exportar: non se conseguiu executar pg_dump (a ruta indicada no seu ficheiro «conf/config.inc.php» é «%s»). Cambie a ruta no ficheiro de configuración e volva intentalo."
+
+msgid "strbadpgdumpallpath"
+msgstr "Produciuse un erro ao exportar: non se conseguiu executar pg_dumpall (a ruta indicada no seu ficheiro «conf/config.inc.php» é «%s»). Cambie a ruta no ficheiro de configuración e volva intentalo."
+
+msgid "strconnectionfail"
+msgstr "Non se puido establecer a conexión co servidor."
+
+# Tables
+msgid "strtable"
+msgstr "Táboa"
+
+msgid "strtables"
+msgstr "Táboas"
+
+msgid "strshowalltables"
+msgstr "Amosar todas as táboas"
+
+msgid "strnotables"
+msgstr "Non se atopou táboa algunha."
+
+msgid "strnotable"
+msgstr "Non se atopou táboa algunha."
+
+msgid "strcreatetable"
+msgstr "Crear unha táboa"
+
+msgid "strcreatetablelike"
+msgstr "Crear unha táboa coma"
+
+msgid "strcreatetablelikeparent"
+msgstr "Táboa orixinal"
+
+msgid "strcreatelikewithdefaults"
+msgstr "INCLUÍR OS VALORES PREDETERMINADOS"
+
+msgid "strcreatelikewithconstraints"
+msgstr "INCLUÍR AS RESTRICIÓNS"
+
+msgid "strcreatelikewithindexes"
+msgstr "INCLUÍR OS ÍNDICES"
+
+msgid "strtablename"
+msgstr "Nome da táboa"
+
+msgid "strtableneedsname"
+msgstr "Debe fornecer un nome para a táboa."
+
+msgid "strtablelikeneedslike"
+msgstr "Debe fornecer unha táboa á que copiarlle as propiedades."
+
+msgid "strtableneedsfield"
+msgstr "Debe indicar polo menos un campo."
+
+msgid "strtableneedscols"
+msgstr "Debe indicar un número de columnas correcto."
+
+msgid "strtablecreated"
+msgstr "Creouse a táboa."
+
+msgid "strtablecreatedbad"
+msgstr "Non se conseguiu crear a táboa."
+
+msgid "strconfdroptable"
+msgstr "Está seguro de que quere eliminar a táboa «%s»?"
+
+msgid "strtabledropped"
+msgstr "Eliminouse a táboa."
+
+msgid "strtabledroppedbad"
+msgstr "Non se conseguiu eliminar a táboa."
+
+msgid "strconfemptytable"
+msgstr "Está seguro de que quere baleirar a táboa «%s»?"
+
+msgid "strtableemptied"
+msgstr "Baleirouse a táboa."
+
+msgid "strtableemptiedbad"
+msgstr "Non se conseguiu baleirar a táboa."
+
+msgid "strinsertrow"
+msgstr "Inserir unha fila"
+
+msgid "strrowinserted"
+msgstr "Inseriuse unha fila."
+
+msgid "strrowinsertedbad"
+msgstr "Non se conseguiu inserir a fila."
+
+msgid "strnofkref"
+msgstr "Non existe ningún valor que coincida na clave externa «%s»."
+
+msgid "strrowduplicate"
+msgstr "Non se conseguiu inserir a fila, intentouse facer unha inxección duplicada."
+
+msgid "streditrow"
+msgstr "Modificar a fila"
+
+msgid "strrowupdated"
+msgstr "Actualizouse a fila."
+
+msgid "strrowupdatedbad"
+msgstr "Non se conseguiu actualizar a fila."
+
+msgid "strdeleterow"
+msgstr "Borrar a fila"
+
+msgid "strconfdeleterow"
+msgstr "Está seguro de que quere borrar esta fila?"
+
+msgid "strrowdeleted"
+msgstr "Borrouse a fila."
+
+msgid "strrowdeletedbad"
+msgstr "Non se conseguiu borrar a fila."
+
+msgid "strinsertandrepeat"
+msgstr "Inserir e repetir"
+
+msgid "strnumcols"
+msgstr "Número de columnas"
+
+msgid "strcolneedsname"
+msgstr "Debe especificar un nome para a columna"
+
+msgid "strselectallfields"
+msgstr "Marcar todos os campos"
+
+msgid "strselectneedscol"
+msgstr "Debe amosar polo menos unha columna."
+
+msgid "strselectunary"
+msgstr "Os operadores dun só operando non poden ter valores."
+
+msgid "strcolumnaltered"
+msgstr "Modificouse a columna."
+
+msgid "strcolumnalteredbad"
+msgstr "Non se conseguiu modificar a columna."
+
+msgid "strconfdropcolumn"
+msgstr "Está seguro de que quere eliminar a columna «%s» da táboa «%s»?"
+
+msgid "strcolumndropped"
+msgstr "Eliminouse a columna."
+
+msgid "strcolumndroppedbad"
+msgstr "Non se conseguiu eliminar a columna."
+
+msgid "straddcolumn"
+msgstr "Engadir unha columna"
+
+msgid "strcolumnadded"
+msgstr "Engadiuse a columna."
+
+msgid "strcolumnaddedbad"
+msgstr "Non se conseguiu engadir a columna."
+
+msgid "strcascade"
+msgstr "EN CASCADA"
+
+msgid "strtablealtered"
+msgstr "Modificouse a táboa."
+
+msgid "strtablealteredbad"
+msgstr "Non se conseguiu modificar a táboa."
+
+msgid "strdataonly"
+msgstr "Só datos"
+
+msgid "strstructureonly"
+msgstr "Só estrutura"
+
+msgid "strstructureanddata"
+msgstr "Estrutura e datos"
+
+msgid "strtabbed"
+msgstr "Tabulado"
+
+msgid "strauto"
+msgstr "Detectar"
+
+msgid "strconfvacuumtable"
+msgstr "Está seguro de que quere purgar «%s»?"
+
+msgid "strconfanalyzetable"
+msgstr "Está seguro de que quere analizar «%s»?"
+
+msgid "strconfreindextable"
+msgstr "Está seguro de que quere indexar «%s»?"
+
+msgid "strconfclustertable"
+msgstr "Está seguro de que quere concentrar «%s»?"
+
+msgid "strestimatedrowcount"
+msgstr "Número estimado de filas"
+
+msgid "strspecifytabletoanalyze"
+msgstr "Debe especificar polo menos unha táboa a analizar."
+
+msgid "strspecifytabletoempty"
+msgstr "Debe especificar polo menos unha táboa a baleirar."
+
+msgid "strspecifytabletodrop"
+msgstr "Debe especificar polo menos unha táboa a eliminar."
+
+msgid "strspecifytabletovacuum"
+msgstr "Debe especificar polo menos unha táboa a purgar."
+
+msgid "strspecifytabletoreindex"
+msgstr "Debe especificar polo menos unha táboa a indexar."
+
+msgid "strspecifytabletocluster"
+msgstr "Debe especificar polo menos unha táboa a concentrar."
+
+msgid "strnofieldsforinsert"
+msgstr "Non pode inserir filas nunha táboa sen columnas."
+
+# Columns
+msgid "strcolprop"
+msgstr "Propiedades da columna"
+
+msgid "strnotableprovided"
+msgstr "Non se forneceu ningunha táboa!"
+
+# Users
+msgid "struser"
+msgstr "Usuario"
+
+msgid "strusers"
+msgstr "Usuarios"
+
+msgid "strusername"
+msgstr "Nome"
+
+msgid "strpassword"
+msgstr "Contrasinal"
+
+msgid "strsuper"
+msgstr "Administrador?"
+
+msgid "strcreatedb"
+msgstr "Crear bases de datos?"
+
+msgid "strexpires"
+msgstr "Caducidade"
+
+msgid "strsessiondefaults"
+msgstr "Valores predeterminados da sesión"
+
+msgid "strnousers"
+msgstr "Non se atopou ningún usuario."
+
+msgid "struserupdated"
+msgstr "Actualizouse o usuario."
+
+msgid "struserupdatedbad"
+msgstr "Non se conseguiu actualizar o usuario."
+
+msgid "strshowallusers"
+msgstr "Listar todos os usuarios"
+
+msgid "strcreateuser"
+msgstr "Crear un usuario"
+
+msgid "struserneedsname"
+msgstr "Debe fornecer un nome para o usuario."
+
+msgid "strusercreated"
+msgstr "Creouse o usuario."
+
+msgid "strusercreatedbad"
+msgstr "Non se conseguiu crear o usuario."
+
+msgid "strconfdropuser"
+msgstr "Está seguro de que quere eliminar o usuario «%s»?"
+
+msgid "struserdropped"
+msgstr "Eliminouse o usuario."
+
+msgid "struserdroppedbad"
+msgstr "Non se conseguiu eliminar o usuario."
+
+msgid "straccount"
+msgstr "Conta"
+
+msgid "strchangepassword"
+msgstr "Cambiar de contrasinal"
+
+msgid "strpasswordchanged"
+msgstr "Cambiouse o contrasinal."
+
+msgid "strpasswordchangedbad"
+msgstr "Non se conseguiu cambiar o contrasinal."
+
+msgid "strpasswordshort"
+msgstr "O contrasinal é curto de máis."
+
+msgid "strpasswordconfirm"
+msgstr "Os contrasinais introducidos son distintos."
+
+# Groups
+msgid "strgroup"
+msgstr "Grupo"
+
+msgid "strgroups"
+msgstr "Grupos"
+
+msgid "strshowallgroups"
+msgstr "Amosar todos os grupos"
+
+msgid "strnogroup"
+msgstr "Non se atopou o grupo."
+
+msgid "strnogroups"
+msgstr "Non se atopou grupo algún."
+
+msgid "strcreategroup"
+msgstr "Crear un grupo"
+
+msgid "strgroupneedsname"
+msgstr "Debe fornecer un nome para o grupo."
+
+msgid "strgroupcreated"
+msgstr "Creouse o grupo."
+
+msgid "strgroupcreatedbad"
+msgstr "Non se conseguiu crear o grupo."
+
+msgid "strconfdropgroup"
+msgstr "está seguro de que quere eliminar o grupo «%s»?"
+
+msgid "strgroupdropped"
+msgstr "Eliminouse o grupo."
+
+msgid "strgroupdroppedbad"
+msgstr "Non se conseguiu eliminar o grupo."
+
+msgid "strmembers"
+msgstr "Membros"
+
+msgid "strmemberof"
+msgstr "Membros de"
+
+msgid "stradminmembers"
+msgstr "Membros administradores"
+
+msgid "straddmember"
+msgstr "Engadir un membro"
+
+msgid "strmemberadded"
+msgstr "Engadiuse o membro."
+
+msgid "strmemberaddedbad"
+msgstr "Non se conseguiu engadir o membro."
+
+msgid "strdropmember"
+msgstr "Eliminar o membro"
+
+msgid "strconfdropmember"
+msgstr "Está seguro de que quere eliminar o membro «%s» do grupo «%s»?"
+
+msgid "strmemberdropped"
+msgstr "Eliminouse o membro."
+
+msgid "strmemberdroppedbad"
+msgstr "Non se conseguiu eliminar o membro."
+
+# Roles
+msgid "strrole"
+msgstr "Rol"
+
+msgid "strroles"
+msgstr "Roles"
+
+msgid "strshowallroles"
+msgstr "Amosar todos os roles"
+
+msgid "strnoroles"
+msgstr "Non se atopou rol algún."
+
+msgid "strinheritsprivs"
+msgstr "Herdar os privilexios?"
+
+msgid "strcreaterole"
+msgstr "Crear un rol"
+
+msgid "strcancreaterole"
+msgstr "Pode crear roles?"
+
+msgid "strrolecreated"
+msgstr "Creouse o rol."
+
+msgid "strrolecreatedbad"
+msgstr "Non se conseguiu crear o rol."
+
+msgid "strrolealtered"
+msgstr "Modificouse o rol."
+
+msgid "strrolealteredbad"
+msgstr "Non se conseguiu modificar o rol."
+
+msgid "strcanlogin"
+msgstr "Pode identificarse?"
+
+msgid "strconnlimit"
+msgstr "Límite da conexión"
+
+msgid "strdroprole"
+msgstr "Eliminar o rol"
+
+msgid "strconfdroprole"
+msgstr "Está seguro de que quere eliminar o rol «%s»?"
+
+msgid "strroledropped"
+msgstr "Eliminouse o rol."
+
+msgid "strroledroppedbad"
+msgstr "Non se conseguiu eliminar o rol."
+
+msgid "strnolimit"
+msgstr "Sen límite"
+
+msgid "strnever"
+msgstr "Nunca"
+
+msgid "strroleneedsname"
+msgstr "Ten que darlle un nome ao rol."
+
+# Privileges
+msgid "strprivilege"
+msgstr "Privilexio"
+
+msgid "strprivileges"
+msgstr "Privilexios"
+
+msgid "strnoprivileges"
+msgstr "Este obxecto ten os privilexios predeterminados do propietario."
+
+msgid "strgrant"
+msgstr "Conceder"
+
+msgid "strrevoke"
+msgstr "Revogar"
+
+msgid "strgranted"
+msgstr "Cambiáronse os privilexios."
+
+msgid "strgrantfailed"
+msgstr "Non se conseguiu cambiar os privilexios."
+
+msgid "strgrantbad"
+msgstr "Ten que especificar polo menos un usuario ou grupo e un privilexio."
+
+msgid "strgrantor"
+msgstr "Autor da concesión"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "Base de datos"
+
+msgid "strdatabases"
+msgstr "Bases de datos"
+
+msgid "strshowalldatabases"
+msgstr "Amosar todas as bases de datos"
+
+msgid "strnodatabases"
+msgstr "Non se atopou base de datos algunha."
+
+msgid "strcreatedatabase"
+msgstr "Crear unha base de datos"
+
+msgid "strdatabasename"
+msgstr "Nome da base de datos"
+
+msgid "strdatabaseneedsname"
+msgstr "Debe darlle un nome á base de datos."
+
+msgid "strdatabasecreated"
+msgstr "Creouse a base de datos."
+
+msgid "strdatabasecreatedbad"
+msgstr "Non se conseguiu crear a base de datos."
+
+msgid "strconfdropdatabase"
+msgstr "Está seguro de que quere eliminar a base de datos «%s»?"
+
+msgid "strdatabasedropped"
+msgstr "Eliminouse a base de datos."
+
+msgid "strdatabasedroppedbad"
+msgstr "Non se conseguiu eliminar a base de datos."
+
+msgid "strentersql"
+msgstr "Introduza a continuación as instrucións SQL a executar:"
+
+msgid "strsqlexecuted"
+msgstr "Executáronse as instrucións SQL."
+
+msgid "strvacuumgood"
+msgstr "Completouse a purgación."
+
+msgid "strvacuumbad"
+msgstr "Non se conseguiu efectuar a purgación."
+
+msgid "stranalyzegood"
+msgstr "Completouse a análise."
+
+msgid "stranalyzebad"
+msgstr "Non se conseguiu completar a análise."
+
+msgid "strreindexgood"
+msgstr "Completouse o indexado."
+
+msgid "strreindexbad"
+msgstr "Non se conseguiu completar o indexado."
+
+msgid "strfull"
+msgstr "Completo"
+
+msgid "strfreeze"
+msgstr "Agresivo"
+
+msgid "strforce"
+msgstr "Forzar"
+
+msgid "strsignalsent"
+msgstr "Enviouse o sinal."
+
+msgid "strsignalsentbad"
+msgstr "Non se conseguiu enviar o sinal."
+
+msgid "strallobjects"
+msgstr "Todos os obxectos"
+
+msgid "strdatabasealtered"
+msgstr "Modificouse a base de datos."
+
+msgid "strdatabasealteredbad"
+msgstr "Non se conseguiu modificar a base de datos."
+
+msgid "strspecifydatabasetodrop"
+msgstr "Debe especificar polo menos unha base de datos a eliminar."
+
+msgid "strtemplatedb"
+msgstr "Modelo"
+
+msgid "strconfanalyzedatabase"
+msgstr "Está seguro de que quere analizar todas as táboas da base de datos «%s»?"
+
+msgid "strconfvacuumdatabase"
+msgstr "Está seguro de que quere purgar todas as táboas da base de datos «%s»?"
+
+msgid "strconfreindexdatabase"
+msgstr "Está seguro de que quere indexar todas as táboas da base de datos «%s»?"
+
+msgid "strconfclusterdatabase"
+msgstr "Está seguro de que quere concentrar todas as táboas da base de datos «%s»?"
+
+# Views
+msgid "strview"
+msgstr "Vista"
+
+msgid "strviews"
+msgstr "Vistas"
+
+msgid "strshowallviews"
+msgstr "Listar todas as vistas"
+
+msgid "strnoview"
+msgstr "Non se atopou vista algunha."
+
+msgid "strnoviews"
+msgstr "Non se atopou vista algunha."
+
+msgid "strcreateview"
+msgstr "Crear unha vista"
+
+msgid "strviewname"
+msgstr "Nome da vista"
+
+msgid "strviewneedsname"
+msgstr "Debe fornecer un nome para a vista."
+
+msgid "strviewneedsdef"
+msgstr "Debe fornecer unha descrición da vista."
+
+msgid "strviewneedsfields"
+msgstr "Debe indicar que columnas quere ter na vista."
+
+msgid "strviewcreated"
+msgstr "Creouse a vista."
+
+msgid "strviewcreatedbad"
+msgstr "Non se conseguiu crear a vista."
+
+msgid "strconfdropview"
+msgstr "Está seguro de que quere eliminar a vista «%s»?"
+
+msgid "strviewdropped"
+msgstr "Eliminouse a vista."
+
+msgid "strviewdroppedbad"
+msgstr "Non se conseguiu eliminar a vista."
+
+msgid "strviewupdated"
+msgstr "Actualizouse a vista."
+
+msgid "strviewupdatedbad"
+msgstr "Non se conseguiu actualizar a vista."
+
+msgid "strviewlink"
+msgstr "Unión de claves"
+
+msgid "strviewconditions"
+msgstr "Condicións adicionais"
+
+msgid "strcreateviewwiz"
+msgstr "Crear unha vista co asistente"
+
+msgid "strrenamedupfields"
+msgstr "Renomear os campos duplicados"
+
+msgid "strdropdupfields"
+msgstr "Eliminar os campos duplicados"
+
+msgid "strerrordupfields"
+msgstr "Non permitir que haxa campos duplicados"
+
+msgid "strviewaltered"
+msgstr "Modificouse a vista."
+
+msgid "strviewalteredbad"
+msgstr "Non se conseguiu modificar a vista."
+
+msgid "strspecifyviewtodrop"
+msgstr "Debe especificar polo menos unha vista a borrar."
+
+# Sequences
+msgid "strsequence"
+msgstr "Secuencia"
+
+msgid "strsequences"
+msgstr "Secuencias"
+
+msgid "strshowallsequences"
+msgstr "Amosar todas as secuencias"
+
+msgid "strnosequence"
+msgstr "Non se atopou secuencia algunha."
+
+msgid "strnosequences"
+msgstr "Non se atopou secuencia algunha."
+
+msgid "strcreatesequence"
+msgstr "Crear unha secuencia"
+
+msgid "strlastvalue"
+msgstr "Último valor"
+
+msgid "strincrementby"
+msgstr "Aumentar en"
+
+msgid "strstartvalue"
+msgstr "Valor inicial"
+
+msgid "strrestartvalue"
+msgstr "Valor do reinicio"
+
+msgid "strmaxvalue"
+msgstr "Valor máximo"
+
+msgid "strminvalue"
+msgstr "Valor mínimo"
+
+msgid "strcachevalue"
+msgstr "Valor da caché"
+
+msgid "strlogcount"
+msgstr "Conta de rexistros"
+
+msgid "strcancycle"
+msgstr "Pode repetirse?"
+
+msgid "striscalled"
+msgstr "Aumentará o último valor antes de devolver o seguinte (is_called)?"
+
+msgid "strsequenceneedsname"
+msgstr "Debe fornecer un nome para a secuencia."
+
+msgid "strsequencecreated"
+msgstr "Creouse a secuencia."
+
+msgid "strsequencecreatedbad"
+msgstr "Non se conseguiu crear a secuencia."
+
+msgid "strconfdropsequence"
+msgstr "Está seguro de que quere eliminar a secuencia «%s»?"
+
+msgid "strsequencedropped"
+msgstr "Eliminouse a secuencia."
+
+msgid "strsequencedroppedbad"
+msgstr "Non se conseguiu eliminar a secuencia."
+
+msgid "strsequencerestart"
+msgstr "Reiniciouse a secuencia."
+
+msgid "strsequencerestartbad"
+msgstr "Non se conseguiu reiniciar a secuencia."
+
+msgid "strsequencereset"
+msgstr "Restableceuse a secuencia."
+
+msgid "strsequenceresetbad"
+msgstr "Non se conseguiu restablecer a secuencia."
+
+msgid "strsequencealtered"
+msgstr "Modificouse a secuencia."
+
+msgid "strsequencealteredbad"
+msgstr "Non se conseguiu modificar a secuencia."
+
+msgid "strsetval"
+msgstr "Establecer o valor"
+
+msgid "strsequencesetval"
+msgstr "Estableceuse o valor da secuencia."
+
+msgid "strsequencesetvalbad"
+msgstr "Non se conseguiu establecer o valor da secuencia."
+
+msgid "strnextval"
+msgstr "Aumentar o valor"
+
+msgid "strsequencenextval"
+msgstr "Aumentouse o valor da secuencia."
+
+msgid "strsequencenextvalbad"
+msgstr "Non se conseguiu aumentar o valor da secuencia."
+
+msgid "strspecifysequencetodrop"
+msgstr "Debe especificar polo menos unha secuencia a eliminar."
+
+# Indexes
+msgid "strindex"
+msgstr "Índice"
+
+msgid "strindexes"
+msgstr "Índices"
+
+msgid "strindexname"
+msgstr "Nome do índice"
+
+msgid "strshowallindexes"
+msgstr "Listar todos os índices"
+
+msgid "strnoindex"
+msgstr "Non se atopou índice algún."
+
+msgid "strnoindexes"
+msgstr "Non se atopou índice algún."
+
+msgid "strcreateindex"
+msgstr "Crear un índice"
+
+msgid "strtabname"
+msgstr "Nome da lapela"
+
+msgid "strcolumnname"
+msgstr "Nome da columna"
+
+msgid "strindexneedsname"
+msgstr "Debe fornecer un nome para o índice."
+
+msgid "strindexneedscols"
+msgstr "Os índices teñen que ter un número de columnas correcto."
+
+msgid "strindexcreated"
+msgstr "Creouse o índice."
+
+msgid "strindexcreatedbad"
+msgstr "Non se conseguiu crear o índice."
+
+msgid "strconfdropindex"
+msgstr "Está seguro de que quere eliminar o índice «%s»?"
+
+msgid "strindexdropped"
+msgstr "Eliminouse o índice."
+
+msgid "strindexdroppedbad"
+msgstr "Non se conseguiu eliminar o índice."
+
+msgid "strkeyname"
+msgstr "Nome da clave"
+
+msgid "struniquekey"
+msgstr "Clave única"
+
+msgid "strprimarykey"
+msgstr "Clave primaria"
+
+msgid "strindextype"
+msgstr "Tipo de índice"
+
+msgid "strtablecolumnlist"
+msgstr "Columnas na táboa"
+
+msgid "strindexcolumnlist"
+msgstr "Columnas no índice"
+
+msgid "strconfcluster"
+msgstr "Está seguro de que quere concentrar «%s»?"
+
+msgid "strclusteredgood"
+msgstr "Completouse o concentrado."
+
+msgid "strclusteredbad"
+msgstr "Non se conseguiu completar o concentrado."
+
+msgid "strconcurrently"
+msgstr "Simultaneamente"
+
+msgid "strnoclusteravailable"
+msgstr "A táboa non está concentrada nun índice."
+
+# Rules
+msgid "strrules"
+msgstr "Regras"
+
+msgid "strrule"
+msgstr "Regra"
+
+msgid "strshowallrules"
+msgstr "Listar todas as regras"
+
+msgid "strnorule"
+msgstr "Non se atopou regra algunha."
+
+msgid "strnorules"
+msgstr "Non se atopou regra algunha."
+
+msgid "strcreaterule"
+msgstr "Crear unha regra"
+
+msgid "strrulename"
+msgstr "Nome da regra"
+
+msgid "strruleneedsname"
+msgstr "Debe fornecer un nome para a regra."
+
+msgid "strrulecreated"
+msgstr "Creouse a regra."
+
+msgid "strrulecreatedbad"
+msgstr "Non se conseguiu crear a regra."
+
+msgid "strconfdroprule"
+msgstr "Está seguro de que quere eliminar a regra «%s» en «%s»?"
+
+msgid "strruledropped"
+msgstr "Eliminouse a regra."
+
+msgid "strruledroppedbad"
+msgstr "Non se conseguiu eliminar a regra."
+
+# Constraints
+msgid "strconstraint"
+msgstr "Restrición"
+
+msgid "strconstraints"
+msgstr "Restricións"
+
+msgid "strshowallconstraints"
+msgstr "Listar todas as restricións"
+
+msgid "strnoconstraints"
+msgstr "Non se atopou restrición algunha."
+
+msgid "strcreateconstraint"
+msgstr "Crear unha restrición"
+
+msgid "strconstraintcreated"
+msgstr "Creouse a restrición."
+
+msgid "strconstraintcreatedbad"
+msgstr "Non se conseguiu crear a restrición."
+
+msgid "strconfdropconstraint"
+msgstr "Está seguro de que quere eliminar a restrición «%s» en «%s»?"
+
+msgid "strconstraintdropped"
+msgstr "Eliminouse a restrición."
+
+msgid "strconstraintdroppedbad"
+msgstr "Non se conseguiu eliminar a restrición."
+
+msgid "straddcheck"
+msgstr "Engadir unha comprobación"
+
+msgid "strcheckneedsdefinition"
+msgstr "A comprobación necesita unha definición."
+
+msgid "strcheckadded"
+msgstr "Engadiuse a comprobación."
+
+msgid "strcheckaddedbad"
+msgstr "Non se conseguiu engadir a comprobación."
+
+msgid "straddpk"
+msgstr "Engadir unha clave primaria"
+
+msgid "strpkneedscols"
+msgstr "A clave primaria necesita polo menos unha columna."
+
+msgid "strpkadded"
+msgstr "Engadiuse a clave primaria."
+
+msgid "strpkaddedbad"
+msgstr "Non se conseguiu engadir a clave primaria."
+
+msgid "stradduniq"
+msgstr "Engadir unha clave única"
+
+msgid "struniqneedscols"
+msgstr "A clave única necesita polo menos unha columna."
+
+msgid "struniqadded"
+msgstr "Engadiuse a clave única."
+
+msgid "struniqaddedbad"
+msgstr "Non se conseguiu engadir a clave única."
+
+msgid "straddfk"
+msgstr "Engadir unha clave externa"
+
+msgid "strfkneedscols"
+msgstr "A clave externa necesita polo menos unha columna."
+
+msgid "strfkneedstarget"
+msgstr "A clave externa necesita unha táboa externa."
+
+msgid "strfkadded"
+msgstr "Engadiuse a clave externa."
+
+msgid "strfkaddedbad"
+msgstr "Non se conseguiu engadir a clave externa."
+
+msgid "strfktarget"
+msgstr "Táboa externa"
+
+msgid "strfkcolumnlist"
+msgstr "Columnas na clave"
+
+msgid "strondelete"
+msgstr "AO ACTUALIZAR"
+
+# Sei que son instrucións cando se usa SQL, pero na
+msgid "stronupdate"
+msgstr "AO BORRAR"
+# interface paréceme mellor traducilos.
+
+# Functions
+msgid "strfunction"
+msgstr "Función"
+
+msgid "strfunctions"
+msgstr "Funcións"
+
+msgid "strshowallfunctions"
+msgstr "Listar todas as funcións"
+
+msgid "strnofunction"
+msgstr "Non se atopou función algunha."
+
+msgid "strnofunctions"
+msgstr "Non se atopou función algunha."
+
+msgid "strcreateplfunction"
+msgstr "Crear unha función SQL/PL"
+
+msgid "strcreateinternalfunction"
+msgstr "Crear unha función interna"
+
+msgid "strcreatecfunction"
+msgstr "Crear unha función en C"
+
+msgid "strfunctionname"
+msgstr "Nome da función"
+
+msgid "strreturns"
+msgstr "Devolve"
+
+msgid "strproglanguage"
+msgstr "Linguaxe de programación"
+
+msgid "strfunctionneedsname"
+msgstr "Debe fornecer un nome para a función."
+
+msgid "strfunctionneedsdef"
+msgstr "Debe fornecer unha definición para a función."
+
+msgid "strfunctioncreated"
+msgstr "Creouse a función."
+
+msgid "strfunctioncreatedbad"
+msgstr "Non se conseguiu crear a función."
+
+msgid "strconfdropfunction"
+msgstr "Está seguro de que quere eliminar a función «%s»?"
+
+msgid "strfunctiondropped"
+msgstr "Eliminouse a función."
+
+msgid "strfunctiondroppedbad"
+msgstr "Non se conseguiu eliminar a función."
+
+msgid "strfunctionupdated"
+msgstr "Actualizouse a función."
+
+msgid "strfunctionupdatedbad"
+msgstr "Non se conseguiu actualizar a función."
+
+msgid "strobjectfile"
+msgstr "Ficheiro de obxecto"
+
+msgid "strlinksymbol"
+msgstr "Símbolo da ligazón"
+
+msgid "strarguments"
+msgstr "Argumentos"
+
+msgid "strargmode"
+msgstr "Modo"
+
+msgid "strargtype"
+msgstr "Tipo"
+
+msgid "strargadd"
+msgstr "Engadir outro argumento"
+
+msgid "strargremove"
+msgstr "Borrar este argumento"
+
+msgid "strargnoargs"
+msgstr "Esta función non recibirá argumento ningún."
+
+msgid "strargenableargs"
+msgstr "Permitir que se lle fornezan argumentos á función."
+
+msgid "strargnorowabove"
+msgstr "Ten que haber unha fila antes desta."
+
+msgid "strargnorowbelow"
+msgstr "Ten que haber unha fila despois desta."
+
+msgid "strargraise"
+msgstr "Subir."
+
+msgid "strarglower"
+msgstr "Baixar."
+
+msgid "strargremoveconfirm"
+msgstr "Está seguro de que quere borrar este argumento? Esta acción non se pode desfacer."
+
+msgid "strfunctioncosting"
+msgstr "Custo da función"
+
+msgid "strresultrows"
+msgstr "Filas resultantes"
+
+msgid "strexecutioncost"
+msgstr "Custo de execución"
+
+msgid "strspecifyfunctiontodrop"
+msgstr "Debe especificar polo menos unha función a eliminar."
+
+# Triggers
+msgid "strtrigger"
+msgstr "Disparador"
+
+msgid "strtriggers"
+msgstr "Disparadores"
+
+msgid "strshowalltriggers"
+msgstr "Listar todos os disparadores"
+
+msgid "strnotrigger"
+msgstr "Non se atopor disparador algún."
+
+msgid "strnotriggers"
+msgstr "Non se atopor disparador algún."
+
+msgid "strcreatetrigger"
+msgstr "Crear un disparador"
+
+msgid "strtriggerneedsname"
+msgstr "Debe fornecer un nome para o disparador."
+
+msgid "strtriggerneedsfunc"
+msgstr "Debe especificar unha función para o disparador."
+
+msgid "strtriggercreated"
+msgstr "Creouse o disparador."
+
+msgid "strtriggercreatedbad"
+msgstr "Non se conseguiu crear o disparador."
+
+msgid "strconfdroptrigger"
+msgstr "Está seguro de que quere eliminar o disparador «%s» en «%s»?"
+
+msgid "strconfenabletrigger"
+msgstr "Está seguro de que quere activar o disparador «%s» en «%s»?"
+
+msgid "strconfdisabletrigger"
+msgstr "Está seguro de que quere desactivar o disparador «%s» en «%s»?"
+
+msgid "strtriggerdropped"
+msgstr "Eliminouse o disparador."
+
+msgid "strtriggerdroppedbad"
+msgstr "Non se conseguiu eliminar o disparador."
+
+msgid "strtriggerenabled"
+msgstr "Activouse o disparador."
+
+msgid "strtriggerenabledbad"
+msgstr "Non se conseguiu activar o disparador."
+
+msgid "strtriggerdisabled"
+msgstr "Desactivouse o disparador."
+
+msgid "strtriggerdisabledbad"
+msgstr "Non se conseguiu desactivar o disparador."
+
+msgid "strtriggeraltered"
+msgstr "Modificouse o disparador."
+
+msgid "strtriggeralteredbad"
+msgstr "Non se conseguiu modificar o disparador."
+
+msgid "strforeach"
+msgstr "Por cada"
+# «For each [row or instruction]»
+
+# Types
+msgid "strtype"
+msgstr "Tipo"
+
+msgid "strtypes"
+msgstr "Tipos"
+
+msgid "strshowalltypes"
+msgstr "Listar todos os tipos"
+
+msgid "strnotype"
+msgstr "Non se atopou tipo algún."
+
+msgid "strnotypes"
+msgstr "Non se atopou tipo algún."
+
+msgid "strcreatetype"
+msgstr "Crear un tipo"
+
+msgid "strcreatecomptype"
+msgstr "Crear un tipo composto"
+
+msgid "strcreateenumtype"
+msgstr "Crear un tipo de enumeración"
+
+msgid "strtypeneedsfield"
+msgstr "Debe especificar polo menos un campo."
+
+msgid "strtypeneedsvalue"
+msgstr "Debe especificar polo menos un valor."
+
+msgid "strtypeneedscols"
+msgstr "Debe especificar un número correcto de campos."
+
+msgid "strtypeneedsvals"
+msgstr "Debe especificar un número correcto de valores."
+
+msgid "strinputfn"
+msgstr "Función de entrada"
+
+msgid "stroutputfn"
+msgstr "Función de saída"
+
+msgid "strpassbyval"
+msgstr "Pasado por valor?"
+
+msgid "stralignment"
+msgstr "Aliñación"
+
+msgid "strelement"
+msgstr "Elemento"
+
+msgid "strdelimiter"
+msgstr "Delimitador"
+
+msgid "strstorage"
+msgstr "Almacenamento"
+
+msgid "strfield"
+msgstr "Campo"
+
+msgid "strnumfields"
+msgstr "Cantidade de campos"
+
+msgid "strnumvalues"
+msgstr "Cantidade de valores"
+
+msgid "strtypeneedsname"
+msgstr "Debe fornecer un nome para o tipo."
+
+msgid "strtypeneedslen"
+msgstr "Debe fornecer unha lonxitude para o tipo."
+
+msgid "strtypecreated"
+msgstr "Creouse o tipo."
+
+msgid "strtypecreatedbad"
+msgstr "Non se conseguiu crear o tipo."
+
+msgid "strconfdroptype"
+msgstr "Está seguro de que quere eliminar o tipo «%s»?"
+
+msgid "strtypedropped"
+msgstr "Eliminouse o tipo."
+
+msgid "strtypedroppedbad"
+msgstr "Non se conseguiu eliminar o tipo."
+
+msgid "strflavor"
+msgstr "Subtipo"
+
+msgid "strbasetype"
+msgstr "Base"
+
+msgid "strcompositetype"
+msgstr "Composto"
+
+msgid "strpseudotype"
+msgstr "Pseudo"
+
+msgid "strenum"
+msgstr "Enumeración"
+
+msgid "strenumvalues"
+msgstr "Valores da enumeración"
+
+# Schemas
+msgid "strschema"
+msgstr "Esquema"
+
+msgid "strschemas"
+msgstr "Esquemas"
+
+msgid "strshowallschemas"
+msgstr "Listar todos os esquemas"
+
+msgid "strnoschema"
+msgstr "Non se atopou esquema algún."
+
+msgid "strnoschemas"
+msgstr "Non se atopou esquema algún."
+
+msgid "strcreateschema"
+msgstr "Crear un esquema"
+
+msgid "strschemaname"
+msgstr "Nome do esquema"
+
+msgid "strschemaneedsname"
+msgstr "Debe fornecer un nome para o esquema."
+
+msgid "strschemacreated"
+msgstr "Creouse o esquema."
+
+msgid "strschemacreatedbad"
+msgstr "Non se conseguiu crear o esquema."
+
+msgid "strconfdropschema"
+msgstr "Está seguro de que quere eliminar o esquema «%s»?"
+
+msgid "strschemadropped"
+msgstr "Eliminouse o esquema."
+
+msgid "strschemadroppedbad"
+msgstr "Non se conseguiu eliminar o esquema."
+
+msgid "strschemaaltered"
+msgstr "Modificouse o esquema."
+
+msgid "strschemaalteredbad"
+msgstr "Non se conseguiu modificar o esquema."
+
+msgid "strsearchpath"
+msgstr "Ruta de busca do esquema"
+
+msgid "strspecifyschematodrop"
+msgstr "Debe especificar polo menos un esquema a eliminar."
+
+# Reports
+
+# Domains
+msgid "strdomain"
+msgstr "Dominio"
+
+msgid "strdomains"
+msgstr "Dominios"
+
+msgid "strshowalldomains"
+msgstr "Listar todos os dominios"
+
+msgid "strnodomains"
+msgstr "Non se atopou dominio algún."
+
+msgid "strcreatedomain"
+msgstr "Crear un dominio"
+
+msgid "strdomaindropped"
+msgstr "Eliminouse o dominio."
+
+msgid "strdomaindroppedbad"
+msgstr "Non se conseguiu eliminar o dominio."
+
+msgid "strconfdropdomain"
+msgstr "Está seguro de que quere eliminar o dominio «%s»?"
+
+msgid "strdomainneedsname"
+msgstr "Debe fornecer un nome para o dominio."
+
+msgid "strdomaincreated"
+msgstr "Creouse o dominio."
+
+msgid "strdomaincreatedbad"
+msgstr "Non se conseguiu crear o dominio."
+
+msgid "strdomainaltered"
+msgstr "Modificouse o dominio."
+
+msgid "strdomainalteredbad"
+msgstr "Non se conseguiu modificar o dominio."
+
+# Operators
+msgid "stroperator"
+msgstr "Operador"
+
+msgid "stroperators"
+msgstr "Operadores"
+
+msgid "strshowalloperators"
+msgstr "Listar todos os operadores"
+
+msgid "strnooperator"
+msgstr "Non se atopou operador algún."
+
+msgid "strnooperators"
+msgstr "Non se atopou operador algún."
+
+msgid "strcreateoperator"
+msgstr "Crear un operador"
+
+msgid "strleftarg"
+msgstr "Tipo do argumento esquerdo"
+
+msgid "strrightarg"
+msgstr "Tipo do argumento dereito"
+
+msgid "strcommutator"
+msgstr "Conmutador"
+
+msgid "strnegator"
+msgstr "Negación"
+
+msgid "strrestrict"
+msgstr "Restrinxir"
+
+msgid "strjoin"
+msgstr "Unir"
+
+msgid "strhashes"
+msgstr "Hashes"
+
+# Non sei como traducilo.
+msgid "strmerges"
+msgstr "Mesturas"
+
+msgid "strleftsort"
+msgstr "Ordenar pola esquerda"
+
+msgid "strrightsort"
+msgstr "Ordenar pola dereita"
+
+msgid "strlessthan"
+msgstr "Menor que"
+
+msgid "strgreaterthan"
+msgstr "Maior que"
+
+msgid "stroperatorneedsname"
+msgstr "Debe fornecer un nome para o operador."
+
+msgid "stroperatorcreated"
+msgstr "Creouse o operador."
+
+msgid "stroperatorcreatedbad"
+msgstr "Non se conseguiu crear o operador."
+
+msgid "strconfdropoperator"
+msgstr "Está seguro de que quere eliminar o operador «%s»?"
+
+msgid "stroperatordropped"
+msgstr "Eliminouse o operador."
+
+msgid "stroperatordroppedbad"
+msgstr "Non se conseguiu eliminar o operador."
+
+# Casts
+msgid "strcasts"
+msgstr "Molde"
+
+msgid "strnocasts"
+msgstr "Non se atopou molde algún."
+
+msgid "strsourcetype"
+msgstr "Tipo orixe"
+
+msgid "strtargettype"
+msgstr "Tipo obxectivo"
+
+msgid "strimplicit"
+msgstr "Implícito"
+
+msgid "strinassignment"
+msgstr "Na asignación"
+
+msgid "strbinarycompat"
+msgstr "(Compatible a nivel binario)"
+
+# Conversions
+msgid "strconversions"
+msgstr "Conversións"
+
+msgid "strnoconversions"
+msgstr "Non se atopou conversión algunha."
+
+msgid "strsourceencoding"
+msgstr "Codificación orixinal"
+
+msgid "strtargetencoding"
+msgstr "Codificación obxectivo"
+
+# Languages
+msgid "strlanguages"
+msgstr "Linguas"
+
+msgid "strnolanguages"
+msgstr "Non se atopou lingua algunha."
+
+msgid "strtrusted"
+msgstr "De confianza"
+
+# Info
+msgid "strnoinfo"
+msgstr "Non hai información dispoñible."
+
+msgid "strreferringtables"
+msgstr "Táboas que fan referencia a esta"
+
+msgid "strparenttables"
+msgstr "Táboas superiores"
+
+msgid "strchildtables"
+msgstr "Táboas subordinadas"
+
+# Aggregates
+msgid "straggregate"
+msgstr "Conxunto"
+
+msgid "straggregates"
+msgstr "Conxuntos"
+
+msgid "strnoaggregates"
+msgstr "Non se atopou conxunto algún."
+
+msgid "stralltypes"
+msgstr "(Todos os tipos)"
+
+msgid "strcreateaggregate"
+msgstr "Crear un conxunto"
+
+msgid "straggrbasetype"
+msgstr "Tipo de dato de entrada"
+
+msgid "straggrsfunc"
+msgstr "Función de cambio de estado"
+
+msgid "straggrstype"
+msgstr "Tipo de dato para o valor do estado"
+
+msgid "straggrffunc"
+msgstr "Función final"
+
+msgid "straggrinitcond"
+msgstr "Condición inicial"
+
+msgid "straggrsortop"
+msgstr "Operador de orde"
+
+msgid "strconfdropaggregate"
+msgstr "Está seguro de que quere eliminar o conxunto «%s»?"
+
+msgid "straggregatedropped"
+msgstr "Eliminouse o conxunto."
+
+msgid "straggregatedroppedbad"
+msgstr "Non se conseguiu eliminar o conxunto."
+
+msgid "straggraltered"
+msgstr "Modificouse o conxunto."
+
+msgid "straggralteredbad"
+msgstr "Non se conseguiu eliminar o conxunto."
+
+msgid "straggrneedsname"
+msgstr "Debe fornecer un nome para o conxunto."
+
+msgid "straggrneedsbasetype"
+msgstr "Debe fornecer un tipo de dato de entrada para o conxunto."
+
+msgid "straggrneedssfunc"
+msgstr "Debe fornecer o nome da función de cambio de estado para o conxunto."
+
+msgid "straggrneedsstype"
+msgstr "Debe fornecer un tipo de dato para o valor do estado do conxunto."
+
+msgid "straggrcreated"
+msgstr "Creouse o conxunto."
+
+msgid "straggrcreatedbad"
+msgstr "Non se conseguiu crear o conxunto."
+
+msgid "straggrshowall"
+msgstr "Listar todos os conxuntos"
+
+# Operator Classes
+msgid "stropclasses"
+msgstr "Clases de operador"
+
+msgid "strnoopclasses"
+msgstr "Non se atopor clase de operador algunha."
+
+msgid "straccessmethod"
+msgstr "Método de acceso"
+
+# Stats and performance
+msgid "strrowperf"
+msgstr "Rendemento das filas"
+
+msgid "strioperf"
+msgstr "Rendemento da entrada e saída"
+
+msgid "stridxrowperf"
+msgstr "Rendemento das filas do índice"
+
+msgid "stridxioperf"
+msgstr "Rendemento da entrada e saída do índice"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "Secuencial"
+
+msgid "strscan"
+msgstr "Explorar"
+
+msgid "strread"
+msgstr "Ler"
+
+msgid "strfetch"
+msgstr "Obter"
+
+msgid "strheap"
+msgstr "Pila"
+
+msgid "strtoast"
+msgstr "TOAST"
+
+# Non traduzo por se son siglas, que non o teño claro.
+msgid "strtoastindex"
+msgstr "Índice TOAST"
+
+msgid "strcache"
+msgstr "Caché"
+
+msgid "strdisk"
+msgstr "Disco"
+
+msgid "strrows2"
+msgstr "Filas"
+
+# Tablespaces
+msgid "strtablespace"
+msgstr "Alias de ruta"
+
+msgid "strtablespaces"
+msgstr "Alias de ruta"
+
+msgid "strshowalltablespaces"
+msgstr "Listar todos os alias de ruta"
+
+msgid "strnotablespaces"
+msgstr "Non se atopou alias de ruta algún."
+
+msgid "strcreatetablespace"
+msgstr "Crear un alias de ruta"
+
+msgid "strlocation"
+msgstr "Lugar"
+
+msgid "strtablespaceneedsname"
+msgstr "Debe fornecer un nome para o alias de ruta."
+
+msgid "strtablespaceneedsloc"
+msgstr "Debe fornecer unha ruta para a que crear o alias."
+
+msgid "strtablespacecreated"
+msgstr "Creouse o alias de ruta."
+
+msgid "strtablespacecreatedbad"
+msgstr "non se conseguiu crear o alias de ruta."
+
+msgid "strconfdroptablespace"
+msgstr "Está seguro de que quere borrar o alias de ruta «%s»?"
+
+msgid "strtablespacedropped"
+msgstr "Eliminouse o alias de ruta."
+
+msgid "strtablespacedroppedbad"
+msgstr "Non se conseguiu eliminar o alias de ruta."
+
+msgid "strtablespacealtered"
+msgstr "Modificouse o alias de ruta."
+
+msgid "strtablespacealteredbad"
+msgstr "Non se conseguiu modificar o alias de ruta."
+
+# Miscellaneous
+msgid "strtopbar"
+msgstr "%s, executándose no enderezo %s:%s. Está identificado coma «%s»."
+
+msgid "strtimefmt"
+msgstr "d/m/Y, G:i:s"
+
+msgid "strhelp"
+msgstr "Axuda"
+
+msgid "strhelpicon"
+msgstr "?"
+
+msgid "strhelppagebrowser"
+msgstr "Navegador das páxinas de axuda"
+
+msgid "strselecthelppage"
+msgstr "Escolla unha páxina de axuda"
+
+msgid "strinvalidhelppage"
+msgstr "Páxina de axuda incorrecta."
+
+msgid "strlogintitle"
+msgstr "Identificarse en %s"
+
+msgid "strlogoutmsg"
+msgstr "Saíu de %s"
+
+msgid "strloading"
+msgstr "Cargando..."
+
+msgid "strerrorloading"
+msgstr "Produciuse un erro durante o proceso de carga"
+
+msgid "strclicktoreload"
+msgstr "Prema aquí para recargar"
+
+# Autovacuum
+msgid "strautovacuum"
+msgstr "Purgación automática"
+
+msgid "strturnedon"
+msgstr "Acendido"
+
+msgid "strturnedoff"
+msgstr "Apagado"
+
+msgid "strenabled"
+msgstr "Activado"
+
+msgid "strnovacuumconf"
+msgstr "Non se atopou ningunha configuración para purgacións automáticas."
+
+msgid "strvacuumbasethreshold"
+msgstr "Límite da base da purgación"
+
+msgid "strvacuumscalefactor"
+msgstr "Factores de escala da purgación"
+
+msgid "stranalybasethreshold"
+msgstr "Límite da base da análise"
+
+msgid "stranalyzescalefactor"
+msgstr "Factores de escala da análise"
+
+msgid "strvacuumcostdelay"
+msgstr "Atraso do custo da purgación"
+
+msgid "strvacuumcostlimit"
+msgstr "Custo límite da purgación"
+
+msgid "strvacuumpertable"
+msgstr "Configuración da purgación automática por táboa"
+
+msgid "straddvacuumtable"
+msgstr "Engadir unha configuración de purgación automática dunha táboa"
+
+msgid "streditvacuumtable"
+msgstr "Modificar a configuración de purgación automática da táboa «%s»"
+
+msgid "strdelvacuumtable"
+msgstr "Está seguro de que quere eliminar a configuración de purgación automática da táboa «%s»?"
+
+msgid "strvacuumtablereset"
+msgstr "A configuración de purgación automática da táboa «%s» restableceuse aos seus valores predeterminados"
+
+msgid "strdelvacuumtablefail"
+msgstr "Non se conseguiu eliminar a configuración de purgación automática da táboa «%s»"
+
+msgid "strsetvacuumtablesaved"
+msgstr "Gardouse a configuración de purgación automática da táboa «%s»."
+
+msgid "strsetvacuumtablefail"
+msgstr "Non se conseguiu gardar a configuración de purgación automática da táboa «%s»."
+
+msgid "strspecifydelvacuumtable"
+msgstr "Debe especificar unha táboa da que borrar os parámetros de purgación."
+
+msgid "strspecifyeditvacuumtable"
+msgstr "Debe especificar unha táboa na que modificar os parámetros de purgación."
+
+msgid "strnotdefaultinred"
+msgstr "Os valores que non sexan os predeterminados están en cor vermella."
+
+# Table-level Locks
+msgid "strlocks"
+msgstr "Bloqueos"
+
+msgid "strtransaction"
+msgstr "Identificador da transacción"
+
+msgid "strvirtualtransaction"
+msgstr "Identificador da transacción virtual"
+
+msgid "strprocessid"
+msgstr "Identificador do proceso"
+
+msgid "strmode"
+msgstr "Modo de bloqueo"
+
+msgid "strislockheld"
+msgstr "Está activo o bloqueo?"
+
+# Prepared transactions
+msgid "strpreparedxacts"
+msgstr "Transaccións preparadas"
+
+msgid "strxactid"
+msgstr "Identificador da transacción"
+
+msgid "strgid"
+msgstr "Identificador global"
+
+# Fulltext search
+msgid "strfulltext"
+msgstr "Busca de texto completa"
+
+msgid "strftsconfig"
+msgstr "Configuración de BTC"
+
+msgid "strftsconfigs"
+msgstr "Configuracións"
+
+msgid "strftscreateconfig"
+msgstr "Crear unha configuración de BTC"
+
+msgid "strftscreatedict"
+msgstr "Crear un dicionario"
+
+msgid "strftscreatedicttemplate"
+msgstr "Crear un modelo de dicionario"
+
+msgid "strftscreateparser"
+msgstr "Crear un analizador"
+
+msgid "strftsnoconfigs"
+msgstr "Non se atopou configuración de BTC algunha."
+
+msgid "strftsconfigdropped"
+msgstr "Eliminouse a configuración de BTC."
+
+msgid "strftsconfigdroppedbad"
+msgstr "Non se conseguiu eliminar a configuración de BTC."
+
+msgid "strconfdropftsconfig"
+msgstr "Está seguro de que quere eliminar a configuración de BTC «%s»?"
+
+msgid "strconfdropftsdict"
+msgstr "Está seguro de que quere eliminar o dicionario de BTC «%s»?"
+
+msgid "strconfdropftsmapping"
+msgstr "Está seguro de que quere eliminar a aplicación «%s» da configuración de BTC «%s»?"
+
+msgid "strftstemplate"
+msgstr "Modelo"
+
+msgid "strftsparser"
+msgstr "Analizador"
+
+msgid "strftsconfigneedsname"
+msgstr "Debe fornecer un nome para a configuración de BTC."
+
+msgid "strftsconfigcreated"
+msgstr "Creouse a configuración de BTC."
+
+msgid "strftsconfigcreatedbad"
+msgstr "non se conseguiu crear a configuración de BTC."
+
+msgid "strftsmapping"
+msgstr "Aplicación"
+
+msgid "strftsdicts"
+msgstr "Dicionarios"
+
+msgid "strftsdict"
+msgstr "Dicionario"
+
+msgid "strftsemptymap"
+msgstr "Aplicación da configuración de BTC baleira."
+
+msgid "strftsconfigaltered"
+msgstr "Modificouse a configuración de BTC."
+
+msgid "strftsconfigalteredbad"
+msgstr "Non se conseguiu modificar a configuración de BTC."
+
+msgid "strftsconfigmap"
+msgstr "Aplicación da configuración de BTC"
+
+msgid "strftsparsers"
+msgstr "Analizadores de BTC"
+
+msgid "strftsnoparsers"
+msgstr "Non hai ningún analizador de BTC dispoñible."
+
+msgid "strftsnodicts"
+msgstr "Non hai ningún dicionario de BTC dispoñible."
+
+msgid "strftsdictcreated"
+msgstr "Creouse o dicionario de BTC."
+
+msgid "strftsdictcreatedbad"
+msgstr "Non se conseguiu crear o dicionario de BTC."
+
+msgid "strftslexize"
+msgstr "Análise léxica"
+
+msgid "strftsinit"
+msgstr "Comezo"
+
+msgid "strftsoptionsvalues"
+msgstr "Opcións e valores"
+
+msgid "strftsdictneedsname"
+msgstr "Debe fornecer un nome para o dicionario de BTC."
+
+msgid "strftsdictdropped"
+msgstr "Eliminouse o dicionario de BTC."
+
+msgid "strftsdictdroppedbad"
+msgstr "Non se conseguiu eliminar o dicionario de BTC."
+
+msgid "strftsdictaltered"
+msgstr "Modificouse o dicionario de BTC."
+
+msgid "strftsdictalteredbad"
+msgstr "Non se conseguiu modifica o dicionario de BTC."
+
+msgid "strftsaddmapping"
+msgstr "Engadir unha nova aplicación"
+
+msgid "strftsspecifymappingtodrop"
+msgstr "Debe especificar polo menos unha aplicación a eliminar."
+
+msgid "strftsspecifyconfigtoalter"
+msgstr "Debe especificar polo menos unha configuración de BTC a modificar"
+
+msgid "strftsmappingdropped"
+msgstr "Eliminouse a aplicación de BTC."
+
+msgid "strftsmappingdroppedbad"
+msgstr "Non se conseguiu eliminar a aplicación de BTC."
+
+msgid "strftsnodictionaries"
+msgstr "Non se atopou dicionario algún."
+
+msgid "strftsmappingaltered"
+msgstr "Modificouse a aplicación de BTC."
+
+msgid "strftsmappingalteredbad"
+msgstr "Non se conseguiu modificar a aplicación de BTC."
+
+msgid "strftsmappingadded"
+msgstr "Engadiuse a aplicación de BTC."
+
+msgid "strftsmappingaddedbad"
+msgstr "Non se conseguiu engadir a aplicación de BTC."
+
+msgid "strftstabconfigs"
+msgstr "Configuracións"
+
+msgid "strftstabdicts"
+msgstr "Dicionarios"
+
+msgid "strftstabparsers"
+msgstr "Analizadores"
+
+msgid "strftscantparsercopy"
+msgstr "Non se pode especificar tanto un analizador coma un modelo durante a creación dunha configuración de busca de texto."

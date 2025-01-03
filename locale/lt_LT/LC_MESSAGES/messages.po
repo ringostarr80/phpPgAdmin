@@ -1,0 +1,2516 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lt_LT\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "Lietuvių"
+
+msgid "applocale"
+msgstr "lt-LT"
+
+msgid "applangdir"
+msgstr "ltr"
+
+# Welcome
+msgid "strintro"
+msgstr "Sveiki atvykę į phpPgAdmin."
+
+msgid "strppahome"
+msgstr "phpPgAdmin pradinis puslapis"
+
+msgid "strpgsqlhome"
+msgstr "PostgreSQL pradinis puslapis"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "PostgreSQL dokumentacija (vietinė)"
+
+msgid "strreportbug"
+msgstr "Pranešti apie klaidą"
+
+msgid "strviewfaq"
+msgstr "Peržiūrėti internetinį DUK"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "Prisijungti"
+
+msgid "strloginfailed"
+msgstr "Nepavyko prisijungti"
+
+msgid "strlogindisallowed"
+msgstr "Prisijungti neleidžiama saugumo sumetimais."
+
+msgid "strserver"
+msgstr "Serveris"
+
+msgid "strservers"
+msgstr "Serveriai"
+
+msgid "strgroupservers"
+msgstr "Serveriai grupėje \"%s\""
+
+msgid "strallservers"
+msgstr "Visi serveriai"
+
+msgid "strintroduction"
+msgstr "Įžanga"
+
+# Pradžia
+msgid "strhost"
+msgstr "Host"
+
+# Pagrindinis kompiuteris
+msgid "strport"
+msgstr "Prievadas"
+
+msgid "strlogout"
+msgstr "Atsijungti"
+
+msgid "strowner"
+msgstr "Valdytojas"
+
+# Savininkas
+msgid "straction"
+msgstr "Veiksmas"
+
+msgid "stractions"
+msgstr "Veiksmai"
+
+msgid "strname"
+msgstr "Pavadinimas"
+
+msgid "strdefinition"
+msgstr "Apibrėžtis"
+
+msgid "strproperties"
+msgstr "Savybės"
+
+msgid "strbrowse"
+msgstr "Peržiūrėti"
+
+# Naršyti
+msgid "strenable"
+msgstr "Įjungti"
+
+msgid "strdisable"
+msgstr "Išjungti"
+
+msgid "strdrop"
+msgstr "Šalinti"
+
+msgid "strdropped"
+msgstr "Pašalintas"
+
+msgid "strnull"
+msgstr "Null"
+
+msgid "strnotnull"
+msgstr "Ne Null"
+
+msgid "strprev"
+msgstr "< Ankstesnis"
+
+msgid "strnext"
+msgstr "Tolesnis >"
+
+msgid "strfirst"
+msgstr "<< Pirmas"
+
+msgid "strlast"
+msgstr "Paskutinis >>"
+
+msgid "strfailed"
+msgstr "Nepavyko"
+
+msgid "strcreate"
+msgstr "Sukurti"
+
+msgid "strcreated"
+msgstr "Sukurta"
+
+msgid "strcomment"
+msgstr "Komentaras"
+
+msgid "strlength"
+msgstr "Ilgis"
+
+msgid "strdefault"
+msgstr "Numatytoji reikšmė"
+
+# Numatytas(-a)
+msgid "stralter"
+msgstr "Pakeisti"
+
+msgid "strok"
+msgstr "Gerai"
+
+msgid "strcancel"
+msgstr "Atsisakyti"
+
+msgid "strkill"
+msgstr "Nutraukti"
+
+# Sunaikinti
+msgid "strac"
+msgstr "Įjungti automatinį baigimą"
+
+msgid "strsave"
+msgstr "Įrašyti"
+
+msgid "strreset"
+msgstr "Atstatyti į pradinę būseną"
+
+# Atkurti
+msgid "strrestart"
+msgstr "Paleisti iš naujo"
+
+msgid "strinsert"
+msgstr "Įterpti"
+
+msgid "strselect"
+msgstr "Atrinkti"
+
+msgid "strdelete"
+msgstr "Šalinti"
+
+msgid "strupdate"
+msgstr "Atnaujinti"
+
+msgid "strreferences"
+msgstr "Rodyklės"
+
+msgid "stryes"
+msgstr "Taip"
+
+msgid "strno"
+msgstr "Ne"
+
+msgid "strtrue"
+msgstr "TIESA"
+
+msgid "strfalse"
+msgstr "NETIESA"
+
+msgid "stredit"
+msgstr "Taisyti"
+
+msgid "strcolumn"
+msgstr "Stulpelis"
+
+msgid "strcolumns"
+msgstr "Stulpeliai"
+
+msgid "strrows"
+msgstr "įrašas(-ai)"
+
+msgid "strrowsaff"
+msgstr "įrašas(-ai) paveikti."
+
+msgid "strobjects"
+msgstr "objektas (-ai)"
+
+msgid "strback"
+msgstr "Atgal"
+
+msgid "strqueryresults"
+msgstr "Užklausos rezultatai"
+
+msgid "strshow"
+msgstr "Rodyti"
+
+msgid "strempty"
+msgstr "Išvalyti"
+
+# Šalinti turinį
+msgid "strlanguage"
+msgstr "Kalba"
+
+msgid "strencoding"
+msgstr "Koduotė"
+
+msgid "strvalue"
+msgstr "Reikšmė"
+
+msgid "strunique"
+msgstr "Unikalus"
+
+msgid "strprimary"
+msgstr "Pirminis"
+
+msgid "strexport"
+msgstr "Eksportuoti"
+
+msgid "strimport"
+msgstr "Importuoti"
+
+msgid "strallowednulls"
+msgstr "Leidžiami NULL simboliai"
+
+msgid "strbackslashn"
+msgstr "\\N"
+
+msgid "stremptystring"
+msgstr "Tuščia eilutė/laukas"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "stradmin"
+msgstr "Admin"
+
+# Administratorius
+msgid "strvacuum"
+msgstr "Apvalyti"
+
+msgid "stranalyze"
+msgstr "Analizuoti"
+
+msgid "strclusterindex"
+msgstr "Pertvarkyti"
+
+msgid "strclustered"
+msgstr "Sutvarkyta?"
+
+msgid "strreindex"
+msgstr "Perindeksuoti"
+
+msgid "strexecute"
+msgstr "Vykdyti"
+
+msgid "stradd"
+msgstr "Pridėti"
+
+msgid "strevent"
+msgstr "Įvykis"
+
+msgid "strwhere"
+msgstr "Sąlyga"
+
+# Kur
+msgid "strinstead"
+msgstr "Atlikti užuot"
+
+msgid "strwhen"
+msgstr "Kai"
+
+msgid "strformat"
+msgstr "Formatas"
+
+msgid "strdata"
+msgstr "Duomenys"
+
+msgid "strconfirm"
+msgstr "Patvirtinti"
+
+msgid "strexpression"
+msgstr "Išraiška"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strseparator"
+msgstr ": "
+
+msgid "strexpand"
+msgstr "Išskleisti"
+
+msgid "strcollapse"
+msgstr "Suskleisti"
+
+msgid "strfind"
+msgstr "Ieškoti"
+
+msgid "stroptions"
+msgstr "Parinktys"
+
+msgid "strrefresh"
+msgstr "Atnaujinti"
+
+msgid "strdownload"
+msgstr "Parsisiųsti"
+
+msgid "strdownloadgzipped"
+msgstr "Parsisiųsti suspaustą su gzip"
+
+msgid "strinfo"
+msgstr "Informacija"
+
+msgid "stroids"
+msgstr "OIDs"
+
+msgid "stradvanced"
+msgstr "Išplėstinis(-ė)"
+
+# papildomas(-a),
+msgid "strvariables"
+msgstr "Kintamieji"
+
+msgid "strprocess"
+msgstr "Procesas"
+
+msgid "strprocesses"
+msgstr "Procesai"
+
+msgid "strsetting"
+msgstr "Nuostata"
+
+# Parinktis
+msgid "streditsql"
+msgstr "Redaguoti SQL"
+
+msgid "strruntime"
+msgstr "Visa vykdymo trukmė: %s ms"
+
+msgid "strpaginate"
+msgstr "Rezultatus skaidyti į puslapius"
+
+msgid "struploadscript"
+msgstr "arba nusiųsti SQL skriptą:"
+
+msgid "strstarttime"
+msgstr "Pradžios laikas"
+
+msgid "strfile"
+msgstr "Failas"
+
+msgid "strfileimported"
+msgstr "Failas importuotas."
+
+msgid "strtrycred"
+msgstr "Naudoti šiuos įgaliojimus visiems serveriams"
+
+msgid "strconfdropcred"
+msgstr "Dėl saugumo, ryšio nutraukimas panaikins jūsų bendrą prisijungimo informaciją. Ar tikrai norite nutraukti ryšį ?"
+
+msgid "stractionsonmultiplelines"
+msgstr "Veiksmai keliose eilutėse"
+
+msgid "strselectall"
+msgstr "Visi"
+
+# Pažymėti visus
+msgid "strunselectall"
+msgstr "Nieko"
+
+# Panaikinti žymėjimą visiems
+msgid "strlocale"
+msgstr "Lokalė"
+
+msgid "strcollation"
+msgstr "Rikiavimas"
+
+msgid "strctype"
+msgstr "Character Type"
+
+# Simbolių(ženklų) tipas
+msgid "strdefaultvalues"
+msgstr "Numatytosios reikšmės"
+
+msgid "strnewvalues"
+msgstr "Naujosios reikšmės"
+
+msgid "strstart"
+msgstr "Paleisti"
+
+msgid "strstop"
+msgstr "Stabdyti"
+
+msgid "strgotoppage"
+msgstr "atgal į viršų"
+
+msgid "strtheme"
+msgstr "Apipavidalinimas"
+
+msgid "strcluster"
+msgstr "Klasteris"
+
+# Admin
+msgid "stradminondatabase"
+msgstr "Šios administracinės užduotys taikomos visai %s duomenų bazei."
+
+msgid "stradminontable"
+msgstr "Šios administracinės užduotys taikomos lentelei %s."
+
+# User-supplied SQL history
+msgid "strhistory"
+msgstr "Praeitis"
+
+msgid "strnohistory"
+msgstr "Nėra praeities."
+
+msgid "strclearhistory"
+msgstr "Išvalyti praeitį"
+
+msgid "strdelhistory"
+msgstr "Šalinti iš praeities sąrašo"
+
+msgid "strconfdelhistory"
+msgstr "Ar tikrai pašalinti šią užklausą iš preities sąrašo?"
+
+msgid "strconfclearhistory"
+msgstr "Ar tikrai išvalyti praeitį?"
+
+msgid "strnodatabaseselected"
+msgstr "Prašom pasirinkiti duomenų bazę."
+
+# Database sizes
+msgid "strnoaccess"
+msgstr "Nėra prieigos"
+
+msgid "strsize"
+msgstr "Dydis"
+
+msgid "strbytes"
+msgstr "baitai"
+
+msgid "strkb"
+msgstr "kB"
+
+msgid "strmb"
+msgstr "MB"
+
+msgid "strgb"
+msgstr "GB"
+
+msgid "strtb"
+msgstr "TB"
+
+# Error handling
+msgid "strnoframes"
+msgstr "Ši programa geriausiai veikia su naršykle, kurioje palaikomi HTML rėmeliai(frames),tačiau gali būti naudojama be rėmelių spustelėjus toliau pateiktą nuorodą."
+
+msgid "strnoframeslink"
+msgstr "Naudoti be rėmelių"
+
+msgid "strbadconfig"
+msgstr "Jūsų config.inc.php pasenęs. Reikia atkurti jį iš naujo config.inc.php-dist."
+
+msgid "strnotloaded"
+msgstr "Jūsų PHP įdiegimas nepalaiko PostgreSQL. Reikia perkompiliuoti PHP naudojant --with-pgsql konfigūravimo parametrą."
+
+msgid "strpostgresqlversionnotsupported"
+msgstr "PostgreSQL versija nepalaikoma. Prašom atnaujinti iki %s arba naujesnės versijos."
+
+msgid "strbadschema"
+msgstr "Nurodyta neteisinga schema."
+
+msgid "strbadencoding"
+msgstr "Nepavyko nustatyti kliento koduotės duomenų bazėje."
+
+msgid "strsqlerror"
+msgstr "SQL klaida:"
+
+msgid "strinstatement"
+msgstr "Sakinyje:"
+
+msgid "strinvalidparam"
+msgstr "Neteisingi skripto parametrai."
+
+msgid "strnodata"
+msgstr "Įrašų nerasta."
+
+msgid "strnoobjects"
+msgstr "Objektų nerasta."
+
+msgid "strrownotunique"
+msgstr "Šiame įraše nėra unikalaus identifikatoriaus."
+
+msgid "strnouploads"
+msgstr "Failų išsiuntimai - negalimi."
+
+msgid "strimporterror"
+msgstr "Importavimo klaida."
+
+msgid "strimporterror-fileformat"
+msgstr "Importavimo klaida: Nepavyko automatiškai nustatyti failo formato."
+
+msgid "strimporterrorline"
+msgstr "Importavimo klaida eilutėje %s."
+
+msgid "strimporterrorline-badcolumnnum"
+msgstr "Importavimo klaida eilutėje %s: Eilutėje neteisingas stulpelių skaičius."
+
+msgid "strimporterror-uploadedfile"
+msgstr "Importavimo klaida: Failas negali būti nusiųstas į serverį"
+
+msgid "strcannotdumponwindows"
+msgstr "Atminties išklotinės suformavimas su sudėtingais lentelių ir schemų vardais Windows operacinėje sistemoje nepalaikomas"
+
+msgid "strinvalidserverparam"
+msgstr "Bandymas prisijungti su negaliojančiu serverio parametru, galbūt kas nors bando nulaužti jūsų sistemą."
+
+msgid "strnoserversupplied"
+msgstr "Nenurodytas serveris!"
+
+msgid "strbadpgdumppath"
+msgstr "Eksportavimo klaida: nepavyko įvykdyti pg_dump (pateiktas kelias Jūsų conf/config.inc.php : %s). Pataisykite šį kelią savo konfigūracijoje ir prisijunkite iš naujo."
+
+msgid "strbadpgdumpallpath"
+msgstr "Eksportavimo klaida: nepavyko įvykdyti pg_dumpall (pateiktas kelias Jūsų conf/config.inc.php : %s). Pataisykite šį kelią savo konfigūracijoje ir prisijunkite iš naujo."
+
+msgid "strconnectionfail"
+msgstr "Nepavyksta prisijungti prie serverio."
+
+# Tables
+msgid "strtable"
+msgstr "Lentelė"
+
+msgid "strtables"
+msgstr "Lentelės"
+
+msgid "strshowalltables"
+msgstr "Rodyti visas lenteles"
+
+msgid "strnotables"
+msgstr "Lentelių nerasta."
+
+msgid "strnotable"
+msgstr "Lentelė nerasta."
+
+msgid "strcreatetable"
+msgstr "Sukurti lentelę"
+
+msgid "strcreatetablelike"
+msgstr "Sukurti lentelę kaip"
+
+msgid "strcreatetablelikeparent"
+msgstr "Pirminė lentelė"
+
+msgid "strcreatelikewithdefaults"
+msgstr "ĮTRAUKTI NUMATYTĄSIAS REIKŠMES"
+
+msgid "strcreatelikewithconstraints"
+msgstr "ĮTRAUKTI RIBOJIMUS"
+
+msgid "strcreatelikewithindexes"
+msgstr "ĮTRAUKTI INDEKSUS"
+
+msgid "strtablename"
+msgstr "Lentelės pavadinimas"
+
+msgid "strtableneedsname"
+msgstr "Turite suteikti lentelei pavadinimą."
+
+msgid "strtablelikeneedslike"
+msgstr "Turite nurodyti lentelę, kurios savybes reikia kopijuoti."
+
+msgid "strtableneedsfield"
+msgstr "Turite nurodyti bent vieną lauką."
+
+msgid "strtableneedscols"
+msgstr "Turite nurodyti teisingą stulpelių skaičių."
+
+msgid "strtablecreated"
+msgstr "Lentelė sukurta."
+
+msgid "strtablecreatedbad"
+msgstr "Nepavyko sukurti lentelės."
+
+msgid "strconfdroptable"
+msgstr "Ar tikrai norite šalinti lentelę \"%s\"?"
+
+msgid "strtabledropped"
+msgstr "Lentelė pašalinta."
+
+msgid "strtabledroppedbad"
+msgstr "Nepavyko pašalinti lentelės."
+
+msgid "strconfemptytable"
+msgstr "Ar tikrai norite išvalyti lentelę \"%s\"?"
+
+msgid "strtableemptied"
+msgstr "Lentelė išvalyta."
+
+msgid "strtableemptiedbad"
+msgstr "Nepavyko išvalyti lentelės."
+
+msgid "strinsertrow"
+msgstr "Įterpti įrašą"
+
+msgid "strrowinserted"
+msgstr "Įrašas įterptas."
+
+msgid "strrowinsertedbad"
+msgstr "Nepavyko įterpti įrašo."
+
+msgid "strnofkref"
+msgstr "Nėra atitinkamos reikšmės išoriniame rakte %s."
+
+msgid "strrowduplicate"
+msgstr "Nepavyko įterpti įrašo, bandyta dubliuoti įrašą."
+
+msgid "streditrow"
+msgstr "Taisyti įrašą"
+
+msgid "strrowupdated"
+msgstr "Įrašas atnaujintas."
+
+msgid "strrowupdatedbad"
+msgstr "Nepavyko atnaujinti įrašo."
+
+msgid "strdeleterow"
+msgstr "Šalinti įrašą"
+
+msgid "strconfdeleterow"
+msgstr "Ar tikrai norite šalinti šį įrašą?"
+
+msgid "strrowdeleted"
+msgstr "Įrašas pašalintas."
+
+msgid "strrowdeletedbad"
+msgstr "Nepavyko pašalinti įrašo."
+
+msgid "strinsertandrepeat"
+msgstr "Įterpti ir kartoti"
+
+msgid "strnumcols"
+msgstr "Stulpelių skaičius"
+
+msgid "strcolneedsname"
+msgstr "Turite nurodyti stulpelio pavadinimą"
+
+msgid "strselectallfields"
+msgstr "Pažymėti visus laukus"
+
+msgid "strselectneedscol"
+msgstr "Turite rodyti bent vieną stulpelį."
+
+msgid "strselectunary"
+msgstr "Vienviečiai operatoriai negali turėti reikšmių."
+
+msgid "strcolumnaltered"
+msgstr "Stulpelis pakeistas."
+
+msgid "strcolumnalteredbad"
+msgstr "Nepavyko pakeisti stulpelio."
+
+msgid "strconfdropcolumn"
+msgstr "Ar tikrai norite šalinti stulpelį \"%s\" iš lentelės \"%s\"?"
+
+msgid "strcolumndropped"
+msgstr "Stulpelis pašalintas."
+
+msgid "strcolumndroppedbad"
+msgstr "Nepavyko pašalinti stulpelio."
+
+msgid "straddcolumn"
+msgstr "Pridėti stulpelį"
+
+msgid "strcolumnadded"
+msgstr "Stulpelis pridėtas."
+
+msgid "strcolumnaddedbad"
+msgstr "Nepavyko pridėti stulpelio."
+
+msgid "strcascade"
+msgstr "CASCADE"
+
+# Pakopinis
+msgid "strtablealtered"
+msgstr "Lentelė pakeista."
+
+msgid "strtablealteredbad"
+msgstr "Nepavyko pakeisti lentelės."
+
+msgid "strdataonly"
+msgstr "Tik duomenis"
+
+msgid "strstructureonly"
+msgstr "Tik struktūrą"
+
+msgid "strstructureanddata"
+msgstr "Struktūrą ir duomenis"
+
+msgid "strtabbed"
+msgstr "Tabbed"
+
+# Atskirtas tabuliavimo žymėmis
+msgid "strauto"
+msgstr "Auto"
+
+msgid "strconfvacuumtable"
+msgstr "Ar tikrai norite apvalyti \"%s\"?"
+
+msgid "strconfanalyzetable"
+msgstr "Ar tikrai norite analizuoti \"%s\"?"
+
+msgid "strconfreindextable"
+msgstr "Ar tikrai norite perindeksuoti \"%s\"?"
+
+msgid "strconfclustertable"
+msgstr "Ar tikrai norite sutvarkyti \"%s\"?"
+
+msgid "strestimatedrowcount"
+msgstr "Apskaičiuotasis įrašų skaičius"
+
+# Apytikris
+msgid "strspecifytabletoanalyze"
+msgstr "Turite nurodyti bent vieną lentelę, kuri turi būti išanalizuota."
+
+msgid "strspecifytabletoempty"
+msgstr "Turite nurodyti bent vieną lentelę, kuri turi būti išvalyta."
+
+msgid "strspecifytabletodrop"
+msgstr "Turite nurodyti bent vieną lentelę, kuri turi būti pašalinta."
+
+msgid "strspecifytabletovacuum"
+msgstr "Turite nurodyti bent vieną lentelę, kuri turi būti apvalyta."
+
+msgid "strspecifytabletoreindex"
+msgstr "Turite nurodyti bent vieną lentelę, kuri turi būti perindeksuota."
+
+msgid "strspecifytabletocluster"
+msgstr "Turite nurodyti bent vieną lentelę, kuri turi būti sutvarkyta."
+
+msgid "strnofieldsforinsert"
+msgstr "Negalite įterpti įrašo į lentelę be stulpelių."
+
+# Columns
+msgid "strcolprop"
+msgstr "Stulpelio savybės"
+
+msgid "strnotableprovided"
+msgstr "Nenurodyta lentelė!"
+
+# Users
+msgid "struser"
+msgstr "Naudotojas"
+
+msgid "strusers"
+msgstr "Naudotojai"
+
+msgid "strusername"
+msgstr "Naudotojo vardas"
+
+msgid "strpassword"
+msgstr "Slaptažodis"
+
+msgid "strsuper"
+msgstr "Superuser?"
+
+msgid "strcreatedb"
+msgstr "Gali kurti DB?"
+
+msgid "strexpires"
+msgstr "Baigia galioti"
+
+msgid "strsessiondefaults"
+msgstr "Seanso numatytosios reikšmės"
+
+msgid "strnousers"
+msgstr "Naudotojų nerasta."
+
+msgid "struserupdated"
+msgstr "Naudotojas atnaujintas."
+
+msgid "struserupdatedbad"
+msgstr "Nepavyko atnaujinti naudotojo."
+
+msgid "strshowallusers"
+msgstr "Rodyti visus naudotojus"
+
+msgid "strcreateuser"
+msgstr "Kurti naudotoją"
+
+msgid "struserneedsname"
+msgstr "Turite suteikti naudotojui vardą."
+
+msgid "strusercreated"
+msgstr "Naudotojas sukurtas."
+
+msgid "strusercreatedbad"
+msgstr "Nepavyko sukurti naudotojo."
+
+msgid "strconfdropuser"
+msgstr "Ar tikrai norite pašalinti naudotoją \"%s\"?"
+
+msgid "struserdropped"
+msgstr "Naudotojas pašalintas."
+
+msgid "struserdroppedbad"
+msgstr "Nepavyko pašalinti naudotojo."
+
+msgid "straccount"
+msgstr "Paskyra"
+
+msgid "strchangepassword"
+msgstr "Keisti slaptažodį"
+
+msgid "strpasswordchanged"
+msgstr "Slaptažodis pakeistas."
+
+msgid "strpasswordchangedbad"
+msgstr "Nepavyko pakeisti slaptažodžio."
+
+msgid "strpasswordshort"
+msgstr "Slaptažodis per trumpas."
+
+msgid "strpasswordconfirm"
+msgstr "Slaptažodis neatitinka patvirtinimo."
+
+# Groups
+msgid "strgroup"
+msgstr "Grupė"
+
+msgid "strgroups"
+msgstr "Grupės"
+
+msgid "strshowallgroups"
+msgstr "Rodyti visas grupes"
+
+msgid "strnogroup"
+msgstr "Grupė nerasta."
+
+msgid "strnogroups"
+msgstr "Grupių nerasta."
+
+msgid "strcreategroup"
+msgstr "Kurti grupę"
+
+msgid "strgroupneedsname"
+msgstr "Turite suteikti grupei pavadinimą."
+
+msgid "strgroupcreated"
+msgstr "Grupė sukurta."
+
+msgid "strgroupcreatedbad"
+msgstr "Nepavyko sukurti grupės."
+
+msgid "strconfdropgroup"
+msgstr "Ar tikrai norite šalinti grupę \"%s\"?"
+
+msgid "strgroupdropped"
+msgstr "Grupė pašalinta."
+
+msgid "strgroupdroppedbad"
+msgstr "Nepavyko pašalinti grupės."
+
+msgid "strmembers"
+msgstr "Nariai"
+
+msgid "strmemberof"
+msgstr "Yra narys"
+
+msgid "stradminmembers"
+msgstr "Admin nariai"
+
+msgid "straddmember"
+msgstr "Pridėti narį"
+
+msgid "strmemberadded"
+msgstr "Narys pridėtas."
+
+msgid "strmemberaddedbad"
+msgstr "Nepavyko pridėti nario."
+
+msgid "strdropmember"
+msgstr "Šalinti narį"
+
+msgid "strconfdropmember"
+msgstr "Ar tikrai norite šalinti narį \"%s\" iš grupės \"%s\"?"
+
+msgid "strmemberdropped"
+msgstr "Narys pašalintas."
+
+msgid "strmemberdroppedbad"
+msgstr "Nepavyko pašalinti nario."
+
+# Roles
+msgid "strrole"
+msgstr "Rolė"
+
+msgid "strroles"
+msgstr "Rolės"
+
+msgid "strshowallroles"
+msgstr "Rodyti roles"
+
+msgid "strnoroles"
+msgstr "Rolių nerasta."
+
+msgid "strinheritsprivs"
+msgstr "Paveldi privilegijas?"
+
+msgid "strcreaterole"
+msgstr "Kurti rolę"
+
+msgid "strcancreaterole"
+msgstr "Gali kurti rolę?"
+
+msgid "strrolecreated"
+msgstr "Rolė sukurta."
+
+msgid "strrolecreatedbad"
+msgstr "Nepavyko sukurti rolės."
+
+msgid "strrolealtered"
+msgstr "Rolė pakeista."
+
+msgid "strrolealteredbad"
+msgstr "Nepavyko pakeisti rolės."
+
+msgid "strcanlogin"
+msgstr "Gali prisijungti?"
+
+msgid "strconnlimit"
+msgstr "Sujungimų limitas"
+
+msgid "strdroprole"
+msgstr "Šalinti rolę"
+
+msgid "strconfdroprole"
+msgstr "Ar tikrai norite šalinti rolę \"%s\"?"
+
+msgid "strroledropped"
+msgstr "Rolė pašalinta."
+
+msgid "strroledroppedbad"
+msgstr "Nepavyko pašalinti rolės."
+
+msgid "strnolimit"
+msgstr "Be ribojimų"
+
+msgid "strnever"
+msgstr "Niekada"
+
+msgid "strroleneedsname"
+msgstr "Turite suteikti rolei pavadinimą."
+
+# Privileges
+msgid "strprivilege"
+msgstr "Privilegija"
+
+msgid "strprivileges"
+msgstr "Privilegijos"
+
+msgid "strnoprivileges"
+msgstr "Šiam objektui taikomos numatytosios valdytojo privilegijos."
+
+msgid "strgrant"
+msgstr "Suteikti"
+
+msgid "strrevoke"
+msgstr "Panaikinti"
+
+# Atšaukti
+msgid "strgranted"
+msgstr "Privilegijos pakeistos."
+
+msgid "strgrantfailed"
+msgstr "Nepavyko pakeisti privilegijų."
+
+msgid "strgrantbad"
+msgstr "Turite nurodyti bent vieną naudotoją arba grupę ir bent vieną privilegiją."
+
+msgid "strgrantor"
+msgstr "Teikėjas"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "Duomenų bazė"
+
+msgid "strdatabases"
+msgstr "Duomenų bazės"
+
+msgid "strshowalldatabases"
+msgstr "Rodyti duomenų bazes"
+
+msgid "strnodatabases"
+msgstr "Duomenų bazių nerasta."
+
+msgid "strcreatedatabase"
+msgstr "Kurti duomenų bazę"
+
+msgid "strdatabasename"
+msgstr "Duomenų bazės pavadinimas"
+
+msgid "strdatabaseneedsname"
+msgstr "Turite suteikti duomenų bazei pavadinimą."
+
+msgid "strdatabasecreated"
+msgstr "Duomenų bazė sukurta."
+
+msgid "strdatabasecreatedbad"
+msgstr "Nepavyko sukurti duomenų bazės."
+
+msgid "strconfdropdatabase"
+msgstr "Ar tikrai norite šalinti duomenų bazę \"%s\"?"
+
+msgid "strdatabasedropped"
+msgstr "Duomenų bazė pašalinta."
+
+msgid "strdatabasedroppedbad"
+msgstr "Nepavyko pašalinti duomenų bazės."
+
+msgid "strentersql"
+msgstr "Įveskite SQL užklausą žemiau:"
+
+msgid "strsqlexecuted"
+msgstr "SQL užklausa įvykdyta."
+
+msgid "strvacuumgood"
+msgstr "Apvalymas atliktas."
+
+msgid "strvacuumbad"
+msgstr "Nepavyko atlikti apvalymo."
+
+msgid "stranalyzegood"
+msgstr "Analizė atlikta."
+
+msgid "stranalyzebad"
+msgstr "Nepavyko atlikti analizės."
+
+msgid "strreindexgood"
+msgstr "Perindeksavimas atliktas."
+
+msgid "strreindexbad"
+msgstr "Perindeksavimas nepavyko."
+
+msgid "strfull"
+msgstr "Visiškas"
+
+msgid "strfreeze"
+msgstr "Freeze"
+
+msgid "strforce"
+msgstr "Force"
+
+msgid "strsignalsent"
+msgstr "Signalas išsiųstas."
+
+msgid "strsignalsentbad"
+msgstr "Nepavyko išsiųsti signalo."
+
+msgid "strallobjects"
+msgstr "Visi objektai"
+
+msgid "strdatabasealtered"
+msgstr "Duomenų bazė pakeista."
+
+msgid "strdatabasealteredbad"
+msgstr "Nepavyko pakeisti duomenų bazės."
+
+msgid "strspecifydatabasetodrop"
+msgstr "Turite nurodyti bent vieną duomenų bazę, kurią reikia šalinti."
+
+msgid "strtemplatedb"
+msgstr "Šablonas"
+
+msgid "strconfanalyzedatabase"
+msgstr "Ar tikrai norite analizuoti visas lenteles duomenų bazėje \"%s\"?"
+
+msgid "strconfvacuumdatabase"
+msgstr "Ar tikrai norite apvalyti visas lenteles duomenų bazėje \"%s\"?"
+
+msgid "strconfreindexdatabase"
+msgstr "Ar tikrai norite perindeksuoti visas lenteles duomenų bazėje \"%s\"?"
+
+msgid "strconfclusterdatabase"
+msgstr "Ar tikrai norite sutvarkyti visas lenteles duomenų bazėje \"%s\"?"
+
+# Views
+msgid "strview"
+msgstr "Rodinys"
+
+msgid "strviews"
+msgstr "Rodiniai"
+
+msgid "strshowallviews"
+msgstr "Rodyti visus rodinius"
+
+msgid "strnoview"
+msgstr "Rodinys nerastas."
+
+msgid "strnoviews"
+msgstr "Rodinių nerasta."
+
+msgid "strcreateview"
+msgstr "Kurti rodinį"
+
+msgid "strviewname"
+msgstr "Rodinio pavadinimas"
+
+msgid "strviewneedsname"
+msgstr "Turite suteikti rodiniui pavadinimą."
+
+msgid "strviewneedsdef"
+msgstr "Turite pateikti rodinio apibrėžtį."
+
+msgid "strviewneedsfields"
+msgstr "Turite nurodyti stulpelius, kurie turi būti rodinyje."
+
+msgid "strviewcreated"
+msgstr "Rodinys sukurtas."
+
+msgid "strviewcreatedbad"
+msgstr "Nepavyko sukurti rodinio."
+
+msgid "strconfdropview"
+msgstr "Ar tikrai norite pašalinti rodinį \"%s\"?"
+
+msgid "strviewdropped"
+msgstr "Rodinys pašalintas."
+
+msgid "strviewdroppedbad"
+msgstr "Nepavyko pašalinti rodinio."
+
+msgid "strviewupdated"
+msgstr "Rodinys atnaujintas."
+
+msgid "strviewupdatedbad"
+msgstr "Nepavyko atnaujinti rodinio."
+
+msgid "strviewlink"
+msgstr "Saistantys raktai"
+
+msgid "strviewconditions"
+msgstr "Papildomos sąlygos"
+
+msgid "strcreateviewwiz"
+msgstr "Kurti rodinį su vedikliu"
+
+msgid "strrenamedupfields"
+msgstr "Pervadinti dubliuojančiuosius laukus"
+
+msgid "strdropdupfields"
+msgstr "Pašalinti dubliuojančiuosius laukus"
+
+msgid "strerrordupfields"
+msgstr "Klaida dubliuojančiuose laukuose"
+
+msgid "strviewaltered"
+msgstr "Rodinys pakeistas."
+
+msgid "strviewalteredbad"
+msgstr "Nepavyko pakeisti rodinio."
+
+msgid "strspecifyviewtodrop"
+msgstr "Turite nurodyti bent vieną rodinį, kurį norite pašalinti."
+
+#s Sequences
+msgid "strsequence"
+msgstr "Seka"
+
+msgid "strsequences"
+msgstr "Sekos"
+
+msgid "strshowallsequences"
+msgstr "Rodyti visas sekas"
+
+msgid "strnosequence"
+msgstr "Seka nerasta."
+
+msgid "strnosequences"
+msgstr "Sekų nerasta."
+
+msgid "strcreatesequence"
+msgstr "Kurti seką"
+
+msgid "strlastvalue"
+msgstr "Paskutinė reikšmė"
+
+msgid "strincrementby"
+msgstr "Prieaugis"
+
+msgid "strstartvalue"
+msgstr "Pradinė reikšmė"
+
+msgid "strrestartvalue"
+msgstr "Paleidimo iš naujo reikšmė"
+
+msgid "strmaxvalue"
+msgstr "Maks. reikšmė"
+
+msgid "strminvalue"
+msgstr "Min. reikšmė"
+
+msgid "strcachevalue"
+msgstr "Reikšmė podėlyje"
+
+msgid "strlogcount"
+msgstr "Log count"
+
+msgid "strcancycle"
+msgstr "Can cycle?"
+
+# Gali kartotis?
+msgid "striscalled"
+msgstr "Padidins paskutinę reikšmę prieš grąžinant kitą reikšmę (is_called)?"
+
+msgid "strsequenceneedsname"
+msgstr "Turite suteikti sekai vardą."
+
+msgid "strsequencecreated"
+msgstr "Seka sukurta."
+
+msgid "strsequencecreatedbad"
+msgstr "Nepavyko sukurti sekos."
+
+msgid "strconfdropsequence"
+msgstr "Ar tikrai norite pašalinti seką \"%s\"?"
+
+msgid "strsequencedropped"
+msgstr "Seka pašalinta."
+
+msgid "strsequencedroppedbad"
+msgstr "Nepavyko pašalinti sekos."
+
+msgid "strsequencerestart"
+msgstr "Seka paleista iš naujo."
+
+msgid "strsequencerestartbad"
+msgstr "Nepavyko sekos paleist iš naujo."
+
+msgid "strsequencereset"
+msgstr "Seka atstatyta į pradinę būseną."
+
+msgid "strsequenceresetbad"
+msgstr "Nepavyko sekos atstatyti į pradinę būseną."
+
+msgid "strsequencealtered"
+msgstr "Seka pakeista."
+
+msgid "strsequencealteredbad"
+msgstr "Nepavyko pakeisti sekos."
+
+msgid "strsetval"
+msgstr "Nustatyti reikšmę"
+
+msgid "strsequencesetval"
+msgstr "Sekos reikšmė nustatyta."
+
+msgid "strsequencesetvalbad"
+msgstr "Nepavyko nustatyti sekos reikšmės."
+
+msgid "strnextval"
+msgstr "Padidinti reikšmę"
+
+msgid "strsequencenextval"
+msgstr "Sekos reikšmė padidėjo."
+
+msgid "strsequencenextvalbad"
+msgstr "Sekos reikšmės padidinti nepavyko."
+
+msgid "strspecifysequencetodrop"
+msgstr "Turite nurodyti bent vieną seką, kurią norite pašalinti."
+
+# Indexes
+msgid "strindex"
+msgstr "Indeksas"
+
+msgid "strindexes"
+msgstr "Indeksai"
+
+msgid "strindexname"
+msgstr "Indekso pavadinimas"
+
+msgid "strshowallindexes"
+msgstr "Rodyti visus indeksus"
+
+msgid "strnoindex"
+msgstr "Indeksas nerastas."
+
+msgid "strnoindexes"
+msgstr "Indeksų nerasta."
+
+msgid "strcreateindex"
+msgstr "Kurti indeksą"
+
+msgid "strtabname"
+msgstr "Lentelės pavadinimas"
+
+msgid "strcolumnname"
+msgstr "Stulpelio pavadinimas"
+
+msgid "strindexneedsname"
+msgstr "Turite suteikti indeksui pavadinimą."
+
+msgid "strindexneedscols"
+msgstr "Turite nurodyti teisingą stulpelių skaičių."
+
+msgid "strindexcreated"
+msgstr "Indeksas sukurtas."
+
+msgid "strindexcreatedbad"
+msgstr "Nepavyko sukurti indekso."
+
+msgid "strconfdropindex"
+msgstr "Ar tikrai norite pašalinti indeksą \"%s\"?"
+
+msgid "strindexdropped"
+msgstr "Indeksas pašalintas."
+
+msgid "strindexdroppedbad"
+msgstr "Nepavyko pašalinti indekso."
+
+msgid "strkeyname"
+msgstr "Rakto pavadinimas"
+
+msgid "struniquekey"
+msgstr "Unikalus raktas"
+
+msgid "strprimarykey"
+msgstr "Pirminis raktas"
+
+msgid "strindextype"
+msgstr "Indekso tipas"
+
+msgid "strtablecolumnlist"
+msgstr "Stulpeliai lentelėje"
+
+msgid "strindexcolumnlist"
+msgstr "Stulpeliai indekse"
+
+msgid "strconfcluster"
+msgstr "Ar tikrai norite pertvarkyti \"%s\"?"
+
+msgid "strclusteredgood"
+msgstr "Pertvarka atlikta."
+
+msgid "strclusteredbad"
+msgstr "Nepavyko atlikti pertvarkos."
+
+msgid "strconcurrently"
+msgstr "Lygiagrečiai"
+
+# tuo pat metu
+msgid "strnoclusteravailable"
+msgstr "Lentelė nesutvarkyta pagal indeksą."
+
+# Rules
+msgid "strrules"
+msgstr "Taisyklės"
+
+msgid "strrule"
+msgstr "Taisyklė"
+
+msgid "strshowallrules"
+msgstr "Rodyti visas taisykles"
+
+msgid "strnorule"
+msgstr "Taisyklė nerasta."
+
+msgid "strnorules"
+msgstr "Taisyklių nerasta."
+
+msgid "strcreaterule"
+msgstr "Kurti taisyklę"
+
+msgid "strrulename"
+msgstr "Taisyklės pavadinimas"
+
+msgid "strruleneedsname"
+msgstr "Turite suteikti taisyklei pavadinimą."
+
+msgid "strrulecreated"
+msgstr "Taisyklė sukurta."
+
+msgid "strrulecreatedbad"
+msgstr "Nepavyko sukurti taisyklės."
+
+msgid "strconfdroprule"
+msgstr "Ar tikrai norite šalinti taisyklę \"%s\" taikomą \"%s\"?"
+
+msgid "strruledropped"
+msgstr "Taisyklė pašalinta."
+
+msgid "strruledroppedbad"
+msgstr "Nepavyko pašalinti taisyklės."
+
+# Constraints
+msgid "strconstraint"
+msgstr "Ribojimas"
+
+msgid "strconstraints"
+msgstr "Ribojimai"
+
+msgid "strshowallconstraints"
+msgstr "Rodyti visus ribojimus"
+
+msgid "strnoconstraints"
+msgstr "Ribojimų nerasta."
+
+msgid "strcreateconstraint"
+msgstr "Kurti ribojimą"
+
+msgid "strconstraintcreated"
+msgstr "Ribojimas sukurtas."
+
+msgid "strconstraintcreatedbad"
+msgstr "Nepavyko sukurti ribojimo."
+
+msgid "strconfdropconstraint"
+msgstr "Ar tikrai norite šalinti ribojimą \"%s\" lentelei \"%s\"?"
+
+msgid "strconstraintdropped"
+msgstr "Ribojimas pašalintas."
+
+msgid "strconstraintdroppedbad"
+msgstr "Nepavyko pašalinti ribojimo."
+
+msgid "straddcheck"
+msgstr "Pridėti tikrinimą"
+
+msgid "strcheckneedsdefinition"
+msgstr "Tikrinimo ribojimui būtina apibrėžtis."
+
+msgid "strcheckadded"
+msgstr "Tikrinimo ribojimas pridėtas."
+
+msgid "strcheckaddedbad"
+msgstr "Nepavyko pridėti tikrinimo ribojimo."
+
+msgid "straddpk"
+msgstr "Pridėti pirminį raktą"
+
+msgid "strpkneedscols"
+msgstr "Pirminiam raktui būtina priskirti bent vieną stulpelį."
+
+msgid "strpkadded"
+msgstr "Pirminis raktas pridėtas."
+
+msgid "strpkaddedbad"
+msgstr "Nepavyko pridėti pirminio rakto."
+
+msgid "stradduniq"
+msgstr "Pridėti unikalų raktą"
+
+msgid "struniqneedscols"
+msgstr "Unikaliam raktui būtina priskirti bent vieną stulpelį."
+
+msgid "struniqadded"
+msgstr "Unikalus raktas pridėtas."
+
+msgid "struniqaddedbad"
+msgstr "Nepavyko pridėti unikalaus rakto."
+
+msgid "straddfk"
+msgstr "Pridėti išorinį raktą"
+
+msgid "strfkneedscols"
+msgstr "Išoriniam raktui būtina priskirti bent vieną stulpelį."
+
+msgid "strfkneedstarget"
+msgstr "Būtina nurodyti išorinio rakto paskirties lentelę."
+
+msgid "strfkadded"
+msgstr "Išorinis raktas pridėtas."
+
+msgid "strfkaddedbad"
+msgstr "Nepavyko pridėti išorinio rakto."
+
+msgid "strfktarget"
+msgstr "Paskirties lentelė"
+
+msgid "strfkcolumnlist"
+msgstr "Rakto stulpeliai"
+
+msgid "strondelete"
+msgstr "šalinant"
+
+msgid "stronupdate"
+msgstr "atnaujinant"
+
+# Functions
+msgid "strfunction"
+msgstr "Funkcija"
+
+msgid "strfunctions"
+msgstr "Funkcijos"
+
+msgid "strshowallfunctions"
+msgstr "Rodyti visas funkcijas"
+
+msgid "strnofunction"
+msgstr "Funkcija nerasta."
+
+msgid "strnofunctions"
+msgstr "Funkcijų nerasta."
+
+msgid "strcreateplfunction"
+msgstr "Kurti SQL/PL funkciją"
+
+msgid "strcreateinternalfunction"
+msgstr "Kurti vidinę funkciją"
+
+msgid "strcreatecfunction"
+msgstr "Kurti C funkciją"
+
+msgid "strfunctionname"
+msgstr "Funkcijos pavadinimas"
+
+msgid "strreturns"
+msgstr "Grąžina"
+
+msgid "strproglanguage"
+msgstr "Programavimo kalba"
+
+msgid "strfunctionneedsname"
+msgstr "Turite suteikti funkcijai pavadinimą."
+
+msgid "strfunctionneedsdef"
+msgstr "Turite pateikti funkcijos apibrėžtį."
+
+msgid "strfunctioncreated"
+msgstr "Funkcija sukurta."
+
+msgid "strfunctioncreatedbad"
+msgstr "Nepavyko sukurti funkcijos."
+
+msgid "strconfdropfunction"
+msgstr "Ar tikrai norite šalinti funkciją \"%s\"?"
+
+msgid "strfunctiondropped"
+msgstr "Funkcija pašalinta."
+
+msgid "strfunctiondroppedbad"
+msgstr "Nepavyko pašalinti funkcijos."
+
+msgid "strfunctionupdated"
+msgstr "Funkcija atnaujinta."
+
+msgid "strfunctionupdatedbad"
+msgstr "Nepavyko atnaujinti funkcijos."
+
+msgid "strobjectfile"
+msgstr "Objektinis Failas"
+
+msgid "strlinksymbol"
+msgstr "Sąsajos simbolis (C funkcijos pavadinimas)"
+
+msgid "strarguments"
+msgstr "Argumentai"
+
+msgid "strargmode"
+msgstr "Veiksena"
+
+msgid "strargtype"
+msgstr "Tipas"
+
+msgid "strargadd"
+msgstr "Pridėti dar vieną argumentą"
+
+msgid "strargremove"
+msgstr "Pašalinti šį argumentą"
+
+msgid "strargnoargs"
+msgstr "Ši funkcija nepriims jokių argumentų."
+
+msgid "strargenableargs"
+msgstr "Leisti perduoti argumentus šiai funkcijai."
+
+msgid "strargnorowabove"
+msgstr "Turi būti eilutė virš šios eilutės."
+
+msgid "strargnorowbelow"
+msgstr "Turi būti eilutė žemiau šios eilutės."
+
+msgid "strargraise"
+msgstr "Pakelti."
+
+msgid "strarglower"
+msgstr "Nuleisti."
+
+msgid "strargremoveconfirm"
+msgstr "Ar tikrai norite pašalinti šį argumentą? Pašalinimas negalės būti atšauktas."
+
+msgid "strfunctioncosting"
+msgstr "Function Costing"
+
+msgid "strresultrows"
+msgstr "Eilučių rezultate"
+
+msgid "strexecutioncost"
+msgstr "Vykdymo sąnaudos"
+
+msgid "strspecifyfunctiontodrop"
+msgstr "Turite nurodyti bent vieną funkciją, kurią norite pašalinti."
+
+# Triggers
+msgid "strtrigger"
+msgstr "Trigeris"
+
+msgid "strtriggers"
+msgstr "Trigeriai"
+
+msgid "strshowalltriggers"
+msgstr "Rodyti visus trigerius"
+
+msgid "strnotrigger"
+msgstr "Trigeris nerastas."
+
+msgid "strnotriggers"
+msgstr "Trigerių nerasta."
+
+msgid "strcreatetrigger"
+msgstr "Kurti trigerį"
+
+msgid "strtriggerneedsname"
+msgstr "Turite nurodyti trigerio pavadinimą."
+
+msgid "strtriggerneedsfunc"
+msgstr "Turite priskirti funkciją trigeriui."
+
+msgid "strtriggercreated"
+msgstr "Trigeris sukurtas."
+
+msgid "strtriggercreatedbad"
+msgstr "Nepavyko sukurti trigerio."
+
+msgid "strconfdroptrigger"
+msgstr "Ar tikrai norite šalinti trigerį \"%s\" lentelėje \"%s\"?"
+
+msgid "strconfenabletrigger"
+msgstr "Ar tikrai norite įjungti trigerį \"%s\" lentelėje \"%s\"?"
+
+msgid "strconfdisabletrigger"
+msgstr "Ar tikrai norite išjungti trigerį \"%s\" lentelėje \"%s\"?"
+
+msgid "strtriggerdropped"
+msgstr "Trigeris pašalintas."
+
+msgid "strtriggerdroppedbad"
+msgstr "Nepavyko pašalinti trigerio."
+
+msgid "strtriggerenabled"
+msgstr "Trigeris įjungtas."
+
+msgid "strtriggerenabledbad"
+msgstr "Nepavyko įjungti trigerio."
+
+msgid "strtriggerdisabled"
+msgstr "Trigeris išjungtas."
+
+msgid "strtriggerdisabledbad"
+msgstr "Nepavyko išjungti trigerio."
+
+msgid "strtriggeraltered"
+msgstr "Trigeris pakeistas."
+
+msgid "strtriggeralteredbad"
+msgstr "Nepavyko pakeisti trigerio."
+
+msgid "strforeach"
+msgstr "Kiekvienam(-ai)"
+
+# Types
+msgid "strtype"
+msgstr "Duomenų tipas"
+
+msgid "strtypes"
+msgstr "Duomenų tipai"
+
+msgid "strshowalltypes"
+msgstr "Rodyti visus duomenų tipus"
+
+msgid "strnotype"
+msgstr "Duomenų tipas nerastas."
+
+msgid "strnotypes"
+msgstr "Duomenų tipų nerasta."
+
+msgid "strcreatetype"
+msgstr "Kurti duomenų tipą"
+
+msgid "strcreatecomptype"
+msgstr "Kurti struktūrinį duomenų tipą"
+
+msgid "strcreateenumtype"
+msgstr "Kurti enum duomenų tipą"
+
+msgid "strtypeneedsfield"
+msgstr "Turite nurodyti bent vieną lauką."
+
+msgid "strtypeneedsvalue"
+msgstr "Turite nurodyti bent vieną reikšmę."
+
+msgid "strtypeneedscols"
+msgstr "Turite nurodyti teisingą laukų skaičių."
+
+msgid "strtypeneedsvals"
+msgstr "Turite nurodyti teisingą reikšmių skaičių."
+
+msgid "strinputfn"
+msgstr "Įvesties funkcija"
+
+msgid "stroutputfn"
+msgstr "Išvesties funkcija"
+
+msgid "strpassbyval"
+msgstr "Perdavimas reikšme?"
+
+msgid "stralignment"
+msgstr "Lygiavimas"
+
+msgid "strelement"
+msgstr "Elementas"
+
+msgid "strdelimiter"
+msgstr "Skirtukas"
+
+msgid "strstorage"
+msgstr "Atmintinė"
+
+msgid "strfield"
+msgstr "Laukas"
+
+msgid "strnumfields"
+msgstr "Laukų sk."
+
+msgid "strnumvalues"
+msgstr "Reikšmių sk."
+
+msgid "strtypeneedsname"
+msgstr "Turite suteikti duomenų tipui pavadinimą."
+
+msgid "strtypeneedslen"
+msgstr "Turite nurodyti duomenų tipo ilgį."
+
+msgid "strtypecreated"
+msgstr "Duomenų tipas sukurtas."
+
+msgid "strtypecreatedbad"
+msgstr "Nepavyko sukurti duomenų tipo."
+
+msgid "strconfdroptype"
+msgstr "Ar tikrai norite šalinti duomenų tipą \"%s\"?"
+
+msgid "strtypedropped"
+msgstr "Duomenų tipas pašalintas."
+
+msgid "strtypedroppedbad"
+msgstr "Nepavyko pašalinti duomenų tipo."
+
+msgid "strflavor"
+msgstr "Atmaina"
+
+msgid "strbasetype"
+msgstr "Bazinis"
+
+msgid "strcompositetype"
+msgstr "Struktūrinis"
+
+msgid "strpseudotype"
+msgstr "Pseudo"
+
+msgid "strenum"
+msgstr "Enum"
+
+msgid "strenumvalues"
+msgstr "Enum reikšmės"
+
+# Schemas
+msgid "strschema"
+msgstr "Schema"
+
+msgid "strschemas"
+msgstr "Schemos"
+
+msgid "strshowallschemas"
+msgstr "Rodyti visas schemas"
+
+msgid "strnoschema"
+msgstr "Schema nerasta."
+
+msgid "strnoschemas"
+msgstr "Schemų nerasta."
+
+msgid "strcreateschema"
+msgstr "Kurti schemą"
+
+msgid "strschemaname"
+msgstr "Schemos pavadinimas"
+
+msgid "strschemaneedsname"
+msgstr "Turite suteikti schemai pavadinimą."
+
+msgid "strschemacreated"
+msgstr "Schema sukurta."
+
+msgid "strschemacreatedbad"
+msgstr "Nepavyko sukurti schemos."
+
+msgid "strconfdropschema"
+msgstr "Ar tikrai norite šalinti schemą \"%s\"?"
+
+msgid "strschemadropped"
+msgstr "Schema pašalinta."
+
+msgid "strschemadroppedbad"
+msgstr "Nepavyko pašalinti schemos."
+
+msgid "strschemaaltered"
+msgstr "Schema pakeista."
+
+msgid "strschemaalteredbad"
+msgstr "Nepavyko pakeisti schemos."
+
+msgid "strsearchpath"
+msgstr "Schemų paieškos kelias"
+
+msgid "strspecifyschematodrop"
+msgstr "Turite nurodyti bent vieną schemą, kurią norite pašalinti."
+
+# Reports
+
+# Domains
+msgid "strdomain"
+msgstr "Domenas"
+
+msgid "strdomains"
+msgstr "Domenai"
+
+msgid "strshowalldomains"
+msgstr "Rodyti visus domenus"
+
+msgid "strnodomains"
+msgstr "Domenų nerasta."
+
+msgid "strcreatedomain"
+msgstr "Kurti domeną"
+
+msgid "strdomaindropped"
+msgstr "Domenas pašalintas."
+
+msgid "strdomaindroppedbad"
+msgstr "Nepavyko pašalinti domeno."
+
+msgid "strconfdropdomain"
+msgstr "Ar tikrai norite šalinti domeną \"%s\"?"
+
+msgid "strdomainneedsname"
+msgstr "Turite suteikti domenui vardą."
+
+msgid "strdomaincreated"
+msgstr "Domenas sukurtas."
+
+msgid "strdomaincreatedbad"
+msgstr "Nepavyko sukurti domeno."
+
+msgid "strdomainaltered"
+msgstr "Domenas pakeistas."
+
+msgid "strdomainalteredbad"
+msgstr "Nepavyko pakeisti domeno."
+
+# Operators
+msgid "stroperator"
+msgstr "Operatorius"
+
+msgid "stroperators"
+msgstr "Operatoriai"
+
+msgid "strshowalloperators"
+msgstr "Rodyti visus operatorius"
+
+msgid "strnooperator"
+msgstr "Operatorius nerastas."
+
+msgid "strnooperators"
+msgstr "Operatorių nerasta."
+
+msgid "strcreateoperator"
+msgstr "Kurti operatorių"
+
+msgid "strleftarg"
+msgstr "Kairiojo argumento tipas"
+
+msgid "strrightarg"
+msgstr "Dešiniojo argumento tipas"
+
+msgid "strcommutator"
+msgstr "Commutator"
+
+# komutatyvumas, perstatomumas,
+msgid "strnegator"
+msgstr "Negator"
+
+# inversija,neigimas, neigimo operacija
+msgid "strrestrict"
+msgstr "Restrict"
+
+# ribojimas
+msgid "strjoin"
+msgstr "Join"
+
+msgid "strhashes"
+msgstr "Hashes"
+
+msgid "strmerges"
+msgstr "Merges"
+
+msgid "strleftsort"
+msgstr "Left sort"
+
+msgid "strrightsort"
+msgstr "Right sort"
+
+msgid "strlessthan"
+msgstr "Mažiau nei"
+
+msgid "strgreaterthan"
+msgstr "Daugiau nei"
+
+msgid "stroperatorneedsname"
+msgstr "Turite suteikti operatoriui pavadinimą."
+
+msgid "stroperatorcreated"
+msgstr "Operatorius sukurtas."
+
+msgid "stroperatorcreatedbad"
+msgstr "Nepavyko sukurti operatoriaus."
+
+msgid "strconfdropoperator"
+msgstr "Ar tikrai norite šalinti operatorių \"%s\"?"
+
+msgid "stroperatordropped"
+msgstr "Operatorius pašalintas."
+
+msgid "stroperatordroppedbad"
+msgstr "Nepavyko pašalinti operatoriaus."
+
+# Casts
+msgid "strcasts"
+msgstr "Casts"
+
+# duomenų tipo keitimas
+msgid "strnocasts"
+msgstr "No casts found."
+
+msgid "strsourcetype"
+msgstr "Source type"
+
+msgid "strtargettype"
+msgstr "Target type"
+
+msgid "strimplicit"
+msgstr "Implicit"
+
+# numanomas(-a)
+msgid "strinassignment"
+msgstr "In assignment"
+
+msgid "strbinarycompat"
+msgstr "(Binary compatible)"
+
+# suderintas(-a) su dvejetainė sistema
+
+# Conversions
+msgid "strconversions"
+msgstr "Konvertavimai"
+
+msgid "strnoconversions"
+msgstr "Konvertavimai nerasti."
+
+msgid "strsourceencoding"
+msgstr "Source encoding"
+
+# pradinė koduotė
+msgid "strtargetencoding"
+msgstr "Target encoding"
+
+# galutinė koduotė
+
+# Languages
+msgid "strlanguages"
+msgstr "Programavimo kalbos"
+
+msgid "strnolanguages"
+msgstr "Kalbų nerasta."
+
+msgid "strtrusted"
+msgstr "Patikima"
+
+# Info
+msgid "strnoinfo"
+msgstr "Nėra informacijos."
+
+msgid "strreferringtables"
+msgstr "Priklausomos lentelės"
+
+msgid "strparenttables"
+msgstr "Viršlentelės"
+
+msgid "strchildtables"
+msgstr "Polentelės"
+
+# Aggregates
+msgid "straggregate"
+msgstr "Agregavimo funkcija"
+
+msgid "straggregates"
+msgstr "Agregavimo funkcijos"
+
+msgid "strnoaggregates"
+msgstr "Agregavimo funkcijų nerasta."
+
+msgid "stralltypes"
+msgstr "(Visi tipai)"
+
+msgid "strcreateaggregate"
+msgstr "Kurti agregavimo funkciją"
+
+msgid "straggrbasetype"
+msgstr "Pradinių duomenų tipas"
+
+msgid "straggrsfunc"
+msgstr "Būsenos keitimo funkcija"
+
+msgid "straggrstype"
+msgstr "Būsenos reikšmės duomenų tipas"
+
+msgid "straggrffunc"
+msgstr "Galutinė funkcija"
+
+msgid "straggrinitcond"
+msgstr "Pradinė sąlyga"
+
+msgid "straggrsortop"
+msgstr "Rikiavimo operatorius"
+
+msgid "strconfdropaggregate"
+msgstr "Ar tikrai norite šalinti agregavimo funkciją \"%s\"?"
+
+msgid "straggregatedropped"
+msgstr "Agregavimo funkcija pašalinta."
+
+msgid "straggregatedroppedbad"
+msgstr "Nepavyko pašalinti agregavimo funkcijos."
+
+msgid "straggraltered"
+msgstr "Agregavimo funkcija pakeista."
+
+msgid "straggralteredbad"
+msgstr "Nepavyko pakeisti agregavimo funkcijos."
+
+msgid "straggrneedsname"
+msgstr "Turite suteikti agregavimo funkcijai pavadinimą."
+
+msgid "straggrneedsbasetype"
+msgstr "Turite nurodyti agregavimo funkcijos pradinių duomenų tipą."
+
+msgid "straggrneedssfunc"
+msgstr "Turite nurodyti agregavimo funkcijos būsenos keitimo funkcijos pavadinimą."
+
+msgid "straggrneedsstype"
+msgstr "Turite nurodyti agregavimo funkcijos būsenos reikšmės duomenų tipą."
+
+msgid "straggrcreated"
+msgstr "Agregavimo funkcija sukurta."
+
+msgid "straggrcreatedbad"
+msgstr "Nepavyko sukurti agregavimo funkcijos."
+
+msgid "straggrshowall"
+msgstr "Rodyti visas agregavimo funkcijas"
+
+# Operator Classes
+msgid "stropclasses"
+msgstr "Operatorių klasės"
+
+msgid "strnoopclasses"
+msgstr "Operatorių klasių nerasta."
+
+msgid "straccessmethod"
+msgstr "Prieigos metodas"
+
+# Stats and performance
+msgid "strrowperf"
+msgstr "Įrašų Našumas"
+
+msgid "strioperf"
+msgstr "I/O Našumas"
+
+msgid "stridxrowperf"
+msgstr "Indeksų Įrašų Našumas"
+
+msgid "stridxioperf"
+msgstr "Indeksų I/O Našumas"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "Nuoseklus"
+
+msgid "strscan"
+msgstr "Peržiūrėti"
+
+msgid "strread"
+msgstr "Skaityti"
+
+msgid "strfetch"
+msgstr "Paimti"
+
+msgid "strheap"
+msgstr "Krūva"
+
+msgid "strtoast"
+msgstr "TOAST"
+
+msgid "strtoastindex"
+msgstr "TOAST Indeksas"
+
+msgid "strcache"
+msgstr "Podėlis"
+
+msgid "strdisk"
+msgstr "Diskas"
+
+msgid "strrows2"
+msgstr "Įrašai"
+
+# Tablespaces
+msgid "strtablespace"
+msgstr "Lentelių erdvė"
+
+msgid "strtablespaces"
+msgstr "Lentelių erdvės"
+
+msgid "strshowalltablespaces"
+msgstr "Rodyti visas lentelių erdves"
+
+msgid "strnotablespaces"
+msgstr "Lentelių erdvių nerasta."
+
+msgid "strcreatetablespace"
+msgstr "Kurti lentelių erdvę"
+
+msgid "strlocation"
+msgstr "Vieta"
+
+msgid "strtablespaceneedsname"
+msgstr "Turite suteikti lentelių erdvei pavadinimą."
+
+msgid "strtablespaceneedsloc"
+msgstr "Turite nurodyti katalogą, kuriame turi būti sukurta lentelių erdvė."
+
+msgid "strtablespacecreated"
+msgstr "Lentelių erdvė sukurta."
+
+msgid "strtablespacecreatedbad"
+msgstr "Nepavyko sukurti lentelių erdvės."
+
+msgid "strconfdroptablespace"
+msgstr "Ar tikrai norite šalinti lentelių erdvę \"%s\"?"
+
+msgid "strtablespacedropped"
+msgstr "Lentelių erdvė pašalinta."
+
+msgid "strtablespacedroppedbad"
+msgstr "Nepavyko pašalinti lentelių erdvės."
+
+msgid "strtablespacealtered"
+msgstr "Lentelių erdvė pakeista."
+
+msgid "strtablespacealteredbad"
+msgstr "Nepavyko pakeisti lentelių erdvės."
+
+# Miscellaneous
+msgid "strtopbar"
+msgstr "%s veikia %s:%s -- Jūs esate prisijungęs kaip \"%s\""
+
+msgid "strtimefmt"
+msgstr "j M Y - g:iA"
+
+msgid "strhelp"
+msgstr "Pagalba"
+
+msgid "strhelpicon"
+msgstr "?"
+
+msgid "strhelppagebrowser"
+msgstr "Pagalbos puslapio naršyklė"
+
+msgid "strselecthelppage"
+msgstr "Pasirinkite pagalbos puslapį"
+
+msgid "strinvalidhelppage"
+msgstr "Netinkamas pagalbos puslapis."
+
+msgid "strlogintitle"
+msgstr "Prisijungti prie %s"
+
+msgid "strlogoutmsg"
+msgstr "Atsijungta nuo %s"
+
+msgid "strloading"
+msgstr "Įkeliama..."
+
+msgid "strerrorloading"
+msgstr "Klaida įkeliant"
+
+msgid "strclicktoreload"
+msgstr "Spustelėkite, kad būtų atsiųsta iš naujo"
+
+# Autovacuum
+msgid "strautovacuum"
+msgstr "Automatinis apvalymas"
+
+msgid "strturnedon"
+msgstr "Įjungta"
+
+msgid "strturnedoff"
+msgstr "Išjungta"
+
+msgid "strenabled"
+msgstr "Veiksnus"
+
+msgid "strnovacuumconf"
+msgstr "Automatinio apvalymo konfigūracijų nerasta."
+
+msgid "strvacuumbasethreshold"
+msgstr "Apvalymo bazinė riba"
+
+msgid "strvacuumscalefactor"
+msgstr "Apvalymo skalės koeficientas"
+
+msgid "stranalybasethreshold"
+msgstr "Analizės bazinė riba"
+
+msgid "stranalyzescalefactor"
+msgstr "Analizės skalės koeficientas"
+
+msgid "strvacuumcostdelay"
+msgstr "Apvalymo Cost Delay"
+
+msgid "strvacuumcostlimit"
+msgstr "Apvalymo Cost Limit"
+
+msgid "strvacuumpertable"
+msgstr "Lentelių automatinio apvalymo konfigūracijos"
+
+msgid "straddvacuumtable"
+msgstr "Pridėti lentelės automatinio apvalymo konfigūraciją"
+
+msgid "streditvacuumtable"
+msgstr "Taisyti lentelės %s automatinio apvalymo konfigūraciją"
+
+msgid "strdelvacuumtable"
+msgstr "Šalinti lentelės %s automatinio apvalymo konfigūraciją ?"
+
+msgid "strvacuumtablereset"
+msgstr "Lentelės %s automatinio apvalymo konfigūracijos reikšmės atstatytos į numatytąsias"
+
+msgid "strdelvacuumtablefail"
+msgstr "Nepavyko panaikinti lentelės %s automatinio apvalymo konfigūracijos"
+
+msgid "strsetvacuumtablesaved"
+msgstr "Lentelės %s automatinio apvalymo konfigūracija įrašyta."
+
+msgid "strsetvacuumtablefail"
+msgstr "Nepavyko konfigūruoti lentelės %s automatinio apvalymo."
+
+msgid "strspecifydelvacuumtable"
+msgstr "Turite nurodyti lentelę, kurios automatinio apvalymo konfigūraciją norite panaikinti."
+
+msgid "strspecifyeditvacuumtable"
+msgstr "Turite nurodyti lentelę, kurios automatinio apvalymo konfigūraciją norite taisyti."
+
+msgid "strnotdefaultinred"
+msgstr "Reikšmės, kitokios nei numatytosios, pažymėtos raudonai."
+
+# Table-level Locks
+msgid "strlocks"
+msgstr "Blokuotės"
+
+msgid "strtransaction"
+msgstr "Operacijos Identifikatorius"
+
+msgid "strvirtualtransaction"
+msgstr "Virtualios Operacijos Identifikatorius"
+
+msgid "strprocessid"
+msgstr "Proceso Identifikatorius"
+
+msgid "strmode"
+msgstr "Blokuotės veiksena"
+
+msgid "strislockheld"
+msgstr "Ar blokuotė veikia?"
+
+# Prepared transactions
+msgid "strpreparedxacts"
+msgstr "Paruoštos operacijos"
+
+msgid "strxactid"
+msgstr "Operacijos identifikatorius"
+
+msgid "strgid"
+msgstr "Globalus identifikatorius"
+
+# Fulltext search
+msgid "strfulltext"
+msgstr "Full Text Search"
+
+msgid "strftsconfig"
+msgstr "FTS konfigūracija"
+
+msgid "strftsconfigs"
+msgstr "Konfigūracijos"
+
+msgid "strftscreateconfig"
+msgstr "Kurti FTS konfigūraciją"
+
+msgid "strftscreatedict"
+msgstr "Kurti žodyną"
+
+msgid "strftscreatedicttemplate"
+msgstr "Kurti žodyno šabloną"
+
+msgid "strftscreateparser"
+msgstr "Kurti analizatorių"
+
+msgid "strftsnoconfigs"
+msgstr "FTS konfigūracijų nerasta."
+
+msgid "strftsconfigdropped"
+msgstr "FTS konfigūracija pašalinta."
+
+msgid "strftsconfigdroppedbad"
+msgstr "Nepavyko pašalinti FTS konfigūracijos."
+
+msgid "strconfdropftsconfig"
+msgstr "Ar tikrai norite šalinti FTS konfigūraciją \"%s\"?"
+
+msgid "strconfdropftsdict"
+msgstr "Ar tikrai norite šalinti FTS žodyną \"%s\"?"
+
+msgid "strconfdropftsmapping"
+msgstr "Ar tikrai norite šalinti atvaizdį \"%s\" FTS konfigūracijai \"%s\"?"
+
+msgid "strftstemplate"
+msgstr "Šablonas"
+
+msgid "strftsparser"
+msgstr "Analizatorius"
+
+msgid "strftsconfigneedsname"
+msgstr "Turite suteikti FTS konfigūracijai pavadinimą."
+
+msgid "strftsconfigcreated"
+msgstr "FTS konfigūracija sukurta."
+
+msgid "strftsconfigcreatedbad"
+msgstr "Nepavyko sukurti FTS konfigūracijos."
+
+msgid "strftsmapping"
+msgstr "Atvaizdis"
+
+msgid "strftsdicts"
+msgstr "Žodynai"
+
+msgid "strftsdict"
+msgstr "Žodynas"
+
+msgid "strftsemptymap"
+msgstr "Išvalyti FTS konfigūracijos atvaizdį."
+
+msgid "strftsconfigaltered"
+msgstr "FTS konfigūracija pakeista."
+
+msgid "strftsconfigalteredbad"
+msgstr "Nepavyko pakeisti FTS konfigūracijos."
+
+msgid "strftsconfigmap"
+msgstr "FTS konfigūracijos atvaizdis"
+
+msgid "strftsparsers"
+msgstr "FTS analizatoriai"
+
+msgid "strftsnoparsers"
+msgstr "FTS analizatorių nėra."
+
+msgid "strftsnodicts"
+msgstr "FTS žodynų nėra."
+
+msgid "strftsdictcreated"
+msgstr "FTS žodynas sukurtas."
+
+msgid "strftsdictcreatedbad"
+msgstr "Nepavyko sukurti FTS žodyno."
+
+msgid "strftslexize"
+msgstr "Lexize"
+
+msgid "strftsinit"
+msgstr "Init"
+
+msgid "strftsoptionsvalues"
+msgstr "Parinktys ir reikšmės"
+
+msgid "strftsdictneedsname"
+msgstr "Turite suteikti FTS žodynui pavadinimą."
+
+msgid "strftsdictdropped"
+msgstr "FTS žodynas pašalintas."
+
+msgid "strftsdictdroppedbad"
+msgstr "Nepavyko pašalinti FTS žodyno."
+
+msgid "strftsdictaltered"
+msgstr "FTS žodynas pakeistas."
+
+msgid "strftsdictalteredbad"
+msgstr "Nepavyko pakeisti FTS žodyno."
+
+msgid "strftsaddmapping"
+msgstr "Pridėti naują atvaizdį"
+
+msgid "strftsspecifymappingtodrop"
+msgstr "Turite nurodyti bent vieną atvaizdį, kurį norite pašalinti."
+
+msgid "strftsspecifyconfigtoalter"
+msgstr "Turite nurodyti bent vieną FTS konfigūraciją, kurią norite pakeisti."
+
+msgid "strftsmappingdropped"
+msgstr "FTS atvaizdis pašalintas."
+
+msgid "strftsmappingdroppedbad"
+msgstr "Nepavyko pašalinti FTS atvaizdžio."
+
+msgid "strftsnodictionaries"
+msgstr "Žodynų nerasta."
+
+msgid "strftsmappingaltered"
+msgstr "FTS atvaizdis pakeistas."
+
+msgid "strftsmappingalteredbad"
+msgstr "Nepavyko pakeisti FTS atvaizdžio."
+
+msgid "strftsmappingadded"
+msgstr "FTS atvaizdis pridėtas."
+
+msgid "strftsmappingaddedbad"
+msgstr "Nepavyko pridėti FTS atvaizdžio."
+
+msgid "strftstabconfigs"
+msgstr "Konfigūracijos"
+
+msgid "strftstabdicts"
+msgstr "Žodynai"
+
+msgid "strftstabparsers"
+msgstr "Analizatoriai"
+
+msgid "strftscantparsercopy"
+msgstr "Negalima nurodyti kartu ir analizatoriaus, ir šablono, teksto paieškos konfikūracijos kūrimo metu."

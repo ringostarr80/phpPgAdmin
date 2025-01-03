@@ -1,0 +1,1422 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: mn_MN\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "Mongolian"
+
+msgid "applocale"
+msgstr "mn-MN"
+
+msgid "applangdir"
+msgstr "ltr"
+
+# Welcome
+msgid "strintro"
+msgstr "phpPgAdmin-Ф дСздСЪ ЭЯвЩЬЮЯ ее."
+
+msgid "strppahome"
+msgstr "phpPgAdmin - ?ЮФгмЮ ФмЬЧмУ"
+
+msgid "strpgsqlhome"
+msgstr "PostgreSQL - ?ЮФгмЮ ФмЬЧмУ"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "PostgreSQL - тЩоЩЧ ТСвЩЭд (ьЯЫСЬ)"
+
+msgid "strreportbug"
+msgstr "сЬФССЮй ЭмФммЬмЬ"
+
+msgid "strviewfaq"
+msgstr "сгееЬд ТС ШСвЩеЬд"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "шЯЬТЯЧФЯШ"
+
+msgid "strloginfailed"
+msgstr "шЯЬТЯЬдйЮ СЬФСС"
+
+msgid "strlogindisallowed"
+msgstr "шЯЬТЯЧФЯШ ТЯЬЯЭжЧ?Ъ"
+
+msgid "strserver"
+msgstr "є?з ЫЯЭаиРдХв"
+
+msgid "strlogout"
+msgstr "чСвСШ"
+
+msgid "strowner"
+msgstr "ќкмЭлЩЧо"
+
+msgid "straction"
+msgstr "?ЪЬФмЬ"
+
+msgid "stractions"
+msgstr "?ЪЬФмЬ??Ф"
+
+msgid "strname"
+msgstr "юмв"
+
+msgid "strdefinition"
+msgstr "єЯФЯвШЯЪЬЯЬд"
+
+msgid "straggregates"
+msgstr "юмЧдЧмШ"
+
+msgid "strproperties"
+msgstr "є?Ь?з (лЩЮж оСЮСв)"
+
+msgid "strbrowse"
+msgstr "шСвСШ"
+
+msgid "strdrop"
+msgstr "шСгСШ"
+
+msgid "strdropped"
+msgstr "шСгСЧФгСЮ"
+
+msgid "strnull"
+msgstr "шЯЯгЯЮ"
+
+msgid "strnotnull"
+msgstr "шЯЯгЯШ ТЩл"
+
+msgid "strprev"
+msgstr "< ?ЭЮ?Ш"
+
+msgid "strnext"
+msgstr "фСвССЧЩЪЮ >"
+
+msgid "strfirst"
+msgstr "<< ќШмЮФ"
+
+msgid "strlast"
+msgstr "ѓ??ЬФ >>"
+
+msgid "strfailed"
+msgstr "сЬФСС"
+
+msgid "strcreate"
+msgstr "??гЧмШ"
+
+msgid "strcreated"
+msgstr "??гЧмгмЮ"
+
+msgid "strcomment"
+msgstr "єСЪЬТСв"
+
+msgid "strlength"
+msgstr "ѕвд"
+
+msgid "strdefault"
+msgstr "єЯФЯвШЯЪ Тег"
+
+msgid "stralter"
+msgstr "??воЩЬ?Ш"
+
+msgid "strok"
+msgstr "OK"
+
+msgid "strcancel"
+msgstr "ш?оЩЮЧ?Ъ ТЯЬЧЯШ"
+
+msgid "strsave"
+msgstr "шСФЧСЬСШ"
+
+msgid "strreset"
+msgstr "свЩЬЧСШ"
+
+msgid "strinsert"
+msgstr "явееЬЧС ШЩЪШ"
+
+msgid "strselect"
+msgstr "ѓЯЮЧЯШ"
+
+msgid "strdelete"
+msgstr "ѕгдЧСШ"
+
+msgid "strupdate"
+msgstr "ѓСЪжЩвееЬСШ"
+
+msgid "strreferences"
+msgstr "шСЭССвСЬ"
+
+msgid "stryes"
+msgstr "єЩЪЭ"
+
+msgid "strno"
+msgstr "?Ч?Ъ"
+
+msgid "strtrue"
+msgstr "?ЮмЮ"
+
+msgid "strfalse"
+msgstr "шеФСЬ"
+
+msgid "stredit"
+msgstr "њСгСШ"
+
+msgid "strcolumns"
+msgstr "тСЧСЮС"
+
+msgid "strrows"
+msgstr "э?в"
+
+msgid "strobjects"
+msgstr "яТиХЫд"
+
+msgid "strexample"
+msgstr "ЧмШ Эмд"
+
+msgid "strback"
+msgstr "теУСШ"
+
+msgid "strqueryresults"
+msgstr "сгееЬЧйЮ ?в Ф?Ю"
+
+msgid "strshow"
+msgstr "?кмШ"
+
+msgid "strempty"
+msgstr "шЯЯгЬЯШ"
+
+msgid "strlanguage"
+msgstr "шмЬ"
+
+msgid "strencoding"
+msgstr "ыЯФоЩЬЯШ"
+
+msgid "strvalue"
+msgstr "ѕдЧС"
+
+msgid "strunique"
+msgstr "яЮУЧЯЪ"
+
+msgid "strprimary"
+msgstr "?ЮФгмЮ"
+
+msgid "strexport"
+msgstr "ќЫгаЯвд"
+
+msgid "strimport"
+msgstr "щЭаЯвд"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "strgo"
+msgstr "?вЧмЬжЬ??Ь"
+
+msgid "stradmin"
+msgstr "њЯШЩЯЮ ТСЪЧееЬСШ"
+
+msgid "strvacuum"
+msgstr "Vacuum"
+
+msgid "stranalyze"
+msgstr "ф?Ю лЩЮжЩЬЧмм"
+
+msgid "strclusterindex"
+msgstr "ыЬСгдХв"
+
+msgid "strclustered"
+msgstr "ыЬСгдХв"
+
+msgid "strreindex"
+msgstr "фСШЩЮ ЩЮФХЫгЬмШ"
+
+msgid "strrun"
+msgstr "сжЩЬЬееЬСШ"
+
+msgid "stradd"
+msgstr "юмЭмШ"
+
+msgid "strevent"
+msgstr "є?Ь?з"
+
+msgid "strwhere"
+msgstr "шССЮС"
+
+msgid "strinstead"
+msgstr "явЯЮФ Юи "
+
+msgid "strwhen"
+msgstr "шмкмм"
+
+msgid "strformat"
+msgstr "цЯвЭСд"
+
+msgid "strdata"
+msgstr "?Ч?ЧФ?Ь"
+
+msgid "strconfirm"
+msgstr "тСдСЬЧССжееЬСШ"
+
+msgid "strexpression"
+msgstr "?ЪЬФмЬ"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strexpand"
+msgstr "?вЧ?дЧ?Ш"
+
+msgid "strcollapse"
+msgstr "ѕЮСЬд"
+
+msgid "strexplain"
+msgstr "єСЪЬТСв"
+
+msgid "strfind"
+msgstr "яЬЯШ"
+
+msgid "stroptions"
+msgstr "ѓЯЮЧЯЬд"
+
+msgid "strrefresh"
+msgstr "ѓмвЧммШ"
+
+msgid "strdownload"
+msgstr "єСдСж СзСШ"
+
+msgid "strinfo"
+msgstr "эмФммЬмЬ"
+
+msgid "stroids"
+msgstr "OIDs"
+
+msgid "stradvanced"
+msgstr "юмЭмЬд"
+
+# Error handling
+msgid "strbadconfig"
+msgstr "єСЮй config.inc.php ШееоЩвгСЮ ТСЪЮС. config.inc.php-dist ?ССг ФСШЩЮ ??гЧм."
+
+msgid "strnotloaded"
+msgstr "єСЮй PHP гееЬЧСЬд Юи PostgreSQL ?Ч?ЧФЬЩЪЮ гСЮдСЪ ШСЭдвСЮ СжЭЬЬСШ ТЯЬЯжЧ?Ъ ТСЪЮС. єС  PHP ?ЧСС ФСШЩЮ --with-pgsql дЯШЩвЧЯЯдЯЪ гееЬЧС."
+
+msgid "strbadschema"
+msgstr "єЯШЩвЧЯЯ Тевее"
+
+msgid "strbadencoding"
+msgstr "Failed to set client encoding in database."
+
+msgid "strsqlerror"
+msgstr "SQL СЬФСС:"
+
+msgid "strinstatement"
+msgstr "ї ЯаХвСдЯвХ:"
+
+msgid "strinvalidparam"
+msgstr "юХзХвЮйЪ аСвСЭХдв гЫвЩадС."
+
+msgid "strnodata"
+msgstr "фСЮЮйШ ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strnoobjects"
+msgstr "яТпХЫдЯз ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strrownotunique"
+msgstr "юХд еЮЩЫСЬиЮЯЧЯ ЩФХЮдЩЦЩЫСдЯвС ФЬб мдЯЪ кСаЩгЩ."
+
+# Tables
+msgid "strtable"
+msgstr "єСТЬЩУС"
+
+msgid "strtables"
+msgstr "єСТЬЩУй"
+
+msgid "strshowalltables"
+msgstr "№ЯЫСкСди згХ дСТЬЩУй"
+
+msgid "strnotables"
+msgstr "єСТЬЩУ ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strnotable"
+msgstr " єСТЬЩУС ЮХ ЯТЮСвежХЮС."
+
+msgid "strcreatetable"
+msgstr "ѓЯкФСди дСТЬЩУе"
+
+msgid "strtablename"
+msgstr "щЭб дСТЬЩУй"
+
+msgid "strtableneedsname"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ ЯавХФХЬЩди ЩЭб дСТЬЩУй."
+
+msgid "strtableneedsfield"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ ЯавХФХЬЩди аЯ ЫвСЪЮХЪ ЭХвХ ЯФЮЯ аЯЬХ."
+
+msgid "strtableneedscols"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ еЫСкСди ФЯаегдЩЭЯХ оЩгЬЯ СдвЩТедЯз."
+
+msgid "strtablecreated"
+msgstr "єСТЬЩУС гЯкФСЮС."
+
+msgid "strtablecreatedbad"
+msgstr "ѓЯкФСЮЩХ дСТЬЩУй авХвзСЮЯ."
+
+msgid "strconfdroptable"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еФСЬЩди дСТЬЩУе \"%s\"?"
+
+msgid "strtabledropped"
+msgstr "єСТЬЩУС еФСЬХЮС."
+
+msgid "strtabledroppedbad"
+msgstr "ѕФСЬХЮЩХ дСТЬЩУй авХвзСЮЯ."
+
+msgid "strconfemptytable"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ ЯоЩгдЩди дСТЬЩУе \"%s\"?"
+
+msgid "strtableemptied"
+msgstr "єСТЬЩУС ЯоЩнХЮС."
+
+msgid "strtableemptiedbad"
+msgstr "яоЩгдЫС дСТЬЩУй авХвзСЮС."
+
+msgid "strinsertrow"
+msgstr "фЯТСзЩди кСаЩги"
+
+msgid "strrowinserted"
+msgstr "њСаЩги ФЯТСзЬХЮС."
+
+msgid "strrowinsertedbad"
+msgstr "фЯТСзЬХЮЩХ кСаЩгЩ авХвзСЮЯ."
+
+msgid "streditrow"
+msgstr "ђХФСЫдЩвЯзСди кСаЩги"
+
+msgid "strrowupdated"
+msgstr "њСаЩги ЯТЮЯзЬХЮС."
+
+msgid "strrowupdatedbad"
+msgstr "яТЮЯзЬХЮЩХ кСаЩгЩ авХвзСЮЯ."
+
+msgid "strdeleterow"
+msgstr "ѕФСЬЩди кСаЩги"
+
+msgid "strconfdeleterow"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еФСЬЩди кСаЩги?"
+
+msgid "strrowdeleted"
+msgstr "њСаЩги еФСЬХЮС."
+
+msgid "strrowdeletedbad"
+msgstr "ѕФСЬХЮЩХ кСаЩгЩ авХвзСЮЯ."
+
+msgid "strsaveandrepeat"
+msgstr "їгдСзЩди Щ аЯздЯвЩди"
+
+msgid "strfield"
+msgstr "№ЯЬХ"
+
+msgid "strfields"
+msgstr "№ЯЬб"
+
+msgid "strnumfields"
+msgstr "ыЯЬ-зЯ аЯЬХЪ"
+
+msgid "strfieldneedsname"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ ЮСкзСди аЯЬХ"
+
+msgid "strselectallfields"
+msgstr "їйТвСди згХ аЯЬб"
+
+msgid "strselectneedscol"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ еЫСкСди аЯ ЫвСЪЮХЪ ЭХвХ ЯФЩЮ СдвЩТед"
+
+msgid "strselectunary"
+msgstr "ѕЮСвЮйЪ ЯаХвСдЯв ЮХ ЭЯжХд ЩЭХди зХЬЩоЩЮе."
+
+msgid "straltercolumn"
+msgstr "щкЭХЮЩди СдвЩТед"
+
+msgid "strcolumnaltered"
+msgstr "сдвЩТед ЩкЭХЮХЮ."
+
+msgid "strcolumnalteredbad"
+msgstr "щкЭХЮХЮЩХ СдвЩТедС авХвзСЮЯ."
+
+msgid "strconfdropcolumn"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еФСЬЩди СдвЩТед \"%s\" дСТЬЩУй \"%s\"?"
+
+msgid "strcolumndropped"
+msgstr "сдвЩТед еФСЬХЮ."
+
+msgid "strcolumndroppedbad"
+msgstr "ѕФСЬХЮЩХ СдвЩТедС авХвзСЮЯ."
+
+msgid "straddcolumn"
+msgstr "фЯТСзЩди СдвЩТед"
+
+msgid "strcolumnadded"
+msgstr "сдвЩТед ФЯТСзЬХЮ."
+
+msgid "strcolumnaddedbad"
+msgstr "фЯТСзЬХЮЩХ СдвЩТедС авХвзСЮЯ."
+
+msgid "strcascade"
+msgstr "ыСгЫСФЯЭ"
+
+msgid "strtablealtered"
+msgstr "єСТЬЩУС ЩкЭХЮХЮС."
+
+msgid "strtablealteredbad"
+msgstr "щкЭХЮХЮЩХ дСТЬЩУй авХвзСЮЯ."
+
+msgid "strdataonly"
+msgstr "єЯЬиЫЯ ФСЮЮйХ"
+
+msgid "strstructureonly"
+msgstr "єЯЬиЫЯ гдвеЫдеве"
+
+msgid "strstructureanddata"
+msgstr "ѓдвеЫдеве Щ ФСЮЮйХ"
+
+# Users
+msgid "struser"
+msgstr "№ЯЬикЯзСдХЬи"
+
+msgid "strusers"
+msgstr "№ЯЬикЯзСдХЬЩ"
+
+msgid "strusername"
+msgstr "щЭб аЯЬикЯзСдХЬб"
+
+msgid "strpassword"
+msgstr "№СвЯЬи"
+
+msgid "strsuper"
+msgstr "ѓеаХваЯЬикЯзСдХЬи?"
+
+msgid "strcreatedb"
+msgstr "ѓЯкФСди ТСке ФСЮЮйШ?"
+
+msgid "strexpires"
+msgstr "ѓвЯЫ ФХЪгдзЩб"
+
+msgid "strnousers"
+msgstr "юХд дСЫЩШ аЯЬикЯзСдХЬХЪ."
+
+msgid "struserupdated"
+msgstr "№ЯЬикЯзСдХЬи ЯТЮЯзЬХЮ."
+
+msgid "struserupdatedbad"
+msgstr "яТЮЯзЬХЮЩХ аЯЬикЯзСдХЬб авХвзСЮЯ."
+
+msgid "strshowallusers"
+msgstr "№ЯЫСкСди згХШ аЯЬикЯзСдХЬХЪ"
+
+msgid "strcreateuser"
+msgstr "ѓЯкФСди аЯЬикЯзСдХЬб"
+
+msgid "struserneedsname"
+msgstr "їй ФЯЬжЮй ззХгдЩ ЩЭб аЯЬикЯзСдХЬб."
+
+msgid "strusercreated"
+msgstr "№ЯЬикЯзСдХЬи гЯкФСЮ."
+
+msgid "strusercreatedbad"
+msgstr "ѓЯкФСЮЩХ аЯЬикЯзСдХЬб авХвзСЮЯ."
+
+msgid "strconfdropuser"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еФСЬЩди аЯЬикЯзСдХЬб \"%s\"?"
+
+msgid "struserdropped"
+msgstr "№ЯЬикЯзСдХЬи еФСЬХЮ."
+
+msgid "struserdroppedbad"
+msgstr "ѕФСЬХЮЩХ аЯЬикЯзСдХЬб авХвзСЮЯ."
+
+msgid "straccount"
+msgstr "сЫЫСеЮд"
+
+msgid "strchangepassword"
+msgstr "щкЭХЮЩди аСвЯЬи"
+
+msgid "strpasswordchanged"
+msgstr "№СвЯЬи ЩкЭХЮХЮ."
+
+msgid "strpasswordchangedbad"
+msgstr "щкЭХЮХЮЩХ аСвЯЬб авХвзСЮЯ."
+
+msgid "strpasswordshort"
+msgstr "№СвЯЬи гЬЩлЫЯЭ ЫЯвЯдЫЩЪ."
+
+msgid "strpasswordconfirm"
+msgstr "№СвЯЬи ЮХ гЯЯдзХдгдзеХд аЯФдзХвжФХЮЩР."
+
+# Groups
+msgid "strgroup"
+msgstr "чвеааС"
+
+msgid "strgroups"
+msgstr "чвеаай"
+
+msgid "strnogroup"
+msgstr "чвеааС ЮХ ЯТЮСвежХЮС."
+
+msgid "strnogroups"
+msgstr "юЩ ЯФЮЯЪ Чвеаай ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strcreategroup"
+msgstr "ѓЯкФСди Чвеаае"
+
+msgid "strshowallgroups"
+msgstr "№ЯЫСкСди згХ Чвеаай"
+
+msgid "strgroupneedsname"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ еЫСкСди ЮСкзСЮЩХ Чвеаай."
+
+msgid "strgroupcreated"
+msgstr "чвеааС гЯкФСЮС."
+
+msgid "strgroupcreatedbad"
+msgstr "ѓЯкФСЮЩХ Чвеаай авХвзСЮЯ."
+
+msgid "strconfdropgroup"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еФСЬЩди Чвеаае \"%s\"?"
+
+msgid "strgroupdropped"
+msgstr "чвеааС еФСЬХЮС."
+
+msgid "strgroupdroppedbad"
+msgstr "ѕФСЬХЮЩХ Чвеаай авХвзСЮЯ."
+
+msgid "strmembers"
+msgstr "ѕоСгдЮЩЫЯз"
+
+msgid "straddmember"
+msgstr "фЯТСзЩди еоСгдЮЩЫС"
+
+msgid "strmemberadded"
+msgstr "ѕоСгдЮЩЫ ФЯТСзЬХЮ."
+
+msgid "strmemberaddedbad"
+msgstr "фЯТСзЬХЮЩХ еоСгдЮЩЫС авХвзСЮЯ."
+
+msgid "strdropmember"
+msgstr "ѕФСЬЩди еоСгдЮЩЫС"
+
+msgid "strconfdropmember"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еФСЬЩди еоСгдЮЩЫС \"%s\" Щк Чвеаай \"%s\"?"
+
+msgid "strmemberdropped"
+msgstr "ѕоСгдЮЩЫ еФСЬХЮ."
+
+msgid "strmemberdroppedbad"
+msgstr "ѕФСЬХЮЩХ еоСгдЮЩЫС авХвзСЮЯ."
+
+# Privilges
+msgid "strprivilege"
+msgstr "№вЩзЩЬХЧЩб"
+
+msgid "strprivileges"
+msgstr "№вЩзЩЬХЧЩЩ"
+
+msgid "strnoprivileges"
+msgstr "яТпХЫд ЮХ ЩЭХХд авЩзЩЬХЧЩЪ."
+
+msgid "strgrant"
+msgstr "ѕгЩЬЩди"
+
+msgid "strrevoke"
+msgstr "ягЬСТЩди"
+
+msgid "strgranted"
+msgstr "№вЩзЩЬХЧЩЩ ЩкЭХЮХЮй."
+
+msgid "strgrantfailed"
+msgstr "щкЭХЮХЮЩХ авЩзЩЬХЧЩЪ авХвзСЮЯ."
+
+msgid "strgrantbad"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ еЫСкСди ШЯдб Тй ЯФЮЯЧЯ аЯЬикЯзСдХЬб ЩЬЩ Чвеаае Щ ШЯдб Тй ЯФЮе авЩзЩЬХЧЩР."
+
+msgid "stralterprivs"
+msgstr "щкЭХЮЩди авЩзЩЬХЧЩЩ"
+
+msgid "strgrantor"
+msgstr "фЯЮЯв"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "тСкС ФСЮЮйШ"
+
+msgid "strdatabases"
+msgstr "тСкй ФСЮЮйШ"
+
+msgid "strshowalldatabases"
+msgstr "№ЯЫСкСди згХ ТСкй ФСЮЮйШ"
+
+msgid "strnodatabase"
+msgstr "тСкС ФСЮЮйШ ЮХ ЯТЮСвежХЮС."
+
+msgid "strnodatabases"
+msgstr "юЩ ЯФЮЯЪ ТСкй ФСЮЮйШ ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strcreatedatabase"
+msgstr "ѓЯкФСди ТСке ФСЮЮйШ"
+
+msgid "strdatabasename"
+msgstr "щЭб ТСкй ФСЮЮйШ"
+
+msgid "strdatabaseneedsname"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ авЩгзЯЩди ЩЭб їСлХЪ ТСкХ ФСЮЮйШ."
+
+msgid "strdatabasecreated"
+msgstr "тСкС ФСЮЮйШ гЯкФСЮС."
+
+msgid "strdatabasecreatedbad"
+msgstr "ѓЯкФСЮЩХ ТСкй ФСЮЮйШ авХвзСЮЯ."
+
+msgid "strconfdropdatabase"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еЮЩодЯжЩди ТСке ФСЮЮйШ \"%s\"?"
+
+msgid "strdatabasedropped"
+msgstr " тСкС ФСЮЮйШ еЮЩодЯжХЮС."
+
+msgid "strdatabasedroppedbad"
+msgstr "ѕЮЩодЯжХЮЩХ ТСкй ФСЮЮйШ авХвзСЮЯ."
+
+msgid "strentersql"
+msgstr "їзХФЩдХ SQL-кСавЯг ЮЩжХ:"
+
+msgid "strvacuumgood"
+msgstr "яаХвСУЩб аХвХгдвЯЪЫЩ кСзХвлХЮС."
+
+msgid "strvacuumbad"
+msgstr "яаХвСУЩб аХвХгдвЯЪЫЩ авХвзСЮС."
+
+msgid "stranalyzegood"
+msgstr " яаХвСУЩб СЮСЬЩкС кСзХвлХЮС."
+
+msgid "stranalyzebad"
+msgstr " яаХвСУЩб СЮСЬЩкС кСзХвлХЮС."
+
+# Views
+msgid "strview"
+msgstr "№вХФгдСзЬХЮЩХ"
+
+msgid "strviews"
+msgstr "№вХФгдСзЬХЮЩб"
+
+msgid "strshowallviews"
+msgstr "№ЯЫСкСди згХ авХФгдСзЬХЮЩб"
+
+msgid "strnoview"
+msgstr "№вХФгдСзЬХЮЩХ ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strnoviews"
+msgstr "юЩ ЯФЮЯЧЯ авХФгдСзЬХЮЩб ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strcreateview"
+msgstr "ѓЯкФСди авХФгдСзЬХЮЩХ"
+
+msgid "strviewname"
+msgstr "щЭб авХФгдСзЬХЮЩб"
+
+msgid "strviewneedsname"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ еЫСкСди ЩЭб авХФгдСзЬХЮЩб."
+
+msgid "strviewneedsdef"
+msgstr " їСЭ ЮХЯТШЯФЩЭЯ ЯавХФХЬЩди СдвЩТедй авХФгдСзЬХЮЩб."
+
+msgid "strviewcreated"
+msgstr "№вХФгдСзЬХЮЩХ гЯкФСЮЯ."
+
+msgid "strviewcreatedbad"
+msgstr "ѓЯкФСЮЩХ авХФгдСзЬХЮЩб авХвзСЮЯ."
+
+msgid "strconfdropview"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еЮЩодЯжЩди авХФгдСзЬХЮЩХ \"%s\"?"
+
+msgid "strviewdropped"
+msgstr "№вХФгдСзЬХЮЩХ еЮЩодЯжХЮЯ."
+
+msgid "strviewdroppedbad"
+msgstr "ѕЮЩодЯжХЮЩХ авХФгдСзЬХЮЩб авХвзСЮЯ."
+
+msgid "strviewupdated"
+msgstr "№вХФгдСзЬХЮЩХ ЯТЮЯзЬХЮЯ."
+
+msgid "strviewupdatedbad"
+msgstr "яТЮЯзЬХЮЩХ авХФгдСзЬХЮЩб авХвзСЮЯ."
+
+# Sequences
+msgid "strsequence"
+msgstr "№ЯгЬХФЯзСдХЬиЮЯгди"
+
+msgid "strsequences"
+msgstr " №ЯгЬХФЯзСдХЬиЮЯгдЩ"
+
+msgid "strshowallsequences"
+msgstr "№ЯЫСкСди згХ аЯгЬХФЯзСдХЬиЮЯгдЩ"
+
+msgid "strnosequence"
+msgstr "№ЯгЬХФЯзСдХЬиЮЯгди ЮХ ЯТЮСвежХЮС."
+
+msgid "strnosequences"
+msgstr "юЩ ЯФЮЯЪ аЯгЬХФЯзСдХЬиЮЯгдЩ ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strcreatesequence"
+msgstr "ѓЯкФСди аЯгЬХФЯзСдХЬиЮЯгди"
+
+msgid "strlastvalue"
+msgstr "№ЯгЬХФЮХХ кЮСоХЮЩХ"
+
+msgid "strincrementby"
+msgstr "ѕзХЬЩоХЮЩХ ЮС"
+
+msgid "strstartvalue"
+msgstr "юСоСЬиЮЯХ кЮСоХЮЩХ"
+
+msgid "strmaxvalue"
+msgstr "эСЫг. зХЬЩоЩЮС"
+
+msgid "strminvalue"
+msgstr "эЩЮ. зХЬЩоЩЮС"
+
+msgid "strcachevalue"
+msgstr "ђСкЭХв ЫмлС"
+
+msgid "strlogcount"
+msgstr "Log Count"
+
+msgid "striscycled"
+msgstr "њСУЩЫЬЩди?"
+
+msgid "strsequenceneedsname"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ еЫСкСди ЩЭб аЯгЬХФЯзСдХЬиЮЯгдЩ."
+
+msgid "strsequencecreated"
+msgstr "№ЯгЬХФЯзСдХЬиЮЯгди гЯкФСЮС."
+
+msgid "strsequencecreatedbad"
+msgstr "ѓЯкФСЮЩХ аЯгЬХФЯзСдХЬиЮЯгдЩ авХвзСЮЯ."
+
+msgid "strconfdropsequence"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еЮЩодЯжЩди аЯгЬХФЯзСдХЬиЮЯгди \"%s\"?"
+
+msgid "strsequencedropped"
+msgstr "№ЯгЬХФЯзСдХЬиЮЯгди еЮЩодЯжХЮС."
+
+msgid "strsequencedroppedbad"
+msgstr "ѕЮЩодЯжХЮЩХ аЯгЬХФЯзСдХЬиЮЯгдЩ авХвзСЮЯ."
+
+msgid "strsequencereset"
+msgstr "№ЯгЬХФЯзСдХЬиЮЯгди гТвЯлХЮС."
+
+msgid "strsequenceresetbad"
+msgstr "ѓТвЯг аЯгЬХФЯзСдХЬиЮЯгдЩ авХвзСЮ."
+
+# Indexes
+msgid "strindexes"
+msgstr "щЮФХЫг"
+
+msgid "strshowallindexes"
+msgstr "№ЯЫСкСди згХ ЩЮФХЫгй"
+
+msgid "strnoindex"
+msgstr "щЮФХЫг ЮХ ЯТЮСвежХЮ."
+
+msgid "strnoindexes"
+msgstr "юЩ ЯФЮЯЧЯ ЩЮФХЫгС ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strcreateindex"
+msgstr "ѓЯкФСди ЩЮФХЫг"
+
+msgid "strtabname"
+msgstr "щЭб дСТЬЩУй"
+
+msgid "strcolumnname"
+msgstr "щЭб СдвЩТедС"
+
+msgid "strindexneedsname"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ еЫСкСди ЩЭб ЩЮФХЫгС"
+
+msgid "strindexneedscols"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ еЫСкСди ФЯаегдЩЭЯХ ЫЯЬЩоХгдзЯ СдвЩТедЯз."
+
+msgid "strindexcreated"
+msgstr "щЮФХЫг гЯкФСЮ."
+
+msgid "strindexcreatedbad"
+msgstr "ѓЯкФСЮЩХ ЩЮФХЫгС авХвзСЮЯ."
+
+msgid "strconfdropindex"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еЮЩодЯжЩди ЩЮФХЫг \"%s\"?"
+
+msgid "strindexdropped"
+msgstr "щЮФХЫг еЮЩодЯжХЮ."
+
+msgid "strindexdroppedbad"
+msgstr "ѕЮЩодЯжХЮЩХ ЩЮФХЫгС авХвзСЮЯ."
+
+msgid "strkeyname"
+msgstr "щЭб ЫЬРоС"
+
+msgid "struniquekey"
+msgstr "ѕЮЩЫСЬиЮйЪ ЫЬРо"
+
+msgid "strprimarykey"
+msgstr "№ХвзЩоЮйЪ ЫЬРо"
+
+msgid "strindextype"
+msgstr "їЩФ ЩЮФХЫгС"
+
+msgid "strindexname"
+msgstr "щЭб ЩЮФХЫгС"
+
+msgid "strtablecolumnlist"
+msgstr "сдвЩТедЯз з дСТЬЩУХ"
+
+msgid "strindexcolumnlist"
+msgstr "сдвЩТедЯз з ЩЮФХЫгХ"
+
+msgid "strconfcluster"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ ЫЬСгдХвЩкЯзСди \"%s\"?"
+
+msgid "strclusteredgood"
+msgstr "ыЬСгдХвЩкСУЩб кСзХвлХЮС."
+
+msgid "strclusteredbad"
+msgstr "ыЬСгдХвЩкСУЩб авХвзСЮС."
+
+# Rules
+msgid "strrules"
+msgstr "№вСзЩЬС"
+
+msgid "strrule"
+msgstr "№вСзЩЬЯ"
+
+msgid "strshowallrules"
+msgstr "№ЯЫСкСди згХ авСзЩЬС"
+
+msgid "strnorule"
+msgstr "№вСзЩЬЯ ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strnorules"
+msgstr "юЩ ЯФЮЯЧЯ авСзЩЬС ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strcreaterule"
+msgstr "ѓЯкФСди авСзЩЬЯ"
+
+msgid "strrulename"
+msgstr "щЭб авСзЩЬС"
+
+msgid "strruleneedsname"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ еЫСкСди ЩЭб авСзЩЬС."
+
+msgid "strrulecreated"
+msgstr "№вСзЩЬЯ гЯкФСЮЯ."
+
+msgid "strrulecreatedbad"
+msgstr "ѓЯкФСЮЩХ авСзЩЬС авХвзСЮЯ."
+
+msgid "strconfdroprule"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еЮЩодЯжЩди авСзЩЬЯ \"%s\" on \"%s\"?"
+
+msgid "strruledropped"
+msgstr "№вСзЩЬЯ еЮЩодЯжХЮЯ."
+
+msgid "strruledroppedbad"
+msgstr "ѕЮЩодЯжХЮЩХ авСзЩЬС авХвзСЮЯ."
+
+# Constraints
+msgid "strconstraints"
+msgstr "яЧвСЮЩоХЮЩб"
+
+msgid "strshowallconstraints"
+msgstr "№ЯЫСкСди згХ ЯЧвСЮЩоХЮЩб"
+
+msgid "strnoconstraints"
+msgstr "юЩ ЯФЮЯЧЯ ЯЧвСЮЩоХЮЩб ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strcreateconstraint"
+msgstr "ѓЯкФСди ЯЧвСЮЩоХЮЩХ"
+
+msgid "strconstraintcreated"
+msgstr "яЧвСЮЩоХЮЩХ гЯкФСЮЯ."
+
+msgid "strconstraintcreatedbad"
+msgstr "ѓЯкФСЮЩХ ЯЧвСЮЩоХЮЩб авХвзСЮЯ."
+
+msgid "strconfdropconstraint"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еЮЩодЯжЩди ЯЧвСЮЩоХЮЩХ \"%s\" on \"%s\"?"
+
+msgid "strconstraintdropped"
+msgstr "яЧвСЮЩоХЮЩХ еЮЩодЯжХЮЯ."
+
+msgid "strconstraintdroppedbad"
+msgstr "ѕЮЩодЯжХЮЩХ ЯЧвСЮЩоХЮЩб авХвзСЮЯ."
+
+msgid "straddcheck"
+msgstr "фЯТСзЩди авЯзХвЫе"
+
+msgid "strcheckneedsdefinition"
+msgstr "яЧвСЮЩоХЮЩХ авЯзХвЫЩ ЮежФСХдгб з ЯавХФХЬХЮЩЩ."
+
+msgid "strcheckadded"
+msgstr "яЧвСЮЩоХЮЩХ авЯзХвЫЩ ФЯТСзЬХЮЯ."
+
+msgid "strcheckaddedbad"
+msgstr "фЯТСзЬХЮЩХ ЯЧвСЮЩоХЮЩб авЯзХвЫЩ авХвзСЮЯ."
+
+msgid "straddpk"
+msgstr "фЯТСзЩди аХвзЩоЮйЪ ЫЬРо"
+
+msgid "strpkneedscols"
+msgstr "№ХвзЩоЮйЪ ЫЬРо ФЯЬжХЮ зЫЬРоСди ШЯдб Тй ЯФЩЮ СдвЩТед."
+
+msgid "strpkadded"
+msgstr "№ХвзЩоЮйЪ ЫЬРо ФЯТСзЬХЮ."
+
+msgid "strpkaddedbad"
+msgstr "фЯТСзЬХЮЩХ аХвзЩоЮЯЧЯ ЫЬРоС авХвзСЮЯ."
+
+msgid "stradduniq"
+msgstr "фЯТСзЩди еЮЩЫСЬиЮйЪ ЫЬРо"
+
+msgid "struniqneedscols"
+msgstr "ѕЮЩЫСЬиЮйЪ ЫЬРо ФЯЬжХЮ зЫЬРоСди ШЯдб Тй ЯФЩЮ СдвЩТед."
+
+msgid "struniqadded"
+msgstr "ѕЮЩЫСЬиЮйЪ ЫЬРо ФЯТСзЬХЮ."
+
+msgid "struniqaddedbad"
+msgstr "фЯТСзЬХЮЩХ еЮЩЫСЬиЮЯЧЯ ЫЬРоС авХвзСЮЯ."
+
+msgid "straddfk"
+msgstr "фЯТСзЩди зЮХлЮЩЪ ЫЬРо"
+
+msgid "strfkneedscols"
+msgstr "їЮХлЮЩЪ ЫЬРо ФЯЬжХЮ зЫЬРоСди ШЯдб Тй ЯФЩЮ СдвЩТед."
+
+msgid "strfkneedstarget"
+msgstr "їЮХлЮХЭе ЫЬРое ЮХЯТШЯФЩЭЯ еЫСкСди УХЬХзеР дСТЬЩУе."
+
+msgid "strfkadded"
+msgstr "їЮХлЮЩЪ ЫЬРо ФЯТСзЬХЮ."
+
+msgid "strfkaddedbad"
+msgstr "фЯТСзЬХЮЩХ зЮХлЮХЧЯ ЫЬРоС авХвзСЮЯ."
+
+msgid "strfktarget"
+msgstr "уХЬХзСб дСТЬЩУС"
+
+msgid "strfkcolumnlist"
+msgstr "сдвЩТедй з ЫЬРоХ"
+
+msgid "strondelete"
+msgstr "ON DELETE"
+
+msgid "stronupdate"
+msgstr "ON UPDATE"
+
+# Functions
+msgid "strfunction"
+msgstr "цеЮЫУЩб"
+
+msgid "strfunctions"
+msgstr " цеЮЫУЩЩ"
+
+msgid "strshowallfunctions"
+msgstr "№ЯЫСкСди згХ ЦеЮЫУЩЩ"
+
+msgid "strnofunction"
+msgstr "цеЮЫУЩб ЮХ ЯТЮСвежХЮС."
+
+msgid "strnofunctions"
+msgstr "юЩ ЯФЮЯЪ ЦеЮЫУЩЩ ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strcreatefunction"
+msgstr "ѓЯкФСди ЦеЮЫУЩР"
+
+msgid "strfunctionname"
+msgstr "щЭб ЦеЮЫУЩЩ"
+
+msgid "strreturns"
+msgstr "їЯкзвСнСХЭЯХ кЮСоХЮЩХ"
+
+msgid "strarguments"
+msgstr "свЧеЭХЮдй"
+
+msgid "strproglanguage"
+msgstr "ёкйЫ"
+
+msgid "strfunctionneedsname"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ еЫСкСди ЩЭб ЦеЮЫУЩЩ."
+
+msgid "strfunctionneedsdef"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ ЯавХФХЬЩди ЦеЮЫУЩР."
+
+msgid "strfunctioncreated"
+msgstr "цеЮЫУЩб гЯкФСЮС."
+
+msgid "strfunctioncreatedbad"
+msgstr "ѓЯкФСЮЩХ ЦеЮЫУЩЩ авХвзСЮЯ."
+
+msgid "strconfdropfunction"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еЮЩодЯжЩди ЦеЮЫУЩР \"%s\"?"
+
+msgid "strfunctiondropped"
+msgstr "цеЮЫУЩб еЮЩодЯжХЮС."
+
+msgid "strfunctiondroppedbad"
+msgstr "ѕЮЩодЯжХЮЩХ ЦеЮЫУЩЩ авХвзСЮЯ."
+
+msgid "strfunctionupdated"
+msgstr "цеЮЫУЩб ЯТЮЯзЬХЮС."
+
+msgid "strfunctionupdatedbad"
+msgstr "яТЮЯзЬХЮЩХ ЦеЮЫУЩЩ авХвзСЮЯ."
+
+# Triggers
+msgid "strtrigger"
+msgstr "євЩЧЧХв"
+
+msgid "strtriggers"
+msgstr " євЩЧЧХвй"
+
+msgid "strshowalltriggers"
+msgstr "№ЯЫСкСди згХ двЩЧЧХвй"
+
+msgid "strnotrigger"
+msgstr "євЩЧЧХв ЮХ ЯТЮСвежХЮ."
+
+msgid "strnotriggers"
+msgstr "юЩ ЯФЮЯЧЯ двЩЧЧХвС ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strcreatetrigger"
+msgstr "ѓЯкФСди двЩЧЧХв"
+
+msgid "strtriggerneedsname"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ еЫСкСди ЩЭб двЩЧЧХвС."
+
+msgid "strtriggerneedsfunc"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ ЯавХФХЬЩди ЦеЮЫУЩР двЩЧЧХвС."
+
+msgid "strtriggercreated"
+msgstr "євЩЧЧХв гЯкФСЮ."
+
+msgid "strtriggercreatedbad"
+msgstr "ѓЯкФСЮЩХ двЩЧЧХвС авХвзСЮЯ."
+
+msgid "strconfdroptrigger"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еЮЩодЯжЩди двЩЧЧХв \"%s\" ЮС \"%s\"?"
+
+msgid "strtriggerdropped"
+msgstr "євЩЧЧХв еЮЩодЯжХЮ."
+
+msgid "strtriggerdroppedbad"
+msgstr "ѕЮЩодЯжХЮЩХ двЩЧЧХвС авХвзСЮЯ."
+
+msgid "strtriggeraltered"
+msgstr "євЩЧЧХв ЩкЭХЮХЮ."
+
+msgid "strtriggeralteredbad"
+msgstr "щкЭХЮХЮЩХ двЩЧЧХвС авХвзСЮЯ."
+
+# Types
+msgid "strtype"
+msgstr "єЩа ФСЮЮйШ"
+
+msgid "strtypes"
+msgstr "єЩай ФСЮЮйШ"
+
+msgid "strshowalltypes"
+msgstr "№ЯЫСкСди згХ дЩай ФСЮЮйШ"
+
+msgid "strnotype"
+msgstr "єЩа ФСЮЮйШ ЮХ ЯТЮСвежХЮ."
+
+msgid "strnotypes"
+msgstr "юЩ ЯФЮЯЧЯ дЩаС ФСЮЮйШ ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strcreatetype"
+msgstr "ѓЯкФСди дЩа ФСЮЮйШ"
+
+msgid "strtypename"
+msgstr "щЭб дЩаС ФСЮЮйШ"
+
+msgid "strinputfn"
+msgstr "цеЮЫУЩб ззЯФС"
+
+msgid "stroutputfn"
+msgstr "цеЮЫУЩб зйзЯФС"
+
+msgid "strpassbyval"
+msgstr "№ХвХФСди аЯ кЮСоХЮЩР?"
+
+msgid "stralignment"
+msgstr "їйвСзЮЩзСЮЩХ"
+
+msgid "strelement"
+msgstr "ќЬХЭХЮд"
+
+msgid "strdelimiter"
+msgstr "ђСкФХЬЩдХЬи"
+
+msgid "strstorage"
+msgstr "Storage"
+
+msgid "strtypeneedsname"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ еЫСкСди ЩЭб дЩаС ФСЮЮйШ."
+
+msgid "strtypeneedslen"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ еЫСкСди вСкЭХв ФЬб дЩаС ФСЮЮйШ."
+
+msgid "strtypecreated"
+msgstr "єЩа ФСЮЮйШ гЯкФСЮ."
+
+msgid "strtypecreatedbad"
+msgstr "ѓЯкФСЮЩХ дЩаС ФСЮЮйШ авХвзСЮЯ."
+
+msgid "strconfdroptype"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еЮЩодЯжЩди дЩа ФСЮЮйШ \"%s\"?"
+
+msgid "strtypedropped"
+msgstr "єЩа ФСЮЮйШ еЮЩодЯжХЮ."
+
+msgid "strtypedroppedbad"
+msgstr "ѕЮЩодЯжХЮЩХ дЩаС ФСЮЮйШ авХвзСЮЯ."
+
+# Schemas
+msgid "strschema"
+msgstr "ѓШХЭС"
+
+msgid "strschemas"
+msgstr "ѓШХЭй"
+
+msgid "strshowallschemas"
+msgstr "№ЯЫСкСди згХ гШХЭй"
+
+msgid "strnoschema"
+msgstr "ѓШХЭС ЮХ ЯТЮСвежХЮС."
+
+msgid "strnoschemas"
+msgstr "юЩ ЯФЮЯЪ гШХЭй ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strcreateschema"
+msgstr "ѓЯкФСди гШХЭе"
+
+msgid "strschemaname"
+msgstr "щЭб гШХЭй"
+
+msgid "strschemaneedsname"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ еЫСкСди ЩЭб гШХЭй."
+
+msgid "strschemacreated"
+msgstr "ѓШХЭС гЯкФСЮС."
+
+msgid "strschemacreatedbad"
+msgstr "ѓЯкФСЮЩХ гШХЭй авХвзСЮЯ."
+
+msgid "strconfdropschema"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еЮЩодЯжЩди гШХЭе \"%s\"?"
+
+msgid "strschemadropped"
+msgstr "ѓШХЭС еЮЩодЯжХЮС."
+
+msgid "strschemadroppedbad"
+msgstr "ѕЮЩодЯжХЮЩХ гШХЭй авХвзСЮЯ."
+
+# Reports
+
+# Domains
+msgid "strdomain"
+msgstr "фЯЭХЮ"
+
+msgid "strdomains"
+msgstr "фЯЭХЮй"
+
+msgid "strshowalldomains"
+msgstr "№ЯЫСкСди згХ ФЯЭХЮй"
+
+msgid "strnodomains"
+msgstr "юЩ ЯФЮЯЧЯ ФЯЭХЮС ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strcreatedomain"
+msgstr "ѓЯкФСди ФЯЭХЮ"
+
+msgid "strdomaindropped"
+msgstr "фЯЭХЮ еФСЬХЮ."
+
+msgid "strdomaindroppedbad"
+msgstr "ѕФСЬХЮЩХ ФЯЭХЮС авХвзСЮЯ."
+
+msgid "strconfdropdomain"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еФСЬЩди ФЯЭХЮ \"%s\"?"
+
+msgid "strdomainneedsname"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ еЫСкСди ЩЭб ФЯЭХЮС."
+
+msgid "strdomaincreated"
+msgstr "фЯЭХЮ гЯкФСЮ."
+
+msgid "strdomaincreatedbad"
+msgstr "ѓЯкФСЮЩХ ФЯЭХЮС авХвзСЮЯ."
+
+msgid "strdomainaltered"
+msgstr "фЯЭХЮ ЩкЭХЮХЮ."
+
+msgid "strdomainalteredbad"
+msgstr "щкЭХЮХЮЩХ ФЯЭХЮС авХвзСЮЯ."
+
+# Operators
+msgid "stroperator"
+msgstr "яаХвСдЯв"
+
+msgid "stroperators"
+msgstr "яаХвСдЯвй"
+
+msgid "strshowalloperators"
+msgstr "№ЯЫСкСди згХ ЯаХвСдЯвй"
+
+msgid "strnooperator"
+msgstr "яаХвСдЯв ЮХ ЯТЮСвежХЮ."
+
+msgid "strnooperators"
+msgstr "яаХвСдЯвй ЮХ ЯТЮСвежХЮй."
+
+msgid "strcreateoperator"
+msgstr "ѓЯкФСди ЯаХвСдЯв"
+
+msgid "strleftarg"
+msgstr "єЩа ЬХзЯЧЯ СвЧеЭХЮдС"
+
+msgid "strrightarg"
+msgstr "єЩа авСзЯЧЯ СвЧеЭХЮдС"
+
+msgid "strcommutator"
+msgstr "№вХЯТвСкЯзСЮЩХ"
+
+msgid "strnegator"
+msgstr "ядвЩУСЮЩХ"
+
+msgid "strrestrict"
+msgstr "ягЬСТЬХЮЩХ"
+
+msgid "strjoin"
+msgstr "яТпХФЩЮХЮЩХ"
+
+msgid "strhashes"
+msgstr "шХлЩвЯзСЮЩХ"
+
+msgid "strmerges"
+msgstr "ѓЬЩбЮЩХ"
+
+msgid "strleftsort"
+msgstr "ѓЯдЩвЯзЫС аЯ ЬХзЯЭе"
+
+msgid "strrightsort"
+msgstr "ѓЯдЩвЯзЫС аЯ авСзЯЭе"
+
+msgid "strlessthan"
+msgstr "эХЮилХ"
+
+msgid "strgreaterthan"
+msgstr "тЯЬилХ"
+
+msgid "stroperatorneedsname"
+msgstr "їСЭ ЮХЯТШЯФЩЭЯ еЫСкСди ЮСкзСЮЩХ ЯаХвСдЯвС."
+
+msgid "stroperatorcreated"
+msgstr "яаХвСдЯв гЯкФСЮ"
+
+msgid "stroperatorcreatedbad"
+msgstr "ЯкФСЮЩХ ЯаХвСдЯвС авХвзСЮЯ."
+
+msgid "strconfdropoperator"
+msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еЮЩодЯжЩди ЯаХвСдЯв \"%s\"?"
+
+msgid "stroperatordropped"
+msgstr "яаХвСдЯв еФСЬХЮ."
+
+msgid "stroperatordroppedbad"
+msgstr "ѕФСЬХЮЩХ ЯаХвСдЯвС авХвзСЮЯ."
+
+# Casts
+msgid "strcasts"
+msgstr "яТвСкУй"
+
+msgid "strnocasts"
+msgstr "яТвСкУЯз ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strsourcetype"
+msgstr "єЩа ЩгдЯоЮЩЫС"
+
+msgid "strtargettype"
+msgstr "єЩа авЩХЭЮЩЫС"
+
+msgid "strimplicit"
+msgstr "юХбзЮйЪ"
+
+msgid "strinassignment"
+msgstr "ї ЮСкЮСоХЮЩЩ"
+
+msgid "strbinarycompat"
+msgstr "(ФзЯЩоЮЯ гЯзЭХгдЩЭйЪ)"
+
+# Conversions
+msgid "strconversions"
+msgstr "№вХЯТвСкЯзСЮЩХ"
+
+msgid "strnoconversions"
+msgstr "№вХЯТвСкЯзСЮЩЪ ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strsourceencoding"
+msgstr "ыЯФЩвЯзЫС ЩгдЯоЮЩЫС"
+
+msgid "strtargetencoding"
+msgstr "ыЯФЩвЯзЫС авЩХЭЮЩЫС"
+
+# Languages
+msgid "strlanguages"
+msgstr "ёкйЫЩ"
+
+msgid "strnolanguages"
+msgstr "ёкйЫЯз ЮХ ЯТЮСвежХЮЯ."
+
+msgid "strtrusted"
+msgstr "№вЯзХвХЮЯ"
+
+# Info
+msgid "strnoinfo"
+msgstr "юХд ФЯгдеаЮЯЪ ЩЮЦЯвЭСУЩЩ."
+
+msgid "strreferringtables"
+msgstr "ѓгйЬСРнЩХгб дСТЬЩУй"
+
+msgid "strparenttables"
+msgstr "ђЯФЩдХЬигЫЩХ дСТЬЩУй"
+
+msgid "strchildtables"
+msgstr "фЯоХвЮЩХ дСТЬЩУй"
+
+# Miscellaneous
+msgid "strtopbar"
+msgstr "%s зйаЯЬЮбХдгб ЮС %s:%s -- їй кСвХЧЩгдвЩвЯзСЮй ЫСЫ \"%s\""
+
+msgid "strtimefmt"
+msgstr " j-m-Y  g:i"

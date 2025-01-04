@@ -48,6 +48,7 @@
             "@build-locale-de_DE",
             "@build-locale-el_GR",
             "@build-locale-en_US",
+            "@build-locale-es_ES",
             "@build-locale-fr_FR",
             "@build-locale-gl_ES",
             "@build-locale-he_IL",
@@ -63,6 +64,9 @@
             "@build-locale-ro_RO",
             "@build-locale-ru_RU",
             "@build-locale-sk_SK",
+            "@build-locale-sv_SE",
+            "@build-locale-tr_TR",
+            "@build-locale-uk_UA",
             "@build-locale-zh_CN",
             "@build-locale-zh_TW"
         ],
@@ -74,6 +78,7 @@
         "build-locale-de_DE": "msgfmt locale/de_DE/LC_MESSAGES/messages.po -o locale/de_DE/LC_MESSAGES/messages.mo",
         "build-locale-el_GR": "msgfmt locale/el_GR/LC_MESSAGES/messages.po -o locale/el_GR/LC_MESSAGES/messages.mo",
         "build-locale-en_US": "msgfmt locale/en_US/LC_MESSAGES/messages.po -o locale/en_US/LC_MESSAGES/messages.mo",
+        "build-locale-es_ES": "msgfmt locale/es_ES/LC_MESSAGES/messages.po -o locale/es_ES/LC_MESSAGES/messages.mo",
         "build-locale-fr_FR": "msgfmt locale/fr_FR/LC_MESSAGES/messages.po -o locale/fr_FR/LC_MESSAGES/messages.mo",
         "build-locale-gl_ES": "msgfmt locale/gl_ES/LC_MESSAGES/messages.po -o locale/gl_ES/LC_MESSAGES/messages.mo",
         "build-locale-he_IL": "msgfmt locale/he_IL/LC_MESSAGES/messages.po -o locale/he_IL/LC_MESSAGES/messages.mo",
@@ -89,6 +94,9 @@
         "build-locale-ro_RO": "msgfmt locale/ro_RO/LC_MESSAGES/messages.po -o locale/ro_RO/LC_MESSAGES/messages.mo",
         "build-locale-ru_RU": "msgfmt locale/ru_RU/LC_MESSAGES/messages.po -o locale/ru_RU/LC_MESSAGES/messages.mo",
         "build-locale-sk_SK": "msgfmt locale/sk_SK/LC_MESSAGES/messages.po -o locale/sk_SK/LC_MESSAGES/messages.mo",
+        "build-locale-sv_SE": "msgfmt locale/sv_SE/LC_MESSAGES/messages.po -o locale/sv_SE/LC_MESSAGES/messages.mo",
+        "build-locale-tr_TR": "msgfmt locale/tr_TR/LC_MESSAGES/messages.po -o locale/tr_TR/LC_MESSAGES/messages.mo",
+        "build-locale-uk_UA": "msgfmt locale/uk_UA/LC_MESSAGES/messages.po -o locale/uk_UA/LC_MESSAGES/messages.mo",
         "build-locale-zh_CN": "msgfmt locale/zh_CN/LC_MESSAGES/messages.po -o locale/zh_CN/LC_MESSAGES/messages.mo",
         "build-locale-zh_TW": "msgfmt locale/zh_TW/LC_MESSAGES/messages.po -o locale/zh_TW/LC_MESSAGES/messages.mo"
     }

@@ -1,0 +1,1765 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "Türkçe"
+
+msgid "applocale"
+msgstr "tr-TR"
+
+msgid "applangdir"
+msgstr "ltr"
+
+# Basic strings
+msgid "strintro"
+msgstr "phpPgAdmin'e hoşgeldiniz."
+
+msgid "strppahome"
+msgstr "phpPgAdmin Ana Sayfası"
+
+msgid "strpgsqlhome"
+msgstr "PostgreSQL Ana Sayfası"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "PostgreSQL Belgeleri (yerel)"
+
+msgid "strreportbug"
+msgstr "Hata Bildirin"
+
+msgid "strviewfaq"
+msgstr "Sıkça Sorulan Sorular"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "Giriş"
+
+msgid "strloginfailed"
+msgstr "Giriş Başarısız"
+
+msgid "strlogindisallowed"
+msgstr "Güvenlik nedeniyle girişe izin verilmedi."
+
+msgid "strserver"
+msgstr "Sunucu"
+
+msgid "strservers"
+msgstr "Sunucular"
+
+msgid "strintroduction"
+msgstr "Giriş"
+
+msgid "strhost"
+msgstr "Sunucu"
+
+msgid "strport"
+msgstr "Port"
+
+msgid "strlogout"
+msgstr "Çıkış"
+
+msgid "strowner"
+msgstr "Sahibi"
+
+msgid "straction"
+msgstr "Eylem"
+
+msgid "stractions"
+msgstr "Eylemler"
+
+msgid "strname"
+msgstr "Ad"
+
+msgid "strdefinition"
+msgstr "Tanım"
+
+msgid "strproperties"
+msgstr "Özellikler"
+
+msgid "strbrowse"
+msgstr "Gözat"
+
+msgid "strdrop"
+msgstr "Sil"
+
+msgid "strdropped"
+msgstr "Silindi"
+
+msgid "strnotnull"
+msgstr "Null/Null değil"
+
+msgid "strprev"
+msgstr "Önceki"
+
+msgid "strnext"
+msgstr "Sonraki"
+
+msgid "strfirst"
+msgstr "<< İlk"
+
+msgid "strlast"
+msgstr "Son >>"
+
+msgid "strfailed"
+msgstr "Başarısız oldu."
+
+msgid "strcreate"
+msgstr "Yarat"
+
+msgid "strcreated"
+msgstr "Yaratıldı"
+
+msgid "strcomment"
+msgstr "Yorum"
+
+msgid "strlength"
+msgstr "Uzunluk"
+
+msgid "strdefault"
+msgstr "Ön tanımlı değer"
+
+msgid "stralter"
+msgstr "Değiştir"
+
+msgid "strok"
+msgstr "Tamam"
+
+msgid "strcancel"
+msgstr "İptal Et"
+
+msgid "strsave"
+msgstr "Kaydet"
+
+msgid "strreset"
+msgstr "Temizle"
+
+msgid "strinsert"
+msgstr "Ekle"
+
+msgid "strselect"
+msgstr "Seç"
+
+msgid "strdelete"
+msgstr "Sil"
+
+msgid "strupdate"
+msgstr "Güncelle"
+
+msgid "strreferences"
+msgstr "References"
+
+msgid "stryes"
+msgstr "Evet"
+
+msgid "strno"
+msgstr "Hayır"
+
+msgid "strtrue"
+msgstr "TRUE"
+
+msgid "strfalse"
+msgstr "FALSE"
+
+msgid "stredit"
+msgstr "Düzenle"
+
+msgid "strcolumn"
+msgstr "KolonF"
+
+msgid "strcolumns"
+msgstr "Kolonlar"
+
+msgid "strrows"
+msgstr "satır"
+
+msgid "strrowsaff"
+msgstr "satır işlendi."
+
+msgid "strobjects"
+msgstr "nesne(ler)"
+
+msgid "strback"
+msgstr "Geri"
+
+msgid "strqueryresults"
+msgstr "Sorgu sonuçları"
+
+msgid "strshow"
+msgstr "Göster"
+
+msgid "strempty"
+msgstr "Boşalt"
+
+msgid "strlanguage"
+msgstr "Dil"
+
+msgid "strencoding"
+msgstr "Karakter kodlaması"
+
+msgid "strvalue"
+msgstr "Değer"
+
+msgid "strunique"
+msgstr "Tekil"
+
+msgid "strprimary"
+msgstr "Birincil"
+
+msgid "strexport"
+msgstr "Export"
+
+msgid "strimport"
+msgstr "Import"
+
+msgid "strallowednulls"
+msgstr "İzin verilen NULL karakterler"
+
+msgid "strbackslashn"
+msgstr "\\N"
+
+msgid "strnull"
+msgstr "NULL (sözcük)"
+
+msgid "stremptystring"
+msgstr "Boş metin/alan"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "stradmin"
+msgstr "Yönetici"
+
+msgid "strvacuum"
+msgstr "Vacuum"
+
+msgid "stranalyze"
+msgstr "Analyze"
+
+msgid "strclusterindex"
+msgstr "Cluster"
+
+msgid "strclustered"
+msgstr "Cluster edildi mi?"
+
+msgid "strreindex"
+msgstr "Reindex"
+
+msgid "strrun"
+msgstr "Çalıştır"
+
+msgid "stradd"
+msgstr "Ekle"
+
+msgid "strremove"
+msgstr "Kaldır"
+
+msgid "strevent"
+msgstr "Event"
+
+msgid "strwhere"
+msgstr "Where"
+
+msgid "strinstead"
+msgstr "Do Instead"
+
+msgid "strwhen"
+msgstr "When"
+
+msgid "strformat"
+msgstr "Format"
+
+msgid "strdata"
+msgstr "Veri"
+
+msgid "strconfirm"
+msgstr "Onayla"
+
+msgid "strexpression"
+msgstr "İfade"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strseparator"
+msgstr ": "
+
+msgid "strexpand"
+msgstr "Genişlet"
+
+msgid "strcollapse"
+msgstr "Dar görünüm"
+
+msgid "strexplain"
+msgstr "Explain"
+
+msgid "strexplainanalyze"
+msgstr "Explain Analyze"
+
+msgid "strfind"
+msgstr "Bul"
+
+msgid "stroptions"
+msgstr "Seçenekler"
+
+msgid "strrefresh"
+msgstr "Yenile"
+
+msgid "strdownload"
+msgstr "İndir"
+
+msgid "strdownloadgzipped"
+msgstr "gzip ile sıkıştırılmış halde indir"
+
+msgid "strinfo"
+msgstr "Bilgi"
+
+msgid "stroids"
+msgstr "OIDler"
+
+msgid "stradvanced"
+msgstr "Gelişmiş"
+
+msgid "strvariables"
+msgstr "Değişkenler"
+
+msgid "strprocess"
+msgstr "Süreç"
+
+msgid "strprocesses"
+msgstr "Süreçler"
+
+msgid "strsetting"
+msgstr "Ayar"
+
+msgid "streditsql"
+msgstr "SQL Düzenle"
+
+msgid "strruntime"
+msgstr "Toplam çalışma süresi: %s ms"
+
+msgid "strpaginate"
+msgstr "Sonuçları sayfalandır."
+
+msgid "struploadscript"
+msgstr "ya da bir SQL betiği yükleyin:"
+
+msgid "strstarttime"
+msgstr "Başlangıç zamanı"
+
+msgid "strfile"
+msgstr "Dosya"
+
+msgid "strfileimported"
+msgstr "Dosya import edildi."
+
+msgid "strtrycred"
+msgstr "Giriş bilgilerini tüm sunucular için kullan"
+
+msgid "strexecute"
+msgstr "Execute"
+
+# Error handling
+msgid "strnoframes"
+msgstr "Bu uygulama en iyi olarak frame destekli bir tarayıcı ile kullanılabilir; ancak frameler ile kullanmak istemiyorsanız aşağıdaki linke tıklayabilirsiniz."
+
+msgid "strnoframeslink"
+msgstr "Frame olmadan kullan"
+
+msgid "strbadconfig"
+msgstr "config.inc.php dosyaniz güncel değil. Bu dosyayı yeni config.inc.php-dist dosyasından yaratmanız gerekmektedir."
+
+msgid "strnotloaded"
+msgstr "PHP kurulumunuzda PostgreSQL desteği bulunamamıştır."
+
+msgid "strpostgresqlversionnotsupported"
+msgstr "Bu PostgreSQL sürümü desteklenmemektedir. Lütfen %s ya da üstü bir sürüme güncelleyiniz."
+
+msgid "strbadschema"
+msgstr "Geçersiz şema."
+
+msgid "strbadencoding"
+msgstr "İstemci dil kodlamasını ayarlamaya çalışırken bir hata oluştu."
+
+msgid "strsqlerror"
+msgstr "SQL hatası:"
+
+msgid "strinstatement"
+msgstr "Üstteki hata, aşağıdaki ifade içinde oluştu:"
+
+msgid "strinvalidparam"
+msgstr "Geçersiz betik parametreleri."
+
+msgid "strnodata"
+msgstr "Satır bulunamadı."
+
+msgid "strnoobjects"
+msgstr "Hiçbir nesne bulunamadı.."
+
+msgid "strrownotunique"
+msgstr "Bu satır için hiçbir tekil belirtici bulunamadı."
+
+msgid "strnouploads"
+msgstr "Dosya yükleme özelliği etkin değil."
+
+msgid "strimporterror"
+msgstr "Import hatası."
+
+msgid "strimporterror-fileformat"
+msgstr "Import hatası: Dosya tipi otomatik olarak belirlenemedi."
+
+msgid "strimporterrorline"
+msgstr "%s numaralı satırda import hatası."
+
+msgid "strimporterrorline-badcolumnnum"
+msgstr "Import error on line %s:  Line does not possess the correct number of columns."
+
+msgid "strimporterror-uploadedfile"
+msgstr "Import error: File could not be uploaded to the server"
+
+msgid "strcannotdumponwindows"
+msgstr "Dumping of complex table and schema names on Windows is not supported."
+
+# Tables
+msgid "strtable"
+msgstr "Tablo"
+
+msgid "strtables"
+msgstr "Tablolar"
+
+msgid "strshowalltables"
+msgstr "Tüm tabloları göster"
+
+msgid "strnotables"
+msgstr "Veritabanında tablo bulunamadı."
+
+msgid "strnotable"
+msgstr "Veritabanında tablo bulunamadı."
+
+msgid "strcreatetable"
+msgstr "Yeni tablo yarat"
+
+msgid "strtablename"
+msgstr "Tablo adı"
+
+msgid "strtableneedsname"
+msgstr "Tablonuza bir ad vermeniz gerekmektedir."
+
+msgid "strtableneedsfield"
+msgstr "En az bir alan belirtmeniz gerekmektedir."
+
+msgid "strtableneedscols"
+msgstr "Geçerli miktarda kolon sayısı belirtmeniz gerekmektedir."
+
+msgid "strtablecreated"
+msgstr "Tablo yaratıldı."
+
+msgid "strtablecreatedbad"
+msgstr "Tablo yaratılamadı."
+
+msgid "strconfdroptable"
+msgstr "\"%s\" tablosunu kaldırmak istediğinizden emin misiniz?"
+
+msgid "strtabledropped"
+msgstr "Tablo kaldırıldı."
+
+msgid "strtabledroppedbad"
+msgstr "Tablo kaldırılamadı."
+
+msgid "strconfemptytable"
+msgstr "\"%s\" tablosunu boşaltmak istediğinizden emin misiniz?"
+
+msgid "strtableemptied"
+msgstr "Tablo boşaltıldı."
+
+msgid "strtableemptiedbad"
+msgstr "Tablo boşaltılamadı."
+
+msgid "strinsertrow"
+msgstr "Yeni kayıt gir"
+
+msgid "strrowinserted"
+msgstr "Yeni kayıt girildi."
+
+msgid "strrowinsertedbad"
+msgstr "Yeni kayıt girme işlemi başarısız oldu."
+
+msgid "strrowduplicate"
+msgstr "Satır ekleme başarısız oldu, birbirinin aynı iki kayıt girilmek istendi."
+
+msgid "streditrow"
+msgstr "Kayıdın içeriğini değiştir."
+
+msgid "strrowupdated"
+msgstr "Kayıt güncellendi."
+
+msgid "strrowupdatedbad"
+msgstr "Kayıt güncelleme işleme başarısız oldu."
+
+msgid "strdeleterow"
+msgstr "Kaydı sil"
+
+msgid "strconfdeleterow"
+msgstr "Bu kaydı silmek istediğinize emin misiniz?"
+
+msgid "strrowdeleted"
+msgstr "Kayıt silindi."
+
+msgid "strrowdeletedbad"
+msgstr "Kayıt silinme işlemi başarısız oldu."
+
+msgid "strinsertandrepeat"
+msgstr "Ekle ve Tekrarla"
+
+msgid "strnumcols"
+msgstr "Kolon sayısı"
+
+msgid "strcolneedsname"
+msgstr "Kolon için bir ad vermelisiniz."
+
+msgid "strselectallfields"
+msgstr "Tüm alanları seç"
+
+msgid "strselectneedscol"
+msgstr "En az bir kolon işaretlemelisiniz"
+
+msgid "strselectunary"
+msgstr "Unary operatörlerin değeri olamaz."
+
+msgid "straltercolumn"
+msgstr "Kolonu değiştir (alter)"
+
+msgid "strcolumnaltered"
+msgstr "Kolon değiştirildi (alter)"
+
+msgid "strcolumnalteredbad"
+msgstr "Kolon değiştirilme işlemi başarısız oldu."
+
+msgid "strconfdropcolumn"
+msgstr "\"%s\" kolonunu \"%s\" tablosundan silmek istediğinize emin misiniz?"
+
+msgid "strcolumndropped"
+msgstr "Kolon silindi."
+
+msgid "strcolumndroppedbad"
+msgstr "Kolon silme işlemi başarısız oldu."
+
+msgid "straddcolumn"
+msgstr "Yeni kolon ekle"
+
+msgid "strcolumnadded"
+msgstr "Kolon eklendi."
+
+msgid "strcolumnaddedbad"
+msgstr "Kolon eklenemedi."
+
+msgid "strcascade"
+msgstr "CASCADE"
+
+msgid "strtablealtered"
+msgstr "Tablo alter edildi.."
+
+msgid "strtablealteredbad"
+msgstr "Tablo alteration işlemi başarısız oldu."
+
+msgid "strdataonly"
+msgstr "Sadece veri"
+
+msgid "strstructureonly"
+msgstr "Sadece yapı"
+
+msgid "strstructureanddata"
+msgstr "Yapı ve veri"
+
+msgid "strtabbed"
+msgstr "Tabbed"
+
+msgid "strauto"
+msgstr "Otomatik"
+
+msgid "strconfvacuumtable"
+msgstr "\"%s\" tablosunu vakumlamak istediğiniz emin misiniz?"
+
+msgid "strestimatedrowcount"
+msgstr "Yaklaşık satır sayısı"
+
+# Users
+msgid "struser"
+msgstr "Kullanıcı"
+
+msgid "strusers"
+msgstr "Kullanıcılar"
+
+msgid "strusername"
+msgstr "Kullanıcı Adı"
+
+msgid "strpassword"
+msgstr "Şifresi"
+
+msgid "strsuper"
+msgstr "Superuser mı?"
+
+msgid "strcreatedb"
+msgstr "Veritabanı yaratabilsin mi?"
+
+msgid "strexpires"
+msgstr "Expires"
+
+msgid "strsessiondefaults"
+msgstr "Oturum varsayılanları"
+
+msgid "strnousers"
+msgstr "Hiçbir kullanıcı bulunamadı."
+
+msgid "struserupdated"
+msgstr "Kullanıcı güncellendi."
+
+msgid "struserupdatedbad"
+msgstr "Kullanıcı güncelleme işlemi başarısız oldu."
+
+msgid "strshowallusers"
+msgstr "Tüm kullanıcıları göster."
+
+msgid "strcreateuser"
+msgstr "Yeni kullanıcı yarat"
+
+msgid "struserneedsname"
+msgstr "Kullanıcınız için bir ad vermelisiniz."
+
+msgid "strusercreated"
+msgstr "Kullanıcı yaratıldı."
+
+msgid "strusercreatedbad"
+msgstr "Kullanıcı yaratılma işlemi başarısız oldu."
+
+msgid "strconfdropuser"
+msgstr "\"%s\" kullanıcısını silmek istediğinize emin misiniz?"
+
+msgid "struserdropped"
+msgstr "Kullanıcı silindi."
+
+msgid "struserdroppedbad"
+msgstr "Kullanıcı silme işlemi başarısız oldu."
+
+msgid "straccount"
+msgstr "Hesap"
+
+msgid "strchangepassword"
+msgstr "Şifre Değiştir"
+
+msgid "strpasswordchanged"
+msgstr "Şifre değiştirildi."
+
+msgid "strpasswordchangedbad"
+msgstr "Şifre değiştirme başarısız oldu."
+
+msgid "strpasswordshort"
+msgstr "Şifre çok kısa."
+
+msgid "strpasswordconfirm"
+msgstr "Şifreler uyuşmadı."
+
+# Groups
+msgid "strgroup"
+msgstr "Grup"
+
+msgid "strgroups"
+msgstr "Gruplar"
+
+msgid "strnogroup"
+msgstr "Grup bulunamadı."
+
+msgid "strnogroups"
+msgstr "Grup bulunamadı."
+
+msgid "strcreategroup"
+msgstr "Yeni grup yarat"
+
+msgid "strshowallgroups"
+msgstr "Tüm grupları göster"
+
+msgid "strgroupneedsname"
+msgstr "Grup yaratabilmek için bir ad vermelisiniz."
+
+msgid "strgroupcreated"
+msgstr "Grup yaratıldı."
+
+msgid "strgroupcreatedbad"
+msgstr "Grup yaratma işlemi başarısız oldu."
+
+msgid "strconfdropgroup"
+msgstr "\"%s\" grubunu silmek istediğinize emin misiniz?"
+
+msgid "strgroupdropped"
+msgstr "Grup silindi."
+
+msgid "strgroupdroppedbad"
+msgstr "Grup silme işlemi başarısız oldu."
+
+msgid "strmembers"
+msgstr "Üyeler"
+
+msgid "straddmember"
+msgstr "Üye ekle"
+
+msgid "strmemberadded"
+msgstr "Üye eklendi."
+
+msgid "strmemberaddedbad"
+msgstr "Üye ekleme başarısız oldu."
+
+msgid "strdropmember"
+msgstr "Üyeyi kaldır"
+
+msgid "strconfdropmember"
+msgstr "\"%s\" üyesini \"%s\" grubundan silmek istediğinize emin misiniz?"
+
+msgid "strmemberdropped"
+msgstr "Üye silindi."
+
+msgid "strmemberdroppedbad"
+msgstr "Üye silme başarısız oldu."
+
+# Privilges
+msgid "strprivilege"
+msgstr "İzni"
+
+msgid "strprivileges"
+msgstr "İzinler"
+
+msgid "strnoprivileges"
+msgstr "Bu nesnenin bir izni yoktur."
+
+msgid "strgrant"
+msgstr "İzni ver"
+
+msgid "strrevoke"
+msgstr "İzni kaldır"
+
+msgid "strgranted"
+msgstr "İzimler verildi."
+
+msgid "strgrantfailed"
+msgstr "İzinlerin grant işlemi başarısız oldu."
+
+
+msgid "strgrantbad"
+msgstr "En az bir kullanıcı ya da grup ve en az bir izin belirtmelisiniz."
+
+msgid "strgrantor"
+msgstr "Grantor"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "Veritabanı"
+
+msgid "strdatabases"
+msgstr "Veritabanları"
+
+msgid "strshowalldatabases"
+msgstr "Tüm veritabanlarını göster"
+
+msgid "strnodatabase"
+msgstr "Veritabanı bulunamadı."
+
+msgid "strnodatabases"
+msgstr "Veritabanı bulunamadı."
+
+msgid "strcreatedatabase"
+msgstr "Veritabanı yarat"
+
+msgid "strdatabasename"
+msgstr "Veritabanı adı"
+
+msgid "strdatabaseneedsname"
+msgstr "Veritabanınıza bir ad vermelisiniz."
+
+msgid "strdatabasecreated"
+msgstr "Veritabanı yaratıldı."
+
+msgid "strdatabasecreatedbad"
+msgstr "Veritabanı yaratılamadı."
+
+msgid "strconfdropdatabase"
+msgstr "\"%s\" veritabanını kaldırmak istediğinize emin misiniz?"
+
+msgid "strdatabasedropped"
+msgstr "Veritabanı kaldırıldı."
+
+msgid "strdatabasedroppedbad"
+msgstr "Veritabanı kaldırma başarısız oldu."
+
+msgid "strentersql"
+msgstr "Veritabanı üzerinde çalıştırılacak sorgu/sorguları aşağıya yazınız:"
+
+msgid "strsqlexecuted"
+msgstr "SQL çalıştırıldı."
+
+msgid "strvacuumgood"
+msgstr "Vacuum tamamlandı."
+
+msgid "strvacuumbad"
+msgstr "Vacuum işlemi başarısız oldu."
+
+msgid "stranalyzegood"
+msgstr "Analyze işlemi tamamlandı."
+
+msgid "stranalyzebad"
+msgstr "Analyze işlemi başarısız oldu."
+
+msgid "strreindexgood"
+msgstr "Reindex tamamlandı."
+
+msgid "strreindexbad"
+msgstr "Reindex başarısız oldu."
+
+msgid "strfull"
+msgstr "Full"
+
+msgid "strfreeze"
+msgstr "Freeze"
+
+msgid "strforce"
+msgstr "Force"
+
+msgid "strsignalsent"
+msgstr "Sinyal gönderildi."
+
+msgid "strsignalsentbad"
+msgstr "Sinyal gönderme işlemi başarısız oldu"
+
+msgid "strallobjects"
+msgstr "Tüm nesneler"
+
+msgid "strdatabasealtered"
+msgstr "Veritabanı değiştirildi."
+
+msgid "strdatabasealteredbad"
+msgstr "Veritabanı değiştirme başarısız oldu."
+
+# Views
+msgid "strview"
+msgstr "View"
+
+msgid "strviews"
+msgstr "Viewlar"
+
+msgid "strshowallviews"
+msgstr "Tüm viewları göster"
+
+msgid "strnoview"
+msgstr "Bir view bulunamadı."
+
+msgid "strnoviews"
+msgstr "Bir view bulunamadı."
+
+msgid "strcreateview"
+msgstr "View yarat"
+
+msgid "strviewname"
+msgstr "View adı"
+
+msgid "strviewneedsname"
+msgstr "View için bir ad belirtmelisiniz."
+
+msgid "strviewneedsdef"
+msgstr "View için bir tanım belirtmelisiniz."
+
+msgid "strviewneedsfields"
+msgstr "View içinde görünmesini istediğiniz kolonları belirtmelisiniz."
+
+msgid "strviewcreated"
+msgstr "View yaratıldı."
+
+msgid "strviewcreatedbad"
+msgstr "View yaratma işlemi başarısız oldu."
+
+msgid "strconfdropview"
+msgstr "\"%s\" viewini kaldırmak istediğinize emin misiniz?"
+
+msgid "strviewdropped"
+msgstr "View kaldırıldı."
+
+msgid "strviewdroppedbad"
+msgstr "View kaldırma işlemi başarısız oldu."
+
+msgid "strviewupdated"
+msgstr "View güncellendi."
+
+msgid "strviewupdatedbad"
+msgstr "View güncelleme işlemi başarısız oldu."
+
+msgid "strviewlink"
+msgstr "Linking Keys"
+
+msgid "strviewconditions"
+msgstr "Ek durumlar"
+
+msgid "strcreateviewwiz"
+msgstr "Sihirbaz ile view yaratın"
+
+# Sequences
+msgid "strsequence"
+msgstr "Sequence"
+
+msgid "strsequences"
+msgstr "Sequences"
+
+msgid "strshowallsequences"
+msgstr "Show all sequences"
+
+msgid "strnosequence"
+msgstr "No sequence found."
+
+msgid "strnosequences"
+msgstr "No sequences found."
+
+msgid "strcreatesequence"
+msgstr "Create sequence"
+
+msgid "strlastvalue"
+msgstr "Son değer"
+
+msgid "strincrementby"
+msgstr "Arttırma değeri"
+
+msgid "strstartvalue"
+msgstr "Başlangıç Değeri"
+
+msgid "strmaxvalue"
+msgstr "Max Değer"
+
+msgid "strminvalue"
+msgstr "Min Değer"
+
+msgid "strcachevalue"
+msgstr "Cache Değeri"
+
+msgid "strlogcount"
+msgstr "Log Count"
+
+msgid "striscycled"
+msgstr "Is Cycled?"
+
+msgid "strsequenceneedsname"
+msgstr "Sequence için bir ad belirtmelisiniz."
+
+msgid "strsequencecreated"
+msgstr "Sequence yaratıldı."
+
+msgid "strsequencecreatedbad"
+msgstr "Sequence yaratma işlemi başarısız oldu."
+
+msgid "strconfdropsequence"
+msgstr "\"%s\" sequence ini kaldırmak istediğinize emin misiniz?"
+
+msgid "strsequencedropped"
+msgstr "Sequence kaldırıldı."
+
+msgid "strsequencedroppedbad"
+msgstr "Sequence kaldırma işlemi başarısız oldu."
+
+msgid "strsequencereset"
+msgstr "Sequence sıfırlandı."
+
+msgid "strsequenceresetbad"
+msgstr "Sequence sıfırlama başarısız oldu."
+
+# Indexes
+msgid "strindex"
+msgstr "Index"
+
+msgid "strindexes"
+msgstr "Indeksler"
+
+msgid "strindexname"
+msgstr "Indeks adı"
+
+msgid "strshowallindexes"
+msgstr "Tüm indeksleri göster"
+
+msgid "strnoindex"
+msgstr "Hiçbir indeks bulunamadı."
+
+msgid "strnoindexes"
+msgstr "Hiçbir indeks bulunamadı."
+
+msgid "strcreateindex"
+msgstr "Indeks yarat"
+
+msgid "strtabname"
+msgstr "Tab Adı"
+
+msgid "strcolumnname"
+msgstr "Kolon adı"
+
+msgid "strindexneedsname"
+msgstr "Indeksinize bir ad vermeniz gerekmektedir."
+
+msgid "strindexneedscols"
+msgstr "Geçerli kolın sayısı vermeniz gerekmektedir."
+
+msgid "strindexcreated"
+msgstr "Indeks yaratıldı."
+
+msgid "strindexcreatedbad"
+msgstr "Index creation failed."
+
+msgid "strconfdropindex"
+msgstr "\"%s\" indeksini kaldırmak istediğinize emin misiniz?"
+
+msgid "strindexdropped"
+msgstr "Indeks kaldırıldı."
+
+msgid "strindexdroppedbad"
+msgstr "Indeks kaldırılamadı."
+
+msgid "strkeyname"
+msgstr "Anahtar adı"
+
+msgid "struniquekey"
+msgstr "Tekil (Unique) Anahtar"
+
+msgid "strprimarykey"
+msgstr "Birincil Anahtar (Primary Key)"
+
+msgid "strindextype"
+msgstr "Indeksin tipi"
+
+msgid "strtablecolumnlist"
+msgstr "Tablodaki kolonlar"
+
+msgid "strindexcolumnlist"
+msgstr "Indeksteki kolonlar"
+
+msgid "strconfcluster"
+msgstr "\"%s\" tablosunu cluster etmek istiyor musunuz?"
+
+msgid "strclusteredgood"
+msgstr "Cluster tamamlandı."
+
+msgid "strclusteredbad"
+msgstr "Cluster başarısız oldu."
+
+msgid "strcluster"
+msgstr "Küme"
+
+# Rules
+msgid "strrules"
+msgstr "Rules"
+
+msgid "strrule"
+msgstr "Rule"
+
+msgid "strshowallrules"
+msgstr "Show all Rules"
+
+msgid "strnorule"
+msgstr "Rule bulunamadı."
+
+msgid "strnorules"
+msgstr "Rule bulunamadı."
+
+msgid "strcreaterule"
+msgstr "Rule yarat"
+
+msgid "strrulename"
+msgstr "Rule adı"
+
+msgid "strruleneedsname"
+msgstr "Rule için bir ad belirtmelisiniz."
+
+msgid "strrulecreated"
+msgstr "Rule yaratıldı."
+
+msgid "strrulecreatedbad"
+msgstr "Rule yaratma işlemi başarısız oldu."
+
+msgid "strconfdroprule"
+msgstr "\"%s\" kuralını \"%s\" tablosundan silmek istediğinize emin misiniz?"
+
+msgid "strruledropped"
+msgstr "Rule silindi"
+
+msgid "strruledroppedbad"
+msgstr "Rule silinme işlemi başarısız oldu."
+
+# Constraints
+msgid "strconstraint"
+msgstr "Kısıtlama"
+
+msgid "strconstraints"
+msgstr "Kısıtlamalar"
+
+msgid "strshowallconstraints"
+msgstr "Tüm kısıtlamaları (constraint) göster."
+
+msgid "strnoconstraints"
+msgstr "Hiçbir kısıtlama (constraint) bulunamadı."
+
+msgid "strcreateconstraint"
+msgstr "Kısıtlama (Constraint) yarat"
+
+msgid "strconstraintcreated"
+msgstr "Kısıtlama (Constraint) yaratıldı."
+
+msgid "strconstraintcreatedbad"
+msgstr "Kısıtlama (Constraint) yaratma işlemi başarısız oldu."
+
+msgid "strconfdropconstraint"
+msgstr "\"%s\" üzerindeki \"%s\" kısıtlamasını (constraint) kaldırmak istiyor musunuz?"
+
+msgid "strconstraintdropped"
+msgstr "Kısıtlama (Constraint) kaldırıldı"
+
+msgid "strconstraintdroppedbad"
+msgstr "Kısıtlama (Constraint) işlemi başarısız oldu."
+
+msgid "straddcheck"
+msgstr "Kontrol (Check) ekle"
+
+msgid "strcheckneedsdefinition"
+msgstr "Kontrol (Check) kısıtlaması (constraint) için bir tanım girilmelidir."
+
+msgid "strcheckadded"
+msgstr "Kontrol kısıtlaması (Check constraint) eklendi."
+
+msgid "strcheckaddedbad"
+msgstr "Kontrol kısıtlaması (Check constraint) ekleme işlemi başarısız oldu."
+
+msgid "straddpk"
+msgstr "Birincil Anahtar Ekle"
+
+msgid "strpkneedscols"
+msgstr "Birincil anahtar için en az bir kolon gereklidir."
+
+msgid "strpkadded"
+msgstr "Birincil anahtar eklendi."
+
+msgid "strpkaddedbad"
+msgstr "Birincil anahtar eklenemedi."
+
+msgid "stradduniq"
+msgstr "Tekil (Unique) anahtar ekle"
+
+msgid "struniqneedscols"
+msgstr "Tekil anahtar yaratmak için en az bir kolon gerekir."
+
+msgid "struniqadded"
+msgstr "Tekil anahtar eklendi."
+
+msgid "struniqaddedbad"
+msgstr "Tekil anahtar eklenemedi."
+
+msgid "straddfk"
+msgstr "İkincil anahtar ekle"
+
+msgid "strfkneedscols"
+msgstr "İkincil anahtar yaratmak için en az bir kolon gerekir."
+
+msgid "strfkneedstarget"
+msgstr "İkincil anahtar hedef bir tablo gerektirir."
+
+msgid "strfkadded"
+msgstr "İkincil anahtar eklendi."
+
+msgid "strfkaddedbad"
+msgstr "İkincil anahtar eklenemedi."
+
+msgid "strfktarget"
+msgstr "Hedef tablo"
+
+
+msgid "strfkcolumnlist"
+msgstr "Anahtardaki kolonlar"
+
+msgid "strondelete"
+msgstr "ON DELETE"
+
+msgid "stronupdate"
+msgstr "ON UPDATE"
+
+# Functions
+msgid "strfunction"
+msgstr "Fonksiyon"
+
+msgid "strfunctions"
+msgstr "Fonksiyonlar"
+
+msgid "strshowallfunctions"
+msgstr "Tüm fonksiyonları göster"
+
+msgid "strnofunction"
+msgstr "Fonksiyon bulunamadı."
+
+msgid "strnofunctions"
+msgstr "Fonksiyon bulunamadı."
+
+msgid "strcreateplfunction"
+msgstr "SQL/PL fonksiyonu yarat"
+
+msgid "strcreateinternalfunction"
+msgstr "İç (internal) fonksiyon yarat"
+
+msgid "strcreatecfunction"
+msgstr "C fonksiyonu yarat"
+
+msgid "strfunctionname"
+msgstr "Fonksiyon adı"
+
+msgid "strreturns"
+msgstr "Dönderilen değer"
+
+msgid "strarguments"
+msgstr "Argümanlar"
+
+msgid "strproglanguage"
+msgstr "Dil"
+
+msgid "strfunctionneedsname"
+msgstr "Fonksiyona bir ad vermelisiniz."
+
+msgid "strfunctionneedsdef"
+msgstr "Fonksiyona bir tanım vermelisiniz."
+
+msgid "strfunctioncreated"
+msgstr "Fonksiyon yaratıldı."
+
+msgid "strfunctioncreatedbad"
+msgstr "Fonksiyon yaratma işlemi başarısız oldu."
+
+msgid "strconfdropfunction"
+msgstr "\"%s\" fonksiyonunu kaldırmak istediğinize emin misiniz?"
+
+msgid "strfunctiondropped"
+msgstr "Fonksiyon kaldırıldı."
+
+msgid "strfunctiondroppedbad"
+msgstr "Fonksiyon kaldırma işlemi başarısız oldu."
+
+msgid "strfunctionupdated"
+msgstr "Fonksiyon güncellendi."
+
+msgid "strfunctionupdatedbad"
+msgstr "Function güncelleme işlemi başarısız oldu."
+
+msgid "strobjectfile"
+msgstr "Nesne dosyası"
+
+msgid "strlinksymbol"
+msgstr "Bağlantı sembolü"
+
+# Triggers
+msgid "strtrigger"
+msgstr "Trigger"
+
+msgid "strtriggers"
+msgstr "Triggerlar"
+
+msgid "strshowalltriggers"
+msgstr "Tüm triggerları göster"
+
+msgid "strnotrigger"
+msgstr "Trigger bulunamadı."
+
+msgid "strnotriggers"
+msgstr "Trigger bulunamadı."
+
+msgid "strcreatetrigger"
+msgstr "Yeni trigger yarat"
+
+msgid "strtriggerneedsname"
+msgstr "Trigger için bir ad belirtmelisiniz."
+
+msgid "strtriggerneedsfunc"
+msgstr "Trigger için bir fonksiyon belirtmelisiniz."
+
+msgid "strtriggercreated"
+msgstr "Trigger yaratıldı."
+
+msgid "strtriggercreatedbad"
+msgstr "Trigger yaratılamadı."
+
+msgid "strconfdroptrigger"
+msgstr "\"%s\" triggerini \"%s\" tablosundan kaldırmak istediğinize emin misiniz?"
+
+msgid "strtriggerdropped"
+msgstr "Trigger silindi."
+
+msgid "strtriggerdroppedbad"
+msgstr "Trigger silinme işlemi başarısız oldu."
+
+msgid "strtriggeraltered"
+msgstr "Trigger değiştirildi."
+
+msgid "strtriggeralteredbad"
+msgstr "Trigger değiştirilme işlemi başarısız oldu."
+
+msgid "strforeach"
+msgstr "Her bir"
+
+# Types
+msgid "strtype"
+msgstr "Veri tipi"
+
+msgid "strtypes"
+msgstr "Veri tipleri"
+
+msgid "strshowalltypes"
+msgstr "Tüm veri tiplerini göster"
+
+msgid "strnotype"
+msgstr "Hiç veri tipi bulunamadı."
+
+msgid "strnotypes"
+msgstr "Hiç veri tipi bulunamadı."
+
+msgid "strcreatetype"
+msgstr "Yeni veri tipi yarat"
+
+msgid "strcreatecomptype"
+msgstr "Karmaşık veri tipi yarat"
+
+msgid "strtypeneedsfield"
+msgstr "En az bir alan belirtmelisiniz."
+
+msgid "strtypeneedscols"
+msgstr "Geçerli bir alan sayısı belirtmelisiniz."
+
+msgid "strtypename"
+msgstr "Veri tipi adı"
+
+msgid "strinputfn"
+msgstr "Giriş (Input) fonksiyonu"
+
+msgid "stroutputfn"
+msgstr "Çıkış (Output) fonksiyonu"
+
+msgid "strpassbyval"
+msgstr "Passed by val?"
+
+msgid "stralignment"
+msgstr "Alignment"
+
+msgid "strelement"
+msgstr "Eleman"
+
+msgid "strdelimiter"
+msgstr "Delimiter"
+
+msgid "strstorage"
+msgstr "Storage"
+
+msgid "strfield"
+msgstr "Alan"
+
+msgid "strnumfields"
+msgstr "Alanların sayısı"
+
+msgid "strtypeneedsname"
+msgstr "Veri tipi için bir ad vermelisiniz."
+
+msgid "strtypeneedslen"
+msgstr "Veri tipiniz için bir uzunluk belirtmelisiniz."
+
+msgid "strtypecreated"
+msgstr "Veri tipi yaratıldı"
+
+msgid "strtypecreatedbad"
+msgstr "Veri tipi yaratılamadı."
+
+msgid "strconfdroptype"
+msgstr "\"%s\" veri tipini kaldırmak istediğinize emin misiniz?"
+
+msgid "strtypedropped"
+msgstr "Veri tipi kaldırıldı."
+
+msgid "strtypedroppedbad"
+msgstr "Veri tipi kaldırılamadı."
+
+msgid "strflavor"
+msgstr "Flavor"
+
+msgid "strbasetype"
+msgstr "Base"
+
+msgid "strcompositetype"
+msgstr "Composite"
+
+msgid "strpseudotype"
+msgstr "Pseudo"
+
+# Schemas
+msgid "strschema"
+msgstr "Şema"
+
+msgid "strschemas"
+msgstr "Şemalar"
+
+msgid "strshowallschemas"
+msgstr "Tüm şemaları göster"
+
+msgid "strnoschema"
+msgstr "Bir şema bulunamadı."
+
+msgid "strnoschemas"
+msgstr "Bir şema bulunamadı."
+
+msgid "strcreateschema"
+msgstr "Şema yarat"
+
+msgid "strschemaname"
+msgstr "Şema adı"
+
+msgid "strschemaneedsname"
+msgstr "Şema için bir ad belirtmelisiniz."
+
+msgid "strschemacreated"
+msgstr "Şema yaratıldı"
+
+msgid "strschemacreatedbad"
+msgstr "Şema yaratma işlemi başarısız oldu"
+
+msgid "strconfdropschema"
+msgstr "\"%s\" şemasını kaldırmak istediğinize emin misiniz?"
+
+msgid "strschemadropped"
+msgstr "Şema kaldırıldı."
+
+msgid "strschemadroppedbad"
+msgstr "Şema kaldırma işlemi başarısız oldu."
+
+msgid "strschemaaltered"
+msgstr "Schema değiştirildi."
+
+msgid "strschemaalteredbad"
+msgstr "Schema değiştirilme işlemi başarısız oldu."
+
+msgid "strsearchpath"
+msgstr "Şema arama yolu"
+
+# Reports
+msgid "strdomain"
+msgstr "Domain"
+
+msgid "strdomains"
+msgstr "Domainler"
+
+msgid "strshowalldomains"
+msgstr "Tüm domainleri göster."
+
+msgid "strnodomains"
+msgstr "Hiçbir domain bulunamadı."
+
+msgid "strcreatedomain"
+msgstr "Domain yarat"
+
+msgid "strdomaindropped"
+msgstr "Domain silindi."
+
+msgid "strdomaindroppedbad"
+msgstr "Domain silme başarısız oldu."
+
+msgid "strconfdropdomain"
+msgstr "\"%s\" domain'ini silmek istediğinize emin misiniz??"
+
+msgid "strdomainneedsname"
+msgstr "Domain için bir ad vermelisiniz."
+
+msgid "strdomaincreated"
+msgstr "Domain yaratıldı."
+
+msgid "strdomaincreatedbad"
+msgstr "Domain yaratma başarısız oldu."
+
+msgid "strdomainaltered"
+msgstr "Domain alter edildi."
+
+msgid "strdomainalteredbad"
+msgstr "Domain alter işlemi başarısız oldu."
+
+msgid "stroperator"
+msgstr "Operatör"
+
+msgid "stroperators"
+msgstr "Operatörler"
+
+msgid "strshowalloperators"
+msgstr "Tüm operatörleri göster"
+
+msgid "strnooperator"
+msgstr "Operatör bulunamadı."
+
+msgid "strnooperators"
+msgstr "Operatör bulunamadı."
+
+msgid "strcreateoperator"
+msgstr "Operatör yaratıldı."
+
+msgid "strleftarg"
+msgstr "Sol Arg Tipi"
+
+msgid "strrightarg"
+msgstr "Sağ Arg Tipi"
+
+msgid "strcommutator"
+msgstr "Commutator"
+
+msgid "strnegator"
+msgstr "Negator"
+
+msgid "strrestrict"
+msgstr "Restrict"
+
+msgid "strjoin"
+msgstr "Join"
+
+msgid "strhashes"
+msgstr "Hashes"
+
+msgid "strmerges"
+msgstr "Merges"
+
+msgid "strleftsort"
+msgstr "Left sort"
+
+msgid "strrightsort"
+msgstr "Right sort"
+
+msgid "strlessthan"
+msgstr "küçüktür"
+
+msgid "strgreaterthan"
+msgstr "büyüktür"
+
+msgid "stroperatorneedsname"
+msgstr "Operatöre bir ad vermelisiniz."
+
+msgid "stroperatorcreated"
+msgstr "Operatör yaratıldı"
+
+msgid "stroperatorcreatedbad"
+msgstr "Operatör yaratma işlemi başarısız oldu."
+
+msgid "strconfdropoperator"
+msgstr "\"%s\" operatörünü kaldırmak istediğinize emin misiniz?"
+
+msgid "stroperatordropped"
+msgstr "Operatör kaldırıldı."
+
+msgid "stroperatordroppedbad"
+msgstr "Operator kaldırma işlemi başarısız oldu."
+
+# Casts
+msgid "strcasts"
+msgstr "Casts"
+
+msgid "strnocasts"
+msgstr "Hiç cast bulunamadı."
+
+msgid "strsourcetype"
+msgstr "Kaynak tip"
+
+msgid "strtargettype"
+msgstr "Hedef tip"
+
+msgid "strimplicit"
+msgstr "Implicit"
+
+msgid "strinassignment"
+msgstr "In assignment"
+
+msgid "strbinarycompat"
+msgstr "(Binary uyumlu)"
+
+# Conversions
+msgid "strconversions"
+msgstr "Dönüşümleri"
+
+msgid "strnoconversions"
+msgstr "Hiç dönüşüm bulunamadı."
+
+msgid "strsourceencoding"
+msgstr "Kaynak dil kodlaması"
+
+msgid "strtargetencoding"
+msgstr "Hedef dil kodlaması"
+
+# Languages
+msgid "strlanguages"
+msgstr "Diller"
+
+msgid "strnolanguages"
+msgstr "Hiç bir dil bulunamadı."
+
+msgid "strtrusted"
+msgstr "Güvenilir"
+
+# Info
+msgid "strnoinfo"
+msgstr "Hiç bir bilgi yok."
+
+msgid "strreferringtables"
+msgstr "Referring tables"
+
+msgid "strparenttables"
+msgstr "Parent tablolar"
+
+msgid "strchildtables"
+msgstr "Child tablolar"
+
+# Aggregates
+msgid "straggregates"
+msgstr "Aggregate"
+
+msgid "strnoaggregates"
+msgstr "Hiç aggregate bulunamadı."
+
+msgid "stralltypes"
+msgstr "(Tüm veri tipleri)"
+
+msgid "stropclasses"
+msgstr "Op sınıfları"
+
+msgid "strnoopclasses"
+msgstr "Hiç operatör sınıfı bulunamadı."
+
+msgid "straccessmethod"
+msgstr "Erişim Yöntemi"
+
+msgid "strrowperf"
+msgstr "Satır Başarımı"
+
+msgid "strioperf"
+msgstr "I/O Başarımı"
+
+msgid "stridxrowperf"
+msgstr "Index Satır Başarımı"
+
+msgid "stridxioperf"
+msgstr "Index I/O Başarımı"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "Sequential"
+
+msgid "strscan"
+msgstr "Scan"
+
+msgid "strread"
+msgstr "Read"
+
+msgid "strfetch"
+msgstr "Fetch"
+
+msgid "strheap"
+msgstr "Heap"
+
+msgid "strtoast"
+msgstr "TOAST"
+
+msgid "strtoastindex"
+msgstr "TOAST Index"
+
+msgid "strcache"
+msgstr "Cache"
+
+msgid "strdisk"
+msgstr "Disk"
+
+msgid "strrows2"
+msgstr "Rows"
+
+# Tablespaces
+msgid "strtablespace"
+msgstr "Tablespace"
+
+msgid "strtablespaces"
+msgstr "Tablespaceler"
+
+msgid "strshowalltablespaces"
+msgstr "Tüm tablespaceleri göster"
+
+msgid "strnotablespaces"
+msgstr "Hiç tablespace bulunamadı."
+
+msgid "strcreatetablespace"
+msgstr "Tablespace yarat"
+
+msgid "strlocation"
+msgstr "Yer"
+
+msgid "strtablespaceneedsname"
+msgstr "Tablespace'e bir ad vermelisiniz."
+
+msgid "strtablespaceneedsloc"
+msgstr "Tablespace'in yaratılacağı dizini belirtmelisiniz"
+
+msgid "strtablespacecreated"
+msgstr "Tablespace yaratıldı."
+
+msgid "strtablespacecreatedbad"
+msgstr "Tablespace yaratılamadı."
+
+msgid "strconfdroptablespace"
+msgstr "\"%s\" adlı tablespace'i kaldırmak istediğinize emin misiniz?"
+
+msgid "strtablespacedropped"
+msgstr "Tablespace kaldırıldı."
+
+msgid "strtablespacedroppedbad"
+msgstr "Tablespace kaldırılamadı."
+
+msgid "strtablespacealtered"
+msgstr "Tablespace değiştirildi."
+
+msgid "strtablespacealteredbad"
+msgstr "Tablespace değiştirilemedi."
+
+# Miscellaneous
+msgid "strtopbar"
+msgstr "%s, %s:%s üzerinde çalışıyor-- \"%s\" kullanıcısı ile sisteme giriş yaptınız."
+
+msgid "strtimefmt"
+msgstr "jS M, Y g:iA"
+
+msgid "strhelp"
+msgstr "Yardım"
+
+msgid "strhelpicon"
+msgstr "?"
+
+msgid "strlogintitle"
+msgstr "%s'e giriş yap"
+
+msgid "strlogoutmsg"
+msgstr "%s'den çıkıldı."
+
+msgid "strloading"
+msgstr "Yükleniyor..."
+
+msgid "strerrorloading"
+msgstr "Yükleme hatası"
+
+msgid "strclicktoreload"
+msgstr "Yeniden yüklemek için tıklayın."

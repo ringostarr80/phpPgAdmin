@@ -1,0 +1,2074 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ro_RO\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "Română"
+
+msgid "applocale"
+msgstr "ro-RO"
+
+msgid "applangdir"
+msgstr "ltr"
+
+# Welcome
+msgid "strintro"
+msgstr "Bun venit în phpPgAdmin."
+
+msgid "strppahome"
+msgstr "Pagina phpPgAdmin"
+
+msgid "strpgsqlhome"
+msgstr "Pagina PostgreSQL"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "Documentaţie locală PostgreSQL"
+
+msgid "strreportbug"
+msgstr "Raportaţi o eroare"
+
+msgid "strviewfaq"
+msgstr "Întrebări frecvente online"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "Autentificare"
+
+msgid "strloginfailed"
+msgstr "Autentificare eşuată"
+
+msgid "strlogindisallowed"
+msgstr "Autentificare nepermisă din motive de securitate."
+
+msgid "strserver"
+msgstr "Server"
+
+msgid "strservers"
+msgstr "Servere"
+
+msgid "strintroduction"
+msgstr "Introducere"
+
+msgid "strhost"
+msgstr "Gazdă"
+
+msgid "strport"
+msgstr "Port"
+
+msgid "strlogout"
+msgstr "Ieşire"
+
+msgid "strowner"
+msgstr "Proprietar"
+
+msgid "straction"
+msgstr "Acţiune"
+
+msgid "stractions"
+msgstr "Acţiuni"
+
+msgid "strname"
+msgstr "Nume"
+
+msgid "strdefinition"
+msgstr "Definiţie"
+
+msgid "strproperties"
+msgstr "Proprietăţi"
+
+msgid "strbrowse"
+msgstr "Vizualizare"
+
+msgid "strenable"
+msgstr "Activare"
+
+msgid "strdisable"
+msgstr "Dezactivare"
+
+msgid "strdrop"
+msgstr "Ştergere"
+
+msgid "strdropped"
+msgstr "Şters"
+
+msgid "strnull"
+msgstr "Nul"
+
+msgid "strnotnull"
+msgstr "Ne-nul"
+
+msgid "strprev"
+msgstr "< Înapoi"
+
+msgid "strnext"
+msgstr "Înainte >"
+
+msgid "strfirst"
+msgstr "<< Început"
+
+msgid "strlast"
+msgstr "Sfârşit >>"
+
+msgid "strfailed"
+msgstr "Eşuat"
+
+msgid "strcreate"
+msgstr "Creare"
+
+msgid "strcreated"
+msgstr "Creat"
+
+msgid "strcomment"
+msgstr "Comentariu"
+
+msgid "strlength"
+msgstr "Lungime"
+
+msgid "strdefault"
+msgstr "Implicit"
+
+msgid "stralter"
+msgstr "Modificare"
+
+msgid "strok"
+msgstr "OK"
+
+msgid "strcancel"
+msgstr "Anulare"
+
+msgid "strac"
+msgstr "Activare Auto-completare"
+
+msgid "strsave"
+msgstr "Salvare"
+
+msgid "strreset"
+msgstr "Reiniţializare"
+
+msgid "strinsert"
+msgstr "Inserare"
+
+msgid "strselect"
+msgstr "Selectare"
+
+msgid "strdelete"
+msgstr "Ştergere"
+
+msgid "strupdate"
+msgstr "Actualizare"
+
+msgid "strreferences"
+msgstr "Referinţe"
+
+msgid "stryes"
+msgstr "Da"
+
+msgid "strno"
+msgstr "Nu"
+
+msgid "strtrue"
+msgstr "TRUE"
+
+msgid "strfalse"
+msgstr "FALSE"
+
+msgid "stredit"
+msgstr "Editare"
+
+msgid "strcolumn"
+msgstr "Coloană"
+
+msgid "strcolumns"
+msgstr "Coloane"
+
+msgid "strrows"
+msgstr "rând(uri)"
+
+msgid "strrowsaff"
+msgstr "rând(uri) afectate."
+
+msgid "strobjects"
+msgstr "obiect(e)"
+
+msgid "strback"
+msgstr "Înapoi"
+
+msgid "strqueryresults"
+msgstr "Rezultatele interogării"
+
+msgid "strshow"
+msgstr "Afişare"
+
+msgid "strempty"
+msgstr "Golire"
+
+msgid "strlanguage"
+msgstr "Limbă"
+
+msgid "strencoding"
+msgstr "Codificare"
+
+msgid "strvalue"
+msgstr "Valoare"
+
+msgid "strunique"
+msgstr "Unic"
+
+msgid "strprimary"
+msgstr "Primar"
+
+msgid "strexport"
+msgstr "Export"
+
+msgid "strimport"
+msgstr "Import"
+
+msgid "strallowednulls"
+msgstr "Caractere NULL permise"
+
+msgid "strbackslashn"
+msgstr "\\N"
+
+msgid "stremptystring"
+msgstr "Şir/câmp gol"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "stradmin"
+msgstr "Administrare"
+
+msgid "strvacuum"
+msgstr "Vacuum"
+
+msgid "stranalyze"
+msgstr "Analiză"
+
+msgid "strclusterindex"
+msgstr "Grupare"
+
+msgid "strclustered"
+msgstr "Grupat?"
+
+msgid "strreindex"
+msgstr "Re-indexare"
+
+msgid "strrun"
+msgstr "Executare"
+
+msgid "stradd"
+msgstr "Adăugare"
+
+msgid "strevent"
+msgstr "Eveniment"
+
+msgid "strwhere"
+msgstr "În schimb"
+
+msgid "strinstead"
+msgstr "Execută în schimb"
+
+msgid "strwhen"
+msgstr "Când"
+
+msgid "strformat"
+msgstr "Format"
+
+msgid "strdata"
+msgstr "Dată"
+
+msgid "strconfirm"
+msgstr "Confirmare"
+
+msgid "strexpression"
+msgstr "Expresie"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strseparator"
+msgstr ": "
+
+msgid "strexpand"
+msgstr "Expandare"
+
+msgid "strcollapse"
+msgstr "Restrângere"
+
+msgid "strexplain"
+msgstr "Explicare"
+
+msgid "strexplainanalyze"
+msgstr "Explicare & Analiză"
+
+msgid "strfind"
+msgstr "Căutare"
+
+msgid "stroptions"
+msgstr "Opţiuni"
+
+msgid "strrefresh"
+msgstr "Reîmprospătare"
+
+msgid "strdownload"
+msgstr "Transfer"
+
+msgid "strdownloadgzipped"
+msgstr "Transfer comprimat cu gzip"
+
+msgid "strinfo"
+msgstr "Info"
+
+msgid "stroids"
+msgstr "OID-uri"
+
+msgid "stradvanced"
+msgstr "Avansat"
+
+msgid "strvariables"
+msgstr "Variabile"
+
+msgid "strprocess"
+msgstr "Proces"
+
+msgid "strprocesses"
+msgstr "Procese"
+
+msgid "strsetting"
+msgstr "Valoare"
+
+msgid "streditsql"
+msgstr "Editare SQL"
+
+msgid "strruntime"
+msgstr "Timp total de rulare:%s ms"
+
+msgid "strpaginate"
+msgstr "Paginare rezultate"
+
+msgid "struploadscript"
+msgstr "sau încărcare script SQL:"
+
+msgid "strstarttime"
+msgstr "Timp start"
+
+msgid "strfile"
+msgstr "Fişier"
+
+msgid "strfileimported"
+msgstr "Fişier importat"
+
+msgid "strtrycred"
+msgstr "Folosiţi aceste acreditări pentru toate serverele"
+
+msgid "strexecute"
+msgstr "Executare"
+
+# Database sizes
+msgid "strsize"
+msgstr "Dimensiune"
+
+msgid "strbytes"
+msgstr "octeţi"
+
+msgid "strkb"
+msgstr "kB"
+
+msgid "strmb"
+msgstr "MB"
+
+msgid "strgb"
+msgstr "GB"
+
+msgid "strtb"
+msgstr "TB"
+
+# Error handling
+msgid "strnoframes"
+msgstr "Această aplicaţie funcţionează cel mai bine într-un browser ce suportă frame-uri , dar poate fi folosită şi fără frame-uri, urmând legătura de mai jos."
+
+msgid "strnoframeslink"
+msgstr "Fără frame-uri"
+
+msgid "strbadconfig"
+msgstr "Fişierul config.inc.php este învechit. Trebuie să-l re-generaţi folosind noul fişier config.inc.php-dist."
+
+msgid "strnotloaded"
+msgstr "Instalarea de PHP nu suportă PostgreSQL. Trebuie să re-compilaţi PHP folosind opţiunea --with-pgsql la configurare."
+
+msgid "strpostgresqlversionnotsupported"
+msgstr "Versiune de PostgreSQL ne-suportată. Actualizaţi la versiunea %s sau ulterioară."
+
+msgid "strbadschema"
+msgstr "Schemă specificată incorectă."
+
+msgid "strbadencoding"
+msgstr "Imposibil de setat codificarea client în baza de date."
+
+msgid "strsqlerror"
+msgstr "Eroare SQL:"
+
+msgid "strinstatement"
+msgstr "În instrucţiunea:"
+
+msgid "strinvalidparam"
+msgstr "Parametrii scriptului sunt incorecţi."
+
+msgid "strnodata"
+msgstr "Nici un rând găsit."
+
+msgid "strnoobjects"
+msgstr "Nici un obiect găsit."
+
+msgid "strrownotunique"
+msgstr "Nici un identificator unic pentru acest rând."
+
+msgid "strnouploads"
+msgstr "Încărcarea de fişiere este dezactivată."
+
+msgid "strimporterror"
+msgstr "Eroare la importare."
+
+msgid "strimporterror-fileformat"
+msgstr "Eroare la importare: Imposibil de determinat în mod automat formatul fişierului."
+
+msgid "strimporterrorline"
+msgstr "Eroare la importare pe linia %s."
+
+msgid "strimporterrorline-badcolumnnum"
+msgstr "Eroare la importare pe linia %s:  Linia nu are numărul corect de coloane."
+
+msgid "strimporterror-uploadedfile"
+msgstr "Eroare la importare: Fişierul nu a putut fi încărcat pe server"
+
+msgid "strcannotdumponwindows"
+msgstr "Descărcarea de tabele complexe şi nume de scheme în Windows nu este suportată."
+
+# Tables
+msgid "strtable"
+msgstr "Tabelă"
+
+msgid "strtables"
+msgstr "Tabele"
+
+msgid "strshowalltables"
+msgstr "Afişare toate tabelele"
+
+msgid "strnotables"
+msgstr "Nici o tabelă găsită."
+
+msgid "strnotable"
+msgstr "Nici o tabelă găsită."
+
+msgid "strcreatetable"
+msgstr "Creare tabelă."
+
+msgid "strtablename"
+msgstr "Nume tabelă"
+
+msgid "strtableneedsname"
+msgstr "Specificaţi un nume pentru tabelă."
+
+msgid "strtableneedsfield"
+msgstr "Specificaţi cel puţin un câmp."
+
+msgid "strtableneedscols"
+msgstr "Specificaţi un număr corect de coloane."
+
+msgid "strtablecreated"
+msgstr "Tabelă creată."
+
+msgid "strtablecreatedbad"
+msgstr "Creare tabelă eşuată."
+
+msgid "strconfdroptable"
+msgstr "Sigur ştergeţi tabela \"%s\"?"
+
+msgid "strtabledropped"
+msgstr "Tabelă ştearsă."
+
+msgid "strtabledroppedbad"
+msgstr "Ştergere tabelă eşuată."
+
+msgid "strconfemptytable"
+msgstr "Sigur goliţi tabela \"%s\"?"
+
+msgid "strtableemptied"
+msgstr "Tabelă golită."
+
+msgid "strtableemptiedbad"
+msgstr "Golire tabelă eşuată."
+
+msgid "strinsertrow"
+msgstr "Inserare rând"
+
+msgid "strrowinserted"
+msgstr "Rând inserat"
+
+msgid "strrowinsertedbad"
+msgstr "Inserare rând eşuată."
+
+msgid "strrowduplicate"
+msgstr "Inserare de rând eşuată, s-a încercat inserarea unui duplicat."
+
+msgid "streditrow"
+msgstr "Editare rând"
+
+msgid "strrowupdated"
+msgstr "Rând actualizat."
+
+msgid "strrowupdatedbad"
+msgstr "Actualizare rând eşuată."
+
+msgid "strdeleterow"
+msgstr "Ştergere rând."
+
+msgid "strconfdeleterow"
+msgstr "Sigur ştergeţi acest rând?"
+
+msgid "strrowdeleted"
+msgstr "Rând şters."
+
+msgid "strrowdeletedbad"
+msgstr "Ştergere rând eşuată."
+
+msgid "strinsertandrepeat"
+msgstr "Inserare & Repetare"
+
+msgid "strnumcols"
+msgstr "Număr de coloane"
+
+msgid "strcolneedsname"
+msgstr "Specificaţi un nume pentru coloană"
+
+msgid "strselectallfields"
+msgstr "Selectare toate câmpurile"
+
+msgid "strselectneedscol"
+msgstr "Afişaţi cel puţin o coloană."
+
+msgid "strselectunary"
+msgstr "Operatorii unari nu pot avea valori."
+
+msgid "straltercolumn"
+msgstr "Modificare coloană"
+
+msgid "strcolumnaltered"
+msgstr "Coloană modificată."
+
+msgid "strcolumnalteredbad"
+msgstr "Modificare coloană eşuată."
+
+msgid "strconfdropcolumn"
+msgstr "Sigur ştergeţi coloana \"%s\" din tabela \"%s\"?"
+
+msgid "strcolumndropped"
+msgstr "Coloană ştearsă."
+
+msgid "strcolumndroppedbad"
+msgstr "Ştergere coloană eşuată."
+
+msgid "straddcolumn"
+msgstr "Adăugare coloană"
+
+msgid "strcolumnadded"
+msgstr "Coloană adăugată."
+
+msgid "strcolumnaddedbad"
+msgstr "Adăugare coloană eşuată."
+
+msgid "strcascade"
+msgstr "CASCADE"
+
+msgid "strtablealtered"
+msgstr "Tabelă modificată."
+
+msgid "strtablealteredbad"
+msgstr "Modificare tabelă eşuată."
+
+msgid "strdataonly"
+msgstr "Numai date"
+
+msgid "strstructureonly"
+msgstr "Numai structură"
+
+msgid "strstructureanddata"
+msgstr "Structură şi date"
+
+msgid "strtabbed"
+msgstr "Cu tab-uri"
+
+msgid "strauto"
+msgstr "Automat"
+
+msgid "strconfvacuumtable"
+msgstr "Sigur executaţi \"vacuum\" pe \"%s\"?"
+
+msgid "strestimatedrowcount"
+msgstr "Număr estimat de rânduri"
+
+# Columns
+msgid "strcolprop"
+msgstr "Proprietăţi coloană"
+
+# Users
+msgid "struser"
+msgstr "Utilizator"
+
+msgid "strusers"
+msgstr "Utilizatori"
+
+msgid "strusername"
+msgstr "Nume utilizator"
+
+msgid "strpassword"
+msgstr "Parolă"
+
+msgid "strsuper"
+msgstr "Utilizator privilegiat?"
+
+msgid "strcreatedb"
+msgstr "Creează BD?"
+
+msgid "strexpires"
+msgstr "Expiră la"
+
+msgid "strsessiondefaults"
+msgstr "Valori implicite pentru sesiune"
+
+msgid "strnousers"
+msgstr "Nici un utilizator găsit."
+
+msgid "struserupdated"
+msgstr "Utilizator actualizat."
+
+msgid "struserupdatedbad"
+msgstr "Actualizare utilizator eşuată."
+
+msgid "strshowallusers"
+msgstr "Afişare toţi utilizatorii"
+
+msgid "strcreateuser"
+msgstr "Creare utilizator"
+
+msgid "struserneedsname"
+msgstr "Specificaţi un nume pentru utilizator."
+
+msgid "strusercreated"
+msgstr "Utilizator creat."
+
+msgid "strusercreatedbad"
+msgstr "Creare utilizator eşuată."
+
+msgid "strconfdropuser"
+msgstr "Sigur ştergeţi utilizatorul \"%s\"?"
+
+msgid "struserdropped"
+msgstr "Utilizator şters."
+
+msgid "struserdroppedbad"
+msgstr "Ştergere utilizator eşuată."
+
+msgid "straccount"
+msgstr "Cont"
+
+msgid "strchangepassword"
+msgstr "Schimbare parolă"
+
+msgid "strpasswordchanged"
+msgstr "Parolă schimbată."
+
+msgid "strpasswordchangedbad"
+msgstr "Schimbare parolă eşuată."
+
+msgid "strpasswordshort"
+msgstr "Parola este prea scurtă."
+
+msgid "strpasswordconfirm"
+msgstr "Parola nu se confirmă."
+
+# Groups
+msgid "strgroup"
+msgstr "Grup"
+
+msgid "strgroups"
+msgstr "Grupuri"
+
+msgid "strshowallgroups"
+msgstr "Afişare toate grupurile"
+
+msgid "strnogroup"
+msgstr "Grup negăsit."
+
+msgid "strnogroups"
+msgstr "Nici un grup găsit."
+
+msgid "strcreategroup"
+msgstr "Creare grup"
+
+msgid "strgroupneedsname"
+msgstr "Specificaţi un nume pentru grup."
+
+msgid "strgroupcreated"
+msgstr "Grup creat."
+
+msgid "strgroupcreatedbad"
+msgstr "Creare grup eşuată."
+
+msgid "strconfdropgroup"
+msgstr "Sigur ştergeţi grupul \"%s\"?"
+
+msgid "strgroupdropped"
+msgstr "Grup şters."
+
+msgid "strgroupdroppedbad"
+msgstr "Ştergere grup eşuată."
+
+msgid "strmembers"
+msgstr "Membri"
+
+msgid "strmemberof"
+msgstr "Membru al"
+
+msgid "stradminmembers"
+msgstr "Membri administratori"
+
+msgid "straddmember"
+msgstr "Adăugare membru"
+
+msgid "strmemberadded"
+msgstr "Membru adăugat."
+
+msgid "strmemberaddedbad"
+msgstr "Adăugare membru eşuată."
+
+msgid "strdropmember"
+msgstr "Ştergere membru"
+
+msgid "strconfdropmember"
+msgstr "Sigur ştergeţi membrul \"%s\" din grupul \"%s\"?"
+
+msgid "strmemberdropped"
+msgstr "Membru şters."
+
+msgid "strmemberdroppedbad"
+msgstr "Ştergere membru eşuată."
+
+# Roles
+msgid "strrole"
+msgstr "Rol"
+
+msgid "strroles"
+msgstr "Roluri"
+
+msgid "strshowallroles"
+msgstr "Afişare toate rolurile"
+
+msgid "strnoroles"
+msgstr "Nici un rol găsit"
+
+msgid "strinheritsprivs"
+msgstr "Moştenire privilegii?"
+
+msgid "strcreaterole"
+msgstr "Creare rol"
+
+msgid "strcancreaterole"
+msgstr "Creare rol posibilă?"
+
+msgid "strrolecreated"
+msgstr "Rol creat"
+
+msgid "strrolecreatedbad"
+msgstr "Creare rol eşuată"
+
+msgid "stralterrole"
+msgstr "Modificare rol"
+
+msgid "strrolealtered"
+msgstr "Rol modificat"
+
+msgid "strrolealteredbad"
+msgstr "Modificare rol eşuată"
+
+msgid "strcanlogin"
+msgstr "Autentificare posibilă?"
+
+msgid "strconnlimit"
+msgstr "Limită conectare"
+
+msgid "strdroprole"
+msgstr "Ştergere rol"
+
+msgid "strconfdroprole"
+msgstr "Sigur ştergeţi rolul \"%s\"?"
+
+msgid "strroledropped"
+msgstr "Rol şters"
+
+msgid "strroledroppedbad"
+msgstr "Ştergere rol eşuată"
+
+msgid "strnolimit"
+msgstr "Fără limită"
+
+msgid "strnever"
+msgstr "Niciodată"
+
+msgid "strroleneedsname"
+msgstr "Specificaţi un nume pentru rol"
+
+# Privileges
+msgid "strprivilege"
+msgstr "Privilegiu"
+
+msgid "strprivileges"
+msgstr "Privilegii"
+
+msgid "strnoprivileges"
+msgstr "Acest obiect are privilegiile implicite ale proprietarului."
+
+msgid "strgrant"
+msgstr "Acordare"
+
+msgid "strrevoke"
+msgstr "Revocare"
+
+msgid "strgranted"
+msgstr "Privilegii schimbate."
+
+msgid "strgrantfailed"
+msgstr "Schimbare privilegii eşuată."
+
+msgid "strgrantbad"
+msgstr "Specificaţi cel puţin un utilizator sau grup şi cel puţin un privilegiu."
+
+msgid "strgrantor"
+msgstr "Acordat de"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "Bază de date"
+
+msgid "strdatabases"
+msgstr "Baze de date"
+
+msgid "strshowalldatabases"
+msgstr "Afişare toate bazele de date"
+
+msgid "strnodatabases"
+msgstr "Nici o bază de date găsită."
+
+msgid "strcreatedatabase"
+msgstr "Creare bază de date"
+
+msgid "strdatabasename"
+msgstr "Nume bază de date"
+
+msgid "strdatabaseneedsname"
+msgstr "Specificaţi un nume pentru baza de date."
+
+msgid "strdatabasecreated"
+msgstr "Bază de date creată."
+
+msgid "strdatabasecreatedbad"
+msgstr "Creare bază de date eşuată."
+
+msgid "strconfdropdatabase"
+msgstr "Sigur ştergeţi baza de date \"%s\"?"
+
+msgid "strdatabasedropped"
+msgstr "Bază de date ştearsă."
+
+msgid "strdatabasedroppedbad"
+msgstr "Ştergere bază de date eşuată."
+
+msgid "strentersql"
+msgstr "Introduceţi instrucţiunea SQL de executat:"
+
+msgid "strsqlexecuted"
+msgstr "Instrucţiune SQL executată."
+
+msgid "strvacuumgood"
+msgstr "Vacuum terminat."
+
+msgid "strvacuumbad"
+msgstr "Vacuum eşuat."
+
+msgid "stranalyzegood"
+msgstr "Analiză terminată."
+
+msgid "stranalyzebad"
+msgstr "Analiză eşuată."
+
+msgid "strreindexgood"
+msgstr "Re-indexare terminată."
+
+msgid "strreindexbad"
+msgstr "Re-indexare eşuată."
+
+msgid "strfull"
+msgstr "Complet"
+
+msgid "strfreeze"
+msgstr "Îngheţare"
+
+msgid "strforce"
+msgstr "Forţare"
+
+msgid "strsignalsent"
+msgstr "Semnal trimis."
+
+msgid "strsignalsentbad"
+msgstr "Trimitere semnal eşuată."
+
+msgid "strallobjects"
+msgstr "Toate obiectele"
+
+msgid "strdatabasealtered"
+msgstr "Bază de date modificată."
+
+msgid "strdatabasealteredbad"
+msgstr "Modificarea bazei de date a eşuat."
+
+# Views
+msgid "strview"
+msgstr "Vizualizare"
+
+msgid "strviews"
+msgstr "Vizualizări"
+
+msgid "strshowallviews"
+msgstr "Afişare toate vizualizările"
+
+msgid "strnoview"
+msgstr "Nici o vizualizare găsită."
+
+msgid "strnoviews"
+msgstr "Nici o vizualizare găsită."
+
+msgid "strcreateview"
+msgstr "Creare vizualizare"
+
+msgid "strviewname"
+msgstr "Nume vizualizare"
+
+msgid "strviewneedsname"
+msgstr "Specificaţi un nume pentru vizualizare."
+
+msgid "strviewneedsdef"
+msgstr "Specificaţi o definiţie pentru vizualizare."
+
+msgid "strviewneedsfields"
+msgstr "Specificaţi coloanele pe care le doriţi selectate în vizualizare."
+
+msgid "strviewcreated"
+msgstr "Vizualizare creată."
+
+msgid "strviewcreatedbad"
+msgstr "Creare vizualizare eşuată."
+
+msgid "strconfdropview"
+msgstr "Sigur ştergeţi vizualizarea \"%s\"?"
+
+msgid "strviewdropped"
+msgstr "Vizualizare ştearsă."
+
+msgid "strviewdroppedbad"
+msgstr "Ştergere vizualizare eşuată."
+
+msgid "strviewupdated"
+msgstr "Vizualizare actualizată"
+
+msgid "strviewupdatedbad"
+msgstr "Actualizare vizualizare eşuată."
+
+msgid "strviewlink"
+msgstr "Chei de legătură"
+
+msgid "strviewconditions"
+msgstr "Condiţii suplimentare"
+
+msgid "strcreateviewwiz"
+msgstr "Creare vizualizare folosind expertul"
+
+# Sequences
+msgid "strsequence"
+msgstr "Secvenţă"
+
+msgid "strsequences"
+msgstr "Secvenţe"
+
+msgid "strshowallsequences"
+msgstr "Afişare toate secvenţele"
+
+msgid "strnosequence"
+msgstr "Nici o secvenţă găsită."
+
+msgid "strnosequences"
+msgstr "Nici o secvenţă găsită."
+
+msgid "strcreatesequence"
+msgstr "Creare secvenţă"
+
+msgid "strlastvalue"
+msgstr "Ultima valoare"
+
+msgid "strincrementby"
+msgstr "Incrementare cu"
+
+msgid "strstartvalue"
+msgstr "Valoare de start"
+
+msgid "strmaxvalue"
+msgstr "Valoare maximă"
+
+msgid "strminvalue"
+msgstr "Valoare minimă"
+
+msgid "strcachevalue"
+msgstr "Valoare cache"
+
+msgid "strlogcount"
+msgstr "Log count"
+
+msgid "striscycled"
+msgstr "Ciclică?"
+
+msgid "strsequenceneedsname"
+msgstr "Specificaţi un nume pentru secvenţă."
+
+msgid "strsequencecreated"
+msgstr "Secvenţă creată."
+
+msgid "strsequencecreatedbad"
+msgstr "Creare secvenţă eşuată."
+
+msgid "strconfdropsequence"
+msgstr "Sigur ştergeţi secvenţa \"%s\"?"
+
+msgid "strsequencedropped"
+msgstr "Secvenţă ştearsă."
+
+msgid "strsequencedroppedbad"
+msgstr "Ştergere secvenţă eşuată."
+
+msgid "strsequencereset"
+msgstr "Reiniţializare secvenţă."
+
+msgid "strsequenceresetbad"
+msgstr "Reiniţializare secvenţă eşuată."
+
+msgid "straltersequence"
+msgstr "Modificare secvenţă"
+
+msgid "strsequencealtered"
+msgstr "Secvenţă modificată"
+
+msgid "strsequencealteredbad"
+msgstr "Modificare secvenţă eşuată"
+
+msgid "strsetval"
+msgstr "Setare valoare"
+
+msgid "strsequencesetval"
+msgstr "Valoare secvenţă setată"
+
+msgid "strsequencesetvalbad"
+msgstr "Setare valoare secvenţă eşuată"
+
+msgid "strnextval"
+msgstr "Valoare increment"
+
+msgid "strsequencenextval"
+msgstr "Secvenţă incrementată"
+
+msgid "strsequencenextvalbad"
+msgstr "Incremetare secvenţă eşuată"
+
+# Indexes
+msgid "strindex"
+msgstr "Index"
+
+msgid "strindexes"
+msgstr "Indexuri"
+
+msgid "strindexname"
+msgstr "Nume index"
+
+msgid "strshowallindexes"
+msgstr "Afişare toate indexurile"
+
+msgid "strnoindex"
+msgstr "Nici un index găsit."
+
+msgid "strnoindexes"
+msgstr "Nici un index găsit."
+
+msgid "strcreateindex"
+msgstr "Creare index"
+
+msgid "strtabname"
+msgstr "Nume tabelă"
+
+msgid "strcolumnname"
+msgstr "Nume coloană"
+
+msgid "strindexneedsname"
+msgstr "Specificaţi un nume pentru index."
+
+msgid "strindexneedscols"
+msgstr "Indexurile necesită un număr corect de coloane."
+
+msgid "strindexcreated"
+msgstr "Index creat"
+
+msgid "strindexcreatedbad"
+msgstr "Creare index eşuată."
+
+msgid "strconfdropindex"
+msgstr "Sigur ştergeţi indexul \"%s\"?"
+
+msgid "strindexdropped"
+msgstr "Index şters."
+
+msgid "strindexdroppedbad"
+msgstr "Ştergere index eşuată."
+
+msgid "strkeyname"
+msgstr "Nume cheie"
+
+msgid "struniquekey"
+msgstr "Cheie unică"
+
+msgid "strprimarykey"
+msgstr "Cheie primară"
+
+msgid "strindextype"
+msgstr "Tip de index"
+
+msgid "strtablecolumnlist"
+msgstr "Coloane în tabelă"
+
+msgid "strindexcolumnlist"
+msgstr "Coloane în index"
+
+msgid "strconfcluster"
+msgstr "Sigur grupaţi \"%s\"?"
+
+msgid "strclusteredgood"
+msgstr "Grupare completă."
+
+msgid "strclusteredbad"
+msgstr "Grupare eşuată."
+
+msgid "strcluster"
+msgstr "Grupare"
+
+# Rules
+msgid "strrules"
+msgstr "Reguli"
+
+msgid "strrule"
+msgstr "Regulă"
+
+msgid "strshowallrules"
+msgstr "Afişare toate regulile"
+
+msgid "strnorule"
+msgstr "Nici o regulă găsită."
+
+msgid "strnorules"
+msgstr "Nici o regulă găsită."
+
+msgid "strcreaterule"
+msgstr "Creare regulă"
+
+msgid "strrulename"
+msgstr "Nume regulă"
+
+msgid "strruleneedsname"
+msgstr "Specificaţi un nume pentru regulă."
+
+msgid "strrulecreated"
+msgstr "Regulă creată."
+
+msgid "strrulecreatedbad"
+msgstr "Creare regulă eşuată."
+
+msgid "strconfdroprule"
+msgstr "Sigur ştergeţi regula \"%s\"?"
+
+msgid "strruledropped"
+msgstr "Regulă ştearsă."
+
+msgid "strruledroppedbad"
+msgstr "Ştergere regulă eşuată."
+
+# Constraints
+msgid "strconstraint"
+msgstr "Restricţie"
+
+msgid "strconstraints"
+msgstr "Restricţii"
+
+msgid "strshowallconstraints"
+msgstr "Afişare toate restricţiile"
+
+msgid "strnoconstraints"
+msgstr "Nici o restricţie găsită."
+
+msgid "strcreateconstraint"
+msgstr "Creare restricţie"
+
+msgid "strconstraintcreated"
+msgstr "Restricţie creată."
+
+msgid "strconstraintcreatedbad"
+msgstr "Creare restricţie eşuată."
+
+msgid "strconfdropconstraint"
+msgstr "Sigur ştergeţi restricţia \"%s\"?"
+
+msgid "strconstraintdropped"
+msgstr "Restricţie ştearsă."
+
+msgid "strconstraintdroppedbad"
+msgstr "Ştergere restricţie eşuată."
+
+msgid "straddcheck"
+msgstr "Adăugare verificare"
+
+msgid "strcheckneedsdefinition"
+msgstr "Verificarea de restricţie necesită o definiţie."
+
+msgid "strcheckadded"
+msgstr "Verificare de restricţie adăugată."
+
+msgid "strcheckaddedbad"
+msgstr "Adăugare verificare de restricţie eşuată."
+
+msgid "straddpk"
+msgstr "Adăugare cheie primară"
+
+msgid "strpkneedscols"
+msgstr "Cheia primară necesită cel puţin o coloană."
+
+msgid "strpkadded"
+msgstr "Cheie primară adăugată."
+
+msgid "strpkaddedbad"
+msgstr "Adăugare cheie primară eşuată."
+
+msgid "stradduniq"
+msgstr "Adăugare cheie unică"
+
+msgid "struniqneedscols"
+msgstr "Cheia unică necesită cel puţin o coloană."
+
+msgid "struniqadded"
+msgstr "Cheie unică adăugată."
+
+msgid "struniqaddedbad"
+msgstr "Adăugare cheie unică eşuată."
+
+msgid "straddfk"
+msgstr "Adăugare cheie străină"
+
+msgid "strfkneedscols"
+msgstr "Cheia străină necesită cel puţin o coloană."
+
+msgid "strfkneedstarget"
+msgstr "Cheia străină necesită o tabelă de destinaţie."
+
+msgid "strfkadded"
+msgstr "Cheie străină adăugată."
+
+msgid "strfkaddedbad"
+msgstr "Adăugare cheie străină eşuată."
+
+msgid "strfktarget"
+msgstr "Tabelă de destinaţie"
+
+msgid "strfkcolumnlist"
+msgstr "Coloane în cheie"
+
+msgid "strondelete"
+msgstr "ON DELETE"
+
+msgid "stronupdate"
+msgstr "ON UPDATE"
+
+# Functions
+msgid "strfunction"
+msgstr "Funcţie"
+
+msgid "strfunctions"
+msgstr "Funcţii"
+
+msgid "strshowallfunctions"
+msgstr "Afişare toate funcţiile"
+
+msgid "strnofunction"
+msgstr "Nici o functie găsită."
+
+msgid "strnofunctions"
+msgstr "Nici o functie găsită."
+
+msgid "strcreateplfunction"
+msgstr "Creare funcţie SQL/PL"
+
+msgid "strcreateinternalfunction"
+msgstr "Creare funcţie internă"
+
+msgid "strcreatecfunction"
+msgstr "Creare funcţie C"
+
+msgid "strfunctionname"
+msgstr "Nume funcţie"
+
+msgid "strreturns"
+msgstr "Întoarce"
+
+msgid "strproglanguage"
+msgstr "Limbaj de programare"
+
+msgid "strfunctionneedsname"
+msgstr "Specificaţi un nume pentru funcţie."
+
+msgid "strfunctionneedsdef"
+msgstr "Specificaţi o definiţie pentru functie."
+
+msgid "strfunctioncreated"
+msgstr "Funcţie creată."
+
+msgid "strfunctioncreatedbad"
+msgstr "Creare funcţie eşuată."
+
+msgid "strconfdropfunction"
+msgstr "Sigur ştergeţi funcţia \"%s\"?"
+
+msgid "strfunctiondropped"
+msgstr "Funcţie ştearsă."
+
+msgid "strfunctiondroppedbad"
+msgstr "Ştergere funcţie eşuată."
+
+msgid "strfunctionupdated"
+msgstr "Funcţie actualizată."
+
+msgid "strfunctionupdatedbad"
+msgstr "Actualizare funcţie eşuată."
+
+msgid "strobjectfile"
+msgstr "Fişier obiect"
+
+msgid "strlinksymbol"
+msgstr "Simbol de legătură"
+
+msgid "strarguments"
+msgstr "Argumente"
+
+msgid "strargmode"
+msgstr "Mod"
+
+msgid "strargtype"
+msgstr "Tip"
+
+msgid "strargadd"
+msgstr "Adăugare alt argument"
+
+msgid "strargremove"
+msgstr "Eliminare argument"
+
+msgid "strargnoargs"
+msgstr "Această funcţie nu acceptă nici un argument"
+
+msgid "strargenableargs"
+msgstr "Activare argumente pasate acestei funcţii"
+
+msgid "strargnorowabove"
+msgstr "Trebuie să existe un rând deasupra acestui rând"
+
+msgid "strargnorowbelow"
+msgstr "Trebuie să existe un rând dedesubtul acestui rând"
+
+msgid "strargraise"
+msgstr "Mutare în sus"
+
+msgid "strarglower"
+msgstr "Mutare în jos"
+
+msgid "strargremoveconfirm"
+msgstr "Sigur eliminaţi acest argument? Această acţiune NU poate fi revocată."
+
+# Triggers
+msgid "strtrigger"
+msgstr "Declanşator"
+
+msgid "strtriggers"
+msgstr "Declanşatori"
+
+msgid "strshowalltriggers"
+msgstr "Afişare toate declanşatoarele"
+
+msgid "strnotrigger"
+msgstr "Nici un declanşator găsit."
+
+msgid "strnotriggers"
+msgstr "Nici un declanşator găsit."
+
+msgid "strcreatetrigger"
+msgstr "Creare declanşator"
+
+msgid "strtriggerneedsname"
+msgstr "Specificaţi un nume pentru declanşator."
+
+msgid "strtriggerneedsfunc"
+msgstr "Specificaţi o funcţie pentru declanşator."
+
+msgid "strtriggercreated"
+msgstr "Declanşator creat."
+
+msgid "strtriggercreatedbad"
+msgstr "Creare declanşator eşuată."
+
+msgid "strconfdroptrigger"
+msgstr "Sigur ştergeţi declanşatorul \"%s\" de pe \"%s\"?"
+
+msgid "strconfenabletrigger"
+msgstr "Sigur activaţi declanşatorul \"%s\" pentru \"%s\"?"
+
+msgid "strconfdisabletrigger"
+msgstr "Sigur dezactivaţi declanşatorul \"%s\" pentru \"%s\"?"
+
+msgid "strtriggerdropped"
+msgstr "Declanşator şters."
+
+msgid "strtriggerdroppedbad"
+msgstr "Ştergere declanşator eşuată."
+
+msgid "strtriggerenabled"
+msgstr "Declanşator activat"
+
+msgid "strtriggerenabledbad"
+msgstr "Activare declanşator eşuată"
+
+msgid "strtriggerdisabled"
+msgstr "Declanşator dezactivat"
+
+msgid "strtriggerdisabledbad"
+msgstr "Dezactivare declanşator eşuată"
+
+msgid "strtriggeraltered"
+msgstr "Declanşator modificat."
+
+msgid "strtriggeralteredbad"
+msgstr "Modificare declanşator eşuată."
+
+msgid "strforeach"
+msgstr "Pentru fiecare"
+
+# Types
+msgid "strtype"
+msgstr "Tip"
+
+msgid "strtypes"
+msgstr "Tipuri"
+
+msgid "strshowalltypes"
+msgstr "Afişare toate tipurile"
+
+msgid "strnotype"
+msgstr "Nici un tip găsit."
+
+msgid "strnotypes"
+msgstr "Nici un tip găsit."
+
+msgid "strcreatetype"
+msgstr "Creare tip"
+
+msgid "strcreatecomptype"
+msgstr "Creare tip compus"
+
+msgid "strtypeneedsfield"
+msgstr "Specificaţi cel puţin un câmp."
+
+msgid "strtypeneedscols"
+msgstr "Specificaţi un număr corect de cămpuri."
+
+msgid "strtypename"
+msgstr "Nume tip"
+
+msgid "strinputfn"
+msgstr "Funcţie de intrare"
+
+msgid "stroutputfn"
+msgstr "Funcţie de ieşire"
+
+msgid "strpassbyval"
+msgstr "Transmis prin valoare?"
+
+msgid "stralignment"
+msgstr "Aliniere"
+
+msgid "strelement"
+msgstr "Element"
+
+msgid "strdelimiter"
+msgstr "Delimitator"
+
+msgid "strstorage"
+msgstr "Stocare"
+
+msgid "strfield"
+msgstr "Câmp"
+
+msgid "strnumfields"
+msgstr "Număr de câmpuri"
+
+msgid "strtypeneedsname"
+msgstr "Specificaţi un nume pentru tip."
+
+msgid "strtypeneedslen"
+msgstr "Specificaţi o lungime pentru tip."
+
+msgid "strtypecreated"
+msgstr "Tip creat."
+
+msgid "strtypecreatedbad"
+msgstr "Creare tip eşuată."
+
+msgid "strconfdroptype"
+msgstr "Sigur ştergeţi tipul \"%s\"?"
+
+msgid "strtypedropped"
+msgstr "Tip şters."
+
+msgid "strtypedroppedbad"
+msgstr "Ştergere tip eşuată."
+
+msgid "strflavor"
+msgstr "Flavor"
+
+msgid "strbasetype"
+msgstr "Bază"
+
+msgid "strcompositetype"
+msgstr "Compus"
+
+msgid "strpseudotype"
+msgstr "Pseudo"
+
+# Schemas
+msgid "strschema"
+msgstr "Schemă"
+
+msgid "strschemas"
+msgstr "Scheme"
+
+msgid "strshowallschemas"
+msgstr "Afişare toate schemele"
+
+msgid "strnoschema"
+msgstr "Nici o schemă găsită."
+
+msgid "strnoschemas"
+msgstr "Nici o schemă găsită."
+
+msgid "strcreateschema"
+msgstr "Creare schemă"
+
+msgid "strschemaname"
+msgstr "Nume schemă"
+
+msgid "strschemaneedsname"
+msgstr "Specificaţi un nume pentru schemă."
+
+msgid "strschemacreated"
+msgstr "Schemă creată."
+
+msgid "strschemacreatedbad"
+msgstr "Creare schemă eşuată."
+
+msgid "strconfdropschema"
+msgstr "Sigur ştergeţi schema \"%s\"?"
+
+msgid "strschemadropped"
+msgstr "Schemă ştearsă."
+
+msgid "strschemadroppedbad"
+msgstr "Ştergere schemă eşuată."
+
+msgid "strschemaaltered"
+msgstr "Schemă modificată."
+
+msgid "strschemaalteredbad"
+msgstr "Modificare schemă eşuată."
+
+msgid "strsearchpath"
+msgstr "Cale de căutare pentru schemă"
+
+# Reports
+
+# Domains
+msgid "strdomain"
+msgstr "Domeniu"
+
+msgid "strdomains"
+msgstr "Domenii"
+
+msgid "strshowalldomains"
+msgstr "Afişare toate domeniile"
+
+msgid "strnodomains"
+msgstr "Nici un domeniu găsit."
+
+msgid "strcreatedomain"
+msgstr "Creare domeniu"
+
+msgid "strdomaindropped"
+msgstr "Domeniu şters."
+
+msgid "strdomaindroppedbad"
+msgstr "Ştergere domeniu eşuată."
+
+msgid "strconfdropdomain"
+msgstr "Sigur ştergeţi domeniul \"%s\"?"
+
+msgid "strdomainneedsname"
+msgstr "Specificaţi un nume pentru domeniu."
+
+msgid "strdomaincreated"
+msgstr "Domeniu creat."
+
+msgid "strdomaincreatedbad"
+msgstr "Creare domeniu eşuată."
+
+msgid "strdomainaltered"
+msgstr "Domeniu modificat."
+
+msgid "strdomainalteredbad"
+msgstr "Modificare domeniu eşuată."
+
+# Operators
+msgid "stroperator"
+msgstr "Operator"
+
+msgid "stroperators"
+msgstr "Operatori"
+
+msgid "strshowalloperators"
+msgstr "Afişare toţi operatorii"
+
+msgid "strnooperator"
+msgstr "Nici un operator găsit."
+
+msgid "strnooperators"
+msgstr "Nici un operator găsit."
+
+msgid "strcreateoperator"
+msgstr "Creare operator"
+
+msgid "strleftarg"
+msgstr "Tipul argumentului stâng"
+
+msgid "strrightarg"
+msgstr "Tipul argumentului drept"
+
+msgid "strcommutator"
+msgstr "Comutator"
+
+msgid "strnegator"
+msgstr "Negator"
+
+msgid "strrestrict"
+msgstr "Restrict"
+
+msgid "strjoin"
+msgstr "Relaţionare"
+
+msgid "strhashes"
+msgstr "Hashes"
+
+msgid "strmerges"
+msgstr "Îmbină"
+
+msgid "strleftsort"
+msgstr "Sortare stânga"
+
+msgid "strrightsort"
+msgstr "Sortare dreapta"
+
+msgid "strlessthan"
+msgstr "Mai mic decăt"
+
+msgid "strgreaterthan"
+msgstr "Mai mare decăt"
+
+msgid "stroperatorneedsname"
+msgstr "Specificaţi un nume pentru operator."
+
+msgid "stroperatorcreated"
+msgstr "Operator creat."
+
+msgid "stroperatorcreatedbad"
+msgstr "Creare operator eşuată."
+
+msgid "strconfdropoperator"
+msgstr "Sigur ştergeţi operatorul \"%s\"?"
+
+msgid "stroperatordropped"
+msgstr "Operator şters."
+
+msgid "stroperatordroppedbad"
+msgstr "Ştergere operator eşuată."
+
+# Casts
+msgid "strcasts"
+msgstr "Conversii de tip"
+
+msgid "strnocasts"
+msgstr "Nici o conversie de tip găsită."
+
+msgid "strsourcetype"
+msgstr "Tip sursă"
+
+msgid "strtargettype"
+msgstr "Tip destinaţie"
+
+msgid "strimplicit"
+msgstr "Implicit"
+
+msgid "strinassignment"
+msgstr "În alocare"
+
+msgid "strbinarycompat"
+msgstr "(Compatibil binar)"
+
+# Conversions
+msgid "strconversions"
+msgstr "Conversii"
+
+msgid "strnoconversions"
+msgstr "Nici o conversie găsită."
+
+msgid "strsourceencoding"
+msgstr "Codificare sursă"
+
+msgid "strtargetencoding"
+msgstr "Codificare destinaţie"
+
+# Languages
+msgid "strlanguages"
+msgstr "Limbaje"
+
+msgid "strnolanguages"
+msgstr "Nici un limbaj găsit."
+
+msgid "strtrusted"
+msgstr "Sigur"
+
+# Info
+msgid "strnoinfo"
+msgstr "Nici o informaţie disponibilă."
+
+msgid "strreferringtables"
+msgstr "Tabele referite"
+
+msgid "strparenttables"
+msgstr "Tabele părinte"
+
+msgid "strchildtables"
+msgstr "Tabele copii"
+
+# Aggregates
+msgid "straggregate"
+msgstr "Agregare"
+
+msgid "straggregates"
+msgstr "Agregări"
+
+msgid "strnoaggregates"
+msgstr "Nici o agregare găsită."
+
+msgid "stralltypes"
+msgstr "(Toate tipurile)"
+
+msgid "straggrtransfn"
+msgstr "Funcţie de tranziţie"
+
+msgid "strcreateaggregate"
+msgstr "Creare agregare"
+
+msgid "straggrbasetype"
+msgstr "Tip dată de intrare"
+
+msgid "straggrsfunc"
+msgstr "Funcţie tranziţie de stare"
+
+msgid "straggrffunc"
+msgstr "Funcţie finală"
+
+msgid "straggrinitcond"
+msgstr "Condiţie iniţială"
+
+msgid "straggrsortop"
+msgstr "Operator sortare"
+
+msgid "strdropaggregate"
+msgstr "Ştergere agregare"
+
+msgid "strconfdropaggregate"
+msgstr "Sigur ştergeţi agregarea \"%s\"?"
+
+msgid "straggregatedropped"
+msgstr "Agregare ştearsă."
+
+msgid "straggregatedroppedbad"
+msgstr "Ştergere agregare eşuată."
+
+msgid "stralteraggregate"
+msgstr "Modificare agregare"
+
+msgid "straggraltered"
+msgstr "Agregare modificată."
+
+msgid "straggralteredbad"
+msgstr "Modificare agregare eşuată."
+
+msgid "straggrneedsname"
+msgstr "Specificaţi un nume pentru agregare"
+
+msgid "straggrneedsbasetype"
+msgstr "Specificaţi tipul de dată de intrare pentru agregare"
+
+msgid "straggrneedssfunc"
+msgstr "Specificaţi numele funcţiei tranziţiei de stare pentru agregare"
+
+msgid "straggrneedsstype"
+msgstr "Specificaţi tipul datei pentru valoarea stării agregării"
+
+msgid "straggrcreated"
+msgstr "Agregare creată."
+
+msgid "straggrcreatedbad"
+msgstr "Creare agregare eşuată."
+
+msgid "straggrshowall"
+msgstr "Afişare toate agregările"
+
+# Operator Classes
+msgid "stropclasses"
+msgstr "Clase de operatori"
+
+msgid "strnoopclasses"
+msgstr "Nici o clasă de operatori găsită."
+
+msgid "straccessmethod"
+msgstr "Metodă de acces"
+
+# Stats and performance
+msgid "strrowperf"
+msgstr "Performanţă rând"
+
+msgid "strioperf"
+msgstr "Performanţă I/O"
+
+msgid "stridxrowperf"
+msgstr "Performanţă index/rând"
+
+msgid "stridxioperf"
+msgstr "Performanţă index I/O"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "Secvenţial"
+
+msgid "strscan"
+msgstr "Scanare"
+
+msgid "strread"
+msgstr "Citire"
+
+msgid "strfetch"
+msgstr "Transfer"
+
+msgid "strheap"
+msgstr "Stivă"
+
+msgid "strtoast"
+msgstr "TOAST"
+
+msgid "strtoastindex"
+msgstr "Index TOAST"
+
+msgid "strcache"
+msgstr "Cache"
+
+msgid "strdisk"
+msgstr "Disc"
+
+msgid "strrows2"
+msgstr "Rânduri"
+
+# Tablespaces
+msgid "strtablespace"
+msgstr "Spaţiu de tabele"
+
+msgid "strtablespaces"
+msgstr "Spaţii de tabele"
+
+msgid "strshowalltablespaces"
+msgstr "Afişare toate spaţiile de tabele"
+
+msgid "strnotablespaces"
+msgstr "Nici un spaţiu de tabele găsit."
+
+msgid "strcreatetablespace"
+msgstr "Creare spaţiu de tabele"
+
+msgid "strlocation"
+msgstr "Locaţie"
+
+msgid "strtablespaceneedsname"
+msgstr "Specificaţi un nume pentru spaţiul de tabele."
+
+msgid "strtablespaceneedsloc"
+msgstr "Specificaţi directorul în care va fi creat spaţiul de tabele."
+
+msgid "strtablespacecreated"
+msgstr "Spaţiu de tabele creat."
+
+msgid "strtablespacecreatedbad"
+msgstr "Creare spaţiu de tabele eşuată."
+
+msgid "strconfdroptablespace"
+msgstr "Sigur ştergeţi spaţiul de tabele \"%s\"?"
+
+msgid "strtablespacedropped"
+msgstr "Spaţiu de tabele şters."
+
+msgid "strtablespacedroppedbad"
+msgstr "Ştergere şpaţiu de tabele eşuată."
+
+msgid "strtablespacealtered"
+msgstr "Spaţiu de tabele modificat."
+
+msgid "strtablespacealteredbad"
+msgstr "Modificare şpaţiu de tabele eşuată."
+
+# Miscellaneous
+msgid "strtopbar"
+msgstr "%s rulând pe %s:%s -- Sunteţi autentificat ca utilizator \"%s\""
+
+msgid "strtimefmt"
+msgstr "jS M, Y g:iA"
+
+msgid "strhelp"
+msgstr "Ajutor"
+
+msgid "strhelpicon"
+msgstr "?"
+
+msgid "strhelppagebrowser"
+msgstr "Pagini de ajutor"
+
+msgid "strselecthelppage"
+msgstr "Selectaţi o pagină de ajutor"
+
+msgid "strinvalidhelppage"
+msgstr "Pagină de ajutor incorectă."
+
+msgid "strlogintitle"
+msgstr "Autentificare la %s"
+
+msgid "strlogoutmsg"
+msgstr "Ieşire din %s"
+
+msgid "strloading"
+msgstr "Încărcare..."
+
+msgid "strerrorloading"
+msgstr "Eroare la încărcare"
+
+msgid "strclicktoreload"
+msgstr "Faceţi clic pentru reîncărcare"
+
+# Autovacuum
+msgid "strautovacuum"
+msgstr "Autovacuum"
+
+msgid "strturnedon"
+msgstr "Pornit"
+
+msgid "strturnedoff"
+msgstr "Oprit"
+
+msgid "strenabled"
+msgstr "Activat"
+
+msgid "strvacuumbasethreshold"
+msgstr "Vacuum Base Threshold"
+
+msgid "strvacuumscalefactor"
+msgstr "Vacuum Scale Factor"
+
+msgid "stranalybasethreshold"
+msgstr "Analyze Base Threshold"
+
+msgid "stranalyzescalefactor"
+msgstr "Analyze Scale Factor"
+
+msgid "strvacuumcostdelay"
+msgstr "Vacuum Cost Delay"
+
+msgid "strvacuumcostlimit"
+msgstr "Vacuum Cost Limit"
+
+# Table-level Locks
+msgid "strlocks"
+msgstr "Blocări"
+
+msgid "strtransaction"
+msgstr "ID tranzacţie"
+
+msgid "strprocessid"
+msgstr "ID proces"
+
+msgid "strmode"
+msgstr "Mod blocare"
+
+msgid "strislockheld"
+msgstr "Blocaj reţinut?"
+
+# Prepared transactions
+msgid "strpreparedxacts"
+msgstr "Tranzacţii preparate"
+
+msgid "strxactid"
+msgstr "ID tranzacţie"
+
+msgid "strgid"
+msgstr "ID global"

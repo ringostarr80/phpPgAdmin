@@ -1,0 +1,2035 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: el_GR\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "Ελληνικά"
+
+msgid "applocale"
+msgstr "el-GR"
+
+msgid "applangdir"
+msgstr "ltr"
+
+# Welcome
+msgid "strintro"
+msgstr "Καλώς ήρθατε στο phpPgAdmin."
+
+msgid "strppahome"
+msgstr "Αρχική σελίδα phpPgAdmin"
+
+msgid "strpgsqlhome"
+msgstr "Αρχική σελίδα PostgreSQL"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "Εγχειρίδια PostgreSQL (τοπικό αντίγραφο)"
+
+msgid "strreportbug"
+msgstr "Αναφορά ελαττώματος στο phpPgAdmin"
+
+msgid "strviewfaq"
+msgstr "Συχνές ερωτήσεις (FAQ)"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "Είσοδος"
+
+msgid "strloginfailed"
+msgstr "Αποτυχία εισόδου"
+
+msgid "strlogindisallowed"
+msgstr "Η είσοδος δεν επιτρέπεται για λόγους ασφαλείας."
+
+msgid "strserver"
+msgstr "Διακομιστής"
+
+msgid "strservers"
+msgstr "Διακομιστές"
+
+msgid "strintroduction"
+msgstr "Αρχική"
+
+msgid "strhost"
+msgstr "Κόμβος"
+
+msgid "strport"
+msgstr "Θύρα"
+
+msgid "strlogout"
+msgstr "Εξοδος"
+
+msgid "strowner"
+msgstr "Κάτοχος"
+
+msgid "straction"
+msgstr "Πράξη"
+
+msgid "stractions"
+msgstr "Ενέργειες"
+
+msgid "strname"
+msgstr "Ονομα"
+
+msgid "strdefinition"
+msgstr "Ορισμός"
+
+msgid "strproperties"
+msgstr "Ιδιότητες"
+
+msgid "strbrowse"
+msgstr "Προβολή"
+
+msgid "strenable"
+msgstr "Ενεργοποίηση"
+
+msgid "strdisable"
+msgstr "Απενεργοποίηση"
+
+msgid "strdrop"
+msgstr "Διαγραφή"
+
+msgid "strdropped"
+msgstr "Διαγράφηκε"
+
+msgid "strnotnull"
+msgstr "Να μην είναι κενό"
+
+msgid "strprev"
+msgstr "< Προηγούμενη"
+
+msgid "strnext"
+msgstr "Επόμενη >"
+
+msgid "strfirst"
+msgstr "<< Πρώτη"
+
+msgid "strlast"
+msgstr "Τελευταία >>"
+
+msgid "strfailed"
+msgstr "Απέτυχε"
+
+msgid "strcreate"
+msgstr "Δημιουργία"
+
+msgid "strcreated"
+msgstr "Δημιουργήθηκε"
+
+msgid "strcomment"
+msgstr "Σχόλιο"
+
+msgid "strlength"
+msgstr "Μήκος"
+
+msgid "strdefault"
+msgstr "Αρχική τιμή"
+
+msgid "stralter"
+msgstr "Τροποποίηση"
+
+msgid "strok"
+msgstr "Εντάξει"
+
+msgid "strcancel"
+msgstr "Ακυρο"
+
+msgid "strac"
+msgstr "Ενεργοποίηση Αυτόματης Συμπλήρωσης (AutoComplete)"
+
+msgid "strsave"
+msgstr "Αποθήκευση"
+
+msgid "strreset"
+msgstr "Καθαρισμός"
+
+msgid "strinsert"
+msgstr "Εισαγωγή"
+
+msgid "strselect"
+msgstr "Επιλογή"
+
+msgid "strdelete"
+msgstr "Διαγραφή"
+
+msgid "strupdate"
+msgstr "Ενημέρωση"
+
+msgid "strreferences"
+msgstr "Σχέσεις"
+
+msgid "stryes"
+msgstr "Ναι"
+
+msgid "strno"
+msgstr "Οχι"
+
+msgid "strtrue"
+msgstr "ΑΛΗΘΕΣ"
+
+msgid "strfalse"
+msgstr "ΨΕΥΔΕΣ"
+
+msgid "stredit"
+msgstr "Προσαρμογή"
+
+msgid "strcolumn"
+msgstr "Στήλη"
+
+msgid "strcolumns"
+msgstr "Στήλες"
+
+msgid "strrows"
+msgstr "γραμμές"
+
+msgid "strrowsaff"
+msgstr "γραμμές επηρεάστηκαν."
+
+msgid "strobjects"
+msgstr "αντικείμενα"
+
+msgid "strback"
+msgstr "Πίσω"
+
+msgid "strqueryresults"
+msgstr "Αποτελέσματα Ερωτήματος"
+
+msgid "strshow"
+msgstr "Εμφάνιση"
+
+msgid "strempty"
+msgstr "Αδειασμα"
+
+msgid "strlanguage"
+msgstr "Γλώσσα"
+
+msgid "strencoding"
+msgstr "Κωδικοποίηση"
+
+msgid "strvalue"
+msgstr "Τιμή"
+
+msgid "strunique"
+msgstr "Μοναδικό"
+
+msgid "strprimary"
+msgstr "Πρωτεύον"
+
+msgid "strexport"
+msgstr "Εξαγωγή"
+
+msgid "strimport"
+msgstr "Εισαγωγή"
+
+msgid "strallowednulls"
+msgstr "Επιτρεπόμενοι κενοί χαρακτήρες"
+
+msgid "strbackslashn"
+msgstr "\\N"
+
+msgid "strnull"
+msgstr "κενό"
+
+msgid "stremptystring"
+msgstr "κενή συμβολοσειρά/κενό πεδίο"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "stradmin"
+msgstr "Διαχείριση"
+
+msgid "strvacuum"
+msgstr "Εκκένωση"
+
+msgid "stranalyze"
+msgstr "Ανάλυση"
+
+msgid "strclusterindex"
+msgstr "Ομαδοποίηση"
+
+msgid "strclustered"
+msgstr "Ομαδοποιημένο"
+
+msgid "strreindex"
+msgstr "Ανανέωση Ευρετηρίου"
+
+msgid "stradd"
+msgstr "Προσθήκη"
+
+msgid "strevent"
+msgstr "Ενέργεια"
+
+msgid "strwhere"
+msgstr "Οπου"
+
+msgid "strinstead"
+msgstr "Αντί να"
+
+msgid "strwhen"
+msgstr "Πότε"
+
+msgid "strformat"
+msgstr "Μορφή δεδομένων"
+
+msgid "strdata"
+msgstr "Δεδομένα"
+
+msgid "strconfirm"
+msgstr "Επιβεβαίωση"
+
+msgid "strexpression"
+msgstr "Εκφραση"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strseparator"
+msgstr ": "
+
+msgid "strexpand"
+msgstr "Ανάπτυξη"
+
+msgid "strcollapse"
+msgstr "Σύμπτυξη"
+
+msgid "strfind"
+msgstr "Αναζήτηση"
+
+msgid "stroptions"
+msgstr "Επιλογές"
+
+msgid "strrefresh"
+msgstr "Ανανέωση"
+
+msgid "strdownload"
+msgstr "Καταφόρτωση"
+
+msgid "strdownloadgzipped"
+msgstr "Συμπίεση κατά gzip"
+
+msgid "strinfo"
+msgstr "Πληροφορίες"
+
+msgid "stroids"
+msgstr "OIDs"
+
+msgid "stradvanced"
+msgstr "Προχωρημένα"
+
+msgid "strvariables"
+msgstr "Μεταβλητές"
+
+msgid "strprocess"
+msgstr "Διεργασία"
+
+msgid "strprocesses"
+msgstr "Διεργασίες"
+
+msgid "strsetting"
+msgstr "Τιμή"
+
+msgid "streditsql"
+msgstr "Επεξεργασία SQL"
+
+msgid "strruntime"
+msgstr "Συνολικός χρόνος εκτέλεσης: %s ms"
+
+msgid "strpaginate"
+msgstr "Σελιδοποίηση"
+
+msgid "struploadscript"
+msgstr "ή ανεβάστε σενάριο (script) SQL:"
+
+msgid "strstarttime"
+msgstr "Ωρα Εναρξης"
+
+msgid "strfile"
+msgstr "Αρχείο"
+
+msgid "strfileimported"
+msgstr "Αρχείο εισήχθη."
+
+msgid "strtrycred"
+msgstr "Χρήση αυτών των διαπιστευτηρίων για όλους τους διακομιστές"
+
+msgid "strexecute"
+msgstr "Εκτέλεση"
+
+# Database Sizes
+msgid "strsize"
+msgstr "Μέγεθος"
+
+msgid "strbytes"
+msgstr "bytes"
+
+msgid "strkb"
+msgstr "KB"
+
+msgid "strmb"
+msgstr "MB"
+
+msgid "strgb"
+msgstr "GB"
+
+msgid "strtb"
+msgstr "TB"
+
+# Error handling
+msgid "strnoframes"
+msgstr "Το phpPgAdmin λειτουργεί καλύτερα με προγράμματα πλοήγησης που υποστηρίζουν πλαίσια (frames). Εαν επιθυμείτε να συνεχίσετε ακολουθήστε την παρακάτω σύνδεση."
+
+msgid "strnoframeslink"
+msgstr "Χρήση χωρίς πλαίσια"
+
+msgid "strbadconfig"
+msgstr "Το αρχείο config.inc.php είναι παλιό. Επαναδημιουργήστε το χρησιμοποιώντας το config.inc.php-dist."
+
+msgid "strnotloaded"
+msgstr "Η τρέχουσα εγκατάσταση της PHP δεν υποστηρίζει PostgreSQL. Εγκαταστήστε την πάλι με την επιλογή --with-pgsql (compilation option)."
+
+msgid "strpostgresqlversionnotsupported"
+msgstr "Η τρέχουσα έκδοση της PostgreSQL δεν υποστηρίζεται από το phpPgAdmin. Παρακαλώ αναβαθμίστε στην έκδοση %s ή νεότερη."
+
+msgid "strbadschema"
+msgstr "Το σχήμα που δηλώθηκε δεν είναι έγκυρο."
+
+msgid "strbadencoding"
+msgstr "Αποτυχία ορισμού κωδικοποίησης στη βάση δεδομένων."
+
+msgid "strsqlerror"
+msgstr "Σφάλμα στην SQL:"
+
+msgid "strinstatement"
+msgstr "Στη δήλωση:"
+
+msgid "strinvalidparam"
+msgstr "Λάθος παράμετροι."
+
+msgid "strnodata"
+msgstr "Δε βρέθηκαν γραμμές."
+
+msgid "strnoobjects"
+msgstr "Δε βρέθηκαν αντικείμενα."
+
+msgid "strrownotunique"
+msgstr "Δε βρέθηκε μοναδικό κλειδί στη γραμμή."
+
+msgid "strnouploads"
+msgstr "Η αποστολή αρχείων είναι απενεργοποιημένη."
+
+msgid "strimporterror"
+msgstr "Σφάλμα κατά την εισαγωγή."
+
+msgid "strimporterror-fileformat"
+msgstr "Σφάλμα κατά την εισαγωγή: απέτυχε η αυτόματη αναγνώριση του τύπου του αρχείου."
+
+msgid "strimporterrorline"
+msgstr "Σφάλμα κατά την εισαγωγή της γραμμής %s."
+
+msgid "strimporterrorline-badcolumnnum"
+msgstr "Σφάλμα κατά την εισαγωγή της γραμμής %s: δεν περιέχει το σωστό αριθμό στηλών."
+
+msgid "strimporterror-uploadedfile"
+msgstr "Σφάλμα κατά την εισαγωγή: αποτυχία αποστολής στο διακομιστή."
+
+msgid "strcannotdumponwindows"
+msgstr "Η αποτύπωση (dumping) περίπλοκων πινάκων και σχημάτων (schemas) δεν υποστηρίζεται στα Windows."
+
+# Tables
+msgid "strtable"
+msgstr "Πίνακας"
+
+msgid "strtables"
+msgstr "Πίνακες"
+
+msgid "strshowalltables"
+msgstr "Εμφάνιση όλων των πινάκων"
+
+msgid "strnotables"
+msgstr "Δεν βρέθηκαν πίνακες."
+
+msgid "strnotable"
+msgstr "Δε βρέθηκε πίνακας."
+
+msgid "strcreatetable"
+msgstr "Δημιουργία πίνακα"
+
+msgid "strtablename"
+msgstr "Ονομα πίνακα"
+
+msgid "strtableneedsname"
+msgstr "Πρέπει να εισάγετε το όνομα του πίνακα."
+
+msgid "strtableneedsfield"
+msgstr "Πρέπει να εισάγετε τουλάχιστον ένα πεδίο."
+
+msgid "strtableneedscols"
+msgstr "Πρέπει να εισάγετε έγκυρο αριθμό στηλών."
+
+msgid "strtablecreated"
+msgstr "Ο πίνακας δημιουργήθηκε."
+
+msgid "strtablecreatedbad"
+msgstr "Η δημιουργία του πίνακα απέτυχε."
+
+msgid "strconfdroptable"
+msgstr "Διαγραφή του πίνακα \"%s\"?"
+
+msgid "strtabledropped"
+msgstr "Ο πίνακας διαγράφηκε."
+
+msgid "strtabledroppedbad"
+msgstr "Η διαγραφή του πίνακα απέτυχε."
+
+msgid "strconfemptytable"
+msgstr "Διαγραφή των περιεχομένων του πίνακα \"%s\"?"
+
+msgid "strtableemptied"
+msgstr "Τα περιεχόμενα του πίνακα διαγράφηκαν."
+
+msgid "strtableemptiedbad"
+msgstr "Η διαγραφή των περιεχομένων του πίνακα απέτυχε."
+
+msgid "strinsertrow"
+msgstr "Εισαγωγή γραμμής"
+
+msgid "strrowinserted"
+msgstr "Η γραμμή εισήχθη."
+
+msgid "strrowinsertedbad"
+msgstr "H εισαγωγή της γραμμής απέτυχε."
+
+msgid "strrowduplicate"
+msgstr "H εισαγωγή της γραμμής απέτυχε, διπλή εγγραφή."
+
+msgid "streditrow"
+msgstr "Επεξεργασία γραμμής"
+
+msgid "strrowupdated"
+msgstr "Η γραμμή ενημερώθηκε."
+
+msgid "strrowupdatedbad"
+msgstr "Η ενημέρωση της γραμμής απέτυχε."
+
+msgid "strdeleterow"
+msgstr "Διαγραφή γραμμής"
+
+msgid "strconfdeleterow"
+msgstr "Διαγραφή της γραμμής?"
+
+msgid "strrowdeleted"
+msgstr "Η γραμμή διαγράφηκε."
+
+msgid "strrowdeletedbad"
+msgstr "Η διαγραφή της γραμμής απέτυχε."
+
+msgid "strinsertandrepeat"
+msgstr "Εισαγωγή και επανάληψη"
+
+msgid "strnumcols"
+msgstr "Αριθμός στηλών"
+
+msgid "strcolneedsname"
+msgstr "Πρέπει να ορίσετε το όνομα της στήλης"
+
+msgid "strselectallfields"
+msgstr "Επιλογή όλων των πεδίων"
+
+msgid "strselectneedscol"
+msgstr "Πρέπει να εμφανιστεί τουλάχιστον μία στήλη."
+
+msgid "strselectunary"
+msgstr "Οι μονοτελείς τελεστές (unary operators) δεν πρέπει να έχουν τιμές."
+
+msgid "strcolumnaltered"
+msgstr "Η στήλη τροποποιήθηκε."
+
+msgid "strcolumnalteredbad"
+msgstr "Η τροποποίηση της στήλης απέτυχε."
+
+msgid "strconfdropcolumn"
+msgstr "Διαγραφή στήλης \"%s\" από τον πίνακα \"%s\"?"
+
+msgid "strcolumndropped"
+msgstr "Η στήλη διαγράφηκε."
+
+msgid "strcolumndroppedbad"
+msgstr "Η διαγραφή της στήλης απέτυχε."
+
+msgid "straddcolumn"
+msgstr "Εισαγωγή στήλης"
+
+msgid "strcolumnadded"
+msgstr "Η στήλη εισήχθη."
+
+msgid "strcolumnaddedbad"
+msgstr "Η εισαγωγή της στήλης απέτυχε."
+
+msgid "strcascade"
+msgstr "ΔΙΑΤΑΞΗ"
+
+msgid "strtablealtered"
+msgstr "Ο πίνακας τροποποιήθηκε."
+
+msgid "strtablealteredbad"
+msgstr "Η τροποποίηση του πίνακα απέτυχε."
+
+msgid "strdataonly"
+msgstr "Μόνο τα δεδομένα"
+
+msgid "strstructureonly"
+msgstr "Μόνο τη δομή"
+
+msgid "strstructureanddata"
+msgstr "Δομή και δεδομένα"
+
+msgid "strtabbed"
+msgstr "Με στηλοθέτες"
+
+msgid "strauto"
+msgstr "Αυτόματα"
+
+msgid "strconfvacuumtable"
+msgstr "Να εκκενωθεί ο πίνακας \"%s\"?"
+
+msgid "strestimatedrowcount"
+msgstr "Εκτιμώμενος αριθμός γραμμών"
+
+# Columns
+msgid "strcolprop"
+msgstr "Ιδιότητες Στήλης"
+
+# Users
+msgid "struser"
+msgstr "Χρήστη"
+
+msgid "strusers"
+msgstr "Χρήστες"
+
+msgid "strusername"
+msgstr "Ονομα χρήστη"
+
+msgid "strpassword"
+msgstr "Κωδικός χρήστη"
+
+msgid "strsuper"
+msgstr "Υπερχρήστης?"
+
+msgid "strcreatedb"
+msgstr "Δημιουργία βάσης?"
+
+msgid "strexpires"
+msgstr "Λήξη"
+
+msgid "strsessiondefaults"
+msgstr "Εξ ορισμού παράμετροι συνεδρίας"
+
+msgid "strnousers"
+msgstr "Δε βρέθηκαν χρήστες."
+
+msgid "struserupdated"
+msgstr "Ο λογαριασμός χρήστη ενημερώθηκε."
+
+msgid "struserupdatedbad"
+msgstr "Η ενημέρωση του χρήστη απέτυχε."
+
+msgid "strshowallusers"
+msgstr "Εμφάνιση όλων των χρηστών"
+
+msgid "strcreateuser"
+msgstr "Δημιουργία χρήστη"
+
+msgid "struserneedsname"
+msgstr "Πρέπει να εισάγετε όνομα χρήστη."
+
+msgid "strusercreated"
+msgstr "Ο χρήστης δημιουργήθηκε."
+
+msgid "strusercreatedbad"
+msgstr "Η δημιουργία του χρήστη απέτυχε."
+
+msgid "strconfdropuser"
+msgstr "Διαγραφή του χρήστη \"%s\"?"
+
+msgid "struserdropped"
+msgstr "Ο χρήστης διαγράφηκε."
+
+msgid "struserdroppedbad"
+msgstr "Η διαγραφή του χρήστη απέτυχε."
+
+msgid "straccount"
+msgstr "Λογαριασμός"
+
+msgid "strchangepassword"
+msgstr "Αλλαγή κωδικού"
+
+msgid "strpasswordchanged"
+msgstr "Ο κωδικός αλλάχθηκε."
+
+msgid "strpasswordchangedbad"
+msgstr "Η αλλαγή του κωδικού απέτυχε."
+
+msgid "strpasswordshort"
+msgstr "Ο κωδικός έχει πολύ μικρό μήκος."
+
+msgid "strpasswordconfirm"
+msgstr "Σφάλμα στην επιβεβαίωση του κωδικού."
+
+# Groups
+msgid "strgroup"
+msgstr "Ομάδα"
+
+msgid "strgroups"
+msgstr "Ομάδες"
+
+msgid "strnogroup"
+msgstr "Η ομάδα δε βρέθηκε."
+
+msgid "strnogroups"
+msgstr "Δε βρέθηκαν ομάδες."
+
+msgid "strcreategroup"
+msgstr "Δημιουργία ομάδας"
+
+msgid "strshowallgroups"
+msgstr "Εμφάνιση όλων των ομάδων"
+
+msgid "strgroupneedsname"
+msgstr "Πρέπει να δώσετε όνομα στην ομάδα."
+
+msgid "strgroupcreated"
+msgstr "Η ομάδα δημιουργήθηκε."
+
+msgid "strgroupcreatedbad"
+msgstr "Η δημιουργία ομάδας απέτυχε."
+
+msgid "strconfdropgroup"
+msgstr "Διαγραφή της ομάδας \"%s\"?"
+
+msgid "strgroupdropped"
+msgstr "Η ομάδα διαγράφηκε."
+
+msgid "strgroupdroppedbad"
+msgstr "Η διαγραφή της ομάδας απέτυχε."
+
+msgid "strmembers"
+msgstr "Μέλη"
+
+msgid "strmemberof"
+msgstr "Μέλος της ομάδας"
+
+msgid "stradminmembers"
+msgstr "Μέλη της ομάδας διαχειριστών"
+
+msgid "straddmember"
+msgstr "Προσθήκη μέλους"
+
+msgid "strmemberadded"
+msgstr "Το μέλος προστέθηκε στην ομάδα."
+
+msgid "strmemberaddedbad"
+msgstr "Η προσθήκη του μέλους απέτυχε."
+
+msgid "strdropmember"
+msgstr "Διαγραφή μέλους"
+
+msgid "strconfdropmember"
+msgstr "Διαγραφή του μέλους \"%s\" από την ομάδα \"%s\"?"
+
+msgid "strmemberdropped"
+msgstr "Το μέλος διαγράφηκε."
+
+msgid "strmemberdroppedbad"
+msgstr "Η διαγραφή του μέλους απέτυχε."
+
+# Roles
+msgid "strrole"
+msgstr "Ρόλος"
+
+msgid "strroles"
+msgstr "Ρόλοι"
+
+msgid "strshowallroles"
+msgstr "Εμφάνιση όλων των ρόλων"
+
+msgid "strinheritsprivs"
+msgstr "Κληρονομεί προνόμια?"
+
+msgid "strcreaterole"
+msgstr "Δημιουργία ρόλου"
+
+msgid "strcancreaterole"
+msgstr "Δημιουργία ρόλου?"
+
+msgid "strrolecreated"
+msgstr "Ο ρόλος δημιουργήθηκε."
+
+msgid "strrolecreatedbad"
+msgstr "Η δημιουργία του ρόλου απέτυχε."
+
+msgid "strcanlogin"
+msgstr "Επιτρέπεται η σύνδεση?"
+
+msgid "strconnlimit"
+msgstr "Οριο συνδέσεων"
+
+msgid "strdroprole"
+msgstr "Διαγραφή ρόλου"
+
+msgid "strconfdroprole"
+msgstr "Διαγραφή του ρόλου \"%s\"?"
+
+msgid "strroledropped"
+msgstr "Ο ρόλος διαγράφηκε."
+
+msgid "strroledroppedbad"
+msgstr "Η διαγραφή του ρόλου απέτυχε."
+
+msgid "strnoroles"
+msgstr "Δε βρέθηκαν ρόλοι."
+
+msgid "strnolimit"
+msgstr "Κανένα όριο"
+
+msgid "strnever"
+msgstr "Ποτέ"
+
+msgid "strroleneedsname"
+msgstr "Πρέπει να δώσετε όνομα στο ρόλο."
+
+# Privileges
+msgid "strprivilege"
+msgstr "Προνόμιο"
+
+msgid "strprivileges"
+msgstr "Προνόμια"
+
+msgid "strnoprivileges"
+msgstr "Αυτό το αντικείμενο έχει τα εξ ορισμού προνόμια."
+
+msgid "strgrant"
+msgstr "Παροχή"
+
+msgid "strrevoke"
+msgstr "Ανάκληση"
+
+msgid "strgranted"
+msgstr "Τα προνόμια αλλάχθηκαν."
+
+msgid "strgrantfailed"
+msgstr "Αποτυχία αλλαγής προνομίων."
+
+msgid "strgrantbad"
+msgstr "Πρέπει να ορίσετε τουλάχιστον ένα χρήστη ή ομάδα και τουλάχιστον ένα προνόμιο."
+
+msgid "strgrantor"
+msgstr "Εκχωρητής"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "Βάση"
+
+msgid "strdatabases"
+msgstr "Βάσεις"
+
+msgid "strshowalldatabases"
+msgstr "Εμφάνιση όλων των βάσεων"
+
+msgid "strnodatabases"
+msgstr "Δε βρέθηκαν βάσεις."
+
+msgid "strcreatedatabase"
+msgstr "Δημιουργία βάσης"
+
+msgid "strdatabasename"
+msgstr "Ονομα βάσης"
+
+msgid "strdatabaseneedsname"
+msgstr "Πρέπει να δώσετε όνομα βάσης."
+
+msgid "strdatabasecreated"
+msgstr "Η βάση δημιουργήθηκε."
+
+msgid "strdatabasecreatedbad"
+msgstr "Η δημιουργία της βάσης απέτυχε."
+
+msgid "strconfdropdatabase"
+msgstr "Διαγραφή της βάσης \"%s\"?"
+
+msgid "strdatabasedropped"
+msgstr "Η βάση διαγράφηκε."
+
+msgid "strdatabasedroppedbad"
+msgstr "Η δημιουργία της βάσης απέτυχε."
+
+msgid "strentersql"
+msgstr "Εισάγετε SQL προς εκτέλεση:"
+
+msgid "strsqlexecuted"
+msgstr "H SQL εκτελέστηκε."
+
+msgid "strvacuumgood"
+msgstr "Η εκκένωση ολοκληρώθηκε."
+
+msgid "strvacuumbad"
+msgstr "Η εκκένωση απέτυχε."
+
+msgid "stranalyzegood"
+msgstr "Η ανάλυση ολοκληρώθηκε."
+
+msgid "stranalyzebad"
+msgstr "Η ανάλυση απέτυχε."
+
+msgid "strreindexgood"
+msgstr "Η επαναδεικτοδότηση ολοκληρώθηκε."
+
+msgid "strreindexbad"
+msgstr "Η επαναδεικτοδότηση απέτυχε."
+
+msgid "strfull"
+msgstr "Ολα"
+
+msgid "strfreeze"
+msgstr "Πάγωμα"
+
+msgid "strforce"
+msgstr "Υποχρεωτικά"
+
+msgid "strsignalsent"
+msgstr "Το σήμα εστάλη."
+
+msgid "strsignalsentbad"
+msgstr "Η αποστολή του σήματος απέτυχε."
+
+msgid "strallobjects"
+msgstr "Ολα τα αντικείμενα"
+
+msgid "strdatabasealtered"
+msgstr "Η βάση τροποποιήθηκε."
+
+msgid "strdatabasealteredbad"
+msgstr "Η τροποποίηση της βάσης απέτυχε."
+
+# Views
+msgid "strview"
+msgstr "Οψη"
+
+msgid "strviews"
+msgstr "Οψεις"
+
+msgid "strshowallviews"
+msgstr "Εμφάνιση όλων των όψεων"
+
+msgid "strnoview"
+msgstr "Δε βρέθηκε όψη."
+
+msgid "strnoviews"
+msgstr "Δε βρέθηκαν όψεις."
+
+msgid "strcreateview"
+msgstr "Δημιουργία όψης"
+
+msgid "strviewname"
+msgstr "Ονομα όψης"
+
+msgid "strviewneedsname"
+msgstr "Πρέπει να δώσετε όνομα στην όψη."
+
+msgid "strviewneedsdef"
+msgstr "Πρέπει να δώσετε τον ορισμό της όψης."
+
+msgid "strviewneedsfields"
+msgstr "Πρέπει να δώσετε τις στήλες της όψης."
+
+msgid "strviewcreated"
+msgstr "Η όψη δημιουργήθηκε."
+
+msgid "strviewcreatedbad"
+msgstr "Η δημιουργία της όψης απέτυχε."
+
+msgid "strconfdropview"
+msgstr "Διαγραφή της όψης \"%s\"?"
+
+msgid "strviewdropped"
+msgstr "Η όψη διαγράφηκε."
+
+msgid "strviewdroppedbad"
+msgstr "Η διαγραφή της όψης απέτυχε."
+
+msgid "strviewupdated"
+msgstr "Η όψη ενημερώθηκε."
+
+msgid "strviewupdatedbad"
+msgstr "Η ενημέρωση της όψης απέτυχε."
+
+msgid "strviewlink"
+msgstr "Σύζευξη κλειδιών"
+
+msgid "strviewconditions"
+msgstr "Πρόσθετες συνθήκες"
+
+msgid "strcreateviewwiz"
+msgstr "Δημιουργία όψης με βοηθό"
+
+# Sequences
+msgid "strsequence"
+msgstr "Ακολουθία"
+
+msgid "strsequences"
+msgstr "Ακολουθίες"
+
+msgid "strshowallsequences"
+msgstr "Εμφάνιση όλων των ακολουθιών"
+
+msgid "strnosequence"
+msgstr "Δε βρέθηκε ακολουθία."
+
+msgid "strnosequences"
+msgstr "Δε βρέθηκαν ακολουθίες."
+
+msgid "strcreatesequence"
+msgstr "Δημιουργία ακολουθίας"
+
+msgid "strlastvalue"
+msgstr "Τελευταία τιμή"
+
+msgid "strincrementby"
+msgstr "Προσαύξηση κατά"
+
+msgid "strstartvalue"
+msgstr "Τιμή εκκίνησης"
+
+msgid "strmaxvalue"
+msgstr "Μέγιστη τιμή"
+
+msgid "strminvalue"
+msgstr "Ελάχιστη τιμή"
+
+msgid "strcachevalue"
+msgstr "Αριθμός εγγραφών στην κρυφή μνήμη (cache)"
+
+msgid "strlogcount"
+msgstr "Καταγραφή"
+
+msgid "strcancycle"
+msgstr "Να μηδενίζεται?"
+
+msgid "striscalled"
+msgstr "Εχει κληθεί?"
+
+msgid "strsequenceneedsname"
+msgstr "Πρέπει να δώσετε όνομα για την ακολουθία."
+
+msgid "strsequencecreated"
+msgstr "Η ακολουθία δημιουργήθηκε."
+
+msgid "strsequencecreatedbad"
+msgstr "Η δημιουργία της ακολουθίας απέτυχε."
+
+msgid "strconfdropsequence"
+msgstr "Να διαγραφεί η ακολουθία \"%s\"?"
+
+msgid "strsequencedropped"
+msgstr "Η ακολουθία διαγράφηκε."
+
+msgid "strsequencedroppedbad"
+msgstr "Η διαγραφή της ακολουθίας απέτυχε."
+
+msgid "strsequencereset"
+msgstr "Η ακολουθία επανεκκινήθηκε."
+
+msgid "strsequenceresetbad"
+msgstr "Η επανεκκίνηση της ακολουθίας απέτυχε."
+
+msgid "strsequencealtered"
+msgstr "Η ακολουθία τροποποιήθηκε."
+
+msgid "strsequencealteredbad"
+msgstr "Η τροποποίηση της ακολουθίας απέτυχε."
+
+msgid "strsetval"
+msgstr "Αλλαγή τιμής"
+
+msgid "strsequencesetval"
+msgstr "Η τιμή της ακολουθίας ορίσθηκε."
+
+msgid "strsequencesetvalbad"
+msgstr "Απέτυχε ο ορισμός τιμής της ακολουθίας."
+
+msgid "strnextval"
+msgstr "Προσαύξηση"
+
+msgid "strsequencenextval"
+msgstr "Η ακολουθία προσαυξήθηκε."
+
+msgid "strsequencenextvalbad"
+msgstr "Η προσαύξηση της ακολουθίας απέτυχε."
+
+# Indexes
+msgid "strindex"
+msgstr "Ευρετήριο"
+
+msgid "strindexes"
+msgstr "Ευρετήρια"
+
+msgid "strindexname"
+msgstr "Ονομα ευρετηρίου"
+
+msgid "strshowallindexes"
+msgstr "Εμφάνιση όλων των ευρετηρίων"
+
+msgid "strnoindex"
+msgstr "Δε βρέθηκε ευρετήριο."
+
+msgid "strnoindexes"
+msgstr "Δε βρέθηκαν ευρετήρια."
+
+msgid "strcreateindex"
+msgstr "Δημιουργία ευρετηρίου"
+
+msgid "strtabname"
+msgstr "Ονομα καρτέλας"
+
+msgid "strcolumnname"
+msgstr "Ονομα στήλης"
+
+msgid "strindexneedsname"
+msgstr "Πρέπει να δώσετε όνομα στο ευρετήριο."
+
+msgid "strindexneedscols"
+msgstr "Τα ευρετήρια απαιτούν έναν έγκυρο αριθμό στηλών."
+
+msgid "strindexcreated"
+msgstr "Το ευρετήριο δημιουργήθηκε."
+
+msgid "strindexcreatedbad"
+msgstr "Η δημιουργία του ευρετηρίου απέτυχε."
+
+msgid "strconfdropindex"
+msgstr "Να διαγραφεί το ευρετήριο \"%s\"?"
+
+msgid "strindexdropped"
+msgstr "Το ευρετήριο διαγράφηκε."
+
+msgid "strindexdroppedbad"
+msgstr "Η διαγραφή του ευρετηρίου απέτυχε."
+
+msgid "strkeyname"
+msgstr "Ονομα κλειδιού"
+
+msgid "struniquekey"
+msgstr "Μοναδικό κλειδί"
+
+msgid "strprimarykey"
+msgstr "Πρωτεύον κλειδί"
+
+msgid "strindextype"
+msgstr "Τύπος ευρετηρίου"
+
+msgid "strtablecolumnlist"
+msgstr "Στήλες πίνακα"
+
+msgid "strindexcolumnlist"
+msgstr "Στήλες ευρετηρίου"
+
+msgid "strconfcluster"
+msgstr "Να ομαδοποιηθούν τα \"%s\"?"
+
+msgid "strclusteredgood"
+msgstr "Η ομαδοποίηση ολοκληρώθηκε."
+
+msgid "strclusteredbad"
+msgstr "Η ομαδοποίηση απέτυχε."
+
+msgid "strcluster"
+msgstr "Συστοιχία"
+
+# Rules
+msgid "strrules"
+msgstr "Κανόνες"
+
+msgid "strrule"
+msgstr "Κανόνας"
+
+msgid "strshowallrules"
+msgstr "Εμφάνιση όλων των κανόνων"
+
+msgid "strnorule"
+msgstr "Δε βρέθηκε κανόνας."
+
+msgid "strnorules"
+msgstr "Δε βρέθηκαν κανόνες."
+
+msgid "strcreaterule"
+msgstr "Δημιουργία κανόνα"
+
+msgid "strrulename"
+msgstr "Ονομα κανόνα"
+
+msgid "strruleneedsname"
+msgstr "Πρέπει να δώσετε όνομα στον κανόνα."
+
+msgid "strrulecreated"
+msgstr "Ο κανόνας δημιουργήθηκε."
+
+msgid "strrulecreatedbad"
+msgstr "Η δημιουργία του κανόνα απέτυχε."
+
+msgid "strconfdroprule"
+msgstr "Να διαγραφεί ο κανόνας \"%s\" στον \"%s\"?"
+
+msgid "strruledropped"
+msgstr "Ο κανόνας διαγράφηκε."
+
+msgid "strruledroppedbad"
+msgstr "Η διαγραφή του κανόνα απέτυχε."
+
+# Constraints
+msgid "strconstraint"
+msgstr "Περιορισμός"
+
+msgid "strconstraints"
+msgstr "Περιορισμοί"
+
+msgid "strshowallconstraints"
+msgstr "Εμφάνιση όλων των περιορισμών"
+
+msgid "strnoconstraints"
+msgstr "Δε βρέθηκαν περιορισμοί."
+
+msgid "strcreateconstraint"
+msgstr "Δημιουργία περιορισμού"
+
+msgid "strconstraintcreated"
+msgstr "Ο περιορισμός δημιουργήθηκε."
+
+msgid "strconstraintcreatedbad"
+msgstr "Η δημιουργία του περιορισμού απέτυχε."
+
+msgid "strconfdropconstraint"
+msgstr "Να διαγραφεί ο περιορισμός \"%s\" στον \"%s\"?"
+
+msgid "strconstraintdropped"
+msgstr "Ο περιορισμός διαγράφηκε."
+
+msgid "strconstraintdroppedbad"
+msgstr "Η διαγραφή του περιορισμού απέτυχε."
+
+msgid "straddcheck"
+msgstr "Προσθήκη ελέγχου"
+
+msgid "strcheckneedsdefinition"
+msgstr "Πρέπει να οριστεί ο έλεγχος."
+
+msgid "strcheckadded"
+msgstr "Ο έλεγχος προστέθηκε."
+
+msgid "strcheckaddedbad"
+msgstr "Η προσθήκη ελέγχου απέτυχε."
+
+msgid "straddpk"
+msgstr "Προσθήκη πρωτεύοντος κλειδιού"
+
+msgid "strpkneedscols"
+msgstr "Το πρωτεύον κλειδί χρειάζεται τουλάχιστον μία στήλη."
+
+msgid "strpkadded"
+msgstr "Το πρωτεύον κλειδί προστέθηκε."
+
+msgid "strpkaddedbad"
+msgstr "Αποτυχία προσθήκης πρωτεύοντος κλειδιού."
+
+msgid "stradduniq"
+msgstr "Προσθήκη μοναδικού κλειδιού"
+
+msgid "struniqneedscols"
+msgstr "Το μοναδικό κλειδί χρειάζεται τουλάχιστον μία στήλη."
+
+msgid "struniqadded"
+msgstr "Το μοναδικό κλειδί προστέθηκε."
+
+msgid "struniqaddedbad"
+msgstr "Αποτυχία προσθήκης μοναδικού κλειδιού."
+
+msgid "straddfk"
+msgstr "Προσθήση ξένου κλειδιού"
+
+msgid "strfkneedscols"
+msgstr "Το ξένο κλειδί χρειάζεται τουλάχιστον μία στήλη."
+
+msgid "strfkneedstarget"
+msgstr "Το ξένο κλειδί χρειάζεται ένα αποδέκτη πίνακα."
+
+msgid "strfkadded"
+msgstr "Το ξένο κλειδί προστέθηκε."
+
+msgid "strfkaddedbad"
+msgstr "Αποτυχία προσθήκης ξένου κλειδιού."
+
+msgid "strfktarget"
+msgstr "Αποδέκτης πίνακας"
+
+msgid "strfkcolumnlist"
+msgstr "Στήλες στο κλειδί"
+
+msgid "strondelete"
+msgstr "ΚΑΤΑ ΤΗ ΔΙΑΓΡΑΦΗ"
+
+msgid "stronupdate"
+msgstr "ΚΑΤΑ ΤΗΝ ΕΝΗΜΕΡΩΣΗ"
+
+# Functions
+msgid "strfunction"
+msgstr "Συνάρτηση"
+
+msgid "strfunctions"
+msgstr "Συναρτήσεις"
+
+msgid "strshowallfunctions"
+msgstr "Εμφάνιση όλων των συναρτήσεων"
+
+msgid "strnofunction"
+msgstr "Δε βρέθηκε συνάρτηση."
+
+msgid "strnofunctions"
+msgstr "Δε βρέθηκαν συναρτήσεις."
+
+msgid "strcreateplfunction"
+msgstr "Δημιουργία συνάρτησης σε SQL/PL"
+
+msgid "strcreateinternalfunction"
+msgstr "Δημιουργία εσωτερικής συνάρτησης"
+
+msgid "strcreatecfunction"
+msgstr "Δημιουργία συνάρτησης σε C"
+
+msgid "strfunctionname"
+msgstr "Ονομα συνάρτησης"
+
+msgid "strreturns"
+msgstr "Επιστρέφει"
+
+msgid "strproglanguage"
+msgstr "Γλώσσα προγραμματισμού"
+
+msgid "strfunctionneedsname"
+msgstr "Πρέπει να δώσετε όνομα στη συνάρτηση."
+
+msgid "strfunctionneedsdef"
+msgstr "Πρέπει να δώσετε ορισμό στη συνάρτηση."
+
+msgid "strfunctioncreated"
+msgstr "Η συνάρτηση δημιουργήθηκε."
+
+msgid "strfunctioncreatedbad"
+msgstr "Η δημιουργία της συνάρτησης απέτυχε."
+
+msgid "strconfdropfunction"
+msgstr "Να διαγραφεί η συνάρτηση \"%s\"?"
+
+msgid "strfunctiondropped"
+msgstr "Η συνάρτηση διαγράφηκε."
+
+msgid "strfunctiondroppedbad"
+msgstr "Η διαγραφή της συνάρτησης απέτυχε."
+
+msgid "strfunctionupdated"
+msgstr "Η συνάρτηση ενημερώθηκε."
+
+msgid "strfunctionupdatedbad"
+msgstr "Η ενημέρωση της συνάρτησης απέτυχε."
+
+msgid "strobjectfile"
+msgstr "Αρχείο αντικειμένου"
+
+msgid "strlinksymbol"
+msgstr "Ονομα συνάρτησης στον πηγαίο κώδικα"
+
+msgid "strarguments"
+msgstr "Ορίσματα"
+
+msgid "strargmode"
+msgstr "Είδος"
+
+msgid "strargtype"
+msgstr "Τύπος"
+
+msgid "strargadd"
+msgstr "Επιπλέον όρισμα"
+
+msgid "strargremove"
+msgstr "Διαγραφή ορίσματος"
+
+msgid "strargnoargs"
+msgstr "Αυτή η συνάρτηση δεν έχει ορίσματα."
+
+msgid "strargenableargs"
+msgstr "Ενεργοποίηση ορισμάτων που τροφοδοτούν τη συνάρτηση."
+
+msgid "strargnorowabove"
+msgstr "Δεν υπάρχει γραμμή πάνω από αυτήν."
+
+msgid "strargnorowbelow"
+msgstr "Δεν υπάρχει γραμμή κάτω από αυτήν."
+
+msgid "strargraise"
+msgstr "Μετακίνηση πάνω."
+
+msgid "strarglower"
+msgstr "Μετακίνηση κάτω."
+
+msgid "strargremoveconfirm"
+msgstr "Να διαγραφεί το όρισμα; Η ενέργεια είναι ΜΗ ΑΝΑΣΤΡΕΨΙΜΗ."
+
+# Triggers
+msgid "strtrigger"
+msgstr "Εναυσμα"
+
+msgid "strtriggers"
+msgstr "Εναύσματα"
+
+msgid "strshowalltriggers"
+msgstr "Εμφάνιση όλων των εναυσμάτων"
+
+msgid "strnotrigger"
+msgstr "Δε βρέθηκε έναυσμα."
+
+msgid "strnotriggers"
+msgstr "Δε βρέθηκαν εναύσματα."
+
+msgid "strcreatetrigger"
+msgstr "Δημιουργία εναύσματος"
+
+msgid "strtriggerneedsname"
+msgstr "Πρέπει να δώσετε όνομα στο έναυσμα."
+
+msgid "strtriggerneedsfunc"
+msgstr "Το έναυσμα πρέπει να αντιστοιχεί σε μία συνάρτηση."
+
+msgid "strtriggercreated"
+msgstr "Το έναυσμα δημιουργήθηκε."
+
+msgid "strtriggercreatedbad"
+msgstr "Η δημιουργία του εναύσματος απέτυχε."
+
+msgid "strconfdroptrigger"
+msgstr "Να διαγραφεί το έναυσμα \"%s\" στον \"%s\"?"
+
+msgid "strconfenabletrigger"
+msgstr "Να ενεργοποιηθεί το έναυσμα \"%s\" στον \"%s\"?"
+
+msgid "strconfdisabletrigger"
+msgstr "Να απενεργοποιηθεί το έναυσμα \"%s\" στον \"%s\"?"
+
+msgid "strtriggerdropped"
+msgstr "Το έναυσμα διαγράφηκε."
+
+msgid "strtriggerdroppedbad"
+msgstr "Η διαγραφή του εναύσματος απέτυχε."
+
+msgid "strtriggerenabled"
+msgstr "Το έναυσμα ενεργοποιήθηκε."
+
+msgid "strtriggerenabledbad"
+msgstr "Η ενεργοποίηση του εναύσματος απέτυχε."
+
+msgid "strtriggerdisabled"
+msgstr "Το έναυσμα απενεργοποιήθηκε."
+
+msgid "strtriggerdisabledbad"
+msgstr "Η απενεργοποίηση απέτυχε."
+
+msgid "strtriggeraltered"
+msgstr "Το έναυσμα τροποποιήθηκε."
+
+msgid "strtriggeralteredbad"
+msgstr "Η τροποποίηση του εναύσματος απέτυχε."
+
+msgid "strforeach"
+msgstr "Για κάθε"
+
+# Types
+msgid "strtype"
+msgstr "Τύπος"
+
+msgid "strtypes"
+msgstr "Τύποι"
+
+msgid "strshowalltypes"
+msgstr "Εμφάνιση όλων των τύπων"
+
+msgid "strnotype"
+msgstr "Δε βρέθηκε τύπος."
+
+msgid "strnotypes"
+msgstr "Δε βρέθηκαν τύποι."
+
+msgid "strcreatetype"
+msgstr "Δημιουργία τύπου"
+
+msgid "strcreatecomptype"
+msgstr "Δημιουργία σύνθετου τύπου"
+
+msgid "strtypeneedsfield"
+msgstr "Πρέπει να ορίσετε τουλάχιστον ένα πεδίο."
+
+msgid "strtypeneedscols"
+msgstr "Πρέπει να ορίσετε έναν έγκυρο αριθμό πεδίων."
+
+msgid "strinputfn"
+msgstr "Συνάρτηση εισόδου"
+
+msgid "stroutputfn"
+msgstr "Συνάρτηση εξόδου"
+
+msgid "strpassbyval"
+msgstr "Να μεταφέρεται η μεταβλητή?"
+
+msgid "stralignment"
+msgstr "Στοίχιση"
+
+msgid "strelement"
+msgstr "Στοιχείο"
+
+msgid "strdelimiter"
+msgstr "Διαχωριστής"
+
+msgid "strstorage"
+msgstr "Αποθήκευση"
+
+msgid "strfield"
+msgstr "Πεδίο"
+
+msgid "strnumfields"
+msgstr "Αριθμός πεδίων"
+
+msgid "strtypeneedsname"
+msgstr "Πρέπει να δώσετε όνομα στον τύπο."
+
+msgid "strtypeneedslen"
+msgstr "Πρέπει να ορίσετε το μήκος του τύπου."
+
+msgid "strtypecreated"
+msgstr "Ο τύπος δημιουργήθηκε."
+
+msgid "strtypecreatedbad"
+msgstr "Η δημιουργία του τύπου απέτυχε."
+
+msgid "strconfdroptype"
+msgstr "Να διαγραφεί ο τύπος \"%s\"?"
+
+msgid "strtypedropped"
+msgstr "Ο τύπος διαγράφηκε."
+
+msgid "strtypedroppedbad"
+msgstr "Η διαγραφή του τύπου απέτυχε."
+
+msgid "strflavor"
+msgstr "Εντύπωση"
+
+msgid "strbasetype"
+msgstr "Βάση"
+
+msgid "strcompositetype"
+msgstr "Σύνθεση"
+
+msgid "strpseudotype"
+msgstr "Ψεύδο"
+
+# Schemas
+msgid "strschema"
+msgstr "Σχήμα"
+
+msgid "strschemas"
+msgstr "Σχήματα"
+
+msgid "strshowallschemas"
+msgstr "Εμφάνιση όλων των σχημάτων"
+
+msgid "strnoschema"
+msgstr "Δε βρέθηκε σχήμα."
+
+msgid "strnoschemas"
+msgstr "Δε βρέθηκαν σχήματα."
+
+msgid "strcreateschema"
+msgstr "Δημιουργία σχήματος"
+
+msgid "strschemaname"
+msgstr "Ονομα σχήματος"
+
+msgid "strschemaneedsname"
+msgstr "Πρέπει να δώσετε όνομα στο σχήμα."
+
+msgid "strschemacreated"
+msgstr "Το σχήμα δημιουργήθηκε"
+
+msgid "strschemacreatedbad"
+msgstr "Η δημιουργία του σχήματος απέτυχε."
+
+msgid "strconfdropschema"
+msgstr "Να διαγραφεί το σχήμα \"%s\"?"
+
+msgid "strschemadropped"
+msgstr "Το σχήμα διαγράφηκε."
+
+msgid "strschemadroppedbad"
+msgstr "Η διαγραφή του σχήματος απέτυχε."
+
+msgid "strschemaaltered"
+msgstr "Το σχήμα τροποποιήθηκε."
+
+msgid "strschemaalteredbad"
+msgstr "Η τροποποίηση του σχήματος απέτυχε."
+
+msgid "strsearchpath"
+msgstr "Πορεία αναζήτησης σχήματος"
+
+# Reports
+
+# Domains
+msgid "strdomain"
+msgstr "Τομέας"
+
+msgid "strdomains"
+msgstr "Τομείς"
+
+msgid "strshowalldomains"
+msgstr "Εμφάνιση όλων των τομέων"
+
+msgid "strnodomains"
+msgstr "Δε βρέθηκαν τομείς."
+
+msgid "strcreatedomain"
+msgstr "Δημιουργία τομέα"
+
+msgid "strdomaindropped"
+msgstr "Ο τομέας διαγράφηκε."
+
+msgid "strdomaindroppedbad"
+msgstr "Η διαγραφή του τομέα απέτυχε."
+
+msgid "strconfdropdomain"
+msgstr "Να διαγραφεί ο τομέας \"%s\"?"
+
+msgid "strdomainneedsname"
+msgstr "Πρέπει να δώσετε όνομα στον τομέα."
+
+msgid "strdomaincreated"
+msgstr "Ο τομέας δημιουργήθηκε."
+
+msgid "strdomaincreatedbad"
+msgstr "Η δημιουργία του τομέα απέτυχε."
+
+msgid "strdomainaltered"
+msgstr "Ο τομέας τροποποιήθηκε."
+
+msgid "strdomainalteredbad"
+msgstr "Η τροποποίηση του τομέα απέτυχε."
+
+# Operators
+msgid "stroperator"
+msgstr "Τελεστής"
+
+msgid "stroperators"
+msgstr "Τελεστές"
+
+msgid "strshowalloperators"
+msgstr "Εμφάνιση όλων των τελεστών"
+
+msgid "strnooperator"
+msgstr "Δε βρέθηκε τελεστής."
+
+msgid "strnooperators"
+msgstr "Δε βρέθηκαν τελεστές."
+
+msgid "strcreateoperator"
+msgstr "Δημιουργία τελεστή"
+
+msgid "strleftarg"
+msgstr "Είδος αριστερής παραμέτρου"
+
+msgid "strrightarg"
+msgstr "Είδος δεξιάς παραμέτρου"
+
+msgid "strcommutator"
+msgstr "Αντιμετάθεση"
+
+msgid "strnegator"
+msgstr "Αρνηση"
+
+msgid "strrestrict"
+msgstr "Περιορισμός"
+
+msgid "strjoin"
+msgstr "Σύζευξη"
+
+msgid "strhashes"
+msgstr "Κατάτμηση"
+
+msgid "strmerges"
+msgstr "Ενωση"
+
+msgid "strleftsort"
+msgstr "Αριστερή ταξινόμηση"
+
+msgid "strrightsort"
+msgstr "Δεξιά ταξινόμηση"
+
+msgid "strlessthan"
+msgstr "Μικρότερο από"
+
+msgid "strgreaterthan"
+msgstr "Μεγαλύτερο από"
+
+msgid "stroperatorneedsname"
+msgstr "Πρέπει να δώσετε όνομα στον τελεστή."
+
+msgid "stroperatorcreated"
+msgstr "Ο τελεστής δημιουργήθηκε"
+
+msgid "stroperatorcreatedbad"
+msgstr "Η δημιουργία του τελεστή απέτυχε."
+
+msgid "strconfdropoperator"
+msgstr "Να διαγραφεί ο τελεστής \"%s\"?"
+
+msgid "stroperatordropped"
+msgstr "Ο τελεστής διαγράφηκε."
+
+msgid "stroperatordroppedbad"
+msgstr "Η διαγραφή του τελεστή απέτυχε."
+
+# Casts
+msgid "strcasts"
+msgstr "Μετατροπή τύπου"
+
+msgid "strnocasts"
+msgstr "Δε βρέθηκαν μετατροπές τύπου."
+
+msgid "strsourcetype"
+msgstr "Τύπος εισόδου"
+
+msgid "strtargettype"
+msgstr "Τύπος εξόδου"
+
+msgid "strimplicit"
+msgstr "Απόλυτη"
+
+msgid "strinassignment"
+msgstr "Σε ανάθεση"
+
+msgid "strbinarycompat"
+msgstr "(Δυαδική συμβατότητα)"
+
+# Conversions
+msgid "strconversions"
+msgstr "Μετατροπές"
+
+msgid "strnoconversions"
+msgstr "Δε βρέθηκαν μετατροπές."
+
+msgid "strsourceencoding"
+msgstr "Κωδικοποίηση εισόδου"
+
+msgid "strtargetencoding"
+msgstr "Κωδικοποίηση εξόδου"
+
+# Languages
+msgid "strlanguages"
+msgstr "Γλώσσες"
+
+msgid "strnolanguages"
+msgstr "Δε βρέθηκαν γλώσσες."
+
+msgid "strtrusted"
+msgstr "Αξιόπιστη"
+
+# Info
+msgid "strnoinfo"
+msgstr "Δε βρέθηκαν πληροφορίες."
+
+msgid "strreferringtables"
+msgstr "Σχετικοί πίνακες"
+
+msgid "strparenttables"
+msgstr "Γονικοί πίνακες"
+
+msgid "strchildtables"
+msgstr "Θυγατρικοί πίνακες"
+
+# Aggregates
+msgid "straggregate"
+msgstr "Συγκεντρωτική συνάρτηση"
+
+msgid "straggregates"
+msgstr "Συγκεντρωτικές συναρτήσεις"
+
+msgid "strnoaggregates"
+msgstr "Δε βρέθηκαν συγκεντρωτικές συναρτήσεις"
+
+msgid "stralltypes"
+msgstr "(Ολοι οι τύποι)"
+
+msgid "strcreateaggregate"
+msgstr "Δημιουργία συγκεντρωτικής συνάρτησης"
+
+msgid "straggrbasetype"
+msgstr "Μορφή δεδομένων εισόδου"
+
+msgid "straggrsfunc"
+msgstr "Συνάρτηση μεταβολής κατάστασης"
+
+msgid "straggrstype"
+msgstr "Μορφή δεδομένων κατάστασης"
+
+msgid "straggrffunc"
+msgstr "Τελική συνάρτηση"
+
+msgid "straggrinitcond"
+msgstr "Αρχική συνθήκη"
+
+msgid "straggrsortop"
+msgstr "Τελεστής ταξινόμησης"
+
+msgid "strconfdropaggregate"
+msgstr "Να διαγραφεί η συγκεντρωτική συνάρτηση \"%s\"?"
+
+msgid "straggregatedropped"
+msgstr "Η συγκεντρωτική συνάρτηση διαγράφηκε."
+
+msgid "straggregatedroppedbad"
+msgstr "Η διαγραφή της συγκεντρωτικής συνάρτησης απέτυχε."
+
+msgid "straggraltered"
+msgstr "Η συγκεντρωτική συνάρτηση τροποποιήθηκε."
+
+msgid "straggralteredbad"
+msgstr "Η τροποποίηση της συγκεντρωτικής συνάρτησης απέτυχε."
+
+msgid "straggrneedsname"
+msgstr "Πρέπει να δώσετε όνομα στη συγκεντρωτική συνάρτηση."
+
+msgid "straggrneedsbasetype"
+msgstr "Πρέπει να δώσετε τη μορφή δεδομένων εισόδου της συγκεντρωτικής συνάρτησης"
+
+msgid "straggrneedssfunc"
+msgstr "Πρέπει να δώσετε το όνομα της συνάρτησης μεταβολής κατάστασης"
+
+msgid "straggrneedsstype"
+msgstr "Πρέπει να δώσετε τη μορφή δεδομένων της τιμής κατάστασης"
+
+msgid "straggrcreated"
+msgstr "Η συγκεντρωτική συνάρτηση δημιουργήθηκε."
+
+msgid "straggrcreatedbad"
+msgstr "Η δημιουργία της συγκεντρωτικής συνάρτησης απέτυχε."
+
+msgid "straggrshowall"
+msgstr "Εμφάνιση όλων των συγκεντρωτικών συναρτήσεων"
+
+# Operator Classes
+msgid "stropclasses"
+msgstr "Κλάσεις τελεστών"
+
+msgid "strnoopclasses"
+msgstr "Δε βρέθηκαν κλάσεις τελεστών."
+
+msgid "straccessmethod"
+msgstr "Μέθοδος πρόσβασης"
+
+# Stats and performance
+msgid "strrowperf"
+msgstr "Επιδόσεις γραμμών"
+
+msgid "strioperf"
+msgstr "Επιδόσεις Εισόδου/Εξόδου"
+
+msgid "stridxrowperf"
+msgstr "Επιδόσεις γραμμών ευρετηρίου"
+
+msgid "stridxioperf"
+msgstr "Επιδόσεις Εισόδου/Εξόδου ευρετηρίου"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "Αλληλουχία"
+
+msgid "strscan"
+msgstr "Σάρωση"
+
+msgid "strread"
+msgstr "Ανάγνωση"
+
+msgid "strfetch"
+msgstr "Απόδοση"
+
+msgid "strheap"
+msgstr "Σωρός"
+
+msgid "strtoast"
+msgstr "TOAST"
+
+msgid "strtoastindex"
+msgstr "Ευρετήριο TOAST"
+
+msgid "strcache"
+msgstr "Κρυφή μνήμη"
+
+msgid "strdisk"
+msgstr "Δίσκος"
+
+msgid "strrows2"
+msgstr "Γραμμές"
+
+# Tablespaces
+msgid "strtablespace"
+msgstr "Τοποθεσία πίνακα"
+
+msgid "strtablespaces"
+msgstr "Τοποθεσίες πινάκων"
+
+msgid "strshowalltablespaces"
+msgstr "Εμφάνιση όλων των τοποθεσιών"
+
+msgid "strnotablespaces"
+msgstr "Δε βρέθηκαν τοποθεσίες πινάκων."
+
+msgid "strcreatetablespace"
+msgstr "Δημιουργία τοποθεσίας πίνακα"
+
+msgid "strlocation"
+msgstr "Τοποθεσία"
+
+msgid "strtablespaceneedsname"
+msgstr "Πρέπει να δώσετε όνομα στην τοποθεσία."
+
+msgid "strtablespaceneedsloc"
+msgstr "Πρέπει να δώσετε την ακριβή θέση του καταλόγου όπου θα δημιουργηθεί ο πίνακας."
+
+msgid "strtablespacecreated"
+msgstr "Η τοποθεσία δημιουργήθηκε."
+
+msgid "strtablespacecreatedbad"
+msgstr "Η δημιουργία της τοποθεσίας απέτυχε."
+
+msgid "strconfdroptablespace"
+msgstr "Να διαγραφεί η τοποθεσία \"%s\"?"
+
+msgid "strtablespacedropped"
+msgstr "Η τοποθεσία διαγράφηκε."
+
+msgid "strtablespacedroppedbad"
+msgstr "Η διαγραφή της τοποθεσίας απέτυχε."
+
+msgid "strtablespacealtered"
+msgstr "Η τοποθεσία τροποποιήθηκε."
+
+msgid "strtablespacealteredbad"
+msgstr "Η τροποποίηση της τοποθεσίας απέτυχε."
+
+# Miscellaneous
+msgid "strtopbar"
+msgstr "%s στο %s:%s -- Είστε συνδεδεμένος ως \"%s\""
+
+msgid "strtimefmt"
+msgstr "jS M, Y g:iA"
+
+msgid "strhelp"
+msgstr "Βοήθεια"
+
+msgid "strhelpicon"
+msgstr "?"
+
+msgid "strlogintitle"
+msgstr "Σύνδεση με %s"
+
+msgid "strlogoutmsg"
+msgstr "Αποσύνδεση από %s"
+
+msgid "strloading"
+msgstr "Φόρτωση..."
+
+msgid "strerrorloading"
+msgstr "Σφάλμα στη φόρτωση"
+
+msgid "strclicktoreload"
+msgstr "Να ξαναφορτωθεί"
+
+# Autovacuum
+msgid "strautovacuum"
+msgstr "Αυτόματη εκκένωση"
+
+msgid "strturnedon"
+msgstr "Ανοιχτή"
+
+msgid "strturnedoff"
+msgstr "Κλειστή"
+
+msgid "strenabled"
+msgstr "Ενεργοποιημένη"
+
+msgid "strvacuumbasethreshold"
+msgstr "Βάση κατωφλίου εκκένωσης"
+
+msgid "strvacuumscalefactor"
+msgstr "Συντελεστής κλίμακας εκκένωσης"
+
+msgid "stranalybasethreshold"
+msgstr "Ανάλυση βάσης κατωφλίου"
+
+msgid "stranalyzescalefactor"
+msgstr "Ανάλυση συντελεστή κλίμακας"
+
+msgid "strvacuumcostdelay"
+msgstr "Καθυστέρηση κόστους εκκένωσης"
+
+msgid "strvacuumcostlimit"
+msgstr "Οριο κόστους εκκένωσης"
+
+# Table-level Locks
+msgid "strlocks"
+msgstr "Κλειδώματα"
+
+msgid "strtransaction"
+msgstr "Ταυτότητα συναλλαγής"
+
+msgid "strprocessid"
+msgstr "Ταυτότητα διεργασίας"
+
+msgid "strmode"
+msgstr "Τρόπος κλειδώματος"
+
+msgid "strislockheld"
+msgstr "Διατηρείται το κλείδωμα?"
+
+# Prepared transactions
+msgid "strpreparedxacts"
+msgstr "Ετοιμες συναλλαγές"
+
+msgid "strxactid"
+msgstr "Ταυτότητα"
+
+msgid "strgid"
+msgstr "Γενική ταυτότητα"

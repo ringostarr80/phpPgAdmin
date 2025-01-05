@@ -1,0 +1,1654 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: da_DK\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "Danish"
+
+msgid "applocale"
+msgstr "da-DK"
+
+msgid "applangdir"
+msgstr "ltr"
+
+# Welcome
+msgid "strintro"
+msgstr "Velkommen til phpPgAdmin."
+
+msgid "strppahome"
+msgstr "phpPgAdmins Hjemmeside"
+
+msgid "strpgsqlhome"
+msgstr "PostgreSQLs Hjemmeside"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "PostgreSQL Dokumentation (lokalt)"
+
+msgid "strreportbug"
+msgstr "Rapporter fejl"
+
+msgid "strviewfaq"
+msgstr "Ofte stillede spørgsmål"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "Login"
+
+msgid "strloginfailed"
+msgstr "Login mislykkedes"
+
+msgid "strlogindisallowed"
+msgstr "Login forbudt"
+
+msgid "strserver"
+msgstr "Server"
+
+msgid "strlogout"
+msgstr "Log ud"
+
+msgid "strowner"
+msgstr "Ejer"
+
+msgid "straction"
+msgstr "Handling"
+
+msgid "stractions"
+msgstr "Handlinger"
+
+msgid "strname"
+msgstr "Navn"
+
+msgid "strdefinition"
+msgstr "Definition"
+
+msgid "strproperties"
+msgstr "Egenskaber"
+
+msgid "strbrowse"
+msgstr "Bladre"
+
+msgid "strdrop"
+msgstr "Fjern"
+
+msgid "strdropped"
+msgstr "Fjernet"
+
+msgid "strnull"
+msgstr "Ingenting"
+
+msgid "strnotnull"
+msgstr "Ikke ingenting"
+
+msgid "strfirst"
+msgstr "<< Første"
+
+msgid "strlast"
+msgstr "Sidste >>"
+
+msgid "strprev"
+msgstr "Forgående"
+
+msgid "strfailed"
+msgstr "Mislykkedes"
+
+msgid "strnext"
+msgstr "Næste"
+
+msgid "strcreate"
+msgstr "Opret"
+
+msgid "strcreated"
+msgstr "Oprettet"
+
+msgid "strcomment"
+msgstr "Kommentar"
+
+msgid "strlength"
+msgstr "Længde"
+
+msgid "strdefault"
+msgstr "Standardværdi"
+
+msgid "stralter"
+msgstr "Ændre"
+
+msgid "strok"
+msgstr "OK"
+
+msgid "strcancel"
+msgstr "Fortryd"
+
+msgid "strsave"
+msgstr "Gem"
+
+msgid "strreset"
+msgstr "Nulstil"
+
+msgid "strinsert"
+msgstr "Indsæt"
+
+msgid "strselect"
+msgstr "Vælg"
+
+msgid "strdelete"
+msgstr "Slet"
+
+msgid "strupdate"
+msgstr "Opdater"
+
+msgid "strreferences"
+msgstr "Referencer"
+
+msgid "stryes"
+msgstr "Ja"
+
+msgid "strno"
+msgstr "Nej"
+
+msgid "strtrue"
+msgstr "Sand"
+
+msgid "strfalse"
+msgstr "Falsk"
+
+msgid "stredit"
+msgstr "Redigere"
+
+msgid "strcolumn"
+msgstr "Kolonne"
+
+msgid "strcolumns"
+msgstr "Kolonner"
+
+msgid "strrows"
+msgstr "Række(r)"
+
+msgid "strrowsaff"
+msgstr "Række(r) berørt."
+
+msgid "strobjects"
+msgstr "Objekt"
+
+msgid "strexample"
+msgstr "f.eks."
+
+msgid "strback"
+msgstr "Tilbage"
+
+msgid "strqueryresults"
+msgstr "Søgeresultat"
+
+msgid "strshow"
+msgstr "Vise"
+
+msgid "strempty"
+msgstr "Tøm"
+
+msgid "strlanguage"
+msgstr "Sprog"
+
+msgid "strencoding"
+msgstr "Kodning"
+
+msgid "strvalue"
+msgstr "Værdi"
+
+msgid "strunique"
+msgstr "Unik"
+
+msgid "strprimary"
+msgstr "Primær"
+
+msgid "strexport"
+msgstr "Eksportere"
+
+msgid "strimport"
+msgstr "Importere"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "strgo"
+msgstr "Udfør"
+
+msgid "stradmin"
+msgstr "Admin"
+
+msgid "strvacuum"
+msgstr "Ryd op"
+
+msgid "stranalyze"
+msgstr "Analysere"
+
+msgid "strclusterindex"
+msgstr "Klynge"
+
+msgid "strclustered"
+msgstr "Klynget?"
+
+msgid "strreindex"
+msgstr "Genindekser"
+
+msgid "strrun"
+msgstr "Udfør"
+
+msgid "stradd"
+msgstr "Tilføj"
+
+msgid "strevent"
+msgstr "Hændelse"
+
+msgid "strwhere"
+msgstr "Hvor"
+
+msgid "strinstead"
+msgstr "Gør i stedet"
+
+msgid "strwhen"
+msgstr "Når"
+
+msgid "strformat"
+msgstr "Format"
+
+msgid "strdata"
+msgstr "Data"
+
+msgid "strconfirm"
+msgstr "Bekræft"
+
+msgid "strexpression"
+msgstr "Udtryk"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strseparator"
+msgstr ": "
+
+msgid "strexpand"
+msgstr "Udvid"
+
+msgid "strcollapse"
+msgstr "Klap sammen"
+
+msgid "strexplain"
+msgstr "Forklar"
+
+msgid "strexplainanalyze"
+msgstr "Forklar analyze"
+
+msgid "strfind"
+msgstr "Søg"
+
+msgid "stroptions"
+msgstr "Alternativ"
+
+msgid "strrefresh"
+msgstr "Opdater"
+
+msgid "strdownload"
+msgstr "Download"
+
+msgid "strdownloadgzipped"
+msgstr "Download komprimeret som gzip"
+
+msgid "strinfo"
+msgstr "Info"
+
+msgid "stroids"
+msgstr "OID´er"
+
+msgid "stradvanced"
+msgstr "Avanceret"
+
+msgid "strvariables"
+msgstr "Variable"
+
+msgid "strprocess"
+msgstr "Proces"
+
+msgid "strprocesses"
+msgstr "Processer"
+
+msgid "strsetting"
+msgstr "Indstilling"
+
+msgid "streditsql"
+msgstr "Rediger SQL"
+
+msgid "strruntime"
+msgstr "Total runtime: %s ms"
+
+msgid "strpaginate"
+msgstr "Paginere resultater"
+
+msgid "struploadscript"
+msgstr "eller upload et SQL script:"
+
+msgid "strstarttime"
+msgstr "Starttid"
+
+msgid "strfile"
+msgstr "Fil"
+
+msgid "strfileimported"
+msgstr "Fil importeret."
+
+msgid "strparameters"
+msgstr "Parametrer"
+
+# Error handling
+msgid "strnotloaded"
+msgstr "Du har ikke ikke indlagt korrekt databaseunderstøttelse i din PHP-installation."
+
+msgid "strbadconfig"
+msgstr "Din config.inc.php er ikke opdateret. Du er nødt til at genetablere den fra den nye config.inc.php-dist."
+
+msgid "strbadencoding"
+msgstr "Det lykkedes ikke at sætte klientkodning i databasen."
+
+msgid "strbadSchema"
+msgstr "Forkert Skema angivet."
+
+msgid "strinstatement"
+msgstr "I påstanden:"
+
+msgid "strsqlerror"
+msgstr "SQL fejl:"
+
+msgid "strinvalidparam"
+msgstr "Ugyldig scriptparam."
+
+msgid "strnodata"
+msgstr "Ingen rækker fundet."
+
+msgid "strnoobjects"
+msgstr "Ingen objekter fundet."
+
+msgid "strrownotunique"
+msgstr "Denne række har ingen unik nøgle."
+
+# Tables
+msgid "strtable"
+msgstr "Tabel"
+
+msgid "strtables"
+msgstr "Tabeller"
+
+msgid "strshowalltables"
+msgstr "Vis alle tabeller"
+
+msgid "strnotables"
+msgstr "Fandt ingen tabeller."
+
+msgid "strnotable"
+msgstr "Fandt ingen tabel."
+
+msgid "strcreatetable"
+msgstr "Opret tabel"
+
+msgid "strtablename"
+msgstr "Tabelnavn"
+
+msgid "strtableneedsname"
+msgstr "Tabel skal have et navn."
+
+msgid "strtableneedsfield"
+msgstr "Der skal mindst være et felt."
+
+msgid "strtableneedscols"
+msgstr "tabeller kræver et tilladeligt antal kolonner."
+
+msgid "strtablecreated"
+msgstr "Tabel oprettet."
+
+msgid "strtablecreatedbad"
+msgstr "Tabeloprettelse mislykkedes."
+
+msgid "strconfdroptable"
+msgstr "Er du sikker på at du vil fjerne tabellen \"%s\"?"
+
+msgid "strtabledropped"
+msgstr "Tabel fjernet."
+
+msgid "strinsertrow"
+msgstr "Indsæt række"
+
+msgid "strtabledroppedbad"
+msgstr "Det lykkedes ikke at fjerne tabellen."
+
+msgid "strrowinserted"
+msgstr "Række indsat."
+
+msgid "strconfemptytable"
+msgstr "Er du sikker på at du vil tømme tabellen \"%s\"?"
+
+msgid "strrowupdated"
+msgstr "Række opdateret."
+
+msgid "strrowinsertedbad"
+msgstr "Det lykkedes ikke indsætte række."
+
+msgid "strtableemptied"
+msgstr "Tabellen tømt."
+
+msgid "strrowupdatedbad"
+msgstr "Opdatering af række mislykkedes."
+
+msgid "streditrow"
+msgstr "Rediger række"
+
+msgid "strrowdeleted"
+msgstr "Række slettet."
+
+msgid "strrowdeletedbad"
+msgstr "Sletning af række mislykkedes."
+
+msgid "strfield"
+msgstr "Felt"
+
+msgid "strconfdeleterow"
+msgstr "Er du sikker på at du vil slette denne række?"
+
+msgid "strnumfields"
+msgstr "Antal felter"
+
+msgid "strsaveandrepeat"
+msgstr "Gem & Fortsæt"
+
+msgid "strtableemptiedbad"
+msgstr "Det lykkedes ikke at tømme tabellen"
+
+msgid "strdeleterow"
+msgstr "Slet række"
+
+msgid "strfields"
+msgstr "Felt"
+
+msgid "strfieldneedsname"
+msgstr "Feltet skal have et navn"
+
+msgid "strcolumndropped"
+msgstr "Kolonne fjernet."
+
+msgid "strselectallfields"
+msgstr "Vælg alle felter"
+
+msgid "strselectneedscol"
+msgstr "Der skal vælges mindst een kolonne"
+
+msgid "strselectunary"
+msgstr "Unary operander kan ikke have værdien."
+
+msgid "strcolumnaltered"
+msgstr "Kolonne ændret."
+
+msgid "straltercolumn"
+msgstr "Ændre kolonne"
+
+msgid "strcolumnalteredbad"
+msgstr "Det lykkes ikke at ændre kolonne."
+
+msgid "strconfdropcolumn"
+msgstr "Er du sikker på at du vil fjerne kolonne \"%s\" fra tabel \"%s\"?"
+
+msgid "strcolumndroppedbad"
+msgstr "Det lykkedes ikke at fjerne kolonne."
+
+msgid "straddcolumn"
+msgstr "Tilføj kolonne"
+
+msgid "strcolumnadded"
+msgstr "Kolonne tiføjet."
+
+msgid "strcolumnaddedbad"
+msgstr "Det lykkedes ikke at tilføje kolonne."
+
+msgid "strcascade"
+msgstr "KASKAD"
+
+msgid "strdataonly"
+msgstr "Udelukkende data"
+
+msgid "strtablealtered"
+msgstr "Tabel ændret."
+
+msgid "strtablealteredbad"
+msgstr "Det lykkedes ikke at ændre tabel."
+
+msgid "strestimatedrowcount"
+msgstr "Anslået antal rækker"
+
+# Users
+msgid "struser"
+msgstr "Bruger"
+
+msgid "strusers"
+msgstr "Brugere"
+
+msgid "strusername"
+msgstr "Brugernavn"
+
+msgid "strpassword"
+msgstr "Password"
+
+msgid "strsuper"
+msgstr "Superbruger?"
+
+msgid "strcreatedb"
+msgstr "Opret database?"
+
+msgid "strexpires"
+msgstr "Udløber"
+
+msgid "strsessiondefaults"
+msgstr "Sessionsindstillinger"
+
+msgid "strnewname"
+msgstr "Nyt navn"
+
+msgid "strnousers"
+msgstr "Der blev ikke fundet nogen brugere."
+
+msgid "strrename"
+msgstr "Omdøb"
+
+msgid "struserrenamed"
+msgstr "Brugernavn ændret."
+
+msgid "struserrenamedbad"
+msgstr "Det lykkedes ikke at omdøbe bruger."
+
+msgid "struserupdated"
+msgstr "Bruger opdateret."
+
+msgid "struserupdatedbad"
+msgstr "Opdatering af bruger mislykkedes."
+
+msgid "strshowallusers"
+msgstr "Vis alle brugere"
+
+msgid "strcreateuser"
+msgstr "Opret bruger"
+
+msgid "struserneedsname"
+msgstr "Bruger behøver et navn."
+
+msgid "strconfdropuser"
+msgstr "Er du sikker på at du vil slette brugeren \"%s\"?"
+
+msgid "strusercreated"
+msgstr "Bruger oprettet."
+
+msgid "strusercreatedbad"
+msgstr "Oprettelse af bruger mislykkedes."
+
+msgid "struserdropped"
+msgstr "Bruger slettet."
+
+msgid "struserdroppedbad"
+msgstr "Sletning af bruger mislykkedes."
+
+msgid "straccount"
+msgstr "Konto"
+
+msgid "strchangepassword"
+msgstr "Ændre password"
+
+msgid "strpasswordchanged"
+msgstr "Password ændret."
+
+msgid "strpasswordchangedbad"
+msgstr "Ændring af password mislykkedes."
+
+msgid "strpasswordshort"
+msgstr "Password er for kort."
+
+msgid "strpasswordconfirm"
+msgstr "Password er forskellig fra bekræftelsen."
+
+# Groups
+msgid "strgroup"
+msgstr "Gruppe"
+
+msgid "strgroups"
+msgstr "Grupper"
+
+msgid "strnogroup"
+msgstr "Gruppe blev ikke fundet."
+
+msgid "strnogroups"
+msgstr "Ingen grupper blev fundet."
+
+msgid "strcreategroup"
+msgstr "Opret gruppe"
+
+msgid "strshowallgroups"
+msgstr "Vis alle grupper"
+
+msgid "strgroupneedsname"
+msgstr "Gruppen skal have et navn."
+
+msgid "strgroupcreated"
+msgstr "Gruppe oprettet."
+
+msgid "strgroupdropped"
+msgstr "Gruppe slettet."
+
+msgid "strgroupcreatedbad"
+msgstr "Oprettelse af gruppe mislykkedes."
+
+msgid "strconfdropgroup"
+msgstr "Er du sikker på at du vil slette gruppe \"%s\"?"
+
+msgid "strgrant"
+msgstr "Tildel"
+
+msgid "strgranted"
+msgstr "Privilegier ændret."
+
+msgid "strgroupdroppedbad"
+msgstr "Det lykkedes ikke at fjerne gruppe."
+
+msgid "straddmember"
+msgstr "Tilføj medlem"
+
+msgid "strmemberadded"
+msgstr "Medlem tilføjet."
+
+msgid "strmemberaddedbad"
+msgstr "Det lykkedes ikke at tilføje medlem."
+
+msgid "strdropmember"
+msgstr "Fjern medlem"
+
+msgid "strconfdropmember"
+msgstr "Er du sikker på at du vil fjerne medlem \"%s\" fra gruppen \"%s\"?"
+
+msgid "strmemberdropped"
+msgstr "Medlem fjernet."
+
+msgid "strmemberdroppedbad"
+msgstr "Det lykkedes ikke at fjerne medlem."
+
+# Privileges
+msgid "strprivilege"
+msgstr "Rettighed"
+
+msgid "strprivileges"
+msgstr "Rettigheder"
+
+msgid "strnoprivileges"
+msgstr "Dette objekt har standard ejerrettigheder."
+
+msgid "strmembers"
+msgstr "Medlemmer"
+
+msgid "strrevoke"
+msgstr "Inddrag"
+
+msgid "strgrantbad"
+msgstr "Du skal angive mindst en bruger eller gruppe og mindst et privilegie."
+
+msgid "strgrantfailed"
+msgstr "Ændring af rettigheder mislykkedes."
+
+msgid "stralterprivs"
+msgstr "Ændre rettigheder"
+
+msgid "strdatabasedropped"
+msgstr "Database fjernet."
+
+msgid "strgrantor"
+msgstr "Tilladelsesudsteder"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "Database"
+
+msgid "strdatabases"
+msgstr "Databaser"
+
+msgid "strshowalldatabases"
+msgstr "Vis alle databaser"
+
+msgid "strnodatabase"
+msgstr "Database blev ikke fundet."
+
+msgid "strnodatabases"
+msgstr "Der blev ikke fundet nogen databaser."
+
+msgid "strcreatedatabase"
+msgstr "Opret database"
+
+msgid "strdatabasename"
+msgstr "Databasenavn"
+
+msgid "strdatabaseneedsname"
+msgstr "Databasen skal have et navn."
+
+msgid "strdatabasecreated"
+msgstr "Database oprettet."
+
+msgid "strdatabasecreatedbad"
+msgstr "Oprettelse af database mislykkedes."
+
+msgid "strconfdropdatabase"
+msgstr "Er du sikker på at du vil fjerne database \"%s\"?"
+
+msgid "strdatabasedroppedbad"
+msgstr "Fjernelse af database mislykkedes."
+
+msgid "strentersql"
+msgstr "Enter the SQL to execute below:"
+
+msgid "strsqlexecuted"
+msgstr "SQL-kommando udført."
+
+msgid "strvacuumgood"
+msgstr "Vacuum udført."
+
+msgid "strvacuumbad"
+msgstr "Vacuum mislykkedes."
+
+msgid "stranalyzegood"
+msgstr "Analysen lykkedes."
+
+msgid "stranalyzebad"
+msgstr "Analysen mislykkedes."
+
+msgid "strreindexgood"
+msgstr "Reindeksering komplet."
+
+msgid "strreindexbad"
+msgstr "Reindeksering slog fejl."
+
+msgid "strfull"
+msgstr "Fuld"
+
+msgid "strfreeze"
+msgstr "Fastfrys"
+
+msgid "strforce"
+msgstr "Force"
+
+msgid "strsignalsent"
+msgstr "Signal sendt."
+
+msgid "strsignalsentbad"
+msgstr "Afsendelse af signal mislykkedes."
+
+msgid "strallobjects"
+msgstr "Alle objekter"
+
+msgid "strstructureonly"
+msgstr "Kun struktur"
+
+msgid "strstructureanddata"
+msgstr "Struktur og data"
+
+# Views
+msgid "strview"
+msgstr "View"
+
+msgid "strviews"
+msgstr "Views"
+
+msgid "strshowallviews"
+msgstr "Vis alle views"
+
+msgid "strnoview"
+msgstr "Ingen view blev fundet."
+
+msgid "strnoviews"
+msgstr "Ingen views blev fundet."
+
+msgid "strcreateview"
+msgstr "Opret view"
+
+msgid "strviewname"
+msgstr "Navn på view"
+
+msgid "strviewneedsname"
+msgstr "View skal have et navn."
+
+msgid "strviewneedsdef"
+msgstr "Du skal angive en defintion for view."
+
+msgid "strviewcreated"
+msgstr "View oprettet."
+
+msgid "strviewcreatedbad"
+msgstr "Oprettelse af View mislykkedes."
+
+msgid "strconfdropview"
+msgstr "Er du sikker på at du vil fjerne view \"%s\"?"
+
+msgid "strviewdropped"
+msgstr "View fjernet."
+
+msgid "strviewdroppedbad"
+msgstr "Fjernelse af view mislykkedes."
+
+msgid "strviewupdated"
+msgstr "View opdateret."
+
+msgid "strviewupdatedbad"
+msgstr "Opdatering af view mislykkedes."
+
+msgid "strviewlink"
+msgstr "Linking Keys"
+
+msgid "strviewconditions"
+msgstr "Yderligere vilkår"
+
+msgid "strcreateviewwiz"
+msgstr "Opret view med hjælp af wizard"
+
+# Sequences
+msgid "strsequence"
+msgstr "Sekvens"
+
+msgid "strsequences"
+msgstr "Sekvenser"
+
+msgid "strshowallsequences"
+msgstr "Vis alle sekvenser"
+
+msgid "strnosequence"
+msgstr "Sekvens blev ikke fundet."
+
+msgid "strnosequences"
+msgstr "Ingen sekvenser blev fundet."
+
+msgid "strcreatesequence"
+msgstr "Opret sekvens"
+
+msgid "strlastvalue"
+msgstr "Seneste værdi"
+
+msgid "strincrementby"
+msgstr "Øg med"
+
+msgid "strstartvalue"
+msgstr "Startværdi"
+
+msgid "strmaxvalue"
+msgstr "Største værdi"
+
+msgid "strminvalue"
+msgstr "Mindste værdi"
+
+msgid "strcachevalue"
+msgstr "Cachens værdi"
+
+msgid "strlogcount"
+msgstr "Log count"
+
+msgid "striscycled"
+msgstr "Is cycled?"
+
+msgid "strsequenceneedsname"
+msgstr "Sekvens skal have et navn."
+
+msgid "strsequencecreated"
+msgstr "Sekvens oprettet."
+
+msgid "strsequencecreatedbad"
+msgstr "Oprettelse af sekvens mislykkedes."
+
+msgid "strconfdropsequence"
+msgstr "Er du sikker på at du vil fjerne sekvensen \"%s\"?"
+
+msgid "strsequencedropped"
+msgstr "Sekvensen fjernet."
+
+msgid "strsequencedroppedbad"
+msgstr "Fjernelse af sekvens mislykkedes."
+
+# Indexes
+msgid "strindex"
+msgstr "Indeks"
+
+msgid "strindexes"
+msgstr "Indekser"
+
+msgid "strshowallindexes"
+msgstr "Vis alle indeks"
+
+msgid "strnoindex"
+msgstr "Ingen indeks blev fundet."
+
+msgid "strsequencereset"
+msgstr "Nulstil sekvens."
+
+msgid "strsequenceresetbad"
+msgstr "Nulstilling af sekvens mislykkedes."
+
+msgid "strnoindexes"
+msgstr "Ingen indeks blev fundet."
+
+msgid "strcreateindex"
+msgstr "Opret indeks"
+
+msgid "strtabname"
+msgstr "Tabelnavn"
+
+msgid "strcolumnname"
+msgstr "Kolonnenavn"
+
+msgid "strindexneedsname"
+msgstr "Indeks skal have et navn"
+
+msgid "strindexneedscols"
+msgstr "Indeks kræveret gyldigt antal kolonner."
+
+msgid "strindexcreated"
+msgstr "Indeks oprettet"
+
+msgid "strindexcreatedbad"
+msgstr "Oprettelse af indeks mislykkedes."
+
+msgid "strconfdropindex"
+msgstr "Er du sikker på at du vil fjerne indeks \"%s\"?"
+
+msgid "strindexdropped"
+msgstr "Indeks fjernet."
+
+msgid "strindexdroppedbad"
+msgstr "Det lykkedes ikke at fjerne indeks."
+
+msgid "strkeyname"
+msgstr "Nøglebetegnelse"
+
+msgid "struniquekey"
+msgstr "Unik nøgle"
+
+msgid "strprimarykey"
+msgstr "Primærnøgle"
+
+msgid "strindextype"
+msgstr "Indekstype"
+
+msgid "strindexname"
+msgstr "Indeksnavn"
+
+msgid "strtablecolumnlist"
+msgstr "Tabelkolonner"
+
+msgid "strindexcolumnlist"
+msgstr "Indekskolonner"
+
+msgid "strconfcluster"
+msgstr "Are you sure you want to cluster \"%s\"?"
+
+msgid "strclusteredgood"
+msgstr "Cluster complete."
+
+msgid "strclusteredbad"
+msgstr "Cluster failed."
+
+# Rules
+msgid "strrules"
+msgstr "Regler"
+
+msgid "strrule"
+msgstr "Regel"
+
+msgid "strshowallrules"
+msgstr "Vis alle regler"
+
+msgid "strnorule"
+msgstr "Regel blev ikke fundet."
+
+msgid "strnorules"
+msgstr "Ingen regler blev fundet."
+
+msgid "strcreaterule"
+msgstr "Opret regel"
+
+msgid "strrulename"
+msgstr "Regelnavn"
+
+msgid "strruleneedsname"
+msgstr "Regel skal have et navn."
+
+msgid "strrulecreated"
+msgstr "Regel oprettet."
+
+msgid "strrulecreatedbad"
+msgstr "Oprettelse af regel mislykkedes."
+
+msgid "strconfdroprule"
+msgstr "Er du sikker på at du fjerne regel \"%s\" for \"%s\"?"
+
+msgid "strruledropped"
+msgstr "Regel fjernet."
+
+msgid "strruledroppedbad"
+msgstr "Det lykkedes ikke at fjerne regel."
+
+# Constraints
+msgid "strconstraints"
+msgstr "Afgrænsninger"
+
+msgid "strshowallconstraints"
+msgstr "Vis alle afgrænsninger"
+
+msgid "strnoconstraints"
+msgstr "Der blev ikke fundet nogen afgrænsninger."
+
+msgid "strcreateconstraint"
+msgstr "Opret afgrænsning"
+
+msgid "strconstraintcreated"
+msgstr "Afgrænsning oprettet."
+
+msgid "strconstraintcreatedbad"
+msgstr "Det lykkedes ikke at oprette afgrænsning."
+
+msgid "strconfdropconstraint"
+msgstr "Er du sikker på at du vil fjerne afgrænsning \"%s\" for \"%s\"?"
+
+msgid "strconstraintdropped"
+msgstr "Afgrænsning fjernet."
+
+msgid "strconstraintdroppedbad"
+msgstr "Det lykkedes ikke at fjerne afgrænsning."
+
+msgid "straddcheck"
+msgstr "Tilføj check"
+
+msgid "strcheckneedsdefinition"
+msgstr "Check afgrænsning skal defineres."
+
+msgid "strcheckadded"
+msgstr "Check tilføjet."
+
+msgid "strcheckaddedbad"
+msgstr "Det lykkedes ikke at tilføje check."
+
+msgid "straddpk"
+msgstr "Tilføj primærnøgle"
+
+msgid "strpkneedscols"
+msgstr "Primærnøgle kræver mindst en kolonne."
+
+msgid "strpkadded"
+msgstr "Primærnøgle tilføjet."
+
+msgid "strpkaddedbad"
+msgstr "Tilføjelse af primærnøgle mislykkedes."
+
+msgid "stradduniq"
+msgstr "Tilføj unik nøgle"
+
+msgid "struniqneedscols"
+msgstr "Unik nøgle kræver mindst een kolonne."
+
+msgid "struniqadded"
+msgstr "Unik nøgle tilføjet."
+
+msgid "struniqaddedbad"
+msgstr "Tilføjelse af unik nøgle mislykkedes."
+
+msgid "straddfk"
+msgstr "Tilføj ekstern nøgle"
+
+msgid "strfkneedscols"
+msgstr "Ekstern nøgle kræver mindst een kolonne."
+
+msgid "strfkneedstarget"
+msgstr "Ekstern nøgle kræver en måltabel."
+
+msgid "strfkadded"
+msgstr "Ekstern nøgle tilføjet."
+
+msgid "strfkaddedbad"
+msgstr "Tilføjelse af ekstern nøgle mislykkedes."
+
+msgid "strfktarget"
+msgstr "Måltabel"
+
+msgid "strfkcolumnlist"
+msgstr "Kolonner i nøgle"
+
+msgid "strondelete"
+msgstr "VED SLETNING"
+
+msgid "stronupdate"
+msgstr "VED OPDATERING"
+
+# Functions
+msgid "strfunction"
+msgstr "Funktion"
+
+msgid "strfunctions"
+msgstr "Funktioner"
+
+msgid "strshowallfunctions"
+msgstr "Vis alle funktioner"
+
+msgid "strnofunction"
+msgstr "Hittade ingen funktion."
+
+msgid "strnofunctions"
+msgstr "Hittade inga funktioner."
+
+msgid "strcreatefunction"
+msgstr "Opret funktion"
+
+msgid "strcreateplfunction"
+msgstr "Opret SQL/PL funktion"
+
+msgid "strcreateinternalfunction"
+msgstr "Opret intern funktion"
+
+msgid "strcreatecfunction"
+msgstr "Opret C funktion"
+
+msgid "strfunctionname"
+msgstr "Funktionsnavn"
+
+msgid "strreturns"
+msgstr "Tilbage"
+
+msgid "strarguments"
+msgstr "Argumenter"
+
+msgid "strfunctionneedsname"
+msgstr "Funktionen skal have et navn."
+
+msgid "strfunctionneedsdef"
+msgstr "Funktionen skal defineres."
+
+msgid "strfunctioncreated"
+msgstr "Funktion oprettet."
+
+msgid "strfunctioncreatedbad"
+msgstr "Oprettelse af funktion mislykkedes."
+
+msgid "strconfdropfunction"
+msgstr "Er du sikker på at du vil slette funktionen \"%s\"?"
+
+msgid "strproglanguage"
+msgstr "Programmeringssprog"
+
+msgid "strfunctiondropped"
+msgstr "Funktionen fjernet."
+
+msgid "strfunctiondroppedbad"
+msgstr "Fjernelse af funktionen mislykkedes."
+
+msgid "strfunctionupdated"
+msgstr "Funktion opdateret."
+
+msgid "strfunctionupdatedbad"
+msgstr "Opdatering af funktion mislykkedes."
+
+# Triggers
+msgid "strtrigger"
+msgstr "Trigger"
+
+msgid "strtriggers"
+msgstr "Triggere"
+
+msgid "strshowalltriggers"
+msgstr "Vis alle triggere"
+
+msgid "strnotrigger"
+msgstr "Hittede ingen trigger."
+
+msgid "strnotriggers"
+msgstr "Hittede ingen trigger."
+
+msgid "strcreatetrigger"
+msgstr "Opret trigger"
+
+msgid "strtriggerneedsname"
+msgstr "Trigger skal have et navn."
+
+msgid "strtriggerneedsfunc"
+msgstr "Du skal specificere en funktion for trigger."
+
+msgid "strtriggercreated"
+msgstr "Trigger oprettet."
+
+msgid "strtriggerdropped"
+msgstr "Trigger fjernet."
+
+msgid "strtriggercreatedbad"
+msgstr "Det lykkedes ikke at oprette trigger."
+
+msgid "strconfdroptrigger"
+msgstr "Er du sikker på at du vil fjerne trigger \"%s\" på \"%s\"?"
+
+msgid "strtriggerdroppedbad"
+msgstr "Det lykkedes ikke at fjerne trigger."
+
+msgid "strstorage"
+msgstr "Lagring"
+
+msgid "strtriggeraltered"
+msgstr "Trigger ændret."
+
+msgid "strtriggeralteredbad"
+msgstr "Det lykkedes ikke at ændre trigger."
+
+# Types
+msgid "strtype"
+msgstr "Type"
+
+msgid "strtypes"
+msgstr "Typer"
+
+msgid "strshowalltypes"
+msgstr "Vis alle typer"
+
+msgid "strnotype"
+msgstr "Typen blev ikke fundet."
+
+msgid "strnotypes"
+msgstr "Ingen typer fundet."
+
+
+msgid "strtypeneedslen"
+msgstr "Du skal angive typens længde."
+
+msgid "strcreatetype"
+msgstr "Opret type"
+
+msgid "strtypename"
+msgstr "Navn på typen"
+
+msgid "strinputfn"
+msgstr "Input funktion"
+
+msgid "stroutputfn"
+msgstr "Output funktion"
+
+msgid "strpassbyval"
+msgstr "Passed by val?"
+
+msgid "stralignment"
+msgstr "Justering"
+
+msgid "strelement"
+msgstr "Element"
+
+msgid "strdelimiter"
+msgstr "Begrænser"
+
+msgid "strtypeneedsname"
+msgstr "Typen skal have et navn."
+
+msgid "strtypecreated"
+msgstr "Type oprettet"
+
+msgid "strtypecreatedbad"
+msgstr "Det lykkedes ikke at oprette type."
+
+msgid "strconfdroptype"
+msgstr "Er du sikker på at du vil fjerne typen \"%s\"?"
+
+msgid "strtypedropped"
+msgstr "Typen fjernet."
+
+msgid "strtypedroppedbad"
+msgstr "Det lykkedes ikke at fjerne typen."
+
+# Schemas
+msgid "strschema"
+msgstr "Skema"
+
+msgid "strschemas"
+msgstr "Skemaer"
+
+msgid "strshowallschemas"
+msgstr "Vis alle skemaer"
+
+msgid "strnoschema"
+msgstr "Der blev ikke fundet noget skema."
+
+msgid "strnoschemas"
+msgstr "Der blev ikke fundet nogen skemaer."
+
+msgid "strcreateschema"
+msgstr "Opret skema"
+
+msgid "strschemaname"
+msgstr "Skemanavn"
+
+msgid "strschemaneedsname"
+msgstr "Skema skal have et navn."
+
+msgid "strschemacreated"
+msgstr "Skema oprettet"
+
+msgid "strschemacreatedbad"
+msgstr "Det lykkedes ikke at oprette skema."
+
+msgid "strconfdropschema"
+msgstr "Er du sikker på, at du vil fjerne skemaet \"%s\"?"
+
+msgid "strschemadropped"
+msgstr "Skema fjernet."
+
+msgid "strschemadroppedbad"
+msgstr "Det lykkedes ikka at fjerne skema."
+
+# Reports
+msgid "strtopbar"
+msgstr "%s kører på %s:%s -- Du er logged ind som bruger \"%s\""
+
+msgid "strtimefmt"
+msgstr "jS M, Y g:iA"
+
+# Domains
+msgid "strdomain"
+msgstr "Domæne"
+
+msgid "strdomains"
+msgstr "Domæner"
+
+msgid "strshowalldomains"
+msgstr "Vis alle domæner"
+
+msgid "strnodomains"
+msgstr "Ingen domæner blev fundet."
+
+msgid "strcreatedomain"
+msgstr "Opret domæne"
+
+msgid "strdomaindropped"
+msgstr "Domæne fjernet."
+
+msgid "strdomaindroppedbad"
+msgstr "Det lykkedes ikke at fjerne domæne."
+
+msgid "strconfdropdomain"
+msgstr "Er du sikker på at du vil fjerne domænet \"%s\"?"
+
+msgid "strdomainneedsname"
+msgstr "Du skal indtaste et domænenavn."
+
+msgid "strdomaincreated"
+msgstr "Domæne oprettet."
+
+msgid "strdomaincreatedbad"
+msgstr "Det lykkedes ikke at oprette et domæne."
+
+msgid "strdomainaltered"
+msgstr "Domæne ændret."
+
+msgid "strdomainalteredbad"
+msgstr "Det lykkedes ikke at ændre domæne."
+
+# Operators
+msgid "stroperator"
+msgstr "Operator"
+
+msgid "stroperators"
+msgstr "Operatorer"
+
+msgid "strshowalloperators"
+msgstr "Vis alle operatorer"
+
+msgid "strnooperator"
+msgstr "Operator blev ikke."
+
+msgid "strnooperators"
+msgstr "Der blev ikke fundet nogen operatorer."
+
+msgid "strcreateoperator"
+msgstr "Opret operator"
+
+msgid "strleftarg"
+msgstr "Left Arg Type"
+
+msgid "strrightarg"
+msgstr "Right Arg Type"
+
+msgid "strcommutator"
+msgstr "Commutator"
+
+msgid "strnegator"
+msgstr "Negator"
+
+msgid "strrestrict"
+msgstr "Restrict"
+
+msgid "strjoin"
+msgstr "Join"
+
+msgid "strhashes"
+msgstr "Hashes"
+
+msgid "strmerges"
+msgstr "Merges"
+
+msgid "strleftsort"
+msgstr "Left sort"
+
+msgid "strrightsort"
+msgstr "Right sort"
+
+msgid "strlessthan"
+msgstr "Less than"
+
+msgid "strgreaterthan"
+msgstr "Greater than"
+
+msgid "stroperatorneedsname"
+msgstr "Operator skal have et navn."
+
+msgid "stroperatorcreated"
+msgstr "Operator oprettet"
+
+msgid "stroperatorcreatedbad"
+msgstr "Oprettelse af operator mislykkedes."
+
+msgid "strconfdropoperator"
+msgstr "Er du sikker på, at du vil fjerne operator \"%s\"?"
+
+msgid "stroperatordropped"
+msgstr "Operator fjernet."
+
+msgid "stroperatordroppedbad"
+msgstr "Fjernelse af operator mislykkedes."
+
+# Casts
+msgid "strcasts"
+msgstr "Typekonverteringer"
+
+msgid "strnocasts"
+msgstr "Ingen typekonverteringer fundet."
+
+msgid "strsourcetype"
+msgstr "Kildetype"
+
+msgid "strtargettype"
+msgstr "Måltype"
+
+msgid "strimplicit"
+msgstr "Implicit"
+
+msgid "strinassignment"
+msgstr "Tildelt i"
+
+msgid "strbinarycompat"
+msgstr "(Binært kompatibel)"
+
+# Conversions
+msgid "strconversions"
+msgstr "Konverteringer"
+
+msgid "strnoconversions"
+msgstr "Ingen konverteringer fundet."
+
+msgid "strsourceencoding"
+msgstr "Kildekodning"
+
+msgid "strtargetencoding"
+msgstr "Målkodning"
+
+# Languages
+msgid "strlanguages"
+msgstr "Sprog"
+
+msgid "strnolanguages"
+msgstr "Der blev ikke fundet noget sprog."
+
+msgid "strtrusted"
+msgstr "Pålidelig(e)"
+
+# Info
+msgid "strnoinfo"
+msgstr "Ingen tilgængelig information."
+
+msgid "strreferringtables"
+msgstr "Refererende tabeller"
+
+msgid "strparenttables"
+msgstr "Overordnede tabeller"
+
+msgid "strchildtables"
+msgstr "Underordnede tabeller"
+
+# Aggregates
+msgid "straggregates"
+msgstr "Sammenlægninger"
+
+msgid "strnoaggregates"
+msgstr "Ingen sammenlægninger fundet."
+
+msgid "stralltypes"
+msgstr "(Alle typer)"
+
+# Operator Classes
+msgid "stropclasses"
+msgstr "Operatorklasser"
+
+msgid "strnoopclasses"
+msgstr "Ingen Operatorklasser fundet."
+
+msgid "straccessmethod"
+msgstr "Tilgangsmetode"
+
+# Stats and performance
+msgid "strrowperf"
+msgstr "Row Performance"
+
+msgid "strioperf"
+msgstr "I/O Performance"
+
+msgid "stridxrowperf"
+msgstr "Index Row Performance"
+
+msgid "stridxioperf"
+msgstr "Index I/O Performance"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "Sequential"
+
+msgid "strscan"
+msgstr "Scan"
+
+msgid "strread"
+msgstr "Read"
+
+msgid "strfetch"
+msgstr "Fetch"
+
+msgid "strheap"
+msgstr "Heap"
+
+msgid "strtoast"
+msgstr "TOAST"
+
+msgid "strtoastindex"
+msgstr "TOAST Index"
+
+msgid "strcache"
+msgstr "Cache"
+
+msgid "strdisk"
+msgstr "Disk"
+
+msgid "strrows2"
+msgstr "Rows"
+
+# Tablespaces
+msgid "strtablespace"
+msgstr "Tabelområde"
+
+msgid "strtablespaces"
+msgstr "Tabelområder"
+
+msgid "strshowalltablespaces"
+msgstr "Vis alle tabelområder"
+
+msgid "strnotablespaces"
+msgstr "Ingen tabelområder fundet."
+
+msgid "strcreatetablespace"
+msgstr "Opret tabelområder"
+
+msgid "strlocation"
+msgstr "Location"
+
+msgid "strtablespaceneedsname"
+msgstr "Tabelområdet skal have et navn."
+
+msgid "strtablespaceneedsloc"
+msgstr "Du skal angive hvilken mappe tabelområdet skal oprettes i."
+
+msgid "strtablespacecreated"
+msgstr "Tabelområde oprettet."
+
+msgid "strtablespacecreatedbad"
+msgstr "Oprettelse af tabelområde lykkedes ikke."
+
+msgid "strconfdroptablespace"
+msgstr "Er du sikker på, at du vil fjerne tabelområde \"%s\"?"
+
+msgid "strtablespacedropped"
+msgstr "Tabelområde fjernet."
+
+msgid "strtablespacedroppedbad"
+msgstr "Fjernelse af tabelområde lykkedes ikke."
+
+msgid "strtablespacealtered"
+msgstr "Tabelområde ændret."
+
+msgid "strtablespacealteredbad"
+msgstr "Ændring af tabelområde lykkedes ikke."
+
+# Miscellaneous
+msgid "strhelp"
+msgstr "Hjælp"
+
+msgid "strhelpicon"
+msgstr "?"

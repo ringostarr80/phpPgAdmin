@@ -1,0 +1,1581 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "عربي"
+
+msgid "applocale"
+msgstr "ar"
+
+msgid "applangdir"
+msgstr "rtl"
+
+# Welcome
+msgid "strintro"
+msgstr "مرحبا الى phpPgAdmin."
+
+msgid "strppahome"
+msgstr "موقع phpPgAdmin"
+
+msgid "strpgsqlhome"
+msgstr "موقع PostgreSQL"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "تعليمات PostgreSQL (محلية)"
+
+msgid "strreportbug"
+msgstr "الإبلاغ عن خطأ في البرنامج."
+
+msgid "strviewfaq"
+msgstr "قراءة الأسئلة المتكررة على الموقع"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "الدخول"
+
+msgid "strloginfailed"
+msgstr "لم تنجح عملية الدخول"
+
+msgid "strlogindisallowed"
+msgstr "لا يسمح بالدخول بهذه الطريقة لأسباب أمنية."
+
+msgid "strserver"
+msgstr "الخادم"
+
+msgid "strlogout"
+msgstr "خروج"
+
+msgid "strowner"
+msgstr "مالك Owner"
+
+msgid "straction"
+msgstr "إجراء Action"
+
+msgid "stractions"
+msgstr "إجراءات Actions"
+
+msgid "strname"
+msgstr "الإسم"
+
+msgid "strdefinition"
+msgstr "التعريف"
+
+msgid "strproperties"
+msgstr "خصائص"
+
+msgid "strbrowse"
+msgstr "إستعراض Browse"
+
+msgid "strdrop"
+msgstr "حذف Drop"
+
+msgid "strdropped"
+msgstr "محذوف Dropped"
+
+msgid "strnull"
+msgstr "Null"
+
+msgid "strnotnull"
+msgstr "ليس Null"
+
+msgid "strprev"
+msgstr ">السابق"
+
+msgid "strnext"
+msgstr "<التالي"
+
+msgid "strfirst"
+msgstr ">>الأول"
+
+msgid "strlast"
+msgstr "الأخير<<"
+
+msgid "strfailed"
+msgstr "فشـل"
+
+msgid "strcreate"
+msgstr "إنشاء"
+
+msgid "strcreated"
+msgstr "تم الإنشاء"
+
+msgid "strcomment"
+msgstr "ملاحظات"
+
+msgid "strlength"
+msgstr "طول"
+
+msgid "strdefault"
+msgstr "الإفتراضي"
+
+msgid "stralter"
+msgstr "تعديلAlter"
+
+msgid "strok"
+msgstr "موافق"
+
+msgid "strcancel"
+msgstr "تراجع"
+
+msgid "strsave"
+msgstr "حفظ"
+
+msgid "strreset"
+msgstr "إعادة Reset"
+
+msgid "strinsert"
+msgstr "إدراج Insert"
+
+msgid "strselect"
+msgstr "إختيار Select"
+
+msgid "strdelete"
+msgstr "حذف Delete"
+
+msgid "strupdate"
+msgstr "تعديل Update"
+
+msgid "strreferences"
+msgstr "مراجع"
+
+msgid "stryes"
+msgstr "نعم"
+
+msgid "strno"
+msgstr "لا"
+
+msgid "strtrue"
+msgstr "صحيح TRUE"
+
+msgid "strfalse"
+msgstr "خاطئ FALSE"
+
+msgid "stredit"
+msgstr "تحرير"
+
+msgid "strcolumns"
+msgstr "أعمدة Columns"
+
+msgid "strrows"
+msgstr "سجل/سجلات"
+
+msgid "strrowsaff"
+msgstr "سجل تأثر/سجلات تأثرت"
+
+msgid "strobjects"
+msgstr "object(s)"
+
+msgid "strexample"
+msgstr "مثلا"
+
+msgid "strback"
+msgstr "رجوع للخلف"
+
+msgid "strqueryresults"
+msgstr "نتائج الإستعلام"
+
+msgid "strshow"
+msgstr "اعرض"
+
+msgid "strempty"
+msgstr "إفراغ Empty"
+
+msgid "strlanguage"
+msgstr "اللغة"
+
+msgid "strencoding"
+msgstr "الشيفرة Encoding"
+
+msgid "strvalue"
+msgstr "القيمة Value"
+
+msgid "strunique"
+msgstr "فريد Unique"
+
+msgid "strprimary"
+msgstr "رئيسي Primary"
+
+msgid "strexport"
+msgstr "تصدير Export"
+
+msgid "strimport"
+msgstr "إستيراد Import"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "strgo"
+msgstr "Go"
+
+msgid "stradmin"
+msgstr "إدارة Admin"
+
+msgid "strvacuum"
+msgstr "Vacuum"
+
+msgid "stranalyze"
+msgstr "Analyze"
+
+msgid "strclusterindex"
+msgstr "Cluster"
+
+msgid "strclustered"
+msgstr "Clustered?"
+
+msgid "strreindex"
+msgstr "Reindex"
+
+msgid "strrun"
+msgstr "Run"
+
+msgid "stradd"
+msgstr "إضافة"
+
+msgid "strevent"
+msgstr "Event"
+
+msgid "strwhere"
+msgstr "Where"
+
+msgid "strinstead"
+msgstr "Do Instead"
+
+msgid "strwhen"
+msgstr "When"
+
+msgid "strformat"
+msgstr "Format"
+
+msgid "strdata"
+msgstr "Data"
+
+msgid "strconfirm"
+msgstr "تأكيد"
+
+msgid "strexpression"
+msgstr "تعبير"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strseparator"
+msgstr ": "
+
+msgid "strexpand"
+msgstr "إفتح"
+
+msgid "strcollapse"
+msgstr "سكّر"
+
+msgid "strexplain"
+msgstr "Explain"
+
+msgid "strexplainanalyze"
+msgstr "Explain Analyze"
+
+msgid "strfind"
+msgstr "بحث"
+
+msgid "stroptions"
+msgstr "خيارات"
+
+msgid "strrefresh"
+msgstr "تحديث Refresh"
+
+msgid "strdownload"
+msgstr "تنزيل"
+
+msgid "strdownloadgzipped"
+msgstr "تنزيل على شكل ملف مضغوط بـ gzip"
+
+msgid "strinfo"
+msgstr "Info"
+
+msgid "stroids"
+msgstr "OIDs"
+
+msgid "stradvanced"
+msgstr "Advanced"
+
+msgid "strvariables"
+msgstr "Variables"
+
+msgid "strprocess"
+msgstr "العملية Process"
+
+msgid "strprocesses"
+msgstr "العمليات Processes"
+
+msgid "strsetting"
+msgstr "Setting"
+
+msgid "streditsql"
+msgstr "Edit SQL"
+
+msgid "strruntime"
+msgstr "Total runtime: %s ms"
+
+msgid "strpaginate"
+msgstr "Paginate results"
+
+msgid "struploadscript"
+msgstr "or upload an SQL script:"
+
+msgid "strstarttime"
+msgstr "Start Time"
+
+msgid "strfile"
+msgstr "ملف"
+
+msgid "strfileimported"
+msgstr "تم استيراد الملف."
+
+# Error handling
+msgid "strbadconfig"
+msgstr "إن الملف config.inc.php الذي لديك اصبح قديما. ستحتاج الى إعادة توليده من الملف الجديد config.inc.php-dist."
+
+msgid "strnotloaded"
+msgstr "إن اعداد  PHP الموجود على هذا الخادم لاتدعم PostgreSQL. تحتاج الى اعادة تثبيت PHP بإستخدام الخيار  --with-pgsql configure option."
+
+msgid "strpostgresqlversionnotsupported"
+msgstr "هذا الاصدار من PostgreSQL غير مدعوم. الرجاء الترقية الى الإصدار %s او أعلى."
+
+msgid "strbadschema"
+msgstr "Invalid schema specified."
+
+msgid "strbadencoding"
+msgstr "لقد فشل ضبط شيفرة العميل client encoding في قاعدة البيانات."
+
+msgid "strsqlerror"
+msgstr "خطأ SQL:"
+
+msgid "strinstatement"
+msgstr "في الجملة statement:"
+
+msgid "strinvalidparam"
+msgstr "Invalid script parameters."
+
+msgid "strnodata"
+msgstr "لم توجد سجلات."
+
+msgid "strnoobjects"
+msgstr "لم توجد كائنات."
+
+msgid "strrownotunique"
+msgstr "لا يوجد معرّف فريد unique identifier في هذا السجل."
+
+msgid "strnouploads"
+msgstr "تحميل الملفات غير مفعّل."
+
+msgid "strimporterror"
+msgstr "خطأ في الإستيراد."
+
+msgid "strimporterrorline"
+msgstr "خطأ في الإستيراد عند السطر: %s."
+
+# Tables
+msgid "strtable"
+msgstr "جدول Table"
+
+msgid "strtables"
+msgstr "جداول Tables"
+
+msgid "strshowalltables"
+msgstr "أعرض جميع الجداول Tables."
+
+msgid "strnotables"
+msgstr "لا يوجد جداول."
+
+msgid "strnotable"
+msgstr "لا يوجد جدول."
+
+msgid "strcreatetable"
+msgstr "إنشاء جدول Table جديد."
+
+msgid "strtablename"
+msgstr "إسم الجدول"
+
+msgid "strtableneedsname"
+msgstr "يجب إعطاء إسم للجدول."
+
+msgid "strtableneedsfield"
+msgstr "يجب عليك تحديد على الأقل حقل واحد."
+
+msgid "strtableneedscols"
+msgstr "الجداول تتطلب عدد مقبول من الأعمدة."
+
+msgid "strtablecreated"
+msgstr "لقد تم إنشاء الجدول بنجاح."
+
+msgid "strtablecreatedbad"
+msgstr "لقد فشلت عملية إنشاء الجدول."
+
+msgid "strconfdroptable"
+msgstr "هل انت متأكد تريد حذف الجدول بإسم \"%s\"؟"
+
+msgid "strtabledropped"
+msgstr "لقد تم حذف الجدول."
+
+msgid "strtabledroppedbad"
+msgstr "لقد فشلت عملية حذف الجدول."
+
+msgid "strconfemptytable"
+msgstr "هل انت متأكد تريد افراغ محتويات الجدول \"%s\"؟"
+
+msgid "strtableemptied"
+msgstr "لقد تم افراغ محتويات الجدول بنجاح."
+
+msgid "strtableemptiedbad"
+msgstr "لقد فشلت عملية إفراغ محتويات الجدول."
+
+msgid "strinsertrow"
+msgstr "إدراج سجل."
+
+msgid "strrowinserted"
+msgstr "لقد تم إدراج السجل بنجاح."
+
+msgid "strrowinsertedbad"
+msgstr "لقد فشلت عملية إدراج السجل."
+
+msgid "streditrow"
+msgstr "تحرير السجل."
+
+msgid "strrowupdated"
+msgstr "تم تعديل السجل بنجاح."
+
+msgid "strrowupdatedbad"
+msgstr "لقد فشلت عملية تعديل السجل."
+
+msgid "strdeleterow"
+msgstr "إحذف السجل."
+
+msgid "strconfdeleterow"
+msgstr "هل انت متأكد تريد حذف هذا السجل؟"
+
+msgid "strrowdeleted"
+msgstr "لقد تم حذف السجل بنجاح."
+
+msgid "strrowdeletedbad"
+msgstr "لقد فشلت عملية حذف السجل."
+
+msgid "strinsertandrepeat"
+msgstr "إدراج و إعادة"
+
+msgid "strfield"
+msgstr "الحقل"
+
+msgid "strnumfields"
+msgstr "عدد الحقول"
+
+msgid "strselectallfields"
+msgstr "إختيار جميع الحقول"
+
+msgid "strselectneedscol"
+msgstr "تحتاج عرض على الأقل عمود واحد."
+
+msgid "strselectunary"
+msgstr "العمليات الأحادية Unary operators لا يمكن ان يكون لها قيم."
+
+msgid "straltercolumn"
+msgstr "تعديل العمود"
+
+msgid "strcolumnaltered"
+msgstr "لقد تم تعديل العمود بنجاح."
+
+msgid "strcolumnalteredbad"
+msgstr "لقد فشلت عملية تعديل العمود."
+
+msgid "strconfdropcolumn"
+msgstr "هل انت متأكد تريد حذف العمود \"%s\" من الجدول \"%s\"؟"
+
+msgid "strcolumndropped"
+msgstr "لقد تم حذف العمود بنجاح."
+
+msgid "strcolumndroppedbad"
+msgstr "لقد فشلت عملية حذف العمود."
+
+msgid "straddcolumn"
+msgstr "إضافة عمود."
+
+msgid "strcolumnadded"
+msgstr "لقد تمت إضافة العمود بنجاح."
+
+msgid "strcolumnaddedbad"
+msgstr "لقد فشلت عملية إضافة العمود."
+
+msgid "strcascade"
+msgstr "CASCADE"
+
+msgid "strtablealtered"
+msgstr "لقد تم تعديل الجدول بنجاح."
+
+msgid "strtablealteredbad"
+msgstr "لقد فشلت عملية تعديل الجدول."
+
+msgid "strdataonly"
+msgstr "البيانات فقط"
+
+msgid "strstructureonly"
+msgstr "الهيكلية فقط"
+
+msgid "strstructureanddata"
+msgstr "الهيكلية والبيانات"
+
+msgid "strtabbed"
+msgstr "Tabbed"
+
+msgid "strauto"
+msgstr "Auto"
+
+# Users
+msgid "struser"
+msgstr "المستخدم"
+
+msgid "strusers"
+msgstr "المستخدمين"
+
+msgid "strusername"
+msgstr "إسم المستخدم"
+
+msgid "strpassword"
+msgstr "كلمة السر"
+
+msgid "strsuper"
+msgstr "مستخدم ذو صلاحيّات عليا؟"
+
+msgid "strcreatedb"
+msgstr "إنشاء قاعدة بيانات؟"
+
+msgid "strexpires"
+msgstr "ينتهي"
+
+msgid "strsessiondefaults"
+msgstr "Session defaults"
+
+msgid "strnousers"
+msgstr "لم يوجد مستخدمين."
+
+msgid "struserupdated"
+msgstr "تم تعديل المستخدم بنجاح."
+
+msgid "struserupdatedbad"
+msgstr "فشل تعديل المستخدم."
+
+msgid "strshowallusers"
+msgstr "عرض جميع المستخدمين"
+
+msgid "strcreateuser"
+msgstr "إضافة مستخدم جديد"
+
+msgid "struserneedsname"
+msgstr "يجب إعطاء إسم للمستخدم."
+
+msgid "strusercreated"
+msgstr "تمت عملية إضافة المستخدم بنجاح."
+
+msgid "strusercreatedbad"
+msgstr "فشلت عملية إضافة المستخدم."
+
+msgid "strconfdropuser"
+msgstr "هل انت متأكد تريد حذف المستخدم \"%s\"؟"
+
+msgid "struserdropped"
+msgstr "تم حذف المستخدم بنجاح."
+
+msgid "struserdroppedbad"
+msgstr "فشلت عملية حذف المستخدم."
+
+msgid "straccount"
+msgstr "Account"
+
+msgid "strchangepassword"
+msgstr "تغيير كلمة السر"
+
+msgid "strpasswordchanged"
+msgstr "تم تغيير كلمة السر بنجاح."
+
+msgid "strpasswordchangedbad"
+msgstr "لم ينجح تغيير كلمة السر."
+
+msgid "strpasswordshort"
+msgstr "كلمة السر أقصر من الحد الأدنى."
+
+msgid "strpasswordconfirm"
+msgstr "كلمة السر المدخلة لم تتطابق مع تأكيد كلمة السر."
+
+# Groups
+msgid "strgroup"
+msgstr "المجموعة"
+
+msgid "strgroups"
+msgstr "المجموعات"
+
+msgid "strnogroup"
+msgstr "لم توجد المجموعة."
+
+msgid "strnogroups"
+msgstr "لم توجد مجموعات."
+
+msgid "strcreategroup"
+msgstr "إضافة مجموعة جديدة"
+
+msgid "strshowallgroups"
+msgstr "عرض جميع المجموعات"
+
+msgid "strgroupneedsname"
+msgstr "يجب إعطاء إسم للمجموعة."
+
+msgid "strgroupcreated"
+msgstr "لقد تمت إضافة المجموعة بنجاح."
+
+msgid "strgroupcreatedbad"
+msgstr "لقد فشلت عملية إضافة المجموعة."
+
+msgid "strconfdropgroup"
+msgstr "هل انت متأكد تريد حذف المجموعة \"%s\"؟"
+
+msgid "strgroupdropped"
+msgstr "تم حذف المجموعة بنجاح."
+
+msgid "strgroupdroppedbad"
+msgstr "لقد فشلت عملية حذف المجموعة."
+
+msgid "strmembers"
+msgstr "الأعضاء"
+
+msgid "straddmember"
+msgstr "إضافة عضو"
+
+msgid "strmemberadded"
+msgstr "تمت إضافة العضو."
+
+msgid "strmemberaddedbad"
+msgstr "لقد فشلت عملية إضافة العضو."
+
+msgid "strdropmember"
+msgstr "حذف عضو"
+
+msgid "strconfdropmember"
+msgstr "هل أنت متأكد تريد حذف العضو \"%s\" من المجموعة \"%s\"؟"
+
+msgid "strmemberdropped"
+msgstr "تم حذف العضو."
+
+msgid "strmemberdroppedbad"
+msgstr "لقد فشل حذف العضو."
+
+# Privileges
+msgid "strprivilege"
+msgstr "الصلاحيّة"
+
+msgid "strprivileges"
+msgstr "الصلاحيات"
+
+msgid "strnoprivileges"
+msgstr "هذا الكائن لديه صلاحيّات المالك الإفتراضية."
+
+msgid "strgrant"
+msgstr "تصريح Grant"
+
+msgid "strrevoke"
+msgstr "سحب Revoke"
+
+msgid "strgranted"
+msgstr "تم تغيير الصلاحيات."
+
+msgid "strgrantfailed"
+msgstr "لقد فشل تغيير الصلاحيات."
+
+msgid "strgrantbad"
+msgstr "يجب عليك تحديد على الاقل مستخدم واحد او مجموعة واحدة و على الأقل صلاحيّة واحدة."
+
+msgid "strgrantor"
+msgstr "المصرّح Grantor"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "قاعدة بيانات"
+
+msgid "strdatabases"
+msgstr "قواعد البيانات"
+
+msgid "strshowalldatabases"
+msgstr "عرض جميع قواعد البيانات"
+
+msgid "strnodatabase"
+msgstr "لم يوجد قاعدة بيانات."
+
+msgid "strnodatabases"
+msgstr "لم يوجد قواعد بيانات."
+
+msgid "strcreatedatabase"
+msgstr "إنشاء قاعدة بيانات جديدة"
+
+msgid "strdatabasename"
+msgstr "إسم قاعدة البيانات"
+
+msgid "strdatabaseneedsname"
+msgstr "يجب عليك إعطاء إسم لقاعدة البيانات."
+
+msgid "strdatabasecreated"
+msgstr "تم إنشاء قاعدة البيانات بنجاح."
+
+msgid "strdatabasecreatedbad"
+msgstr "فشل إنشاء قاعدة البيانات."
+
+msgid "strconfdropdatabase"
+msgstr "هل أنت متأكد تريد حذف قاعدة البيانات بإسم \"%s\"?"
+
+msgid "strdatabasedropped"
+msgstr "تم حذف قاعدة البيانات."
+
+msgid "strdatabasedroppedbad"
+msgstr "لقد فشلت عملية حذف قاعدة البيانات."
+
+msgid "strentersql"
+msgstr "أدخل الـSQL الذي تريد إستدعاءه هنا:"
+
+msgid "strsqlexecuted"
+msgstr "تم إستدعاء الـSQL."
+
+msgid "strvacuumgood"
+msgstr "تمت عملية الـVacuum."
+
+msgid "strvacuumbad"
+msgstr "لقد فشلت عملية الـVacuum."
+
+msgid "stranalyzegood"
+msgstr "تمت عملية الفحص."
+
+msgid "stranalyzebad"
+msgstr "لقد فشلت عملية الفحص."
+
+msgid "strreindexgood"
+msgstr "تمت عملية إعادة الفهرسة بنجاح."
+
+msgid "strreindexbad"
+msgstr "لقد فشلت عملية إعادة الفهرسة."
+
+msgid "strfull"
+msgstr "Full"
+
+msgid "strfreeze"
+msgstr "Freeze"
+
+msgid "strforce"
+msgstr "Force"
+
+# Views
+msgid "strview"
+msgstr "View عرض"
+
+msgid "strviews"
+msgstr "عروض Views"
+
+msgid "strshowallviews"
+msgstr "أعرض جميع العروض Views."
+
+msgid "strnoview"
+msgstr "لم يوجد عرض View."
+
+msgid "strnoviews"
+msgstr "لم يوجد عروض Views."
+
+msgid "strcreateview"
+msgstr "إنشاء عرض View جديد"
+
+msgid "strviewname"
+msgstr "إسم العرض View"
+
+msgid "strviewneedsname"
+msgstr "يجب إعطاء إسم للعرض View."
+
+msgid "strviewneedsdef"
+msgstr "يجب عليك إعطاء تعريف للعرض View."
+
+msgid "strviewneedsfields"
+msgstr "يجب عليك تحديد الحقول التي تريدها في العرض View."
+
+msgid "strviewcreated"
+msgstr "تم إنشاء العرض View."
+
+msgid "strviewcreatedbad"
+msgstr "فشلت عملية إنشاء العرض View."
+
+msgid "strconfdropview"
+msgstr "هل انت متأكد تريد حذف العرض View بإسم \"%s\""
+
+msgid "strviewdropped"
+msgstr "تم حذف العرض View."
+
+msgid "strviewdroppedbad"
+msgstr "لقد فشلت عملية حذف العرض View."
+
+msgid "strviewupdated"
+msgstr "تم تحديث العرض View بنجاح."
+
+msgid "strviewupdatedbad"
+msgstr "لقد فشلت عملية تحديث العرض View."
+
+msgid "strviewlink"
+msgstr "Linking Keys"
+
+msgid "strviewconditions"
+msgstr "Additional Conditions"
+
+msgid "strcreateviewwiz"
+msgstr "إنشاء عرض View بإستخدام الساحر Wizard."
+
+# Sequences
+msgid "strsequence"
+msgstr "تسلسل Sequence"
+
+msgid "strsequences"
+msgstr "تسلسلات Sequences"
+
+msgid "strshowallsequences"
+msgstr "عرض جميع التسلسلات"
+
+msgid "strnosequence"
+msgstr "لم يوجد تسلسل."
+
+msgid "strnosequences"
+msgstr "لم يوجد تسلسلات."
+
+msgid "strcreatesequence"
+msgstr "إنشاء تسلسل جديد"
+
+msgid "strlastvalue"
+msgstr "آخر قيمة"
+
+msgid "strincrementby"
+msgstr "مقدار الزيادة Increment by"
+
+msgid "strstartvalue"
+msgstr "قيمة البداية"
+
+msgid "strmaxvalue"
+msgstr "القيمة القصوى"
+
+msgid "strminvalue"
+msgstr "القيمة الدنيا"
+
+msgid "strcachevalue"
+msgstr "Cache value"
+
+msgid "strlogcount"
+msgstr "Log count"
+
+msgid "striscycled"
+msgstr "Is cycled?"
+
+msgid "strsequenceneedsname"
+msgstr "يجب إعطاء إسم للتسلسل sequence."
+
+msgid "strsequencecreated"
+msgstr "تم إنشاء التسلسل بنجاح."
+
+msgid "strsequencecreatedbad"
+msgstr "لقد فشل إنشاء التسلسل."
+
+msgid "strconfdropsequence"
+msgstr "هل أنت متأكد تريد حذف التسلسل بإسم \"%s\"؟"
+
+msgid "strsequencedropped"
+msgstr "لقد تم حذف التسلسل بنجاح."
+
+msgid "strsequencedroppedbad"
+msgstr "لقد فشلت عملية حذف التسلسل."
+
+msgid "strsequencereset"
+msgstr "لقد تمت إعادة التسلسل بنجاح."
+
+msgid "strsequenceresetbad"
+msgstr "لقد فشلت إعادة التسلسل."
+
+# Indexes
+msgid "strindex"
+msgstr "فهرسIndex"
+
+msgid "strindexes"
+msgstr "فهارسIndexes"
+
+msgid "strindexname"
+msgstr "إسم الفهرس Index"
+
+msgid "strshowallindexes"
+msgstr "عرض جميع الفهارس indexes"
+
+msgid "strnoindex"
+msgstr "لم يوجد فهرس index."
+
+msgid "strnoindexes"
+msgstr "لم توجد فهارس indexes."
+
+msgid "strcreateindex"
+msgstr "إنشاء فهرس index جديد"
+
+msgid "strtabname"
+msgstr "Tab name"
+
+msgid "strcolumnname"
+msgstr "إسم العمود"
+
+msgid "strindexneedsname"
+msgstr "يجب عليك إعطاء إسم للفهرس index."
+
+msgid "strindexneedscols"
+msgstr "الفهارس تتطلب عدد مقبول من الأعمدة."
+
+msgid "strindexcreated"
+msgstr "لقد تم إنشاء الفهرس بنجاح."
+
+msgid "strindexcreatedbad"
+msgstr "فشل إنشاء الفهرس."
+
+msgid "strconfdropindex"
+msgstr "هل انت متأكد تريد حذف الفهرس بإسم \"%s\"؟"
+
+msgid "strindexdropped"
+msgstr "لقد تم حذف الفهرس بنجاح."
+
+msgid "strindexdroppedbad"
+msgstr "فشلت عملية حذف الفهرس."
+
+msgid "strkeyname"
+msgstr "إسم المفتاح Key"
+
+msgid "struniquekey"
+msgstr "مفتاح فريد Unique key"
+
+msgid "strprimarykey"
+msgstr "مفتاح رئيسي Primary key"
+
+msgid "strindextype"
+msgstr "نوع الفهرس"
+
+msgid "strtablecolumnlist"
+msgstr "الأعمدة في الجدول"
+
+msgid "strindexcolumnlist"
+msgstr "الأعمدة في الفهرس"
+
+msgid "strconfcluster"
+msgstr "Are you sure you want to cluster \"%s\"?"
+
+msgid "strclusteredgood"
+msgstr "Cluster complete."
+
+msgid "strclusteredbad"
+msgstr "Cluster failed."
+
+# Rules
+msgid "strrules"
+msgstr "قواعد Rules"
+
+msgid "strrule"
+msgstr "قاعدة Rule"
+
+msgid "strshowallrules"
+msgstr "عرض جميع القواعد"
+
+msgid "strnorule"
+msgstr "لم توجد قاعدة."
+
+msgid "strnorules"
+msgstr "لم توجد قواعد."
+
+msgid "strcreaterule"
+msgstr "إنشاء قاعدة rule جديدة"
+
+msgid "strrulename"
+msgstr "إسم القاعدة rule name"
+
+msgid "strruleneedsname"
+msgstr "يجب عليك إعطاء إسم للقاعدة rule."
+
+msgid "strrulecreated"
+msgstr "تم إنشاء القاعدة بنجاح."
+
+msgid "strrulecreatedbad"
+msgstr "فشل إنشاء القاعدة."
+
+msgid "strconfdroprule"
+msgstr "هل أنت متأكد تريد حذف القاعدة \"%s\" على \"%s\"؟"
+
+msgid "strruledropped"
+msgstr "تم حذف القاعدة."
+
+msgid "strruledroppedbad"
+msgstr "فشل حذف القاعدة."
+
+# Constraints
+msgid "strconstraints"
+msgstr "قيود Constraints"
+
+msgid "strshowallconstraints"
+msgstr "عرض جميع القيود constraints"
+
+msgid "strnoconstraints"
+msgstr "لم يوجد قيود constraints."
+
+msgid "strcreateconstraint"
+msgstr "إنشاء قيد constraint جديد"
+
+msgid "strconstraintcreated"
+msgstr "تم إنشاء القيد بنجاح."
+
+msgid "strconstraintcreatedbad"
+msgstr "فشل إنشاء القيد."
+
+msgid "strconfdropconstraint"
+msgstr "هل أنت متأكد تريد حذف القيد \"%s\" على \"%s\"؟"
+
+msgid "strconstraintdropped"
+msgstr "تم حذف القيد بنجاح."
+
+msgid "strconstraintdroppedbad"
+msgstr "فشل حذف القيد."
+
+msgid "straddcheck"
+msgstr "إضافة فحص check"
+
+msgid "strcheckneedsdefinition"
+msgstr "قيد الفحص يحتاج لتعريف."
+
+msgid "strcheckadded"
+msgstr "تم إضافة قيد الفحص بنحاح."
+
+msgid "strcheckaddedbad"
+msgstr "فشلت إضافة قيد الفحص."
+
+msgid "straddpk"
+msgstr "primary key إضافة مفتاح رئيسي."
+
+msgid "strpkneedscols"
+msgstr "المفتاح الرئيسي يتطلب على الأقل عمود واحد."
+
+msgid "strpkadded"
+msgstr "تمت إضافة المفتاح الرئيسي بنجاح."
+
+msgid "strpkaddedbad"
+msgstr "فشلت إضافة المفتاح الرئيسي."
+
+msgid "stradduniq"
+msgstr "unique key إضافة مفتاح فريد"
+
+msgid "struniqneedscols"
+msgstr "المفتاح الفريد يتطلب عمود واحد على الأقل."
+
+msgid "struniqadded"
+msgstr "تمت إضافة المفتاح الفريد بنجاح."
+
+msgid "struniqaddedbad"
+msgstr "فشلت إضافة المفتاح الفريد."
+
+msgid "straddfk"
+msgstr "إضافة مفتاح خارجيforeign key"
+
+msgid "strfkneedscols"
+msgstr "المفتاح الخارجي يتطلب عمود واحد على الأقل."
+
+msgid "strfkneedstarget"
+msgstr "المفتاح الخارجي يحتاج الى جدول هدف."
+
+msgid "strfkadded"
+msgstr "تمت إضافة المفتاح الخارجي بنجاح."
+
+msgid "strfkaddedbad"
+msgstr "فشلت إضافة المفتاح الخارجي."
+
+msgid "strfktarget"
+msgstr "الجدول الهدف Target table"
+
+msgid "strfkcolumnlist"
+msgstr "الأعمدة في المفتاح"
+
+msgid "strondelete"
+msgstr "ON DELETE"
+
+msgid "stronupdate"
+msgstr "ON UPDATE"
+
+# Functions
+msgid "strfunction"
+msgstr "دالة Function"
+
+msgid "strfunctions"
+msgstr "دوال Functions"
+
+msgid "strshowallfunctions"
+msgstr "عرض جميع الدوال functions"
+
+msgid "strnofunction"
+msgstr "لم توجد دالة function."
+
+msgid "strnofunctions"
+msgstr "لم توجد دوال functions."
+
+msgid "strfunctionname"
+msgstr "إسم الدالة function name"
+
+msgid "strreturns"
+msgstr "Returns"
+
+msgid "strarguments"
+msgstr "Arguments"
+
+msgid "strproglanguage"
+msgstr "لغة برمجة"
+
+msgid "strfunctionneedsname"
+msgstr "يجب عليك إعطاء إسم للدالة function."
+
+msgid "strfunctionneedsdef"
+msgstr "يجب عليك اعطاء تعريف للدالة function definition."
+
+msgid "strfunctioncreated"
+msgstr "تم إنشاء الدالة function بنجاح."
+
+msgid "strfunctioncreatedbad"
+msgstr "لقد فشل إنشاء الدالة."
+
+msgid "strconfdropfunction"
+msgstr "هل أنت متأكد تريد حذف الدالة function بإسم \"%s\"?"
+
+msgid "strfunctiondropped"
+msgstr "تم حذف الدالة function بنجاح."
+
+msgid "strfunctiondroppedbad"
+msgstr "لقد فشلت عملية حذف الدالة function."
+
+msgid "strfunctionupdated"
+msgstr "لقد تم تعديل الدالة function."
+
+msgid "strfunctionupdatedbad"
+msgstr "لقد فشل تعديل الدالة function."
+
+# Triggers
+msgid "strtrigger"
+msgstr "محفّز Trigger"
+
+msgid "strtriggers"
+msgstr "محفّزات Triggers"
+
+msgid "strshowalltriggers"
+msgstr "عرض جميع المحفزات triggers"
+
+msgid "strnotrigger"
+msgstr "لم يوجد المحفز trigger."
+
+msgid "strnotriggers"
+msgstr "لم يوجد محفزات triggers."
+
+msgid "strcreatetrigger"
+msgstr "إنشاء محفّز trigger جديد"
+
+msgid "strtriggerneedsname"
+msgstr "يجب إعطاء اسم للمحفز."
+
+msgid "strtriggerneedsfunc"
+msgstr "يجب تحديد دالة function للمحفز."
+
+msgid "strtriggercreated"
+msgstr "تم إنشاء المحفز بنجاح."
+
+msgid "strtriggercreatedbad"
+msgstr "لقد فشلت عملية إنشاء المحفز."
+
+msgid "strconfdroptrigger"
+msgstr "هل أنت متأكد تريد حذف المحفّز trigger \"%s\" على \"%s\"؟"
+
+msgid "strtriggerdropped"
+msgstr "تم حذف المحفز."
+
+msgid "strtriggerdroppedbad"
+msgstr "فشل حذف المحفز، لم يتم الحذف."
+
+msgid "strtriggeraltered"
+msgstr "تم تعديل المحفز بنجاح."
+
+msgid "strtriggeralteredbad"
+msgstr "فشلت عملية تعديل المحفز. لم يتم التعديل."
+
+# Types
+msgid "strtype"
+msgstr "نوع Type"
+
+msgid "strtypes"
+msgstr "أنواع Types"
+
+msgid "strshowalltypes"
+msgstr "عرض جميع الأنواع"
+
+msgid "strnotype"
+msgstr "لم يوجد النوع."
+
+msgid "strnotypes"
+msgstr "لم يوجد أنواع."
+
+msgid "strcreatetype"
+msgstr "إنشاء نوع جديد."
+
+msgid "strtypename"
+msgstr "إسم النوع"
+
+msgid "strinputfn"
+msgstr "دالة الإدخال Input function"
+
+msgid "stroutputfn"
+msgstr "دالة الإخراج Output function"
+
+msgid "strpassbyval"
+msgstr "Passed by val?"
+
+msgid "stralignment"
+msgstr "Alignment"
+
+msgid "strelement"
+msgstr "Element"
+
+msgid "strdelimiter"
+msgstr "Delimiter"
+
+msgid "strstorage"
+msgstr "Storage"
+
+msgid "strtypeneedsname"
+msgstr "يجب إعطاء إسم للنوع."
+
+msgid "strtypeneedslen"
+msgstr "يجب إعطاء طول للنوع."
+
+msgid "strtypecreated"
+msgstr "تم إنشاء النوع"
+
+msgid "strtypecreatedbad"
+msgstr "فشل إنشاء النوع."
+
+msgid "strconfdroptype"
+msgstr "هل أنت متأكد تريد حذف النوع \"%s\"؟"
+
+msgid "strtypedropped"
+msgstr "تم حذف النوع."
+
+msgid "strtypedroppedbad"
+msgstr "فشلت عملية حذف النوع."
+
+# Schemas
+msgid "strschema"
+msgstr "مخطط Schema"
+
+msgid "strschemas"
+msgstr "المخططات Schemas"
+
+msgid "strshowallschemas"
+msgstr "عرض جميع المخططات schemas"
+
+msgid "strnoschema"
+msgstr "لم يوجد مخطط schema."
+
+msgid "strnoschemas"
+msgstr "لم توجد مخططات schemas."
+
+msgid "strcreateschema"
+msgstr "إنشاء مخطط schema جديد"
+
+msgid "strschemaname"
+msgstr "إسم المخطط"
+
+msgid "strschemaneedsname"
+msgstr "يجب عليك إعطاء إسم للمخطط."
+
+msgid "strschemacreated"
+msgstr "لقد تم انشاء المخطط بنجاح."
+
+msgid "strschemacreatedbad"
+msgstr "فشل إنشاء المخطط."
+
+msgid "strconfdropschema"
+msgstr "هل أنت متأكد تريد حذف المخطط Schema بإسم \"%s\"؟"
+
+msgid "strschemadropped"
+msgstr "تم حذف المخطط."
+
+msgid "strschemadroppedbad"
+msgstr "فشلت عملية الحذف للمخطط."
+
+msgid "strschemaaltered"
+msgstr "تم تعديل المخطط."
+
+msgid "strschemaalteredbad"
+msgstr "فشلت عملية تعديل المخطط، لم يتم التعديل."
+
+# Reports
+
+# Domains
+msgid "strdomain"
+msgstr "نطاق Domain"
+
+msgid "strdomains"
+msgstr "نطاقات Domains"
+
+msgid "strshowalldomains"
+msgstr "عرض جيع النطاقات"
+
+msgid "strnodomains"
+msgstr "لم يوجد نطاقات."
+
+msgid "strcreatedomain"
+msgstr "إنشاء نطاق جديد"
+
+msgid "strdomaindropped"
+msgstr "تم حذف النطاق."
+
+msgid "strdomaindroppedbad"
+msgstr "لقد فشل حذف النطاق، لم يتم الحذف."
+
+msgid "strconfdropdomain"
+msgstr "هل أنت متأكد تريد حذف النطاق domain بإسم \"%s\"؟"
+
+msgid "strdomainneedsname"
+msgstr "يجب إعطاء إسم للنطاق."
+
+msgid "strdomaincreated"
+msgstr "تم إنشاء النطاق بنجاح."
+
+msgid "strdomaincreatedbad"
+msgstr "لم يتم إنشاء النطاق، فشلت العملية."
+
+msgid "strdomainaltered"
+msgstr "تم تعديل النطاق."
+
+msgid "strdomainalteredbad"
+msgstr "فشلت عملية تعديل النطاق."
+
+# Operators
+msgid "stroperator"
+msgstr "Operator"
+
+msgid "stroperators"
+msgstr "Operators"
+
+msgid "strshowalloperators"
+msgstr "Show all operators"
+
+msgid "strnooperator"
+msgstr "No operator found."
+
+msgid "strnooperators"
+msgstr "No operators found."
+
+msgid "strcreateoperator"
+msgstr "Create operator"
+
+msgid "strleftarg"
+msgstr "Left Arg Type"
+
+msgid "strrightarg"
+msgstr "Right Arg Type"
+
+msgid "strcommutator"
+msgstr "Commutator"
+
+msgid "strnegator"
+msgstr "Negator"
+
+msgid "strrestrict"
+msgstr "Restrict"
+
+msgid "strjoin"
+msgstr "Join"
+
+msgid "strhashes"
+msgstr "Hashes"
+
+msgid "strmerges"
+msgstr "Merges"
+
+msgid "strleftsort"
+msgstr "Left sort"
+
+msgid "strrightsort"
+msgstr "Right sort"
+
+msgid "strlessthan"
+msgstr "Less than"
+
+msgid "strgreaterthan"
+msgstr "Greater than"
+
+msgid "stroperatorneedsname"
+msgstr "You must give a name for your operator."
+
+msgid "stroperatorcreated"
+msgstr "Operator created"
+
+msgid "stroperatorcreatedbad"
+msgstr "Operator creation failed."
+
+msgid "strconfdropoperator"
+msgstr "Are you sure you want to drop the operator \"%s\"?"
+
+msgid "stroperatordropped"
+msgstr "Operator dropped."
+
+msgid "stroperatordroppedbad"
+msgstr "Operator drop failed."
+
+# Casts
+msgid "strcasts"
+msgstr "Casts"
+
+msgid "strnocasts"
+msgstr "No casts found."
+
+msgid "strsourcetype"
+msgstr "Source type"
+
+msgid "strtargettype"
+msgstr "Target type"
+
+msgid "strimplicit"
+msgstr "Implicit"
+
+msgid "strinassignment"
+msgstr "In assignment"
+
+msgid "strbinarycompat"
+msgstr "(Binary compatible)"
+
+# Conversions
+msgid "strconversions"
+msgstr "Conversions"
+
+msgid "strnoconversions"
+msgstr "No conversions found."
+
+msgid "strsourceencoding"
+msgstr "Source encoding"
+
+msgid "strtargetencoding"
+msgstr "Target encoding"
+
+# Languages
+msgid "strlanguages"
+msgstr "Languages"
+
+msgid "strnolanguages"
+msgstr "No languages found."
+
+msgid "strtrusted"
+msgstr "Trusted"
+
+# Info
+msgid "strnoinfo"
+msgstr "No information available."
+
+msgid "strreferringtables"
+msgstr "Referring tables"
+
+msgid "strparenttables"
+msgstr "Parent tables"
+
+msgid "strchildtables"
+msgstr "Child tables"
+
+# Aggregates
+msgid "straggregates"
+msgstr "Aggregates"
+
+msgid "strnoaggregates"
+msgstr "No aggregates found."
+
+msgid "stralltypes"
+msgstr "(All types)"
+
+# Operator Classes
+msgid "stropclasses"
+msgstr "Op Classes"
+
+msgid "strnoopclasses"
+msgstr "No operator classes found."
+
+msgid "straccessmethod"
+msgstr "Access method"
+
+# Stats and performance
+msgid "strrowperf"
+msgstr "Row Performance"
+
+msgid "strioperf"
+msgstr "I/O Performance"
+
+msgid "stridxrowperf"
+msgstr "Index Row Performance"
+
+msgid "stridxioperf"
+msgstr "Index I/O Performance"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "Sequential"
+
+msgid "strscan"
+msgstr "Scan"
+
+msgid "strread"
+msgstr "Read"
+
+msgid "strfetch"
+msgstr "Fetch"
+
+msgid "strheap"
+msgstr "Heap"
+
+msgid "strtoast"
+msgstr "TOAST"
+
+msgid "strtoastindex"
+msgstr "TOAST Index"
+
+msgid "strcache"
+msgstr "Cache"
+
+msgid "strdisk"
+msgstr "Disk"
+
+msgid "strrows2"
+msgstr "Rows"
+
+# Miscellaneous
+msgid "strtopbar"
+msgstr "%s يعمل على %s:%s -- You are logged in as user \"%s\""
+
+msgid "strtimefmt"
+msgstr "jS M, Y g:iA"
+
+msgid "strhelp"
+msgstr "مساعدة"

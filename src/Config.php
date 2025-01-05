@@ -55,6 +55,36 @@ class Config
         return self::$availableLocales;
     }
 
+    /**
+     * @param string|array<string> $icon
+     */
+    public static function getIcon(string|array $icon): string
+    {
+        $possiblePaths = [];
+        if (is_string($icon)) {
+            $theme = self::theme();
+            $path = "images/themes/{$theme}/{$icon}";
+            $possiblePaths[] = "{$path}.png";
+            $possiblePaths[] = "{$path}.gif";
+            $path = "images/themes/default/{$icon}";
+            $possiblePaths[] = "{$path}.png";
+            $possiblePaths[] = "{$path}.gif";
+        } else {
+            // Icon from plugins
+            $path = "plugins/{$icon[0]}/images/{$icon[1]}";
+            $possiblePaths[] = "{$path}.png";
+            $possiblePaths[] = "{$path}.gif";
+        }
+
+        foreach ($possiblePaths as $path) {
+            if (file_exists($path)) {
+                return $path;
+            }
+        }
+
+        return '';
+    }
+
     private static function getNormalizedLocaleFromLocaleOrLanguage(string $localeOrLanguage): ?string
     {
         if (preg_match('/^(?P<language>[a-z]{2})[_-](?P<region>[A-Z]{2})$/i', $localeOrLanguage, $matches)) {

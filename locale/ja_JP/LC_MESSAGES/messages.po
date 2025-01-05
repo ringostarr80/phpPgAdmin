@@ -1,0 +1,2346 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja_JP\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "日本語(EUC-JP)"
+
+msgid "applocale"
+msgstr "ja-JP"
+
+msgid "applangdir"
+msgstr "ltr"
+
+# Welcome
+msgid "strintro"
+msgstr "ようこそ phpPgAdmin へ。"
+
+msgid "strppahome"
+msgstr "phpPgAdmin ホームページ"
+
+msgid "strpgsqlhome"
+msgstr "PostgreSQL ホームページ"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "PostgreSQL ドキュメント (ローカル)"
+
+msgid "strreportbug"
+msgstr "バグレポート"
+
+msgid "strviewfaq"
+msgstr "FAQ を表示する"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "ログイン"
+
+msgid "strloginfailed"
+msgstr "ログインに失敗しました"
+
+msgid "strlogindisallowed"
+msgstr "ログインが許可されませんでした。"
+
+msgid "strserver"
+msgstr "サーバー"
+
+msgid "strservers"
+msgstr "サーバー"
+
+msgid "strintroduction"
+msgstr "導入"
+
+msgid "strhost"
+msgstr "ホスト"
+
+msgid "strport"
+msgstr "ポート"
+
+msgid "strlogout"
+msgstr "ログアウト"
+
+msgid "strowner"
+msgstr "所有者"
+
+msgid "straction"
+msgstr "アクション"
+
+msgid "stractions"
+msgstr "操作"
+
+msgid "strname"
+msgstr "名前"
+
+msgid "strdefinition"
+msgstr "定義"
+
+msgid "strproperties"
+msgstr "プロパティ"
+
+msgid "strbrowse"
+msgstr "表示"
+
+msgid "strenable"
+msgstr "有効"
+
+msgid "strdisable"
+msgstr "無効"
+
+msgid "strdrop"
+msgstr "破棄"
+
+msgid "strdropped"
+msgstr "破棄しました。"
+
+msgid "strnull"
+msgstr "NULL"
+
+msgid "strnotnull"
+msgstr "NOT NULL"
+
+msgid "strprev"
+msgstr "前に"
+
+msgid "strnext"
+msgstr "次に"
+
+msgid "strfirst"
+msgstr "<< 最初"
+
+msgid "strlast"
+msgstr "最後 >>"
+
+msgid "strfailed"
+msgstr "失敗"
+
+msgid "strcreate"
+msgstr "作成"
+
+msgid "strcreated"
+msgstr "作成しました。"
+
+msgid "strcomment"
+msgstr "コメント"
+
+msgid "strlength"
+msgstr "長さ"
+
+msgid "strdefault"
+msgstr "デフォルト"
+
+msgid "stralter"
+msgstr "変更"
+
+msgid "strok"
+msgstr "OK"
+
+msgid "strcancel"
+msgstr "取り消し"
+
+msgid "strac"
+msgstr "自動補完を有効にする"
+
+msgid "strsave"
+msgstr "保存"
+
+msgid "strreset"
+msgstr "リセット"
+
+msgid "strinsert"
+msgstr "挿入"
+
+msgid "strselect"
+msgstr "選択"
+
+msgid "strdelete"
+msgstr "削除"
+
+msgid "strupdate"
+msgstr "更新"
+
+msgid "strreferences"
+msgstr "参照"
+
+msgid "stryes"
+msgstr "はい"
+
+msgid "strno"
+msgstr "いいえ"
+
+msgid "strtrue"
+msgstr "真"
+
+msgid "strfalse"
+msgstr "偽"
+
+msgid "stredit"
+msgstr "編集"
+
+msgid "strcolumn"
+msgstr "カラム"
+
+msgid "strcolumns"
+msgstr "カラム"
+
+msgid "strrows"
+msgstr "レコード"
+
+msgid "strrowsaff"
+msgstr "影響を受けたレコード"
+
+msgid "strobjects"
+msgstr "オブジェクト"
+
+msgid "strback"
+msgstr "戻る"
+
+msgid "strqueryresults"
+msgstr "クエリ結果"
+
+msgid "strshow"
+msgstr "表示"
+
+msgid "strempty"
+msgstr "空にする"
+
+msgid "strlanguage"
+msgstr "言語"
+
+msgid "strencoding"
+msgstr "エンコード"
+
+msgid "strunique"
+msgstr "ユニーク"
+
+msgid "strprimary"
+msgstr "プライマリ"
+
+msgid "strexport"
+msgstr "エクスポート"
+
+msgid "strimport"
+msgstr "インポート"
+
+msgid "strallowednulls"
+msgstr "NULL 文字を許可する"
+
+msgid "strbackslashn"
+msgstr "\\N"
+
+msgid "stremptystring"
+msgstr "空の文字列/項目"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "stradmin"
+msgstr "管理"
+
+msgid "strvacuum"
+msgstr "バキューム"
+
+msgid "stranalyze"
+msgstr "解析"
+
+msgid "strclusterindex"
+msgstr "クラスター"
+
+msgid "strclustered"
+msgstr "Clustered?"
+
+msgid "strreindex"
+msgstr "再インデックス"
+
+msgid "strexecute"
+msgstr "実行する"
+
+msgid "stradd"
+msgstr "追加"
+
+msgid "strevent"
+msgstr "イベント"
+
+msgid "strwhere"
+msgstr "Where"
+
+msgid "strinstead"
+msgstr "代行"
+
+msgid "strwhen"
+msgstr "When"
+
+msgid "strformat"
+msgstr "フォーマット"
+
+msgid "strdata"
+msgstr "データ"
+
+msgid "strconfirm"
+msgstr "確認"
+
+msgid "strexpression"
+msgstr "評価式"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strseparator"
+msgstr ": "
+
+msgid "strexpand"
+msgstr "展開"
+
+msgid "strcollapse"
+msgstr "閉じる"
+
+msgid "strfind"
+msgstr "検索"
+
+msgid "stroptions"
+msgstr "オプション"
+
+msgid "strrefresh"
+msgstr "再表示"
+
+msgid "strdownload"
+msgstr "ダウンロード"
+
+msgid "strdownloadgzipped"
+msgstr "gzip で圧縮してダウンロード"
+
+msgid "strinfo"
+msgstr "情報"
+
+msgid "stroids"
+msgstr "OID "
+
+msgid "stradvanced"
+msgstr "高度な"
+
+msgid "strvariables"
+msgstr "変数"
+
+msgid "strprocess"
+msgstr "プロセス"
+
+msgid "strprocesses"
+msgstr "プロセス"
+
+msgid "strsetting"
+msgstr "設定"
+
+msgid "streditsql"
+msgstr "SQL 編集"
+
+msgid "strruntime"
+msgstr "総実行時間: %s ミリ秒"
+
+msgid "strpaginate"
+msgstr "結果のページ分割処理を行う"
+
+msgid "struploadscript"
+msgstr "または SQL スクリプトをアップロード:"
+
+msgid "strstarttime"
+msgstr "開始時間"
+
+msgid "strfile"
+msgstr "ファイル"
+
+msgid "strfileimported"
+msgstr "ファイルをインポートしました。"
+
+msgid "strtrycred"
+msgstr "すべてのサーバーでこの情報を使う"
+
+msgid "stractionsonmultiplelines"
+msgstr "複数行の操作"
+
+msgid "strselectall"
+msgstr "すべて選択する"
+
+msgid "strunselectall"
+msgstr "すべて選択を解除する"
+
+msgid "strlocale"
+msgstr "ロケール"
+
+# User-supplied SQL history
+msgid "strhistory"
+msgstr "履歴"
+
+msgid "strnohistory"
+msgstr "履歴がありません。"
+
+msgid "strclearhistory"
+msgstr "履歴を消去するす"
+
+msgid "strdelhistory"
+msgstr "履歴から削除する"
+
+msgid "strconfdelhistory"
+msgstr "本当に履歴からこの要求を削除しますか?"
+
+msgid "strconfclearhistory"
+msgstr "本当に履歴を消去しますか?"
+
+msgid "strnodatabaseselected"
+msgstr "データベースを選択してください。"
+
+# Database Sizes
+msgid "strsize"
+msgstr "サイズ"
+
+msgid "strbytes"
+msgstr "バイト"
+
+msgid "strkb"
+msgstr "kB"
+
+msgid "strmb"
+msgstr "MB"
+
+msgid "strgb"
+msgstr "GB"
+
+msgid "strtb"
+msgstr "TB"
+
+# Error handling
+msgid "strnoframes"
+msgstr "このアプリケーションを使用するためにはフレームが使用可能なブラウザーが必要です。"
+
+msgid "strnoframeslink"
+msgstr "フレームを除外して使う"
+
+msgid "strbadconfig"
+msgstr "config.inc.php が旧式です。新しい config.inc.php-dist から再作成する必要があります。"
+
+msgid "strnotloaded"
+msgstr "データベースをサポートするように PHP のコンパイル・インストールがされていません。configure の --with-pgsql オプションを用いて PHP を再コンパイルする必要があります。"
+
+msgid "strpostgresqlversionnotsupported"
+msgstr "このバージョンの PostgreSQL はサポートしていません。バージョン %s 以上にアップグレードしてください。"
+
+msgid "strbadschema"
+msgstr "無効のスキーマが指定されました。"
+
+msgid "strbadencoding"
+msgstr "データベースの中でクライアントエンコードを指定しませんでした。"
+
+msgid "strsqlerror"
+msgstr "SQL エラー:"
+
+msgid "strinstatement"
+msgstr "文:"
+
+msgid "strinvalidparam"
+msgstr "スクリプトパラメータが無効です。"
+
+msgid "strnodata"
+msgstr "レコードが見つかりません。"
+
+msgid "strnoobjects"
+msgstr "オブジェクトが見つかりません。"
+
+msgid "strrownotunique"
+msgstr "このレコードには一意識別子がありません。"
+
+msgid "strnouploads"
+msgstr "ファイルアップロードが無効です。"
+
+msgid "strimporterror"
+msgstr "インポートエラー"
+
+msgid "strimporterror-fileformat"
+msgstr "インポートエラー: ファイル形式を自動的に確定できません。."
+
+msgid "strimporterrorline"
+msgstr "%s 行目がインポートエラーです。"
+
+msgid "strimporterrorline-badcolumnnum"
+msgstr "%s 行でインポートエラー:  行は正しい列数を持っていません。"
+
+msgid "strimporterror-uploadedfile"
+msgstr "インポートエラー: サーバーにファイルをアップロードすることができないかもしれません。"
+
+msgid "strcannotdumponwindows"
+msgstr "Windows 上での複合テーブルとスキーマ名のダンプはサポートしていません。"
+
+msgid "strinvalidserverparam"
+msgstr "Attempt to connect with invalid server parameter, possibly someone is trying to hack your system."
+
+msgid "strnoserversupplied"
+msgstr "サーバーが指定されていません!"
+
+# Tables
+msgid "strtable"
+msgstr "テーブル"
+
+msgid "strtables"
+msgstr "テーブル"
+
+msgid "strshowalltables"
+msgstr "すべてのテーブルを表示する"
+
+msgid "strnotables"
+msgstr "テーブルが見つかりません。"
+
+msgid "strnotable"
+msgstr "テーブルが見つかりません。"
+
+msgid "strcreatetable"
+msgstr "テーブルを作成する"
+
+msgid "strcreatetablelike"
+msgstr "このテーブルを元に新しいテーブルを作成する"
+
+msgid "strcreatetablelikeparent"
+msgstr "元テーブル"
+
+msgid "strcreatelikewithdefaults"
+msgstr "DEFAULT を含む"
+
+msgid "strcreatelikewithconstraints"
+msgstr "CONSTRAINTS を含む"
+
+msgid "strcreatelikewithindexes"
+msgstr "INDEX を含む"
+
+msgid "strtablename"
+msgstr "テーブル名"
+
+msgid "strtableneedsname"
+msgstr "テーブル名を指定する必要があります。"
+
+msgid "strtablelikeneedslike"
+msgstr "You must give a table to copy properties from."
+
+msgid "strtableneedsfield"
+msgstr "少なくとも一つのフィールドを指定しなければなりません。"
+
+msgid "strtableneedscols"
+msgstr "有効なカラム数を指定しなければなりません。"
+
+msgid "strtablecreated"
+msgstr "テーブルを作成しました。"
+
+msgid "strtablecreatedbad"
+msgstr "テーブルの作成に失敗しました。"
+
+msgid "strconfdroptable"
+msgstr "テーブル「%s」を本当に破棄しますか?"
+
+msgid "strtabledropped"
+msgstr "テーブルを破棄しました。"
+
+msgid "strtabledroppedbad"
+msgstr "テーブルの破棄に失敗しました。"
+
+msgid "strconfemptytable"
+msgstr "本当にテーブル「%s」の内容を破棄しますか?"
+
+msgid "strtableemptied"
+msgstr "テーブルが空になりました."
+
+msgid "strtableemptiedbad"
+msgstr "テーブルを空にできませんでした。"
+
+msgid "strinsertrow"
+msgstr "レコードの挿入"
+
+msgid "strrowinserted"
+msgstr "レコードを挿入しました。"
+
+msgid "strrowinsertedbad"
+msgstr "レコードの挿入に失敗しました。"
+
+msgid "strrowduplicate"
+msgstr "レコードの挿入に失敗し、挿入の複製を試みました。"
+
+msgid "streditrow"
+msgstr "レコード編集"
+
+msgid "strrowupdated"
+msgstr "レコードを更新しました。"
+
+msgid "strrowupdatedbad"
+msgstr "レコードの更新に失敗しました。"
+
+msgid "strdeleterow"
+msgstr "レコード削除"
+
+msgid "strconfdeleterow"
+msgstr "本当にこのレコードを削除しますか?"
+
+msgid "strrowdeleted"
+msgstr "レコードを削除しました。"
+
+msgid "strrowdeletedbad"
+msgstr "レコードの削除に失敗しました。"
+
+msgid "strinsertandrepeat"
+msgstr "挿入と繰り返し"
+
+msgid "strnumcols"
+msgstr "カラムの数"
+
+msgid "strcolneedsname"
+msgstr "カラムの名前を指定しなければりません。"
+
+msgid "strselectallfields"
+msgstr "すべてのフィールドを選択する"
+
+msgid "strselectneedscol"
+msgstr "少なくとも一カラムは必要です。"
+
+msgid "strselectunary"
+msgstr "単項のオペレーターは値を持つことができません。"
+
+msgid "strcolumnaltered"
+msgstr "カラムを変更しました。"
+
+msgid "strcolumnalteredbad"
+msgstr "カラムの変更に失敗しました。"
+
+msgid "strconfdropcolumn"
+msgstr "本当にカラム「%s」をテーブル「%s」から破棄していいですか?"
+
+msgid "strcolumndropped"
+msgstr "カラムを破棄しました。"
+
+msgid "strcolumndroppedbad"
+msgstr "カラムの破棄に失敗しました。"
+
+msgid "straddcolumn"
+msgstr "カラムの追加"
+
+msgid "strcolumnadded"
+msgstr "カラムを追加しました。"
+
+msgid "strcolumnaddedbad"
+msgstr "カラムの追加に失敗しました。"
+
+msgid "strcascade"
+msgstr "カスケード"
+
+msgid "strtablealtered"
+msgstr "テーブルを変更しました。"
+
+msgid "strtablealteredbad"
+msgstr "テーブルの変更に失敗しました。"
+
+msgid "strdataonly"
+msgstr "データのみ"
+
+msgid "strstructureonly"
+msgstr "構造のみ"
+
+msgid "strstructureanddata"
+msgstr "構造とデータ"
+
+msgid "strtabbed"
+msgstr "タブ区切り"
+
+msgid "strauto"
+msgstr "自動"
+
+msgid "strconfvacuumtable"
+msgstr "本当に「%s」をバキュームしますか?"
+
+msgid "strconfanalyzetable"
+msgstr "「%s」を本当に分析(ANALYZE)しますか?"
+
+msgid "strestimatedrowcount"
+msgstr "評価済レコード数"
+
+msgid "strspecifytabletoanalyze"
+msgstr "テーブルを解析には少なくとも 1 つ指定しなければなりません"
+
+msgid "strspecifytabletoempty"
+msgstr "テーブルを空にするには少なくとも 1 つ指定しなければなりません"
+
+msgid "strspecifytabletodrop"
+msgstr "テーブルを破棄するには少なくとも 1 つ指定しなければなりません"
+
+msgid "strspecifytabletovacuum"
+msgstr "テーブルをバキュームするには少なくとも 1 つ指定しなければなりません"
+
+# Columns
+msgid "strcolprop"
+msgstr "カラムのプロパティ"
+
+msgid "strnotableprovided"
+msgstr "テーブルが指定されていません!"
+
+# Users
+msgid "struser"
+msgstr "ユーザー"
+
+msgid "strusers"
+msgstr "ユーザー"
+
+msgid "strusername"
+msgstr "ユーザー名"
+
+msgid "strpassword"
+msgstr "パスワード"
+
+msgid "strsuper"
+msgstr "スーパーユーザーですか?"
+
+msgid "strcreatedb"
+msgstr "データベースを作成しますか?"
+
+msgid "strexpires"
+msgstr "有効期限"
+
+msgid "strsessiondefaults"
+msgstr "セッションデフォルト"
+
+msgid "strnousers"
+msgstr "ユーザーが見つかりません。"
+
+msgid "struserupdated"
+msgstr "ユーザーを更新しました。"
+
+msgid "struserupdatedbad"
+msgstr "ユーザーの更新に失敗しました。"
+
+msgid "strshowallusers"
+msgstr "すべてのユーザーを表示する"
+
+msgid "strcreateuser"
+msgstr "ユーザーを作成する"
+
+msgid "struserneedsname"
+msgstr "ユーザーの名前をが必要です。"
+
+msgid "strusercreated"
+msgstr "ユーザーを作成しました。"
+
+msgid "strusercreatedbad"
+msgstr "ユーザーの作成に失敗しました。"
+
+msgid "strconfdropuser"
+msgstr "本当にユーザー「%s」を破棄しますか?"
+
+msgid "struserdropped"
+msgstr "ユーザーを破棄しました。"
+
+msgid "struserdroppedbad"
+msgstr "ユーザーの削除に破棄しました"
+
+msgid "straccount"
+msgstr "アカウント"
+
+msgid "strchangepassword"
+msgstr "パスワード変更"
+
+msgid "strpasswordchanged"
+msgstr "パスワードの変更をしました。"
+
+msgid "strpasswordchangedbad"
+msgstr "パスワードの変更に失敗しました。"
+
+msgid "strpasswordshort"
+msgstr "パスワードが短すぎます。"
+
+msgid "strpasswordconfirm"
+msgstr "パスワードの確認が一致しませんでした。"
+
+# Groups
+msgid "strgroup"
+msgstr "グループ"
+
+msgid "strgroups"
+msgstr "グループ"
+
+msgid "strshowallgroups"
+msgstr "すべてのグループを表示する"
+
+msgid "strnogroup"
+msgstr "グループがありません。"
+
+msgid "strnogroups"
+msgstr "グループが見つかりません。"
+
+msgid "strcreategroup"
+msgstr "グループを作成する"
+
+msgid "strgroupneedsname"
+msgstr "グループ名を指定しなければなりません。"
+
+msgid "strgroupcreated"
+msgstr "グループを作成しました。"
+
+msgid "strgroupcreatedbad"
+msgstr "グループの作成に失敗しました。"
+
+msgid "strconfdropgroup"
+msgstr "本当にグループ「%s」を破棄しますか?"
+
+msgid "strgroupdropped"
+msgstr "グループを破棄しました。"
+
+msgid "strgroupdroppedbad"
+msgstr "グループの破棄に失敗しました。"
+
+msgid "strmembers"
+msgstr "メンバー"
+
+msgid "strmemberof"
+msgstr "次のグループのメンバー:"
+
+msgid "stradminmembers"
+msgstr "管理メンバー"
+
+msgid "straddmember"
+msgstr "メンバーを追加する"
+
+msgid "strmemberadded"
+msgstr "メンバーを追加しました。"
+
+msgid "strmemberaddedbad"
+msgstr "メンバーの追加に失敗しました。"
+
+msgid "strdropmember"
+msgstr "メンバー破棄"
+
+msgid "strconfdropmember"
+msgstr "本当にメンバー「%s」をグループ「%s」から破棄しますか?"
+
+msgid "strmemberdropped"
+msgstr "メンバーを破棄しました。"
+
+msgid "strmemberdroppedbad"
+msgstr "メンバーの破棄に失敗しました。"
+
+# Roles
+msgid "strrole"
+msgstr "ロール"
+
+msgid "strroles"
+msgstr "ロール"
+
+msgid "strshowallroles"
+msgstr "すべてのロールを表示する"
+
+msgid "strnoroles"
+msgstr "ロールが見つかりません。"
+
+msgid "strinheritsprivs"
+msgstr "特権を引き継ぎますか?"
+
+msgid "strcreaterole"
+msgstr "ロールを作成する"
+
+msgid "strcancreaterole"
+msgstr "ロールを作成できますか?"
+
+msgid "strrolecreated"
+msgstr "ロールを作成しました。"
+
+msgid "strrolecreatedbad"
+msgstr "ロールの作成に失敗しました。"
+
+msgid "strrolealtered"
+msgstr "ロールを変更しました。"
+
+msgid "strrolealteredbad"
+msgstr "ロールの変更に失敗しました。"
+
+msgid "strcanlogin"
+msgstr "ログインできますか?"
+
+msgid "strconnlimit"
+msgstr "接続制限"
+
+msgid "strdroprole"
+msgstr "ロールを破棄する"
+
+msgid "strconfdroprole"
+msgstr "本当にロール「%s」を破棄しますか?"
+
+msgid "strroledropped"
+msgstr "ロールを破棄しました。"
+
+msgid "strroledroppedbad"
+msgstr "ロールの破棄に失敗しました。"
+
+msgid "strnolimit"
+msgstr "制限なし"
+
+msgid "strnever"
+msgstr "Never"
+
+msgid "strroleneedsname"
+msgstr "ロールの名前を指定しなければなりません。"
+
+# Privileges
+msgid "strprivilege"
+msgstr "特権"
+
+msgid "strprivileges"
+msgstr "特権"
+
+msgid "strnoprivileges"
+msgstr "このオブジェクトは特権を持っていません。"
+
+msgid "strgrant"
+msgstr "権限"
+
+msgid "strrevoke"
+msgstr "廃止"
+
+msgid "strgranted"
+msgstr "特権を与えました。"
+
+msgid "strgrantfailed"
+msgstr "特権を与える事に失敗しました。"
+
+msgid "strgrantbad"
+msgstr "少なくとも一人のユーザーかグループに、少なくともひとつの特権を指定しなければなりません。"
+
+msgid "strgrantor"
+msgstr "譲与"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "データベース"
+
+msgid "strdatabases"
+msgstr "データベース"
+
+msgid "strshowalldatabases"
+msgstr "すべてのデータベースを表示する"
+
+msgid "strnodatabases"
+msgstr "データベースがまったくありません。"
+
+msgid "strcreatedatabase"
+msgstr "データベースを作成する"
+
+msgid "strdatabasename"
+msgstr "データベース名"
+
+msgid "strdatabaseneedsname"
+msgstr "データベース名を指定しなければなりません。"
+
+msgid "strdatabasecreated"
+msgstr "データベースを作成しました。"
+
+msgid "strdatabasecreatedbad"
+msgstr "データベースの作成に失敗しました。"
+
+msgid "strconfdropdatabase"
+msgstr "本当にデータベース「%s」を破棄しますか?"
+
+msgid "strdatabasedropped"
+msgstr "データベースを破棄しました。"
+
+msgid "strdatabasedroppedbad"
+msgstr "データベースの破棄に失敗しました。"
+
+msgid "strentersql"
+msgstr "下に実行するSQLを入力します:"
+
+msgid "strsqlexecuted"
+msgstr "SQLを実行しました。"
+
+msgid "strvacuumgood"
+msgstr "バキュームを完了しました。"
+
+msgid "strvacuumbad"
+msgstr "バキュームに失敗しました。"
+
+msgid "stranalyzegood"
+msgstr "解析を完了しました。"
+
+msgid "stranalyzebad"
+msgstr "解析に失敗しました。"
+
+msgid "strreindexgood"
+msgstr "再インデックスを完了しました。"
+
+msgid "strreindexbad"
+msgstr "再インデックスに失敗しました。"
+
+msgid "strfull"
+msgstr "すべて"
+
+msgid "strfreeze"
+msgstr "フリーズ"
+
+msgid "strforce"
+msgstr "強制"
+
+msgid "strsignalsent"
+msgstr "シグナル送信"
+
+msgid "strsignalsentbad"
+msgstr "シグナル送信に失敗しました"
+
+msgid "strallobjects"
+msgstr "すべてのオブジェクト"
+
+msgid "strdatabasealtered"
+msgstr "データベースを変更しました。"
+
+msgid "strdatabasealteredbad"
+msgstr "データベースの変更に失敗しました。"
+
+msgid "strspecifydatabasetodrop"
+msgstr "データベースを破棄するには少なくとも 1 つ指定しなければなりません"
+
+# Views
+msgid "strview"
+msgstr "ビュー"
+
+msgid "strviews"
+msgstr "ビュー"
+
+msgid "strshowallviews"
+msgstr "すべてのビューを表示する"
+
+msgid "strnoview"
+msgstr "ビューがありません。"
+
+msgid "strnoviews"
+msgstr "ビューが見つかりません。"
+
+msgid "strcreateview"
+msgstr "ビューを作成する"
+
+msgid "strviewname"
+msgstr "ビュー名"
+
+msgid "strviewneedsname"
+msgstr "ビュー名を指定しなければなりません。"
+
+msgid "strviewneedsdef"
+msgstr "定義名を指定しなければなりません。"
+
+msgid "strviewneedsfields"
+msgstr "ビューのの中から選択し、希望のカラムを指定しなければなりません。"
+
+msgid "strviewcreated"
+msgstr "ビューを作成しました。"
+
+msgid "strviewcreatedbad"
+msgstr "ビューの作成に失敗しました。"
+
+msgid "strconfdropview"
+msgstr "本当にビュー「%s」を破棄しますか?"
+
+msgid "strviewdropped"
+msgstr "ビューを破棄しました。"
+
+msgid "strviewdroppedbad"
+msgstr "ビューの破棄に失敗しました。"
+
+msgid "strviewupdated"
+msgstr "ビューを更新しました。"
+
+msgid "strviewupdatedbad"
+msgstr "ビューの更新に失敗しました。"
+
+msgid "strviewlink"
+msgstr "リンクしたキー"
+
+msgid "strviewconditions"
+msgstr "追加条件"
+
+msgid "strcreateviewwiz"
+msgstr "ウィザードでビューを作成する"
+
+msgid "strrenamedupfields"
+msgstr "重複項目の名前を変更する"
+
+msgid "strdropdupfields"
+msgstr "重複項目を破棄する"
+
+msgid "strerrordupfields"
+msgstr "重複項目のエラーです"
+
+msgid "strviewaltered"
+msgstr "ビューを変更しました。"
+
+msgid "strviewalteredbad"
+msgstr "ビューの変更に失敗しました。"
+
+msgid "strspecifyviewtodrop"
+msgstr "ビューを破棄するには少なくとも 1 つ指定しなければなりません"
+
+# Sequences
+msgid "strsequence"
+msgstr "シーケンス"
+
+msgid "strsequences"
+msgstr "シーケンス"
+
+msgid "strshowallsequences"
+msgstr "すべてのシーケンスを表示する"
+
+msgid "strnosequence"
+msgstr "シーケンスがありません。"
+
+msgid "strnosequences"
+msgstr "シーケンスが見つかりません。"
+
+msgid "strcreatesequence"
+msgstr "シーケンスを作成する"
+
+msgid "strlastvalue"
+msgstr "最終値"
+
+msgid "strincrementby"
+msgstr "増加数"
+
+msgid "strstartvalue"
+msgstr "開始値"
+
+msgid "strmaxvalue"
+msgstr "最大値"
+
+msgid "strminvalue"
+msgstr "最小値"
+
+msgid "strcachevalue"
+msgstr "キャッシュ値"
+
+msgid "strlogcount"
+msgstr "ログカウント"
+
+msgid "strcancycle"
+msgstr "Can cycle?"
+
+msgid "striscalled"
+msgstr "Will increment last value before returning next value (is_called)?"
+
+msgid "strsequenceneedsname"
+msgstr "シーケンス名を指定しなければなりません。"
+
+msgid "strsequencecreated"
+msgstr "シーケンスを作成しました。"
+
+msgid "strsequencecreatedbad"
+msgstr "シーケンスの作成に失敗しました。"
+
+msgid "strconfdropsequence"
+msgstr "本当にシーケンス「%s」を破棄しますか?"
+
+msgid "strsequencedropped"
+msgstr "シーケンスを破棄しました。"
+
+msgid "strsequencedroppedbad"
+msgstr "シーケンスの破棄に失敗しました。"
+
+msgid "strsequencereset"
+msgstr "シーケンスリセットを行いました。"
+
+msgid "strsequenceresetbad"
+msgstr "シーケンスのリセットに失敗しました。"
+
+msgid "strsequencealtered"
+msgstr "シーケンスを変更しました。"
+
+msgid "strsequencealteredbad"
+msgstr "シーケンスの変更に失敗しました。"
+
+msgid "strsetval"
+msgstr "値を設定する"
+
+msgid "strsequencesetval"
+msgstr "シーケンス値を設定しました。"
+
+msgid "strsequencesetvalbad"
+msgstr "シーケンス値の設定に失敗しました。"
+
+msgid "strnextval"
+msgstr "値を増加する"
+
+msgid "strsequencenextval"
+msgstr "値を増加しました。"
+
+msgid "strsequencenextvalbad"
+msgstr "値の増加に失敗しました。"
+
+msgid "strspecifysequencetodrop"
+msgstr "シーケンスを破棄するには少なくとも 1 つ指定しなければなりません"
+
+# Indexes
+msgid "strindex"
+msgstr "インデックス"
+
+msgid "strindexes"
+msgstr "インデックス"
+
+msgid "strindexname"
+msgstr "インデックス名"
+
+msgid "strshowallindexes"
+msgstr "すべてのインデックスを表示する"
+
+msgid "strnoindex"
+msgstr "インデックスがありません。"
+
+msgid "strnoindexes"
+msgstr "インデックスが見つかりません。"
+
+msgid "strcreateindex"
+msgstr "インデックスを作成する"
+
+msgid "strtabname"
+msgstr "タブ名"
+
+msgid "strcolumnname"
+msgstr "カラム名"
+
+msgid "strindexneedsname"
+msgstr "有効なインデックス名を指定しなければいけません。"
+
+msgid "strindexneedscols"
+msgstr "有効なカラム数を指定しなければいけません。"
+
+msgid "strindexcreated"
+msgstr "インデックスを作成しました。"
+
+msgid "strindexcreatedbad"
+msgstr "インデックスの作成に失敗しました。"
+
+msgid "strconfdropindex"
+msgstr "本当にインデックス「%s」を破棄しますか?"
+
+msgid "strindexdropped"
+msgstr "インデックスを破棄しました。"
+
+msgid "strindexdroppedbad"
+msgstr "インデックスの破棄に失敗しました。"
+
+msgid "strkeyname"
+msgstr "キー名"
+
+msgid "struniquekey"
+msgstr "ユニークキー"
+
+msgid "strprimarykey"
+msgstr "プライマリキー"
+
+msgid "strindextype"
+msgstr "インデックスタイプ"
+
+msgid "strtablecolumnlist"
+msgstr "テーブル中のカラム"
+
+msgid "strindexcolumnlist"
+msgstr "インデックス中のカラム"
+
+msgid "strconfcluster"
+msgstr "本当に「%s」をクラスターにしますか?"
+
+msgid "strclusteredgood"
+msgstr "クラスター完了です。"
+
+msgid "strclusteredbad"
+msgstr "クラスターに失敗しました。"
+
+msgid "strcluster"
+msgstr "クラスター"
+
+# Rules
+msgid "strrules"
+msgstr "ルール"
+
+msgid "strrule"
+msgstr "ルール"
+
+msgid "strshowallrules"
+msgstr "すべてのルールを表示する"
+
+msgid "strnorule"
+msgstr "ルールがありません。"
+
+msgid "strnorules"
+msgstr "ルールが見つかりません。"
+
+msgid "strcreaterule"
+msgstr "ルールを作成する"
+
+msgid "strrulename"
+msgstr "ルール名"
+
+msgid "strruleneedsname"
+msgstr "ルール名を指定しなければなりません。"
+
+msgid "strrulecreated"
+msgstr "ルールを作成しました。"
+
+msgid "strrulecreatedbad"
+msgstr "ルールの作成に失敗しました。"
+
+msgid "strconfdroprule"
+msgstr "本当にルール「%s」をデータベース「%s」から破棄しますか?"
+
+msgid "strruledropped"
+msgstr "ルールを破棄しました。"
+
+msgid "strruledroppedbad"
+msgstr "ルールの破棄に失敗しました。"
+
+# Constraints
+msgid "strconstraint"
+msgstr "検査制約"
+
+msgid "strconstraints"
+msgstr "検査制約"
+
+msgid "strshowallconstraints"
+msgstr "すべての検査制約を表示する"
+
+msgid "strnoconstraints"
+msgstr "検査制約がありません。"
+
+msgid "strcreateconstraint"
+msgstr "検査制約を作成する"
+
+msgid "strconstraintcreated"
+msgstr "検査制約を作成しました。"
+
+msgid "strconstraintcreatedbad"
+msgstr "検査制約の作成に失敗しました。"
+
+msgid "strconfdropconstraint"
+msgstr "本当に検査制約「%s」をデータベース「%s」から破棄しますか?"
+
+msgid "strconstraintdropped"
+msgstr "検査制約を破棄しました。"
+
+msgid "strconstraintdroppedbad"
+msgstr "検査制約の破棄に失敗しました。"
+
+msgid "straddcheck"
+msgstr "検査を追加する"
+
+msgid "strcheckneedsdefinition"
+msgstr "検査制約には定義が必要です。"
+
+msgid "strcheckadded"
+msgstr "検査制約を追加しました。"
+
+msgid "strcheckaddedbad"
+msgstr "検査制約の追加に失敗しました。"
+
+msgid "straddpk"
+msgstr "プライマリキーを追加する"
+
+msgid "strpkneedscols"
+msgstr "プライマリキーは少なくとも一カラムを必要とします。"
+
+msgid "strpkadded"
+msgstr "プライマリキーを追加しました。"
+
+msgid "strpkaddedbad"
+msgstr "プライマリキーの追加に失敗しました。"
+
+msgid "stradduniq"
+msgstr "ユニークキーを追加する"
+
+msgid "struniqneedscols"
+msgstr "ユニークキーは少なくとも一カラムを必要とします。"
+
+msgid "struniqadded"
+msgstr "ユニークキーを追加しました。"
+
+msgid "struniqaddedbad"
+msgstr "ユニークキーの追加に失敗しました。"
+
+msgid "straddfk"
+msgstr "外部キーを追加する"
+
+msgid "strfkneedscols"
+msgstr "外部キーは少なくとも一カラムを必要とします。"
+
+msgid "strfkneedstarget"
+msgstr "外部キーはターゲットテーブルを必要とします。"
+
+msgid "strfkadded"
+msgstr "外部キーを追加しました。"
+
+msgid "strfkaddedbad"
+msgstr "外部キーの追加に失敗しました。"
+
+msgid "strfktarget"
+msgstr "対象テーブル"
+
+msgid "strfkcolumnlist"
+msgstr "キー中のカラム"
+
+msgid "strondelete"
+msgstr "ON DELETE"
+
+msgid "stronupdate"
+msgstr "ON UPDATE"
+
+# Functions
+msgid "strfunction"
+msgstr "関数"
+
+msgid "strfunctions"
+msgstr "関数"
+
+msgid "strshowallfunctions"
+msgstr "すべて関数を表示する"
+
+msgid "strnofunction"
+msgstr "関数がありません。"
+
+msgid "strnofunctions"
+msgstr "関数が見つかりません。"
+
+msgid "strcreateplfunction"
+msgstr "SQL/PL 関数を作成する"
+
+msgid "strcreateinternalfunction"
+msgstr "内部関数を作成する"
+
+msgid "strcreatecfunction"
+msgstr "C 関数を作成する"
+
+msgid "strfunctionname"
+msgstr "関数名"
+
+msgid "strreturns"
+msgstr "返り値"
+
+msgid "strproglanguage"
+msgstr "プログラミング言語"
+
+msgid "strfunctionneedsname"
+msgstr "関数名を指定しなければなりません。"
+
+msgid "strfunctionneedsdef"
+msgstr "関数の定義をしなければなりあせん。"
+
+msgid "strfunctioncreated"
+msgstr "関数を作成しました。"
+
+msgid "strfunctioncreatedbad"
+msgstr "関数の作成に失敗しました。"
+
+msgid "strconfdropfunction"
+msgstr "本当に関数「%s」を破棄しますか?"
+
+msgid "strfunctiondropped"
+msgstr "関数を破棄しました。"
+
+msgid "strfunctiondroppedbad"
+msgstr "関数の破棄に失敗しました。"
+
+msgid "strfunctionupdated"
+msgstr "関数を更新しました。"
+
+msgid "strfunctionupdatedbad"
+msgstr "関数の更新に失敗しました。"
+
+msgid "strobjectfile"
+msgstr "オブジェクトファイル"
+
+msgid "strlinksymbol"
+msgstr "リンクシンボル"
+
+msgid "strarguments"
+msgstr "引数"
+
+msgid "strargmode"
+msgstr "モード"
+
+msgid "strargtype"
+msgstr "種類"
+
+msgid "strargadd"
+msgstr "他の引数を追加する"
+
+msgid "strargremove"
+msgstr "この引数を削除する"
+
+msgid "strargnoargs"
+msgstr "この関数はいくつかの引数を取らなでしょう。"
+
+msgid "strargenableargs"
+msgstr "Enable arguments being passed to this function."
+
+msgid "strargnorowabove"
+msgstr "この行の上に行が必要です。"
+
+msgid "strargnorowbelow"
+msgstr "この行の下に行が必要です。"
+
+msgid "strargraise"
+msgstr "上に移動します。"
+
+msgid "strarglower"
+msgstr "下に移動します。"
+
+msgid "strargremoveconfirm"
+msgstr "本当にこの引数を削除しますか? これは戻すことができませんThis CANNOT be undone。"
+
+msgid "strfunctioncosting"
+msgstr "Function Costing"
+
+msgid "strresultrows"
+msgstr "Result Rows"
+
+msgid "strexecutioncost"
+msgstr "Execution Cost"
+
+msgid "strspecifyfunctiontodrop"
+msgstr "関数を破棄するには少なくとも 1 つ指定しなければなりません"
+
+# Triggers
+msgid "strtrigger"
+msgstr "トリガー"
+
+msgid "strtriggers"
+msgstr "トリガー"
+
+msgid "strshowalltriggers"
+msgstr "すべてのトリガーを表示する"
+
+msgid "strnotrigger"
+msgstr "トリガーがありません。"
+
+msgid "strnotriggers"
+msgstr "トリガーが見つかりません。"
+
+msgid "strcreatetrigger"
+msgstr "トリガーを作成する"
+
+msgid "strtriggerneedsname"
+msgstr "トリガー名を指定する必要があります。"
+
+msgid "strtriggerneedsfunc"
+msgstr "トリガーのための関数を指定しなければなりません。"
+
+msgid "strtriggercreated"
+msgstr "トリガーを作成しました。"
+
+msgid "strtriggercreatedbad"
+msgstr "トリガーの作成に失敗しました。"
+
+msgid "strconfdroptrigger"
+msgstr "本当にトリガー「%s」をデータベース「%s」から破棄しますか?"
+
+msgid "strconfenabletrigger"
+msgstr "本当に「%2$s」のトリガー「%1$s」を有効にしますか?"
+
+msgid "strconfdisabletrigger"
+msgstr "本当に「%2$s」のトリガー「%1$s」を無効にしますか?"
+
+msgid "strtriggerdropped"
+msgstr "トリガーを破棄しました。"
+
+msgid "strtriggerdroppedbad"
+msgstr "トリガーの破棄に失敗しました。"
+
+msgid "strtriggerenabled"
+msgstr "トリガーを有効にしました。"
+
+msgid "strtriggerenabledbad"
+msgstr "トリガーの有効化に失敗しました。"
+
+msgid "strtriggerdisabled"
+msgstr "トリガーを無効にしました。"
+
+msgid "strtriggerdisabledbad"
+msgstr "トリガーの無効化に失敗しました。"
+
+msgid "strtriggeraltered"
+msgstr "トリガーを変更しました。"
+
+msgid "strtriggeralteredbad"
+msgstr "トリガーの変更に失敗しました。"
+
+msgid "strforeach"
+msgstr "For each"
+
+# Types
+msgid "strtype"
+msgstr "データ型"
+
+msgid "strtypes"
+msgstr "データ型"
+
+msgid "strshowalltypes"
+msgstr "すべてのデータ型を表示する"
+
+msgid "strnotype"
+msgstr "データ型がありません。"
+
+msgid "strnotypes"
+msgstr "データ型が見つかりませんでした。"
+
+msgid "strcreatetype"
+msgstr "データ型を作成する"
+
+msgid "strcreatecomptype"
+msgstr "複合型を作成する"
+
+msgid "strcreateenumtype"
+msgstr "Create enum type"
+
+msgid "strtypeneedsfield"
+msgstr "少なくとも 1 つのフィールドを指定しなければなりません。"
+
+msgid "strtypeneedsvalue"
+msgstr "少なくとも 1 つの値を指定しなければなりません。"
+
+msgid "strtypeneedscols"
+msgstr "有効なフィールドの数を指定しなければなりません。"
+
+msgid "strtypeneedsvals"
+msgstr "You must specify a valid number of values."
+
+msgid "strinputfn"
+msgstr "入力関数"
+
+msgid "stroutputfn"
+msgstr "出力関数"
+
+msgid "strpassbyval"
+msgstr "Passed by val?"
+
+msgid "stralignment"
+msgstr "アライメント"
+
+msgid "strelement"
+msgstr "要素"
+
+msgid "strdelimiter"
+msgstr "デミリタ"
+
+msgid "strstorage"
+msgstr "ストレージ"
+
+msgid "strfield"
+msgstr "フィールド"
+
+msgid "strvalue"
+msgstr "Value"
+
+msgid "strnumfields"
+msgstr "フィールド数"
+
+msgid "strnumvalues"
+msgstr "Num. of values"
+
+msgid "strtypeneedsname"
+msgstr "型名を指定しなければなりません。"
+
+msgid "strtypeneedslen"
+msgstr "データ型の長さを指定しなければなりません。"
+
+msgid "strtypecreated"
+msgstr "データ型を作成しました。"
+
+msgid "strtypecreatedbad"
+msgstr "データ型の作成に失敗しました。"
+
+msgid "strconfdroptype"
+msgstr "本当にデータ型「%s」を破棄しますか?"
+
+msgid "strtypedropped"
+msgstr "データ型を破棄しました。"
+
+msgid "strtypedroppedbad"
+msgstr "データ型の破棄に失敗しました。"
+
+msgid "strflavor"
+msgstr "種類"
+
+msgid "strbasetype"
+msgstr "基本"
+
+msgid "strcompositetype"
+msgstr "複合型"
+
+msgid "strpseudotype"
+msgstr "擬似データ"
+
+msgid "strenum"
+msgstr "Enum"
+
+msgid "strenumvalues"
+msgstr "Enum Values"
+
+# Schemas
+msgid "strschema"
+msgstr "スキーマ"
+
+msgid "strschemas"
+msgstr "スキーマ"
+
+msgid "strshowallschemas"
+msgstr "すべてのスキーマを表示する"
+
+msgid "strnoschema"
+msgstr "スキーマがありません。"
+
+msgid "strnoschemas"
+msgstr "スキーマが見つかりません。"
+
+msgid "strcreateschema"
+msgstr "スキーマを作成する"
+
+msgid "strschemaname"
+msgstr "スキーマ名"
+
+msgid "strschemaneedsname"
+msgstr "スキーマ名を指定する必要があります。"
+
+msgid "strschemacreated"
+msgstr "スキーマを作成しました。"
+
+msgid "strschemacreatedbad"
+msgstr "スキーマの作成に失敗しました。"
+
+msgid "strconfdropschema"
+msgstr "本当にスキーマ「%s」を破棄しますか?"
+
+msgid "strschemadropped"
+msgstr "スキーマを破棄しました。"
+
+msgid "strschemadroppedbad"
+msgstr "スキーマの破棄に失敗しました。"
+
+msgid "strschemaaltered"
+msgstr "スキーマを変更しました。"
+
+msgid "strschemaalteredbad"
+msgstr "スキーマの変更に失敗しました。"
+
+msgid "strsearchpath"
+msgstr "スキーマ検索パス"
+
+msgid "strspecifyschematodrop"
+msgstr "スキーマを破棄するには少なくとも 1 つ指定しなければなりません"
+
+# Reports
+
+# Domains
+msgid "strdomain"
+msgstr "ドメイン"
+
+msgid "strdomains"
+msgstr "ドメイン"
+
+msgid "strshowalldomains"
+msgstr "すべてのドメインを表示する"
+
+msgid "strnodomains"
+msgstr "ドメインがありません。"
+
+msgid "strcreatedomain"
+msgstr "ドメイン作成"
+
+msgid "strdomaindropped"
+msgstr "ドメインを破棄しました。"
+
+msgid "strdomaindroppedbad"
+msgstr "ドメインの破棄に失敗しました。"
+
+msgid "strconfdropdomain"
+msgstr "本当にドメイン「%s」を破棄しますか?"
+
+msgid "strdomainneedsname"
+msgstr "ドメイン名を指定する必要があります。"
+
+msgid "strdomaincreated"
+msgstr "ドメインを作成しました。"
+
+msgid "strdomaincreatedbad"
+msgstr "ドメインの作成に失敗しました。"
+
+msgid "strdomainaltered"
+msgstr "ドメインを変更しました。"
+
+msgid "strdomainalteredbad"
+msgstr "ドメインの変更に失敗しました。"
+
+# Operators
+msgid "stroperator"
+msgstr "演算子"
+
+msgid "stroperators"
+msgstr "演算子"
+
+msgid "strshowalloperators"
+msgstr "すべての演算子を表示する"
+
+msgid "strnooperator"
+msgstr "演算子が見つかりません。"
+
+msgid "strnooperators"
+msgstr "演算子クラスが見つかりません。"
+
+msgid "strcreateoperator"
+msgstr "演算子を作成しました。"
+
+msgid "strleftarg"
+msgstr "左引数タイプ"
+
+msgid "strrightarg"
+msgstr "右引数タイプ"
+
+msgid "strcommutator"
+msgstr "交代"
+
+msgid "strnegator"
+msgstr "否定"
+
+msgid "strrestrict"
+msgstr "制限"
+
+msgid "strjoin"
+msgstr "結合"
+
+msgid "strhashes"
+msgstr "ハッシュ"
+
+msgid "strmerges"
+msgstr "併合"
+
+msgid "strleftsort"
+msgstr "左ソート"
+
+msgid "strrightsort"
+msgstr "右ソート"
+
+msgid "strlessthan"
+msgstr "未満"
+
+msgid "strgreaterthan"
+msgstr "以上"
+
+msgid "stroperatorneedsname"
+msgstr "演算子名を指定する必要があります。"
+
+msgid "stroperatorcreated"
+msgstr "演算子を作成しました。"
+
+msgid "stroperatorcreatedbad"
+msgstr "演算子の作成に失敗しました。"
+
+msgid "strconfdropoperator"
+msgstr "本当に演算子「%s」を破棄しますか?"
+
+msgid "stroperatordropped"
+msgstr "演算子を破棄しました。"
+
+msgid "stroperatordroppedbad"
+msgstr "演算子の破棄に失敗しました。"
+
+# Casts
+msgid "strcasts"
+msgstr "キャスト"
+
+msgid "strnocasts"
+msgstr "キャストが見つかりません。"
+
+msgid "strsourcetype"
+msgstr "ソースタイプ"
+
+msgid "strtargettype"
+msgstr "ターゲットタイプ"
+
+msgid "strimplicit"
+msgstr "暗黙"
+
+msgid "strinassignment"
+msgstr "In assignment"
+
+msgid "strbinarycompat"
+msgstr "(バイナリー互換)"
+
+# Conversions
+msgid "strconversions"
+msgstr "変換"
+
+msgid "strnoconversions"
+msgstr "変換が見つかりません。"
+
+msgid "strsourceencoding"
+msgstr "変換元エンコード"
+
+msgid "strtargetencoding"
+msgstr "変換先エンコード"
+
+# Languages
+msgid "strlanguages"
+msgstr "言語"
+
+msgid "strnolanguages"
+msgstr "言語が存在しません。"
+
+msgid "strtrusted"
+msgstr "Trusted"
+
+# Info
+msgid "strnoinfo"
+msgstr "有効な情報がありません。"
+
+msgid "strreferringtables"
+msgstr "参照テーブル"
+
+msgid "strparenttables"
+msgstr "親テーブル"
+
+msgid "strchildtables"
+msgstr "子テーブル"
+
+# Aggregates
+msgid "straggregate"
+msgstr "集計"
+
+msgid "straggregates"
+msgstr "集計"
+
+msgid "strnoaggregates"
+msgstr "集計がありません。"
+
+msgid "stralltypes"
+msgstr "(すべての種類)"
+
+msgid "strcreateaggregate"
+msgstr "集計を作成する"
+
+msgid "straggrbasetype"
+msgstr "入力データの種類"
+
+msgid "straggrsfunc"
+msgstr "状態遷移関数"
+
+msgid "straggrstype"
+msgstr "状態データの種類"
+
+msgid "straggrffunc"
+msgstr "終了関数"
+
+msgid "straggrinitcond"
+msgstr "初期状態"
+
+msgid "straggrsortop"
+msgstr "ソート操作"
+
+msgid "strconfdropaggregate"
+msgstr "本当に集計「%s」を破棄しますか?"
+
+msgid "straggregatedropped"
+msgstr "集計を破棄しました。"
+
+msgid "straggregatedroppedbad"
+msgstr "集計の破棄に失敗しました。"
+
+msgid "straggraltered"
+msgstr "集計を変更しました。"
+
+msgid "straggralteredbad"
+msgstr "集計の変更に失敗しました。"
+
+msgid "straggrneedsname"
+msgstr "集計は名前を指定しなければなりません"
+
+msgid "straggrneedsbasetype"
+msgstr "集計は入力データの種類を指定しなければなりません"
+
+msgid "straggrneedssfunc"
+msgstr "集計は状態遷移関数の名前を指定しなければなりません"
+
+msgid "straggrneedsstype"
+msgstr "集計の状態値のデータの種類を指定しなければなりません"
+
+msgid "straggrcreated"
+msgstr "集計を作成しました。"
+
+msgid "straggrcreatedbad"
+msgstr "集計の作成に失敗しました。"
+
+msgid "straggrshowall"
+msgstr "すべての集計を表示する"
+
+# Operator Classes
+msgid "stropclasses"
+msgstr "演算子クラス"
+
+msgid "strnoopclasses"
+msgstr "演算子クラスが見つかりません。"
+
+msgid "straccessmethod"
+msgstr "アクセス方法"
+
+# Stats and performance
+msgid "strrowperf"
+msgstr "行パフォーマンス"
+
+msgid "strioperf"
+msgstr "I/O パフォーマンス"
+
+msgid "stridxrowperf"
+msgstr "インデックス行パフォーマンス"
+
+msgid "stridxioperf"
+msgstr "インデックス I/O パフォーマンス"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "シーケンシャル"
+
+msgid "strscan"
+msgstr "検索"
+
+msgid "strread"
+msgstr "読込"
+
+msgid "strfetch"
+msgstr "取得"
+
+msgid "strheap"
+msgstr "ヒープ"
+
+msgid "strtoast"
+msgstr "TOAST"
+
+msgid "strtoastindex"
+msgstr "TOAST インデックス"
+
+msgid "strcache"
+msgstr "キャッシュ"
+
+msgid "strdisk"
+msgstr "ディスク"
+
+msgid "strrows2"
+msgstr "行"
+
+# Tablespaces
+msgid "strtablespace"
+msgstr "テーブル空間"
+
+msgid "strtablespaces"
+msgstr "テーブル空間"
+
+msgid "strshowalltablespaces"
+msgstr "すべてのテーブルスペースを表示する"
+
+msgid "strnotablespaces"
+msgstr "テーブル空間が見つかりません。"
+
+msgid "strcreatetablespace"
+msgstr "テーブル空間を作成する"
+
+msgid "strlocation"
+msgstr "ロケーション"
+
+msgid "strtablespaceneedsname"
+msgstr "テーブル空間名を指定する必要があります。"
+
+msgid "strtablespaceneedsloc"
+msgstr "テーブル空間作成をするディレクトリを指定する必要があります。"
+
+msgid "strtablespacecreated"
+msgstr "テーブル空間を作成しました。"
+
+msgid "strtablespacecreatedbad"
+msgstr "テーブル空間の作成に失敗しました。"
+
+msgid "strconfdroptablespace"
+msgstr "本当にテーブル空間「%s」を破棄しますか?"
+
+msgid "strtablespacedropped"
+msgstr "テーブル空間を破棄しました。"
+
+msgid "strtablespacedroppedbad"
+msgstr "テーブル空間の破棄に失敗しました。"
+
+msgid "strtablespacealtered"
+msgstr "テーブル空間を変更しました。"
+
+msgid "strtablespacealteredbad"
+msgstr "テーブル空間の変更に失敗しました。"
+
+# Miscellaneous
+msgid "strtopbar"
+msgstr "サーバー %2$s のポート番号 %3$s で実行中の %1$s に接続中 -- ユーザー「%4$s」としてログイン中"
+
+msgid "strtimefmt"
+msgstr "Y 年 n 月 j 日 G:i"
+
+msgid "strhelp"
+msgstr "ヘルプ"
+
+msgid "strhelpicon"
+msgstr "?"
+
+msgid "strhelppagebrowser"
+msgstr "ヘルプページブラウザー"
+
+msgid "strselecthelppage"
+msgstr "ヘルプページを選んでください"
+
+msgid "strinvalidhelppage"
+msgstr "無効なヘルプページです。"
+
+msgid "strlogintitle"
+msgstr "%s にログイン"
+
+msgid "strlogoutmsg"
+msgstr "%s をログアウトしました。"
+
+msgid "strloading"
+msgstr "読み込み中..."
+
+msgid "strerrorloading"
+msgstr "読み込み中のエラーです。"
+
+msgid "strclicktoreload"
+msgstr "クリックで再読み込み"
+
+# Autovacuum
+msgid "strautovacuum"
+msgstr "オートバキューム"
+
+msgid "strturnedon"
+msgstr "オンにする"
+
+msgid "strturnedoff"
+msgstr "オフにする"
+
+msgid "strenabled"
+msgstr "Enabled"
+
+msgid "strvacuumbasethreshold"
+msgstr "閾値に基づいたバキューム"
+
+msgid "strvacuumscalefactor"
+msgstr "Vacuum Scale Factor"
+
+msgid "stranalybasethreshold"
+msgstr "閾値に基づいた解析"
+
+msgid "stranalyzescalefactor"
+msgstr "Analyze Scale Factor"
+
+msgid "strvacuumcostdelay"
+msgstr "Vacuum Cost Delay"
+
+msgid "strvacuumcostlimit"
+msgstr "Vacuum Cost Limit"
+
+# Table-level Locks
+msgid "strlocks"
+msgstr "ロック"
+
+msgid "strtransaction"
+msgstr "トランザクション ID"
+
+msgid "strvirtualtransaction"
+msgstr "仮想トランザクション ID"
+
+msgid "strprocessid"
+msgstr "プロセス ID"
+
+msgid "strmode"
+msgstr "ロックモード"
+
+msgid "strislockheld"
+msgstr "Is lock held?"
+
+# Prepared transactions
+msgid "strpreparedxacts"
+msgstr "プリペアを用いたトランザクション"
+
+msgid "strxactid"
+msgstr "トランザクション ID"
+
+msgid "strgid"
+msgstr "全体 ID"
+
+# Fulltext search
+msgid "strfulltext"
+msgstr "全文テキスト検索"
+
+msgid "strftsconfig"
+msgstr "FTS 設定"
+
+msgid "strftsconfigs"
+msgstr "設定"
+
+msgid "strftscreateconfig"
+msgstr "FTS 設定の作成"
+
+msgid "strftscreatedict"
+msgstr "辞書を作成する"
+
+msgid "strftscreatedicttemplate"
+msgstr "辞書のテンプレートを作成する"
+
+msgid "strftscreateparser"
+msgstr "パーサーを作成する"
+
+msgid "strftsnoconfigs"
+msgstr "FTS 設定が見つかりません。"
+
+msgid "strftsconfigdropped"
+msgstr "FTS 設定を破棄しました。"
+
+msgid "strftsconfigdroppedbad"
+msgstr "FTS 設定の破棄に失敗しました。"
+
+msgid "strconfdropftsconfig"
+msgstr "本当に FTS 設定「%s」を破棄しますか?"
+
+msgid "strconfdropftsdict"
+msgstr "本当に FTS 辞書「%s」を破棄しますか?"
+
+msgid "strconfdropftsmapping"
+msgstr "本当に FTS 設定「%s」のマップ「%s」を破棄しますか?"
+
+msgid "strftstemplate"
+msgstr "テンプレート"
+
+msgid "strftsparser"
+msgstr "パーサー"
+
+msgid "strftsconfigneedsname"
+msgstr "FTS 設定には名前を指定する必要があります。"
+
+msgid "strftsconfigcreated"
+msgstr "FTS 設定を作成しました。"
+
+msgid "strftsconfigcreatedbad"
+msgstr "FTS 設定の作成に失敗しました。"
+
+msgid "strftsmapping"
+msgstr "Mapping"
+
+msgid "strftsdicts"
+msgstr "辞書"
+
+msgid "strftsdict"
+msgstr "辞書"
+
+msgid "strftsemptymap"
+msgstr "FTS 設定マップが空です。"
+
+msgid "strftswithmap"
+msgstr "With map"
+
+msgid "strftsmakedefault"
+msgstr "Make default for given locale"
+
+msgid "strftsconfigaltered"
+msgstr "FTS 設定を変更しました。"
+
+msgid "strftsconfigalteredbad"
+msgstr "FTS 設定の変更に失敗しました。"
+
+msgid "strftsconfigmap"
+msgstr "FTS 設定マップ"
+
+msgid "strftsparsers"
+msgstr "FTS パーサー"
+
+msgid "strftsnoparsers"
+msgstr "利用できる FTS パーサーがありません。"
+
+msgid "strftsnodicts"
+msgstr "利用できる FTS 辞書がありません。"
+
+msgid "strftsdictcreated"
+msgstr "FTS 辞書を作成しました。"
+
+msgid "strftsdictcreatedbad"
+msgstr "FTS 辞書の作成に失敗しました"
+
+msgid "strftslexize"
+msgstr "Lexize"
+
+msgid "strftsinit"
+msgstr "Init"
+
+msgid "strftsoptionsvalues"
+msgstr "オプションと値"
+
+msgid "strftsdictneedsname"
+msgstr "FTS 辞書の名前を指定しなければなりません。"
+
+msgid "strftsdictdropped"
+msgstr "FTS 辞書を破棄しました。"
+
+msgid "strftsdictdroppedbad"
+msgstr "FTS 辞書の破棄に失敗しました。"
+
+msgid "strftsdictaltered"
+msgstr "FTS 辞書を変更しました。"
+
+msgid "strftsdictalteredbad"
+msgstr "FTS 辞書の変更に失敗しました。"
+
+msgid "strftsaddmapping"
+msgstr "新規マップを追加する"
+
+msgid "strftsspecifymappingtodrop"
+msgstr "マップを破棄をするには少なくとも 1 つ指定しなければなりません"
+
+msgid "strftsspecifyconfigtoalter"
+msgstr "FTS 設定を変更するには指定しなければなりません"
+
+msgid "strftsnodictionaries"
+msgstr "辞書が見つかりません。"
+
+msgid "strftsmappingaltered"
+msgstr "FTS マップを変更しました。"
+
+msgid "strftsmappingalteredbad"
+msgstr "FTS マップの変更に失敗しました。"
+
+msgid "strftsmappingadded"
+msgstr "FTS マップを追加しました。"
+
+msgid "strftsmappingaddedbad"
+msgstr "FTS マップの追加に失敗しました。"
+
+msgid "strftsmappingdropped"
+msgstr "FTS マップを破棄しました。"
+
+msgid "strftsmappingdroppedbad"
+msgstr "FTS マップの破棄に失敗しました。"
+
+msgid "strftstabconfigs"
+msgstr "設定"
+
+msgid "strftstabdicts"
+msgstr "辞書"
+
+msgid "strftstabparsers"
+msgstr "パーサー"

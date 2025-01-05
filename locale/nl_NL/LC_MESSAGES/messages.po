@@ -1,0 +1,1304 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl_NL\n"
+"X-Generator: Poedit 2.4.2\n"
+
+msgid "applang"
+msgstr "Nederlands"
+
+msgid "applocale"
+msgstr "nl-NL"
+
+msgid "applangdir"
+msgstr "ltr"
+
+msgid "strlogin"
+msgstr "Login"
+
+msgid "strnotables"
+msgstr "Geen tabellen gevonden."
+
+msgid "strppahome"
+msgstr "phpPgAdmin Homepage"
+
+msgid "strpgsqlhome"
+msgstr "PostgreSQL Homepage"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "PostgreSQL Documentatie (lokaal)"
+
+msgid "strreportbug"
+msgstr "Meldt een fout"
+
+msgid "strviewfaq"
+msgstr "Bekijk FAQ"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+msgid "strnotable"
+msgstr "Geen tabel gevonden."
+
+msgid "strnoviews"
+msgstr "Geen views gevonden."
+
+msgid "strnofunctions"
+msgstr "Geen functies gevonden."
+
+msgid "strowner"
+msgstr "Eigenaar"
+
+msgid "straction"
+msgstr "Actie"
+
+msgid "stractions"
+msgstr "Acties"
+
+msgid "strname"
+msgstr "Naam"
+
+msgid "strtable"
+msgstr "Tabel"
+
+msgid "strtables"
+msgstr "Tabellen"
+
+msgid "strview"
+msgstr "View"
+
+msgid "strviews"
+msgstr "Views"
+
+msgid "strdefinition"
+msgstr "Definitie"
+
+msgid "strrules"
+msgstr "Regels"
+
+msgid "strsequence"
+msgstr "Sequence"
+
+msgid "strsequences"
+msgstr "Sequences"
+
+msgid "strfunction"
+msgstr "Functie"
+
+msgid "strfunctions"
+msgstr "Functies"
+
+msgid "stroperators"
+msgstr "Operatoren"
+
+msgid "straggregates"
+msgstr "Aggregaten"
+
+msgid "strproperties"
+msgstr "Eigenschappen"
+
+msgid "strbrowse"
+msgstr "Bekijk"
+
+msgid "strdrop"
+msgstr "Verwijder"
+
+msgid "strdropped"
+msgstr "Verwijderd"
+
+msgid "strnull"
+msgstr "Null"
+
+msgid "strnotnull"
+msgstr "Niet Null"
+
+msgid "strprev"
+msgstr "Vorige"
+
+msgid "strnext"
+msgstr "Volgende"
+
+msgid "strfailed"
+msgstr "mislukt"
+
+msgid "strnotloaded"
+msgstr "Deze PHP-installatie is zonder ondersteuning van dit type database gecompileerd."
+
+msgid "strcreate"
+msgstr "Creëer"
+
+msgid "strcomment"
+msgstr "Commentaar"
+
+
+msgid "strlength"
+msgstr "Lengte"
+
+msgid "strdefault"
+msgstr "Standaard"
+
+msgid "stralter"
+msgstr "Wijzig"
+
+msgid "strcancel"
+msgstr "Cancel"
+
+msgid "strprivileges"
+msgstr "Privileges"
+
+msgid "strtrue"
+msgstr "True"
+
+msgid "strfalse"
+msgstr "False"
+
+msgid "strinsert"
+msgstr "Voeg in"
+
+msgid "strselect"
+msgstr "Selecteer"
+
+msgid "strdelete"
+msgstr "Verwijder"
+
+msgid "strupdate"
+msgstr "Vernieuw"
+
+msgid "strrule"
+msgstr "Regel"
+
+msgid "strreferences"
+msgstr "Referenties"
+
+msgid "strtrigger"
+msgstr "Triggers"
+
+msgid "stryes"
+msgstr "Ja"
+
+msgid "strno"
+msgstr "Nee"
+
+msgid "stredit"
+msgstr "Edit"
+
+msgid "strinvalidparam"
+msgstr "Ongeldige parameters."
+
+# Error handling
+msgid "strsqlerror"
+msgstr "SQL fout:"
+
+msgid "strinstatement"
+msgstr "In statement:"
+
+msgid "strimport"
+msgstr "Importeer"
+
+# Users
+msgid "struser"
+msgstr "Gebruiker"
+
+msgid "strgroup"
+msgstr "Groep"
+
+msgid "strusername"
+msgstr "Gebruikersnaam"
+
+msgid "strpassword"
+msgstr "wachtwoord"
+
+msgid "strsuper"
+msgstr "Superuser?"
+
+msgid "strcreatedb"
+msgstr "Creëer DB?"
+
+msgid "strexpires"
+msgstr "Verloopt"
+
+msgid "strnousers"
+msgstr "Geen gebruikers gevonden."
+
+# Databases
+msgid "strdatabase"
+msgstr "Database"
+
+msgid "strdatabases"
+msgstr "Databases"
+
+msgid "strdata"
+msgstr "Data"
+
+msgid "strconfirm"
+msgstr "Bevestig"
+
+msgid "strexpression"
+msgstr "Uitdrukking"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strexpand"
+msgstr "Uitvouwen"
+
+msgid "strcollapse"
+msgstr "Inklappen"
+
+msgid "strnodatabases"
+msgstr "Geen Databases gevonden."
+
+msgid "strdatabaseneedsname"
+msgstr "U dient uw database een naam te geven."
+
+# Views
+msgid "strviewneedsname"
+msgstr "U dient uw view een naam te geven."
+
+msgid "strviewneedsdef"
+msgstr "U dinet uw view te definiëren."
+
+# Sequences
+msgid "strnosequences"
+msgstr "Geen sequences gevonden."
+
+msgid "strsequencename"
+msgstr "sequence_naam"
+
+msgid "strlastvalue"
+msgstr "laatste_waarde"
+
+msgid "strincrementby"
+msgstr "verhoog_met"
+
+msgid "strmaxvalue"
+msgstr "max_waarde"
+
+msgid "strminvalue"
+msgstr "min_waarde"
+
+msgid "strcachevalue"
+msgstr "cache_waarde"
+
+msgid "strlogcount"
+msgstr "log_cnt"
+
+msgid "striscycled"
+msgstr "is_cyclisch"
+
+msgid "strreset"
+msgstr "Reset"
+
+# Indicies
+msgid "strindexname"
+msgstr "Index Naam"
+
+msgid "strtabname"
+msgstr "Tab Naam"
+
+msgid "strcolumnname"
+msgstr "Kolom Naam"
+
+msgid "struniquekey"
+msgstr "Unieke sleutel"
+
+msgid "strprimarykey"
+msgstr "Primaire sleutel"
+
+# Tables
+msgid "strfield"
+msgstr "veld"
+
+msgid "strfields"
+msgstr "velden"
+
+msgid "strvalue"
+msgstr "waarde"
+
+msgid "strshowalltables"
+msgstr "Toon alle tabellen"
+
+msgid "strunique"
+msgstr "uniek"
+
+msgid "strprimary"
+msgstr "Primair"
+
+msgid "strkeyname"
+msgstr "sleutel naam"
+
+msgid "strnumfields"
+msgstr "aantal velden"
+
+msgid "strcreatetable"
+msgstr "Creëer tabel"
+
+msgid "strtableneedsname"
+msgstr "U dient uw tabel een naam te geven."
+
+msgid "strtableneedscols"
+msgstr "U dient uw tabel een geldig aantal kolommen te geven."
+
+msgid "strexport"
+msgstr "exporteer"
+
+msgid "strconstraints"
+msgstr "constraints"
+
+msgid "strcolumns"
+msgstr "kolommen"
+
+# Functions
+msgid "strreturns"
+msgstr "Retourneert"
+
+msgid "strarguments"
+msgstr "Argumenten"
+
+msgid "strlanguage"
+msgstr "taal"
+
+msgid "strfunctionneedsname"
+msgstr "U dient uw functie een naam te geven."
+
+msgid "strfunctionneedsdef"
+msgstr "U dient uw functie te definiëren."
+
+# Triggers
+msgid "strtriggers"
+msgstr "Triggers"
+
+msgid "strnotriggers"
+msgstr "Geen triggers gevonden."
+
+msgid "strcreatetrigger"
+msgstr "Creëer trigger"
+
+# Types
+msgid "strtype"
+msgstr "Type"
+
+msgid "strtypes"
+msgstr "Types"
+
+msgid "strcascade"
+msgstr "CASCADE"
+
+msgid "strnotypes"
+msgstr "Geen types gevonden."
+
+msgid "strcreatetype"
+msgstr "Creëer type"
+
+msgid "strconfdroptype"
+msgstr "Weet u zeker dat u het type \"%s\" wilt verwijderen?"
+
+msgid "strtypedropped"
+msgstr "Type verwijderd."
+
+msgid "strtypedroppedbad"
+msgstr "Verwijdering van het type mislukt."
+
+msgid "strtypecreated"
+msgstr "Type gecreëerd"
+
+msgid "strtypecreatedbad"
+msgstr "Type creatie mislukt."
+
+msgid "strshowalltypes"
+msgstr "Toon alle types"
+
+msgid "strinputfn"
+msgstr "Invoer functie"
+
+msgid "stroutputfn"
+msgstr "Uitvoer functie"
+
+msgid "strpassbyval"
+msgstr "Passed by val?"
+
+msgid "stralignment"
+msgstr "Alignment"
+
+msgid "strelement"
+msgstr "Element"
+
+msgid "strdelimiter"
+msgstr "Scheidingsteken"
+
+msgid "strstorage"
+msgstr "Opslag"
+
+msgid "strtypeneedsname"
+msgstr "U dient uw type een naam te geven."
+
+msgid "strtypeneedslen"
+msgstr "U dient uw type een lengte te geven."
+
+# New translations
+msgid "strintro"
+msgstr "Welkom bij phpPgAdmin."
+
+msgid "straccount"
+msgstr "Account"
+
+msgid "strchangepassword"
+msgstr "Verander wachtwoord"
+
+msgid "strpasswordchanged"
+msgstr "Wachtwoord veranderd."
+
+msgid "strpasswordchangedbad"
+msgstr "Wachtwoord veranderen mislukt."
+
+msgid "strpasswordshort"
+msgstr "Wachtwoord is te kort."
+
+msgid "strpasswordconfirm"
+msgstr "Wachtwoord verschilt van bevestigings-wachtwoord."
+
+msgid "strloginfailed"
+msgstr "Inloggen mislukt"
+
+msgid "strserver"
+msgstr "Server"
+
+msgid "strlogout"
+msgstr "Log uit"
+
+msgid "strcreated"
+msgstr "Aangemaakt"
+
+msgid "strok"
+msgstr "OK"
+
+msgid "strsave"
+msgstr "Bewaar"
+
+msgid "strrows"
+msgstr "rij(en)"
+
+msgid "strrowsaff"
+msgstr "rij(en) gewijzigd."
+
+msgid "strexample"
+msgstr "bijv."
+
+msgid "strback"
+msgstr "Terug"
+
+msgid "strqueryresults"
+msgstr "Query resultaten"
+
+msgid "strshow"
+msgstr "Toon"
+
+msgid "strempty"
+msgstr "Leeg"
+
+msgid "strencoding"
+msgstr "Encoding"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "strgo"
+msgstr "Go"
+
+msgid "stradmin"
+msgstr "Admin"
+
+msgid "strvacuum"
+msgstr "Vacuum"
+
+msgid "stranalyze"
+msgstr "Analyzeer"
+
+msgid "strclusterindex"
+msgstr "Cluster"
+
+msgid "strreindex"
+msgstr "Reindex"
+
+msgid "strrun"
+msgstr "Run"
+
+msgid "stradd"
+msgstr "Voeg toe"
+
+msgid "strevent"
+msgstr "Event"
+
+msgid "strwhere"
+msgstr "Where"
+
+msgid "strgrantbad"
+msgstr "U dient minstens een gebruiker of groep en minstens een privilege op te geven."
+
+msgid "stralterprivs"
+msgstr "Wijzig privilege"
+
+msgid "strinstead"
+msgstr "Do Instead"
+
+msgid "strwhen"
+msgstr "zodra"
+
+msgid "strformat"
+msgstr "Format"
+
+msgid "strbadconfig"
+msgstr "Het bestand config.inc.php is verouderd. U kunt een verbeterde versie afleiden van het bestand config.inc.php-dist."
+
+msgid "strbadschema"
+msgstr "Ongeldig schema gespecificeerd."
+
+msgid "strbadencoding"
+msgstr "Het zetten van de client encoding in de database is mislukt."
+
+msgid "strnodata"
+msgstr "Geen rijen gevonden."
+
+msgid "strtablename"
+msgstr "Tabelnaam"
+
+msgid "strtableneedsfield"
+msgstr "U dient ten minste één veld te specificeren."
+
+msgid "strtablecreated"
+msgstr "Tabel aangemaakt."
+
+msgid "strtablecreatedbad"
+msgstr "Het aanmaken van de tabel is mislukt."
+
+msgid "strconfdroptable"
+msgstr "Weet u zeker dat u de tabel \"%s\" wilt verwijderen?"
+
+msgid "strtabledropped"
+msgstr "Tabel verwijderd."
+
+msgid "strtabledroppedbad"
+msgstr "Verwijderen van de tabel is mislukt."
+
+msgid "strconfemptytable"
+msgstr "Weet u zeker dat u alle rijen uit tabel \"%s\" wilt verwijderen?"
+
+msgid "strtableemptied"
+msgstr "Alle rijen uit de tabel verwijderd."
+
+msgid "strtableemptiedbad"
+msgstr "Verwijderen van rijen is mislukt."
+
+msgid "strinsertrow"
+msgstr "Voeg een rij toe"
+
+msgid "strrowinserted"
+msgstr "Rij toegevoegd."
+
+msgid "strrowinsertedbad"
+msgstr "Toevoegen van rij is mislukt."
+
+msgid "streditrow"
+msgstr "Wijzig rij"
+
+msgid "strrowupdated"
+msgstr "Rij geupdate."
+
+msgid "strrowupdatedbad"
+msgstr "Het updaten van de rij is mislukt."
+
+msgid "strdeleterow"
+msgstr "Verwijder rij"
+
+msgid "strconfdeleterow"
+msgstr "Weet u zeker dat u deze rij wilt verwijderen?"
+
+msgid "strrowdeleted"
+msgstr "Rij verwijderd."
+
+msgid "strrowdeletedbad"
+msgstr "Verwijderen van de rij mislukt."
+
+msgid "strsaveandrepeat"
+msgstr "Save & Repeat"
+
+msgid "strfieldneedsname"
+msgstr "U dient het veld een naam te geven"
+
+msgid "strselectneedscol"
+msgstr "U moet ten minste één kolom als uitvoer tonen"
+
+msgid "straltercolumn"
+msgstr "Wijzig kolom"
+
+msgid "strcolumnaltered"
+msgstr "Kolom gewijzigd."
+
+msgid "strcolumnalteredbad"
+msgstr "Wijzigen van de kolom is mislukt."
+
+msgid "strconfdropcolumn"
+msgstr "Weet u zeker dat u de kolom \"%s\" wilt verwijderen uit tabel \"%s\"?"
+
+msgid "strcolumndropped"
+msgstr "Kolom verwijderd."
+
+msgid "strcolumndroppedbad"
+msgstr "Verwijderen van de kolom is mislukt."
+
+msgid "straddcolumn"
+msgstr "Voeg kolom toe"
+
+msgid "strcolumnadded"
+msgstr "Kolom toegevoegd."
+
+msgid "strcolumnaddedbad"
+msgstr "Toevoegen van de kolom is mislukt."
+
+msgid "strschemaanddata"
+msgstr "Schema & Data"
+
+msgid "strschemaonly"
+msgstr "Enkel schema"
+
+msgid "strdataonly"
+msgstr "Enkel data"
+
+msgid "strusers"
+msgstr "gebruikers"
+
+msgid "struserupdated"
+msgstr "gebruiker geupdate."
+
+msgid "struserupdatedbad"
+msgstr "gebruikerupdate mislukt."
+
+msgid "strshowallusers"
+msgstr "Toon alle gebruikers"
+
+msgid "strusercreated"
+msgstr "Gebruiker aangemaakt."
+
+msgid "strconfdropuser"
+msgstr "Weet u zeker dat u de gebruiker \"%s\" wilt verwijderen?"
+
+msgid "struserdropped"
+msgstr "Gebruiker verwijderd."
+
+msgid "struserdroppedbad"
+msgstr "Verwijdering van de gebruiker mislukt."
+
+msgid "strgroups"
+msgstr "Groepen"
+
+msgid "strnogroup"
+msgstr "Groep niet gevonden."
+
+msgid "strnogroups"
+msgstr "Geen groepen gevonden."
+
+msgid "strcreategroup"
+msgstr "Maak groep aan"
+
+msgid "strshowallgroups"
+msgstr "Toon alle groepen"
+
+msgid "strgroupneedsname"
+msgstr "U moet een naam opgeven voor uw groep."
+
+msgid "strgroupcreated"
+msgstr "Groep aangemaakt."
+
+msgid "strgroupcreatedbad"
+msgstr "Het aanmaken van de groep is mislukt."
+
+msgid "strconfdropgroup"
+msgstr "Weet u zeker dat u de groep \"%s\" wilt verwijderen?"
+
+msgid "strgroupdropped"
+msgstr "Groep verwijderd."
+
+msgid "strgroupdroppedbad"
+msgstr "Verwijdering van de groep is mislukt."
+
+msgid "strmembers"
+msgstr "Leden"
+
+msgid "strprivilege"
+msgstr "Rechten"
+
+msgid "strnoprivileges"
+msgstr "Dit object heeft standaard eigenaar rechten."
+
+msgid "strgrant"
+msgstr "Sta toe"
+
+msgid "strrevoke"
+msgstr "Ontzeg"
+
+msgid "strgranted"
+msgstr "Rechten toegevoegd."
+
+msgid "strgrantfailed"
+msgstr "Rechten toevoegen is mislukt."
+
+msgid "strshowalldatabases"
+msgstr "Toon alle databases"
+
+msgid "strnodatabase"
+msgstr "Geen database gevonden."
+
+msgid "strcreatedatabase"
+msgstr "Maak database aan"
+
+msgid "strdatabasename"
+msgstr "Database naam"
+
+msgid "strdatabasecreated"
+msgstr "Database aangemaakt."
+
+msgid "strdatabasecreatedbad"
+msgstr "Het aanmaken van de database is misluk."
+
+msgid "strconfdropdatabase"
+msgstr "Weet u zeker dat u de database \"%s\" wilt verwijderen?"
+
+msgid "strdatabasedropped"
+msgstr "Database verwijderd."
+
+msgid "strdatabasedroppedbad"
+msgstr "Database verwijdering is mislukt."
+
+msgid "strentersql"
+msgstr "Type hieronder de uit te voeren SQL:"
+
+msgid "strsqlexecuted"
+msgstr "SQL uitgevoerd."
+
+msgid "strvacuumgood"
+msgstr "Vacuum klaar."
+
+msgid "strvacuumbad"
+msgstr "Vacuum mislukt."
+
+msgid "stranalyzegood"
+msgstr "Analyze klaar."
+
+msgid "stranalyzebad"
+msgstr "Analyze mislukt."
+
+msgid "strshowallviews"
+msgstr "Toon alle views"
+
+msgid "strnoview"
+msgstr "Geen views gevonden."
+
+msgid "strcreateview"
+msgstr "Maak view aan"
+
+msgid "strviewname"
+msgstr "View naam"
+
+msgid "strviewcreated"
+msgstr "View aangemaakt."
+
+msgid "strviewcreatedbad"
+msgstr "Aanmaken van de View mislukt."
+
+msgid "strconfdropview"
+msgstr "Weet u zeker dat u de view \"%s\" wilt verwijderen?"
+
+msgid "strviewdropped"
+msgstr "View verwijderd."
+
+msgid "strviewdroppedbad"
+msgstr "Verwijderen van de view mislukt."
+
+msgid "strviewupdated"
+msgstr "View geupdate."
+
+msgid "strviewupdatedbad"
+msgstr "View updaten mislukt."
+
+msgid "strshowallsequences"
+msgstr "Toon alle sequences"
+
+msgid "strnosequence"
+msgstr "Geen sequence gevonden."
+
+msgid "strcreatesequence"
+msgstr "Maak sequence aan"
+
+msgid "strstartvalue"
+msgstr "Start waarde"
+
+msgid "strsequenceneedsname"
+msgstr "U dient een naam op te geven voor de sequence."
+
+msgid "strsequencecreated"
+msgstr "Sequence aangemaakt."
+
+msgid "strsequencecreatedbad"
+msgstr "Aanmaken van de sequence mislukt."
+
+msgid "strconfdropsequence"
+msgstr "Weet u zeker dat u de sequence \"%s\" wilt verwijderen?"
+
+msgid "strsequencedropped"
+msgstr "Sequence verwijderd."
+
+msgid "strsequencedroppedbad"
+msgstr "Verwijdering van de sequence mislukt."
+
+msgid "strindexes"
+msgstr "Indices"
+
+msgid "strshowallindexes"
+msgstr "Toon alle indices"
+
+msgid "strnoindex"
+msgstr "Geen index gevonden."
+
+msgid "strnoindexes"
+msgstr "Geen indices gevonden."
+
+msgid "strcreateindex"
+msgstr "Maak index aan"
+
+msgid "strindexneedsname"
+msgstr "U dient een naam op te geven voor de index."
+
+msgid "strindexneedscols"
+msgstr "Indices dienen uit minimaal één kolom te bestaan."
+
+msgid "strindexcreated"
+msgstr "Index aangemaakt"
+
+msgid "strindexcreatedbad"
+msgstr "Het aanmaken van de index is mislukt."
+
+msgid "strconfdropindex"
+msgstr "Weet u zeker dat u de index \"%s\" wilt verwijderen?"
+
+msgid "strindexdropped"
+msgstr "Index verwijderd."
+
+msgid "strindexdroppedbad"
+msgstr "Verwijdering van de index mislukt."
+
+msgid "strindextype"
+msgstr "Type van de index"
+
+msgid "strtablecolumnlist"
+msgstr "Kolommen in tabel"
+
+msgid "strindexcolumnlist"
+msgstr "Kolommen in index"
+
+msgid "strshowallrules"
+msgstr "Toon alle Rules"
+
+msgid "strnorule"
+msgstr "Geen rule gevonden."
+
+msgid "strnorules"
+msgstr "Geen rules gevonden."
+
+msgid "strcreaterule"
+msgstr "Maak rule aan"
+
+msgid "strrulename"
+msgstr "Rule naam"
+
+msgid "strruleneedsname"
+msgstr "U dient een naam op te geven voor de rule."
+
+msgid "strrulecreated"
+msgstr "Rule aangemaakt."
+
+msgid "strrulecreatedbad"
+msgstr "Het aanmaken van de rule is mislukt."
+
+msgid "strconfdroprule"
+msgstr "Weet u zeker dat u de rule \"%s\" op \"%s\" wilt verwijderen?"
+
+msgid "strruledropped"
+msgstr "Rule verwijderd."
+
+msgid "strruledroppedbad"
+msgstr "Verwijdering van de rule mislukt."
+
+msgid "strshowallconstraints"
+msgstr "Toon alle constraints"
+
+msgid "strnoconstraints"
+msgstr "Geen constraints gevonden."
+
+msgid "strcreateconstraint"
+msgstr "Maak constraint aan"
+
+msgid "strconstraintcreated"
+msgstr "Constraint aangemaakt."
+
+msgid "strconstraintcreatedbad"
+msgstr "Het aanmaken van de constraint is mislukt."
+
+msgid "strconfdropconstraint"
+msgstr "Weet u zeker dat u de constraint \"%s\" op \"%s\" wilt verwijderen?"
+
+msgid "strconstraintdropped"
+msgstr "Constraint verwijderd."
+
+msgid "strconstraintdroppedbad"
+msgstr "Verwijdering van de constraint mislukt."
+
+msgid "straddcheck"
+msgstr "Voeg Check toe"
+
+msgid "strcheckneedsdefinition"
+msgstr "Check constraint moeten gedefiniëerd zijn."
+
+msgid "strcheckadded"
+msgstr "Check constraint toegevoegd."
+
+msgid "strcheckaddedbad"
+msgstr "Toevoegen van check constraint mislukt."
+
+msgid "straddpk"
+msgstr "Voeg primaire sleutel toe"
+
+msgid "strpkneedscols"
+msgstr "Primaire sleutel dient minsten éé te hebben."
+
+msgid "strpkadded"
+msgstr "Primaire sleutel toegevoegd."
+
+msgid "strpkaddedbad"
+msgstr "Toevoegen van primaire sleutel is mislukt."
+
+msgid "stradduniq"
+msgstr "Voeg unieke sleutel toe."
+
+msgid "struniqneedscols"
+msgstr "Unieke sleutel dient minstens één kolom te hebben."
+
+msgid "struniqadded"
+msgstr "Unieke sleutel toegevoegd."
+
+msgid "struniqaddedbad"
+msgstr "Toevoegen van unieke sleutel mislukt."
+
+msgid "straddfk"
+msgstr "Voeg Foreign sleutel toe"
+
+msgid "strfkneedscols"
+msgstr "Foreign sleutel dient minstens één kolom te hebben."
+
+msgid "strfkneedstarget"
+msgstr "Foreign sleutel dient een doeltabel te hebben."
+
+msgid "strfkadded"
+msgstr "Foreign sleutel toegevoegd."
+
+msgid "strfkaddedbad"
+msgstr "Toevoegen van foreign sleutel mislukt."
+
+msgid "strfktarget"
+msgstr "Doeltabel"
+
+msgid "strfkcolumnlist"
+msgstr "Kolommen in sleutel"
+
+msgid "strshowallfunctions"
+msgstr "Toon alle functies"
+
+msgid "strnofunction"
+msgstr "Geen functies gevonden."
+
+msgid "strcreatefunction"
+msgstr "Maak functie aan"
+
+msgid "strfunctionname"
+msgstr "Functie naam"
+
+msgid "strfunctioncreated"
+msgstr "Functie aangemaakt."
+
+msgid "strfunctioncreatedbad"
+msgstr "Het aanmaken van de functie is mislukt."
+
+msgid "strconfdropfunction"
+msgstr "Weet u zeker dat u de functie \"%s\" wilt verwijderen?"
+
+msgid "strfunctiondropped"
+msgstr "Functie verwijderd."
+
+msgid "strfunctiondroppedbad"
+msgstr "Verwijdering van de functie mislukt."
+
+msgid "strfunctionupdated"
+msgstr "Functie geupdate."
+
+msgid "strfunctionupdatedbad"
+msgstr "Het updaten van de functie is mislukt."
+
+msgid "strshowalltriggers"
+msgstr "Toon alle triggers"
+
+msgid "strnotrigger"
+msgstr "Geen trigger gevonden."
+
+msgid "strtriggerneedsname"
+msgstr "U dient een naam op te geven voor de trigger."
+
+msgid "strtriggerneedsfunc"
+msgstr "U dient een functie op te geven voor de trigger."
+
+msgid "strtriggercreated"
+msgstr "Trigger aangemaakt."
+
+msgid "strtriggercreatedbad"
+msgstr "Het aanmaken van de trigger is mislukt."
+
+msgid "strconfdroptrigger"
+msgstr "Weet u zeker dat u de trigger \"%s\" op \"%s\" wilt verwijderen?"
+
+msgid "strtriggerdropped"
+msgstr "Trigger verwijderd."
+
+msgid "strtriggerdroppedbad"
+msgstr "Verwijdering van trigger mislukt."
+
+msgid "strnotype"
+msgstr "Geen type gevonden."
+
+msgid "strtypename"
+msgstr "Type naam"
+
+msgid "strschema"
+msgstr "Schema"
+
+msgid "strschemas"
+msgstr "Schema's"
+
+msgid "strshowallschemas"
+msgstr "Toon alle schema's"
+
+msgid "strnoschema"
+msgstr "Geen schema gevonden."
+
+msgid "strnoschemas"
+msgstr "Geen schema's gevonden."
+
+msgid "strcreateschema"
+msgstr "Maak schema aan"
+
+msgid "strschemaname"
+msgstr "Schema naam"
+
+msgid "strschemaneedsname"
+msgstr "U dient een naam op te geven voor het schema."
+
+msgid "strschemacreated"
+msgstr "Schema aangemaakt"
+
+msgid "strschemacreatedbad"
+msgstr "Het aanmaken van het schema is mislukt."
+
+msgid "strconfdropschema"
+msgstr "Weet u zeker dat u het schema \"%s\" wilt verwijderen?"
+
+msgid "strschemadropped"
+msgstr "Schema verwijderd."
+
+msgid "strschemadroppedbad"
+msgstr "Verwijdering van het schema mislukt."
+
+msgid "strtopbar"
+msgstr "%s draaiend op %s:%s -- U bent ingelogd als gebruiker \"%s\""
+
+msgid "strtimefmt"
+msgstr "jS M, Y g:iA"
+
+msgid "strondelete"
+msgstr "ON DELETE"
+
+msgid "stronupdate"
+msgstr "ON UPDATE"
+
+# These were missing after using the language conversion tool :(
+
+msgid "strfirst"
+msgstr "<< Eerste"
+
+msgid "strlast"
+msgstr "Laatste >>"
+
+msgid "strexplain"
+msgstr "Verklaring"
+
+msgid "strfind"
+msgstr "Zoek"
+
+msgid "stroptions"
+msgstr "Opties"
+
+msgid "strrefresh"
+msgstr "Ververs"
+
+msgid "strdownload"
+msgstr "Download"
+
+msgid "strrownotunique"
+msgstr "Geen unieke identifier voor deze rij."
+
+msgid "strselectallfields"
+msgstr "Selecteer alle velden"
+
+msgid "strtablealtered"
+msgstr "Tabel gewijzigd."
+
+msgid "strtablealteredbad"
+msgstr "Tabel wijzigen mislukt."
+
+msgid "strcreateuser"
+msgstr "Creëer gebruiker"
+
+msgid "strusercreatedbad"
+msgstr "Gebruiker creëren mislukt."
+
+msgid "straddmember"
+msgstr "Voeg groepslid toe"
+
+msgid "strmemberadded"
+msgstr "Groepslid toegevoegd."
+
+msgid "strmemberaddedbad"
+msgstr "Toevoegen groepslid mislukt."
+
+msgid "strdropmember"
+msgstr "Verwijder groepslid"
+
+msgid "strconfdropmember"
+msgstr "Weet u zeker dat u \"%s\" uit groep \"%s\" wilt verwijderen?"
+
+msgid "strmemberdropped"
+msgstr "Groepslid verwijderd."
+
+msgid "strmemberdroppedbad"
+msgstr "Verwijderen van groepslid mislukt."
+
+msgid "strgrantor"
+msgstr "Grantor"
+
+msgid "strasterisk"
+msgstr "*"
+
+msgid "strsequencereset"
+msgstr "Sequence reset."
+
+msgid "strsequenceresetbad"
+msgstr "Sequence reset mislukt."
+
+msgid "strproglanguage"
+msgstr "Programmeertaal"
+
+msgid "strtriggeraltered"
+msgstr "Trigger gewijzigd."
+
+msgid "strtriggeralteredbad"
+msgstr "Trigger wijziging mislukt."
+
+msgid "strdomain"
+msgstr "Domein"
+
+msgid "strdomains"
+msgstr "Domeinen"
+
+msgid "strshowalldomains"
+msgstr "Toon alle domeinen"
+
+msgid "strnodomains"
+msgstr "Geen domeinen gevonden."
+
+msgid "strcreatedomain"
+msgstr "Creëer domein"
+
+msgid "strdomaindropped"
+msgstr "Domein verwijderd."
+
+msgid "strdomaindroppedbad"
+msgstr "Verwijderen van domein mislukt."
+
+msgid "strconfdropdomain"
+msgstr "Weet u zeker dat u het domein \"%s\" wilt verwijderen?"
+
+msgid "strdomainneedsname"
+msgstr "U dient een naam op te geven voor uw domein."
+
+msgid "strdomaincreated"
+msgstr "Domein gecreëerd."
+
+msgid "strdomaincreatedbad"
+msgstr "Domeincreatie mislukt."
+
+msgid "strdomainaltered"
+msgstr "Domein gewijzigd."
+
+msgid "strdomainalteredbad"
+msgstr "Wijzigen van het domein mislukt."
+
+msgid "stroperator"
+msgstr "Operator"
+
+msgid "strshowalloperators"
+msgstr "Toon alle operators"
+
+msgid "strnooperator"
+msgstr "Geen operator gevonden."
+
+msgid "strnooperators"
+msgstr "Geen operators gevonden."
+
+msgid "strcreateoperator"
+msgstr "Creëer operator"
+
+msgid "stroperatorname"
+msgstr "Naam van de operator"
+
+msgid "strleftarg"
+msgstr "Linkerargument type"
+
+msgid "strrightarg"
+msgstr "Rechterargument type"
+
+msgid "stroperatorneedsname"
+msgstr "U dient een naam op te geven voor uw operator."
+
+msgid "stroperatorcreated"
+msgstr "Operator gecreëerd"
+
+msgid "stroperatorcreatedbad"
+msgstr "Operator creatie mislukt."
+
+msgid "strconfdropoperator"
+msgstr "Weet u zeker dat u de operator \"%s\" wilt verwijderen?"
+
+msgid "stroperatordropped"
+msgstr "Operator verwijderd."
+
+msgid "stroperatordroppedbad"
+msgstr "Verwijderen van de operator mislukt."
+
+msgid "strhelp"
+msgstr "Help"

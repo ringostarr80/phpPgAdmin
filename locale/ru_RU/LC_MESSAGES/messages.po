@@ -1,0 +1,2470 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru_RU\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "Русский (UTF-8)"
+
+msgid "applocale"
+msgstr "ru-RU.UTF-8"
+
+msgid "applangdir"
+msgstr "ltr"
+
+# Welcome
+msgid "strintro"
+msgstr "Добро пожаловать в phpPgAdmin."
+
+msgid "strppahome"
+msgstr "phpPgAdmin - домашняя страница"
+
+msgid "strpgsqlhome"
+msgstr "PostgreSQL - домашняя страница"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "PostgreSQL - документация (локально)"
+
+msgid "strreportbug"
+msgstr "Отчет об ошибках"
+
+msgid "strviewfaq"
+msgstr "Просмотр онлайн FAQ"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "Вход"
+
+msgid "strloginfailed"
+msgstr "Ошибка входа"
+
+msgid "strlogindisallowed"
+msgstr "Вход невозможен по соображениям безопасности"
+
+msgid "strserver"
+msgstr "Сервер"
+
+msgid "strservers"
+msgstr "Серверы"
+
+msgid "strgroupservers"
+msgstr "Серверы в группе \"%s\""
+
+msgid "strallservers"
+msgstr "Все серверы"
+
+msgid "strintroduction"
+msgstr "Введение"
+
+msgid "strhost"
+msgstr "Хост"
+
+msgid "strport"
+msgstr "Порт"
+
+msgid "strlogout"
+msgstr "Выход"
+
+msgid "strowner"
+msgstr "Владелец"
+
+msgid "straction"
+msgstr "Действие"
+
+msgid "stractions"
+msgstr "Действия"
+
+msgid "strname"
+msgstr "Имя"
+
+msgid "strdefinition"
+msgstr "Определение"
+
+msgid "strproperties"
+msgstr "Свойства"
+
+msgid "strbrowse"
+msgstr "Просмотреть"
+
+msgid "strenable"
+msgstr "Включить"
+
+msgid "strdisable"
+msgstr "Выключить"
+
+msgid "strdrop"
+msgstr "Удалить"
+
+msgid "strdropped"
+msgstr "Удалено"
+
+msgid "strnull"
+msgstr "Null"
+
+msgid "strnotnull"
+msgstr "Not Null"
+
+msgid "strprev"
+msgstr "< Пред"
+
+msgid "strnext"
+msgstr "След. >"
+
+msgid "strfirst"
+msgstr "<< Перв."
+
+msgid "strlast"
+msgstr "Посл. >>"
+
+msgid "strfailed"
+msgstr "Прервано"
+
+msgid "strcreate"
+msgstr "Создать"
+
+msgid "strcreated"
+msgstr "Создано"
+
+msgid "strcomment"
+msgstr "Комментарий"
+
+msgid "strlength"
+msgstr "Длина"
+
+msgid "strdefault"
+msgstr "По умолчанию"
+
+msgid "stralter"
+msgstr "Изменить"
+
+msgid "strok"
+msgstr "OK"
+
+msgid "strcancel"
+msgstr "Отменить"
+
+msgid "strkill"
+msgstr "Убить"
+
+msgid "strac"
+msgstr "Включить автодополнение"
+
+msgid "strsave"
+msgstr "Сохранить"
+
+msgid "strreset"
+msgstr "Сбросить"
+
+msgid "strinsert"
+msgstr "Вставить"
+
+msgid "strselect"
+msgstr "Выбрать"
+
+msgid "strdelete"
+msgstr "Удалить"
+
+msgid "strupdate"
+msgstr "Обновить"
+
+msgid "strreferences"
+msgstr "Ссылки"
+
+msgid "stryes"
+msgstr "Да"
+
+msgid "strno"
+msgstr "Нет"
+
+msgid "strtrue"
+msgstr "Истина"
+
+msgid "strfalse"
+msgstr "Ложь"
+
+msgid "stredit"
+msgstr "Редактировать"
+
+msgid "strcolumn"
+msgstr "Атрибут"
+
+msgid "strcolumns"
+msgstr "Атрибуты"
+
+msgid "strrows"
+msgstr "запис(ь/и/ей)"
+
+msgid "strrowsaff"
+msgstr "запис(ь/и/ей) обработано."
+
+msgid "strobjects"
+msgstr "объект(а/ов)"
+
+msgid "strback"
+msgstr "Назад"
+
+msgid "strqueryresults"
+msgstr "Результаты запроса"
+
+msgid "strshow"
+msgstr "Показать"
+
+msgid "strempty"
+msgstr "Очистить"
+
+msgid "strlanguage"
+msgstr "Язык"
+
+msgid "strencoding"
+msgstr "Кодировка"
+
+msgid "strvalue"
+msgstr "Значение"
+
+msgid "strunique"
+msgstr "Уникальный"
+
+msgid "strprimary"
+msgstr "Первичный"
+
+msgid "strexport"
+msgstr "Экспорт"
+
+msgid "strimport"
+msgstr "Импорт"
+
+msgid "strallowednulls"
+msgstr "Разрешенные NULL-символы"
+
+msgid "strbackslashn"
+msgstr "\\N"
+
+msgid "stremptystring"
+msgstr "Пустая строка/поле"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "stradmin"
+msgstr "Управление"
+
+msgid "strvacuum"
+msgstr "Перестроить"
+
+msgid "stranalyze"
+msgstr "Анализировать"
+
+msgid "strclusterindex"
+msgstr "Кластеризовать"
+
+msgid "strclustered"
+msgstr "Кластеризован?"
+
+msgid "strreindex"
+msgstr "Перестроить индекс"
+
+msgid "strexecute"
+msgstr "Выполнить"
+
+msgid "stradd"
+msgstr "Добавить"
+
+msgid "strevent"
+msgstr "Событие"
+
+msgid "strwhere"
+msgstr "Где"
+
+msgid "strinstead"
+msgstr "Делать вместо"
+
+msgid "strwhen"
+msgstr "Когда"
+
+msgid "strformat"
+msgstr "Формат"
+
+msgid "strdata"
+msgstr "Данные"
+
+msgid "strconfirm"
+msgstr "Подтвердить"
+
+msgid "strexpression"
+msgstr "Выражение"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strseparator"
+msgstr ": "
+
+msgid "strexpand"
+msgstr "Расширить"
+
+msgid "strcollapse"
+msgstr "Свернуть"
+
+msgid "strfind"
+msgstr "Найти"
+
+msgid "stroptions"
+msgstr "Опции"
+
+msgid "strrefresh"
+msgstr "Обновить"
+
+msgid "strdownload"
+msgstr "Загрузить"
+
+msgid "strdownloadgzipped"
+msgstr "Загрузить архив gzip"
+
+msgid "strinfo"
+msgstr "Сведения"
+
+msgid "stroids"
+msgstr "OIDs"
+
+msgid "stradvanced"
+msgstr "Дополнительно"
+
+msgid "strvariables"
+msgstr "Переменные"
+
+msgid "strprocess"
+msgstr "Процесс"
+
+msgid "strprocesses"
+msgstr "Процессы"
+
+msgid "strsetting"
+msgstr "Опции"
+
+msgid "streditsql"
+msgstr "Редактировать SQL"
+
+msgid "strruntime"
+msgstr "Время выполнения: %s мсек"
+
+msgid "strpaginate"
+msgstr "Нумеровать страницы с результатами"
+
+msgid "struploadscript"
+msgstr "или загрузить SQL-скрипт:"
+
+msgid "strstarttime"
+msgstr "Время начала"
+
+msgid "strfile"
+msgstr "Файл"
+
+msgid "strfileimported"
+msgstr "Файл импортирован."
+
+msgid "strtrycred"
+msgstr "Использовать эти данные аутентификации для всех серверов"
+
+msgid "strconfdropcred"
+msgstr "В целях безопасности отключение уничтожит общую аутентификационную информацию. Вы действительно хотите отключится?"
+
+msgid "stractionsonmultiplelines"
+msgstr "Действия над несколькими строками."
+
+msgid "strselectall"
+msgstr "Выбрать все"
+
+msgid "strunselectall"
+msgstr "Отменить выбор всех"
+
+msgid "strlocale"
+msgstr "Локаль"
+
+msgid "strcollation"
+msgstr "Порядок сортировки строк (LC_COLLATE)"
+
+msgid "strctype"
+msgstr "Классификация символов (LC_CTYPE)"
+
+msgid "strdefaultvalues"
+msgstr "Значения по умолчанию"
+
+msgid "strnewvalues"
+msgstr "Новые значения"
+
+msgid "strstart"
+msgstr "Запустить автоматическое обновление"
+
+msgid "strstop"
+msgstr "Остановить автоматическое обновление"
+
+msgid "strgotoppage"
+msgstr "вверх"
+
+msgid "strtheme"
+msgstr "Тема"
+
+msgid "strcluster"
+msgstr "Кластер"
+
+# Admin
+msgid "stradminondatabase"
+msgstr "Следующие административные задачи применяются ко всей базе данных %s."
+
+msgid "stradminontable"
+msgstr "Следующие административные задачи применяются к таблице %s."
+
+# User-supplied SQL history
+msgid "strhistory"
+msgstr "История"
+
+msgid "strnohistory"
+msgstr "Нет истории."
+
+msgid "strclearhistory"
+msgstr "Очистить историю"
+
+msgid "strdelhistory"
+msgstr "Удалить из истории"
+
+msgid "strconfdelhistory"
+msgstr "Вы действительно хотите удалить этот запрос из истории?"
+
+msgid "strconfclearhistory"
+msgstr "Вы действительно хотите очистить историю?"
+
+msgid "strnodatabaseselected"
+msgstr "Пожалуйста, выберете базу данных."
+
+# Database sizes
+msgid "strnoaccess"
+msgstr "Нет доступа"
+
+msgid "strsize"
+msgstr "Размер"
+
+msgid "strbytes"
+msgstr "байт"
+
+msgid "strkb"
+msgstr "кБ"
+
+msgid "strmb"
+msgstr "МБ"
+
+msgid "strgb"
+msgstr "ГБ"
+
+msgid "strtb"
+msgstr "ТБ"
+
+# Error handling
+msgid "strnoframes"
+msgstr "Это приложение лучше всего работает в браузере, который поддерживает фреймы, но оно может работать и без использования фреймов если перейти по ссылке ниже."
+
+msgid "strnoframeslink"
+msgstr "Использовать без фреймов"
+
+msgid "strbadconfig"
+msgstr "Ваш config.inc.php является устаревшим. Вам необходимо обновить его из config.inc.php-dist."
+
+msgid "strnotloaded"
+msgstr "Ваша инсталяция PHP не поддерживает PostgreSQL. Вам необходимо пересобрать PHP, используя параметр --with-pgsql для configure."
+
+msgid "strpostgresqlversionnotsupported"
+msgstr "Версия PostgreSQL не поддерживается. Пожалуйста, обновитесь до версии %s или более поздней."
+
+msgid "strbadschema"
+msgstr "Обнаружена неверная схема."
+
+msgid "strbadencoding"
+msgstr "Ошибка при установке кодировки клиента (client encoding)."
+
+msgid "strsqlerror"
+msgstr "Ошибка SQL:"
+
+msgid "strinstatement"
+msgstr "В операторе:"
+
+msgid "strinvalidparam"
+msgstr "Неверный параметр скрипта."
+
+msgid "strnodata"
+msgstr "Данных не найдено."
+
+msgid "strnoobjects"
+msgstr "Объектов не найдено."
+
+msgid "strrownotunique"
+msgstr "Нет уникального идентификатора для этой записи."
+
+msgid "strnouploads"
+msgstr "Загрузка файла невозможна."
+
+msgid "strimporterror"
+msgstr "Ошибка импорта."
+
+msgid "strimporterror-fileformat"
+msgstr "Ошибка импорта: Невозможно автоматически определить формат файла."
+
+msgid "strimporterrorline"
+msgstr "Ошибка канала при импорте %s."
+
+msgid "strimporterrorline-badcolumnnum"
+msgstr "Ошибка импорта в строке %s: Строка не обладает необходимым числом атрибутов."
+
+msgid "strimporterror-uploadedfile"
+msgstr "Ошибка импорта: Файл не может быть загружен на сервер"
+
+msgid "strcannotdumponwindows"
+msgstr "Экспорт таблиц и схем со сложными именами в Windows не поддерживается."
+
+msgid "strinvalidserverparam"
+msgstr "Попытка соединения с некорректным значением параметра \"сервер\", возможно кто-то пытается взломать вашу систему."
+
+msgid "strnoserversupplied"
+msgstr "Значение параметра \"сервер\" не представлено!"
+
+msgid "strbadpgdumppath"
+msgstr "Ошибка экспорта: Невозможно выполнить pg_dump (указанный в conf/config.inc.php путь: %s). Пожалуйста, исправте этот путь в конфигурации и заново войдите в систему."
+
+msgid "strbadpgdumpallpath"
+msgstr "Ошибка экспорта: Невозможно выполнить pg_dumpall (указанный в conf/config.inc.php путь: %s). Пожалуйста, исправте этот путь в конфигурации и заново войдите в систему."
+
+msgid "strconnectionfail"
+msgstr "Ошибка подключения к серверу."
+
+# Tables
+msgid "strtable"
+msgstr "Таблица"
+
+msgid "strtables"
+msgstr "Таблицы"
+
+msgid "strshowalltables"
+msgstr "Показать все таблицы"
+
+msgid "strnotables"
+msgstr "Таблиц не найдено."
+
+msgid "strnotable"
+msgstr "Таблица не обнаружена."
+
+msgid "strcreatetable"
+msgstr "Создать таблицу"
+
+msgid "strcreatetablelike"
+msgstr "Создать таблицу наподобие"
+
+msgid "strcreatetablelikeparent"
+msgstr "Исходная таблица"
+
+msgid "strcreatelikewithdefaults"
+msgstr "включить значения по умолчанию"
+
+msgid "strcreatelikewithconstraints"
+msgstr "включить ограничения"
+
+msgid "strcreatelikewithindexes"
+msgstr "включить индексы"
+
+msgid "strtablename"
+msgstr "Имя таблицы"
+
+msgid "strtableneedsname"
+msgstr "Вам необходимо определить имя таблицы."
+
+msgid "strtablelikeneedslike"
+msgstr "Вам необходимо определить исходную таблицу."
+
+msgid "strtableneedsfield"
+msgstr "Вам необходимо определить по крайней мере одно поле."
+
+msgid "strtableneedscols"
+msgstr "Вам необходимо указать допустимое число атрибутов."
+
+msgid "strtablecreated"
+msgstr "Таблица создана."
+
+msgid "strtablecreatedbad"
+msgstr "Создание таблицы прервано."
+
+msgid "strconfdroptable"
+msgstr "Вы уверены, что хотите удалить таблицу \"%s\"?"
+
+msgid "strtabledropped"
+msgstr "Таблица удалена."
+
+msgid "strtabledroppedbad"
+msgstr "Удаление таблицы прервано."
+
+msgid "strconfemptytable"
+msgstr "Вы уверены, что хотите очистить таблицу \"%s\"?"
+
+msgid "strtableemptied"
+msgstr "Таблица очищена."
+
+msgid "strtableemptiedbad"
+msgstr "Очистка таблицы прервана."
+
+msgid "strinsertrow"
+msgstr "Добавить запись"
+
+msgid "strrowinserted"
+msgstr "Запись добавлена."
+
+msgid "strrowinsertedbad"
+msgstr "Добавление записи прервано."
+
+msgid "strnofkref"
+msgstr "Нет соответствующего значения внешнего ключа %s."
+
+msgid "strrowduplicate"
+msgstr "Вставка строки прервана, попытка сделать дублирующую вставку."
+
+msgid "streditrow"
+msgstr "Редактировать запись"
+
+msgid "strrowupdated"
+msgstr "Запись обновлена."
+
+msgid "strrowupdatedbad"
+msgstr "Обновление записи прервано."
+
+msgid "strdeleterow"
+msgstr "Удалить запись"
+
+msgid "strconfdeleterow"
+msgstr "Вы уверены, что хотите удалить запись?"
+
+msgid "strrowdeleted"
+msgstr "Запись удалена."
+
+msgid "strrowdeletedbad"
+msgstr "Удаление записи прервано."
+
+msgid "strinsertandrepeat"
+msgstr "Вставить и повторить"
+
+msgid "strnumcols"
+msgstr "Количество атрибутов"
+
+msgid "strcolneedsname"
+msgstr "Вам необходимо определить имя столбца"
+
+msgid "strselectallfields"
+msgstr "Выбрать все поля"
+
+msgid "strselectneedscol"
+msgstr "Вам необходимо указать по крайней мере один атрибут"
+
+msgid "strselectunary"
+msgstr "Унарный оператор не может иметь величину."
+
+msgid "strcolumnaltered"
+msgstr "Атрибут изменен."
+
+msgid "strcolumnalteredbad"
+msgstr "Изменение атрибута прервано."
+
+msgid "strconfdropcolumn"
+msgstr "Вы уверены, что хотите удалить атрибут \"%s\" таблицы \"%s\"?"
+
+msgid "strcolumndropped"
+msgstr "Атрибут удален."
+
+msgid "strcolumndroppedbad"
+msgstr "Удаление атрибута прервано."
+
+msgid "straddcolumn"
+msgstr "Добавить атрибут"
+
+msgid "strcolumnadded"
+msgstr "Атрибут добавлен."
+
+msgid "strcolumnaddedbad"
+msgstr "Добавление атрибута прервано."
+
+msgid "strcascade"
+msgstr "Каскадом"
+
+msgid "strtablealtered"
+msgstr "Таблица изменена."
+
+msgid "strtablealteredbad"
+msgstr "Изменение таблицы прервано."
+
+msgid "strdataonly"
+msgstr "Только данные"
+
+msgid "strstructureonly"
+msgstr "Только структуру"
+
+msgid "strstructureanddata"
+msgstr "Структуру и данные"
+
+msgid "strtabbed"
+msgstr "Через табуляцию"
+
+msgid "strauto"
+msgstr "Авто"
+
+msgid "strconfvacuumtable"
+msgstr "Вы действительно хотите перестроить \"%s\"?"
+
+msgid "strconfanalyzetable"
+msgstr "Вы действительно хотите произвести анализ \"%s\"?"
+
+msgid "strconfreindextable"
+msgstr "Вы действительно хотите перестроить индекс \"%s\"?"
+
+msgid "strconfclustertable"
+msgstr "Вы действительно хотите кластеризовать \"%s\"?"
+
+msgid "strestimatedrowcount"
+msgstr "Предполагаемое число строк"
+
+msgid "strspecifytabletoanalyze"
+msgstr "Вам необходимо указать как минимум одну таблицу для анализа."
+
+msgid "strspecifytabletoempty"
+msgstr "Вам необходимо указать как минимум одну таблицу для очистки."
+
+msgid "strspecifytabletodrop"
+msgstr "Вам необходимо указать как минимум одну таблицу для удаления."
+
+msgid "strspecifytabletovacuum"
+msgstr "Вам необходимо указать как минимум одну таблицу для перестроения."
+
+msgid "strspecifytabletoreindex"
+msgstr "Вам необходимо указать как минимум одну таблицу для перестроения индекса."
+
+msgid "strspecifytabletocluster"
+msgstr "Вам необходимо указать как минимум одну таблицу для кластеризации."
+
+msgid "strnofieldsforinsert"
+msgstr "Вы не можете вставить строку в таблицу без столбцов."
+
+# Columns
+msgid "strcolprop"
+msgstr "Свойства столбца"
+
+msgid "strnotableprovided"
+msgstr "Значение параметра \"таблица\" не представлено!"
+
+# Users
+msgid "struser"
+msgstr "Пользователь"
+
+msgid "strusers"
+msgstr "Пользователи"
+
+msgid "strusername"
+msgstr "Имя пользователя"
+
+msgid "strpassword"
+msgstr "Пароль"
+
+msgid "strsuper"
+msgstr "Суперпользователь?"
+
+msgid "strcreatedb"
+msgstr "Создать базу данных?"
+
+msgid "strexpires"
+msgstr "Срок действия"
+
+msgid "strsessiondefaults"
+msgstr "Опции сеанса по умолчанию"
+
+msgid "strnousers"
+msgstr "Нет таких пользователей."
+
+msgid "struserupdated"
+msgstr "Пользователь обновлен."
+
+msgid "struserupdatedbad"
+msgstr "Обновление пользователя прервано."
+
+msgid "strshowallusers"
+msgstr "Показать всех пользователей"
+
+msgid "strcreateuser"
+msgstr "Создать пользователя"
+
+msgid "struserneedsname"
+msgstr "Вы должны ввести имя пользователя."
+
+msgid "strusercreated"
+msgstr "Пользователь создан."
+
+msgid "strusercreatedbad"
+msgstr "Создание пользователя прервано."
+
+msgid "strconfdropuser"
+msgstr "Вы уверены, что хотите удалить пользователя \"%s\"?"
+
+msgid "struserdropped"
+msgstr "Пользователь удален."
+
+msgid "struserdroppedbad"
+msgstr "Удаление пользователя прервано."
+
+msgid "straccount"
+msgstr "Аккаунт"
+
+msgid "strchangepassword"
+msgstr "Изменить пароль"
+
+msgid "strpasswordchanged"
+msgstr "Пароль изменен."
+
+msgid "strpasswordchangedbad"
+msgstr "Изменение пароля прервано."
+
+msgid "strpasswordshort"
+msgstr "Пароль слишком короткий."
+
+msgid "strpasswordconfirm"
+msgstr "Пароль не соответствует подтверждению."
+
+# Groups
+msgid "strgroup"
+msgstr "Группа"
+
+msgid "strgroups"
+msgstr "Группы"
+
+msgid "strshowallgroups"
+msgstr "Показать все группы"
+
+msgid "strnogroup"
+msgstr "Группа не обнаружена."
+
+msgid "strnogroups"
+msgstr "Ни одной группы не найдено."
+
+msgid "strcreategroup"
+msgstr "Создать группу"
+
+msgid "strgroupneedsname"
+msgstr "Вам необходимо указать название группы."
+
+msgid "strgroupcreated"
+msgstr "Группа создана."
+
+msgid "strgroupcreatedbad"
+msgstr "Создание группы прервано."
+
+msgid "strconfdropgroup"
+msgstr "Вы уверены, что хотите удалить группу \"%s\"?"
+
+msgid "strgroupdropped"
+msgstr "Группа удалена."
+
+msgid "strgroupdroppedbad"
+msgstr "Удаление группы прервано."
+
+msgid "strmembers"
+msgstr "Участников"
+
+msgid "strmemberof"
+msgstr "Добавить в роли"
+
+msgid "stradminmembers"
+msgstr "Admin-участников"
+
+msgid "straddmember"
+msgstr "Добавить участника"
+
+msgid "strmemberadded"
+msgstr "Участник добавлен."
+
+msgid "strmemberaddedbad"
+msgstr "Добавление участника прервано."
+
+msgid "strdropmember"
+msgstr "Удалить участника"
+
+msgid "strconfdropmember"
+msgstr "Вы уверены, что хотите удалить участника \"%s\" из группы \"%s\"?"
+
+msgid "strmemberdropped"
+msgstr "Участник удален."
+
+msgid "strmemberdroppedbad"
+msgstr "Удаление участника прервано."
+
+# Roles
+msgid "strrole"
+msgstr "Роль"
+
+msgid "strroles"
+msgstr "Роли"
+
+msgid "strshowallroles"
+msgstr "Показать все роли"
+
+msgid "strnoroles"
+msgstr "Роли не найдены."
+
+msgid "strinheritsprivs"
+msgstr "Наследовать привилегии?"
+
+msgid "strcreaterole"
+msgstr "Создать роль"
+
+msgid "strcancreaterole"
+msgstr "Может создавать роли?"
+
+msgid "strrolecreated"
+msgstr "Роль создана."
+
+msgid "strrolecreatedbad"
+msgstr "Создание роли прервано."
+
+msgid "strrolealtered"
+msgstr "Роль изменена."
+
+msgid "strrolealteredbad"
+msgstr "Изменение роли прервано."
+
+msgid "strcanlogin"
+msgstr "Может логиниться?"
+
+msgid "strconnlimit"
+msgstr "Лимит соединений"
+
+msgid "strdroprole"
+msgstr "Удалить роль"
+
+msgid "strconfdroprole"
+msgstr "Вы действительно хотите удалить роль \"%s\"?"
+
+msgid "strroledropped"
+msgstr "Роль удалена."
+
+msgid "strroledroppedbad"
+msgstr "Удаление роли прервано."
+
+msgid "strnolimit"
+msgstr "Без ограничений"
+
+msgid "strnever"
+msgstr "Никогда"
+
+msgid "strroleneedsname"
+msgstr "Вам необходимо определить имя роли."
+
+# Privileges
+msgid "strprivilege"
+msgstr "Привилегия"
+
+msgid "strprivileges"
+msgstr "Привилегии"
+
+msgid "strnoprivileges"
+msgstr "Объект не имеет привилегий."
+
+msgid "strgrant"
+msgstr "Усилить"
+
+msgid "strrevoke"
+msgstr "Ослабить"
+
+msgid "strgranted"
+msgstr "Привилегии изменены."
+
+msgid "strgrantfailed"
+msgstr "Изменение привилегий прервано."
+
+msgid "strgrantbad"
+msgstr "Вам необходимо указать хотя бы одного пользователя или группу и хотя бы одну привилегию."
+
+msgid "strgrantor"
+msgstr "Донор"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "База данных"
+
+msgid "strdatabases"
+msgstr "Базы данных"
+
+msgid "strshowalldatabases"
+msgstr "Показать все базы данных"
+
+msgid "strnodatabases"
+msgstr "Ни одной базы данных не найдено."
+
+msgid "strcreatedatabase"
+msgstr "Создать базу данных"
+
+msgid "strdatabasename"
+msgstr "Имя базы данных"
+
+msgid "strdatabaseneedsname"
+msgstr "Вам необходимо присвоить имя Вашей базе данных."
+
+msgid "strdatabasecreated"
+msgstr "База данных создана."
+
+msgid "strdatabasecreatedbad"
+msgstr "Создание базы данных прервано."
+
+msgid "strconfdropdatabase"
+msgstr "Вы уверены, что хотите уничтожить базу данных \"%s\"?"
+
+msgid "strdatabasedropped"
+msgstr "База данных уничтожена."
+
+msgid "strdatabasedroppedbad"
+msgstr "Уничтожение базы данных прервано."
+
+msgid "strentersql"
+msgstr "Введите SQL-запрос ниже:"
+
+msgid "strsqlexecuted"
+msgstr "SQL-запрос выполнен."
+
+msgid "strvacuumgood"
+msgstr "Операция перестроения завершена."
+
+msgid "strvacuumbad"
+msgstr "Операция перестроения прервана."
+
+msgid "stranalyzegood"
+msgstr "Операция анализа завершена."
+
+msgid "stranalyzebad"
+msgstr "Операция анализа прервана."
+
+msgid "strreindexgood"
+msgstr "Переиндексация завершена."
+
+msgid "strreindexbad"
+msgstr "Переиндексация прервана."
+
+msgid "strfull"
+msgstr "Полностью"
+
+msgid "strfreeze"
+msgstr "Заморозить"
+
+msgid "strforce"
+msgstr "Принудительно"
+
+msgid "strsignalsent"
+msgstr "Сигнал отправлен."
+
+msgid "strsignalsentbad"
+msgstr "Отправка сигнала прервана."
+
+msgid "strallobjects"
+msgstr "Все объекты"
+
+msgid "strdatabasealtered"
+msgstr "База данных изменена."
+
+msgid "strdatabasealteredbad"
+msgstr "Изменение базы данных прервано."
+
+msgid "strspecifydatabasetodrop"
+msgstr "Вам необходимо указать как минимум одну базу данных для удаления."
+
+msgid "strtemplatedb"
+msgstr "Шаблон"
+
+msgid "strconfanalyzedatabase"
+msgstr "Вы действительно хотите анализировать все таблицы в базе данных \"%s\"?"
+
+msgid "strconfvacuumdatabase"
+msgstr "Вы действительно хотите перестроить все таблицы в базе данных \"%s\"?"
+
+msgid "strconfreindexdatabase"
+msgstr "Вы действительно хотите перестроить индекс всех таблиц в базе данных \"%s\"?"
+
+msgid "strconfclusterdatabase"
+msgstr "Вы действительно хотите кластеризовать все таблицы в базе данных \"%s\"?"
+
+# Views
+msgid "strview"
+msgstr "Представление"
+
+msgid "strviews"
+msgstr "Представления"
+
+msgid "strshowallviews"
+msgstr "Показать все представления"
+
+msgid "strnoview"
+msgstr "Представление не найдено."
+
+msgid "strnoviews"
+msgstr "Ни одного представления не найдено."
+
+msgid "strcreateview"
+msgstr "Создать представление"
+
+msgid "strviewname"
+msgstr "Имя представления"
+
+msgid "strviewneedsname"
+msgstr "Вам необходимо указать имя представления."
+
+msgid "strviewneedsdef"
+msgstr "Вам необходимо определить атрибуты представления."
+
+msgid "strviewneedsfields"
+msgstr "Вам необходимо определить атрибуты для выборки в ваше представление."
+
+msgid "strviewcreated"
+msgstr "Представление создано."
+
+msgid "strviewcreatedbad"
+msgstr "Создание представления прервано."
+
+msgid "strconfdropview"
+msgstr "Вы уверены, что хотите уничтожить представление \"%s\"?"
+
+msgid "strviewdropped"
+msgstr "Представление уничтожено."
+
+msgid "strviewdroppedbad"
+msgstr "Уничтожение представления прервано."
+
+msgid "strviewupdated"
+msgstr "Представление обновлено."
+
+msgid "strviewupdatedbad"
+msgstr "Обновление представления прервано."
+
+msgid "strviewlink"
+msgstr "Связанные ключи"
+
+msgid "strviewconditions"
+msgstr "Дополнительные условия"
+
+msgid "strcreateviewwiz"
+msgstr "Создать представление помощником"
+
+msgid "strrenamedupfields"
+msgstr "Переименовывать поля-дубликаты"
+
+msgid "strdropdupfields"
+msgstr "Удалять поля-дубликаты"
+
+msgid "strerrordupfields"
+msgstr "Ошибка при появлении полей-дубликатов"
+
+msgid "strviewaltered"
+msgstr "Представление изменено."
+
+msgid "strviewalteredbad"
+msgstr "Изменение представления прервано."
+
+msgid "strspecifyviewtodrop"
+msgstr "Вам необходимо определить как минимум одно представление для удаления."
+
+# Sequences
+msgid "strsequence"
+msgstr "Последовательность"
+
+msgid "strsequences"
+msgstr "Последовательности"
+
+msgid "strshowallsequences"
+msgstr "Показать все последовательности"
+
+msgid "strnosequence"
+msgstr "Последовательность не обнаружена."
+
+msgid "strnosequences"
+msgstr "Ни одной последовательности не найдено."
+
+msgid "strcreatesequence"
+msgstr "Создать последовательность"
+
+msgid "strlastvalue"
+msgstr "Последнее значение"
+
+msgid "strincrementby"
+msgstr "Увеличение на"
+
+msgid "strstartvalue"
+msgstr "Начальное значение"
+
+msgid "strmaxvalue"
+msgstr "Макс. величина"
+
+msgid "strminvalue"
+msgstr "Мин. величина"
+
+msgid "strcachevalue"
+msgstr "Размер кэша"
+
+msgid "strlogcount"
+msgstr "Log Count"
+
+msgid "strcancycle"
+msgstr "Может зацикливаться?"
+
+msgid "striscalled"
+msgstr "Увеличит последнее значение после получения следующего значения (is_called)?"
+
+msgid "strsequenceneedsname"
+msgstr "Вам необходимо указать имя последовательности."
+
+msgid "strsequencecreated"
+msgstr "Последовательность создана."
+
+msgid "strsequencecreatedbad"
+msgstr "Создание последовательности прервано."
+
+msgid "strconfdropsequence"
+msgstr "Вы уверены, что хотите уничтожить последовательность \"%s\"?"
+
+msgid "strsequencedropped"
+msgstr "Последовательность уничтожена."
+
+msgid "strsequencedroppedbad"
+msgstr "Уничтожение последовательности прервано."
+
+msgid "strsequencereset"
+msgstr "Последовательность сброшена."
+
+msgid "strsequenceresetbad"
+msgstr "Сброс последовательности прерван."
+
+msgid "strsequencealtered"
+msgstr "Последовательность изменена."
+
+msgid "strsequencealteredbad"
+msgstr "Изменение последовательности прервано."
+
+msgid "strsetval"
+msgstr "Установить значение"
+
+msgid "strsequencesetval"
+msgstr "Значение последовательности установлено."
+
+msgid "strsequencesetvalbad"
+msgstr "Изменение значения последовательности прервано."
+
+msgid "strnextval"
+msgstr "Инкрементировать значение"
+
+msgid "strsequencenextval"
+msgstr "Значение последовательности инкрементировано."
+
+msgid "strsequencenextvalbad"
+msgstr "Инкрементирование значения последовательности прервано."
+
+msgid "strspecifysequencetodrop"
+msgstr "Вам необходимо указать как минимун одну последовательность для удаления."
+
+# Indexes
+msgid "strindex"
+msgstr "Индекс"
+
+msgid "strindexes"
+msgstr "Индексы"
+
+msgid "strindexname"
+msgstr "Имя индекса"
+
+msgid "strshowallindexes"
+msgstr "Показать все индексы"
+
+msgid "strnoindex"
+msgstr "Индекс не обнаружен."
+
+msgid "strnoindexes"
+msgstr "Ни одного индекса не найдено."
+
+msgid "strcreateindex"
+msgstr "Создать индекс"
+
+msgid "strtabname"
+msgstr "Имя таблицы"
+
+msgid "strcolumnname"
+msgstr "Имя атрибута"
+
+msgid "strindexneedsname"
+msgstr "Вам необходимо указать имя индекса"
+
+msgid "strindexneedscols"
+msgstr "Вам необходимо указать допустимое количество атрибутов."
+
+msgid "strindexcreated"
+msgstr "Индекс создан."
+
+msgid "strindexcreatedbad"
+msgstr "Создание индекса прервано."
+
+msgid "strconfdropindex"
+msgstr "Вы уверены, что хотите уничтожить индекс \"%s\"?"
+
+msgid "strindexdropped"
+msgstr "Индекс уничтожен."
+
+msgid "strindexdroppedbad"
+msgstr "Уничтожение индекса прервано."
+
+msgid "strkeyname"
+msgstr "Имя ключа"
+
+msgid "struniquekey"
+msgstr "Уникальный ключ"
+
+msgid "strprimarykey"
+msgstr "Первичный ключ"
+
+msgid "strindextype"
+msgstr "Вид индекса"
+
+msgid "strtablecolumnlist"
+msgstr "Атрибутов в таблице"
+
+msgid "strindexcolumnlist"
+msgstr "Атрибутов в индексе"
+
+msgid "strclusteredgood"
+msgstr "Кластеризация завершена."
+
+msgid "strclusteredbad"
+msgstr "Кластеризация прервана."
+
+msgid "strconcurrently"
+msgstr "Без блокировки записи (CONCURRENTLY)"
+
+msgid "strnoclusteravailable"
+msgstr "Таблица не кластеризуема по индексу."
+
+# Rules
+msgid "strrules"
+msgstr "Правила"
+
+msgid "strrule"
+msgstr "Правило"
+
+msgid "strshowallrules"
+msgstr "Показать все правила"
+
+msgid "strnorule"
+msgstr "Правило не найдено."
+
+msgid "strnorules"
+msgstr "Ни одного правила не найдено."
+
+msgid "strcreaterule"
+msgstr "Создать правило"
+
+msgid "strrulename"
+msgstr "Имя правила"
+
+msgid "strruleneedsname"
+msgstr "Вам необходимо указать имя правила."
+
+msgid "strrulecreated"
+msgstr "Правило создано."
+
+msgid "strrulecreatedbad"
+msgstr "Создание правила прервано."
+
+msgid "strconfdroprule"
+msgstr "Вы уверены, что хотите уничтожить правило \"%s\" on \"%s\"?"
+
+msgid "strruledropped"
+msgstr "Правило уничтожено."
+
+msgid "strruledroppedbad"
+msgstr "Уничтожение правила прервано."
+
+# Constraints
+msgid "strconstraint"
+msgstr "Ограничение"
+
+msgid "strconstraints"
+msgstr "Ограничения"
+
+msgid "strshowallconstraints"
+msgstr "Показать все ограничения"
+
+msgid "strnoconstraints"
+msgstr "Ни одного ограничения не найдено."
+
+msgid "strcreateconstraint"
+msgstr "Создать ограничение"
+
+msgid "strconstraintcreated"
+msgstr "Ограничение создано."
+
+msgid "strconstraintcreatedbad"
+msgstr "Создание ограничения прервано."
+
+msgid "strconfdropconstraint"
+msgstr "Вы уверены, что хотите уничтожить ограничение \"%s\" on \"%s\"?"
+
+msgid "strconstraintdropped"
+msgstr "Ограничение уничтожено."
+
+msgid "strconstraintdroppedbad"
+msgstr "Уничтожение ограничения прервано."
+
+msgid "straddcheck"
+msgstr "Добавить проверку"
+
+msgid "strcheckneedsdefinition"
+msgstr "Ограничение проверки нуждается в определении."
+
+msgid "strcheckadded"
+msgstr "Ограничение проверки добавлено."
+
+msgid "strcheckaddedbad"
+msgstr "Добавление ограничения проверки прервано."
+
+msgid "straddpk"
+msgstr "Добавить первичный ключ"
+
+msgid "strpkneedscols"
+msgstr "Первичный ключ должен включать хотя бы один атрибут."
+
+msgid "strpkadded"
+msgstr "Первичный ключ добавлен."
+
+msgid "strpkaddedbad"
+msgstr "Добавление первичного ключа прервано."
+
+msgid "stradduniq"
+msgstr "Добавить уникальный ключ"
+
+msgid "struniqneedscols"
+msgstr "Уникальный ключ должен включать хотя бы один атрибут."
+
+msgid "struniqadded"
+msgstr "Уникальный ключ добавлен."
+
+msgid "struniqaddedbad"
+msgstr "Добавление уникального ключа прервано."
+
+msgid "straddfk"
+msgstr "Добавить внешний ключ"
+
+msgid "strfkneedscols"
+msgstr "Внешний ключ должен включать хотя бы один атрибут."
+
+msgid "strfkneedstarget"
+msgstr "Внешнему ключу необходимо указать целевую таблицу."
+
+msgid "strfkadded"
+msgstr "Внешний ключ добавлен."
+
+msgid "strfkaddedbad"
+msgstr "Добавление внешнего ключа прервано."
+
+msgid "strfktarget"
+msgstr "Целевая таблица"
+
+msgid "strfkcolumnlist"
+msgstr "Атрибуты в ключе"
+
+msgid "strondelete"
+msgstr "при удалении"
+
+msgid "stronupdate"
+msgstr "при обновлении"
+
+# Functions
+msgid "strfunction"
+msgstr "Функция"
+
+msgid "strfunctions"
+msgstr "Функции"
+
+msgid "strshowallfunctions"
+msgstr "Показать все функции"
+
+msgid "strnofunction"
+msgstr "Функция не обнаружена."
+
+msgid "strnofunctions"
+msgstr "Ни одной функции не найдено."
+
+msgid "strcreateplfunction"
+msgstr "Создать SQL/PL функцию"
+
+msgid "strcreateinternalfunction"
+msgstr "Создать внутреннюю функцию"
+
+msgid "strcreatecfunction"
+msgstr "Создать функцию на языке C"
+
+msgid "strfunctionname"
+msgstr "Имя функции"
+
+msgid "strreturns"
+msgstr "Возвращаемое значение"
+
+msgid "strproglanguage"
+msgstr "Язык"
+
+msgid "strfunctionneedsname"
+msgstr "Вам необходимо указать имя функции."
+
+msgid "strfunctionneedsdef"
+msgstr "Вам необходимо определить функцию."
+
+msgid "strfunctioncreated"
+msgstr "Функция создана."
+
+msgid "strfunctioncreatedbad"
+msgstr "Создание функции прервано."
+
+msgid "strconfdropfunction"
+msgstr "Вы уверены, что хотите уничтожить функцию \"%s\"?"
+
+msgid "strfunctiondropped"
+msgstr "Функция уничтожена."
+
+msgid "strfunctiondroppedbad"
+msgstr "Уничтожение функции прервано."
+
+msgid "strfunctionupdated"
+msgstr "Функция обновлена."
+
+msgid "strfunctionupdatedbad"
+msgstr "Обновление функции прервано."
+
+msgid "strobjectfile"
+msgstr "Объектный файл"
+
+msgid "strlinksymbol"
+msgstr "Символ линковки (имя функции в C)"
+
+msgid "strarguments"
+msgstr "Аргументы"
+
+msgid "strargmode"
+msgstr "Режим"
+
+msgid "strargtype"
+msgstr "Тип"
+
+msgid "strargadd"
+msgstr "Добавить еще аргумент"
+
+msgid "strargremove"
+msgstr "Удалить этот аргумент"
+
+msgid "strargnoargs"
+msgstr "Эта функция не будет принимать аргументов."
+
+msgid "strargenableargs"
+msgstr "Включить передачу аргументов этой функции."
+
+msgid "strargnorowabove"
+msgstr "Необходима строка выше этой строки."
+
+msgid "strargnorowbelow"
+msgstr "Необходима строка ниже этой строки."
+
+msgid "strargraise"
+msgstr "Переместить вверх."
+
+msgid "strarglower"
+msgstr "Переместить вниз."
+
+msgid "strargremoveconfirm"
+msgstr "Вы действительно хотите удалить этот аргумент? Отменить удаление невозможно."
+
+msgid "strfunctioncosting"
+msgstr "Стоимости функции"
+
+msgid "strresultrows"
+msgstr "Строк в результате"
+
+msgid "strexecutioncost"
+msgstr "Стоимость исполнения"
+
+msgid "strspecifyfunctiontodrop"
+msgstr "Вам необходимо указать как минимум одну функцию для удаления."
+
+# Triggers
+msgid "strtrigger"
+msgstr "Триггер"
+
+msgid "strtriggers"
+msgstr "Триггеры"
+
+msgid "strshowalltriggers"
+msgstr "Показать все триггеры"
+
+msgid "strnotrigger"
+msgstr "Триггер не обнаружен."
+
+msgid "strnotriggers"
+msgstr "Ни одного триггера не найдено."
+
+msgid "strcreatetrigger"
+msgstr "Создать триггер"
+
+msgid "strtriggerneedsname"
+msgstr "Вам необходимо указать имя триггера."
+
+msgid "strtriggerneedsfunc"
+msgstr "Вам необходимо определить функцию триггера."
+
+msgid "strtriggercreated"
+msgstr "Триггер создан."
+
+msgid "strtriggercreatedbad"
+msgstr "Создание триггера прервано."
+
+msgid "strconfdroptrigger"
+msgstr "Вы уверены, что хотите уничтожить триггер \"%s\" на \"%s\"?"
+
+msgid "strconfenabletrigger"
+msgstr "Вы действительно хотите включить триггер \"%s\" на \"%s\"?"
+
+msgid "strconfdisabletrigger"
+msgstr "Вы действительно хотите выключить триггер \"%s\" на \"%s\"?"
+
+msgid "strtriggerdropped"
+msgstr "Триггер уничтожен."
+
+msgid "strtriggerdroppedbad"
+msgstr "Уничтожение триггера прервано."
+
+msgid "strtriggerenabled"
+msgstr "Триггер включен."
+
+msgid "strtriggerenabledbad"
+msgstr "Включение триггера прервано."
+
+msgid "strtriggerdisabled"
+msgstr "Триггер выключен."
+
+msgid "strtriggerdisabledbad"
+msgstr "Выключение триггера прервано."
+
+msgid "strtriggeraltered"
+msgstr "Триггер изменен."
+
+msgid "strtriggeralteredbad"
+msgstr "Изменение триггера прервано."
+
+msgid "strforeach"
+msgstr "Для каждого"
+
+# Types
+msgid "strtype"
+msgstr "Тип данных"
+
+msgid "strtypes"
+msgstr "Типы данных"
+
+msgid "strshowalltypes"
+msgstr "Показать все типы данных"
+
+msgid "strnotype"
+msgstr "Тип данных не обнаружен."
+
+msgid "strnotypes"
+msgstr "Ни одного типа данных не найдено."
+
+msgid "strcreatetype"
+msgstr "Создать тип данных"
+
+msgid "strcreatecomptype"
+msgstr "Создать композитный тип"
+
+msgid "strcreateenumtype"
+msgstr "Создать перечислимый тип"
+
+msgid "strtypeneedsfield"
+msgstr "Вам необходимо указать как минимум одно поле."
+
+msgid "strtypeneedsvalue"
+msgstr "Вам необходимо указать как минимум одно значение."
+
+msgid "strtypeneedscols"
+msgstr "Вам необходимо указать корректное число полей."
+
+msgid "strtypeneedsvals"
+msgstr "Вам необходимо указать корректное число значений."
+
+msgid "strinputfn"
+msgstr "Функция ввода"
+
+msgid "stroutputfn"
+msgstr "Функция вывода"
+
+msgid "strpassbyval"
+msgstr "Передать по значению?"
+
+msgid "stralignment"
+msgstr "Выравнивание"
+
+msgid "strelement"
+msgstr "Элемент"
+
+msgid "strdelimiter"
+msgstr "Разделитель"
+
+msgid "strstorage"
+msgstr "Хранилище"
+
+msgid "strfield"
+msgstr "Поле"
+
+msgid "strnumfields"
+msgstr "Кол-во полей"
+
+msgid "strnumvalues"
+msgstr "Кол-во значений"
+
+msgid "strtypeneedsname"
+msgstr "Вам необходимо указать имя типа данных."
+
+msgid "strtypeneedslen"
+msgstr "Вам необходимо указать размер для типа данных."
+
+msgid "strtypecreated"
+msgstr "Тип данных создан."
+
+msgid "strtypecreatedbad"
+msgstr "Создание типа данных прервано."
+
+msgid "strconfdroptype"
+msgstr "Вы уверены, что хотите уничтожить тип данных \"%s\"?"
+
+msgid "strtypedropped"
+msgstr "Тип данных уничтожен."
+
+msgid "strtypedroppedbad"
+msgstr "Уничтожение типа данных прервано."
+
+msgid "strflavor"
+msgstr "Тип"
+
+msgid "strbasetype"
+msgstr "Базовый"
+
+msgid "strcompositetype"
+msgstr "Композитный"
+
+msgid "strpseudotype"
+msgstr "Псевдо"
+
+msgid "strenum"
+msgstr "Перечислимый"
+
+msgid "strenumvalues"
+msgstr "Перечислимые значения"
+
+# Schemas
+msgid "strschema"
+msgstr "Схема"
+
+msgid "strschemas"
+msgstr "Схемы"
+
+msgid "strshowallschemas"
+msgstr "Показать все схемы"
+
+msgid "strnoschema"
+msgstr "Схема не обнаружена."
+
+msgid "strnoschemas"
+msgstr "Ни одной схемы не найдено."
+
+msgid "strcreateschema"
+msgstr "Создать схему"
+
+msgid "strschemaname"
+msgstr "Имя схемы"
+
+msgid "strschemaneedsname"
+msgstr "Вам необходимо указать имя схемы."
+
+msgid "strschemacreated"
+msgstr "Схема создана."
+
+msgid "strschemacreatedbad"
+msgstr "Создание схемы прервано."
+
+msgid "strconfdropschema"
+msgstr "Вы уверены, что хотите уничтожить схему \"%s\"?"
+
+msgid "strschemadropped"
+msgstr "Схема уничтожена."
+
+msgid "strschemadroppedbad"
+msgstr "Уничтожение схемы прервано."
+
+msgid "strschemaaltered"
+msgstr "Схема обновлена."
+
+msgid "strschemaalteredbad"
+msgstr "Обновление схемы прервано."
+
+msgid "strsearchpath"
+msgstr "Пути поиска в схемах"
+
+msgid "strspecifyschematodrop"
+msgstr "Вам необходимо указать как минимум одну схему для удаления."
+
+# Reports
+
+# Domains
+msgid "strdomain"
+msgstr "Домен"
+
+msgid "strdomains"
+msgstr "Домены"
+
+msgid "strshowalldomains"
+msgstr "Показать все домены"
+
+msgid "strnodomains"
+msgstr "Ни одного домена не найдено."
+
+msgid "strcreatedomain"
+msgstr "Создать домен"
+
+msgid "strdomaindropped"
+msgstr "Домен удален."
+
+msgid "strdomaindroppedbad"
+msgstr "Удаление домена прервано."
+
+msgid "strconfdropdomain"
+msgstr "Вы уверены, что хотите удалить домен \"%s\"?"
+
+msgid "strdomainneedsname"
+msgstr "Вам необходимо указать имя домена."
+
+msgid "strdomaincreated"
+msgstr "Домен создан."
+
+msgid "strdomaincreatedbad"
+msgstr "Создание домена прервано."
+
+msgid "strdomainaltered"
+msgstr "Домен изменен."
+
+msgid "strdomainalteredbad"
+msgstr "Изменение домена прервано."
+
+# Operators
+msgid "stroperator"
+msgstr "Оператор"
+
+msgid "stroperators"
+msgstr "Операторы"
+
+msgid "strshowalloperators"
+msgstr "Показать все операторы"
+
+msgid "strnooperator"
+msgstr "Оператор не обнаружен."
+
+msgid "strnooperators"
+msgstr "Операторы не обнаружены."
+
+msgid "strcreateoperator"
+msgstr "Создать оператор"
+
+msgid "strleftarg"
+msgstr "Тип левого аргумента"
+
+msgid "strrightarg"
+msgstr "Тип правого аргумента"
+
+msgid "strcommutator"
+msgstr "Преобразование"
+
+msgid "strnegator"
+msgstr "Отрицание"
+
+msgid "strrestrict"
+msgstr "Ослабление"
+
+msgid "strjoin"
+msgstr "Объединение"
+
+msgid "strhashes"
+msgstr "Хеширование"
+
+msgid "strmerges"
+msgstr "Слияние"
+
+msgid "strleftsort"
+msgstr "Сотировка по левому"
+
+msgid "strrightsort"
+msgstr "Сотировка по правому"
+
+msgid "strlessthan"
+msgstr "Меньше"
+
+msgid "strgreaterthan"
+msgstr "Больше"
+
+msgid "stroperatorneedsname"
+msgstr "Вам необходимо указать название оператора."
+
+msgid "stroperatorcreated"
+msgstr "Оператор создан"
+
+msgid "stroperatorcreatedbad"
+msgstr "Создание оператора прервано."
+
+msgid "strconfdropoperator"
+msgstr "Вы уверены, что хотите уничтожить оператор \"%s\"?"
+
+msgid "stroperatordropped"
+msgstr "Оператор удален."
+
+msgid "stroperatordroppedbad"
+msgstr "Удаление оператора прервано."
+
+# Casts
+msgid "strcasts"
+msgstr "Образцы"
+
+msgid "strnocasts"
+msgstr "Образцов не найдено."
+
+msgid "strsourcetype"
+msgstr "Тип источника"
+
+msgid "strtargettype"
+msgstr "Тип приемника"
+
+msgid "strimplicit"
+msgstr "Неявный"
+
+msgid "strinassignment"
+msgstr "В назначении"
+
+msgid "strbinarycompat"
+msgstr "(двоично совместимый)"
+
+# Conversions
+msgid "strconversions"
+msgstr "Преобразование"
+
+msgid "strnoconversions"
+msgstr "Преобразований не найдено."
+
+msgid "strsourceencoding"
+msgstr "Кодировка источника"
+
+msgid "strtargetencoding"
+msgstr "Кодировка приемника"
+
+# Languages
+msgid "strlanguages"
+msgstr "Языки"
+
+msgid "strnolanguages"
+msgstr "Языков не найдено."
+
+msgid "strtrusted"
+msgstr "Проверено"
+
+# Info
+msgid "strnoinfo"
+msgstr "Нет доступной информации."
+
+msgid "strreferringtables"
+msgstr "Ссылающиеся таблицы"
+
+msgid "strparenttables"
+msgstr "Родительские таблицы"
+
+msgid "strchildtables"
+msgstr "Дочерние таблицы"
+
+# Aggregates
+msgid "straggregate"
+msgstr "Агрегатное выражение"
+
+msgid "straggregates"
+msgstr "Агрегатные выражения"
+
+msgid "strnoaggregates"
+msgstr "Агрегатных выражений не найдено."
+
+msgid "stralltypes"
+msgstr "(Все типы)"
+
+msgid "strcreateaggregate"
+msgstr "Создать агрегатное выражение"
+
+msgid "straggrbasetype"
+msgstr "Входной тип данных"
+
+msgid "straggrsfunc"
+msgstr "Функция смены состояний"
+
+msgid "straggrstype"
+msgstr "Тип переменной состояния"
+
+msgid "straggrffunc"
+msgstr "Финальная функция"
+
+msgid "straggrinitcond"
+msgstr "Начальное условие"
+
+msgid "straggrsortop"
+msgstr "Оператор сортировки"
+
+msgid "strconfdropaggregate"
+msgstr "Вы действительно хотите удалить агрегатное выражение \"%s\"?"
+
+msgid "straggregatedropped"
+msgstr "Агрегатное выражение удалено."
+
+msgid "straggregatedroppedbad"
+msgstr "Удаление агрегатного выражения прервано."
+
+msgid "straggraltered"
+msgstr "Агрегатное выражение изменено."
+
+msgid "straggralteredbad"
+msgstr "Изменение агрегатного выражения прервано."
+
+msgid "straggrneedsname"
+msgstr "Вам необходимо определить имя агрегатного выражения."
+
+msgid "straggrneedsbasetype"
+msgstr "Вам необходимо указать входной тип данных для агрегатного выражения."
+
+msgid "straggrneedssfunc"
+msgstr "Вам необходимо укакзать имя функции смены состояний для агрегатного выражения."
+
+msgid "straggrneedsstype"
+msgstr "Вам необходимо указать тип переменной состояния для агрегатного выражения."
+
+msgid "straggrcreated"
+msgstr "Агрегатное выражение создано."
+
+msgid "straggrcreatedbad"
+msgstr "Создание агрегатного выражения прервано."
+
+msgid "straggrshowall"
+msgstr "Показать все агрегатные выражения"
+
+# Operator Classes
+msgid "stropclasses"
+msgstr "Классы операторов"
+
+msgid "strnoopclasses"
+msgstr "Классов операторов не найдено."
+
+msgid "straccessmethod"
+msgstr "Метод доступа"
+
+# Stats and performance
+msgid "strrowperf"
+msgstr "Представление записи"
+
+msgid "strioperf"
+msgstr "Представление ввода/вывода"
+
+msgid "stridxrowperf"
+msgstr "Представление индекса записи"
+
+msgid "stridxioperf"
+msgstr "Представление индекса ввода/вывода"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "Последовательный"
+
+msgid "strscan"
+msgstr "Сканировать"
+
+msgid "strread"
+msgstr "Читать"
+
+msgid "strfetch"
+msgstr "Извлечь"
+
+msgid "strheap"
+msgstr "Мусор"
+
+msgid "strtoast"
+msgstr "TOAST"
+
+msgid "strtoastindex"
+msgstr "TOAST индекс"
+
+msgid "strcache"
+msgstr "Кеш"
+
+msgid "strdisk"
+msgstr "Диск"
+
+msgid "strrows2"
+msgstr "Записи"
+
+# Tablespaces
+msgid "strtablespace"
+msgstr "Табличное пространство"
+
+msgid "strtablespaces"
+msgstr "Табличные пространства"
+
+msgid "strshowalltablespaces"
+msgstr "Показать все табличные пространства"
+
+msgid "strnotablespaces"
+msgstr "Табличные пространства не найдены."
+
+msgid "strcreatetablespace"
+msgstr "Создать табличное пространство"
+
+msgid "strlocation"
+msgstr "Расположение"
+
+msgid "strtablespaceneedsname"
+msgstr "Вам необходимо определить имя табличного пространства."
+
+msgid "strtablespaceneedsloc"
+msgstr "Вам необходимо определить директорию, в которой табличное пространство буде создано."
+
+msgid "strtablespacecreated"
+msgstr "Табличное пространство создано."
+
+msgid "strtablespacecreatedbad"
+msgstr "Создание табличного пространства прервано."
+
+msgid "strconfdroptablespace"
+msgstr "Вы действительно хотите удалить табличное пространство \"%s\"?"
+
+msgid "strtablespacedropped"
+msgstr "Табличное пространство удалено."
+
+msgid "strtablespacedroppedbad"
+msgstr "Удаление табличного пространства прервано."
+
+msgid "strtablespacealtered"
+msgstr "Табличное пространство изменено."
+
+msgid "strtablespacealteredbad"
+msgstr "Изменение табличного пространства прервано."
+
+# Miscellaneous
+msgid "strtopbar"
+msgstr "%s выполняется на %s:%s -- Вы зарегистрированы как \"%s\""
+
+msgid "strtimefmt"
+msgstr " j-m-Y  g:i"
+
+msgid "strhelp"
+msgstr "Помощь"
+
+msgid "strhelpicon"
+msgstr "?"
+
+msgid "strhelppagebrowser"
+msgstr "Просмотр страниц помощи"
+
+msgid "strselecthelppage"
+msgstr "Выберете страницу помощи"
+
+msgid "strinvalidhelppage"
+msgstr "Неправильная страница помощи."
+
+msgid "strlogintitle"
+msgstr "Вошли на %s"
+
+msgid "strlogoutmsg"
+msgstr "Вышли из %s"
+
+msgid "strloading"
+msgstr "Загрузка..."
+
+msgid "strerrorloading"
+msgstr "Ошибка при загрузке"
+
+msgid "strclicktoreload"
+msgstr "Щелкните для перезагрузки"
+
+# Autovacuum
+msgid "strautovacuum"
+msgstr "Автоматическое перестроение"
+
+msgid "strturnedon"
+msgstr "Включено"
+
+msgid "strturnedoff"
+msgstr "Выключено"
+
+msgid "strenabled"
+msgstr "Включено"
+
+msgid "strnovacuumconf"
+msgstr "Конфигурация автоматического перестроения не найдена."
+
+msgid "strvacuumbasethreshold"
+msgstr "Базовый порог перестроения"
+
+msgid "strvacuumscalefactor"
+msgstr "Масштабный множитель перестроения"
+
+msgid "stranalybasethreshold"
+msgstr "Базовый порог анализа"
+
+msgid "stranalyzescalefactor"
+msgstr "Масштабный множитель анализа"
+
+msgid "strvacuumcostdelay"
+msgstr "Задержка при превышении стоимости перестроения"
+
+msgid "strvacuumcostlimit"
+msgstr "Ограничение стоимости перестроения"
+
+msgid "strvacuumpertable"
+msgstr "Установки автоматического перестроения по таблицам"
+
+msgid "straddvacuumtable"
+msgstr "Добавить установки автоматического перестроения для таблицы"
+
+msgid "streditvacuumtable"
+msgstr "Редактировать установки автоматического перестроения для таблицы %s"
+
+msgid "strdelvacuumtable"
+msgstr "Удалить установки автоматического перестроения для таблицы %s?"
+
+msgid "strvacuumtablereset"
+msgstr "Сброс установок автоматического перестроения для таблицы %s к значениям по умолчанию"
+
+msgid "strdelvacuumtablefail"
+msgstr "Ошибка при удалении установок автоматического перестроения для таблицы %s"
+
+msgid "strsetvacuumtablesaved"
+msgstr "Установки автоматического перестроения для таблицы %s сохранены."
+
+msgid "strsetvacuumtablefail"
+msgstr "Ошибка при сохранении установок автоматического перестроения %s."
+
+msgid "strspecifydelvacuumtable"
+msgstr "Вам необходимо указать таблицу, для которой вы хотите удалить установки автоматического перестроения."
+
+msgid "strspecifyeditvacuumtable"
+msgstr "Вам необходимо указать таблицу, для которой вы хотите редактировать установки автоматического перестроения."
+
+msgid "strnotdefaultinred"
+msgstr "Значения, отличные от значений по умолчанию, отмечены красным цветом."
+
+# Table-level Locks
+msgid "strlocks"
+msgstr "Блокировки"
+
+msgid "strtransaction"
+msgstr "ID транзакции"
+
+msgid "strvirtualtransaction"
+msgstr "ID виртуальной транзакции"
+
+msgid "strprocessid"
+msgstr "ID процесса"
+
+msgid "strmode"
+msgstr "Режим блокировки"
+
+msgid "strislockheld"
+msgstr "Блокировка удерживается?"
+
+# Prepared transactions
+msgid "strpreparedxacts"
+msgstr "Подготовленные транзакции"
+
+msgid "strxactid"
+msgstr "ID транзакции"
+
+msgid "strgid"
+msgstr "Глобальный ID"
+
+# Fulltext search
+msgid "strfulltext"
+msgstr "Полнотекстовый поиск (FTS)"
+
+msgid "strftsconfig"
+msgstr "Конфигурация FTS"
+
+msgid "strftsconfigs"
+msgstr "Конфигурации"
+
+msgid "strftscreateconfig"
+msgstr "Создать конфигурацию FTS"
+
+msgid "strftscreatedict"
+msgstr "Создать словарь"
+
+msgid "strftscreatedicttemplate"
+msgstr "Создать шаблон словаря"
+
+msgid "strftscreateparser"
+msgstr "Создать парсер"
+
+msgid "strftsnoconfigs"
+msgstr "Конфигурации FTS не найдены."
+
+msgid "strftsconfigdropped"
+msgstr "Конфигурация FTS удалена."
+
+msgid "strftsconfigdroppedbad"
+msgstr "Удаление конфигурации FTS прервано."
+
+msgid "strconfdropftsconfig"
+msgstr "Вы действительно хотите удалить конфигурацию FTS \"%s\"?"
+
+msgid "strconfdropftsdict"
+msgstr "Вы действительно хотите удалить словарь FTS \"%s\"?"
+
+msgid "strconfdropftsmapping"
+msgstr "Вы действительно хотите удалить правило \"%s\" конфигурации FTS \"%s\"?"
+
+msgid "strftstemplate"
+msgstr "Шаблон"
+
+msgid "strftsparser"
+msgstr "Парсер"
+
+msgid "strftsconfigneedsname"
+msgstr "Вам необходимо определить имя конфигурации FTS."
+
+msgid "strftsconfigcreated"
+msgstr "Конфигурация FTS создана."
+
+msgid "strftsconfigcreatedbad"
+msgstr "Создание конфигурации FTS прервано."
+
+msgid "strftsmapping"
+msgstr "Правила"
+
+msgid "strftsdicts"
+msgstr "Словари"
+
+msgid "strftsdict"
+msgstr "Словарь"
+
+msgid "strftsemptymap"
+msgstr "Конфигурация правил FTS пуста."
+
+msgid "strftsconfigaltered"
+msgstr "Конфигурация FTS изменена."
+
+msgid "strftsconfigalteredbad"
+msgstr "Изменение конфигурации FTS прервано."
+
+msgid "strftsconfigmap"
+msgstr "Конфигурация правил FTS"
+
+msgid "strftsparsers"
+msgstr "Парсеры FTS"
+
+msgid "strftsnoparsers"
+msgstr "Нет доступных парсеров FTS."
+
+msgid "strftsnodicts"
+msgstr "Нет доступных словарей FTS."
+
+msgid "strftsdictcreated"
+msgstr "Словарь FTS создан."
+
+msgid "strftsdictcreatedbad"
+msgstr "Создание словаря FTS прервано."
+
+msgid "strftslexize"
+msgstr "Функция преобразования токена в лексему (lexize)"
+
+msgid "strftsinit"
+msgstr "Функция инициализации"
+
+msgid "strftsoptionsvalues"
+msgstr "Опции и значения"
+
+msgid "strftsdictneedsname"
+msgstr "Вам необходимо определить имя словаря FTS."
+
+msgid "strftsdictdropped"
+msgstr "Словарь FTS удален."
+
+msgid "strftsdictdroppedbad"
+msgstr "Удаление словаря FTS прервано."
+
+msgid "strftsdictaltered"
+msgstr "Словарь FTS изменен."
+
+msgid "strftsdictalteredbad"
+msgstr "Изменение словаря FTS прервано."
+
+msgid "strftsaddmapping"
+msgstr "Добавить новое правило"
+
+msgid "strftsspecifymappingtodrop"
+msgstr "Вам необходимо указать как минимум одно правило для удаления."
+
+msgid "strftsspecifyconfigtoalter"
+msgstr "Вам необходимо указать конфигурацию FTS для изменения"
+
+msgid "strftsmappingdropped"
+msgstr "Правило FTS удалено."
+
+msgid "strftsmappingdroppedbad"
+msgstr "Удаление правила FTS прервано."
+
+msgid "strftsnodictionaries"
+msgstr "Словари не найдены."
+
+msgid "strftsmappingaltered"
+msgstr "Правило FTS изменено."
+
+msgid "strftsmappingalteredbad"
+msgstr "Изменение правила FTS прервано."
+
+msgid "strftsmappingadded"
+msgstr "Правило FTS добавлено."
+
+msgid "strftsmappingaddedbad"
+msgstr "Добавление правила FTS прервано."
+
+msgid "strftstabconfigs"
+msgstr "Конфигурации"
+
+msgid "strftstabdicts"
+msgstr "Словари"
+
+msgid "strftstabparsers"
+msgstr "Парсеры"
+
+msgid "strftscantparsercopy"
+msgstr "При создании конфигурации поиска нельзя указывать одновременно парсер и шаблон."

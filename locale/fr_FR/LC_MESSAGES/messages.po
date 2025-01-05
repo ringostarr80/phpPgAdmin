@@ -1,0 +1,2507 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_FR\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "Français"
+
+msgid "applocale"
+msgstr "fr-FR"
+
+msgid "applangdir"
+msgstr "ltr"
+
+# Basic strings
+msgid "strintro"
+msgstr "Bienvenue sur phpPgAdmin."
+
+msgid "strppahome"
+msgstr "Page d'accueil de phpPgAdmin"
+
+msgid "strpgsqlhome"
+msgstr "Page d'accueil de PostgreSQL"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "Documentation PostgreSQL (local)"
+
+msgid "strreportbug"
+msgstr "Rapporter un bug"
+
+msgid "strviewfaq"
+msgstr "Lire la FAQ"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "Connexion"
+
+msgid "strloginfailed"
+msgstr "Échec de la connexion"
+
+msgid "strlogindisallowed"
+msgstr "Connexion désactivée pour raison de sécurité"
+
+msgid "strserver"
+msgstr "Serveur"
+
+msgid "strservers"
+msgstr "Serveurs"
+
+msgid "strgroupservers"
+msgstr "Serveurs du groupe \"%s\""
+
+msgid "strallservers"
+msgstr "Tous les serveurs"
+
+msgid "strintroduction"
+msgstr "Introduction"
+
+msgid "strhost"
+msgstr "Hôte"
+
+msgid "strport"
+msgstr "Port"
+
+msgid "strlogout"
+msgstr "Déconnexion"
+
+msgid "strowner"
+msgstr "Propriétaire"
+
+msgid "straction"
+msgstr "Action"
+
+msgid "stractions"
+msgstr "Actions"
+
+msgid "strname"
+msgstr "Nom"
+
+msgid "strdefinition"
+msgstr "Définition"
+
+msgid "strproperties"
+msgstr "Propriétés"
+
+msgid "strbrowse"
+msgstr "Parcourir"
+
+msgid "strenable"
+msgstr "Activer"
+
+msgid "strdisable"
+msgstr "Désactiver"
+
+msgid "strdrop"
+msgstr "Supprimer"
+
+msgid "strdropped"
+msgstr "Supprimé"
+
+msgid "strnull"
+msgstr "NULL (le mot)"
+
+msgid "strnotnull"
+msgstr "NOT NULL"
+
+msgid "strprev"
+msgstr "Précédent"
+
+msgid "strnext"
+msgstr "Suivant"
+
+msgid "strfirst"
+msgstr "<< Début"
+
+msgid "strlast"
+msgstr "Fin >>"
+
+msgid "strfailed"
+msgstr "Échec"
+
+msgid "strcreate"
+msgstr "Créer"
+
+msgid "strcreated"
+msgstr "Créé"
+
+msgid "strcomment"
+msgstr "Commentaire"
+
+msgid "strlength"
+msgstr "Longueur"
+
+msgid "strdefault"
+msgstr "Défaut"
+
+msgid "stralter"
+msgstr "Modifier"
+
+msgid "strok"
+msgstr "OK"
+
+msgid "strcancel"
+msgstr "Annuler"
+
+msgid "strkill"
+msgstr "Tuer"
+
+msgid "strac"
+msgstr "Activer la complétion automatique"
+
+msgid "strsave"
+msgstr "Sauvegarder"
+
+msgid "strreset"
+msgstr "Réinitialiser"
+
+msgid "strrestart"
+msgstr "Redémarrer"
+
+msgid "strinsert"
+msgstr "Insérer"
+
+msgid "strselect"
+msgstr "Sélectionner"
+
+msgid "strdelete"
+msgstr "Effacer"
+
+msgid "strupdate"
+msgstr "Modifier"
+
+msgid "strreferences"
+msgstr "Références"
+
+msgid "stryes"
+msgstr "Oui"
+
+msgid "strno"
+msgstr "Non"
+
+msgid "strtrue"
+msgstr "TRUE"
+
+msgid "strfalse"
+msgstr "FALSE"
+
+msgid "stredit"
+msgstr "Éditer"
+
+msgid "strcolumn"
+msgstr "Colonne"
+
+msgid "strcolumns"
+msgstr "Colonnes"
+
+msgid "strrows"
+msgstr "ligne(s)"
+
+msgid "strrowsaff"
+msgstr "ligne(s) affectée(s)."
+
+msgid "strobjects"
+msgstr "objet(s)"
+
+msgid "strback"
+msgstr "Retour"
+
+msgid "strqueryresults"
+msgstr "Résultats de la requête"
+
+msgid "strshow"
+msgstr "Voir"
+
+msgid "strempty"
+msgstr "Vider"
+
+msgid "strlanguage"
+msgstr "Langage"
+
+msgid "strencoding"
+msgstr "Codage"
+
+msgid "strvalue"
+msgstr "Valeur"
+
+msgid "strunique"
+msgstr "Unique"
+
+msgid "strprimary"
+msgstr "Primaire"
+
+msgid "strexport"
+msgstr "Exporter"
+
+msgid "strimport"
+msgstr "Importer"
+
+msgid "strallowednulls"
+msgstr "Autoriser les caractères NULL"
+
+msgid "strbackslashn"
+msgstr "\\N"
+
+msgid "stremptystring"
+msgstr "Chaîne/champ vide"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "stradmin"
+msgstr "Admin"
+
+msgid "strvacuum"
+msgstr "Vacuum"
+
+msgid "stranalyze"
+msgstr "Analyze"
+
+msgid "strclusterindex"
+msgstr "Cluster"
+
+msgid "strclustered"
+msgstr "En Cluster ?"
+
+msgid "strreindex"
+msgstr "Reindex"
+
+msgid "strexecute"
+msgstr "Lancer"
+
+msgid "stradd"
+msgstr "Ajouter"
+
+msgid "strevent"
+msgstr "Événement"
+
+msgid "strwhere"
+msgstr "Où"
+
+msgid "strinstead"
+msgstr "Faire à la place"
+
+msgid "strwhen"
+msgstr "Quand"
+
+msgid "strformat"
+msgstr "Format"
+
+msgid "strdata"
+msgstr "Donnée"
+
+msgid "strconfirm"
+msgstr "Confirmer"
+
+msgid "strexpression"
+msgstr "Expression"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strseparator"
+msgstr " :"
+
+msgid "strexpand"
+msgstr "Étendre"
+
+msgid "strcollapse"
+msgstr "Réduire"
+
+msgid "strfind"
+msgstr "Rechercher"
+
+msgid "stroptions"
+msgstr "Options"
+
+msgid "strrefresh"
+msgstr "Rafraichir"
+
+msgid "strdownload"
+msgstr "Télécharger"
+
+msgid "strdownloadgzipped"
+msgstr "Télécharger avec compression gzip"
+
+msgid "strinfo"
+msgstr "Info"
+
+msgid "stroids"
+msgstr "OID"
+
+msgid "stradvanced"
+msgstr "Avancé"
+
+msgid "strvariables"
+msgstr "Variables"
+
+msgid "strprocess"
+msgstr "Processus"
+
+msgid "strprocesses"
+msgstr "Processus"
+
+msgid "strblocked"
+msgstr "Bloqué"
+
+msgid "strsetting"
+msgstr "Paramétrage"
+
+msgid "streditsql"
+msgstr "Éditer SQL"
+
+msgid "strruntime"
+msgstr "Temps d'exécution total : %s ms"
+
+msgid "strpaginate"
+msgstr "Paginer les résultats"
+
+msgid "struploadscript"
+msgstr "ou importer un script SQL :"
+
+msgid "strstarttime"
+msgstr "Heure de début"
+
+msgid "strfile"
+msgstr "Fichier"
+
+msgid "strfileimported"
+msgstr "Fichier importé."
+
+msgid "strtrycred"
+msgstr "Utilisez ces identifiants pour tous les serveurs"
+
+msgid "strconfdropcred"
+msgstr "For security reason, disconnecting will destroy your shared login information. Are you sure you want to disconnect ?"
+
+msgid "stractionsonmultiplelines"
+msgstr "Actions sur plusieurs lignes"
+
+msgid "strselectall"
+msgstr "Sélectionner tout"
+
+msgid "strunselectall"
+msgstr "Desélectionner tout"
+
+msgid "strlocale"
+msgstr "Locale"
+
+msgid "strcollation"
+msgstr "Tri"
+
+msgid "strctype"
+msgstr "Type de cartactère"
+
+msgid "strdefaultvalues"
+msgstr "Valeurs par défaut"
+
+msgid "strnewvalues"
+msgstr "Nouvelles valeurs"
+
+msgid "strstart"
+msgstr "Démarrer"
+
+msgid "strstop"
+msgstr "Arrêter"
+
+msgid "strgotoppage"
+msgstr "Haut de la page"
+
+msgid "strtheme"
+msgstr "Thème"
+
+msgid "strcluster"
+msgstr "Cluster"
+
+# Admin
+msgid "stradminondatabase"
+msgstr "Les actions d'administration suivantes s'appliquent à l'ensemble de la base de donnée %s."
+
+msgid "stradminontable"
+msgstr "Les actions d'administration suivantes s'appliquent à la table %s."
+
+# User-supplied SQL history
+msgid "strhistory"
+msgstr "Historique"
+
+msgid "strnohistory"
+msgstr "Pas d'historique."
+
+msgid "strclearhistory"
+msgstr "Éffacer l'historique"
+
+msgid "strdelhistory"
+msgstr "Supprimer de l'historique"
+
+msgid "strconfdelhistory"
+msgstr "Voulez-vous vraiment supprimer cette requête de l'historique ?"
+
+msgid "strconfclearhistory"
+msgstr "Voulez-vous vraiment éffacer l'historique ?"
+
+msgid "strnodatabaseselected"
+msgstr "Veuillez sélectionner une base de données."
+
+# Database Sizes
+msgid "strnoaccess"
+msgstr "Pas d'Accès"
+
+msgid "strsize"
+msgstr "Taille"
+
+msgid "strbytes"
+msgstr "octets"
+
+msgid "strkb"
+msgstr " Ko"
+
+msgid "strmb"
+msgstr " Mo"
+
+msgid "strgb"
+msgstr " Go"
+
+msgid "strtb"
+msgstr " To"
+
+# Error handling
+msgid "strnoframes"
+msgstr "Cette application fonctionne mieux avec un navigateur pouvant afficher des frames mais peut être utilisée sans frames en suivant les liens ci-dessous."
+
+msgid "strnoframeslink"
+msgstr "Utiliser sans frames"
+
+msgid "strbadconfig"
+msgstr "Le fichier de configuration config.inc.php est obsolète. Vous avez besoin de le regénérer à partir de config.inc.php-dist."
+
+msgid "strnotloaded"
+msgstr "Vous n'avez pas compilé correctement le support de la base de données dans votre installation de PHP."
+
+msgid "strlibnotfound"
+msgstr "Votre installation PHP n'a pas le module %s. Vous devez l'installer, l'activer ou le compiler pour utiliser phpPgAdmin."
+
+msgid "strlibnotfound_plural"
+msgstr "Votre installation PHP n'a pas les modules %s. Vous devez les installer, les activer ou les compiler pour utiliser phpPgAdmin."
+
+msgid "strpostgresqlversionnotsupported"
+msgstr "Cette version de PostgreSQL n'est pas supportée. Merci de mettre à jour PHP à la version %s ou ultérieure."
+
+msgid "strbadschema"
+msgstr "Schéma spécifié invalide."
+
+msgid "strbadencoding"
+msgstr "Impossible de spécifier l'encodage de la base de données."
+
+msgid "strsqlerror"
+msgstr "Erreur SQL :"
+
+msgid "strinstatement"
+msgstr "Dans l'instruction :"
+
+msgid "strinvalidparam"
+msgstr "Paramètres de script invalides."
+
+msgid "strnodata"
+msgstr "Pas de résultats."
+
+msgid "strnoobjects"
+msgstr "Aucun objet trouvé."
+
+msgid "strrownotunique"
+msgstr "Pas d'identifiant unique pour cette ligne."
+
+msgid "strnouploads"
+msgstr "Importation de fichiers désactivée."
+
+msgid "strimporterror"
+msgstr "Erreur d'importation."
+
+msgid "strimporterror-fileformat"
+msgstr "Erreur d'importation : échec lors de la détermination automatique du format de fichier."
+
+msgid "strimporterrorline"
+msgstr "Erreur d'importation à la ligne %s."
+
+msgid "strimporterrorline-badcolumnnum"
+msgstr "Erreur d'importation sur la ligne %s : la ligne ne possède pas le bon nombre de colonnes."
+
+msgid "strimporterror-uploadedfile"
+msgstr "Erreur d'importation : le fichier n'a pas pû être récupéré sur le serveur."
+
+msgid "strcannotdumponwindows"
+msgstr "La sauvegarde de table complexe et des noms de schémas n'est pas supporté sur Windows."
+
+msgid "strinvalidserverparam"
+msgstr "Tentative de connexion avec un serveur invalide, il est possible que quelqu'un essai de pirater votre système."
+
+msgid "strnoserversupplied"
+msgstr "Aucun serveur fournis !"
+
+msgid "strbadpgdumppath"
+msgstr "Erreur d'export : n'a pu exécuter pg_dump (chemin indiqué dans votre conf/config.inc.php : %s). Merci de corriger le chemin dans votre configuration et de vous reconnecter."
+
+msgid "strbadpgdumpallpath"
+msgstr "Erreur d'export : n'a pu exécuter pg_dumpall (chemin indiqué dans votre conf/config.inc.php : %s). Merci de corriger le chemin dans votre configuration et de vous reconnecter."
+
+msgid "strconnectionfail"
+msgstr "Connexion au serveur échouée."
+
+# Tables
+msgid "strtable"
+msgstr "Table"
+
+msgid "strtables"
+msgstr "Tables"
+
+msgid "strshowalltables"
+msgstr "Voir toutes les tables"
+
+msgid "strnotables"
+msgstr "Aucune table trouvée."
+
+msgid "strnotable"
+msgstr "Aucune table trouvée."
+
+msgid "strcreatetable"
+msgstr "Créer une table"
+
+msgid "strcreatetablelike"
+msgstr "Créer une table d'après une table existante"
+
+msgid "strcreatetablelikeparent"
+msgstr "Table modèle"
+
+msgid "strcreatelikewithdefaults"
+msgstr "inclure les valeurs par défaut."
+
+msgid "strcreatelikewithconstraints"
+msgstr "inclure les contraintes."
+
+msgid "strcreatelikewithindexes"
+msgstr "inclure les indexes."
+
+msgid "strtablename"
+msgstr "Nom de la table"
+
+msgid "strtableneedsname"
+msgstr "Vous devez donner un nom pour votre table."
+
+msgid "strtablelikeneedslike"
+msgstr "Vous devez préciser une table modèle."
+
+msgid "strtableneedsfield"
+msgstr "Vous devez spécifier au moins un champ."
+
+msgid "strtableneedscols"
+msgstr "Vous devez indiquer un nombre valide de colonnes."
+
+msgid "strtablecreated"
+msgstr "Table créée."
+
+msgid "strtablecreatedbad"
+msgstr "Échec de la création de table."
+
+msgid "strconfdroptable"
+msgstr "Êtes-vous sur de vouloir supprimer la table « %s » ?"
+
+msgid "strtabledropped"
+msgstr "Table supprimée."
+
+msgid "strtabledroppedbad"
+msgstr "Échec lors de la suppression de table."
+
+msgid "strconfemptytable"
+msgstr "Êtes-vous sûr de vouloir vider la table « %s » ?"
+
+msgid "strtableemptied"
+msgstr "Table vide."
+
+msgid "strtableemptiedbad"
+msgstr "Échec du vidage de la table."
+
+msgid "strinsertrow"
+msgstr "Insérer un enregistrement."
+
+msgid "strrowinserted"
+msgstr "Enregistrement inséré."
+
+msgid "strrowinsertedbad"
+msgstr "Échec lors de l'insertion d'un enregistrement."
+
+msgid "strnofkref"
+msgstr "Aucune valeur correspondate pour la clé étrangère %s."
+
+msgid "strrowduplicate"
+msgstr "Échec lors de l'insertion d'un enregistrement, a tenté de faire une insertion dupliquée."
+
+msgid "streditrow"
+msgstr "Éditer l'enregistrement."
+
+msgid "strrowupdated"
+msgstr "Enregistrement mis à jour."
+
+msgid "strrowupdatedbad"
+msgstr "Échec de mise à jour de l'enregistrement."
+
+msgid "strdeleterow"
+msgstr "Effacer l'enregistrement"
+
+msgid "strconfdeleterow"
+msgstr "Êtes-vous sûr de vouloir supprimer cet enregistrement ?"
+
+msgid "strrowdeleted"
+msgstr "Enregistrement supprimé."
+
+msgid "strrowdeletedbad"
+msgstr "Échec lors de la suppression de l'enregistrement."
+
+msgid "strinsertandrepeat"
+msgstr "Insérer et répéter"
+
+msgid "strnumcols"
+msgstr "Nombre de colonnes"
+
+msgid "strcolneedsname"
+msgstr "Vous devez spécifier un nom pour la colonne"
+
+msgid "strselectallfields"
+msgstr "Sélectionner tous les champs"
+
+msgid "strselectneedscol"
+msgstr "Vous devez sélectionner au moins une colonne."
+
+msgid "strselectunary"
+msgstr "Les opérateurs unaires ne peuvent avoir de valeurs."
+
+msgid "strcolumnaltered"
+msgstr "Colonne modifiée."
+
+msgid "strcolumnalteredbad"
+msgstr "Échec lors de la modification de la colonne."
+
+msgid "strconfdropcolumn"
+msgstr "Êtes-vous sûr de vouloir supprimer la colonne « %s » de la table « %s » ?"
+
+msgid "strcolumndropped"
+msgstr "Colonne supprimée."
+
+msgid "strcolumndroppedbad"
+msgstr "Échec lors de la suppression de la colonne."
+
+msgid "straddcolumn"
+msgstr "Ajouter une colonne"
+
+msgid "strcolumnadded"
+msgstr "Colonne ajoutée."
+
+msgid "strcolumnaddedbad"
+msgstr "Échec lors de l'ajout de la colonne."
+
+msgid "strcascade"
+msgstr "CASCADE"
+
+msgid "strtablealtered"
+msgstr "Table modifiée."
+
+msgid "strtablealteredbad"
+msgstr "Échec lors de la modification de la table."
+
+msgid "strdataonly"
+msgstr "Données seulement"
+
+msgid "strstructureonly"
+msgstr "Structure seulement"
+
+msgid "strstructureanddata"
+msgstr "Structure et données"
+
+msgid "strtabbed"
+msgstr "Tabulé"
+
+msgid "strauto"
+msgstr "Auto"
+
+msgid "strconfvacuumtable"
+msgstr "Êtes-vous sûr de vouloir faire un vacuum de « %s » ?"
+
+msgid "strconfanalyzetable"
+msgstr "Êtes-vous sûr de vouloir éffectuer un ANALYZE sur « %s » ?"
+
+msgid "strconfreindextable"
+msgstr "Êtes-vous sûr de vouloir réindexer « %s » ?"
+
+msgid "strconfclustertable"
+msgstr "Êtes-vous sûr de vouloir lancer un CLUSTER sur «%s » ?"
+
+msgid "strestimatedrowcount"
+msgstr "Nombre d'enregistrements estimés"
+
+msgid "strspecifytabletoanalyze"
+msgstr "Vous devez spécifier au moins une table à analyzer"
+
+msgid "strspecifytabletoempty"
+msgstr "Vous devez spécifier au moins une table à vider"
+
+msgid "strspecifytabletodrop"
+msgstr "Vous devez spécifier au moins une table à supprimer"
+
+msgid "strspecifytabletovacuum"
+msgstr "Vous devez spécifier au moins une table sur laquelle éffectuer le vacuum"
+
+msgid "strspecifytabletoreindex"
+msgstr "Vous devez spécifier au moins une table à réindexer."
+
+msgid "strspecifytabletocluster"
+msgstr "Vous devez spécifier au moins une table sur laquelle éffectuer la commande CLUSTER."
+
+msgid "strnofieldsforinsert"
+msgstr "Vous ne pouvez insérer de données dans une table sans champs."
+
+# Columns
+msgid "strcolprop"
+msgstr "Propriétés de la Colonne"
+
+msgid "strnotableprovided"
+msgstr "Aucune table fournie !"
+
+# Users
+msgid "struser"
+msgstr "Utilisateur"
+
+msgid "strusers"
+msgstr "Utilisateurs"
+
+msgid "strusername"
+msgstr "Utilisateur"
+
+msgid "strpassword"
+msgstr "Mot de passe"
+
+msgid "strsuper"
+msgstr "Super utilisateur ?"
+
+msgid "strcreatedb"
+msgstr "Créer base de données ?"
+
+msgid "strexpires"
+msgstr "Expiration"
+
+msgid "strsessiondefaults"
+msgstr "Session par défaut"
+
+msgid "strnousers"
+msgstr "Aucun utilisateur trouvé."
+
+msgid "struserupdated"
+msgstr "Utilisateur mis à jour."
+
+msgid "struserupdatedbad"
+msgstr "Échec lors de la mise à jour de l'utilisateur."
+
+msgid "strshowallusers"
+msgstr "Voir tous les utilisateurs"
+
+msgid "strcreateuser"
+msgstr "Créer un utilisateur"
+
+msgid "struserneedsname"
+msgstr "Vous devez donner un nom pour votre utilisateur."
+
+msgid "strusercreated"
+msgstr "Utilisateur créé."
+
+msgid "strusercreatedbad"
+msgstr "Échec lors de la création de l'utilisateur."
+
+msgid "strconfdropuser"
+msgstr "Êtes-vous sûr de vouloir supprimer l'utilisateur « %s » ?"
+
+msgid "struserdropped"
+msgstr "Utilisateur supprimé."
+
+msgid "struserdroppedbad"
+msgstr "Échec lors de la suppression de l'utilisateur."
+
+msgid "straccount"
+msgstr "Comptes"
+
+msgid "strchangepassword"
+msgstr "Modifier le mot de passe"
+
+msgid "strpasswordchanged"
+msgstr "Mot de passe modifié."
+
+msgid "strpasswordchangedbad"
+msgstr "Échec lors de la modification du mot de passe."
+
+msgid "strpasswordshort"
+msgstr "Le mot de passe est trop court."
+
+msgid "strpasswordconfirm"
+msgstr "Le mot de passe de confirmation est différent."
+
+# Groups
+msgid "strgroup"
+msgstr "Groupe"
+
+msgid "strgroups"
+msgstr "Groupes"
+
+msgid "strgroupgroups"
+msgstr "Groupes du groupe \"%s\""
+
+msgid "strshowallgroups"
+msgstr "Afficher tous les groupes"
+
+msgid "strnogroup"
+msgstr "Groupe introuvable."
+
+msgid "strnogroups"
+msgstr "Aucun groupe trouvé."
+
+msgid "strcreategroup"
+msgstr "Créer un groupe"
+
+msgid "strgroupneedsname"
+msgstr "Vous devez indiquer un nom pour votre groupe."
+
+msgid "strgroupcreated"
+msgstr "Groupe créé."
+
+msgid "strgroupcreatedbad"
+msgstr "Échec lors de la création du groupe."
+
+msgid "strconfdropgroup"
+msgstr "Êtes-vous sûr de vouloir supprimer le groupe « %s » ?"
+
+msgid "strgroupdropped"
+msgstr "Groupe supprimé."
+
+msgid "strgroupdroppedbad"
+msgstr "Échec lors de la suppression du groupe."
+
+msgid "strmembers"
+msgstr "Membres"
+
+msgid "strmemberof"
+msgstr "Membre de"
+
+msgid "stradminmembers"
+msgstr "Membres admin"
+
+msgid "straddmember"
+msgstr "Ajouter un membre"
+
+msgid "strmemberadded"
+msgstr "Membre ajouté."
+
+msgid "strmemberaddedbad"
+msgstr "Échec lors de l'ajout du membre."
+
+msgid "strdropmember"
+msgstr "Supprimer un membre"
+
+msgid "strconfdropmember"
+msgstr "Êtes-vous sûr de vouloir supprimer le membre « %s » du groupe « %s » ?"
+
+msgid "strmemberdropped"
+msgstr "Membre supprimé."
+
+msgid "strmemberdroppedbad"
+msgstr "Échec lors de la suppression du membre."
+
+# Roles
+msgid "strrole"
+msgstr "Rôle"
+
+msgid "strroles"
+msgstr "Rôles"
+
+msgid "strshowallroles"
+msgstr "Afficher tous les rôles"
+
+msgid "strnoroles"
+msgstr "Aucun rôle trouvé."
+
+msgid "strinheritsprivs"
+msgstr "Hérite des droits ?"
+
+msgid "strcreaterole"
+msgstr "Créer un rôle"
+
+msgid "strcancreaterole"
+msgstr "Peut créer un rôle ?"
+
+msgid "strrolecreated"
+msgstr "Rôle créé."
+
+msgid "strrolecreatedbad"
+msgstr "Échec lors de la création du rôle."
+
+msgid "strrolealtered"
+msgstr "Rôle modifié."
+
+msgid "strrolealteredbad"
+msgstr "Échec lors de la modification du rôle."
+
+msgid "strcanlogin"
+msgstr "Peut se connecter ?"
+
+msgid "strconnlimit"
+msgstr "Limite de connexion"
+
+msgid "strdroprole"
+msgstr "Supprimer un rôle"
+
+msgid "strconfdroprole"
+msgstr "Êtes-vous sûr de vouloir supprimer le rôle « %s » ?"
+
+msgid "strroledropped"
+msgstr "Rôle supprimé."
+
+msgid "strroledroppedbad"
+msgstr "Échec lors de la suppression du rôle."
+
+msgid "strnolimit"
+msgstr "Aucune limite"
+
+msgid "strnever"
+msgstr "Jamais"
+
+msgid "strroleneedsname"
+msgstr "Vous devez donner un nom à ce rôle."
+
+# Privileges
+msgid "strprivilege"
+msgstr "Droit"
+
+msgid "strprivileges"
+msgstr "Droits"
+
+msgid "strnoprivileges"
+msgstr "Cet objet possède les droits par défault."
+
+msgid "strgrant"
+msgstr "Accorder (GRANT)"
+
+msgid "strrevoke"
+msgstr "Révoquer (REVOKE)"
+
+msgid "strgranted"
+msgstr "Droits accordés."
+
+msgid "strgrantfailed"
+msgstr "Échec lors de l'octroi des droits."
+
+msgid "strgrantbad"
+msgstr "Vous devez spécifier au moins un utilisateur ou groupe et au moins un droit."
+
+msgid "strgrantor"
+msgstr "Grantor"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "Base de données"
+
+msgid "strdatabases"
+msgstr "Bases de données"
+
+msgid "strshowalldatabases"
+msgstr "Voir toutes les bases de données"
+
+msgid "strnodatabases"
+msgstr "Aucune base de données trouvée."
+
+msgid "strcreatedatabase"
+msgstr "Créer une base de données"
+
+msgid "strdatabasename"
+msgstr "Nom de la base de données"
+
+msgid "strdatabaseneedsname"
+msgstr "Vous devez donner un nom pour votre base de données."
+
+msgid "strdatabasecreated"
+msgstr "Base de données créée."
+
+msgid "strdatabasecreatedbad"
+msgstr "Échec lors de la création de la base de données."
+
+msgid "strconfdropdatabase"
+msgstr "Êtes-vous sûr de vouloir supprimer la base de données « %s » ?"
+
+msgid "strdatabasedropped"
+msgstr "Base de données supprimée."
+
+msgid "strdatabasedroppedbad"
+msgstr "Échec lors de la suppression de la base de données."
+
+msgid "strentersql"
+msgstr "Veuillez saisir ci-dessous la requête SQL à exécuter :"
+
+msgid "strsqlexecuted"
+msgstr "Requête SQL exécutée."
+
+msgid "strvacuumgood"
+msgstr "Vacuum exécuté."
+
+msgid "strvacuumbad"
+msgstr "Échec du Vacuum."
+
+msgid "stranalyzegood"
+msgstr "Analyse effectuée."
+
+msgid "stranalyzebad"
+msgstr "Échec de l'analyse."
+
+msgid "strreindexgood"
+msgstr "Réindexation exécutée."
+
+msgid "strreindexbad"
+msgstr "Échec de la réindexation."
+
+msgid "strfull"
+msgstr "Intégral (FULL)"
+
+msgid "strfreeze"
+msgstr "Freeze"
+
+msgid "strforce"
+msgstr "Forcer"
+
+msgid "strsignalsent"
+msgstr "Signal envoyé."
+
+msgid "strsignalsentbad"
+msgstr "Échec lors de l'envoi du signal."
+
+msgid "strallobjects"
+msgstr "Tous les objets"
+
+msgid "strdatabasealtered"
+msgstr "Base de données modifiée."
+
+msgid "strdatabasealteredbad"
+msgstr "Échec lors de la modification de la base de données."
+
+msgid "strspecifydatabasetodrop"
+msgstr "Vous devez spécifier au moins une base de données à supprimer"
+
+msgid "strtemplatedb"
+msgstr "Modèle"
+
+msgid "strconfanalyzedatabase"
+msgstr "Êtes vous sûr de vouloir éffectuer un ANALYZE sur toutes les tables de la base de données « %s » ?"
+
+msgid "strconfvacuumdatabase"
+msgstr "Êtes vous sûr de vouloir éffectuer un VACUUM sur toutes les tables de la base de données « %s » ?"
+
+msgid "strconfreindexdatabase"
+msgstr "Êtes vous sûr de vouloir réindexer toutes les tables de la base de données « %s » ?"
+
+msgid "strconfclusterdatabase"
+msgstr "Êtes vous sûr de vouloir éffectuer un CLUSTER sur toutes les tables de la base de données « %s » ?"
+
+# Views
+msgid "strview"
+msgstr "Vue"
+
+msgid "strviews"
+msgstr "Vues"
+
+msgid "strshowallviews"
+msgstr "Voir toutes les vues"
+
+msgid "strnoview"
+msgstr "Aucne vue trouvée."
+
+msgid "strnoviews"
+msgstr "Aucune vue trouvée."
+
+msgid "strcreateview"
+msgstr "Créer une vue"
+
+msgid "strviewname"
+msgstr "Nom de la vue"
+
+msgid "strviewneedsname"
+msgstr "Vous devez indiquer un nom pour votre vue."
+
+msgid "strviewneedsdef"
+msgstr "Vous devez indiquer une définition pour votre vue."
+
+msgid "strviewneedsfields"
+msgstr "Vous devez préciser les colonnes que vous voulez sélectionner dans votre vue."
+
+msgid "strviewcreated"
+msgstr "Vue créée."
+
+msgid "strviewcreatedbad"
+msgstr "Échec lors de la création de la vue."
+
+msgid "strconfdropview"
+msgstr "Êtes-vous sûr de vouloir supprimer la vue « %s » ?"
+
+msgid "strviewdropped"
+msgstr "Vue supprimée."
+
+msgid "strviewdroppedbad"
+msgstr "Échec lors de la suppression de la vue."
+
+msgid "strviewupdated"
+msgstr "Vue mise à jour."
+
+msgid "strviewupdatedbad"
+msgstr "Échec lors de la mise à jour de la vue."
+
+msgid "strviewlink"
+msgstr "Clés liées"
+
+msgid "strviewconditions"
+msgstr "Conditions supplémentaires"
+
+msgid "strcreateviewwiz"
+msgstr "Créer une vue avec l'assistant"
+
+msgid "strrenamedupfields"
+msgstr "Renommer les champs dupliqués"
+
+msgid "strdropdupfields"
+msgstr "Ignorer les champs dupliqués"
+
+msgid "strerrordupfields"
+msgstr "Erreur en cas de champs dupliqués"
+
+msgid "strviewaltered"
+msgstr "Vue modifiée."
+
+msgid "strviewalteredbad"
+msgstr "Échec lors de la modification de la vue."
+
+msgid "strspecifyviewtodrop"
+msgstr "Vous devez spécifier au moins une vue à supprimer."
+
+# Sequences
+msgid "strsequence"
+msgstr "Séquence"
+
+msgid "strsequences"
+msgstr "Séquences"
+
+msgid "strshowallsequences"
+msgstr "Voir toutes les séquences"
+
+msgid "strnosequence"
+msgstr "Aucune séquence trouvée."
+
+msgid "strnosequences"
+msgstr "Aucune séquence trouvée."
+
+msgid "strcreatesequence"
+msgstr "Créer une séquence"
+
+msgid "strlastvalue"
+msgstr "Dernière valeur"
+
+msgid "strincrementby"
+msgstr "Incrémenter par "
+
+msgid "strstartvalue"
+msgstr "Valeur de départ"
+
+msgid "strrestartvalue"
+msgstr "Valeur de redémarrage"
+
+msgid "strmaxvalue"
+msgstr "Valeur maximale"
+
+msgid "strminvalue"
+msgstr "Valeur minimale"
+
+msgid "strcachevalue"
+msgstr "Valeur de cache"
+
+msgid "strlogcount"
+msgstr "Comptage"
+
+msgid "strcancycle"
+msgstr "Peut boucler?"
+
+msgid "striscalled"
+msgstr "Incrémentera la dernière valeur avant de retourner la prochaine valeur (is_called) ?"
+
+msgid "strsequenceneedsname"
+msgstr "Vous devez spécifier un nom pour votre séquence."
+
+msgid "strsequencecreated"
+msgstr "Séquence créée."
+
+msgid "strsequencecreatedbad"
+msgstr "Échec lors de la création de la séquence."
+
+msgid "strconfdropsequence"
+msgstr "Êtes-vous sûr de vouloir supprimer la séquence « %s » ?"
+
+msgid "strsequencedropped"
+msgstr "Séquence supprimée."
+
+msgid "strsequencedroppedbad"
+msgstr "Échec lors de la suppression de la séquence."
+
+msgid "strsequencerestart"
+msgstr "Séquence redémarrée."
+
+msgid "strsequencerestartbad"
+msgstr "Échec tu redémarrage de la séquence."
+
+msgid "strsequencereset"
+msgstr "Séquence initialisée."
+
+msgid "strsequenceresetbad"
+msgstr "Échec lors de l'initialisation de la séquence."
+
+msgid "strsequencealtered"
+msgstr "Séquence modifiée."
+
+msgid "strsequencealteredbad"
+msgstr "Échec lors de la modification de la séquence."
+
+msgid "strsetval"
+msgstr "Initialiser à une valeur"
+
+msgid "strsequencesetval"
+msgstr "Séquence initialisée."
+
+msgid "strsequencesetvalbad"
+msgstr "Échec lors de l'initialisation de la séquence."
+
+msgid "strnextval"
+msgstr "Incrémenter la valeur"
+
+msgid "strsequencenextval"
+msgstr "Séquence incrémentée."
+
+msgid "strsequencenextvalbad"
+msgstr "Échec lors de l'incrémentation de la valeur."
+
+msgid "strspecifysequencetodrop"
+msgstr "Vous devez spécifier au moins une séquence à supprimer."
+
+# Indexes
+msgid "strindex"
+msgstr "Index"
+
+msgid "strindexes"
+msgstr "Index"
+
+msgid "strindexname"
+msgstr "Nom de l'index"
+
+msgid "strshowallindexes"
+msgstr "Voir tous les index"
+
+msgid "strnoindex"
+msgstr "Aucun index trouvé."
+
+msgid "strnoindexes"
+msgstr "Aucun index trouvé."
+
+msgid "strcreateindex"
+msgstr "Créer un index"
+
+msgid "strtabname"
+msgstr "Nom de la table"
+
+msgid "strcolumnname"
+msgstr "Nom de la colonne"
+
+msgid "strindexneedsname"
+msgstr "Vous devez indiquer un nom pour votre index"
+
+msgid "strindexneedscols"
+msgstr "Vous devez indiquer un nombre valide de colonnes."
+
+msgid "strindexcreated"
+msgstr "Index créé"
+
+msgid "strindexcreatedbad"
+msgstr "Échec lors de la création de l'index."
+
+msgid "strconfdropindex"
+msgstr "Êtes-vous sûr de vouloir supprimer l'index « %s » ?"
+
+msgid "strindexdropped"
+msgstr "Index supprimé."
+
+msgid "strindexdroppedbad"
+msgstr "Échec lors de la suppression de l'index."
+
+msgid "strkeyname"
+msgstr "Nom de la clé"
+
+msgid "struniquekey"
+msgstr "Clé unique"
+
+msgid "strprimarykey"
+msgstr "Clé primaire"
+
+msgid "strindextype"
+msgstr "Type d'index"
+
+msgid "strtablecolumnlist"
+msgstr "Liste des colonnes"
+
+msgid "strindexcolumnlist"
+msgstr "Liste des colonnes dans l'index"
+
+msgid "strconfcluster"
+msgstr "Are you sure you want to cluster on \"%s\"?"
+
+msgid "strclusteredgood"
+msgstr "Cluster effectué."
+
+msgid "strclusteredbad"
+msgstr "Échec du cluster."
+
+msgid "strconcurrently"
+msgstr "En parallèle"
+
+msgid "strnoclusteravailable"
+msgstr "La table n'est pas encore ordonnée selon un index."
+
+# Rules
+msgid "strrules"
+msgstr "Règles"
+
+msgid "strrule"
+msgstr "Règle"
+
+msgid "strshowallrules"
+msgstr "Voir toutes les règles"
+
+msgid "strnorule"
+msgstr "Aucune règle trouvée."
+
+msgid "strnorules"
+msgstr "Aucune règle trouvée."
+
+msgid "strcreaterule"
+msgstr "Créer une règle"
+
+msgid "strrulename"
+msgstr "Nom de la règle"
+
+msgid "strruleneedsname"
+msgstr "Vous devez indiquer un nom pour votre règle."
+
+msgid "strrulecreated"
+msgstr "Règle créée."
+
+msgid "strrulecreatedbad"
+msgstr "Échec lors de la création de la règle."
+
+msgid "strconfdroprule"
+msgstr "Êtes-vous sûr de vouloir supprimer la règle « %s » sur « %s » ?"
+
+msgid "strruledropped"
+msgstr "Règle supprimée."
+
+msgid "strruledroppedbad"
+msgstr "Échec lors de la suppression de la règle."
+
+# Constraints
+msgid "strconstraint"
+msgstr "Contrainte"
+
+msgid "strconstraints"
+msgstr "Contraintes"
+
+msgid "strshowallconstraints"
+msgstr "Voir toutes les contraintes"
+
+msgid "strnoconstraints"
+msgstr "Aucune contrainte trouvée."
+
+msgid "strcreateconstraint"
+msgstr "Créer une contrainte"
+
+msgid "strconstraintcreated"
+msgstr "Création d'une contrainte."
+
+msgid "strconstraintcreatedbad"
+msgstr "Échec lors de la création de la contrainte."
+
+msgid "strconfdropconstraint"
+msgstr "Êtes-vous sûr de vouloir supprimer la contrainte « %s » sur « %s » ?"
+
+msgid "strconstraintdropped"
+msgstr "Contrainte supprimée."
+
+msgid "strconstraintdroppedbad"
+msgstr "Échec lors de la suppression de la contrainte."
+
+msgid "straddcheck"
+msgstr "Ajouter une contrainte"
+
+msgid "strcheckneedsdefinition"
+msgstr "La contrainte a besoin d'une définition."
+
+msgid "strcheckadded"
+msgstr "Contrainte ajoutée."
+
+msgid "strcheckaddedbad"
+msgstr "Échec lors de l'ajout d'une contrainte de vérification (CHECK)."
+
+msgid "straddpk"
+msgstr "Ajouter une clé primaire"
+
+msgid "strpkneedscols"
+msgstr "La clé primaire nécessite au moins une colonne."
+
+msgid "strpkadded"
+msgstr "Clé primaire ajoutée."
+
+msgid "strpkaddedbad"
+msgstr "Échec lors de l'ajout de la clé primaire."
+
+msgid "stradduniq"
+msgstr "Ajouter une clé unique"
+
+msgid "struniqneedscols"
+msgstr "Une clé unique nécessite au moins une colonne."
+
+msgid "struniqadded"
+msgstr "La clé unique a été ajoutée."
+
+msgid "struniqaddedbad"
+msgstr "Échec lors de la création de la clé unique."
+
+msgid "straddfk"
+msgstr "Ajouter une clé étrangère"
+
+msgid "strfkneedscols"
+msgstr "Une clé étrangère nécessite au moins une colonne."
+
+msgid "strfkneedstarget"
+msgstr "Une clé étrangère nécessite une table cible."
+
+msgid "strfkadded"
+msgstr "La clé étrangère a été ajoutée."
+
+msgid "strfkaddedbad"
+msgstr "Échec lors de la création de la clé étrangère."
+
+msgid "strfktarget"
+msgstr "Table cible"
+
+msgid "strfkcolumnlist"
+msgstr "Liste des colonnes de la clé"
+
+msgid "strondelete"
+msgstr "ON DELETE"
+
+msgid "stronupdate"
+msgstr "ON UPDATE"
+
+# Functions
+msgid "strfunction"
+msgstr "Fonction"
+
+msgid "strfunctions"
+msgstr "Fonctions"
+
+msgid "strshowallfunctions"
+msgstr "Voir toutes les fonctions"
+
+msgid "strnofunction"
+msgstr "Aucune fonction trouvée."
+
+msgid "strnofunctions"
+msgstr "Aucune fonction trouvée."
+
+msgid "strcreateplfunction"
+msgstr "Créer une fonction PL/SQL"
+
+msgid "strcreateinternalfunction"
+msgstr "Créer une fonction interne"
+
+msgid "strcreatecfunction"
+msgstr "Créer une fonction C"
+
+msgid "strfunctionname"
+msgstr "Nom de la fonction"
+
+msgid "strreturns"
+msgstr "Valeur de sortie"
+
+msgid "strproglanguage"
+msgstr "Langage"
+
+msgid "strfunctionneedsname"
+msgstr "Vous devez indiquer un nom pour votre fonction."
+
+msgid "strfunctionneedsdef"
+msgstr "Vous devez indiquer une définition pour votre fonction."
+
+msgid "strfunctioncreated"
+msgstr "Fonction créée."
+
+msgid "strfunctioncreatedbad"
+msgstr "Échec lors de la création de la fonction."
+
+msgid "strconfdropfunction"
+msgstr "Êtes-vous sûr de vouloir supprimer la fonction « %s » ?"
+
+msgid "strfunctiondropped"
+msgstr "Fonction supprimée."
+
+msgid "strfunctiondroppedbad"
+msgstr "Échec lors de la suppression de la fonction."
+
+msgid "strfunctionupdated"
+msgstr "Fonction mise à jour."
+
+msgid "strfunctionupdatedbad"
+msgstr "Échec lors de la mise à jour de la fonction."
+
+msgid "strobjectfile"
+msgstr "Fichier objet"
+
+msgid "strlinksymbol"
+msgstr "Symbole lien"
+
+msgid "strarguments"
+msgstr "Arguments"
+
+msgid "strargmode"
+msgstr "Mode"
+
+msgid "strargtype"
+msgstr "Type"
+
+msgid "strargadd"
+msgstr "Ajouter un autre argument"
+
+msgid "strargremove"
+msgstr "Supprimer cet argument"
+
+msgid "strargnoargs"
+msgstr "Cet fonction ne prend pas d'arguments."
+
+msgid "strargenableargs"
+msgstr "Active les arguments passés à cette fonction."
+
+msgid "strargnorowabove"
+msgstr "Il doit y avoir une ligne au-dessus de cette ligne."
+
+msgid "strargnorowbelow"
+msgstr "Il doit y avoir une ligne en-dessous de cette ligne."
+
+msgid "strargraise"
+msgstr "Monter."
+
+msgid "strarglower"
+msgstr "Descendre."
+
+msgid "strargremoveconfirm"
+msgstr "Êtes-vous sûr de vouloir supprimer cet argument ? cette opération ne peut pas être annulée."
+
+msgid "strfunctioncosting"
+msgstr "Coût de la function"
+
+msgid "strresultrows"
+msgstr "Lignes de résultat"
+
+msgid "strexecutioncost"
+msgstr "Coût d'exécution"
+
+msgid "strspecifyfunctiontodrop"
+msgstr "Vous devez spécifier au moins une fonction à supprimer."
+
+# Triggers
+msgid "strtrigger"
+msgstr "Trigger"
+
+msgid "strtriggers"
+msgstr "Triggers"
+
+msgid "strshowalltriggers"
+msgstr "Voir tous les triggers"
+
+msgid "strnotrigger"
+msgstr "Aucun trigger trouvé."
+
+msgid "strnotriggers"
+msgstr "Aucun trigger trouvé."
+
+msgid "strcreatetrigger"
+msgstr "Créer un trigger"
+
+msgid "strtriggerneedsname"
+msgstr "Vous devez indiquer un nom pour votre trigger."
+
+msgid "strtriggerneedsfunc"
+msgstr "Vous devez indiquer une fonction pour votre trigger."
+
+msgid "strtriggercreated"
+msgstr "Trigger créé."
+
+msgid "strtriggercreatedbad"
+msgstr "Échec lors de la création du trigger."
+
+msgid "strconfdroptrigger"
+msgstr "Êtes-vous sûr de vouloir supprimer le trigger « %s » sur « %s » ?"
+
+msgid "strconfenabletrigger"
+msgstr "Êtes-vous sûr de vouloir activer le trigger « %s » sur « %s» ?"
+
+msgid "strconfdisabletrigger"
+msgstr "Êtes-vous sûr de vouloir désactiver le trigger « %s » sur « %s» ?"
+
+msgid "strtriggerdropped"
+msgstr "Trigger supprimé."
+
+msgid "strtriggerdroppedbad"
+msgstr "Échec lors de la suppression du trigger."
+
+msgid "strtriggerenabled"
+msgstr "Trigger activé."
+
+msgid "strtriggerenabledbad"
+msgstr "Échec lors de l'activation du trigger."
+
+msgid "strtriggerdisabled"
+msgstr "Trigger désactivé."
+
+msgid "strtriggerdisabledbad"
+msgstr "Échec lors de la désactivation du trigger."
+
+msgid "strtriggeraltered"
+msgstr "Trigger modifié."
+
+msgid "strtriggeralteredbad"
+msgstr "Échec lors de la modification du trigger."
+
+msgid "strforeach"
+msgstr "Pour chaque"
+
+# Types
+msgid "strtype"
+msgstr "Type"
+
+msgid "strtypes"
+msgstr "Types"
+
+msgid "strshowalltypes"
+msgstr "Voir tous les types"
+
+msgid "strnotype"
+msgstr "Aucun type trouvé."
+
+msgid "strnotypes"
+msgstr "Aucun type trouvé."
+
+msgid "strcreatetype"
+msgstr "Créer un type"
+
+msgid "strcreatecomptype"
+msgstr "Créer un type composé"
+
+msgid "strcreateenumtype"
+msgstr "Créer un type enum"
+
+msgid "strtypeneedsfield"
+msgstr "Vous devez spécifier au moins un champ."
+
+msgid "strtypeneedsvalue"
+msgstr "Vous devez spécifier au moins une valeur."
+
+msgid "strtypeneedscols"
+msgstr "Vous devez spécifier un nombre valide de champs."
+
+msgid "strtypeneedsvals"
+msgstr "Vous devez spécifier un nombre valide de valeurs."
+
+msgid "strinputfn"
+msgstr "Fonction d'entrée"
+
+msgid "stroutputfn"
+msgstr "Fonction de sortie"
+
+msgid "strpassbyval"
+msgstr "Passée par valeur ?"
+
+msgid "stralignment"
+msgstr "Alignement"
+
+msgid "strelement"
+msgstr "Élément"
+
+msgid "strdelimiter"
+msgstr "Délimiteur"
+
+msgid "strstorage"
+msgstr "Stockage"
+
+msgid "strfield"
+msgstr "Champ"
+
+msgid "strnumfields"
+msgstr "Nombre de champs"
+
+msgid "strnumvalues"
+msgstr "Nombre de valeurs"
+
+msgid "strtypeneedsname"
+msgstr "Vous devez indiquer un nom pour votre type."
+
+msgid "strtypeneedslen"
+msgstr "Vous devez indiquer une longueur pour votre type."
+
+msgid "strtypecreated"
+msgstr "Type créé"
+
+msgid "strtypecreatedbad"
+msgstr "Échec lors de la création du type."
+
+msgid "strconfdroptype"
+msgstr "Êtes-vous sûr de vouloir supprimer le type « %s » ?"
+
+msgid "strtypedropped"
+msgstr "Type supprimé."
+
+msgid "strtypedroppedbad"
+msgstr "Échec lors de la suppression du type."
+
+msgid "strflavor"
+msgstr "Genre"
+
+msgid "strbasetype"
+msgstr "Base"
+
+msgid "strcompositetype"
+msgstr "Composite"
+
+msgid "strpseudotype"
+msgstr "Pseudo"
+
+msgid "strenum"
+msgstr "Enum"
+
+msgid "strenumvalues"
+msgstr "Valeurs de l'enum"
+
+# Schemas
+msgid "strschema"
+msgstr "Schéma"
+
+msgid "strschemas"
+msgstr "Schémas"
+
+msgid "strshowallschemas"
+msgstr "Voir tous les schémas"
+
+msgid "strnoschema"
+msgstr "Aucun schéma trouvé."
+
+msgid "strnoschemas"
+msgstr "Aucun schéma trouvé."
+
+msgid "strcreateschema"
+msgstr "Créer un schéma"
+
+msgid "strschemaname"
+msgstr "Nom du schéma"
+
+msgid "strschemaneedsname"
+msgstr "Vous devez indiquer un nom pour votre schéma."
+
+msgid "strschemacreated"
+msgstr "Schéma créé"
+
+msgid "strschemacreatedbad"
+msgstr "Échec lors de la création du schéma."
+
+msgid "strconfdropschema"
+msgstr "Êtes-vous sûr de vouloir supprimer le schéma « %s » ?"
+
+msgid "strschemadropped"
+msgstr "Schéma supprimé."
+
+msgid "strschemadroppedbad"
+msgstr "Échec lors de la suppression du schéma."
+
+msgid "strschemaaltered"
+msgstr "Schema modifié."
+
+msgid "strschemaalteredbad"
+msgstr "Échec lors de la modification du schéma."
+
+msgid "strsearchpath"
+msgstr "Chemin de recherche du schéma"
+
+msgid "strspecifyschematodrop"
+msgstr "Vous devez spécifier au moins un schéma à supprimer."
+
+# Reports
+
+# Domains
+msgid "strdomain"
+msgstr "Domaine"
+
+msgid "strdomains"
+msgstr "Domaines"
+
+msgid "strshowalldomains"
+msgstr "Voir tous les domaines"
+
+msgid "strnodomains"
+msgstr "Pas de domaine trouvé."
+
+msgid "strcreatedomain"
+msgstr "Créer un domaine"
+
+msgid "strdomaindropped"
+msgstr "Domaine supprimé."
+
+msgid "strdomaindroppedbad"
+msgstr "Échec lors de la suppression."
+
+msgid "strconfdropdomain"
+msgstr "Êtes-vous sur de vouloir supprimer le domaine « %s » ?"
+
+msgid "strdomainneedsname"
+msgstr "Vous devez donner un nom pour votre domaine."
+
+msgid "strdomaincreated"
+msgstr "Domaine créé."
+
+msgid "strdomaincreatedbad"
+msgstr "Échec lors de la création du domaine."
+
+msgid "strdomainaltered"
+msgstr "Domaine modifié."
+
+msgid "strdomainalteredbad"
+msgstr "Échec lors de la modification du domaine."
+
+# Operators
+msgid "stroperator"
+msgstr "Opérateur"
+
+msgid "stroperators"
+msgstr "Opérateurs"
+
+msgid "strshowalloperators"
+msgstr "Voir tous les opérateurs"
+
+msgid "strnooperator"
+msgstr "Pas d'opérateur trouvé."
+
+msgid "strnooperators"
+msgstr "Pas d'opérateur trouvé."
+
+msgid "strcreateoperator"
+msgstr "Créer un opérateur"
+
+msgid "strleftarg"
+msgstr "Type de l'argument de gauche"
+
+msgid "strrightarg"
+msgstr "Type de l'argument de droite"
+
+msgid "strcommutator"
+msgstr "Commutateur"
+
+msgid "strnegator"
+msgstr "Négation"
+
+msgid "strrestrict"
+msgstr "Restriction"
+
+msgid "strjoin"
+msgstr "Jointure"
+
+msgid "strhashes"
+msgstr "Hachages"
+
+msgid "strmerges"
+msgstr "Assemblages"
+
+msgid "strleftsort"
+msgstr "Tri gauche"
+
+msgid "strrightsort"
+msgstr "Tri droite"
+
+msgid "strlessthan"
+msgstr "Plus petit que"
+
+msgid "strgreaterthan"
+msgstr "Plus grand que"
+
+msgid "stroperatorneedsname"
+msgstr "Vous devez donner un nom pour votre opérateur."
+
+msgid "stroperatorcreated"
+msgstr "Opérateur créé"
+
+msgid "stroperatorcreatedbad"
+msgstr "Échec lors de la création de l'opérateur."
+
+msgid "strconfdropoperator"
+msgstr "Êtes-vous sur de vouloir supprimer l'opérateur « %s » ?"
+
+msgid "stroperatordropped"
+msgstr "Opérateur supprimé."
+
+msgid "stroperatordroppedbad"
+msgstr "Échec lors de la suppression de l'opérateur."
+
+# Casts
+msgid "strcasts"
+msgstr "Conversions"
+
+msgid "strnocasts"
+msgstr "Aucune conversion trouvée."
+
+msgid "strsourcetype"
+msgstr "Type source"
+
+msgid "strtargettype"
+msgstr "Type cible"
+
+msgid "strimplicit"
+msgstr "Implicite"
+
+msgid "strinassignment"
+msgstr "En affectation"
+
+msgid "strbinarycompat"
+msgstr "(binaire compatible)"
+
+# Conversions
+msgid "strconversions"
+msgstr "Conversions"
+
+msgid "strnoconversions"
+msgstr "Aucune conversion trouvée."
+
+msgid "strsourceencoding"
+msgstr "Codage source"
+
+msgid "strtargetencoding"
+msgstr "Codage cible"
+
+# Languages
+msgid "strlanguages"
+msgstr "Langages"
+
+msgid "strnolanguages"
+msgstr "Pas de langage trouvé."
+
+msgid "strtrusted"
+msgstr "De confiance"
+
+# Info
+msgid "strnoinfo"
+msgstr "Pas d'information disponible."
+
+msgid "strreferringtables"
+msgstr "Tables référentes"
+
+msgid "strparenttables"
+msgstr "Tables parents"
+
+msgid "strchildtables"
+msgstr "Tables enfants"
+
+# Aggregates
+msgid "straggregate"
+msgstr "Agrégat"
+
+msgid "straggregates"
+msgstr "Agrégats"
+
+msgid "strnoaggregates"
+msgstr "Aucun agrégat trouvé."
+
+msgid "stralltypes"
+msgstr "(tous les types)"
+
+msgid "strcreateaggregate"
+msgstr "Créer un agrégat"
+
+msgid "straggrbasetype"
+msgstr "Type de données en entrée"
+
+msgid "straggrsfunc"
+msgstr "Fonction de transition de l'état"
+
+msgid "straggrstype"
+msgstr "Type de la valeur de transition"
+
+msgid "straggrffunc"
+msgstr "Fonction finale"
+
+msgid "straggrinitcond"
+msgstr "Condition initiale"
+
+msgid "straggrsortop"
+msgstr "Opérateur de tri"
+
+msgid "strconfdropaggregate"
+msgstr "Êtes-vous sûr de vouloir supprimer l'agrégat « %s »?"
+
+msgid "straggregatedropped"
+msgstr "Agrégat supprimé."
+
+msgid "straggregatedroppedbad"
+msgstr "Échec lors de la suppression de l'agrégat."
+
+msgid "straggraltered"
+msgstr "Agrégat modifié."
+
+msgid "straggralteredbad"
+msgstr "Échec lors de la modification de l'agrégat."
+
+msgid "straggrneedsname"
+msgstr "Vous devez indiquer un nom pour l'agrégat"
+
+msgid "straggrneedsbasetype"
+msgstr "Vous devez indiquer le type de données en entrée pour l'agrégat"
+
+msgid "straggrneedssfunc"
+msgstr "Vous devez indiquer le nom de la fonction de transition de l'agrégat"
+
+msgid "straggrneedsstype"
+msgstr "Vous devez indiquer le type de donnée pour la valeur d'état pour l'agrégat"
+
+msgid "straggrcreated"
+msgstr "Agrégat créé."
+
+msgid "straggrcreatedbad"
+msgstr "Échec lors de la création de l'agrégat."
+
+msgid "straggrshowall"
+msgstr "Afficher tous les agrégats"
+
+# Operator Classes
+msgid "stropclasses"
+msgstr "Classes d'opérateur"
+
+msgid "strnoopclasses"
+msgstr "Aucune classe d'opérateur trouvée."
+
+msgid "straccessmethod"
+msgstr "Méthode d'accès"
+
+# Stats and performance
+msgid "strrowperf"
+msgstr "Performance des enregistrements"
+
+msgid "strioperf"
+msgstr "Performance en entrée/sortie"
+
+msgid "stridxrowperf"
+msgstr "Performance des index"
+
+msgid "stridxioperf"
+msgstr "Performance des index en entrées/sortie"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "Séquentiel"
+
+msgid "strscan"
+msgstr "Parcours"
+
+msgid "strread"
+msgstr "Lecture"
+
+msgid "strfetch"
+msgstr "Récupération"
+
+msgid "strheap"
+msgstr "En-tête"
+
+msgid "strtoast"
+msgstr "TOAST"
+
+msgid "strtoastindex"
+msgstr "Index TOAST"
+
+msgid "strcache"
+msgstr "Cache"
+
+msgid "strdisk"
+msgstr "Disque"
+
+msgid "strrows2"
+msgstr "Enregistrements"
+
+# Tablespaces
+msgid "strtablespace"
+msgstr "Tablespace"
+
+msgid "strtablespaces"
+msgstr "Tablespaces"
+
+msgid "strshowalltablespaces"
+msgstr "Voir tous les tablespaces"
+
+msgid "strnotablespaces"
+msgstr "Aucun tablespace trouvé."
+
+msgid "strcreatetablespace"
+msgstr "Créer un tablespace"
+
+msgid "strlocation"
+msgstr "Emplacement"
+
+msgid "strtablespaceneedsname"
+msgstr "Vous devez donner un nom à votre tablespace."
+
+msgid "strtablespaceneedsloc"
+msgstr "Vous devez préciser un répertoire dans lequel sera créé le tablespace."
+
+msgid "strtablespacecreated"
+msgstr "Tablespace créé."
+
+msgid "strtablespacecreatedbad"
+msgstr "Échec lors de la création du tablespace."
+
+msgid "strconfdroptablespace"
+msgstr "Êtes-vous sûr de vouloir supprimer le tablespace « %s » ?"
+
+msgid "strtablespacedropped"
+msgstr "Tablespace supprimé."
+
+msgid "strtablespacedroppedbad"
+msgstr "Échec lors de la suppression du tablespace."
+
+msgid "strtablespacealtered"
+msgstr "Tablespace modifié."
+
+msgid "strtablespacealteredbad"
+msgstr "Échec lors de la modification du tablespace."
+
+# Miscellaneous
+msgid "strtopbar"
+msgstr "%s lancé sur %s:%s -- Vous êtes connecté avec le profil « %s »"
+
+msgid "strtimefmt"
+msgstr "j M Y, H:i"
+
+msgid "strhelp"
+msgstr "Aide"
+
+msgid "strhelpicon"
+msgstr "?"
+
+msgid "strhelppagebrowser"
+msgstr "Navigateur pour l'aide"
+
+msgid "strselecthelppage"
+msgstr "Sélectionner une page d'aide"
+
+msgid "strinvalidhelppage"
+msgstr "Page d'aide invalide."
+
+msgid "strlogintitle"
+msgstr "Se connecter à %s"
+
+msgid "strlogoutmsg"
+msgstr "Déconnecté de %s"
+
+msgid "strloading"
+msgstr "Chargement..."
+
+msgid "strerrorloading"
+msgstr "Erreur lors du chargement"
+
+msgid "strclicktoreload"
+msgstr "Cliquer pour recharger"
+
+# Autovacuum
+msgid "strautovacuum"
+msgstr "Autovacuum"
+
+msgid "strturnedon"
+msgstr "Activé"
+
+msgid "strturnedoff"
+msgstr "Désactivé"
+
+msgid "strenabled"
+msgstr "activé"
+
+msgid "strnovacuumconf"
+msgstr "Aucune configuration autovacuum trouvée."
+
+msgid "strvacuumbasethreshold"
+msgstr "Limite de base pour le Vacuum"
+
+msgid "strvacuumscalefactor"
+msgstr "Facteur d'échelle pour le Vacuum"
+
+msgid "stranalybasethreshold"
+msgstr "Limite de base pour le Analyze"
+
+msgid "stranalyzescalefactor"
+msgstr "Facteur d'échelle pour le Analyze"
+
+msgid "strvacuumcostdelay"
+msgstr "Délai du coût du Vacuum"
+
+msgid "strvacuumcostlimit"
+msgstr "Limite du coût du Vacuum"
+
+msgid "strvacuumpertable"
+msgstr "Configuration autovacuum par table"
+
+msgid "straddvacuumtable"
+msgstr "Configurer autovacuum pour cette table"
+
+msgid "streditvacuumtable"
+msgstr "Modifier la configuration autovacuum pour la table « %s »"
+
+msgid "strdelvacuumtable"
+msgstr "Supprimer la configuration autovacuum pour la table « %s » ?"
+
+msgid "strvacuumtablereset"
+msgstr "Configuration autovacuum par défaut pour la table « %s »."
+
+msgid "strdelvacuumtablefail"
+msgstr "Échec lors de la suppression de la configuration autovacuumpour la table « %s »"
+
+msgid "strsetvacuumtablesaved"
+msgstr "Configuration autovacuum pour la table « %s » enregistrée."
+
+msgid "strsetvacuumtablefail"
+msgstr "Échec de la configuration autovacuum pour la table « %s »."
+
+msgid "strspecifydelvacuumtable"
+msgstr "Vous devez spécifier la table où supprimer les paramètres autovacuum."
+
+msgid "strspecifyeditvacuumtable"
+msgstr "Vous devez spécifier la table où éditer les paramètres autovacuum."
+
+msgid "strnotdefaultinred"
+msgstr "Valeurs différentes de celles par défaut en rouge."
+
+# Table-level Locks
+msgid "strlocks"
+msgstr "Verrous"
+
+msgid "strtransaction"
+msgstr "ID de transaction"
+
+msgid "strvirtualtransaction"
+msgstr "ID Virtuel de Transaction"
+
+msgid "strprocessid"
+msgstr "ID du processus"
+
+msgid "strmode"
+msgstr "Mode du verrou"
+
+msgid "strislockheld"
+msgstr "Verrou détenu ?"
+
+# Prepared transactions
+msgid "strpreparedxacts"
+msgstr "Transactions préparées"
+
+msgid "strxactid"
+msgstr "ID de transaction"
+
+msgid "strgid"
+msgstr "ID global"
+
+# Fulltext search
+msgid "strfulltext"
+msgstr "Recherche textuelle"
+
+msgid "strftsconfig"
+msgstr "Configuration FTS"
+
+msgid "strftsconfigs"
+msgstr "Configurations"
+
+msgid "strftscreateconfig"
+msgstr "Créer une configuration FTS"
+
+msgid "strftscreatedict"
+msgstr "Créer un dictionnaire"
+
+msgid "strftscreatedicttemplate"
+msgstr "Créer un modèle de dictionnaire"
+
+msgid "strftscreateparser"
+msgstr "Créer un analyseur syntaxique"
+
+msgid "strftsnoconfigs"
+msgstr "Aucune configuration FTS trouvée."
+
+msgid "strftsconfigdropped"
+msgstr "Configuration FTS supprimée."
+
+msgid "strftsconfigdroppedbad"
+msgstr "Échec lors de la suppression de la configuration FTS."
+
+msgid "strconfdropftsconfig"
+msgstr "Êtes-vous sûr de vouloir supprimer la configuration FTS « %s » ?"
+
+msgid "strconfdropftsdict"
+msgstr "Êtes-vous sûr de vouloir supprimer le dictionnaire FTS « %s » ?"
+
+msgid "strconfdropftsmapping"
+msgstr "Êtes-vous sûr de vouloir supprimer le mapping « %s » de la configuration FTS « %s » ?"
+
+msgid "strftstemplate"
+msgstr "Modèle"
+
+msgid "strftsparser"
+msgstr "Analyseur syntaxique"
+
+msgid "strftsconfigneedsname"
+msgstr "Vous devez donner un nom pour votre configuration FTS."
+
+msgid "strftsconfigcreated"
+msgstr "Configuration FTS créée"
+
+msgid "strftsconfigcreatedbad"
+msgstr "Échec lors de la création de la configuration FTS."
+
+msgid "strftsmapping"
+msgstr "Type de jeton"
+
+msgid "strftsdicts"
+msgstr "Dictionaires"
+
+msgid "strftsdict"
+msgstr "Dictionaire"
+
+msgid "strftsemptymap"
+msgstr "Aucune liaisons configurée."
+
+msgid "strftsconfigaltered"
+msgstr "Configuration FTS modifiée."
+
+msgid "strftsconfigalteredbad"
+msgstr "Échec lors de l'édition de la configuration FTS."
+
+msgid "strftsconfigmap"
+msgstr "Configuration des liaisons type de jeton / dictionnaires"
+
+msgid "strftsparsers"
+msgstr "Analyseurs syntaxique FTS"
+
+msgid "strftsnoparsers"
+msgstr "Aucun analyseur syntaxique FTS disponnible."
+
+msgid "strftsnodicts"
+msgstr "Aucun dictionnaire FTS disponible."
+
+msgid "strftsdictcreated"
+msgstr "Dictionnaire FTS créé"
+
+msgid "strftsdictcreatedbad"
+msgstr "Échec lors de la création du dictionnaire FTS."
+
+msgid "strftslexize"
+msgstr "Lexize"
+
+msgid "strftsinit"
+msgstr "Init"
+
+msgid "strftsoptionsvalues"
+msgstr "Options et Valeurs"
+
+msgid "strftsdictneedsname"
+msgstr "Vous devez donner un nom pour votre dictionnaire FTS."
+
+msgid "strftsdictdropped"
+msgstr "Dictionnaire FTS supprimé."
+
+msgid "strftsdictdroppedbad"
+msgstr "Échec lors de la suppression du dictionnaire FTS."
+
+msgid "strftsdictaltered"
+msgstr "Dictionnaire FTS modifié."
+
+msgid "strftsdictalteredbad"
+msgstr "Échec lors de l'édition du dictionnaire FTS."
+
+msgid "strftsaddmapping"
+msgstr "Ajouter une nouvelle liaison"
+
+msgid "strftsspecifymappingtodrop"
+msgstr "Vous devez spécifier au moins une liaison à suppimer."
+
+msgid "strftsspecifyconfigtoalter"
+msgstr "Vous devez spécifier une configuration FTS à modifier"
+
+msgid "strftsmappingdropped"
+msgstr "Laison supprimée."
+
+msgid "strftsmappingdroppedbad"
+msgstr "Échec lors de la suppression de la liaison."
+
+msgid "strftsnodictionaries"
+msgstr "Aucun dictionnaire trouvé."
+
+msgid "strftsmappingaltered"
+msgstr "Liaison modifiée."
+
+msgid "strftsmappingalteredbad"
+msgstr "Échec lors de la modification de la liaison."
+
+msgid "strftsmappingadded"
+msgstr "Liaison ajoutée."
+
+msgid "strftsmappingaddedbad"
+msgstr "Échec lors de la suppression de la liaison."
+
+msgid "strftstabconfigs"
+msgstr "Configurations"
+
+msgid "strftstabdicts"
+msgstr "Dictionaires"
+
+msgid "strftstabparsers"
+msgstr "Analyseurs syntaxique"
+
+msgid "strftscantparsercopy"
+msgstr "Vous ne pouvez spécifier en même temps un modèle et un analyseur lors de la création d'une configuration FTS."
+
+# Plugins
+msgid "strpluginnotfound"
+msgstr "Erreur: greffon '%s' non trouvé. Vérifiez si le greffon existe dans le répertoire plugins/, ou si ce greffon a un fichier plugin.php. Les noms des greffons sont sensibles aux majuscules."
+
+msgid "stractionnotfound"
+msgstr "Erreur: action '%s' non trouvée dans le greffon '%s', ou elle n'a pas été déclarée comme une action."
+
+msgid "strhooknotfound"
+msgstr "Erreur: Le hook '%s' n'est pas disponible."

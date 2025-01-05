@@ -1,0 +1,1532 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sv_SE\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "Swedish"
+
+msgid "applocale"
+msgstr "sv-SE"
+
+msgid "applangdir"
+msgstr "ltr"
+
+# Welcome
+msgid "strintro"
+msgstr "Välkommen till phpPgAdmin."
+
+msgid "strppahome"
+msgstr "phpPgAdmins Hemsida"
+
+msgid "strpgsqlhome"
+msgstr "PostgreSQLs Hemsida"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "PostgreSQLs Dokumentation (lokalt)"
+
+msgid "strreportbug"
+msgstr "Rapportera ett fel"
+
+msgid "strviewfaq"
+msgstr "Visa Frågor & Svar"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "Logga in"
+
+msgid "strloginfailed"
+msgstr "Inloggningen misslyckades"
+
+msgid "strlogindisallowed"
+msgstr "Inloggningen ej tillåten"
+
+msgid "strserver"
+msgstr "Server"
+
+msgid "strlogout"
+msgstr "Logga ut"
+
+msgid "strowner"
+msgstr "Ägare"
+
+msgid "straction"
+msgstr "Åtgärd"
+
+msgid "stractions"
+msgstr "Åtgärder"
+
+msgid "strname"
+msgstr "Namn"
+
+msgid "strdefinition"
+msgstr "Definition"
+
+msgid "strproperties"
+msgstr "Egenskaper"
+
+msgid "strbrowse"
+msgstr "Bläddra"
+
+msgid "strdrop"
+msgstr "Ta bort"
+
+msgid "strdropped"
+msgstr "Borttagen"
+
+msgid "strnull"
+msgstr "Ingenting"
+
+msgid "strnotnull"
+msgstr "Inte Ingenting"
+
+msgid "strfirst"
+msgstr "<< Första"
+
+msgid "strlast"
+msgstr "Sista >>"
+
+msgid "strprev"
+msgstr "Föregående"
+
+msgid "strfailed"
+msgstr "Misslyckades"
+
+msgid "strnext"
+msgstr "Nästa"
+
+msgid "strcreate"
+msgstr "Skapa"
+
+msgid "strcreated"
+msgstr "Skapad"
+
+msgid "strcomment"
+msgstr "Kommentar"
+
+msgid "strlength"
+msgstr "Längd"
+
+msgid "strdefault"
+msgstr "Standardvärde"
+
+msgid "stralter"
+msgstr "Ändra"
+
+msgid "strok"
+msgstr "OK"
+
+msgid "strcancel"
+msgstr "Ångra"
+
+msgid "strsave"
+msgstr "Spara"
+
+msgid "strreset"
+msgstr "Nollställ"
+
+msgid "strinsert"
+msgstr "Infoga"
+
+msgid "strselect"
+msgstr "Välj"
+
+msgid "strdelete"
+msgstr "Radera"
+
+msgid "strupdate"
+msgstr "Uppdatera"
+
+msgid "strreferences"
+msgstr "Referencer"
+
+msgid "stryes"
+msgstr "Ja"
+
+msgid "strno"
+msgstr "Nej"
+
+msgid "strtrue"
+msgstr "Sant"
+
+msgid "strfalse"
+msgstr "Falskt"
+
+msgid "stredit"
+msgstr "Redigera"
+
+msgid "strcolumns"
+msgstr "Kolumner"
+
+msgid "strrows"
+msgstr "Rad(er)"
+
+msgid "strrowsaff"
+msgstr "Rad(er) Påverkade."
+
+msgid "strobjects"
+msgstr "Objekt"
+
+msgid "strexample"
+msgstr "t. ex."
+
+msgid "strback"
+msgstr "Bakåt"
+
+msgid "strqueryresults"
+msgstr "Sökresultat"
+
+msgid "strshow"
+msgstr "Visa"
+
+msgid "strempty"
+msgstr "Tom"
+
+msgid "strlanguage"
+msgstr "Språk"
+
+msgid "strencoding"
+msgstr "Kodning"
+
+msgid "strvalue"
+msgstr "Värde"
+
+msgid "strunique"
+msgstr "Unik"
+
+msgid "strprimary"
+msgstr "Primär"
+
+msgid "strexport"
+msgstr "Exportera"
+
+msgid "strimport"
+msgstr "Importera"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "strgo"
+msgstr "Kör"
+
+msgid "stradmin"
+msgstr "Admin"
+
+msgid "strvacuum"
+msgstr "Städa upp"
+
+msgid "stranalyze"
+msgstr "Analysera"
+
+msgid "strclusterindex"
+msgstr "Kluster"
+
+msgid "strclustered"
+msgstr "Klustrat?"
+
+msgid "strreindex"
+msgstr "Återindexera"
+
+msgid "strrun"
+msgstr "Kör"
+
+msgid "stradd"
+msgstr "Lägg till"
+
+msgid "strinstead"
+msgstr "Gör Istället"
+
+msgid "strevent"
+msgstr "Händelse"
+
+msgid "strformat"
+msgstr "Format"
+
+msgid "strwhen"
+msgstr "När"
+
+msgid "strdata"
+msgstr "Data"
+
+msgid "strconfirm"
+msgstr "Bekräfta"
+
+msgid "strexpression"
+msgstr "Uttryck"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strwhere"
+msgstr "När"
+
+msgid "strexplain"
+msgstr "Förklara"
+
+msgid "strfind"
+msgstr "Sök"
+
+msgid "stroptions"
+msgstr "Alternativ"
+
+msgid "strrefresh"
+msgstr "Uppdatera"
+
+msgid "strcollapse"
+msgstr "Förminska"
+
+msgid "strexpand"
+msgstr "Utöka"
+
+msgid "strdownload"
+msgstr "Ladda ner"
+
+msgid "strdownloadgzipped"
+msgstr "Ladda ner komprimerat med gzip"
+
+msgid "strinfo"
+msgstr "Info"
+
+msgid "stroids"
+msgstr "OIDs"
+
+msgid "stradvanced"
+msgstr "Avancerat"
+
+msgid "strvariables"
+msgstr "Variabler"
+
+msgid "strprocess"
+msgstr "Process"
+
+msgid "strprocesses"
+msgstr "Processer"
+
+msgid "strsetting"
+msgstr "Inställning"
+
+msgid "strparameters"
+msgstr "Parametrar"
+
+# Error handling
+msgid "strnotloaded"
+msgstr "Du har inte kompilerat in korrekt databasstöd i din PHP-installation."
+
+msgid "strbadconfig"
+msgstr "Din config.inc.php är ej uppdaterad. Du måste återskapa den från den nya config.inc.php-dist."
+
+msgid "strbadencoding"
+msgstr "Misslyckades att sätta klientkodning i databasen."
+
+msgid "strbadschema"
+msgstr "Otillåtet schema angett."
+
+msgid "strinstatement"
+msgstr "I påstående:"
+
+msgid "strsqlerror"
+msgstr "SQL fel:"
+
+msgid "strinvalidparam"
+msgstr "Otillåtna scriptparametrar."
+
+msgid "strnodata"
+msgstr "Hittade inga rader."
+
+msgid "strnoobjects"
+msgstr "Hittade inga objekt."
+
+msgid "strrownotunique"
+msgstr "Ingen unik nyckel för denna rad."
+
+# Tables
+msgid "strtable"
+msgstr "Tabell"
+
+msgid "strtables"
+msgstr "Tabeller"
+
+msgid "strshowalltables"
+msgstr "Visa alla tabeller"
+
+msgid "strnotables"
+msgstr "Hittade inga tabeller."
+
+msgid "strnotable"
+msgstr "Hittade ingen tabell."
+
+msgid "strcreatetable"
+msgstr "Skapa tabell"
+
+msgid "strtablename"
+msgstr "Tabellnamn"
+
+msgid "strtableneedsname"
+msgstr "Du måste ge ett namn till din tabell."
+
+msgid "strtableneedsfield"
+msgstr "Du måste ange minst ett fält."
+
+msgid "strtableneedscols"
+msgstr "tabeller kräver ett tillåtet antal kolumner."
+
+msgid "strtablecreated"
+msgstr "Tabell skapad."
+
+msgid "strtablecreatedbad"
+msgstr "Misslyckades med att skapa Tabell."
+
+msgid "strconfdroptable"
+msgstr "Är du säker på att du vill ta bort tabellen \"%s\"?"
+
+msgid "strtabledropped"
+msgstr "Tabellen borttagen."
+
+msgid "strinsertrow"
+msgstr "Infoga rad"
+
+msgid "strtabledroppedbad"
+msgstr "Misslyckades med att ta bort tabellen."
+
+msgid "strrowinserted"
+msgstr "Rad infogad."
+
+msgid "strconfemptytable"
+msgstr "Är du säker på att du vill tömma tabellen \"%s\"?"
+
+msgid "strrowupdated"
+msgstr "Rad uppdaterad."
+
+msgid "strrowinsertedbad"
+msgstr "Misslyckades att infoga rad."
+
+msgid "strtableemptied"
+msgstr "Tabellen tömd."
+
+msgid "strrowupdatedbad"
+msgstr "Misslyckades att uppdatera rad."
+
+msgid "streditrow"
+msgstr "Ändra rad"
+
+msgid "strrowdeleted"
+msgstr "Rad raderad."
+
+msgid "strrowdeletedbad"
+msgstr "Misslyckades att radera rad."
+
+msgid "strfield"
+msgstr "Fält"
+
+msgid "strconfdeleterow"
+msgstr "Är du säker på att du vill ta bort denna rad?"
+
+msgid "strnumfields"
+msgstr "Antal fält"
+
+msgid "strsaveandrepeat"
+msgstr "Infoga & Upprepa"
+
+msgid "strtableemptiedbad"
+msgstr "Misslyckades med att tömma tabellen"
+
+msgid "strdeleterow"
+msgstr "Radera rad"
+
+msgid "strfields"
+msgstr "Fält"
+
+msgid "strfieldneedsname"
+msgstr "Du måste namnge fältet"
+
+msgid "strcolumndropped"
+msgstr "Kolumn raderad."
+
+msgid "strselectallfields"
+msgstr "Välj alla fält"
+
+msgid "strselectneedscol"
+msgstr "Du måste visa minst en kolumn"
+
+msgid "strselectunary"
+msgstr "Unära operander kan ej ha värden."
+
+msgid "strcolumnaltered"
+msgstr "Kolumn ändrad."
+
+msgid "straltercolumn"
+msgstr "Ändra kolumn"
+
+msgid "strcolumnalteredbad"
+msgstr "Misslyckades att ändra kolumn."
+
+msgid "strconfdropcolumn"
+msgstr "Är du säker på att du vill radera kolumn \"%s\" från tabell \"%s\"?"
+
+msgid "strcolumndroppedbad"
+msgstr "Misslyckades att radera kolumn."
+
+msgid "straddcolumn"
+msgstr "Lägg till kolumn"
+
+msgid "strcolumnadded"
+msgstr "Kolumn inlagd."
+
+msgid "strcolumnaddedbad"
+msgstr "Misslyckades att lägga till kolumne."
+
+msgid "strcascade"
+msgstr "KASKAD"
+
+msgid "strdataonly"
+msgstr "Endast Data"
+
+msgid "strtablealtered"
+msgstr "Tabell ändrad."
+
+msgid "strtablealteredbad"
+msgstr "Misslyckades att ändra tabell."
+
+# Users
+msgid "struser"
+msgstr "Användare"
+
+msgid "strusers"
+msgstr "Användare"
+
+msgid "strusername"
+msgstr "Användarnamn"
+
+msgid "strpassword"
+msgstr "Lösenord"
+
+msgid "strsuper"
+msgstr "Superanvändare?"
+
+msgid "strcreatedb"
+msgstr "Skapa Databas?"
+
+msgid "strexpires"
+msgstr "Utgångsdatum"
+
+msgid "strsessiondefaults"
+msgstr "Sessionsinställningar"
+
+msgid "strnewname"
+msgstr "Nytt namn"
+
+msgid "strnousers"
+msgstr "Hittade inga användare."
+
+msgid "strrename"
+msgstr "Döp om"
+
+msgid "struserrenamed"
+msgstr "Användarnamn ändrat."
+
+msgid "struserrenamedbad"
+msgstr "Misslyckades att döpa om användare."
+
+msgid "struserupdated"
+msgstr "Användare uppdaterad."
+
+msgid "struserupdatedbad"
+msgstr "Misslyckades att uppdatera användare."
+
+msgid "strshowallusers"
+msgstr "Visa alla användare"
+
+msgid "strcreateuser"
+msgstr "Skapa användare"
+
+msgid "struserneedsname"
+msgstr "Du måste namnge användaren."
+
+msgid "strconfdropuser"
+msgstr "Är du säker på att du vill radera användaren \"%s\"?"
+
+msgid "strusercreated"
+msgstr "Användare skapad."
+
+msgid "strusercreatedbad"
+msgstr "Misslyckades att skapa användare."
+
+msgid "struserdropped"
+msgstr "Användare raderad."
+
+msgid "struserdroppedbad"
+msgstr "Misslyckades att radera användare."
+
+msgid "straccount"
+msgstr "Konton"
+
+msgid "strchangepassword"
+msgstr "Ändra lösenord"
+
+msgid "strpasswordchanged"
+msgstr "Lösenord ändrat."
+
+msgid "strpasswordchangedbad"
+msgstr "Misslyckades att ändra lösenord."
+
+msgid "strpasswordshort"
+msgstr "För få tecken i lösenordet."
+
+msgid "strpasswordconfirm"
+msgstr "Lösenordet är inte samma som bekräftelsen."
+
+msgid "strgroup"
+msgstr "Grupp"
+
+msgid "strgroups"
+msgstr "Grupper"
+
+msgid "strnogroup"
+msgstr "Hittade ej grupp."
+
+msgid "strnogroups"
+msgstr "Hittade inga grupper."
+
+msgid "strcreategroup"
+msgstr "Skapa grupp"
+
+msgid "strshowallgroups"
+msgstr "Visa alla grupper"
+
+msgid "strgroupneedsname"
+msgstr "Du måste namnge din grupp."
+
+msgid "strgroupcreated"
+msgstr "Grupp skapad."
+
+msgid "strgroupdropped"
+msgstr "Grupp raderad."
+
+msgid "strgroupcreatedbad"
+msgstr "Misslyckades att skapa grupp."
+
+msgid "strconfdropgroup"
+msgstr "Är du säker på att du vill radera grupp \"%s\"?"
+
+msgid "strprivileges"
+msgstr "Rättigheter"
+
+msgid "strgrant"
+msgstr "Tillåt"
+
+msgid "strgranted"
+msgstr "Rättigheter ändrade."
+
+msgid "strgroupdroppedbad"
+msgstr "Misslyckades att radera grupp."
+
+msgid "straddmember"
+msgstr "Lägg till medlem"
+
+msgid "strmemberadded"
+msgstr "Medlem inlagd."
+
+msgid "strmemberaddedbad"
+msgstr "Misslyckades att lägga till medlem."
+
+msgid "strdropmember"
+msgstr "Radera medlem"
+
+msgid "strconfdropmember"
+msgstr "Är du säker på att du vill radera medlem \"%s\" från gruppen \"%s\"?"
+
+msgid "strmemberdropped"
+msgstr "Medlem raderad."
+
+msgid "strmemberdroppedbad"
+msgstr "Misslyckades att radera medlem."
+
+msgid "strprivilege"
+msgstr "Rättighet"
+
+msgid "strnoprivileges"
+msgstr "Detta objekt har standard ägarrättigheter."
+
+msgid "strmembers"
+msgstr "Medelemmar"
+
+msgid "strrevoke"
+msgstr "Ta tillbaka"
+
+msgid "strgrantbad"
+msgstr "Du måste ange minst en användare eller grupp och minst en rättighet."
+
+msgid "strgrantfailed"
+msgstr "Misslyckades att ändra rättigheter."
+
+msgid "stralterprivs"
+msgstr "Ändra rättigheter"
+
+msgid "strdatabase"
+msgstr "Databas"
+
+msgid "strdatabasedropped"
+msgstr "Databas raderad."
+
+msgid "strdatabases"
+msgstr "Databaser"
+
+msgid "strentersql"
+msgstr "Ange SQL att köra:"
+
+msgid "strgrantor"
+msgstr "Tillståndsgivare"
+
+msgid "strasterisk"
+msgstr "*"
+
+msgid "strshowalldatabases"
+msgstr "Visa alla databaser"
+
+msgid "strnodatabase"
+msgstr "Hittade ingen databas."
+
+msgid "strnodatabases"
+msgstr "Hittade inga databaser."
+
+msgid "strcreatedatabase"
+msgstr "Skapa databas"
+
+msgid "strdatabasename"
+msgstr "Databasnamn"
+
+msgid "strdatabaseneedsname"
+msgstr "Du måste namnge databasen."
+
+msgid "strdatabasecreated"
+msgstr "Databas skapad."
+
+msgid "strdatabasecreatedbad"
+msgstr "Misslyckades att skapa databas."
+
+msgid "strconfdropdatabase"
+msgstr "Är du säker på att du vill radera databas \"%s\"?"
+
+msgid "strdatabasedroppedbad"
+msgstr "Misslyckades att radera databas."
+
+msgid "strsqlexecuted"
+msgstr "SQL-kommando utfört."
+
+msgid "strvacuumgood"
+msgstr "Uppstädning utförd."
+
+msgid "strvacuumbad"
+msgstr "Uppstädning misslyckades."
+
+msgid "stranalyzegood"
+msgstr "Analysen lyckades."
+
+msgid "stranalyzebad"
+msgstr "Analysen misslyckades."
+
+msgid "strstructureonly"
+msgstr "Endast struktur"
+
+msgid "strstructureanddata"
+msgstr "Struktur och data"
+
+# Views
+msgid "strview"
+msgstr "Vy"
+
+msgid "strviews"
+msgstr "Vyer"
+
+msgid "strshowallviews"
+msgstr "Visa alla vyer"
+
+msgid "strnoview"
+msgstr "Hittade ingen vy."
+
+msgid "strnoviews"
+msgstr "Hittade inga vyer."
+
+msgid "strcreateview"
+msgstr "Skapa vy"
+
+msgid "strviewname"
+msgstr "Vynamn"
+
+msgid "strviewneedsname"
+msgstr "Du måste namnge Vy."
+
+msgid "strviewneedsdef"
+msgstr "Du måste ange en definition för din vy."
+
+msgid "strviewcreated"
+msgstr "Vy skapad."
+
+msgid "strviewcreatedbad"
+msgstr "Misslyckades att skapa vy."
+
+msgid "strconfdropview"
+msgstr "Är du säker på att du vill radera vyn \"%s\"?"
+
+msgid "strviewdropped"
+msgstr "Vy raderad."
+
+msgid "strviewdroppedbad"
+msgstr "Misslyckades att radera vy."
+
+msgid "strviewupdated"
+msgstr "Vy uppdaterad."
+
+msgid "strviewupdatedbad"
+msgstr "Misslyckades att uppdatera vy."
+
+msgid "strviewlink"
+msgstr "Länkade nycklar"
+
+msgid "strviewconditions"
+msgstr "Ytterligare villkor"
+
+# Sequences
+msgid "strsequence"
+msgstr "Sekvens"
+
+msgid "strsequences"
+msgstr "Sekvenser"
+
+msgid "strshowallsequences"
+msgstr "Visa alla sekvenser"
+
+msgid "strnosequence"
+msgstr "Hittade ingen sekvens."
+
+msgid "strnosequences"
+msgstr "Hittade inga sekvenser."
+
+msgid "strcreatesequence"
+msgstr "Skapa sekvens"
+
+msgid "strlastvalue"
+msgstr "Senaste värde"
+
+msgid "strincrementby"
+msgstr "Öka med"
+
+msgid "strstartvalue"
+msgstr "Startvärde"
+
+msgid "strmaxvalue"
+msgstr "Största värde"
+
+msgid "strminvalue"
+msgstr "Minsta värde"
+
+msgid "strcachevalue"
+msgstr "Värde på cache"
+
+msgid "strlogcount"
+msgstr "Räkna log"
+
+msgid "striscycled"
+msgstr "Är upprepad?"
+
+msgid "strsequenceneedsname"
+msgstr "Du måste ge ett namn till din sekvens."
+
+msgid "strsequencecreated"
+msgstr "Sekvens skapad."
+
+msgid "strsequencecreatedbad"
+msgstr "Misslyckades att skapa sekvens."
+
+msgid "strconfdropsequence"
+msgstr "Är du säker på att du vill radera sekvensen \"%s\"?"
+
+msgid "strsequencedropped"
+msgstr "Sekvensen borrtagen."
+
+msgid "strsequencedroppedbad"
+msgstr "Misslyckades att radera sekvens."
+
+# Indexes
+msgid "strindex"
+msgstr "Index"
+
+msgid "strindexes"
+msgstr "Index"
+
+msgid "strshowallindexes"
+msgstr "Visa alla index"
+
+msgid "strnoindex"
+msgstr "Hittade inget index."
+
+msgid "strsequencereset"
+msgstr "Nollställ sekvens."
+
+msgid "strsequenceresetbad"
+msgstr "Misslyckades att nollställa sekvens."
+
+msgid "strnoindexes"
+msgstr "Hittade inga index."
+
+msgid "strcreateindex"
+msgstr "Skapa index"
+
+msgid "strtabname"
+msgstr "Tabellnamn"
+
+msgid "strcolumnname"
+msgstr "Kolumnnamn"
+
+msgid "strindexneedsname"
+msgstr "Du måste ge ett namn för ditt index"
+
+msgid "strindexneedscols"
+msgstr "Det krävs ett giltigt antal kolumner för index."
+
+msgid "strindexcreated"
+msgstr "Index skapat"
+
+msgid "strindexcreatedbad"
+msgstr "Misslyckades att skapa index."
+
+msgid "strconfdropindex"
+msgstr "Är du säker på att du vill radera index \"%s\"?"
+
+msgid "strindexdropped"
+msgstr "Index raderat."
+
+msgid "strindexdroppedbad"
+msgstr "Misslyckades att radera index."
+
+msgid "strkeyname"
+msgstr "Nyckelvärdesnamn"
+
+msgid "struniquekey"
+msgstr "Unikt nyckelvärde"
+
+msgid "strprimarykey"
+msgstr "Primärnyckel"
+
+msgid "strindextype"
+msgstr "Typ av index"
+
+msgid "strindexname"
+msgstr "Indexnamn"
+
+msgid "strtablecolumnlist"
+msgstr "Tabellkolumner"
+
+msgid "strindexcolumnlist"
+msgstr "Indexkolumner"
+
+msgid "strconfcluster"
+msgstr "Är du säker på att du vill klustra \"%s\"?"
+
+msgid "strclusteredgood"
+msgstr "Klustring avslutad."
+
+msgid "strclusteredbad"
+msgstr "Klustring misslyckades."
+
+# Rules
+msgid "strrules"
+msgstr "Regler"
+
+msgid "strrule"
+msgstr "Regel"
+
+msgid "strshowallrules"
+msgstr "Visa alla regler"
+
+msgid "strnorule"
+msgstr "Hittade ingen regel."
+
+msgid "strnorules"
+msgstr "Hittade inga regler."
+
+msgid "strcreaterule"
+msgstr "Skapa regel"
+
+msgid "strrulename"
+msgstr "Regelnamn"
+
+msgid "strruleneedsname"
+msgstr "Du måste ge ett namn till din regel."
+
+msgid "strrulecreated"
+msgstr "Regel skapad."
+
+msgid "strrulecreatedbad"
+msgstr "Misslyckades att skapa regel."
+
+msgid "strconfdroprule"
+msgstr "Är du säker på att du vill radera regel \"%s\" för \"%s\"?"
+
+msgid "strruledropped"
+msgstr "Regel raderat."
+
+msgid "strruledroppedbad"
+msgstr "Misslyckades att radera regel."
+
+# Constraints
+msgid "strconstraints"
+msgstr "Begränsningar"
+
+msgid "strshowallconstraints"
+msgstr "Visa alla begränsningar"
+
+msgid "strnoconstraints"
+msgstr "Hittade inga begränsningar."
+
+msgid "strcreateconstraint"
+msgstr "Skapa begränsning"
+
+msgid "strconstraintcreated"
+msgstr "Begränsning skapad."
+
+msgid "strconstraintcreatedbad"
+msgstr "Misslyckades att skapa begränsning."
+
+msgid "strconfdropconstraint"
+msgstr "Är du säker på att du vill radera begränsning \"%s\" för \"%s\"?"
+
+msgid "strconstraintdropped"
+msgstr "Begränsning raderad."
+
+msgid "strconstraintdroppedbad"
+msgstr "Misslyckades att radera begränsning."
+
+msgid "straddcheck"
+msgstr "Lägg till en koll"
+
+msgid "strcheckneedsdefinition"
+msgstr "En kollbegränsning behöver definieras."
+
+msgid "strcheckadded"
+msgstr "Kollbegränsning inlagd."
+
+msgid "strcheckaddedbad"
+msgstr "Misslyckades att lägga till en koll."
+
+msgid "straddpk"
+msgstr "Lägg till primärnyckel"
+
+msgid "strpkneedscols"
+msgstr "Primärnyckel behöver minst en kolumn."
+
+msgid "strpkadded"
+msgstr "Primärnyckel inlagd."
+
+msgid "strpkaddedbad"
+msgstr "Misslyckades att lägga till primärnyckel."
+
+msgid "stradduniq"
+msgstr "Lägg till Unikt nyckelvärde"
+
+msgid "struniqneedscols"
+msgstr "Unikt nyckelvärde behöver minst en kolumn."
+
+msgid "struniqadded"
+msgstr "Unikt nyckelvärde inlagt."
+
+msgid "struniqaddedbad"
+msgstr "Misslyckades att lägga till unikt nyckelvärde."
+
+msgid "straddfk"
+msgstr "Lägg till utomstående nyckel"
+
+msgid "strfkneedscols"
+msgstr "Utomstående nyckel behöver minst en kolumn."
+
+msgid "strfkneedstarget"
+msgstr "Utomstående nycket behöver en måltabell."
+
+msgid "strfkadded"
+msgstr "Utomstående nyckel inlagd."
+
+msgid "strfkaddedbad"
+msgstr "Misslyckades att lägga till utomstående nyckel."
+
+msgid "strfktarget"
+msgstr "Måltabell"
+
+msgid "strfkcolumnlist"
+msgstr "Kolumner i nyckel"
+
+msgid "strondelete"
+msgstr "VID RADERING"
+
+msgid "stronupdate"
+msgstr "VID UPPDATERING"
+
+# Functions
+msgid "strfunction"
+msgstr "Funktion"
+
+msgid "strfunctions"
+msgstr "Funktioner"
+
+msgid "strshowallfunctions"
+msgstr "Visa alla funktioner"
+
+msgid "strnofunction"
+msgstr "Hittade ingen funktion."
+
+msgid "strnofunctions"
+msgstr "Hittade inga funktioner."
+
+msgid "strcreatefunction"
+msgstr "Skapa funktion"
+
+msgid "strfunctionname"
+msgstr "Funktionsnamn"
+
+msgid "strreturns"
+msgstr "Återger"
+
+msgid "strarguments"
+msgstr "Argument"
+
+msgid "strfunctionneedsname"
+msgstr "Du måste namnge din funktion."
+
+msgid "strfunctionneedsdef"
+msgstr "Du måste definiera din funktion."
+
+msgid "strfunctioncreated"
+msgstr "Funktion skapad."
+
+msgid "strfunctioncreatedbad"
+msgstr "Misslyckades att skapa funktion."
+
+msgid "strconfdropfunction"
+msgstr "Är du säker på att du vill radera funktionen \"%s\"?"
+
+msgid "strproglanguage"
+msgstr "Programmeringsspråk"
+
+msgid "strfunctiondropped"
+msgstr "Funktionen raderad."
+
+msgid "strfunctiondroppedbad"
+msgstr "Misslyckades att radera funktion."
+
+msgid "strfunctionupdated"
+msgstr "Funktion uppdaterad."
+
+msgid "strfunctionupdatedbad"
+msgstr "Misslyckades att uppdatera funktion."
+
+# Triggers
+msgid "strtrigger"
+msgstr "Mekanism"
+
+msgid "strtriggers"
+msgstr "Mekanismer"
+
+msgid "strshowalltriggers"
+msgstr "Visa alla Mekanismer"
+
+msgid "strnotrigger"
+msgstr "Hittade ingen mekanism."
+
+msgid "strnotriggers"
+msgstr "Hittade inga mekanismer."
+
+msgid "strcreatetrigger"
+msgstr "Skapa mekanism"
+
+msgid "strtriggerneedsname"
+msgstr "Du måste namnge din mekanism."
+
+msgid "strtriggerneedsfunc"
+msgstr "Du måste specificera en funktion för din mekanism."
+
+msgid "strtriggercreated"
+msgstr "Mekanism skapad."
+
+msgid "strtriggerdropped"
+msgstr "Mekanism raderad."
+
+msgid "strtriggercreatedbad"
+msgstr "Misslyckades att skapa mekanism."
+
+msgid "strconfdroptrigger"
+msgstr "Är du säker på att du vill radera mekanismen \"%s\" på \"%s\"?"
+
+msgid "strtriggerdroppedbad"
+msgstr "Misslyckades att radera mekanism."
+
+# Types
+msgid "strtype"
+msgstr "Typ"
+
+msgid "strstorage"
+msgstr "Lagring"
+
+msgid "strtriggeraltered"
+msgstr "Mekanism ändrad."
+
+msgid "strtriggeralteredbad"
+msgstr "Misslyckades att ändra mekanism."
+
+msgid "strtypes"
+msgstr "Typer"
+
+msgid "strtypeneedslen"
+msgstr "Du måste ange typens längd."
+
+msgid "strshowalltypes"
+msgstr "Visa alla typer"
+
+msgid "strnotype"
+msgstr "Hittade ingen typ."
+
+msgid "strnotypes"
+msgstr "Hittade inga typer."
+
+msgid "strcreatetype"
+msgstr "Skapa typ"
+
+msgid "strtypename"
+msgstr "Namn på typen"
+
+msgid "strinputfn"
+msgstr "Infogande funktion"
+
+msgid "stroutputfn"
+msgstr "Funktion för utvärden"
+
+msgid "strpassbyval"
+msgstr "Genomgått utvärdering?"
+
+msgid "stralignment"
+msgstr "Justering"
+
+msgid "strelement"
+msgstr "Element"
+
+msgid "strdelimiter"
+msgstr "Avgränsare"
+
+msgid "strtypeneedsname"
+msgstr "Du måste namnge din typ."
+
+msgid "strtypecreated"
+msgstr "Typ skapad"
+
+msgid "strtypecreatedbad"
+msgstr "Misslyckades att skapa typ."
+
+msgid "strconfdroptype"
+msgstr "Är du säker på att du vill radera typen \"%s\"?"
+
+msgid "strtypedropped"
+msgstr "Typ raderad."
+
+msgid "strtypedroppedbad"
+msgstr "Misslyckades att radera typ."
+
+# Schemas
+msgid "strschema"
+msgstr "Schema"
+
+msgid "strschemas"
+msgstr "Scheman"
+
+msgid "strshowallschemas"
+msgstr "Visa alla scheman"
+
+msgid "strnoschema"
+msgstr "Hittade inget schema."
+
+msgid "strnoschemas"
+msgstr "Hittade inga scheman."
+
+msgid "strcreateschema"
+msgstr "Skapa Schema"
+
+msgid "strschemaname"
+msgstr "Schemanamn"
+
+msgid "strschemaneedsname"
+msgstr "Du måste namnge ditt Schema."
+
+msgid "strschemacreated"
+msgstr "Schema skapat"
+
+msgid "strschemacreatedbad"
+msgstr "Misslyckades att skapa schema."
+
+msgid "strconfdropschema"
+msgstr "Är du säker på att du vill radera schemat \"%s\"?"
+
+msgid "strschemadropped"
+msgstr "Schema raderat."
+
+msgid "strschemadroppedbad"
+msgstr "Misslyckades att radera schema."
+
+# Reports
+msgid "strtopbar"
+msgstr "%s körs på %s:%s -- Du är inloggad som användare \"%s\""
+
+msgid "strtimefmt"
+msgstr "jS M, Y g:iA"
+
+# Domains
+msgid "strdomain"
+msgstr "Domän"
+
+msgid "strdomains"
+msgstr "Domäner"
+
+msgid "strshowalldomains"
+msgstr "Visa alla domäner"
+
+msgid "strnodomains"
+msgstr "Hittade inga domäner."
+
+msgid "strcreatedomain"
+msgstr "Skapa domän"
+
+msgid "strdomaindropped"
+msgstr "Domän raderad."
+
+msgid "strdomaindroppedbad"
+msgstr "Misslyckades att radera domän."
+
+msgid "strconfdropdomain"
+msgstr "Är du säker på att du vill radera domänen \"%s\"?"
+
+msgid "strdomainneedsname"
+msgstr "Du måste ange ett domännamn."
+
+msgid "strdomaincreated"
+msgstr "Domän skapad."
+
+msgid "strdomaincreatedbad"
+msgstr "Misslyckades att skapa domän."
+
+msgid "strdomainaltered"
+msgstr "Domän ändrad."
+
+msgid "strdomainalteredbad"
+msgstr "Misslyckades att ändra domän."
+
+# Operators
+msgid "stroperator"
+msgstr "Operand"
+
+msgid "stroperators"
+msgstr "Operander"
+
+msgid "strshowalloperators"
+msgstr "Visa alla operander"
+
+msgid "strnooperator"
+msgstr "Hittade ingen operand."
+
+msgid "strnooperators"
+msgstr "Hittade inga operander."
+
+msgid "strcreateoperator"
+msgstr "Skapa operand"
+
+msgid "strleftarg"
+msgstr "Arg Typ Vänster"
+
+msgid "strrightarg"
+msgstr "Arg Typ Höger"
+
+msgid "strcommutator"
+msgstr "Växlare"
+
+msgid "strnegator"
+msgstr "Negerande"
+
+msgid "strrestrict"
+msgstr "Spärra"
+
+msgid "strjoin"
+msgstr "Slå ihop"
+
+msgid "strhashes"
+msgstr "Hashtabeller"
+
+msgid "strmerges"
+msgstr "Sammanslagningar"
+
+msgid "strleftsort"
+msgstr "Sortera vänster"
+
+msgid "strrightsort"
+msgstr "Sortera höger"
+
+msgid "strlessthan"
+msgstr "Mindre än"
+
+msgid "strgreaterthan"
+msgstr "Större än"
+
+msgid "stroperatorneedsname"
+msgstr "Du måste namnge operanden."
+
+msgid "stroperatorcreated"
+msgstr "Operand skapad"
+
+msgid "stroperatorcreatedbad"
+msgstr "Misslyckades att skapa operand."
+
+msgid "strconfdropoperator"
+msgstr "Är du säker på att du vill radera operanden \"%s\"?"
+
+msgid "stroperatordropped"
+msgstr "Operand raderad."
+
+msgid "stroperatordroppedbad"
+msgstr "Misslyckades att radera operand."
+
+# Casts
+msgid "strcasts"
+msgstr "Typomvandlingar"
+
+msgid "strnocasts"
+msgstr "Hittade inga typomvandlingar."
+
+msgid "strsourcetype"
+msgstr "Källtyp"
+
+msgid "strtargettype"
+msgstr "Måltyp"
+
+msgid "strimplicit"
+msgstr "Implicit"
+
+msgid "strinassignment"
+msgstr "Tilldelat i"
+
+msgid "strbinarycompat"
+msgstr "(Binärt kompatibel)"
+
+# Conversions
+msgid "strconversions"
+msgstr "Omkodningar"
+
+msgid "strnoconversions"
+msgstr "Hittade inga omkodningar."
+
+msgid "strsourceencoding"
+msgstr "Källkodning"
+
+msgid "strtargetencoding"
+msgstr "Målkodning"
+
+# Languages
+msgid "strlanguages"
+msgstr "Språk"
+
+msgid "strnolanguages"
+msgstr "Hittade inga språk."
+
+msgid "strtrusted"
+msgstr "Pålitlig(a)"
+
+# Info
+msgid "strnoinfo"
+msgstr "Ingen information tillgänglig."
+
+msgid "strreferringtables"
+msgstr "Refererande tabeller"
+
+msgid "strparenttables"
+msgstr "Ovanstående tabeller"
+
+msgid "strchildtables"
+msgstr "Underliggande tabeller"
+
+# Aggregates
+msgid "straggregates"
+msgstr "Sammanslagningar"
+
+msgid "strnoaggregates"
+msgstr "Hittade inga sammanslagningar."
+
+msgid "stralltypes"
+msgstr "(Alla typer)"
+
+# Operator Classes
+msgid "stropclasses"
+msgstr "Op Klasser"
+
+msgid "strnoopclasses"
+msgstr "Hittade inga operandklasser."
+
+msgid "straccessmethod"
+msgstr "Kopplingsmetod"
+
+# Stats and performance
+msgid "strrowperf"
+msgstr "Radprestanda"
+
+msgid "strioperf"
+msgstr "I/O Prestanda"
+
+msgid "stridxrowperf"
+msgstr "Index Radprestanda"
+
+msgid "stridxioperf"
+msgstr "Index I/O Prestanda"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "Sekventiell"
+
+msgid "strscan"
+msgstr "Scanna"
+
+msgid "strread"
+msgstr "Läs"
+
+msgid "strfetch"
+msgstr "Hämta"
+
+msgid "strheap"
+msgstr "Bunt"
+
+msgid "strtoast"
+msgstr "Bränn"
+
+msgid "strtoastindex"
+msgstr "Bränn Index"
+
+msgid "strcache"
+msgstr "Cache"
+
+msgid "strdisk"
+msgstr "Disk"
+
+msgid "strrows2"
+msgstr "Rader"
+
+# Miscellaneous
+msgid "strhelp"
+msgstr "Hjälp"

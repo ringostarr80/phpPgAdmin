@@ -2,5 +2,7 @@ parameters:
     level: max
     paths:
         - src/
+        - index.php
+        - browser.php
     excludePaths:
         - vendor/

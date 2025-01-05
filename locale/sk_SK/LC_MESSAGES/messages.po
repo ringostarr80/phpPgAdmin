@@ -1,0 +1,1777 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phpPgAdmin\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ringo Leese <ringo19@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sk_SK\n"
+"X-Generator: Poedit 2.4.2\n"
+
+# Language and character set
+msgid "applang"
+msgstr "Slovensky"
+
+msgid "applocale"
+msgstr "sk-SK"
+
+msgid "applangdir"
+msgstr "ltr"
+
+# Basic strings
+msgid "strintro"
+msgstr "Vitaje vo phpPgAdmin-e."
+
+msgid "strppahome"
+msgstr "phpPgAdmin Homepage"
+
+msgid "strpgsqlhome"
+msgstr "PostgreSQL Homepage"
+
+msgid "strpgsqlhome_url"
+msgstr "http://www.postgresql.org/"
+
+msgid "strlocaldocs"
+msgstr "PostgreSQL Dokumentácia"
+
+msgid "strreportbug"
+msgstr "Oznámiť Chybu"
+
+msgid "strviewfaq"
+msgstr "Zobraziť FAQ"
+
+msgid "strviewfaq_url"
+msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
+
+# Basic strings
+msgid "strlogin"
+msgstr "Prihlásenie"
+
+msgid "strloginfailed"
+msgstr "Prihlásenie zlyhalo"
+
+msgid "strlogindisallowed"
+msgstr "Prihlásenie je vypnuté kôli bezpečnosti"
+
+msgid "strserver"
+msgstr "Server"
+
+msgid "strservers"
+msgstr "Servery"
+
+msgid "strintroduction"
+msgstr "Úvod"
+
+msgid "strhost"
+msgstr "Hostiteľ"
+
+msgid "strport"
+msgstr "Port"
+
+msgid "strlogout"
+msgstr "Odhlásiť"
+
+msgid "strowner"
+msgstr "Vlastník"
+
+msgid "straction"
+msgstr "Akcia"
+
+msgid "stractions"
+msgstr "Akcie"
+
+msgid "strname"
+msgstr "Meno"
+
+msgid "strdefinition"
+msgstr "Definícia"
+
+msgid "strproperties"
+msgstr "Vlastnosti"
+
+msgid "strbrowse"
+msgstr "Prehliadať"
+
+msgid "strdrop"
+msgstr "Odstrániť"
+
+msgid "strdropped"
+msgstr "Odstránený"
+
+msgid "strnotnull"
+msgstr "Ne-nulový"
+
+msgid "strprev"
+msgstr "Predchádzajúci"
+
+msgid "strnext"
+msgstr "Ďaľší"
+
+msgid "strfirst"
+msgstr "<< Prvý"
+
+msgid "strlast"
+msgstr "Posledný >>"
+
+msgid "strfailed"
+msgstr "Chyba."
+
+msgid "strcreate"
+msgstr "Vytvoriť"
+
+msgid "strcreated"
+msgstr "Vytvorené"
+
+msgid "strcomment"
+msgstr "Komentár"
+
+msgid "strlength"
+msgstr "Dĺžka"
+
+msgid "strdefault"
+msgstr "Predvolené"
+
+msgid "stralter"
+msgstr "Zmeniť"
+
+msgid "strok"
+msgstr "OK"
+
+msgid "strcancel"
+msgstr "Zrušiť"
+
+msgid "strsave"
+msgstr "Uložiť"
+
+msgid "strreset"
+msgstr "Reset"
+
+msgid "strinsert"
+msgstr "Vložiť"
+
+msgid "strselect"
+msgstr "Vybrať"
+
+msgid "strdelete"
+msgstr "Zmazať"
+
+msgid "strupdate"
+msgstr "Aktualizovať"
+
+msgid "strreferences"
+msgstr "Referencie"
+
+msgid "stryes"
+msgstr "Áno"
+
+msgid "strno"
+msgstr "Nie"
+
+msgid "strtrue"
+msgstr "True"
+
+msgid "strfalse"
+msgstr "False"
+
+msgid "stredit"
+msgstr "Upraviť"
+
+msgid "strcolumn"
+msgstr "Stĺpec"
+
+msgid "strcolumns"
+msgstr "Stĺpce"
+
+msgid "strrows"
+msgstr "riadky"
+
+msgid "strrowsaff"
+msgstr "riadkov ovplyvnených."
+
+msgid "strobjects"
+msgstr "objekt(y)"
+
+msgid "strback"
+msgstr "Späť"
+
+msgid "strqueryresults"
+msgstr "Výsledky Dotazu"
+
+msgid "strshow"
+msgstr "Ukázať"
+
+msgid "strempty"
+msgstr "Vyprázdniť"
+
+msgid "strlanguage"
+msgstr "Jazyk"
+
+msgid "strencoding"
+msgstr "Kódovanie"
+
+msgid "strvalue"
+msgstr "Hodnota"
+
+msgid "strunique"
+msgstr "Unikátny"
+
+msgid "strprimary"
+msgstr "Primárny"
+
+msgid "strexport"
+msgstr "Exportovať"
+
+msgid "strimport"
+msgstr "Import"
+
+msgid "strallowednulls"
+msgstr "Povolený NULL znak"
+
+msgid "strbackslashn"
+msgstr "\\N"
+
+msgid "strnull"
+msgstr "NULL (slovo)"
+
+msgid "stremptystring"
+msgstr "Prázdny reťazec/pole"
+
+msgid "strsql"
+msgstr "SQL"
+
+msgid "stradmin"
+msgstr "Admin"
+
+msgid "strvacuum"
+msgstr "Vyčistiť"
+
+msgid "stranalyze"
+msgstr "Analyzovať"
+
+msgid "strclusterindex"
+msgstr "Cluster"
+
+msgid "strclustered"
+msgstr "Clustered?"
+
+msgid "strreindex"
+msgstr "Reindex"
+
+msgid "strrun"
+msgstr "Spustiť"
+
+msgid "stradd"
+msgstr "Pridať"
+
+msgid "strremove"
+msgstr "Zmazať"
+
+msgid "strevent"
+msgstr "Prípadne"
+
+msgid "strwhere"
+msgstr "Kde"
+
+msgid "strinstead"
+msgstr "Urobiť Namiesto"
+
+msgid "strwhen"
+msgstr "Kedy"
+
+msgid "strformat"
+msgstr "Formát"
+
+msgid "strdata"
+msgstr "Dáta"
+
+msgid "strconfirm"
+msgstr "Potvrdiť"
+
+msgid "strexpression"
+msgstr "Výraz"
+
+msgid "strellipsis"
+msgstr "..."
+
+msgid "strseparator"
+msgstr ": "
+
+msgid "strexpand"
+msgstr "Rozšíriť"
+
+msgid "strcollapse"
+msgstr "Zbaliť"
+
+msgid "strexplain"
+msgstr "Vysvetliť"
+
+msgid "strexplainanalyze"
+msgstr "Vysvetliť Analyze"
+
+msgid "strfind"
+msgstr "Nájsť"
+
+msgid "stroptions"
+msgstr "Nastavenia"
+
+msgid "strrefresh"
+msgstr "Obnoviť"
+
+msgid "strdownload"
+msgstr "Download"
+
+msgid "strdownloadgzipped"
+msgstr "Stiahnuť skomprimované pomocou gzip"
+
+msgid "strinfo"
+msgstr "Info"
+
+msgid "stroids"
+msgstr "OIDs"
+
+msgid "stradvanced"
+msgstr "Viac"
+
+msgid "strvariables"
+msgstr "Premenné"
+
+msgid "strprocess"
+msgstr "Proces"
+
+msgid "strprocesses"
+msgstr "Procesy"
+
+msgid "strsetting"
+msgstr "Nastavenie"
+
+msgid "streditsql"
+msgstr "Upraviť SQL"
+
+msgid "strruntime"
+msgstr "Celkový beh: %s ms"
+
+msgid "strpaginate"
+msgstr "Výsledky stránkovania"
+
+msgid "struploadscript"
+msgstr "alebo uploadni SQL skript:"
+
+msgid "strstarttime"
+msgstr "Čas štartu"
+
+msgid "strfile"
+msgstr "Súbor"
+
+msgid "strfileimported"
+msgstr "Súbor importovaný."
+
+msgid "strtrycred"
+msgstr "Použiť tieto hodnoty pre všetky hodnoty"
+
+msgid "strexecute"
+msgstr "Execute"
+
+# Error handling
+msgid "strnoframes"
+msgstr "Táto aplikácia funguje najlapšie s prehliadačom, ktorý podporuje technológiu frame-ov, no môže byť použitý aj takým, ktorý to nepodporuje nasledovaním tohto odkazu:"
+
+msgid "strnoframeslink"
+msgstr "Nepoužívať frame-y"
+
+msgid "strbadconfig"
+msgstr "Tvoj config.inc.php je zastaralý. Musíš vygenerovať nový zo súboru config.inc.php-dist."
+
+msgid "strnotloaded"
+msgstr "Tvoje PHP nie je skompilované s potrebnou podporou databáz."
+
+msgid "strpostgresqlversionnotsupported"
+msgstr "Tvoja verzia PostgreSQL nie je podporovaná. Prosím aktualizuj ju na verziu %s alebo vyššiu."
+
+msgid "strbadschema"
+msgstr "Špecifikovaná chybná schéma."
+
+msgid "strbadencoding"
+msgstr "Nastavenie kódovania v databáze zlyhalo."
+
+msgid "strsqlerror"
+msgstr "SQL chyba:"
+
+msgid "strinstatement"
+msgstr "Vo výraze:"
+
+msgid "strinvalidparam"
+msgstr "Chybné parametre skriptu."
+
+msgid "strnodata"
+msgstr "Nenájdené žiadne záznamy."
+
+msgid "strnoobjects"
+msgstr "Nenájdené žiadne objekty."
+
+msgid "strrownotunique"
+msgstr "Žiadny unikátny identifikárot pre tento riadok."
+
+msgid "strnouploads"
+msgstr "Upload súborov je vypnutý."
+
+msgid "strimporterror"
+msgstr "Chyba Import-u."
+
+msgid "strimporterror-fileformat"
+msgstr "Chyba importu: Automatické určenie formátu súboru zlyhalo."
+
+msgid "strimporterrorline"
+msgstr "Chyba Import-u na riadku %s."
+
+msgid "strimporterrorline-badcolumnnum"
+msgstr "Chyba importu na riadku %s: Riadok nemá správny počet stĺpcov."
+
+msgid "strimporterror-uploadedfile"
+msgstr "Chyba importu: Súbor nemôže byť upload-nutý k serveru"
+
+msgid "strcannotdumponwindows"
+msgstr "Dump komplexných tabuliek a schém nie je na platforme Windows podporovaný."
+
+# Tables
+msgid "strtable"
+msgstr "Tabuľka"
+
+msgid "strtables"
+msgstr "Tabuľky"
+
+msgid "strshowalltables"
+msgstr "Zobraziť Všetky Tabuľky"
+
+msgid "strnotables"
+msgstr "Nenájdené žiadne tabuľky."
+
+msgid "strnotable"
+msgstr "Nenájdená žiadna tabuľka."
+
+msgid "strcreatetable"
+msgstr "Vytvoriť tabuľku"
+
+msgid "strtablename"
+msgstr "Názov tabuľky"
+
+msgid "strtableneedsname"
+msgstr "Musíš zadať názov pre tvoju tabuľku."
+
+msgid "strtableneedsfield"
+msgstr "Musíš špecifikovať aspoň jedno pole."
+
+msgid "strtableneedscols"
+msgstr "Tabuľky vyžadujú vyhovujúci počet stĺpcov."
+
+msgid "strtablecreated"
+msgstr "Tabuľka vytvorená."
+
+msgid "strtablecreatedbad"
+msgstr "Tabuľka nebola vytvorená."
+
+msgid "strconfdroptable"
+msgstr "Naozaj chceš odstrániť tabuľku \"%s\"?"
+
+msgid "strtabledropped"
+msgstr "Tabuľka odstránená."
+
+msgid "strtabledroppedbad"
+msgstr "Tabuľka nebola odstránená."
+
+msgid "strconfemptytable"
+msgstr "Si si istý, že chceš vyprázdniť tabuľku \"%s\"?"
+
+msgid "strtableemptied"
+msgstr "Tabuľka vyprázdnená."
+
+msgid "strtableemptiedbad"
+msgstr "Tabuľka nebola vyprázdnená."
+
+msgid "strinsertrow"
+msgstr "Vložiť Riadok"
+
+msgid "strrowinserted"
+msgstr "Riadok vložený."
+
+msgid "strrowinsertedbad"
+msgstr "Riadok nebol vložený."
+
+msgid "strrowduplicate"
+msgstr "Vloženie riadku zlyhalo, pokus o duplikátny insert."
+
+msgid "streditrow"
+msgstr "Upraviť Riadok"
+
+msgid "strrowupdated"
+msgstr "Riadok upravený."
+
+msgid "strrowupdatedbad"
+msgstr "Riadok nebol upravený."
+
+msgid "strdeleterow"
+msgstr "Zmazať Riadok"
+
+msgid "strconfdeleterow"
+msgstr "Si si istý, že chceš zmazať tento riadok?"
+
+msgid "strrowdeleted"
+msgstr "Riadok zmazaný."
+
+msgid "strrowdeletedbad"
+msgstr "Riadok nebol zmazaný."
+
+msgid "strinsertandrepeat"
+msgstr "Vložiť & Zopakovať"
+
+msgid "strnumcols"
+msgstr "Počet stĺpcov"
+
+msgid "strcolneedsname"
+msgstr "Musíš zadať názov pre tvoj stĺpec"
+
+msgid "strselectallfields"
+msgstr "Vybrať všetky polia"
+
+msgid "strselectneedscol"
+msgstr "Musíš označiť aspoň jeden stĺpec."
+
+msgid "strselectunary"
+msgstr "Unárne operátory nemôžu mať hodnoty."
+
+msgid "straltercolumn"
+msgstr "Zmeniť Stĺpec"
+
+msgid "strcolumnaltered"
+msgstr "Stĺpec zmenený."
+
+msgid "strcolumnalteredbad"
+msgstr "Stĺpec nebol zmenený."
+
+msgid "strconfdropcolumn"
+msgstr "Naozaj chceš zmazať stĺpec \"%s\" z tabuľky \"%s\"?"
+
+msgid "strcolumndropped"
+msgstr "Stĺpec zmenený."
+
+msgid "strcolumndroppedbad"
+msgstr "Stĺpec nebol zmazaný."
+
+msgid "straddcolumn"
+msgstr "Pridať Stĺpec"
+
+msgid "strcolumnadded"
+msgstr "Stĺpec pridaný."
+
+msgid "strcolumnaddedbad"
+msgstr "Stĺpec nebol pridaný."
+
+msgid "strcascade"
+msgstr "CASCADE"
+
+msgid "strtablealtered"
+msgstr "Tabuľka zmenená."
+
+msgid "strtablealteredbad"
+msgstr "Tabuľka nebola zmenená."
+
+msgid "strdataonly"
+msgstr "Iba Dáta"
+
+msgid "strstructureonly"
+msgstr "Iba Štruktúra"
+
+msgid "strstructureanddata"
+msgstr "Štruktúra a Dáta"
+
+msgid "strtabbed"
+msgstr "Tabbed"
+
+msgid "strauto"
+msgstr "Auto"
+
+msgid "strconfvacuumtable"
+msgstr "Naozaj chceš vyčistiť \"%s\"?"
+
+msgid "strestimatedrowcount"
+msgstr "Odhadovaný počet riadkov"
+
+# Users
+msgid "struser"
+msgstr "Používateľ"
+
+msgid "strusers"
+msgstr "Používatelia"
+
+msgid "strusername"
+msgstr "Meno používateľa"
+
+msgid "strpassword"
+msgstr "Heslo"
+
+msgid "strsuper"
+msgstr "Superuser?"
+
+msgid "strcreatedb"
+msgstr "Vytváranie DB?"
+
+msgid "strexpires"
+msgstr "Expiruje"
+
+msgid "strsessiondefaults"
+msgstr "Sessions defaults"
+
+# s cim to tak suvis??:)
+msgid "strnousers"
+msgstr "Nenájdení žiadni používatelia."
+
+msgid "struserupdated"
+msgstr "Požívatelia zmenení."
+
+msgid "struserupdatedbad"
+msgstr "Použivatelia neboli zmenení."
+
+msgid "strshowallusers"
+msgstr "Zobraziť Všetkých Používateľov"
+
+msgid "strcreateuser"
+msgstr "Vytvoriť používateľa"
+
+msgid "struserneedsname"
+msgstr "Musíš zadať meno pre svojho používateľa."
+
+msgid "strusercreated"
+msgstr "Používateľ vytvorený."
+
+msgid "strusercreatedbad"
+msgstr "Používateľ nebol vytvorený."
+
+msgid "strconfdropuser"
+msgstr "Naozaj chceš zmazať používateľa \"%s\"?"
+
+msgid "struserdropped"
+msgstr "Používateľ zmazaný."
+
+msgid "struserdroppedbad"
+msgstr "Používateľ nebol zmazaný."
+
+# Groups
+msgid "straccount"
+msgstr "Konto"
+
+msgid "strchangepassword"
+msgstr "Zmeniť Heslo"
+
+msgid "strpasswordchanged"
+msgstr "Heslo zmenené."
+
+msgid "strpasswordchangedbad"
+msgstr "Heslo NEBOLO zmenené."
+
+msgid "strpasswordshort"
+msgstr "Heslo je príliš krátke."
+
+msgid "strpasswordconfirm"
+msgstr "Heslo sa nezhoduje so zadaným overovacím heslom."
+
+# Groups
+msgid "strgroup"
+msgstr "Skupina"
+
+msgid "strgroups"
+msgstr "Skupiny"
+
+msgid "strnogroup"
+msgstr "Skupina nenájdená."
+
+msgid "strnogroups"
+msgstr "Žiadne skupiny nenájdené."
+
+msgid "strcreategroup"
+msgstr "Vytvoriť Skupinu"
+
+msgid "strshowallgroups"
+msgstr "Zobraziť Všetky Skupiny"
+
+msgid "strgroupneedsname"
+msgstr "Musíš zadať názov pre tvoju skupinu."
+
+msgid "strgroupcreated"
+msgstr "Skupina Vytvorená."
+
+msgid "strgroupcreatedbad"
+msgstr "Skupina nebola vytvorená."
+
+msgid "strconfdropgroup"
+msgstr "Naozaj chceš zmazať skupinu \"%s\"?"
+
+msgid "strgroupdropped"
+msgstr "Skupina zmazaná."
+
+msgid "strgroupdroppedbad"
+msgstr "Skupina nebola zmazaná."
+
+msgid "strmembers"
+msgstr "Členovia"
+
+msgid "straddmember"
+msgstr "Pridať člena"
+
+msgid "strmemberadded"
+msgstr "Člen pridaný."
+
+msgid "strmemberaddedbad"
+msgstr "Člen nebol pridaný."
+
+msgid "strdropmember"
+msgstr "Zmazať člena"
+
+msgid "strconfdropmember"
+msgstr "Naozaj chceš zmazať cľena \"%s\" zo skupiny \"%s\"?"
+
+msgid "strmemberdropped"
+msgstr "Člen zmazaný."
+
+msgid "strmemberdroppedbad"
+msgstr "Člen nebol zmazaný."
+
+# Privilges
+msgid "strprivilege"
+msgstr "Privilégiá"
+
+msgid "strprivileges"
+msgstr "Privilégiá"
+
+msgid "strnoprivileges"
+msgstr "Tento objekt nemá privilégiá."
+
+msgid "strgrant"
+msgstr "Povoliť"
+
+msgid "strrevoke"
+msgstr "Odobrať"
+
+msgid "strgranted"
+msgstr "Privilégiá pridané."
+
+msgid "strgrantfailed"
+msgstr "Privilégiá neboli pridané."
+
+msgid "strgrantbad"
+msgstr "Musíš špecifikovat aspoň jedného užívateľa/skupinu a aspoň jedno privilégium."
+
+msgid "strgrantor"
+msgstr "Prideľovateľ"
+
+msgid "strasterisk"
+msgstr "*"
+
+# Databases
+msgid "strdatabase"
+msgstr "Databáza"
+
+msgid "strdatabases"
+msgstr "Databázy"
+
+msgid "strshowalldatabases"
+msgstr "Zobraziť všetky databázy"
+
+msgid "strnodatabase"
+msgstr "Nenájdená žiadna Databáza."
+
+msgid "strnodatabases"
+msgstr "Nenájdené žiadne Databázy."
+
+msgid "strcreatedatabase"
+msgstr "Vytvoriť databázu"
+
+msgid "strdatabasename"
+msgstr "Názov databázy"
+
+msgid "strdatabaseneedsname"
+msgstr "Musíš zadať názov pre tvoju databázu."
+
+msgid "strdatabasecreated"
+msgstr "Databáza vytvorená."
+
+msgid "strdatabasecreatedbad"
+msgstr "Databáza nebola vytvorená."
+
+msgid "strconfdropdatabase"
+msgstr "Naozaj chceš zmazať databázu \"%s\"?"
+
+msgid "strdatabasedropped"
+msgstr "Databáze zmazaná."
+
+msgid "strdatabasedroppedbad"
+msgstr "Databáza nebola zmazaná."
+
+msgid "strentersql"
+msgstr "Vložiť SQL dotaz:"
+
+msgid "strsqlexecuted"
+msgstr "SQL dotaz vykonaný."
+
+msgid "strvacuumgood"
+msgstr "Vyčistenie kompletné."
+
+msgid "strvacuumbad"
+msgstr "Vyčistnie zlyhalo."
+
+msgid "stranalyzegood"
+msgstr "Analyzovanie kompletné."
+
+msgid "stranalyzebad"
+msgstr "Analyzovanie zlyhalo."
+
+msgid "strreindexgood"
+msgstr "Reindex hotový."
+
+msgid "strreindexbad"
+msgstr "Reindex zlyhal."
+
+msgid "strfull"
+msgstr "Full"
+
+# todo - konzultovat!!
+msgid "strfreeze"
+msgstr "Freeze"
+
+# deto
+msgid "strforce"
+msgstr "Force"
+
+# -||-
+msgid "strsignalsent"
+msgstr "Signál odoslaný."
+
+msgid "strsignalsentbad"
+msgstr "Odoslanie signálu zlyhalo."
+
+msgid "strallobjects"
+msgstr "Všetky objekty"
+
+msgid "strdatabasealtered"
+msgstr "Databáza zmenená."
+
+msgid "strdatabasealteredbad"
+msgstr "Databáza nebola zmenená."
+
+# Views
+msgid "strview"
+msgstr "Náhľad"
+
+msgid "strviews"
+msgstr "Náhľady"
+
+msgid "strshowallviews"
+msgstr "Zobraziť Všetky Náhľady"
+
+msgid "strnoview"
+msgstr "Nenájdený žiadny náhľad."
+
+msgid "strnoviews"
+msgstr "Nenájdené žiadne náhľady."
+
+msgid "strcreateview"
+msgstr "Vytvoriť Náhľad"
+
+msgid "strviewname"
+msgstr "Názov náhľadu"
+
+msgid "strviewneedsname"
+msgstr "Musíš zadať názov pre tvoj náhľad."
+
+msgid "strviewneedsdef"
+msgstr "Musíš zadať definíciu pre tvoj náhľad."
+
+msgid "strviewneedsfields"
+msgstr "Mušíš zvoliť stĺpce, ktoré chceš mať vo svojom náhľade."
+
+msgid "strviewcreated"
+msgstr "Náhľad vytvorený."
+
+msgid "strviewcreatedbad"
+msgstr "Náhľad nebol vytvorený."
+
+msgid "strconfdropview"
+msgstr "Naozaj chceš zmazať náhľad \"%s\"?"
+
+msgid "strviewdropped"
+msgstr "Náhľad zmazaný."
+
+msgid "strviewdroppedbad"
+msgstr "Náhľad nebol zmazaný."
+
+msgid "strviewupdated"
+msgstr "Náhľad upravený."
+
+msgid "strviewupdatedbad"
+msgstr "Náhľad nebol upravený."
+
+msgid "strviewlink"
+msgstr "Linkujúce Kľúče"
+
+msgid "strviewconditions"
+msgstr "Doplňujúce Podmienky"
+
+msgid "strcreateviewwiz"
+msgstr "Vytvoriť náhľad cez \"pomocníka\""
+
+# Sequences
+msgid "strsequence"
+msgstr "Sekvencia"
+
+msgid "strsequences"
+msgstr "Sekvencie"
+
+msgid "strshowallsequences"
+msgstr "Zobraziť Všetky Sekvencie"
+
+msgid "strnosequence"
+msgstr "Nenájdená žiadna sekvencia."
+
+msgid "strnosequences"
+msgstr "nenájdené žiadne sekvencie."
+
+msgid "strcreatesequence"
+msgstr "Vytvoriť Sekvenciu"
+
+msgid "strlastvalue"
+msgstr "Posledná Hodnota"
+
+msgid "strincrementby"
+msgstr "Inkrementovať od"
+
+msgid "strstartvalue"
+msgstr "Start Hodnota"
+
+msgid "strmaxvalue"
+msgstr "Max Hodnota"
+
+msgid "strminvalue"
+msgstr "Min Hodnota"
+
+msgid "strcachevalue"
+msgstr "Cache Hodnota"
+
+msgid "strlogcount"
+msgstr "Log Súčet"
+
+msgid "striscycled"
+msgstr "Je Cycled?"
+
+msgid "strsequenceneedsname"
+msgstr "Musíš zadať názov pre tvoju sekvenciu."
+
+msgid "strsequencecreated"
+msgstr "Sekvencia vytvorená."
+
+msgid "strsequencecreatedbad"
+msgstr "Sekvencia nebola vytvorená."
+
+msgid "strconfdropsequence"
+msgstr "Naozaj chceš zmazať sekvenciu \"%s\"?"
+
+msgid "strsequencedropped"
+msgstr "Sekvencia zmazaná."
+
+msgid "strsequencedroppedbad"
+msgstr "Sekvencia nebola zmazaná."
+
+msgid "strsequencereset"
+msgstr "Sekvencia resetovaná."
+
+msgid "strsequenceresetbad"
+msgstr "Sekvencia nebola resetovaná."
+
+# Indexes
+msgid "strindex"
+msgstr "Index"
+
+msgid "strindexes"
+msgstr "Indexy"
+
+msgid "strindexname"
+msgstr "Názov Indexu"
+
+msgid "strshowallindexes"
+msgstr "Zobraziť Všetky Indexy"
+
+msgid "strnoindex"
+msgstr "Nenájdený žiadny index."
+
+msgid "strnoindexes"
+msgstr "Nenájdené žiadne indexy."
+
+msgid "strcreateindex"
+msgstr "Vytvoriť Index"
+
+msgid "strtabname"
+msgstr "Tab Meno"
+
+msgid "strcolumnname"
+msgstr "Názov ståpca"
+
+msgid "strindexneedsname"
+msgstr "Musíš zadať názov pre tvoj index"
+
+msgid "strindexneedscols"
+msgstr "Index vyžaduje vyhovujúci počet stĺpcov."
+
+msgid "strindexcreated"
+msgstr "Index vytvorený"
+
+msgid "strindexcreatedbad"
+msgstr "Index nebol vytvorený."
+
+msgid "strconfdropindex"
+msgstr "Naozaj chceš zmazať index \"%s\"?"
+
+msgid "strindexdropped"
+msgstr "Index zmazaný."
+
+msgid "strindexdroppedbad"
+msgstr "Index nebol zmazaný."
+
+msgid "strkeyname"
+msgstr "Názov Kľúču"
+
+msgid "struniquekey"
+msgstr "Unikátny Kľúč"
+
+msgid "strprimarykey"
+msgstr "Primárny Kľúč"
+
+msgid "strindextype"
+msgstr "Typ indexu"
+
+msgid "strtablecolumnlist"
+msgstr "Stĺpce v Tabuľke"
+
+msgid "strindexcolumnlist"
+msgstr "Stľpce v Indexe"
+
+msgid "strconfcluster"
+msgstr "Naozaj chceš vytvoriť cluster \"%s\"?"
+
+msgid "strclusteredgood"
+msgstr "Cluster hotový."
+
+msgid "strclusteredbad"
+msgstr "Cluster nebol vytvorený."
+
+msgid "strcluster"
+msgstr "Cluster"
+
+# Rules
+msgid "strrules"
+msgstr "Pravidlá"
+
+msgid "strrule"
+msgstr "Pravidlo"
+
+msgid "strshowallrules"
+msgstr "Zobraziť Všetky Pravidlá"
+
+msgid "strnorule"
+msgstr "Nenájdené žiadne pravidlo."
+
+msgid "strnorules"
+msgstr "Nenájdené žiadne pravidlá."
+
+msgid "strcreaterule"
+msgstr "Vytvoriť pravidlo"
+
+msgid "strrulename"
+msgstr "Názov pravidla"
+
+msgid "strruleneedsname"
+msgstr "Musíš zadať názov pre tvoje pravidlo."
+
+msgid "strrulecreated"
+msgstr "Pravidlo vytvorené."
+
+msgid "strrulecreatedbad"
+msgstr "Pravidlo nebolo vytvorené."
+
+msgid "strconfdroprule"
+msgstr "Naozaj chceš zmazať pravidlo \"%s\" na \"%s\"?"
+
+msgid "strruledropped"
+msgstr "Pravidlo zmazané."
+
+msgid "strruledroppedbad"
+msgstr "Pravidlo nebolo zmazané."
+
+# Constraints
+msgid "strconstraint"
+msgstr "Obmedzenie"
+
+msgid "strconstraints"
+msgstr "Obmedzenia"
+
+msgid "strshowallconstraints"
+msgstr "Zobraziť Všetky Obmedzenia"
+
+msgid "strnoconstraints"
+msgstr "Nenájdené žiadne obmedzenie."
+
+msgid "strcreateconstraint"
+msgstr "Vytvoriť Obmedzenie"
+
+msgid "strconstraintcreated"
+msgstr "Obmedzenie vytvorené."
+
+msgid "strconstraintcreatedbad"
+msgstr "Obmedzenie nebolo vytvorené."
+
+msgid "strconfdropconstraint"
+msgstr "Naozaj chceš zmazať obmedzenie \"%s\" na \"%s\"?"
+
+msgid "strconstraintdropped"
+msgstr "Obmedzenie zmazané."
+
+msgid "strconstraintdroppedbad"
+msgstr "Obmedzenie nebolo zmazané."
+
+msgid "straddcheck"
+msgstr "Pridať Overovanie"
+
+msgid "strcheckneedsdefinition"
+msgstr "Overovanie Obmedzenia vyžaduje jeho definovanie."
+
+msgid "strcheckadded"
+msgstr "Overovanie obmedzenia pridané."
+
+msgid "strcheckaddedbad"
+msgstr "Overovanie obmedzenia nebolo pridané."
+
+msgid "straddpk"
+msgstr "Pridať Primárny Kľúč"
+
+msgid "strpkneedscols"
+msgstr "Primárny kľúč vyžaduje aspoň jeden stĺpec."
+
+msgid "strpkadded"
+msgstr "Primárny kľúč pridaný."
+
+msgid "strpkaddedbad"
+msgstr "Primárny kľúč nebol pridaný."
+
+msgid "stradduniq"
+msgstr "Pridať Unikátny Kľúč"
+
+msgid "struniqneedscols"
+msgstr "Unikátny kľúč vyžaduje aspoň jeden stĺpec."
+
+msgid "struniqadded"
+msgstr "Unikátny kľúč pridaný."
+
+msgid "struniqaddedbad"
+msgstr "Unikátny kľúč nebol pridaný."
+
+msgid "straddfk"
+msgstr "Pridať Cudzí Kľúč"
+
+msgid "strfkneedscols"
+msgstr "Cudzí kľúč vyžaduje aspoň jeden stĺpec."
+
+msgid "strfkneedstarget"
+msgstr "Cudzí kľúč vyžaduje cieľovú tabuľku."
+
+msgid "strfkadded"
+msgstr "Cudzí kľúč pridaný."
+
+msgid "strfkaddedbad"
+msgstr "Cudzí kľúč nebol pridaný."
+
+msgid "strfktarget"
+msgstr "Cieľová tabuľka"
+
+msgid "strfkcolumnlist"
+msgstr "Stľpce v kľúči"
+
+msgid "strondelete"
+msgstr "ON DELETE"
+
+msgid "stronupdate"
+msgstr "ON UPDATE"
+
+# Functions
+msgid "strfunction"
+msgstr "Funkcia"
+
+msgid "strfunctions"
+msgstr "Funkcie"
+
+msgid "strshowallfunctions"
+msgstr "Zobraziť vŠetky funkcie"
+
+msgid "strnofunction"
+msgstr "Nenájdená žiadna funkcia."
+
+msgid "strnofunctions"
+msgstr "Nenájdené žiadne funkcie."
+
+msgid "strcreateplfunction"
+msgstr "Vytvoriť SQL/PL funkciu"
+
+msgid "strcreateinternalfunction"
+msgstr "Vytvoriť internú funkciu"
+
+msgid "strcreatecfunction"
+msgstr "Vytvoriť C funkciu"
+
+msgid "strfunctionname"
+msgstr "Názov funkcie"
+
+msgid "strreturns"
+msgstr "Vracia"
+
+msgid "strarguments"
+msgstr "Argumenty"
+
+msgid "strproglanguage"
+msgstr "Jazyk"
+
+msgid "strfunctionneedsname"
+msgstr "Musíš zadať názov pre tvoju funkciu."
+
+msgid "strfunctionneedsdef"
+msgstr "Musíš zadať definíciu pre tvoju funkciu."
+
+msgid "strfunctioncreated"
+msgstr "Funkcia vytvorená."
+
+msgid "strfunctioncreatedbad"
+msgstr "Funkcia nebola vytvorená."
+
+msgid "strconfdropfunction"
+msgstr "Si si istý, že chceš zmazať funkciu \"%s\"?"
+
+msgid "strfunctiondropped"
+msgstr "Funkcia zmazaná."
+
+msgid "strfunctiondroppedbad"
+msgstr "Funkcia nebola zmazaná."
+
+msgid "strfunctionupdated"
+msgstr "Funkcia upravená."
+
+msgid "strfunctionupdatedbad"
+msgstr "Funkcia nebola upravená."
+
+msgid "strobjectfile"
+msgstr "Objektový súbor"
+
+msgid "strlinksymbol"
+msgstr "Link symbol"
+
+# Triggers
+msgid "strtrigger"
+msgstr "Trigger"
+
+# su to medzipravidla ?? po cesky spouste..
+msgid "strtriggers"
+msgstr "Trigger-y"
+
+msgid "strshowalltriggers"
+msgstr "Zobraziť Všetky Trigger-y"
+
+msgid "strnotrigger"
+msgstr "Nenájdený žiadny Trigger."
+
+msgid "strnotriggers"
+msgstr "Nenájdené žiadne Trigger-y."
+
+msgid "strcreatetrigger"
+msgstr "Vytvoriť Trigger"
+
+msgid "strtriggerneedsname"
+msgstr "Musíš zadať názov pre tvoj Trigger."
+
+msgid "strtriggerneedsfunc"
+msgstr "Musíš zadať funkciu pre tvoj Trigger."
+
+msgid "strtriggercreated"
+msgstr "Trigger vytvorený."
+
+msgid "strtriggercreatedbad"
+msgstr "Trigger nebol vytvorený."
+
+msgid "strconfdroptrigger"
+msgstr "Naozaj chceš zmazať Trigger \"%s\" na \"%s\"?"
+
+msgid "strtriggerdropped"
+msgstr "Trigger zmazaný."
+
+msgid "strtriggerdroppedbad"
+msgstr "Trigger nebol zmazaný."
+
+msgid "strtriggeraltered"
+msgstr "Trigger zmenený."
+
+msgid "strtriggeralteredbad"
+msgstr "Trigger nebol zmenený."
+
+msgid "strforeach"
+msgstr "Pre každých"
+
+# Types
+msgid "strtype"
+msgstr "Typ"
+
+msgid "strtypes"
+msgstr "Typy"
+
+msgid "strshowalltypes"
+msgstr "Zobraziť Všetky typy"
+
+msgid "strnotype"
+msgstr "Nenájdený žiadny typ."
+
+msgid "strnotypes"
+msgstr "Nenájdené žiadne typy."
+
+msgid "strcreatetype"
+msgstr "Vytvoriť Typ"
+
+msgid "strcreatecomptype"
+msgstr "Vytvoriť kompozitný typ"
+
+msgid "strtypeneedsfield"
+msgstr "Musíš vybrať aspoň jedno pole."
+
+msgid "strtypeneedscols"
+msgstr "Musíš zadať správny počet polí."
+
+msgid "strtypename"
+msgstr "Názov typu"
+
+msgid "strinputfn"
+msgstr "Vstupná funkcia"
+
+msgid "stroutputfn"
+msgstr "Výstupná funkcia"
+
+msgid "strpassbyval"
+msgstr "Passed by val?"
+
+msgid "stralignment"
+msgstr "Alignment"
+
+msgid "strelement"
+msgstr "Element"
+
+msgid "strdelimiter"
+msgstr "Delimiter"
+
+msgid "strstorage"
+msgstr "Storage"
+
+msgid "strfield"
+msgstr "Pole"
+
+msgid "strnumfields"
+msgstr "Počet polí"
+
+msgid "strtypeneedsname"
+msgstr "Musíš zadať názov pre tvoj typ."
+
+msgid "strtypeneedslen"
+msgstr "Musíš zadať dĺžku pre tvoj typ."
+
+msgid "strtypecreated"
+msgstr "Typ Vytvorený"
+
+msgid "strtypecreatedbad"
+msgstr "Typ nebol vytvorený."
+
+msgid "strconfdroptype"
+msgstr "Naozaj chceš zmazať typ \"%s\"?"
+
+msgid "strtypedropped"
+msgstr "Typ zmazaný."
+
+msgid "strtypedroppedbad"
+msgstr "Typ nebol zmazaný."
+
+msgid "strflavor"
+msgstr "Flavor"
+
+# todo
+msgid "strbasetype"
+msgstr "Základný"
+
+msgid "strcompositetype"
+msgstr "Kompozitný"
+
+msgid "strpseudotype"
+msgstr "Pseudo"
+
+# Schemas
+msgid "strschema"
+msgstr "Schéma"
+
+msgid "strschemas"
+msgstr "Schémy"
+
+msgid "strshowallschemas"
+msgstr "Zobraziť Všetky Schémy"
+
+msgid "strnoschema"
+msgstr "Nenájdená žiadna schéma."
+
+msgid "strnoschemas"
+msgstr "Nenájdené žiadne schémy."
+
+msgid "strcreateschema"
+msgstr "Vytvoriť Schému"
+
+msgid "strschemaname"
+msgstr "Názov Schémy"
+
+msgid "strschemaneedsname"
+msgstr "Musíš zadať názov pre tvoju schému."
+
+msgid "strschemacreated"
+msgstr "Schéma vytvorená"
+
+msgid "strschemacreatedbad"
+msgstr "Schéma nebola vytvorená."
+
+msgid "strconfdropschema"
+msgstr "Naozaj chceš zmazať schému \"%s\"?"
+
+msgid "strschemadropped"
+msgstr "Schéma zmazaná."
+
+msgid "strschemadroppedbad"
+msgstr "Schéma nebola zmazaná."
+
+msgid "strschemaaltered"
+msgstr "Schéma zmenená."
+
+msgid "strschemaalteredbad"
+msgstr "Schéma nebola zmenená."
+
+msgid "strsearchpath"
+msgstr "Cesta k nájdeniu Schémy"
+
+# Reports
+
+# Domains
+msgid "strdomain"
+msgstr "Doména"
+
+msgid "strdomains"
+msgstr "Domény"
+
+msgid "strshowalldomains"
+msgstr "Zobraziť Všetky Domény"
+
+msgid "strnodomains"
+msgstr "Nenájdené žiadne domény."
+
+msgid "strcreatedomain"
+msgstr "Vytvoriť doménu"
+
+msgid "strdomaindropped"
+msgstr "Doména zmazaná."
+
+msgid "strdomaindroppedbad"
+msgstr "Doména nebola zmazaná."
+
+msgid "strconfdropdomain"
+msgstr "Naozaj chceš zmazať doménu \"%s\"?"
+
+msgid "strdomainneedsname"
+msgstr "Musíš zadať názov pre tvoju doménu."
+
+msgid "strdomaincreated"
+msgstr "Doména vytvorená."
+
+msgid "strdomaincreatedbad"
+msgstr "Doména nebola vytvorená."
+
+msgid "strdomainaltered"
+msgstr "Doména zmenená."
+
+msgid "strdomainalteredbad"
+msgstr "Doména nebola zmenená."
+
+# Operators
+msgid "stroperator"
+msgstr "Operátor"
+
+msgid "stroperators"
+msgstr "Operátory"
+
+msgid "strshowalloperators"
+msgstr "Zobraziť Všetky Operátory"
+
+msgid "strnooperator"
+msgstr "Nenájdený žiadny operátor."
+
+msgid "strnooperators"
+msgstr "Nenájdené žiadne operátory."
+
+msgid "strcreateoperator"
+msgstr "Vytvoriť Operátor"
+
+msgid "strleftarg"
+msgstr "Ľavý Arg Typ"
+
+msgid "strrightarg"
+msgstr "Pravý Arg Typ"
+
+msgid "strcommutator"
+msgstr "Komutátor"
+
+msgid "strnegator"
+msgstr "Negátor"
+
+msgid "strrestrict"
+msgstr "Obmedziť"
+
+msgid "strjoin"
+msgstr "Join"
+
+msgid "strhashes"
+msgstr "Hashes"
+
+msgid "strmerges"
+msgstr "Merges"
+
+msgid "strleftsort"
+msgstr "Ľavý sort"
+
+msgid "strrightsort"
+msgstr "Pravý sort"
+
+msgid "strlessthan"
+msgstr "Menej ako"
+
+msgid "strgreaterthan"
+msgstr "Viac ako"
+
+msgid "stroperatorneedsname"
+msgstr "Musíš zadať názov pre tvoj operátor."
+
+msgid "stroperatorcreated"
+msgstr "Operátor vytvorený"
+
+msgid "stroperatorcreatedbad"
+msgstr "Operátor nebol vytvorený."
+
+msgid "strconfdropoperator"
+msgstr "Naozaj chceš zmazať operátor \"%s\"?"
+
+msgid "stroperatordropped"
+msgstr "Operátor zmazaný."
+
+msgid "stroperatordroppedbad"
+msgstr "Operátor nebol zmazaný."
+
+# Casts
+msgid "strcasts"
+msgstr "Cast-y"
+
+msgid "strnocasts"
+msgstr "Nenájdené žiadne Cast-y."
+
+msgid "strsourcetype"
+msgstr "Zdrojový typ"
+
+msgid "strtargettype"
+msgstr "Cieľový typ"
+
+msgid "strimplicit"
+msgstr "Implicitný"
+
+msgid "strinassignment"
+msgstr "V priradení"
+
+msgid "strbinarycompat"
+msgstr "(Binárne identické)"
+
+# Conversions
+msgid "strconversions"
+msgstr "Konverzie"
+
+msgid "strnoconversions"
+msgstr "Nenájdené žiadne konverzie."
+
+msgid "strsourceencoding"
+msgstr "Zdojové kódovanie"
+
+msgid "strtargetencoding"
+msgstr "Cieľové kódovanie"
+
+# Languages
+msgid "strlanguages"
+msgstr "Jazyky"
+
+msgid "strnolanguages"
+msgstr "Nenájdené žiadne jazyky."
+
+msgid "strtrusted"
+msgstr "Trusted"
+
+# Info
+msgid "strnoinfo"
+msgstr "Informácie nedostupné."
+
+msgid "strreferringtables"
+msgstr "Referujúce tabuľky"
+
+msgid "strparenttables"
+msgstr "Rodičovské tabuľky"
+
+msgid "strchildtables"
+msgstr "Dcérske tabuľky"
+
+# Aggregates
+msgid "straggregates"
+msgstr "Agregáty"
+
+msgid "strnoaggregates"
+msgstr "Nenájdené žiadne agregáty."
+
+msgid "stralltypes"
+msgstr "(Všetky typy)"
+
+# Operator Classes
+msgid "stropclasses"
+msgstr "Op Triedy"
+
+msgid "strnoopclasses"
+msgstr "Nenájdené žiadne op. triedy."
+
+msgid "straccessmethod"
+msgstr "Prístupové metódy"
+
+# Stats and performance
+msgid "strrowperf"
+msgstr "Výkonnosť Riadku"
+
+# to znie dost tupo..
+msgid "strioperf"
+msgstr "I/O Výkon"
+
+msgid "stridxrowperf"
+msgstr "Výkonnosť Indexovania Riadkov"
+
+msgid "stridxioperf"
+msgstr "Index I/O Výkon"
+
+msgid "strpercent"
+msgstr "%"
+
+msgid "strsequential"
+msgstr "Sekvenčný"
+
+msgid "strscan"
+msgstr "Scan"
+
+# co s tymto tu???
+msgid "strread"
+msgstr "Načítať"
+
+msgid "strfetch"
+msgstr "Získať"
+
+msgid "strheap"
+msgstr "Heap"
+
+msgid "strtoast"
+msgstr "TOAST"
+
+msgid "strtoastindex"
+msgstr "TOAST Index"
+
+msgid "strcache"
+msgstr "Cache"
+
+msgid "strdisk"
+msgstr "Disk"
+
+msgid "strrows2"
+msgstr "Riadkov"
+
+# Tablespaces
+msgid "strtablespace"
+msgstr "Priestor pre tabuľku"
+
+msgid "strtablespaces"
+msgstr "Priestory tabuliek"
+
+msgid "strshowalltablespaces"
+msgstr "Zobraziť všetky priestory pre tabuľky"
+
+msgid "strnotablespaces"
+msgstr "Nenájdené žiadne priestory tabuliek."
+
+msgid "strcreatetablespace"
+msgstr "Vytvoriť priestor pre tabuľku"
+
+msgid "strlocation"
+msgstr "Umiestnenie"
+
+msgid "strtablespaceneedsname"
+msgstr "Musíš zadať názov priestoru tabuľky."
+
+msgid "strtablespaceneedsloc"
+msgstr "Musíš zadať adresár, vktorom sa má vytvoriť priestor pre tabuľku."
+
+msgid "strtablespacecreated"
+msgstr "Priestor pre tabuľku bol vytvorený."
+
+msgid "strtablespacecreatedbad"
+msgstr "Vytvorenie priestoru pre tabuľku zlyhalo."
+
+msgid "strconfdroptablespace"
+msgstr "Naozaj chceš odstrániť priestor tabuľky \"%s\"?"
+
+msgid "strtablespacedropped"
+msgstr "Priestor pre tabuľku bol odstránený."
+
+msgid "strtablespacedroppedbad"
+msgstr "Odstránenie priestoru zlyhalo."
+
+msgid "strtablespacealtered"
+msgstr "Priestor tabuľky zmenený."
+
+msgid "strtablespacealteredbad"
+msgstr "Zmenenie priestoru tabuľky zlyhalo."
+
+# Miscellaneous
+msgid "strtopbar"
+msgstr "%s beží na %s:%s -- si prihlásený ako \"%s\""
+
+msgid "strtimefmt"
+msgstr "jS M, Y g:iA"
+
+msgid "strhelp"
+msgstr "Pomoc"
+
+msgid "strhelpicon"
+msgstr "?"
+
+msgid "strlogintitle"
+msgstr "Prihlasujem do %s"
+
+msgid "strlogoutmsg"
+msgstr "Odhlásený z %s"
+
+msgid "strloading"
+msgstr "Spracuvávam..."
+
+msgid "strerrorloading"
+msgstr "Chyba spracovania"
+
+msgid "strclicktoreload"
+msgstr "Klikni pre obnovenie"

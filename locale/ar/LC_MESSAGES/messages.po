@@ -293,7 +293,7 @@ msgstr "بحث"
 msgid "stroptions"
 msgstr "خيارات"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "تحديث Refresh"
 
 msgid "strdownload"

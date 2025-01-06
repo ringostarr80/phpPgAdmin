@@ -56,7 +56,7 @@ msgstr "Identificação desabilitada por motivos de segurança."
 msgid "strserver"
 msgstr "Servidor"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Servidores"
 
 msgid "strgroupservers"
@@ -326,7 +326,7 @@ msgstr "Encontrar"
 msgid "stroptions"
 msgstr "Opções"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Atualizar"
 
 msgid "strdownload"
@@ -2219,13 +2219,13 @@ msgstr "Conectado em %s"
 msgid "strlogoutmsg"
 msgstr "Desconectado de %s"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Carregando..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Erro no carregamento"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Clique para recarregar"
 
 # Autovacuum

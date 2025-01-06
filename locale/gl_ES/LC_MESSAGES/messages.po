@@ -56,7 +56,7 @@ msgstr "A identificación está desactivada por motivos de seguridade."
 msgid "strserver"
 msgstr "Servidor"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Servidores"
 
 msgid "strgroupservers"
@@ -326,7 +326,7 @@ msgstr "Buscar"
 msgid "stroptions"
 msgstr "Opcións"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Actualizar"
 
 msgid "strdownload"
@@ -2224,13 +2224,13 @@ msgstr "Identificarse en %s"
 msgid "strlogoutmsg"
 msgstr "Saíu de %s"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Cargando..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Produciuse un erro durante o proceso de carga"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Prema aquí para recargar"
 
 # Autovacuum

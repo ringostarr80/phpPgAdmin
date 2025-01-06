@@ -56,7 +56,8 @@ msgstr "Login disallowed for security reasons."
 msgid "strserver"
 msgstr "Server"
 
-msgid "strservers"
+# original: "strservers"
+msgid "Servers"
 msgstr "Servers"
 
 msgid "strgroupservers"
@@ -326,7 +327,8 @@ msgstr "Find"
 msgid "stroptions"
 msgstr "Options"
 
-msgid "strrefresh"
+# original: "strrefresh"
+msgid "Refresh"
 msgstr "Refresh"
 
 msgid "strdownload"
@@ -2228,13 +2230,16 @@ msgstr "Login to %s"
 msgid "strlogoutmsg"
 msgstr "Logged out of %s"
 
-msgid "strloading"
+# original: "strloading"
+msgid "Loading..."
 msgstr "Loading..."
 
-msgid "strerrorloading"
+# original: "strerrorloading"
+msgid "Error Loading"
 msgstr "Error Loading"
 
-msgid "strclicktoreload"
+# original: "strclicktoreload"
+msgid "Click to reload"
 msgstr "Click to reload"
 
 msgid "sessionsecuritywarning"

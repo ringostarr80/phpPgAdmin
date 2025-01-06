@@ -1150,7 +1150,7 @@ msgstr "Zoek"
 msgid "stroptions"
 msgstr "Opties"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Ververs"
 
 msgid "strdownload"

@@ -56,7 +56,7 @@ msgstr "Logowanie niedozwolone"
 msgid "strserver"
 msgstr "Serwer"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Serwery"
 
 msgid "strintroduction"
@@ -323,7 +323,7 @@ msgstr "Znajdź"
 msgid "stroptions"
 msgstr "Opcje"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Odśwież"
 
 msgid "strdownload"
@@ -1962,13 +1962,13 @@ msgstr "Zaloguj do %s"
 msgid "strlogoutmsg"
 msgstr "Wylogowano z %s"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Ładuję..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Błąd ładowania"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Kliknij aby odświeżyć"
 
 # Autovacuum

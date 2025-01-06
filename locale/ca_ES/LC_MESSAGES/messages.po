@@ -56,7 +56,7 @@ msgstr "Entrada rebutjada per raons de seguretat."
 msgid "strserver"
 msgstr "Servidor"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Servidors"
 
 msgid "strgroupservers"
@@ -326,7 +326,7 @@ msgstr "Cerca"
 msgid "stroptions"
 msgstr "Opcions"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Refresca"
 
 msgid "strdownload"
@@ -2216,13 +2216,13 @@ msgstr "Entrar a %s"
 msgid "strlogoutmsg"
 msgstr "Sortir de %s"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Carregant..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Error Carregant"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Clicar per recarregar"
 
 # Autovacuum

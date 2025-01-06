@@ -56,7 +56,7 @@ msgstr "Biztonsági okból engedélyezettlen a bejelentkezés."
 msgid "strserver"
 msgstr "Szolgáló"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Szolgálók"
 
 msgid "strgroupservers"
@@ -326,7 +326,7 @@ msgstr "Keres"
 msgid "stroptions"
 msgstr "Részletek"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Frissít"
 
 msgid "strdownload"
@@ -2216,13 +2216,13 @@ msgstr "Belépett %s helyre"
 msgid "strlogoutmsg"
 msgstr "Kilépett %s helyről"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Betöltök..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Betöltési hiba"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Kattintson az újratöltéshez"
 
 # Autovacuum

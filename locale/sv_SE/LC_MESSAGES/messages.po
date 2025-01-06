@@ -281,7 +281,7 @@ msgstr "Sök"
 msgid "stroptions"
 msgstr "Alternativ"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Uppdatera"
 
 msgid "strcollapse"

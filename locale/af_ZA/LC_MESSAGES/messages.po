@@ -290,7 +290,7 @@ msgstr "Soek"
 msgid "stroptions"
 msgstr "Opsies"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Verfris"
 
 msgid "strdownload"

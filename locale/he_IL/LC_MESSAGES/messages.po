@@ -293,7 +293,7 @@ msgstr "מצא"
 msgid "stroptions"
 msgstr "אפשרויות"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "רענן"
 
 msgid "strdownload"

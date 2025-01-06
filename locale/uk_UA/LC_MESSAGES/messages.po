@@ -290,7 +290,7 @@ msgstr "Знайти"
 msgid "stroptions"
 msgstr "Опції"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Оновити"
 
 msgid "strdownload"

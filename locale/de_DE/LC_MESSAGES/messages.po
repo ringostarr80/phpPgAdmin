@@ -56,7 +56,7 @@ msgstr "Anmeldung aus Sicherheitsgründen verweigert."
 msgid "strserver"
 msgstr "Server"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Server"
 
 msgid "strintroduction"
@@ -314,7 +314,7 @@ msgstr "Suchen"
 msgid "stroptions"
 msgstr "Optionen"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Aktualisieren"
 
 msgid "strdownload"
@@ -2116,13 +2116,13 @@ msgstr "Bei %s anmelden"
 msgid "strlogoutmsg"
 msgstr "Von %s abgemeldet"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Lade..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Fehler beim Laden"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Klicken Sie zum Neuladen"
 
 # Autovacuum

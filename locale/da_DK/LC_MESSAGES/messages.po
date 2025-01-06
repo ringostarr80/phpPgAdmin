@@ -296,7 +296,7 @@ msgstr "Søg"
 msgid "stroptions"
 msgstr "Alternativ"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Opdater"
 
 msgid "strdownload"

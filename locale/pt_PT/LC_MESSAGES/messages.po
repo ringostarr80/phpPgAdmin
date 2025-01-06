@@ -1166,7 +1166,7 @@ msgstr "Procurar"
 msgid "stroptions"
 msgstr "Opções"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Actualizar"
 
 msgid "strdownload"

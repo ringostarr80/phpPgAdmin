@@ -56,7 +56,7 @@ msgstr "Prisijungti neleidžiama saugumo sumetimais."
 msgid "strserver"
 msgstr "Serveris"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Serveriai"
 
 msgid "strgroupservers"
@@ -336,7 +336,7 @@ msgstr "Ieškoti"
 msgid "stroptions"
 msgstr "Parinktys"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Atnaujinti"
 
 msgid "strdownload"
@@ -2250,13 +2250,13 @@ msgstr "Prisijungti prie %s"
 msgid "strlogoutmsg"
 msgstr "Atsijungta nuo %s"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Įkeliama..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Klaida įkeliant"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Spustelėkite, kad būtų atsiųsta iš naujo"
 
 # Autovacuum

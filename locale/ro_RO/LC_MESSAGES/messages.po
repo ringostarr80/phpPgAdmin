@@ -56,7 +56,7 @@ msgstr "Autentificare nepermisă din motive de securitate."
 msgid "strserver"
 msgstr "Server"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Servere"
 
 msgid "strintroduction"
@@ -320,7 +320,7 @@ msgstr "Căutare"
 msgid "stroptions"
 msgstr "Opţiuni"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Reîmprospătare"
 
 msgid "strdownload"
@@ -2004,13 +2004,13 @@ msgstr "Autentificare la %s"
 msgid "strlogoutmsg"
 msgstr "Ieşire din %s"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Încărcare..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Eroare la încărcare"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Faceţi clic pentru reîncărcare"
 
 # Autovacuum

@@ -15,9 +15,6 @@ msgstr ""
 msgid "applang"
 msgstr "Русский (UTF-8)"
 
-msgid "applocale"
-msgstr "ru-RU.UTF-8"
-
 msgid "applangdir"
 msgstr "ltr"
 

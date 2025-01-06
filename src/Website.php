@@ -41,7 +41,7 @@ abstract class Website
         $dom->formatOutput = true;
 
         $root = $dom->createElement('html');
-        $root->setAttribute('lang', _('applocale'));
+        $root->setAttribute('lang', str_replace('_', '-', Config::locale()));
         $root->appendChild($this->buildHtmlHead($dom));
         $root->appendChild($this->buildHtmlBody($dom));
         $dom->appendChild($root);

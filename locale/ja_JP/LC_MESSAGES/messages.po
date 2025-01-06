@@ -15,9 +15,6 @@ msgstr ""
 msgid "applang"
 msgstr "日本語(EUC-JP)"
 
-msgid "applocale"
-msgstr "ja-JP"
-
 msgid "applangdir"
 msgstr "ltr"
 

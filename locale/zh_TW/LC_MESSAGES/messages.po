@@ -15,9 +15,6 @@ msgstr ""
 msgid "applang"
 msgstr "正體中文（UTF-8）"
 
-msgid "applocale"
-msgstr "zh-TW"
-
 msgid "applangdir"
 msgstr "ltr"
 

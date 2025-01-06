@@ -15,9 +15,6 @@ msgstr ""
 msgid "applang"
 msgstr "عربي"
 
-msgid "applocale"
-msgstr "ar"
-
 msgid "applangdir"
 msgstr "rtl"
 

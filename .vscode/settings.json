@@ -1,4 +1,5 @@
 {
     "editor.rulers": [120],
-    "phpstan.configFile": "phpstan.neon"
+    "phpstan.configFile": "phpstan.neon",
+    "intelephense.environment.phpVersion": "8.1.0"
 }

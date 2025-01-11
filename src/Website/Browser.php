@@ -75,8 +75,9 @@ class Browser extends Website
         $scriptContent .= '// Disable double click:' . PHP_EOL;
         $scriptContent .= 'WebFXTreeAbstractNode.prototype._ondblclick = function(){};' . PHP_EOL;
         $scriptContent .= PHP_EOL;
+        $serversTreeUrl = 'servers-tree.php';
         $scriptContent .= 'const tree = new WebFXLoadTree("' . _('Servers') .
-            '", "servers.php?action=tree", "servers.php");' . PHP_EOL;
+            '", "' . $serversTreeUrl . '", "servers.php");' . PHP_EOL;
         $scriptContent .= PHP_EOL;
         $scriptContent .= 'tree.write();' . PHP_EOL;
         $scriptContent .= 'tree.setExpanded(true);' . PHP_EOL;

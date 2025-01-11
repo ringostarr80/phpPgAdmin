@@ -10,7 +10,15 @@ use Symfony\Component\Yaml\Parser as YamlParser;
  * @phpstan-type ConfigData=array{
  *  'default_lang'?: string,
  *  'left_width'?: int,
- *  'servers'?: array<mixed>
+ *  'servers'?: array{
+ *      'desc': string,
+ *      'host': string,
+ *      'port': int,
+ *      'sslmode': string,
+ *      'defaultdb'?: string,
+ *      'pg_dump_path'?: string,
+ *      'pg_dumpall_path'?: string
+ *  }[]
  * }
  */
 class Config
@@ -123,6 +131,23 @@ class Config
             'ukrainian' => 'uk_UA',
             default => null,
         };
+    }
+
+    /**
+     * @return array{
+     *  'desc': string,
+     *  'host': string,
+     *  'port': int,
+     *  'sslmode': string,
+     *  'defaultdb'?: string,
+     *  'pg_dump_path'?: string,
+     *  'pg_dumpall_path'?: string
+     * }[]
+     */
+    public static function getServers(): array
+    {
+        $conf = self::tryGetConfigFileData();
+        return $conf['servers'] ?? [];
     }
 
     public static function leftWidth(): int
@@ -252,6 +277,21 @@ class Config
         return false;
     }
 
+    /**
+     * @param string $serverId Server ID in the format host:port:sslmode
+     */
+    public static function serverExists(string $serverId): bool
+    {
+        $servers = self::getServers();
+        foreach ($servers as $info) {
+            if ($serverId === $info['host'] . ':' . $info['port'] . ':' . $info['sslmode']) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static function theme(): string
     {
         if (!isset(self::$data['theme'])) {
@@ -319,6 +359,45 @@ class Config
                     if (isset($yaml['left_width']) && is_int($yaml['left_width'])) {
                         self::$conf['left_width'] = $yaml['left_width'];
                     }
+                    if (isset($yaml['servers']) && is_array($yaml['servers'])) {
+                        self::$conf['servers'] = [];
+
+                        foreach ($yaml['servers'] as $server) {
+                            if (!is_array($server)) {
+                                continue;
+                            }
+                            if (!isset($server['desc']) || !is_string($server['desc'])) {
+                                continue;
+                            }
+
+                            $tmpServer = [
+                                'desc' => $server['desc'],
+                                'host' => '127.0.0.1',
+                                'port' => 5432,
+                                'sslmode' => 'prefer',
+                            ];
+                            if (isset($server['host']) && is_string($server['host'])) {
+                                $tmpServer['host'] = $server['host'];
+                            }
+                            if (isset($server['port']) && is_int($server['port'])) {
+                                $tmpServer['port'] = $server['port'];
+                            }
+                            if (isset($server['sslmode']) && is_string($server['sslmode'])) {
+                                $tmpServer['sslmode'] = $server['sslmode'];
+                            }
+                            if (isset($server['defaultdb']) && is_string($server['defaultdb'])) {
+                                $tmpServer['defaultdb'] = $server['defaultdb'];
+                            }
+                            if (isset($server['pg_dump_path']) && is_string($server['pg_dump_path'])) {
+                                $tmpServer['pg_dump_path'] = $server['pg_dump_path'];
+                            }
+                            if (isset($server['pg_dumpall_path']) && is_string($server['pg_dumpall_path'])) {
+                                $tmpServer['pg_dumpall_path'] = $server['pg_dumpall_path'];
+                            }
+
+                            self::$conf['servers'][] = $tmpServer;
+                        }
+                    }
                 }
             }
         }
@@ -326,25 +405,18 @@ class Config
         return self::$conf;
     }
 
+    /**
+     * @param string $serverId Server ID in the format host:port:sslmode
+     */
     private static function tryGetThemeByServerId(string $serverId): string
     {
-        $conf = self::tryGetConfigFileData();
-
-        if (!isset($conf['servers'])) {
+        $servers = self::getServers();
+        if (!isset($servers)) {
             return '';
         }
 
         $tmpTheme = '';
-        foreach ($conf['servers'] as $info) {
-            if (!is_array($info)) {
-                continue;
-            }
-            if (!isset($info['host'], $info['port'], $info['sslmode'])) {
-                continue;
-            }
-            if (!is_string($info['host']) || !is_numeric($info['port']) || !is_string($info['sslmode'])) {
-                continue;
-            }
+        foreach ($servers as $info) {
             if ($serverId !== $info['host'] . ':' . $info['port'] . ':' . $info['sslmode']) {
                 continue;
             }

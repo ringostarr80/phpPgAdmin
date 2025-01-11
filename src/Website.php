@@ -20,6 +20,10 @@ abstract class Website
 
     public function __construct()
     {
+        if (!($this instanceof Website\Exception)) {
+            set_exception_handler([Website\Exception::class, 'handle']);
+        }
+
         $locale = Config::locale();
         putenv("LC_ALL={$locale}.UTF-8");
         setlocale(LC_ALL, ["{$locale}.UTF-8", $locale, substr($locale, 0, 2)]);

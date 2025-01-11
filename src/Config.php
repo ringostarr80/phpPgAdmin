@@ -17,7 +17,12 @@ use Symfony\Component\Yaml\Parser as YamlParser;
  *      'sslmode': string,
  *      'defaultdb'?: string,
  *      'pg_dump_path'?: string,
- *      'pg_dumpall_path'?: string
+ *      'pg_dumpall_path'?: string,
+ *      'theme'?: array{
+ *          'default'?: string,
+ *          'user'?: array{'specific_user'?: string},
+ *          'db'?: array{'specific_db'?: string}
+ *      }
  *  }[]
  * }
  */
@@ -141,7 +146,12 @@ class Config
      *  'sslmode': string,
      *  'defaultdb'?: string,
      *  'pg_dump_path'?: string,
-     *  'pg_dumpall_path'?: string
+     *  'pg_dumpall_path'?: string,
+     *  'theme'?: array{
+     *      'default'?: string,
+     *      'user'?: array{'specific_user'?: string},
+     *      'db'?: array{'specific_db'?: string}
+     *  }
      * }[]
      */
     public static function getServers(): array
@@ -394,6 +404,32 @@ class Config
                             if (isset($server['pg_dumpall_path']) && is_string($server['pg_dumpall_path'])) {
                                 $tmpServer['pg_dumpall_path'] = $server['pg_dumpall_path'];
                             }
+                            if (isset($server['theme']) && is_array($server['theme'])) {
+                                $tmpServer['theme'] = [];
+                                if (isset($server['theme']['default']) && is_string($server['theme']['default'])) {
+                                    $tmpServer['theme']['default'] = $server['theme']['default'];
+                                }
+                                if (isset($server['theme']['user']) && is_array($server['theme']['user'])) {
+                                    $tmpServer['theme']['user'] = [];
+                                    if (
+                                        isset($server['theme']['user']['specific_user']) &&
+                                        is_string($server['theme']['user']['specific_user'])
+                                    ) {
+                                        $tmpServer['theme']['user']['specific_user'] =
+                                            $server['theme']['user']['specific_user'];
+                                    }
+                                }
+                                if (isset($server['theme']['db']) && is_array($server['theme']['db'])) {
+                                    $tmpServer['theme']['db'] = [];
+                                    if (
+                                        isset($server['theme']['db']['specific_db']) &&
+                                        is_string($server['theme']['db']['specific_db'])
+                                    ) {
+                                        $tmpServer['theme']['db']['specific_db'] =
+                                            $server['theme']['db']['specific_db'];
+                                    }
+                                }
+                            }
 
                             self::$conf['servers'][] = $tmpServer;
                         }
@@ -411,9 +447,6 @@ class Config
     private static function tryGetThemeByServerId(string $serverId): string
     {
         $servers = self::getServers();
-        if (!isset($servers)) {
-            return '';
-        }
 
         $tmpTheme = '';
         foreach ($servers as $info) {
@@ -421,38 +454,22 @@ class Config
                 continue;
             }
 
-            if (!isset($info['theme']) || !is_array($info['theme'])) {
+            if (!isset($info['theme']) || !isset($info['theme']['default'])) {
                 continue;
             }
 
-            if (
-                isset($info['theme']['default']) &&
-                is_string($info['theme']['default']) &&
-                Themes::cssExists($info['theme']['default'])
-            ) {
+            if (Themes::cssExists($info['theme']['default'])) {
                 $tmpTheme = $info['theme']['default'];
             }
 
             if (
                 isset($_REQUEST['database'])
                 && is_string($_REQUEST['database'])
-                && is_array($info['theme']['db'])
+                && isset($info['theme']['db'])
                 && isset($info['theme']['db'][$_REQUEST['database']])
-                && is_string($info['theme']['db'][$_REQUEST['database']])
                 && Themes::cssExists($info['theme']['db'][$_REQUEST['database']])
             ) {
                 $tmpTheme = $info['theme']['db'][$_REQUEST['database']];
-            }
-
-            if (
-                isset($info['username'])
-                && is_string($info['username'])
-                && is_array($info['theme']['user'])
-                && isset($info['theme']['user'][$info['username']])
-                && is_string($info['theme']['user'][$info['username']])
-                && Themes::cssExists($info['theme']['user'][$info['username']])
-            ) {
-                $tmpTheme = $info['theme']['user'][$info['username']];
             }
         }
 

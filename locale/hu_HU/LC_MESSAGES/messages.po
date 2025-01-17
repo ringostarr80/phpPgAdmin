@@ -19,13 +19,13 @@ msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Üdvözli a phpPgAdmin!"
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "A phpPgAdmin honlapja"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "A PostgreSQL honlapja"
 
 msgid "strpgsqlhome_url"
@@ -34,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "A PostgreSQL (helyi) dokumentációja"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Hibajelentés feladása"
 
 msgid "strviewfaq"
@@ -53,7 +53,7 @@ msgstr "Nem sikerült bejelentkezni"
 msgid "strlogindisallowed"
 msgstr "Biztonsági okból engedélyezettlen a bejelentkezés."
 
-msgid "strserver"
+msgid "Server"
 msgstr "Szolgáló"
 
 msgid "Servers"
@@ -65,7 +65,7 @@ msgstr "Szolgálók „%s” csoportban"
 msgid "strallservers"
 msgstr "Minden szolgáló"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Bevezető"
 
 msgid "strhost"
@@ -227,7 +227,7 @@ msgstr "Megjelenít"
 msgid "strempty"
 msgstr "Ürít"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Nyelv"
 
 msgid "strencoding"
@@ -413,10 +413,10 @@ msgstr "Indít"
 msgid "strstop"
 msgstr "Leállít"
 
-msgid "strgotoppage"
+msgid "back to top"
 msgstr "vissza a tetejére"
 
-msgid "strtheme"
+msgid "Theme"
 msgstr "Téma"
 
 msgid "strcluster"

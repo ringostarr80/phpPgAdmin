@@ -19,13 +19,13 @@ msgid "applangdir"
 msgstr "ltr"
 
 # Basic strings
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Vitaje vo phpPgAdmin-e."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmin Homepage"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQL Homepage"
 
 msgid "strpgsqlhome_url"
@@ -34,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQL Dokumentácia"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Oznámiť Chybu"
 
 msgid "strviewfaq"
@@ -53,13 +53,13 @@ msgstr "Prihlásenie zlyhalo"
 msgid "strlogindisallowed"
 msgstr "Prihlásenie je vypnuté kôli bezpečnosti"
 
-msgid "strserver"
+msgid "Server"
 msgstr "Server"
 
 msgid "Servers"
 msgstr "Servery"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Úvod"
 
 msgid "strhost"
@@ -203,7 +203,7 @@ msgstr "Ukázať"
 msgid "strempty"
 msgstr "Vyprázdniť"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Jazyk"
 
 msgid "strencoding"

@@ -19,13 +19,13 @@ msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "ようこそ phpPgAdmin へ。"
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmin ホームページ"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQL ホームページ"
 
 msgid "strpgsqlhome_url"
@@ -34,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQL ドキュメント (ローカル)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "バグレポート"
 
 msgid "strviewfaq"
@@ -53,13 +53,13 @@ msgstr "ログインに失敗しました"
 msgid "strlogindisallowed"
 msgstr "ログインが許可されませんでした。"
 
-msgid "strserver"
+msgid "Server"
 msgstr "サーバー"
 
 msgid "Servers"
 msgstr "サーバー"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "導入"
 
 msgid "strhost"
@@ -215,7 +215,7 @@ msgstr "表示"
 msgid "strempty"
 msgstr "空にする"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "言語"
 
 msgid "strencoding"

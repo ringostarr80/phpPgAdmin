@@ -13,19 +13,19 @@ msgstr ""
 
 # Language and character set
 msgid "applang"
-msgstr "正體中文（UTF-8）"
+msgstr "正體中文"
 
 msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "歡迎使用 phpPgAdmin。"
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmin 首頁"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQL 首頁"
 
 msgid "strpgsqlhome_url"
@@ -34,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQL 文件 (本機)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "通報程式 Bug"
 
 msgid "strviewfaq"
@@ -53,13 +53,13 @@ msgstr "登入失敗"
 msgid "strlogindisallowed"
 msgstr "出於安全原因禁止登入。"
 
-msgid "strserver"
+msgid "Server"
 msgstr "伺服器"
 
 msgid "Servers"
 msgstr "伺服器"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "介紹"
 
 msgid "strhost"
@@ -215,7 +215,7 @@ msgstr "顯示"
 msgid "strempty"
 msgstr "清空"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "語言"
 
 msgid "strencoding"

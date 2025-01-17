@@ -19,13 +19,16 @@ msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+# original: "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Welcome to phpPgAdmin."
 
-msgid "strppahome"
+# original: "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmin Homepage"
 
-msgid "strpgsqlhome"
+# original: "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQL Homepage"
 
 msgid "strpgsqlhome_url"
@@ -34,7 +37,8 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQL Documentation (local)"
 
-msgid "strreportbug"
+# original: "strreportbug"
+msgid "Report a Bug"
 msgstr "Report a Bug"
 
 msgid "strviewfaq"
@@ -53,7 +57,8 @@ msgstr "Login failed"
 msgid "strlogindisallowed"
 msgstr "Login disallowed for security reasons."
 
-msgid "strserver"
+# original: "strserver"
+msgid "Server"
 msgstr "Server"
 
 # original: "strservers"
@@ -66,7 +71,8 @@ msgstr "Servers in group \"%s\""
 msgid "strallservers"
 msgstr "All servers"
 
-msgid "strintroduction"
+# original: "strintroduction"
+msgid "Introduction"
 msgstr "Introduction"
 
 msgid "strhost"
@@ -228,7 +234,8 @@ msgstr "Show"
 msgid "strempty"
 msgstr "Empty"
 
-msgid "strlanguage"
+# original: "strlanguage"
+msgid "Language"
 msgstr "Language"
 
 msgid "strencoding"
@@ -418,10 +425,12 @@ msgstr "Start"
 msgid "strstop"
 msgstr "Stop"
 
-msgid "strgotoppage"
+# original: "strgotoppage"
+msgid "back to top"
 msgstr "back to top"
 
-msgid "strtheme"
+# original: "strtheme"
+msgid "Theme"
 msgstr "Theme"
 
 msgid "strcluster"

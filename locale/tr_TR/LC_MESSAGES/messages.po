@@ -19,13 +19,13 @@ msgid "applangdir"
 msgstr "ltr"
 
 # Basic strings
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "phpPgAdmin'e hoşgeldiniz."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmin Ana Sayfası"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQL Ana Sayfası"
 
 msgid "strpgsqlhome_url"
@@ -34,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQL Belgeleri (yerel)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Hata Bildirin"
 
 msgid "strviewfaq"
@@ -53,13 +53,13 @@ msgstr "Giriş Başarısız"
 msgid "strlogindisallowed"
 msgstr "Güvenlik nedeniyle girişe izin verilmedi."
 
-msgid "strserver"
+msgid "Server"
 msgstr "Sunucu"
 
 msgid "Servers"
 msgstr "Sunucular"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Giriş"
 
 msgid "strhost"
@@ -203,7 +203,7 @@ msgstr "Göster"
 msgid "strempty"
 msgstr "Boşalt"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Dil"
 
 msgid "strencoding"

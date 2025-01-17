@@ -23,10 +23,10 @@ msgstr "Login"
 msgid "strnotables"
 msgstr "Geen tabellen gevonden."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmin Homepage"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQL Homepage"
 
 msgid "strpgsqlhome_url"
@@ -35,7 +35,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQL Documentatie (lokaal)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Meldt een fout"
 
 msgid "strviewfaq"
@@ -362,7 +362,7 @@ msgstr "Retourneert"
 msgid "strarguments"
 msgstr "Argumenten"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "taal"
 
 msgid "strfunctionneedsname"
@@ -443,7 +443,7 @@ msgid "strtypeneedslen"
 msgstr "U dient uw type een lengte te geven."
 
 # New translations
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Welkom bij phpPgAdmin."
 
 msgid "straccount"
@@ -467,7 +467,7 @@ msgstr "Wachtwoord verschilt van bevestigings-wachtwoord."
 msgid "strloginfailed"
 msgstr "Inloggen mislukt"
 
-msgid "strserver"
+msgid "Server"
 msgstr "Server"
 
 msgid "strlogout"

@@ -19,13 +19,13 @@ msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Vítejte v phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "Domovská stránka phpPgAdmin"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "Domovská stránka PostgreSQL"
 
 msgid "strpgsqlhome_url"
@@ -34,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "Lokální dokumentace k PostgreSQL"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Nahlásit chybu"
 
 msgid "strviewfaq"
@@ -53,7 +53,7 @@ msgstr "Přihlášení se nezdařilo"
 msgid "strlogindisallowed"
 msgstr "Z bezpečnostních důvodů není přihlášení povoleno."
 
-msgid "strserver"
+msgid "Server"
 msgstr "Server"
 
 msgid "Servers"
@@ -65,7 +65,7 @@ msgstr "Servery ve skupině „%s“"
 msgid "strallservers"
 msgstr "Všechny servery"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Úvodní stránka"
 
 msgid "strhost"
@@ -227,7 +227,7 @@ msgstr "Zobrazit"
 msgid "strempty"
 msgstr "Vyprázdnit"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Jazyk"
 
 msgid "strencoding"
@@ -413,10 +413,10 @@ msgstr "Spustit"
 msgid "strstop"
 msgstr "Zastavit"
 
-msgid "strgotoppage"
+msgid "back to top"
 msgstr "zpět nahoru"
 
-msgid "strtheme"
+msgid "Theme"
 msgstr "Motiv"
 
 msgid "strcluster"

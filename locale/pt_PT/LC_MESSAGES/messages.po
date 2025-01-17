@@ -19,19 +19,19 @@ msgid "applangdir"
 msgstr "ltr"
 
 # Basic strings
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Bem-vindo ao phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "Página inicial phpPgAdmin "
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "Página inicial PostgreSQL "
 
 msgid "strpgsqlhome_url"
 msgstr "http://www.postgresql.org/"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Relatório de Bug"
 
 msgid "strviewfaq"
@@ -46,7 +46,7 @@ msgstr "Autenticação"
 msgid "strloginfailed"
 msgstr "Falha na autenticação"
 
-msgid "strserver"
+msgid "Server"
 msgstr "Servidor"
 
 msgid "strlogout"
@@ -178,7 +178,7 @@ msgstr "Exibir"
 msgid "strempty"
 msgstr "Vazio"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Linguagem"
 
 msgid "strencoding"
@@ -247,7 +247,7 @@ msgstr "Iniciar"
 msgid "strstop"
 msgstr "Parar"
 
-msgid "strgotoppage"
+msgid "back to top"
 msgstr "Topo da página"
 
 # Error handling

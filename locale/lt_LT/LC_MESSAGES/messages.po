@@ -19,13 +19,13 @@ msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Sveiki atvykę į phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmin pradinis puslapis"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQL pradinis puslapis"
 
 msgid "strpgsqlhome_url"
@@ -34,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQL dokumentacija (vietinė)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Pranešti apie klaidą"
 
 msgid "strviewfaq"
@@ -53,7 +53,7 @@ msgstr "Nepavyko prisijungti"
 msgid "strlogindisallowed"
 msgstr "Prisijungti neleidžiama saugumo sumetimais."
 
-msgid "strserver"
+msgid "Server"
 msgstr "Serveris"
 
 msgid "Servers"
@@ -65,7 +65,7 @@ msgstr "Serveriai grupėje \"%s\""
 msgid "strallservers"
 msgstr "Visi serveriai"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Įžanga"
 
 # Pradžia
@@ -235,7 +235,7 @@ msgid "strempty"
 msgstr "Išvalyti"
 
 # Šalinti turinį
-msgid "strlanguage"
+msgid "Language"
 msgstr "Kalba"
 
 msgid "strencoding"
@@ -428,10 +428,10 @@ msgstr "Paleisti"
 msgid "strstop"
 msgstr "Stabdyti"
 
-msgid "strgotoppage"
+msgid "back to top"
 msgstr "atgal į viršų"
 
-msgid "strtheme"
+msgid "Theme"
 msgstr "Apipavidalinimas"
 
 msgid "strcluster"

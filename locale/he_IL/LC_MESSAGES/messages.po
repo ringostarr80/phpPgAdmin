@@ -19,13 +19,13 @@ msgid "applangdir"
 msgstr "rtl"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "ברוכים הבאים ל phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "עמוד הבית של phpPgAdmin."
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "עמוד הבית של PostgreSQL."
 
 msgid "strpgsqlhome_url"
@@ -34,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "תיעוד PostgreSQL (מקומי)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "דווח על באג"
 
 msgid "strviewfaq"
@@ -53,7 +53,7 @@ msgstr "התחברות נכשלה"
 msgid "strlogindisallowed"
 msgstr "התחברות מבוטלת בשל בעיות אבטחה."
 
-msgid "strserver"
+msgid "Server"
 msgstr "שרת"
 
 msgid "strlogout"
@@ -194,7 +194,7 @@ msgstr "הראה"
 msgid "strempty"
 msgstr "רוקן"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "שפה"
 
 msgid "strencoding"

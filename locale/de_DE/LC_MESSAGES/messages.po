@@ -19,13 +19,13 @@ msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Willkommen bei phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmin Homepage"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQL Homepage"
 
 msgid "strpgsqlhome_url"
@@ -34,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQL Dokumentation (lokal)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Fehler melden"
 
 msgid "strviewfaq"
@@ -53,13 +53,13 @@ msgstr "Anmeldung fehlgeschlagen"
 msgid "strlogindisallowed"
 msgstr "Anmeldung aus Sicherheitsgründen verweigert."
 
-msgid "strserver"
+msgid "Server"
 msgstr "Server"
 
 msgid "Servers"
 msgstr "Server"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Einführung"
 
 msgid "strhost"
@@ -215,7 +215,7 @@ msgstr "Anzeigen"
 msgid "strempty"
 msgstr "Leeren"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Sprache"
 
 msgid "strencoding"

@@ -7,6 +7,7 @@ namespace PhpPgAdmin;
 abstract class Website
 {
     public const APP_NAME = 'phpPgAdmin';
+    public const APP_VERSION = '8.0.0-prealpha';
 
     /**
      * @var array<string, array{'src': string, 'type'?: 'text/javascript'|'module'}>

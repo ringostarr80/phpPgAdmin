@@ -19,13 +19,13 @@ msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "phpPgAdmin-Ф дСздСЪ ЭЯвЩЬЮЯ ее."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmin - ?ЮФгмЮ ФмЬЧмУ"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQL - ?ЮФгмЮ ФмЬЧмУ"
 
 msgid "strpgsqlhome_url"
@@ -34,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQL - тЩоЩЧ ТСвЩЭд (ьЯЫСЬ)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "сЬФССЮй ЭмФммЬмЬ"
 
 msgid "strviewfaq"
@@ -53,7 +53,7 @@ msgstr "шЯЬТЯЬдйЮ СЬФСС"
 msgid "strlogindisallowed"
 msgstr "шЯЬТЯЧФЯШ ТЯЬЯЭжЧ?Ъ"
 
-msgid "strserver"
+msgid "Server"
 msgstr "є?з ЫЯЭаиРдХв"
 
 msgid "strlogout"
@@ -194,7 +194,7 @@ msgstr "?кмШ"
 msgid "strempty"
 msgstr "шЯЯгЬЯШ"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "шмЬ"
 
 msgid "strencoding"

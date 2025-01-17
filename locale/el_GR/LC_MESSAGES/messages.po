@@ -19,13 +19,13 @@ msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Καλώς ήρθατε στο phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "Αρχική σελίδα phpPgAdmin"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "Αρχική σελίδα PostgreSQL"
 
 msgid "strpgsqlhome_url"
@@ -34,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "Εγχειρίδια PostgreSQL (τοπικό αντίγραφο)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Αναφορά ελαττώματος στο phpPgAdmin"
 
 msgid "strviewfaq"
@@ -53,13 +53,13 @@ msgstr "Αποτυχία εισόδου"
 msgid "strlogindisallowed"
 msgstr "Η είσοδος δεν επιτρέπεται για λόγους ασφαλείας."
 
-msgid "strserver"
+msgid "Server"
 msgstr "Διακομιστής"
 
 msgid "Servers"
 msgstr "Διακομιστές"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Αρχική"
 
 msgid "strhost"
@@ -212,7 +212,7 @@ msgstr "Εμφάνιση"
 msgid "strempty"
 msgstr "Αδειασμα"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Γλώσσα"
 
 msgid "strencoding"

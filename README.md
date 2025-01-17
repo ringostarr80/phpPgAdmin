@@ -12,53 +12,53 @@ I appreciate any form of help or feedback!
 
 ### .php files in the root directory
 
-| file               | status  |
-| :--------------    | :------- |
-| admin.php          | &cross; |
-| aggregates.php     | &cross; |
-| ajax-ac-insert.php | &cross; |
-| all_db.php         | &cross; |
-| autoload.php       | &check; |
-| browser.php        | &check; |
-| casts.php          | &cross; |
-| colproperties.php  | &cross; |
-| constraints.php    | &cross; |
-| conversions.php    | &cross; |
-| database.php       | &cross; |
-| dataexport.php     | &cross; |
-| dataimport.php     | &cross; |
-| dbexport.php       | &cross; |
-| display.php        | &cross; |
-| domains.php        | &cross; |
-| fulltext.php       | &cross; |
-| functions.php      | &cross; |
-| groups.php         | &cross; |
-| help.php           | &cross; |
-| history.php        | &cross; |
-| index.php          | :check_mark: |
-| indexes.php        | &cross; |
-| info.php           | &cross; |
-| intro.php          | :heavy_check_mark: |
-| languages.php      | &cross; |
-| login.php          | &cross; |
-| logout.php         | &cross; |
-| opclasses.php      | &cross; |
-| operators.php      | &cross; |
-| plugin.php         | &cross; |
-| privileges.php     | &cross; |
-| redirect.php       | &cross; |
-| roles.php          | &cross; |
-| rules.php          | &cross; |
-| schemas.php        | &cross; |
-| sequences.php      | &cross; |
-| servers.php        | &cross; |
-| sql.php            | &cross; |
-| sqledit.php        | &cross; |
-| tables.php         | &cross; |
-| tablespaces.php    | &cross; |
-| tblproperties.php  | &cross; |
-| triggers.php       | &cross; |
-| types.php          | &cross; |
-| users.php          | &cross; |
-| viewproperties.php | &cross; |
-| views.php          | &cross; |
+| file               | status | since      |
+| ------------------ | ------ | ---------- |
+| admin.php          | ❌     | yyyy-mm-dd |
+| aggregates.php     | ❌     | yyyy-mm-dd |
+| ajax-ac-insert.php | ❌     | yyyy-mm-dd |
+| all_db.php         | ❌     | yyyy-mm-dd |
+| autoload.php       | ✅     | 2024-12-19 |
+| browser.php        | ✅     | 2024-12-29 |
+| casts.php          | ❌     | yyyy-mm-dd |
+| colproperties.php  | ❌     | yyyy-mm-dd |
+| constraints.php    | ❌     | yyyy-mm-dd |
+| conversions.php    | ❌     | yyyy-mm-dd |
+| database.php       | ❌     | yyyy-mm-dd |
+| dataexport.php     | ❌     | yyyy-mm-dd |
+| dataimport.php     | ❌     | yyyy-mm-dd |
+| dbexport.php       | ❌     | yyyy-mm-dd |
+| display.php        | ❌     | yyyy-mm-dd |
+| domains.php        | ❌     | yyyy-mm-dd |
+| fulltext.php       | ❌     | yyyy-mm-dd |
+| functions.php      | ❌     | yyyy-mm-dd |
+| groups.php         | ❌     | yyyy-mm-dd |
+| help.php           | ❌     | yyyy-mm-dd |
+| history.php        | ❌     | yyyy-mm-dd |
+| index.php          | ✅     | 2024-12-26 |
+| indexes.php        | ❌     | yyyy-mm-dd |
+| info.php           | ❌     | yyyy-mm-dd |
+| intro.php          | ✅     | 2025-01-17 |
+| languages.php      | ❌     | yyyy-mm-dd |
+| login.php          | ❌     | yyyy-mm-dd |
+| logout.php         | ❌     | yyyy-mm-dd |
+| opclasses.php      | ❌     | yyyy-mm-dd |
+| operators.php      | ❌     | yyyy-mm-dd |
+| plugin.php         | ❌     | yyyy-mm-dd |
+| privileges.php     | ❌     | yyyy-mm-dd |
+| redirect.php       | ❌     | yyyy-mm-dd |
+| roles.php          | ❌     | yyyy-mm-dd |
+| rules.php          | ❌     | yyyy-mm-dd |
+| schemas.php        | ❌     | yyyy-mm-dd |
+| sequences.php      | ❌     | yyyy-mm-dd |
+| servers.php        | ❌     | yyyy-mm-dd |
+| sql.php            | ❌     | yyyy-mm-dd |
+| sqledit.php        | ❌     | yyyy-mm-dd |
+| tables.php         | ❌     | yyyy-mm-dd |
+| tablespaces.php    | ❌     | yyyy-mm-dd |
+| tblproperties.php  | ❌     | yyyy-mm-dd |
+| triggers.php       | ❌     | yyyy-mm-dd |
+| types.php          | ❌     | yyyy-mm-dd |
+| users.php          | ❌     | yyyy-mm-dd |
+| viewproperties.php | ❌     | yyyy-mm-dd |
+| views.php          | ❌     | yyyy-mm-dd |

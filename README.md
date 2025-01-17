@@ -38,7 +38,7 @@ I appreciate any form of help or feedback!
 | index.php          | &check; |
 | indexes.php        | &cross; |
 | info.php           | &cross; |
-| intro.php          | :\check: |
+| intro.php          | :heavy_check_mark: |
 | languages.php      | &cross; |
 | login.php          | &cross; |
 | logout.php         | &cross; |

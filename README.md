@@ -13,7 +13,7 @@ I appreciate any form of help or feedback!
 ### .php files in the root directory
 
 | file               | status  |
-| --------------     | ------- |
+| :--------------    | :------- |
 | admin.php          | &cross; |
 | aggregates.php     | &cross; |
 | ajax-ac-insert.php | &cross; |
@@ -35,7 +35,7 @@ I appreciate any form of help or feedback!
 | groups.php         | &cross; |
 | help.php           | &cross; |
 | history.php        | &cross; |
-| index.php          | &check; |
+| index.php          | :check_mark: |
 | indexes.php        | &cross; |
 | info.php           | &cross; |
 | intro.php          | :heavy_check_mark: |

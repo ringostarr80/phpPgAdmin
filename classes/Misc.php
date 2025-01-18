@@ -562,7 +562,7 @@ class Misc
             echo "        <link rel=\"stylesheet\" href=\"themes/{$conf['theme']}/global.css\" type=\"text/css\" id=\"csstheme\" />" . PHP_EOL;
             echo "        <link rel=\"shortcut icon\" href=\"images/themes/{$conf['theme']}/Favicon.ico\" type=\"image/vnd.microsoft.icon\" />" . PHP_EOL;
             echo "        <link rel=\"icon\" type=\"image/png\" href=\"images/themes/{$conf['theme']}/Introduction.png\" />" . PHP_EOL;
-            echo "        <script type=\"text/javascript\" src=\"libraries/js/jquery.js\"></script>" . PHP_EOL;
+            echo "        <script type=\"text/javascript\" src=\"libraries/js/jquery-3.7.1.min.js\"></script>" . PHP_EOL;
             echo "        <script type=\"text/javascript\">" . PHP_EOL;
             echo "        $(function() {" . PHP_EOL;
             echo "            if (window.parent.frames.length > 1) {" . PHP_EOL;

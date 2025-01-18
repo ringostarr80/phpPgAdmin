@@ -15,20 +15,17 @@ msgstr ""
 msgid "applang"
 msgstr "Swedish"
 
-msgid "applocale"
-msgstr "sv-SE"
-
 msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Välkommen till phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmins Hemsida"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQLs Hemsida"
 
 msgid "strpgsqlhome_url"
@@ -37,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQLs Dokumentation (lokalt)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Rapportera ett fel"
 
 msgid "strviewfaq"
@@ -56,7 +53,7 @@ msgstr "Inloggningen misslyckades"
 msgid "strlogindisallowed"
 msgstr "Inloggningen ej tillåten"
 
-msgid "strserver"
+msgid "Server"
 msgstr "Server"
 
 msgid "strlogout"
@@ -197,7 +194,7 @@ msgstr "Visa"
 msgid "strempty"
 msgstr "Tom"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Språk"
 
 msgid "strencoding"
@@ -284,7 +281,7 @@ msgstr "Sök"
 msgid "stroptions"
 msgstr "Alternativ"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Uppdatera"
 
 msgid "strcollapse"

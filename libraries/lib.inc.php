@@ -226,7 +226,6 @@ if (!isset($_language)) {
     $_language = 'english';
 }
 
-
 // Import the language file
 if (isset($_language)) {
     include("./lang/{$_language}.php");
@@ -288,7 +287,7 @@ if (!isset($_no_db_connection)) {
     }
 
     include_once './classes/database/Connection.php';
-
+    
     // Connect to database and set the global $data variable
     $data = $misc->getDatabaseAccessor($_curr_db);
 

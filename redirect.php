@@ -1,16 +1,25 @@
 <?php
 
-    $subject = isset($_REQUEST['subject']) ? $_REQUEST['subject'] : 'root';
+/*
+use PhpPgAdmin\Website\Redirect;
+
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'autoload.php';
+
+$redirect = new Redirect();
+echo $redirect->buildHtmlString();
+//*/
+
+$subject = isset($_REQUEST['subject']) ? $_REQUEST['subject'] : 'root';
 
 if ($subject == 'root') {
     $_no_db_connection = true;
 }
 
-    include_once('./libraries/lib.inc.php');
+include_once('./libraries/lib.inc.php');
 
-    $url = $misc->getLastTabURL($subject);
+$url = $misc->getLastTabURL($subject);
 
-    // Load query vars into superglobal arrays
+// Load query vars into superglobal arrays
 if (isset($url['urlvars'])) {
     $urlvars = array();
 
@@ -22,4 +31,4 @@ if (isset($url['urlvars'])) {
     $_GET = array_merge($_GET, $urlvars);
 }
 
-    require $url['url'];
+require $url['url'];

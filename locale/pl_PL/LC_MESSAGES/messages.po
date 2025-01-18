@@ -15,20 +15,17 @@ msgstr ""
 msgid "applang"
 msgstr "Polski"
 
-msgid "applocale"
-msgstr "pl-PL"
-
 msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Witaj w phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "Strona domowa phpPgAdmin"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "Strona domowa PostgreSQL"
 
 msgid "strpgsqlhome_url"
@@ -37,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "Dokumentacja PostgreSQL (lokalna)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Zgłoś raport o błędzie"
 
 msgid "strviewfaq"
@@ -56,13 +53,13 @@ msgstr "Próba zalogowania nie powiodła się."
 msgid "strlogindisallowed"
 msgstr "Logowanie niedozwolone"
 
-msgid "strserver"
+msgid "Server"
 msgstr "Serwer"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Serwery"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Wprowadzenie"
 
 msgid "strhost"
@@ -215,7 +212,7 @@ msgstr "Pokaż"
 msgid "strempty"
 msgstr "Wyczyść"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Język"
 
 msgid "strencoding"
@@ -326,7 +323,7 @@ msgstr "Znajdź"
 msgid "stroptions"
 msgstr "Opcje"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Odśwież"
 
 msgid "strdownload"
@@ -1965,13 +1962,13 @@ msgstr "Zaloguj do %s"
 msgid "strlogoutmsg"
 msgstr "Wylogowano z %s"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Ładuję..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Błąd ładowania"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Kliknij aby odświeżyć"
 
 # Autovacuum

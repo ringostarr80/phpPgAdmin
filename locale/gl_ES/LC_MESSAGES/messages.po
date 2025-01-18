@@ -15,20 +15,17 @@ msgstr ""
 msgid "applang"
 msgstr "Galego"
 
-msgid "applocale"
-msgstr "gl-ES"
-
 msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Benvida ou benvido ao phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "Sitio web do phpPgAdmin"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "Sitio web de PostgreSQL"
 
 msgid "strpgsqlhome_url"
@@ -37,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "Documentación de PostgreSQL (local)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Informar dun erro"
 
 msgid "strviewfaq"
@@ -56,10 +53,10 @@ msgstr "Non se puido levar a cabo a identificación."
 msgid "strlogindisallowed"
 msgstr "A identificación está desactivada por motivos de seguridade."
 
-msgid "strserver"
+msgid "Server"
 msgstr "Servidor"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Servidores"
 
 msgid "strgroupservers"
@@ -68,7 +65,7 @@ msgstr "Servidores no grupo «%s»"
 msgid "strallservers"
 msgstr "Todos os servidores"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Introdución"
 
 msgid "strhost"
@@ -230,7 +227,7 @@ msgstr "Amosar"
 msgid "strempty"
 msgstr "Baleiro"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Lingua"
 
 msgid "strencoding"
@@ -329,7 +326,7 @@ msgstr "Buscar"
 msgid "stroptions"
 msgstr "Opcións"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Actualizar"
 
 msgid "strdownload"
@@ -416,10 +413,10 @@ msgstr "Iniciar"
 msgid "strstop"
 msgstr "Deter"
 
-msgid "strgotoppage"
+msgid "back to top"
 msgstr "Volver arriba"
 
-msgid "strtheme"
+msgid "Theme"
 msgstr "Tema visual"
 
 msgid "strcluster"
@@ -2227,13 +2224,13 @@ msgstr "Identificarse en %s"
 msgid "strlogoutmsg"
 msgstr "Saíu de %s"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Cargando..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Produciuse un erro durante o proceso de carga"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Prema aquí para recargar"
 
 # Autovacuum

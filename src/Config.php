@@ -10,7 +10,20 @@ use Symfony\Component\Yaml\Parser as YamlParser;
  * @phpstan-type ConfigData=array{
  *  'default_lang'?: string,
  *  'left_width'?: int,
- *  'servers'?: array<mixed>
+ *  'servers'?: array{
+ *      'desc': string,
+ *      'host': string,
+ *      'port': int,
+ *      'sslmode': string,
+ *      'defaultdb'?: string,
+ *      'pg_dump_path'?: string,
+ *      'pg_dumpall_path'?: string,
+ *      'theme'?: array{
+ *          'default'?: string,
+ *          'user'?: array{'specific_user'?: string},
+ *          'db'?: array{'specific_db'?: string}
+ *      }
+ *  }[]
  * }
  */
 class Config
@@ -91,38 +104,35 @@ class Config
             return strtolower($matches['language']) . '_' . strtoupper($matches['region']);
         }
 
-        return match (strtolower($localeOrLanguage)) {
-            'afrikaans' => 'af_ZA',
-            'arabic' => 'ar_SA',
-            'catalan' => 'ca_ES',
-            'chinese-zh-cn' => 'zh_CN',
-            'chinese-zh-tw' => 'zh_TW',
-            'czech' => 'cs_CZ',
-            'danish' => 'da_DK',
-            'dutch' => 'nl_NL',
-            'english' => 'en_US',
-            'french' => 'fr_FR',
-            'galician' => 'gl_ES',
-            'german' => 'de_DE',
-            'greek' => 'el_GR',
-            'hebrew' => 'he_IL',
-            'hungarian' => 'hu_HU',
-            'italian' => 'it_IT',
-            'japanese' => 'ja_JP',
-            'lithuanian' => 'lt_LT',
-            'mongol' => 'mn_MN',
-            'polish' => 'pl_PL',
-            'portuguese-br' => 'pt_BR',
-            'portuguese-pt' => 'pt_PT',
-            'romanian' => 'ro_RO',
-            'russian' => 'ru_RU',
-            'slovak' => 'sk_SK',
-            'spanish' => 'es_ES',
-            'swedish' => 'sv_SE',
-            'turkish' => 'tr_TR',
-            'ukrainian' => 'uk_UA',
-            default => null,
-        };
+        $lowerCasedLocaleOrLanguage = strtolower($localeOrLanguage);
+        $languageIdsWithLocales = Language::getAvailableLanguageIdsWithLocales();
+        if (isset($languageIdsWithLocales[$lowerCasedLocaleOrLanguage])) {
+            return $languageIdsWithLocales[$lowerCasedLocaleOrLanguage];
+        }
+
+        return null;
+    }
+
+    /**
+     * @return array{
+     *  'desc': string,
+     *  'host': string,
+     *  'port': int,
+     *  'sslmode': string,
+     *  'defaultdb'?: string,
+     *  'pg_dump_path'?: string,
+     *  'pg_dumpall_path'?: string,
+     *  'theme'?: array{
+     *      'default'?: string,
+     *      'user'?: array{'specific_user'?: string},
+     *      'db'?: array{'specific_db'?: string}
+     *  }
+     * }[]
+     */
+    public static function getServers(): array
+    {
+        $conf = self::tryGetConfigFileData();
+        return $conf['servers'] ?? [];
     }
 
     public static function leftWidth(): int
@@ -252,21 +262,39 @@ class Config
         return false;
     }
 
+    /**
+     * @param string $serverId Server ID in the format host:port:sslmode
+     */
+    public static function serverExists(string $serverId): bool
+    {
+        $servers = self::getServers();
+        foreach ($servers as $info) {
+            if ($serverId === $info['host'] . ':' . $info['port'] . ':' . $info['sslmode']) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static function theme(): string
     {
         if (!isset(self::$data['theme'])) {
             self::$data['theme'] = 'default';
+
+            if (isset($_REQUEST['server']) && is_string($_REQUEST['server'])) {
+                $serverIdTheme = self::tryGetThemeByServerId($_REQUEST['server']);
+                if ($serverIdTheme !== '') {
+                    self::$data['theme'] = $serverIdTheme;
+                }
+            }
+
             if (
-                isset($_REQUEST['theme']) &&
-                is_string($_REQUEST['theme']) &&
-                Themes::cssExists($_REQUEST['theme'])
+                isset($_COOKIE['ppaTheme']) &&
+                is_string($_COOKIE['ppaTheme']) &&
+                Themes::cssExists($_COOKIE['ppaTheme'])
             ) {
-                setcookie(
-                    name: 'ppaTheme',
-                    value: $_REQUEST['theme'],
-                    expires_or_options: time() + 31_536_000 // 1 year.
-                );
-                self::$data['theme'] = $_REQUEST['theme'];
+                self::$data['theme'] = $_COOKIE['ppaTheme'];
             }
 
             if (
@@ -278,18 +306,16 @@ class Config
             }
 
             if (
-                isset($_COOKIE['ppaTheme']) &&
-                is_string($_COOKIE['ppaTheme']) &&
-                Themes::cssExists($_COOKIE['ppaTheme'])
+                isset($_REQUEST['theme']) &&
+                is_string($_REQUEST['theme']) &&
+                Themes::cssExists($_REQUEST['theme'])
             ) {
-                self::$data['theme'] = $_COOKIE['ppaTheme'];
-            }
-
-            if (isset($_REQUEST['server']) && is_string($_REQUEST['server'])) {
-                $serverIdTheme = self::tryGetThemeByServerId($_REQUEST['server']);
-                if ($serverIdTheme !== '') {
-                    self::$data['theme'] = $serverIdTheme;
-                }
+                setcookie(
+                    name: 'ppaTheme',
+                    value: $_REQUEST['theme'],
+                    expires_or_options: time() + 31_536_000 // 1 year.
+                );
+                self::$data['theme'] = $_REQUEST['theme'];
             }
 
             $_SESSION['ppaTheme'] = self::$data['theme'];
@@ -319,6 +345,71 @@ class Config
                     if (isset($yaml['left_width']) && is_int($yaml['left_width'])) {
                         self::$conf['left_width'] = $yaml['left_width'];
                     }
+                    if (isset($yaml['servers']) && is_array($yaml['servers'])) {
+                        self::$conf['servers'] = [];
+
+                        foreach ($yaml['servers'] as $server) {
+                            if (!is_array($server)) {
+                                continue;
+                            }
+                            if (!isset($server['desc']) || !is_string($server['desc'])) {
+                                continue;
+                            }
+
+                            $tmpServer = [
+                                'desc' => $server['desc'],
+                                'host' => '127.0.0.1',
+                                'port' => 5432,
+                                'sslmode' => 'prefer',
+                            ];
+                            if (isset($server['host']) && is_string($server['host'])) {
+                                $tmpServer['host'] = $server['host'];
+                            }
+                            if (isset($server['port']) && is_int($server['port'])) {
+                                $tmpServer['port'] = $server['port'];
+                            }
+                            if (isset($server['sslmode']) && is_string($server['sslmode'])) {
+                                $tmpServer['sslmode'] = $server['sslmode'];
+                            }
+                            if (isset($server['defaultdb']) && is_string($server['defaultdb'])) {
+                                $tmpServer['defaultdb'] = $server['defaultdb'];
+                            }
+                            if (isset($server['pg_dump_path']) && is_string($server['pg_dump_path'])) {
+                                $tmpServer['pg_dump_path'] = $server['pg_dump_path'];
+                            }
+                            if (isset($server['pg_dumpall_path']) && is_string($server['pg_dumpall_path'])) {
+                                $tmpServer['pg_dumpall_path'] = $server['pg_dumpall_path'];
+                            }
+                            if (isset($server['theme']) && is_array($server['theme'])) {
+                                $tmpServer['theme'] = [];
+                                if (isset($server['theme']['default']) && is_string($server['theme']['default'])) {
+                                    $tmpServer['theme']['default'] = $server['theme']['default'];
+                                }
+                                if (isset($server['theme']['user']) && is_array($server['theme']['user'])) {
+                                    $tmpServer['theme']['user'] = [];
+                                    if (
+                                        isset($server['theme']['user']['specific_user']) &&
+                                        is_string($server['theme']['user']['specific_user'])
+                                    ) {
+                                        $tmpServer['theme']['user']['specific_user'] =
+                                            $server['theme']['user']['specific_user'];
+                                    }
+                                }
+                                if (isset($server['theme']['db']) && is_array($server['theme']['db'])) {
+                                    $tmpServer['theme']['db'] = [];
+                                    if (
+                                        isset($server['theme']['db']['specific_db']) &&
+                                        is_string($server['theme']['db']['specific_db'])
+                                    ) {
+                                        $tmpServer['theme']['db']['specific_db'] =
+                                            $server['theme']['db']['specific_db'];
+                                    }
+                                }
+                            }
+
+                            self::$conf['servers'][] = $tmpServer;
+                        }
+                    }
                 }
             }
         }
@@ -326,61 +417,35 @@ class Config
         return self::$conf;
     }
 
+    /**
+     * @param string $serverId Server ID in the format host:port:sslmode
+     */
     private static function tryGetThemeByServerId(string $serverId): string
     {
-        $conf = self::tryGetConfigFileData();
-
-        if (!isset($conf['servers'])) {
-            return '';
-        }
+        $servers = self::getServers();
 
         $tmpTheme = '';
-        foreach ($conf['servers'] as $info) {
-            if (!is_array($info)) {
-                continue;
-            }
-            if (!isset($info['host'], $info['port'], $info['sslmode'])) {
-                continue;
-            }
-            if (!is_string($info['host']) || !is_numeric($info['port']) || !is_string($info['sslmode'])) {
-                continue;
-            }
+        foreach ($servers as $info) {
             if ($serverId !== $info['host'] . ':' . $info['port'] . ':' . $info['sslmode']) {
                 continue;
             }
 
-            if (!isset($info['theme']) || !is_array($info['theme'])) {
+            if (!isset($info['theme']) || !isset($info['theme']['default'])) {
                 continue;
             }
 
-            if (
-                isset($info['theme']['default']) &&
-                is_string($info['theme']['default']) &&
-                Themes::cssExists($info['theme']['default'])
-            ) {
+            if (Themes::cssExists($info['theme']['default'])) {
                 $tmpTheme = $info['theme']['default'];
             }
 
             if (
                 isset($_REQUEST['database'])
                 && is_string($_REQUEST['database'])
-                && is_array($info['theme']['db'])
+                && isset($info['theme']['db'])
                 && isset($info['theme']['db'][$_REQUEST['database']])
-                && is_string($info['theme']['db'][$_REQUEST['database']])
                 && Themes::cssExists($info['theme']['db'][$_REQUEST['database']])
             ) {
                 $tmpTheme = $info['theme']['db'][$_REQUEST['database']];
-            }
-
-            if (
-                isset($info['username'])
-                && is_string($info['username'])
-                && is_array($info['theme']['user'])
-                && isset($info['theme']['user'][$info['username']])
-                && is_string($info['theme']['user'][$info['username']])
-                && Themes::cssExists($info['theme']['user'][$info['username']])
-            ) {
-                $tmpTheme = $info['theme']['user'][$info['username']];
             }
         }
 

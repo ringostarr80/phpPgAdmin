@@ -42,8 +42,8 @@ class Browser extends Website
         $aBrowser->setAttribute('target', 'browser');
         $imgRefresh = $dom->createElement('img');
         $imgRefresh->setAttribute('src', Config::getIcon('Refresh'));
-        $imgRefresh->setAttribute('alt', _('strrefresh'));
-        $imgRefresh->setAttribute('title', _('strrefresh'));
+        $imgRefresh->setAttribute('alt', _('Refresh'));
+        $imgRefresh->setAttribute('title', _('Refresh'));
         $aBrowser->appendChild($imgRefresh);
         $divRefreshTree->appendChild($aBrowser);
 
@@ -64,10 +64,10 @@ class Browser extends Website
         $scriptContent .= 'webFXTreeConfig.tPlusIcon        = "' . Config::getIcon('Tplus') . '";' . PHP_EOL;
         $scriptContent .= 'webFXTreeConfig.blankIcon        = "' . Config::getIcon('blank') . '";' . PHP_EOL;
         $scriptContent .= 'webFXTreeConfig.loadingIcon      = "' . Config::getIcon('Loading') . '";' . PHP_EOL;
-        $scriptContent .= 'webFXTreeConfig.loadingText      = "' . _('strloading') . '";' . PHP_EOL;
+        $scriptContent .= 'webFXTreeConfig.loadingText      = "' . _('Loading...') . '";' . PHP_EOL;
         $scriptContent .= 'webFXTreeConfig.errorIcon        = "' . Config::getIcon('ObjectNotFound') . '";' . PHP_EOL;
-        $scriptContent .= 'webFXTreeConfig.errorLoadingText = "' . _('strerrorloading') . '";' . PHP_EOL;
-        $scriptContent .= 'webFXTreeConfig.reloadText       = "' . _('strclicktoreload') . '";' . PHP_EOL;
+        $scriptContent .= 'webFXTreeConfig.errorLoadingText = "' . _('Error Loading') . '";' . PHP_EOL;
+        $scriptContent .= 'webFXTreeConfig.reloadText       = "' . _('Click to reload') . '";' . PHP_EOL;
         $scriptContent .= PHP_EOL;
         $scriptContent .= '// Set default target frame:' . PHP_EOL;
         $scriptContent .= 'WebFXTreeAbstractNode.prototype.target = "detail";' . PHP_EOL;
@@ -75,8 +75,9 @@ class Browser extends Website
         $scriptContent .= '// Disable double click:' . PHP_EOL;
         $scriptContent .= 'WebFXTreeAbstractNode.prototype._ondblclick = function(){};' . PHP_EOL;
         $scriptContent .= PHP_EOL;
-        $scriptContent .= 'const tree = new WebFXLoadTree("' . _('strservers') .
-            '", "servers.php?action=tree", "servers.php");' . PHP_EOL;
+        $serversTreeUrl = 'servers-tree.php';
+        $scriptContent .= 'const tree = new WebFXLoadTree("' . _('Servers') .
+            '", "' . $serversTreeUrl . '", "servers.php");' . PHP_EOL;
         $scriptContent .= PHP_EOL;
         $scriptContent .= 'tree.write();' . PHP_EOL;
         $scriptContent .= 'tree.setExpanded(true);' . PHP_EOL;

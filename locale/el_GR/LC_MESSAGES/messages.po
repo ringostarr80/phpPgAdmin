@@ -15,20 +15,17 @@ msgstr ""
 msgid "applang"
 msgstr "Ελληνικά"
 
-msgid "applocale"
-msgstr "el-GR"
-
 msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Καλώς ήρθατε στο phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "Αρχική σελίδα phpPgAdmin"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "Αρχική σελίδα PostgreSQL"
 
 msgid "strpgsqlhome_url"
@@ -37,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "Εγχειρίδια PostgreSQL (τοπικό αντίγραφο)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Αναφορά ελαττώματος στο phpPgAdmin"
 
 msgid "strviewfaq"
@@ -56,13 +53,13 @@ msgstr "Αποτυχία εισόδου"
 msgid "strlogindisallowed"
 msgstr "Η είσοδος δεν επιτρέπεται για λόγους ασφαλείας."
 
-msgid "strserver"
+msgid "Server"
 msgstr "Διακομιστής"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Διακομιστές"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Αρχική"
 
 msgid "strhost"
@@ -215,7 +212,7 @@ msgstr "Εμφάνιση"
 msgid "strempty"
 msgstr "Αδειασμα"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Γλώσσα"
 
 msgid "strencoding"
@@ -314,7 +311,7 @@ msgstr "Αναζήτηση"
 msgid "stroptions"
 msgstr "Επιλογές"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Ανανέωση"
 
 msgid "strdownload"
@@ -1968,13 +1965,13 @@ msgstr "Σύνδεση με %s"
 msgid "strlogoutmsg"
 msgstr "Αποσύνδεση από %s"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Φόρτωση..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Σφάλμα στη φόρτωση"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Να ξαναφορτωθεί"
 
 # Autovacuum

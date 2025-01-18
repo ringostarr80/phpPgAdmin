@@ -15,20 +15,17 @@ msgstr ""
 msgid "applang"
 msgstr "日本語(EUC-JP)"
 
-msgid "applocale"
-msgstr "ja-JP"
-
 msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "ようこそ phpPgAdmin へ。"
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmin ホームページ"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQL ホームページ"
 
 msgid "strpgsqlhome_url"
@@ -37,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQL ドキュメント (ローカル)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "バグレポート"
 
 msgid "strviewfaq"
@@ -56,13 +53,13 @@ msgstr "ログインに失敗しました"
 msgid "strlogindisallowed"
 msgstr "ログインが許可されませんでした。"
 
-msgid "strserver"
+msgid "Server"
 msgstr "サーバー"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "サーバー"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "導入"
 
 msgid "strhost"
@@ -218,7 +215,7 @@ msgstr "表示"
 msgid "strempty"
 msgstr "空にする"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "言語"
 
 msgid "strencoding"
@@ -314,7 +311,7 @@ msgstr "検索"
 msgid "stroptions"
 msgstr "オプション"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "再表示"
 
 msgid "strdownload"
@@ -2116,13 +2113,13 @@ msgstr "%s にログイン"
 msgid "strlogoutmsg"
 msgstr "%s をログアウトしました。"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "読み込み中..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "読み込み中のエラーです。"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "クリックで再読み込み"
 
 # Autovacuum

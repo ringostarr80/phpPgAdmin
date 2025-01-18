@@ -13,22 +13,19 @@ msgstr ""
 
 # Language and character set
 msgid "applang"
-msgstr "Русский (UTF-8)"
-
-msgid "applocale"
-msgstr "ru-RU.UTF-8"
+msgstr "Русский"
 
 msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Добро пожаловать в phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmin - домашняя страница"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQL - домашняя страница"
 
 msgid "strpgsqlhome_url"
@@ -37,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQL - документация (локально)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Отчет об ошибках"
 
 msgid "strviewfaq"
@@ -56,10 +53,10 @@ msgstr "Ошибка входа"
 msgid "strlogindisallowed"
 msgstr "Вход невозможен по соображениям безопасности"
 
-msgid "strserver"
+msgid "Server"
 msgstr "Сервер"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Серверы"
 
 msgid "strgroupservers"
@@ -68,7 +65,7 @@ msgstr "Серверы в группе \"%s\""
 msgid "strallservers"
 msgstr "Все серверы"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Введение"
 
 msgid "strhost"
@@ -227,7 +224,7 @@ msgstr "Показать"
 msgid "strempty"
 msgstr "Очистить"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Язык"
 
 msgid "strencoding"
@@ -326,7 +323,7 @@ msgstr "Найти"
 msgid "stroptions"
 msgstr "Опции"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Обновить"
 
 msgid "strdownload"
@@ -413,10 +410,10 @@ msgstr "Запустить автоматическое обновление"
 msgid "strstop"
 msgstr "Остановить автоматическое обновление"
 
-msgid "strgotoppage"
+msgid "back to top"
 msgstr "вверх"
 
-msgid "strtheme"
+msgid "Theme"
 msgstr "Тема"
 
 msgid "strcluster"
@@ -2207,13 +2204,13 @@ msgstr "Вошли на %s"
 msgid "strlogoutmsg"
 msgstr "Вышли из %s"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Загрузка..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Ошибка при загрузке"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Щелкните для перезагрузки"
 
 # Autovacuum

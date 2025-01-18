@@ -15,20 +15,20 @@ msgstr ""
 msgid "applang"
 msgstr "English"
 
-msgid "applocale"
-msgstr "en-US"
-
 msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+# original: "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Welcome to phpPgAdmin."
 
-msgid "strppahome"
+# original: "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmin Homepage"
 
-msgid "strpgsqlhome"
+# original: "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQL Homepage"
 
 msgid "strpgsqlhome_url"
@@ -37,7 +37,8 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQL Documentation (local)"
 
-msgid "strreportbug"
+# original: "strreportbug"
+msgid "Report a Bug"
 msgstr "Report a Bug"
 
 msgid "strviewfaq"
@@ -56,10 +57,12 @@ msgstr "Login failed"
 msgid "strlogindisallowed"
 msgstr "Login disallowed for security reasons."
 
-msgid "strserver"
+# original: "strserver"
+msgid "Server"
 msgstr "Server"
 
-msgid "strservers"
+# original: "strservers"
+msgid "Servers"
 msgstr "Servers"
 
 msgid "strgroupservers"
@@ -68,7 +71,8 @@ msgstr "Servers in group \"%s\""
 msgid "strallservers"
 msgstr "All servers"
 
-msgid "strintroduction"
+# original: "strintroduction"
+msgid "Introduction"
 msgstr "Introduction"
 
 msgid "strhost"
@@ -230,7 +234,8 @@ msgstr "Show"
 msgid "strempty"
 msgstr "Empty"
 
-msgid "strlanguage"
+# original: "strlanguage"
+msgid "Language"
 msgstr "Language"
 
 msgid "strencoding"
@@ -329,7 +334,8 @@ msgstr "Find"
 msgid "stroptions"
 msgstr "Options"
 
-msgid "strrefresh"
+# original: "strrefresh"
+msgid "Refresh"
 msgstr "Refresh"
 
 msgid "strdownload"
@@ -419,10 +425,12 @@ msgstr "Start"
 msgid "strstop"
 msgstr "Stop"
 
-msgid "strgotoppage"
+# original: "strgotoppage"
+msgid "back to top"
 msgstr "back to top"
 
-msgid "strtheme"
+# original: "strtheme"
+msgid "Theme"
 msgstr "Theme"
 
 msgid "strcluster"
@@ -2231,13 +2239,16 @@ msgstr "Login to %s"
 msgid "strlogoutmsg"
 msgstr "Logged out of %s"
 
-msgid "strloading"
+# original: "strloading"
+msgid "Loading..."
 msgstr "Loading..."
 
-msgid "strerrorloading"
+# original: "strerrorloading"
+msgid "Error Loading"
 msgstr "Error Loading"
 
-msgid "strclicktoreload"
+# original: "strclicktoreload"
+msgid "Click to reload"
 msgstr "Click to reload"
 
 msgid "sessionsecuritywarning"

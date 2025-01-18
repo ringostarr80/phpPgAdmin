@@ -15,20 +15,17 @@ msgstr ""
 msgid "applang"
 msgstr "عربي"
 
-msgid "applocale"
-msgstr "ar"
-
 msgid "applangdir"
 msgstr "rtl"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "مرحبا الى phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "موقع phpPgAdmin"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "موقع PostgreSQL"
 
 msgid "strpgsqlhome_url"
@@ -37,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "تعليمات PostgreSQL (محلية)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "الإبلاغ عن خطأ في البرنامج."
 
 msgid "strviewfaq"
@@ -56,7 +53,7 @@ msgstr "لم تنجح عملية الدخول"
 msgid "strlogindisallowed"
 msgstr "لا يسمح بالدخول بهذه الطريقة لأسباب أمنية."
 
-msgid "strserver"
+msgid "Server"
 msgstr "الخادم"
 
 msgid "strlogout"
@@ -197,7 +194,7 @@ msgstr "اعرض"
 msgid "strempty"
 msgstr "إفراغ Empty"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "اللغة"
 
 msgid "strencoding"
@@ -296,7 +293,7 @@ msgstr "بحث"
 msgid "stroptions"
 msgstr "خيارات"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "تحديث Refresh"
 
 msgid "strdownload"

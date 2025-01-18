@@ -15,20 +15,17 @@ msgstr ""
 msgid "applang"
 msgstr "Português-Brasileiro"
 
-msgid "applocale"
-msgstr "pt-BR"
-
 msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Bem-vindo ao phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "Página inicial phpPgAdmin"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "Página inicial PostgreSQL"
 
 msgid "strpgsqlhome_url"
@@ -37,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "Documentação PostgreSQL (local)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Reportar um Bug"
 
 msgid "strviewfaq"
@@ -56,10 +53,10 @@ msgstr "Falha na identificação"
 msgid "strlogindisallowed"
 msgstr "Identificação desabilitada por motivos de segurança."
 
-msgid "strserver"
+msgid "Server"
 msgstr "Servidor"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Servidores"
 
 msgid "strgroupservers"
@@ -68,7 +65,7 @@ msgstr "Servidores no grupo \"%s\""
 msgid "strallservers"
 msgstr "Todos os servidores"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Introdução"
 
 msgid "strhost"
@@ -230,7 +227,7 @@ msgstr "Exibir"
 msgid "strempty"
 msgstr "Vazio"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Linguagem"
 
 msgid "strencoding"
@@ -329,7 +326,7 @@ msgstr "Encontrar"
 msgid "stroptions"
 msgstr "Opções"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Atualizar"
 
 msgid "strdownload"
@@ -416,10 +413,10 @@ msgstr "Iniciar"
 msgid "strstop"
 msgstr "Parar"
 
-msgid "strgotoppage"
+msgid "back to top"
 msgstr "Topo da página"
 
-msgid "strtheme"
+msgid "Theme"
 msgstr "Tema"
 
 # Admin
@@ -2222,13 +2219,13 @@ msgstr "Conectado em %s"
 msgid "strlogoutmsg"
 msgstr "Desconectado de %s"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Carregando..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Erro no carregamento"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Clique para recarregar"
 
 # Autovacuum

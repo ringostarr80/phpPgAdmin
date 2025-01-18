@@ -15,20 +15,17 @@ msgstr ""
 msgid "applang"
 msgstr "Català"
 
-msgid "applocale"
-msgstr "ca-ES"
-
 msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Benvingut a phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "Pàgina web de phpPgAdmin"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "Pàgina web de PostgreSQL"
 
 msgid "strpgsqlhome_url"
@@ -37,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "Documentació PostgreSQL (local)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Reportar un Bug"
 
 msgid "strviewfaq"
@@ -56,10 +53,10 @@ msgstr "Entrada fallida"
 msgid "strlogindisallowed"
 msgstr "Entrada rebutjada per raons de seguretat."
 
-msgid "strserver"
+msgid "Server"
 msgstr "Servidor"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Servidors"
 
 msgid "strgroupservers"
@@ -68,7 +65,7 @@ msgstr "Servidors en el grup \"%s\""
 msgid "strallservers"
 msgstr "Tots els servidors"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Introducció"
 
 msgid "strhost"
@@ -230,7 +227,7 @@ msgstr "Mostra"
 msgid "strempty"
 msgstr "Buida"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Idioma"
 
 msgid "strencoding"
@@ -329,7 +326,7 @@ msgstr "Cerca"
 msgid "stroptions"
 msgstr "Opcions"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Refresca"
 
 msgid "strdownload"
@@ -416,10 +413,10 @@ msgstr "Comença"
 msgid "strstop"
 msgstr "Para"
 
-msgid "strgotoppage"
+msgid "back to top"
 msgstr "Torna al principi"
 
-msgid "strtheme"
+msgid "Theme"
 msgstr "Tema"
 
 msgid "strcluster"
@@ -2219,13 +2216,13 @@ msgstr "Entrar a %s"
 msgid "strlogoutmsg"
 msgstr "Sortir de %s"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Carregant..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Error Carregant"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Clicar per recarregar"
 
 # Autovacuum

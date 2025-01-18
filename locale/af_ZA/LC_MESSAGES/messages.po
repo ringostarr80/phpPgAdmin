@@ -15,20 +15,17 @@ msgstr ""
 msgid "applang"
 msgstr "Afrikaans"
 
-msgid "applocale"
-msgstr "af-ZA"
-
 msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Welkom by phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmin Tuisblad"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQL Tuisblad"
 
 msgid "strpgsqlhome_url"
@@ -37,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQL Dokumentasie (lokaal)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Meld 'n fout aan"
 
 msgid "strviewfaq"
@@ -56,7 +53,7 @@ msgstr "Aantekening het misluk"
 msgid "strlogindisallowed"
 msgstr "Aantekening nie toegelaat nie"
 
-msgid "strserver"
+msgid "Server"
 msgstr "Bediener"
 
 msgid "strlogout"
@@ -197,7 +194,7 @@ msgstr "Wys"
 msgid "strempty"
 msgstr "Leeg"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Taal"
 
 msgid "strencoding"
@@ -293,7 +290,7 @@ msgstr "Soek"
 msgid "stroptions"
 msgstr "Opsies"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Verfris"
 
 msgid "strdownload"

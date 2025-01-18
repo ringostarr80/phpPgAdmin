@@ -15,20 +15,17 @@ msgstr ""
 msgid "applang"
 msgstr "Türkçe"
 
-msgid "applocale"
-msgstr "tr-TR"
-
 msgid "applangdir"
 msgstr "ltr"
 
 # Basic strings
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "phpPgAdmin'e hoşgeldiniz."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmin Ana Sayfası"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQL Ana Sayfası"
 
 msgid "strpgsqlhome_url"
@@ -37,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQL Belgeleri (yerel)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Hata Bildirin"
 
 msgid "strviewfaq"
@@ -56,13 +53,13 @@ msgstr "Giriş Başarısız"
 msgid "strlogindisallowed"
 msgstr "Güvenlik nedeniyle girişe izin verilmedi."
 
-msgid "strserver"
+msgid "Server"
 msgstr "Sunucu"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Sunucular"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Giriş"
 
 msgid "strhost"
@@ -206,7 +203,7 @@ msgstr "Göster"
 msgid "strempty"
 msgstr "Boşalt"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Dil"
 
 msgid "strencoding"
@@ -317,7 +314,7 @@ msgstr "Bul"
 msgid "stroptions"
 msgstr "Seçenekler"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Yenile"
 
 msgid "strdownload"
@@ -1755,11 +1752,11 @@ msgstr "%s'e giriş yap"
 msgid "strlogoutmsg"
 msgstr "%s'den çıkıldı."
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Yükleniyor..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Yükleme hatası"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Yeniden yüklemek için tıklayın."

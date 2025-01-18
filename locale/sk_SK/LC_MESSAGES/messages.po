@@ -15,20 +15,17 @@ msgstr ""
 msgid "applang"
 msgstr "Slovensky"
 
-msgid "applocale"
-msgstr "sk-SK"
-
 msgid "applangdir"
 msgstr "ltr"
 
 # Basic strings
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Vitaje vo phpPgAdmin-e."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmin Homepage"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQL Homepage"
 
 msgid "strpgsqlhome_url"
@@ -37,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQL Dokumentácia"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Oznámiť Chybu"
 
 msgid "strviewfaq"
@@ -56,13 +53,13 @@ msgstr "Prihlásenie zlyhalo"
 msgid "strlogindisallowed"
 msgstr "Prihlásenie je vypnuté kôli bezpečnosti"
 
-msgid "strserver"
+msgid "Server"
 msgstr "Server"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Servery"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Úvod"
 
 msgid "strhost"
@@ -206,7 +203,7 @@ msgstr "Ukázať"
 msgid "strempty"
 msgstr "Vyprázdniť"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Jazyk"
 
 msgid "strencoding"
@@ -317,7 +314,7 @@ msgstr "Nájsť"
 msgid "stroptions"
 msgstr "Nastavenia"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Obnoviť"
 
 msgid "strdownload"
@@ -1767,11 +1764,11 @@ msgstr "Prihlasujem do %s"
 msgid "strlogoutmsg"
 msgstr "Odhlásený z %s"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Spracuvávam..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Chyba spracovania"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Klikni pre obnovenie"

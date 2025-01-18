@@ -15,20 +15,17 @@ msgstr ""
 msgid "applang"
 msgstr "Română"
 
-msgid "applocale"
-msgstr "ro-RO"
-
 msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Bun venit în phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "Pagina phpPgAdmin"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "Pagina PostgreSQL"
 
 msgid "strpgsqlhome_url"
@@ -37,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "Documentaţie locală PostgreSQL"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Raportaţi o eroare"
 
 msgid "strviewfaq"
@@ -56,13 +53,13 @@ msgstr "Autentificare eşuată"
 msgid "strlogindisallowed"
 msgstr "Autentificare nepermisă din motive de securitate."
 
-msgid "strserver"
+msgid "Server"
 msgstr "Server"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Servere"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Introducere"
 
 msgid "strhost"
@@ -218,7 +215,7 @@ msgstr "Afişare"
 msgid "strempty"
 msgstr "Golire"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Limbă"
 
 msgid "strencoding"
@@ -323,7 +320,7 @@ msgstr "Căutare"
 msgid "stroptions"
 msgstr "Opţiuni"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Reîmprospătare"
 
 msgid "strdownload"
@@ -2007,13 +2004,13 @@ msgstr "Autentificare la %s"
 msgid "strlogoutmsg"
 msgstr "Ieşire din %s"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Încărcare..."
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Eroare la încărcare"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Faceţi clic pentru reîncărcare"
 
 # Autovacuum

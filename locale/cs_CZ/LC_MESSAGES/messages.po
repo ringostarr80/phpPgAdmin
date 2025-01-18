@@ -15,20 +15,17 @@ msgstr ""
 msgid "applang"
 msgstr "Česky"
 
-msgid "applocale"
-msgstr "cs-CZ"
-
 msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Vítejte v phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "Domovská stránka phpPgAdmin"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "Domovská stránka PostgreSQL"
 
 msgid "strpgsqlhome_url"
@@ -37,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "Lokální dokumentace k PostgreSQL"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Nahlásit chybu"
 
 msgid "strviewfaq"
@@ -56,10 +53,10 @@ msgstr "Přihlášení se nezdařilo"
 msgid "strlogindisallowed"
 msgstr "Z bezpečnostních důvodů není přihlášení povoleno."
 
-msgid "strserver"
+msgid "Server"
 msgstr "Server"
 
-msgid "strservers"
+msgid "Servers"
 msgstr "Servery"
 
 msgid "strgroupservers"
@@ -68,7 +65,7 @@ msgstr "Servery ve skupině „%s“"
 msgid "strallservers"
 msgstr "Všechny servery"
 
-msgid "strintroduction"
+msgid "Introduction"
 msgstr "Úvodní stránka"
 
 msgid "strhost"
@@ -230,7 +227,7 @@ msgstr "Zobrazit"
 msgid "strempty"
 msgstr "Vyprázdnit"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Jazyk"
 
 msgid "strencoding"
@@ -329,7 +326,7 @@ msgstr "Hledat"
 msgid "stroptions"
 msgstr "Volby"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Občerstvit"
 
 msgid "strdownload"
@@ -416,10 +413,10 @@ msgstr "Spustit"
 msgid "strstop"
 msgstr "Zastavit"
 
-msgid "strgotoppage"
+msgid "back to top"
 msgstr "zpět nahoru"
 
-msgid "strtheme"
+msgid "Theme"
 msgstr "Motiv"
 
 msgid "strcluster"
@@ -2219,13 +2216,13 @@ msgstr "Přihlášení k %s"
 msgid "strlogoutmsg"
 msgstr "Odhlášení od %s"
 
-msgid "strloading"
+msgid "Loading..."
 msgstr "Načítá se…"
 
-msgid "strerrorloading"
+msgid "Error Loading"
 msgstr "Chyba při načítání"
 
-msgid "strclicktoreload"
+msgid "Click to reload"
 msgstr "Klikněte pro opětovné načtení"
 
 # Autovacuum

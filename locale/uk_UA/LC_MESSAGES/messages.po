@@ -15,20 +15,17 @@ msgstr ""
 msgid "applang"
 msgstr "Українська"
 
-msgid "applocale"
-msgstr "uk-UA"
-
 msgid "applangdir"
 msgstr "ltr"
 
 # Welcome
-msgid "strintro"
+msgid "Welcome to phpPgAdmin."
 msgstr "Вітаємо вас в phpPgAdmin."
 
-msgid "strppahome"
+msgid "phpPgAdmin Homepage"
 msgstr "phpPgAdmin - домашня сторінка"
 
-msgid "strpgsqlhome"
+msgid "PostgreSQL Homepage"
 msgstr "PostgreSQL - домашня сторінка"
 
 msgid "strpgsqlhome_url"
@@ -37,7 +34,7 @@ msgstr "http://www.postgresql.org/"
 msgid "strlocaldocs"
 msgstr "PostgreSQL - документація (локальна)"
 
-msgid "strreportbug"
+msgid "Report a Bug"
 msgstr "Звіт про помилки"
 
 msgid "strviewfaq"
@@ -56,7 +53,7 @@ msgstr "Неправильний пароль"
 msgid "strlogindisallowed"
 msgstr "Логін недопустимий із міркувань безпеки"
 
-msgid "strserver"
+msgid "Server"
 msgstr "Сервер"
 
 msgid "strlogout"
@@ -197,7 +194,7 @@ msgstr "Показати"
 msgid "strempty"
 msgstr "Очистити"
 
-msgid "strlanguage"
+msgid "Language"
 msgstr "Мова"
 
 msgid "strencoding"
@@ -293,7 +290,7 @@ msgstr "Знайти"
 msgid "stroptions"
 msgstr "Опції"
 
-msgid "strrefresh"
+msgid "Refresh"
 msgstr "Оновити"
 
 msgid "strdownload"

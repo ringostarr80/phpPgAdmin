@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{Config, Language, Themes, Website};
+use PhpPgAdmin\{Config, Language, RequestParameter, Themes, Website};
 
 class Intro extends Website
 {
@@ -117,6 +117,7 @@ class Intro extends Website
         foreach ($languageIdsWithLocales as $languageId => $locale) {
             putenv("LC_ALL={$locale}.UTF-8");
             setlocale(LC_ALL, ["{$locale}.UTF-8", $locale, substr($locale, 0, 2)]);
+            textdomain('messages'); // clear textdomain cache
             $option = $dom->createElement('option', _('applang'));
             $option->setAttribute('value', $languageId);
             if ($locale === $currentLocale) {
@@ -127,6 +128,7 @@ class Intro extends Website
         // Reset locale
         putenv("LC_ALL={$currentLocale}.UTF-8");
         setlocale(LC_ALL, ["{$currentLocale}.UTF-8", $currentLocale, substr($currentLocale, 0, 2)]);
+        textdomain('messages');
 
         $td->appendChild($select);
         $tr->appendChild($td);
@@ -167,7 +169,7 @@ class Intro extends Website
         $ul->appendChild($li);
         $li = $dom->createElement('li');
         $a = $dom->createElement('a', _('PostgreSQL Homepage'));
-        $a->setAttribute('href', 'http://www.postgresql.org/');
+        $a->setAttribute('href', 'https://www.postgresql.org/');
         $li->appendChild($a);
         $ul->appendChild($li);
         $li = $dom->createElement('li');
@@ -181,6 +183,14 @@ class Intro extends Website
         $a->setAttribute('href', '#');
         $a->setAttribute('class', 'bottom_link');
         $body->appendChild($a);
+
+        $languageParam = RequestParameter::getString('language');
+        if (!is_null($languageParam)) {
+            $scriptElement = $dom->createElement('script');
+            $scriptElement->setAttribute('type', 'text/javascript');
+            $scriptElement->appendChild($dom->createCDATASection('parent.frames.browser.location.reload();'));
+            $body->appendChild($scriptElement);
+        }
 
         return $body;
     }

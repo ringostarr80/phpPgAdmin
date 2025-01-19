@@ -59,7 +59,7 @@ msgstr "Eigenaar"
 msgid "straction"
 msgstr "Actie"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "Acties"
 
 msgid "strname"
@@ -209,7 +209,7 @@ msgstr "Gebruiker"
 msgid "strgroup"
 msgstr "Groep"
 
-msgid "strusername"
+msgid "Username"
 msgstr "Gebruikersnaam"
 
 msgid "strpassword"

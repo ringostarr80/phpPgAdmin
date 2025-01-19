@@ -68,10 +68,10 @@ msgstr "Minden szolgáló"
 msgid "Introduction"
 msgstr "Bevezető"
 
-msgid "strhost"
+msgid "Host"
 msgstr "Gazda"
 
-msgid "strport"
+msgid "Port"
 msgstr "Kapu"
 
 msgid "strlogout"
@@ -83,7 +83,7 @@ msgstr "Tulajdonos"
 msgid "straction"
 msgstr "Művelet"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "Műveletek"
 
 msgid "strname"
@@ -774,7 +774,7 @@ msgstr "Használó"
 msgid "strusers"
 msgstr "Használók"
 
-msgid "strusername"
+msgid "Username"
 msgstr "Használó neve"
 
 msgid "strpassword"

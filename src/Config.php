@@ -9,6 +9,7 @@ use Symfony\Component\Yaml\Parser as YamlParser;
 /**
  * @phpstan-type ConfigData=array{
  *  'default_lang'?: string,
+ *  'extra_session_security'?: bool,
  *  'left_width'?: int,
  *  'servers'?: array{
  *      'desc': string,
@@ -40,6 +41,12 @@ class Config
      * @var array{'locale'?: string, 'theme'?: string}
      */
     private static array $data = [];
+
+    public static function extraSessionSecurity(): bool
+    {
+        $conf = self::tryGetConfigFileData();
+        return ($conf['extra_session_security'] ?? true) === true;
+    }
 
     /**
      * @return array<string>
@@ -341,6 +348,9 @@ class Config
                 if (is_array($yaml)) {
                     if (isset($yaml['default_lang']) && is_string($yaml['default_lang'])) {
                         self::$conf['default_lang'] = $yaml['default_lang'];
+                    }
+                    if (isset($yaml['extra_session_security']) && is_bool($yaml['extra_session_security'])) {
+                        self::$conf['extra_session_security'] = $yaml['extra_session_security'];
                     }
                     if (isset($yaml['left_width']) && is_int($yaml['left_width'])) {
                         self::$conf['left_width'] = $yaml['left_width'];

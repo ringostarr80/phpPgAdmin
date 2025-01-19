@@ -62,10 +62,10 @@ msgstr "Servere"
 msgid "Introduction"
 msgstr "Introducere"
 
-msgid "strhost"
+msgid "Host"
 msgstr "Gazdă"
 
-msgid "strport"
+msgid "Port"
 msgstr "Port"
 
 msgid "strlogout"
@@ -77,7 +77,7 @@ msgstr "Proprietar"
 msgid "straction"
 msgstr "Acţiune"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "Acţiuni"
 
 msgid "strname"
@@ -631,7 +631,7 @@ msgstr "Utilizator"
 msgid "strusers"
 msgstr "Utilizatori"
 
-msgid "strusername"
+msgid "Username"
 msgstr "Nume utilizator"
 
 msgid "strpassword"

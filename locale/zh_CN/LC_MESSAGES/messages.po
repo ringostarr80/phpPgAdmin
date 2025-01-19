@@ -68,10 +68,10 @@ msgstr "所有服务器"
 msgid "Introduction"
 msgstr "介绍"
 
-msgid "strhost"
+msgid "Host"
 msgstr "主机"
 
-msgid "strport"
+msgid "Port"
 msgstr "端口"
 
 msgid "strlogout"
@@ -83,7 +83,7 @@ msgstr "所属人"
 msgid "straction"
 msgstr "操作"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "操作"
 
 msgid "strname"
@@ -774,7 +774,7 @@ msgstr "用户"
 msgid "strusers"
 msgstr "用户"
 
-msgid "strusername"
+msgid "Username"
 msgstr "用名"
 
 msgid "strpassword"

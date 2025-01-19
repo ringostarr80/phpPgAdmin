@@ -34,7 +34,11 @@
         "dev:analyze": [
             "@dev:analyze:phpstan"
         ],
-        "dev:analyze:phpstan": "phpstan analyse --configuration=phpstan.neon --memory-limit=512M",
+        "dev:analyze:phpstan": "@dev:analyze:phpstan-8.1",
+        "dev:analyze:phpstan-8.1": "phpstan analyse --configuration=phpstan-8.1.neon --memory-limit=512M",
+        "dev:analyze:phpstan-8.2": "phpstan analyse --configuration=phpstan-8.2.neon --memory-limit=512M",
+        "dev:analyze:phpstan-8.3": "phpstan analyse --configuration=phpstan-8.3.neon --memory-limit=512M",
+        "dev:analyze:phpstan-8.4": "phpstan analyse --configuration=phpstan-8.4.neon --memory-limit=512M",
         "dev:lint": [
             "@dev:lint:php",
             "@dev:lint:phpcs"

@@ -69,11 +69,11 @@ msgid "Introduction"
 msgstr "Įžanga"
 
 # Pradžia
-msgid "strhost"
+msgid "Host"
 msgstr "Host"
 
 # Pagrindinis kompiuteris
-msgid "strport"
+msgid "Port"
 msgstr "Prievadas"
 
 msgid "strlogout"
@@ -86,7 +86,7 @@ msgstr "Valdytojas"
 msgid "straction"
 msgstr "Veiksmas"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "Veiksmai"
 
 msgid "strname"
@@ -792,7 +792,7 @@ msgstr "Naudotojas"
 msgid "strusers"
 msgstr "Naudotojai"
 
-msgid "strusername"
+msgid "Username"
 msgstr "Naudotojo vardas"
 
 msgid "strpassword"

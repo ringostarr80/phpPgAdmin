@@ -1,0 +1,9 @@
+parameters:
+    phpVersion: 80300
+    level: max
+    paths:
+        - src/
+        - index.php
+        - browser.php
+    excludePaths:
+        - vendor/

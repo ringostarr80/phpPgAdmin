@@ -6,7 +6,7 @@ namespace PhpPgAdmin;
 
 class RequestParameter
 {
-    public static function getString(string $name, string $default = null): ?string
+    public static function getString(string $name, ?string $default = null): ?string
     {
         $value = filter_input(INPUT_GET, $name, FILTER_DEFAULT);
         if (!is_string($value)) {

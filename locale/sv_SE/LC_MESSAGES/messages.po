@@ -65,7 +65,7 @@ msgstr "Ägare"
 msgid "straction"
 msgstr "Åtgärd"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "Åtgärder"
 
 msgid "strname"
@@ -506,7 +506,7 @@ msgstr "Användare"
 msgid "strusers"
 msgstr "Användare"
 
-msgid "strusername"
+msgid "Username"
 msgstr "Användarnamn"
 
 msgid "strpassword"

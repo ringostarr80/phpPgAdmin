@@ -65,7 +65,7 @@ msgstr "مالك Owner"
 msgid "straction"
 msgstr "إجراء Action"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "إجراءات Actions"
 
 msgid "strname"
@@ -548,7 +548,7 @@ msgstr "المستخدم"
 msgid "strusers"
 msgstr "المستخدمين"
 
-msgid "strusername"
+msgid "Username"
 msgstr "إسم المستخدم"
 
 msgid "strpassword"

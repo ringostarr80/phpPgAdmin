@@ -65,7 +65,7 @@ msgstr "ќкмЭлЩЧо"
 msgid "straction"
 msgstr "?ЪЬФмЬ"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "?ЪЬФмЬ??Ф"
 
 msgid "strname"
@@ -494,7 +494,7 @@ msgstr "№ЯЬикЯзСдХЬи"
 msgid "strusers"
 msgstr "№ЯЬикЯзСдХЬЩ"
 
-msgid "strusername"
+msgid "Username"
 msgstr "щЭб аЯЬикЯзСдХЬб"
 
 msgid "strpassword"

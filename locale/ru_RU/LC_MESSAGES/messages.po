@@ -68,10 +68,10 @@ msgstr "Все серверы"
 msgid "Introduction"
 msgstr "Введение"
 
-msgid "strhost"
+msgid "Host"
 msgstr "Хост"
 
-msgid "strport"
+msgid "Port"
 msgstr "Порт"
 
 msgid "strlogout"
@@ -83,7 +83,7 @@ msgstr "Владелец"
 msgid "straction"
 msgstr "Действие"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "Действия"
 
 msgid "strname"
@@ -771,7 +771,7 @@ msgstr "Пользователь"
 msgid "strusers"
 msgstr "Пользователи"
 
-msgid "strusername"
+msgid "Username"
 msgstr "Имя пользователя"
 
 msgid "strpassword"

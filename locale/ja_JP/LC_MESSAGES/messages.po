@@ -62,10 +62,10 @@ msgstr "サーバー"
 msgid "Introduction"
 msgstr "導入"
 
-msgid "strhost"
+msgid "Host"
 msgstr "ホスト"
 
-msgid "strport"
+msgid "Port"
 msgstr "ポート"
 
 msgid "strlogout"
@@ -77,7 +77,7 @@ msgstr "所有者"
 msgid "straction"
 msgstr "アクション"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "操作"
 
 msgid "strname"
@@ -692,7 +692,7 @@ msgstr "ユーザー"
 msgid "strusers"
 msgstr "ユーザー"
 
-msgid "strusername"
+msgid "Username"
 msgstr "ユーザー名"
 
 msgid "strpassword"

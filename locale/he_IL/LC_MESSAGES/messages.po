@@ -65,7 +65,7 @@ msgstr "בעל"
 msgid "straction"
 msgstr "פעולה"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "פעולות"
 
 msgid "strname"
@@ -551,7 +551,7 @@ msgstr "משתמש"
 msgid "strusers"
 msgstr "משתמשים"
 
-msgid "strusername"
+msgid "Username"
 msgstr "שם משתמש"
 
 msgid "strpassword"

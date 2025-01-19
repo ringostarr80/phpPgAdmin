@@ -1,3 +1,5 @@
+[![CodeQL](https://github.com/ringostarr80/phpPgAdmin/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/ringostarr80/phpPgAdmin/actions/workflows/github-code-scanning/codeql)
+
 # phpPgAdmin
 
 ## About this project
@@ -51,7 +53,7 @@ I appreciate any form of help or feedback!
 | rules.php          | ❌     | yyyy-mm-dd |
 | schemas.php        | ❌     | yyyy-mm-dd |
 | sequences.php      | ❌     | yyyy-mm-dd |
-| servers.php        | ❌     | yyyy-mm-dd |
+| servers.php        | ✅     | 2025-01-19 |
 | sql.php            | ❌     | yyyy-mm-dd |
 | sqledit.php        | ❌     | yyyy-mm-dd |
 | tables.php         | ❌     | yyyy-mm-dd |

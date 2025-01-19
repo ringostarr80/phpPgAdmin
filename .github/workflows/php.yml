@@ -50,4 +50,4 @@ jobs:
         run: composer run-script dev:lint:phpcs
 
       - name: Run PHP Static Analysis
-        run: composer run-script dev:analyze:phpstan
+        run: composer run-script dev:analyze:phpstan-${{ matrix.version }}

@@ -68,10 +68,10 @@ msgstr "Todos os servidores"
 msgid "Introduction"
 msgstr "Introdución"
 
-msgid "strhost"
+msgid "Host"
 msgstr "Enderezo IP"
 
-msgid "strport"
+msgid "Port"
 msgstr "Porto"
 
 msgid "strlogout"
@@ -83,7 +83,7 @@ msgstr "Propietario"
 msgid "straction"
 msgstr "Acción"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "Accións"
 
 msgid "strname"
@@ -774,7 +774,7 @@ msgstr "Usuario"
 msgid "strusers"
 msgstr "Usuarios"
 
-msgid "strusername"
+msgid "Username"
 msgstr "Nome"
 
 msgid "strpassword"

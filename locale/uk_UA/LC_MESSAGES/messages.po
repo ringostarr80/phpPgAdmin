@@ -65,7 +65,7 @@ msgstr "Користувач"
 msgid "straction"
 msgstr "Дія"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "Дії"
 
 msgid "strname"
@@ -548,7 +548,7 @@ msgstr "Користувач"
 msgid "strusers"
 msgstr "Користувачі"
 
-msgid "strusername"
+msgid "Username"
 msgstr "Ім\"я користувача"
 
 msgid "strpassword"

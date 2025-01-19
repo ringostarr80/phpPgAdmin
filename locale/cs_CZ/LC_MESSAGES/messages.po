@@ -68,10 +68,10 @@ msgstr "Všechny servery"
 msgid "Introduction"
 msgstr "Úvodní stránka"
 
-msgid "strhost"
+msgid "Host"
 msgstr "Hostitel"
 
-msgid "strport"
+msgid "Port"
 msgstr "Port"
 
 msgid "strlogout"
@@ -83,7 +83,7 @@ msgstr "Vlastník"
 msgid "straction"
 msgstr "Akce"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "Akce"
 
 msgid "strname"
@@ -774,7 +774,7 @@ msgstr "Uživatel"
 msgid "strusers"
 msgstr "Uživatelé"
 
-msgid "strusername"
+msgid "Username"
 msgstr "Jméno uživatele"
 
 msgid "strpassword"

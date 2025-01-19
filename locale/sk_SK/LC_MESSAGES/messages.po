@@ -62,10 +62,10 @@ msgstr "Servery"
 msgid "Introduction"
 msgstr "Úvod"
 
-msgid "strhost"
+msgid "Host"
 msgstr "Hostiteľ"
 
-msgid "strport"
+msgid "Port"
 msgstr "Port"
 
 msgid "strlogout"
@@ -77,7 +77,7 @@ msgstr "Vlastník"
 msgid "straction"
 msgstr "Akcia"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "Akcie"
 
 msgid "strname"
@@ -602,7 +602,7 @@ msgstr "Používateľ"
 msgid "strusers"
 msgstr "Používatelia"
 
-msgid "strusername"
+msgid "Username"
 msgstr "Meno používateľa"
 
 msgid "strpassword"

@@ -25,6 +25,8 @@ abstract class Website
             set_exception_handler([Website\Exception::class, 'handle']);
         }
 
+        Session::start();
+
         $locale = Config::locale();
         putenv("LC_ALL={$locale}.UTF-8");
         setlocale(LC_ALL, ["{$locale}.UTF-8", $locale, substr($locale, 0, 2)]);

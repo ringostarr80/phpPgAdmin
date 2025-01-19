@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{Config, Language, RequestParameter, Themes, Website};
+use PhpPgAdmin\{Config, Language, RequestParameter, Themes, Website, WebsiteComponents};
 
 class Intro extends Website
 {
@@ -12,88 +12,9 @@ class Intro extends Website
     {
         $body = parent::buildHtmlBody($dom);
 
-        $divTopbar = $dom->createElement('div');
-        $divTopbar->setAttribute('class', 'topbar');
-        $tableTopbar = $dom->createElement('table');
-        $tableTopbar->setAttribute('style', 'width: 100%');
-        $trTopbar = $dom->createElement('tr');
-        $tdTopbar = $dom->createElement('td');
-        $spanAppname = $dom->createElement('span', self::APP_NAME);
-        $spanAppname->setAttribute('class', 'appname');
-        $spanVersion = $dom->createElement('span', self::APP_VERSION);
-        $spanVersion->setAttribute('class', 'version');
-        $tdTopbar->appendChild($spanAppname);
-        $tdTopbar->appendChild($dom->createTextNode(' '));
-        $tdTopbar->appendChild($spanVersion);
-        $trTopbar->appendChild($tdTopbar);
-        $tableTopbar->appendChild($trTopbar);
-        $divTopbar->appendChild($tableTopbar);
-        $body->appendChild($divTopbar);
-
-        $divTrail = $dom->createElement('div');
-        $divTrail->setAttribute('class', 'trail');
-        $tableTrail = $dom->createElement('table');
-        $trTrail = $dom->createElement('tr');
-        $tdTrail = $dom->createElement('td');
-        $tdTrail->setAttribute('class', 'crumb');
-        $aTrail = $dom->createElement('a');
-        $aTrail->setAttribute('href', 'redirect.php?subject=root');
-        $spanIcon = $dom->createElement('span');
-        $spanIcon->setAttribute('class', 'icon');
-        $imgIcon = $dom->createElement('img');
-        $imgIcon->setAttribute('src', Config::getIcon('Introduction'));
-        $imgIcon->setAttribute('alt', 'Database Root');
-        $spanIcon->appendChild($imgIcon);
-        $aTrail->appendChild($spanIcon);
-        $spanLabel = $dom->createElement('span', self::APP_NAME);
-        $spanLabel->setAttribute('class', 'label');
-        $aTrail->appendChild($spanLabel);
-        $aTrail->appendChild($dom->createTextNode(':'));
-        $tdTrail->appendChild($aTrail);
-        $trTrail->appendChild($tdTrail);
-        $tableTrail->appendChild($trTrail);
-        $divTrail->appendChild($tableTrail);
-        $body->appendChild($divTrail);
-
-        $tableTabs = $dom->createElement('table');
-        $tableTabs->setAttribute('class', 'tabs');
-        $trTabs = $dom->createElement('tr');
-        $tdTab = $dom->createElement('td');
-        $tdTab->setAttribute('style', 'width: 50%');
-        $tdTab->setAttribute('class', 'tab active');
-        $aTab = $dom->createElement('a');
-        $aTab->setAttribute('href', 'intro.php');
-        $spanIcon = $dom->createElement('span');
-        $spanIcon->setAttribute('class', 'icon');
-        $imgIcon = $dom->createElement('img');
-        $imgIcon->setAttribute('src', Config::getIcon('Introduction'));
-        $imgIcon->setAttribute('alt', _('Introduction'));
-        $spanIcon->appendChild($imgIcon);
-        $aTab->appendChild($spanIcon);
-        $spanLabel = $dom->createElement('span', _('Introduction'));
-        $spanLabel->setAttribute('class', 'label');
-        $aTab->appendChild($spanLabel);
-        $tdTab->appendChild($aTab);
-        $trTabs->appendChild($tdTab);
-        $tdTab = $dom->createElement('td');
-        $tdTab->setAttribute('style', 'width: 50%');
-        $tdTab->setAttribute('class', 'tab');
-        $aTab = $dom->createElement('a');
-        $aTab->setAttribute('href', 'servers.php');
-        $spanIcon = $dom->createElement('span');
-        $spanIcon->setAttribute('class', 'icon');
-        $imgIcon = $dom->createElement('img');
-        $imgIcon->setAttribute('src', Config::getIcon('Servers'));
-        $imgIcon->setAttribute('alt', _('Server'));
-        $spanIcon->appendChild($imgIcon);
-        $aTab->appendChild($spanIcon);
-        $spanLabel = $dom->createElement('span', _('Server'));
-        $spanLabel->setAttribute('class', 'label');
-        $aTab->appendChild($spanLabel);
-        $tdTab->appendChild($aTab);
-        $trTabs->appendChild($tdTab);
-        $tableTabs->appendChild($trTabs);
-        $body->appendChild($tableTabs);
+        $body->appendChild(WebsiteComponents::buildTopBar($dom));
+        $body->appendChild(WebsiteComponents::buildTrail($dom));
+        $body->appendChild(WebsiteComponents::buildRootTabs($dom, 'intro'));
 
         $h1 = $dom->createElement('h1', self::APP_NAME . ' ' . self::APP_VERSION . ' (PHP ' . PHP_VERSION . ')');
         $body->appendChild($h1);
@@ -179,10 +100,7 @@ class Intro extends Website
         $ul->appendChild($li);
         $body->appendChild($ul);
 
-        $a = $dom->createElement('a', _('back to top'));
-        $a->setAttribute('href', '#');
-        $a->setAttribute('class', 'bottom_link');
-        $body->appendChild($a);
+        $body->appendChild(WebsiteComponents::buildBackToTopLink($dom));
 
         $languageParam = RequestParameter::getString('language');
         if (!is_null($languageParam)) {

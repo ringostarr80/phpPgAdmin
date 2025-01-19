@@ -65,7 +65,7 @@ msgstr "Ejer"
 msgid "straction"
 msgstr "Handling"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "Handlinger"
 
 msgid "strname"
@@ -539,7 +539,7 @@ msgstr "Bruger"
 msgid "strusers"
 msgstr "Brugere"
 
-msgid "strusername"
+msgid "Username"
 msgstr "Brugernavn"
 
 msgid "strpassword"

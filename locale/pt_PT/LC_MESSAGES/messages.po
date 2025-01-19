@@ -58,7 +58,7 @@ msgstr "Propietário"
 msgid "straction"
 msgstr "Acção"
 
-msgid "stractions"
+msgid "Actions"
 msgstr "Acções"
 
 msgid "strname"
@@ -430,7 +430,7 @@ msgstr "Utilizador"
 msgid "strusers"
 msgstr "Utilizadores"
 
-msgid "strusername"
+msgid "Username"
 msgstr "Nome do utilizador"
 
 msgid "strpassword"

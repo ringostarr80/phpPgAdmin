@@ -10,6 +10,11 @@ To achieve this, I plan to gradually rewrite the codebase, following Martin Fowl
 
 I appreciate any form of help or feedback!
 
+## Project Progress
+
+For an overview of the software quality over time and the evolving metrics, check out the 
+[Progress Table](./PROGRESS.md).
+
 ## Refactoring Status
 
 ### .php files in the root directory

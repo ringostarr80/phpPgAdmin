@@ -68,7 +68,7 @@ msgstr "主機"
 msgid "Port"
 msgstr "埠號"
 
-msgid "strlogout"
+msgid "Logout"
 msgstr "登出"
 
 msgid "strowner"

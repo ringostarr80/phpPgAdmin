@@ -68,7 +68,7 @@ msgstr "Gazdă"
 msgid "Port"
 msgstr "Port"
 
-msgid "strlogout"
+msgid "Logout"
 msgstr "Ieşire"
 
 msgid "strowner"

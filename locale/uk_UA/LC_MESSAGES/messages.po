@@ -56,7 +56,7 @@ msgstr "Логін недопустимий із міркувань безпек
 msgid "Server"
 msgstr "Сервер"
 
-msgid "strlogout"
+msgid "Logout"
 msgstr "Перереєстрація"
 
 msgid "strowner"

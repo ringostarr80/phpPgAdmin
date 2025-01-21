@@ -68,7 +68,7 @@ msgstr "Sunucu"
 msgid "Port"
 msgstr "Port"
 
-msgid "strlogout"
+msgid "Logout"
 msgstr "Çıkış"
 
 msgid "strowner"

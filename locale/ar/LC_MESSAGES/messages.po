@@ -56,7 +56,7 @@ msgstr "لا يسمح بالدخول بهذه الطريقة لأسباب أمن
 msgid "Server"
 msgstr "الخادم"
 
-msgid "strlogout"
+msgid "Logout"
 msgstr "خروج"
 
 msgid "strowner"

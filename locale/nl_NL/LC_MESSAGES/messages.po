@@ -470,7 +470,7 @@ msgstr "Inloggen mislukt"
 msgid "Server"
 msgstr "Server"
 
-msgid "strlogout"
+msgid "Logout"
 msgstr "Log uit"
 
 msgid "strcreated"

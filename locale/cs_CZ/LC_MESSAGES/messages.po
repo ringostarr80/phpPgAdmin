@@ -74,7 +74,7 @@ msgstr "Hostitel"
 msgid "Port"
 msgstr "Port"
 
-msgid "strlogout"
+msgid "Logout"
 msgstr "Odhlásit"
 
 msgid "strowner"

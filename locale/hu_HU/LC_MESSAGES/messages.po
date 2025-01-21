@@ -74,7 +74,7 @@ msgstr "Gazda"
 msgid "Port"
 msgstr "Kapu"
 
-msgid "strlogout"
+msgid "Logout"
 msgstr "Kilépés"
 
 msgid "strowner"

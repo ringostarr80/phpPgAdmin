@@ -56,7 +56,7 @@ msgstr "Login forbudt"
 msgid "Server"
 msgstr "Server"
 
-msgid "strlogout"
+msgid "Logout"
 msgstr "Log ud"
 
 msgid "strowner"

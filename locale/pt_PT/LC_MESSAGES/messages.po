@@ -49,7 +49,7 @@ msgstr "Falha na autenticação"
 msgid "Server"
 msgstr "Servidor"
 
-msgid "strlogout"
+msgid "Logout"
 msgstr "Sair"
 
 msgid "strowner"

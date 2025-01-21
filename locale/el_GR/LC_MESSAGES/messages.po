@@ -68,7 +68,7 @@ msgstr "Κόμβος"
 msgid "Port"
 msgstr "Θύρα"
 
-msgid "strlogout"
+msgid "Logout"
 msgstr "Εξοδος"
 
 msgid "strowner"

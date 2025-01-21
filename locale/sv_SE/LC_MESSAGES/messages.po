@@ -56,7 +56,7 @@ msgstr "Inloggningen ej tillåten"
 msgid "Server"
 msgstr "Server"
 
-msgid "strlogout"
+msgid "Logout"
 msgstr "Logga ut"
 
 msgid "strowner"

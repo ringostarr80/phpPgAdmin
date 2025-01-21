@@ -56,7 +56,7 @@ msgstr "Aantekening nie toegelaat nie"
 msgid "Server"
 msgstr "Bediener"
 
-msgid "strlogout"
+msgid "Logout"
 msgstr "Teken af"
 
 msgid "strowner"

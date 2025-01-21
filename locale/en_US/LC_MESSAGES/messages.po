@@ -83,7 +83,8 @@ msgstr "Host"
 msgid "Port"
 msgstr "Port"
 
-msgid "strlogout"
+# original: "strlogout"
+msgid "Logout"
 msgstr "Logout"
 
 msgid "strowner"

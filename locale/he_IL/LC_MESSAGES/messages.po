@@ -56,7 +56,7 @@ msgstr "התחברות מבוטלת בשל בעיות אבטחה."
 msgid "Server"
 msgstr "שרת"
 
-msgid "strlogout"
+msgid "Logout"
 msgstr "התנתקות"
 
 msgid "strowner"

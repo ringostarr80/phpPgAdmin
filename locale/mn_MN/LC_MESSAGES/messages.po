@@ -56,7 +56,7 @@ msgstr "шЯЬТЯЧФЯШ ТЯЬЯЭжЧ?Ъ"
 msgid "Server"
 msgstr "є?з ЫЯЭаиРдХв"
 
-msgid "strlogout"
+msgid "Logout"
 msgstr "чСвСШ"
 
 msgid "strowner"

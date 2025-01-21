@@ -76,7 +76,7 @@ msgstr "Host"
 msgid "Port"
 msgstr "Prievadas"
 
-msgid "strlogout"
+msgid "Logout"
 msgstr "Atsijungti"
 
 msgid "strowner"

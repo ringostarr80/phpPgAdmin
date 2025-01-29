@@ -40,10 +40,10 @@ msgstr "Visualizar FAQ"
 msgid "strviewfaq_url"
 msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
 
-msgid "strlogin"
+msgid "Login"
 msgstr "Autenticação"
 
-msgid "strloginfailed"
+msgid "Login failed"
 msgstr "Falha na autenticação"
 
 msgid "Server"
@@ -433,7 +433,7 @@ msgstr "Utilizadores"
 msgid "Username"
 msgstr "Nome do utilizador"
 
-msgid "strpassword"
+msgid "Password"
 msgstr "Palavra-chave"
 
 msgid "strsuper"

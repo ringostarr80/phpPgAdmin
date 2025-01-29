@@ -1,13 +1,13 @@
 <?php
 
-/*
+declare(strict_types=1);
+
 use PhpPgAdmin\Website\Redirect;
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'autoload.php';
 
 $redirect = new Redirect();
-echo $redirect->buildHtmlString();
-//*/
+$redirect->tryRedirect();
 
 $subject = isset($_REQUEST['subject']) ? $_REQUEST['subject'] : 'root';
 

@@ -44,10 +44,10 @@ msgid "strviewfaq_url"
 msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
 
 # Basic strings
-msgid "strlogin"
+msgid "Login"
 msgstr "התחברות"
 
-msgid "strloginfailed"
+msgid "Login failed"
 msgstr "התחברות נכשלה"
 
 msgid "strlogindisallowed"
@@ -554,7 +554,7 @@ msgstr "משתמשים"
 msgid "Username"
 msgstr "שם משתמש"
 
-msgid "strpassword"
+msgid "Password"
 msgstr "סיסמה"
 
 msgid "strsuper"

@@ -44,10 +44,10 @@ msgid "strviewfaq_url"
 msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
 
 # Basic strings
-msgid "strlogin"
+msgid "Login"
 msgstr "Bejelentkezés"
 
-msgid "strloginfailed"
+msgid "Login failed"
 msgstr "Nem sikerült bejelentkezni"
 
 msgid "strlogindisallowed"
@@ -777,7 +777,7 @@ msgstr "Használók"
 msgid "Username"
 msgstr "Használó neve"
 
-msgid "strpassword"
+msgid "Password"
 msgstr "Jelszó"
 
 msgid "strsuper"
@@ -2210,7 +2210,7 @@ msgstr "Súgólapot választ"
 msgid "strinvalidhelppage"
 msgstr "Érvénytelen súgólap."
 
-msgid "strlogintitle"
+msgid "Login to %s"
 msgstr "Belépett %s helyre"
 
 msgid "strlogoutmsg"

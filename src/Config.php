@@ -272,6 +272,21 @@ class Config
     /**
      * @param string $serverId Server ID in the format host:port:sslmode
      */
+    public static function getServerById(string $serverId): ?array
+    {
+        $servers = self::getServers();
+        foreach ($servers as $info) {
+            if ($serverId === $info['host'] . ':' . $info['port'] . ':' . $info['sslmode']) {
+                return $info;
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * @param string $serverId Server ID in the format host:port:sslmode
+     */
     public static function serverExists(string $serverId): bool
     {
         $servers = self::getServers();

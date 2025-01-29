@@ -7,7 +7,6 @@
  */
 
 include_once('./libraries/errorhandler.inc.php');
-include_once('./libraries/adodb/adodb.inc.php');
 
 class ADODB_base
 {

@@ -6,6 +6,7 @@
  * $Id: Connection.php,v 1.15 2008/02/18 21:42:47 ioguix Exp $
  */
 
+include_once(dirname(__DIR__, 2) . '/vendor/adodb/adodb-php/adodb.inc.php');
 include_once('./classes/database/ADODB_base.php');
 
 class Connection
@@ -42,7 +43,9 @@ class Connection
             $pghost .= ' requiressl=1';
         }
 
-        $this->conn->connect($pghost, $user, $password, $database);
+        if ($this->conn->connect($pghost, $user, $password, $database) === false) {
+            throw new \Exception('Connection failed');
+        }
     }
 
     /**

@@ -46,8 +46,8 @@ function Error_Handler($dbms, $fn, $errno, $errmsg, $p1 = false, $p2 = false)
             unset($_SESSION['sharedPassword']);
             unset($_SESSION['webdbLogin'][$_REQUEST['server']]);
             $msg = $lang['strloginfailed'];
-            include('./login.php');
-            exit;
+            //include('./login.php');
+            //exit;
         break;
         default:
             $s = "$dbms error: [$errno: $errmsg] in $fn($p1, $p2)\n";

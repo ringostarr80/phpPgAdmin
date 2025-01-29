@@ -17,7 +17,7 @@ msgstr "Nederlands"
 msgid "applangdir"
 msgstr "ltr"
 
-msgid "strlogin"
+msgid "Login"
 msgstr "Login"
 
 msgid "strnotables"
@@ -212,7 +212,7 @@ msgstr "Groep"
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-msgid "strpassword"
+msgid "Password"
 msgstr "wachtwoord"
 
 msgid "strsuper"
@@ -464,7 +464,7 @@ msgstr "Wachtwoord is te kort."
 msgid "strpasswordconfirm"
 msgstr "Wachtwoord verschilt van bevestigings-wachtwoord."
 
-msgid "strloginfailed"
+msgid "Login failed"
 msgstr "Inloggen mislukt"
 
 msgid "Server"

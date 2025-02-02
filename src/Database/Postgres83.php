@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Database;
 
+use PhpPgAdmin\Config;
+use PhpPgAdmin\DDD\Entities\ServerSession;
+
 class Postgres83 extends Postgres84
 {
-    public float $major_version = 8.3;
+    public float $majorVersion = 8.3;
 
     // List of all legal privileges that can be applied to different types
     // of objects.
@@ -20,9 +23,12 @@ class Postgres83 extends Postgres84
         'schema' => array('CREATE', 'USAGE', 'ALL PRIVILEGES'),
         'tablespace' => array('CREATE', 'ALL PRIVILEGES')
     );
-    // List of characters in acl lists and the privileges they
-    // refer to.
-    public array $privmap = array(
+    /**
+     * List of characters in acl lists and the privileges they refer to.
+     *
+     * @var array<string, string>
+     */
+    public array $privmap = [
         'r' => 'SELECT',
         'w' => 'UPDATE',
         'a' => 'INSERT',
@@ -35,23 +41,26 @@ class Postgres83 extends Postgres84
         'C' => 'CREATE',
         'T' => 'TEMPORARY',
         'c' => 'CONNECT'
-    );
+    ];
 
-    /**
-     * Constructor
-     * @param $conn The database connection
-     */
-    public function __construct($conn)
+    public function __construct(\ADOConnection $conn)
     {
         parent::__construct($conn);
-    }
 
-    // Help functions
+        $this->helpPage['pg.fts'] = 'textsearch.html';
 
-    public function getHelpPages()
-    {
-        include_once('./help/PostgresDoc83.php');
-        return $this->help_page;
+        $this->helpPage['pg.ftscfg'] = 'textsearch-intro.html#TEXTSEARCH-INTRO-CONFIGURATIONS';
+        $this->helpPage['pg.ftscfg.example'] = 'textsearch-configuration.html';
+        $this->helpPage['pg.ftscfg.drop'] = 'sql-droptsconfig.html';
+        $this->helpPage['pg.ftscfg.create'] = 'sql-createtsconfig.html';
+        $this->helpPage['pg.ftscfg.alter'] = 'sql-altertsconfig.html';
+
+        $this->helpPage['pg.ftsdict'] = 'textsearch-dictionaries.html';
+        $this->helpPage['pg.ftsdict.drop'] = 'sql-droptsdictionary.html';
+        $this->helpPage['pg.ftsdict.create'] = ['sql-createtsdictionary.html', 'sql-createtstemplate.html'];
+        $this->helpPage['pg.ftsdict.alter'] = 'sql-altertsdictionary.html';
+
+        $this->helpPage['pg.ftsparser'] = 'textsearch-parsers.html';
     }
 
     // Database functions
@@ -60,16 +69,14 @@ class Postgres83 extends Postgres84
      * Return all database available on the server
      * @param $currentdatabase database name that should be on top of the resultset
      *
-     * @return A list of databases, sorted alphabetically
+     * @return mixed A list of databases, sorted alphabetically
      */
-    public function getDatabases($currentdatabase = null)
+    public function getDatabases(?string $currentdatabase = null)
     {
-        global $conf, $misc;
+        $serverSession = ServerSession::fromRequestParameter();
 
-        $server_info = $misc->getServerInfo();
-
-        if (isset($conf['owned_only']) && $conf['owned_only'] && !$this->isSuperUser()) {
-            $username = $server_info['username'];
+        if (Config::ownedOnly() && !$this->isSuperUser() && !is_null($serverSession)) {
+            $username = (string)$serverSession->Username;
             $this->clean($username);
             $clause = " AND pr.rolname='{$username}'";
         } else {
@@ -83,7 +90,7 @@ class Postgres83 extends Postgres84
             $orderby = "ORDER BY pdb.datname";
         }
 
-        if (!$conf['show_system']) {
+        if (!Config::showSystem()) {
             $where = ' AND NOT pdb.datistemplate';
         } else {
             $where = ' AND pdb.datallowconn';
@@ -107,9 +114,9 @@ class Postgres83 extends Postgres84
 
     /**
      * Returns all available autovacuum per table information.
-     * @return A recordset
+     * @return mixed A recordset
      */
-    public function getTableAutovacuum($table = '')
+    public function getTableAutovacuum(string $table = '')
     {
         $sql = '';
 
@@ -154,15 +161,15 @@ class Postgres83 extends Postgres84
     }
 
     public function saveAutovacuum(
-        $table,
-        $vacenabled,
-        $vacthreshold,
-        $vacscalefactor,
-        $anathresold,
-        $anascalefactor,
-        $vaccostdelay,
-        $vaccostlimit
-    ) {
+        string $table,
+        ?string $vacenabled,
+        ?string $vacthreshold,
+        ?string $vacscalefactor,
+        ?string $anathresold,
+        ?string $anascalefactor,
+        ?string $vaccostdelay,
+        ?string $vaccostlimit
+    ): mixed {
         $defaults = $this->getAutovacuum();
         $c_schema = $this->_schema;
         $this->clean($c_schema);
@@ -175,12 +182,14 @@ class Postgres83 extends Postgres84
 			WHERE 
 				c.relname = '{$table}' AND n.nspname = '{$c_schema}'
 		");
-
-        if ($rs->EOF) {
+        if (is_int($rs) || $rs->EOF) {
             return -1;
         }
 
         $toid = $rs->fields('oid');
+        if (!is_string($toid) && !is_numeric($toid) && !($toid instanceof \Stringable)) {
+            $toid = '';
+        }
         unset($rs);
 
         if (empty($_POST['autovacuum_vacuum_threshold'])) {
@@ -221,7 +230,12 @@ class Postgres83 extends Postgres84
 			WHERE vacrelid = {$toid};");
 
         $status = -1; // ini
-        if ($rs->recordCount() and ($rs->fields['vacrelid'] == $toid)) {
+        if (
+            $rs instanceof \ADORecordSet &&
+            $rs->recordCount() &&
+            is_array($rs->fields) &&
+            $rs->fields['vacrelid'] == $toid
+        ) {
             // table exists in pg_autovacuum, UPDATE
             $sql = sprintf(
                 "UPDATE \"pg_catalog\".\"pg_autovacuum\" SET 
@@ -236,15 +250,15 @@ class Postgres83 extends Postgres84
 						freeze_max_age = %s
 					WHERE vacrelid = {$toid};
 				",
-                ($_POST['autovacuum_enabled'] == 'on') ? 't' : 'f',
-                $_POST['autovacuum_vacuum_threshold'],
-                $_POST['autovacuum_vacuum_scale_factor'],
-                $_POST['autovacuum_analyze_threshold'],
-                $_POST['autovacuum_analyze_scale_factor'],
-                $_POST['autovacuum_vacuum_cost_delay'],
-                $_POST['autovacuum_vacuum_cost_limit'],
-                $_POST['vacuum_freeze_min_age'],
-                $_POST['autovacuum_freeze_max_age']
+                $_POST['autovacuum_enabled'] === 'on' ? 't' : 'f',
+                is_string($_POST['autovacuum_vacuum_threshold']) ? $_POST['autovacuum_vacuum_threshold'] : '',
+                is_string($_POST['autovacuum_vacuum_scale_factor']) ? $_POST['autovacuum_vacuum_scale_factor'] : '',
+                is_string($_POST['autovacuum_analyze_threshold']) ? $_POST['autovacuum_analyze_threshold'] : '',
+                is_string($_POST['autovacuum_analyze_scale_factor']) ? $_POST['autovacuum_analyze_scale_factor'] : '',
+                is_string($_POST['autovacuum_vacuum_cost_delay']) ? $_POST['autovacuum_vacuum_cost_delay'] : '',
+                is_string($_POST['autovacuum_vacuum_cost_limit']) ? $_POST['autovacuum_vacuum_cost_limit'] : '',
+                is_string($_POST['vacuum_freeze_min_age']) ? $_POST['vacuum_freeze_min_age'] : '',
+                is_string($_POST['autovacuum_freeze_max_age']) ? $_POST['autovacuum_freeze_max_age'] : ''
             );
             $status = $this->execute($sql);
         } else {
@@ -253,15 +267,15 @@ class Postgres83 extends Postgres84
                 "INSERT INTO \"pg_catalog\".\"pg_autovacuum\" 
 				VALUES (%s, '%s', %s, %s, %s, %s, %s, %s, %s, %s )",
                 $toid,
-                ($_POST['autovacuum_enabled'] == 'on') ? 't' : 'f',
-                $_POST['autovacuum_vacuum_threshold'],
-                $_POST['autovacuum_vacuum_scale_factor'],
-                $_POST['autovacuum_analyze_threshold'],
-                $_POST['autovacuum_analyze_scale_factor'],
-                $_POST['autovacuum_vacuum_cost_delay'],
-                $_POST['autovacuum_vacuum_cost_limit'],
-                $_POST['vacuum_freeze_min_age'],
-                $_POST['autovacuum_freeze_max_age']
+                $_POST['autovacuum_enabled'] === 'on' ? 't' : 'f',
+                is_string($_POST['autovacuum_vacuum_threshold']) ? $_POST['autovacuum_vacuum_threshold'] : '',
+                is_string($_POST['autovacuum_vacuum_scale_factor']) ? $_POST['autovacuum_vacuum_scale_factor'] : '',
+                is_string($_POST['autovacuum_analyze_threshold']) ? $_POST['autovacuum_analyze_threshold'] : '',
+                is_string($_POST['autovacuum_analyze_scale_factor']) ? $_POST['autovacuum_analyze_scale_factor'] : '',
+                is_string($_POST['autovacuum_vacuum_cost_delay']) ? $_POST['autovacuum_vacuum_cost_delay'] : '',
+                is_string($_POST['autovacuum_vacuum_cost_limit']) ? $_POST['autovacuum_vacuum_cost_limit'] : '',
+                is_string($_POST['vacuum_freeze_min_age']) ? $_POST['vacuum_freeze_min_age'] : '',
+                is_string($_POST['autovacuum_freeze_max_age']) ? $_POST['autovacuum_freeze_max_age'] : ''
             );
             $status = $this->execute($sql);
         }
@@ -269,7 +283,10 @@ class Postgres83 extends Postgres84
         return $status;
     }
 
-    public function dropAutovacuum($table)
+    /**
+     * @return bool|int
+     */
+    public function dropAutovacuum(string $table)
     {
         $c_schema = $this->_schema;
         $this->clean($c_schema);
@@ -283,14 +300,21 @@ class Postgres83 extends Postgres84
 				c.relname = '{$table}' AND n.nspname = '{$c_schema}'
 		");
 
-        return $this->deleteRow('pg_autovacuum', array('vacrelid' => $rs->fields['oid']), 'pg_catalog');
+        return $this->deleteRow(
+            'pg_autovacuum',
+            [
+                'vacrelid' => $rs instanceof \ADORecordSet && is_array($rs->fields) ?
+                    $rs->fields['oid'] : 0
+            ],
+            'pg_catalog'
+        );
     }
 
     // Sequence functions
 
     /**
      * Alter a sequence's properties
-     * @param $seqrs The sequence RecordSet returned by getSequence()
+     * @param \ADORecordSet $seqrs The sequence RecordSet returned by getSequence()
      * @param $increment The sequence incremental value
      * @param $minvalue The sequence minimum value
      * @param $maxvalue The sequence maximum value
@@ -298,41 +322,52 @@ class Postgres83 extends Postgres84
      * @param $cachevalue The sequence cache value
      * @param $cycledvalue Sequence can cycle ?
      * @param $startvalue The sequence start value when issuing a restart (ignored)
-     * @return 0 success
+     * @return int 0 success
      */
     public function alterSequenceProps(
-        $seqrs,
-        $increment,
-        $minvalue,
-        $maxvalue,
-        $restartvalue,
-        $cachevalue,
-        $cycledvalue,
-        $startvalue
-    ) {
+        \ADORecordSet $seqrs,
+        ?string $increment = null,
+        ?string $minvalue = null,
+        ?string $maxvalue = null,
+        ?string $restartvalue = null,
+        ?string $cachevalue = null,
+        ?string $cycledvalue = null,
+        ?string $startvalue = null
+    ): int {
 
         $sql = '';
         /* vars are cleaned in alterSequenceInternal */
-        if (!empty($increment) && ($increment != $seqrs->fields['increment_by'])) {
-            $sql .= " INCREMENT {$increment}";
-        }
-        if (!empty($minvalue) && ($minvalue != $seqrs->fields['min_value'])) {
-            $sql .= " MINVALUE {$minvalue}";
-        }
-        if (!empty($maxvalue) && ($maxvalue != $seqrs->fields['max_value'])) {
-            $sql .= " MAXVALUE {$maxvalue}";
-        }
-        if (!empty($restartvalue) && ($restartvalue != $seqrs->fields['last_value'])) {
-            $sql .= " RESTART {$restartvalue}";
-        }
-        if (!empty($cachevalue) && ($cachevalue != $seqrs->fields['cache_value'])) {
-            $sql .= " CACHE {$cachevalue}";
+        if (is_array($seqrs->fields)) {
+            if (!empty($increment) && $increment != $seqrs->fields['increment_by']) {
+                $sql .= " INCREMENT {$increment}";
+            }
+            if (!empty($minvalue) && $minvalue != $seqrs->fields['min_value']) {
+                $sql .= " MINVALUE {$minvalue}";
+            }
+            if (!empty($maxvalue) && $maxvalue != $seqrs->fields['max_value']) {
+                $sql .= " MAXVALUE {$maxvalue}";
+            }
+            if (!empty($restartvalue) && $restartvalue != $seqrs->fields['last_value']) {
+                $sql .= " RESTART {$restartvalue}";
+            }
+            if (!empty($cachevalue) && $cachevalue != $seqrs->fields['cache_value']) {
+                $sql .= " CACHE {$cachevalue}";
+            }
         }
         // toggle cycle yes/no
         if (!is_null($cycledvalue)) {
             $sql .= (!$cycledvalue ? ' NO ' : '') . " CYCLE";
         }
-        if ($sql != '') {
+        if (
+            $sql != '' &&
+            is_array($seqrs->fields) &&
+            isset($seqrs->fields['seqname']) &&
+            (
+                is_string($seqrs->fields['seqname']) ||
+                is_numeric($seqrs->fields['seqname']) ||
+                $seqrs->fields['seqname'] instanceof \Stringable
+            )
+        ) {
             $f_schema = $this->_schema;
             $this->fieldClean($f_schema);
             $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" {$sql}";
@@ -345,15 +380,25 @@ class Postgres83 extends Postgres84
      * Alter a sequence's owner
      * @param $seqrs The sequence RecordSet returned by getSequence()
      * @param $name The new owner for the sequence
-     * @return 0 success
+     * @return int 0 success
      */
-    public function alterSequenceOwner($seqrs, $owner)
+    public function alterSequenceOwner(\ADORecordSet $seqrs, ?string $owner): int
     {
         // If owner has been changed, then do the alteration.  We are
         // careful to avoid this generally as changing owner is a
         // superuser only function.
         /* vars are cleaned in alterSequenceInternal */
-        if (!empty($owner) && ($seqrs->fields['seqowner'] != $owner)) {
+        if (
+            !empty($owner) &&
+            is_array($seqrs->fields) &&
+            $seqrs->fields['seqowner'] != $owner &&
+            isset($seqrs->fields['seqname']) &&
+            (
+                is_string($seqrs->fields['seqname']) ||
+                is_numeric($seqrs->fields['seqname']) ||
+                $seqrs->fields['seqname'] instanceof \Stringable
+            )
+        ) {
             $f_schema = $this->_schema;
             $this->fieldClean($f_schema);
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" OWNER TO \"{$owner}\"";
@@ -367,9 +412,9 @@ class Postgres83 extends Postgres84
     /**
      * Returns all details for a particular function
      * @param $func The name of the function to retrieve
-     * @return Function info
+     * @return \ADORecordSet|int Function info
      */
-    public function getFunction($function_oid)
+    public function getFunction(string $function_oid): \ADORecordSet|int
     {
         $this->clean($function_oid);
 
@@ -396,15 +441,17 @@ class Postgres83 extends Postgres84
 
 
     // Capabilities
-    public function hasQueryKill()
+    public function hasQueryKill(): bool
     {
         return false;
     }
-    public function hasDatabaseCollation()
+
+    public function hasDatabaseCollation(): bool
     {
         return false;
     }
-    public function hasAlterSequenceStart()
+
+    public function hasAlterSequenceStart(): bool
     {
         return false;
     }

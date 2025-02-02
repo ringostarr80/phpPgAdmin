@@ -6,25 +6,15 @@ namespace PhpPgAdmin\Database;
 
 class Postgres10 extends Postgres11
 {
-    public float $major_version = 10;
-
-    /**
-     * Constructor
-     * @param $conn The database connection
-     */
-    public function __construct($conn)
-    {
-        parent::__construct($conn);
-    }
-
+    public float $majorVersion = 10;
 
     /**
      * Searches all system catalogs to find objects that match a certain name.
      * @param $term The search term
      * @param $filter The object type to restrict to ('' means no restriction)
-     * @return A recordset
+     * @return mixed A recordset
      */
-    public function findObject($term, $filter)
+    public function findObject(string $term, string $filter)
     {
         global $conf;
 
@@ -262,13 +252,5 @@ class Postgres10 extends Postgres11
 			   AND p.proisagg AND n.nspname='{$c_schema}' ORDER BY 1, 2";
 
         return $this->selectSet($sql);
-    }
-
-    // Help functions
-
-    public function getHelpPages()
-    {
-        include_once('./help/PostgresDoc10.php');
-        return $this->help_page;
     }
 }

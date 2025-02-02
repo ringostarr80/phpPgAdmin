@@ -8,7 +8,7 @@ include_once dirname(__DIR__, 2) . '/vendor/adodb/adodb-php/adodb.inc.php';
 
 class Connection
 {
-    public \ADOConnection|false $conn = false;
+    public \ADOConnection $conn;
 
     public string $platform = 'UNKNOWN';
 
@@ -18,7 +18,7 @@ class Connection
      */
     public function __construct($host, $port, $sslmode, $user, $password, $database, $fetchMode = ADODB_FETCH_ASSOC)
     {
-        $this->conn = ADONewConnection('postgres');
+        $this->conn = ADONewConnection('postgres') ?: throw new \Exception('Connection failed');
         $this->conn->setFetchMode($fetchMode);
 
         // Ignore host if null

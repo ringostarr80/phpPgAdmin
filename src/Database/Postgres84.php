@@ -4,49 +4,37 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Database;
 
+use PhpPgAdmin\Config;
+
 class Postgres84 extends Postgres90
 {
-    public float $major_version = 8.4;
-
-    // List of all legal privileges that can be applied to different types
-    // of objects.
-    public array $privlist = array(
-        'table' => array('SELECT', 'INSERT', 'UPDATE', 'DELETE', 'REFERENCES', 'TRIGGER', 'ALL PRIVILEGES'),
-        'view' => array('SELECT', 'INSERT', 'UPDATE', 'DELETE', 'REFERENCES', 'TRIGGER', 'ALL PRIVILEGES'),
-        'sequence' => array('USAGE', 'SELECT', 'UPDATE', 'ALL PRIVILEGES'),
-        'database' => array('CREATE', 'TEMPORARY', 'CONNECT', 'ALL PRIVILEGES'),
-        'function' => array('EXECUTE', 'ALL PRIVILEGES'),
-        'language' => array('USAGE', 'ALL PRIVILEGES'),
-        'schema' => array('CREATE', 'USAGE', 'ALL PRIVILEGES'),
-        'tablespace' => array('CREATE', 'ALL PRIVILEGES'),
-        'column' => array('SELECT', 'INSERT', 'UPDATE', 'REFERENCES','ALL PRIVILEGES')
-    );
+    public float $majorVersion = 8.4;
 
     /**
-     * Constructor
-     * @param $conn The database connection
+     * List of all legal privileges that can be applied to different types of objects.
+     *
+     * @var array<string, string[]>
      */
-    public function __construct($conn)
-    {
-        parent::__construct($conn);
-    }
-
-    // Help functions
-
-    public function getHelpPages()
-    {
-        include_once('./help/PostgresDoc84.php');
-        return $this->help_page;
-    }
+    public array $privlist = [
+        'table'      => ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'REFERENCES', 'TRIGGER', 'ALL PRIVILEGES'],
+        'view'       => ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'REFERENCES', 'TRIGGER', 'ALL PRIVILEGES'],
+        'sequence'   => ['USAGE', 'SELECT', 'UPDATE', 'ALL PRIVILEGES'],
+        'database'   => ['CREATE', 'TEMPORARY', 'CONNECT', 'ALL PRIVILEGES'],
+        'function'   => ['EXECUTE', 'ALL PRIVILEGES'],
+        'language'   => ['USAGE', 'ALL PRIVILEGES'],
+        'schema'     => ['CREATE', 'USAGE', 'ALL PRIVILEGES'],
+        'tablespace' => ['CREATE', 'ALL PRIVILEGES'],
+        'column'     => ['SELECT', 'INSERT', 'UPDATE', 'REFERENCES','ALL PRIVILEGES']
+    ];
 
     // Database functions
 
     /**
      * Grabs a list of triggers on a table
      * @param $table The name of a table whose triggers to retrieve
-     * @return A recordset
+     * @return mixed A recordset
      */
-    public function getTriggers($table = '')
+    public function getTriggers(string $table = '')
     {
         $c_schema = $this->_schema;
         $this->clean($c_schema);
@@ -74,12 +62,10 @@ class Postgres84 extends Postgres90
      * Searches all system catalogs to find objects that match a certain name.
      * @param $term The search term
      * @param $filter The object type to restrict to ('' means no restriction)
-     * @return A recordset
+     * @return mixed A recordset
      */
-    public function findObject($term, $filter)
+    public function findObject(string $term, string $filter)
     {
-        global $conf;
-
         /*about escaping:
          * SET standard_conforming_string is not available before 8.2
          * So we must use PostgreSQL specific notation :/
@@ -89,13 +75,13 @@ class Postgres84 extends Postgres90
          **/
 
         // Escape search term for ILIKE match
-        $this->clean($term);
+        $term = $this->clean($term) ?? '';
         $this->clean($filter);
         $term = str_replace('_', '\_', $term);
         $term = str_replace('%', '\%', $term);
 
         // Exclude system relations if necessary
-        if (!$conf['show_system']) {
+        if (!Config::showSystem()) {
             // XXX: The mention of information_schema here is in the wrong place, but
             // it's the quickest fix to exclude the info schema from 7.4
             $where = " AND pn.nspname NOT LIKE \$_PATTERN_\$pg\_%\$_PATTERN_\$ AND pn.nspname != 'information_schema'";
@@ -171,7 +157,7 @@ class Postgres84 extends Postgres90
 		";
 
         // Add advanced objects if show_advanced is set
-        if ($conf['show_advanced']) {
+        if (Config::showAdvanced()) {
             $sql .= "
 				UNION ALL
 				SELECT CASE WHEN pt.typtype='d' THEN 'DOMAIN' ELSE 'TYPE' END, pt.oid, pn.nspname, NULL,
@@ -218,10 +204,8 @@ class Postgres84 extends Postgres90
         return $this->selectSet($sql);
     }
 
-
     // Capabilities
-
-    public function hasByteaHexDefault()
+    public function hasByteaHexDefault(): bool
     {
         return false;
     }

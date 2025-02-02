@@ -6,7 +6,8 @@ namespace PhpPgAdmin\Database;
 
 class Postgres81 extends Postgres82
 {
-    public float $major_version = 8.1;
+    public float $majorVersion = 8.1;
+
     // List of all legal privileges that can be applied to different types
     // of objects.
     public array $privlist = array(
@@ -44,23 +45,20 @@ class Postgres81 extends Postgres82
     public function __construct($conn)
     {
         parent::__construct($conn);
-    }
 
-    // Help functions
-
-    public function getHelpPages()
-    {
-        include_once('./help/PostgresDoc81.php');
-        return $this->help_page;
+        $this->helpPage['pg.role'] = 'user-manag.html';
+        $this->helpPage['pg.role.create'] = ['sql-createrole.html','user-manag.html#DATABASE-ROLES'];
+        $this->helpPage['pg.role.alter'] = ['sql-alterrole.html','role-attributes.html'];
+        $this->helpPage['pg.role.drop'] = ['sql-droprole.html','user-manag.html#DATABASE-ROLES'];
     }
 
     // Database functions
 
     /**
      * Returns all databases available on the server
-     * @return A list of databases, sorted alphabetically
+     * @return mixed A list of databases, sorted alphabetically
      */
-    public function getDatabases($currentdatabase = null)
+    public function getDatabases(?string $currentdatabase = null)
     {
         global $conf, $misc;
 
@@ -143,15 +141,15 @@ class Postgres81 extends Postgres82
     // Autovacuum functions
 
     public function saveAutovacuum(
-        $table,
-        $vacenabled,
-        $vacthreshold,
-        $vacscalefactor,
-        $anathresold,
-        $anascalefactor,
-        $vaccostdelay,
-        $vaccostlimit
-    ) {
+        string $table,
+        ?string $vacenabled,
+        ?string $vacthreshold,
+        ?string $vacscalefactor,
+        ?string $anathresold,
+        ?string $anascalefactor,
+        ?string $vaccostdelay,
+        ?string $vaccostlimit
+    ): mixed {
         $defaults = $this->getAutovacuum();
         $c_schema = $this->_schema;
         $this->clean($c_schema);
@@ -245,10 +243,10 @@ class Postgres81 extends Postgres82
 
     /**
      * Returns all available process information.
-     * @param $database (optional) Find only connections to specified database
-     * @return A recordset
+     * @param ?string $database (optional) Find only connections to specified database
+     * @return mixed A recordset
      */
-    public function getProcesses($database = null)
+    public function getProcesses(?string $database = null)
     {
         if ($database === null) {
             $sql = "SELECT datname, usename, procpid AS pid, current_query AS query, query_start, 
@@ -273,14 +271,14 @@ class Postgres81 extends Postgres82
 
     /**
      * Retrieves a tablespace's information
-     * @return A recordset
+     * @return mixed A recordset
      */
-    public function getTablespace($spcname)
+    public function getTablespace(string $spcname)
     {
         $this->clean($spcname);
 
         $sql = "SELECT spcname, pg_catalog.pg_get_userbyid(spcowner) AS spcowner, spclocation
-					FROM pg_catalog.pg_tablespace WHERE spcname='{$spcname}'";
+            FROM pg_catalog.pg_tablespace WHERE spcname='{$spcname}'";
 
         return $this->selectSet($sql);
     }
@@ -288,9 +286,9 @@ class Postgres81 extends Postgres82
     /**
      * Retrieves information for all tablespaces
      * @param $all Include all tablespaces (necessary when moving objects back to the default space)
-     * @return A recordset
+     * @return mixed A recordset
      */
-    public function getTablespaces($all = false)
+    public function getTablespaces(bool $all = false)
     {
         global $conf;
 

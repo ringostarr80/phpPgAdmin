@@ -6,33 +6,15 @@ namespace PhpPgAdmin\Database;
 
 class Postgres96 extends Postgres10
 {
-    public float $major_version = 9.6;
-
-    /**
-     * Constructor
-     * @param $conn The database connection
-     */
-    public function __construct($conn)
-    {
-        parent::__construct($conn);
-    }
-
-    // Help functions
-
-    public function getHelpPages()
-    {
-        include_once('./help/PostgresDoc96.php');
-        return $this->help_page;
-    }
+    public float $majorVersion = 9.6;
 
     // Sequence functions
 
     /**
      * Returns properties of a single sequence
-     * @param $sequence Sequence name
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getSequence($sequence)
+    public function getSequence(string $sequence): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $this->clean($c_schema);

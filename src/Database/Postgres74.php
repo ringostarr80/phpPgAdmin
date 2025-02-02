@@ -6,7 +6,8 @@ namespace PhpPgAdmin\Database;
 
 class Postgres74 extends Postgres80
 {
-    public float $major_version = 7.4;
+    public float $majorVersion = 7.4;
+
     // List of all legal privileges that can be applied to different types
     // of objects.
     public array $privlist = array(
@@ -18,23 +19,6 @@ class Postgres74 extends Postgres80
         'language' => array('USAGE', 'ALL PRIVILEGES'),
         'schema' => array('CREATE', 'USAGE', 'ALL PRIVILEGES')
     );
-
-
-    /**
-     * Constructor
-     * @param $conn The database connection
-     */
-    public function __construct($conn)
-    {
-        parent::__construct($conn);
-    }
-
-    // Help functions
-    public function getHelpPages()
-    {
-        include_once('./help/PostgresDoc74.php');
-        return $this->help_page;
-    }
 
     // Database functions
 
@@ -66,9 +50,9 @@ class Postgres74 extends Postgres80
 
     /**
      * Return all database available on the server
-     * @return A list of databases, sorted alphabetically
+     * @return mixed A list of databases, sorted alphabetically
      */
-    public function getDatabases($currentdatabase = null)
+    public function getDatabases(?string $currentdatabase = null)
     {
         global $conf, $misc;
 
@@ -110,9 +94,9 @@ class Postgres74 extends Postgres80
      * Searches all system catalogs to find objects that match a certain name.
      * @param $term The search term
      * @param $filter The object type to restrict to ('' means no restriction)
-     * @return A recordset
+     * @return mixed A recordset
      */
-    public function findObject($term, $filter)
+    public function findObject(string $term, string $filter)
     {
         global $conf;
 
@@ -579,9 +563,9 @@ class Postgres74 extends Postgres80
     /**
      * Returns all details for a particular function
      * @param $func The name of the function to retrieve
-     * @return Function info
+     * @return \ADORecordSet|int Function info
      */
-    public function getFunction($function_oid)
+    public function getFunction(string $function_oid): \ADORecordSet|int
     {
         $this->clean($function_oid);
 

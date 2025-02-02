@@ -8,17 +8,10 @@ include_once dirname(__DIR__, 2) . '/libraries/errorhandler.inc.php';
 
 class ADOdbBase
 {
-    public mixed $conn;
-
     public string $platform = 'UNKNOWN';
 
-    /**
-     * Base constructor
-     * @param &$conn The connection object
-     */
-    public function __construct(&$conn)
+    public function __construct(public \ADOConnection $conn)
     {
-        $this->conn = $conn;
     }
 
     /**
@@ -32,10 +25,9 @@ class ADOdbBase
 
     /**
      * Cleans (escapes) a string
-     * @param $str The string to clean, by reference
-     * @return The cleaned string
+     * @return ?string The cleaned string
      */
-    public function clean(&$str)
+    public function clean(?string &$str): ?string
     {
         $str = addslashes($str);
         return $str;
@@ -54,10 +46,9 @@ class ADOdbBase
 
     /**
      * Cleans (escapes) an object name (eg. table, field)
-     * @param $str The string to clean, by reference
-     * @return The cleaned string
+     * @return ?string The cleaned string
      */
-    public function fieldClean(&$str)
+    public function fieldClean(?string &$str): ?string
     {
         $str = str_replace('"', '""', $str);
         return $str;
@@ -76,9 +67,9 @@ class ADOdbBase
     /**
      * Executes a query on the underlying connection
      * @param $sql The SQL query to execute
-     * @return A recordset
+     * @return int A recordset
      */
-    public function execute($sql)
+    public function execute(string $sql): int
     {
         // Execute the statement
         $this->conn->Execute($sql);
@@ -99,7 +90,7 @@ class ADOdbBase
     /**
      * Retrieves a ResultSet from a query
      * @param $sql The SQL statement to be executed
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset or an error code
      */
     public function selectSet($sql)
     {
@@ -304,11 +295,7 @@ class ADOdbBase
         return !$this->conn->BeginTrans();
     }
 
-    /**
-     * End a transaction
-     * @return 0 success
-     */
-    public function endTransaction()
+    public function endTransaction(): bool
     {
         return !$this->conn->CommitTrans();
     }

@@ -504,7 +504,7 @@ function doCreate($msg = '')
         $funcs->moveNext();
     }
     echo "</select></td></tr>\n";
-    echo "<tr><th class=\"data left" . (version_compare($data->major_version, '7.4', '<') ? ' required' : '') . "\">{$lang['strlength']}</th>\n";
+    echo "<tr><th class=\"data left" . (version_compare($data->majorVersion, '7.4', '<') ? ' required' : '') . "\">{$lang['strlength']}</th>\n";
     echo "<td class=\"data1\"><input name=\"typlen\" size=\"8\" value=\"",
         htmlspecialchars($_POST['typlen']), "\" /></td></tr>";
     echo "<tr><th class=\"data left\">{$lang['strdefault']}</th>\n";

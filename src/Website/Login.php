@@ -35,19 +35,19 @@ class Login extends Website
             if (is_null($server)) {
                 throw new \InvalidArgumentException('Server not found');
             }
-            $loginPassword = RequestParameter::getString('loginPassword_' . hash('sha256', $server['desc']));
+            $loginPassword = RequestParameter::getString('loginPassword_' . hash('sha256', (string)$server->Name));
             if (is_null($loginPassword)) {
                 throw new \InvalidArgumentException('Parameter "loginPassword" is required');
             }
 
             try {
                 new Connection(
-                    $server['host'],
-                    $server['port'],
-                    $server['sslmode'],
+                    (string)$server->Host,
+                    $server->Port->Value,
+                    $server->SslMode->value,
                     $loginUsername,
                     $loginPassword,
-                    $server['defaultdb'] ?? 'template1'
+                    (string)$server->DefaultDb
                 );
             } catch (\Exception) {
                 $this->message = _('Login failed');
@@ -72,7 +72,7 @@ class Login extends Website
             throw new \InvalidArgumentException('Server not found');
         }
 
-        $body->appendChild($this->buildTitle($dom, sprintf(_('Login to %s'), $server['desc'])));
+        $body->appendChild($this->buildTitle($dom, sprintf(_('Login to %s'), (string)$server->Name)));
 
         if (!empty($this->message)) {
             $p = $dom->createElement('p', $this->message);
@@ -82,7 +82,11 @@ class Login extends Website
 
         $form = $dom->createElement('form');
         $form->setAttribute('id', 'login_form');
-        $form->setAttribute('action', $_SERVER['SCRIPT_NAME']);
+        $loginFormAction = '';
+        if (isset($_SERVER['SCRIPT_NAME']) && is_string($_SERVER['SCRIPT_NAME'])) {
+            $loginFormAction = $_SERVER['SCRIPT_NAME'];
+        }
+        $form->setAttribute('action', $loginFormAction);
         $form->setAttribute('method', 'post');
         $form->setAttribute('name', 'login_form');
         $inputTypeHiddenSubject = $dom->createElement('input');
@@ -125,7 +129,7 @@ class Login extends Website
         $inputTypePasswordLoginPassword = $dom->createElement('input');
         $inputTypePasswordLoginPassword->setAttribute('id', 'loginPassword');
         $inputTypePasswordLoginPassword->setAttribute('type', 'password');
-        $inputPasswordName = 'loginPassword_' . hash('sha256', $server['desc']);
+        $inputPasswordName = 'loginPassword_' . hash('sha256', (string)$server->Name);
         $inputTypePasswordLoginPassword->setAttribute('name', $inputPasswordName);
         $inputTypePasswordLoginPassword->setAttribute('size', '24');
         $td->appendChild($inputTypePasswordLoginPassword);

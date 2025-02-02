@@ -6,16 +6,7 @@ namespace PhpPgAdmin\Database;
 
 class Postgres11 extends Postgres
 {
-    public float $major_version = 11;
-
-    /**
-     * Constructor
-     * @param $conn The database connection
-     */
-    public function __construct($conn)
-    {
-        parent::__construct($conn);
-    }
+    public float $majorVersion = 11;
 
     /**
      * Returns the current default_with_oids setting
@@ -52,16 +43,6 @@ class Postgres11 extends Postgres
             return $rs->fields['relhasoids'];
         }
     }
-
-
-    // Help functions
-
-    public function getHelpPages()
-    {
-        include_once('./help/PostgresDoc11.php');
-        return $this->help_page;
-    }
-
 
     // Capabilities
     public function hasServerOids()

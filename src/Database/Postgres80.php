@@ -6,7 +6,8 @@ namespace PhpPgAdmin\Database;
 
 class Postgres80 extends Postgres81
 {
-    public float $major_version = 8.0;
+    public float $majorVersion = 8.0;
+
     // Map of database encoding names to HTTP encoding names.  If a
     // database encoding does not appear in this list, then its HTTP
     // encoding name is the same as its database encoding name.
@@ -49,23 +50,30 @@ class Postgres80 extends Postgres81
     public function __construct($conn)
     {
         parent::__construct($conn);
-    }
 
-    // Help functions
+        $this->helpPage['pg.column.add'][0] = 'ddl-alter.html#AEN2217';
+        $this->helpPage['pg.column.drop'][0] = 'ddl-alter.html#AEN2226';
 
-    public function getHelpPages()
-    {
-        include_once('./help/PostgresDoc80.php');
-        return $this->help_page;
+        $this->helpPage['pg.constraint.add'] = 'ddl-alter.html#AEN2217';
+        $this->helpPage['pg.constraint.check'] = 'ddl-constraints.html#AEN1978';
+        $this->helpPage['pg.constraint.drop'] = 'ddl-alter.html#AEN2226';
+        $this->helpPage['pg.constraint.primary_key'] = 'ddl-constraints.html#AEN2055';
+        $this->helpPage['pg.constraint.unique_key'] = 'ddl-constraints.html#AEN2033';
+
+        $this->helpPage['pg.domain'] = 'extend-type-system.html#AEN27940';
+
+        $this->helpPage['pg.function'][2] = 'sql-expressions.html#AEN1652';
+
+        $this->helpPage['pg.operator'][2] = 'sql-expressions.html#AEN1623';
     }
 
     // Database functions
 
     /**
      * Return all database available on the server
-     * @return A list of databases, sorted alphabetically
+     * @return mixed A list of databases, sorted alphabetically
      */
-    public function getDatabases($currentdatabase = null)
+    public function getDatabases(?string $currentdatabase = null)
     {
         global $conf, $misc;
 
@@ -246,7 +254,7 @@ class Postgres80 extends Postgres81
     /**
      * Protected method which alter a sequence
      * SHOULDN'T BE CALLED OUTSIDE OF A TRANSACTION
-     * @param $seqrs The sequence recordSet returned by getSequence()
+     * @param \ADORecordSet $seqrs The sequence recordSet returned by getSequence()
      * @param $name The new name for the sequence
      * @param $comment The comment on the sequence
      * @param $owner The new owner for the sequence
@@ -266,18 +274,18 @@ class Postgres80 extends Postgres81
      * @return -7 schema error
      */
     protected function alterSequenceInternal(
-        $seqrs,
-        $name,
-        $comment,
-        $owner,
-        $schema,
-        $increment,
-        $minvalue,
-        $maxvalue,
-        $restartvalue,
-        $cachevalue,
-        $cycledvalue,
-        $startvalue
+        \ADORecordSet $seqrs,
+        ?string $name = null,
+        ?string $comment = null,
+        ?string $owner = null,
+        ?string $schema = null,
+        ?string $increment = null,
+        ?string $minvalue = null,
+        ?string $maxvalue = null,
+        ?string $restartvalue = null,
+        ?string $cachevalue = null,
+        ?string $cycledvalue = null,
+        ?string $startvalue = null
     ) {
 
         /* $schema not supported in pg80- */

@@ -8,11 +8,11 @@ use PhpPgAdmin\ArrayRecordSet;
 
 class Postgres extends ADOdbBase
 {
-    public $major_version = 14;
+    public float $majorVersion = 14;
     // Max object name length
-    public $_maxNameLen = 63;
+    public int $_maxNameLen = 63;
     // Store the current schema
-    public $_schema;
+    public string $_schema;
     // Map of database encoding names to HTTP encoding names.  If a
     // database encoding does not appear in this list, then its HTTP
     // encoding name is the same as its database encoding name.
@@ -65,11 +65,158 @@ class Postgres extends ADOdbBase
                             array('', 'CALLED ON NULL INPUT', 'RETURNS NULL ON NULL INPUT'),
                             array('', 'SECURITY INVOKER', 'SECURITY DEFINER'));
     // Default help URL
-    public $help_base;
-    // Help sub pages
-    public $help_page;
+    public string $help_base;
+
+    /**
+     * Help sub pages (base version is 7.4)
+     * @var array<string, string|string[]>
+     */
+    public array $helpPage = [
+        'pg.database'                 => 'managing-databases.html',
+        'pg.database.create'          => ['sql-createdatabase.html', 'manage-ag-createdb.html'],
+        'pg.database.alter'           => 'sql-alterdatabase.html',
+        'pg.database.drop'            => ['sql-dropdatabase.html', 'manage-ag-dropdb.html'],
+
+        'pg.admin.analyze'            => 'sql-analyze.html',
+        'pg.admin.vacuum'             => 'sql-vacuum.html',
+
+        'pg.cast'                     => ['sql-expressions.html#SQL-SYNTAX-TYPE-CASTS','sql-createcast.html'],
+        'pg.cast.create'              => 'sql-createcast.html',
+        'pg.cast.drop'                => 'sql-dropcast.html',
+
+        'pg.column.add'               => ['ddl-alter.html#AEN2115', 'sql-altertable.html'],
+        'pg.column.alter'             => ['ddl-alter.html','sql-altertable.html'],
+        'pg.column.drop'              => ['ddl-alter.html#AEN2124', 'sql-altertable.html'],
+
+        'pg.constraint'               => 'ddl-constraints.html',
+        'pg.constraint.add'           => 'ddl-alter.html#AEN2131',
+        'pg.constraint.check'         => 'ddl-constraints.html#AEN1895',
+        'pg.constraint.drop'          => 'ddl-alter.html#AEN2140',
+        'pg.constraint.foreign_key'   => 'ddl-constraints.html#DDL-CONSTRAINTS-FK',
+        'pg.constraint.primary_key'   => 'ddl-constraints.html#AEN1972',
+        'pg.constraint.unique_key'    => 'ddl-constraints.html#AEN1950',
+
+        'pg.conversion'               => 'multibyte.html',
+        'pg.conversion.alter'         => 'sql-alterconversion.html',
+        'pg.conversion.create'        => 'sql-createconversion.html',
+        'pg.conversion.drop'          => 'sql-dropconversion.html',
+
+        'pg.domain'                   => 'extend-type-system.html#AEN28657',
+        'pg.domain.alter'             => 'sql-alterdomain.html',
+        'pg.domain.create'            => 'sql-createdomain.html',
+        'pg.domain.drop'              => 'sql-dropdomain.html',
+
+        'pg.function'                 => ['xfunc.html', 'functions.html', 'sql-expressions.html#AEN1599'],
+        'pg.function.alter'           => 'sql-alterfunction.html',
+        'pg.function.create'          => 'sql-createfunction.html',
+        'pg.function.create.c'        => ['xfunc-c.html','sql-createfunction.html'],
+        'pg.function.create.internal' => ['xfunc-internal.html','sql-createfunction.html'],
+        'pg.function.create.pl'       => ['xfunc-sql.html','xfunc-pl.html','sql-createfunction.html'],
+        'pg.function.drop'            => 'sql-dropfunction.html',
+
+        'pg.group'                    => 'groups.html',
+        'pg.group.alter'              => ['sql-altergroup.html','groups.html'],
+        'pg.group.create'             => 'sql-creategroup.html',
+        'pg.group.drop'               => 'sql-dropgroup.html',
+
+        'pg.index'                    => 'indexes.html',
+        'pg.index.cluster'            => 'sql-cluster.html',
+        'pg.index.drop'               => 'sql-dropindex.html',
+        'pg.index.create'             => 'sql-createindex.html',
+        'pg.index.reindex'            => 'sql-reindex.html',
+
+        'pg.language'                 => 'xplang.html',
+        'pg.language.alter'           => 'sql-alterlanguage.html',
+        'pg.language.create'          => 'sql-createlanguage.html',
+        'pg.language.drop'            => 'sql-droplanguage.html',
+
+        'pg.opclass'                  => 'indexes-opclass.html',
+        'pg.opclass.alter'            => 'sql-alteropclass.html',
+        'pg.opclass.create'           => 'sql-createopclass.html',
+        'pg.opclass.drop'             => 'sql-dropopclass.html',
+
+        'pg.operator'                 => ['xoper.html', 'functions.html', 'sql-expressions.html#AEN1570'],
+        'pg.operator.alter'           => 'sql-alteroperator.html',
+        'pg.operator.create'          => 'sql-createoperator.html',
+        'pg.operator.drop'            => 'sql-dropoperator.html',
+
+        'pg.pl'                       => 'xplang.html',
+        'pg.pl.plperl'                => 'plperl.html',
+        'pg.pl.plpgsql'               => 'plpgsql.html',
+        'pg.pl.plpython'              => 'plpython.html',
+        'pg.pl.pltcl'                 => 'pltcl.html',
+
+        'pg.privilege'                => ['privileges.html','ddl-priv.html'],
+        'pg.privilege.grant'          => 'sql-grant.html',
+        'pg.privilege.revoke'         => 'sql-revoke.html',
+
+        'pg.process'                  => 'monitoring.html',
+
+        'pg.rule'                     => 'rules.html',
+        'pg.rule.create'              => 'sql-createrule.html',
+        'pg.rule.drop'                => 'sql-droprule.html',
+
+        'pg.schema'                   => 'ddl-schemas.html',
+        'pg.schema.alter'             => 'sql-alterschema.html',
+        'pg.schema.create'            => ['sql-createschema.html','ddl-schemas.html#DDL-SCHEMAS-CREATE'],
+        'pg.schema.drop'              => 'sql-dropschema.html',
+        'pg.schema.search_path'       => 'ddl-schemas.html#DDL-SCHEMAS-PATH',
+
+        'pg.sequence'                 => 'functions-sequence.html',
+        'pg.sequence.alter'           => 'sql-altersequence.html',
+        'pg.sequence.create'          => 'sql-createsequence.html',
+        'pg.sequence.drop'            => 'sql-dropsequence.html',
+
+        'pg.sql'                      => ['sql.html','sql-commands.html'],
+        'pg.sql.insert'               => 'sql-insert.html',
+        'pg.sql.select'               => 'sql-select.html',
+        'pg.sql.update'               => 'sql-update.html',
+
+        'pg.table'                    => 'ddl.html#DDL-BASICS',
+        'pg.table.alter'              => 'sql-altertable.html',
+        'pg.table.create'             => 'sql-createtable.html',
+        'pg.table.drop'               => 'sql-droptable.html',
+        'pg.table.empty'              => 'sql-truncate.html',
+
+        'pg.tablespace'               => 'manage-ag-tablespaces.html',
+        'pg.tablespace.alter'         => 'sql-altertablespace.html',
+        'pg.tablespace.create'        => 'sql-createtablespace.html',
+        'pg.tablespace.drop'          => 'sql-droptablespace.html',
+
+        'pg.trigger'                  => 'triggers.html',
+        'pg.trigger.alter'            => 'sql-altertrigger.html',
+        'pg.trigger.create'           => 'sql-createtrigger.html',
+        'pg.trigger.drop'             => 'sql-droptrigger.html',
+
+        'pg.type'                     => ['xtypes.html','datatype.html','extend-type-system.html'],
+        'pg.type.alter'               => 'sql-altertype.html',
+        'pg.type.create'              => 'sql-createtype.html',
+        'pg.type.drop'                => 'sql-droptype.html',
+
+        'pg.user.alter'               => ['sql-alteruser.html','user-attributes.html'],
+        'pg.user.create'              => ['sql-createuser.html','user-manag.html#DATABASE-USERS'],
+        'pg.user.drop'                => ['sql-dropuser.html','user-manag.html#DATABASE-USERS'],
+
+        'pg.variable'                 => 'runtime-config.html',
+
+        'pg.view'                     => 'tutorial-views.html',
+        'pg.view.alter'               => ['sql-createview.html','sql-altertable.html'],
+        'pg.view.create'              => 'sql-createview.html',
+        'pg.view.drop'                => 'sql-dropview.html',
+
+        'pg.aggregate'                => ['xaggr.html', 'tutorial-agg.html', 'functions-aggregate.html', 'sql-expressions.html#SYNTAX-AGGREGATES'],
+        'pg.aggregate.create'         => 'sql-createaggregate.html',
+        'pg.aggregate.drop'           => 'sql-dropaggregate.html',
+        'pg.aggregate.alter'          => 'sql-alteraggregate.html',
+
+        'pg.server'                   => 'admin.html',
+
+        'pg.user'                     => 'user-manag.html',
+
+        'pg.locks'                    => 'view-pg-locks.html'
+    ];
     // Name of id column
-    public $id = 'oid';
+    public string $id = 'oid';
     // Supported join operations for use with view wizard
     public $joinOps = array('INNER JOIN' => 'INNER JOIN', 'LEFT JOIN' => 'LEFT JOIN', 'RIGHT JOIN' => 'RIGHT JOIN', 'FULL JOIN' => 'FULL JOIN');
     // Map of internal language name to syntax highlighting name
@@ -101,22 +248,29 @@ class Postgres extends ADOdbBase
     );
     // Predefined size types
     public $predefined_size_types = array('abstime','aclitem','bigserial','boolean','bytea','cid','cidr','circle','date','float4','float8','gtsvector','inet','int2','int4','int8','macaddr','money','oid','path','polygon','refcursor','regclass','regoper','regoperator','regproc','regprocedure','regtype','reltime','serial','smgr','text','tid','tinterval','tsquery','tsvector','varbit','void','xid');
-    // List of all legal privileges that can be applied to different types
-    // of objects.
-    public $privlist = array(
-        'table' => array('SELECT', 'INSERT', 'UPDATE', 'DELETE', 'REFERENCES', 'TRIGGER', 'ALL PRIVILEGES'),
-        'view' => array('SELECT', 'INSERT', 'UPDATE', 'DELETE', 'REFERENCES', 'TRIGGER', 'ALL PRIVILEGES'),
-        'sequence' => array('USAGE', 'SELECT', 'UPDATE', 'ALL PRIVILEGES'),
-        'database' => array('CREATE', 'TEMPORARY', 'CONNECT', 'ALL PRIVILEGES'),
-        'function' => array('EXECUTE', 'ALL PRIVILEGES'),
-        'language' => array('USAGE', 'ALL PRIVILEGES'),
-        'schema' => array('CREATE', 'USAGE', 'ALL PRIVILEGES'),
-        'tablespace' => array('CREATE', 'ALL PRIVILEGES'),
-        'column' => array('SELECT', 'INSERT', 'UPDATE', 'REFERENCES','ALL PRIVILEGES')
-    );
-    // List of characters in acl lists and the privileges they
-    // refer to.
-    public $privmap = array(
+
+    /**
+     * List of all legal privileges that can be applied to different types of objects.
+     *
+     * @var array<string, string[]>
+     */
+    public array $privlist = [
+        'table'      => ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'REFERENCES', 'TRIGGER', 'ALL PRIVILEGES'],
+        'view'       => ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'REFERENCES', 'TRIGGER', 'ALL PRIVILEGES'],
+        'sequence'   => ['USAGE', 'SELECT', 'UPDATE', 'ALL PRIVILEGES'],
+        'database'   => ['CREATE', 'TEMPORARY', 'CONNECT', 'ALL PRIVILEGES'],
+        'function'   => ['EXECUTE', 'ALL PRIVILEGES'],
+        'language'   => ['USAGE', 'ALL PRIVILEGES'],
+        'schema'     => ['CREATE', 'USAGE', 'ALL PRIVILEGES'],
+        'tablespace' => ['CREATE', 'ALL PRIVILEGES'],
+        'column'     => ['SELECT', 'INSERT', 'UPDATE', 'REFERENCES','ALL PRIVILEGES']
+    ];
+    /**
+     * List of characters in acl lists and the privileges they refer to.
+     *
+     * @var array<string, string>
+     */
+    public array $privmap = [
         'r' => 'SELECT',
         'w' => 'UPDATE',
         'a' => 'INSERT',
@@ -130,11 +284,16 @@ class Postgres extends ADOdbBase
         'C' => 'CREATE',
         'T' => 'TEMPORARY',
         'c' => 'CONNECT'
-    );
+    ];
     // Rule action types
     public $rule_events = array('SELECT', 'INSERT', 'UPDATE', 'DELETE');
-    // Select operators
-    public $selectOps = array(
+
+    /**
+     * Select operators
+     *
+     * @var array<string, string>
+     */
+    public array $selectOps = [
         '=' => 'i', '!=' => 'i', '<' => 'i', '>' => 'i', '<=' => 'i', '>=' => 'i',
         '<<' => 'i', '>>' => 'i', '<<=' => 'i', '>>=' => 'i',
         'LIKE' => 'i', 'NOT LIKE' => 'i', 'ILIKE' => 'i', 'NOT ILIKE' => 'i', 'SIMILAR TO' => 'i',
@@ -143,7 +302,7 @@ class Postgres extends ADOdbBase
         '@@' => 'i', '@@@' => 'i', '@>' => 'i', '<@' => 'i',
         '@@ to_tsquery' => 't', '@@@ to_tsquery' => 't', '@> to_tsquery' => 't', '<@ to_tsquery' => 't',
         '@@ plainto_tsquery' => 't', '@@@ plainto_tsquery' => 't', '@> plainto_tsquery' => 't', '<@ plainto_tsquery' => 't'
-    );
+    ];
     // Array of allowed trigger events
     public $triggerEvents = array(
         'INSERT', 'UPDATE', 'DELETE', 'INSERT OR UPDATE', 'INSERT OR DELETE',
@@ -170,10 +329,9 @@ class Postgres extends ADOdbBase
 
     /**
      * Cleans (escapes) a string
-     * @param $str The string to clean, by reference
-     * @return The cleaned string
+     * @return ?string The cleaned string
      */
-    public function clean(&$str)
+    public function clean(?string &$str): ?string
     {
         if ($str === null) {
             return null;
@@ -190,10 +348,9 @@ class Postgres extends ADOdbBase
 
     /**
      * Cleans (escapes) an object name (eg. table, field)
-     * @param $str The string to clean, by reference
-     * @return The cleaned string
+     * @return string The cleaned string
      */
-    public function fieldClean(&$str)
+    public function fieldClean(?string &$str): ?string
     {
         if ($str === null) {
             return null;
@@ -440,25 +597,27 @@ class Postgres extends ADOdbBase
     {
         $this->getHelpPages();
 
-        if (isset($this->help_page[$help])) {
-            if (is_array($this->help_page[$help])) {
+        if (isset($this->helpPage[$help])) {
+            if (is_array($this->helpPage[$help])) {
                 $urls = array();
-                foreach ($this->help_page[$help] as $link) {
+                foreach ($this->helpPage[$help] as $link) {
                     $urls[] = $this->help_base . $link;
                 }
                 return $urls;
             } else {
-                return $this->help_base . $this->help_page[$help];
+                return $this->help_base . $this->helpPage[$help];
             }
         } else {
             return null;
         }
     }
 
-    public function getHelpPages()
+    /**
+     * @return array<string, string|string[]>
+     */
+    public function getHelpPages(): array
     {
-        include_once('./help/PostgresDoc14.php');
-        return $this->help_page;
+        return $this->helpPage;
     }
 
     // Database functions
@@ -479,9 +638,9 @@ class Postgres extends ADOdbBase
      * Return all database available on the server
      * @param $currentdatabase database name that should be on top of the resultset
      *
-     * @return A list of databases, sorted alphabetically
+     * @return mixed A list of databases, sorted alphabetically
      */
-    public function getDatabases($currentdatabase = null)
+    public function getDatabases(?string $currentdatabase = null)
     {
         global $conf, $misc;
 
@@ -743,9 +902,9 @@ class Postgres extends ADOdbBase
      * Searches all system catalogs to find objects that match a certain name.
      * @param $term The search term
      * @param $filter The object type to restrict to ('' means no restriction)
-     * @return A recordset
+     * @return mixed A recordset
      */
-    public function findObject($term, $filter)
+    public function findObject(string $term, string $filter)
     {
         global $conf;
 
@@ -2566,11 +2725,11 @@ class Postgres extends ADOdbBase
 
     /**
      * Returns all available autovacuum per table information.
-     * @param $table if given, return autovacuum info for the given table or return all information for all tables
+     * @param mixed $table if given, return autovacuum info for the given table or return all information for all tables
      *
-     * @return A recordset
+     * @return mixed A recordset
      */
-    public function getTableAutovacuum($table = '')
+    public function getTableAutovacuum(string $table = '')
     {
         $sql = '';
 
@@ -2812,7 +2971,7 @@ class Postgres extends ADOdbBase
      * Delete a row from a table
      * @param $table The table from which to delete
      * @param $key An array mapping column => value to delete
-     * @return 0 success
+     * @return bool|int 0 success
      */
     public function deleteRow($table, $key, $schema = false)
     {
@@ -2865,10 +3024,9 @@ class Postgres extends ADOdbBase
 
     /**
      * Returns properties of a single sequence
-     * @param $sequence Sequence name
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getSequence($sequence)
+    public function getSequence(string $sequence): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $this->clean($c_schema);
@@ -3132,9 +3290,9 @@ class Postgres extends ADOdbBase
      * Alter a sequence's owner
      * @param $seqrs The sequence RecordSet returned by getSequence()
      * @param $name The new owner for the sequence
-     * @return 0 success
+     * @return int 0 success
      */
-    public function alterSequenceOwner($seqrs, $owner)
+    public function alterSequenceOwner(\ADORecordSet $seqrs, ?string $owner): int
     {
         // If owner has been changed, then do the alteration.  We are
         // careful to avoid this generally as changing owner is a
@@ -3169,7 +3327,7 @@ class Postgres extends ADOdbBase
 
     /**
      * Alter a sequence's properties
-     * @param $seqrs The sequence RecordSet returned by getSequence()
+     * @param \ADORecordSet $seqrs The sequence RecordSet returned by getSequence()
      * @param $increment The sequence incremental value
      * @param $minvalue The sequence minimum value
      * @param $maxvalue The sequence maximum value
@@ -3177,18 +3335,18 @@ class Postgres extends ADOdbBase
      * @param $cachevalue The sequence cache value
      * @param $cycledvalue Sequence can cycle ?
      * @param $startvalue The sequence start value when issuing a restart
-     * @return 0 success
+     * @return int 0 success
      */
     public function alterSequenceProps(
-        $seqrs,
-        $increment,
-        $minvalue,
-        $maxvalue,
-        $restartvalue,
-        $cachevalue,
-        $cycledvalue,
-        $startvalue
-    ) {
+        \ADORecordSet $seqrs,
+        ?string $increment = null,
+        ?string $minvalue = null,
+        ?string $maxvalue = null,
+        ?string $restartvalue = null,
+        ?string $cachevalue = null,
+        ?string $cycledvalue = null,
+        ?string $startvalue = null
+    ): int {
         $sql = '';
         /* vars are cleaned in alterSequenceInternal */
         if (!empty($increment) && ($increment != $seqrs->fields['increment_by'])) {
@@ -3225,7 +3383,7 @@ class Postgres extends ADOdbBase
     /**
      * Protected method which alter a sequence
      * SHOULDN'T BE CALLED OUTSIDE OF A TRANSACTION
-     * @param $seqrs The sequence recordSet returned by getSequence()
+     * @param \ADORecordSet $seqrs The sequence recordSet returned by getSequence()
      * @param $name The new name for the sequence
      * @param $comment The comment on the sequence
      * @param $owner The new owner for the sequence
@@ -3245,18 +3403,18 @@ class Postgres extends ADOdbBase
      * @return -7 schema error
      */
     protected function alterSequenceInternal(
-        $seqrs,
-        $name,
-        $comment,
-        $owner,
-        $schema,
-        $increment,
-        $minvalue,
-        $maxvalue,
-        $restartvalue,
-        $cachevalue,
-        $cycledvalue,
-        $startvalue
+        \ADORecordSet $seqrs,
+        ?string $name = null,
+        ?string $comment = null,
+        ?string $owner = null,
+        ?string $schema = null,
+        ?string $increment = null,
+        ?string $minvalue = null,
+        ?string $maxvalue = null,
+        ?string $restartvalue = null,
+        ?string $cachevalue = null,
+        ?string $cycledvalue = null,
+        ?string $startvalue = null
     ) {
         $this->fieldArrayClean($seqrs->fields);
 
@@ -3332,22 +3490,25 @@ class Postgres extends ADOdbBase
      * @return $this->alterSequenceInternal error code
      */
     public function alterSequence(
-        $sequence,
-        $name,
-        $comment,
-        $owner = null,
-        $schema = null,
-        $increment = null,
-        $minvalue = null,
-        $maxvalue = null,
-        $restartvalue = null,
-        $cachevalue = null,
-        $cycledvalue = null,
-        $startvalue = null
+        ?string $sequence = null,
+        ?string $name = null,
+        ?string $comment = null,
+        ?string $owner = null,
+        ?string $schema = null,
+        ?string $increment = null,
+        ?string $minvalue = null,
+        ?string $maxvalue = null,
+        ?string $restartvalue = null,
+        ?string $cachevalue = null,
+        ?string $cycledvalue = null,
+        ?string $startvalue = null
     ) {
         $this->fieldClean($sequence);
 
         $data = $this->getSequence($sequence);
+        if (is_int($data)) {
+            return $data;
+        }
 
         if ($data->recordCount() != 1) {
             return -2;
@@ -4619,9 +4780,9 @@ class Postgres extends ADOdbBase
     /**
      * Returns all details for a particular function
      * @param $func The name of the function to retrieve
-     * @return Function info
+     * @return \ADORecordSet|int Function info
      */
-    public function getFunction($function_oid)
+    public function getFunction(string $function_oid): \ADORecordSet|int
     {
         $this->clean($function_oid);
 
@@ -5471,9 +5632,9 @@ class Postgres extends ADOdbBase
     /**
      * Grabs a list of triggers on a table
      * @param $table The name of a table whose triggers to retrieve
-     * @return A recordset
+     * @return mixed A recordset
      */
-    public function getTriggers($table = '')
+    public function getTriggers(string $table = '')
     {
         $c_schema = $this->_schema;
         $this->clean($c_schema);
@@ -7222,7 +7383,7 @@ class Postgres extends ADOdbBase
     /**
      * Determines whether or not a user is a super user
      * @param $username The username of the user
-     * @return True if is a super user, false otherwise
+     * @return bool True if is a super user, false otherwise
      */
     public function isSuperUser($username = '')
     {
@@ -7738,9 +7899,9 @@ class Postgres extends ADOdbBase
     /**
      * Retrieves information for all tablespaces
      * @param $all Include all tablespaces (necessary when moving objects back to the default space)
-     * @return A recordset
+     * @return mixed A recordset
      */
-    public function getTablespaces($all = false)
+    public function getTablespaces(bool $all = false)
     {
         global $conf;
 
@@ -7759,15 +7920,15 @@ class Postgres extends ADOdbBase
 
     /**
      * Retrieves a tablespace's information
-     * @return A recordset
+     * @return mixed A recordset
      */
-    public function getTablespace($spcname)
+    public function getTablespace(string $spcname)
     {
         $this->clean($spcname);
 
         $sql = "SELECT spcname, pg_catalog.pg_get_userbyid(spcowner) AS spcowner, pg_catalog.pg_tablespace_location(oid) as spclocation,
-					(SELECT description FROM pg_catalog.pg_shdescription pd WHERE pg_tablespace.oid=pd.objoid AND pd.classoid='pg_tablespace'::regclass) AS spccomment
-					FROM pg_catalog.pg_tablespace WHERE spcname='{$spcname}'";
+            (SELECT description FROM pg_catalog.pg_shdescription pd WHERE pg_tablespace.oid=pd.objoid AND pd.classoid='pg_tablespace'::regclass) AS spccomment
+            FROM pg_catalog.pg_tablespace WHERE spcname='{$spcname}'";
 
         return $this->selectSet($sql);
     }
@@ -7928,9 +8089,9 @@ class Postgres extends ADOdbBase
 
     /**
      * Returns all autovacuum global configuration
-     * @return associative array array( param => value, ...)
+     * @return array<mixed> associative array array( param => value, ...)
      */
-    public function getAutovacuum()
+    public function getAutovacuum(): array
     {
         $_defaults = $this->selectSet("SELECT name, setting
 			FROM pg_catalog.pg_settings
@@ -7946,7 +8107,7 @@ class Postgres extends ADOdbBase
 				OR name = 'autovacuum_freeze_max_age'
 			");
 
-        $ret = array();
+        $ret = [];
         while (!$_defaults->EOF) {
             $ret[$_defaults->fields['name']] = $_defaults->fields['setting'];
             $_defaults->moveNext();
@@ -7957,18 +8118,18 @@ class Postgres extends ADOdbBase
 
     /**
      * Returns all available autovacuum per table information.
-     * @return A recordset
+     * @return mixed A recordset
      */
     public function saveAutovacuum(
-        $table,
-        $vacenabled,
-        $vacthreshold,
-        $vacscalefactor,
-        $anathresold,
-        $anascalefactor,
-        $vaccostdelay,
-        $vaccostlimit
-    ) {
+        string $table,
+        ?string $vacenabled,
+        ?string $vacthreshold,
+        ?string $vacscalefactor,
+        ?string $anathresold,
+        ?string $anascalefactor,
+        ?string $vaccostdelay,
+        ?string $vaccostlimit
+    ): mixed {
         $f_schema = $this->_schema;
         $this->fieldClean($f_schema);
         $this->fieldClean($table);
@@ -8009,7 +8170,10 @@ class Postgres extends ADOdbBase
         return $this->execute($sql);
     }
 
-    public function dropAutovacuum($table)
+    /**
+     * @return bool|int
+     */
+    public function dropAutovacuum(string $table)
     {
         $f_schema = $this->_schema;
         $this->fieldClean($f_schema);
@@ -8024,10 +8188,10 @@ class Postgres extends ADOdbBase
 
     /**
      * Returns all available process information.
-     * @param $database (optional) Find only connections to specified database
-     * @return A recordset
+     * @param ?string $database (optional) Find only connections to specified database
+     * @return mixed A recordset
      */
-    public function getProcesses($database = null)
+    public function getProcesses(?string $database = null)
     {
         if ($database === null) {
             $sql = "SELECT datname, usename, pid,
@@ -8797,188 +8961,232 @@ class Postgres extends ADOdbBase
     }
 
     // Capabilities
+    public function hasAggregateSortOp(): bool
+    {
+        return true;
+    }
 
-    public function hasAggregateSortOp()
+    public function hasAlterAggregate(): bool
     {
         return true;
     }
-    public function hasAlterAggregate()
+
+    public function hasAlterColumnType(): bool
     {
         return true;
     }
-    public function hasAlterColumnType()
+
+    public function hasAlterDatabaseOwner(): bool
     {
         return true;
     }
-    public function hasAlterDatabaseOwner()
+
+    public function hasAlterDatabaseRename(): bool
     {
         return true;
     }
-    public function hasAlterDatabaseRename()
+
+    public function hasAlterSchema(): bool
     {
         return true;
     }
-    public function hasAlterSchema()
+
+    public function hasAlterSchemaOwner(): bool
     {
         return true;
     }
-    public function hasAlterSchemaOwner()
+
+    public function hasAlterSequenceSchema(): bool
     {
         return true;
     }
-    public function hasAlterSequenceSchema()
+
+    public function hasAlterSequenceStart(): bool
     {
         return true;
     }
-    public function hasAlterSequenceStart()
+
+    public function hasAlterTableSchema(): bool
     {
         return true;
     }
-    public function hasAlterTableSchema()
+
+    public function hasAutovacuum(): bool
     {
         return true;
     }
-    public function hasAutovacuum()
+
+    public function hasCreateTableLike(): bool
     {
         return true;
     }
-    public function hasCreateTableLike()
+
+    public function hasCreateTableLikeWithConstraints(): bool
     {
         return true;
     }
-    public function hasCreateTableLikeWithConstraints()
+
+    public function hasCreateTableLikeWithIndexes(): bool
     {
         return true;
     }
-    public function hasCreateTableLikeWithIndexes()
+
+    public function hasCreateFieldWithConstraints(): bool
     {
         return true;
     }
-    public function hasCreateFieldWithConstraints()
+
+    public function hasDisableTriggers(): bool
     {
         return true;
     }
-    public function hasDisableTriggers()
+
+    public function hasAlterDomains(): bool
     {
         return true;
     }
-    public function hasAlterDomains()
+
+    public function hasDomainConstraints(): bool
     {
         return true;
     }
-    public function hasDomainConstraints()
+
+    public function hasEnumTypes(): bool
     {
         return true;
     }
-    public function hasEnumTypes()
+
+    public function hasFTS(): bool
     {
         return true;
     }
-    public function hasFTS()
+
+    public function hasFunctionAlterOwner(): bool
     {
         return true;
     }
-    public function hasFunctionAlterOwner()
+
+    public function hasFunctionAlterSchema(): bool
     {
         return true;
     }
-    public function hasFunctionAlterSchema()
+
+    public function hasFunctionCosting(): bool
     {
         return true;
     }
-    public function hasFunctionCosting()
+
+    public function hasFunctionGUC(): bool
     {
         return true;
     }
-    public function hasFunctionGUC()
+
+    public function hasGrantOption(): bool
     {
         return true;
     }
-    public function hasGrantOption()
+
+    public function hasNamedParams(): bool
     {
         return true;
     }
-    public function hasNamedParams()
+
+    public function hasPrepare(): bool
     {
         return true;
     }
-    public function hasPrepare()
+
+    public function hasPreparedXacts(): bool
     {
         return true;
     }
-    public function hasPreparedXacts()
+
+    public function hasReadOnlyQueries(): bool
     {
         return true;
     }
-    public function hasReadOnlyQueries()
+
+    public function hasRecluster(): bool
     {
         return true;
     }
-    public function hasRecluster()
+
+    public function hasRoles(): bool
     {
         return true;
     }
-    public function hasRoles()
+
+    public function hasServerAdminFuncs(): bool
     {
         return true;
     }
-    public function hasServerAdminFuncs()
+
+    public function hasSharedComments(): bool
     {
         return true;
     }
-    public function hasSharedComments()
+
+    public function hasQueryCancel(): bool
     {
         return true;
     }
-    public function hasQueryCancel()
+
+    public function hasTablespaces(): bool
     {
         return true;
     }
-    public function hasTablespaces()
+
+    public function hasUserRename(): bool
     {
         return true;
     }
-    public function hasUserRename()
+
+    public function hasUserSignals(): bool
     {
         return true;
     }
-    public function hasUserSignals()
+
+    public function hasVirtualTransactionId(): bool
     {
         return true;
     }
-    public function hasVirtualTransactionId()
-    {
-        return true;
-    }
-    public function hasAlterDatabase()
+
+    public function hasAlterDatabase(): bool
     {
         return $this->hasAlterDatabaseRename();
     }
-    public function hasDatabaseCollation()
+
+    public function hasDatabaseCollation(): bool
     {
         return true;
     }
-    public function hasMagicTypes()
+
+    public function hasMagicTypes(): bool
     {
         return true;
     }
-    public function hasQueryKill()
+
+    public function hasQueryKill(): bool
     {
         return true;
     }
-    public function hasConcurrentIndexBuild()
+
+    public function hasConcurrentIndexBuild(): bool
     {
         return true;
     }
-    public function hasForceReindex()
+
+    public function hasForceReindex(): bool
     {
         return false;
     }
-    public function hasByteaHexDefault()
+
+    public function hasByteaHexDefault(): bool
     {
         return true;
     }
-    public function hasServerOids()
+
+    public function hasServerOids(): bool
     {
         return false;
     }

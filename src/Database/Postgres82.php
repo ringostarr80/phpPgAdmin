@@ -6,30 +6,17 @@ namespace PhpPgAdmin\Database;
 
 class Postgres82 extends Postgres83
 {
-    public float $major_version = 8.2;
-
-    // Select operators
-    public array $selectOps = array('=' => 'i', '!=' => 'i', '<' => 'i', '>' => 'i', '<=' => 'i', '>=' => 'i', '<<' => 'i', '>>' => 'i', '<<=' => 'i', '>>=' => 'i',
-        'LIKE' => 'i', 'NOT LIKE' => 'i', 'ILIKE' => 'i', 'NOT ILIKE' => 'i', 'SIMILAR TO' => 'i',
-        'NOT SIMILAR TO' => 'i', '~' => 'i', '!~' => 'i', '~*' => 'i', '!~*' => 'i',
-        'IS NULL' => 'p', 'IS NOT NULL' => 'p', 'IN' => 'x', 'NOT IN' => 'x');
+    public float $majorVersion = 8.2;
 
     /**
-     * Constructor
-     * @param $conn The database connection
+     * Select operators
+     *
+     * @var array<string, string>
      */
-    public function __construct($conn)
-    {
-        parent::__construct($conn);
-    }
-
-    // Help functions
-
-    public function getHelpPages()
-    {
-        include_once('./help/PostgresDoc82.php');
-        return $this->help_page;
-    }
+    public array $selectOps = ['=' => 'i', '!=' => 'i', '<' => 'i', '>' => 'i', '<=' => 'i', '>=' => 'i', '<<' => 'i', '>>' => 'i', '<<=' => 'i', '>>=' => 'i',
+        'LIKE' => 'i', 'NOT LIKE' => 'i', 'ILIKE' => 'i', 'NOT ILIKE' => 'i', 'SIMILAR TO' => 'i',
+        'NOT SIMILAR TO' => 'i', '~' => 'i', '!~' => 'i', '~*' => 'i', '!~*' => 'i',
+        'IS NULL' => 'p', 'IS NOT NULL' => 'p', 'IN' => 'x', 'NOT IN' => 'x'];
 
     // Database functions
 
@@ -112,9 +99,9 @@ class Postgres82 extends Postgres83
     /**
      * Grabs a list of triggers on a table
      * @param $table The name of a table whose triggers to retrieve
-     * @return A recordset
+     * @return mixed A recordset
      */
-    public function getTriggers($table = '')
+    public function getTriggers(string $table = '')
     {
         $c_schema = $this->_schema;
         $this->clean($c_schema);
@@ -142,9 +129,9 @@ class Postgres82 extends Postgres83
     /**
      * Returns all details for a particular function
      * @param $func The name of the function to retrieve
-     * @return Function info
+     * @return \ADORecordSet|int Function info
      */
-    public function getFunction($function_oid)
+    public function getFunction(string $function_oid): \ADORecordSet|int
     {
         $this->clean($function_oid);
 

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Database;
 
+use PhpPgAdmin\Config;
+
 class Postgres82 extends Postgres83
 {
     public float $majorVersion = 8.2;
@@ -22,13 +24,11 @@ class Postgres82 extends Postgres83
 
     /**
      * Returns table locks information in the current database
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getLocks()
+    public function getLocks(): \ADORecordSet|int
     {
-        global $conf;
-
-        if (!$conf['show_system']) {
+        if (!Config::showSystem()) {
             $where = 'AND pn.nspname NOT LIKE $$pg\_%$$';
         } else {
             $where = "AND nspname !~ '^pg_t(emp_[0-9]+|oast)$'";
@@ -46,20 +46,30 @@ class Postgres82 extends Postgres83
 
     /**
      * Rename a sequence
-     * @param $seqrs The sequence RecordSet returned by getSequence()
-     * @param $name The new name for the sequence
-     * @return 0 success
+     * @param \ADORecordSet $seqrs The sequence RecordSet returned by getSequence()
+     * @param ?string $name The new name for the sequence
+     * @return int 0 success
      */
-    public function alterSequenceName($seqrs, $name)
+    public function alterSequenceName(\ADORecordSet $seqrs, ?string $name): int
     {
         /* vars are cleaned in alterSequenceInternal */
-        if (!empty($name) && ($seqrs->fields['seqname'] != $name)) {
+        if (
+            !empty($name) &&
+            is_array($seqrs->fields) &&
+            isset($seqrs->fields['seqname']) &&
+            (
+                is_string($seqrs->fields['seqname']) ||
+                is_numeric($seqrs->fields['seqname']) ||
+                $seqrs->fields['seqname'] instanceof \Stringable
+            ) &&
+            $seqrs->fields['seqname'] !== $name
+        ) {
             $f_schema = $this->_schema;
-            $this->fieldClean($f_schema);
+            $f_schema = $this->fieldClean($f_schema);
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" RENAME TO \"{$name}\"";
             $status = $this->execute($sql);
             if ($status == 0) {
-                $seqrs->fields['seqname'] = $name;
+                $seqrs->fields['seqname'] = $name; // @phpstan-ignore assign.propertyType
             } else {
                 return $status;
             }
@@ -71,22 +81,31 @@ class Postgres82 extends Postgres83
 
     /**
      * Rename a view
-     * @param $vwrs The view recordSet returned by getView()
-     * @param $name The new view's name
-     * @return -1 Failed
-     * @return 0 success
+     * @param \ADORecordSet $vwrs The view recordSet returned by getView()
+     * @param ?string $name The new view's name
+     * @return int -1 Failed, 0 success
      */
-    public function alterViewName($vwrs, $name)
+    public function alterViewName(\ADORecordSet $vwrs, ?string $name): int
     {
         // Rename (only if name has changed)
         /* $vwrs and $name are cleaned in alterViewInternal */
-        if (!empty($name) && ($name != $vwrs->fields['relname'])) {
+        if (
+            !empty($name) &&
+            is_array($vwrs->fields) &&
+            isset($vwrs->fields['relname']) &&
+            (
+                is_string($vwrs->fields['relname']) ||
+                is_numeric($vwrs->fields['relname']) ||
+                $vwrs->fields['relname'] instanceof \Stringable
+            ) &&
+            $name != $vwrs->fields['relname']
+        ) {
             $f_schema = $this->_schema;
-            $this->fieldClean($f_schema);
+            $f_schema = $this->fieldClean($f_schema);
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$vwrs->fields['relname']}\" RENAME TO \"{$name}\"";
             $status =  $this->execute($sql);
             if ($status == 0) {
-                $vwrs->fields['relname'] = $name;
+                $vwrs->fields['relname'] = $name; // @phpstan-ignore assign.propertyType
             } else {
                 return $status;
             }
@@ -104,8 +123,8 @@ class Postgres82 extends Postgres83
     public function getTriggers(string $table = '')
     {
         $c_schema = $this->_schema;
-        $this->clean($c_schema);
-        $this->clean($table);
+        $c_schema = $this->clean($c_schema);
+        $table = $this->clean($table);
 
         $sql = "SELECT
 				t.tgname, pg_catalog.pg_get_triggerdef(t.oid) AS tgdef, t.tgenabled, p.oid AS prooid,
@@ -133,7 +152,7 @@ class Postgres82 extends Postgres83
      */
     public function getFunction(string $function_oid): \ADORecordSet|int
     {
-        $this->clean($function_oid);
+        $function_oid = $this->clean($function_oid);
 
         $sql = "SELECT
 					pc.oid AS prooid,
@@ -167,33 +186,41 @@ class Postgres82 extends Postgres83
      * @param $funcname The name of the function to create
      * @param $args A comma separated string of types
      * @param $returns The return type
-     * @param $definition The definition for the new function
+     * @param array<string|int, string>|string $definition The definition for the new function
      * @param $language The language the function is written for
-     * @param $flags An array of optional flags
+     * @param array<string|int, string> $flags An array of optional flags
      * @param $setof True if it returns a set, false otherwise
      * @param $rows number of rows planner should estimate will be returned
      * @param $cost cost the planner should use in the function execution step
      * @param $comment The comment on the function
      * @param $replace (optional) True if OR REPLACE, false for normal
-     * @return 0 success
-     * @return -1 create function failed
-     * @return -4 set comment failed
+     * @return bool|int 0 success, -1 create function failed, -4 set comment failed
      */
-    public function createFunction($funcname, $args, $returns, $definition, $language, $flags, $setof, $cost, $rows, $comment, $replace = false)
-    {
-
+    public function createFunction(
+        string $funcname,
+        string $args,
+        string $returns,
+        array|string $definition,
+        string $language,
+        array $flags,
+        bool $setof,
+        string|int|float $cost,
+        string|int $rows,
+        string $comment,
+        bool $replace = false
+    ): bool|int {
         // Begin a transaction
         $status = $this->beginTransaction();
-        if ($status != 0) {
+        if (!$status) {
             $this->rollbackTransaction();
             return -1;
         }
 
         $f_schema = $this->_schema;
-        $this->fieldClean($f_schema);
-        $this->fieldClean($funcname);
-        $this->clean($args);
-        $this->fieldClean($language);
+        $f_schema = $this->fieldClean($f_schema);
+        $funcname = $this->fieldClean($funcname);
+        $args = $this->clean($args);
+        $language = $this->fieldClean($language);
         $this->arrayClean($flags);
 
         $sql = "CREATE";
@@ -215,12 +242,14 @@ class Postgres82 extends Postgres83
 
         if (is_array($definition)) {
             $this->arrayClean($definition);
-            $sql .= "'" . $definition[0] . "'";
-            if ($definition[1]) {
-                $sql .= ",'" . $definition[1] . "'";
+            if (isset($definition[0])) {
+                $sql .= "'" . $definition[0] . "'";
+                if (isset($definition[1])) {
+                    $sql .= ",'" . $definition[1] . "'";
+                }
             }
         } else {
-            $this->clean($definition);
+            $definition = $this->clean($definition);
             $sql .= "'" . $definition . "'";
         }
 
@@ -229,11 +258,11 @@ class Postgres82 extends Postgres83
         // Add flags
         foreach ($flags as $v) {
             // Skip default flags
-            if ($v == '') {
+            if ($v === '') {
                 continue;
-            } else {
-                $sql .= "\n{$v}";
             }
+
+            $sql .= "\n{$v}";
         }
 
         $status = $this->execute($sql);
@@ -244,7 +273,7 @@ class Postgres82 extends Postgres83
 
         /* set the comment */
         $status = $this->setComment('FUNCTION', "\"{$funcname}\"({$args})", null, $comment);
-        if ($status != 0) {
+        if ($status !== 0) {
             $this->rollbackTransaction();
             return -4;
         }
@@ -258,11 +287,10 @@ class Postgres82 extends Postgres83
      * Clusters an index
      * @param $index The name of the index
      * @param $table The table the index is on
-     * @return 0 success
+     * @return int 0 success
      */
-    public function clusterIndex($table = '', $index = '')
+    public function clusterIndex(string $table = '', string $index = ''): int
     {
-
         $sql = 'CLUSTER';
 
         // We don't bother with a transaction here, as there's no point rolling
@@ -270,11 +298,11 @@ class Postgres82 extends Postgres83
 
         if (!empty($table)) {
             $f_schema = $this->_schema;
-            $this->fieldClean($f_schema);
-            $this->fieldClean($table);
+            $f_schema = $this->fieldClean($f_schema);
+            $table = $this->fieldClean($table);
 
             if (!empty($index)) {
-                $this->fieldClean($index);
+                $index = $this->fieldClean($index);
                 $sql .= " \"{$index}\" ON \"{$f_schema}\".\"{$table}\"";
             } else {
                 $sql .= " \"{$f_schema}\".\"{$table}\"";
@@ -289,11 +317,11 @@ class Postgres82 extends Postgres83
     /**
      * Returns all details for a particular operator
      * @param $operator_oid The oid of the operator
-     * @return Function info
+     * @return \ADORecordSet|int Function info
      */
-    public function getOperator($operator_oid)
+    public function getOperator(string $operator_oid): \ADORecordSet|int
     {
-        $this->clean($operator_oid);
+        $operator_oid = $this->clean($operator_oid);
 
         $sql = "
 			SELECT
@@ -324,12 +352,12 @@ class Postgres82 extends Postgres83
 
     /**
      * Gets all opclasses
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getOpClasses()
+    public function getOpClasses(): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
-        $this->clean($c_schema);
+        $c_schema = $this->clean($c_schema);
         $sql = "
 			SELECT
 				pa.amname,
@@ -350,28 +378,32 @@ class Postgres82 extends Postgres83
     }
 
     // Capabilities
+    public function hasCreateTableLikeWithIndexes(): bool
+    {
+        return false;
+    }
 
-    public function hasCreateTableLikeWithIndexes()
+    public function hasEnumTypes(): bool
     {
         return false;
     }
-    public function hasEnumTypes()
+
+    public function hasFTS(): bool
     {
         return false;
     }
-    public function hasFTS()
+
+    public function hasFunctionCosting(): bool
     {
         return false;
     }
-    public function hasFunctionCosting()
+
+    public function hasFunctionGUC(): bool
     {
         return false;
     }
-    public function hasFunctionGUC()
-    {
-        return false;
-    }
-    public function hasVirtualTransactionId()
+
+    public function hasVirtualTransactionId(): bool
     {
         return false;
     }

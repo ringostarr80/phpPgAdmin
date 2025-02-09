@@ -21,7 +21,7 @@ class Postgres95 extends Postgres96
 				FROM pg_catalog.pg_stat_activity
 				ORDER BY datname, usename, pid";
         } else {
-            $this->clean($database);
+            $database = $this->clean($database);
             $sql = "SELECT datname, usename, pid, waiting, state_change as query_start,
                 case when state='idle in transaction' then '<IDLE> in transaction' when state = 'idle' then '<IDLE>' else query end as query 
 				FROM pg_catalog.pg_stat_activity

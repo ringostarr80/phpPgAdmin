@@ -500,8 +500,8 @@ function doDefault($msg = '')
         $rowdata->fields['+type'] = $data->formatType($rowdata->fields['type'], $rowdata->fields['atttypmod']);
         $attname = $rowdata->fields['attname'];
         $table = $_REQUEST['table'];
-        $data->fieldClean($attname);
-        $data->fieldClean($table);
+        $attname = $data->fieldClean($attname);
+        $table = $data->fieldClean($table);
 
         $actions['browse']['attr']['href']['urlvars']['query'] = "SELECT \"{$attname}\", count(*) AS \"count\"
 				FROM \"{$table}\" GROUP BY \"{$attname}\" ORDER BY \"{$attname}\"";

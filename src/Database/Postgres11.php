@@ -29,8 +29,8 @@ class Postgres11 extends Postgres
     public function hasObjectID($table)
     {
         $c_schema = $this->_schema;
-        $this->clean($c_schema);
-        $this->clean($table);
+        $c_schema = $this->clean($c_schema);
+        $table = $this->clean($table);
 
         $sql = "SELECT relhasoids FROM pg_catalog.pg_class WHERE relname='{$table}'
 			AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname='{$c_schema}')";

@@ -23,7 +23,7 @@ class Postgres91 extends Postgres92
 				FROM pg_catalog.pg_stat_activity
 				ORDER BY datname, usename, procpid";
         } else {
-            $this->clean($database);
+            $database = $this->clean($database);
             $sql = "SELECT datname, usename, procpid AS pid, waiting, current_query AS query, query_start
 				FROM pg_catalog.pg_stat_activity
 				WHERE datname='{$database}'
@@ -63,7 +63,7 @@ class Postgres91 extends Postgres92
      */
     public function getTablespace(string $spcname)
     {
-        $this->clean($spcname);
+        $spcname = $this->clean($spcname);
 
         $sql = "SELECT spcname, pg_catalog.pg_get_userbyid(spcowner) AS spcowner, spclocation,
             (SELECT description FROM pg_catalog.pg_shdescription pd WHERE pg_tablespace.oid=pd.objoid AND pd.classoid='pg_tablespace'::regclass) AS spccomment

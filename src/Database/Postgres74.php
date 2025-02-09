@@ -28,17 +28,17 @@ class Postgres74 extends Postgres80
      * @param $dbName The name of the database
      * @param $newName new name for the database
      * @param $newOwner The new owner for the database
-     * @return 0 success
-     * @return -1 transaction error
-     * @return -2 owner error
-     * @return -3 rename error
+     * @return bool|int 0 success
+     * -1 transaction error
+     * -2 owner error
+     * -3 rename error
      */
-    public function alterDatabase($dbName, $newName, $newOwner = '', $comment = '')
+    public function alterDatabase(string $dbName, string $newName, string $newOwner = '', string $comment = ''): bool|int
     {
         //ignore $newowner, not supported pre 8.0
         //ignore $comment, not supported pre 8.2
-        $this->clean($dbName);
-        $this->clean($newName);
+        $dbName = $this->clean($dbName);
+        $newName = $this->clean($newName);
 
         $status = $this->alterDatabaseRename($dbName, $newName);
         if ($status != 0) {
@@ -60,14 +60,14 @@ class Postgres74 extends Postgres80
 
         if (isset($conf['owned_only']) && $conf['owned_only'] && !$this->isSuperUser()) {
             $username = $server_info['username'];
-            $this->clean($username);
+            $username = $this->clean($username);
             $clause = " AND pu.usename='{$username}'";
         } else {
             $clause = '';
         }
 
         if ($currentdatabase != null) {
-            $this->clean($currentdatabase);
+            $currentdatabase = $this->clean($currentdatabase);
             $orderby = "ORDER BY pdb.datname = '{$currentdatabase}' DESC, pdb.datname";
         } else {
             $orderby = "ORDER BY pdb.datname";
@@ -111,8 +111,8 @@ class Postgres74 extends Postgres80
         // Escape search term for ILIKE match
         $term = str_replace('_', '\\_', $term);
         $term = str_replace('%', '\\%', $term);
-        $this->clean($term);
-        $this->clean($filter);
+        $term = $this->clean($term);
+        $filter = $this->clean($filter);
 
         // Exclude system relations if necessary
         if (!$conf['show_system']) {
@@ -238,9 +238,9 @@ class Postgres74 extends Postgres80
 
     /**
      * Returns table locks information in the current database
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getLocks()
+    public function getLocks(): \ADORecordSet|int
     {
         global $conf;
 
@@ -280,16 +280,19 @@ class Postgres74 extends Postgres80
      * @param $schema The new schema for the table
      * @param $comment The comment on the table
      * @param $tablespace The new tablespace for the table ('' means leave as is)
-     * @return 0 success
-     * @return -3 rename error
-     * @return -4 comment error
-     * @return -5 owner error
+     * @return 0 success, -3 rename error, -4 comment error, -5 owner error
      */
-    protected function alterTableInternal($tblrs, $name, $owner, $schema, $comment, $tablespace)
-    {
+    protected function alterTableInternal(
+        \ADORecordSet $tblrs,
+        string $name,
+        string $owner,
+        string $schema,
+        string $comment,
+        string $tablespace
+    ): int {
 
         /* $schema and tablespace not supported in pg74- */
-        $this->fieldArrayClean($tblrs->fields);
+        $tblrs->fields = $this->fieldArrayClean($tblrs->fields);
 
         // Comment
         $status = $this->setComment('TABLE', '', $tblrs->fields['relname'], $comment);
@@ -298,14 +301,14 @@ class Postgres74 extends Postgres80
         }
 
         // Owner
-        $this->fieldClean($owner);
+        $owner = $this->fieldClean($owner);
         $status = $this->alterTableOwner($tblrs, $owner);
         if ($status != 0) {
             return -5;
         }
 
         // Rename
-        $this->fieldClean($name);
+        $name = $this->fieldClean($name);
         $status = $this->alterTableName($tblrs, $name);
         if ($status != 0) {
             return -3;
@@ -387,9 +390,9 @@ class Postgres74 extends Postgres80
         }
 
         // The $name and $table parameters must be cleaned for the setComment function.
-                // It's ok to do that here since this is the last time these variables are used.
-        $this->fieldClean($name);
-        $this->fieldClean($table);
+        // It's ok to do that here since this is the last time these variables are used.
+        $name = $this->fieldClean($name);
+        $table = $this->fieldClean($table);
         $status = $this->setComment('COLUMN', $name, $table, $comment);
         if ($status != 0) {
             $this->rollbackTransaction();
@@ -407,8 +410,8 @@ class Postgres74 extends Postgres80
     public function getTable($table)
     {
         $c_schema = $this->_schema;
-        $this->clean($c_schema);
-        $this->clean($table);
+        $c_schema = $this->clean($c_schema);
+        $table = $this->clean($table);
 
         $sql = "
 			SELECT
@@ -432,7 +435,7 @@ class Postgres74 extends Postgres80
     public function getTables($all = false)
     {
         $c_schema = $this->_schema;
-        $this->clean($c_schema);
+        $c_schema = $this->clean($c_schema);
         if ($all) {
             // Exclude pg_catalog and information_schema tables
             $sql = "SELECT schemaname AS nspname, tablename AS relname, tableowner AS relowner
@@ -477,8 +480,8 @@ class Postgres74 extends Postgres80
     {
 
         $c_schema = $this->_schema;
-        $this->clean($c_schema);
-        $this->clean($table);
+        $c_schema = $this->clean($c_schema);
+        $table = $this->clean($table);
 
         // get the max number of col used in a constraint for the table
         $sql = "SELECT DISTINCT
@@ -539,7 +542,7 @@ class Postgres74 extends Postgres80
     public function getSequences($all = false)
     {
         $c_schema = $this->_schema;
-        $this->clean($c_schema);
+        $c_schema = $this->clean($c_schema);
         if ($all) {
             // Exclude pg_catalog and information_schema tables
             $sql = "SELECT n.nspname, c.relname AS seqname, u.usename AS seqowner
@@ -567,7 +570,7 @@ class Postgres74 extends Postgres80
      */
     public function getFunction(string $function_oid): \ADORecordSet|int
     {
-        $this->clean($function_oid);
+        $function_oid = $this->clean($function_oid);
 
         $sql = "
 		SELECT

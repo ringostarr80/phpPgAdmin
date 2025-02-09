@@ -154,7 +154,7 @@ function doEdit($msg = '')
                     }
                 }
                 if (isset($names_arr[$i]) && $names_arr[$i] != '') {
-                    $data->fieldClean($names_arr[$i]);
+                    $names_arr[$i] = $data->fieldClean($names_arr[$i]);
                     $args .= '"' . $names_arr[$i] . '" ';
                 }
                 $args .= $args_arr[$i];
@@ -343,7 +343,7 @@ function doProperties($msg = '')
                     }
                 }
                 if (isset($names_arr[$i]) && $names_arr[$i] != '') {
-                    $data->fieldClean($names_arr[$i]);
+                    $names_arr[$i] = $data->fieldClean($names_arr[$i]);
                     $args .= '"' . $names_arr[$i] . '" ';
                 }
                 $args .= $args_arr[$i];

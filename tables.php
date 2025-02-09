@@ -309,8 +309,8 @@ function doCreateLike($confirm, $msg = '')
         $tables = array();
         $tblsel = '';
         foreach ($tbltmp as $a) {
-            $data->fieldClean($a['nspname']);
-            $data->fieldClean($a['relname']);
+            $a['nspname'] = $data->fieldClean($a['nspname']);
+            $a['relname'] = $data->fieldClean($a['relname']);
             $tables["\"{$a['nspname']}\".\"{$a['relname']}\""] = serialize(array('schema' => $a['nspname'], 'table' => $a['relname']));
             if ($_REQUEST['like'] == $tables["\"{$a['nspname']}\".\"{$a['relname']}\""]) {
                 $tblsel = htmlspecialchars($tables["\"{$a['nspname']}\".\"{$a['relname']}\""]);

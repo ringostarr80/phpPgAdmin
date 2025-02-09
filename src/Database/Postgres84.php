@@ -37,8 +37,8 @@ class Postgres84 extends Postgres90
     public function getTriggers(string $table = '')
     {
         $c_schema = $this->_schema;
-        $this->clean($c_schema);
-        $this->clean($table);
+        $c_schema = $this->clean($c_schema);
+        $table = $this->clean($table);
 
         $sql = "SELECT
 				t.tgname, pg_catalog.pg_get_triggerdef(t.oid) AS tgdef,
@@ -76,7 +76,7 @@ class Postgres84 extends Postgres90
 
         // Escape search term for ILIKE match
         $term = $this->clean($term) ?? '';
-        $this->clean($filter);
+        $filter = $this->clean($filter);
         $term = str_replace('_', '\_', $term);
         $term = str_replace('%', '\%', $term);
 

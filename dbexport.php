@@ -80,7 +80,7 @@ if ($misc->isDumpEnabled($dumpall)) {
     // we are PG 7.4+, so we always have a schema
     if (isset($_REQUEST['schema'])) {
         $f_schema = $_REQUEST['schema'];
-        $data->fieldClean($f_schema);
+        $f_schema = $data->fieldClean($f_schema);
     }
 
     // Check for a specified table/view
@@ -92,7 +92,7 @@ if ($misc->isDumpEnabled($dumpall)) {
         case 'table':
         case 'view':
             $f_object = $_REQUEST[$_REQUEST['subject']];
-            $data->fieldClean($f_object);
+            $f_object = $data->fieldClean($f_object);
 
             // Starting in 8.2, -n and -t are orthogonal, so we now schema qualify
             // the table name in the -t argument and quote both identifiers

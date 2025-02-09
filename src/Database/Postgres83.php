@@ -77,14 +77,14 @@ class Postgres83 extends Postgres84
 
         if (Config::ownedOnly() && !$this->isSuperUser() && !is_null($serverSession)) {
             $username = (string)$serverSession->Username;
-            $this->clean($username);
+            $username = $this->clean($username);
             $clause = " AND pr.rolname='{$username}'";
         } else {
             $clause = '';
         }
 
         if ($currentdatabase != null) {
-            $this->clean($currentdatabase);
+            $currentdatabase = $this->clean($currentdatabase);
             $orderby = "ORDER BY pdb.datname = '{$currentdatabase}' DESC, pdb.datname";
         } else {
             $orderby = "ORDER BY pdb.datname";
@@ -121,9 +121,9 @@ class Postgres83 extends Postgres84
         $sql = '';
 
         if ($table !== '') {
-            $this->clean($table);
+            $table = $this->clean($table);
             $c_schema = $this->_schema;
-            $this->clean($c_schema);
+            $c_schema = $this->clean($c_schema);
 
             $sql = "
 				SELECT vacrelid, nspname, relname, 
@@ -172,8 +172,8 @@ class Postgres83 extends Postgres84
     ): mixed {
         $defaults = $this->getAutovacuum();
         $c_schema = $this->_schema;
-        $this->clean($c_schema);
-        $this->clean($table);
+        $c_schema = $this->clean($c_schema);
+        $table = $this->clean($table);
 
         $rs = $this->selectSet("
 			SELECT c.oid 
@@ -289,8 +289,8 @@ class Postgres83 extends Postgres84
     public function dropAutovacuum(string $table)
     {
         $c_schema = $this->_schema;
-        $this->clean($c_schema);
-        $this->clean($table);
+        $c_schema = $this->clean($c_schema);
+        $table = $this->clean($table);
 
         $rs = $this->selectSet("
 			SELECT c.oid 
@@ -369,7 +369,7 @@ class Postgres83 extends Postgres84
             )
         ) {
             $f_schema = $this->_schema;
-            $this->fieldClean($f_schema);
+            $f_schema = $this->fieldClean($f_schema);
             $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" {$sql}";
             return $this->execute($sql);
         }
@@ -400,7 +400,7 @@ class Postgres83 extends Postgres84
             )
         ) {
             $f_schema = $this->_schema;
-            $this->fieldClean($f_schema);
+            $f_schema = $this->fieldClean($f_schema);
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" OWNER TO \"{$owner}\"";
             return $this->execute($sql);
         }
@@ -416,7 +416,7 @@ class Postgres83 extends Postgres84
      */
     public function getFunction(string $function_oid): \ADORecordSet|int
     {
-        $this->clean($function_oid);
+        $function_oid = $this->clean($function_oid);
 
         $sql = "
 			SELECT

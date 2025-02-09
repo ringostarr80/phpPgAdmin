@@ -210,8 +210,8 @@ function doCreateConfig($msg = '')
     $tpls = array();
     $tplsel = '';
     while (!$ftscfgs->EOF) {
-        $data->fieldClean($ftscfgs->fields['schema']);
-        $data->fieldClean($ftscfgs->fields['name']);
+        $ftscfgs->fields['schema'] = $data->fieldClean($ftscfgs->fields['schema']);
+        $ftscfgs->fields['name'] = $data->fieldClean($ftscfgs->fields['name']);
         $tplname = $ftscfgs->fields['schema'] . '.' . $ftscfgs->fields['name'];
         $tpls[$tplname] = serialize(array(
             'name' => $ftscfgs->fields['name'],
@@ -231,8 +231,8 @@ function doCreateConfig($msg = '')
     $ftsparsers_ = array();
     $ftsparsel = '';
     while (!$ftsparsers->EOF) {
-        $data->fieldClean($ftsparsers->fields['schema']);
-        $data->fieldClean($ftsparsers->fields['name']);
+        $ftsparsers->fields['schema'] = $data->fieldClean($ftsparsers->fields['schema']);
+        $ftsparsers->fields['name'] = $data->fieldClean($ftsparsers->fields['name']);
         $parsername = $ftsparsers->fields['schema'] . '.' . $ftsparsers->fields['name'];
 
         $ftsparsers_[$parsername] = serialize(array(
@@ -647,8 +647,8 @@ function doCreateDict($msg = '')
     $tpls = array();
     $tplsel = '';
     while (!$ftstpls->EOF) {
-        $data->fieldClean($ftstpls->fields['schema']);
-        $data->fieldClean($ftstpls->fields['name']);
+        $ftstpls->fields['schema'] = $data->fieldClean($ftstpls->fields['schema']);
+        $ftstpls->fields['name'] = $data->fieldClean($ftstpls->fields['name']);
         $tplname = $ftstpls->fields['schema'] . '.' . $ftstpls->fields['name'];
         $tpls[$tplname] = serialize(array(
             'name' => $ftstpls->fields['name'],

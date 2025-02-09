@@ -27,8 +27,8 @@ class Postgres10 extends Postgres11
          **/
 
         // Escape search term for ILIKE match
-        $this->clean($term);
-        $this->clean($filter);
+        $term = $this->clean($term);
+        $filter = $this->clean($filter);
         $term = str_replace('_', '\_', $term);
         $term = str_replace('%', '\%', $term);
 
@@ -175,7 +175,7 @@ class Postgres10 extends Postgres11
             }
         } else {
             $c_schema = $this->_schema;
-            $this->clean($c_schema);
+            $c_schema = $this->clean($c_schema);
             $where = "n.nspname = '{$c_schema}'";
             $distinct = '';
         }
@@ -207,16 +207,16 @@ class Postgres10 extends Postgres11
 
     /**
      * Gets all information for an aggregate
-     * @param $name The name of the aggregate
-     * @param $basetype The input data type of the aggregate
-     * @return A recordset
+     * @param string $name The name of the aggregate
+     * @param string $basetype The input data type of the aggregate
+     * @return \ADORecordSet|int A recordset
      */
-    public function getAggregate($name, $basetype)
+    public function getAggregate(string $name, string $basetype): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
-        $this->clean($c_schema);
-        $this->fieldclean($name);
-        $this->fieldclean($basetype);
+        $c_schema = $this->clean($c_schema);
+        $name = $this->fieldclean($name);
+        $basetype = $this->fieldclean($basetype);
 
         $sql = "
 			SELECT p.proname, CASE p.proargtypes[0]
@@ -243,7 +243,7 @@ class Postgres10 extends Postgres11
     public function getAggregates()
     {
         $c_schema = $this->_schema;
-        $this->clean($c_schema);
+        $c_schema = $this->clean($c_schema);
         $sql = "SELECT p.proname, CASE p.proargtypes[0] WHEN 'pg_catalog.\"any\"'::pg_catalog.regtype THEN NULL ELSE
 			   pg_catalog.format_type(p.proargtypes[0], NULL) END AS proargtypes, a.aggtransfn, u.usename,
 			   pg_catalog.obj_description(p.oid, 'pg_proc') AS aggrcomment

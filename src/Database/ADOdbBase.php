@@ -48,18 +48,20 @@ class ADOdbBase
      * Cleans (escapes) an object name (eg. table, field)
      * @return ?string The cleaned string
      */
-    public function fieldClean(?string &$str): ?string
+    public function fieldClean(?string $str): ?string
     {
-        $str = str_replace('"', '""', $str);
-        return $str;
+        if (is_null($str)) {
+            return null;
+        }
+        return str_replace('"', '""', $str);
     }
 
     /**
      * Cleans (escapes) an array
-     * @param $arr The array to clean, by reference
-     * @return The cleaned array
+     * @param array<mixed> $arr The array to clean, by reference
+     * @return array<mixed> The cleaned array
      */
-    public function arrayClean(&$arr)
+    public function arrayClean(array &$arr): array
     {
         return $arr = array_map('addslashes', $arr);
     }
@@ -140,18 +142,18 @@ class ADOdbBase
      */
     public function delete($table, $conditions, $schema = '')
     {
-        $this->fieldClean($table);
+        $table = $this->fieldClean($table);
 
         if (!empty($schema)) {
-            $this->fieldClean($schema);
+            $schema = $this->fieldClean($schema);
             $schema = "\"{$schema}\".";
         }
 
         // Build clause
         $sql = '';
         foreach ($conditions as $key => $value) {
-            $this->clean($key);
-            $this->clean($value);
+            $key = $this->clean($key);
+            $value = $this->clean($value);
             if ($sql) {
                 $sql .= " AND \"{$key}\"='{$value}'";
             } else {
@@ -182,15 +184,15 @@ class ADOdbBase
      */
     public function insert($table, $vars)
     {
-        $this->fieldClean($table);
+        $table = $this->fieldClean($table);
 
         // Build clause
         if (sizeof($vars) > 0) {
             $fields = '';
             $values = '';
             foreach ($vars as $key => $value) {
-                $this->clean($key);
-                $this->clean($value);
+                $key = $this->clean($key);
+                $value = $this->clean($value);
 
                 if ($fields) {
                     $fields .= ", \"{$key}\"";
@@ -233,15 +235,15 @@ class ADOdbBase
      */
     public function update($table, $vars, $where, $nulls = array())
     {
-        $this->fieldClean($table);
+        $table = $this->fieldClean($table);
 
         $setClause = '';
         $whereClause = '';
 
         // Populate the syntax arrays
         foreach ($vars as $key => $value) {
-            $this->fieldClean($key);
-            $this->clean($value);
+            $key = $this->fieldClean($key);
+            $value = $this->clean($value);
             if ($setClause) {
                 $setClause .= ", \"{$key}\"='{$value}'";
             } else {
@@ -250,7 +252,7 @@ class ADOdbBase
         }
 
         foreach ($nulls as $value) {
-            $this->fieldClean($value);
+            $value = $this->fieldClean($value);
             if ($setClause) {
                 $setClause .= ", \"{$value}\"=NULL";
             } else {
@@ -259,8 +261,8 @@ class ADOdbBase
         }
 
         foreach ($where as $key => $value) {
-            $this->fieldClean($key);
-            $this->clean($value);
+            $key = $this->fieldClean($key);
+            $value = $this->clean($value);
             if ($whereClause) {
                 $whereClause .= " AND \"{$key}\"='{$value}'";
             } else {
@@ -288,9 +290,9 @@ class ADOdbBase
 
     /**
      * Begin a transaction
-     * @return 0 success
+     * @return bool true success
      */
-    public function beginTransaction()
+    public function beginTransaction(): bool
     {
         return !$this->conn->BeginTrans();
     }

@@ -4,14 +4,22 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Database;
 
+use ADORecordSet;
+use PhpPgAdmin\Config;
+use PhpPgAdmin\DDD\Entities\ServerSession;
+
 class Postgres80 extends Postgres81
 {
     public float $majorVersion = 8.0;
 
-    // Map of database encoding names to HTTP encoding names.  If a
-    // database encoding does not appear in this list, then its HTTP
-    // encoding name is the same as its database encoding name.
-    public array $codemap = array(
+    /**
+     * Map of database encoding names to HTTP encoding names.  If a
+     * database encoding does not appear in this list, then its HTTP
+     * encoding name is the same as its database encoding name.
+     *
+     * @var array<string, string>
+     */
+    public array $codemap = [
         'ALT' => 'CP866',
         'EUC_CN' => 'GB2312',
         'EUC_JP' => 'EUC-JP',
@@ -41,13 +49,9 @@ class Postgres80 extends Postgres81
         'WIN' => 'CP1251',
         'WIN874' => 'CP874',
         'WIN1256' => 'CP1256'
-    );
+    ];
 
-    /**
-     * Constructor
-     * @param $conn The database connection
-     */
-    public function __construct($conn)
+    public function __construct(\ADOConnection $conn)
     {
         parent::__construct($conn);
 
@@ -75,35 +79,32 @@ class Postgres80 extends Postgres81
      */
     public function getDatabases(?string $currentdatabase = null)
     {
-        global $conf, $misc;
+        $serverSession = ServerSession::fromRequestParameter();
 
-        $server_info = $misc->getServerInfo();
-
-        if (isset($conf['owned_only']) && $conf['owned_only'] && !$this->isSuperUser()) {
-            $username = $server_info['username'];
-            $this->clean($username);
+        if (Config::ownedOnly() && !$this->isSuperUser() && !is_null($serverSession)) {
+            $username = $this->clean((string)$serverSession->Username);
             $clause = " AND pu.usename='{$username}'";
         } else {
             $clause = '';
         }
 
         if ($currentdatabase != null) {
-            $this->clean($currentdatabase);
+            $currentdatabase = $this->clean($currentdatabase);
             $orderby = "ORDER BY pdb.datname = '{$currentdatabase}' DESC, pdb.datname";
         } else {
             $orderby = "ORDER BY pdb.datname";
         }
 
-        if (!$conf['show_system']) {
+        if (!Config::showSystem()) {
             $where = ' AND NOT pdb.datistemplate';
         } else {
             $where = ' AND pdb.datallowconn';
         }
 
         $sql = "SELECT pdb.datname AS datname, pu.usename AS datowner, pg_encoding_to_char(encoding) AS datencoding,
-                               (SELECT description FROM pg_description pd WHERE pdb.oid=pd.objoid) AS datcomment,
-                               (SELECT spcname FROM pg_catalog.pg_tablespace pt WHERE pt.oid=pdb.dattablespace) AS tablespace
-                        FROM pg_database pdb, pg_user pu
+            (SELECT description FROM pg_description pd WHERE pdb.oid=pd.objoid) AS datcomment,
+            (SELECT spcname FROM pg_catalog.pg_tablespace pt WHERE pt.oid=pdb.dattablespace) AS tablespace
+            FROM pg_database pdb, pg_user pu
 			WHERE pdb.datdba = pu.usesysid
 			{$where}
 			{$clause}
@@ -116,13 +117,11 @@ class Postgres80 extends Postgres81
 
     /**
      * Return all schemas in the current database.
-     * @return All schemas, sorted alphabetically
+     * @return \ADORecordSet|int All schemas, sorted alphabetically
      */
-    public function getSchemas()
+    public function getSchemas(): \ADORecordSet|int
     {
-        global $conf;
-
-        if (!$conf['show_system']) {
+        if (!Config::showSystem()) {
             $where = "WHERE nspname NOT LIKE 'pg@_%' ESCAPE '@' AND nspname != 'information_schema'";
         } else {
             $where = "WHERE nspname !~ '^pg_t(emp_[0-9]+|oast)$'";
@@ -140,12 +139,12 @@ class Postgres80 extends Postgres81
 
     /**
      * Return all information relating to a schema
-     * @param $schema The name of the schema
-     * @return Schema information
+     * @param string $schema The name of the schema
+     * @return \ADORecordSet|int Schema information
      */
-    public function getSchemaByName($schema)
+    public function getSchemaByName(string $schema): \ADORecordSet|int
     {
-        $this->clean($schema);
+        $schema = $this->clean($schema);
         $sql = "
 			SELECT nspname, nspowner, u.usename AS ownername, nspacl,
 				pg_catalog.obj_description(pn.oid, 'pg_namespace') as nspcomment
@@ -166,39 +165,46 @@ class Postgres80 extends Postgres81
      * @param $schema The new schema for the table
      * @param $comment The comment on the table
      * @param $tablespace The new tablespace for the table ('' means leave as is)
-     * @return 0 success
-     * @return -3 rename error
-     * @return -4 comment error
-     * @return -5 owner error
-     * @return -6 tablespace error
+     * @return int 0 success
+     * -3 rename error
+     * -4 comment error
+     * -5 owner error
+     * -6 tablespace error
      */
-    protected function alterTableInternal($tblrs, $name, $owner, $schema, $comment, $tablespace)
-    {
-
+    protected function alterTableInternal(
+        \ADORecordSet $tblrs,
+        string $name,
+        string $owner,
+        string $schema,
+        string $comment,
+        string $tablespace
+    ): int {
         /* $schema not supported in pg80- */
 
         // Comment
-        $status = $this->setComment('TABLE', '', $tblrs->fields['relname'], $comment);
-        if ($status != 0) {
-            return -4;
+        if (is_array($tblrs->fields)) {
+            $status = $this->setComment('TABLE', '', $tblrs->fields['relname'], $comment);
+            if ($status != 0) {
+                return -4;
+            }
         }
 
         // Owner
-        $this->fieldClean($owner);
+        $owner = $this->fieldClean($owner);
         $status = $this->alterTableOwner($tblrs, $owner);
         if ($status != 0) {
             return -5;
         }
 
         // Tablespace
-        $this->fieldClean($tablespace);
+        $tablespace = $this->fieldClean($tablespace);
         $status = $this->alterTableTablespace($tblrs, $tablespace);
         if ($status != 0) {
             return -6;
         }
 
         // Rename
-        $this->fieldClean($name);
+        $name = $this->fieldClean($name);
         $status = $this->alterTableName($tblrs, $name);
         if ($status != 0) {
             return -3;
@@ -216,31 +222,34 @@ class Postgres80 extends Postgres81
      * @param $name The new name for the view
      * @param $owner The new owner for the view
      * @param $comment The comment on the view
-     * @return 0 success
-     * @return -3 rename error
-     * @return -4 comment error
-     * @return -5 owner error
+     * @return int 0 success, -3 rename error, -4 comment error, -5 owner error
      */
-    protected function alterViewInternal($vwrs, $name, $owner, $schema, $comment)
-    {
-
+    protected function alterViewInternal(
+        \ADORecordSet $vwrs,
+        string $name,
+        string $owner,
+        string $schema,
+        string $comment
+    ): int {
         /* $schema not supported in pg80- */
-        $this->fieldArrayClean($vwrs->fields);
+        if (is_array($vwrs->fields)) {
+            $vwrs->fields = $this->fieldArrayClean($vwrs->fields);
 
-        // Comment
-        if ($this->setComment('VIEW', $vwrs->fields['relname'], '', $comment) != 0) {
-            return -4;
+            // Comment
+            if ($this->setComment('VIEW', $vwrs->fields['relname'], '', $comment) != 0) {
+                return -4;
+            }
         }
 
         // Owner
-        $this->fieldClean($owner);
+        $owner = $this->fieldClean($owner);
         $status = $this->alterViewOwner($vwrs, $owner);
         if ($status != 0) {
             return -5;
         }
 
         // Rename
-        $this->fieldClean($name);
+        $name = $this->fieldClean($name);
         $status = $this->alterViewName($vwrs, $name);
         if ($status != 0) {
             return -3;
@@ -266,12 +275,7 @@ class Postgres80 extends Postgres81
      * @param $cachevalue The cache value
      * @param $cycledvalue True if cycled, false otherwise
      * @param $startvalue The sequence start value when issuing a restart
-     * @return 0 success
-     * @return -3 rename error
-     * @return -4 comment error
-     * @return -5 owner error
-     * @return -6 get sequence props error
-     * @return -7 schema error
+     * @return int 0 success, -3 rename error, -4 comment error, -5 owner error, -6 get sequence props error, -7 schema error
      */
     protected function alterSequenceInternal(
         \ADORecordSet $seqrs,
@@ -286,32 +290,33 @@ class Postgres80 extends Postgres81
         ?string $cachevalue = null,
         ?string $cycledvalue = null,
         ?string $startvalue = null
-    ) {
-
+    ): int {
         /* $schema not supported in pg80- */
-        $this->fieldArrayClean($seqrs->fields);
+        if (is_array($seqrs->fields)) {
+            $seqrs->fields = $this->fieldArrayClean($seqrs->fields);
 
-        // Comment
-        $status = $this->setComment('SEQUENCE', $seqrs->fields['seqname'], '', $comment);
-        if ($status != 0) {
-            return -4;
+            // Comment
+            $status = $this->setComment('SEQUENCE', $seqrs->fields['seqname'], '', $comment);
+            if ($status != 0) {
+                return -4;
+            }
         }
 
         // Owner
-        $this->fieldClean($owner);
+        $owner = $this->fieldClean($owner);
         $status = $this->alterSequenceOwner($seqrs, $owner);
         if ($status != 0) {
             return -5;
         }
 
         // Props
-        $this->clean($increment);
-        $this->clean($minvalue);
-        $this->clean($maxvalue);
-        $this->clean($restartvalue);
-        $this->clean($cachevalue);
-        $this->clean($cycledvalue);
-        $this->clean($startvalue);
+        $increment = $this->clean($increment);
+        $minvalue = $this->clean($minvalue);
+        $maxvalue = $this->clean($maxvalue);
+        $restartvalue = $this->clean($restartvalue);
+        $cachevalue = $this->clean($cachevalue);
+        $cycledvalue = $this->clean($cycledvalue);
+        $startvalue = $this->clean($startvalue);
         $status = $this->alterSequenceProps(
             $seqrs,
             $increment,
@@ -327,7 +332,7 @@ class Postgres80 extends Postgres81
         }
 
         // Rename
-        $this->fieldClean($name);
+        $name = $this->fieldClean($name);
         $status = $this->alterSequenceName($seqrs, $name);
         if ($status != 0) {
             return -3;
@@ -340,15 +345,15 @@ class Postgres80 extends Postgres81
 
     /**
      * Changes a user's password
-     * @param $username The username
-     * @param $password The new password
-     * @return 0 success
+     * @param string $username The username
+     * @param string $password The new password
+     * @return int 0 success
      */
-    public function changePassword($username, $password)
+    public function changePassword(string $username, string $password): int
     {
         $enc = $this->encryptPasswordInternal($username, $password);
-        $this->fieldClean($username);
-        $this->clean($enc);
+        $username = $this->fieldClean($username);
+        $enc = $this->clean($enc);
 
         $sql = "ALTER USER \"{$username}\" WITH ENCRYPTED PASSWORD '{$enc}'";
 
@@ -359,16 +364,16 @@ class Postgres80 extends Postgres81
 
     /**
      * Gets all information for an aggregate
-     * @param $name The name of the aggregate
-     * @param $basetype The input data type of the aggregate
-     * @return A recordset
+     * @param string $name The name of the aggregate
+     * @param string $basetype The input data type of the aggregate
+     * @return \ADORecordSet|int A recordset
      */
-    public function getAggregate($name, $basetype)
+    public function getAggregate(string $name, string $basetype): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
-        $this->clean($c_schema);
-        $this->clean($name);
-        $this->clean($basetype);
+        $c_schema = $this->clean($c_schema);
+        $name = $this->clean($name);
+        $basetype = $this->clean($basetype);
 
         $sql = "
 			SELECT p.proname,
@@ -390,40 +395,47 @@ class Postgres80 extends Postgres81
     }
 
     // Capabilities
+    public function hasAggregateSortOp(): bool
+    {
+        return false;
+    }
 
-    public function hasAggregateSortOp()
+    public function hasAlterTableSchema(): bool
     {
         return false;
     }
-    public function hasAlterTableSchema()
+
+    public function hasAutovacuum(): bool
     {
         return false;
     }
-    public function hasAutovacuum()
+
+    public function hasDisableTriggers(): bool
     {
         return false;
     }
-    public function hasDisableTriggers()
+
+    public function hasFunctionAlterSchema(): bool
     {
         return false;
     }
-    public function hasFunctionAlterSchema()
+
+    public function hasPreparedXacts(): bool
     {
         return false;
     }
-    public function hasPreparedXacts()
+
+    public function hasRoles(): bool
     {
         return false;
     }
-    public function hasRoles()
+
+    public function hasAlterSequenceSchema(): bool
     {
         return false;
     }
-    public function hasAlterSequenceSchema()
-    {
-        return false;
-    }
-    public function hasServerAdminFuncs()
+
+    public function hasServerAdminFuncs(): bool
     {
         return false;
     }

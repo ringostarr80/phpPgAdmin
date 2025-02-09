@@ -485,7 +485,7 @@ function doSaveCreateWiz()
 
         foreach ($_POST['formFields'] as $curField) {
             $arrTmp = safeUnserialize($curField);
-            $data->fieldArrayClean($arrTmp);
+            $arrTmp = $data->fieldArrayClean($arrTmp);
             if (! empty($_POST['dblFldMeth'])) { // doublon control
                 if (empty($tmpHsh[$arrTmp['fieldname']])) { // field does not exist
                     $selFields .= "\"{$arrTmp['schemaname']}\".\"{$arrTmp['tablename']}\".\"{$arrTmp['fieldname']}\", ";
@@ -525,8 +525,8 @@ function doSaveCreateWiz()
                     foreach ($arrLinks as $curLink) {
                         $arrLeftLink = safeUnserialize($curLink['leftlink']);
                         $arrRightLink = safeUnserialize($curLink['rightlink']);
-                        $data->fieldArrayClean($arrLeftLink);
-                        $data->fieldArrayClean($arrRightLink);
+                        $arrLeftLink = $data->fieldArrayClean($arrLeftLink);
+                        $arrRightLink = $data->fieldArrayClean($arrRightLink);
 
                         $tbl1 = "\"{$arrLeftLink['schemaname']}\".\"{$arrLeftLink['tablename']}\"";
                         $tbl2 = "\"{$arrRightLink['schemaname']}\".\"{$arrRightLink['tablename']}\"";
@@ -558,7 +558,7 @@ function doSaveCreateWiz()
         if (!strlen($linkFields)) {
             foreach ($_POST['formTables'] as $curTable) {
                 $arrTmp = safeUnserialize($curTable);
-                $data->fieldArrayClean($arrTmp);
+                $arrTmp = $data->fieldArrayClean($arrTmp);
                 $linkFields .= strlen($linkFields) ? ", \"{$arrTmp['schemaname']}\".\"{$arrTmp['tablename']}\"" : "\"{$arrTmp['schemaname']}\".\"{$arrTmp['tablename']}\"";
             }
         }
@@ -568,7 +568,7 @@ function doSaveCreateWiz()
             foreach ($_POST['formCondition'] as $curCondition) {
                 if (strlen($curCondition['field']) && strlen($curCondition['txt'])) {
                     $arrTmp = safeUnserialize($curCondition['field']);
-                    $data->fieldArrayClean($arrTmp);
+                    $arrTmp = $data->fieldArrayClean($arrTmp);
                     $addConditions .= strlen($addConditions) ? " AND \"{$arrTmp['schemaname']}\".\"{$arrTmp['tablename']}\".\"{$arrTmp['fieldname']}\" {$curCondition['operator']} '{$curCondition['txt']}' "
                         : " \"{$arrTmp['schemaname']}\".\"{$arrTmp['tablename']}\".\"{$arrTmp['fieldname']}\" {$curCondition['operator']} '{$curCondition['txt']}' ";
                 }

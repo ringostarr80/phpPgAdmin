@@ -17,10 +17,10 @@ class Postgres96 extends Postgres10
     public function getSequence(string $sequence): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
-        $this->clean($c_schema);
+        $c_schema = $this->clean($c_schema);
         $c_sequence = $sequence;
-        $this->fieldClean($sequence);
-        $this->clean($c_sequence);
+        $sequence = $this->fieldClean($sequence);
+        $c_sequence = $this->clean($c_sequence);
 
         $sql = "
 			SELECT c.relname AS seqname, s.*,

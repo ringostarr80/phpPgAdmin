@@ -40,9 +40,9 @@ class Postgres91 extends Postgres92
     /**
      * Retrieves information for all tablespaces
      * @param $all Include all tablespaces (necessary when moving objects back to the default space)
-     * @return mixed A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getTablespaces(bool $all = false)
+    public function getTablespaces(bool $all = false): \ADORecordSet|int
     {
         $sql = "SELECT spcname, pg_catalog.pg_get_userbyid(spcowner) AS spcowner, spclocation,
             (SELECT description FROM pg_catalog.pg_shdescription pd WHERE pg_tablespace.oid=pd.objoid AND pd.classoid='pg_tablespace'::regclass) AS spccomment

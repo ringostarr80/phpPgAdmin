@@ -75,9 +75,9 @@ class Postgres80 extends Postgres81
 
     /**
      * Return all database available on the server
-     * @return mixed A list of databases, sorted alphabetically
+     * @return \ADORecordSet|int A list of databases, sorted alphabetically
      */
-    public function getDatabases(?string $currentdatabase = null)
+    public function getDatabases(?string $currentdatabase = null): \ADORecordSet|int
     {
         $serverSession = ServerSession::fromRequestParameter();
 

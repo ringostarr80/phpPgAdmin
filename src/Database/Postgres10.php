@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Database;
 
+use PhpPgAdmin\Config;
+
 class Postgres10 extends Postgres11
 {
     public float $majorVersion = 10;
@@ -12,12 +14,10 @@ class Postgres10 extends Postgres11
      * Searches all system catalogs to find objects that match a certain name.
      * @param $term The search term
      * @param $filter The object type to restrict to ('' means no restriction)
-     * @return mixed A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function findObject(string $term, string $filter)
+    public function findObject(string $term, string $filter): \ADORecordSet|int
     {
-        global $conf;
-
         /*about escaping:
          * SET standard_conforming_string is not available before 8.2
          * So we must use PostgreSQL specific notation :/
@@ -27,13 +27,13 @@ class Postgres10 extends Postgres11
          **/
 
         // Escape search term for ILIKE match
-        $term = $this->clean($term);
+        $term = $this->clean($term) ?? $term;
         $filter = $this->clean($filter);
         $term = str_replace('_', '\_', $term);
         $term = str_replace('%', '\%', $term);
 
         // Exclude system relations if necessary
-        if (!$conf['show_system']) {
+        if (!Config::showSystem()) {
             // XXX: The mention of information_schema here is in the wrong place, but
             // it's the quickest fix to exclude the info schema from 7.4
             $where = " AND pn.nspname NOT LIKE \$_PATTERN_\$pg\_%\$_PATTERN_\$ AND pn.nspname != 'information_schema'";
@@ -108,9 +108,8 @@ class Postgres10 extends Postgres11
 				WHERE c.relkind='v' AND r.rulename != '_RETURN' AND r.rulename ILIKE {$term} {$where}
 		";
 
-
         // Add advanced objects if show_advanced is set
-        if ($conf['show_advanced']) {
+        if (Config::showAdvanced()) {
             $sql .= "
 				UNION ALL
 				SELECT CASE WHEN pt.typtype='d' THEN 'DOMAIN' ELSE 'TYPE' END, pt.oid, pn.nspname, NULL,
@@ -162,9 +161,9 @@ class Postgres10 extends Postgres11
      * @param $all If true, will find all available functions, if false just those in search path
      * @param $type If not null, will find all functions with return value = type
      *
-     * @return All functions
+     * @return \ADORecordSet|int All functions
      */
-    public function getFunctions($all = false, $type = null)
+    public function getFunctions(bool $all = false, ?string $type = null): \ADORecordSet|int
     {
         if ($all) {
             $where = 'pg_catalog.pg_function_is_visible(p.oid)';
@@ -238,9 +237,9 @@ class Postgres10 extends Postgres11
 
     /**
      * Gets all aggregates
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getAggregates()
+    public function getAggregates(): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);

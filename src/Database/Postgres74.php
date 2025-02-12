@@ -4,21 +4,28 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Database;
 
+use ADORecordSet;
+use PhpPgAdmin\Config;
+use PhpPgAdmin\DDD\Entities\ServerSession;
+
 class Postgres74 extends Postgres80
 {
     public float $majorVersion = 7.4;
 
-    // List of all legal privileges that can be applied to different types
-    // of objects.
-    public array $privlist = array(
-        'table' => array('SELECT', 'INSERT', 'UPDATE', 'DELETE', 'RULE', 'REFERENCES', 'TRIGGER', 'ALL PRIVILEGES'),
-        'view' => array('SELECT', 'INSERT', 'UPDATE', 'DELETE', 'RULE', 'REFERENCES', 'TRIGGER', 'ALL PRIVILEGES'),
-        'sequence' => array('SELECT', 'UPDATE', 'ALL PRIVILEGES'),
-        'database' => array('CREATE', 'TEMPORARY', 'ALL PRIVILEGES'),
-        'function' => array('EXECUTE', 'ALL PRIVILEGES'),
-        'language' => array('USAGE', 'ALL PRIVILEGES'),
-        'schema' => array('CREATE', 'USAGE', 'ALL PRIVILEGES')
-    );
+    /**
+     * List of all legal privileges that can be applied to different types of objects.
+     *
+     * @var array<string, string[]>
+     */
+    public array $privlist = [
+        'table' => ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'RULE', 'REFERENCES', 'TRIGGER', 'ALL PRIVILEGES'],
+        'view' => ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'RULE', 'REFERENCES', 'TRIGGER', 'ALL PRIVILEGES'],
+        'sequence' => ['SELECT', 'UPDATE', 'ALL PRIVILEGES'],
+        'database' => ['CREATE', 'TEMPORARY', 'ALL PRIVILEGES'],
+        'function' => ['EXECUTE', 'ALL PRIVILEGES'],
+        'language' => ['USAGE', 'ALL PRIVILEGES'],
+        'schema' => ['CREATE', 'USAGE', 'ALL PRIVILEGES']
+    ];
 
     // Database functions
 
@@ -37,8 +44,8 @@ class Postgres74 extends Postgres80
     {
         //ignore $newowner, not supported pre 8.0
         //ignore $comment, not supported pre 8.2
-        $dbName = $this->clean($dbName);
-        $newName = $this->clean($newName);
+        $dbName = $this->clean($dbName) ?? $dbName;
+        $newName = $this->clean($newName) ?? $newName;
 
         $status = $this->alterDatabaseRename($dbName, $newName);
         if ($status != 0) {
@@ -50,17 +57,14 @@ class Postgres74 extends Postgres80
 
     /**
      * Return all database available on the server
-     * @return mixed A list of databases, sorted alphabetically
+     * @return \ADORecordSet|int A list of databases, sorted alphabetically
      */
-    public function getDatabases(?string $currentdatabase = null)
+    public function getDatabases(?string $currentdatabase = null): \ADORecordSet|int
     {
-        global $conf, $misc;
+        $serverSession = ServerSession::fromRequestParameter();
 
-        $server_info = $misc->getServerInfo();
-
-        if (isset($conf['owned_only']) && $conf['owned_only'] && !$this->isSuperUser()) {
-            $username = $server_info['username'];
-            $username = $this->clean($username);
+        if (Config::ownedOnly() && !$this->isSuperUser() && !is_null($serverSession)) {
+            $username = $this->clean((string)$serverSession->Username);
             $clause = " AND pu.usename='{$username}'";
         } else {
             $clause = '';
@@ -73,15 +77,15 @@ class Postgres74 extends Postgres80
             $orderby = "ORDER BY pdb.datname";
         }
 
-        if (!$conf['show_system']) {
+        if (!Config::showSystem()) {
             $where = ' AND NOT pdb.datistemplate';
         } else {
             $where = ' AND pdb.datallowconn';
         }
 
         $sql = "SELECT pdb.datname AS datname, pu.usename AS datowner, pg_encoding_to_char(encoding) AS datencoding,
-                               (SELECT description FROM pg_description pd WHERE pdb.oid=pd.objoid) AS datcomment
-                        FROM pg_database pdb, pg_user pu
+            (SELECT description FROM pg_description pd WHERE pdb.oid=pd.objoid) AS datcomment
+            FROM pg_database pdb, pg_user pu
 			WHERE pdb.datdba = pu.usesysid
 			{$where}
 			{$clause}
@@ -94,12 +98,10 @@ class Postgres74 extends Postgres80
      * Searches all system catalogs to find objects that match a certain name.
      * @param $term The search term
      * @param $filter The object type to restrict to ('' means no restriction)
-     * @return mixed A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function findObject(string $term, string $filter)
+    public function findObject(string $term, string $filter): \ADORecordSet|int
     {
-        global $conf;
-
         /*about escaping:
          * SET standard_conforming_string is not available before 8.2
          * So we must use PostgreSQL specific notation :/
@@ -115,7 +117,7 @@ class Postgres74 extends Postgres80
         $filter = $this->clean($filter);
 
         // Exclude system relations if necessary
-        if (!$conf['show_system']) {
+        if (!Config::showSystem()) {
             // XXX: The mention of information_schema here is in the wrong place, but
             // it's the quickest fix to exclude the info schema from 7.4
             $where = " AND pn.nspname NOT LIKE 'pg\\\\_%' AND pn.nspname != 'information_schema'";
@@ -189,7 +191,7 @@ class Postgres74 extends Postgres80
 		";
 
         // Add advanced objects if show_advanced is set
-        if ($conf['show_advanced']) {
+        if (Config::showAdvanced()) {
             $sql .= "
 				UNION ALL
 				SELECT CASE WHEN pt.typtype='d' THEN 'DOMAIN' ELSE 'TYPE' END, pt.oid, pn.nspname, NULL,
@@ -242,31 +244,28 @@ class Postgres74 extends Postgres80
      */
     public function getLocks(): \ADORecordSet|int
     {
-        global $conf;
-
-        if (!$conf['show_system']) {
+        if (!Config::showSystem()) {
             $where = "AND pn.nspname NOT LIKE 'pg\\\\_%'";
         } else {
             $where = "AND nspname !~ '^pg_t(emp_[0-9]+|oast)$'";
         }
 
         $sql = "SELECT pn.nspname, pc.relname AS tablename, pl.transaction, pl.pid, pl.mode, pl.granted
-		FROM pg_catalog.pg_locks pl, pg_catalog.pg_class pc, pg_catalog.pg_namespace pn
-		WHERE pl.relation = pc.oid AND pc.relnamespace=pn.oid {$where}
-		ORDER BY nspname,tablename";
+		    FROM pg_catalog.pg_locks pl, pg_catalog.pg_class pc, pg_catalog.pg_namespace pn
+		    WHERE pl.relation = pc.oid AND pc.relnamespace=pn.oid {$where}
+		    ORDER BY nspname,tablename";
 
         return $this->selectSet($sql);
     }
 
     /**
      * Returns the current database encoding
-     * @return The encoding.  eg. SQL_ASCII, UTF-8, etc.
+     *
+     * @return string|int The encoding.  eg. SQL_ASCII, UTF-8, etc.
      */
-    public function getDatabaseEncoding()
+    public function getDatabaseEncoding(): string|int
     {
-        $sql = "SELECT getdatabaseencoding() AS encoding";
-
-        return $this->selectField($sql, 'encoding');
+        return $this->selectField("SELECT getdatabaseencoding() AS encoding", 'encoding');
     }
 
     // Table functions
@@ -280,7 +279,7 @@ class Postgres74 extends Postgres80
      * @param $schema The new schema for the table
      * @param $comment The comment on the table
      * @param $tablespace The new tablespace for the table ('' means leave as is)
-     * @return 0 success, -3 rename error, -4 comment error, -5 owner error
+     * @return int 0 success, -3 rename error, -4 comment error, -5 owner error
      */
     protected function alterTableInternal(
         \ADORecordSet $tblrs,
@@ -292,12 +291,14 @@ class Postgres74 extends Postgres80
     ): int {
 
         /* $schema and tablespace not supported in pg74- */
-        $tblrs->fields = $this->fieldArrayClean($tblrs->fields);
+        if (is_array($tblrs->fields)) {
+            $tblrs->fields = $this->fieldArrayClean($tblrs->fields);
 
-        // Comment
-        $status = $this->setComment('TABLE', '', $tblrs->fields['relname'], $comment);
-        if ($status != 0) {
-            return -4;
+            // Comment
+            $status = $this->setComment('TABLE', '', $tblrs->fields['relname'], $comment);
+            if ($status != 0) {
+                return -4;
+            }
         }
 
         // Owner
@@ -331,27 +332,27 @@ class Postgres74 extends Postgres80
      * @param $length The optional size of the column (ie. 30 for varchar(30))
      * @param $oldtype The old type for the column
      * @param $comment Comment for the column
-     * @return 0 success
-     * @return -2 set not null error
-     * @return -3 set default error
-     * @return -4 rename column error
-     * @return -5 comment error
-     * @return -6 transaction error
+     * @return bool|int -1 could not start a transaction
+     * -2 set not null error
+     * -3 set default error
+     * -4 rename column error
+     * -5 comment error
+     * -6 transaction error
      */
     public function alterColumn(
-        $table,
-        $column,
-        $name,
-        $notnull,
-        $oldnotnull,
-        $default,
-        $olddefault,
-        $type,
-        $length,
-        $array,
-        $oldtype,
-        $comment
-    ) {
+        string $table,
+        string $column,
+        string $name,
+        bool $notnull,
+        bool $oldnotnull,
+        string $default,
+        string $olddefault,
+        string $type,
+        string $length,
+        string $array,
+        string $oldtype,
+        string $comment
+    ): bool|int {
         $status = $this->beginTransaction();
         if ($status != 0) {
             return -1;
@@ -405,9 +406,9 @@ class Postgres74 extends Postgres80
     /**
      * Returns table information
      * @param $table The name of the table
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getTable($table)
+    public function getTable(string $table): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -430,27 +431,27 @@ class Postgres74 extends Postgres80
     /**
      * Return all tables in current database (and schema)
      * @param $all True to fetch all tables, false for just in current schema
-     * @return All tables, sorted alphabetically
+     * @return \ADORecordSet|int All tables, sorted alphabetically
      */
-    public function getTables($all = false)
+    public function getTables(bool $all = false): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
         if ($all) {
             // Exclude pg_catalog and information_schema tables
             $sql = "SELECT schemaname AS nspname, tablename AS relname, tableowner AS relowner
-					FROM pg_catalog.pg_tables
-					WHERE schemaname NOT IN ('pg_catalog', 'information_schema', 'pg_toast')
-					ORDER BY schemaname, tablename";
+                FROM pg_catalog.pg_tables
+                WHERE schemaname NOT IN ('pg_catalog', 'information_schema', 'pg_toast')
+                ORDER BY schemaname, tablename";
         } else {
             $sql = "SELECT c.relname, pg_catalog.pg_get_userbyid(c.relowner) AS relowner,
-						pg_catalog.obj_description(c.oid, 'pg_class') AS relcomment,
-						reltuples::bigint
-					FROM pg_catalog.pg_class c
-					LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
-					WHERE c.relkind = 'r'
-					AND nspname='{$c_schema}'
-					ORDER BY c.relname";
+                    pg_catalog.obj_description(c.oid, 'pg_class') AS relcomment,
+                    reltuples::bigint
+                FROM pg_catalog.pg_class c
+                LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+                WHERE c.relkind = 'r'
+                AND nspname='{$c_schema}'
+                ORDER BY c.relname";
         }
 
         return $this->selectSet($sql);
@@ -458,9 +459,9 @@ class Postgres74 extends Postgres80
 
     /**
      * Returns the current default_with_oids setting
-     * @return default_with_oids setting
+     * @return string|int|false default_with_oids setting
      */
-    public function getDefaultWithOid()
+    public function getDefaultWithOid(): string|int|false
     {
         // 8.0 is the first release to have this setting
         // Prior releases don't have this setting... oids always activated
@@ -474,11 +475,10 @@ class Postgres74 extends Postgres80
      * including constraint name, definition, related col and referenced namespace,
      * table and col if needed
      * @param $table the table where we are looking for fk
-     * @return a recordset
+     * @return \ADORecordSet|int a recordset
      */
-    public function getConstraintsWithFields($table)
+    public function getConstraintsWithFields(string $table): \ADORecordSet|int
     {
-
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
@@ -494,12 +494,6 @@ class Postgres74 extends Postgres80
 
         $rs = $this->selectSet($sql);
 
-        if ($rs->EOF) {
-            $max_col = 0;
-        } else {
-            $max_col = $rs->fields['nb'];
-        }
-
         $sql = '
 			SELECT
 				c.oid AS conid, c.contype, c.conname, pg_catalog.pg_get_constraintdef(c.oid, true) AS consrc,
@@ -511,8 +505,10 @@ class Postgres74 extends Postgres80
 				pg_catalog.pg_constraint AS c
 				JOIN pg_catalog.pg_class AS r1 ON (c.conrelid=r1.oid)
 				JOIN pg_catalog.pg_attribute AS f1 ON (f1.attrelid=r1.oid AND (f1.attnum=c.conkey[1]';
-        for ($i = 2; $i <= $rs->fields['nb']; $i++) {
-            $sql .= " OR f1.attnum=c.conkey[$i]";
+        if ($rs instanceof ADORecordSet && is_array($rs->fields)) {
+            for ($i = 2; $i <= $rs->fields['nb']; $i++) {
+                $sql .= " OR f1.attnum=c.conkey[$i]";
+            }
         }
         $sql .= '))
 				JOIN pg_catalog.pg_namespace AS ns1 ON r1.relnamespace=ns1.oid
@@ -521,8 +517,10 @@ class Postgres74 extends Postgres80
 				) ON (c.confrelid=r2.oid)
 				LEFT JOIN pg_catalog.pg_attribute AS f2 ON
 					(f2.attrelid=r2.oid AND ((c.confkey[1]=f2.attnum AND c.conkey[1]=f1.attnum)';
-        for ($i = 2; $i <= $rs->fields['nb']; $i++) {
-            $sql .= " OR (c.confkey[$i]=f2.attnum AND c.conkey[$i]=f1.attnum)";
+        if ($rs instanceof ADORecordSet && is_array($rs->fields)) {
+            for ($i = 2; $i <= $rs->fields['nb']; $i++) {
+                $sql .= " OR (c.confkey[$i]=f2.attnum AND c.conkey[$i]=f1.attnum)";
+            }
         }
 
         $sql .= sprintf("))
@@ -537,9 +535,9 @@ class Postgres74 extends Postgres80
 
     /**
      * Returns all sequences in the current database
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getSequences($all = false)
+    public function getSequences(bool $all = false): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -601,13 +599,11 @@ class Postgres74 extends Postgres80
 
     /**
      * Returns a list of all casts in the database
-     * @return All casts
+     * @return \ADORecordSet|int All casts
      */
-    public function getCasts()
+    public function getCasts(): \ADORecordSet|int
     {
-        global $conf;
-
-        if ($conf['show_system']) {
+        if (Config::showSystem()) {
             $where = '';
         } else {
             $where = "
@@ -645,39 +641,47 @@ class Postgres74 extends Postgres80
 
     // Capabilities
 
-    public function hasAlterColumnType()
+    public function hasAlterColumnType(): bool
     {
         return false;
     }
-    public function hasCreateFieldWithConstraints()
+
+    public function hasCreateFieldWithConstraints(): bool
     {
         return false;
     }
-    public function hasAlterDatabaseOwner()
+
+    public function hasAlterDatabaseOwner(): bool
     {
         return false;
     }
-    public function hasAlterSchemaOwner()
+
+    public function hasAlterSchemaOwner(): bool
     {
         return false;
     }
-    public function hasFunctionAlterOwner()
+
+    public function hasFunctionAlterOwner(): bool
     {
         return false;
     }
-    public function hasNamedParams()
+
+    public function hasNamedParams(): bool
     {
         return false;
     }
-    public function hasQueryCancel()
+
+    public function hasQueryCancel(): bool
     {
         return false;
     }
-    public function hasTablespaces()
+
+    public function hasTablespaces(): bool
     {
         return false;
     }
-    public function hasMagicTypes()
+
+    public function hasMagicTypes(): bool
     {
         return false;
     }

@@ -27,10 +27,9 @@ class ADOdbBase
      * Cleans (escapes) a string
      * @return ?string The cleaned string
      */
-    public function clean(?string &$str): ?string
+    public function clean(?string $str): ?string
     {
-        $str = addslashes($str);
-        return $str;
+        return addslashes($str);
     }
 
     /**
@@ -84,7 +83,7 @@ class ADOdbBase
      * Closes the connection the database class
      * relies on.
      */
-    public function close()
+    public function close(): void
     {
         $this->conn->close();
     }
@@ -113,19 +112,28 @@ class ADOdbBase
      *
      * @param $sql The SQL statement to be executed
      * @param $field The field name to be returned
-     * @return mixed A single field value
-     * @return -1 No rows were found
+     * @return string|int A single field value, -1 No rows were found
      */
-    public function selectField($sql, $field): mixed
+    public function selectField(string $sql, string $field): string|int
     {
         // Execute the statement
         $rs = $this->conn->Execute($sql);
 
         // If failure, or no rows returned, return error value
-        if (!$rs) {
+        if ($rs === false) {
             return $this->conn->ErrorNo();
-        } elseif ($rs->RecordCount() == 0) {
+        }
+        if ($rs->RecordCount() == 0) {
             return -1;
+        }
+        if (!is_array($rs->fields)) {
+            return -2;
+        }
+        if (!isset($rs->fields[$field])) {
+            return -3;
+        }
+        if (!is_string($rs->fields[$field])) {
+            return -4;
         }
 
         return $rs->fields[$field];
@@ -294,43 +302,33 @@ class ADOdbBase
      */
     public function beginTransaction(): bool
     {
-        return !$this->conn->BeginTrans();
+        return $this->conn->BeginTrans();
     }
 
     public function endTransaction(): bool
     {
-        return !$this->conn->CommitTrans();
+        return $this->conn->CommitTrans();
     }
 
     /**
      * Roll back a transaction
-     * @return 0 success
      */
-    public function rollbackTransaction()
+    public function rollbackTransaction(): bool
     {
-        return !$this->conn->RollbackTrans();
+        return $this->conn->RollbackTrans();
     }
 
     /**
      * Get the backend platform
-     * @return The backend platform
+     * @return string The backend platform
      */
-    public function getPlatform()
+    public function getPlatform(): string
     {
         // return $this->conn->platform;
         return "UNKNOWN";
     }
 
     // Type conversion routines
-
-    /**
-     * Change the value of a parameter to database representation depending on whether it evaluates to true or false
-     * @param $parameter the parameter
-     */
-    public function dbBool(&$parameter)
-    {
-        return $parameter;
-    }
 
     /**
      * Change a parameter from database representation to a boolean, (others evaluate to false)

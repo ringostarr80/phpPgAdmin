@@ -59,9 +59,9 @@ class Postgres81 extends Postgres82
 
     /**
      * Returns all databases available on the server
-     * @return mixed A list of databases, sorted alphabetically
+     * @return \ADORecordSet|int A list of databases, sorted alphabetically
      */
-    public function getDatabases(?string $currentdatabase = null)
+    public function getDatabases(?string $currentdatabase = null): \ADORecordSet|int
     {
         $serverSession = ServerSession::fromRequestParameter();
 
@@ -292,9 +292,9 @@ class Postgres81 extends Postgres82
     /**
      * Retrieves information for all tablespaces
      * @param $all Include all tablespaces (necessary when moving objects back to the default space)
-     * @return mixed A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getTablespaces(bool $all = false)
+    public function getTablespaces(bool $all = false): \ADORecordSet|int
     {
         $sql = "SELECT spcname, pg_catalog.pg_get_userbyid(spcowner) AS spcowner, spclocation
 					FROM pg_catalog.pg_tablespace";

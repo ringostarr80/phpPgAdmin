@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace PhpPgAdmin\Database;
 
 use PhpPgAdmin\ArrayRecordSet;
+use PhpPgAdmin\Config;
+use PhpPgAdmin\DDD\Entities\ServerSession;
 
 class Postgres extends ADOdbBase
 {
@@ -498,9 +500,9 @@ class Postgres extends ADOdbBase
      * @param $type The type of the field
      * @param $format VALUE or EXPRESSION
      * @param $value The actual value entered in the field.  Can be NULL
-     * @return The suitably quoted and escaped value.
+     * @return string The suitably quoted and escaped value.
      */
-    public function formatValue($type, $format, $value)
+    public function formatValue(string $type, string $format, string $value): string
     {
         switch ($type) {
             case 'bool':
@@ -633,9 +635,9 @@ class Postgres extends ADOdbBase
     /**
      * Return all information about a particular database
      * @param $database The name of the database to retrieve
-     * @return The database info
+     * @return \ADORecordSet|int The database info
      */
-    public function getDatabase($database)
+    public function getDatabase(string $database): \ADORecordSet|int
     {
         $database = $this->clean($database);
         $sql = "SELECT * FROM pg_database WHERE datname='{$database}'";
@@ -646,17 +648,14 @@ class Postgres extends ADOdbBase
      * Return all database available on the server
      * @param $currentdatabase database name that should be on top of the resultset
      *
-     * @return mixed A list of databases, sorted alphabetically
+     * @return \ADORecordSet|int A list of databases, sorted alphabetically
      */
-    public function getDatabases(?string $currentdatabase = null)
+    public function getDatabases(?string $currentdatabase = null): \ADORecordSet|int
     {
-        global $conf, $misc;
+        $serverSession = ServerSession::fromRequestParameter();
 
-        $server_info = $misc->getServerInfo();
-
-        if (isset($conf['owned_only']) && $conf['owned_only'] && !$this->isSuperUser()) {
-            $username = $server_info['username'];
-            $username = $this->clean($username);
+        if (Config::ownedOnly() && !$this->isSuperUser() && !is_null($serverSession)) {
+            $username = $this->clean((string)$serverSession->Username);
             $clause = " AND pg_has_role('{$username}'::name,pr.rolname,'USAGE')";
         } else {
             $clause = '';
@@ -669,7 +668,7 @@ class Postgres extends ADOdbBase
             $orderby = "ORDER BY pdb.datname";
         }
 
-        if (!$conf['show_system']) {
+        if (!Config::showSystem()) {
             $where = ' AND NOT pdb.datistemplate';
         } else {
             $where = ' AND pdb.datallowconn';
@@ -719,18 +718,18 @@ class Postgres extends ADOdbBase
 
     /**
      * Returns the current database encoding
-     * @return The encoding.  eg. SQL_ASCII, UTF-8, etc.
+     * @return string|int The encoding.  eg. SQL_ASCII, UTF-8, etc.
      */
-    public function getDatabaseEncoding()
+    public function getDatabaseEncoding(): string|int
     {
         return pg_parameter_status($this->conn->_connectionID, 'server_encoding');
     }
 
     /**
      * Returns the current default_with_oids setting
-     * @return default_with_oids setting
+     * @return string|int|false default_with_oids setting
      */
-    public function getDefaultWithOid()
+    public function getDefaultWithOid(): string|int|false
     {
         // OID support was removed in PG12
         // But this function is referenced when browsing data
@@ -742,19 +741,17 @@ class Postgres extends ADOdbBase
      * @param $database The name of the database to create
      * @param $encoding Encoding of the database
      * @param $tablespace (optional) The tablespace name
-     * @return 0 success
-     * @return -1 tablespace error
-     * @return -2 comment error
+     * @return int 0 success, -1 tablespace error, -2 comment error
      */
     public function createDatabase(
-        $database,
-        $encoding,
-        $tablespace = '',
-        $comment = '',
-        $template = 'template1',
-        $lc_collate = '',
-        $lc_ctype = ''
-    ) {
+        string $database,
+        string $encoding,
+        string $tablespace = '',
+        string $comment = '',
+        string $template = 'template1',
+        string $lc_collate = '',
+        string $lc_ctype = ''
+    ): int {
         $database = $this->fieldClean($database);
         $encoding = $this->clean($encoding);
         $tablespace = $this->fieldClean($tablespace);
@@ -817,9 +814,9 @@ class Postgres extends ADOdbBase
     /**
      * Drops a database
      * @param $database The name of the database to drop
-     * @return 0 success
+     * @return int 0 success
      */
-    public function dropDatabase($database)
+    public function dropDatabase(string $database): int
     {
         $database = $this->fieldClean($database);
         $sql = "DROP DATABASE \"{$database}\"";
@@ -833,7 +830,7 @@ class Postgres extends ADOdbBase
      * @param string $newOwner user that will own the database
      * @return int 0 on success
      */
-    public function alterDatabaseOwner($dbName, $newOwner)
+    public function alterDatabaseOwner(string $dbName, string $newOwner): int
     {
         $dbName = $this->fieldClean($dbName);
         $newOwner = $this->fieldClean($newOwner);
@@ -891,9 +888,9 @@ class Postgres extends ADOdbBase
     /**
      * Returns prepared transactions information
      * @param $database (optional) Find only prepared transactions executed in a specific database
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getPreparedXacts($database = null)
+    public function getPreparedXacts(?string $database = null): \ADORecordSet|int
     {
         if ($database === null) {
             $sql = "SELECT * FROM pg_prepared_xacts";
@@ -910,12 +907,10 @@ class Postgres extends ADOdbBase
      * Searches all system catalogs to find objects that match a certain name.
      * @param $term The search term
      * @param $filter The object type to restrict to ('' means no restriction)
-     * @return mixed A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function findObject(string $term, string $filter)
+    public function findObject(string $term, string $filter): \ADORecordSet|int
     {
-        global $conf;
-
         /*about escaping:
          * SET standard_conforming_string is not available before 8.2
          * So we must use PostgreSQL specific notation :/
@@ -931,7 +926,7 @@ class Postgres extends ADOdbBase
         $term = str_replace('%', '\%', $term);
 
         // Exclude system relations if necessary
-        if (!$conf['show_system']) {
+        if (!Config::showSystem()) {
             // XXX: The mention of information_schema here is in the wrong place, but
             // it's the quickest fix to exclude the info schema from 7.4
             $where = " AND pn.nspname NOT LIKE \$_PATTERN_\$pg\_%\$_PATTERN_\$ AND pn.nspname != 'information_schema'";
@@ -1007,7 +1002,7 @@ class Postgres extends ADOdbBase
 		";
 
         // Add advanced objects if show_advanced is set
-        if ($conf['show_advanced']) {
+        if (Config::showAdvanced()) {
             $sql .= "
 				UNION ALL
 				SELECT CASE WHEN pt.typtype='d' THEN 'DOMAIN' ELSE 'TYPE' END, pt.oid, pn.nspname, NULL,
@@ -1069,13 +1064,11 @@ class Postgres extends ADOdbBase
 
     /**
      * Return all schemas in the current database.
-     * @return All schemas, sorted alphabetically
+     * @return \ADORecordSet|int All schemas, sorted alphabetically
      */
-    public function getSchemas()
+    public function getSchemas(): \ADORecordSet|int
     {
-        global $conf;
-
-        if (!$conf['show_system']) {
+        if (!Config::showSystem()) {
             $where = "WHERE nspname NOT LIKE 'pg@_%' ESCAPE '@' AND nspname != 'information_schema'";
         } else {
             $where = "WHERE nspname !~ '^pg_t(emp_[0-9]+|oast)$'";
@@ -1165,9 +1158,9 @@ class Postgres extends ADOdbBase
      * @param $schemaname The name of the schema to create
      * @param $authorization (optional) The username to create the schema for.
      * @param $comment (optional) If omitted, defaults to nothing
-     * @return 0 success
+     * @return bool|int true or 0 success
      */
-    public function createSchema($schemaname, $authorization = '', $comment = '')
+    public function createSchema(string $schemaname, string $authorization = '', string $comment = ''): bool|int
     {
         $schemaname = $this->fieldClean($schemaname);
         $authorization = $this->fieldClean($authorization);
@@ -1258,9 +1251,9 @@ class Postgres extends ADOdbBase
      * Drops a schema.
      * @param $schemaname The name of the schema to drop
      * @param $cascade True to cascade drop, false to restrict
-     * @return 0 success
+     * @return int 0 success
      */
-    public function dropSchema($schemaname, $cascade)
+    public function dropSchema(string $schemaname, bool $cascade): int
     {
         $schemaname = $this->fieldClean($schemaname);
 
@@ -1288,10 +1281,9 @@ class Postgres extends ADOdbBase
     /**
      * Checks to see whether or not a table has a unique id column
      * @param $table The table name
-     * @return True if it has a unique id, false otherwise
-     * @return null error
+     * @return ?bool True if it has a unique id, false otherwise, null error
      **/
-    public function hasObjectID($table)
+    public function hasObjectID(string $table): ?bool
     {
         // OID support is gone since PG12
         // But that function is required by table exports
@@ -1328,29 +1320,29 @@ class Postgres extends ADOdbBase
     /**
      * Return all tables in current database (and schema)
      * @param $all True to fetch all tables, false for just in current schema
-     * @return All tables, sorted alphabetically
+     * @return \ADORecordSet|int All tables, sorted alphabetically
      */
-    public function getTables($all = false)
+    public function getTables(bool $all = false): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
         if ($all) {
             // Exclude pg_catalog and information_schema tables
             $sql = "SELECT schemaname AS nspname, tablename AS relname, tableowner AS relowner
-					FROM pg_catalog.pg_tables
-					WHERE schemaname NOT IN ('pg_catalog', 'information_schema', 'pg_toast')
-					ORDER BY schemaname, tablename";
+                FROM pg_catalog.pg_tables
+                WHERE schemaname NOT IN ('pg_catalog', 'information_schema', 'pg_toast')
+                ORDER BY schemaname, tablename";
         } else {
             $sql = "SELECT c.relname, pg_catalog.pg_get_userbyid(c.relowner) AS relowner,
-						pg_catalog.obj_description(c.oid, 'pg_class') AS relcomment,
-						reltuples::bigint,
-						CASE c.relkind WHEN 'm' THEN '[MV]' WHEN 'f' THEN '[FDW]@'||n.nspname ELSE (SELECT spcname FROM pg_catalog.pg_tablespace pt
-							WHERE pt.oid=c.reltablespace) END AS tablespace
-					FROM pg_catalog.pg_class c
-					LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
-					WHERE c.relkind IN ('r', 'm', 'f', 'p')
-					AND nspname='{$c_schema}'
-					ORDER BY c.relname";
+                pg_catalog.obj_description(c.oid, 'pg_class') AS relcomment,
+                reltuples::bigint,
+                CASE c.relkind WHEN 'm' THEN '[MV]' WHEN 'f' THEN '[FDW]@'||n.nspname ELSE (SELECT spcname FROM pg_catalog.pg_tablespace pt
+                    WHERE pt.oid=c.reltablespace) END AS tablespace
+                FROM pg_catalog.pg_class c
+                LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+                WHERE c.relkind IN ('r', 'm', 'f', 'p')
+                AND nspname='{$c_schema}'
+                ORDER BY c.relname";
         }
 
         return $this->selectSet($sql);
@@ -1360,9 +1352,9 @@ class Postgres extends ADOdbBase
      * Retrieve the attribute definition of a table
      * @param $table The name of the table
      * @param $field (optional) The name of a field to return
-     * @return All attributes in order
+     * @return \ADORecordSet|int All attributes in order
      */
-    public function getTableAttributes($table, $field = '')
+    public function getTableAttributes(string $table, string $field = ''): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -1430,9 +1422,9 @@ class Postgres extends ADOdbBase
     /**
      * Finds the names and schemas of parent tables (in order)
      * @param $table The table to find the parents for
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getTableParents($table)
+    public function getTableParents(string $table): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -1458,9 +1450,9 @@ class Postgres extends ADOdbBase
     /**
      * Finds the names and schemas of child tables
      * @param $table The table to find the children for
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getTableChildren($table)
+    public function getTableChildren(string $table): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -1486,10 +1478,9 @@ class Postgres extends ADOdbBase
      * @pre MUST be run within a transaction
      * @param $table The table to define
      * @param $clean True to issue drop command, false otherwise
-     * @return A string containing the formatted SQL code
-     * @return null On error
+     * @return ?string A string containing the formatted SQL code or null on error.
      */
-    public function getTableDefPrefix($table, $clean = false)
+    public function getTableDefPrefix(string $table, bool $clean = false): ?string
     {
         // Fetch table
         $t = $this->getTable($table);
@@ -1497,6 +1488,10 @@ class Postgres extends ADOdbBase
             $this->rollbackTransaction();
             return null;
         }
+        if (!is_array($t->fields)) {
+            return null;
+        }
+
         $t->fields['relname'] = $this->fieldClean($t->fields['relname']);
         $t->fields['nspname'] = $this->fieldClean($t->fields['nspname']);
 
@@ -1536,6 +1531,10 @@ class Postgres extends ADOdbBase
         $num = $atts->recordCount() + $cons->recordCount();
         $i = 1;
         while (!$atts->EOF) {
+            if (!is_array($atts->fields)) {
+                continue;
+            }
+
             $atts->fields['attname'] = $this->fieldClean($atts->fields['attname']);
             $sql .= "    \"{$atts->fields['attname']}\"";
             // Dump SERIAL and BIGSERIAL columns correctly
@@ -1579,6 +1578,10 @@ class Postgres extends ADOdbBase
         }
         // Output all table constraints
         while (!$cons->EOF) {
+            if (!is_array($cons->fields)) {
+                continue;
+            }
+
             $cons->fields['conname'] = $this->fieldClean($cons->fields['conname']);
             $sql .= "    CONSTRAINT \"{$cons->fields['conname']}\" ";
             // Nasty hack to support pre-7.4 PostgreSQL
@@ -1654,6 +1657,10 @@ class Postgres extends ADOdbBase
         $atts->moveFirst();
         $first = true;
         while (!$atts->EOF) {
+            if (!is_array($atts->fields)) {
+                continue;
+            }
+
             $atts->fields['attname'] = $this->fieldClean($atts->fields['attname']);
             // Statistics first
             if ($atts->fields['attstattarget'] >= 0) {
@@ -1807,10 +1814,9 @@ class Postgres extends ADOdbBase
      * Returns extra table definition information that is most usefully
      * dumped after the table contents for speed and efficiency reasons
      * @param $table The table to define
-     * @return A string containing the formatted SQL code
-     * @return null On error
+     * @return ?string A string containing the formatted SQL code, null on error
      */
-    public function getTableDefSuffix($table)
+    public function getTableDefSuffix(string $table): ?string
     {
         $sql = '';
 
@@ -1824,7 +1830,9 @@ class Postgres extends ADOdbBase
         if ($indexes->recordCount() > 0) {
             $sql .= "\n-- Indexes\n\n";
             while (!$indexes->EOF) {
-                $sql .= $indexes->fields['inddef'] . ";\n";
+                if (is_array($indexes->fields)) {
+                    $sql .= $indexes->fields['inddef'] . ";\n";
+                }
 
                 $indexes->moveNext();
             }
@@ -1840,8 +1848,10 @@ class Postgres extends ADOdbBase
         if ($triggers->recordCount() > 0) {
             $sql .= "\n-- Triggers\n\n";
             while (!$triggers->EOF) {
-                $sql .= $triggers->fields['tgdef'];
-                $sql .= ";\n";
+                if (is_array($triggers->fields)) {
+                    $sql .= $triggers->fields['tgdef'];
+                    $sql .= ";\n";
+                }
 
                 $triggers->moveNext();
             }
@@ -2470,14 +2480,25 @@ class Postgres extends ADOdbBase
      * @param $length The optional size of the column (ie. 30 for varchar(30))
      * @param $oldtype The old type for the column
      * @param $comment Comment for the column
-     * @return 0 success
-     * @return -1 batch alteration failed
-     * @return -4 rename column error
-     * @return -5 comment error
-     * @return -6 transaction error
+     * @return bool|int -1 batch alteration failed
+     * -4 rename column error
+     * -5 comment error
+     * -6 transaction error
      */
-    public function alterColumn($table, $column, $name, $notnull, $oldnotnull, $default, $olddefault, $type, $length, $array, $oldtype, $comment)
-    {
+    public function alterColumn(
+        string $table,
+        string $column,
+        string $name,
+        bool $notnull,
+        bool $oldnotnull,
+        string $default,
+        string $olddefault,
+        string $type,
+        string $length,
+        string $array,
+        string $oldtype,
+        string $comment
+    ): bool|int {
         // Begin transaction
         $status = $this->beginTransaction();
         if ($status != 0) {
@@ -2574,9 +2595,9 @@ class Postgres extends ADOdbBase
      * @param $table The table containing the column to be renamed
      * @param $column The column to be renamed
      * @param $newName The new name for the column
-     * @return 0 success
+     * @return int 0 success
      */
-    public function renameColumn($table, $column, $newName)
+    public function renameColumn(string $table, string $column, string $newName): int
     {
         $f_schema = $this->_schema;
         $f_schema = $this->fieldClean($f_schema);
@@ -2594,9 +2615,9 @@ class Postgres extends ADOdbBase
      * @param $table The table from which to drop
      * @param $column The column name to set
      * @param $default The new default value
-     * @return 0 success
+     * @return int 0 success
      */
-    public function setColumnDefault($table, $column, $default)
+    public function setColumnDefault(string $table, string $column, string $default): int
     {
         $f_schema = $this->_schema;
         $f_schema = $this->fieldClean($f_schema);
@@ -2613,9 +2634,9 @@ class Postgres extends ADOdbBase
      * @param $table The table that contains the column
      * @param $column The column to alter
      * @param $state True to set null, false to set not null
-     * @return 0 success
+     * @return int 0 success
      */
-    public function setColumnNull($table, $column, $state)
+    public function setColumnNull(string $table, string $column, bool $state): int
     {
         $f_schema = $this->_schema;
         $f_schema = $this->fieldClean($f_schema);
@@ -2653,9 +2674,9 @@ class Postgres extends ADOdbBase
      * Drops default value of a column
      * @param $table The table from which to drop
      * @param $column The column name to drop default
-     * @return 0 success
+     * @return int 0 success
      */
-    public function dropColumnDefault($table, $column)
+    public function dropColumnDefault(string $table, string $column): int
     {
         $f_schema = $this->_schema;
         $f_schema = $this->fieldClean($f_schema);
@@ -2854,131 +2875,131 @@ class Postgres extends ADOdbBase
     /**
      * Adds a new row to a table
      * @param $table The table in which to insert
-     * @param $fields Array of given field in values
-     * @param $values Array of new values for the row
-     * @param $nulls An array mapping column => something if it is to be null
-     * @param $format An array of the data type (VALUE or EXPRESSION)
-     * @param $types An array of field types
-     * @return 0 success
-     * @return -1 invalid parameters
+     * @param array<string> $fields Array of given field in values
+     * @param array<string> $values Array of new values for the row
+     * @param array<string> $nulls An array mapping column => something if it is to be null
+     * @param array<string> $format An array of the data type (VALUE or EXPRESSION)
+     * @param array<string> $types An array of field types
+     * @return int 0 success, -1 invalid parameters
      */
-    public function insertRow($table, $fields, $values, $nulls, $format, $types)
-    {
-        if (
-            !is_array($fields) || !is_array($values) || !is_array($nulls)
-            || !is_array($format) || !is_array($types)
-            || (count($fields) != count($values))
-        ) {
+    public function insertRow(
+        string $table,
+        array $fields,
+        array $values,
+        array $nulls,
+        array $format,
+        array $types
+    ): int {
+        if (count($fields) != count($values)) {
             return -1;
-        } else {
-            // Build clause
-            if (count($values) > 0) {
-                // Escape all field names
-                $clean_fields = array();
+        }
+        if (empty($values)) {
+            return -1;
+        }
 
-                foreach ($fields as $field) {
-                    array_push($clean_fields, $this->fieldClean($field));
-                }
+        // Escape all field names
+        $clean_fields = array();
 
-                $fields = $clean_fields;
+        foreach ($fields as $field) {
+            array_push($clean_fields, $this->fieldClean($field));
+        }
 
-                $f_schema = $this->_schema;
-                $table = $this->fieldClean($table);
-                $f_schema = $this->fieldClean($f_schema);
+        $fields = $clean_fields;
+
+        $f_schema = $this->_schema;
+        $table = $this->fieldClean($table);
+        $f_schema = $this->fieldClean($f_schema);
 
 
-                $sql = '';
-                foreach ($values as $i => $value) {
-                    // Handle NULL values
-                    if (isset($nulls[$i])) {
-                        $sql .= ',NULL';
-                    } else {
-                        $sql .= ',' . $this->formatValue($types[$i], $format[$i], $value);
-                    }
-                }
-
-                $sql = "INSERT INTO \"{$f_schema}\".\"{$table}\" (\"" . implode('","', $fields) . "\")
-					VALUES (" . substr($sql, 1) . ")";
-
-                return $this->execute($sql);
+        $sql = '';
+        foreach ($values as $i => $value) {
+            // Handle NULL values
+            if (isset($nulls[$i])) {
+                $sql .= ',NULL';
+            } else {
+                $sql .= ',' . $this->formatValue($types[$i], $format[$i], $value);
             }
         }
 
-        return -1;
+        $sql = "INSERT INTO \"{$f_schema}\".\"{$table}\" (\"" . implode('","', $fields) . "\")
+            VALUES (" . substr($sql, 1) . ")";
+
+        return $this->execute($sql);
     }
 
     /**
      * Updates a row in a table
      * @param $table The table in which to update
-     * @param $vars An array mapping new values for the row
-     * @param $nulls An array mapping column => something if it is to be null
-     * @param $format An array of the data type (VALUE or EXPRESSION)
-     * @param $types An array of field types
-     * @param $keyarr An array mapping column => value to update
-     * @return 0 success
-     * @return -1 invalid parameters
+     * @param array<string> $vars An array mapping new values for the row
+     * @param array<string> $nulls An array mapping column => something if it is to be null
+     * @param array<string> $format An array of the data type (VALUE or EXPRESSION)
+     * @param array<string> $types An array of field types
+     * @param array<string> $keyarr An array mapping column => value to update
+     * @return bool|int 0 success, -1 invalid parameters
      */
-    public function editRow($table, $vars, $nulls, $format, $types, $keyarr)
-    {
-        if (!is_array($vars) || !is_array($nulls) || !is_array($format) || !is_array($types)) {
-            return -1;
-        } else {
-            $f_schema = $this->_schema;
-            $f_schema = $this->fieldClean($f_schema);
-            $table = $this->fieldClean($table);
+    public function editRow(
+        string $table,
+        array $vars,
+        array $nulls,
+        array $format,
+        array $types,
+        array $keyarr
+    ): bool|int {
+        $f_schema = $this->_schema;
+        $f_schema = $this->fieldClean($f_schema);
+        $table = $this->fieldClean($table);
 
-            // Build clause
-            if (sizeof($vars) > 0) {
-                foreach ($vars as $key => $value) {
-                    $key = $this->fieldClean($key);
+        // Build clause
+        if (!empty($vars)) {
+            foreach ($vars as $key => $value) {
+                $key = $this->fieldClean($key);
 
-                    // Handle NULL values
-                    if (isset($nulls[$key])) {
-                        $tmp = 'NULL';
-                    } else {
-                        $tmp = $this->formatValue($types[$key], $format[$key], $value);
-                    }
-
-                    if (isset($sql)) {
-                        $sql .= ", \"{$key}\"={$tmp}";
-                    } else {
-                        $sql = "UPDATE \"{$f_schema}\".\"{$table}\" SET \"{$key}\"={$tmp}";
-                    }
+                // Handle NULL values
+                if (isset($nulls[$key])) {
+                    $tmp = 'NULL';
+                } else {
+                    $tmp = $this->formatValue($types[$key], $format[$key], $value);
                 }
-                $first = true;
-                foreach ($keyarr as $k => $v) {
-                    $k = $this->fieldClean($k);
-                    $v = $this->clean($v);
-                    if ($first) {
-                        $sql .= " WHERE \"{$k}\"='{$v}'";
-                        $first = false;
-                    } else {
-                        $sql .= " AND \"{$k}\"='{$v}'";
-                    }
+
+                if (isset($sql)) {
+                    $sql .= ", \"{$key}\"={$tmp}";
+                } else {
+                    $sql = "UPDATE \"{$f_schema}\".\"{$table}\" SET \"{$key}\"={$tmp}";
                 }
             }
-
-            // Begin transaction.  We do this so that we can ensure only one row is
-            // edited
-            $status = $this->beginTransaction();
-            if ($status != 0) {
-                $this->rollbackTransaction();
-                return -1;
+            $first = true;
+            foreach ($keyarr as $k => $v) {
+                $k = $this->fieldClean($k);
+                $v = $this->clean($v);
+                if ($first) {
+                    $sql .= " WHERE \"{$k}\"='{$v}'";
+                    $first = false;
+                } else {
+                    $sql .= " AND \"{$k}\"='{$v}'";
+                }
             }
-
-            $status = $this->execute($sql);
-
-            if ($status != 0) { // update failed
-                $this->rollbackTransaction();
-                return -1;
-            } elseif ($this->conn->Affected_Rows() != 1) { // more than one row could be updated
-                $this->rollbackTransaction();
-                return -2;
-            }
-
-            // End transaction
-            return $this->endTransaction();
         }
+
+        // Begin transaction.  We do this so that we can ensure only one row is
+        // edited
+        $status = $this->beginTransaction();
+        if ($status != 0) {
+            $this->rollbackTransaction();
+            return -1;
+        }
+
+        $status = $this->execute($sql);
+
+        if ($status != 0) { // update failed
+            $this->rollbackTransaction();
+            return -1;
+        } elseif ($this->conn->Affected_Rows() != 1) { // more than one row could be updated
+            $this->rollbackTransaction();
+            return -2;
+        }
+
+        // End transaction
+        return $this->endTransaction();
     }
 
     /**
@@ -3095,9 +3116,9 @@ class Postgres extends ADOdbBase
 
     /**
      * Returns all sequences in the current database
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getSequences($all = false)
+    public function getSequences(bool $all = false): \ADORecordSet|int
     {
         if ($all) {
             // Exclude pg_catalog and information_schema tables
@@ -3624,12 +3645,9 @@ class Postgres extends ADOdbBase
      * Updates a view.
      * @param $viewname The name of the view to update
      * @param $definition The new definition for the view
-     * @return 0 success
-     * @return -1 transaction error
-     * @return -2 drop view error
-     * @return -3 create view error
+     * @return bool|int true success, -1 transaction error, -2 drop view error, -3 create view error
      */
-    public function setView($viewname, $definition, $comment)
+    public function setView(string $viewname, string $definition, string $comment): bool|int
     {
         return $this->createView($viewname, $definition, true, $comment);
     }
@@ -3639,12 +3657,12 @@ class Postgres extends ADOdbBase
      * @param $viewname The name of the view to create
      * @param $definition The definition for the new view
      * @param $replace True to replace the view, false otherwise
-     * @return 0 success
+     * @return bool|int number for error-code
      */
-    public function createView($viewname, $definition, $replace, $comment)
+    public function createView(string $viewname, string $definition, bool $replace, string $comment): bool|int
     {
         $status = $this->beginTransaction();
-        if ($status != 0) {
+        if (!$status) {
             return -1;
         }
 
@@ -3687,7 +3705,7 @@ class Postgres extends ADOdbBase
     {
         // Rename (only if name has changed)
         /* $vwrs and $name are cleaned in alterViewInternal */
-        if (!empty($name) && ($name != $vwrs->fields['relname'])) {
+        if (!empty($name) && is_array($vwrs->fields) && $vwrs->fields['relname'] != $name) {
             $f_schema = $this->_schema;
             $f_schema = $this->fieldClean($f_schema);
             $sql = "ALTER VIEW \"{$f_schema}\".\"{$vwrs->fields['relname']}\" RENAME TO \"{$name}\"";
@@ -3850,9 +3868,9 @@ class Postgres extends ADOdbBase
      * Grabs a list of indexes for a table
      * @param $table The name of a table whose indexes to retrieve
      * @param $unique Only get unique/pk indexes
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getIndexes($table = '', $unique = false)
+    public function getIndexes(string $table = '', bool $unique = false): \ADORecordSet|int
     {
         $table = $this->clean($table);
 
@@ -4035,9 +4053,9 @@ class Postgres extends ADOdbBase
     /**
      * Returns a list of all constraints on a table
      * @param $table The table to find rules for
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getConstraints($table)
+    public function getConstraints(string $table): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -4082,9 +4100,9 @@ class Postgres extends ADOdbBase
      * including constraint name, definition, related col and referenced namespace,
      * table and col if needed
      * @param $table the table where we are looking for fk
-     * @return a recordset
+     * @return \ADORecordSet|int a recordset
      */
-    public function getConstraintsWithFields($table)
+    public function getConstraintsWithFields(string $table): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -4832,9 +4850,9 @@ class Postgres extends ADOdbBase
      * @param $all If true, will find all available functions, if false just those in search path
      * @param $type If not null, will find all functions with return value = type
      *
-     * @return All functions
+     * @return \ADORecordSet|int All functions
      */
-    public function getFunctions($all = false, $type = null)
+    public function getFunctions(bool $all = false, ?string $type = null): \ADORecordSet|int
     {
         if ($all) {
             $where = 'pg_catalog.pg_function_is_visible(p.oid)';
@@ -5470,13 +5488,11 @@ class Postgres extends ADOdbBase
 
     /**
      * Returns a list of all casts in the database
-     * @return All casts
+     * @return \ADORecordSet|int All casts
      */
-    public function getCasts()
+    public function getCasts(): \ADORecordSet|int
     {
-        global $conf;
-
-        if ($conf['show_system']) {
+        if (Config::showSystem()) {
             $where = '';
         } else {
             $where = '
@@ -5672,9 +5688,9 @@ class Postgres extends ADOdbBase
     /**
      * Grabs a list of triggers on a table
      * @param $table The name of a table whose triggers to retrieve
-     * @return mixed A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getTriggers(string $table = '')
+    public function getTriggers(string $table = ''): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -5800,7 +5816,10 @@ class Postgres extends ADOdbBase
 
         // Parameters
         // Escape null characters
-        $v = addCSlashes($trigger['tgargs'], "\0");
+        $v = '';
+        if (isset($trigger['tgargs']) && is_string($trigger['tgargs'])) {
+            $v = addcslashes($trigger['tgargs'], "\0");
+        }
         // Split on escaped null characters
         $params = explode('\\000', $v);
         for ($findx = 0; $findx < $trigger['tgnargs']; $findx++) {
@@ -6629,13 +6648,11 @@ class Postgres extends ADOdbBase
     /**
      * Gets all languages
      * @param $all True to get all languages, regardless of show_system
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getLanguages($all = false)
+    public function getLanguages(bool $all = false): \ADORecordSet|int
     {
-        global $conf;
-
-        if ($conf['show_system'] || $all) {
+        if (Config::showSystem() || $all) {
             $where = '';
         } else {
             $where = 'WHERE lanispl';
@@ -6781,9 +6798,9 @@ class Postgres extends ADOdbBase
 
     /**
      * Gets all aggregates
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getAggregates()
+    public function getAggregates(): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -7938,9 +7955,9 @@ class Postgres extends ADOdbBase
     /**
      * Retrieves information for all tablespaces
      * @param $all Include all tablespaces (necessary when moving objects back to the default space)
-     * @return mixed A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getTablespaces(bool $all = false)
+    public function getTablespaces(bool $all = false): \ADORecordSet|int
     {
         global $conf;
 
@@ -7948,7 +7965,7 @@ class Postgres extends ADOdbBase
 					(SELECT description FROM pg_catalog.pg_shdescription pd WHERE pg_tablespace.oid=pd.objoid AND pd.classoid='pg_tablespace'::regclass) AS spccomment
 					FROM pg_catalog.pg_tablespace";
 
-        if (!$conf['show_system'] && !$all) {
+        if (!Config::showSystem() && !$all) {
             $sql .= ' WHERE spcname NOT LIKE $$pg\_%$$';
         }
 
@@ -8259,9 +8276,7 @@ class Postgres extends ADOdbBase
      */
     public function getLocks(): \ADORecordSet|int
     {
-        global $conf;
-
-        if (!$conf['show_system']) {
+        if (!Config::showSystem()) {
             $where = 'AND pn.nspname NOT LIKE $$pg\_%$$';
         } else {
             $where = "AND nspname !~ '^pg_t(emp_[0-9]+|oast)$'";
@@ -8892,21 +8907,12 @@ class Postgres extends ADOdbBase
     // Type conversion routines
 
     /**
-     * Change the value of a parameter to 't' or 'f' depending on whether it evaluates to true or false
-     * @param $parameter the parameter
-     */
-    public function dbBool(&$parameter)
-    {
-        return $parameter ? 't' : 'f';
-    }
-
-    /**
      * Change a parameter from 't' or 'f' to a boolean, (others evaluate to false)
      * @param $parameter the parameter
      */
-    public function phpBool($parameter)
+    public function phpBool(mixed $parameter): bool
     {
-        return $parameter == 't';
+        return $parameter === 't';
     }
 
     // interfaces Statistics collector functions

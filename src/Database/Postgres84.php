@@ -32,9 +32,9 @@ class Postgres84 extends Postgres90
     /**
      * Grabs a list of triggers on a table
      * @param $table The name of a table whose triggers to retrieve
-     * @return mixed A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getTriggers(string $table = '')
+    public function getTriggers(string $table = ''): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -62,9 +62,9 @@ class Postgres84 extends Postgres90
      * Searches all system catalogs to find objects that match a certain name.
      * @param $term The search term
      * @param $filter The object type to restrict to ('' means no restriction)
-     * @return mixed A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function findObject(string $term, string $filter)
+    public function findObject(string $term, string $filter): \ADORecordSet|int
     {
         /*about escaping:
          * SET standard_conforming_string is not available before 8.2

@@ -118,9 +118,9 @@ class Postgres82 extends Postgres83
     /**
      * Grabs a list of triggers on a table
      * @param $table The name of a table whose triggers to retrieve
-     * @return mixed A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getTriggers(string $table = '')
+    public function getTriggers(string $table = ''): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);

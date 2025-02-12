@@ -1,9 +1,16 @@
+includes:
+	- phpstan-baseline.neon
+
 parameters:
     phpVersion: 80100
     level: max
     paths:
         - src/
-        - index.php
+        - autoload.php
         - browser.php
+        - index.php
+        - intro.php
+        - login.php
+        - servers.php
     excludePaths:
         - vendor/

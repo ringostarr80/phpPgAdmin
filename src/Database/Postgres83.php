@@ -69,9 +69,9 @@ class Postgres83 extends Postgres84
      * Return all database available on the server
      * @param $currentdatabase database name that should be on top of the resultset
      *
-     * @return mixed A list of databases, sorted alphabetically
+     * @return \ADORecordSet|int A list of databases, sorted alphabetically
      */
-    public function getDatabases(?string $currentdatabase = null)
+    public function getDatabases(?string $currentdatabase = null): \ADORecordSet|int
     {
         $serverSession = ServerSession::fromRequestParameter();
 

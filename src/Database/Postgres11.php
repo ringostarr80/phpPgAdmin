@@ -4,29 +4,27 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Database;
 
+use ADORecordSet;
+
 class Postgres11 extends Postgres
 {
     public float $majorVersion = 11;
 
     /**
      * Returns the current default_with_oids setting
-     * @return default_with_oids setting
+     * @return string|int|false default_with_oids setting
      */
-    public function getDefaultWithOid()
+    public function getDefaultWithOid(): string|int|false
     {
-
-        $sql = "SHOW default_with_oids";
-
-        return $this->selectField($sql, 'default_with_oids');
+        return $this->selectField("SHOW default_with_oids", 'default_with_oids');
     }
 
     /**
      * Checks to see whether or not a table has a unique id column
      * @param $table The table name
-     * @return True if it has a unique id, false otherwise
-     * @return null error
+     * @return ?bool True if it has a unique id, false otherwise. null error.
      **/
-    public function hasObjectID($table)
+    public function hasObjectID(string $table): ?bool
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -36,16 +34,19 @@ class Postgres11 extends Postgres
 			AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname='{$c_schema}')";
 
         $rs = $this->selectSet($sql);
-        if ($rs->recordCount() != 1) {
-            return null;
-        } else {
-            $rs->fields['relhasoids'] = $this->phpBool($rs->fields['relhasoids']);
-            return $rs->fields['relhasoids'];
+        if ($rs instanceof ADORecordSet) {
+            if ($rs->recordCount() != 1) {
+                return null;
+            } elseif (is_array($rs->fields)) {
+                return $this->phpBool($rs->fields['relhasoids']);
+            }
         }
+
+        return null;
     }
 
     // Capabilities
-    public function hasServerOids()
+    public function hasServerOids(): bool
     {
         return true;
     }

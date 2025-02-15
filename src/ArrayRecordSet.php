@@ -11,29 +11,33 @@ namespace PhpPgAdmin;
  */
 class ArrayRecordSet
 {
-    protected $_array;
-    protected $_count;
-    public $EOF = false;
-    public $fields;
+    /**
+     * @var array<mixed>
+     */
+    private array $array;
+    public bool $EOF = false;
+    public mixed $fields;
 
-    public function __construct($data)
+    /**
+     * @param array<mixed> $data
+     */
+    public function __construct(array $data)
     {
-        $this->_array = $data;
-        $this->_count = count($this->_array);
-        $this->fields = reset($this->_array);
+        $this->array = $data;
+        $this->fields = reset($this->array);
         if ($this->fields === false) {
             $this->EOF = true;
         }
     }
 
-    public function recordCount()
+    public function recordCount(): int
     {
-        return $this->_count;
+        return count($this->array);
     }
 
-    public function moveNext()
+    public function moveNext(): void
     {
-        $this->fields = next($this->_array);
+        $this->fields = next($this->array);
         if ($this->fields === false) {
             $this->EOF = true;
         }

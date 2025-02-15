@@ -18,7 +18,7 @@ class ADOdbBase
      * Turns on or off query debugging
      * @param $debug True to turn on debugging, false otherwise
      */
-    public function setDebug($debug)
+    public function setDebug(bool $debug): void
     {
         $this->conn->debug = $debug;
     }
@@ -29,15 +29,15 @@ class ADOdbBase
      */
     public function clean(?string $str): ?string
     {
-        return addslashes($str);
+        return addslashes($str ?? '');
     }
 
     /**
      * Escapes a string for use as an identifier
      * @param $str The string to escape
-     * @return The escaped string
+     * @return string The escaped string
      */
-    public function escapeIdentifier($str)
+    public function escapeIdentifier(string $str): string
     {
         return '`' . $str . '`';
     }
@@ -57,12 +57,12 @@ class ADOdbBase
 
     /**
      * Cleans (escapes) an array
-     * @param array<mixed> $arr The array to clean, by reference
-     * @return array<mixed> The cleaned array
+     * @param array<string> $arr The array to clean, by reference
+     * @return array<string> The cleaned array
      */
-    public function arrayClean(array &$arr): array
+    public function arrayClean(array $arr): array
     {
-        return $arr = array_map('addslashes', $arr);
+        return array_map('addslashes', $arr);
     }
 
     /**
@@ -93,7 +93,7 @@ class ADOdbBase
      * @param $sql The SQL statement to be executed
      * @return \ADORecordSet|int A recordset or an error code
      */
-    public function selectSet($sql)
+    public function selectSet(string $sql): \ADORecordSet|int
     {
         // Execute the statement
         $rs = $this->conn->Execute($sql);
@@ -142,13 +142,11 @@ class ADOdbBase
     /**
      * Delete from the database
      * @param $table The name of the table
-     * @param $conditions (array) A map of field names to conditions
+     * @param array<string, string> $conditions (array) A map of field names to conditions
      * @param $schema (optional) The table's schema
-     * @return 0 success
-     * @return -1 on referential integrity violation
-     * @return -2 on no rows deleted
+     * @return int 0 success, -1 on referential integrity violation, -2 on no rows deleted
      */
-    public function delete($table, $conditions, $schema = '')
+    public function delete(string $table, array $conditions, string $schema = ''): int
     {
         $table = $this->fieldClean($table);
 
@@ -185,17 +183,16 @@ class ADOdbBase
     /**
      * Insert a set of values into the database
      * @param $table The table to insert into
-     * @param $vars (array) A mapping of the field names to the values to be inserted
-     * @return 0 success
-     * @return -1 if a unique constraint is violated
-     * @return -2 if a referential constraint is violated
+     * @param array<string, string> $vars (array) A mapping of the field names to the values to be inserted
+     * @return int 0 success, -1 if a unique constraint is violated, -2 if a referential constraint is violated
      */
-    public function insert($table, $vars)
+    public function insert(string $table, array $vars): int
     {
         $table = $this->fieldClean($table);
 
+        $sql = '';
         // Build clause
-        if (sizeof($vars) > 0) {
+        if (!empty($vars)) {
             $fields = '';
             $values = '';
             foreach ($vars as $key => $value) {
@@ -233,15 +230,15 @@ class ADOdbBase
     /**
      * Update a row in the database
      * @param $table The table that is to be updated
-     * @param $vars (array) A mapping of the field names to the values to be updated
-     * @param $where (array) A mapping of field names to values for the where clause
-     * @param $nulls (array, optional) An array of fields to be set null
-     * @return 0 success
-     * @return -1 if a unique constraint is violated
-     * @return -2 if a referential constraint is violated
-     * @return -3 on no rows deleted
+     * @param array<string, string> $vars (array) A mapping of the field names to the values to be updated
+     * @param array<string, string> $where (array) A mapping of field names to values for the where clause
+     * @param array<?string> $nulls (array, optional) An array of fields to be set null
+     * @return int 0 success
+     * -1 if a unique constraint is violated
+     * -2 if a referential constraint is violated
+     * -3 on no rows deleted
      */
-    public function update($table, $vars, $where, $nulls = array())
+    public function update(string $table, array $vars, array $where, array $nulls = []): int
     {
         $table = $this->fieldClean($table);
 
@@ -324,7 +321,6 @@ class ADOdbBase
      */
     public function getPlatform(): string
     {
-        // return $this->conn->platform;
         return "UNKNOWN";
     }
 
@@ -334,17 +330,21 @@ class ADOdbBase
      * Change a parameter from database representation to a boolean, (others evaluate to false)
      * @param $parameter the parameter
      */
-    public function phpBool($parameter)
+    public function phpBool(mixed $parameter): bool
     {
-        return $parameter;
+        if ($parameter) {
+            return true;
+        }
+
+        return false;
     }
 
     /**
      * Change a db array into a PHP array
      * @param $arr String representing the DB array
-     * @return A PHP array
+     * @return array<string> A PHP array
      */
-    public function phpArray($dbarr)
+    public function phpArray(string $dbarr): array
     {
         // Take off the first and last characters (the braces)
         $arr = substr($dbarr, 1, strlen($dbarr) - 2);

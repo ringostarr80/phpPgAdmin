@@ -221,7 +221,7 @@ class Postgres82 extends Postgres83
         $funcname = $this->fieldClean($funcname);
         $args = $this->clean($args);
         $language = $this->fieldClean($language);
-        $this->arrayClean($flags);
+        $flags = $this->arrayClean($flags);
 
         $sql = "CREATE";
         if ($replace) {
@@ -241,7 +241,7 @@ class Postgres82 extends Postgres83
         $sql .= "{$returns} AS ";
 
         if (is_array($definition)) {
-            $this->arrayClean($definition);
+            $definition = $this->arrayClean($definition);
             if (isset($definition[0])) {
                 $sql .= "'" . $definition[0] . "'";
                 if (isset($definition[1])) {

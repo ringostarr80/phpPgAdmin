@@ -44,7 +44,7 @@ class Server
 
     public function id(): string
     {
-        return $this->host . ':' . $this->port . ':' . $this->sslMode;
+        return (string)$this->host . ':' . $this->port->Value . ':' . $this->sslMode->value;
     }
 
     /**

@@ -9,8 +9,15 @@ use PhpPgAdmin\DDD\ValueObjects\Server\{DatabaseName, Filename, Host, Name, Port
 use PhpPgAdmin\DDD\ValueObjects\ServerSession\{Username, Password};
 
 /**
- * @property-read Username $Username
+ * @property-read DatabaseName $DefaultDb
+ * @property-read Host $Host
+ * @property-read Name $Name
  * @property-read Password $Password
+ * @property-read Filename $PgDumpAllPath
+ * @property-read Filename $PgDumpPath
+ * @property-read Port $Port
+ * @property-read SslMode $SslMode
+ * @property-read Username $Username
  */
 class ServerSession extends Server
 {
@@ -30,8 +37,15 @@ class ServerSession extends Server
     public function __get(string $name): mixed
     {
         return match ($name) {
-            'Username' => $this->username,
+            'DefaultDb' => $this->defaultDb,
+            'Host' => $this->host,
+            'Name' => $this->name,
             'Password' => $this->password,
+            'PgDumpAllPath' => $this->pgDumpAllPath,
+            'PgDumpPath' => $this->pgDumpPath,
+            'Port' => $this->port,
+            'SslMode' => $this->sslMode,
+            'Username' => $this->username,
             default => parent::__get($name),
         };
     }

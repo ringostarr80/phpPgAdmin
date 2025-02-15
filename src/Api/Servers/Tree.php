@@ -26,10 +26,8 @@ class Tree
         $configuredServers = Config::getServers();
         foreach ($configuredServers as $configuredServer) {
             $tree = $dom->createElement('tree');
-            $tree->setAttribute('text', $configuredServer['desc']);
-            $serverId = $configuredServer['host'] . ':' .
-                $configuredServer['port'] . ':' .
-                $configuredServer['sslmode'];
+            $tree->setAttribute('text', (string)$configuredServer->Name);
+            $serverId = $configuredServer->id();
             $actionUrlParams = [
                 'subject' => 'server',
                 'server' => $serverId

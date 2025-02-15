@@ -253,9 +253,9 @@ class Config
     public static function getServerById(string $serverId): ?Server
     {
         $servers = self::getServers();
-        foreach ($servers as $info) {
-            if ($serverId === $info['host'] . ':' . $info['port'] . ':' . $info['sslmode']) {
-                return $info;
+        foreach ($servers as $server) {
+            if ($serverId === $server->id()) {
+                return $server;
             }
         }
 
@@ -265,7 +265,7 @@ class Config
     public static function ownedOnly(): bool
     {
         $conf = self::tryGetConfigFileData();
-        return $conf['owned_only'] ?? [];
+        return $conf['owned_only'] ?? false;
     }
 
     /**
@@ -274,8 +274,8 @@ class Config
     public static function serverExists(string $serverId): bool
     {
         $servers = self::getServers();
-        foreach ($servers as $info) {
-            if ($serverId === $info['host'] . ':' . $info['port'] . ':' . $info['sslmode']) {
+        foreach ($servers as $server) {
+            if ($serverId === $server->id()) {
                 return true;
             }
         }
@@ -373,6 +373,10 @@ class Config
                         self::$conf['servers'] = [];
 
                         foreach ($yaml['servers'] as $server) {
+                            if (!is_array($server)) {
+                                continue;
+                            }
+
                             self::$conf['servers'][] = Server::fromArray($server);
 
                             /*
@@ -427,10 +431,11 @@ class Config
 
         $tmpTheme = '';
         foreach ($servers as $info) {
-            if ($serverId !== $info['host'] . ':' . $info['port'] . ':' . $info['sslmode']) {
+            if ($serverId !== $info->id()) {
                 continue;
             }
 
+            /*
             if (!isset($info['theme']) || !isset($info['theme']['default'])) {
                 continue;
             }
@@ -448,6 +453,7 @@ class Config
             ) {
                 $tmpTheme = $info['theme']['db'][$_REQUEST['database']];
             }
+            */
         }
 
         return $tmpTheme;

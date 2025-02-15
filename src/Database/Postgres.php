@@ -348,13 +348,13 @@ class Postgres extends ADOdbBase
         }
 
         $str = str_replace("\r\n", "\n", $str);
-        $str = pg_escape_string($this->conn->_connectionID, $str);
+        $str = pg_escape_string($this->conn->_connectionID, $str) ?: $str;
         return $str;
     }
 
-    public function escapeIdentifier($str)
+    public function escapeIdentifier(string $str): string
     {
-        return pg_escape_identifier($this->conn->_connectionID, $str);
+        return pg_escape_identifier($this->conn->_connectionID, $str) ?: $str;
     }
 
     /**
@@ -390,13 +390,13 @@ class Postgres extends ADOdbBase
      * @param array<string|int, ?string> $arr The array to clean, by reference
      * @return array<string|int, ?string> The cleaned array
      */
-    public function arrayClean(array &$arr): array
+    public function arrayClean(array $arr): array
     {
         foreach ($arr as $k => $v) {
             if ($v === null) {
                 continue;
             }
-            $arr[$k] = pg_escape_string($this->conn->_connectionID, $v);
+            $arr[$k] = pg_escape_string($this->conn->_connectionID, $v) ?: $v;
         }
         return $arr;
     }
@@ -404,9 +404,9 @@ class Postgres extends ADOdbBase
     /**
      * Escapes bytea data for display on the screen
      * @param $data The bytea data
-     * @return Data formatted for on-screen display
+     * @return string Data formatted for on-screen display
      */
-    public function escapeBytea($input)
+    public function escapeBytea(string $input): string
     {
         global $data;
 
@@ -418,9 +418,9 @@ class Postgres extends ADOdbBase
      * @param $name The name to give the field
      * @param $value The value of the field.  Note this could be 'numeric(7,2)' sort of thing...
      * @param $type The database type of the field
-     * @param $extras An array of attributes name as key and attributes' values as value
+     * @param array<string, ?string> $extras An array of attributes name as key and attributes' values as value
      */
-    public function printField($name, $value, $type, $extras = array())
+    public function printField(?string $name, ?string $value, string $type, array $extras = []): void
     {
         global $lang;
 
@@ -516,7 +516,6 @@ class Postgres extends ADOdbBase
                 } else {
                     return $value;
                 }
-                break;
             default:
                 // Checking variable fields is difficult as there might be a size
                 // attribute...
@@ -554,7 +553,7 @@ class Postgres extends ADOdbBase
      * @param $typname The name of the type
      * @param $typmod The contents of the typmod field
      */
-    public function formatType($typname, $typmod)
+    public function formatType(string $typname, int $typmod): string
     {
         // This is a specific constant in the 7.0 source
         $varhdrsz = 4;
@@ -1267,13 +1266,16 @@ class Postgres extends ADOdbBase
 
     /**
      * Return the current schema search path
-     * @return Array of schema names
+     * @return array<mixed> Array of schema names
      */
-    public function getSearchPath()
+    public function getSearchPath(): array
     {
         $sql = 'SELECT current_schemas(false) AS search_path';
-
-        return $this->phpArray($this->selectField($sql, 'search_path'));
+        $selectedField = $this->selectField($sql, 'search_path');
+        if (!is_string($selectedField)) {
+            return [];
+        }
+        return $this->phpArray($selectedField);
     }
 
     // Table functions
@@ -1547,8 +1549,8 @@ class Postgres extends ADOdbBase
                 } else {
                     $sql .= " BIGSERIAL";
                 }
-            } else {
-                $sql .= " " . $this->formatType($atts->fields['type'], $atts->fields['atttypmod']);
+            } elseif (is_string($atts->fields['type']) && is_numeric($atts->fields['atttypmod'])) {
+                $sql .= " " . $this->formatType($atts->fields['type'], (int)$atts->fields['atttypmod']);
 
                 // Add NOT NULL if necessary
                 if ($this->phpBool($atts->fields['attnotnull'])) {
@@ -2323,7 +2325,7 @@ class Postgres extends ADOdbBase
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
-        $this->arrayClean($atts);
+        $atts = $this->arrayClean($atts);
 
         if (!is_array($atts)) {
             return -1;
@@ -3005,35 +3007,31 @@ class Postgres extends ADOdbBase
     /**
      * Delete a row from a table
      * @param $table The table from which to delete
-     * @param $key An array mapping column => value to delete
+     * @param array<string, string> $key An array mapping column => value to delete
      * @return bool|int 0 success
      */
-    public function deleteRow($table, $key, $schema = false)
+    public function deleteRow(string $table, array $key, string|false $schema = false): bool|int
     {
-        if (!is_array($key)) {
+        // Begin transaction.  We do this so that we can ensure only one row is
+        // deleted
+        $status = $this->beginTransaction();
+        if ($status != 0) {
+            $this->rollbackTransaction();
             return -1;
-        } else {
-            // Begin transaction.  We do this so that we can ensure only one row is
-            // deleted
-            $status = $this->beginTransaction();
-            if ($status != 0) {
-                $this->rollbackTransaction();
-                return -1;
-            }
-
-            if ($schema === false) {
-                $schema = $this->_schema;
-            }
-
-            $status = $this->delete($table, $key, $schema);
-            if ($status != 0 || $this->conn->Affected_Rows() != 1) {
-                $this->rollbackTransaction();
-                return -2;
-            }
-
-            // End transaction
-            return $this->endTransaction();
         }
+
+        if ($schema === false) {
+            $schema = $this->_schema;
+        }
+
+        $status = $this->delete($table, $key, $schema);
+        if ($status != 0 || $this->conn->Affected_Rows() != 1) {
+            $this->rollbackTransaction();
+            return -2;
+        }
+
+        // End transaction
+        return $this->endTransaction();
     }
 
     // Sequence functions
@@ -3948,7 +3946,7 @@ class Postgres extends ADOdbBase
         $sql .= " \"{$name}\" ON \"{$f_schema}\".\"{$table}\" USING {$type} ";
 
         if (is_array($columns)) {
-            $this->arrayClean($columns);
+            $columns = $this->arrayClean($columns);
             $sql .= "(\"" . implode('","', $columns) . "\")";
         } else {
             $sql .= "(" . $columns . ")";
@@ -5075,7 +5073,7 @@ class Postgres extends ADOdbBase
         $funcname = $this->fieldClean($funcname);
         $args = $this->clean($args);
         $language = $this->fieldClean($language);
-        $this->arrayClean($flags);
+        $flags = $this->arrayClean($flags);
         $cost = $this->clean($cost);
         $rows = $this->clean($rows);
         $f_schema = $this->_schema;
@@ -5099,7 +5097,7 @@ class Postgres extends ADOdbBase
         $sql .= "{$returns} AS ";
 
         if (is_array($definition)) {
-            $this->arrayClean($definition);
+            $definition = $this->arrayClean($definition);
             $sql .= "'" . $definition[0] . "'";
             if ($definition[1]) {
                 $sql .= ",'" . $definition[1] . "'";
@@ -6560,7 +6558,7 @@ class Postgres extends ADOdbBase
             $f_schema = $this->fieldClean($f_schema);
             $ftscfg = $this->fieldClean($ftscfg);
             $dictname = $this->fieldClean($dictname);
-            $this->arrayClean($mapping);
+            $mapping = $this->arrayClean($mapping);
 
             switch ($action) {
                 case 'alter':

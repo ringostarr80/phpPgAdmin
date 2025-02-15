@@ -303,8 +303,11 @@ class Postgres83 extends Postgres84
         return $this->deleteRow(
             'pg_autovacuum',
             [
-                'vacrelid' => $rs instanceof \ADORecordSet && is_array($rs->fields) ?
-                    $rs->fields['oid'] : 0
+                'vacrelid' => $rs instanceof \ADORecordSet &&
+                    is_array($rs->fields) &&
+                    isset($rs->fields['oid']) &&
+                    is_numeric($rs->fields['oid']) ?
+                    (string)$rs->fields['oid'] : '0'
             ],
             'pg_catalog'
         );

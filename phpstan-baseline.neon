@@ -1,30 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: '#^Access to property \$EOF on an unknown class PhpPgAdmin\\Database\\A\.$#'
-			identifier: class.notFound
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Access to property \$fields on an unknown class PhpPgAdmin\\Database\\A\.$#'
-			identifier: class.notFound
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Access to property \$fields on an unknown class PhpPgAdmin\\Database\\FTS\.$#'
-			identifier: class.notFound
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Binary operation "&" between mixed and bool results in an error\.$#'
-			identifier: binaryOp.invalid
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
 			message: '#^Binary operation "&" between mixed and mixed results in an error\.$#'
 			identifier: binaryOp.invalid
 			count: 4
@@ -145,24 +121,6 @@ parameters:
 			path: src/Database/Postgres.php
 
 		-
-			message: '#^Call to function is_object\(\) with PhpPgAdmin\\Database\\A will always evaluate to true\.$#'
-			identifier: function.alreadyNarrowedType
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Call to method moveNext\(\) on an unknown class PhpPgAdmin\\Database\\A\.$#'
-			identifier: class.notFound
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Call to method recordCount\(\) on an unknown class PhpPgAdmin\\Database\\A\.$#'
-			identifier: class.notFound
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
 			message: '#^Cannot access an offset on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 1
@@ -194,12 +152,6 @@ parameters:
 
 		-
 			message: '#^Cannot access offset ''cfgparser'' on array\|bool\.$#'
-			identifier: offsetAccess.nonOffsetAccessible
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Cannot access offset ''definition'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 1
 			path: src/Database/Postgres.php
@@ -286,12 +238,6 @@ parameters:
 			message: '#^Cannot access offset ''parser'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 2
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Cannot access offset ''parser_id'' on mixed\.$#'
-			identifier: offsetAccess.nonOffsetAccessible
-			count: 1
 			path: src/Database/Postgres.php
 
 		-
@@ -439,12 +385,6 @@ parameters:
 			path: src/Database/Postgres.php
 
 		-
-			message: '#^Cannot access offset int\<0, max\> on mixed\.$#'
-			identifier: offsetAccess.nonOffsetAccessible
-			count: 24
-			path: src/Database/Postgres.php
-
-		-
 			message: '#^Cannot access offset string\|null on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 5
@@ -453,7 +393,7 @@ parameters:
 		-
 			message: '#^Cannot access property \$EOF on ADORecordSet\|int\.$#'
 			identifier: property.nonObject
-			count: 5
+			count: 4
 			path: src/Database/Postgres.php
 
 		-
@@ -471,7 +411,7 @@ parameters:
 		-
 			message: '#^Cannot access property \$fields on ADORecordSet\|int\.$#'
 			identifier: property.nonObject
-			count: 33
+			count: 32
 			path: src/Database/Postgres.php
 
 		-
@@ -501,7 +441,7 @@ parameters:
 		-
 			message: '#^Cannot call method moveNext\(\) on ADORecordSet\|int\.$#'
 			identifier: method.nonObject
-			count: 3
+			count: 2
 			path: src/Database/Postgres.php
 
 		-
@@ -1579,60 +1519,6 @@ parameters:
 			path: src/Database/Postgres.php
 
 		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createCompositeType\(\) has parameter \$array with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createCompositeType\(\) has parameter \$colcomment with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createCompositeType\(\) has parameter \$field with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createCompositeType\(\) has parameter \$fields with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createCompositeType\(\) has parameter \$length with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createCompositeType\(\) has parameter \$name with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createCompositeType\(\) has parameter \$typcomment with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createCompositeType\(\) has parameter \$type with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createCompositeType\(\) should return \-1 but returns bool\.$#'
-			identifier: return.type
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
 			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createDomain\(\) has parameter \$array with no type specified\.$#'
 			identifier: missingType.parameter
 			count: 1
@@ -1982,96 +1868,6 @@ parameters:
 
 		-
 			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createSequence\(\) should return 0 but returns int\.$#'
-			identifier: return.type
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createTable\(\) has parameter \$array with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createTable\(\) has parameter \$colcomment with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createTable\(\) has parameter \$default with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createTable\(\) has parameter \$field with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createTable\(\) has parameter \$fields with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createTable\(\) has parameter \$length with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createTable\(\) has parameter \$name with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createTable\(\) has parameter \$notnull with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createTable\(\) has parameter \$primarykey with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createTable\(\) has parameter \$tablespace with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createTable\(\) has parameter \$tblcomment with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createTable\(\) has parameter \$type with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createTable\(\) has parameter \$uniquekey with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createTable\(\) has parameter \$withoutoids with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:createTable\(\) should return \-1 but returns bool\.$#'
 			identifier: return.type
 			count: 1
 			path: src/Database/Postgres.php
@@ -2983,24 +2779,6 @@ parameters:
 			path: src/Database/Postgres.php
 
 		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:getFtsConfigurationByName\(\) has invalid return type PhpPgAdmin\\Database\\FTS\.$#'
-			identifier: class.notFound
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:getFtsConfigurationByName\(\) has parameter \$ftscfg with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:getFtsConfigurationByName\(\) should return PhpPgAdmin\\Database\\FTS but returns ADORecordSet\|int\.$#'
-			identifier: return.type
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
 			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:getFtsConfigurationMap\(\) has invalid return type PhpPgAdmin\\Database\\RecordSet\.$#'
 			identifier: class.notFound
 			count: 1
@@ -3086,18 +2864,6 @@ parameters:
 
 		-
 			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:getFtsMappingByName\(\) should return PhpPgAdmin\\Database\\FTS but returns ADORecordSet\|int\.$#'
-			identifier: return.type
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:getFtsMappings\(\) has parameter \$ftscfg with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:getFtsMappings\(\) should return 0 but returns ADORecordSet\|int\.$#'
 			identifier: return.type
 			count: 1
 			path: src/Database/Postgres.php
@@ -3367,24 +3133,6 @@ parameters:
 			path: src/Database/Postgres.php
 
 		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:getRules\(\) has invalid return type PhpPgAdmin\\Database\\A\.$#'
-			identifier: class.notFound
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:getRules\(\) has parameter \$table with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:getRules\(\) should return PhpPgAdmin\\Database\\A but returns ADORecordSet\|int\.$#'
-			identifier: return.type
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
 			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:getSelectSQL\(\) has invalid return type PhpPgAdmin\\Database\\The\.$#'
 			identifier: class.notFound
 			count: 1
@@ -3541,24 +3289,6 @@ parameters:
 			path: src/Database/Postgres.php
 
 		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:getTriggerDef\(\) has invalid return type PhpPgAdmin\\Database\\The\.$#'
-			identifier: class.notFound
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:getTriggerDef\(\) has parameter \$trigger with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:getTriggerDef\(\) should return PhpPgAdmin\\Database\\The but returns string\.$#'
-			identifier: return.type
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
 			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:getTriggerFunctions\(\) has no return type specified\.$#'
 			identifier: missingType.return
 			count: 1
@@ -3698,12 +3428,6 @@ parameters:
 
 		-
 			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:hasSequencePrivilege\(\) has parameter \$sequence with no type specified\.$#'
-			identifier: missingType.parameter
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Method PhpPgAdmin\\Database\\Postgres\:\:isSuperUser\(\) has parameter \$username with no type specified\.$#'
 			identifier: missingType.parameter
 			count: 1
 			path: src/Database/Postgres.php
@@ -4725,7 +4449,7 @@ parameters:
 		-
 			message: '#^Parameter \#1 \$arr of method PhpPgAdmin\\Database\\Postgres\:\:fieldArrayClean\(\) expects array\<mixed\>, mixed given\.$#'
 			identifier: argument.type
-			count: 11
+			count: 10
 			path: src/Database/Postgres.php
 
 		-
@@ -4851,13 +4575,13 @@ parameters:
 		-
 			message: '#^Parameter \#1 \$str of method PhpPgAdmin\\Database\\Postgres\:\:clean\(\) expects string\|null, mixed given\.$#'
 			identifier: argument.type
-			count: 62
+			count: 53
 			path: src/Database/Postgres.php
 
 		-
 			message: '#^Parameter \#1 \$str of method PhpPgAdmin\\Database\\Postgres\:\:fieldClean\(\) expects string\|null, mixed given\.$#'
 			identifier: argument.type
-			count: 154
+			count: 149
 			path: src/Database/Postgres.php
 
 		-
@@ -5233,12 +4957,6 @@ parameters:
 			path: src/Database/Postgres.php
 
 		-
-			message: '#^Part \$default\[\$i\] \(mixed\) of encapsed string cannot be cast to string\.$#'
-			identifier: encapsedStringPart.nonString
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
 			message: '#^Part \$deferrable \(mixed\) of encapsed string cannot be cast to string\.$#'
 			identifier: encapsedStringPart.nonString
 			count: 1
@@ -5264,12 +4982,6 @@ parameters:
 
 		-
 			message: '#^Part \$event \(mixed\) of encapsed string cannot be cast to string\.$#'
-			identifier: encapsedStringPart.nonString
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Part \$field\[\$i\] \(mixed\) of encapsed string cannot be cast to string\.$#'
 			identifier: encapsedStringPart.nonString
 			count: 1
 			path: src/Database/Postgres.php
@@ -5716,16 +5428,4 @@ parameters:
 			message: '#^Variable \$sql might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Variable \$usename in empty\(\) is never defined\.$#'
-			identifier: empty.variable
-			count: 1
-			path: src/Database/Postgres.php
-
-		-
-			message: '#^Variable \$value on left side of \?\? always exists and is not nullable\.$#'
-			identifier: nullCoalesce.variable
-			count: 2
 			path: src/Database/Postgres.php

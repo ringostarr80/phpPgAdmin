@@ -449,7 +449,7 @@ class Postgres extends ADOdbBase
                     echo "<option value=\"f\"", ($value === 'f') ? ' selected="selected"' : '', ">{$lang['strfalse']}</option>\n";
                     echo "</select>\n";
                 } else {
-                    echo "<input name=\"", htmlspecialchars($name ?? ''), "\" value=\"", htmlspecialchars($value ?? ''), "\" size=\"35\"{$extra_str} />\n";
+                    echo "<input name=\"", htmlspecialchars($name ?? ''), "\" value=\"", htmlspecialchars($value), "\" size=\"35\"{$extra_str} />\n";
                 }
                 break;
             case 'bytea':
@@ -490,7 +490,7 @@ class Postgres extends ADOdbBase
                 if ($value === null) {
                     $value = '';
                 }
-                echo "<input name=\"", htmlspecialchars($name ?? ''), "\" value=\"", htmlspecialchars($value ?? ''), "\" size=\"35\"{$extra_str} />\n";
+                echo "<input name=\"", htmlspecialchars($name ?? ''), "\" value=\"", htmlspecialchars($value), "\" size=\"35\"{$extra_str} />\n";
                 break;
         }
     }
@@ -1224,7 +1224,7 @@ class Postgres extends ADOdbBase
 
         $schema_rs = $this->getSchemaByName($schemaname);
         /* Only if the owner change */
-        if ($schema_rs->fields['ownername'] != $owner) {
+        if ($schema_rs instanceof \ADORecordSet && $schema_rs->fields['ownername'] != $owner) {
             $sql = "ALTER SCHEMA \"{$schemaname}\" OWNER TO \"{$owner}\"";
             $status = $this->execute($sql);
             if ($status != 0) {
@@ -1570,7 +1570,7 @@ class Postgres extends ADOdbBase
             }
 
             // Does this column have a comment?
-            if ($atts->fields['comment'] !== null) {
+            if (!is_null($atts->fields['comment'])) {
                 $atts->fields['comment'] = $this->clean($atts->fields['comment']);
                 $col_comments_sql .= "COMMENT ON COLUMN \"{$t->fields['relname']}\".\"{$atts->fields['attname']}\"  IS '{$atts->fields['comment']}';\n";
             }
@@ -1868,7 +1868,7 @@ class Postgres extends ADOdbBase
 
         if ($rules->recordCount() > 0) {
             $sql .= "\n-- Rules\n\n";
-            while (!$rules->EOF) {
+            while (!$rules->EOF && is_array($rules->fields)) {
                 $sql .= $rules->fields['definition'] . "\n";
 
                 $rules->moveNext();
@@ -1882,37 +1882,36 @@ class Postgres extends ADOdbBase
      * Creates a new table in the database
      * @param $name The name of the table
      * @param $fields The number of fields
-     * @param $field An array of field names
-     * @param $type An array of field types
-     * @param $array An array of '' or '[]' for each type if it's an array or not
-     * @param $length An array of field lengths
-     * @param $notnull An array of not null
-     * @param $default An array of default values
+     * @param array<string> $field An array of field names
+     * @param array<string> $type An array of field types
+     * @param array<string> $array An array of '' or '[]' for each type if it's an array or not
+     * @param array<string> $length An array of field lengths
+     * @param array<mixed> $notnull An array of not null
+     * @param array<string> $default An array of default values
      * @param $withoutoids True if WITHOUT OIDS, false otherwise
-     * @param $colcomment An array of comments
+     * @param array<string> $colcomment An array of comments
      * @param $comment Table comment
      * @param $tablespace The tablespace name ('' means none/default)
-     * @param $uniquekey An Array indicating the fields that are unique (those indexes that are set)
-     * @param $primarykey An Array indicating the field used for the primarykey (those indexes that are set)
-     * @return 0 success
-     * @return -1 no fields supplied
+     * @param array<mixed> $uniquekey An Array indicating the fields that are unique (those indexes that are set)
+     * @param array<mixed> $primarykey An Array indicating the field used for the primarykey (those indexes that are set)
+     * @return int 0 success, -1 no fields supplied
      */
     public function createTable(
-        $name,
-        $fields,
-        $field,
-        $type,
-        $array,
-        $length,
-        $notnull,
-        $default,
-        $withoutoids,
-        $colcomment,
-        $tblcomment,
-        $tablespace,
-        $uniquekey,
-        $primarykey
-    ) {
+        string $name,
+        int $fields,
+        array $field,
+        array $type,
+        array $array,
+        array $length,
+        array $notnull,
+        array $default,
+        bool $withoutoids,
+        array $colcomment,
+        string $tblcomment,
+        string $tablespace,
+        array $uniquekey,
+        array $primarykey
+    ): bool|int {
         $f_schema = $this->_schema;
         $f_schema = $this->fieldClean($f_schema);
         $name = $this->fieldClean($name);
@@ -5374,17 +5373,24 @@ class Postgres extends ADOdbBase
      * Creates a new composite type in the database
      * @param $name The name of the type
      * @param $fields The number of fields
-     * @param $field An array of field names
-     * @param $type An array of field types
-     * @param $array An array of '' or '[]' for each type if it's an array or not
-     * @param $length An array of field lengths
-     * @param $colcomment An array of comments
+     * @param array<string> $field An array of field names
+     * @param array<string> $type An array of field types
+     * @param array<string> $array An array of '' or '[]' for each type if it's an array or not
+     * @param array<string> $length An array of field lengths
+     * @param array<string> $colcomment An array of comments
      * @param $typcomment Type comment
-     * @return 0 success
-     * @return -1 no fields supplied
+     * @return bool|int 0 success, -1 no fields supplied
      */
-    public function createCompositeType($name, $fields, $field, $type, $array, $length, $colcomment, $typcomment)
-    {
+    public function createCompositeType(
+        string $name,
+        int $fields,
+        array $field,
+        array $type,
+        array $array,
+        array $length,
+        array $colcomment,
+        string $typcomment
+    ): bool|int {
         $f_schema = $this->_schema;
         $f_schema = $this->fieldClean($f_schema);
         $name = $this->fieldClean($name);
@@ -5555,9 +5561,9 @@ class Postgres extends ADOdbBase
     /**
      * Returns a list of all rules on a table OR view
      * @param $table The table to find rules for
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getRules($table)
+    public function getRules(string $table): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -5716,10 +5722,10 @@ class Postgres extends ADOdbBase
      * A helper function for getTriggers that translates
      * an array of attribute numbers to an array of field names.
      * Note: Only needed for pre-7.4 servers, this function is deprecated
-     * @param $trigger An array containing fields from the trigger table
-     * @return The trigger definition string
+     * @param array<mixed> $trigger An array containing fields from the trigger table
+     * @return string The trigger definition string
      */
-    public function getTriggerDef($trigger)
+    public function getTriggerDef(array $trigger): string
     {
         $trigger = $this->fieldArrayClean($trigger);
         // Constants to figure out tgtype
@@ -5803,7 +5809,7 @@ class Postgres extends ADOdbBase
         }
 
         // Row or statement
-        if ($trigger['tgtype'] & TRIGGER_TYPE_ROW == TRIGGER_TYPE_ROW) {
+        if ($trigger['tgtype'] & true) {
             $tgdef .= 'FOR EACH ROW ';
         } else {
             $tgdef .= 'FOR EACH STATEMENT ';
@@ -6165,9 +6171,9 @@ class Postgres extends ADOdbBase
      * Return all information related to a FTS configuration
      * @param $ftscfg The name of the FTS configuration
      *
-     * @return FTS configuration information
+     * @return \ADORecordSet|int FTS configuration information
      */
-    public function getFtsConfigurationByName($ftscfg)
+    public function getFtsConfigurationByName(string $ftscfg): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -6628,11 +6634,14 @@ class Postgres extends ADOdbBase
      * (specified by given configuration since configuration can only have 1 parser)
      * @param $ftscfg The config's name that use the parser
      *
-     * @return 0 on success
+     * @return \ADORecordSet|int 0 on success
      */
-    public function getFtsMappings($ftscfg)
+    public function getFtsMappings(string $ftscfg): \ADORecordSet|int
     {
         $cfg = $this->getFtsConfigurationByName($ftscfg);
+        if (!is_array($cfg->fields)) {
+            return -1;
+        }
 
         $sql = "SELECT alias AS name, description
 			FROM pg_catalog.ts_token_type({$cfg->fields['parser_id']})
@@ -7439,11 +7448,11 @@ class Postgres extends ADOdbBase
      * @param $username The username of the user
      * @return bool True if is a super user, false otherwise
      */
-    public function isSuperUser($username = '')
+    public function isSuperUser(string $username = ''): bool
     {
         $username = $this->clean($username);
 
-        if (empty($usename)) {
+        if (empty($username)) {
             $val = pg_parameter_status($this->conn->_connectionID, 'is_superuser');
             if ($val !== false) {
                 return $val === 'on';
@@ -8160,6 +8169,10 @@ class Postgres extends ADOdbBase
 				OR name = 'vacuum_freeze_min_age'
 				OR name = 'autovacuum_freeze_max_age'
 			");
+
+        if (!($_defaults instanceof \ADORecordSet)) {
+            return [];
+        }
 
         $ret = [];
         while (!$_defaults->EOF) {

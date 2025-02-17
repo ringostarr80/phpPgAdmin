@@ -694,9 +694,9 @@ class Postgres extends ADOdbBase
     /**
      * Return the database comment of a db from the shared description table
      * @param string $database the name of the database to get the comment for
-     * @return recordset of the db comment info
+     * @return \ADORecordSet|int recordset of the db comment info
      */
-    public function getDatabaseComment($database)
+    public function getDatabaseComment(string $database): \ADORecordSet|int
     {
         $database = $this->clean($database);
         $sql = "SELECT description FROM pg_catalog.pg_database JOIN pg_catalog.pg_shdescription ON (oid=objoid AND classoid='pg_database'::regclass) WHERE pg_database.datname = '{$database}' ";
@@ -706,9 +706,9 @@ class Postgres extends ADOdbBase
     /**
      * Return the database owner of a db
      * @param string $database the name of the database to get the owner for
-     * @return recordset of the db owner info
+     * @return \ADORecordSet|int recordset of the db owner info
      */
-    public function getDatabaseOwner($database)
+    public function getDatabaseOwner(string $database): \ADORecordSet|int
     {
         $database = $this->clean($database);
         $sql = "SELECT usename FROM pg_user, pg_database WHERE pg_user.usesysid = pg_database.datdba AND pg_database.datname = '{$database}' ";
@@ -1050,9 +1050,9 @@ class Postgres extends ADOdbBase
 
     /**
      * Returns all available variable information.
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getVariables()
+    public function getVariables(): \ADORecordSet|int
     {
         $sql = "SHOW ALL";
 
@@ -2273,7 +2273,7 @@ class Postgres extends ADOdbBase
      * @return 0 success
      * @return -1 transaction error
      * @return -2 get existing table error
-     * @return $this->alterTableInternal error code
+     * @return bool|int $this->alterTableInternal error code
      */
     public function alterTable($table, $name, $owner, $schema, $comment, $tablespace)
     {
@@ -2302,9 +2302,9 @@ class Postgres extends ADOdbBase
     /**
      * Returns the SQL for changing the current user
      * @param $user The user to change to
-     * @return The SQL
+     * @return string The SQL
      */
-    public function getChangeUserSQL($user)
+    public function getChangeUserSQL(string $user): string
     {
         $user = $this->clean($user);
         return "SET SESSION AUTHORIZATION '{$user}';";
@@ -2761,11 +2761,11 @@ class Postgres extends ADOdbBase
 
     /**
      * Returns all available autovacuum per table information.
-     * @param mixed $table if given, return autovacuum info for the given table or return all information for all tables
+     * @param string $table if given, return autovacuum info for the given table or return all information for all tables
      *
-     * @return mixed A recordset
+     * @return \ADORecordSet|ArrayRecordSet|int A recordset
      */
-    public function getTableAutovacuum(string $table = '')
+    public function getTableAutovacuum(string $table = ''): \ADORecordSet|ArrayRecordSet|int
     {
         $sql = '';
 
@@ -2950,6 +2950,7 @@ class Postgres extends ADOdbBase
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
 
+        $sql = '';
         // Build clause
         if (!empty($vars)) {
             foreach ($vars as $key => $value) {
@@ -2962,7 +2963,7 @@ class Postgres extends ADOdbBase
                     $tmp = $this->formatValue($types[$key], $format[$key], $value);
                 }
 
-                if (isset($sql)) {
+                if ($sql !== '') {
                     $sql .= ", \"{$key}\"={$tmp}";
                 } else {
                     $sql = "UPDATE \"{$f_schema}\".\"{$table}\" SET \"{$key}\"={$tmp}";
@@ -3038,9 +3039,9 @@ class Postgres extends ADOdbBase
     /**
      * Determines whether or not the current user can directly access sequence information
      * @param $sequence Sequence Name
-     * @return t/f based on user permissions
+     * @return string|int t/f based on user permissions
     */
-    public function hasSequencePrivilege($sequence)
+    public function hasSequencePrivilege(string $sequence): string|int
     {
         /* This double-cleaning is deliberate */
         $f_schema = $this->_schema;
@@ -3519,7 +3520,7 @@ class Postgres extends ADOdbBase
      * @return 0 success
      * @return -1 transaction error
      * @return -2 get existing sequence error
-     * @return $this->alterSequenceInternal error code
+     * @return bool|int $this->alterSequenceInternal error code
      */
     public function alterSequence(
         ?string $sequence = null,
@@ -3534,7 +3535,7 @@ class Postgres extends ADOdbBase
         ?string $cachevalue = null,
         ?string $cycledvalue = null,
         ?string $startvalue = null
-    ) {
+    ): bool|int {
         $sequence = $this->fieldClean($sequence);
 
         $data = $this->getSequence($sequence);
@@ -3621,9 +3622,9 @@ class Postgres extends ADOdbBase
 
     /**
      * Returns a list of all views in the database
-     * @return All views
+     * @return \ADORecordSet|int All views
      */
-    public function getViews()
+    public function getViews(): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -3814,9 +3815,9 @@ class Postgres extends ADOdbBase
      * @return 0 success
      * @return -1 transaction error
      * @return -2 get existing view error
-     * @return $this->alterViewInternal error code
+     * @return bool|int $this->alterViewInternal error code
      */
-    public function alterView($view, $name, $owner, $schema, $comment)
+    public function alterView($view, $name, $owner, $schema, $comment): bool|int
     {
         $data = $this->getView($view);
         if ($data->recordCount() != 1) {
@@ -4445,7 +4446,7 @@ class Postgres extends ADOdbBase
         $rs = $this->selectSet($sql);
         while (!$rs->EOF) {
             $arrData = explode(':', $rs->fields['arr_dim']);
-            $tmpDimension = intval(substr($arrData[1], 0, strlen((string)($arrData[1] - 1))));
+            $tmpDimension = intval(substr($arrData[1], 0, strlen((string)(intval($arrData[1]) - 1))));
             $maxDimension = $tmpDimension > $maxDimension ? $tmpDimension : $maxDimension;
             $rs->MoveNext();
         }
@@ -4491,9 +4492,9 @@ class Postgres extends ADOdbBase
     /**
      * Finds the foreign keys that refer to the specified table
      * @param $table The table to find referrers for
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getReferrers($table)
+    public function getReferrers(string $table): \ADORecordSet|int
     {
         $table = $this->clean($table);
 
@@ -4533,9 +4534,9 @@ class Postgres extends ADOdbBase
     /**
      * Gets all information for a single domain
      * @param $domain The name of the domain to fetch
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getDomain($domain)
+    public function getDomain(string $domain): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -4562,9 +4563,9 @@ class Postgres extends ADOdbBase
 
     /**
      * Return all domains in current schema.  Excludes domain constraints.
-     * @return All tables, sorted alphabetically
+     * @return \ADORecordSet|int All tables, sorted alphabetically
      */
-    public function getDomains()
+    public function getDomains(): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -4591,9 +4592,9 @@ class Postgres extends ADOdbBase
     /**
      * Get domain constraints
      * @param $domain The name of the domain whose constraints to fetch
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getDomainConstraints($domain)
+    public function getDomainConstraints(string $domain): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -4628,9 +4629,9 @@ class Postgres extends ADOdbBase
      * @param $notnull True for NOT NULL, false otherwise
      * @param $default Default value for domain
      * @param $check A CHECK constraint if there is one
-     * @return 0 success
+     * @return int 0 success
      */
-    public function createDomain($domain, $type, $length, $array, $notnull, $default, $check)
+    public function createDomain($domain, $type, $length, $array, $notnull, $default, $check): int
     {
         $f_schema = $this->_schema;
         $f_schema = $this->fieldClean($f_schema);
@@ -4744,9 +4745,9 @@ class Postgres extends ADOdbBase
      * Drops a domain.
      * @param $domain The name of the domain to drop
      * @param $cascade True to cascade drop, false to restrict
-     * @return 0 success
+     * @return int 0 success
      */
-    public function dropDomain($domain, $cascade)
+    public function dropDomain($domain, $cascade): int
     {
         $f_schema = $this->_schema;
         $f_schema = $this->fieldClean($f_schema);
@@ -4765,9 +4766,9 @@ class Postgres extends ADOdbBase
      * @param $domain The domain to which to add the check
      * @param $definition The definition of the check
      * @param $name (optional) The name to give the check, otherwise default name is assigned
-     * @return 0 success
+     * @return int 0 success
      */
-    public function addDomainCheckConstraint($domain, $definition, $name = '')
+    public function addDomainCheckConstraint($domain, $definition, $name = ''): int
     {
         $f_schema = $this->_schema;
         $f_schema = $this->fieldClean($f_schema);
@@ -4899,9 +4900,9 @@ class Postgres extends ADOdbBase
     /**
      * Returns an array containing a function's properties
      * @param $f The array of data for the function
-     * @return An array containing the properties
+     * @return array<string>|int An array containing the properties
      */
-    public function getFunctionProperties($f)
+    public function getFunctionProperties($f): array|int
     {
         $temp = array();
 
@@ -5170,9 +5171,9 @@ class Postgres extends ADOdbBase
     /**
      * Returns all details for a particular type
      * @param $typname The name of the view to retrieve
-     * @return Type info
+     * @return \ADORecordSet|int Type info
      */
-    public function getType($typname)
+    public function getType(string $typname): \ADORecordSet|int
     {
         $typname = $this->clean($typname);
 
@@ -5187,9 +5188,9 @@ class Postgres extends ADOdbBase
      * @param $all If true, will find all available types, if false just those in search path
      * @param $tabletypes If true, will include table types
      * @param $domains If true, will include domains
-     * @return A recordet
+     * @return \ADORecordSet|int A recordet
      */
-    public function getTypes($all = false, $tabletypes = false, $domains = false)
+    public function getTypes($all = false, $tabletypes = false, $domains = false): \ADORecordSet|int
     {
         if ($all) {
             $where = '1 = 1';
@@ -5232,8 +5233,7 @@ class Postgres extends ADOdbBase
 
     /**
      * Creates a new type
-     * @param ...
-     * @return 0 success
+     * @return int 0 success
      */
     public function createType(
         $typname,
@@ -5246,7 +5246,7 @@ class Postgres extends ADOdbBase
         $typbyval,
         $typalign,
         $typstorage
-    ) {
+    ): int {
         $f_schema = $this->_schema;
         $f_schema = $this->fieldClean($f_schema);
         $typname = $this->fieldClean($typname);
@@ -5357,9 +5357,9 @@ class Postgres extends ADOdbBase
 
     /**
      * Get defined values for a given enum
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getEnumValues($name)
+    public function getEnumValues(string $name): \ADORecordSet|int
     {
         $name = $this->clean($name);
 
@@ -5534,9 +5534,9 @@ class Postgres extends ADOdbBase
 
     /**
      * Returns a list of all conversions in the database
-     * @return All conversions
+     * @return \ADORecordSet|int All conversions
      */
-    public function getConversions()
+    public function getConversions(): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -5670,9 +5670,9 @@ class Postgres extends ADOdbBase
      * Grabs a single trigger
      * @param $table The name of a table whose triggers to retrieve
      * @param $trigger The name of the trigger to retrieve
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getTrigger($table, $trigger)
+    public function getTrigger($table, $trigger): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -5956,9 +5956,9 @@ class Postgres extends ADOdbBase
 
     /**
      * Returns a list of all operators in the database
-     * @return All operators
+     * @return \ADORecordSet|int All operators
      */
-    public function getOperators()
+    public function getOperators(): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -6081,15 +6081,12 @@ class Postgres extends ADOdbBase
      * Creates a new FTS configuration.
      * @param string $cfgname The name of the FTS configuration to create
      * @param string $parser The parser to be used in new FTS configuration
-     * @param string $locale Locale of the FTS configuration
      * @param string $template The existing FTS configuration to be used as template for the new one
-     * @param string $withmap Should we copy whole map of existing FTS configuration to the new one
-     * @param string $makeDefault Should this configuration be the default for locale given
      * @param string $comment If omitted, defaults to nothing
      *
-     * @return 0 success
+     * @return bool|int 0 success
      */
-    public function createFtsConfiguration($cfgname, $parser = '', $template = '', $comment = '')
+    public function createFtsConfiguration($cfgname, $parser = '', $template = '', $comment = ''): bool|int
     {
         $f_schema = $this->_schema;
         $f_schema = $this->fieldClean($f_schema);
@@ -6141,9 +6138,9 @@ class Postgres extends ADOdbBase
      * Returns available FTS configurations
      * @param $all if false, returns schema qualified FTS confs
      *
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getFtsConfigurations($all = true)
+    public function getFtsConfigurations($all = true): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -6200,9 +6197,9 @@ class Postgres extends ADOdbBase
      * (list of mappings (tokens) and their processing dictionaries)
      * @param string $ftscfg Name of the FTS configuration
      *
-     * @return RecordSet
+     * @return \ADORecordSet|int RecordSet
      */
-    public function getFtsConfigurationMap($ftscfg)
+    public function getFtsConfigurationMap(string $ftscfg): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -6238,9 +6235,9 @@ class Postgres extends ADOdbBase
      * Returns FTS parsers available
      * @param $all if false, return only Parsers from the current schema
      *
-     * @return RecordSet
+     * @return \ADORecordSet|int RecordSet
      */
-    public function getFtsParsers($all = true)
+    public function getFtsParsers($all = true): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -6266,9 +6263,9 @@ class Postgres extends ADOdbBase
      * Returns FTS dictionaries available
      * @param $all if false, return only Dics from the current schema
      *
-     * @returns RecordSet
+     * @return \ADORecordSet|int RecordSet
      */
-    public function getFtsDictionaries($all = true)
+    public function getFtsDictionaries($all = true): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -6521,9 +6518,9 @@ class Postgres extends ADOdbBase
      * Return all information relating to a FTS dictionary
      * @param $ftsdict The name of the FTS dictionary
      *
-     * @return RecordSet of FTS dictionary information
+     * @return \ADORecordSet|int RecordSet of FTS dictionary information
      */
-    public function getFtsDictionaryByName($ftsdict)
+    public function getFtsDictionaryByName(string $ftsdict): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -6550,14 +6547,14 @@ class Postgres extends ADOdbBase
 
     /**
      * Creates/updates/deletes FTS mapping.
-     * @param string $cfgname The name of the FTS configuration to alter
+     * @param string $ftscfg The name of the FTS configuration to alter
      * @param array $mapping Array of tokens' names
      * @param string $action What to do with the mapping: add, alter or drop
      * @param string $dictname Dictionary that will process tokens given or null in case of drop action
      *
-     * @return 0 success
+     * @return int 0 success
      */
-    public function changeFtsMapping($ftscfg, $mapping, $action, $dictname = null)
+    public function changeFtsMapping($ftscfg, $mapping, $action, $dictname = null): int
     {
         if (count($mapping) > 0) {
             $f_schema = $this->_schema;
@@ -6595,9 +6592,9 @@ class Postgres extends ADOdbBase
      * @param $ftscfg The name of the FTS configuration
      * @param $mapping The name of the mapping
      *
-     * @return FTS configuration information
+     * @return \ADORecordSet|int FTS configuration information
      */
-    public function getFtsMappingByName($ftscfg, $mapping)
+    public function getFtsMappingByName($ftscfg, $mapping): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -6929,9 +6926,9 @@ class Postgres extends ADOdbBase
     /**
      * Returns all roles in the database cluster
      * @param $rolename (optional) The role name to exclude from the select
-     * @return All roles
+     * @return \ADORecordSet|int All roles
      */
-    public function getRoles($rolename = '')
+    public function getRoles($rolename = ''): \ADORecordSet|int
     {
         $sql = '
 			SELECT rolname, rolsuper, rolcreatedb, rolcreaterole, rolinherit,
@@ -6948,9 +6945,9 @@ class Postgres extends ADOdbBase
     /**
      * Returns information about a single role
      * @param $rolename The name of the role to retrieve
-     * @return The role's data
+     * @return \ADORecordSet|int The role's data
      */
-    public function getRole($rolename)
+    public function getRole($rolename): \ADORecordSet|int
     {
         $rolename = $this->clean($rolename);
 
@@ -7006,9 +7003,9 @@ class Postgres extends ADOdbBase
 
     /**
      * Returns all users in the database cluster
-     * @return All users
+     * @return \ADORecordSet|int All users
      */
-    public function getUsers()
+    public function getUsers(): \ADORecordSet|int
     {
         $sql = "SELECT usename, usesuper, usecreatedb, valuntil AS useexpires, useconfig
 			FROM pg_user
@@ -7020,9 +7017,9 @@ class Postgres extends ADOdbBase
     /**
      * Returns information about a single user
      * @param $username The username of the user to retrieve
-     * @return The user's data
+     * @return \ADORecordSet|int The user's data
      */
-    public function getUser($username)
+    public function getUser($username): \ADORecordSet|int
     {
         $username = $this->clean($username);
 
@@ -7505,9 +7502,9 @@ class Postgres extends ADOdbBase
     /**
      * Returns all role names which the role belongs to
      * @param $rolename The role name
-     * @return All role names
+     * @return \ADORecordSet|int All role names
      */
-    public function getMemberOf($rolename)
+    public function getMemberOf($rolename): \ADORecordSet|int
     {
         $rolename = $this->clean($rolename);
 
@@ -7526,9 +7523,9 @@ class Postgres extends ADOdbBase
      * Returns all role names that are members of a role
      * @param $rolename The role name
      * @param $admin (optional) Find only admin members
-     * @return All role names
+     * @return \ADORecordSet|int All role names
      */
-    public function getMembers($rolename, $admin = 'f')
+    public function getMembers($rolename, $admin = 'f'): \ADORecordSet|int
     {
         $rolename = $this->clean($rolename);
 
@@ -7561,9 +7558,9 @@ class Postgres extends ADOdbBase
     /**
      * Return users in a specific group
      * @param $groname The name of the group
-     * @return All users in the group
+     * @return \ADORecordSet|int All users in the group
      */
-    public function getGroup($groname)
+    public function getGroup($groname): \ADORecordSet|int
     {
         $groname = $this->clean($groname);
 
@@ -7577,9 +7574,9 @@ class Postgres extends ADOdbBase
 
     /**
      * Returns all groups in the database cluser
-     * @return All groups
+     * @return \ADORecordSet|int All groups
      */
-    public function getGroups()
+    public function getGroups(): \ADORecordSet|int
     {
         $sql = "SELECT groname FROM pg_group ORDER BY groname";
 
@@ -7623,9 +7620,9 @@ class Postgres extends ADOdbBase
     /**
      * Internal function used for parsing ACLs
      * @param $acl The ACL to parse (of type aclitem[])
-     * @return Privileges array
+     * @return array<mixed> Privileges array
      */
-    protected function parseACLInternal($acl)
+    protected function parseACLInternal($acl): array
     {
         // Take off the first and last characters (the braces)
         $acl = substr($acl, 1, strlen($acl) - 2);
@@ -8203,6 +8200,7 @@ class Postgres extends ADOdbBase
 
         $sql = "ALTER TABLE \"{$f_schema}\".\"{$table}\" SET (";
 
+        $params = [];
         if (!empty($vacenabled)) {
             $vacenabled = $this->clean($vacenabled);
             $params[] = "autovacuum_enabled='{$vacenabled}'";
@@ -8415,7 +8413,7 @@ class Postgres extends ADOdbBase
      * @param &$prevlen Length of previous character (ie. 1)
      * @param &$thislen Length of current character (ie. 1)
      */
-    private function advance1(&$i, &$prevlen, &$thislen)
+    private function advance1(int &$i, int &$prevlen, int &$thislen): void
     {
         $prevlen = $thislen;
         $i += $thislen;
@@ -8541,7 +8539,7 @@ class Postgres extends ADOdbBase
                 } elseif (substr($line, $i, 1) === '\'' || substr($line, $i, 1) === '"') { /* start of quote? */
                     $in_quote = substr($line, $i, 1);
                 } elseif (!$dol_quote && $this->validDoLQuote(substr($line, $i))) { /* start of $foo$ type quote? */
-                    $dol_end = strpos(substr($line, $i + 1), '$');
+                    $dol_end = strpos(substr($line, $i + 1), '$') ?: 0;
                     $dol_quote = substr($line, $i, $dol_end + 1);
                     $this->advance1($i, $prevlen, $thislen);
                     while (substr($line, $i, 1) !== '$') {
@@ -8666,9 +8664,9 @@ class Postgres extends ADOdbBase
      * @param $ops An array of the operators to use
      * @param $orderby (optional) An array of column numbers or names (one based)
      *        mapped to sort direction (asc or desc or '' or null) to order by
-     * @return The SQL query
+     * @return string The SQL query
      */
-    public function getSelectSQL($table, $show, $values, $ops, $orderby = array())
+    public function getSelectSQL($table, $show, $values, $ops, $orderby = array()): string
     {
         $show = $this->fieldArrayClean($show);
 
@@ -8894,9 +8892,9 @@ class Postgres extends ADOdbBase
      * Returns a recordset of all columns in a table
      * @param $table The name of a table
      * @param $key The associative array holding the key to retrieve
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
     */
-    public function browseRow($table, $key)
+    public function browseRow($table, $key): \ADORecordSet|int
     {
         $f_schema = $this->_schema;
         $f_schema = $this->fieldClean($f_schema);
@@ -8931,9 +8929,9 @@ class Postgres extends ADOdbBase
     /**
      * Fetches statistics for a database
      * @param $database The database to fetch stats for
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getStatsDatabase($database)
+    public function getStatsDatabase($database): \ADORecordSet|int
     {
         $database = $this->clean($database);
 
@@ -8945,9 +8943,9 @@ class Postgres extends ADOdbBase
     /**
      * Fetches tuple statistics for a table
      * @param $table The table to fetch stats for
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getStatsTableTuples($table)
+    public function getStatsTableTuples($table): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -8962,9 +8960,9 @@ class Postgres extends ADOdbBase
     /**
      * Fetches I/0 statistics for a table
      * @param $table The table to fetch stats for
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getStatsTableIO($table)
+    public function getStatsTableIO($table): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -8979,9 +8977,9 @@ class Postgres extends ADOdbBase
     /**
      * Fetches tuple statistics for all indexes on a table
      * @param $table The table to fetch index stats for
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getStatsIndexTuples($table)
+    public function getStatsIndexTuples($table): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -8996,9 +8994,9 @@ class Postgres extends ADOdbBase
     /**
      * Fetches I/0 statistics for all indexes on a table
      * @param $table The table to fetch index stats for
-     * @return A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getStatsIndexIO($table)
+    public function getStatsIndexIO($table): \ADORecordSet|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);

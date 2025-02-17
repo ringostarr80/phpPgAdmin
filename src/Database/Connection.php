@@ -60,7 +60,7 @@ class Connection
     public function getDriver(string &$description): string|int|null
     {
         $version = '';
-        $v = pg_version($this->conn->_connectionID); // @phpstan-ignore-line
+        $v = pg_version($this->conn->_connectionID);
         if (isset($v['server'])) {
             $version = $v['server'];
         }
@@ -152,6 +152,6 @@ class Connection
      */
     public function getLastError(): string
     {
-        return pg_last_error($this->conn->_connectionID); // @phpstan-ignore-line
+        return pg_last_error($this->conn->_connectionID);
     }
 }

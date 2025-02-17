@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Database;
 
-use PhpPgAdmin\Config;
+use PhpPgAdmin\{ArrayRecordSet, Config};
 use PhpPgAdmin\DDD\Entities\ServerSession;
 
 class Postgres83 extends Postgres84
@@ -114,9 +114,9 @@ class Postgres83 extends Postgres84
 
     /**
      * Returns all available autovacuum per table information.
-     * @return mixed A recordset
+     * @return \ADORecordSet|ArrayRecordSet|int A recordset
      */
-    public function getTableAutovacuum(string $table = '')
+    public function getTableAutovacuum(string $table = ''): \ADORecordSet|ArrayRecordSet|int
     {
         $sql = '';
 

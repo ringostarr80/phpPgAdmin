@@ -35,9 +35,9 @@ class Postgres82 extends Postgres83
         }
 
         $sql = "SELECT pn.nspname, pc.relname AS tablename, pl.transaction, pl.pid, pl.mode, pl.granted
-		FROM pg_catalog.pg_locks pl, pg_catalog.pg_class pc, pg_catalog.pg_namespace pn
-		WHERE pl.relation = pc.oid AND pc.relnamespace=pn.oid {$where}
-		ORDER BY nspname,tablename";
+            FROM pg_catalog.pg_locks pl, pg_catalog.pg_class pc, pg_catalog.pg_namespace pn
+            WHERE pl.relation = pc.oid AND pc.relnamespace=pn.oid {$where}
+            ORDER BY nspname,tablename";
 
         return $this->selectSet($sql);
     }
@@ -69,7 +69,7 @@ class Postgres82 extends Postgres83
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" RENAME TO \"{$name}\"";
             $status = $this->execute($sql);
             if ($status == 0) {
-                $seqrs->fields['seqname'] = $name; // @phpstan-ignore assign.propertyType
+                $seqrs->fields['seqname'] = $name;
             } else {
                 return $status;
             }
@@ -105,7 +105,7 @@ class Postgres82 extends Postgres83
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$vwrs->fields['relname']}\" RENAME TO \"{$name}\"";
             $status =  $this->execute($sql);
             if ($status == 0) {
-                $vwrs->fields['relname'] = $name; // @phpstan-ignore assign.propertyType
+                $vwrs->fields['relname'] = $name;
             } else {
                 return $status;
             }
@@ -127,18 +127,18 @@ class Postgres82 extends Postgres83
         $table = $this->clean($table);
 
         $sql = "SELECT
-				t.tgname, pg_catalog.pg_get_triggerdef(t.oid) AS tgdef, t.tgenabled, p.oid AS prooid,
-				p.proname || ' (' || pg_catalog.oidvectortypes(p.proargtypes) || ')' AS proproto,
-				ns.nspname AS pronamespace
-			FROM pg_catalog.pg_trigger t, pg_catalog.pg_proc p, pg_catalog.pg_namespace ns
-			WHERE t.tgrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname='{$table}'
-				AND relnamespace=(SELECT oid FROM pg_catalog.pg_namespace WHERE nspname='{$c_schema}'))
-				AND (NOT tgisconstraint OR NOT EXISTS
-						(SELECT 1 FROM pg_catalog.pg_depend d    JOIN pg_catalog.pg_constraint c
-							ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
-						WHERE d.classid = t.tableoid AND d.objid = t.oid AND d.deptype = 'i' AND c.contype = 'f'))
-				AND p.oid=t.tgfoid
-				AND p.pronamespace = ns.oid";
+                t.tgname, pg_catalog.pg_get_triggerdef(t.oid) AS tgdef, t.tgenabled, p.oid AS prooid,
+                p.proname || ' (' || pg_catalog.oidvectortypes(p.proargtypes) || ')' AS proproto,
+                ns.nspname AS pronamespace
+            FROM pg_catalog.pg_trigger t, pg_catalog.pg_proc p, pg_catalog.pg_namespace ns
+            WHERE t.tgrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname='{$table}'
+                AND relnamespace=(SELECT oid FROM pg_catalog.pg_namespace WHERE nspname='{$c_schema}'))
+                AND (NOT tgisconstraint OR NOT EXISTS
+                        (SELECT 1 FROM pg_catalog.pg_depend d    JOIN pg_catalog.pg_constraint c
+                            ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+                        WHERE d.classid = t.tableoid AND d.objid = t.oid AND d.deptype = 'i' AND c.contype = 'f'))
+                AND p.oid=t.tgfoid
+                AND p.pronamespace = ns.oid";
 
         return $this->selectSet($sql);
     }
@@ -155,28 +155,28 @@ class Postgres82 extends Postgres83
         $function_oid = $this->clean($function_oid);
 
         $sql = "SELECT
-					pc.oid AS prooid,
-					proname,
-					pg_catalog.pg_get_userbyid(proowner) AS proowner,
-					nspname as proschema,
-					lanname as prolanguage,
-					pg_catalog.format_type(prorettype, NULL) as proresult,
-					prosrc,
-					probin,
-					proretset,
-					proisstrict,
-					provolatile,
-					prosecdef,
-					pg_catalog.oidvectortypes(pc.proargtypes) AS proarguments,
-					proargnames AS proargnames,
-					pg_catalog.obj_description(pc.oid, 'pg_proc') AS procomment
-				FROM
-					pg_catalog.pg_proc pc, pg_catalog.pg_language pl, pg_catalog.pg_namespace pn
-				WHERE
-					pc.oid = '{$function_oid}'::oid
-					AND pc.prolang = pl.oid
-					AND pc.pronamespace = pn.oid
-				";
+                    pc.oid AS prooid,
+                    proname,
+                    pg_catalog.pg_get_userbyid(proowner) AS proowner,
+                    nspname as proschema,
+                    lanname as prolanguage,
+                    pg_catalog.format_type(prorettype, NULL) as proresult,
+                    prosrc,
+                    probin,
+                    proretset,
+                    proisstrict,
+                    provolatile,
+                    prosecdef,
+                    pg_catalog.oidvectortypes(pc.proargtypes) AS proarguments,
+                    proargnames AS proargnames,
+                    pg_catalog.obj_description(pc.oid, 'pg_proc') AS procomment
+                FROM
+                    pg_catalog.pg_proc pc, pg_catalog.pg_language pl, pg_catalog.pg_namespace pn
+                WHERE
+                    pc.oid = '{$function_oid}'::oid
+                    AND pc.prolang = pl.oid
+                    AND pc.pronamespace = pn.oid
+                ";
 
         return $this->selectSet($sql);
     }
@@ -324,26 +324,26 @@ class Postgres82 extends Postgres83
         $operator_oid = $this->clean($operator_oid);
 
         $sql = "
-			SELECT
-				po.oid, po.oprname,
-				oprleft::pg_catalog.regtype AS oprleftname,
-				oprright::pg_catalog.regtype AS oprrightname,
-				oprresult::pg_catalog.regtype AS resultname,
-				po.oprcanhash,
-				oprcom::pg_catalog.regoperator AS oprcom,
-				oprnegate::pg_catalog.regoperator AS oprnegate,
-				oprlsortop::pg_catalog.regoperator AS oprlsortop,
-				oprrsortop::pg_catalog.regoperator AS oprrsortop,
-				oprltcmpop::pg_catalog.regoperator AS oprltcmpop,
-				oprgtcmpop::pg_catalog.regoperator AS oprgtcmpop,
-				po.oprcode::pg_catalog.regproc AS oprcode,
-				po.oprrest::pg_catalog.regproc AS oprrest,
-				po.oprjoin::pg_catalog.regproc AS oprjoin
-			FROM
-				pg_catalog.pg_operator po
-			WHERE
-				po.oid='{$operator_oid}'
-		";
+            SELECT
+                po.oid, po.oprname,
+                oprleft::pg_catalog.regtype AS oprleftname,
+                oprright::pg_catalog.regtype AS oprrightname,
+                oprresult::pg_catalog.regtype AS resultname,
+                po.oprcanhash,
+                oprcom::pg_catalog.regoperator AS oprcom,
+                oprnegate::pg_catalog.regoperator AS oprnegate,
+                oprlsortop::pg_catalog.regoperator AS oprlsortop,
+                oprrsortop::pg_catalog.regoperator AS oprrsortop,
+                oprltcmpop::pg_catalog.regoperator AS oprltcmpop,
+                oprgtcmpop::pg_catalog.regoperator AS oprgtcmpop,
+                po.oprcode::pg_catalog.regproc AS oprcode,
+                po.oprrest::pg_catalog.regproc AS oprrest,
+                po.oprjoin::pg_catalog.regproc AS oprjoin
+            FROM
+                pg_catalog.pg_operator po
+            WHERE
+                po.oid='{$operator_oid}'
+        ";
 
         return $this->selectSet($sql);
     }
@@ -359,20 +359,20 @@ class Postgres82 extends Postgres83
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
         $sql = "
-			SELECT
-				pa.amname,
-				po.opcname,
-				po.opcintype::pg_catalog.regtype AS opcintype,
-				po.opcdefault,
-				pg_catalog.obj_description(po.oid, 'pg_opclass') AS opccomment
-			FROM
-				pg_catalog.pg_opclass po, pg_catalog.pg_am pa, pg_catalog.pg_namespace pn
-			WHERE
-				po.opcamid=pa.oid
-				AND po.opcnamespace=pn.oid
-				AND pn.nspname='{$c_schema}'
-			ORDER BY 1,2
-		";
+            SELECT
+                pa.amname,
+                po.opcname,
+                po.opcintype::pg_catalog.regtype AS opcintype,
+                po.opcdefault,
+                pg_catalog.obj_description(po.oid, 'pg_opclass') AS opccomment
+            FROM
+                pg_catalog.pg_opclass po, pg_catalog.pg_am pa, pg_catalog.pg_namespace pn
+            WHERE
+                po.opcamid=pa.oid
+                AND po.opcnamespace=pn.oid
+                AND pn.nspname='{$c_schema}'
+            ORDER BY 1,2
+        ";
 
         return $this->selectSet($sql);
     }

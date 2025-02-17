@@ -1,0 +1,12 @@
+parameters:
+    level: 2
+    paths:
+        - src/
+        - autoload.php
+        - browser.php
+        - index.php
+        - intro.php
+        - login.php
+        - servers.php
+    excludePaths:
+        - vendor/

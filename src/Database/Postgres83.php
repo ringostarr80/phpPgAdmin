@@ -169,7 +169,7 @@ class Postgres83 extends Postgres84
         ?string $anascalefactor,
         ?string $vaccostdelay,
         ?string $vaccostlimit
-    ): mixed {
+    ): int {
         $defaults = $this->getAutovacuum();
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -284,9 +284,9 @@ class Postgres83 extends Postgres84
     }
 
     /**
-     * @return bool|int
+     * @return int
      */
-    public function dropAutovacuum(string $table)
+    public function dropAutovacuum(string $table): int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);

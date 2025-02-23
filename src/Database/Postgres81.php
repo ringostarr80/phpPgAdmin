@@ -150,7 +150,7 @@ class Postgres81 extends Postgres82
         ?string $anascalefactor,
         ?string $vaccostdelay,
         ?string $vaccostlimit
-    ): mixed {
+    ): int {
         $defaults = $this->getAutovacuum();
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
@@ -250,9 +250,9 @@ class Postgres81 extends Postgres82
     /**
      * Returns all available process information.
      * @param ?string $database (optional) Find only connections to specified database
-     * @return mixed A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getProcesses(?string $database = null)
+    public function getProcesses(?string $database = null): \ADORecordSet|int
     {
         if ($database === null) {
             $sql = "SELECT datname, usename, procpid AS pid, current_query AS query, query_start, 
@@ -268,18 +268,16 @@ class Postgres81 extends Postgres82
 				ORDER BY usename, procpid";
         }
 
-        $rc = $this->selectSet($sql);
-
-        return $rc;
+        return $this->selectSet($sql);
     }
 
     // Tablespace functions
 
     /**
      * Retrieves a tablespace's information
-     * @return mixed A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getTablespace(string $spcname)
+    public function getTablespace(string $spcname): \ADORecordSet|int
     {
         $spcname = $this->clean($spcname);
 

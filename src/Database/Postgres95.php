@@ -11,9 +11,9 @@ class Postgres95 extends Postgres96
     /**
      * Returns all available process information.
      * @param ?string $database (optional) Find only connections to specified database
-     * @return mixed A recordset
+     * @return \ADORecordSet|int A recordset
      */
-    public function getProcesses(?string $database = null)
+    public function getProcesses(?string $database = null): \ADORecordSet|int
     {
         if ($database === null) {
             $sql = "SELECT datname, usename, pid, waiting, state_change as query_start,

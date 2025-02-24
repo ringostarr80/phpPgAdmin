@@ -355,7 +355,7 @@ class Postgres extends ADOdbBase
      *
      * @var string[]
      */
-    public array $triggerEvents =[ 
+    public array $triggerEvents = [
         'INSERT', 'UPDATE', 'DELETE', 'INSERT OR UPDATE', 'INSERT OR DELETE',
         'DELETE OR UPDATE', 'INSERT OR DELETE OR UPDATE'
     ];
@@ -1282,8 +1282,13 @@ class Postgres extends ADOdbBase
         }
 
         $schema_rs = $this->getSchemaByName($schemaname);
+
         /* Only if the owner change */
-        if ($schema_rs instanceof \ADORecordSet && $schema_rs->fields['ownername'] != $owner) {
+        if (
+            $schema_rs instanceof \ADORecordSet &&
+            is_array($schema_rs->fields) &&
+            $schema_rs->fields['ownername'] != $owner
+        ) {
             $sql = "ALTER SCHEMA \"{$schemaname}\" OWNER TO \"{$owner}\"";
             $status = $this->execute($sql);
             if ($status != 0) {
@@ -1652,11 +1657,15 @@ class Postgres extends ADOdbBase
                 switch ($cons->fields['contype']) {
                     case 'p':
                         $keys = $this->getAttributeNames($table, explode(' ', $cons->fields['indkey']));
-                        $sql .= "PRIMARY KEY (" . join(',', $keys) . ")";
+                        if (is_array($keys)) {
+                            $sql .= "PRIMARY KEY (" . join(',', $keys) . ")";
+                        }
                         break;
                     case 'u':
                         $keys = $this->getAttributeNames($table, explode(' ', $cons->fields['indkey']));
-                        $sql .= "UNIQUE (" . join(',', $keys) . ")";
+                        if (is_array($keys)) {
+                            $sql .= "UNIQUE (" . join(',', $keys) . ")";
+                        }
                         break;
                     default:
                         // Unrecognised constraint
@@ -2180,7 +2189,7 @@ class Postgres extends ADOdbBase
     {
         /* vars cleaned in alterTableInternal */
         // Rename (only if name has changed)
-        if (!empty($name) && ($name != $tblrs->fields['relname'])) {
+        if (!empty($name) && is_array($tblrs->fields) && $name != $tblrs->fields['relname']) {
             $f_schema = $this->_schema;
             $f_schema = $this->fieldClean($f_schema);
 
@@ -2205,7 +2214,7 @@ class Postgres extends ADOdbBase
     public function alterTableOwner(\ADORecordSet $tblrs, ?string $owner = null)
     {
         /* vars cleaned in alterTableInternal */
-        if (!empty($owner) && ($tblrs->fields['relowner'] != $owner)) {
+        if (!empty($owner) && is_array($tblrs->fields) && $tblrs->fields['relowner'] != $owner) {
             $f_schema = $this->_schema;
             $f_schema = $this->fieldClean($f_schema);
             // If owner has been changed, then do the alteration.  We are
@@ -2228,7 +2237,7 @@ class Postgres extends ADOdbBase
     public function alterTableTablespace(\ADORecordSet $tblrs, ?string $tablespace = null)
     {
         /* vars cleaned in alterTableInternal */
-        if (!empty($tablespace) && ($tblrs->fields['tablespace'] != $tablespace)) {
+        if (!empty($tablespace) && is_array($tblrs->fields) && $tblrs->fields['tablespace'] != $tablespace) {
             $f_schema = $this->_schema;
             $f_schema = $this->fieldClean($f_schema);
 
@@ -2251,7 +2260,7 @@ class Postgres extends ADOdbBase
     public function alterTableSchema(\ADORecordSet $tblrs, ?string $schema = null): int
     {
         /* vars cleaned in alterTableInternal */
-        if (!empty($schema) && ($tblrs->fields['nspname'] != $schema)) {
+        if (!empty($schema) && is_array($tblrs->fields) && $tblrs->fields['nspname'] != $schema) {
             $f_schema = $this->_schema;
             $f_schema = $this->fieldClean($f_schema);
             // If tablespace has been changed, then do the alteration.  We
@@ -2287,6 +2296,10 @@ class Postgres extends ADOdbBase
         string $comment,
         string $tablespace
     ): int {
+        if (!is_array($tblrs->fields)) {
+            return -2;
+        }
+
         $tblrs->fields = $this->fieldArrayClean($tblrs->fields);
 
         // Comment
@@ -2352,19 +2365,21 @@ class Postgres extends ADOdbBase
         string $tablespace
     ): bool|int {
         $data = $this->getTable($table);
+        if (is_int($data)) {
+            return $data;
+        }
 
         if ($data->recordCount() != 1) {
             return -2;
         }
 
         $status = $this->beginTransaction();
-        if ($status != 0) {
+        if (!$status) {
             $this->rollbackTransaction();
             return -1;
         }
 
         $status = $this->alterTableInternal($data, $name, $owner, $schema, $comment, $tablespace);
-
         if ($status != 0) {
             $this->rollbackTransaction();
             return $status;
@@ -2410,11 +2425,15 @@ class Postgres extends ADOdbBase
 			AND attnum IN ('" . join("','", $atts) . "')";
 
         $rs = $this->selectSet($sql);
+        if (is_int($rs)) {
+            return $rs;
+        }
+
         if ($rs->recordCount() != sizeof($atts)) {
-                return -2;
+            return -2;
         } else {
             $temp = array();
-            while (!$rs->EOF) {
+            while (!$rs->EOF && is_array($rs->fields)) {
                 $temp[$rs->fields['attnum']] = $rs->fields['attname'];
                 $rs->moveNext();
             }
@@ -2870,10 +2889,13 @@ class Postgres extends ADOdbBase
 
         /* tmp var to parse the results */
         $_autovacs = $this->selectSet($sql);
+        if (is_int($_autovacs)) {
+            return $_autovacs;
+        }
 
         /* result array to return as RS */
         $autovacs = array();
-        while (!$_autovacs->EOF) {
+        while (!$_autovacs->EOF && is_array($_autovacs->fields)) {
             $_ = array(
                 'nspname' => $_autovacs->fields['nspname'],
                 'relname' => $_autovacs->fields['relname']
@@ -2925,6 +2947,10 @@ class Postgres extends ADOdbBase
 			) AND indpred IS NULL AND indexprs IS NULL
 			ORDER BY indisprimary DESC LIMIT 1";
         $rs = $this->selectSet($sql);
+        if (is_int($rs)) {
+            $this->rollbackTransaction();
+            return -1;
+        }
 
         // If none, check for an OID column.  Even though OIDs can be duplicated, the edit and delete row
         // functions check that they're only modiying a single row.  Otherwise, return empty array.
@@ -2936,7 +2962,7 @@ class Postgres extends ADOdbBase
             }
             $this->endTransaction();
             return $temp;
-        } else {
+        } elseif (is_array($rs->fields)) {
             $attnames = $this->getAttributeNames($oldtable, explode(' ', $rs->fields['indkey']));
             if (!is_array($attnames)) {
                 $this->rollbackTransaction();
@@ -2946,6 +2972,8 @@ class Postgres extends ADOdbBase
                 return $attnames;
             }
         }
+
+        return [];
     }
 
     /**
@@ -3299,6 +3327,12 @@ class Postgres extends ADOdbBase
     {
         // Get the minimum value of the sequence
         $seq = $this->getSequence($sequence);
+        if (is_int($seq)) {
+            return $seq;
+        }
+        if (!is_array($seq->fields)) {
+            return -1;
+        }
         if ($seq->recordCount() != 1) {
             return -1;
         }
@@ -3376,7 +3410,7 @@ class Postgres extends ADOdbBase
     public function alterSequenceName(\ADORecordSet $seqrs, string $name): int
     {
         /* vars are cleaned in alterSequenceInternal */
-        if (!empty($name) && ($seqrs->fields['seqname'] != $name)) {
+        if (!empty($name) && is_array($seqrs->fields) && $seqrs->fields['seqname'] != $name) {
             $f_schema = $this->_schema;
             $f_schema = $this->fieldClean($f_schema);
             $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" RENAME TO \"{$name}\"";
@@ -3402,7 +3436,7 @@ class Postgres extends ADOdbBase
         // careful to avoid this generally as changing owner is a
         // superuser only function.
         /* vars are cleaned in alterSequenceInternal */
-        if (!empty($owner) && ($seqrs->fields['seqowner'] != $owner)) {
+        if (!empty($owner) && is_array($seqrs->fields) && $seqrs->fields['seqowner'] != $owner) {
             $f_schema = $this->_schema;
             $f_schema = $this->fieldClean($f_schema);
             $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" OWNER TO \"{$owner}\"";
@@ -3420,7 +3454,7 @@ class Postgres extends ADOdbBase
     public function alterSequenceSchema(\ADORecordSet $seqrs, string $schema): int
     {
         /* vars are cleaned in alterSequenceInternal */
-        if (!empty($schema) && ($seqrs->fields['nspname'] != $schema)) {
+        if (!empty($schema) && is_array($seqrs->fields) && $seqrs->fields['nspname'] != $schema) {
             $f_schema = $this->_schema;
             $f_schema = $this->fieldClean($f_schema);
             $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" SET SCHEMA {$schema}";
@@ -3451,24 +3485,28 @@ class Postgres extends ADOdbBase
         ?string $cycledvalue = null,
         ?string $startvalue = null
     ): int {
+        if (!is_array($seqrs->fields)) {
+            return -6;
+        }
+
         $sql = '';
         /* vars are cleaned in alterSequenceInternal */
-        if (!empty($increment) && ($increment != $seqrs->fields['increment_by'])) {
+        if (!empty($increment) && $increment != $seqrs->fields['increment_by']) {
             $sql .= " INCREMENT {$increment}";
         }
-        if (!empty($minvalue) && ($minvalue != $seqrs->fields['min_value'])) {
+        if (!empty($minvalue) && $minvalue != $seqrs->fields['min_value']) {
             $sql .= " MINVALUE {$minvalue}";
         }
-        if (!empty($maxvalue) && ($maxvalue != $seqrs->fields['max_value'])) {
+        if (!empty($maxvalue) && $maxvalue != $seqrs->fields['max_value']) {
             $sql .= " MAXVALUE {$maxvalue}";
         }
-        if (!empty($restartvalue) && ($restartvalue != $seqrs->fields['last_value'])) {
+        if (!empty($restartvalue) && $restartvalue != $seqrs->fields['last_value']) {
             $sql .= " RESTART {$restartvalue}";
         }
-        if (!empty($cachevalue) && ($cachevalue != $seqrs->fields['cache_value'])) {
+        if (!empty($cachevalue) && $cachevalue != $seqrs->fields['cache_value']) {
             $sql .= " CACHE {$cachevalue}";
         }
-        if (!empty($startvalue) && ($startvalue != $seqrs->fields['start_value'])) {
+        if (!empty($startvalue) && $startvalue != $seqrs->fields['start_value']) {
             $sql .= " START {$startvalue}";
         }
         // toggle cycle yes/no
@@ -3520,6 +3558,10 @@ class Postgres extends ADOdbBase
         ?string $cycledvalue = null,
         ?string $startvalue = null
     ): int {
+        if (!is_array($seqrs->fields)) {
+            return -6;
+        }
+
         $seqrs->fields = $this->fieldArrayClean($seqrs->fields);
 
         // Comment
@@ -3797,7 +3839,7 @@ class Postgres extends ADOdbBase
     public function alterViewOwner(\ADORecordSet $vwrs, ?string $owner = null): int
     {
         /* $vwrs and $owner are cleaned in alterViewInternal */
-        if ((!empty($owner)) && ($vwrs->fields['relowner'] != $owner)) {
+        if ((!empty($owner)) && is_array($vwrs->fields) && $vwrs->fields['relowner'] != $owner) {
             $f_schema = $this->_schema;
             $f_schema = $this->fieldClean($f_schema);
             // If owner has been changed, then do the alteration.  We are
@@ -3818,7 +3860,7 @@ class Postgres extends ADOdbBase
     public function alterViewSchema(\ADORecordSet $vwrs, string $schema): int
     {
         /* $vwrs and $schema are cleaned in alterViewInternal */
-        if (!empty($schema) && ($vwrs->fields['nspname'] != $schema)) {
+        if (!empty($schema) && is_array($vwrs->fields) && $vwrs->fields['nspname'] != $schema) {
             $f_schema = $this->_schema;
             $f_schema = $this->fieldClean($f_schema);
             // If tablespace has been changed, then do the alteration.  We
@@ -3845,6 +3887,9 @@ class Postgres extends ADOdbBase
         string $schema,
         string $comment
     ): int {
+        if (!is_array($vwrs->fields)) {
+            return -2;
+        }
         $vwrs->fields = $this->fieldArrayClean($vwrs->fields);
 
         // Comment
@@ -3896,12 +3941,15 @@ class Postgres extends ADOdbBase
         string $comment
     ): bool|int {
         $data = $this->getView($view);
+        if (is_int($data)) {
+            return $data;
+        }
         if ($data->recordCount() != 1) {
             return -2;
         }
 
         $status = $this->beginTransaction();
-        if ($status != 0) {
+        if (!$status) {
             $this->rollbackTransaction();
             return -1;
         }
@@ -3984,6 +4032,9 @@ class Postgres extends ADOdbBase
 				";
 
         $v = $this->selectSet($sql);
+        if (is_int($v)) {
+            return false;
+        }
 
         if ($v->recordCount() == 0) {
             return false;
@@ -4200,11 +4251,11 @@ class Postgres extends ADOdbBase
 			r.relname = '{$table}' AND ns.nspname='{$c_schema}'";
 
         $rs = $this->selectSet($sql);
-
-        if ($rs->EOF) {
-            $max_col = 0;
-        } else {
-            $max_col = $rs->fields['nb'];
+        if (is_int($rs)) {
+            return $rs;
+        }
+        if (!is_array($rs->fields)) {
+            return -1;
         }
 
         $sql = '
@@ -4518,7 +4569,11 @@ class Postgres extends ADOdbBase
 
         //parse our output to find the highest dimension of foreign keys since pc.conkey is stored in an array
         $rs = $this->selectSet($sql);
-        while (!$rs->EOF) {
+        if (is_int($rs)) {
+            return $rs;
+        }
+
+        while (!$rs->EOF && is_array($rs->fields)) {
             $arrData = explode(':', $rs->fields['arr_dim']);
             $tmpDimension = intval(substr($arrData[1], 0, strlen((string)(intval($arrData[1]) - 1))));
             $maxDimension = $tmpDimension > $maxDimension ? $tmpDimension : $maxDimension;
@@ -5155,8 +5210,8 @@ class Postgres extends ADOdbBase
         $args = $this->clean($args);
         $language = $this->fieldClean($language);
         $flags = $this->arrayClean($flags);
-        $cost = $this->clean($cost);
-        $rows = $this->clean($rows);
+        $cost = $this->clean((string)$cost);
+        $rows = $this->clean((string)$rows);
         $f_schema = $this->_schema;
         $f_schema = $this->fieldClean($f_schema);
 
@@ -5235,8 +5290,14 @@ class Postgres extends ADOdbBase
     {
         // Function comes in with $object as function OID
         $fn = $this->getFunction($function_oid);
-        $f_schema = $this->_schema;
-        $f_schema = $this->fieldClean($f_schema);
+        if (is_int($fn)) {
+            return $fn;
+        }
+        if (!is_array($fn->fields)) {
+            return -1;
+        }
+
+        $f_schema = $this->fieldClean($this->_schema);
         $fn->fields['proname'] = $this->fieldClean($fn->fields['proname']);
 
         $sql = "DROP FUNCTION \"{$f_schema}\".\"{$fn->fields['proname']}\"({$fn->fields['proarguments']})";
@@ -6123,8 +6184,14 @@ class Postgres extends ADOdbBase
     {
         // Function comes in with $object as operator OID
         $opr = $this->getOperator($operator_oid);
-        $f_schema = $this->_schema;
-        $f_schema = $this->fieldClean($f_schema);
+        if (is_int($opr)) {
+            return $opr;
+        }
+        if (!is_array($opr->fields)) {
+            return -1;
+        }
+
+        $f_schema = $this->fieldClean($this->_schema);
         $opr->fields['oprname'] = $this->fieldClean($opr->fields['oprname']);
 
         $sql = "DROP OPERATOR \"{$f_schema}\".{$opr->fields['oprname']} (";
@@ -6315,6 +6382,12 @@ class Postgres extends ADOdbBase
 				LEFT JOIN pg_catalog.pg_namespace n ON (n.oid = c.cfgnamespace)
 			WHERE c.cfgname = '{$ftscfg}'
 				AND n.nspname='{$c_schema}'");
+        if (is_int($oidSet)) {
+            return $oidSet;
+        }
+        if (!is_array($oidSet->fields)) {
+            return -1;
+        }
 
         $oid = $oidSet->fields['oid'];
 
@@ -6718,6 +6791,12 @@ class Postgres extends ADOdbBase
 				LEFT JOIN pg_catalog.pg_namespace AS n ON n.oid = c.cfgnamespace
 			WHERE c.cfgname = '{$ftscfg}'
 				AND n.nspname='{$c_schema}'");
+        if (is_int($oidSet)) {
+            return $oidSet;
+        }
+        if (!is_array($oidSet->fields)) {
+            return -1;
+        }
 
         $oid = $oidSet->fields['oid'];
         $cfgparser = $oidSet->fields['cfgparser'];
@@ -6725,6 +6804,12 @@ class Postgres extends ADOdbBase
         $tokenIdSet = $this->selectSet("SELECT tokid
 			FROM pg_catalog.ts_token_type({$cfgparser})
 			WHERE alias = '{$mapping}'");
+        if (is_int($tokenIdSet)) {
+            return $tokenIdSet;
+        }
+        if (!is_array($tokenIdSet->fields)) {
+            return -1;
+        }
 
         $tokid = $tokenIdSet->fields['tokid'];
 
@@ -6748,6 +6833,9 @@ class Postgres extends ADOdbBase
     public function getFtsMappings(string $ftscfg): \ADORecordSet|int
     {
         $cfg = $this->getFtsConfigurationByName($ftscfg);
+        if (is_int($cfg)) {
+            return $cfg;
+        }
         if (!is_array($cfg->fields)) {
             return -1;
         }
@@ -7983,7 +8071,7 @@ class Postgres extends ADOdbBase
         } elseif ($acl == '' || $acl == null) {
             return array();
         } else {
-            return $this->parseACLInternal($acl);
+            return $this->parseACLInternal((string)$acl);
         }
     }
 
@@ -8070,8 +8158,10 @@ class Postgres extends ADOdbBase
             case 'function':
                 // Function comes in with $object as function OID
                 $fn = $this->getFunction($object);
-                $fn->fields['proname'] = $this->fieldClean($fn->fields['proname']);
-                $sql .= " ON FUNCTION \"{$f_schema}\".\"{$fn->fields['proname']}\"({$fn->fields['proarguments']})";
+                if ($fn instanceof \ADORecordSet && is_array($fn->fields)) {
+                    $fn->fields['proname'] = $this->fieldClean($fn->fields['proname']);
+                    $sql .= " ON FUNCTION \"{$f_schema}\".\"{$fn->fields['proname']}\"({$fn->fields['proarguments']})";
+                }
                 break;
             case 'language':
                 $object = $this->fieldClean($object);
@@ -8352,7 +8442,7 @@ class Postgres extends ADOdbBase
         }
 
         $ret = [];
-        while (!$_defaults->EOF) {
+        while (!$_defaults->EOF && is_array($_defaults->fields)) {
             $ret[$_defaults->fields['name']] = $_defaults->fields['setting'];
             $_defaults->moveNext();
         }
@@ -8415,10 +8505,7 @@ class Postgres extends ADOdbBase
         return $this->execute($sql);
     }
 
-    /**
-     * @return int
-     */
-    public function dropAutovacuum(string $table): int
+    public function dropAutovacuum(string $table): bool|int
     {
         $f_schema = $this->_schema;
         $f_schema = $this->fieldClean($f_schema);
@@ -8657,6 +8744,9 @@ class Postgres extends ADOdbBase
         // Loop over each line in the file
         while (!feof($fd)) {
             $line = fgets($fd);
+            if ($line === false) {
+                break;
+            }
             $lineno++;
 
             // Nothing left on line? Then ignore...
@@ -8756,19 +8846,24 @@ class Postgres extends ADOdbBase
                         // empty queries, unlike libpq
                         $res = @pg_query($conn, $query_buf);
 
-                        // Call the callback function for display
-                        if ($callback !== null) {
-                            $callback($query_buf, $res, $lineno);
-                        }
-                        // Check for COPY request
-                        if (pg_result_status($res) == 4) { // 4 == PGSQL_COPY_FROM
-                            while (!feof($fd)) {
-                                $copy = fgets($fd, 32768);
-                                $lineno++;
-                                pg_put_line($conn, $copy);
-                                if ($copy === "\\.\n" || $copy === "\\.\r\n") {
-                                    pg_end_copy($conn);
-                                    break;
+                        if ($res !== false) {
+                            // Call the callback function for display
+                            if ($callback !== null) {
+                                $callback($query_buf, $res, $lineno);
+                            }
+                            // Check for COPY request
+                            if (pg_result_status($res) == 4) { // 4 == PGSQL_COPY_FROM
+                                while (!feof($fd)) {
+                                    $copy = fgets($fd, 32768);
+                                    if ($copy === false) {
+                                        break;
+                                    }
+                                    $lineno++;
+                                    pg_put_line($conn, $copy);
+                                    if ($copy === "\\.\n" || $copy === "\\.\r\n") {
+                                        pg_end_copy($conn);
+                                        break;
+                                    }
                                 }
                             }
                         }
@@ -8816,19 +8911,24 @@ class Postgres extends ADOdbBase
             // Execute the query
             $res = @pg_query($conn, $query_buf);
 
-            // Call the callback function for display
-            if ($callback !== null) {
-                $callback($query_buf, $res, $lineno);
-            }
-            // Check for COPY request
-            if (pg_result_status($res) == 4) { // 4 == PGSQL_COPY_FROM
-                while (!feof($fd)) {
-                    $copy = fgets($fd, 32768);
-                    $lineno++;
-                    pg_put_line($conn, $copy);
-                    if ($copy === "\\.\n" || $copy === "\\.\r\n") {
-                        pg_end_copy($conn);
-                        break;
+            if ($res !== false) {
+                // Call the callback function for display
+                if ($callback !== null) {
+                    $callback($query_buf, $res, $lineno);
+                }
+                // Check for COPY request
+                if (pg_result_status($res) == 4) { // 4 == PGSQL_COPY_FROM
+                    while (!feof($fd)) {
+                        $copy = fgets($fd, 32768);
+                        if ($copy === false) {
+                            break;
+                        }
+                        $lineno++;
+                        pg_put_line($conn, $copy);
+                        if ($copy === "\\.\n" || $copy === "\\.\r\n") {
+                            pg_end_copy($conn);
+                            break;
+                        }
                     }
                 }
             }
@@ -9027,7 +9127,7 @@ class Postgres extends ADOdbBase
         }
 
         // Calculate max pages
-        $max_pages = (int)ceil($total / $page_size);
+        $max_pages = (int)ceil((int)$total / (int)$page_size);
 
         // Check that page is less than or equal to max pages
         if (!is_numeric($page) || $page != (int)$page || $page > $max_pages || $page < 1) {

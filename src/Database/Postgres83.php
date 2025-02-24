@@ -284,9 +284,9 @@ class Postgres83 extends Postgres84
     }
 
     /**
-     * @return int
+     * @return bool|int
      */
-    public function dropAutovacuum(string $table): int
+    public function dropAutovacuum(string $table): bool|int
     {
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);

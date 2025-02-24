@@ -392,7 +392,7 @@ class Postgres74 extends Postgres80
 
         // The $name and $table parameters must be cleaned for the setComment function.
         // It's ok to do that here since this is the last time these variables are used.
-        $name = $this->fieldClean($name);
+        $name = $this->fieldClean($name) ?? $name;
         $table = $this->fieldClean($table);
         $status = $this->setComment('COLUMN', $name, $table, $comment);
         if ($status != 0) {

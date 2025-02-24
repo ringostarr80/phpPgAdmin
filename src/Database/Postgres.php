@@ -813,7 +813,7 @@ class Postgres extends ADOdbBase
         string $lc_collate = '',
         string $lc_ctype = ''
     ): int {
-        $database = $this->fieldClean($database);
+        $database = $this->fieldClean($database) ?? $database;
         $encoding = $this->clean($encoding);
         $tablespace = $this->fieldClean($tablespace);
         $template = $this->fieldClean($template);
@@ -937,7 +937,7 @@ class Postgres extends ADOdbBase
             }
         }
 
-        $dbName = $this->fieldClean($dbName);
+        $dbName = $this->fieldClean($dbName) ?? $dbName;
         $status = $this->setComment('DATABASE', $dbName, '', $comment);
         if ($status != 0) {
             $this->rollbackTransaction();
@@ -981,7 +981,7 @@ class Postgres extends ADOdbBase
          **/
 
         // Escape search term for ILIKE match
-        $term = $this->clean($term);
+        $term = $this->clean($term) ?? $term;
         $filter = $this->clean($filter);
         $term = str_replace('_', '\_', $term);
         $term = str_replace('%', '\%', $term);
@@ -1220,7 +1220,7 @@ class Postgres extends ADOdbBase
      */
     public function createSchema(string $schemaname, string $authorization = '', string $comment = ''): bool|int
     {
-        $schemaname = $this->fieldClean($schemaname);
+        $schemaname = $this->fieldClean($schemaname) ?? $schemaname;
         $authorization = $this->fieldClean($authorization);
 
         $sql = "CREATE SCHEMA \"{$schemaname}\"";
@@ -1265,7 +1265,7 @@ class Postgres extends ADOdbBase
      */
     public function updateSchema(string $schemaname, string $comment, string $name, string $owner): bool|int
     {
-        $schemaname = $this->fieldClean($schemaname);
+        $schemaname = $this->fieldClean($schemaname) ?? $schemaname;
         $name = $this->fieldClean($name);
         $owner = $this->fieldClean($owner);
 
@@ -2498,12 +2498,11 @@ class Postgres extends ADOdbBase
         string $default,
         string $comment
     ): bool|int {
-        $f_schema = $this->_schema;
-        $f_schema = $this->fieldClean($f_schema);
-        $table = $this->fieldClean($table);
-        $column = $this->fieldClean($column);
-        $type = $this->clean($type);
-        $length = $this->clean($length);
+        $f_schema = $this->fieldClean($this->_schema) ?? $this->_schema;
+        $table = $this->fieldClean($table) ?? $table;
+        $column = $this->fieldClean($column) ?? $column;
+        $type = $this->clean($type) ?? $type;
+        $length = $this->clean($length) ?? $length;
 
         if ($length == '') {
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$table}\" ADD COLUMN \"{$column}\" {$type}";
@@ -2613,11 +2612,10 @@ class Postgres extends ADOdbBase
             }
         }
 
-        $f_schema = $this->_schema;
-        $f_schema = $this->fieldClean($f_schema);
-        $name = $this->fieldClean($name);
-        $table = $this->fieldClean($table);
-        $column = $this->fieldClean($column);
+        $f_schema = $this->fieldClean($this->_schema) ?? $this->_schema;
+        $name = $this->fieldClean($name) ?? $name;
+        $table = $this->fieldClean($table) ?? $table;
+        $column = $this->fieldClean($column) ?? $column;
 
         $toAlter = array();
         // Create the command for changing nullability
@@ -2926,7 +2924,7 @@ class Postgres extends ADOdbBase
         $oldtable = $table;
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
-        $table = $this->clean($table);
+        $table = $this->clean($table) ?? $table;
 
         $status = $this->beginTransaction();
         if ($status != 0) {
@@ -3167,7 +3165,7 @@ class Postgres extends ADOdbBase
         $c_schema = $this->_schema;
         $c_schema = $this->clean($c_schema);
         $c_sequence = $sequence;
-        $sequence = $this->fieldClean($sequence);
+        $sequence = $this->fieldClean($sequence) ?? $sequence;
         $c_sequence = $this->clean($c_sequence);
 
         $join = '';
@@ -3601,14 +3599,14 @@ class Postgres extends ADOdbBase
 
         // Rename
         $name = $this->fieldClean($name);
-        $status = $this->alterSequenceName($seqrs, $name);
+        $status = $this->alterSequenceName($seqrs, $name ?? '');
         if ($status != 0) {
             return -3;
         }
 
         // Schema
         $schema = $this->clean($schema);
-        $status = $this->alterSequenceSchema($seqrs, $schema);
+        $status = $this->alterSequenceSchema($seqrs, $schema ?? '');
         if ($status != 0) {
             return -7;
         }
@@ -3651,7 +3649,7 @@ class Postgres extends ADOdbBase
     ): bool|int {
         $sequence = $this->fieldClean($sequence);
 
-        $data = $this->getSequence($sequence);
+        $data = $this->getSequence($sequence ?? '');
         if (is_int($data)) {
             return $data;
         }
@@ -3777,9 +3775,8 @@ class Postgres extends ADOdbBase
             return -1;
         }
 
-        $f_schema = $this->_schema;
-        $f_schema = $this->fieldClean($f_schema);
-        $viewname = $this->fieldClean($viewname);
+        $f_schema = $this->fieldClean($this->_schema) ?? $this->_schema;
+        $viewname = $this->fieldClean($viewname) ?? $viewname;
 
         // Note: $definition not cleaned
 
@@ -3905,14 +3902,14 @@ class Postgres extends ADOdbBase
         }
 
         // Rename
-        $name = $this->fieldClean($name);
+        $name = $this->fieldClean($name) ?? $name;
         $status = $this->alterViewName($vwrs, $name);
         if ($status != 0) {
             return -3;
         }
 
         // Schema
-        $schema = $this->fieldClean($schema);
+        $schema = $this->fieldClean($schema) ?? $schema;
         $status = $this->alterViewSchema($vwrs, $schema);
         if ($status != 0) {
             return -6;
@@ -5455,9 +5452,8 @@ class Postgres extends ADOdbBase
      */
     public function createEnumType(string $name, array $values, string $typcomment): bool|int
     {
-        $f_schema = $this->_schema;
-        $f_schema = $this->fieldClean($f_schema);
-        $name = $this->fieldClean($name);
+        $f_schema = $this->fieldClean($this->_schema) ?? $this->_schema;
+        $name = $this->fieldClean($name) ?? $name;
 
         if (empty($values)) {
             return -2;
@@ -5533,9 +5529,8 @@ class Postgres extends ADOdbBase
         array $colcomment,
         string $typcomment
     ): bool|int {
-        $f_schema = $this->_schema;
-        $f_schema = $this->fieldClean($f_schema);
-        $name = $this->fieldClean($name);
+        $f_schema = $this->fieldClean($this->_schema) ?? $this->_schema;
+        $name = $this->fieldClean($name) ?? $name;
 
         $status = $this->beginTransaction();
         if ($status != 0) {
@@ -6260,9 +6255,8 @@ class Postgres extends ADOdbBase
         string $template = '',
         string $comment = ''
     ): bool|int {
-        $f_schema = $this->_schema;
-        $f_schema = $this->fieldClean($f_schema);
-        $cfgname = $this->fieldClean($cfgname);
+        $f_schema = $this->fieldClean($this->_schema) ?? $this->_schema;
+        $cfgname = $this->fieldClean($cfgname) ?? $cfgname;
 
         $sql = "CREATE TEXT SEARCH CONFIGURATION \"{$f_schema}\".\"{$cfgname}\" (";
         if ($parser != '') {
@@ -6550,7 +6544,7 @@ class Postgres extends ADOdbBase
             return -1;
         }
 
-        $cfgname = $this->fieldClean($cfgname);
+        $cfgname = $this->fieldClean($cfgname) ?? $cfgname;
 
         $status = $this->setComment('TEXT SEARCH CONFIGURATION', $cfgname, '', $comment);
         if ($status != 0) {
@@ -6596,13 +6590,12 @@ class Postgres extends ADOdbBase
         string $option = '',
         string $comment = ''
     ): bool|int {
-        $f_schema = $this->_schema;
-        $f_schema = $this->fieldClean($f_schema);
-        $dictname = $this->fieldClean($dictname);
-        $template = $this->fieldClean($template);
-        $lexize = $this->fieldClean($lexize);
-        $init = $this->fieldClean($init);
-        $option = $this->fieldClean($option);
+        $f_schema = $this->fieldClean($this->_schema) ?? $this->_schema;
+        $dictname = $this->fieldClean($dictname) ?? $dictname;
+        $template = $this->fieldClean($template) ?? $template;
+        $lexize = $this->fieldClean($lexize) ?? $lexize;
+        $init = $this->fieldClean($init) ?? $init;
+        $option = $this->fieldClean($option) ?? $option;
 
         $sql = "CREATE TEXT SEARCH";
         if ($isTemplate) {
@@ -6675,7 +6668,7 @@ class Postgres extends ADOdbBase
             return -1;
         }
 
-        $dictname = $this->fieldClean($dictname);
+        $dictname = $this->fieldClean($dictname) ?? $dictname;
         $status = $this->setComment('TEXT SEARCH DICTIONARY', $dictname, '', $comment);
         if ($status != 0) {
             $this->rollbackTransaction();
@@ -6899,15 +6892,14 @@ class Postgres extends ADOdbBase
         string $sortop,
         string $comment
     ): bool|int {
-        $f_schema = $this->_schema;
-        $f_schema = $this->fieldClean($f_schema);
-        $name = $this->fieldClean($name);
-        $basetype = $this->fieldClean($basetype);
-        $sfunc = $this->fieldClean($sfunc);
-        $stype = $this->fieldClean($stype);
-        $ffunc = $this->fieldClean($ffunc);
-        $initcond = $this->fieldClean($initcond);
-        $sortop = $this->fieldClean($sortop);
+        $f_schema = $this->fieldClean($this->_schema) ?? $this->_schema;
+        $name = $this->fieldClean($name) ?? $name;
+        $basetype = $this->fieldClean($basetype) ?? $basetype;
+        $sfunc = $this->fieldClean($sfunc) ?? $sfunc;
+        $stype = $this->fieldClean($stype) ?? $stype;
+        $ffunc = $this->fieldClean($ffunc) ?? $ffunc;
+        $initcond = $this->fieldClean($initcond) ?? $initcond;
+        $sortop = $this->fieldClean($sortop) ?? $sortop;
 
         $this->beginTransaction();
 
@@ -7093,13 +7085,13 @@ class Postgres extends ADOdbBase
         string $newaggrcomment
     ): bool|int {
         // Clean fields
-        $aggrname = $this->fieldClean($aggrname);
-        $aggrtype = $this->fieldClean($aggrtype);
-        $aggrowner = $this->fieldClean($aggrowner);
-        $aggrschema = $this->fieldClean($aggrschema);
-        $newaggrname = $this->fieldClean($newaggrname);
-        $newaggrowner = $this->fieldClean($newaggrowner);
-        $newaggrschema = $this->fieldClean($newaggrschema);
+        $aggrname = $this->fieldClean($aggrname) ?? $aggrname;
+        $aggrtype = $this->fieldClean($aggrtype) ?? $aggrtype;
+        $aggrowner = $this->fieldClean($aggrowner) ?? $aggrowner;
+        $aggrschema = $this->fieldClean($aggrschema) ?? $aggrschema;
+        $newaggrname = $this->fieldClean($newaggrname) ?? $newaggrname;
+        $newaggrowner = $this->fieldClean($newaggrowner) ?? $newaggrowner;
+        $newaggrschema = $this->fieldClean($newaggrschema) ?? $newaggrschema;
 
         $this->beginTransaction();
 
@@ -7359,7 +7351,7 @@ class Postgres extends ADOdbBase
         string $adminmembersold
     ): int {
         $enc = $this->encryptPasswordInternal($rolename, $password);
-        $rolename = $this->fieldClean($rolename);
+        $rolename = $this->fieldClean($rolename) ?? $rolename;
         $enc = $this->clean($enc);
         $connlimit = $this->clean($connlimit);
         $expiry = $this->clean($expiry);
@@ -7943,8 +7935,8 @@ class Postgres extends ADOdbBase
             // Break on unquoted equals sign...
             $i = 0;
             $in_quotes = false;
-            $entity = null;
-            $chars = null;
+            $entity = '';
+            $chars = '';
             while ($i < strlen($v)) {
                 // If current char is a double quote and it's not escaped, then
                 // enter quoted bit
@@ -8106,8 +8098,7 @@ class Postgres extends ADOdbBase
         bool $cascade,
         string $table
     ): int {
-        $f_schema = $this->_schema;
-        $f_schema = $this->fieldClean($f_schema);
+        $f_schema = $this->fieldClean($this->_schema);
         $usernames = $this->fieldArrayClean($usernames);
         $groupnames = $this->fieldArrayClean($groupnames);
 
@@ -8133,7 +8124,7 @@ class Postgres extends ADOdbBase
             $sql .= ' ALL PRIVILEGES';
         } else {
             if ($type == 'column') {
-                $object = $this->fieldClean($object);
+                $object = $this->fieldClean($object) ?? $object;
                 $sql .= ' ' . join(" (\"{$object}\"), ", $privileges);
             } else {
                 $sql .= ' ' . join(', ', $privileges);
@@ -8276,7 +8267,7 @@ class Postgres extends ADOdbBase
      */
     public function createTablespace(string $spcname, string $spcowner, string $spcloc, string $comment = ''): int
     {
-        $spcname = $this->fieldClean($spcname);
+        $spcname = $this->fieldClean($spcname) ?? $spcname;
         $spcloc = $this->clean($spcloc);
 
         $sql = "CREATE TABLESPACE \"{$spcname}\"";
@@ -8312,9 +8303,9 @@ class Postgres extends ADOdbBase
      */
     public function alterTablespace(string $spcname, string $name, string $owner, string $comment = ''): bool|int
     {
-        $spcname = $this->fieldClean($spcname);
-        $name = $this->fieldClean($name);
-        $owner = $this->fieldClean($owner);
+        $spcname = $this->fieldClean($spcname) ?? $spcname;
+        $name = $this->fieldClean($name) ?? $name;
+        $owner = $this->fieldClean($owner) ?? $owner;
 
         // Begin transaction
         $status = $this->beginTransaction();

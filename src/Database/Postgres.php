@@ -441,6 +441,9 @@ class Postgres extends ADOdbBase
             if ($v === null) {
                 continue;
             }
+            if (!is_string($v)) {
+                continue;
+            }
             $arr[$k] = str_replace('"', '""', $v);
         }
         return $arr;
@@ -1330,7 +1333,7 @@ class Postgres extends ADOdbBase
 
     /**
      * Return the current schema search path
-     * @return array<mixed> Array of schema names
+     * @return array<string> Array of schema names
      */
     public function getSearchPath(): array
     {
@@ -1794,6 +1797,16 @@ class Postgres extends ADOdbBase
              */
             $sql .= "REVOKE ALL ON TABLE \"{$t->fields['nspname']}\".\"{$t->fields['relname']}\" FROM PUBLIC;\n";
             foreach ($privs as $v) {
+                if (!is_array($v)) {
+                    continue;
+                }
+                if (!isset($v[2]) || !isset($v[4])) {
+                    continue;
+                }
+                if (!is_array($v[2]) || !is_array($v[4])) {
+                    continue;
+                }
+
                 // Get non-GRANT OPTION privs
                 $nongrant = array_diff($v[2], $v[4]);
 
@@ -2138,8 +2151,14 @@ class Postgres extends ADOdbBase
         bool $idx = false,
         string $tablespace = ''
     ): bool|int {
-        $f_schema = $this->_schema;
-        $f_schema = $this->fieldClean($f_schema);
+        if (!isset($like['schema'])) {
+            return -1;
+        }
+        if (!is_string($like['schema'])) {
+            return -1;
+        }
+
+        $f_schema = $this->fieldClean($this->_schema);
         $name = $this->fieldClean($name);
         $like['schema'] = $this->fieldClean($like['schema']);
         $like['table'] = $this->fieldClean($like['table']);
@@ -2190,11 +2209,17 @@ class Postgres extends ADOdbBase
         /* vars cleaned in alterTableInternal */
         // Rename (only if name has changed)
         if (!empty($name) && is_array($tblrs->fields) && $name != $tblrs->fields['relname']) {
-            $f_schema = $this->_schema;
-            $f_schema = $this->fieldClean($f_schema);
+            if (isset($tblrs->fields['relname'])) {
+                return -1;
+            }
+            if (!is_string($tblrs->fields['relname'])) {
+                return -1;
+            }
+
+            $f_schema = $this->fieldClean($this->_schema);
 
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$tblrs->fields['relname']}\" RENAME TO \"{$name}\"";
-            $status =  $this->execute($sql);
+            $status = $this->execute($sql);
             if ($status == 0) {
                 $tblrs->fields['relname'] = $name;
             } else {
@@ -2215,8 +2240,14 @@ class Postgres extends ADOdbBase
     {
         /* vars cleaned in alterTableInternal */
         if (!empty($owner) && is_array($tblrs->fields) && $tblrs->fields['relowner'] != $owner) {
-            $f_schema = $this->_schema;
-            $f_schema = $this->fieldClean($f_schema);
+            if (!isset($tblrs->fields['relname'])) {
+                return -1;
+            }
+            if (!is_string($tblrs->fields['relname'])) {
+                return -1;
+            }
+
+            $f_schema = $this->fieldClean($this->_schema);
             // If owner has been changed, then do the alteration.  We are
             // careful to avoid this generally as changing owner is a
             // superuser only function.
@@ -2238,8 +2269,14 @@ class Postgres extends ADOdbBase
     {
         /* vars cleaned in alterTableInternal */
         if (!empty($tablespace) && is_array($tblrs->fields) && $tblrs->fields['tablespace'] != $tablespace) {
-            $f_schema = $this->_schema;
-            $f_schema = $this->fieldClean($f_schema);
+            if (!isset($tblrs->fields['relname'])) {
+                return -1;
+            }
+            if (!is_string($tblrs->fields['relname'])) {
+                return -1;
+            }
+
+            $f_schema = $this->fieldClean($this->_schema);
 
             // If tablespace has been changed, then do the alteration.  We
             // don't want to do this unnecessarily.
@@ -2261,8 +2298,14 @@ class Postgres extends ADOdbBase
     {
         /* vars cleaned in alterTableInternal */
         if (!empty($schema) && is_array($tblrs->fields) && $tblrs->fields['nspname'] != $schema) {
-            $f_schema = $this->_schema;
-            $f_schema = $this->fieldClean($f_schema);
+            if (!isset($tblrs->fields['relname'])) {
+                return -1;
+            }
+            if (!is_string($tblrs->fields['relname'])) {
+                return -1;
+            }
+
+            $f_schema = $this->fieldClean($this->_schema);
             // If tablespace has been changed, then do the alteration.  We
             // don't want to do this unnecessarily.
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$tblrs->fields['relname']}\" SET SCHEMA \"{$schema}\"";
@@ -2303,13 +2346,15 @@ class Postgres extends ADOdbBase
         $tblrs->fields = $this->fieldArrayClean($tblrs->fields);
 
         // Comment
-        if ($tblrs->fields['relkind'] == 'f') {
-            $status = $this->setComment('FOREIGN TABLE', '', $tblrs->fields['relname'], $comment);
-        } else {
-            $status = $this->setComment('TABLE', '', $tblrs->fields['relname'], $comment);
-        }
-        if ($status != 0) {
-            return -4;
+        if (isset($tblrs->fields['relname']) && is_string($tblrs->fields['relname'])) {
+            if ($tblrs->fields['relkind'] == 'f') {
+                $status = $this->setComment('FOREIGN TABLE', '', $tblrs->fields['relname'], $comment);
+            } else {
+                $status = $this->setComment('TABLE', '', $tblrs->fields['relname'], $comment);
+            }
+            if ($status != 0) {
+                return -4;
+            }
         }
 
         // Owner
@@ -2403,7 +2448,7 @@ class Postgres extends ADOdbBase
      * Given an array of attnums and a relation, returns an array mapping
      * attribute number to attribute name.
      * @param $table The table to get attributes for
-     * @param array<mixed> $atts An array of attribute numbers
+     * @param array<int|string, ?string> $atts An array of attribute numbers
      * @return array<mixed>|int An array mapping attnum to attname
      * -1 $atts must be an array
      * -2 wrong number of attributes found
@@ -3409,8 +3454,14 @@ class Postgres extends ADOdbBase
     {
         /* vars are cleaned in alterSequenceInternal */
         if (!empty($name) && is_array($seqrs->fields) && $seqrs->fields['seqname'] != $name) {
-            $f_schema = $this->_schema;
-            $f_schema = $this->fieldClean($f_schema);
+            if (!isset($seqrs->fields['seqname'])) {
+                return -1;
+            }
+            if (!is_string($seqrs->fields['seqname'])) {
+                return -1;
+            }
+
+            $f_schema = $this->fieldClean($this->_schema);
             $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" RENAME TO \"{$name}\"";
             $status = $this->execute($sql);
             if ($status == 0) {
@@ -3435,8 +3486,14 @@ class Postgres extends ADOdbBase
         // superuser only function.
         /* vars are cleaned in alterSequenceInternal */
         if (!empty($owner) && is_array($seqrs->fields) && $seqrs->fields['seqowner'] != $owner) {
-            $f_schema = $this->_schema;
-            $f_schema = $this->fieldClean($f_schema);
+            if (!isset($seqrs->fields['seqname'])) {
+                return -1;
+            }
+            if (!is_string($seqrs->fields['seqname'])) {
+                return -1;
+            }
+
+            $f_schema = $this->fieldClean($this->_schema);
             $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" OWNER TO \"{$owner}\"";
             return $this->execute($sql);
         }
@@ -3453,8 +3510,14 @@ class Postgres extends ADOdbBase
     {
         /* vars are cleaned in alterSequenceInternal */
         if (!empty($schema) && is_array($seqrs->fields) && $seqrs->fields['nspname'] != $schema) {
-            $f_schema = $this->_schema;
-            $f_schema = $this->fieldClean($f_schema);
+            if (!isset($seqrs->fields['seqname'])) {
+                return -1;
+            }
+            if (!is_string($seqrs->fields['seqname'])) {
+                return -1;
+            }
+
+            $f_schema = $this->fieldClean($this->_schema);
             $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" SET SCHEMA {$schema}";
             return $this->execute($sql);
         }
@@ -3563,9 +3626,11 @@ class Postgres extends ADOdbBase
         $seqrs->fields = $this->fieldArrayClean($seqrs->fields);
 
         // Comment
-        $status = $this->setComment('SEQUENCE', $seqrs->fields['seqname'], '', $comment);
-        if ($status != 0) {
-            return -4;
+        if (isset($seqrs->fields['seqname']) && is_string($seqrs->fields['seqname'])) {
+            $status = $this->setComment('SEQUENCE', $seqrs->fields['seqname'], '', $comment);
+            if ($status != 0) {
+                return -4;
+            }
         }
 
         // Owner
@@ -3814,8 +3879,13 @@ class Postgres extends ADOdbBase
         // Rename (only if name has changed)
         /* $vwrs and $name are cleaned in alterViewInternal */
         if (!empty($name) && is_array($vwrs->fields) && $vwrs->fields['relname'] != $name) {
-            $f_schema = $this->_schema;
-            $f_schema = $this->fieldClean($f_schema);
+            if (!isset($vwrs->fields['relname'])) {
+                return -1;
+            }
+            if (!is_string($vwrs->fields['relname'])) {
+                return -1;
+            }
+            $f_schema = $this->fieldClean($this->_schema);
             $sql = "ALTER VIEW \"{$f_schema}\".\"{$vwrs->fields['relname']}\" RENAME TO \"{$name}\"";
             $status =  $this->execute($sql);
             if ($status == 0) {
@@ -3837,13 +3907,14 @@ class Postgres extends ADOdbBase
     {
         /* $vwrs and $owner are cleaned in alterViewInternal */
         if ((!empty($owner)) && is_array($vwrs->fields) && $vwrs->fields['relowner'] != $owner) {
-            $f_schema = $this->_schema;
-            $f_schema = $this->fieldClean($f_schema);
+            $f_schema = $this->fieldClean($this->_schema);
             // If owner has been changed, then do the alteration.  We are
             // careful to avoid this generally as changing owner is a
             // superuser only function.
-            $sql = "ALTER TABLE \"{$f_schema}\".\"{$vwrs->fields['relname']}\" OWNER TO \"{$owner}\"";
-            return $this->execute($sql);
+            if (isset($vwrs->fields['relname']) && is_string($vwrs->fields['relname'])) {
+                $sql = "ALTER TABLE \"{$f_schema}\".\"{$vwrs->fields['relname']}\" OWNER TO \"{$owner}\"";
+                return $this->execute($sql);
+            }
         }
         return 0;
     }
@@ -3858,12 +3929,13 @@ class Postgres extends ADOdbBase
     {
         /* $vwrs and $schema are cleaned in alterViewInternal */
         if (!empty($schema) && is_array($vwrs->fields) && $vwrs->fields['nspname'] != $schema) {
-            $f_schema = $this->_schema;
-            $f_schema = $this->fieldClean($f_schema);
+            $f_schema = $this->fieldClean($this->_schema);
             // If tablespace has been changed, then do the alteration.  We
             // don't want to do this unnecessarily.
-            $sql = "ALTER TABLE \"{$f_schema}\".\"{$vwrs->fields['relname']}\" SET SCHEMA \"{$schema}\"";
-            return $this->execute($sql);
+            if (isset($vwrs->fields['relname']) && is_string($vwrs->fields['relname'])) {
+                $sql = "ALTER TABLE \"{$f_schema}\".\"{$vwrs->fields['relname']}\" SET SCHEMA \"{$schema}\"";
+                return $this->execute($sql);
+            }
         }
         return 0;
     }
@@ -3890,7 +3962,11 @@ class Postgres extends ADOdbBase
         $vwrs->fields = $this->fieldArrayClean($vwrs->fields);
 
         // Comment
-        if ($this->setComment('VIEW', $vwrs->fields['relname'], '', $comment) != 0) {
+        if (
+            isset($vwrs->fields['relname']) &&
+            is_string($vwrs->fields['relname']) &&
+            $this->setComment('VIEW', $vwrs->fields['relname'], '', $comment) != 0
+        ) {
             return -4;
         }
 
@@ -4044,7 +4120,7 @@ class Postgres extends ADOdbBase
      * Creates an index
      * @param $name The index name
      * @param $table The table on which to add the index
-     * @param array<mixed>|string $columns An array of columns that form the index
+     * @param array<int|string, ?string>|string $columns An array of columns that form the index
      *                 or a string expression for a functional index
      * @param $type The index type
      * @param $unique True if unique, false otherwise
@@ -4535,6 +4611,12 @@ class Postgres extends ADOdbBase
      */
     public function getLinkingKeys(array $tables): \ADORecordSet|int
     {
+        if (!is_array($tables[0])) {
+            return -1;
+        }
+        if (!is_string($tables[0]['tablename'])) {
+            return -1;
+        }
         $tables[0]['tablename'] = $this->clean($tables[0]['tablename']);
         $tables[0]['schemaname'] = $this->clean($tables[0]['schemaname']);
         $tables_list = "'{$tables[0]['tablename']}'";
@@ -5076,9 +5158,9 @@ class Postgres extends ADOdbBase
      * @param $newname The new name for the function
      * @param $args The array of argument types
      * @param $returns The return type
-     * @param array<mixed>|string $definition The definition for the new function
+     * @param array<int|string, string>|string $definition The definition for the new function
      * @param $language The language the function is written for
-     * @param array<mixed> $flags An array of optional flags
+     * @param array<int|string, string> $flags An array of optional flags
      * @param $setof True if returns a set, false otherwise
      * @param $comment The comment on the function
      * @return bool|int 0 success
@@ -6726,7 +6808,7 @@ class Postgres extends ADOdbBase
     /**
      * Creates/updates/deletes FTS mapping.
      * @param string $ftscfg The name of the FTS configuration to alter
-     * @param array<mixed> $mapping Array of tokens' names
+     * @param array<string|int, ?string> $mapping Array of tokens' names
      * @param string $action What to do with the mapping: add, alter or drop
      * @param ?string $dictname Dictionary that will process tokens given or null in case of drop action
      *
@@ -6734,35 +6816,34 @@ class Postgres extends ADOdbBase
      */
     public function changeFtsMapping(string $ftscfg, array $mapping, string $action, ?string $dictname = null): int
     {
-        if (count($mapping) > 0) {
-            $f_schema = $this->_schema;
-            $f_schema = $this->fieldClean($f_schema);
-            $ftscfg = $this->fieldClean($ftscfg);
-            $dictname = $this->fieldClean($dictname);
-            $mapping = $this->arrayClean($mapping);
-
-            switch ($action) {
-                case 'alter':
-                    $whatToDo = "ALTER";
-                    break;
-                case 'drop':
-                    $whatToDo = "DROP";
-                    break;
-                default:
-                    $whatToDo = "ADD";
-                    break;
-            }
-
-            $sql = "ALTER TEXT SEARCH CONFIGURATION \"{$f_schema}\".\"{$ftscfg}\" {$whatToDo} MAPPING FOR ";
-            $sql .= implode(",", $mapping);
-            if ($action !== 'drop' && !empty($dictname)) {
-                $sql .= " WITH {$dictname}";
-            }
-
-            return $this->execute($sql);
-        } else {
+        if (empty($mapping)) {
             return -1;
         }
+
+        $f_schema = $this->fieldClean($this->_schema);
+        $ftscfg = $this->fieldClean($ftscfg);
+        $dictname = $this->fieldClean($dictname);
+        $mapping = $this->arrayClean($mapping);
+
+        switch ($action) {
+            case 'alter':
+                $whatToDo = "ALTER";
+                break;
+            case 'drop':
+                $whatToDo = "DROP";
+                break;
+            default:
+                $whatToDo = "ADD";
+                break;
+        }
+
+        $sql = "ALTER TEXT SEARCH CONFIGURATION \"{$f_schema}\".\"{$ftscfg}\" {$whatToDo} MAPPING FOR ";
+        $sql .= implode(",", $mapping);
+        if ($action !== 'drop' && !empty($dictname)) {
+            $sql .= " WITH {$dictname}";
+        }
+
+        return $this->execute($sql);
     }
 
     /**
@@ -7388,7 +7469,7 @@ class Postgres extends ADOdbBase
         //memberof
         $old = explode(',', $memberofold);
         foreach ($memberof as $m) {
-            if (!in_array($m, $old)) {
+            if (is_string($m) && !in_array($m, $old)) {
                 $status = $this->grantRole($m, $rolename);
                 if ($status != 0) {
                     return -1;
@@ -7409,7 +7490,7 @@ class Postgres extends ADOdbBase
         //members
         $old = explode(',', $membersold);
         foreach ($members as $m) {
-            if (!in_array($m, $old)) {
+            if (is_string($m) && !in_array($m, $old)) {
                 $status = $this->grantRole($rolename, $m);
                 if ($status != 0) {
                     return -1;
@@ -7430,7 +7511,7 @@ class Postgres extends ADOdbBase
         //adminmembers
         $old = explode(',', $adminmembersold);
         foreach ($adminmembers as $m) {
-            if (!in_array($m, $old)) {
+            if (is_string($m) && !in_array($m, $old)) {
                 $status = $this->grantRole($rolename, $m, 1);
                 if ($status != 0) {
                     return -1;
@@ -8179,6 +8260,9 @@ class Postgres extends ADOdbBase
         }
         // Dump users
         foreach ($usernames as $v) {
+            if (!is_string($v)) {
+                continue;
+            }
             if ($first) {
                 $sql .= "\"{$v}\"";
                 $first = false;
@@ -8188,6 +8272,9 @@ class Postgres extends ADOdbBase
         }
         // Dump groups
         foreach ($groupnames as $v) {
+            if (!is_string($v)) {
+                continue;
+            }
             if ($first) {
                 $sql .= "GROUP \"{$v}\"";
                 $first = false;
@@ -8228,8 +8315,6 @@ class Postgres extends ADOdbBase
      */
     public function getTablespaces(bool $all = false): \ADORecordSet|int
     {
-        global $conf;
-
         $sql = "SELECT spcname, pg_catalog.pg_get_userbyid(spcowner) AS spcowner, pg_catalog.pg_tablespace_location(oid) as spclocation,
 					(SELECT description FROM pg_catalog.pg_shdescription pd WHERE pg_tablespace.oid=pd.objoid AND pd.classoid='pg_tablespace'::regclass) AS spccomment
 					FROM pg_catalog.pg_tablespace";
@@ -8709,6 +8794,18 @@ class Postgres extends ADOdbBase
 
         // This whole function isn't very encapsulated, but hey...
         $conn = $data->conn->_connectionID;
+        if (!isset($_FILES[$name])) {
+            return false;
+        }
+        if (!is_array($_FILES[$name])) {
+            return false;
+        }
+        if (!isset($_FILES[$name]['tmp_name'])) {
+            return false;
+        }
+        if (!is_string($_FILES[$name]['tmp_name'])) {
+            return false;
+        }
         if (!is_uploaded_file($_FILES[$name]['tmp_name'])) {
             return false;
         }
@@ -8827,9 +8924,9 @@ class Postgres extends ADOdbBase
                         if (strlen($query_buf) > 0) {
                             $query_buf .= "\n";
                         }
-                            $query_buf .= $subline;
+                        $query_buf .= $subline;
                     }
-                        $query_buf .= ';';
+                    $query_buf .= ';';
 
                     /* is there anything in the query_buf? */
                     if (trim($query_buf)) {
@@ -8945,7 +9042,7 @@ class Postgres extends ADOdbBase
         $show = $this->fieldArrayClean($show);
 
         // If an empty array is passed in, then show all columns
-        if (sizeof($show) == 0) {
+        if (empty($show)) {
             if ($this->hasObjectID($table)) {
                 $sql = "SELECT \"{$this->id}\", * FROM ";
             } else {
@@ -8964,9 +9061,8 @@ class Postgres extends ADOdbBase
 
         $table = $this->fieldClean($table);
 
-        if (isset($_REQUEST['schema'])) {
-            $f_schema = $_REQUEST['schema'];
-            $f_schema = $this->fieldClean($f_schema);
+        if (isset($_REQUEST['schema']) && is_string($_REQUEST['schema'])) {
+            $f_schema = $this->fieldClean($_REQUEST['schema']);
             $sql .= "\"{$f_schema}\".";
         }
         $sql .= "\"{$table}\"";
@@ -8983,23 +9079,34 @@ class Postgres extends ADOdbBase
                     } else {
                         $sql .= " AND ";
                     }
+                    if (!isset($ops[$k])) {
+                        continue;
+                    }
+                    if (!is_string($ops[$k])) {
+                        continue;
+                    }
+
                     // Different query format depending on operator type
                     switch ($this->selectOps[$ops[$k]]) {
                         case 'i':
                             // Only clean the field for the inline case
                             // this is because (x), subqueries need to
                             // to allow 'a','b' as input.
-                            $v = $this->clean($v);
+                            $v = is_string($v) ? $this->clean($v) : '';
                             $sql .= "\"{$k}\" {$ops[$k]} '{$v}'";
                             break;
                         case 'p':
                             $sql .= "\"{$k}\" {$ops[$k]}";
                             break;
                         case 'x':
-                            $sql .= "\"{$k}\" {$ops[$k]} ({$v})";
+                            if (is_string($v) || is_numeric($v)) {
+                                $sql .= "\"{$k}\" {$ops[$k]} ({$v})";
+                            }
                             break;
                         case 't':
-                            $sql .= "\"{$k}\" {$ops[$k]}('{$v}')";
+                            if (is_string($v) || is_numeric($v)) {
+                                $sql .= "\"{$k}\" {$ops[$k]}('{$v}')";
+                            }
                             break;
                         default:
                             // Shouldn't happen
@@ -9024,7 +9131,7 @@ class Postgres extends ADOdbBase
                     $k = $this->fieldClean($k);
                     $sql .= '"' . $k . '"';
                 }
-                if (strtoupper($v) === 'DESC') {
+                if (is_string($v) && strtoupper($v) === 'DESC') {
                     $sql .= " DESC";
                 }
             }
@@ -9188,7 +9295,7 @@ class Postgres extends ADOdbBase
             $sql .= " WHERE true";
             foreach ($key as $k => $v) {
                 $k = $this->fieldClean($k);
-                $v = $this->clean($v);
+                $v = is_string($v) ? $this->clean($v) : '';
                 $sql .= " AND \"{$k}\"='{$v}'";
             }
         }

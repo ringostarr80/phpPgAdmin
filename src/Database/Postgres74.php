@@ -295,9 +295,11 @@ class Postgres74 extends Postgres80
             $tblrs->fields = $this->fieldArrayClean($tblrs->fields);
 
             // Comment
-            $status = $this->setComment('TABLE', '', $tblrs->fields['relname'], $comment);
-            if ($status != 0) {
-                return -4;
+            if (isset($tblrs->fields['relname']) && is_string($tblrs->fields['relname'])) {
+                $status = $this->setComment('TABLE', '', $tblrs->fields['relname'], $comment);
+                if ($status != 0) {
+                    return -4;
+                }
             }
         }
 

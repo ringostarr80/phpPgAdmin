@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Database;
 
-use ADORecordSet;
 use PhpPgAdmin\Config;
 use PhpPgAdmin\DDD\Entities\ServerSession;
 
@@ -236,8 +235,10 @@ class Postgres80 extends Postgres81
             $vwrs->fields = $this->fieldArrayClean($vwrs->fields);
 
             // Comment
-            if ($this->setComment('VIEW', $vwrs->fields['relname'], '', $comment) != 0) {
-                return -4;
+            if (isset($vwrs->fields['relname']) && is_string($vwrs->fields['relname'])) {
+                if ($this->setComment('VIEW', $vwrs->fields['relname'], '', $comment) != 0) {
+                    return -4;
+                }
             }
         }
 
@@ -275,7 +276,12 @@ class Postgres80 extends Postgres81
      * @param $cachevalue The cache value
      * @param $cycledvalue True if cycled, false otherwise
      * @param $startvalue The sequence start value when issuing a restart
-     * @return int 0 success, -3 rename error, -4 comment error, -5 owner error, -6 get sequence props error, -7 schema error
+     * @return int 0 success
+     * -3 rename error
+     * -4 comment error
+     * -5 owner error
+     * -6 get sequence props error
+     * -7 schema error
      */
     protected function alterSequenceInternal(
         \ADORecordSet $seqrs,
@@ -296,9 +302,11 @@ class Postgres80 extends Postgres81
             $seqrs->fields = $this->fieldArrayClean($seqrs->fields);
 
             // Comment
-            $status = $this->setComment('SEQUENCE', $seqrs->fields['seqname'], '', $comment);
-            if ($status != 0) {
-                return -4;
+            if (isset($seqrs->fields['seqname']) && is_string($seqrs->fields['seqname'])) {
+                $status = $this->setComment('SEQUENCE', $seqrs->fields['seqname'], '', $comment);
+                if ($status != 0) {
+                    return -4;
+                }
             }
         }
 

@@ -188,10 +188,10 @@ msgstr "Да"
 msgid "strno"
 msgstr "Нет"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "Истина"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "Ложь"
 
 msgid "stredit"

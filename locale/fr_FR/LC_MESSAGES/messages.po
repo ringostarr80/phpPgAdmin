@@ -191,10 +191,10 @@ msgstr "Oui"
 msgid "strno"
 msgstr "Non"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "TRUE"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "FALSE"
 
 msgid "stredit"

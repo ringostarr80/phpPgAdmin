@@ -167,10 +167,10 @@ msgstr "Áno"
 msgid "strno"
 msgstr "Nie"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "True"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "False"
 
 msgid "stredit"

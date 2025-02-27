@@ -176,10 +176,10 @@ msgstr "Tak"
 msgid "strno"
 msgstr "Nie"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "Prawda"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "Fałsz"
 
 msgid "stredit"

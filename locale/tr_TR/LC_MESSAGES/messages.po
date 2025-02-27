@@ -167,10 +167,10 @@ msgstr "Evet"
 msgid "strno"
 msgstr "Hayır"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "TRUE"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "FALSE"
 
 msgid "stredit"

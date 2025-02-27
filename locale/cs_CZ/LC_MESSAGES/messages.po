@@ -191,10 +191,10 @@ msgstr "Ano"
 msgid "strno"
 msgstr "Ne"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "PRAVDA"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "NEPRAVDA"
 
 msgid "stredit"

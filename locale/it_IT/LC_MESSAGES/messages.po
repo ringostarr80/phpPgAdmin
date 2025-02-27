@@ -179,10 +179,10 @@ msgstr "Si"
 msgid "strno"
 msgstr "No"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "TRUE"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "FALSE"
 
 msgid "stredit"

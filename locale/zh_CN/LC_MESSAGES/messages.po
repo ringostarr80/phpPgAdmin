@@ -191,10 +191,10 @@ msgstr "是"
 msgid "strno"
 msgstr "否"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "TRUE"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "FALSE"
 
 msgid "stredit"

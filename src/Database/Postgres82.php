@@ -15,10 +15,13 @@ class Postgres82 extends Postgres83
      *
      * @var array<string, string>
      */
-    public array $selectOps = ['=' => 'i', '!=' => 'i', '<' => 'i', '>' => 'i', '<=' => 'i', '>=' => 'i', '<<' => 'i', '>>' => 'i', '<<=' => 'i', '>>=' => 'i',
-        'LIKE' => 'i', 'NOT LIKE' => 'i', 'ILIKE' => 'i', 'NOT ILIKE' => 'i', 'SIMILAR TO' => 'i',
+    public array $selectOps = [
+        '=' => 'i', '!=' => 'i', '<' => 'i', '>' => 'i', '<=' => 'i', '>=' => 'i',
+        '<<' => 'i', '>>' => 'i', '<<=' => 'i', '>>=' => 'i', 'LIKE' => 'i',
+        'NOT LIKE' => 'i', 'ILIKE' => 'i', 'NOT ILIKE' => 'i', 'SIMILAR TO' => 'i',
         'NOT SIMILAR TO' => 'i', '~' => 'i', '!~' => 'i', '~*' => 'i', '!~*' => 'i',
-        'IS NULL' => 'p', 'IS NOT NULL' => 'p', 'IN' => 'x', 'NOT IN' => 'x'];
+        'IS NULL' => 'p', 'IS NOT NULL' => 'p', 'IN' => 'x', 'NOT IN' => 'x'
+    ];
 
     // Database functions
 
@@ -67,12 +70,7 @@ class Postgres82 extends Postgres83
             $f_schema = $this->_schema;
             $f_schema = $this->fieldClean($f_schema);
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" RENAME TO \"{$name}\"";
-            $status = $this->execute($sql);
-            if ($status == 0) {
-                $seqrs->fields['seqname'] = $name;
-            } else {
-                return $status;
-            }
+            return $this->execute($sql);
         }
         return 0;
     }
@@ -87,28 +85,24 @@ class Postgres82 extends Postgres83
      */
     public function alterViewName(\ADORecordSet $vwrs, ?string $name): int
     {
+        if (is_null($name) || empty($name)) {
+            return 0;
+        }
+        if (!is_array($vwrs->fields)) {
+            return 0;
+        }
+
         // Rename (only if name has changed)
         /* $vwrs and $name are cleaned in alterViewInternal */
         if (
-            !empty($name) &&
-            is_array($vwrs->fields) &&
             isset($vwrs->fields['relname']) &&
-            (
-                is_string($vwrs->fields['relname']) ||
-                is_numeric($vwrs->fields['relname']) ||
-                $vwrs->fields['relname'] instanceof \Stringable
-            ) &&
+            is_string($vwrs->fields['relname']) &&
             $name != $vwrs->fields['relname']
         ) {
             $f_schema = $this->_schema;
             $f_schema = $this->fieldClean($f_schema);
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$vwrs->fields['relname']}\" RENAME TO \"{$name}\"";
-            $status =  $this->execute($sql);
-            if ($status == 0) {
-                $vwrs->fields['relname'] = $name;
-            } else {
-                return $status;
-            }
+            return $this->execute($sql);
         }
         return 0;
     }

@@ -158,10 +158,10 @@ msgstr "نعم"
 msgid "strno"
 msgstr "لا"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "صحيح TRUE"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "خاطئ FALSE"
 
 msgid "stredit"

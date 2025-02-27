@@ -181,7 +181,7 @@ class Postgres80 extends Postgres81
         /* $schema not supported in pg80- */
 
         // Comment
-        if (is_array($tblrs->fields)) {
+        if (is_array($tblrs->fields) && isset($tblrs->fields['relname']) && is_string($tblrs->fields['relname'])) {
             $status = $this->setComment('TABLE', '', $tblrs->fields['relname'], $comment);
             if ($status != 0) {
                 return -4;

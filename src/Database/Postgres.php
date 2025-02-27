@@ -474,7 +474,7 @@ class Postgres extends ADOdbBase
     {
         global $data;
 
-        return htmlentities($data->conn->BlobEncode($input), ENT_QUOTES, 'UTF-8');
+        return htmlentities($data->conn->BlobEncode($input), ENT_QUOTES, 'UTF-8'); // @phpstan-ignore-line
     }
 
     /**
@@ -509,8 +509,8 @@ class Postgres extends ADOdbBase
                 if ($value === null || $value === 't' || $value === 'f') {
                     echo "<select name=\"", htmlspecialchars($name ?? ''), "\"{$extra_str}>\n";
                     echo "<option value=\"\"", ($value === null) ? ' selected="selected"' : '', "></option>\n";
-                    echo "<option value=\"t\"", ($value === 't') ? ' selected="selected"' : '', ">{$lang['strtrue']}</option>\n";
-                    echo "<option value=\"f\"", ($value === 'f') ? ' selected="selected"' : '', ">{$lang['strfalse']}</option>\n";
+                    echo "<option value=\"t\"", ($value === 't') ? ' selected="selected"' : '', ">" . _('TRUE') . "</option>\n";
+                    echo "<option value=\"f\"", ($value === 'f') ? ' selected="selected"' : '', ">" . _('FALSE') . "</option>\n";
                     echo "</select>\n";
                 } else {
                     echo "<input name=\"", htmlspecialchars($name ?? ''), "\" value=\"", htmlspecialchars($value), "\" size=\"35\"{$extra_str} />\n";
@@ -1560,9 +1560,15 @@ class Postgres extends ADOdbBase
         if (!is_array($t->fields)) {
             return null;
         }
+        if (!isset($t->fields['relname']) || !isset($t->fields['nspname'])) {
+            return null;
+        }
+        if (!is_string($t->fields['relname']) || !is_string($t->fields['nspname'])) {
+            return null;
+        }
 
-        $t->fields['relname'] = $this->fieldClean($t->fields['relname']);
-        $t->fields['nspname'] = $this->fieldClean($t->fields['nspname']);
+        $t->fields['relname'] = $this->fieldClean($t->fields['relname']); // @phpstan-ignore-line
+        $t->fields['nspname'] = $this->fieldClean($t->fields['nspname']); // @phpstan-ignore-line
 
         // Fetch attributes
         $atts = $this->getTableAttributes($table);
@@ -1579,7 +1585,7 @@ class Postgres extends ADOdbBase
         }
 
         // Output a reconnect command to create the table as the correct user
-        $sql = $this->getChangeUserSQL($t->fields['relowner']) . "\n\n";
+        $sql = $this->getChangeUserSQL($t->fields['relowner']) . "\n\n"; // @phpstan-ignore-line
 
         // Set schema search path
         $sql .= "SET search_path = \"{$t->fields['nspname']}\", pg_catalog;\n\n";
@@ -1603,8 +1609,14 @@ class Postgres extends ADOdbBase
             if (!is_array($atts->fields)) {
                 continue;
             }
+            if (!isset($atts->fields['attname'])) {
+                continue;
+            }
+            if (!is_string($atts->fields['attname'])) {
+                continue;
+            }
 
-            $atts->fields['attname'] = $this->fieldClean($atts->fields['attname']);
+            $atts->fields['attname'] = $this->fieldClean($atts->fields['attname']); // @phpstan-ignore-line
             $sql .= "    \"{$atts->fields['attname']}\"";
             // Dump SERIAL and BIGSERIAL columns correctly
             if (
@@ -1624,7 +1636,7 @@ class Postgres extends ADOdbBase
                     $sql .= " NOT NULL";
                 }
                 // Add default if necessary
-                if ($atts->fields['adsrc'] !== null) {
+                if (isset($atts->fields['adsrc']) && is_string($atts->fields['adsrc'])) {
                     $sql .= " DEFAULT {$atts->fields['adsrc']}";
                 }
             }
@@ -1637,8 +1649,8 @@ class Postgres extends ADOdbBase
             }
 
             // Does this column have a comment?
-            if (!is_null($atts->fields['comment'])) {
-                $atts->fields['comment'] = $this->clean($atts->fields['comment']);
+            if (isset($atts->fields['comment']) && is_string($atts->fields['comment'])) {
+                $atts->fields['comment'] = $this->clean($atts->fields['comment']); // @phpstan-ignore-line
                 $col_comments_sql .= "COMMENT ON COLUMN \"{$t->fields['relname']}\".\"{$atts->fields['attname']}\"  IS '{$atts->fields['comment']}';\n";
             }
 
@@ -1650,24 +1662,34 @@ class Postgres extends ADOdbBase
             if (!is_array($cons->fields)) {
                 continue;
             }
+            if (!isset($cons->fields['conname'])) {
+                continue;
+            }
+            if (!is_string($cons->fields['conname'])) {
+                continue;
+            }
 
-            $cons->fields['conname'] = $this->fieldClean($cons->fields['conname']);
+            $cons->fields['conname'] = $this->fieldClean($cons->fields['conname']); // @phpstan-ignore-line
             $sql .= "    CONSTRAINT \"{$cons->fields['conname']}\" ";
             // Nasty hack to support pre-7.4 PostgreSQL
-            if ($cons->fields['consrc'] !== null) {
+            if (isset($cons->fields['consrc']) && is_string($cons->fields['consrc'])) {
                 $sql .= $cons->fields['consrc'];
             } else {
                 switch ($cons->fields['contype']) {
                     case 'p':
-                        $keys = $this->getAttributeNames($table, explode(' ', $cons->fields['indkey']));
-                        if (is_array($keys)) {
-                            $sql .= "PRIMARY KEY (" . join(',', $keys) . ")";
+                        if (isset($cons->fields['indkey']) && is_string($cons->fields['indkey'])) {
+                            $keys = $this->getAttributeNames($table, explode(' ', $cons->fields['indkey']));
+                            if (is_array($keys)) {
+                                $sql .= "PRIMARY KEY (" . join(',', $keys) . ")";
+                            }
                         }
                         break;
                     case 'u':
-                        $keys = $this->getAttributeNames($table, explode(' ', $cons->fields['indkey']));
-                        if (is_array($keys)) {
-                            $sql .= "UNIQUE (" . join(',', $keys) . ")";
+                        if (isset($cons->fields['indkey']) && is_string($cons->fields['indkey'])) {
+                            $keys = $this->getAttributeNames($table, explode(' ', $cons->fields['indkey']));
+                            if (is_array($keys)) {
+                                $sql .= "UNIQUE (" . join(',', $keys) . ")";
+                            }
                         }
                         break;
                     default:
@@ -1690,33 +1712,6 @@ class Postgres extends ADOdbBase
 
         $sql .= ")";
 
-        // @@@@ DUMP CLUSTERING INFORMATION
-
-        // Inherits
-        /*
-         * XXX: This is currently commented out as handling inheritance isn't this simple.
-         * You also need to make sure you don't dump inherited columns and defaults, as well
-         * as inherited NOT NULL and CHECK constraints.  So for the time being, we just do
-         * not claim to support inheritance.
-        $parents = $this->getTableParents($table);
-        if ($parents->recordCount() > 0) {
-            $sql .= " INHERITS (";
-            while (!$parents->EOF) {
-                $parents->fields['relname'] = $this->fieldClean($parents->fields['relname']);
-                // Qualify the parent table if it's in another schema
-                if ($parents->fields['schemaname'] != $this->_schema) {
-                    $parents->fields['schemaname'] = $this->fieldClean($parents->fields['schemaname']);
-                    $sql .= "\"{$parents->fields['schemaname']}\".";
-                }
-                $sql .= "\"{$parents->fields['relname']}\"";
-
-                $parents->moveNext();
-                if (!$parents->EOF) $sql .= ', ';
-            }
-            $sql .= ")";
-        }
-        */
-
         // Handle WITHOUT OIDS
         if ($this->hasObjectID($table)) {
             $sql .= " WITH OIDS";
@@ -1733,15 +1728,21 @@ class Postgres extends ADOdbBase
             if (!is_array($atts->fields)) {
                 continue;
             }
+            if (!isset($atts->fields['attname'])) {
+                continue;
+            }
+            if (!is_string($atts->fields['attname'])) {
+                continue;
+            }
 
-            $atts->fields['attname'] = $this->fieldClean($atts->fields['attname']);
+            $atts->fields['attname'] = $this->fieldClean($atts->fields['attname']); // @phpstan-ignore-line
             // Statistics first
             if ($atts->fields['attstattarget'] >= 0) {
                 if ($first) {
                     $sql .= "\n";
                     $first = false;
                 }
-                $sql .= "ALTER TABLE ONLY \"{$t->fields['nspname']}\".\"{$t->fields['relname']}\" ALTER COLUMN \"{$atts->fields['attname']}\" SET STATISTICS {$atts->fields['attstattarget']};\n";
+                $sql .= "ALTER TABLE ONLY \"{$t->fields['nspname']}\".\"{$t->fields['relname']}\" ALTER COLUMN \"{$atts->fields['attname']}\" SET STATISTICS {$atts->fields['attstattarget']};\n"; // @phpstan-ignore-line
             }
             // Then storage
             if ($atts->fields['attstorage'] != $atts->fields['typstorage']) {
@@ -1770,8 +1771,8 @@ class Postgres extends ADOdbBase
         }
 
         // Comment
-        if ($t->fields['relcomment'] !== null) {
-            $t->fields['relcomment'] = $this->clean($t->fields['relcomment']);
+        if (isset($t->fields['relcomment']) && is_string($t->fields['relcomment'])) {
+            $t->fields['relcomment'] = $this->clean($t->fields['relcomment']); // @phpstan-ignore-line
             $sql .= "\n-- Comment\n\n";
             $sql .= "COMMENT ON TABLE \"{$t->fields['nspname']}\".\"{$t->fields['relname']}\" IS '{$t->fields['relcomment']}';\n";
         }
@@ -1816,9 +1817,8 @@ class Postgres extends ADOdbBase
                 }
 
                 // Change user if necessary
-                if ($this->hasGrantOption() && $v[3] != $t->fields['relowner']) {
-                    $grantor = $v[3];
-                    $grantor = $this->clean($grantor);
+                if ($this->hasGrantOption() && is_string($v[3]) && $v[3] != $t->fields['relowner']) {
+                    $grantor = $this->clean($v[3]);
                     $sql .= "SET SESSION AUTHORIZATION '{$grantor}';\n";
                 }
 
@@ -1829,12 +1829,16 @@ class Postgres extends ADOdbBase
                         $sql .= "PUBLIC;\n";
                         break;
                     case 'user':
-                        $v[1] = $this->fieldClean($v[1]);
-                        $sql .= "\"{$v[1]}\";\n";
+                        if (is_string($v[1])) {
+                            $v[1] = $this->fieldClean($v[1]);
+                            $sql .= "\"{$v[1]}\";\n";
+                        }
                         break;
                     case 'group':
-                        $v[1] = $this->fieldClean($v[1]);
-                        $sql .= "GROUP \"{$v[1]}\";\n";
+                        if (is_string($v[1])) {
+                            $v[1] = $this->fieldClean($v[1]);
+                            $sql .= "GROUP \"{$v[1]}\";\n";
+                        }
                         break;
                     default:
                         // Unknown privilege type - fail
@@ -1858,9 +1862,8 @@ class Postgres extends ADOdbBase
                 }
 
                 // Change user if necessary
-                if ($v[3] != $t->fields['relowner']) {
-                    $grantor = $v[3];
-                    $grantor = $this->clean($grantor);
+                if (is_string($v[3]) && $v[3] != $t->fields['relowner']) {
+                    $grantor = $this->clean($v[3]);
                     $sql .= "SET SESSION AUTHORIZATION '{$grantor}';\n";
                 }
 
@@ -1870,12 +1873,16 @@ class Postgres extends ADOdbBase
                         $sql .= "PUBLIC";
                         break;
                     case 'user':
-                        $v[1] = $this->fieldClean($v[1]);
-                        $sql .= "\"{$v[1]}\"";
+                        if (is_string($v[1])) {
+                            $v[1] = $this->fieldClean($v[1]);
+                            $sql .= "\"{$v[1]}\"";
+                        }
                         break;
                     case 'group':
-                        $v[1] = $this->fieldClean($v[1]);
-                        $sql .= "GROUP \"{$v[1]}\"";
+                        if (is_string($v[1])) {
+                            $v[1] = $this->fieldClean($v[1]);
+                            $sql .= "GROUP \"{$v[1]}\"";
+                        }
                         break;
                     default:
                         // Unknown privilege type - fail
@@ -1916,7 +1923,11 @@ class Postgres extends ADOdbBase
         if ($indexes->recordCount() > 0) {
             $sql .= "\n-- Indexes\n\n";
             while (!$indexes->EOF) {
-                if (is_array($indexes->fields)) {
+                if (
+                    is_array($indexes->fields) &&
+                    isset($indexes->fields['inddef']) &&
+                    is_string($indexes->fields['inddef'])
+                ) {
                     $sql .= $indexes->fields['inddef'] . ";\n";
                 }
 
@@ -1934,7 +1945,11 @@ class Postgres extends ADOdbBase
         if ($triggers->recordCount() > 0) {
             $sql .= "\n-- Triggers\n\n";
             while (!$triggers->EOF) {
-                if (is_array($triggers->fields)) {
+                if (
+                    is_array($triggers->fields) &&
+                    isset($triggers->fields['tgdef']) &&
+                    is_string($triggers->fields['tgdef'])
+                ) {
                     $sql .= $triggers->fields['tgdef'];
                     $sql .= ";\n";
                 }
@@ -1952,7 +1967,7 @@ class Postgres extends ADOdbBase
 
         if ($rules->recordCount() > 0) {
             $sql .= "\n-- Rules\n\n";
-            while (!$rules->EOF && is_array($rules->fields)) {
+            while (!$rules->EOF && is_array($rules->fields) && isset($rules->fields['definition']) && is_string($rules->fields['definition'])) {
                 $sql .= $rules->fields['definition'] . "\n";
 
                 $rules->moveNext();
@@ -2157,6 +2172,12 @@ class Postgres extends ADOdbBase
         if (!is_string($like['schema'])) {
             return -1;
         }
+        if (!isset($like['table'])) {
+            return -1;
+        }
+        if (!is_string($like['table'])) {
+            return -1;
+        }
 
         $f_schema = $this->fieldClean($this->_schema);
         $name = $this->fieldClean($name);
@@ -2221,7 +2242,7 @@ class Postgres extends ADOdbBase
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$tblrs->fields['relname']}\" RENAME TO \"{$name}\"";
             $status = $this->execute($sql);
             if ($status == 0) {
-                $tblrs->fields['relname'] = $name;
+                $tblrs->fields['relname'] = $name; // @phpstan-ignore-line
             } else {
                 return $status;
             }
@@ -2938,7 +2959,7 @@ class Postgres extends ADOdbBase
 
         /* result array to return as RS */
         $autovacs = array();
-        while (!$_autovacs->EOF && is_array($_autovacs->fields)) {
+        while (!$_autovacs->EOF && is_array($_autovacs->fields) && isset($_autovacs->fields['reloptions']) && is_string($_autovacs->fields['reloptions'])) {
             $_ = array(
                 'nspname' => $_autovacs->fields['nspname'],
                 'relname' => $_autovacs->fields['relname']
@@ -3005,7 +3026,7 @@ class Postgres extends ADOdbBase
             }
             $this->endTransaction();
             return $temp;
-        } elseif (is_array($rs->fields)) {
+        } elseif (is_array($rs->fields) && isset($rs->fields['indkey']) && is_string($rs->fields['indkey'])) {
             $attnames = $this->getAttributeNames($oldtable, explode(' ', $rs->fields['indkey']));
             if (!is_array($attnames)) {
                 $this->rollbackTransaction();
@@ -3380,6 +3401,9 @@ class Postgres extends ADOdbBase
             return -1;
         }
         $minvalue = $seq->fields['min_value'];
+        if (!is_string($minvalue) && !is_numeric($minvalue)) {
+            return -1;
+        }
 
         $f_schema = $this->_schema;
         $f_schema = $this->fieldClean($f_schema);
@@ -3465,7 +3489,7 @@ class Postgres extends ADOdbBase
             $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" RENAME TO \"{$name}\"";
             $status = $this->execute($sql);
             if ($status == 0) {
-                $seqrs->fields['seqname'] = $name;
+                $seqrs->fields['seqname'] = $name; // @phpstan-ignore-line
             } else {
                 return $status;
             }
@@ -3577,8 +3601,10 @@ class Postgres extends ADOdbBase
         if ($sql != '') {
             $f_schema = $this->_schema;
             $f_schema = $this->fieldClean($f_schema);
-            $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" {$sql}";
-            return $this->execute($sql);
+            if (isset($seqrs->fields['seqname']) && is_string($seqrs->fields['seqname'])) {
+                $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" {$sql}";
+                return $this->execute($sql);
+            }
         }
         return 0;
     }
@@ -3887,12 +3913,7 @@ class Postgres extends ADOdbBase
             }
             $f_schema = $this->fieldClean($this->_schema);
             $sql = "ALTER VIEW \"{$f_schema}\".\"{$vwrs->fields['relname']}\" RENAME TO \"{$name}\"";
-            $status =  $this->execute($sql);
-            if ($status == 0) {
-                $vwrs->fields['relname'] = $name;
-            } else {
-                return $status;
-            }
+            return $this->execute($sql);
         }
         return 0;
     }
@@ -4617,6 +4638,9 @@ class Postgres extends ADOdbBase
         if (!is_string($tables[0]['tablename'])) {
             return -1;
         }
+        if (!is_string($tables[0]['schemaname'])) {
+            return -1;
+        }
         $tables[0]['tablename'] = $this->clean($tables[0]['tablename']);
         $tables[0]['schemaname'] = $this->clean($tables[0]['schemaname']);
         $tables_list = "'{$tables[0]['tablename']}'";
@@ -4624,11 +4648,13 @@ class Postgres extends ADOdbBase
         $schema_tables_list = "'{$tables[0]['schemaname']}.{$tables[0]['tablename']}'";
 
         for ($i = 1; $i < sizeof($tables); $i++) {
-            $tables[$i]['tablename'] = $this->clean($tables[$i]['tablename']);
-            $tables[$i]['schemaname'] = $this->clean($tables[$i]['schemaname']);
-            $tables_list .= ", '{$tables[$i]['tablename']}'";
-            $schema_list .= ", '{$tables[$i]['schemaname']}'";
-            $schema_tables_list .= ", '{$tables[$i]['schemaname']}.{$tables[$i]['tablename']}'";
+            if (is_array($tables[$i])) {
+                $tables[$i]['tablename'] = $this->clean($tables[$i]['tablename']); // @phpstan-ignore-line
+                $tables[$i]['schemaname'] = $this->clean($tables[$i]['schemaname']); // @phpstan-ignore-line
+                $tables_list .= ", '{$tables[$i]['tablename']}'"; // @phpstan-ignore-line
+                $schema_list .= ", '{$tables[$i]['schemaname']}'";
+                $schema_tables_list .= ", '{$tables[$i]['schemaname']}.{$tables[$i]['tablename']}'"; // @phpstan-ignore-line
+            }
         }
 
         $maxDimension = 1;
@@ -4652,7 +4678,7 @@ class Postgres extends ADOdbBase
             return $rs;
         }
 
-        while (!$rs->EOF && is_array($rs->fields)) {
+        while (!$rs->EOF && is_array($rs->fields) && isset($rs->fields['arr_dim']) && is_string($rs->fields['arr_dim'])) {
             $arrData = explode(':', $rs->fields['arr_dim']);
             $tmpDimension = intval(substr($arrData[1], 0, strlen((string)(intval($arrData[1]) - 1))));
             $maxDimension = $tmpDimension > $maxDimension ? $tmpDimension : $maxDimension;
@@ -5377,9 +5403,9 @@ class Postgres extends ADOdbBase
         }
 
         $f_schema = $this->fieldClean($this->_schema);
-        $fn->fields['proname'] = $this->fieldClean($fn->fields['proname']);
+        $fn->fields['proname'] = $this->fieldClean($fn->fields['proname']); // @phpstan-ignore-line
 
-        $sql = "DROP FUNCTION \"{$f_schema}\".\"{$fn->fields['proname']}\"({$fn->fields['proarguments']})";
+        $sql = "DROP FUNCTION \"{$f_schema}\".\"{$fn->fields['proname']}\"({$fn->fields['proarguments']})"; // @phpstan-ignore-line
         if ($cascade) {
             $sql .= " CASCADE";
         }
@@ -5551,7 +5577,9 @@ class Postgres extends ADOdbBase
         $nbval = count($values);
 
         for ($i = 0; $i < $nbval; $i++) {
-            $values[$i] = $this->clean($values[$i]);
+            if (is_string($values[$i])) {
+                $values[$i] = $this->clean($values[$i]);
+            }
         }
 
         $sql = "CREATE TYPE \"{$f_schema}\".\"{$name}\" AS ENUM ('";
@@ -5988,21 +6016,23 @@ class Postgres extends ADOdbBase
             $tgdef = 'CREATE TRIGGER ';
         }
 
-        $tgdef .= "\"{$trigger['tgname']}\" ";
+        if (is_string($trigger['tgname'])) {
+            $tgdef .= "\"{$trigger['tgname']}\" ";
+        }
 
         // Trigger type
         $findx = 0;
-        if (($trigger['tgtype'] & TRIGGER_TYPE_BEFORE) == TRIGGER_TYPE_BEFORE) {
+        if (($trigger['tgtype'] & TRIGGER_TYPE_BEFORE) == TRIGGER_TYPE_BEFORE) { // @phpstan-ignore-line
             $tgdef .= 'BEFORE';
         } else {
             $tgdef .= 'AFTER';
         }
 
-        if (($trigger['tgtype'] & TRIGGER_TYPE_INSERT) == TRIGGER_TYPE_INSERT) {
+        if (($trigger['tgtype'] & TRIGGER_TYPE_INSERT) == TRIGGER_TYPE_INSERT) { // @phpstan-ignore-line
             $tgdef .= ' INSERT';
             $findx++;
         }
-        if (($trigger['tgtype'] & TRIGGER_TYPE_DELETE) == TRIGGER_TYPE_DELETE) {
+        if (($trigger['tgtype'] & TRIGGER_TYPE_DELETE) == TRIGGER_TYPE_DELETE) { // @phpstan-ignore-line
             if ($findx > 0) {
                 $tgdef .= ' OR DELETE';
             } else {
@@ -6010,7 +6040,7 @@ class Postgres extends ADOdbBase
                 $findx++;
             }
         }
-        if (($trigger['tgtype'] & TRIGGER_TYPE_UPDATE) == TRIGGER_TYPE_UPDATE) {
+        if (($trigger['tgtype'] & TRIGGER_TYPE_UPDATE) == TRIGGER_TYPE_UPDATE) { // @phpstan-ignore-line
             if ($findx > 0) {
                 $tgdef .= ' OR UPDATE';
             } else {
@@ -6021,11 +6051,17 @@ class Postgres extends ADOdbBase
         $f_schema = $this->_schema;
         $f_schema = $this->fieldClean($f_schema);
         // Table name
-        $tgdef .= " ON \"{$f_schema}\".\"{$trigger['relname']}\" ";
+        if (isset($trigger['relname']) && is_string($trigger['relname'])) {
+            $tgdef .= " ON \"{$f_schema}\".\"{$trigger['relname']}\" ";
+        }
 
         // Deferrability
         if ($trigger['tgisconstraint']) {
-            if ($trigger['tgconstrrelid'] != 0) {
+            if (
+                $trigger['tgconstrrelid'] != 0 &&
+                isset($trigger['tgconstrrelname']) &&
+                is_string($trigger['tgconstrrelname'])
+            ) {
                 // Assume constrelname is not null
                 $tgdef .= " FROM \"{$trigger['tgconstrrelname']}\" ";
             }
@@ -6041,14 +6077,16 @@ class Postgres extends ADOdbBase
         }
 
         // Row or statement
-        if ($trigger['tgtype'] & true) {
+        if ($trigger['tgtype'] & true) { // @phpstan-ignore-line
             $tgdef .= 'FOR EACH ROW ';
         } else {
             $tgdef .= 'FOR EACH STATEMENT ';
         }
 
         // Execute procedure
-        $tgdef .= "EXECUTE PROCEDURE \"{$trigger['tgfname']}\"(";
+        if (isset($trigger['tgfname']) && is_string($trigger['tgfname'])) {
+            $tgdef .= "EXECUTE PROCEDURE \"{$trigger['tgfname']}\"(";
+        }
 
         // Parameters
         // Escape null characters
@@ -6061,7 +6099,7 @@ class Postgres extends ADOdbBase
         for ($findx = 0; $findx < $trigger['tgnargs']; $findx++) {
             $param = "'" . str_replace('\'', '\\\'', $params[$findx]) . "'";
             $tgdef .= $param;
-            if ($findx < ($trigger['tgnargs'] - 1)) {
+            if ($findx < ($trigger['tgnargs'] - 1)) { // @phpstan-ignore-line
                 $tgdef .= ', ';
             }
         }
@@ -6267,18 +6305,21 @@ class Postgres extends ADOdbBase
         if (!is_array($opr->fields)) {
             return -1;
         }
+        if (!isset($opr->fields['oprname']) || !is_string($opr->fields['oprname'])) {
+            return -1;
+        }
 
         $f_schema = $this->fieldClean($this->_schema);
-        $opr->fields['oprname'] = $this->fieldClean($opr->fields['oprname']);
+        $opr->fields['oprname'] = $this->fieldClean($opr->fields['oprname']); // @phpstan-ignore-line
 
         $sql = "DROP OPERATOR \"{$f_schema}\".{$opr->fields['oprname']} (";
         // Quoting or formatting here???
-        if ($opr->fields['oprleftname'] !== null) {
+        if (isset($opr->fields['oprleftname']) && is_string($opr->fields['oprleftname'])) {
             $sql .= $opr->fields['oprleftname'] . ', ';
         } else {
             $sql .= "NONE, ";
         }
-        if ($opr->fields['oprrightname'] !== null) {
+        if (isset($opr->fields['oprrightname']) && is_string($opr->fields['oprrightname'])) {
             $sql .= $opr->fields['oprrightname'] . ')';
         } else {
             $sql .= "NONE)";
@@ -6343,13 +6384,13 @@ class Postgres extends ADOdbBase
         $sql = "CREATE TEXT SEARCH CONFIGURATION \"{$f_schema}\".\"{$cfgname}\" (";
         if ($parser != '') {
             $parser['schema'] = $this->fieldClean($parser['schema']); // @phpstan-ignore-line
-            $parser['parser'] = $this->fieldClean($parser['parser']);
+            $parser['parser'] = $this->fieldClean($parser['parser']); // @phpstan-ignore-line
             $parser = "\"{$parser['schema']}\".\"{$parser['parser']}\""; // @phpstan-ignore-line
             $sql .= " PARSER = {$parser}";
         }
         if ($template != '') {
             $template['schema'] = $this->fieldClean($template['schema']); // @phpstan-ignore-line
-            $template['name'] = $this->fieldClean($template['name']);
+            $template['name'] = $this->fieldClean($template['name']); // @phpstan-ignore-line
             $sql .= " COPY = \"{$template['schema']}\".\"{$template['name']}\""; // @phpstan-ignore-line
         }
         $sql .= ")";
@@ -6466,6 +6507,9 @@ class Postgres extends ADOdbBase
         }
 
         $oid = $oidSet->fields['oid'];
+        if (!is_string($oid) && !is_numeric($oid)) {
+            return -1;
+        }
 
         $sql = "
  			SELECT
@@ -6694,7 +6738,7 @@ class Postgres extends ADOdbBase
             $sql .= " DICTIONARY \"{$f_schema}\".\"{$dictname}\" (";
             if ($template != '') {
                 $template['schema'] = $this->fieldClean($template['schema']); // @phpstan-ignore-line
-                $template['name'] = $this->fieldClean($template['name']);
+                $template['name'] = $this->fieldClean($template['name']); // @phpstan-ignore-line
                 $template = "\"{$template['schema']}\".\"{$template['name']}\""; // @phpstan-ignore-line
 
                 $sql .= " TEMPLATE = {$template}";
@@ -6873,7 +6917,13 @@ class Postgres extends ADOdbBase
         }
 
         $oid = $oidSet->fields['oid'];
+        if (!is_string($oid) && !is_numeric($oid)) {
+            return -1;
+        }
         $cfgparser = $oidSet->fields['cfgparser'];
+        if (!is_string($cfgparser)) {
+            return -1;
+        }
 
         $tokenIdSet = $this->selectSet("SELECT tokid
 			FROM pg_catalog.ts_token_type({$cfgparser})
@@ -6886,6 +6936,9 @@ class Postgres extends ADOdbBase
         }
 
         $tokid = $tokenIdSet->fields['tokid'];
+        if (!is_string($tokid) && !is_numeric($tokid)) {
+            return -1;
+        }
 
         $sql = "SELECT
 				(SELECT t.alias FROM pg_catalog.ts_token_type(c.cfgparser) AS t WHERE t.tokid = m.maptokentype) AS name,
@@ -6911,6 +6964,9 @@ class Postgres extends ADOdbBase
             return $cfg;
         }
         if (!is_array($cfg->fields)) {
+            return -1;
+        }
+        if (!isset($cfg->fields['parser_id']) || !is_string($cfg->fields['parser_id'])) {
             return -1;
         }
 
@@ -8230,8 +8286,15 @@ class Postgres extends ADOdbBase
             case 'function':
                 // Function comes in with $object as function OID
                 $fn = $this->getFunction($object);
-                if ($fn instanceof \ADORecordSet && is_array($fn->fields)) {
-                    $fn->fields['proname'] = $this->fieldClean($fn->fields['proname']);
+                if (
+                    $fn instanceof \ADORecordSet &&
+                    is_array($fn->fields) &&
+                    isset($fn->fields['proname']) &&
+                    is_string($fn->fields['proname']) &&
+                    isset($fn->fields['proarguments']) &&
+                    is_string($fn->fields['proarguments'])
+                ) {
+                    $fn->fields['proname'] = $this->fieldClean($fn->fields['proname']); // @phpstan-ignore-line
                     $sql .= " ON FUNCTION \"{$f_schema}\".\"{$fn->fields['proname']}\"({$fn->fields['proarguments']})";
                 }
                 break;
@@ -8793,7 +8856,10 @@ class Postgres extends ADOdbBase
         global $data;
 
         // This whole function isn't very encapsulated, but hey...
-        $conn = $data->conn->_connectionID;
+        $conn = $data->conn->_connectionID; // @phpstan-ignore-line
+        if (!($conn instanceof \PgSql\Connection)) {
+            return false;
+        }
         if (!isset($_FILES[$name])) {
             return false;
         }

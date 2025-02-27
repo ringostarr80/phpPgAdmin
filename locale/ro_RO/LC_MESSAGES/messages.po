@@ -179,10 +179,10 @@ msgstr "Da"
 msgid "strno"
 msgstr "Nu"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "TRUE"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "FALSE"
 
 msgid "stredit"

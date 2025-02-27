@@ -204,10 +204,12 @@ msgstr "Yes"
 msgid "strno"
 msgstr "No"
 
-msgid "strtrue"
+# original: "strtrue"
+msgid "TRUE"
 msgstr "TRUE"
 
-msgid "strfalse"
+# original: "strfalse"
+msgid "FALSE"
 msgstr "FALSE"
 
 msgid "stredit"

@@ -158,10 +158,10 @@ msgstr "Так"
 msgid "strno"
 msgstr "Ні"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "Істина"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "Фальш"
 
 msgid "stredit"

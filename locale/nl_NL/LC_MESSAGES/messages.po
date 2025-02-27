@@ -153,10 +153,10 @@ msgstr "Cancel"
 msgid "strprivileges"
 msgstr "Privileges"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "True"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "False"
 
 msgid "strinsert"

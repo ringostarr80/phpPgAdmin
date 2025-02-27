@@ -198,10 +198,10 @@ msgstr "Taip"
 msgid "strno"
 msgstr "Ne"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "TIESA"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "NETIESA"
 
 msgid "stredit"

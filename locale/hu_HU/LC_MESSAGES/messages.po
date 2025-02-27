@@ -191,10 +191,10 @@ msgstr "Igen"
 msgid "strno"
 msgstr "Nem"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "IGAZ"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "HAMIS"
 
 msgid "stredit"

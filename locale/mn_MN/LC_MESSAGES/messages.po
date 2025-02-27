@@ -161,10 +161,10 @@ msgstr "єЩЪЭ"
 msgid "strno"
 msgstr "?Ч?Ъ"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "?ЮмЮ"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "шеФСЬ"
 
 msgid "stredit"

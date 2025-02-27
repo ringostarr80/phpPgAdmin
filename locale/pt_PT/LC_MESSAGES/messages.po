@@ -1136,10 +1136,10 @@ msgstr "<< Primeiro"
 msgid "strlast"
 msgstr "Último >>"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "VERDADEIRO"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "FALSO"
 
 msgid "strcolumn"

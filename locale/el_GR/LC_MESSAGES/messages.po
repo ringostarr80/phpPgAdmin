@@ -176,10 +176,10 @@ msgstr "Ναι"
 msgid "strno"
 msgstr "Οχι"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "ΑΛΗΘΕΣ"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "ΨΕΥΔΕΣ"
 
 msgid "stredit"

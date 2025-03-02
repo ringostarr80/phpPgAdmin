@@ -16,3 +16,4 @@ Below is an overview of how the software quality evolves over time, measured by 
 | date         | bugs | code smells | lines of code | reliability | security | technical debt | maintainability | vulnerabilities |
 |--------------|-----:|------------:|--------------:|------------:|---------:|---------------:|----------------:|----------------:|
 | 2025-01-19   | 2.2k |     5.5k    |      95k      |      C      |    E     |     83d        |        A        |        82       |
+| 2025-03-02   |  586 |     1.5k    |      64k      |      C      |    E     |     47d        |        A        |        77       |

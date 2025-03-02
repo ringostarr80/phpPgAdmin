@@ -16,6 +16,7 @@
         "ext-gettext": "*",
 		"ext-pgsql": "*",
         "ext-mbstring": "*",
+        "adodb/adodb-php": "^5.22.",
         "locr-company/http-status-code": "^1.0",
         "symfony/yaml": "^6.4"
     },
@@ -44,7 +45,7 @@
             "@dev:lint:phpcs"
         ],
         "dev:lint:php": "parallel-lint --exclude vendor .",
-        "dev:lint:phpcs": "phpcs -d memory_limit=256M src/ index.php browser.php",
+        "dev:lint:phpcs": "phpcs -d memory_limit=256M src/ autoload.php browser.php index.php intro.php login.php servers.php",
         "build-locales": [
             "@build-locale-af_ZA",
             "@build-locale-ar",

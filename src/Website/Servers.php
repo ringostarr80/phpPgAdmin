@@ -49,8 +49,8 @@ class Servers extends Website
             $tr = $dom->createElement('tr');
             $tr->setAttribute('class', 'data' . ($index + 1));
             $td = $dom->createElement('td');
-            $a = $dom->createElement('a', $server['desc']);
-            $serverId = $server['host'] . ':' . $server['port'] . ':' . $server['sslmode'];
+            $a = $dom->createElement('a', (string)$server->Name);
+            $serverId = $server->id();
             $redirectUrlParams = [
                 'subject' => 'server',
                 'server' => $serverId
@@ -59,9 +59,9 @@ class Servers extends Website
             $a->setAttribute('href', $redirectUrl);
             $td->appendChild($a);
             $tr->appendChild($td);
-            $td = $dom->createElement('td', $server['host']);
+            $td = $dom->createElement('td', (string)$server->Host);
             $tr->appendChild($td);
-            $td = $dom->createElement('td', (string)$server['port']);
+            $td = $dom->createElement('td', (string)$server->Port->Value);
             $tr->appendChild($td);
             $username = '';
             if (

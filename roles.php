@@ -54,7 +54,7 @@ function doCreate($msg = '')
     echo "<form action=\"roles.php\" method=\"post\">\n";
     echo "<table>\n";
     echo "\t<tr>\n\t\t<th class=\"data left required\" style=\"width: 130px\">{$lang['strname']}</th>\n";
-    echo "\t\t<td class=\"data1\"><input size=\"15\" maxlength=\"{$data->_maxNameLen}\" name=\"formRolename\" value=\"", htmlspecialchars($_POST['formRolename']), "\" /></td>\n\t</tr>\n";
+    echo "\t\t<td class=\"data1\"><input size=\"15\" maxlength=\"{$data->maxNameLen}\" name=\"formRolename\" value=\"", htmlspecialchars($_POST['formRolename']), "\" /></td>\n\t</tr>\n";
     echo "\t<tr>\n\t\t<th class=\"data left\">{$lang['strpassword']}</th>\n";
     echo "\t\t<td class=\"data1\"><input size=\"15\" type=\"password\" name=\"formPassword\" value=\"", htmlspecialchars($_POST['formPassword']), "\" /></td>\n\t</tr>\n";
     echo "\t<tr>\n\t\t<th class=\"data left\">{$lang['strconfirm']}</th>\n";
@@ -223,7 +223,7 @@ function doAlter($msg = '')
         echo "<form action=\"roles.php\" method=\"post\">\n";
         echo "<table>\n";
         echo "\t<tr>\n\t\t<th class=\"data left\" style=\"width: 130px\">{$lang['strname']}</th>\n";
-        echo "\t\t<td class=\"data1\">", ($canRename ? "<input name=\"formNewRoleName\" size=\"15\" maxlength=\"{$data->_maxNameLen}\" value=\"" . htmlspecialchars($_POST['formNewRoleName']) . "\" />" : $misc->printVal($roledata->fields['rolname'])), "</td>\n\t</tr>\n";
+        echo "\t\t<td class=\"data1\">", ($canRename ? "<input name=\"formNewRoleName\" size=\"15\" maxlength=\"{$data->maxNameLen}\" value=\"" . htmlspecialchars($_POST['formNewRoleName']) . "\" />" : $misc->printVal($roledata->fields['rolname'])), "</td>\n\t</tr>\n";
         echo "\t<tr>\n\t\t<th class=\"data left\">{$lang['strpassword']}</th>\n";
         echo "\t\t<td class=\"data1\"><input type=\"password\" size=\"15\" name=\"formPassword\" value=\"", htmlspecialchars($_POST['formPassword']), "\" /></td>\n\t</tr>\n";
         echo "\t<tr>\n\t\t<th class=\"data left\">{$lang['strconfirm']}</th>\n";

@@ -111,4 +111,9 @@ abstract class Website
         $dom = $this->buildHtmlDocument();
         return $dom->saveHTML() ?: '';
     }
+
+    protected function buildTitle(\DOMDocument $dom, string $title): \DOMElement
+    {
+        return $dom->createElement('h2', $title);
+    }
 }

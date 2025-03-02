@@ -54,10 +54,10 @@ function doCreate($msg = '')
             echo "<form action=\"tables.php\" method=\"post\">\n";
             echo "<table>\n";
             echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strname']}</th>\n";
-            echo "\t\t<td class=\"data\"><input name=\"name\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+            echo "\t\t<td class=\"data\"><input name=\"name\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
                 htmlspecialchars($_REQUEST['name']), "\" /></td>\n\t</tr>\n";
             echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strnumcols']}</th>\n";
-            echo "\t\t<td class=\"data\"><input name=\"fields\" size=\"5\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+            echo "\t\t<td class=\"data\"><input name=\"fields\" size=\"5\" maxlength=\"{$data->maxNameLen}\" value=\"",
                 htmlspecialchars($_REQUEST['fields']), "\" /></td>\n\t</tr>\n";
             if ($data->hasServerOids()) {
                 echo "\t<tr>\n\t\t<th class=\"data left\">{$lang['stroptions']}</th>\n";
@@ -142,7 +142,7 @@ function doCreate($msg = '')
                 }
 
                 echo "\t<tr>\n\t\t<td>", $i + 1, ".&nbsp;</td>\n";
-                echo "\t\t<td><input name=\"field[{$i}]\" size=\"16\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+                echo "\t\t<td><input name=\"field[{$i}]\" size=\"16\" maxlength=\"{$data->maxNameLen}\" value=\"",
                     htmlspecialchars($_REQUEST['field'][$i]), "\" /></td>\n";
                 echo "\t\t<td>\n\t\t\t<select name=\"type[{$i}]\" id=\"types{$i}\" onchange=\"checkLengths(this.options[this.selectedIndex].value,{$i});\">\n";
                 // Output any "magic" types
@@ -309,8 +309,8 @@ function doCreateLike($confirm, $msg = '')
         $tables = array();
         $tblsel = '';
         foreach ($tbltmp as $a) {
-            $data->fieldClean($a['nspname']);
-            $data->fieldClean($a['relname']);
+            $a['nspname'] = $data->fieldClean($a['nspname']);
+            $a['relname'] = $data->fieldClean($a['relname']);
             $tables["\"{$a['nspname']}\".\"{$a['relname']}\""] = serialize(array('schema' => $a['nspname'], 'table' => $a['relname']));
             if ($_REQUEST['like'] == $tables["\"{$a['nspname']}\".\"{$a['relname']}\""]) {
                 $tblsel = htmlspecialchars($tables["\"{$a['nspname']}\".\"{$a['relname']}\""]);
@@ -321,7 +321,7 @@ function doCreateLike($confirm, $msg = '')
 
         echo "<form action=\"tables.php\" method=\"post\">\n";
         echo "<table>\n\t<tr>\n\t\t<th class=\"data left required\">{$lang['strname']}</th>\n";
-        echo "\t\t<td class=\"data\"><input name=\"name\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"", htmlspecialchars($_REQUEST['name']), "\" /></td>\n\t</tr>\n";
+        echo "\t\t<td class=\"data\"><input name=\"name\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"", htmlspecialchars($_REQUEST['name']), "\" /></td>\n\t</tr>\n";
         echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strcreatetablelikeparent']}</th>\n";
         echo "\t\t<td class=\"data\">";
         echo GUI::printCombo($tables, 'like', true, $tblsel, false);

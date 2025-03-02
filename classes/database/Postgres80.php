@@ -361,7 +361,7 @@ class Postgres80 extends Postgres81
      */
     function getAggregate($name, $basetype)
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $this->clean($c_schema);
         $this->clean($name);
         $this->clean($basetype);

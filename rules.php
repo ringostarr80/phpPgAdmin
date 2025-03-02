@@ -43,7 +43,7 @@ function createRule($confirm, $msg = '')
         echo "<form action=\"rules.php\" method=\"post\">\n";
         echo "<table>\n";
         echo "<tr><th class=\"data left required\">{$lang['strname']}</th>\n";
-        echo "<td class=\"data1\"><input name=\"name\" size=\"16\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+        echo "<td class=\"data1\"><input name=\"name\" size=\"16\" maxlength=\"{$data->maxNameLen}\" value=\"",
             htmlspecialchars($_POST['name']), "\" /></td></tr>\n";
         echo "<tr><th class=\"data left required\">{$lang['strevent']}</th>\n";
         echo "<td class=\"data1\"><select name=\"event\">\n";

@@ -157,7 +157,7 @@ class Postgres81 extends Postgres82
         $vaccostlimit
     ) {
         $defaults = $this->getAutovacuum();
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $this->clean($c_schema);
         $this->clean($table);
 

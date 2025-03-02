@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin;
 
+use PhpPgAdmin\DDD\Entities\Server;
 use Symfony\Component\Yaml\Parser as YamlParser;
 
 /**
@@ -11,20 +12,10 @@ use Symfony\Component\Yaml\Parser as YamlParser;
  *  'default_lang'?: string,
  *  'extra_session_security'?: bool,
  *  'left_width'?: int,
- *  'servers'?: array{
- *      'desc': string,
- *      'host': string,
- *      'port': int,
- *      'sslmode': string,
- *      'defaultdb'?: string,
- *      'pg_dump_path'?: string,
- *      'pg_dumpall_path'?: string,
- *      'theme'?: array{
- *          'default'?: string,
- *          'user'?: array{'specific_user'?: string},
- *          'db'?: array{'specific_db'?: string}
- *      }
- *  }[]
+ *  'owned_only'?: bool,
+ *  'servers'?: Server[],
+ *  'show_advanced'?: bool,
+ *  'show_system'?: bool
  * }
  */
 class Config
@@ -121,20 +112,7 @@ class Config
     }
 
     /**
-     * @return array{
-     *  'desc': string,
-     *  'host': string,
-     *  'port': int,
-     *  'sslmode': string,
-     *  'defaultdb'?: string,
-     *  'pg_dump_path'?: string,
-     *  'pg_dumpall_path'?: string,
-     *  'theme'?: array{
-     *      'default'?: string,
-     *      'user'?: array{'specific_user'?: string},
-     *      'db'?: array{'specific_db'?: string}
-     *  }
-     * }[]
+     * @return Server[]
      */
     public static function getServers(): array
     {
@@ -272,16 +250,49 @@ class Config
     /**
      * @param string $serverId Server ID in the format host:port:sslmode
      */
+    public static function getServerById(string $serverId): ?Server
+    {
+        $servers = self::getServers();
+        foreach ($servers as $server) {
+            if ($serverId === $server->id()) {
+                return $server;
+            }
+        }
+
+        return null;
+    }
+
+    public static function ownedOnly(): bool
+    {
+        $conf = self::tryGetConfigFileData();
+        return $conf['owned_only'] ?? false;
+    }
+
+    /**
+     * @param string $serverId Server ID in the format host:port:sslmode
+     */
     public static function serverExists(string $serverId): bool
     {
         $servers = self::getServers();
-        foreach ($servers as $info) {
-            if ($serverId === $info['host'] . ':' . $info['port'] . ':' . $info['sslmode']) {
+        foreach ($servers as $server) {
+            if ($serverId === $server->id()) {
                 return true;
             }
         }
 
         return false;
+    }
+
+    public static function showAdvanced(): bool
+    {
+        $conf = self::tryGetConfigFileData();
+        return $conf['show_advanced'] ?? false;
+    }
+
+    public static function showSystem(): bool
+    {
+        $conf = self::tryGetConfigFileData();
+        return $conf['show_system'] ?? false;
     }
 
     public static function theme(): string
@@ -355,6 +366,9 @@ class Config
                     if (isset($yaml['left_width']) && is_int($yaml['left_width'])) {
                         self::$conf['left_width'] = $yaml['left_width'];
                     }
+                    if (isset($yaml['owned_only']) && is_bool($yaml['owned_only'])) {
+                        self::$conf['owned_only'] = $yaml['owned_only'];
+                    }
                     if (isset($yaml['servers']) && is_array($yaml['servers'])) {
                         self::$conf['servers'] = [];
 
@@ -362,34 +376,10 @@ class Config
                             if (!is_array($server)) {
                                 continue;
                             }
-                            if (!isset($server['desc']) || !is_string($server['desc'])) {
-                                continue;
-                            }
 
-                            $tmpServer = [
-                                'desc' => $server['desc'],
-                                'host' => '127.0.0.1',
-                                'port' => 5432,
-                                'sslmode' => 'prefer',
-                            ];
-                            if (isset($server['host']) && is_string($server['host'])) {
-                                $tmpServer['host'] = $server['host'];
-                            }
-                            if (isset($server['port']) && is_int($server['port'])) {
-                                $tmpServer['port'] = $server['port'];
-                            }
-                            if (isset($server['sslmode']) && is_string($server['sslmode'])) {
-                                $tmpServer['sslmode'] = $server['sslmode'];
-                            }
-                            if (isset($server['defaultdb']) && is_string($server['defaultdb'])) {
-                                $tmpServer['defaultdb'] = $server['defaultdb'];
-                            }
-                            if (isset($server['pg_dump_path']) && is_string($server['pg_dump_path'])) {
-                                $tmpServer['pg_dump_path'] = $server['pg_dump_path'];
-                            }
-                            if (isset($server['pg_dumpall_path']) && is_string($server['pg_dumpall_path'])) {
-                                $tmpServer['pg_dumpall_path'] = $server['pg_dumpall_path'];
-                            }
+                            self::$conf['servers'][] = Server::fromArray($server);
+
+                            /*
                             if (isset($server['theme']) && is_array($server['theme'])) {
                                 $tmpServer['theme'] = [];
                                 if (isset($server['theme']['default']) && is_string($server['theme']['default'])) {
@@ -416,9 +406,14 @@ class Config
                                     }
                                 }
                             }
-
-                            self::$conf['servers'][] = $tmpServer;
+                            */
                         }
+                    }
+                    if (isset($yaml['show_advanced']) && is_bool($yaml['show_advanced'])) {
+                        self::$conf['show_advanced'] = $yaml['show_advanced'];
+                    }
+                    if (isset($yaml['show_system']) && is_bool($yaml['show_system'])) {
+                        self::$conf['show_system'] = $yaml['show_system'];
                     }
                 }
             }
@@ -436,10 +431,11 @@ class Config
 
         $tmpTheme = '';
         foreach ($servers as $info) {
-            if ($serverId !== $info['host'] . ':' . $info['port'] . ':' . $info['sslmode']) {
+            if ($serverId !== $info->id()) {
                 continue;
             }
 
+            /*
             if (!isset($info['theme']) || !isset($info['theme']['default'])) {
                 continue;
             }
@@ -457,6 +453,7 @@ class Config
             ) {
                 $tmpTheme = $info['theme']['db'][$_REQUEST['database']];
             }
+            */
         }
 
         return $tmpTheme;

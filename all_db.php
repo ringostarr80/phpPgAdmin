@@ -30,7 +30,7 @@ function doAlter($confirm)
         echo "<table>\n";
         echo "<tr><th class=\"data left required\">{$lang['strname']}</th>\n";
         echo "<td class=\"data1\">";
-        echo "<input name=\"newname\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+        echo "<input name=\"newname\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
             htmlspecialchars($_REQUEST['alterdatabase']), "\" /></td></tr>\n";
 
         if ($data->hasAlterDatabaseOwner() && $data->isSuperUser()) {
@@ -186,7 +186,7 @@ function doCreate($msg = '')
     echo "<form action=\"all_db.php\" method=\"post\">\n";
     echo "<table>\n";
     echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strname']}</th>\n";
-    echo "\t\t<td class=\"data1\"><input name=\"formName\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+    echo "\t\t<td class=\"data1\"><input name=\"formName\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
         htmlspecialchars($_POST['formName']), "\" /></td>\n\t</tr>\n";
 
     echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strtemplatedb']}</th>\n";

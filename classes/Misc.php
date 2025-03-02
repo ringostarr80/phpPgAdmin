@@ -2547,7 +2547,7 @@ class Misc
      * If the parameter isn't supplied then the currently
      * connected server is returned.
      * @param $server_id A server identifier (host:port)
-     * @return An associative array of server properties
+     * @return ?array An associative array of server properties
      */
     public function getServerInfo($server_id = null)
     {

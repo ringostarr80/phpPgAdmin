@@ -189,7 +189,7 @@ class Postgres10 extends Postgres11
                 $where .= " AND p.prorettype = (select oid from pg_catalog.pg_type p where p.typname = 'trigger') ";
             }
         } else {
-            $c_schema = $this->_schema;
+            $c_schema = $this->schema;
             $this->clean($c_schema);
             $where = "n.nspname = '{$c_schema}'";
             $distinct = '';
@@ -228,7 +228,7 @@ class Postgres10 extends Postgres11
      */
     function getAggregate($name, $basetype)
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $this->clean($c_schema);
         $this->fieldclean($name);
         $this->fieldclean($basetype);
@@ -257,7 +257,7 @@ class Postgres10 extends Postgres11
      */
     function getAggregates()
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $this->clean($c_schema);
         $sql = "SELECT p.proname, CASE p.proargtypes[0] WHEN 'pg_catalog.\"any\"'::pg_catalog.regtype THEN NULL ELSE
 			   pg_catalog.format_type(p.proargtypes[0], NULL) END AS proargtypes, a.aggtransfn, u.usename,

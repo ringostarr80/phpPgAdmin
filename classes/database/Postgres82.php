@@ -71,7 +71,7 @@ class Postgres82 extends Postgres83
     {
         /* vars are cleaned in _alterSequence */
         if (!empty($name) && ($seqrs->fields['seqname'] != $name)) {
-            $f_schema = $this->_schema;
+            $f_schema = $this->schema;
             $this->fieldClean($f_schema);
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" RENAME TO \"{$name}\"";
             $status = $this->execute($sql);
@@ -98,7 +98,7 @@ class Postgres82 extends Postgres83
         // Rename (only if name has changed)
         /* $vwrs and $name are cleaned in _alterView */
         if (!empty($name) && ($name != $vwrs->fields['relname'])) {
-            $f_schema = $this->_schema;
+            $f_schema = $this->schema;
             $this->fieldClean($f_schema);
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$vwrs->fields['relname']}\" RENAME TO \"{$name}\"";
             $status =  $this->execute($sql);
@@ -120,7 +120,7 @@ class Postgres82 extends Postgres83
      */
     function getTriggers($table = '')
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $this->clean($c_schema);
         $this->clean($table);
 
@@ -206,7 +206,7 @@ class Postgres82 extends Postgres83
             return -1;
         }
 
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $this->fieldClean($f_schema);
         $this->fieldClean($funcname);
         $this->clean($args);
@@ -286,7 +286,7 @@ class Postgres82 extends Postgres83
         // back an expensive cluster if a cheap analyze fails for whatever reason
 
         if (!empty($table)) {
-            $f_schema = $this->_schema;
+            $f_schema = $this->schema;
             $this->fieldClean($f_schema);
             $this->fieldClean($table);
 
@@ -345,7 +345,7 @@ class Postgres82 extends Postgres83
      */
     function getOpClasses()
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $this->clean($c_schema);
         $sql = "
 			SELECT

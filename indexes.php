@@ -131,7 +131,7 @@ function doCreateIndex($msg = '')
     echo "<table>\n";
     echo "<tr><th class=\"data required\" colspan=\"3\">{$lang['strindexname']}</th></tr>";
     echo "<tr>";
-    echo "<td class=\"data1\" colspan=\"3\"><input type=\"text\" name=\"formIndexName\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+    echo "<td class=\"data1\" colspan=\"3\"><input type=\"text\" name=\"formIndexName\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
         htmlspecialchars($_POST['formIndexName']), "\" /></td></tr>";
     echo "<tr><th class=\"data\">{$lang['strtablecolumnlist']}</th><th class=\"data\">&nbsp;</th>";
     echo "<th class=\"data required\">{$lang['strindexcolumnlist']}</th></tr>\n";
@@ -155,7 +155,7 @@ function doCreateIndex($msg = '')
     echo "</tr>";
     echo "<tr>";
     echo "<th class=\"data left\" scope=\"row\">{$lang['strwhere']}</th>";
-    echo "<td class=\"data1\">(<input name=\"formWhere\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+    echo "<td class=\"data1\">(<input name=\"formWhere\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
         htmlspecialchars($_POST['formWhere']), "\" />)</td>";
     echo "</tr>";
 

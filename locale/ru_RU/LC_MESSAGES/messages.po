@@ -44,10 +44,10 @@ msgid "strviewfaq_url"
 msgstr "http://phppgadmin.sourceforge.net/doku.php?id=faq"
 
 # Basic strings
-msgid "strlogin"
+msgid "Login"
 msgstr "Вход"
 
-msgid "strloginfailed"
+msgid "Login failed"
 msgstr "Ошибка входа"
 
 msgid "strlogindisallowed"
@@ -188,10 +188,10 @@ msgstr "Да"
 msgid "strno"
 msgstr "Нет"
 
-msgid "strtrue"
+msgid "TRUE"
 msgstr "Истина"
 
-msgid "strfalse"
+msgid "FALSE"
 msgstr "Ложь"
 
 msgid "stredit"
@@ -774,7 +774,7 @@ msgstr "Пользователи"
 msgid "Username"
 msgstr "Имя пользователя"
 
-msgid "strpassword"
+msgid "Password"
 msgstr "Пароль"
 
 msgid "strsuper"
@@ -2198,7 +2198,7 @@ msgstr "Выберете страницу помощи"
 msgid "strinvalidhelppage"
 msgstr "Неправильная страница помощи."
 
-msgid "strlogintitle"
+msgid "Login to %s"
 msgstr "Вошли на %s"
 
 msgid "strlogoutmsg"

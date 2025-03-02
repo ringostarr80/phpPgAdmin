@@ -6,30 +6,10 @@ namespace PhpPgAdmin\Website;
 
 use Locr\Lib\HTTP\StatusCode;
 use PhpPgAdmin\{Config, RequestParameter, Website};
+use PhpPgAdmin\DDD\Entities\ServerSession;
 
 class Redirect extends Website
 {
-    public function __construct()
-    {
-        parent::__construct();
-
-        $subject = RequestParameter::getString('subject');
-        if (is_null($subject)) {
-            throw new \InvalidArgumentException(
-                'Missing required parameter: subject',
-                StatusCode::BadRequest->value
-            );
-        }
-
-        match ($subject) {
-            'server' => $this->redirectToServer(),
-            default => throw new \InvalidArgumentException(
-                'Invalid or unhandled parameter: subject=' . $subject,
-                StatusCode::BadRequest->value
-            )
-        };
-    }
-
     private function redirectToServer(): void
     {
         $server = RequestParameter::getString('server');
@@ -44,7 +24,39 @@ class Redirect extends Website
             );
         }
 
-        header('Location: ./login.php?server=' . urlencode($server));
+        $locationUrl = './login.php';
+        $locationUrlParams = [
+            'subject' => 'server',
+            'server' => $server
+        ];
+
+        if (ServerSession::isLoggedIn($server)) {
+            $locationUrl = './all_db.php';
+            unset($locationUrlParams['subject']);
+        }
+
+        $locationUrl = $locationUrl . '?' . http_build_query($locationUrlParams);
+
+        header('Location: ' . $locationUrl);
         exit;
+    }
+
+    public function tryRedirect(): void
+    {
+        $subject = RequestParameter::getString('subject');
+        if (is_null($subject)) {
+            throw new \InvalidArgumentException(
+                'Missing required parameter: subject',
+                StatusCode::BadRequest->value
+            );
+        }
+
+        match ($subject) {
+            'server' => $this->redirectToServer(),
+            default => trigger_error(
+                'Redirecting subject ("' . $subject . '") not found the new way. Continue the old way!',
+                E_USER_DEPRECATED
+            )
+        };
     }
 }

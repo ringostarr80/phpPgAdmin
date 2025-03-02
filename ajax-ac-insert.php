@@ -17,11 +17,11 @@ foreach ($_POST['fkeynames'] as $k => $v) {
     $keyspos = array_combine($fkeynames, $_POST['keys']);
 
     $f_schema = html_entity_decode($_POST['f_schema'], ENT_QUOTES);
-    $data->fieldClean($f_schema);
+    $f_schema = $data->fieldClean($f_schema);
     $f_table = html_entity_decode($_POST['f_table'], ENT_QUOTES);
-    $data->fieldClean($f_table);
+    $f_table = $data->fieldClean($f_table);
     $f_attname = $fkeynames[$_POST['fattpos'][0]];
-    $data->fieldClean($f_attname);
+    $f_attname = $data->fieldClean($f_attname);
 
     $q = "SELECT *
 		FROM \"{$f_schema}\".\"{$f_table}\"

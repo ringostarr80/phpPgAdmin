@@ -430,7 +430,7 @@ class Postgres74 extends Postgres80
      */
     function getTable($table)
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $this->clean($c_schema);
         $this->clean($table);
 
@@ -455,7 +455,7 @@ class Postgres74 extends Postgres80
      */
     function getTables($all = false)
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $this->clean($c_schema);
         if ($all) {
             // Exclude pg_catalog and information_schema tables
@@ -500,7 +500,7 @@ class Postgres74 extends Postgres80
     function getConstraintsWithFields($table)
     {
 
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $this->clean($c_schema);
         $this->clean($table);
 
@@ -562,7 +562,7 @@ class Postgres74 extends Postgres80
      */
     function getSequences($all = false)
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $this->clean($c_schema);
         if ($all) {
             // Exclude pg_catalog and information_schema tables

@@ -154,7 +154,7 @@ function doEdit($msg = '')
                     }
                 }
                 if (isset($names_arr[$i]) && $names_arr[$i] != '') {
-                    $data->fieldClean($names_arr[$i]);
+                    $names_arr[$i] = $data->fieldClean($names_arr[$i]);
                     $args .= '"' . $names_arr[$i] . '" ';
                 }
                 $args .= $args_arr[$i];
@@ -193,7 +193,7 @@ function doEdit($msg = '')
         echo "</td>\n";
         echo "<td class=\"data1\">";
         echo "<input type=\"hidden\" name=\"original_function\" value=\"", htmlspecialchars($fndata->fields['proname']),"\" />\n";
-        echo "<input name=\"formFunction\" style=\"width: 100%\" maxlength=\"{$data->_maxNameLen}\" value=\"", htmlspecialchars($_POST['formFunction']), "\" />";
+        echo "<input name=\"formFunction\" style=\"width: 100%\" maxlength=\"{$data->maxNameLen}\" value=\"", htmlspecialchars($_POST['formFunction']), "\" />";
         echo "</td>\n";
 
         echo "<td class=\"data1\">", $misc->printVal($args), "\n";
@@ -343,7 +343,7 @@ function doProperties($msg = '')
                     }
                 }
                 if (isset($names_arr[$i]) && $names_arr[$i] != '') {
-                    $data->fieldClean($names_arr[$i]);
+                    $names_arr[$i] = $data->fieldClean($names_arr[$i]);
                     $args .= '"' . $names_arr[$i] . '" ';
                 }
                 $args .= $args_arr[$i];
@@ -627,7 +627,7 @@ function doCreate($msg = '', $szJS = "")
         $types->moveNext();
     }
 
-    $szFunctionName = "<td class=\"data1\"><input name=\"formFunction\" size=\"16\" maxlength=\"{$data->_maxNameLen}\" value=\"" .
+    $szFunctionName = "<td class=\"data1\"><input name=\"formFunction\" size=\"16\" maxlength=\"{$data->maxNameLen}\" value=\"" .
         htmlspecialchars($_POST['formFunction']) . "\" /></td>";
 
     $szArguments = "<td class=\"data1\"><input name=\"formArguments\" style=\"width:100%;\" size=\"16\" value=\"" .

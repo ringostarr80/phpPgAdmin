@@ -37,7 +37,7 @@ class Postgres96 extends Postgres10
      */
     function getSequence($sequence)
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $this->clean($c_schema);
         $c_sequence = $sequence;
         $this->fieldClean($sequence);

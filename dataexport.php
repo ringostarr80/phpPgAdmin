@@ -123,7 +123,7 @@
             }
 
             if ($format == 'copy') {
-                $data->fieldClean($_REQUEST['table']);
+                $_REQUEST['table'] = $data->fieldClean($_REQUEST['table']);
                 echo "COPY \"{$_REQUEST['table']}\"";
                 if ($oids) {
                     echo " WITH OIDS";
@@ -219,7 +219,7 @@
                 echo "\t</records>\n";
                 echo "</data>\n";
             } elseif ($format == 'sql') {
-                $data->fieldClean($_REQUEST['table']);
+                $_REQUEST['table'] = $data->fieldClean($_REQUEST['table']);
                 while (!$rs->EOF) {
                     echo "INSERT INTO \"{$_REQUEST['table']}\" (";
                     $first = true;
@@ -230,7 +230,7 @@
                         // SQL (INSERT) format cannot handle oids
     //                      if ($k == $data->id) continue;
                         // Output field
-                        $data->fieldClean($k);
+                        $k = $data->fieldClean($k);
                         if ($first) {
                             echo "\"{$k}\"";
                         } else {

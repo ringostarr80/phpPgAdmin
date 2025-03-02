@@ -1,9 +1,5 @@
+includes:
+	- phpstan.neon.dist
+
 parameters:
     phpVersion: 80400
-    level: max
-    paths:
-        - src/
-        - index.php
-        - browser.php
-    excludePaths:
-        - vendor/

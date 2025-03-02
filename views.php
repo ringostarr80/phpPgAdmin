@@ -250,9 +250,9 @@ function doSetParamsCreate($msg = '')
 
         //if we have schemas we need to specify the correct schema for each table we're retrieiving
         //with getTableAttributes
-        $curSchema = $data->_schema;
+        $curSchema = $data->schema;
         for ($i = 0; $i < $tblCount; $i++) {
-            if ($data->_schema != $arrSelTables[$i]['schemaname']) {
+            if ($data->schema != $arrSelTables[$i]['schemaname']) {
                 $data->setSchema($arrSelTables[$i]['schemaname']);
             }
 
@@ -274,7 +274,7 @@ function doSetParamsCreate($msg = '')
         echo "<tr><th class=\"data\">{$lang['strviewname']}</th></tr>";
         echo "<tr>\n<td class=\"data1\">\n";
         // View name
-        echo "<input name=\"formView\" value=\"", htmlspecialchars($_REQUEST['formView']), "\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" />\n";
+        echo "<input name=\"formView\" value=\"", htmlspecialchars($_REQUEST['formView']), "\" size=\"32\" maxlength=\"{$data->maxNameLen}\" />\n";
         echo "</td>\n</tr>\n";
         echo "<tr><th class=\"data\">{$lang['strcomment']}</th></tr>";
         echo "<tr>\n<td class=\"data1\">\n";
@@ -424,7 +424,7 @@ function doCreate($msg = '')
     echo "<form action=\"views.php\" method=\"post\">\n";
     echo "<table style=\"width: 100%\">\n";
     echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strname']}</th>\n";
-    echo "\t<td class=\"data1\"><input name=\"formView\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+    echo "\t<td class=\"data1\"><input name=\"formView\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
         htmlspecialchars($_REQUEST['formView']), "\" /></td>\n\t</tr>\n";
     echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strdefinition']}</th>\n";
     echo "\t<td class=\"data1\"><textarea style=\"width:100%;\" rows=\"10\" cols=\"50\" name=\"formDefinition\">",
@@ -485,7 +485,7 @@ function doSaveCreateWiz()
 
         foreach ($_POST['formFields'] as $curField) {
             $arrTmp = safeUnserialize($curField);
-            $data->fieldArrayClean($arrTmp);
+            $arrTmp = $data->fieldArrayClean($arrTmp);
             if (! empty($_POST['dblFldMeth'])) { // doublon control
                 if (empty($tmpHsh[$arrTmp['fieldname']])) { // field does not exist
                     $selFields .= "\"{$arrTmp['schemaname']}\".\"{$arrTmp['tablename']}\".\"{$arrTmp['fieldname']}\", ";
@@ -525,8 +525,8 @@ function doSaveCreateWiz()
                     foreach ($arrLinks as $curLink) {
                         $arrLeftLink = safeUnserialize($curLink['leftlink']);
                         $arrRightLink = safeUnserialize($curLink['rightlink']);
-                        $data->fieldArrayClean($arrLeftLink);
-                        $data->fieldArrayClean($arrRightLink);
+                        $arrLeftLink = $data->fieldArrayClean($arrLeftLink);
+                        $arrRightLink = $data->fieldArrayClean($arrRightLink);
 
                         $tbl1 = "\"{$arrLeftLink['schemaname']}\".\"{$arrLeftLink['tablename']}\"";
                         $tbl2 = "\"{$arrRightLink['schemaname']}\".\"{$arrRightLink['tablename']}\"";
@@ -558,7 +558,7 @@ function doSaveCreateWiz()
         if (!strlen($linkFields)) {
             foreach ($_POST['formTables'] as $curTable) {
                 $arrTmp = safeUnserialize($curTable);
-                $data->fieldArrayClean($arrTmp);
+                $arrTmp = $data->fieldArrayClean($arrTmp);
                 $linkFields .= strlen($linkFields) ? ", \"{$arrTmp['schemaname']}\".\"{$arrTmp['tablename']}\"" : "\"{$arrTmp['schemaname']}\".\"{$arrTmp['tablename']}\"";
             }
         }
@@ -568,7 +568,7 @@ function doSaveCreateWiz()
             foreach ($_POST['formCondition'] as $curCondition) {
                 if (strlen($curCondition['field']) && strlen($curCondition['txt'])) {
                     $arrTmp = safeUnserialize($curCondition['field']);
-                    $data->fieldArrayClean($arrTmp);
+                    $arrTmp = $data->fieldArrayClean($arrTmp);
                     $addConditions .= strlen($addConditions) ? " AND \"{$arrTmp['schemaname']}\".\"{$arrTmp['tablename']}\".\"{$arrTmp['fieldname']}\" {$curCondition['operator']} '{$curCondition['txt']}' "
                         : " \"{$arrTmp['schemaname']}\".\"{$arrTmp['tablename']}\".\"{$arrTmp['fieldname']}\" {$curCondition['operator']} '{$curCondition['txt']}' ";
                 }

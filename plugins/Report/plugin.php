@@ -391,7 +391,7 @@ class Report extends Plugin
         echo $misc->form;
         echo "<table style=\"width: 100%\">\n";
         echo "<tr><th class=\"data left required\">{$lang['strname']}</th>\n";
-        echo "<td class=\"data1\"><input name=\"report_name\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+        echo "<td class=\"data1\"><input name=\"report_name\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
             htmlspecialchars($_POST['report_name']), "\" /></td></tr>\n";
         echo "<tr><th class=\"data left required\">{$lang['strdatabase']}</th>\n";
         echo "<td class=\"data1\"><select name=\"db_name\">\n";
@@ -612,7 +612,7 @@ class Report extends Plugin
         echo $misc->form;
         echo "<table style=\"width: 100%\">\n";
         echo "<tr><th class=\"data left required\">{$lang['strname']}</th>\n";
-        echo "<td class=\"data1\"><input name=\"report_name\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+        echo "<td class=\"data1\"><input name=\"report_name\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
             htmlspecialchars($_REQUEST['report_name']), "\" /></td></tr>\n";
         echo "<tr><th class=\"data left required\">{$lang['strdatabase']}</th>\n";
         echo "<td class=\"data1\"><select name=\"db_name\">\n";

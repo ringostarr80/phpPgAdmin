@@ -40,18 +40,41 @@ class Login extends Website
                 throw new \InvalidArgumentException('Parameter "loginPassword" is required');
             }
 
-            try {
-                new Connection(
-                    (string)$server->Host,
-                    $server->Port->Value,
-                    $server->SslMode->value,
-                    $loginUsername,
-                    $loginPassword,
-                    (string)$server->DefaultDb
-                );
-            } catch (\Exception) {
+            if (
+                !Connection::loginDataIsValid(
+                    host: (string)$server->Host,
+                    port: $server->Port->Value,
+                    sslmode: $server->SslMode->value,
+                    user: $loginUsername,
+                    password: $loginPassword
+                )
+            ) {
                 $this->message = _('Login failed');
+                return;
             }
+
+            if (!isset($_SESSION['webdbLogin']) || !is_array($_SESSION['webdbLogin'])) {
+                $_SESSION['webdbLogin'] = [];
+            }
+            $_SESSION['webdbLogin'][$loginServer] = [
+                'desc' => (string)$server->Name,
+                'host' => (string)$server->Host,
+                'port' => $server->Port->Value,
+                'sslmode' => $server->SslMode->value,
+                'defaultdb' => (string)$server->DefaultDb,
+                'pg_dump_path' => '/usr/bin/pg_dump',
+                'pg_dumpall_path' => '/usr/bin/pg_dumpall',
+                'username' => $loginUsername,
+                'password' => $loginPassword,
+                //'platform' => 'PostgreSQL ' . $server->Version->Value,
+                //'pgVersion' => $server->Version->Value
+            ];
+
+            $redirectLocationUrlParams = [
+                'server' => $loginServer
+            ];
+            header('Location: ./all_db.php?' . http_build_query($redirectLocationUrlParams));
+            exit;
         }
     }
 

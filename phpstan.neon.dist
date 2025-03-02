@@ -7,6 +7,7 @@ parameters:
         - index.php
         - intro.php
         - login.php
+        - logout.php
         - servers.php
     excludePaths:
         - vendor/

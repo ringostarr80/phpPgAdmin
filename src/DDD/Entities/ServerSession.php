@@ -85,4 +85,24 @@ class ServerSession extends Server
 
         return null;
     }
+
+    public static function isLoggedIn(string $serverId): bool
+    {
+        if (
+            isset($_SESSION['webdbLogin']) &&
+            is_array($_SESSION['webdbLogin']) &&
+            isset($_SESSION['webdbLogin'][$serverId]) &&
+            is_array($_SESSION['webdbLogin'][$serverId]) &&
+            isset($_SESSION['webdbLogin'][$serverId]['username']) &&
+            is_string($_SESSION['webdbLogin'][$serverId]['username']) &&
+            $_SESSION['webdbLogin'][$serverId]['username'] !== '' &&
+            isset($_SESSION['webdbLogin'][$serverId]['password']) &&
+            is_string($_SESSION['webdbLogin'][$serverId]['password']) &&
+            $_SESSION['webdbLogin'][$serverId]['password'] !== ''
+        ) {
+            return true;
+        }
+
+        return false;
+    }
 }

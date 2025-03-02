@@ -6,6 +6,7 @@ namespace PhpPgAdmin\Website;
 
 use Locr\Lib\HTTP\StatusCode;
 use PhpPgAdmin\{Config, RequestParameter, Website};
+use PhpPgAdmin\DDD\Entities\ServerSession;
 
 class Redirect extends Website
 {
@@ -23,11 +24,18 @@ class Redirect extends Website
             );
         }
 
+        $locationUrl = './login.php';
         $locationUrlParams = [
             'subject' => 'server',
             'server' => $server
         ];
-        $locationUrl = './login.php?' . http_build_query($locationUrlParams);
+
+        if (ServerSession::isLoggedIn($server)) {
+            $locationUrl = './all_db.php';
+            unset($locationUrlParams['subject']);
+        }
+
+        $locationUrl = $locationUrl . '?' . http_build_query($locationUrlParams);
 
         header('Location: ' . $locationUrl);
         exit;

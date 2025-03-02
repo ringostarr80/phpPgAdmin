@@ -1,16 +1,11 @@
 <?php
 
-/**
- * Logs a user out of the app
- *
- * $Id: logout.php,v 1.3 2003/09/10 01:55:52 chriskl Exp $
- */
+declare(strict_types=1);
 
-if (!ini_get('session.auto_start')) {
-    session_name('PPA_ID');
-    session_start();
-}
-unset($_SESSION);
-session_destroy();
+use PhpPgAdmin\Session;
 
-header('Location: index.php');
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'autoload.php';
+
+Session::destroy();
+
+header('Location: ./');

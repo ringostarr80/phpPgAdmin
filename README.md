@@ -48,7 +48,7 @@ For an overview of the software quality over time and the evolving metrics, chec
 | intro.php          | ✅     | 2025-01-17 |
 | languages.php      | ❌     | yyyy-mm-dd |
 | login.php          | ✅     | 2025-01-29 |
-| logout.php         | ❌     | yyyy-mm-dd |
+| logout.php         | ✅     | 2025-03-02 |
 | opclasses.php      | ❌     | yyyy-mm-dd |
 | operators.php      | ❌     | yyyy-mm-dd |
 | plugin.php         | ❌     | yyyy-mm-dd |

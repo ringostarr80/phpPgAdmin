@@ -49,6 +49,39 @@ class Connection
         }
     }
 
+    public static function loginDataIsValid(
+        ?string $host,
+        ?int $port,
+        string $sslmode,
+        string $user,
+        string $password
+    ): bool {
+        $conn = ADONewConnection('postgres');
+        if ($conn === false) {
+            return false;
+        }
+
+        // Ignore host if null
+        if ($host === null || $host == '') {
+            if ($port !== null && $port !== 0) {
+                $pghost = ':' . $port;
+            } else {
+                $pghost = '';
+            }
+        } else {
+            $pghost = "{$host}:{$port}";
+        }
+
+        // Add sslmode to $pghost as needed
+        if (($sslmode == 'disable') || ($sslmode == 'allow') || ($sslmode == 'prefer') || ($sslmode == 'require')) {
+            $pghost .= ':' . $sslmode;
+        } elseif ($sslmode == 'legacy') {
+            $pghost .= ' requiressl=1';
+        }
+
+        return $conn->connect($pghost, $user, $password);
+    }
+
     /**
      * Gets the name of the correct database driver to use.  As a side effect,
      * sets the platform.

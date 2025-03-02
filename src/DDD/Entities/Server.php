@@ -53,8 +53,8 @@ class Server
     public static function fromArray(array $input): self
     {
         $name = '';
-        if (isset($input['name']) && is_string($input['name'])) {
-            $name = $input['name'];
+        if (isset($input['desc']) && is_string($input['desc'])) {
+            $name = $input['desc'];
         }
 
         $host = '127.0.0.1';

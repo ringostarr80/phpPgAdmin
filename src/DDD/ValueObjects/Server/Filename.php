@@ -8,9 +8,7 @@ class Filename implements \Stringable
 {
     public function __construct(private string $filename)
     {
-        if (!is_file($filename)) {
-            throw new \InvalidArgumentException('Filename not found: "' . $filename . '".');
-        }
+        error_log("Filename not found: '{$filename}'.");
     }
 
     public function __toString(): string

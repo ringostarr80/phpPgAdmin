@@ -62,7 +62,7 @@ function doFind()
     echo "<form action=\"database.php\" method=\"post\" target=\"detail\">\n";
     _printConnection();
     echo "<p><input name=\"term\" value=\"", htmlspecialchars($_REQUEST['term']),
-        "\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" />\n";
+        "\" size=\"32\" maxlength=\"{$data->maxNameLen}\" />\n";
 
     // Output list of filters.  This is complex due to all the 'has' and 'conf' feature possibilities
     echo "<select name=\"filter\">\n";

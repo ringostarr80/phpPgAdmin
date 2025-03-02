@@ -84,7 +84,7 @@ function doAlter($msg = '')
             }
 
             // Column name
-            echo "<tr><td><input name=\"field\" size=\"16\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+            echo "<tr><td><input name=\"field\" size=\"16\" maxlength=\"{$data->maxNameLen}\" value=\"",
                 htmlspecialchars($_REQUEST['field']), "\" /></td>\n";
 
             // Column type
@@ -254,7 +254,7 @@ function doDefault($msg = '', $isTable = true)
 
         $f_attname = $_REQUEST['column'];
         $f_table = $tableName;
-        $f_schema = $data->_schema;
+        $f_schema = $data->schema;
         $f_attname = $data->fieldClean($f_attname);
         $f_table = $data->fieldClean($f_table);
         $f_schema = $data->fieldClean($f_schema);

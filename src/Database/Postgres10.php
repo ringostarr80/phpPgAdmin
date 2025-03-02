@@ -55,18 +55,24 @@ class Postgres10 extends Postgres11
 			SELECT 'SCHEMA' AS type, oid, NULL AS schemaname, NULL AS relname, nspname AS name
 				FROM pg_catalog.pg_namespace pn WHERE nspname ILIKE {$term} {$where}
 			UNION ALL
-			SELECT CASE WHEN relkind='r' THEN 'TABLE' WHEN relkind='v' THEN 'VIEW' WHEN relkind='S' THEN 'SEQUENCE' END, pc.oid,
+			SELECT CASE WHEN relkind='r' THEN 'TABLE'
+				WHEN relkind='v' THEN 'VIEW'
+				WHEN relkind='S' THEN 'SEQUENCE' END, pc.oid,
 				pn.nspname, NULL, pc.relname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn
 				WHERE pc.relnamespace=pn.oid AND relkind IN ('r', 'v', 'S') AND relname ILIKE {$term} {$where}
 			UNION ALL
-			SELECT CASE WHEN pc.relkind='r' THEN 'COLUMNTABLE' ELSE 'COLUMNVIEW' END, NULL, pn.nspname, pc.relname, pa.attname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
+			SELECT CASE WHEN pc.relkind='r' THEN 'COLUMNTABLE' ELSE 'COLUMNVIEW' END,
+				NULL, pn.nspname, pc.relname, pa.attname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
 				pg_catalog.pg_attribute pa WHERE pc.relnamespace=pn.oid AND pc.oid=pa.attrelid
-				AND pa.attname ILIKE {$term} AND pa.attnum > 0 AND NOT pa.attisdropped AND pc.relkind IN ('r', 'v') {$where}
+				AND pa.attname ILIKE {$term} AND pa.attnum > 0 AND NOT pa.attisdropped
+				AND pc.relkind IN ('r', 'v') {$where}
 			UNION ALL
-			SELECT 'FUNCTION', pp.oid, pn.nspname, NULL, pp.proname || '(' || pg_catalog.oidvectortypes(pp.proargtypes) || ')' FROM pg_catalog.pg_proc pp, pg_catalog.pg_namespace pn
+			SELECT 'FUNCTION', pp.oid, pn.nspname, NULL, pp.proname || '(' ||
+				pg_catalog.oidvectortypes(pp.proargtypes) || ')' FROM pg_catalog.pg_proc pp, pg_catalog.pg_namespace pn
 				WHERE pp.pronamespace=pn.oid AND NOT pp.proisagg AND pp.proname ILIKE {$term} {$where}
 			UNION ALL
-			SELECT 'INDEX', NULL, pn.nspname, pc.relname, pc2.relname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
+			SELECT 'INDEX', NULL, pn.nspname, pc.relname, pc2.relname
+				FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
 				pg_catalog.pg_index pi, pg_catalog.pg_class pc2 WHERE pc.relnamespace=pn.oid AND pc.oid=pi.indrelid
 				AND pi.indexrelid=pc2.oid
 				AND NOT EXISTS (
@@ -76,7 +82,8 @@ class Postgres10 extends Postgres11
 				)
 				AND pc2.relname ILIKE {$term} {$where}
 			UNION ALL
-			SELECT 'CONSTRAINTTABLE', NULL, pn.nspname, pc.relname, pc2.conname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
+			SELECT 'CONSTRAINTTABLE', NULL, pn.nspname, pc.relname, pc2.conname
+				FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
 				pg_catalog.pg_constraint pc2 WHERE pc.relnamespace=pn.oid AND pc.oid=pc2.conrelid AND pc2.conrelid != 0
 				AND CASE WHEN pc2.contype IN ('f', 'c') THEN TRUE ELSE NOT EXISTS (
 					SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
@@ -85,11 +92,13 @@ class Postgres10 extends Postgres11
 				) END
 				AND pc2.conname ILIKE {$term} {$where}
 			UNION ALL
-			SELECT 'CONSTRAINTDOMAIN', pt.oid, pn.nspname, pt.typname, pc.conname FROM pg_catalog.pg_type pt, pg_catalog.pg_namespace pn,
+			SELECT 'CONSTRAINTDOMAIN', pt.oid, pn.nspname, pt.typname, pc.conname
+				FROM pg_catalog.pg_type pt, pg_catalog.pg_namespace pn,
 				pg_catalog.pg_constraint pc WHERE pt.typnamespace=pn.oid AND pt.oid=pc.contypid AND pc.contypid != 0
 				AND pc.conname ILIKE {$term} {$where}
 			UNION ALL
-			SELECT 'TRIGGER', NULL, pn.nspname, pc.relname, pt.tgname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
+			SELECT 'TRIGGER', NULL, pn.nspname, pc.relname, pt.tgname
+				FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
 				pg_catalog.pg_trigger pt WHERE pc.relnamespace=pn.oid AND pc.oid=pt.tgrelid
 					AND ( pt.tgconstraint = 0 OR NOT EXISTS
 					(SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
@@ -97,12 +106,14 @@ class Postgres10 extends Postgres11
 					WHERE d.classid = pt.tableoid AND d.objid = pt.oid AND d.deptype = 'i' AND c.contype = 'f'))
 				AND pt.tgname ILIKE {$term} {$where}
 			UNION ALL
-			SELECT 'RULETABLE', NULL, pn.nspname AS schemaname, c.relname AS tablename, r.rulename FROM pg_catalog.pg_rewrite r
+			SELECT 'RULETABLE', NULL, pn.nspname AS schemaname, c.relname AS tablename, r.rulename
+				FROM pg_catalog.pg_rewrite r
 				JOIN pg_catalog.pg_class c ON c.oid = r.ev_class
 				LEFT JOIN pg_catalog.pg_namespace pn ON pn.oid = c.relnamespace
 				WHERE c.relkind='r' AND r.rulename != '_RETURN' AND r.rulename ILIKE {$term} {$where}
 			UNION ALL
-			SELECT 'RULEVIEW', NULL, pn.nspname AS schemaname, c.relname AS tablename, r.rulename FROM pg_catalog.pg_rewrite r
+			SELECT 'RULEVIEW', NULL, pn.nspname AS schemaname, c.relname AS tablename, r.rulename
+				FROM pg_catalog.pg_rewrite r
 				JOIN pg_catalog.pg_class c ON c.oid = r.ev_class
 				LEFT JOIN pg_catalog.pg_namespace pn ON pn.oid = c.relnamespace
 				WHERE c.relkind='v' AND r.rulename != '_RETURN' AND r.rulename ILIKE {$term} {$where}
@@ -115,10 +126,13 @@ class Postgres10 extends Postgres11
 				SELECT CASE WHEN pt.typtype='d' THEN 'DOMAIN' ELSE 'TYPE' END, pt.oid, pn.nspname, NULL,
 					pt.typname FROM pg_catalog.pg_type pt, pg_catalog.pg_namespace pn
 					WHERE pt.typnamespace=pn.oid AND typname ILIKE {$term}
-					AND (pt.typrelid = 0 OR (SELECT c.relkind = 'c' FROM pg_catalog.pg_class c WHERE c.oid = pt.typrelid))
+					AND (pt.typrelid = 0 OR
+						(SELECT c.relkind = 'c' FROM pg_catalog.pg_class c WHERE c.oid = pt.typrelid)
+					)
 					{$where}
 			 	UNION ALL
-				SELECT 'OPERATOR', po.oid, pn.nspname, NULL, po.oprname FROM pg_catalog.pg_operator po, pg_catalog.pg_namespace pn
+				SELECT 'OPERATOR', po.oid, pn.nspname, NULL, po.oprname
+					FROM pg_catalog.pg_operator po, pg_catalog.pg_namespace pn
 					WHERE po.oprnamespace=pn.oid AND oprname ILIKE {$term} {$where}
 				UNION ALL
 				SELECT 'CONVERSION', pc.oid, pn.nspname, NULL, pc.conname FROM pg_catalog.pg_conversion pc,
@@ -131,7 +145,8 @@ class Postgres10 extends Postgres11
 					LEFT JOIN pg_catalog.pg_namespace pn ON p.pronamespace=pn.oid
 					WHERE p.proisagg AND p.proname ILIKE {$term} {$where}
 				UNION ALL
-				SELECT DISTINCT ON (po.opcname) 'OPCLASS', po.oid, pn.nspname, NULL, po.opcname FROM pg_catalog.pg_opclass po,
+				SELECT DISTINCT ON (po.opcname) 'OPCLASS', po.oid, pn.nspname, NULL, po.opcname
+					FROM pg_catalog.pg_opclass po,
 					pg_catalog.pg_namespace pn WHERE po.opcnamespace=pn.oid
 					AND po.opcname ILIKE {$term} {$where}
 			";
@@ -141,7 +156,9 @@ class Postgres10 extends Postgres11
 				SELECT 'DOMAIN', pt.oid, pn.nspname, NULL,
 					pt.typname FROM pg_catalog.pg_type pt, pg_catalog.pg_namespace pn
 					WHERE pt.typnamespace=pn.oid AND pt.typtype='d' AND typname ILIKE {$term}
-					AND (pt.typrelid = 0 OR (SELECT c.relkind = 'c' FROM pg_catalog.pg_class c WHERE c.oid = pt.typrelid))
+					AND (pt.typrelid = 0 OR
+						(SELECT c.relkind = 'c' FROM pg_catalog.pg_class c WHERE c.oid = pt.typrelid)
+					)
 					{$where}
 			";
         }
@@ -173,7 +190,7 @@ class Postgres10 extends Postgres11
                 $where .= " AND p.prorettype = (select oid from pg_catalog.pg_type p where p.typname = 'trigger') ";
             }
         } else {
-            $c_schema = $this->_schema;
+            $c_schema = $this->schema;
             $c_schema = $this->clean($c_schema);
             $where = "n.nspname = '{$c_schema}'";
             $distinct = '';
@@ -190,7 +207,8 @@ class Postgres10 extends Postgres11
 				pl.lanname AS prolanguage,
 				pg_catalog.obj_description(p.oid, 'pg_proc') AS procomment,
 				p.proname || ' (' || pg_catalog.oidvectortypes(p.proargtypes) || ')' AS proproto,
-				CASE WHEN p.proretset THEN 'setof ' ELSE '' END || pg_catalog.format_type(p.prorettype, NULL) AS proreturns,
+				CASE WHEN p.proretset THEN 'setof ' ELSE '' END ||
+				pg_catalog.format_type(p.prorettype, NULL) AS proreturns,
 				u.usename AS proowner
 			FROM pg_catalog.pg_proc p
 				INNER JOIN pg_catalog.pg_namespace n ON n.oid = p.pronamespace
@@ -212,7 +230,7 @@ class Postgres10 extends Postgres11
      */
     public function getAggregate(string $name, string $basetype): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $name = $this->fieldclean($name);
         $basetype = $this->fieldclean($basetype);
@@ -241,7 +259,7 @@ class Postgres10 extends Postgres11
      */
     public function getAggregates(): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $sql = "SELECT p.proname, CASE p.proargtypes[0] WHEN 'pg_catalog.\"any\"'::pg_catalog.regtype THEN NULL ELSE
 			   pg_catalog.format_type(p.proargtypes[0], NULL) END AS proargtypes, a.aggtransfn, u.usename,

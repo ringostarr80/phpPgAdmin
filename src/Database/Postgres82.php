@@ -67,7 +67,7 @@ class Postgres82 extends Postgres83
             ) &&
             $seqrs->fields['seqname'] !== $name
         ) {
-            $f_schema = $this->_schema;
+            $f_schema = $this->schema;
             $f_schema = $this->fieldClean($f_schema);
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" RENAME TO \"{$name}\"";
             return $this->execute($sql);
@@ -99,7 +99,7 @@ class Postgres82 extends Postgres83
             is_string($vwrs->fields['relname']) &&
             $name != $vwrs->fields['relname']
         ) {
-            $f_schema = $this->_schema;
+            $f_schema = $this->schema;
             $f_schema = $this->fieldClean($f_schema);
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$vwrs->fields['relname']}\" RENAME TO \"{$name}\"";
             return $this->execute($sql);
@@ -116,7 +116,7 @@ class Postgres82 extends Postgres83
      */
     public function getTriggers(string $table = ''): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 
@@ -210,7 +210,7 @@ class Postgres82 extends Postgres83
             return -1;
         }
 
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $funcname = $this->fieldClean($funcname);
         $args = $this->clean($args);
@@ -291,7 +291,7 @@ class Postgres82 extends Postgres83
         // back an expensive cluster if a cheap analyze fails for whatever reason
 
         if (!empty($table)) {
-            $f_schema = $this->_schema;
+            $f_schema = $this->schema;
             $f_schema = $this->fieldClean($f_schema);
             $table = $this->fieldClean($table);
 
@@ -350,7 +350,7 @@ class Postgres82 extends Postgres83
      */
     public function getOpClasses(): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $sql = "
             SELECT

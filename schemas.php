@@ -147,7 +147,7 @@ function doCreate($msg = '')
     echo "<form action=\"schemas.php\" method=\"post\">\n";
     echo "<table style=\"width: 100%\">\n";
     echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strname']}</th>\n";
-    echo "\t\t<td class=\"data1\"><input name=\"formName\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+    echo "\t\t<td class=\"data1\"><input name=\"formName\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
         htmlspecialchars($_POST['formName']), "\" /></td>\n\t</tr>\n";
     // Owner
     echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strowner']}</th>\n";
@@ -228,7 +228,7 @@ function doAlter($msg = '')
         echo "\t<tr>\n";
         echo "\t\t<th class=\"data left required\">{$lang['strname']}</th>\n";
         echo "\t\t<td class=\"data1\">";
-        echo "\t\t\t<input name=\"name\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+        echo "\t\t\t<input name=\"name\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
             htmlspecialchars($_POST['name']), "\" />\n";
         echo "\t\t</td>\n";
         echo "\t</tr>\n";

@@ -378,7 +378,7 @@ class Postgres80 extends Postgres81
      */
     public function getAggregate(string $name, string $basetype): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $name = $this->clean($name);
         $basetype = $this->clean($basetype);

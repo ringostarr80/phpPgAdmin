@@ -171,10 +171,10 @@ function doCreateComposite($msg = '')
             echo "<form action=\"types.php\" method=\"post\">\n";
             echo "<table>\n";
             echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strname']}</th>\n";
-            echo "\t\t<td class=\"data\"><input name=\"name\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+            echo "\t\t<td class=\"data\"><input name=\"name\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
                 htmlspecialchars($_REQUEST['name']), "\" /></td>\n\t</tr>\n";
             echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strnumfields']}</th>\n";
-            echo "\t\t<td class=\"data\"><input name=\"fields\" size=\"5\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+            echo "\t\t<td class=\"data\"><input name=\"fields\" size=\"5\" maxlength=\"{$data->maxNameLen}\" value=\"",
                 htmlspecialchars($_REQUEST['fields']), "\" /></td>\n\t</tr>\n";
 
             echo "\t<tr>\n\t\t<th class=\"data left\">{$lang['strcomment']}</th>\n";
@@ -229,7 +229,7 @@ function doCreateComposite($msg = '')
                 }
 
                 echo "\t<tr>\n\t\t<td>", $i + 1, ".&nbsp;</td>\n";
-                echo "\t\t<td><input name=\"field[{$i}]\" size=\"16\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+                echo "\t\t<td><input name=\"field[{$i}]\" size=\"16\" maxlength=\"{$data->maxNameLen}\" value=\"",
                     htmlspecialchars($_REQUEST['field'][$i]), "\" /></td>\n";
                 echo "\t\t<td>\n\t\t\t<select name=\"type[{$i}]\">\n";
                 $types->moveFirst();
@@ -338,10 +338,10 @@ function doCreateEnum($msg = '')
             echo "<form action=\"types.php\" method=\"post\">\n";
             echo "<table>\n";
             echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strname']}</th>\n";
-            echo "\t\t<td class=\"data\"><input name=\"name\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+            echo "\t\t<td class=\"data\"><input name=\"name\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
                 htmlspecialchars($_REQUEST['name']), "\" /></td>\n\t</tr>\n";
             echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strnumvalues']}</th>\n";
-            echo "\t\t<td class=\"data\"><input name=\"values\" size=\"5\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+            echo "\t\t<td class=\"data\"><input name=\"values\" size=\"5\" maxlength=\"{$data->maxNameLen}\" value=\"",
                 htmlspecialchars($_REQUEST['values']), "\" /></td>\n\t</tr>\n";
 
             echo "\t<tr>\n\t\t<th class=\"data left\">{$lang['strcomment']}</th>\n";
@@ -387,7 +387,7 @@ function doCreateEnum($msg = '')
                 }
 
                 echo "\t<tr>\n\t\t<td>", $i + 1, ".&nbsp;</td>\n";
-                echo "\t\t<td><input name=\"value[{$i}]\" size=\"16\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+                echo "\t\t<td><input name=\"value[{$i}]\" size=\"16\" maxlength=\"{$data->maxNameLen}\" value=\"",
                     htmlspecialchars($_REQUEST['value'][$i]), "\" /></td>\n\t</tr>\n";
             }
             echo "</table>\n";
@@ -483,7 +483,7 @@ function doCreate($msg = '')
     echo "<form action=\"types.php\" method=\"post\">\n";
     echo "<table>\n";
     echo "<tr><th class=\"data left required\">{$lang['strname']}</th>\n";
-    echo "<td class=\"data1\"><input name=\"typname\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+    echo "<td class=\"data1\"><input name=\"typname\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
         htmlspecialchars($_POST['typname']), "\" /></td></tr>\n";
     echo "<tr><th class=\"data left required\">{$lang['strinputfn']}</th>\n";
     echo "<td class=\"data1\"><select name=\"typin\">";

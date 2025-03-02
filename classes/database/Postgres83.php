@@ -119,7 +119,7 @@ class Postgres83 extends Postgres84
 
         if ($table !== '') {
             $this->clean($table);
-            $c_schema = $this->_schema;
+            $c_schema = $this->schema;
             $this->clean($c_schema);
 
             $sql = "
@@ -168,7 +168,7 @@ class Postgres83 extends Postgres84
         $vaccostlimit
     ) {
         $defaults = $this->getAutovacuum();
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $this->clean($c_schema);
         $this->clean($table);
 
@@ -275,7 +275,7 @@ class Postgres83 extends Postgres84
 
     function dropAutovacuum($table)
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $this->clean($c_schema);
         $this->clean($table);
 
@@ -337,7 +337,7 @@ class Postgres83 extends Postgres84
             $sql .= (!$cycledvalue ? ' NO ' : '') . " CYCLE";
         }
         if ($sql != '') {
-            $f_schema = $this->_schema;
+            $f_schema = $this->schema;
             $this->fieldClean($f_schema);
             $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" {$sql}";
             return $this->execute($sql);
@@ -358,7 +358,7 @@ class Postgres83 extends Postgres84
         // superuser only function.
         /* vars are cleaned in _alterSequence */
         if (!empty($owner) && ($seqrs->fields['seqowner'] != $owner)) {
-            $f_schema = $this->_schema;
+            $f_schema = $this->schema;
             $this->fieldClean($f_schema);
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" OWNER TO \"{$owner}\"";
             return $this->execute($sql);

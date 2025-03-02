@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Database;
 
-use ADORecordSet;
 use PhpPgAdmin\Config;
 use PhpPgAdmin\DDD\Entities\ServerSession;
 
@@ -40,8 +39,12 @@ class Postgres74 extends Postgres80
      * -2 owner error
      * -3 rename error
      */
-    public function alterDatabase(string $dbName, string $newName, string $newOwner = '', string $comment = ''): bool|int
-    {
+    public function alterDatabase(
+        string $dbName,
+        string $newName,
+        string $newOwner = '',
+        string $comment = ''
+    ): bool|int {
         //ignore $newowner, not supported pre 8.0
         //ignore $comment, not supported pre 8.2
         $dbName = $this->clean($dbName) ?? $dbName;
@@ -137,18 +140,27 @@ class Postgres74 extends Postgres80
 			SELECT 'SCHEMA' AS type, oid, NULL AS schemaname, NULL AS relname, nspname AS name
 				FROM pg_catalog.pg_namespace pn WHERE nspname ILIKE '%{$term}%' {$where}
 			UNION ALL
-			SELECT CASE WHEN relkind='r' THEN 'TABLE' WHEN relkind='v' THEN 'VIEW' WHEN relkind='S' THEN 'SEQUENCE' END, pc.oid,
+			SELECT CASE WHEN relkind='r'
+                THEN 'TABLE' WHEN relkind='v'
+                THEN 'VIEW' WHEN relkind='S'
+                THEN 'SEQUENCE' END, pc.oid,
 				pn.nspname, NULL, pc.relname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn
 				WHERE pc.relnamespace=pn.oid AND relkind IN ('r', 'v', 'S') AND relname ILIKE '%{$term}%' {$where}
 			UNION ALL
-			SELECT CASE WHEN pc.relkind='r' THEN 'COLUMNTABLE' ELSE 'COLUMNVIEW' END, NULL, pn.nspname, pc.relname, pa.attname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
+			SELECT CASE WHEN pc.relkind='r'
+                THEN 'COLUMNTABLE' ELSE 'COLUMNVIEW' END, NULL, pn.nspname, pc.relname, pa.attname
+                FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
 				pg_catalog.pg_attribute pa WHERE pc.relnamespace=pn.oid AND pc.oid=pa.attrelid
-				AND pa.attname ILIKE '%{$term}%' AND pa.attnum > 0 AND NOT pa.attisdropped AND pc.relkind IN ('r', 'v') {$where}
+				AND pa.attname ILIKE '%{$term}%' AND pa.attnum > 0 AND NOT pa.attisdropped
+                AND pc.relkind IN ('r', 'v') {$where}
 			UNION ALL
-			SELECT 'FUNCTION', pp.oid, pn.nspname, NULL, pp.proname || '(' || pg_catalog.oidvectortypes(pp.proargtypes) || ')' FROM pg_catalog.pg_proc pp, pg_catalog.pg_namespace pn
+			SELECT 'FUNCTION', pp.oid, pn.nspname, NULL,
+                pp.proname || '(' || pg_catalog.oidvectortypes(pp.proargtypes) || ')'
+                FROM pg_catalog.pg_proc pp, pg_catalog.pg_namespace pn
 				WHERE pp.pronamespace=pn.oid AND NOT pp.proisagg AND pp.proname ILIKE '%{$term}%' {$where}
 			UNION ALL
-			SELECT 'INDEX', NULL, pn.nspname, pc.relname, pc2.relname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
+			SELECT 'INDEX', NULL, pn.nspname, pc.relname, pc2.relname
+                FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
 				pg_catalog.pg_index pi, pg_catalog.pg_class pc2 WHERE pc.relnamespace=pn.oid AND pc.oid=pi.indrelid
 				AND pi.indexrelid=pc2.oid
 				AND NOT EXISTS (
@@ -158,7 +170,8 @@ class Postgres74 extends Postgres80
 				)
 				AND pc2.relname ILIKE '%{$term}%' {$where}
 			UNION ALL
-			SELECT 'CONSTRAINTTABLE', NULL, pn.nspname, pc.relname, pc2.conname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
+			SELECT 'CONSTRAINTTABLE', NULL, pn.nspname, pc.relname, pc2.conname
+                FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
 				pg_catalog.pg_constraint pc2 WHERE pc.relnamespace=pn.oid AND pc.oid=pc2.conrelid AND pc2.conrelid != 0
 				AND CASE WHEN pc2.contype IN ('f', 'c') THEN TRUE ELSE NOT EXISTS (
 					SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
@@ -167,11 +180,13 @@ class Postgres74 extends Postgres80
 				) END
 				AND pc2.conname ILIKE '%{$term}%' {$where}
 			UNION ALL
-			SELECT 'CONSTRAINTDOMAIN', pt.oid, pn.nspname, pt.typname, pc.conname FROM pg_catalog.pg_type pt, pg_catalog.pg_namespace pn,
+			SELECT 'CONSTRAINTDOMAIN', pt.oid, pn.nspname, pt.typname, pc.conname
+                FROM pg_catalog.pg_type pt, pg_catalog.pg_namespace pn,
 				pg_catalog.pg_constraint pc WHERE pt.typnamespace=pn.oid AND pt.oid=pc.contypid AND pc.contypid != 0
 				AND pc.conname ILIKE '%{$term}%' {$where}
 			UNION ALL
-			SELECT 'TRIGGER', NULL, pn.nspname, pc.relname, pt.tgname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
+			SELECT 'TRIGGER', NULL, pn.nspname, pc.relname, pt.tgname
+                FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
 				pg_catalog.pg_trigger pt WHERE pc.relnamespace=pn.oid AND pc.oid=pt.tgrelid
 					AND ( pt.tgisconstraint = 'f' OR NOT EXISTS
 					(SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
@@ -179,12 +194,14 @@ class Postgres74 extends Postgres80
 					WHERE d.classid = pt.tableoid AND d.objid = pt.oid AND d.deptype = 'i' AND c.contype = 'f'))
 				AND pt.tgname ILIKE '%{$term}%' {$where}
 			UNION ALL
-			SELECT 'RULETABLE', NULL, pn.nspname AS schemaname, c.relname AS tablename, r.rulename FROM pg_catalog.pg_rewrite r
+			SELECT 'RULETABLE', NULL, pn.nspname AS schemaname, c.relname AS tablename, r.rulename
+                FROM pg_catalog.pg_rewrite r
 				JOIN pg_catalog.pg_class c ON c.oid = r.ev_class
 				LEFT JOIN pg_catalog.pg_namespace pn ON pn.oid = c.relnamespace
 				WHERE c.relkind='r' AND r.rulename != '_RETURN' AND r.rulename ILIKE '%{$term}%' {$where}
 			UNION ALL
-			SELECT 'RULEVIEW', NULL, pn.nspname AS schemaname, c.relname AS tablename, r.rulename FROM pg_catalog.pg_rewrite r
+			SELECT 'RULEVIEW', NULL, pn.nspname AS schemaname, c.relname AS tablename, r.rulename
+                FROM pg_catalog.pg_rewrite r
 				JOIN pg_catalog.pg_class c ON c.oid = r.ev_class
 				LEFT JOIN pg_catalog.pg_namespace pn ON pn.oid = c.relnamespace
 				WHERE c.relkind='v' AND r.rulename != '_RETURN' AND r.rulename ILIKE '%{$term}%' {$where}
@@ -197,10 +214,13 @@ class Postgres74 extends Postgres80
 				SELECT CASE WHEN pt.typtype='d' THEN 'DOMAIN' ELSE 'TYPE' END, pt.oid, pn.nspname, NULL,
 					pt.typname FROM pg_catalog.pg_type pt, pg_catalog.pg_namespace pn
 					WHERE pt.typnamespace=pn.oid AND typname ILIKE '%{$term}%'
-					AND (pt.typrelid = 0 OR (SELECT c.relkind = 'c' FROM pg_catalog.pg_class c WHERE c.oid = pt.typrelid))
+					AND (pt.typrelid = 0 OR
+                        (SELECT c.relkind = 'c' FROM pg_catalog.pg_class c WHERE c.oid = pt.typrelid)
+                    )
 					{$where}
 				UNION ALL
-				SELECT 'OPERATOR', po.oid, pn.nspname, NULL, po.oprname FROM pg_catalog.pg_operator po, pg_catalog.pg_namespace pn
+				SELECT 'OPERATOR', po.oid, pn.nspname, NULL, po.oprname
+                    FROM pg_catalog.pg_operator po, pg_catalog.pg_namespace pn
 					WHERE po.oprnamespace=pn.oid AND oprname ILIKE '%{$term}%' {$where}
 				UNION ALL
 				SELECT 'CONVERSION', pc.oid, pn.nspname, NULL, pc.conname FROM pg_catalog.pg_conversion pc,
@@ -213,7 +233,8 @@ class Postgres74 extends Postgres80
 					LEFT JOIN pg_catalog.pg_namespace pn ON p.pronamespace=pn.oid
 					WHERE p.proisagg AND p.proname ILIKE '%{$term}%' {$where}
 				UNION ALL
-				SELECT DISTINCT ON (po.opcname) 'OPCLASS', po.oid, pn.nspname, NULL, po.opcname FROM pg_catalog.pg_opclass po,
+				SELECT DISTINCT ON (po.opcname) 'OPCLASS', po.oid, pn.nspname, NULL, po.opcname
+                    FROM pg_catalog.pg_opclass po,
 					pg_catalog.pg_namespace pn WHERE po.opcnamespace=pn.oid
 					AND po.opcname ILIKE '%{$term}%' {$where}
 			";
@@ -223,7 +244,9 @@ class Postgres74 extends Postgres80
 				SELECT 'DOMAIN', pt.oid, pn.nspname, NULL,
 					pt.typname FROM pg_catalog.pg_type pt, pg_catalog.pg_namespace pn
 					WHERE pt.typnamespace=pn.oid AND pt.typtype='d' AND typname ILIKE '%{$term}%'
-					AND (pt.typrelid = 0 OR (SELECT c.relkind = 'c' FROM pg_catalog.pg_class c WHERE c.oid = pt.typrelid))
+					AND (pt.typrelid = 0 OR
+                        (SELECT c.relkind = 'c' FROM pg_catalog.pg_class c WHERE c.oid = pt.typrelid)
+                    )
 					{$where}
 			";
         }
@@ -412,7 +435,7 @@ class Postgres74 extends Postgres80
      */
     public function getTable(string $table): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 
@@ -437,7 +460,7 @@ class Postgres74 extends Postgres80
      */
     public function getTables(bool $all = false): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         if ($all) {
             // Exclude pg_catalog and information_schema tables
@@ -481,7 +504,7 @@ class Postgres74 extends Postgres80
      */
     public function getConstraintsWithFields(string $table): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 
@@ -507,7 +530,7 @@ class Postgres74 extends Postgres80
 				pg_catalog.pg_constraint AS c
 				JOIN pg_catalog.pg_class AS r1 ON (c.conrelid=r1.oid)
 				JOIN pg_catalog.pg_attribute AS f1 ON (f1.attrelid=r1.oid AND (f1.attnum=c.conkey[1]';
-        if ($rs instanceof ADORecordSet && is_array($rs->fields)) {
+        if ($rs instanceof \ADORecordSet && is_array($rs->fields)) {
             for ($i = 2; $i <= $rs->fields['nb']; $i++) {
                 $sql .= " OR f1.attnum=c.conkey[$i]";
             }
@@ -519,7 +542,7 @@ class Postgres74 extends Postgres80
 				) ON (c.confrelid=r2.oid)
 				LEFT JOIN pg_catalog.pg_attribute AS f2 ON
 					(f2.attrelid=r2.oid AND ((c.confkey[1]=f2.attnum AND c.conkey[1]=f1.attnum)';
-        if ($rs instanceof ADORecordSet && is_array($rs->fields)) {
+        if ($rs instanceof \ADORecordSet && is_array($rs->fields)) {
             for ($i = 2; $i <= $rs->fields['nb']; $i++) {
                 $sql .= " OR (c.confkey[$i]=f2.attnum AND c.conkey[$i]=f1.attnum)";
             }
@@ -541,7 +564,7 @@ class Postgres74 extends Postgres80
      */
     public function getSequences(bool $all = false): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         if ($all) {
             // Exclude pg_catalog and information_schema tables
@@ -552,7 +575,8 @@ class Postgres74 extends Postgres80
 				AND n.nspname NOT IN ('pg_catalog', 'information_schema', 'pg_toast')
 				ORDER BY nspname, seqname";
         } else {
-            $sql = "SELECT c.relname AS seqname, u.usename AS seqowner, pg_catalog.obj_description(c.oid, 'pg_class') AS seqcomment
+            $sql = "SELECT c.relname AS seqname, u.usename AS seqowner,
+                pg_catalog.obj_description(c.oid, 'pg_class') AS seqcomment
 				FROM pg_catalog.pg_class c, pg_catalog.pg_user u, pg_catalog.pg_namespace n
 				WHERE c.relowner=u.usesysid AND c.relnamespace=n.oid
 				AND c.relkind = 'S' AND n.nspname='{$c_schema}' ORDER BY seqname";
@@ -624,7 +648,8 @@ class Postgres74 extends Postgres80
 				c.castcontext,
 				obj_description(c.oid, 'pg_cast') as castcomment
 			FROM
-				(pg_catalog.pg_cast c LEFT JOIN pg_catalog.pg_proc p ON c.castfunc=p.oid JOIN pg_catalog.pg_namespace n3 ON p.pronamespace=n3.oid),
+				(pg_catalog.pg_cast c LEFT JOIN pg_catalog.pg_proc p ON c.castfunc=p.oid
+                JOIN pg_catalog.pg_namespace n3 ON p.pronamespace=n3.oid),
 				pg_catalog.pg_type t1,
 				pg_catalog.pg_type t2,
 				pg_catalog.pg_namespace n1,

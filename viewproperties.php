@@ -298,7 +298,7 @@ function doAlter($confirm = false, $msg = '')
             echo "<table>\n";
             echo "<tr><th class=\"data left required\">{$lang['strname']}</th>\n";
             echo "<td class=\"data1\">";
-            echo "<input name=\"name\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+            echo "<input name=\"name\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
                 htmlspecialchars($_POST['name']), "\" /></td></tr>\n";
 
             if ($data->isSuperUser()) {
@@ -365,7 +365,7 @@ function doAlter($confirm = false, $msg = '')
                 $_reload_browser = true;
             }
             // If schema has changed, need to change to the new schema and reload the browser
-            if (!empty($_POST['newschema']) && ($_POST['newschema'] != $data->_schema)) {
+            if (!empty($_POST['newschema']) && ($_POST['newschema'] != $data->schema)) {
                 // Jump them to the new sequence schema
                 $misc->setCurrentSchema($_POST['newschema']);
                 $_reload_browser = true;

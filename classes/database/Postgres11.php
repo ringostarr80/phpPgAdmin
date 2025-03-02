@@ -40,7 +40,7 @@ class Postgres11 extends Postgres
      **/
     function hasObjectID($table)
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $this->clean($c_schema);
         $this->clean($table);
 

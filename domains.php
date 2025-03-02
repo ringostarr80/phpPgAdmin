@@ -120,7 +120,7 @@ function addCheck($confirm, $msg = '')
         echo "<tr><th class=\"data\">{$lang['strname']}</th>\n";
         echo "<th class=\"data required\">{$lang['strdefinition']}</th></tr>\n";
 
-        echo "<tr><td class=\"data1\"><input name=\"name\" size=\"16\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+        echo "<tr><td class=\"data1\"><input name=\"name\" size=\"16\" maxlength=\"{$data->maxNameLen}\" value=\"",
             htmlspecialchars($_POST['name']), "\" /></td>\n";
 
         echo "<td class=\"data1\">(<input name=\"definition\" size=\"32\" value=\"",
@@ -385,7 +385,7 @@ function doCreate($msg = '')
     echo "<form action=\"domains.php\" method=\"post\">\n";
     echo "<table>\n";
     echo "<tr><th class=\"data left required\" style=\"width: 70px\">{$lang['strname']}</th>\n";
-    echo "<td class=\"data1\"><input name=\"domname\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+    echo "<td class=\"data1\"><input name=\"domname\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
         htmlspecialchars($_POST['domname']), "\" /></td></tr>\n";
     echo "<tr><th class=\"data left required\">{$lang['strtype']}</th>\n";
     echo "<td class=\"data1\">\n";

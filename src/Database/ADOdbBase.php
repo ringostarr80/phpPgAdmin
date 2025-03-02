@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Database;
 
-include_once dirname(__DIR__, 2) . '/libraries/errorhandler.inc.php';
-
 class ADOdbBase
 {
     public string $platform = 'UNKNOWN';

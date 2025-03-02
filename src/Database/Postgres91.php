@@ -30,9 +30,7 @@ class Postgres91 extends Postgres92
 				ORDER BY usename, procpid";
         }
 
-        $rc = $this->selectSet($sql);
-
-        return $rc;
+        return $this->selectSet($sql);
     }
 
     // Tablespace functions
@@ -45,7 +43,11 @@ class Postgres91 extends Postgres92
     public function getTablespaces(bool $all = false): \ADORecordSet|int
     {
         $sql = "SELECT spcname, pg_catalog.pg_get_userbyid(spcowner) AS spcowner, spclocation,
-            (SELECT description FROM pg_catalog.pg_shdescription pd WHERE pg_tablespace.oid=pd.objoid AND pd.classoid='pg_tablespace'::regclass) AS spccomment
+            (
+                SELECT description
+                FROM pg_catalog.pg_shdescription pd
+                WHERE pg_tablespace.oid=pd.objoid AND pd.classoid='pg_tablespace'::regclass
+            ) AS spccomment
             FROM pg_catalog.pg_tablespace";
 
         if (!Config::showSystem() && !$all) {
@@ -66,7 +68,11 @@ class Postgres91 extends Postgres92
         $spcname = $this->clean($spcname);
 
         $sql = "SELECT spcname, pg_catalog.pg_get_userbyid(spcowner) AS spcowner, spclocation,
-            (SELECT description FROM pg_catalog.pg_shdescription pd WHERE pg_tablespace.oid=pd.objoid AND pd.classoid='pg_tablespace'::regclass) AS spccomment
+            (
+                SELECT description
+                FROM pg_catalog.pg_shdescription pd
+                WHERE pg_tablespace.oid=pd.objoid AND pd.classoid='pg_tablespace'::regclass
+            ) AS spccomment
             FROM pg_catalog.pg_tablespace WHERE spcname='{$spcname}'";
 
         return $this->selectSet($sql);

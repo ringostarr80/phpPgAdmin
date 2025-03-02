@@ -11,9 +11,9 @@ class Postgres extends ADOdbBase
 {
     public float $majorVersion = 14;
     // Max object name length
-    public int $_maxNameLen = 63;
+    public int $maxNameLen = 63;
     // Store the current schema
-    public string $_schema;
+    public string $schema;
     /**
      * Map of database encoding names to HTTP encoding names.  If a
      * database encoding does not appear in this list, then its HTTP
@@ -235,7 +235,12 @@ class Postgres extends ADOdbBase
         'pg.view.create'              => 'sql-createview.html',
         'pg.view.drop'                => 'sql-dropview.html',
 
-        'pg.aggregate'                => ['xaggr.html', 'tutorial-agg.html', 'functions-aggregate.html', 'sql-expressions.html#SYNTAX-AGGREGATES'],
+        'pg.aggregate'                => [
+            'xaggr.html',
+            'tutorial-agg.html',
+            'functions-aggregate.html',
+            'sql-expressions.html#SYNTAX-AGGREGATES'
+        ],
         'pg.aggregate.create'         => 'sql-createaggregate.html',
         'pg.aggregate.drop'           => 'sql-dropaggregate.html',
         'pg.aggregate.alter'          => 'sql-alteraggregate.html',
@@ -253,7 +258,12 @@ class Postgres extends ADOdbBase
      *
      * @var array<string, string>
      */
-    public array $joinOps = ['INNER JOIN' => 'INNER JOIN', 'LEFT JOIN' => 'LEFT JOIN', 'RIGHT JOIN' => 'RIGHT JOIN', 'FULL JOIN' => 'FULL JOIN'];
+    public array $joinOps = [
+        'INNER JOIN' => 'INNER JOIN',
+        'LEFT JOIN' => 'LEFT JOIN',
+        'RIGHT JOIN' => 'RIGHT JOIN',
+        'FULL JOIN' => 'FULL JOIN'
+    ];
     /**
      * Map of internal language name to syntax highlighting name
      *
@@ -290,7 +300,12 @@ class Postgres extends ADOdbBase
      *
      * @var string[]
      */
-    public array $predefined_size_types = ['abstime','aclitem','bigserial','boolean','bytea','cid','cidr','circle','date','float4','float8','gtsvector','inet','int2','int4','int8','macaddr','money','oid','path','polygon','refcursor','regclass','regoper','regoperator','regproc','regprocedure','regtype','reltime','serial','smgr','text','tid','tinterval','tsquery','tsvector','varbit','void','xid'];
+    public array $predefined_size_types = [
+        'abstime', 'aclitem', 'bigserial', 'boolean', 'bytea', 'cid', 'cidr', 'circle', 'date', 'float4', 'float8',
+        'gtsvector', 'inet', 'int2', 'int4', 'int8', 'macaddr', 'money', 'oid', 'path', 'polygon', 'refcursor',
+        'regclass', 'regoper', 'regoperator', 'regproc', 'regprocedure', 'regtype', 'reltime', 'serial', 'smgr', 'text',
+        'tid', 'tinterval', 'tsquery', 'tsvector', 'varbit', 'void', 'xid'
+    ];
 
     /**
      * List of all legal privileges that can be applied to different types of objects.
@@ -348,7 +363,8 @@ class Postgres extends ADOdbBase
         'IS NULL' => 'p', 'IS NOT NULL' => 'p', 'IN' => 'x', 'NOT IN' => 'x',
         '@@' => 'i', '@@@' => 'i', '@>' => 'i', '<@' => 'i',
         '@@ to_tsquery' => 't', '@@@ to_tsquery' => 't', '@> to_tsquery' => 't', '<@ to_tsquery' => 't',
-        '@@ plainto_tsquery' => 't', '@@@ plainto_tsquery' => 't', '@> plainto_tsquery' => 't', '<@ plainto_tsquery' => 't'
+        '@@ plainto_tsquery' => 't', '@@@ plainto_tsquery' => 't',
+        '@> plainto_tsquery' => 't', '<@ plainto_tsquery' => 't'
     ];
     /**
      * Array of allowed trigger events
@@ -509,11 +525,14 @@ class Postgres extends ADOdbBase
                 if ($value === null || $value === 't' || $value === 'f') {
                     echo "<select name=\"", htmlspecialchars($name ?? ''), "\"{$extra_str}>\n";
                     echo "<option value=\"\"", ($value === null) ? ' selected="selected"' : '', "></option>\n";
-                    echo "<option value=\"t\"", ($value === 't') ? ' selected="selected"' : '', ">" . _('TRUE') . "</option>\n";
-                    echo "<option value=\"f\"", ($value === 'f') ? ' selected="selected"' : '', ">" . _('FALSE') . "</option>\n";
+                    echo "<option value=\"t\"", ($value === 't') ? ' selected="selected"' : '', ">" . _('TRUE') .
+                        "</option>\n";
+                    echo "<option value=\"f\"", ($value === 'f') ? ' selected="selected"' : '', ">" . _('FALSE') .
+                        "</option>\n";
                     echo "</select>\n";
                 } else {
-                    echo "<input name=\"", htmlspecialchars($name ?? ''), "\" value=\"", htmlspecialchars($value), "\" size=\"35\"{$extra_str} />\n";
+                    echo "<input name=\"", htmlspecialchars($name ?? ''), "\" value=\"",
+                        htmlspecialchars($value), "\" size=\"35\"{$extra_str} />\n";
                 }
                 break;
             case 'bytea':
@@ -554,7 +573,8 @@ class Postgres extends ADOdbBase
                 if ($value === null) {
                     $value = '';
                 }
-                echo "<input name=\"", htmlspecialchars($name ?? ''), "\" value=\"", htmlspecialchars($value), "\" size=\"35\"{$extra_str} />\n";
+                echo "<input name=\"", htmlspecialchars($name ?? ''), "\" value=\"", htmlspecialchars($value),
+                    "\" size=\"35\"{$extra_str} />\n";
                 break;
         }
     }
@@ -740,7 +760,8 @@ class Postgres extends ADOdbBase
 
         $sql = "
 			SELECT pdb.datname AS datname, pr.rolname AS datowner, pg_encoding_to_char(encoding) AS datencoding,
-				(SELECT description FROM pg_catalog.pg_shdescription pd WHERE pdb.oid=pd.objoid AND pd.classoid='pg_database'::regclass) AS datcomment,
+				(SELECT description FROM pg_catalog.pg_shdescription pd
+                    WHERE pdb.oid=pd.objoid AND pd.classoid='pg_database'::regclass) AS datcomment,
 				(SELECT spcname FROM pg_catalog.pg_tablespace pt WHERE pt.oid=pdb.dattablespace) AS tablespace,
 				CASE WHEN pg_catalog.has_database_privilege(current_user, pdb.oid, 'CONNECT')
 					THEN pg_catalog.pg_database_size(pdb.oid)
@@ -764,7 +785,11 @@ class Postgres extends ADOdbBase
     public function getDatabaseComment(string $database): \ADORecordSet|int
     {
         $database = $this->clean($database);
-        $sql = "SELECT description FROM pg_catalog.pg_database JOIN pg_catalog.pg_shdescription ON (oid=objoid AND classoid='pg_database'::regclass) WHERE pg_database.datname = '{$database}' ";
+        $sql = "SELECT description
+            FROM pg_catalog.pg_database
+            JOIN pg_catalog.pg_shdescription ON
+                (oid=objoid AND classoid='pg_database'::regclass)
+                WHERE pg_database.datname = '{$database}' ";
         return $this->selectSet($sql);
     }
 
@@ -776,7 +801,9 @@ class Postgres extends ADOdbBase
     public function getDatabaseOwner(string $database): \ADORecordSet|int
     {
         $database = $this->clean($database);
-        $sql = "SELECT usename FROM pg_user, pg_database WHERE pg_user.usesysid = pg_database.datdba AND pg_database.datname = '{$database}' ";
+        $sql = "SELECT usename
+            FROM pg_user, pg_database
+            WHERE pg_user.usesysid = pg_database.datdba AND pg_database.datname = '{$database}' ";
         return $this->selectSet($sql);
     }
 
@@ -915,8 +942,12 @@ class Postgres extends ADOdbBase
      * -3 rename error
      * -4 comment error
      */
-    public function alterDatabase(string $dbName, string $newName, string $newOwner = '', string $comment = ''): bool|int
-    {
+    public function alterDatabase(
+        string $dbName,
+        string $newName,
+        string $newOwner = '',
+        string $comment = ''
+    ): bool|int {
         $status = $this->beginTransaction();
         if ($status != 0) {
             $this->rollbackTransaction();
@@ -1012,18 +1043,24 @@ class Postgres extends ADOdbBase
 			SELECT 'SCHEMA' AS type, oid, NULL AS schemaname, NULL AS relname, nspname AS name
 				FROM pg_catalog.pg_namespace pn WHERE nspname ILIKE {$term} {$where}
 			UNION ALL
-			SELECT CASE WHEN relkind='r' THEN 'TABLE' WHEN relkind='v' THEN 'VIEW' WHEN relkind='S' THEN 'SEQUENCE' END, pc.oid,
+			SELECT CASE WHEN relkind='r' THEN 'TABLE'
+                WHEN relkind='v' THEN 'VIEW' WHEN relkind='S' THEN 'SEQUENCE' END, pc.oid,
 				pn.nspname, NULL, pc.relname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn
 				WHERE pc.relnamespace=pn.oid AND relkind IN ('r', 'v', 'S') AND relname ILIKE {$term} {$where}
 			UNION ALL
-			SELECT CASE WHEN pc.relkind='r' THEN 'COLUMNTABLE' ELSE 'COLUMNVIEW' END, NULL, pn.nspname, pc.relname, pa.attname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
+			SELECT CASE WHEN pc.relkind='r' THEN 'COLUMNTABLE' ELSE 'COLUMNVIEW' END, NULL,
+                pn.nspname, pc.relname, pa.attname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
 				pg_catalog.pg_attribute pa WHERE pc.relnamespace=pn.oid AND pc.oid=pa.attrelid
-				AND pa.attname ILIKE {$term} AND pa.attnum > 0 AND NOT pa.attisdropped AND pc.relkind IN ('r', 'v') {$where}
+				AND pa.attname ILIKE {$term} AND pa.attnum > 0 AND NOT pa.attisdropped AND pc.relkind IN ('r', 'v')
+                {$where}
 			UNION ALL
-			SELECT 'FUNCTION', pp.oid, pn.nspname, NULL, pp.proname || '(' || pg_catalog.oidvectortypes(pp.proargtypes) || ')' FROM pg_catalog.pg_proc pp, pg_catalog.pg_namespace pn
+			SELECT 'FUNCTION', pp.oid, pn.nspname, NULL,
+                pp.proname || '(' || pg_catalog.oidvectortypes(pp.proargtypes) || ')'
+                FROM pg_catalog.pg_proc pp, pg_catalog.pg_namespace pn
 				WHERE pp.pronamespace=pn.oid AND NOT pp.prokind = 'a' AND pp.proname ILIKE {$term} {$where}
 			UNION ALL
-			SELECT 'INDEX', NULL, pn.nspname, pc.relname, pc2.relname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
+			SELECT 'INDEX', NULL, pn.nspname, pc.relname, pc2.relname
+                FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
 				pg_catalog.pg_index pi, pg_catalog.pg_class pc2 WHERE pc.relnamespace=pn.oid AND pc.oid=pi.indrelid
 				AND pi.indexrelid=pc2.oid
 				AND NOT EXISTS (
@@ -1033,7 +1070,8 @@ class Postgres extends ADOdbBase
 				)
 				AND pc2.relname ILIKE {$term} {$where}
 			UNION ALL
-			SELECT 'CONSTRAINTTABLE', NULL, pn.nspname, pc.relname, pc2.conname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
+			SELECT 'CONSTRAINTTABLE', NULL, pn.nspname, pc.relname, pc2.conname
+                FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
 				pg_catalog.pg_constraint pc2 WHERE pc.relnamespace=pn.oid AND pc.oid=pc2.conrelid AND pc2.conrelid != 0
 				AND CASE WHEN pc2.contype IN ('f', 'c') THEN TRUE ELSE NOT EXISTS (
 					SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
@@ -1042,11 +1080,13 @@ class Postgres extends ADOdbBase
 				) END
 				AND pc2.conname ILIKE {$term} {$where}
 			UNION ALL
-			SELECT 'CONSTRAINTDOMAIN', pt.oid, pn.nspname, pt.typname, pc.conname FROM pg_catalog.pg_type pt, pg_catalog.pg_namespace pn,
+			SELECT 'CONSTRAINTDOMAIN', pt.oid, pn.nspname, pt.typname, pc.conname
+                FROM pg_catalog.pg_type pt, pg_catalog.pg_namespace pn,
 				pg_catalog.pg_constraint pc WHERE pt.typnamespace=pn.oid AND pt.oid=pc.contypid AND pc.contypid != 0
 				AND pc.conname ILIKE {$term} {$where}
 			UNION ALL
-			SELECT 'TRIGGER', NULL, pn.nspname, pc.relname, pt.tgname FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
+			SELECT 'TRIGGER', NULL, pn.nspname, pc.relname, pt.tgname
+                FROM pg_catalog.pg_class pc, pg_catalog.pg_namespace pn,
 				pg_catalog.pg_trigger pt WHERE pc.relnamespace=pn.oid AND pc.oid=pt.tgrelid
 					AND ( pt.tgconstraint = 0 OR NOT EXISTS
 					(SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
@@ -1054,12 +1094,14 @@ class Postgres extends ADOdbBase
 					WHERE d.classid = pt.tableoid AND d.objid = pt.oid AND d.deptype = 'i' AND c.contype = 'f'))
 				AND pt.tgname ILIKE {$term} {$where}
 			UNION ALL
-			SELECT 'RULETABLE', NULL, pn.nspname AS schemaname, c.relname AS tablename, r.rulename FROM pg_catalog.pg_rewrite r
+			SELECT 'RULETABLE', NULL, pn.nspname AS schemaname, c.relname AS tablename, r.rulename
+                FROM pg_catalog.pg_rewrite r
 				JOIN pg_catalog.pg_class c ON c.oid = r.ev_class
 				LEFT JOIN pg_catalog.pg_namespace pn ON pn.oid = c.relnamespace
 				WHERE c.relkind='r' AND r.rulename != '_RETURN' AND r.rulename ILIKE {$term} {$where}
 			UNION ALL
-			SELECT 'RULEVIEW', NULL, pn.nspname AS schemaname, c.relname AS tablename, r.rulename FROM pg_catalog.pg_rewrite r
+			SELECT 'RULEVIEW', NULL, pn.nspname AS schemaname, c.relname AS tablename, r.rulename
+                FROM pg_catalog.pg_rewrite r
 				JOIN pg_catalog.pg_class c ON c.oid = r.ev_class
 				LEFT JOIN pg_catalog.pg_namespace pn ON pn.oid = c.relnamespace
 				WHERE c.relkind='v' AND r.rulename != '_RETURN' AND r.rulename ILIKE {$term} {$where}
@@ -1072,10 +1114,13 @@ class Postgres extends ADOdbBase
 				SELECT CASE WHEN pt.typtype='d' THEN 'DOMAIN' ELSE 'TYPE' END, pt.oid, pn.nspname, NULL,
 					pt.typname FROM pg_catalog.pg_type pt, pg_catalog.pg_namespace pn
 					WHERE pt.typnamespace=pn.oid AND typname ILIKE {$term}
-					AND (pt.typrelid = 0 OR (SELECT c.relkind = 'c' FROM pg_catalog.pg_class c WHERE c.oid = pt.typrelid))
+					AND (pt.typrelid = 0 OR
+                        (SELECT c.relkind = 'c' FROM pg_catalog.pg_class c WHERE c.oid = pt.typrelid)
+                    )
 					{$where}
 			 	UNION ALL
-				SELECT 'OPERATOR', po.oid, pn.nspname, NULL, po.oprname FROM pg_catalog.pg_operator po, pg_catalog.pg_namespace pn
+				SELECT 'OPERATOR', po.oid, pn.nspname, NULL, po.oprname
+                    FROM pg_catalog.pg_operator po, pg_catalog.pg_namespace pn
 					WHERE po.oprnamespace=pn.oid AND oprname ILIKE {$term} {$where}
 				UNION ALL
 				SELECT 'CONVERSION', pc.oid, pn.nspname, NULL, pc.conname FROM pg_catalog.pg_conversion pc,
@@ -1088,7 +1133,8 @@ class Postgres extends ADOdbBase
 					LEFT JOIN pg_catalog.pg_namespace pn ON p.pronamespace=pn.oid
 					WHERE p.prokind = 'a' AND p.proname ILIKE {$term} {$where}
 				UNION ALL
-				SELECT DISTINCT ON (po.opcname) 'OPCLASS', po.oid, pn.nspname, NULL, po.opcname FROM pg_catalog.pg_opclass po,
+				SELECT DISTINCT ON (po.opcname) 'OPCLASS', po.oid, pn.nspname, NULL, po.opcname
+                    FROM pg_catalog.pg_opclass po,
 					pg_catalog.pg_namespace pn WHERE po.opcnamespace=pn.oid
 					AND po.opcname ILIKE {$term} {$where}
 			";
@@ -1098,7 +1144,9 @@ class Postgres extends ADOdbBase
 				SELECT 'DOMAIN', pt.oid, pn.nspname, NULL,
 					pt.typname FROM pg_catalog.pg_type pt, pg_catalog.pg_namespace pn
 					WHERE pt.typnamespace=pn.oid AND pt.typtype='d' AND typname ILIKE {$term}
-					AND (pt.typrelid = 0 OR (SELECT c.relkind = 'c' FROM pg_catalog.pg_class c WHERE c.oid = pt.typrelid))
+					AND (pt.typrelid = 0 OR
+                        (SELECT c.relkind = 'c' FROM pg_catalog.pg_class c WHERE c.oid = pt.typrelid)
+                    )
 					{$where}
 			";
         }
@@ -1178,7 +1226,7 @@ class Postgres extends ADOdbBase
         array_unshift($search_path, $schema);
         $status = $this->setSearchPath($search_path);
         if ($status === 0) {
-            $this->_schema = $schema;
+            $this->schema = $schema;
             return 0;
         }
 
@@ -1366,7 +1414,7 @@ class Postgres extends ADOdbBase
      */
     public function getTable(string $table): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 
@@ -1393,7 +1441,7 @@ class Postgres extends ADOdbBase
      */
     public function getTables(bool $all = false): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         if ($all) {
             // Exclude pg_catalog and information_schema tables
@@ -1405,7 +1453,8 @@ class Postgres extends ADOdbBase
             $sql = "SELECT c.relname, pg_catalog.pg_get_userbyid(c.relowner) AS relowner,
                 pg_catalog.obj_description(c.oid, 'pg_class') AS relcomment,
                 reltuples::bigint,
-                CASE c.relkind WHEN 'm' THEN '[MV]' WHEN 'f' THEN '[FDW]@'||n.nspname ELSE (SELECT spcname FROM pg_catalog.pg_tablespace pt
+                CASE c.relkind WHEN 'm' THEN '[MV]' WHEN 'f' THEN '[FDW]@'||n.nspname ELSE
+                    (SELECT spcname FROM pg_catalog.pg_tablespace pt
                     WHERE pt.oid=c.reltablespace) END AS tablespace
                 FROM pg_catalog.pg_class c
                 LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
@@ -1425,7 +1474,7 @@ class Postgres extends ADOdbBase
      */
     public function getTableAttributes(string $table, string $field = ''): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
         $field = $this->clean($field);
@@ -1495,7 +1544,7 @@ class Postgres extends ADOdbBase
      */
     public function getTableParents(string $table): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 
@@ -1523,7 +1572,7 @@ class Postgres extends ADOdbBase
      */
     public function getTableChildren(string $table): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 
@@ -1651,7 +1700,8 @@ class Postgres extends ADOdbBase
             // Does this column have a comment?
             if (isset($atts->fields['comment']) && is_string($atts->fields['comment'])) {
                 $atts->fields['comment'] = $this->clean($atts->fields['comment']); // @phpstan-ignore-line
-                $col_comments_sql .= "COMMENT ON COLUMN \"{$t->fields['relname']}\".\"{$atts->fields['attname']}\"  IS '{$atts->fields['comment']}';\n";
+                $col_comments_sql .= "COMMENT ON COLUMN \"{$t->fields['relname']}\".\"{$atts->fields['attname']}\"  IS
+                    '{$atts->fields['comment']}';\n";
             }
 
             $atts->moveNext();
@@ -1742,7 +1792,9 @@ class Postgres extends ADOdbBase
                     $sql .= "\n";
                     $first = false;
                 }
-                $sql .= "ALTER TABLE ONLY \"{$t->fields['nspname']}\".\"{$t->fields['relname']}\" ALTER COLUMN \"{$atts->fields['attname']}\" SET STATISTICS {$atts->fields['attstattarget']};\n"; // @phpstan-ignore-line
+                $sql .= "ALTER TABLE ONLY \"{$t->fields['nspname']}\".\"{$t->fields['relname']}\"
+                    ALTER COLUMN \"{$atts->fields['attname']}\"
+                    SET STATISTICS {$atts->fields['attstattarget']};\n"; // @phpstan-ignore-line
             }
             // Then storage
             if ($atts->fields['attstorage'] != $atts->fields['typstorage']) {
@@ -1764,7 +1816,8 @@ class Postgres extends ADOdbBase
                         $this->rollbackTransaction();
                         return null;
                 }
-                $sql .= "ALTER TABLE ONLY \"{$t->fields['nspname']}\".\"{$t->fields['relname']}\" ALTER COLUMN \"{$atts->fields['attname']}\" SET STORAGE {$storage};\n";
+                $sql .= "ALTER TABLE ONLY \"{$t->fields['nspname']}\".\"{$t->fields['relname']}\"
+                    ALTER COLUMN \"{$atts->fields['attname']}\" SET STORAGE {$storage};\n";
             }
 
             $atts->moveNext();
@@ -1774,7 +1827,8 @@ class Postgres extends ADOdbBase
         if (isset($t->fields['relcomment']) && is_string($t->fields['relcomment'])) {
             $t->fields['relcomment'] = $this->clean($t->fields['relcomment']); // @phpstan-ignore-line
             $sql .= "\n-- Comment\n\n";
-            $sql .= "COMMENT ON TABLE \"{$t->fields['nspname']}\".\"{$t->fields['relname']}\" IS '{$t->fields['relcomment']}';\n";
+            $sql .= "COMMENT ON TABLE \"{$t->fields['nspname']}\".\"{$t->fields['relname']}\" IS
+                '{$t->fields['relcomment']}';\n";
         }
 
         // Add comments on columns, if any
@@ -1967,7 +2021,12 @@ class Postgres extends ADOdbBase
 
         if ($rules->recordCount() > 0) {
             $sql .= "\n-- Rules\n\n";
-            while (!$rules->EOF && is_array($rules->fields) && isset($rules->fields['definition']) && is_string($rules->fields['definition'])) {
+            while (
+                !$rules->EOF &&
+                is_array($rules->fields) &&
+                isset($rules->fields['definition']) &&
+                is_string($rules->fields['definition'])
+            ) {
                 $sql .= $rules->fields['definition'] . "\n";
 
                 $rules->moveNext();
@@ -1992,7 +2051,7 @@ class Postgres extends ADOdbBase
      * @param $comment Table comment
      * @param $tablespace The tablespace name ('' means none/default)
      * @param array<mixed> $uniquekey An Array indicating the fields that are unique (those indexes that are set)
-     * @param array<mixed> $primarykey An Array indicating the field used for the primarykey (those indexes that are set)
+     * @param array<mixed> $primarykey An Array indicating the field used for primarykey (those indexes that are set)
      * @return int 0 success, -1 no fields supplied
      */
     public function createTable(
@@ -2011,7 +2070,7 @@ class Postgres extends ADOdbBase
         array $uniquekey,
         array $primarykey
     ): bool|int {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $name = $this->fieldClean($name);
 
@@ -2149,7 +2208,8 @@ class Postgres extends ADOdbBase
     /**
      * Creates a new table in the database copying attribs and other properties from another table
      * @param $name The name of the table
-     * @param array<mixed> $like an array giving the schema and the name of the table from which attribs are copying from:
+     * @param array<mixed> $like an array giving the schema and the name of the table
+     *      from which attribs are copying from:
      *      array(
      *          'table' => table name,
      *          'schema' => the schema name,
@@ -2179,7 +2239,7 @@ class Postgres extends ADOdbBase
             return -1;
         }
 
-        $f_schema = $this->fieldClean($this->_schema);
+        $f_schema = $this->fieldClean($this->schema);
         $name = $this->fieldClean($name);
         $like['schema'] = $this->fieldClean($like['schema']);
         $like['table'] = $this->fieldClean($like['table']);
@@ -2237,7 +2297,7 @@ class Postgres extends ADOdbBase
                 return -1;
             }
 
-            $f_schema = $this->fieldClean($this->_schema);
+            $f_schema = $this->fieldClean($this->schema);
 
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$tblrs->fields['relname']}\" RENAME TO \"{$name}\"";
             $status = $this->execute($sql);
@@ -2268,7 +2328,7 @@ class Postgres extends ADOdbBase
                 return -1;
             }
 
-            $f_schema = $this->fieldClean($this->_schema);
+            $f_schema = $this->fieldClean($this->schema);
             // If owner has been changed, then do the alteration.  We are
             // careful to avoid this generally as changing owner is a
             // superuser only function.
@@ -2297,7 +2357,7 @@ class Postgres extends ADOdbBase
                 return -1;
             }
 
-            $f_schema = $this->fieldClean($this->_schema);
+            $f_schema = $this->fieldClean($this->schema);
 
             // If tablespace has been changed, then do the alteration.  We
             // don't want to do this unnecessarily.
@@ -2326,7 +2386,7 @@ class Postgres extends ADOdbBase
                 return -1;
             }
 
-            $f_schema = $this->fieldClean($this->_schema);
+            $f_schema = $this->fieldClean($this->schema);
             // If tablespace has been changed, then do the alteration.  We
             // don't want to do this unnecessarily.
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$tblrs->fields['relname']}\" SET SCHEMA \"{$schema}\"";
@@ -2476,7 +2536,7 @@ class Postgres extends ADOdbBase
      */
     public function getAttributeNames(string $table, array $atts): array|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
         $atts = $this->arrayClean($atts);
@@ -2514,7 +2574,7 @@ class Postgres extends ADOdbBase
      */
     public function emptyTable(string $table): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
 
@@ -2531,7 +2591,7 @@ class Postgres extends ADOdbBase
      */
     public function dropTable(string $table, bool $cascade): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
 
@@ -2564,7 +2624,7 @@ class Postgres extends ADOdbBase
         string $default,
         string $comment
     ): bool|int {
-        $f_schema = $this->fieldClean($this->_schema) ?? $this->_schema;
+        $f_schema = $this->fieldClean($this->schema) ?? $this->schema;
         $table = $this->fieldClean($table) ?? $table;
         $column = $this->fieldClean($column) ?? $column;
         $type = $this->clean($type) ?? $type;
@@ -2579,7 +2639,8 @@ class Postgres extends ADOdbBase
                 case 'timestamp with time zone':
                 case 'timestamp without time zone':
                     $qual = substr($type, 9);
-                    $sql = "ALTER TABLE \"{$f_schema}\".\"{$table}\" ADD COLUMN \"{$column}\" timestamp({$length}){$qual}";
+                    $sql = "ALTER TABLE \"{$f_schema}\".\"{$table}\"
+                        ADD COLUMN \"{$column}\" timestamp({$length}){$qual}";
                     break;
                 case 'time with time zone':
                 case 'time without time zone':
@@ -2678,7 +2739,7 @@ class Postgres extends ADOdbBase
             }
         }
 
-        $f_schema = $this->fieldClean($this->_schema) ?? $this->_schema;
+        $f_schema = $this->fieldClean($this->schema) ?? $this->schema;
         $name = $this->fieldClean($name) ?? $name;
         $table = $this->fieldClean($table) ?? $table;
         $column = $this->fieldClean($column) ?? $column;
@@ -2761,7 +2822,7 @@ class Postgres extends ADOdbBase
      */
     public function renameColumn(string $table, string $column, string $newName): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
         $column = $this->fieldClean($column);
@@ -2781,7 +2842,7 @@ class Postgres extends ADOdbBase
      */
     public function setColumnDefault(string $table, string $column, string $default): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
         $column = $this->fieldClean($column);
@@ -2800,12 +2861,13 @@ class Postgres extends ADOdbBase
      */
     public function setColumnNull(string $table, string $column, bool $state): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
         $column = $this->fieldClean($column);
 
-        $sql = "ALTER TABLE \"{$f_schema}\".\"{$table}\" ALTER COLUMN \"{$column}\" " . (($state) ? 'DROP' : 'SET') . " NOT NULL";
+        $sql = "ALTER TABLE \"{$f_schema}\".\"{$table}\" ALTER COLUMN \"{$column}\" " . (($state) ? 'DROP' : 'SET') .
+            " NOT NULL";
 
         return $this->execute($sql);
     }
@@ -2819,7 +2881,7 @@ class Postgres extends ADOdbBase
      */
     public function dropColumn(string $table, string $column, bool $cascade): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
         $column = $this->fieldClean($column);
@@ -2840,7 +2902,7 @@ class Postgres extends ADOdbBase
      */
     public function dropColumnDefault(string $table, string $column): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
         $column = $this->fieldClean($column);
@@ -2920,7 +2982,8 @@ class Postgres extends ADOdbBase
 
     /**
      * Returns all available autovacuum per table information.
-     * @param string $table if given, return autovacuum info for the given table or return all information for all tables
+     * @param string $table if given,
+     * return autovacuum info for the given table or return all information for all tables
      *
      * @return \ADORecordSet|ArrayRecordSet|int A recordset
      */
@@ -2930,7 +2993,7 @@ class Postgres extends ADOdbBase
 
         if ($table !== '') {
             $table = $this->clean($table);
-            $c_schema = $this->_schema;
+            $c_schema = $this->schema;
             $c_schema = $this->clean($c_schema);
 
             $sql = "SELECT c.oid, nspname, relname, pg_catalog.array_to_string(reloptions, E',') AS reloptions
@@ -2959,7 +3022,12 @@ class Postgres extends ADOdbBase
 
         /* result array to return as RS */
         $autovacs = array();
-        while (!$_autovacs->EOF && is_array($_autovacs->fields) && isset($_autovacs->fields['reloptions']) && is_string($_autovacs->fields['reloptions'])) {
+        while (
+            !$_autovacs->EOF &&
+            is_array($_autovacs->fields) &&
+            isset($_autovacs->fields['reloptions']) &&
+            is_string($_autovacs->fields['reloptions'])
+        ) {
             $_ = array(
                 'nspname' => $_autovacs->fields['nspname'],
                 'relname' => $_autovacs->fields['relname']
@@ -2988,7 +3056,7 @@ class Postgres extends ADOdbBase
     public function getRowIdentifier(string $table): array|int
     {
         $oldtable = $table;
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table) ?? $table;
 
@@ -3074,7 +3142,7 @@ class Postgres extends ADOdbBase
 
         $fields = $clean_fields;
 
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $table = $this->fieldClean($table);
         $f_schema = $this->fieldClean($f_schema);
 
@@ -3113,7 +3181,7 @@ class Postgres extends ADOdbBase
         array $types,
         array $keyarr
     ): bool|int {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
 
@@ -3188,7 +3256,7 @@ class Postgres extends ADOdbBase
         }
 
         if ($schema === false) {
-            $schema = $this->_schema;
+            $schema = $this->schema;
         }
 
         $status = $this->delete($table, $key, $schema);
@@ -3211,13 +3279,16 @@ class Postgres extends ADOdbBase
     public function hasSequencePrivilege(string $sequence): string|int
     {
         /* This double-cleaning is deliberate */
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $f_schema = $this->clean($f_schema);
         $sequence = $this->fieldClean($sequence);
         $sequence = $this->clean($sequence);
 
-        $sql = "SELECT pg_catalog.has_sequence_privilege((SELECT pg_class.oid FROM pg_class INNER JOIN pg_namespace ON pg_class.relnamespace = pg_namespace.oid WHERE pg_class.relname ILIKE '{$sequence}' AND pg_namespace.nspname ILIKE '{$f_schema}'),'SELECT,USAGE') AS priv";
+        $sql = "SELECT pg_catalog.has_sequence_privilege((SELECT pg_class.oid FROM pg_class
+            INNER JOIN pg_namespace ON pg_class.relnamespace = pg_namespace.oid
+            WHERE pg_class.relname ILIKE '{$sequence}'
+            AND pg_namespace.nspname ILIKE '{$f_schema}'),'SELECT,USAGE') AS priv";
 
         return $this->selectField($sql, 'priv');
     }
@@ -3228,7 +3299,7 @@ class Postgres extends ADOdbBase
      */
     public function getSequence(string $sequence): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $c_sequence = $sequence;
         $sequence = $this->fieldClean($sequence) ?? $sequence;
@@ -3303,7 +3374,7 @@ class Postgres extends ADOdbBase
 					ORDER BY
 						nspname, seqname;";
         } else {
-            $c_schema = $this->_schema;
+            $c_schema = $this->schema;
             $c_schema = $this->clean($c_schema);
             $sql = "
 					SELECT
@@ -3334,7 +3405,7 @@ class Postgres extends ADOdbBase
     public function nextvalSequence(string $sequence): int
     {
         /* This double-cleaning is deliberate */
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $f_schema = $this->clean($f_schema);
         $sequence = $this->fieldClean($sequence);
@@ -3354,7 +3425,7 @@ class Postgres extends ADOdbBase
     public function setvalSequence(string $sequence, string $nextvalue): int
     {
         /* This double-cleaning is deliberate */
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $f_schema = $this->clean($f_schema);
         $sequence = $this->fieldClean($sequence);
@@ -3373,7 +3444,7 @@ class Postgres extends ADOdbBase
      */
     public function restartSequence(string $sequence): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $sequence = $this->fieldClean($sequence);
 
@@ -3405,7 +3476,7 @@ class Postgres extends ADOdbBase
             return -1;
         }
 
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         /* This double-cleaning is deliberate */
         $sequence = $this->fieldClean($sequence);
@@ -3436,7 +3507,7 @@ class Postgres extends ADOdbBase
         string $cachevalue,
         bool $cycledvalue
     ): int {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $sequence = $this->fieldClean($sequence);
         $increment = $this->clean($increment);
@@ -3485,7 +3556,7 @@ class Postgres extends ADOdbBase
                 return -1;
             }
 
-            $f_schema = $this->fieldClean($this->_schema);
+            $f_schema = $this->fieldClean($this->schema);
             $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" RENAME TO \"{$name}\"";
             $status = $this->execute($sql);
             if ($status == 0) {
@@ -3517,7 +3588,7 @@ class Postgres extends ADOdbBase
                 return -1;
             }
 
-            $f_schema = $this->fieldClean($this->_schema);
+            $f_schema = $this->fieldClean($this->schema);
             $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" OWNER TO \"{$owner}\"";
             return $this->execute($sql);
         }
@@ -3541,7 +3612,7 @@ class Postgres extends ADOdbBase
                 return -1;
             }
 
-            $f_schema = $this->fieldClean($this->_schema);
+            $f_schema = $this->fieldClean($this->schema);
             $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" SET SCHEMA {$schema}";
             return $this->execute($sql);
         }
@@ -3599,7 +3670,7 @@ class Postgres extends ADOdbBase
             $sql .= (!$cycledvalue ? ' NO ' : '') . " CYCLE";
         }
         if ($sql != '') {
-            $f_schema = $this->_schema;
+            $f_schema = $this->schema;
             $f_schema = $this->fieldClean($f_schema);
             if (isset($seqrs->fields['seqname']) && is_string($seqrs->fields['seqname'])) {
                 $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" {$sql}";
@@ -3786,7 +3857,7 @@ class Postgres extends ADOdbBase
      */
     public function dropSequence(string $sequence, bool $cascade): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $sequence = $this->fieldClean($sequence);
 
@@ -3807,7 +3878,7 @@ class Postgres extends ADOdbBase
      */
     public function getView(string $view): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $view = $this->clean($view);
 
@@ -3828,7 +3899,7 @@ class Postgres extends ADOdbBase
      */
     public function getViews(): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $sql = "
 			SELECT c.relname, pg_catalog.pg_get_userbyid(c.relowner) AS relowner,
@@ -3866,7 +3937,7 @@ class Postgres extends ADOdbBase
             return -1;
         }
 
-        $f_schema = $this->fieldClean($this->_schema) ?? $this->_schema;
+        $f_schema = $this->fieldClean($this->schema) ?? $this->schema;
         $viewname = $this->fieldClean($viewname) ?? $viewname;
 
         // Note: $definition not cleaned
@@ -3911,7 +3982,7 @@ class Postgres extends ADOdbBase
             if (!is_string($vwrs->fields['relname'])) {
                 return -1;
             }
-            $f_schema = $this->fieldClean($this->_schema);
+            $f_schema = $this->fieldClean($this->schema);
             $sql = "ALTER VIEW \"{$f_schema}\".\"{$vwrs->fields['relname']}\" RENAME TO \"{$name}\"";
             return $this->execute($sql);
         }
@@ -3928,7 +3999,7 @@ class Postgres extends ADOdbBase
     {
         /* $vwrs and $owner are cleaned in alterViewInternal */
         if ((!empty($owner)) && is_array($vwrs->fields) && $vwrs->fields['relowner'] != $owner) {
-            $f_schema = $this->fieldClean($this->_schema);
+            $f_schema = $this->fieldClean($this->schema);
             // If owner has been changed, then do the alteration.  We are
             // careful to avoid this generally as changing owner is a
             // superuser only function.
@@ -3950,7 +4021,7 @@ class Postgres extends ADOdbBase
     {
         /* $vwrs and $schema are cleaned in alterViewInternal */
         if (!empty($schema) && is_array($vwrs->fields) && $vwrs->fields['nspname'] != $schema) {
-            $f_schema = $this->fieldClean($this->_schema);
+            $f_schema = $this->fieldClean($this->schema);
             // If tablespace has been changed, then do the alteration.  We
             // don't want to do this unnecessarily.
             if (isset($vwrs->fields['relname']) && is_string($vwrs->fields['relname'])) {
@@ -4066,7 +4137,7 @@ class Postgres extends ADOdbBase
      */
     public function dropView(string $viewname, bool $cascade): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $viewname = $this->fieldClean($viewname);
 
@@ -4092,7 +4163,8 @@ class Postgres extends ADOdbBase
 
         $sql = "
 			SELECT c2.relname AS indname, i.indisprimary, i.indisunique, i.indisclustered,
-				pg_catalog.pg_get_indexdef(i.indexrelid, 0, true) AS inddef, i.indpred IS NOT NULL AS indpred, i.indisexclusion
+				pg_catalog.pg_get_indexdef(i.indexrelid, 0, true) AS inddef, i.indpred IS NOT NULL AS indpred,
+                i.indisexclusion
 			FROM pg_catalog.pg_class c, pg_catalog.pg_class c2, pg_catalog.pg_index i
 			WHERE c.relname = '{$table}' AND pg_catalog.pg_table_is_visible(c.oid)
 				AND c.oid = i.indrelid AND i.indexrelid = c2.oid
@@ -4113,7 +4185,7 @@ class Postgres extends ADOdbBase
      */
     public function alreadyClustered(string $table): bool
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 
@@ -4159,7 +4231,7 @@ class Postgres extends ADOdbBase
         string $tablespace,
         bool $concurrently
     ): int {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $name = $this->fieldClean($name);
         $table = $this->fieldClean($table);
@@ -4203,7 +4275,7 @@ class Postgres extends ADOdbBase
      */
     public function dropIndex(string $index, bool $cascade): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $index = $this->fieldClean($index);
 
@@ -4219,11 +4291,12 @@ class Postgres extends ADOdbBase
      * Rebuild indexes
      * @param $type 'DATABASE' or 'TABLE' or 'INDEX'
      * @param $name The name of the specific database, table, or index to be reindexed
-     * @param bool $force If true, recreates indexes forcedly in PostgreSQL 7.0-7.1, forces rebuild of system indexes in 7.2-7.3, ignored in >=7.4
+     * @param bool $force If true, recreates indexes forcedly in PostgreSQL 7.0-7.1,
+     * forces rebuild of system indexes in 7.2-7.3, ignored in >=7.4
      */
     public function reindex(string $type, string $name, bool $force = false): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $name = $this->fieldClean($name);
         switch ($type) {
@@ -4261,7 +4334,7 @@ class Postgres extends ADOdbBase
         // back an expensive cluster if a cheap analyze fails for whatever reason
 
         if (!empty($table)) {
-            $f_schema = $this->_schema;
+            $f_schema = $this->schema;
             $f_schema = $this->fieldClean($f_schema);
             $table = $this->fieldClean($table);
             $sql .= " \"{$f_schema}\".\"{$table}\"";
@@ -4284,7 +4357,7 @@ class Postgres extends ADOdbBase
      */
     public function getConstraints(string $table): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 
@@ -4331,7 +4404,7 @@ class Postgres extends ADOdbBase
      */
     public function getConstraintsWithFields(string $table): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 
@@ -4398,7 +4471,7 @@ class Postgres extends ADOdbBase
         if (empty($fields)) {
             return -1;
         }
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
         $fields = $this->fieldArrayClean($fields);
@@ -4431,7 +4504,7 @@ class Postgres extends ADOdbBase
         if (empty($fields)) {
             return -1;
         }
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
         $fields = $this->fieldArrayClean($fields);
@@ -4460,7 +4533,7 @@ class Postgres extends ADOdbBase
      */
     public function addCheckConstraint(string $table, string $definition, string $name = ''): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
         $name = $this->fieldClean($name);
@@ -4486,9 +4559,9 @@ class Postgres extends ADOdbBase
      */
     public function dropCheckConstraint(string $table, string $name): bool|int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $c_table = $table;
         $table = $this->fieldClean($table);
@@ -4566,7 +4639,7 @@ class Postgres extends ADOdbBase
         if (empty($sfields) || empty($tfields)) {
             return -1;
         }
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
         $targschema = $this->fieldClean($targschema);
@@ -4611,7 +4684,7 @@ class Postgres extends ADOdbBase
      */
     public function dropConstraint(string $constraint, string $relation, string $type, bool $cascade): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $constraint = $this->fieldClean($constraint);
         $relation = $this->fieldClean($relation);
@@ -4653,7 +4726,8 @@ class Postgres extends ADOdbBase
                 $tables[$i]['schemaname'] = $this->clean($tables[$i]['schemaname']); // @phpstan-ignore-line
                 $tables_list .= ", '{$tables[$i]['tablename']}'"; // @phpstan-ignore-line
                 $schema_list .= ", '{$tables[$i]['schemaname']}'";
-                $schema_tables_list .= ", '{$tables[$i]['schemaname']}.{$tables[$i]['tablename']}'"; // @phpstan-ignore-line
+                $schema_tables_list .= ", '{$tables[$i]['schemaname']}.";
+                $schema_tables_list .= "{$tables[$i]['tablename']}'"; // @phpstan-ignore-line
             }
         }
 
@@ -4678,7 +4752,12 @@ class Postgres extends ADOdbBase
             return $rs;
         }
 
-        while (!$rs->EOF && is_array($rs->fields) && isset($rs->fields['arr_dim']) && is_string($rs->fields['arr_dim'])) {
+        while (
+            !$rs->EOF &&
+            is_array($rs->fields) &&
+            isset($rs->fields['arr_dim']) &&
+            is_string($rs->fields['arr_dim'])
+        ) {
             $arrData = explode(':', $rs->fields['arr_dim']);
             $tmpDimension = intval(substr($arrData[1], 0, strlen((string)(intval($arrData[1]) - 1))));
             $maxDimension = $tmpDimension > $maxDimension ? $tmpDimension : $maxDimension;
@@ -4737,7 +4816,7 @@ class Postgres extends ADOdbBase
             return -1;
         }
 
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
 
         $sql = "
@@ -4772,7 +4851,7 @@ class Postgres extends ADOdbBase
      */
     public function getDomain(string $domain): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $domain = $this->clean($domain);
 
@@ -4801,7 +4880,7 @@ class Postgres extends ADOdbBase
      */
     public function getDomains(): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
 
         $sql = "
@@ -4830,7 +4909,7 @@ class Postgres extends ADOdbBase
      */
     public function getDomainConstraints(string $domain): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $domain = $this->clean($domain);
 
@@ -4874,7 +4953,7 @@ class Postgres extends ADOdbBase
         string $default,
         string $check
     ): int {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $domain = $this->fieldClean($domain);
 
@@ -4933,7 +5012,7 @@ class Postgres extends ADOdbBase
      */
     public function alterDomain(string $domain, string $domdefault, bool $domnotnull, string $domowner): bool|int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $domain = $this->fieldClean($domain);
         $domowner = $this->fieldClean($domowner);
@@ -4990,7 +5069,7 @@ class Postgres extends ADOdbBase
      */
     public function dropDomain(string $domain, bool $cascade): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $domain = $this->fieldClean($domain);
 
@@ -5011,7 +5090,7 @@ class Postgres extends ADOdbBase
      */
     public function addDomainCheckConstraint(string $domain, string $definition, string $name = ''): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $domain = $this->fieldClean($domain);
         $name = $this->fieldClean($name);
@@ -5034,7 +5113,7 @@ class Postgres extends ADOdbBase
      */
     public function dropDomainConstraint(string $domain, string $constraint, bool $cascade): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $domain = $this->fieldClean($domain);
         $constraint = $this->fieldClean($constraint);
@@ -5101,7 +5180,7 @@ class Postgres extends ADOdbBase
                 $where .= " AND p.prorettype = (select oid from pg_catalog.pg_type p where p.typname = 'trigger') ";
             }
         } else {
-            $c_schema = $this->_schema;
+            $c_schema = $this->schema;
             $c_schema = $this->clean($c_schema);
             $where = "n.nspname = '{$c_schema}'";
             $distinct = '';
@@ -5118,7 +5197,8 @@ class Postgres extends ADOdbBase
 				pl.lanname AS prolanguage,
 				pg_catalog.obj_description(p.oid, 'pg_proc') AS procomment,
 				p.proname || ' (' || pg_catalog.oidvectortypes(p.proargtypes) || ')' AS proproto,
-				CASE WHEN p.proretset THEN 'setof ' ELSE '' END || pg_catalog.format_type(p.prorettype, NULL) AS proreturns,
+				CASE WHEN p.proretset THEN 'setof ' ELSE '' END ||
+                    pg_catalog.format_type(p.prorettype, NULL) AS proreturns,
 				u.usename AS proowner,
 				CASE p.prokind
   					WHEN 'a' THEN 'agg'
@@ -5223,13 +5303,25 @@ class Postgres extends ADOdbBase
         }
 
         // Replace the existing function
-        $status = $this->createFunction($funcname, $args, $returns, $definition, $language, $flags, $setof, $cost, $rows, $comment, true);
+        $status = $this->createFunction(
+            $funcname,
+            $args,
+            $returns,
+            $definition,
+            $language,
+            $flags,
+            $setof,
+            $cost,
+            $rows,
+            $comment,
+            true
+        );
         if ($status != 0) {
             $this->rollbackTransaction();
             return $status;
         }
 
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
 
         // Rename the function, if necessary
@@ -5317,7 +5409,7 @@ class Postgres extends ADOdbBase
         $flags = $this->arrayClean($flags);
         $cost = $this->clean((string)$cost);
         $rows = $this->clean((string)$rows);
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
 
         $sql = "CREATE";
@@ -5402,10 +5494,11 @@ class Postgres extends ADOdbBase
             return -1;
         }
 
-        $f_schema = $this->fieldClean($this->_schema);
+        $f_schema = $this->fieldClean($this->schema);
         $fn->fields['proname'] = $this->fieldClean($fn->fields['proname']); // @phpstan-ignore-line
 
-        $sql = "DROP FUNCTION \"{$f_schema}\".\"{$fn->fields['proname']}\"({$fn->fields['proarguments']})"; // @phpstan-ignore-line
+        $sql = "DROP FUNCTION \"{$f_schema}\".";
+        $sql .= "\"{$fn->fields['proname']}\"({$fn->fields['proarguments']})"; // @phpstan-ignore-line
         if ($cascade) {
             $sql .= " CASCADE";
         }
@@ -5442,12 +5535,13 @@ class Postgres extends ADOdbBase
         if ($all) {
             $where = '1 = 1';
         } else {
-            $c_schema = $this->_schema;
+            $c_schema = $this->schema;
             $c_schema = $this->clean($c_schema);
             $where = "n.nspname = '{$c_schema}'";
         }
         // Never show system table types
-        $where2 = "AND c.relnamespace NOT IN (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname LIKE 'pg@_%' ESCAPE '@')";
+        $where2 = "AND c.relnamespace NOT IN (SELECT oid FROM pg_catalog.pg_namespace
+            WHERE nspname LIKE 'pg@_%' ESCAPE '@')";
 
         // Create type filter
         $tqry = "'c'";
@@ -5469,7 +5563,8 @@ class Postgres extends ADOdbBase
 			FROM (pg_catalog.pg_type t
 				LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace)
 				LEFT JOIN pg_catalog.pg_user pu ON t.typowner = pu.usesysid
-			WHERE (t.typrelid = 0 OR (SELECT c.relkind IN ({$tqry}) FROM pg_catalog.pg_class c WHERE c.oid = t.typrelid {$where2}))
+			WHERE (t.typrelid = 0 OR (SELECT c.relkind IN ({$tqry}) FROM pg_catalog.pg_class c WHERE c.oid = t.typrelid
+                {$where2}))
 			AND t.typname !~ '^_'
 			AND {$where}
 			ORDER BY typname
@@ -5494,7 +5589,7 @@ class Postgres extends ADOdbBase
         string $typalign,
         string $typstorage
     ): int {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $typname = $this->fieldClean($typname);
         $typin = $this->fieldClean($typin);
@@ -5537,7 +5632,7 @@ class Postgres extends ADOdbBase
      */
     public function dropType(string $typname, bool $cascade): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $typname = $this->fieldClean($typname);
 
@@ -5560,7 +5655,7 @@ class Postgres extends ADOdbBase
      */
     public function createEnumType(string $name, array $values, string $typcomment): bool|int
     {
-        $f_schema = $this->fieldClean($this->_schema) ?? $this->_schema;
+        $f_schema = $this->fieldClean($this->schema) ?? $this->schema;
         $name = $this->fieldClean($name) ?? $name;
 
         if (empty($values)) {
@@ -5639,7 +5734,7 @@ class Postgres extends ADOdbBase
         array $colcomment,
         string $typcomment
     ): bool|int {
-        $f_schema = $this->fieldClean($this->_schema) ?? $this->_schema;
+        $f_schema = $this->fieldClean($this->schema) ?? $this->schema;
         $name = $this->fieldClean($name) ?? $name;
 
         $status = $this->beginTransaction();
@@ -5701,7 +5796,8 @@ class Postgres extends ADOdbBase
             }
 
             if ($colcomment[$i] != '') {
-                $comment_sql .= "COMMENT ON COLUMN \"{$f_schema}\".\"{$name}\".\"{$field[$i]}\" IS '{$colcomment[$i]}';\n";
+                $comment_sql .= "COMMENT ON COLUMN \"{$f_schema}\".\"{$name}\".\"{$field[$i]}\" IS
+                    '{$colcomment[$i]}';\n";
             }
 
             $found = true;
@@ -5762,7 +5858,8 @@ class Postgres extends ADOdbBase
 				c.castcontext,
 				obj_description(c.oid, 'pg_cast') as castcomment
 			FROM
-				(pg_catalog.pg_cast c LEFT JOIN pg_catalog.pg_proc p ON c.castfunc=p.oid JOIN pg_catalog.pg_namespace n3 ON p.pronamespace=n3.oid),
+				(pg_catalog.pg_cast c LEFT JOIN pg_catalog.pg_proc p ON c.castfunc=p.oid
+                JOIN pg_catalog.pg_namespace n3 ON p.pronamespace=n3.oid),
 				pg_catalog.pg_type t1,
 				pg_catalog.pg_type t2,
 				pg_catalog.pg_namespace n1,
@@ -5785,7 +5882,7 @@ class Postgres extends ADOdbBase
      */
     public function getConversions(): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $sql = "
 			SELECT
@@ -5812,7 +5909,7 @@ class Postgres extends ADOdbBase
      */
     public function getRules(string $table): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 
@@ -5872,7 +5969,7 @@ class Postgres extends ADOdbBase
         string $action,
         bool $replace = false
     ): int {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $name = $this->fieldClean($name);
         $table = $this->fieldClean($table);
@@ -5911,7 +6008,7 @@ class Postgres extends ADOdbBase
      */
     public function dropRule(string $rule, string $relation, bool $cascade): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $rule = $this->fieldClean($rule);
         $relation = $this->fieldClean($relation);
@@ -5934,7 +6031,7 @@ class Postgres extends ADOdbBase
      */
     public function getTrigger(string $table, string $trigger): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
         $trigger = $this->clean($trigger);
@@ -5956,7 +6053,7 @@ class Postgres extends ADOdbBase
      */
     public function getTriggers(string $table = ''): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 
@@ -6048,7 +6145,7 @@ class Postgres extends ADOdbBase
             }
         }
 
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         // Table name
         if (isset($trigger['relname']) && is_string($trigger['relname'])) {
@@ -6137,7 +6234,7 @@ class Postgres extends ADOdbBase
         string $tgfrequency,
         string $tgargs
     ): int {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $tgname = $this->fieldClean($tgname);
         $table = $this->fieldClean($table);
@@ -6160,7 +6257,7 @@ class Postgres extends ADOdbBase
      */
     public function alterTrigger(string $table, string $trigger, string $name): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
         $trigger = $this->fieldClean($trigger);
@@ -6180,7 +6277,7 @@ class Postgres extends ADOdbBase
      */
     public function dropTrigger(string $tgname, string $table, bool $cascade): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $tgname = $this->fieldClean($tgname);
         $table = $this->fieldClean($table);
@@ -6201,7 +6298,7 @@ class Postgres extends ADOdbBase
      */
     public function enableTrigger(string $tgname, string $table): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $tgname = $this->fieldClean($tgname);
         $table = $this->fieldClean($table);
@@ -6219,7 +6316,7 @@ class Postgres extends ADOdbBase
      */
     public function disableTrigger(string $tgname, string $table): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $tgname = $this->fieldClean($tgname);
         $table = $this->fieldClean($table);
@@ -6237,14 +6334,16 @@ class Postgres extends ADOdbBase
      */
     public function getOperators(): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         // We stick with the subselects here, as you cannot ORDER BY a regtype
         $sql = "
 			SELECT
 				po.oid,	po.oprname,
-				(SELECT pg_catalog.format_type(oid, NULL) FROM pg_catalog.pg_type pt WHERE pt.oid=po.oprleft) AS oprleftname,
-				(SELECT pg_catalog.format_type(oid, NULL) FROM pg_catalog.pg_type pt WHERE pt.oid=po.oprright) AS oprrightname,
+				(SELECT pg_catalog.format_type(oid, NULL)
+                    FROM pg_catalog.pg_type pt WHERE pt.oid=po.oprleft) AS oprleftname,
+				(SELECT pg_catalog.format_type(oid, NULL)
+                    FROM pg_catalog.pg_type pt WHERE pt.oid=po.oprright) AS oprrightname,
 				po.oprresult::pg_catalog.regtype AS resultname,
 				pg_catalog.obj_description(po.oid, 'pg_operator') AS oprcomment
 			FROM
@@ -6309,7 +6408,7 @@ class Postgres extends ADOdbBase
             return -1;
         }
 
-        $f_schema = $this->fieldClean($this->_schema);
+        $f_schema = $this->fieldClean($this->schema);
         $opr->fields['oprname'] = $this->fieldClean($opr->fields['oprname']); // @phpstan-ignore-line
 
         $sql = "DROP OPERATOR \"{$f_schema}\".{$opr->fields['oprname']} (";
@@ -6341,7 +6440,7 @@ class Postgres extends ADOdbBase
      */
     public function getOpClasses(): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $sql = "
 			SELECT
@@ -6378,7 +6477,7 @@ class Postgres extends ADOdbBase
         string $template = '',
         string $comment = ''
     ): bool|int {
-        $f_schema = $this->fieldClean($this->_schema) ?? $this->_schema;
+        $f_schema = $this->fieldClean($this->schema) ?? $this->schema;
         $cfgname = $this->fieldClean($cfgname) ?? $cfgname;
 
         $sql = "CREATE TEXT SEARCH CONFIGURATION \"{$f_schema}\".\"{$cfgname}\" (";
@@ -6431,7 +6530,7 @@ class Postgres extends ADOdbBase
      */
     public function getFtsConfigurations(bool $all = true): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $sql = "
 			SELECT
@@ -6461,7 +6560,7 @@ class Postgres extends ADOdbBase
      */
     public function getFtsConfigurationByName(string $ftscfg): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $ftscfg = $this->clean($ftscfg);
         $sql = "
@@ -6490,7 +6589,7 @@ class Postgres extends ADOdbBase
      */
     public function getFtsConfigurationMap(string $ftscfg): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $ftscfg = $this->fieldClean($ftscfg);
 
@@ -6514,7 +6613,8 @@ class Postgres extends ADOdbBase
         $sql = "
  			SELECT
 				(SELECT t.alias FROM pg_catalog.ts_token_type(c.cfgparser) AS t WHERE t.tokid = m.maptokentype) AS name,
-				(SELECT t.description FROM pg_catalog.ts_token_type(c.cfgparser) AS t WHERE t.tokid = m.maptokentype) AS description,
+				(SELECT t.description FROM pg_catalog.ts_token_type(c.cfgparser) AS t WHERE t.tokid = m.maptokentype)
+                    AS description,
 				c.cfgname AS cfgname, n.nspname ||'.'|| d.dictname as dictionaries
 			FROM
 				pg_catalog.pg_ts_config AS c, pg_catalog.pg_ts_config_map AS m, pg_catalog.pg_ts_dict d,
@@ -6537,7 +6637,7 @@ class Postgres extends ADOdbBase
      */
     public function getFtsParsers(bool $all = true): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $sql = "
 			SELECT
@@ -6565,7 +6665,7 @@ class Postgres extends ADOdbBase
      */
     public function getFtsDictionaries(bool $all = true): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $sql = "
  			SELECT
@@ -6619,7 +6719,7 @@ class Postgres extends ADOdbBase
      */
     public function dropFtsConfiguration(string $ftscfg, bool $cascade): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $ftscfg = $this->fieldClean($ftscfg);
 
@@ -6641,7 +6741,7 @@ class Postgres extends ADOdbBase
      */
     public function dropFtsDictionary(string $ftsdict, bool $cascade): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $ftsdict = $this->fieldClean($ftsdict);
 
@@ -6680,7 +6780,7 @@ class Postgres extends ADOdbBase
 
         // Only if the name has changed
         if ($name != $cfgname) {
-            $f_schema = $this->_schema;
+            $f_schema = $this->schema;
             $f_schema = $this->fieldClean($f_schema);
             $name = $this->fieldClean($name);
 
@@ -6716,7 +6816,7 @@ class Postgres extends ADOdbBase
         string $option = '',
         string $comment = ''
     ): bool|int {
-        $f_schema = $this->fieldClean($this->_schema) ?? $this->_schema;
+        $f_schema = $this->fieldClean($this->schema) ?? $this->schema;
         $dictname = $this->fieldClean($dictname) ?? $dictname;
         $template = $this->fieldClean($template) ?? $template;
         $lexize = $this->fieldClean($lexize) ?? $lexize;
@@ -6803,7 +6903,7 @@ class Postgres extends ADOdbBase
 
         // Only if the name has changed
         if ($name != $dictname) {
-            $f_schema = $this->_schema;
+            $f_schema = $this->schema;
             $f_schema = $this->fieldClean($f_schema);
             $name = $this->fieldClean($name);
 
@@ -6826,7 +6926,7 @@ class Postgres extends ADOdbBase
      */
     public function getFtsDictionaryByName(string $ftsdict): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $ftsdict = $this->clean($ftsdict);
 
@@ -6864,7 +6964,7 @@ class Postgres extends ADOdbBase
             return -1;
         }
 
-        $f_schema = $this->fieldClean($this->_schema);
+        $f_schema = $this->fieldClean($this->schema);
         $ftscfg = $this->fieldClean($ftscfg);
         $dictname = $this->fieldClean($dictname);
         $mapping = $this->arrayClean($mapping);
@@ -6899,7 +6999,7 @@ class Postgres extends ADOdbBase
      */
     public function getFtsMappingByName(string $ftscfg, string $mapping): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $ftscfg = $this->clean($ftscfg);
         $mapping = $this->clean($mapping);
@@ -7029,7 +7129,7 @@ class Postgres extends ADOdbBase
         string $sortop,
         string $comment
     ): bool|int {
-        $f_schema = $this->fieldClean($this->_schema) ?? $this->_schema;
+        $f_schema = $this->fieldClean($this->schema) ?? $this->schema;
         $name = $this->fieldClean($name) ?? $name;
         $basetype = $this->fieldClean($basetype) ?? $basetype;
         $sfunc = $this->fieldClean($sfunc) ?? $sfunc;
@@ -7040,7 +7140,8 @@ class Postgres extends ADOdbBase
 
         $this->beginTransaction();
 
-        $sql = "CREATE AGGREGATE \"{$f_schema}\".\"{$name}\" (BASETYPE = \"{$basetype}\", SFUNC = \"{$sfunc}\", STYPE = \"{$stype}\"";
+        $sql = "CREATE AGGREGATE \"{$f_schema}\".\"{$name}\" (BASETYPE = \"{$basetype}\", SFUNC = \"{$sfunc}\",
+            STYPE = \"{$stype}\"";
         if (trim($ffunc) != '') {
             $sql .= ", FINALFUNC = \"{$ffunc}\"";
         }
@@ -7083,7 +7184,8 @@ class Postgres extends ADOdbBase
         string $newaggrname
     ): int {
         /* this function is called from alterAggregate where params are cleaned */
-        $sql = "ALTER AGGREGATE \"{$aggrschema}\"" . '.' . "\"{$aggrname}\" (\"{$aggrtype}\") RENAME TO \"{$newaggrname}\"";
+        $sql = "ALTER AGGREGATE \"{$aggrschema}\"" . '.' . "\"{$aggrname}\" (\"{$aggrtype}\")
+            RENAME TO \"{$newaggrname}\"";
         return $this->execute($sql);
     }
 
@@ -7096,7 +7198,7 @@ class Postgres extends ADOdbBase
      */
     public function dropAggregate(string $aggrname, string $aggrtype, bool $cascade): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $aggrname = $this->fieldClean($aggrname);
         $aggrtype = $this->fieldClean($aggrtype);
@@ -7117,7 +7219,7 @@ class Postgres extends ADOdbBase
      */
     public function getAggregate(string $name, string $basetype): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $name = $this->fieldclean($name);
         $basetype = $this->fieldclean($basetype);
@@ -7146,7 +7248,7 @@ class Postgres extends ADOdbBase
      */
     public function getAggregates(): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $sql = "SELECT p.proname, CASE p.proargtypes[0] WHEN 'pg_catalog.\"any\"'::pg_catalog.regtype THEN NULL ELSE
 			   pg_catalog.format_type(p.proargtypes[0], NULL) END AS proargtypes, a.aggtransfn, u.usename,
@@ -7167,7 +7269,7 @@ class Postgres extends ADOdbBase
      */
     public function changeAggregateOwner(string $aggrname, string $aggrtype, string $newaggrowner): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $aggrname = $this->fieldClean($aggrname);
         $newaggrowner = $this->fieldClean($newaggrowner);
@@ -7184,7 +7286,7 @@ class Postgres extends ADOdbBase
      */
     public function changeAggregateSchema(string $aggrname, string $aggrtype, string $newaggrschema): int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $aggrname = $this->fieldClean($aggrname);
         $newaggrschema = $this->fieldClean($newaggrschema);
@@ -7659,7 +7761,23 @@ class Postgres extends ADOdbBase
             $rolename = $newrolename;
         }
 
-        $status = $this->setRole($rolename, $password, $superuser, $createdb, $createrole, $inherits, $login, $connlimit, $expiry, $memberof, $members, $adminmembers, $memberofold, $membersold, $adminmembersold);
+        $status = $this->setRole(
+            $rolename,
+            $password,
+            $superuser,
+            $createdb,
+            $createrole,
+            $inherits,
+            $login,
+            $connlimit,
+            $expiry,
+            $memberof,
+            $members,
+            $adminmembers,
+            $memberofold,
+            $membersold,
+            $adminmembersold
+        );
         if ($status != 0) {
             $this->rollbackTransaction();
             return -2;
@@ -8147,7 +8265,7 @@ class Postgres extends ADOdbBase
      */
     public function getPrivileges(string $object, string $type, ?string $table = null): array|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $object = $this->clean($object);
 
@@ -8235,7 +8353,7 @@ class Postgres extends ADOdbBase
         bool $cascade,
         string $table
     ): int {
-        $f_schema = $this->fieldClean($this->_schema);
+        $f_schema = $this->fieldClean($this->schema);
         $usernames = $this->fieldArrayClean($usernames);
         $groupnames = $this->fieldArrayClean($groupnames);
 
@@ -8378,9 +8496,11 @@ class Postgres extends ADOdbBase
      */
     public function getTablespaces(bool $all = false): \ADORecordSet|int
     {
-        $sql = "SELECT spcname, pg_catalog.pg_get_userbyid(spcowner) AS spcowner, pg_catalog.pg_tablespace_location(oid) as spclocation,
-					(SELECT description FROM pg_catalog.pg_shdescription pd WHERE pg_tablespace.oid=pd.objoid AND pd.classoid='pg_tablespace'::regclass) AS spccomment
-					FROM pg_catalog.pg_tablespace";
+        $sql = "SELECT spcname, pg_catalog.pg_get_userbyid(spcowner)
+            AS spcowner, pg_catalog.pg_tablespace_location(oid) as spclocation,
+            (SELECT description FROM pg_catalog.pg_shdescription pd WHERE pg_tablespace.oid=pd.objoid
+            AND pd.classoid='pg_tablespace'::regclass) AS spccomment
+            FROM pg_catalog.pg_tablespace";
 
         if (!Config::showSystem() && !$all) {
             $sql .= ' WHERE spcname NOT LIKE $$pg\_%$$';
@@ -8399,8 +8519,10 @@ class Postgres extends ADOdbBase
     {
         $spcname = $this->clean($spcname);
 
-        $sql = "SELECT spcname, pg_catalog.pg_get_userbyid(spcowner) AS spcowner, pg_catalog.pg_tablespace_location(oid) as spclocation,
-            (SELECT description FROM pg_catalog.pg_shdescription pd WHERE pg_tablespace.oid=pd.objoid AND pd.classoid='pg_tablespace'::regclass) AS spccomment
+        $sql = "SELECT spcname, pg_catalog.pg_get_userbyid(spcowner)
+            AS spcowner, pg_catalog.pg_tablespace_location(oid) as spclocation,
+            (SELECT description FROM pg_catalog.pg_shdescription pd WHERE pg_tablespace.oid=pd.objoid
+            AND pd.classoid='pg_tablespace'::regclass) AS spccomment
             FROM pg_catalog.pg_tablespace WHERE spcname='{$spcname}'";
 
         return $this->selectSet($sql);
@@ -8515,7 +8637,7 @@ class Postgres extends ADOdbBase
     public function analyzeDB(string $table = ''): int
     {
         if ($table != '') {
-            $f_schema = $this->_schema;
+            $f_schema = $this->schema;
             $f_schema = $this->fieldClean($f_schema);
             $table = $this->fieldClean($table);
 
@@ -8547,7 +8669,7 @@ class Postgres extends ADOdbBase
             $sql .= " ANALYZE";
         }
         if ($table != '') {
-            $f_schema = $this->_schema;
+            $f_schema = $this->schema;
             $f_schema = $this->fieldClean($f_schema);
             $table = $this->fieldClean($table);
             $sql .= " \"{$f_schema}\".\"{$table}\"";
@@ -8603,7 +8725,7 @@ class Postgres extends ADOdbBase
         ?string $vaccostdelay,
         ?string $vaccostlimit
     ): int {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
 
@@ -8646,7 +8768,7 @@ class Postgres extends ADOdbBase
 
     public function dropAutovacuum(string $table): bool|int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
 
@@ -8668,7 +8790,8 @@ class Postgres extends ADOdbBase
             $sql = "SELECT datname, usename, pid,
 					case when wait_event is null then 'false' else wait_event_type || '::' || wait_event end as waiting,
 					query_start, application_name, client_addr,
-				  case when state='idle in transaction' then '<IDLE> in transaction' when state = 'idle' then '<IDLE>' else query end as query
+				  case when state='idle in transaction' then '<IDLE> in transaction'
+                  when state = 'idle' then '<IDLE>' else query end as query
 				FROM pg_catalog.pg_stat_activity
 				ORDER BY datname, usename, pid";
         } else {
@@ -8676,7 +8799,8 @@ class Postgres extends ADOdbBase
             $sql = "SELECT datname, usename, pid,
 					case when wait_event is null then 'false' else wait_event_type || '::' || wait_event end as waiting,
 					query_start, application_name, client_addr,
-					case when state='idle in transaction' then '<IDLE> in transaction' when state = 'idle' then '<IDLE>' else query end as query
+					case when state='idle in transaction' then '<IDLE> in transaction'
+                    when state = 'idle' then '<IDLE>' else query end as query
 				FROM pg_catalog.pg_stat_activity
 				WHERE datname='{$database}'
 				ORDER BY usename, pid";
@@ -8765,7 +8889,7 @@ class Postgres extends ADOdbBase
         ?string $basetype = null
     ): int {
         $sql = "COMMENT ON {$obj_type} " ;
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $comment = $this->clean($comment); // Passing in an already cleaned comment will lead to double escaped data
             // So, while counter-intuitive, it is important to not clean comments before
@@ -8979,7 +9103,7 @@ class Postgres extends ADOdbBase
                     $paren_level++;
                 } elseif (substr($line, $i, 1) === ')' && $paren_level > 0) {
                     $paren_level--;
-                } elseif (substr($line, $i, 1) === ';' && !$bslash_count && !$paren_level) { /* semicolon? then send query */
+                } elseif (substr($line, $i, 1) === ';' && !$bslash_count && !$paren_level) {
                     $subline = substr(substr($line, 0, $i), $query_start);
                     /* is there anything else on the line? */
                     if (strspn($subline, " \t\n\r") != strlen($subline)) {
@@ -9321,7 +9445,8 @@ class Postgres extends ADOdbBase
         }
 
         // Actually retrieve the rows, with offset and limit
-        $rs = $this->selectSet("SELECT * FROM ({$query}) AS sub {$orderby} LIMIT {$page_size} OFFSET " . ($page - 1) * $page_size);
+        $rs = $this->selectSet("SELECT * FROM ({$query}) AS sub {$orderby}
+            LIMIT {$page_size} OFFSET " . ($page - 1) * $page_size);
         $status = $this->endTransaction();
         if ($status != 0) {
             $this->rollbackTransaction();
@@ -9352,7 +9477,7 @@ class Postgres extends ADOdbBase
     */
     public function browseRow(string $table, ?array $key = null): \ADORecordSet|int
     {
-        $f_schema = $this->_schema;
+        $f_schema = $this->schema;
         $f_schema = $this->fieldClean($f_schema);
         $table = $this->fieldClean($table);
 
@@ -9403,7 +9528,7 @@ class Postgres extends ADOdbBase
      */
     public function getStatsTableTuples(string $table): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 
@@ -9420,7 +9545,7 @@ class Postgres extends ADOdbBase
      */
     public function getStatsTableIO(string $table): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 
@@ -9437,7 +9562,7 @@ class Postgres extends ADOdbBase
      */
     public function getStatsIndexTuples(string $table): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 
@@ -9454,7 +9579,7 @@ class Postgres extends ADOdbBase
      */
     public function getStatsIndexIO(string $table): \ADORecordSet|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 

@@ -98,7 +98,8 @@ class Postgres83 extends Postgres84
 
         $sql = "
 			SELECT pdb.datname AS datname, pr.rolname AS datowner, pg_encoding_to_char(encoding) AS datencoding,
-				(SELECT description FROM pg_catalog.pg_shdescription pd WHERE pdb.oid=pd.objoid AND pd.classoid='pg_database'::regclass) AS datcomment,
+				(SELECT description FROM pg_catalog.pg_shdescription pd
+                    WHERE pdb.oid=pd.objoid AND pd.classoid='pg_database'::regclass) AS datcomment,
 				(SELECT spcname FROM pg_catalog.pg_tablespace pt WHERE pt.oid=pdb.dattablespace) AS tablespace,
 				pg_catalog.pg_database_size(pdb.oid) as dbsize
 			FROM pg_catalog.pg_database pdb LEFT JOIN pg_catalog.pg_roles pr ON (pdb.datdba = pr.oid)
@@ -122,17 +123,17 @@ class Postgres83 extends Postgres84
 
         if ($table !== '') {
             $table = $this->clean($table);
-            $c_schema = $this->_schema;
+            $c_schema = $this->schema;
             $c_schema = $this->clean($c_schema);
 
             $sql = "
-				SELECT vacrelid, nspname, relname, 
-					CASE enabled 
-						WHEN 't' THEN 'on' 
-						ELSE 'off' 
+				SELECT vacrelid, nspname, relname,
+					CASE enabled
+						WHEN 't' THEN 'on'
+						ELSE 'off'
 					END AS autovacuum_enabled, vac_base_thresh AS autovacuum_vacuum_threshold,
-					vac_scale_factor AS autovacuum_vacuum_scale_factor, anl_base_thresh AS autovacuum_analyze_threshold, 
-					anl_scale_factor AS autovacuum_analyze_scale_factor, vac_cost_delay AS autovacuum_vacuum_cost_delay, 
+					vac_scale_factor AS autovacuum_vacuum_scale_factor, anl_base_thresh AS autovacuum_analyze_threshold,
+					anl_scale_factor AS autovacuum_analyze_scale_factor, vac_cost_delay AS autovacuum_vacuum_cost_delay,
 					vac_cost_limit AS autovacuum_vacuum_cost_limit
 				FROM pg_autovacuum AS a
 					join pg_class AS c on (c.oid=a.vacrelid)
@@ -142,13 +143,13 @@ class Postgres83 extends Postgres84
 			";
         } else {
             $sql = "
-				SELECT vacrelid, nspname, relname, 
-					CASE enabled 
-						WHEN 't' THEN 'on' 
-						ELSE 'off' 
+				SELECT vacrelid, nspname, relname,
+					CASE enabled
+						WHEN 't' THEN 'on'
+						ELSE 'off'
 					END AS autovacuum_enabled, vac_base_thresh AS autovacuum_vacuum_threshold,
-					vac_scale_factor AS autovacuum_vacuum_scale_factor, anl_base_thresh AS autovacuum_analyze_threshold, 
-					anl_scale_factor AS autovacuum_analyze_scale_factor, vac_cost_delay AS autovacuum_vacuum_cost_delay, 
+					vac_scale_factor AS autovacuum_vacuum_scale_factor, anl_base_thresh AS autovacuum_analyze_threshold,
+					anl_scale_factor AS autovacuum_analyze_scale_factor, vac_cost_delay AS autovacuum_vacuum_cost_delay,
 					vac_cost_limit AS autovacuum_vacuum_cost_limit
 				FROM pg_autovacuum AS a
 					join pg_class AS c on (c.oid=a.vacrelid)
@@ -171,7 +172,7 @@ class Postgres83 extends Postgres84
         ?string $vaccostlimit
     ): int {
         $defaults = $this->getAutovacuum();
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 
@@ -226,7 +227,7 @@ class Postgres83 extends Postgres84
 
 
         $rs = $this->selectSet("SELECT vacrelid 
-			FROM \"pg_catalog\".\"pg_autovacuum\" 
+			FROM \"pg_catalog\".\"pg_autovacuum\"
 			WHERE vacrelid = {$toid};");
 
         $status = -1; // ini
@@ -238,7 +239,7 @@ class Postgres83 extends Postgres84
         ) {
             // table exists in pg_autovacuum, UPDATE
             $sql = sprintf(
-                "UPDATE \"pg_catalog\".\"pg_autovacuum\" SET 
+                "UPDATE \"pg_catalog\".\"pg_autovacuum\" SET
 						enabled = '%s',
 						vac_base_thresh = %s,
 						vac_scale_factor = %s,
@@ -264,7 +265,7 @@ class Postgres83 extends Postgres84
         } else {
             // table doesn't exists in pg_autovacuum, INSERT
             $sql = sprintf(
-                "INSERT INTO \"pg_catalog\".\"pg_autovacuum\" 
+                "INSERT INTO \"pg_catalog\".\"pg_autovacuum\"
 				VALUES (%s, '%s', %s, %s, %s, %s, %s, %s, %s, %s )",
                 $toid,
                 $_POST['autovacuum_enabled'] === 'on' ? 't' : 'f',
@@ -288,15 +289,15 @@ class Postgres83 extends Postgres84
      */
     public function dropAutovacuum(string $table): bool|int
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $c_schema = $this->clean($c_schema);
         $table = $this->clean($table);
 
         $rs = $this->selectSet("
-			SELECT c.oid 
-			FROM pg_catalog.pg_class AS c 
+			SELECT c.oid
+			FROM pg_catalog.pg_class AS c
 				LEFT JOIN pg_catalog.pg_namespace AS n ON (n.oid=c.relnamespace)
-			WHERE 
+			WHERE
 				c.relname = '{$table}' AND n.nspname = '{$c_schema}'
 		");
 
@@ -371,7 +372,7 @@ class Postgres83 extends Postgres84
                 $seqrs->fields['seqname'] instanceof \Stringable
             )
         ) {
-            $f_schema = $this->_schema;
+            $f_schema = $this->schema;
             $f_schema = $this->fieldClean($f_schema);
             $sql = "ALTER SEQUENCE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" {$sql}";
             return $this->execute($sql);
@@ -402,7 +403,7 @@ class Postgres83 extends Postgres84
                 $seqrs->fields['seqname'] instanceof \Stringable
             )
         ) {
-            $f_schema = $this->_schema;
+            $f_schema = $this->schema;
             $f_schema = $this->fieldClean($f_schema);
             $sql = "ALTER TABLE \"{$f_schema}\".\"{$seqrs->fields['seqname']}\" OWNER TO \"{$owner}\"";
             return $this->execute($sql);

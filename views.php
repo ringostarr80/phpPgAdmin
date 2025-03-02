@@ -250,9 +250,9 @@ function doSetParamsCreate($msg = '')
 
         //if we have schemas we need to specify the correct schema for each table we're retrieiving
         //with getTableAttributes
-        $curSchema = $data->_schema;
+        $curSchema = $data->schema;
         for ($i = 0; $i < $tblCount; $i++) {
-            if ($data->_schema != $arrSelTables[$i]['schemaname']) {
+            if ($data->schema != $arrSelTables[$i]['schemaname']) {
                 $data->setSchema($arrSelTables[$i]['schemaname']);
             }
 
@@ -274,7 +274,7 @@ function doSetParamsCreate($msg = '')
         echo "<tr><th class=\"data\">{$lang['strviewname']}</th></tr>";
         echo "<tr>\n<td class=\"data1\">\n";
         // View name
-        echo "<input name=\"formView\" value=\"", htmlspecialchars($_REQUEST['formView']), "\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" />\n";
+        echo "<input name=\"formView\" value=\"", htmlspecialchars($_REQUEST['formView']), "\" size=\"32\" maxlength=\"{$data->maxNameLen}\" />\n";
         echo "</td>\n</tr>\n";
         echo "<tr><th class=\"data\">{$lang['strcomment']}</th></tr>";
         echo "<tr>\n<td class=\"data1\">\n";
@@ -424,7 +424,7 @@ function doCreate($msg = '')
     echo "<form action=\"views.php\" method=\"post\">\n";
     echo "<table style=\"width: 100%\">\n";
     echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strname']}</th>\n";
-    echo "\t<td class=\"data1\"><input name=\"formView\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+    echo "\t<td class=\"data1\"><input name=\"formView\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
         htmlspecialchars($_REQUEST['formView']), "\" /></td>\n\t</tr>\n";
     echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strdefinition']}</th>\n";
     echo "\t<td class=\"data1\"><textarea style=\"width:100%;\" rows=\"10\" cols=\"50\" name=\"formDefinition\">",

@@ -417,7 +417,7 @@ function doCreateSequence($msg = '')
     echo "<table>\n";
 
     echo "<tr><th class=\"data left required\">{$lang['strname']}</th>\n";
-    echo "<td class=\"data1\"><input name=\"formSequenceName\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+    echo "<td class=\"data1\"><input name=\"formSequenceName\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
         htmlspecialchars($_POST['formSequenceName']), "\" /></td></tr>\n";
 
     echo "<tr><th class=\"data left\">{$lang['strincrementby']}</th>\n";
@@ -564,7 +564,7 @@ function doSetval($msg = '')
         echo "<table border=\"0\">";
         echo "<tr><th class=\"data left required\">{$lang['strlastvalue']}</th>\n";
         echo "<td class=\"data1\">";
-        echo "<input name=\"nextvalue\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+        echo "<input name=\"nextvalue\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
             $misc->printVal($sequence->fields['last_value']), "\" /></td></tr>\n";
         echo "</table>\n";
         echo "<p><input type=\"hidden\" name=\"action\" value=\"setval\" />\n";
@@ -636,7 +636,7 @@ function doSaveAlter()
             // Force a browser reload
             $_reload_browser = true;
         }
-        if (!empty($_POST['newschema']) && ($_POST['newschema'] != $data->_schema)) {
+        if (!empty($_POST['newschema']) && ($_POST['newschema'] != $data->schema)) {
             // Jump them to the new sequence schema
             $misc->setCurrentSchema($_POST['newschema']);
             $_reload_browser = true;
@@ -687,7 +687,7 @@ function doAlter($msg = '')
 
         echo "<tr><th class=\"data left required\">{$lang['strname']}</th>\n";
         echo "<td class=\"data1\">";
-        echo "<input name=\"name\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+        echo "<input name=\"name\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
             htmlspecialchars($_POST['name']), "\" /></td></tr>\n";
 
         if ($data->isSuperUser()) {

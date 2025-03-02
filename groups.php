@@ -197,7 +197,7 @@ function doCreate($msg = '')
     echo $misc->form;
     echo "<table>\n";
     echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strname']}</th>\n";
-    echo "\t\t<td class=\"data\"><input size=\"32\" maxlength=\"{$data->_maxNameLen}\" name=\"name\" value=\"", htmlspecialchars($_POST['name']), "\" /></td>\n\t</tr>\n";
+    echo "\t\t<td class=\"data\"><input size=\"32\" maxlength=\"{$data->maxNameLen}\" name=\"name\" value=\"", htmlspecialchars($_POST['name']), "\" /></td>\n\t</tr>\n";
     if ($users->recordCount() > 0) {
         echo "\t<tr>\n\t\t<th class=\"data left\">{$lang['strmembers']}</th>\n";
 

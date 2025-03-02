@@ -52,7 +52,7 @@ class Postgres84 extends Postgres90
      */
     function getTriggers($table = '')
     {
-        $c_schema = $this->_schema;
+        $c_schema = $this->schema;
         $this->clean($c_schema);
         $this->clean($table);
 

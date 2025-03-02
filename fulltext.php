@@ -200,7 +200,7 @@ function doCreateConfig($msg = '')
     echo "<table>\n";
     /* conf name */
     echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strname']}</th>\n";
-    echo "\t\t<td class=\"data1\"><input name=\"formName\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+    echo "\t\t<td class=\"data1\"><input name=\"formName\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
         htmlspecialchars($_POST['formName']), "\" /></td>\n\t</tr>\n";
 
     // Template
@@ -338,7 +338,7 @@ function doAlterConfig($msg = '')
         echo "\t<tr>\n";
         echo "\t\t<th class=\"data left required\">{$lang['strname']}</th>\n";
         echo "\t\t<td class=\"data1\">";
-        echo "\t\t\t<input name=\"formName\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+        echo "\t\t\t<input name=\"formName\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
             htmlspecialchars($_POST['formName']), "\" />\n";
         echo "\t\t</td>\n";
         echo "\t</tr>\n";
@@ -636,7 +636,7 @@ function doCreateDict($msg = '')
     echo "<form action=\"fulltext.php\" method=\"post\">\n";
     echo "<table>\n";
     echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strname']}</th>\n";
-    echo "\t\t<td class=\"data1\"><input name=\"formName\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+    echo "\t\t<td class=\"data1\"><input name=\"formName\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
         htmlspecialchars($_POST['formName']), "\" />&nbsp;",
         "<input type=\"checkbox\" name=\"formIsTemplate\" id=\"formIsTemplate\"", $_POST['formIsTemplate'] ? ' checked="checked" ' : '', " />\n",
         "<label for=\"formIsTemplate\">{$lang['strftscreatedicttemplate']}</label></td>\n\t</tr>\n";
@@ -786,7 +786,7 @@ function doAlterDict($msg = '')
         echo "\t<tr>\n";
         echo "\t\t<th class=\"data left required\">{$lang['strname']}</th>\n";
         echo "\t\t<td class=\"data1\">";
-        echo "\t\t\t<input name=\"formName\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+        echo "\t\t\t<input name=\"formName\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
             htmlspecialchars($_POST['formName']), "\" />\n";
         echo "\t\t</td>\n";
         echo "\t</tr>\n";

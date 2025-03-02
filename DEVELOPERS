@@ -103,7 +103,7 @@ ensures that browsers remove query strings when expanding the given
 relative URL into a full URL.
 
 When working on database classes, always schema qualify your SQL where it is
-possible with the current schema ($data->_schema) for pg73+ classes. Then don't
+possible with the current schema ($data->schema) for pg73+ classes. Then don't
 forget to write your method for older classes which don't support schemas.
 
 When working with git, always make sure to do a 'git pull' both before you 

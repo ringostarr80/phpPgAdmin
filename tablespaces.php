@@ -47,7 +47,7 @@ function doAlter($msg = '')
         echo "<table>\n";
         echo "<tr><th class=\"data left required\">{$lang['strname']}</th>\n";
         echo "<td class=\"data1\">";
-        echo "<input name=\"name\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+        echo "<input name=\"name\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
             htmlspecialchars($_POST['name']), "\" /></td></tr>\n";
         echo "<tr><th class=\"data left required\">{$lang['strowner']}</th>\n";
         echo "<td class=\"data1\"><select name=\"owner\">";
@@ -165,7 +165,7 @@ function doCreate($msg = '')
     echo $misc->form;
     echo "<table>\n";
     echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strname']}</th>\n";
-    echo "\t\t<td class=\"data1\"><input size=\"32\" name=\"formSpcname\" maxlength=\"{$data->_maxNameLen}\" value=\"", htmlspecialchars($_POST['formSpcname']), "\" /></td>\n\t</tr>\n";
+    echo "\t\t<td class=\"data1\"><input size=\"32\" name=\"formSpcname\" maxlength=\"{$data->maxNameLen}\" value=\"", htmlspecialchars($_POST['formSpcname']), "\" /></td>\n\t</tr>\n";
     echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strowner']}</th>\n";
     echo "\t\t<td class=\"data1\"><select name=\"formOwner\">\n";
     while (!$users->EOF) {

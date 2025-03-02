@@ -217,7 +217,7 @@ function addForeignKey($stage, $msg = '')
 
             echo "<table>\n";
             echo "<tr><th class=\"data\" colspan=\"3\">{$lang['strname']}</th></tr>\n";
-            echo "<tr><td class=\"data1\" colspan=\"3\"><input type=\"text\" name=\"name\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" /></td></tr>\n";
+            echo "<tr><td class=\"data1\" colspan=\"3\"><input type=\"text\" name=\"name\" size=\"32\" maxlength=\"{$data->maxNameLen}\" /></td></tr>\n";
             echo "<tr><th class=\"data\">{$lang['strtablecolumnlist']}</th><th class=\"data\">&nbsp;</th><th class=\"data required\">{$lang['strfkcolumnlist']}</th></tr>\n";
             echo "<tr><td class=\"data1\">" . $selColumns->fetch() . "</td>\n";
             echo "<td class=\"data1\" style=\"text-align: center\">" . $buttonRemove->fetch() . $buttonAdd->fetch() . "</td>\n";
@@ -321,7 +321,7 @@ function addPrimaryOrUniqueKey($type, $confirm, $msg = '')
         echo "<tr><th class=\"data\" colspan=\"3\">{$lang['strname']}</th></tr>";
         echo "<tr>";
         echo "<td class=\"data1\" colspan=\"3\"><input type=\"text\" name=\"name\" value=\"", htmlspecialchars($_POST['name']),
-            "\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" /></td></tr>";
+            "\" size=\"32\" maxlength=\"{$data->maxNameLen}\" /></td></tr>";
         echo "<tr><th class=\"data\">{$lang['strtablecolumnlist']}</th><th class=\"data\">&nbsp;</th><th class=\"data required\">{$lang['strindexcolumnlist']}</th></tr>\n";
         echo "<tr><td class=\"data1\">" . $selColumns->fetch() . "</td>\n";
         echo "<td class=\"data1\" style=\"text-align: center\">" . $buttonRemove->fetch() . $buttonAdd->fetch() . "</td>";
@@ -420,7 +420,7 @@ function addCheck($confirm, $msg = '')
         echo "<tr><th class=\"data\">{$lang['strname']}</th>\n";
         echo "<th class=\"data required\">{$lang['strdefinition']}</th></tr>\n";
 
-        echo "<tr><td class=\"data1\"><input name=\"name\" size=\"16\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+        echo "<tr><td class=\"data1\"><input name=\"name\" size=\"16\" maxlength=\"{$data->maxNameLen}\" value=\"",
             htmlspecialchars($_POST['name']), "\" /></td>\n";
 
         echo "<td class=\"data1\">(<input name=\"definition\" size=\"32\" value=\"",

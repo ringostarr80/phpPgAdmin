@@ -50,7 +50,7 @@ function doAlter($msg = '')
         echo "<table>\n";
         echo "<tr><th class=\"data\">{$lang['strname']}</th>\n";
         echo "<td class=\"data1\">";
-        echo "<input name=\"name\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+        echo "<input name=\"name\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
             htmlspecialchars($_POST['name']), "\" />\n";
         echo "</table>\n";
         echo "<p><input type=\"hidden\" name=\"action\" value=\"alter\" />\n";

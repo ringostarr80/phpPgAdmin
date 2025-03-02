@@ -158,7 +158,7 @@ function doEdit($msg = '')
         echo "<form action=\"users.php\" method=\"post\">\n";
         echo "<table>\n";
         echo "\t<tr>\n\t\t<th class=\"data left\">{$lang['strusername']}</th>\n";
-        echo "\t\t<td class=\"data1\">", ($canRename ? "<input name=\"newname\" size=\"15\" maxlength=\"{$data->_maxNameLen}\" value=\"" . htmlspecialchars($_POST['newname']) . "\" />" : $misc->printVal($userdata->fields['usename'])), "</td>\n\t</tr>\n";
+        echo "\t\t<td class=\"data1\">", ($canRename ? "<input name=\"newname\" size=\"15\" maxlength=\"{$data->maxNameLen}\" value=\"" . htmlspecialchars($_POST['newname']) . "\" />" : $misc->printVal($userdata->fields['usename'])), "</td>\n\t</tr>\n";
         echo "\t<tr>\n\t\t<th class=\"data left\"><label for=\"formSuper\">{$lang['strsuper']}</label></th>\n";
         echo "\t\t<td class=\"data1\"><input type=\"checkbox\" id=\"formSuper\" name=\"formSuper\"",
             (isset($_POST['formSuper'])) ? ' checked="checked"' : '', " /></td>\n\t</tr>\n";
@@ -268,7 +268,7 @@ function doCreate($msg = '')
     echo "<form action=\"users.php\" method=\"post\">\n";
     echo "<table>\n";
     echo "\t<tr>\n\t\t<th class=\"data left required\">{$lang['strusername']}</th>\n";
-    echo "\t\t<td class=\"data1\"><input size=\"15\" maxlength=\"{$data->_maxNameLen}\" name=\"formUsername\" value=\"", htmlspecialchars($_POST['formUsername']), "\" /></td>\n\t</tr>\n";
+    echo "\t\t<td class=\"data1\"><input size=\"15\" maxlength=\"{$data->maxNameLen}\" name=\"formUsername\" value=\"", htmlspecialchars($_POST['formUsername']), "\" /></td>\n\t</tr>\n";
     echo "\t<tr>\n\t\t<th class=\"data left\">{$lang['strpassword']}</th>\n";
     echo "\t\t<td class=\"data1\"><input size=\"15\" type=\"password\" name=\"formPassword\" value=\"", htmlspecialchars($_POST['formPassword']), "\" /></td>\n\t</tr>\n";
     echo "\t<tr>\n\t\t<th class=\"data left\">{$lang['strconfirm']}</th>\n";

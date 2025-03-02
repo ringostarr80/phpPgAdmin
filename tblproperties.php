@@ -41,7 +41,7 @@ function doSaveAlter()
             $_reload_browser = true;
         }
         // If schema has changed, need to change to the new schema and reload the browser
-        if (!empty($_POST['newschema']) && ($_POST['newschema'] != $data->_schema)) {
+        if (!empty($_POST['newschema']) && ($_POST['newschema'] != $data->schema)) {
             // Jump them to the new sequence schema
             $misc->setCurrentSchema($_POST['newschema']);
             $_reload_browser = true;
@@ -94,7 +94,7 @@ function doAlter($msg = '')
         echo "<table>\n";
         echo "<tr><th class=\"data left required\">{$lang['strname']}</th>\n";
         echo "<td class=\"data1\">";
-        echo "<input name=\"name\" size=\"32\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+        echo "<input name=\"name\" size=\"32\" maxlength=\"{$data->maxNameLen}\" value=\"",
             htmlspecialchars($_POST['name'], ENT_QUOTES), "\" /></td></tr>\n";
 
         if ($data->isSuperUser()) {
@@ -312,7 +312,7 @@ function doAddColumn($msg = '')
             }
             echo "<th class=\"data\">{$lang['strcomment']}</th></tr>\n";
 
-            echo "<tr><td><input name=\"field\" size=\"16\" maxlength=\"{$data->_maxNameLen}\" value=\"",
+            echo "<tr><td><input name=\"field\" size=\"16\" maxlength=\"{$data->maxNameLen}\" value=\"",
                 htmlspecialchars($_POST['field']), "\" /></td>\n";
             echo "<td><select name=\"type\" id=\"type\" onchange=\"checkLengths(document.getElementById('type').value,'');\">\n";
             // Output any "magic" types.  This came in with the alter column type so we'll check that

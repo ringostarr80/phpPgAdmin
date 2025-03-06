@@ -51,3 +51,6 @@ jobs:
 
       - name: Run PHP Static Analysis
         run: composer run-script dev:analyze:phpstan-${{ matrix.version }}
+      
+      - name: Run PHP Tests with Codeception and Code Coverage
+        run: composer run-script dev:test:coverage:ci

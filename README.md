@@ -1,4 +1,5 @@
 [![CodeQL](https://github.com/ringostarr80/phpPgAdmin/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/ringostarr80/phpPgAdmin/actions/workflows/github-code-scanning/codeql)
+[![codecov](https://codecov.io/gh/ringostarr80/phpPgAdmin/graph/badge.svg?token=Rlab88oRp6)](https://codecov.io/gh/ringostarr80/phpPgAdmin)
 
 # phpPgAdmin
 

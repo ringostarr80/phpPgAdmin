@@ -1,0 +1,23 @@
+namespace: Tests
+support_namespace: Support
+paths:
+    tests: tests
+    output: tests/_output
+    data: tests/Support/Data
+    support: tests/Support
+    envs: tests/_envs
+actor_suffix: Tester
+extensions:
+    enabled:
+        - Codeception\Extension\RunFailed
+        - Tests\Support\MyDevServerExtension
+coverage:
+    enabled: true
+    #remote: true
+    #c3_url: http://127.0.0.1:9876/index.php?c3=1
+    show_uncovered: true
+    include:
+        - ./*
+    exclude:
+        - tests/*
+        - vendor/*

@@ -51,3 +51,13 @@ jobs:
 
       - name: Run PHP Static Analysis
         run: composer run-script dev:analyze:phpstan-${{ matrix.version }}
+      
+      - name: Run PHP Tests with Code Coverage
+        run: composer run-script dev:test:coverage:ci
+      
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        if: ${{ matrix.version == '8.1' }}
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: ringostarr80/phpPgAdmin

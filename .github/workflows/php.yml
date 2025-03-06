@@ -57,7 +57,7 @@ jobs:
       
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
-        if: ${{ matrix.version }} == '8.1'
+        if: ${{ matrix.version == '8.1' }}
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: ringostarr80/phpPgAdmin

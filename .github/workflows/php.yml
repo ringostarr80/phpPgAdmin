@@ -87,5 +87,5 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: test_output
+          name: test-output-${{ matrix.version }}
           path: tests/_output

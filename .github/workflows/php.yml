@@ -64,7 +64,8 @@ jobs:
         run: composer run-script dev:analyze:phpstan-${{ matrix.version }}
       
       - name: Run PHP Tests with Code Coverage
-        run: composer run-script dev:test:coverage:ci
+        #run: composer run-script dev:test:coverage:ci
+        run: composer run-script dev:test:acceptance
         env:
           BROWSER: chrome
       

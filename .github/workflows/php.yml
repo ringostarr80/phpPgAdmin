@@ -65,6 +65,9 @@ jobs:
       - name: Run PHP Static Analysis
         run: composer run-script dev:analyze:phpstan-${{ matrix.version }}
       
+      - name: Wait for Selenium to get ready
+        run: sleep 10
+
       - name: Run PHP Tests with Code Coverage
         run: composer run-script dev:test:acceptance
         env:

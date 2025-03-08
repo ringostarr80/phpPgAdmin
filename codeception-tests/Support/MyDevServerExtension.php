@@ -23,7 +23,7 @@ class MyDevServerExtension extends \Codeception\Extension
         chdir(dirname(__DIR__, 2));
 
         $command = sprintf(
-            'php -S 127.0.0.1:9876 -d auto_prepend_file=%s -d xdebug.mode=coverage',
+            'php -S 0.0.0.0:9876 -d auto_prepend_file=%s -d xdebug.mode=coverage',
             escapeshellarg(dirname(__DIR__, 2) . '/c3.php')
         );
         $fullCommand = "nohup {$command} > /dev/null & echo $!";

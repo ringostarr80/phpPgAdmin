@@ -23,13 +23,15 @@ final class IndexPageCest
         $i->seeElement('iframe', ['src' => 'intro.php', 'name' => 'detail']);
 
         $i->switchToIframe('browser');
+
         $i->waitForElement('div.webfx-tree-children');
+        $i->waitForText('PostgreSQL Test');
         $i->see('PostgreSQL Test', ['css' => 'div[class="webfx-tree-item"] div[class="webfx-tree-row"] a[class="webfx-tree-item-label"]']);
 
         $i->switchToIframe();
         $i->switchToIframe('detail');
-        $i->see('Introduction', 'table.tabs tr:first-child td:first-child.active span');
-        $i->see('Server', 'table.tabs tr:first-child td:nth-child(2) span');
+        $i->see('Introduction', 'table.tabs tr:first-child td:first-child.active span.label');
+        $i->see('Server', 'table.tabs tr:first-child td:nth-child(2) span.label');
 
         $i->seeNumberOfElements('select[name="language"] option', 29);
         $i->seeNumberOfElements('select[name="theme"] option', 5);
@@ -41,8 +43,10 @@ final class IndexPageCest
         $i->switchToIframe('detail');
         $i->click('Server');
 
-        $i->see('Introduction', 'table.tabs tr:first-child td:first-child span');
-        $i->see('Server', 'table.tabs tr:first-child td:nth-child(2).active span');
+        $i->waitForElement('table.tabs tr:first-child td:nth-child(2).active span.label');
+
+        $i->see('Introduction', 'table.tabs tr:first-child td:first-child span.label');
+        $i->see('Server', 'table.tabs tr:first-child td:nth-child(2).active span.label');
 
         $i->seeElement('table#server-list');
         $i->seeElement('table#server-list thead');

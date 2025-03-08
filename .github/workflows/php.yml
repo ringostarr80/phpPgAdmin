@@ -20,52 +20,56 @@ jobs:
 
     name: PHP ${{ matrix.version }}
 
-    services:
-      selenium:
-        image: selenium/standalone-chrome
-        options: --shm-size=2gb
-
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'npm'
-
-      - name: Validate composer.json and composer.lock
-        run: composer validate --strict
-
-      - name: Cache Composer packages
-        id: composer-cache
-        uses: actions/cache@v4
-        with:
-          path: vendor
-          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-php-
-
-      - name: Install Composer dependencies
-        run: composer install --prefer-dist --no-progress
-      
-      - name: Install NodeJS dependencies
-        run: npm install
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@9e72090525849c5e82e596468b86eb55e9cc5401 # v2.32.0
+      - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.version }}
-
-      - name: Run PHP Syntax Checker
-        run: composer run-script dev:lint:php
-
-      - name: Run PHP Style Checker
-        run: composer run-script dev:lint:phpcs
-
-      - name: Run PHP Static Analysis
-        run: composer run-script dev:analyze:phpstan-${{ matrix.version }}
+          extensions: intl, pdo_pgsql, zip
+          coverage: xdebug
+          ini-values: xdebug.mode=coverage
       
-      - name: Run PHP Tests with Code Coverage
-        run: composer run-script dev:test:coverage:ci
+      - name: Install Chrome
+        run: |
+          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+          sudo apt update
+          sudo apt install google-chrome-stable
+      - run: npm install
+      
+      - run: composer validate --strict
+
+      #- name: Cache Composer packages
+      #  id: composer-cache
+      #  uses: actions/cache@v4
+      #  with:
+      #    path: vendor
+      #    key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+
+      - run: composer install --prefer-dist --no-progress
+      - run: composer run-script dev:lint:php
+      - run: composer run-script dev:lint:phpcs
+      - run: composer run-script dev:analyze:phpstan-${{ matrix.version }}
+      - run: npx selenium-standalone install && npx selenium-standalone start &
+      - run: |
+          while ! curl -sSL http://127.0.0.1:4444/wd/hub/status
+          do
+            echo "Waiting for Selenium to start..."
+            sleep 5
+          done
+
+      - run: composer run-script dev:test:acceptance
+        if: ${{ matrix.version != '8.1' }}
+        env:
+          BROWSER: chrome
+
+      - run: composer run-script dev:test:coverage:ci
+        if: ${{ matrix.version == '8.1' }}
+        env:
+          BROWSER: chrome
       
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
@@ -73,3 +77,10 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: ringostarr80/phpPgAdmin
+      
+      - name: Save artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-output-${{ matrix.version }}
+          path: codeception-tests/_output

@@ -11,6 +11,7 @@ modules:
             host: '127.0.0.1'
             browser: 'chrome'
             port: 4444
+            path: '/wd/hub'
             capabilities:
                 goog:chromeOptions:
                     args: ["--headless"]

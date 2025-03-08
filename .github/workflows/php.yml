@@ -82,6 +82,7 @@ jobs:
           BROWSER: chrome
           CODECEPTION_MODULE_WEBDRIVER_HOST: '127.0.0.1'
           CODECEPTION_MODULE_WEBDRIVER_PORT: 4444
+          CODECEPTION_MODULE_WEBDRIVER_PATH: '/wd/hub'
       
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5

@@ -6,10 +6,10 @@
 actor: AcceptanceTester
 modules:
     enabled:
-        #- PhpBrowser:
         - WebDriver:
             url: http://127.0.0.1:9876/
             browser: chrome
+            path: /wd/hub
             capabilities:
                 goog:chromeOptions:
                     args: ["--headless"]

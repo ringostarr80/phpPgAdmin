@@ -20,8 +20,17 @@ jobs:
 
     name: PHP ${{ matrix.version }}
 
+    services:
+      selenium:
+        image: selenium/standalone-chrome
+        options: --shm-size=2gb
+
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
 
       - name: Validate composer.json and composer.lock
         run: composer validate --strict

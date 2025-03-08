@@ -1,5 +1,6 @@
 conf/config.yml
 conf/config.yaml
+node_modules/
 selenium/tests/config.inc.php
 tests/selenium/config.test.php
 tests/_output/

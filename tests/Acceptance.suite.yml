@@ -6,8 +6,13 @@
 actor: AcceptanceTester
 modules:
     enabled:
-        - PhpBrowser:
+        #- PhpBrowser:
+        - WebDriver:
             url: http://127.0.0.1:9876/
+            browser: chrome
+            capabilities:
+                goog:chromeOptions:
+                    args: ["--headless"]
 # Add Codeception\Step\Retry trait to AcceptanceTester to enable retries
 step_decorators:
     - Codeception\Step\ConditionalAssertion

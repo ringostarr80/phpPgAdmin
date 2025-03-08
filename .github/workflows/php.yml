@@ -82,3 +82,10 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: ringostarr80/phpPgAdmin
+      
+      - name: Save artifacts
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: test_output
+          path: tests/_output

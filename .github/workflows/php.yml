@@ -80,7 +80,7 @@ jobs:
         run: composer run-script dev:test:acceptance
         env:
           BROWSER: chrome
-          CODECEPTION_MODULE_WEBDRIVER_HOST: selenium
+          CODECEPTION_MODULE_WEBDRIVER_HOST: '127.0.0.1'
           CODECEPTION_MODULE_WEBDRIVER_PORT: 4444
       
       - name: Upload coverage reports to Codecov

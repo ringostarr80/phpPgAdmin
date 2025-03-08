@@ -68,7 +68,7 @@ jobs:
       - name: Check Selenium readiness
         run: |
           for i in {1..10}; do
-            curl -v -s http://selenium:4444/wd/hub/status && break
+            curl -v -s http://127.0.0.1:4444/wd/hub/status && break
             echo "Selenium not ready yet..."
             sleep 5
           done

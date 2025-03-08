@@ -23,6 +23,8 @@ jobs:
     services:
       selenium:
         image: selenium/standalone-chrome
+        ports:
+          - 4444:4444
         options: --shm-size=2gb
 
     steps:
@@ -64,8 +66,7 @@ jobs:
         run: composer run-script dev:analyze:phpstan-${{ matrix.version }}
       
       - name: Run PHP Tests with Code Coverage
-        #run: composer run-script dev:test:coverage:ci
-        run: composer run-script dev:test:acceptance
+        run: composer run-script dev:test:coverage:ci
         env:
           BROWSER: chrome
       

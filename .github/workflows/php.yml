@@ -66,16 +66,8 @@ jobs:
         run: composer run-script dev:analyze:phpstan-${{ matrix.version }}
 
       - name: Check Selenium readiness
-        run: |
-          for i in {1..10}; do
-            curl -v -s http://127.0.0.1:4444/wd/hub/status && break
-            echo "Selenium not ready yet..."
-            sleep 5
-          done
+        run: curl -v -s http://127.0.0.1:4444/wd/hub/status
 
-      - name: Show Selenium logs
-        run: docker logs $(docker ps --filter "ancestor=selenium/standalone-chrome" -q)      
-      
       - name: Run PHP Tests with Code Coverage
         run: composer run-script dev:test:acceptance
         env:

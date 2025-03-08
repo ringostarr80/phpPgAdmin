@@ -69,6 +69,9 @@ jobs:
         run: composer run-script dev:test:acceptance
         env:
           BROWSER: chrome
+          CODECEPTION_MODULE_WEBDRIVER_HOST: selenium
+          CODECEPTION_MODULE_WEBDRIVER_PORT: 4444
+          CODECEPTION_MODULE_WEBDRIVER_PATH: '/wd/hub'
       
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5

@@ -8,7 +8,10 @@ modules:
     enabled:
         - WebDriver:
             url: http://127.0.0.1:9876/
-            browser: chrome
+            host: 'selenium'
+            browser: 'chrome'
+            path: '/wd/hub'
+            port: 4444
             capabilities:
                 goog:chromeOptions:
                     args: ["--headless"]

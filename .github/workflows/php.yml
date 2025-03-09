@@ -32,12 +32,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - uses: php-actions/composer@v6
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
 
       - name: Validate composer.json and composer.lock
-        uses: php-actions/composer@v6
         run: composer validate --strict
 
       - name: Cache Composer packages

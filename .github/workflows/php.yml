@@ -45,7 +45,7 @@ jobs:
           #php-version: ${{ matrix.version }}
       
       - name: Install Composer
-        run: ./composer-install.sh
+        run: ./composer-installer.sh
 
       - name: Validate composer.json and composer.lock
         run: composer validate --strict

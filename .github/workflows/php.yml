@@ -111,4 +111,4 @@ jobs:
         if: always()
         with:
           name: test-output-${{ matrix.version }}
-          path: tests/_output
+          path: codeception-tests/_output

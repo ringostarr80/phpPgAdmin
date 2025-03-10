@@ -34,13 +34,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       
+      - name: List current directory
+        run: ls -la
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+      
+      - name: List current directory
+        run: ls -la
         
       - name: Install NodeJS dependencies
         run: npm install
+      
+      - name: List current directory
+        run: ls -la
 
       - name: Install Reuired Packages
         run: apt-get update && apt-get install -y libpq-dev libzip-dev zip unzip
@@ -50,6 +59,9 @@ jobs:
       
       - name: Install Composer
         run: ./composer-installer.sh
+
+      - name: List current directory
+        run: ls -la
 
       - name: Validate composer.json and composer.lock
         run: composer validate --strict
@@ -76,7 +88,6 @@ jobs:
       - name: Check Selenium readiness
         run: curl -v -s http://selenium:4444/wd/hub/status
       
-      # list current directory
       - name: List current directory
         run: ls -la
 

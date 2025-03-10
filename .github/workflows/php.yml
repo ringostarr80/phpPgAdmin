@@ -31,71 +31,31 @@ jobs:
         options: --shm-size=2gb
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: List current directory
-        run: |
-          echo "Current directory: $(pwd)"
-          echo "Repository content:"
-          ls -R
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '22'
       
-      - name: List current directory
-        run: ls -la
-        
-      - name: Install NodeJS dependencies
-        run: npm install
+      - run: apt-get update && apt-get install -y libpq-dev libzip-dev zip unzip
+      - run: docker-php-ext-install gettext pgsql zip
+      - run: npm install
       
-      - name: List current directory
-        run: ls -la
+      - run: ./composer-installer.sh
+      - run: composer validate --strict
 
-      - name: Install Reuired Packages
-        run: apt-get update && apt-get install -y libpq-dev libzip-dev zip unzip
-      
-      - name: Install PHP Extensions
-        run: docker-php-ext-install gettext pgsql zip
-      
-      - name: Install Composer
-        run: ./composer-installer.sh
+      #- name: Cache Composer packages
+      #  id: composer-cache
+      #  uses: actions/cache@v4
+      #  with:
+      #    path: vendor
+      #    key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
 
-      - name: List current directory
-        run: ls -la
-
-      - name: Validate composer.json and composer.lock
-        run: composer validate --strict
-
-      - name: Cache Composer packages
-        id: composer-cache
-        uses: actions/cache@v4
-        with:
-          path: vendor
-          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-
-      - name: Install Composer dependencies
-        run: composer install --prefer-dist --no-progress
-
-      - name: Run PHP Syntax Checker
-        run: composer run-script dev:lint:php
-
-      - name: Run PHP Style Checker
-        run: composer run-script dev:lint:phpcs
-
-      - name: Run PHP Static Analysis
-        run: composer run-script dev:analyze:phpstan-${{ matrix.version }}
-
-      - name: Check Selenium readiness
-        run: curl -v -s http://selenium:4444/wd/hub/status
-      
-      - name: List current directory
-        run: ls -la
-
-      - name: Run PHP Tests with Code Coverage
-        run: composer run-script dev:test:acceptance
+      - run: composer install --prefer-dist --no-progress
+      - run: composer run-script dev:lint:php
+      - run: composer run-script dev:lint:phpcs
+      - run: composer run-script dev:analyze:phpstan-${{ matrix.version }}
+      - run: curl -v -s http://selenium:4444/wd/hub/status
+      - run: composer run-script dev:test:acceptance
         env:
           BROWSER: chrome
       

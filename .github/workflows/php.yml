@@ -44,6 +44,9 @@ jobs:
         #with:
           #php-version: ${{ matrix.version }}
       
+      - name: Install PHP Extensions
+        run: docker-php-ext-install gettext pgsql zip
+      
       - name: Install Composer
         run: ./composer-installer.sh
 

@@ -23,10 +23,6 @@ jobs:
     container:
       image: php:${{ matrix.version }}
 
-    defaults:
-      run:
-        working-directory: /github/workspace
-
     services:
       selenium:
         image: selenium/standalone-chrome
@@ -79,6 +75,7 @@ jobs:
 
       - name: Run PHP Tests with Code Coverage
         run: composer run-script dev:test:acceptance
+        working-directory: /github/workspace
         env:
           BROWSER: chrome
       

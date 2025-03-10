@@ -73,14 +73,8 @@ jobs:
       - name: Check Selenium readiness
         run: curl -v -s http://selenium:4444/wd/hub/status
 
-      - name: Debug workspace
-        run: |
-          pwd
-          ls -la      
-
       - name: Run PHP Tests with Code Coverage
         run: composer run-script dev:test:acceptance
-        working-directory: /github/workspace
         env:
           BROWSER: chrome
       

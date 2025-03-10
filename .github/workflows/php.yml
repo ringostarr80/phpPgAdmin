@@ -28,6 +28,8 @@ jobs:
         image: selenium/standalone-chrome
         ports:
           - 4444:4444
+          - 5900:5900
+          - 7900:7900
         options: --shm-size=2gb
 
     steps:

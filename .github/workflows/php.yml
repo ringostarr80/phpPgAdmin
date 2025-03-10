@@ -20,14 +20,14 @@ jobs:
 
     name: PHP ${{ matrix.version }}
 
-    services:
-      selenium:
-        image: selenium/standalone-chrome
-        ports:
-          - 4444:4444
-          - 5900:5900
-          - 7900:7900
-        options: --shm-size=2gb
+#    services:
+#      selenium:
+#        image: selenium/standalone-chrome
+#        ports:
+#          - 4444:4444
+#          - 5900:5900
+#          - 7900:7900
+#        options: --shm-size=2gb
 
     steps:
       - uses: actions/checkout@v4
@@ -57,7 +57,10 @@ jobs:
       - run: composer run-script dev:lint:php
       - run: composer run-script dev:lint:phpcs
       - run: composer run-script dev:analyze:phpstan-${{ matrix.version }}
-      - run: curl -v -s http://127.0.0.1:4444/wd/hub/status
+      #- run: curl -v -s http://127.0.0.1:4444/wd/hub/status
+      - run: npx selenium-standalone install && npx selenium-standalone start &
+      # wait for Selenium to start
+      - run: sleep 5
       - run: composer run-script dev:test:acceptance
         env:
           BROWSER: chrome

@@ -20,9 +20,6 @@ jobs:
 
     name: PHP ${{ matrix.version }}
 
-    container:
-      image: php:${{ matrix.version }}
-
     services:
       selenium:
         image: selenium/standalone-chrome
@@ -37,9 +34,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.version }}
+          extensions: intl, pdo_pgsql, zip
+          coverage: xdebug
+          ini-values: xdebug.mode=coverage
       
-      - run: apt-get update && apt-get install -y libpq-dev libzip-dev zip unzip
-      - run: docker-php-ext-install gettext pgsql zip
       - run: npm install
       
       - run: ./composer-installer.sh

@@ -72,6 +72,10 @@ jobs:
 
       - name: Check Selenium readiness
         run: curl -v -s http://selenium:4444/wd/hub/status
+      
+      # list current directory
+      - name: List current directory
+        run: ls -la
 
       - name: Run PHP Tests with Code Coverage
         run: composer run-script dev:test:acceptance

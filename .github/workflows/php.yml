@@ -43,6 +43,9 @@ jobs:
         #uses: shivammathur/setup-php@9e72090525849c5e82e596468b86eb55e9cc5401 # v2.32.0
         #with:
           #php-version: ${{ matrix.version }}
+
+      - name: Install Reuired Packages
+        run: apt-get update && apt-get install -y libpq-dev zip unzip
       
       - name: Install PHP Extensions
         run: docker-php-ext-install gettext pgsql zip

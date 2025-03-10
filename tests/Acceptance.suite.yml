@@ -1,8 +1,3 @@
-# Codeception Acceptance Test Suite Configuration
-#
-# Perform tests in a browser by either emulating one using PhpBrowser, or in a real browser using WebDriver.
-# If you need both WebDriver and PhpBrowser tests, create a separate suite for each.
-
 actor: AcceptanceTester
 modules:
     enabled:

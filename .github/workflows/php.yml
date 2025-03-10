@@ -23,6 +23,10 @@ jobs:
     container:
       image: php:${{ matrix.version }}
 
+    defaults:
+      run:
+        working-directory: /github/workspace
+
     services:
       selenium:
         image: selenium/standalone-chrome
@@ -38,11 +42,6 @@ jobs:
         
       - name: Install NodeJS dependencies
         run: npm install
-
-      #- name: Setup PHP
-        #uses: shivammathur/setup-php@9e72090525849c5e82e596468b86eb55e9cc5401 # v2.32.0
-        #with:
-          #php-version: ${{ matrix.version }}
 
       - name: Install Reuired Packages
         run: apt-get update && apt-get install -y libpq-dev libzip-dev zip unzip

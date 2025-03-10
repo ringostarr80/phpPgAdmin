@@ -2,7 +2,7 @@ actor: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: http://127.0.0.1:9876/
+            url: http://selenium:9876/
             browser: 'chrome'
             host: selenium
             port: 4444

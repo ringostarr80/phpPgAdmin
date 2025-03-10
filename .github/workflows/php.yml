@@ -45,7 +45,7 @@ jobs:
           #php-version: ${{ matrix.version }}
 
       - name: Install Reuired Packages
-        run: apt-get update && apt-get install -y libpq-dev zip unzip
+        run: apt-get update && apt-get install -y libpq-dev libzip-dev zip unzip
       
       - name: Install PHP Extensions
         run: docker-php-ext-install gettext pgsql zip

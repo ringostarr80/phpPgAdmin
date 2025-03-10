@@ -76,7 +76,7 @@ jobs:
         run: composer run-script dev:analyze:phpstan-${{ matrix.version }}
 
       - name: Check Selenium readiness
-        run: curl -v -s http://127.0.0.1:4444/wd/hub/status
+        run: curl -v -s http://selenium:4444/wd/hub/status
 
       - name: Run PHP Tests with Code Coverage
         run: composer run-script dev:test:acceptance

@@ -35,7 +35,10 @@ jobs:
         uses: actions/checkout@v4
       
       - name: List current directory
-        run: ls -la
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Repository content:"
+          ls -R
       
       - name: Setup Node.js
         uses: actions/setup-node@v4

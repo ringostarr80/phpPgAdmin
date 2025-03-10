@@ -57,7 +57,7 @@ jobs:
       - run: composer run-script dev:lint:php
       - run: composer run-script dev:lint:phpcs
       - run: composer run-script dev:analyze:phpstan-${{ matrix.version }}
-      - run: curl -v -s http://selenium:4444/wd/hub/status
+      - run: curl -v -s http://127.0.0.1:4444/wd/hub/status
       - run: composer run-script dev:test:acceptance
         env:
           BROWSER: chrome

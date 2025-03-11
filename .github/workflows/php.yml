@@ -40,10 +40,14 @@ jobs:
           extensions: intl, pdo_pgsql, zip
           coverage: xdebug
           ini-values: xdebug.mode=coverage
+      - uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: 134
+          install-chromedriver: true
       
       - run: npm install
       
-      - run: ./composer-installer.sh
+      #- run: ./composer-installer.sh
       - run: composer validate --strict
 
       #- name: Cache Composer packages

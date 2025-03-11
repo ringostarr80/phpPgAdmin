@@ -25,7 +25,7 @@ final class IndexPageCest
         $i->switchToIframe('browser');
 
         $i->waitForElement('div.webfx-tree-children');
-        $i->waitForElement('div.webfx-tree-item div.webfx-tree-row a.webfx-tree-item-label');
+        $i->waitForText('PostgreSQL Test');
         $i->see('PostgreSQL Test', ['css' => 'div[class="webfx-tree-item"] div[class="webfx-tree-row"] a[class="webfx-tree-item-label"]']);
 
         $i->switchToIframe();

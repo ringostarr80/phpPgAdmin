@@ -28,8 +28,8 @@ final class IndexPageCest
 
         $i->switchToIframe();
         $i->switchToIframe('detail');
-        $i->see('Introduction', 'table.tabs tr:first-child td:first-child.active span');
-        $i->see('Server', 'table.tabs tr:first-child td:nth-child(2) span');
+        $i->see('Introduction', 'table.tabs tr:first-child td:first-child.active span.label');
+        $i->see('Server', 'table.tabs tr:first-child td:nth-child(2) span.label');
 
         $i->seeNumberOfElements('select[name="language"] option', 29);
         $i->seeNumberOfElements('select[name="theme"] option', 5);

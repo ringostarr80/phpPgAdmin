@@ -3,7 +3,7 @@ modules:
     enabled:
         - WebDriver:
             url: http://127.0.0.1:9876/
-            browser: 'chromium'
+            browser: 'chrome'
             host: 127.0.0.1
             port: 4444
             capabilities:

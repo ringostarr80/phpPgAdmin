@@ -56,7 +56,7 @@
         "dev:test": [
             "@dev:test:acceptance"
         ],
-        "dev:test:acceptance": "PHPPGADMIN_CONFIG_YAML_FILE=config-test.yml codecept -vvv run Acceptance",
+        "dev:test:acceptance": "PHPPGADMIN_CONFIG_YAML_FILE=config-test.yml codecept run Acceptance",
         "dev:test:coverage:ci": "PHPPGADMIN_CONFIG_YAML_FILE=config-test.yml codecept run Acceptance --coverage --coverage-xml",
         "dev:test:coverage:html": "PHPPGADMIN_CONFIG_YAML_FILE=config-test.yml codecept run Acceptance --coverage --coverage-html",
         "build-locales": [

@@ -41,8 +41,8 @@ final class IndexPageCest
         $i->switchToIframe('detail');
         $i->click('Server');
 
-        $i->see('Introduction', 'table.tabs tr:first-child td:first-child span');
-        $i->see('Server', 'table.tabs tr:first-child td:nth-child(2).active span');
+        $i->see('Introduction', 'table.tabs tr:first-child td:first-child span.label');
+        $i->see('Server', 'table.tabs tr:first-child td:nth-child(2).active span.label');
 
         $i->seeElement('table#server-list');
         $i->seeElement('table#server-list thead');

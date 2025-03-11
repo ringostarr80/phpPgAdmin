@@ -67,7 +67,7 @@ jobs:
       - run: curl -v -s http://127.0.0.1:4444/wd/hub/status
       - run: composer run-script dev:test:acceptance
         env:
-          BROWSER: chrome
+          BROWSER: chromium
       
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5

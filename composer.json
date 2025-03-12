@@ -34,7 +34,8 @@
         "phpstan/phpstan": "^2.1",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan-deprecation-rules": "^2.0",
-        "squizlabs/php_codesniffer": "^3.11"
+        "squizlabs/php_codesniffer": "^3.11",
+        "codeception/module-webdriver": "^4.0"
     },
     "minimum-stability": "stable",
     "scripts": {
@@ -55,9 +56,9 @@
         "dev:test": [
             "@dev:test:acceptance"
         ],
-        "dev:test:acceptance": "codecept run Acceptance",
-        "dev:test:coverage:ci": "codecept run Acceptance --coverage --coverage-xml",
-        "dev:test:coverage:html": "codecept run Acceptance --coverage --coverage-html",
+        "dev:test:acceptance": "PHPPGADMIN_CONFIG_YAML_FILE=config-test.yml codecept run Acceptance",
+        "dev:test:coverage:ci": "PHPPGADMIN_CONFIG_YAML_FILE=config-test.yml codecept run Acceptance --coverage --coverage-xml",
+        "dev:test:coverage:html": "PHPPGADMIN_CONFIG_YAML_FILE=config-test.yml codecept run Acceptance --coverage --coverage-html",
         "build-locales": [
             "@build-locale-af_ZA",
             "@build-locale-ar",

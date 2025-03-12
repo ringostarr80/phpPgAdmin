@@ -24,6 +24,9 @@ class Servers extends Website
         $body->appendChild(WebsiteComponents::buildRootTabs($dom, 'servers'));
 
         $table = $dom->createElement('table');
+        $table->setAttribute('id', 'server-list');
+
+        $tHead = $dom->createElement('thead');
         $tr = $dom->createElement('tr');
         $th = $dom->createElement('th', _('Server'));
         $th->setAttribute('class', 'data');
@@ -41,8 +44,10 @@ class Servers extends Website
         $th->setAttribute('class', 'data');
         $th->setAttribute('colspan', '1');
         $tr->appendChild($th);
-        $table->appendChild($tr);
+        $tHead->appendChild($tr);
+        $table->appendChild($tHead);
 
+        $tBody = $dom->createElement('tbody');
         $logins = isset($_SESSION['webdbLogin']) && is_array($_SESSION['webdbLogin']) ? $_SESSION['webdbLogin'] : [];
         $servers = Config::getServers();
         foreach ($servers as $index => $server) {
@@ -86,8 +91,9 @@ class Servers extends Website
                 $td->appendChild($a);
             }
             $tr->appendChild($td);
-            $table->appendChild($tr);
+            $tBody->appendChild($tr);
         }
+        $table->appendChild($tBody);
 
         $body->appendChild($table);
 

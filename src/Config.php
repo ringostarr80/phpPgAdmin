@@ -350,10 +350,16 @@ class Config
         if (is_null(self::$conf)) {
             self::$conf = [];
 
-            $yamlConfigFile = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'conf' . DIRECTORY_SEPARATOR . 'config.yaml';
+            $confDir = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'conf';
+            $yamlConfigFile = $confDir . DIRECTORY_SEPARATOR . 'config.yaml';
             if (!file_exists($yamlConfigFile)) {
-                $yamlConfigFile = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'conf' . DIRECTORY_SEPARATOR . 'config.yml';
+                $yamlConfigFile = $confDir . DIRECTORY_SEPARATOR . 'config.yml';
             }
+            $configYamlFileEnv = getenv('PHPPGADMIN_CONFIG_YAML_FILE');
+            if (is_string($configYamlFileEnv) && $configYamlFileEnv !== '') {
+                $yamlConfigFile = $confDir . DIRECTORY_SEPARATOR . $configYamlFileEnv;
+            }
+
             if (file_exists($yamlConfigFile)) {
                 $yaml = (new YamlParser())->parseFile($yamlConfigFile);
                 if (is_array($yaml)) {

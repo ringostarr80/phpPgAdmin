@@ -1,0 +1,4 @@
+servers:
+  - desc: PostgreSQL Test
+    host: 192.168.0.10
+    port: 5432

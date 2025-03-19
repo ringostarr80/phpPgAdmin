@@ -44,7 +44,7 @@ class Login extends Website
                 !Connection::loginDataIsValid(
                     host: (string)$server->Host,
                     port: $server->Port->Value,
-                    sslmode: $server->SslMode->value,
+                    sslmode: $server->SslMode,
                     user: $loginUsername,
                     password: $loginPassword
                 )

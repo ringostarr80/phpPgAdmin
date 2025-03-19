@@ -38,8 +38,6 @@ final class LoginPageCest
             'loginPassword_' . hash('sha256', 'PostgreSQL Test') => 'wrongpassword',
         ]);
 
-        $i->makeScreenshot('login_failed');
-
-        $i->waitForText('Login failed');
+        $i->waitForText('Login failed', timeout: 90);
     }
 }

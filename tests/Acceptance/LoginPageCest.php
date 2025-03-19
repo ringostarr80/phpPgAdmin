@@ -4,40 +4,57 @@ declare(strict_types=1);
 
 namespace Tests\Acceptance;
 
-use Tests\Support\AcceptanceTester;
+use Tests\Support\{AcceptanceTester, MyConfigExtension};
 
 final class LoginPageCest
 {
-    // @phpcs:disable
-    public function _before(AcceptanceTester $i): void
-    {
-        // Code here will be executed before each test.
-    }
+    private const LOGIN_FORM_SELECTOR = 'form[name="login_form"]';
 
     public function tryToTestLoginFailed(AcceptanceTester $i): void
     {
         $i->amOnPage('/');
 
         $i->switchToIframe('browser');
-        $i->waitForText('PostgreSQL Test');
-        $i->click('PostgreSQL Test');
+        $i->waitForText(MyConfigExtension::NOT_RUNNING_SERVER_DESC);
+        $i->click(MyConfigExtension::NOT_RUNNING_SERVER_DESC);
 
         $i->switchToIframe();
         $i->switchToIframe('detail');
 
         $i->seeInFormFields(
-            'form[name="login_form"]',
+            self::LOGIN_FORM_SELECTOR,
             [
                 'loginUsername' => '',
-                'loginPassword_' . hash('sha256', 'PostgreSQL Test') => '',
+                'loginPassword_' . hash('sha256', MyConfigExtension::NOT_RUNNING_SERVER_DESC) => '',
             ]
         );
 
-        $i->submitForm('form[name="login_form"]', [
-            'loginUsername' => 'admin',
-            'loginPassword_' . hash('sha256', 'PostgreSQL Test') => 'wrongpassword',
+        $i->submitForm(self::LOGIN_FORM_SELECTOR, [
+            'loginUsername' => 'postgres',
+            'loginPassword_' . hash('sha256', MyConfigExtension::NOT_RUNNING_SERVER_DESC) => 'wrongpassword',
         ]);
 
         $i->waitForText('Login failed', timeout: 180);
+    }
+
+    public function tryToTestLoginSuccessful(AcceptanceTester $i): void
+    {
+        $i->amOnPage('/');
+
+        $i->switchToIframe('browser');
+        $i->waitForText(MyConfigExtension::RUNNING_SERVER_DESC);
+        $i->click(MyConfigExtension::RUNNING_SERVER_DESC);
+
+        $i->switchToIframe();
+        $i->switchToIframe('detail');
+
+        $loginUsername = $_ENV['PHPPGADMIN_TEST_SERVER_USERNAME'] ?? 'postgres';
+        $loginPassword = $_ENV['PHPPGADMIN_TEST_SERVER_PASSWORD'] ?? '';
+        $i->submitForm(self::LOGIN_FORM_SELECTOR, [
+            'loginUsername' => $loginUsername,
+            'loginPassword_' . hash('sha256', MyConfigExtension::RUNNING_SERVER_DESC) => $loginPassword,
+        ]);
+
+        $i->waitForText("You are logged in as user \"{$loginUsername}\"");
     }
 }

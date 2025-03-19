@@ -61,13 +61,7 @@ jobs:
             sleep 5
           done
 
-      - run: composer run-script dev:test:acceptance
-        if: ${{ matrix.version != '8.1' }}
-        env:
-          BROWSER: chrome
-
       - run: composer run-script dev:test:coverage:ci
-        if: ${{ matrix.version == '8.1' }}
         env:
           BROWSER: chrome
       

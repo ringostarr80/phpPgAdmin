@@ -10,6 +10,7 @@ actor_suffix: Tester
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
+        - Tests\Support\MyConfigExtension
         - Tests\Support\MyDevServerExtension
 coverage:
     enabled: true

@@ -4,3 +4,5 @@ node_modules/
 tests/_output/
 codeception-tests/_output/
 vendor/
+
+.env

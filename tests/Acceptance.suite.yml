@@ -9,6 +9,8 @@ modules:
             capabilities:
                 goog:chromeOptions:
                     args: ["--headless"]
+                    prefs:
+                        intl.accept_languages: en_US
 step_decorators:
     - Codeception\Step\ConditionalAssertion
     - Codeception\Step\TryTo

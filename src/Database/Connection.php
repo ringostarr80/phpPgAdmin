@@ -60,7 +60,6 @@ class Connection
     ): bool {
         $conn = ADONewConnection('postgres');
         if ($conn === false) {
-            print 'if ($conn === false)';
             return false;
         }
 
@@ -87,6 +86,7 @@ class Connection
             $pghost .= ' requiressl=1';
         }
 
+        print $pghost . ' - ' . $user . ' - ' . $password . PHP_EOL;
         return $conn->connect($pghost, $user, $password);
     }
 

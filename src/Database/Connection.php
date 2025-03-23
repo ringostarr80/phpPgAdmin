@@ -60,6 +60,7 @@ class Connection
     ): bool {
         $conn = ADONewConnection('postgres');
         if ($conn === false) {
+            print 'if ($conn === false)';
             return false;
         }
 

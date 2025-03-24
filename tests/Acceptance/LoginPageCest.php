@@ -49,7 +49,15 @@ final class LoginPageCest
         $i->switchToIframe('detail');
 
         $loginUsername = $_ENV['PHPPGADMIN_TEST_SERVER_USERNAME'] ?? 'postgres';
-        $loginPassword = getenv('PHPPGADMIN_TEST_SERVER_PASSWORD') ?: '';
+        $loginPassword = '';
+        if (isset($_ENV['PHPPGADMIN_TEST_SERVER_PASSWORD']) && is_string($_ENV['PHPPGADMIN_TEST_SERVER_PASSWORD'])) {
+            $loginPassword = $_ENV['PHPPGADMIN_TEST_SERVER_PASSWORD'];
+        } else {
+            $envPassword = getenv('PHPPGADMIN_TEST_SERVER_PASSWORD');
+            if (is_string($envPassword)) {
+                $loginPassword = $envPassword;
+            }
+        }
         $i->submitForm(self::LOGIN_FORM_SELECTOR, [
             'loginUsername' => $loginUsername,
             'loginPassword_' . hash('sha256', MyConfigExtension::RUNNING_SERVER_DESC) => $loginPassword,

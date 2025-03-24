@@ -6,4 +6,5 @@ actor: UnitTester
 modules:
     enabled:
         - Asserts
+bootstrap: ../../autoload.php
 step_decorators: ~

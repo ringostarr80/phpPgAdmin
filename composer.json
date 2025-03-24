@@ -57,6 +57,7 @@
         "dev:test": [
             "@dev:test:acceptance"
         ],
+        "dev:test:unit": "codecept run Unit",
         "dev:test:acceptance": "codecept run Acceptance",
         "dev:test:coverage:ci": "codecept run Acceptance --coverage --coverage-xml",
         "dev:test:coverage:html": "codecept run Acceptance --coverage --coverage-html",

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Support;
 
+use CaptainHook\App\Hook\Condition\Branch\Files;
 use Codeception\Event\SuiteEvent;
 use Codeception\Events;
 use Dotenv\Dotenv;
@@ -57,6 +58,12 @@ class MyConfigExtension extends \Codeception\Extension
         ];
 
         file_put_contents(self::configFilename(), Yaml::dump($config));
+
+        $configIncPhp = dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'conf' . DIRECTORY_SEPARATOR . 'config.inc.php';
+        $configIncPhpDist = dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'conf' . DIRECTORY_SEPARATOR . 'config.inc.php-dist';
+        if (!file_exists($configIncPhp) && file_exists($configIncPhpDist)) {
+            copy($configIncPhpDist, $configIncPhp);
+        }
     }
 
     public function afterSuite(SuiteEvent $e): void

@@ -49,9 +49,11 @@ final class LoginPageCest
         $i->switchToIframe('detail');
 
         $loginUsername = $_ENV['PHPPGADMIN_TEST_SERVER_USERNAME'] ?? 'postgres';
-        $loginPassword = $_ENV['PHPPGADMIN_TEST_SERVER_PASSWORD'] ?? '';
+        $loginPassword = getenv('PHPPGADMIN_TEST_SERVER_PASSWORD') ?: '';
         error_log('$_ENV: ' . serialize($_ENV));
-        error_log('getenv(PHPPGADMIN_TEST_SERVER_PASSWORD): ' .  serialize(getenv('PHPPGADMIN_TEST_SERVER_PASSWORD')));
+        error_log('serialize(getenv(PHPPGADMIN_TEST_SERVER_PASSWORD)): ' .  serialize(getenv('PHPPGADMIN_TEST_SERVER_PASSWORD')));
+        error_log('serialize(getenv()): ' .  serialize(getenv()));
+        error_log('getenv(PHPPGADMIN_TEST_SERVER_PASSWORD): ' .  getenv('PHPPGADMIN_TEST_SERVER_PASSWORD'));
         $i->submitForm(self::LOGIN_FORM_SELECTOR, [
             'loginUsername' => $loginUsername,
             'loginPassword_' . hash('sha256', MyConfigExtension::RUNNING_SERVER_DESC) => $loginPassword,

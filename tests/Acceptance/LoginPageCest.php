@@ -43,7 +43,11 @@ final class LoginPageCest
 
         $i->switchToIframe('browser');
         $i->waitForText(MyConfigExtension::RUNNING_SERVER_DESC);
-        $i->click(MyConfigExtension::RUNNING_SERVER_DESC);
+        $serverHost = $_ENV['PHPPGADMIN_TEST_SERVER_HOSTNAME'] ?? '127.0.0.1';
+        $serverPort = 5432;
+        $serverSslMode = 'allow';
+        $servertLinkTitle = "{$serverHost}:{$serverPort}:{$serverSslMode}";
+        $i->click('a[title="' . $servertLinkTitle . '"]');
 
         $i->switchToIframe();
         $i->switchToIframe('detail');

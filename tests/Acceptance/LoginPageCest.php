@@ -48,6 +48,14 @@ final class LoginPageCest
         $i->switchToIframe();
         $i->switchToIframe('detail');
 
+        $i->seeInFormFields(
+            self::LOGIN_FORM_SELECTOR,
+            [
+                'loginUsername' => '',
+                'loginPassword_' . hash('sha256', MyConfigExtension::NOT_RUNNING_SERVER_DESC) => '',
+            ]
+        );
+
         $loginUsername = $_ENV['PHPPGADMIN_TEST_SERVER_USERNAME'] ?? 'postgres';
         $loginPassword = '';
         if (isset($_ENV['PHPPGADMIN_TEST_SERVER_PASSWORD']) && is_string($_ENV['PHPPGADMIN_TEST_SERVER_PASSWORD'])) {
@@ -58,7 +66,6 @@ final class LoginPageCest
                 $loginPassword = $envPassword;
             }
         }
-        error_log('Login username: ' . $loginUsername . '; password: ' . $loginPassword);
         $i->submitForm(self::LOGIN_FORM_SELECTOR, [
             'loginUsername' => $loginUsername,
             'loginPassword_' . hash('sha256', MyConfigExtension::RUNNING_SERVER_DESC) => $loginPassword,

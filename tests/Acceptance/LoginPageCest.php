@@ -58,6 +58,7 @@ final class LoginPageCest
                 $loginPassword = $envPassword;
             }
         }
+        error_log('Login username: ' . $loginUsername . '; password: ' . $loginPassword);
         $i->submitForm(self::LOGIN_FORM_SELECTOR, [
             'loginUsername' => $loginUsername,
             'loginPassword_' . hash('sha256', MyConfigExtension::RUNNING_SERVER_DESC) => $loginPassword,

@@ -52,7 +52,7 @@ final class LoginPageCest
             self::LOGIN_FORM_SELECTOR,
             [
                 'loginUsername' => '',
-                'loginPassword_' . hash('sha256', MyConfigExtension::NOT_RUNNING_SERVER_DESC) => '',
+                'loginPassword_' . hash('sha256', MyConfigExtension::RUNNING_SERVER_DESC) => '',
             ]
         );
 

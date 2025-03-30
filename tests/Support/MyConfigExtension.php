@@ -42,6 +42,16 @@ class MyConfigExtension extends \Codeception\Extension
         $dotenv = Dotenv::createImmutable(dirname(__DIR__, 2));
         $dotenv->safeLoad();
 
+        $envServerHostname = '127.0.0.1';
+        if (isset($_ENV['PHPPGADMIN_TEST_SERVER_HOSTNAME']) && is_string($_ENV['PHPPGADMIN_TEST_SERVER_HOSTNAME'])) {
+            $envServerHostname = $_ENV['PHPPGADMIN_TEST_SERVER_HOSTNAME'];
+        } else {
+            $getEnvServerHostname = getenv('PHPPGADMIN_TEST_SERVER_HOSTNAME');
+            if (is_string($getEnvServerHostname)) {
+                $envServerHostname = $getEnvServerHostname;
+            }
+        }
+
         $config = [
             'servers' => [
                 [
@@ -51,7 +61,7 @@ class MyConfigExtension extends \Codeception\Extension
                 ],
                 [
                     'desc' => 'Running Server',
-                    'host' => $_ENV['PHPPGADMIN_TEST_SERVER_HOSTNAME'] ?? '127.0.0.1',
+                    'host' => $envServerHostname,
                     'port' => 5432
                 ]
             ]
@@ -77,7 +87,7 @@ class MyConfigExtension extends \Codeception\Extension
 
             $configIncPhpContent = str_replace(
                 "\$conf['servers'][0]['host'] = '';",
-                "\$conf['servers'][0]['host'] = '" . ($_ENV['PHPPGADMIN_TEST_SERVER_HOSTNAME'] ?? '127.0.0.1') . "';",
+                "\$conf['servers'][0]['host'] = '" . $envServerHostname . "';",
                 $configIncPhpContent
             );
 

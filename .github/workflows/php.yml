@@ -97,5 +97,5 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: test-output-${{ matrix.php-version }}
+          name: test-output-${{ matrix.php-version }}-${{ matrix.pg-version }}
           path: tests/_output

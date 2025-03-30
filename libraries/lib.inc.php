@@ -297,14 +297,18 @@ if (!isset($_no_db_connection)) {
 
     include_once './classes/database/Connection.php';
     
+    error_log('Debug log: 10');
     // Connect to database and set the global $data variable
     $data = $misc->getDatabaseAccessor($_curr_db);
+    error_log('Debug log: 11');
 
     // If schema is defined and database supports schemas, then set the
     // schema explicitly.
     if (isset($_REQUEST['database']) && isset($_REQUEST['schema'])) {
+        error_log('Debug log: 12');
         $status = $data->setSchema($_REQUEST['schema']);
         if ($status != 0) {
+            error_log('Debug log: 13');
             echo $lang['strbadschema'];
             exit;
         }

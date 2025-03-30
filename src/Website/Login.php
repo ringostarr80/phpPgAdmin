@@ -69,7 +69,6 @@ class Login extends Website
                 //'platform' => 'PostgreSQL ' . $server->Version->Value,
                 //'pgVersion' => $server->Version->Value
             ];
-            error_log('webdbLogin: ' . print_r($_SESSION['webdbLogin'], true));
 
             $redirectLocationUrlParams = [
                 'server' => $loginServer

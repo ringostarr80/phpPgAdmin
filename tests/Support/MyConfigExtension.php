@@ -91,6 +91,12 @@ class MyConfigExtension extends \Codeception\Extension
                 $configIncPhpContent
             );
 
+            $configIncPhpContent = str_replace(
+                "\$conf['extra_login_security'] = true;",
+                "\$conf['extra_login_security'] = false;",
+                $configIncPhpContent
+            );
+
             error_log('putting config.inc.php content: ' . $configIncPhpContent);
             file_put_contents($configIncPhp, $configIncPhpContent) ?:
                 throw new \RuntimeException('Failed to write config.inc.php');

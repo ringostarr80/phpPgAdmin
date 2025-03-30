@@ -26,7 +26,7 @@ class MyDevServerExtension extends \Codeception\Extension
             'php -S 0.0.0.0:9876 -d auto_prepend_file=%s -d xdebug.mode=coverage',
             escapeshellarg(dirname(__DIR__, 2) . '/c3.php')
         );
-        $fullCommand = "nohup {$command} > /dev/null & echo $!";
+        $fullCommand = "nohup {$command} > /dev/null 2>&1 & echo $!";
         $output = shell_exec($fullCommand);
         if (is_string($output)) {
             $trimmedOutput = trim($output);

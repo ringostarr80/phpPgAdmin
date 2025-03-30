@@ -59,6 +59,8 @@ class MyConfigExtension extends \Codeception\Extension
 
         file_put_contents(self::configFilename(), Yaml::dump($config));
 
+        error_log('putting config.yaml content: ' . Yaml::dump($config));
+
         $configIncPhp = dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'conf' . DIRECTORY_SEPARATOR . 'config.inc.php';
         $configIncPhpDist = $configIncPhp . '-dist';
         if (!file_exists($configIncPhp) && file_exists($configIncPhpDist) && copy($configIncPhpDist, $configIncPhp)) {

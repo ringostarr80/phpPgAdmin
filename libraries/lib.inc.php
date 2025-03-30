@@ -54,7 +54,6 @@ require_once './lang/english.php';
 require_once './classes/Misc.php';
 $misc = new Misc();
 
-error_log('Debug log: 1');
 // Session start: if extra_session_security is on, make sure cookie_samesite
 // is on (exit if we fail); otherwise, just start the session
 $our_session_name = 'PPA_ID';
@@ -88,11 +87,8 @@ if (($conf['extra_session_security'] ?? true) === true) {
     }
 }
 
-error_log('Debug log: 2');
 $misc->setHREF();
-error_log('Debug log: 3');
 $misc->setForm();
-error_log('Debug log: 4');
 
 // Enforce PHP environment
 ini_set('arg_separator.output', '&amp;');
@@ -118,7 +114,6 @@ if (
     $_reload_browser = true;
 }
 
-error_log('Debug log: 5');
 /* select the theme */
 unset($_theme);
 if (!isset($conf['theme'])) {
@@ -145,7 +140,6 @@ if (!isset($_theme) && isset($_COOKIE['ppaTheme']) && is_file("./themes/{$_COOKI
 // 4. Check for theme by server/db/user
 $info = $misc->getServerInfo();
 
-error_log('Debug log: 6');
 if (!is_null($info)) {
     $_theme = '';
 
@@ -271,9 +265,7 @@ if (!isset($_no_db_connection)) {
         echo $lang['strnoserversupplied'];
         exit;
     }
-    error_log('Debug log: 7');
     $_server_info = $misc->getServerInfo();
-    error_log('Debug log: 8');
 
     /* starting with PostgreSQL 9.0, we can set the application name */
     if (isset($_server_info['pgVersion']) && version_compare($_server_info['pgVersion'], '9', '>=')) {
@@ -282,7 +274,6 @@ if (!isset($_no_db_connection)) {
 
     // Redirect to the login form if not logged in
     if (!isset($_server_info['username'])) {
-        error_log('Debug log: 9');
         include './login.php';
         exit;
     }
@@ -297,18 +288,14 @@ if (!isset($_no_db_connection)) {
 
     include_once './classes/database/Connection.php';
     
-    error_log('Debug log: 10');
     // Connect to database and set the global $data variable
     $data = $misc->getDatabaseAccessor($_curr_db);
-    error_log('Debug log: 11');
 
     // If schema is defined and database supports schemas, then set the
     // schema explicitly.
     if (isset($_REQUEST['database']) && isset($_REQUEST['schema'])) {
-        error_log('Debug log: 12');
         $status = $data->setSchema($_REQUEST['schema']);
         if ($status != 0) {
-            error_log('Debug log: 13');
             echo $lang['strbadschema'];
             exit;
         }

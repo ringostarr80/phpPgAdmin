@@ -16,11 +16,12 @@ jobs:
 
     strategy:
       matrix:
-        version: ['8.1', '8.2', '8.3', '8.4']
+        pg-version: ['13', '14', '15', '16', '17']
+        php-version: ['8.1', '8.2', '8.3', '8.4']
 
     services:
       postgres:
-        image: postgres:12
+        image: postgres:${{ matrix.pg-version }}
         env:
           POSTGRES_PASSWORD: postgres
         options: >-
@@ -31,7 +32,7 @@ jobs:
         ports:
           - 5432:5432
 
-    name: PHP ${{ matrix.version }}
+    name: PHP ${{ matrix.php-version }} / PostgreSQL ${{ matrix.pg-version }}
 
     steps:
       - uses: actions/checkout@v4
@@ -40,7 +41,7 @@ jobs:
           node-version: '22'
       - uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.version }}
+          php-version: ${{ matrix.php-version }}
           extensions: intl, pdo_pgsql, zip
           coverage: xdebug
           ini-values: xdebug.mode=coverage,error_reporting=E_ALL,display_errors=On
@@ -65,7 +66,7 @@ jobs:
       - run: composer install --prefer-dist --no-progress
       - run: composer run-script dev:lint:php
       - run: composer run-script dev:lint:phpcs
-      - run: composer run-script dev:analyze:phpstan-${{ matrix.version }}
+      - run: composer run-script dev:analyze:phpstan-${{ matrix.php-version }}
       - run: npx selenium-standalone install && npx selenium-standalone start &
       - run: |
           while ! curl -sSL http://127.0.0.1:4444/wd/hub/status
@@ -87,7 +88,7 @@ jobs:
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
-        if: ${{ matrix.version == '8.1' }}
+        if: ${{ matrix.php-version == '8.1' && matrix.pg-version == '13' }}
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: ringostarr80/phpPgAdmin
@@ -96,5 +97,5 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: test-output-${{ matrix.version }}
+          name: test-output-${{ matrix.php-version }}
           path: tests/_output

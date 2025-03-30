@@ -76,10 +76,12 @@ final class LoginPageCest
         ]);
 
         $i->wait(10);
+        $i->makeScreenshot('login-test-1');
 
         $i->switchToIframe();
         $i->switchToIframe('detail');
         $i->wait(10);
+        $i->makeScreenshot('login-test-2');
 
         $i->waitForText("You are logged in as user \"{$loginUsername}\"");
     }

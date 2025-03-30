@@ -6,10 +6,8 @@
      * $Id: all_db.php,v 1.59 2007/10/17 21:40:19 ioguix Exp $
      */
 
-error_log('Debug test: 1');
     // Include application functions
     include_once('./libraries/lib.inc.php');
-error_log('Debug test: 2');
 
     $action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : '';
 if (!isset($msg)) {
@@ -551,11 +549,8 @@ if ($action == 'tree') {
     doTree();
 }
 
-error_log('Debug test: 3');
     $misc->printHeader($lang['strdatabases']);
-error_log('Debug test: 4');
     $misc->printBody();
-error_log('Debug test: 5');
 
 switch ($action) {
     case 'export':

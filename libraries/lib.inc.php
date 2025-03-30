@@ -54,6 +54,7 @@ require_once './lang/english.php';
 require_once './classes/Misc.php';
 $misc = new Misc();
 
+error_log('Debug log: 1');
 // Session start: if extra_session_security is on, make sure cookie_samesite
 // is on (exit if we fail); otherwise, just start the session
 $our_session_name = 'PPA_ID';
@@ -87,8 +88,11 @@ if (($conf['extra_session_security'] ?? true) === true) {
     }
 }
 
+error_log('Debug log: 2');
 $misc->setHREF();
+error_log('Debug log: 3');
 $misc->setForm();
+error_log('Debug log: 4');
 
 // Enforce PHP environment
 ini_set('arg_separator.output', '&amp;');
@@ -114,6 +118,7 @@ if (
     $_reload_browser = true;
 }
 
+error_log('Debug log: 5');
 /* select the theme */
 unset($_theme);
 if (!isset($conf['theme'])) {
@@ -140,6 +145,7 @@ if (!isset($_theme) && isset($_COOKIE['ppaTheme']) && is_file("./themes/{$_COOKI
 // 4. Check for theme by server/db/user
 $info = $misc->getServerInfo();
 
+error_log('Debug log: 6');
 if (!is_null($info)) {
     $_theme = '';
 

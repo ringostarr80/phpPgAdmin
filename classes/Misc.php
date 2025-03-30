@@ -489,7 +489,6 @@ class Misc
             if ($server_info['password'] == '' || in_array($username, $bad_usernames)) {
                 unset($_SESSION['webdbLogin'][$_REQUEST['server']]);
                 $msg = $lang['strlogindisallowed'];
-                error_log('Debug log: ./login.php');
                 include('./login.php');
                 exit;
             }

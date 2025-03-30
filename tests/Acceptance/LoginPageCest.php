@@ -79,14 +79,6 @@ final class LoginPageCest
             }
         }
 
-        //$i->fillField('loginUsername', $loginUsername);
-        //$i->fillField('loginPassword_' . hash('sha256', MyConfigExtension::RUNNING_SERVER_DESC), $loginPassword);
-        //$i->makeScreenshot('login-test-after-fill');
-        //$i->click('loginSubmit');
-        //$i->makeScreenshot('login-test-after-submit');
-        //$i->wait(5);
-        //$i->makeScreenshot('login-test-after-wait');
-        //*
         $i->submitForm(
             self::LOGIN_FORM_SELECTOR,
             [
@@ -95,7 +87,6 @@ final class LoginPageCest
             ],
             'loginSubmit'
         );
-        //*/
 
         $i->waitForText("{$loginUsername}");
     }

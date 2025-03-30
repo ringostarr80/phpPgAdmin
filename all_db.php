@@ -6,8 +6,10 @@
      * $Id: all_db.php,v 1.59 2007/10/17 21:40:19 ioguix Exp $
      */
 
+error_log('Debug test: 1');
     // Include application functions
     include_once('./libraries/lib.inc.php');
+error_log('Debug test: 2');
 
     $action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : '';
 if (!isset($msg)) {
@@ -386,16 +388,11 @@ function doDefault($msg = '')
     global $data, $conf, $misc;
     global $lang;
 
-    error_log('doDefault called');
     $misc->printTrail('server');
-    error_log('doDefault called 2');
     $misc->printTabs('server', 'databases');
-    error_log('doDefault called 3');
     $misc->printMsg($msg);
-    error_log('doDefault called 4');
 
     $databases = $data->getDatabases();
-    error_log('doDefault called 5');
 
     $columns = array(
         'database' => array(
@@ -554,8 +551,11 @@ if ($action == 'tree') {
     doTree();
 }
 
+error_log('Debug test: 3');
     $misc->printHeader($lang['strdatabases']);
+error_log('Debug test: 4');
     $misc->printBody();
+error_log('Debug test: 5');
 
 switch ($action) {
     case 'export':

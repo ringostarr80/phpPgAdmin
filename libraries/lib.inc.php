@@ -271,7 +271,9 @@ if (!isset($_no_db_connection)) {
         echo $lang['strnoserversupplied'];
         exit;
     }
+    error_log('Debug log: 7');
     $_server_info = $misc->getServerInfo();
+    error_log('Debug log: 8');
 
     /* starting with PostgreSQL 9.0, we can set the application name */
     if (isset($_server_info['pgVersion']) && version_compare($_server_info['pgVersion'], '9', '>=')) {
@@ -280,6 +282,7 @@ if (!isset($_no_db_connection)) {
 
     // Redirect to the login form if not logged in
     if (!isset($_server_info['username'])) {
+        error_log('Debug log: 9');
         include './login.php';
         exit;
     }

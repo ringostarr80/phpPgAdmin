@@ -35,7 +35,6 @@ final class LoginPageCest
         ]);
 
         $i->waitForText('Login failed', timeout: 180);
-        $i->makeScreenshot('login-test-failed');
     }
 
     public function tryToTestLoginSuccessful(AcceptanceTester $i): void
@@ -75,6 +74,8 @@ final class LoginPageCest
         $i->fillField('loginUsername', $loginUsername);
         $i->fillField('loginPassword_' . hash('sha256', MyConfigExtension::RUNNING_SERVER_DESC), $loginPassword);
         $i->makeScreenshot('login-test-after-fill');
+        $i->click('loginSubmit');
+        /*
         $i->submitForm(
             self::LOGIN_FORM_SELECTOR,
             [
@@ -83,6 +84,7 @@ final class LoginPageCest
             ],
             'loginSubmit'
         );
+        */
 
         $i->waitForText("You are logged in as user \"{$loginUsername}\"");
     }

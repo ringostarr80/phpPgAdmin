@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Database;
 
+use PhpPgAdmin\DDD\ValueObjects\Server\SslMode;
+
 class Connection
 {
     public \ADOConnection $conn;
@@ -52,7 +54,7 @@ class Connection
     public static function loginDataIsValid(
         ?string $host,
         ?int $port,
-        string $sslmode,
+        SslMode $sslmode,
         string $user,
         string $password
     ): bool {
@@ -73,9 +75,14 @@ class Connection
         }
 
         // Add sslmode to $pghost as needed
-        if (($sslmode == 'disable') || ($sslmode == 'allow') || ($sslmode == 'prefer') || ($sslmode == 'require')) {
-            $pghost .= ':' . $sslmode;
-        } elseif ($sslmode == 'legacy') {
+        if (
+            $sslmode === SslMode::DISABLED ||
+            $sslmode === SslMode::ALLOW ||
+            $sslmode === SslMode::PREFER ||
+            $sslmode === SslMode::REQUIRE
+        ) {
+            $pghost .= ':' . $sslmode->value;
+        } elseif ($sslmode === SslMode::LEGACY) {
             $pghost .= ' requiressl=1';
         }
 

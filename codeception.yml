@@ -1,15 +1,16 @@
 namespace: Tests
 support_namespace: Support
 paths:
-    tests: codeception-tests
-    output: codeception-tests/_output
-    data: codeception-tests/Support/Data
-    support: codeception-tests/Support
-    envs: codeception-tests/_envs
+    tests: tests
+    output: tests/_output
+    data: tests/Support/Data
+    support: tests/Support
+    envs: tests/_envs
 actor_suffix: Tester
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
+        - Tests\Support\MyConfigExtension
         - Tests\Support\MyDevServerExtension
 coverage:
     enabled: true
@@ -19,6 +20,6 @@ coverage:
     include:
         - ./*
     exclude:
-        - codeception-tests/*
+        - tests/*
         - node_modules/*
         - vendor/*

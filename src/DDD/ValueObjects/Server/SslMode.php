@@ -10,5 +10,6 @@ enum SslMode: string
     case ALLOW = 'allow';
     case PREFER = 'prefer';
     case REQUIRE = 'require';
+    case LEGACY = 'legacy';
     case UNSPECIFIED = 'unspecified';
 }

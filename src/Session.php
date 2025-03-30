@@ -29,16 +29,22 @@ class Session extends Website
                     session_destroy();
                     session_name(self::NAME);
                     ini_set('session.cookie_samesite', 'Strict');
-                    session_start();
+                    if (!session_start()) {
+                        throw new \RuntimeException('Session could not be started');
+                    }
                 }
             } elseif (session_status() !== PHP_SESSION_ACTIVE) {
                 session_name(self::NAME);
                 ini_set('session.cookie_samesite', 'Strict');
-                session_start();
+                if (!session_start()) {
+                    throw new \RuntimeException('Session could not be started');
+                }
             }
         } elseif (!ini_get('session.auto_start')) {
             session_name(self::NAME);
-            session_start();
+            if (!session_start()) {
+                throw new \RuntimeException('Session could not be started');
+            }
         }
     }
 }

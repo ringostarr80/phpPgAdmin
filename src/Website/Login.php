@@ -44,7 +44,7 @@ class Login extends Website
                 !Connection::loginDataIsValid(
                     host: (string)$server->Host,
                     port: $server->Port->Value,
-                    sslmode: $server->SslMode->value,
+                    sslmode: $server->SslMode,
                     user: $loginUsername,
                     password: $loginPassword
                 )
@@ -133,12 +133,17 @@ class Login extends Website
         $table->setAttribute('cellpadding', '5');
         $table->setAttribute('cellspacing', '3');
         $tr = $dom->createElement('tr');
-        $td = $dom->createElement('td', _('Username'));
+        $td = $dom->createElement('td');
+        $usernameLabel = $dom->createElement('label');
+        $usernameLabel->setAttribute('for', 'loginUsername');
+        $usernameLabel->appendChild($dom->createTextNode(_('Username')));
+        $td->appendChild($usernameLabel);
         $tr->appendChild($td);
         $td = $dom->createElement('td');
         $username = RequestParameter::getString('loginUsername') ?? '';
         $inputTypeTextLoginUsername = $dom->createElement('input');
         $inputTypeTextLoginUsername->setAttribute('type', 'text');
+        $inputTypeTextLoginUsername->setAttribute('id', 'loginUsername');
         $inputTypeTextLoginUsername->setAttribute('name', 'loginUsername');
         $inputTypeTextLoginUsername->setAttribute('value', $username);
         $inputTypeTextLoginUsername->setAttribute('size', '24');
@@ -146,7 +151,11 @@ class Login extends Website
         $tr->appendChild($td);
         $table->appendChild($tr);
         $tr = $dom->createElement('tr');
-        $td = $dom->createElement('td', _('Password'));
+        $td = $dom->createElement('td');
+        $labelPassword = $dom->createElement('label');
+        $labelPassword->setAttribute('for', 'loginPassword');
+        $labelPassword->appendChild($dom->createTextNode(_('Password')));
+        $td->appendChild($labelPassword);
         $tr->appendChild($td);
         $td = $dom->createElement('td');
         $inputTypePasswordLoginPassword = $dom->createElement('input');
@@ -162,6 +171,7 @@ class Login extends Website
         $p = $dom->createElement('p');
         $inputTypeSubmitLoginSubmit = $dom->createElement('input');
         $inputTypeSubmitLoginSubmit->setAttribute('type', 'submit');
+        $inputTypeSubmitLoginSubmit->setAttribute('id', 'loginSubmit');
         $inputTypeSubmitLoginSubmit->setAttribute('name', 'loginSubmit');
         $inputTypeSubmitLoginSubmit->setAttribute('value', _('Login'));
         $p->appendChild($inputTypeSubmitLoginSubmit);

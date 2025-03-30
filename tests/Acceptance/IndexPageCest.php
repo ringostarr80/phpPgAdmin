@@ -4,16 +4,10 @@ declare(strict_types=1);
 
 namespace Tests\Acceptance;
 
-use Tests\Support\AcceptanceTester;
+use Tests\Support\{AcceptanceTester, MyConfigExtension};
 
 final class IndexPageCest
 {
-    // @phpcs:disable
-    public function _before(AcceptanceTester $i): void
-    {
-        // Code here will be executed before each test.
-    }
-
     public function tryToTestIndexPage(AcceptanceTester $i): void
     {
         $i->amOnPage('/');
@@ -25,8 +19,13 @@ final class IndexPageCest
         $i->switchToIframe('browser');
 
         $i->waitForElement('div.webfx-tree-children');
-        $i->waitForText('PostgreSQL Test');
-        $i->see('PostgreSQL Test', ['css' => 'div[class="webfx-tree-item"] div[class="webfx-tree-row"] a[class="webfx-tree-item-label"]']);
+        $i->waitForText(MyConfigExtension::NOT_RUNNING_SERVER_DESC);
+        $i->see(
+            MyConfigExtension::NOT_RUNNING_SERVER_DESC,
+            [
+                'css' => 'div[class="webfx-tree-item"] div[class="webfx-tree-row"] a[class="webfx-tree-item-label"]'
+            ]
+        );
 
         $i->switchToIframe();
         $i->switchToIframe('detail');
@@ -51,8 +50,8 @@ final class IndexPageCest
         $i->seeElement('table#server-list');
         $i->seeElement('table#server-list thead');
         $i->seeElement('table#server-list tbody');
-        $i->seeNumberOfElements('table#server-list tbody tr', 1);
-        $i->see('PostgreSQL Test', 'table#server-list tbody tr:first-child td:nth-child(1)');
+        $i->seeNumberOfElements('table#server-list tbody tr', [1, 5]);
+        $i->see(MyConfigExtension::NOT_RUNNING_SERVER_DESC, 'table#server-list tbody tr:first-child td:nth-child(1)');
         $i->see('192.168.0.10', 'table#server-list tbody tr:first-child td:nth-child(2)');
         $i->see('5432', 'table#server-list tbody tr:first-child td:nth-child(3)');
         $i->see('', 'table#server-list tbody tr:first-child td:nth-child(4)');

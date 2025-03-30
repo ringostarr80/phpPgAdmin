@@ -43,7 +43,15 @@ final class LoginPageCest
 
         $i->switchToIframe('browser');
         $i->waitForText(MyConfigExtension::RUNNING_SERVER_DESC);
-        $serverHost = $_ENV['PHPPGADMIN_TEST_SERVER_HOSTNAME'] ?? '127.0.0.1';
+        $serverHost = '127.0.0.1';
+        if (isset($_ENV['PHPPGADMIN_TEST_SERVER_HOSTNAME']) && is_string($_ENV['PHPPGADMIN_TEST_SERVER_HOSTNAME'])) {
+            $serverHost = $_ENV['PHPPGADMIN_TEST_SERVER_HOSTNAME'];
+        } else {
+            $getEnvServerHostname = getenv('PHPPGADMIN_TEST_SERVER_HOSTNAME');
+            if (is_string($getEnvServerHostname)) {
+                $serverHost = $getEnvServerHostname;
+            }
+        }
         $serverPort = 5432;
         $serverSslMode = 'allow';
         $servertLinkTitle = "{$serverHost}:{$serverPort}:{$serverSslMode}";

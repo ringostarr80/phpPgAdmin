@@ -71,6 +71,10 @@ final class LoginPageCest
                 $loginPassword = $envPassword;
             }
         }
+
+        $i->fillField('loginUsername', $loginUsername);
+        $i->fillField('loginPassword_' . hash('sha256', MyConfigExtension::RUNNING_SERVER_DESC), $loginPassword);
+        $i->makeScreenshot('login-test-after-fill');
         $i->submitForm(
             self::LOGIN_FORM_SELECTOR,
             [
@@ -79,9 +83,6 @@ final class LoginPageCest
             ],
             'loginSubmit'
         );
-
-        $i->switchToIframe();
-        $i->switchToIframe('detail');
 
         $i->waitForText("You are logged in as user \"{$loginUsername}\"");
     }

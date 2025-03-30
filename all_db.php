@@ -386,11 +386,16 @@ function doDefault($msg = '')
     global $data, $conf, $misc;
     global $lang;
 
+    error_log('doDefault called');
     $misc->printTrail('server');
+    error_log('doDefault called 2');
     $misc->printTabs('server', 'databases');
+    error_log('doDefault called 3');
     $misc->printMsg($msg);
+    error_log('doDefault called 4');
 
     $databases = $data->getDatabases();
+    error_log('doDefault called 5');
 
     $columns = array(
         'database' => array(

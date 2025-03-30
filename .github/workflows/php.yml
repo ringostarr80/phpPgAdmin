@@ -43,7 +43,7 @@ jobs:
           php-version: ${{ matrix.version }}
           extensions: intl, pdo_pgsql, zip
           coverage: xdebug
-          ini-values: xdebug.mode=coverage
+          ini-values: xdebug.mode=coverage,error_reporting=E_ALL,display_errors=On
 
       - name: Install Chrome
         run: |

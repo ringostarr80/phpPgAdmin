@@ -76,11 +76,13 @@ jobs:
 
       - run: composer run-script dev:test:unit
         env:
+          PHPPGADMIN_TEST_SERVER_HOSTNAME: localhost
           PHPPGADMIN_TEST_SERVER_PASSWORD: ${{ vars.PHPPGADMIN_TEST_SERVER_PASSWORD }}
 
       - run: composer run-script dev:test:coverage:ci
         env:
           BROWSER: chrome
+          PHPPGADMIN_TEST_SERVER_HOSTNAME: localhost
           PHPPGADMIN_TEST_SERVER_PASSWORD: ${{ vars.PHPPGADMIN_TEST_SERVER_PASSWORD }}
 
       - name: Upload coverage reports to Codecov

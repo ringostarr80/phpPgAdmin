@@ -80,7 +80,8 @@ class MyConfigExtension extends \Codeception\Extension
             );
 
             error_log('putting config.inc.php content: ' . $configIncPhpContent);
-            file_put_contents($configIncPhp, $configIncPhpContent);
+            file_put_contents($configIncPhp, $configIncPhpContent) ?:
+                throw new \RuntimeException('Failed to write config.inc.php');
         }
     }
 

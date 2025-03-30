@@ -79,6 +79,7 @@ class MyConfigExtension extends \Codeception\Extension
                 $configIncPhpContent
             );
 
+            error_log('putting config.inc.php content: ' . $configIncPhpContent);
             file_put_contents($configIncPhp, $configIncPhpContent);
         }
     }

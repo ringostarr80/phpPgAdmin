@@ -35,6 +35,7 @@ final class LoginPageCest
         ]);
 
         $i->waitForText('Login failed', timeout: 180);
+        $i->makeScreenshot('login-test-failed');
     }
 
     public function tryToTestLoginSuccessful(AcceptanceTester $i): void
@@ -70,18 +71,17 @@ final class LoginPageCest
                 $loginPassword = $envPassword;
             }
         }
-        $i->submitForm(self::LOGIN_FORM_SELECTOR, [
-            'loginUsername' => $loginUsername,
-            'loginPassword_' . hash('sha256', MyConfigExtension::RUNNING_SERVER_DESC) => $loginPassword,
-        ]);
-
-        $i->wait(10);
-        $i->makeScreenshot('login-test-1');
+        $i->submitForm(
+            self::LOGIN_FORM_SELECTOR,
+            [
+                'loginUsername' => $loginUsername,
+                'loginPassword_' . hash('sha256', MyConfigExtension::RUNNING_SERVER_DESC) => $loginPassword,
+            ],
+            'loginSubmit'
+        );
 
         $i->switchToIframe();
         $i->switchToIframe('detail');
-        $i->wait(10);
-        $i->makeScreenshot('login-test-2');
 
         $i->waitForText("You are logged in as user \"{$loginUsername}\"");
     }

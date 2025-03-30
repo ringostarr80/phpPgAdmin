@@ -171,6 +171,7 @@ class Login extends Website
         $p = $dom->createElement('p');
         $inputTypeSubmitLoginSubmit = $dom->createElement('input');
         $inputTypeSubmitLoginSubmit->setAttribute('type', 'submit');
+        $inputTypeSubmitLoginSubmit->setAttribute('id', 'loginSubmit');
         $inputTypeSubmitLoginSubmit->setAttribute('name', 'loginSubmit');
         $inputTypeSubmitLoginSubmit->setAttribute('value', _('Login'));
         $p->appendChild($inputTypeSubmitLoginSubmit);

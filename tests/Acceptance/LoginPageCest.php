@@ -75,8 +75,11 @@ final class LoginPageCest
             'loginPassword_' . hash('sha256', MyConfigExtension::RUNNING_SERVER_DESC) => $loginPassword,
         ]);
 
+        $i->wait(10);
+
         $i->switchToIframe();
         $i->switchToIframe('detail');
+        $i->wait(10);
 
         $i->waitForText("You are logged in as user \"{$loginUsername}\"");
     }

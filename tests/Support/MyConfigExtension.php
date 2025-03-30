@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Tests\Support;
 
-use CaptainHook\App\Hook\Condition\Branch\Files;
 use Codeception\Event\SuiteEvent;
 use Codeception\Events;
 use Dotenv\Dotenv;
@@ -15,6 +14,7 @@ class MyConfigExtension extends \Codeception\Extension
     public const NOT_RUNNING_SERVER_DESC = 'Not Running Server';
     public const RUNNING_SERVER_DESC = 'Running Server';
 
+    private static bool $configIncPhpCreated = false;
     /**
      * @var array<mixed>
      */
@@ -61,13 +61,36 @@ class MyConfigExtension extends \Codeception\Extension
 
         $configIncPhp = dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'conf' . DIRECTORY_SEPARATOR . 'config.inc.php';
         $configIncPhpDist = $configIncPhp . '-dist';
-        if (!file_exists($configIncPhp) && file_exists($configIncPhpDist)) {
-            copy($configIncPhpDist, $configIncPhp);
+        if (!file_exists($configIncPhp) && file_exists($configIncPhpDist) && copy($configIncPhpDist, $configIncPhp)) {
+            self::$configIncPhpCreated = true;
+
+            $configIncPhpContent = file_get_contents($configIncPhp) ?:
+                throw new \RuntimeException('Failed to read config.inc.php');
+
+            $configIncPhpContent = str_replace(
+                "\$conf['servers'][0]['desc'] = 'PostgreSQL';",
+                "\$conf['servers'][0]['desc'] = '" . self::RUNNING_SERVER_DESC . "';",
+                $configIncPhpContent
+            );
+
+            $configIncPhpContent = str_replace(
+                "\$conf['servers'][0]['host'] = '';",
+                "\$conf['servers'][0]['host'] = '" . ($_ENV['PHPPGADMIN_TEST_SERVER_HOSTNAME'] ?? '127.0.0.1') . "';",
+                $configIncPhpContent
+            );
+
+            file_put_contents($configIncPhp, $configIncPhpContent);
         }
     }
 
     public function afterSuite(SuiteEvent $e): void
     {
         unlink(self::configFilename());
+        if (self::$configIncPhpCreated) {
+            $configIncPhp = dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'conf' . DIRECTORY_SEPARATOR . 'config.inc.php';
+            if (file_exists($configIncPhp)) {
+                unlink($configIncPhp);
+            }
+        }
     }
 }

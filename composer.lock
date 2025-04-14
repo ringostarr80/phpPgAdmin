@@ -497,16 +497,16 @@
         },
         {
             "name": "captainhook/hook-installer",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/captainhookphp/hook-installer.git",
-                "reference": "3308a9152727af4e3d1c7b63ca219d6938b702b8"
+                "url": "https://github.com/captainhook-git/hook-installer.git",
+                "reference": "fb3c45f6204b08baba999f4ffc4ae707bf684e8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/captainhookphp/hook-installer/zipball/3308a9152727af4e3d1c7b63ca219d6938b702b8",
-                "reference": "3308a9152727af4e3d1c7b63ca219d6938b702b8",
+                "url": "https://api.github.com/repos/captainhook-git/hook-installer/zipball/fb3c45f6204b08baba999f4ffc4ae707bf684e8b",
+                "reference": "fb3c45f6204b08baba999f4ffc4ae707bf684e8b",
                 "shasum": ""
             },
             "require": {
@@ -537,10 +537,10 @@
             ],
             "description": "Composer Plugin that makes everyone activate the CaptainHook git hooks locally",
             "support": {
-                "issues": "https://github.com/captainhookphp/hook-installer/issues",
-                "source": "https://github.com/captainhookphp/hook-installer/tree/1.0.3"
+                "issues": "https://github.com/captainhook-git/hook-installer/issues",
+                "source": "https://github.com/captainhook-git/hook-installer/tree/1.0.4"
             },
-            "time": "2024-03-21T13:39:59+00:00"
+            "time": "2025-04-08T07:12:26+00:00"
         },
         {
             "name": "captainhook/secrets",

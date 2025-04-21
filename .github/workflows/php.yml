@@ -18,7 +18,7 @@ jobs:
       - id: set
         run: |
           if [[ "${{ github.ref_name }}" == "dev" ]]; then
-            echo 'matrix={"pg-version":["18"],"php-version":["8.4"]}' >> $GITHUB_OUTPUT
+            echo 'matrix={"pg-version":["17"],"php-version":["8.4"]}' >> $GITHUB_OUTPUT
           else
             echo 'matrix={"pg-version":["13","14","15","16","17"],"php-version":["8.1","8.2","8.3","8.4"]}' >> $GITHUB_OUTPUT
           fi

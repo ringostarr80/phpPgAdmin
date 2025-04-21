@@ -10,14 +10,26 @@ permissions:
   contents: read
 
 jobs:
+  set-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set.outputs.matrix }}
+    steps:
+      - id: set
+        run: |
+          if [[ "${{ github.ref_name }}" == "dev" ]]; then
+            echo 'matrix={"pg-version":["18"],"php-version":["8.4"]}' >> $GITHUB_OUTPUT
+          else
+            echo 'matrix={"pg-version":["13","14","15","16","17"],"php-version":["8.1","8.2","8.3","8.4"]}' >> $GITHUB_OUTPUT
+          fi
+
   build:
 
+    needs: set-matrix
     runs-on: ubuntu-latest
 
     strategy:
-      matrix:
-        pg-version: ['13', '14', '15', '16', '17']
-        php-version: ['8.1', '8.2', '8.3', '8.4']
+      matrix: ${{ fromJson(needs.set-matrix.outputs.matrix) }}
 
     services:
       postgres:

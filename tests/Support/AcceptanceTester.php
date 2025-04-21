@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Support;
 
+use Tests\Acceptance\LoginPageCest;
+
 /**
  * Inherited Methods
  * @method void wantTo($text)
@@ -26,4 +28,32 @@ class AcceptanceTester extends \Codeception\Actor
     /**
      * Define custom actions here
      */
+    public function login($name, $password)
+    {
+        $i = $this;
+
+        $i->amOnPage('/');
+
+        $i->switchToIframe('browser');
+        $i->waitForText(MyConfigExtension::RUNNING_SERVER_DESC);
+        $serverHost = MyConfigExtension::getEnvVar('PHPPGADMIN_TEST_SERVER_HOSTNAME') ?? '127.0.0.1';
+        $serverPort = 5432;
+        $serverSslMode = 'allow';
+        $servertLinkTitle = "{$serverHost}:{$serverPort}:{$serverSslMode}";
+        $i->click('a[title="' . $servertLinkTitle . '"]');
+
+        $i->switchToIframe();
+        $i->switchToIframe('detail');
+
+        $i->submitForm(
+            LoginPageCest::LOGIN_FORM_SELECTOR,
+            [
+                'loginUsername' => $name,
+                'loginPassword_' . hash('sha256', MyConfigExtension::RUNNING_SERVER_DESC) => $password,
+            ],
+            'loginSubmit'
+        );
+
+        $i->waitForText("You are logged in as user \"{$name}\"");
+    }
 }

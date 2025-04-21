@@ -1,22 +1,31 @@
 <?php
 
-    /**
-     * Manage databases within a server
-     *
-     * $Id: all_db.php,v 1.59 2007/10/17 21:40:19 ioguix Exp $
-     */
+/*
+use PhpPgAdmin\Website\AllDb;
 
-    // Include application functions
-    include_once('./libraries/lib.inc.php');
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'autoload.php';
 
-    $action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : '';
+$website = new AllDb();
+echo $website->buildHtmlString();
+//*/
+
+/**
+ * Manage databases within a server
+ *
+ * $Id: all_db.php,v 1.59 2007/10/17 21:40:19 ioguix Exp $
+ */
+
+// Include application functions
+include_once('./libraries/lib.inc.php');
+
+$action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : '';
 if (!isset($msg)) {
     $msg = '';
 }
 
-    /**
-     * Display a form for alter and perform actual alter
-     */
+/**
+ * Display a form for alter and perform actual alter
+ */
 function doAlter($confirm)
 {
     global $data, $misc, $_reload_browser;
@@ -82,9 +91,9 @@ function doAlter($confirm)
     }
 }
 
-    /**
-     * Show confirmation of drop and perform actual drop
-     */
+/**
+ * Show confirmation of drop and perform actual drop
+ */
 function doDrop($confirm)
 {
     global $data, $misc;
@@ -145,10 +154,9 @@ function doDrop($confirm)
     }
 }
 
-
-    /**
-     * Displays a screen where they can enter a new database
-     */
+/**
+ * Displays a screen where they can enter a new database
+ */
 function doCreate($msg = '')
 {
     global $data, $misc;
@@ -275,9 +283,9 @@ function doCreate($msg = '')
     echo "</form>\n";
 }
 
-    /**
-     * Actually creates the new view in the database
-     */
+/**
+ * Actually creates the new view in the database
+ */
 function doSaveCreate()
 {
     global $data, $lang, $_reload_browser;
@@ -324,9 +332,9 @@ function doSaveCreate()
     }
 }
 
-    /**
-     * Displays options for cluster download
-     */
+/**
+ * Displays options for cluster download
+ */
 function doExport($msg = '')
 {
     global $data, $misc;
@@ -378,9 +386,9 @@ function doExport($msg = '')
     echo "</form>\n";
 }
 
-    /**
-     * Show default list of databases in the server
-     */
+/**
+ * Show default list of databases in the server
+ */
 function doDefault($msg = '')
 {
     global $data, $conf, $misc;
@@ -591,4 +599,4 @@ switch ($action) {
         break;
 }
 
-    $misc->printFooter();
+$misc->printFooter();

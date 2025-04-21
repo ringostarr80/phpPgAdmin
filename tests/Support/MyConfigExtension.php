@@ -24,19 +24,6 @@ class MyConfigExtension extends \Codeception\Extension
     ];
     protected ?int $pid = null;
 
-    private static function configFilename(): string
-    {
-        $configYamlFile = 'config-test.yml';
-        $envConfigYamlFile = getenv('PHPPGADMIN_CONFIG_YAML_FILE');
-        if (is_string($envConfigYamlFile)) {
-            $configYamlFile = $envConfigYamlFile;
-        } else {
-            putenv("PHPPGADMIN_CONFIG_YAML_FILE={$configYamlFile}");
-        }
-
-        return dirname(__DIR__, 2) . "/conf/{$configYamlFile}";
-    }
-
     public function beforeSuite(SuiteEvent $e): void
     {
         $dotenv = Dotenv::createImmutable(dirname(__DIR__, 2));
@@ -109,5 +96,33 @@ class MyConfigExtension extends \Codeception\Extension
                 unlink($configIncPhp);
             }
         }
+    }
+
+    private static function configFilename(): string
+    {
+        $configYamlFile = 'config-test.yml';
+        $envConfigYamlFile = getenv('PHPPGADMIN_CONFIG_YAML_FILE');
+        if (is_string($envConfigYamlFile)) {
+            $configYamlFile = $envConfigYamlFile;
+        } else {
+            putenv("PHPPGADMIN_CONFIG_YAML_FILE={$configYamlFile}");
+        }
+
+        return dirname(__DIR__, 2) . "/conf/{$configYamlFile}";
+    }
+
+    public static function getEnvVar(string $envName): ?string
+    {
+        $value = null;
+        if (isset($_ENV[$envName]) && is_string($_ENV[$envName])) {
+            $value = $_ENV[$envName];
+        } else {
+            $envValue = getenv($envName);
+            if (is_string($envValue)) {
+                $value = $envValue;
+            }
+        }
+
+        return $value;
     }
 }

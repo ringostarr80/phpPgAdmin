@@ -20,5 +20,7 @@ final class LocalesCest
         $locales = Config::getAvailableLocales();
         $i->assertNotEmpty($locales, 'No locales found');
         $i->assertEquals(28, count($locales), 'Expected 28 locales');
+        $i->assertContains('de_DE', $locales, 'Locale de_DE should be present');
+        $i->assertContains('en_US', $locales, 'Locale en_US should be present');
     }
 }

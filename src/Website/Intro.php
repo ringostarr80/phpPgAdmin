@@ -36,20 +36,18 @@ class Intro extends Website
         $currentLocale = Config::locale();
         $languageIdsWithLocales = Language::getAvailableLanguageIdsWithLocales();
         foreach ($languageIdsWithLocales as $languageId => $locale) {
-            putenv("LC_ALL={$locale}.UTF-8");
-            setlocale(LC_ALL, ["{$locale}.UTF-8", $locale, substr($locale, 0, 2)]);
-            textdomain('messages'); // clear textdomain cache
+            Language::setLocale($locale);
             $option = $dom->createElement('option', _('applang'));
             $option->setAttribute('value', $languageId);
+            $option->setAttribute('data-locale', $locale);
+            $option->setAttribute('data-language-id', $languageId);
             if ($locale === $currentLocale) {
                 $option->setAttribute('selected', 'selected');
             }
             $select->appendChild($option);
         }
         // Reset locale
-        putenv("LC_ALL={$currentLocale}.UTF-8");
-        setlocale(LC_ALL, ["{$currentLocale}.UTF-8", $currentLocale, substr($currentLocale, 0, 2)]);
-        textdomain('messages');
+        Language::setLocale($currentLocale);
 
         $td->appendChild($select);
         $tr->appendChild($td);

@@ -43,4 +43,12 @@ class Language
             'ukrainian' => 'uk_UA'
         ];
     }
+
+    public static function setLocale(string $locale): void
+    {
+        putenv("LANGUAGE={$locale}");
+        putenv("LC_ALL={$locale}.UTF-8");
+        setlocale(LC_ALL, ["{$locale}.UTF-8", $locale, substr($locale, 0, 2)]);
+        textdomain('messages');
+    }
 }

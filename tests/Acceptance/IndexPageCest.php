@@ -44,7 +44,7 @@ final class IndexPageCest
     {
         $i->amOnPage('/');
         $i->switchToIframe('detail');
-        $i->click('Server');
+        $i->click('a[href="servers.php"]');
 
         $i->waitForElement('table.tabs tr:first-child td:nth-child(2).active span.label');
 

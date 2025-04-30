@@ -25,6 +25,7 @@ final class AllDbPageCest
         $serverPort = 5432;
         $serverSslMode = 'allow';
         $servertLinkTitle = "{$serverHost}:{$serverPort}:{$serverSslMode}";
+        $i->seeElement('a[title="' . $servertLinkTitle . '"]');
         $i->click('a[title="' . $servertLinkTitle . '"]');
 
         $i->switchToIframe();

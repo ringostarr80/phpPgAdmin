@@ -1,5 +1,9 @@
 {
     "editor.rulers": [120],
     "phpstan.configFile": "phpstan-8.1.neon",
-    "intelephense.environment.phpVersion": "8.1.0"
+    "intelephense.environment.phpVersion": "8.1.0",
+    "sonarlint.connectedMode.project": {
+        "connectionId": "ringostarr80",
+        "projectKey": "ringostarr80_phpPgAdmin"
+    }
 }

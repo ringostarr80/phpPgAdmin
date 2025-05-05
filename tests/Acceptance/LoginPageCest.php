@@ -21,7 +21,7 @@ final class LoginPageCest
         $i->click(MyConfigExtension::NOT_RUNNING_SERVER_DESC);
 
         $i->switchToIframe();
-        $i->switchToIframe('detail');
+        $i->switchToIframe('#detail');
 
         $i->seeInFormFields(
             self::LOGIN_FORM_SELECTOR,

@@ -54,7 +54,7 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
-          extensions: intl, pdo_pgsql, zip
+          extensions: intl, pdo_pgsql, xdebug, zip
           coverage: xdebug
           ini-values: xdebug.mode=coverage,error_reporting=E_ALL,display_errors=On
 

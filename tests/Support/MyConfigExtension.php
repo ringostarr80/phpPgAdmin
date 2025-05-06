@@ -101,7 +101,7 @@ class MyConfigExtension extends \Codeception\Extension
     private static function configFilename(): string
     {
         $configYamlFile = 'config-test.yml';
-        $envConfigYamlFile = getenv('PHPPGADMIN_CONFIG_YAML_FILE');
+        $envConfigYamlFile = self::getEnvVar('PHPPGADMIN_CONFIG_YAML_FILE');
         if (is_string($envConfigYamlFile)) {
             $configYamlFile = $envConfigYamlFile;
         } else {

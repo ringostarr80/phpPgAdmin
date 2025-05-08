@@ -57,14 +57,11 @@ jobs:
           extensions: intl, pdo_pgsql, xdebug, zip
           coverage: xdebug
           ini-values: xdebug.mode=coverage,error_reporting=E_ALL,display_errors=On
+      - uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: 136
+          install-chromedriver: true
 
-      - name: Install Chrome
-        run: |
-          sudo apt-get update && sudo apt-get dist-upgrade -y
-          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-          sudo apt-get update
-          sudo apt-get install google-chrome-stable
       - run: npm install
 
       - run: composer validate --strict

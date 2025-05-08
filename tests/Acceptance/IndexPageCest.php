@@ -8,7 +8,7 @@ use Tests\Support\{AcceptanceTester, MyConfigExtension};
 
 final class IndexPageCest
 {
-    /*
+    //*
     public function tryToTestIndexPage(AcceptanceTester $i): void
     {
         $i->amOnPage('/');

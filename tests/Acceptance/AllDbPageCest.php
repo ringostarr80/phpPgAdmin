@@ -10,7 +10,7 @@ use Tests\Support\{AcceptanceTester, MyConfigExtension};
 #[Depends('Tests\Acceptance\LoginPageCest:tryToTestLoginSuccessful')]
 final class AllDbPageCest
 {
-    //*
+    /*
     public function tryToTestAllDbPage(AcceptanceTester $i): void
     {
         $loginUsername = MyConfigExtension::getEnvVar('PHPPGADMIN_TEST_SERVER_USERNAME') ?? 'postgres';

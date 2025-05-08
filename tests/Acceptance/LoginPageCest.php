@@ -12,7 +12,7 @@ final class LoginPageCest
 {
     public const LOGIN_FORM_SELECTOR = 'form[name="login_form"]';
 
-    /*
+    //*
     public function tryToTestLoginFailed(AcceptanceTester $i): void
     {
         $i->amOnPage('/');

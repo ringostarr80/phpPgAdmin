@@ -41,7 +41,7 @@ final class LoginPageCest
     }
     //*/
 
-    /*
+    //*
     public function tryToTestLoginSuccessful(AcceptanceTester $i): void
     {
         $loginUsername = MyConfigExtension::getEnvVar('PHPPGADMIN_TEST_SERVER_USERNAME') ?? 'postgres';

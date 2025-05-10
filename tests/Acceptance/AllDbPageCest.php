@@ -10,6 +10,8 @@ use Tests\Support\{AcceptanceTester, MyConfigExtension};
 //#[Depends('Tests\Acceptance\LoginPageCest:tryToTestLoginSuccessful')]
 final class AllDbPageCest
 {
+    public const LOGIN_FORM_SELECTOR = 'form[name="login_form"]';
+
     //*
     public function tryToTestAllDbPage(AcceptanceTester $i): void
     {
@@ -33,7 +35,7 @@ final class AllDbPageCest
         $i->switchToIframe('detail');
 
         $i->submitForm(
-            LoginPageCest::LOGIN_FORM_SELECTOR,
+            self::LOGIN_FORM_SELECTOR,
             [
                 'loginUsername' => $loginUsername,
                 'loginPassword_' . hash('sha256', MyConfigExtension::RUNNING_SERVER_DESC) => $loginPassword,

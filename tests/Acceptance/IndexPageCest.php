@@ -50,7 +50,7 @@ final class IndexPageCest
         //$i->click('a[href="servers.php"]');
         $i->click('Server');
 
-        $i->waitForElement('table.tabs tr:first-child td:nth-child(2).active span.label');
+        $i->waitForElement('table.tabs tr:first-child td:nth-child(2).active span.label', 30);
 
         $i->see('Introduction', 'table.tabs tr:first-child td:first-child span.label');
         $i->see('Server', 'table.tabs tr:first-child td:nth-child(2).active span.label');

@@ -59,11 +59,7 @@
         ],
         "dev:test:unit": "codecept run Unit",
         "dev:test:acceptance": "codecept run Acceptance",
-        "dev:test:coverage:ci": [
-            "@dev:test:coverage:ci:AllDbPageCest",
-            "@dev:test:coverage:ci:IndexPageCest",
-            "@dev:test:coverage:ci:LoginPageCest"
-        ],
+        "dev:test:coverage:ci": "codecept run Acceptance --coverage --coverage-xml",
         "dev:test:coverage:ci:AllDbPageCest": "codecept run Acceptance AllDbPageCest.php --coverage --coverage-xml",
         "dev:test:coverage:ci:IndexPageCest": "codecept run Acceptance IndexPageCest.php --coverage --coverage-xml",
         "dev:test:coverage:ci:LoginPageCest": "codecept run Acceptance LoginPageCest.php --coverage --coverage-xml",

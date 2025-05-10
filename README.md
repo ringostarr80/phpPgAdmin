@@ -11,6 +11,12 @@ To achieve this, I plan to gradually rewrite the codebase, following Martin Fowl
 
 I appreciate any form of help or feedback!
 
+## ⚠️ Important Notice
+
+**This project is currently under active development and is not ready for production use.**  
+Many parts of the codebase are still being refactored, and breaking changes may occur frequently.  
+Use it at your own risk and feel free to contribute to its progress!
+
 ## Project Progress
 
 For an overview of the software quality over time and the evolving metrics, check out the 

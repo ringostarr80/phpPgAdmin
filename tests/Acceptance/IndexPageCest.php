@@ -8,6 +8,7 @@ use Tests\Support\{AcceptanceTester, MyConfigExtension};
 
 final class IndexPageCest
 {
+    //*
     public function tryToTestIndexPage(AcceptanceTester $i): void
     {
         $i->amOnPage('/');
@@ -29,17 +30,24 @@ final class IndexPageCest
 
         $i->switchToIframe();
         $i->switchToIframe('detail');
+
         $i->see('Introduction', 'table.tabs tr:first-child td:first-child.active span.label');
         $i->see('Server', 'table.tabs tr:first-child td:nth-child(2) span.label');
 
         $i->seeNumberOfElements('select[name="language"] option', 29);
         $i->seeNumberOfElements('select[name="theme"] option', 5);
-    }
 
+        $i->see('English', 'select[name="language"] option[value="english"]');
+        $i->see('Deutsch', 'select[name="language"] option[value="german"]');
+    }
+    //*/
+
+    //*
     public function tryToTestServerTab(AcceptanceTester $i): void
     {
         $i->amOnPage('/');
         $i->switchToIframe('detail');
+        //$i->click('a[href="servers.php"]');
         $i->click('Server');
 
         $i->waitForElement('table.tabs tr:first-child td:nth-child(2).active span.label');
@@ -57,4 +65,5 @@ final class IndexPageCest
         $i->see('', 'table#server-list tbody tr:first-child td:nth-child(4)');
         $i->see('', 'table#server-list tbody tr:first-child td:nth-child(5)');
     }
+    //*/
 }

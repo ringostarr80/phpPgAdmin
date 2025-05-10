@@ -10,14 +10,26 @@ permissions:
   contents: read
 
 jobs:
+  set-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set.outputs.matrix }}
+    steps:
+      - id: set
+        run: |
+          if [[ "${{ github.ref_name }}" == "dev" ]]; then
+            echo 'matrix={"pg-version":["17"],"php-version":["8.4"]}' >> $GITHUB_OUTPUT
+          else
+            echo 'matrix={"pg-version":["13","14","15","16","17"],"php-version":["8.1","8.2","8.3","8.4"]}' >> $GITHUB_OUTPUT
+          fi
+
   build:
 
+    needs: set-matrix
     runs-on: ubuntu-latest
 
     strategy:
-      matrix:
-        pg-version: ['13', '14', '15', '16', '17']
-        php-version: ['8.1', '8.2', '8.3', '8.4']
+      matrix: ${{ fromJson(needs.set-matrix.outputs.matrix) }}
 
     services:
       postgres:
@@ -42,16 +54,14 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
-          extensions: intl, pdo_pgsql, zip
+          extensions: intl, pdo_pgsql, xdebug, zip
           coverage: xdebug
           ini-values: xdebug.mode=coverage,error_reporting=E_ALL,display_errors=On
+      - uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: 136
+          install-chromedriver: true
 
-      - name: Install Chrome
-        run: |
-          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-          sudo apt update
-          sudo apt install google-chrome-stable
       - run: npm install
 
       - run: composer validate --strict

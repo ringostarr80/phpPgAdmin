@@ -27,11 +27,8 @@ abstract class Website
 
         Session::start();
 
-        $locale = Config::locale();
-        putenv("LC_ALL={$locale}.UTF-8");
-        setlocale(LC_ALL, ["{$locale}.UTF-8", $locale, substr($locale, 0, 2)]);
+        Language::setLocale(Config::locale());
         bindtextdomain('messages', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'locale');
-        textdomain('messages');
     }
 
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement

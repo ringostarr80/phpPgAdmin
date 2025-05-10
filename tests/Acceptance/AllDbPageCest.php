@@ -7,7 +7,7 @@ namespace Tests\Acceptance;
 use Codeception\Attribute\Depends;
 use Tests\Support\{AcceptanceTester, MyConfigExtension};
 
-#[Depends('Tests\Acceptance\LoginPageCest:tryToTestLoginSuccessful')]
+//#[Depends('Tests\Acceptance\LoginPageCest:tryToTestLoginSuccessful')]
 final class AllDbPageCest
 {
     //*

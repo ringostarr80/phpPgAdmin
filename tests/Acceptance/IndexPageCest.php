@@ -8,7 +8,7 @@ use Tests\Support\{AcceptanceTester, MyConfigExtension};
 
 final class IndexPageCest
 {
-    //*
+    /*
     public function tryToTestIndexPage(AcceptanceTester $i): void
     {
         $i->amOnPage('/');
@@ -42,7 +42,7 @@ final class IndexPageCest
     }
     //*/
 
-    //*
+    /*
     public function tryToTestServerTab(AcceptanceTester $i): void
     {
         $i->amOnPage('/');

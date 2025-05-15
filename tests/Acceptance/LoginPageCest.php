@@ -4,15 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Acceptance;
 
-use Codeception\Attribute\Depends;
 use Tests\Support\{AcceptanceTester, MyConfigExtension};
 
-//#[Depends('Tests\Acceptance\IndexPageCest:tryToTestIndexPage')]
 final class LoginPageCest
 {
     public const LOGIN_FORM_SELECTOR = 'form[name="login_form"]';
 
-    //*
     public function tryToTestLoginFailed(AcceptanceTester $i): void
     {
         $i->amOnPage('/');
@@ -39,15 +36,9 @@ final class LoginPageCest
 
         $i->waitForText('Login failed', timeout: 180);
     }
-    //*/
 
-    //*
     public function tryToTestLoginSuccessful(AcceptanceTester $i): void
     {
-        $loginUsername = MyConfigExtension::getEnvVar('PHPPGADMIN_TEST_SERVER_USERNAME') ?? 'postgres';
-        $loginPassword = MyConfigExtension::getEnvVar('PHPPGADMIN_TEST_SERVER_PASSWORD') ?? '';
-
-        $i->login($loginUsername, $loginPassword);
+        $i->login();
     }
-    //*/
 }

@@ -245,7 +245,7 @@ msgstr "\\N"
 msgid "stremptystring"
 msgstr "Leere Zeichenkette / Leere Spalte"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -308,7 +308,7 @@ msgstr "Aufklappen"
 msgid "strcollapse"
 msgstr "Zuklappen"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Suchen"
 
 msgid "stroptions"
@@ -387,7 +387,7 @@ msgid "strcluster"
 msgstr "Cluster"
 
 # User-supplied SQL history
-msgid "strhistory"
+msgid "History"
 msgstr "Befehlsspeicher"
 
 msgid "strnohistory"
@@ -2089,7 +2089,7 @@ msgid "strtablespacealteredbad"
 msgstr "Ändern des Tablespace fehlgeschlagen."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s läuft auf %s:%s -- Sie sind als \"%s\" angemeldet"
 
 msgid "strtimefmt"

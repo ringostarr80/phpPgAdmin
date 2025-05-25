@@ -257,7 +257,7 @@ msgstr "\\N"
 msgid "stremptystring"
 msgstr "Texto/campo vazio"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -320,7 +320,7 @@ msgstr "Expandir"
 msgid "strcollapse"
 msgstr "Reduzir"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Encontrar"
 
 msgid "stroptions"
@@ -427,7 +427,7 @@ msgid "stradminontable"
 msgstr "As tarefas administrativas a seguir se aplicam na tabela %s."
 
 # User-supplied SQL history
-msgid "strhistory"
+msgid "History"
 msgstr "Histórico"
 
 msgid "strnohistory"
@@ -2192,7 +2192,7 @@ msgid "strtablespacealteredbad"
 msgstr "Falha ao alterar o tablespace."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s rodando em %s:%s -- Você está logado como usuário \"%s\""
 
 msgid "strtimefmt"

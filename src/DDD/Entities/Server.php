@@ -18,13 +18,13 @@ use PhpPgAdmin\DDD\ValueObjects\Server\{DatabaseName, Filename, Host, Name, Port
 class Server
 {
     public function __construct(
-        private Name $name,
-        private Host $host = new Host(),
-        private Port $port = new Port(),
-        private SslMode $sslMode = SslMode::ALLOW,
-        private DatabaseName $defaultDb = new DatabaseName('template1'),
-        private Filename $pgDumpPath = new Filename('/usr/bin/pg_dump'),
-        private Filename $pgDumpAllPath = new Filename('/usr/bin/pg_dumpall')
+        protected Name $name,
+        protected Host $host = new Host(),
+        protected Port $port = new Port(),
+        protected SslMode $sslMode = SslMode::ALLOW,
+        protected DatabaseName $defaultDb = new DatabaseName('template1'),
+        protected Filename $pgDumpPath = new Filename('/usr/bin/pg_dump'),
+        protected Filename $pgDumpAllPath = new Filename('/usr/bin/pg_dumpall')
     ) {
     }
 

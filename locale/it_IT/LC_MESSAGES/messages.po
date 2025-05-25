@@ -245,7 +245,7 @@ msgstr "\\N"
 msgid "stremptystring"
 msgstr "Stringa vuota"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -314,7 +314,7 @@ msgstr "Explain"
 msgid "strexplainanalyze"
 msgstr "Explain Analyze"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Trova"
 
 msgid "stroptions"
@@ -1917,7 +1917,7 @@ msgid "strtablespacealteredbad"
 msgstr "Modifica del tablespace fallita."
 
 # Miscellaneous - Varie
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s in esecuzione su %s:%s -- Utente \"%s\""
 
 msgid "strtimefmt"

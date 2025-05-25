@@ -245,7 +245,7 @@ msgstr "Null"
 msgid "stremptystring"
 msgstr "Pusty ciąg znaków/pole"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -317,7 +317,7 @@ msgstr "Explain"
 msgid "strexplainanalyze"
 msgstr "Explain Analyze"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Znajdź"
 
 msgid "stroptions"
@@ -1944,7 +1944,7 @@ msgid "strtablespacealteredbad"
 msgstr "Próba modyfikacji przestrzeni tabel się nie powiodła."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s uruchomiony na %s:%s -- Jesteś zalogowany jako \"%s\""
 
 msgid "strtimefmt"

@@ -215,7 +215,7 @@ msgstr "Експорт"
 msgid "strimport"
 msgstr "Імпорт"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "strgo"
@@ -284,7 +284,7 @@ msgstr "Пояснити"
 msgid "strexplainanalyze"
 msgstr "Пояснити аналіз"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Знайти"
 
 msgid "stroptions"
@@ -1574,7 +1574,7 @@ msgid "strrows2"
 msgstr "Записи"
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s виконується на %s:%s -- Ви зареєструвались як \"%s\""
 
 msgid "strtimefmt"

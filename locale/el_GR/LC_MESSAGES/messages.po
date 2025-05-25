@@ -245,7 +245,7 @@ msgstr "κενό"
 msgid "stremptystring"
 msgstr "κενή συμβολοσειρά/κενό πεδίο"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -305,7 +305,7 @@ msgstr "Ανάπτυξη"
 msgid "strcollapse"
 msgstr "Σύμπτυξη"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Αναζήτηση"
 
 msgid "stroptions"
@@ -1947,7 +1947,7 @@ msgid "strtablespacealteredbad"
 msgstr "Η τροποποίηση της τοποθεσίας απέτυχε."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s στο %s:%s -- Είστε συνδεδεμένος ως \"%s\""
 
 msgid "strtimefmt"

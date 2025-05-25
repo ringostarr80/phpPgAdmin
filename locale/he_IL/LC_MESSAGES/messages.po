@@ -215,7 +215,7 @@ msgstr "יצוא"
 msgid "strimport"
 msgstr "יבוא"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "strgo"
@@ -287,7 +287,7 @@ msgstr "הסבק"
 msgid "strexplainanalyze"
 msgstr "הסבר נתיחה"
 
-msgid "strfind"
+msgid "Find"
 msgstr "מצא"
 
 msgid "stroptions"
@@ -1665,7 +1665,7 @@ msgid "strtablespacealteredbad"
 msgstr "עריכת מרחבון מכשלה."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s רץ על %s:%s -- אתה מחובר כמשתמש - \"%s\""
 
 msgid "strtimefmt"

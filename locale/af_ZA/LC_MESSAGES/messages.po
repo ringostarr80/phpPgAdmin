@@ -215,7 +215,7 @@ msgstr "Eksporteer"
 msgid "strimport"
 msgstr "Importeer"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -284,7 +284,7 @@ msgstr "Verduidelik"
 msgid "strexplainanalyze"
 msgstr "Verduidelik Analise"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Soek"
 
 msgid "stroptions"
@@ -1677,7 +1677,7 @@ msgid "strtablespacealteredbad"
 msgstr "Wysiging van tabelruimte het misluk."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s loop op %s:%s -- Jy is aangeteken as gebruiker \"%s\""
 
 msgid "strtimefmt"

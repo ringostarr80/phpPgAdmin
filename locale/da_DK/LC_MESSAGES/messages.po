@@ -218,7 +218,7 @@ msgstr "Eksportere"
 msgid "strimport"
 msgstr "Importere"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "strgo"
@@ -290,7 +290,7 @@ msgstr "Forklar"
 msgid "strexplainanalyze"
 msgstr "Forklar analyze"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Søg"
 
 msgid "stroptions"
@@ -1354,7 +1354,7 @@ msgid "strschemadroppedbad"
 msgstr "Det lykkedes ikka at fjerne skema."
 
 # Reports
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s kører på %s:%s -- Du er logged ind som bruger \"%s\""
 
 msgid "strtimefmt"

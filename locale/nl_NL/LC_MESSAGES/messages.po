@@ -506,7 +506,7 @@ msgstr "Leeg"
 msgid "strencoding"
 msgstr "Encoding"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "strgo"
@@ -1121,7 +1121,7 @@ msgstr "Schema verwijderd."
 msgid "strschemadroppedbad"
 msgstr "Verwijdering van het schema mislukt."
 
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s draaiend op %s:%s -- U bent ingelogd als gebruiker \"%s\""
 
 msgid "strtimefmt"
@@ -1144,7 +1144,7 @@ msgstr "Laatste >>"
 msgid "strexplain"
 msgstr "Verklaring"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Zoek"
 
 msgid "stroptions"

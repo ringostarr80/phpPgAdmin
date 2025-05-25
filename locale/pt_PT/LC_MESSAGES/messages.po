@@ -196,7 +196,7 @@ msgstr "Primário"
 msgid "strexport"
 msgstr "Exportar"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "strgo"
@@ -1117,7 +1117,7 @@ msgstr "Falha ao eliminar o esquema."
 # Reports
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s a correr  em %s:%s -- Você está ligado como \"%s\""
 
 msgid "strtimefmt"
@@ -1160,7 +1160,7 @@ msgstr "Explicação"
 msgid "strexplainanalyze"
 msgstr "Explicação de Análise"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Procurar"
 
 msgid "stroptions"

@@ -273,7 +273,8 @@ msgstr "\\N"
 msgid "stremptystring"
 msgstr "Empty string/field"
 
-msgid "strsql"
+# original: "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -336,7 +337,8 @@ msgstr "Expand"
 msgid "strcollapse"
 msgstr "Collapse"
 
-msgid "strfind"
+# original: "strfind"
+msgid "Find"
 msgstr "Find"
 
 msgid "stroptions"
@@ -452,7 +454,8 @@ msgid "stradminontable"
 msgstr "The following administrative tasks apply on the table %s."
 
 # User-supplied SQL history
-msgid "strhistory"
+# original: "strhistory"
+msgid "History"
 msgstr "History"
 
 msgid "strnohistory"
@@ -2222,7 +2225,8 @@ msgid "strtablespacealteredbad"
 msgstr "Tablespace alteration failed."
 
 # Miscellaneous
-msgid "strtopbar"
+# original: "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s running on %s:%s -- You are logged in as user \"%s\""
 
 msgid "strtimefmt"
@@ -2262,7 +2266,8 @@ msgstr "Error Loading"
 msgid "Click to reload"
 msgstr "Click to reload"
 
-msgid "sessionsecuritywarning"
+# original: "sessionsecuritywarning"
+msgid "You are running phpPgAdmin with session security disabled. This is a potential security risk!"
 msgstr "You are running phpPgAdmin with session security disabled. This is a potential security risk!"
 
 # Autovacuum

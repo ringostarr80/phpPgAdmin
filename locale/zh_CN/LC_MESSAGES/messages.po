@@ -257,7 +257,7 @@ msgstr "\\N"
 msgid "stremptystring"
 msgstr "空 字符串/字段"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL码"
 
 msgid "stradmin"
@@ -320,7 +320,7 @@ msgstr "扩展"
 msgid "strcollapse"
 msgstr "崩溃"
 
-msgid "strfind"
+msgid "Find"
 msgstr "查找"
 
 msgid "stroptions"
@@ -430,7 +430,7 @@ msgid "stradminontable"
 msgstr "以下管理功能可应用于表 %s."
 
 # User-supplied SQL history
-msgid "strhistory"
+msgid "History"
 msgstr "历史"
 
 msgid "strnohistory"
@@ -2195,7 +2195,7 @@ msgid "strtablespacealteredbad"
 msgstr "表空间变更失败。"
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s 架于 %s：%s － 您是 \"%s\""
 
 msgid "strtimefmt"

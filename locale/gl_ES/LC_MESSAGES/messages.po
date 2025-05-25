@@ -257,7 +257,7 @@ msgstr "\\N"
 msgid "stremptystring"
 msgstr "Cadea ou campo baleiro"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -320,7 +320,7 @@ msgstr "Expandir"
 msgid "strcollapse"
 msgstr "Colapsar"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Buscar"
 
 msgid "stroptions"
@@ -430,7 +430,7 @@ msgid "stradminontable"
 msgstr "As seguintes tarefas administrativas realizaranse na táboa «%s»."
 
 # User-supplied SQL history
-msgid "strhistory"
+msgid "History"
 msgstr "Historial"
 
 msgid "strnohistory"
@@ -2197,7 +2197,7 @@ msgid "strtablespacealteredbad"
 msgstr "Non se conseguiu modificar o alias de ruta."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s, executándose no enderezo %s:%s. Está identificado coma «%s»."
 
 msgid "strtimefmt"

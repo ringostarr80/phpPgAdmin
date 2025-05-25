@@ -242,7 +242,7 @@ msgstr "\\N"
 msgid "stremptystring"
 msgstr "空 字串/欄位"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -305,7 +305,7 @@ msgstr "展開"
 msgid "strcollapse"
 msgstr "摺疊"
 
-msgid "strfind"
+msgid "Find"
 msgstr "尋找"
 
 msgid "stroptions"
@@ -378,7 +378,7 @@ msgid "strcluster"
 msgstr "叢集"
 
 # User-supplied SQL history
-msgid "strhistory"
+msgid "History"
 msgstr "歷程"
 
 msgid "strnohistory"
@@ -2068,7 +2068,7 @@ msgid "strtablespacealteredbad"
 msgstr "表空間修改已失敗。"
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s 運作於 %s: %s -- 您是已登入的使用者 \"%s\""
 
 msgid "strtimefmt"

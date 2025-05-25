@@ -254,7 +254,7 @@ msgstr "\\N"
 msgid "stremptystring"
 msgstr "Пустая строка/поле"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -317,7 +317,7 @@ msgstr "Расширить"
 msgid "strcollapse"
 msgstr "Свернуть"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Найти"
 
 msgid "stroptions"
@@ -427,7 +427,7 @@ msgid "stradminontable"
 msgstr "Следующие административные задачи применяются к таблице %s."
 
 # User-supplied SQL history
-msgid "strhistory"
+msgid "History"
 msgstr "История"
 
 msgid "strnohistory"
@@ -2177,7 +2177,7 @@ msgid "strtablespacealteredbad"
 msgstr "Изменение табличного пространства прервано."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s выполняется на %s:%s -- Вы зарегистрированы как \"%s\""
 
 msgid "strtimefmt"

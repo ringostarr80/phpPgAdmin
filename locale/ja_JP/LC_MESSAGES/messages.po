@@ -924,7 +924,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "データベース"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "データベース"
 
 msgid "strshowalldatabases"
@@ -2092,7 +2092,7 @@ msgstr "サーバー %2$s のポート番号 %3$s で実行中の %1$s に接続
 msgid "strtimefmt"
 msgstr "Y 年 n 月 j 日 G:i"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "ヘルプ"
 
 msgid "strhelpicon"

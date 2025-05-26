@@ -231,7 +231,7 @@ msgstr "Geen gebruikers gevonden."
 msgid "strdatabase"
 msgstr "Database"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Databases"
 
 msgid "strdata"
@@ -1297,5 +1297,5 @@ msgstr "Operator verwijderd."
 msgid "stroperatordroppedbad"
 msgstr "Verwijderen van de operator mislukt."
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Help"

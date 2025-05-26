@@ -680,7 +680,7 @@ msgstr "Databas"
 msgid "strdatabasedropped"
 msgstr "Databas raderad."
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Databaser"
 
 msgid "strentersql"
@@ -1525,5 +1525,5 @@ msgid "strrows2"
 msgstr "Rader"
 
 # Miscellaneous
-msgid "strhelp"
+msgid "Help"
 msgstr "Hjälp"

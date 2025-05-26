@@ -556,7 +556,7 @@ msgstr "Deverá especificar um utilizador ou grupo e pelo menos um previlégio."
 msgid "strdatabase"
 msgstr "Base de dados"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Base de dados"
 
 msgid "strshowalldatabases"
@@ -1688,7 +1688,7 @@ msgstr "Espaço de tabela alterado."
 msgid "strtablespacealteredbad"
 msgstr "Alteração do Espaçamento de Tabela falhou."
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Ajuda"
 
 msgid "strhelpicon"

@@ -1012,7 +1012,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Base de Datos"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Bases de Datos"
 
 msgid "strshowalldatabases"
@@ -2204,7 +2204,7 @@ msgstr "%s corriendo en %s:%s -- Usted ha iniciado sesión con el usuario \"%s\"
 msgid "strtimefmt"
 msgstr "d/m/Y, G:i:s"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Ayuda"
 
 msgid "strhelpicon"

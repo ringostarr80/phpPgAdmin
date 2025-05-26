@@ -933,7 +933,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Datenbank"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Datenbanken"
 
 msgid "strshowalldatabases"
@@ -2095,7 +2095,7 @@ msgstr "%s läuft auf %s:%s -- Sie sind als \"%s\" angemeldet"
 msgid "strtimefmt"
 msgstr "D, j. n. Y, G:i"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Hilfe"
 
 msgid "strhelpicon"

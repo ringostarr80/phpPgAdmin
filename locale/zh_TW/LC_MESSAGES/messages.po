@@ -912,7 +912,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "資料庫"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "資料庫"
 
 msgid "strshowalldatabases"
@@ -2074,7 +2074,7 @@ msgstr "%s 運作於 %s: %s -- 您是已登入的使用者 \"%s\""
 msgid "strtimefmt"
 msgstr "jS M, Y g: iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "說明"
 
 msgid "strhelpicon"

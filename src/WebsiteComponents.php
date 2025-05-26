@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace PhpPgAdmin;
 
 use PhpPgAdmin\DDD\Entities\ServerSession;
+use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
 
 abstract class WebsiteComponents
 {
@@ -196,7 +197,7 @@ abstract class WebsiteComponents
         return $tableCell;
     }
 
-    public static function buildTrail(\DOMDocument $dom): \DOMElement
+    public static function buildTrail(\DOMDocument $dom, ?TrailSubject $subject = null): \DOMElement
     {
         $divTrail = $dom->createElement('div');
         $divTrail->setAttribute('class', 'trail');
@@ -222,6 +223,62 @@ abstract class WebsiteComponents
         $tableTrail->appendChild($trTrail);
         $divTrail->appendChild($tableTrail);
 
+        $subTrail = match ($subject) {
+            TrailSubject::Server => self::buildTrailForServer($dom),
+            default => null
+        };
+
+        if (!is_null($subTrail)) {
+            $trTrail->appendChild($subTrail);
+        }
+
         return $divTrail;
+    }
+
+    private static function buildTrailForServer(\DOMDocument $dom): \DOMElement
+    {
+        $td = $dom->createElement('td');
+        $td->setAttribute('class', 'crumb');
+
+        $serverId = RequestParameter::getString('server') ?? '';
+        $serverSession = ServerSession::fromServerId($serverId);
+        $link = 'all_db.php';
+        $linkParams = [
+            'server' => $serverId
+        ];
+        $a = $dom->createElement('a');
+        $a->setAttribute('href', $link . '?' . http_build_query($linkParams));
+        $a->setAttribute('title', _('Server'));
+
+        $spanIcon = $dom->createElement('span');
+        $spanIcon->setAttribute('class', 'icon');
+        $imgIcon = $dom->createElement('img');
+        $imgIcon->setAttribute('src', Config::getIcon('Servers'));
+        $imgIcon->setAttribute('alt', _('Server'));
+        $spanIcon->appendChild($imgIcon);
+        $a->appendChild($spanIcon);
+        if (!is_null($serverSession)) {
+            $spanLabel = $dom->createElement('span', (string)$serverSession->Name);
+            $spanLabel->setAttribute('class', 'label');
+            $a->appendChild($spanLabel);
+        }
+
+        $td->appendChild($a);
+
+        $helpUrl = 'help.php';
+        $helpUrlParams = [
+            'help' => 'pg.server',
+            'server' => $serverId
+        ];
+        $aHelp = $dom->createElement('a', '?');
+        $aHelp->setAttribute('href', $helpUrl . '?' . http_build_query($helpUrlParams));
+        $aHelp->setAttribute('class', 'help');
+        $aHelp->setAttribute('title', _('Help'));
+        $aHelp->setAttribute('target', 'phppgadminhelp');
+
+        $td->appendChild($aHelp);
+        $td->appendChild($dom->createTextNode(': '));
+
+        return $td;
     }
 }

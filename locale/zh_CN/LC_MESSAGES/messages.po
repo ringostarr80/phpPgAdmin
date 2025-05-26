@@ -1009,7 +1009,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "数据库"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "数据库"
 
 msgid "strshowalldatabases"
@@ -2201,7 +2201,7 @@ msgstr "%s 架于 %s：%s － 您是 \"%s\""
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "帮助"
 
 msgid "strhelpicon"

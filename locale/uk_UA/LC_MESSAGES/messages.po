@@ -716,7 +716,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "База даних"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Бази даних"
 
 msgid "strshowalldatabases"
@@ -1580,5 +1580,5 @@ msgstr "%s виконується на %s:%s -- Ви зареєстрували�
 msgid "strtimefmt"
 msgstr " j-m-Y  g:i"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Допомога"

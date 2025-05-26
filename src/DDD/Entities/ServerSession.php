@@ -55,13 +55,8 @@ class ServerSession extends Server
         };
     }
 
-    public static function fromRequestParameter(): ?self
+    public static function fromServerId(string $serverId): ?self
     {
-        if (!isset($_REQUEST['server']) || !is_string($_REQUEST['server'])) {
-            return null;
-        }
-
-        $serverId = $_REQUEST['server'];
         $servers = Config::getServers();
         foreach ($servers as $server) {
             if ($server->id() !== $serverId) {
@@ -126,6 +121,15 @@ class ServerSession extends Server
         }
 
         return null;
+    }
+
+    public static function fromRequestParameter(): ?self
+    {
+        if (!isset($_REQUEST['server']) || !is_string($_REQUEST['server'])) {
+            return null;
+        }
+
+        return self::fromServerId($_REQUEST['server']);
     }
 
     public static function isLoggedIn(string $serverId): bool

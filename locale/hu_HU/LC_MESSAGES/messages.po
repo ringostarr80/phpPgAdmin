@@ -1006,7 +1006,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Adatbázis"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Adatbázisok"
 
 msgid "strshowalldatabases"
@@ -2195,7 +2195,7 @@ msgstr "%s fut %s:%s címen — Ön „%s” néven jelentkezett be."
 msgid "strtimefmt"
 msgstr "Y.m.d. H:i"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Súgó"
 
 msgid "strhelpicon"

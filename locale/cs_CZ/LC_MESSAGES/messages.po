@@ -1006,7 +1006,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Databáze"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Databáze"
 
 msgid "strshowalldatabases"
@@ -2195,7 +2195,7 @@ msgstr "%s běžící na %s:%s -- Jste přihlášený jako uživatel „%s“"
 msgid "strtimefmt"
 msgstr "j. M Y G:i"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Nápověda"
 
 msgid "strhelpicon"

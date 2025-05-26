@@ -722,7 +722,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Databasis"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Databasisse"
 
 msgid "strshowalldatabases"
@@ -1683,7 +1683,7 @@ msgstr "%s loop op %s:%s -- Jy is aangeteken as gebruiker \"%s\""
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Hulp"
 
 msgid "strhelpicon"

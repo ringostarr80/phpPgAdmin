@@ -872,7 +872,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Database"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Database"
 
 msgid "strshowalldatabases"
@@ -1923,7 +1923,7 @@ msgstr "%s in esecuzione su %s:%s -- Utente \"%s\""
 msgid "strtimefmt"
 msgstr "j M Y - g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Aiuto"
 
 msgid "strhelpicon"

@@ -1018,7 +1018,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Base de données"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Bases de données"
 
 msgid "strshowalldatabases"
@@ -2210,7 +2210,7 @@ msgstr "%s lancé sur %s:%s -- Vous êtes connecté avec le profil « %s »"
 msgid "strtimefmt"
 msgstr "j M Y, H:i"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Aide"
 
 msgid "strhelpicon"

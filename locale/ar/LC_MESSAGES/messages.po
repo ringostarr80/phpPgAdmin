@@ -713,7 +713,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "قاعدة بيانات"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "قواعد البيانات"
 
 msgid "strshowalldatabases"
@@ -1574,5 +1574,5 @@ msgstr "%s يعمل على %s:%s -- You are logged in as user \"%s\""
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "مساعدة"

@@ -659,7 +659,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "тСкС ФСЮЮйШ"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "тСкй ФСЮЮйШ"
 
 msgid "strshowalldatabases"

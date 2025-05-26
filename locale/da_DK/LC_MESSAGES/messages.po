@@ -722,7 +722,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Database"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Databaser"
 
 msgid "strshowalldatabases"
@@ -1644,7 +1644,7 @@ msgid "strtablespacealteredbad"
 msgstr "Ændring af tabelområde lykkedes ikke."
 
 # Miscellaneous
-msgid "strhelp"
+msgid "Help"
 msgstr "Hjælp"
 
 msgid "strhelpicon"

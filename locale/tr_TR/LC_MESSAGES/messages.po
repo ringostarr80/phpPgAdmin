@@ -768,7 +768,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Veritabanı"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Veritabanları"
 
 msgid "strshowalldatabases"
@@ -1740,7 +1740,7 @@ msgstr "%s, %s:%s üzerinde çalışıyor-- \"%s\" kullanıcısı ile sisteme gi
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Yardım"
 
 msgid "strhelpicon"

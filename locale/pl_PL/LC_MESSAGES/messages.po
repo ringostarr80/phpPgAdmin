@@ -830,7 +830,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Baza danych"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Bazy danych"
 
 msgid "strshowalldatabases"
@@ -1950,7 +1950,7 @@ msgstr "%s uruchomiony na %s:%s -- Jesteś zalogowany jako \"%s\""
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Pomoc"
 
 msgid "strhelpicon"

@@ -1025,7 +1025,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Duomenų bazė"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Duomenų bazės"
 
 msgid "strshowalldatabases"
@@ -2229,7 +2229,7 @@ msgstr "%s veikia %s:%s -- Jūs esate prisijungęs kaip \"%s\""
 msgid "strtimefmt"
 msgstr "j M Y - g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Pagalba"
 
 msgid "strhelpicon"

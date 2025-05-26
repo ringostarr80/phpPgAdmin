@@ -1039,7 +1039,8 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Database"
 
-msgid "strdatabases"
+# original: "strdatabases"
+msgid "Databases"
 msgstr "Databases"
 
 msgid "strshowalldatabases"
@@ -2232,7 +2233,8 @@ msgstr "%s running on %s:%s -- You are logged in as user \"%s\""
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+# original: "strhelp"
+msgid "Help"
 msgstr "Help"
 
 msgid "strhelpicon"

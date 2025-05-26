@@ -1003,7 +1003,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Banco de dados"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Bancos de dados"
 
 msgid "strshowalldatabases"
@@ -2198,7 +2198,7 @@ msgstr "%s rodando em %s:%s -- Você está logado como usuário \"%s\""
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Ajuda"
 
 msgid "strhelpicon"

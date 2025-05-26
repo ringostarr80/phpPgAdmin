@@ -769,7 +769,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Databáza"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Databázy"
 
 msgid "strshowalldatabases"
@@ -1752,7 +1752,7 @@ msgstr "%s beží na %s:%s -- si prihlásený ako \"%s\""
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Pomoc"
 
 msgid "strhelpicon"

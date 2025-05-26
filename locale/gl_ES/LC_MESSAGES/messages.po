@@ -1006,7 +1006,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Base de datos"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Bases de datos"
 
 msgid "strshowalldatabases"
@@ -2203,7 +2203,7 @@ msgstr "%s, executándose no enderezo %s:%s. Está identificado coma «%s»."
 msgid "strtimefmt"
 msgstr "d/m/Y, G:i:s"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Axuda"
 
 msgid "strhelpicon"

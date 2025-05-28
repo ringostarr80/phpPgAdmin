@@ -78,8 +78,8 @@ jobs:
       - run: composer run-script dev:lint:phpcs
       - run: composer run-script dev:analyze:phpstan-${{ matrix.php-version }}
       - run: |
-          npx selenium-standalone install --onlyDriver=chrome --drivers.chrome.version=136
-          npx selenium-standalone start --onlyDriver=chrome --drivers.chrome.version=136 &
+          npx selenium-standalone install --drivers.chrome.version=136
+          npx selenium-standalone start --drivers.chrome.version=136 &
       - run: |
           while ! curl -sSL http://127.0.0.1:4444/wd/hub/status
           do

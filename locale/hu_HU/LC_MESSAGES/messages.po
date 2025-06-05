@@ -1015,7 +1015,7 @@ msgstr "Minden adatbázist megjelenít"
 msgid "strnodatabases"
 msgstr "Nincs adatbázis."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Adatbázist teremt"
 
 msgid "strdatabasename"

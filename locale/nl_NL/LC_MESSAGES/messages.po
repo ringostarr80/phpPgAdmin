@@ -755,7 +755,7 @@ msgstr "Toon alle databases"
 msgid "strnodatabase"
 msgstr "Geen database gevonden."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Maak database aan"
 
 msgid "strdatabasename"

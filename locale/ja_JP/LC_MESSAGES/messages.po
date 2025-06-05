@@ -933,7 +933,7 @@ msgstr "すべてのデータベースを表示する"
 msgid "strnodatabases"
 msgstr "データベースがまったくありません。"
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "データベースを作成する"
 
 msgid "strdatabasename"

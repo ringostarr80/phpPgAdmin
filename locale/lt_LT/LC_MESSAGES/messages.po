@@ -1034,7 +1034,7 @@ msgstr "Rodyti duomenų bazes"
 msgid "strnodatabases"
 msgstr "Duomenų bazių nerasta."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Kurti duomenų bazę"
 
 msgid "strdatabasename"

@@ -671,7 +671,7 @@ msgstr "тСкС ФСЮЮйШ ЮХ ЯТЮСвежХЮС."
 msgid "strnodatabases"
 msgstr "юЩ ЯФЮЯЪ ТСкй ФСЮЮйШ ЮХ ЯТЮСвежХЮЯ."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "ѓЯкФСди ТСке ФСЮЮйШ"
 
 msgid "strdatabasename"

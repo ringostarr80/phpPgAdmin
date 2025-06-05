@@ -734,7 +734,7 @@ msgstr "Database blev ikke fundet."
 msgid "strnodatabases"
 msgstr "Der blev ikke fundet nogen databaser."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Opret database"
 
 msgid "strdatabasename"

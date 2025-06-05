@@ -1049,7 +1049,8 @@ msgstr "Show all databases"
 msgid "strnodatabases"
 msgstr "No databases found."
 
-msgid "strcreatedatabase"
+# original: "strcreatedatabase"
+msgid "Create database"
 msgstr "Create database"
 
 msgid "strdatabasename"

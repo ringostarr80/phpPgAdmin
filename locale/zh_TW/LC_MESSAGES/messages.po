@@ -921,7 +921,7 @@ msgstr "顯示全部資料庫"
 msgid "strnodatabases"
 msgstr "找不到任何資料庫。"
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "建立資料庫"
 
 msgid "strdatabasename"

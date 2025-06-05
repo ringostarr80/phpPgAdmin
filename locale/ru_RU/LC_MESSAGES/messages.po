@@ -1012,7 +1012,7 @@ msgstr "Показать все базы данных"
 msgid "strnodatabases"
 msgstr "Ни одной базы данных не найдено."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Создать базу данных"
 
 msgid "strdatabasename"

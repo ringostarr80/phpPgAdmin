@@ -881,7 +881,7 @@ msgstr "Mostra tutti i database"
 msgid "strnodatabases"
 msgstr "Nessun database trovato."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Crea database"
 
 msgid "strdatabasename"

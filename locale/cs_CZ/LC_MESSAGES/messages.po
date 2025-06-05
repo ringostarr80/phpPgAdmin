@@ -1015,7 +1015,7 @@ msgstr "Zobrazit všechny databáze"
 msgid "strnodatabases"
 msgstr "Žádné databáze nenalezeny."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Vytvořit databázi"
 
 msgid "strdatabasename"

@@ -1021,7 +1021,7 @@ msgstr "Mostrar todas las bases de datos"
 msgid "strnodatabases"
 msgstr "No se encontraron las bases de datos."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Crear base de datos"
 
 msgid "strdatabasename"

@@ -780,7 +780,7 @@ msgstr "Veritabanı bulunamadı."
 msgid "strnodatabases"
 msgstr "Veritabanı bulunamadı."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Veritabanı yarat"
 
 msgid "strdatabasename"

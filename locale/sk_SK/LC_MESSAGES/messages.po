@@ -781,7 +781,7 @@ msgstr "Nenájdená žiadna Databáza."
 msgid "strnodatabases"
 msgstr "Nenájdené žiadne Databázy."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Vytvoriť databázu"
 
 msgid "strdatabasename"

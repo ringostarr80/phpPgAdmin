@@ -875,7 +875,7 @@ msgstr "Afişare toate bazele de date"
 msgid "strnodatabases"
 msgstr "Nici o bază de date găsită."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Creare bază de date"
 
 msgid "strdatabasename"

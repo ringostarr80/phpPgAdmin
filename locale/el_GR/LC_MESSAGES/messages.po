@@ -854,7 +854,7 @@ msgstr "Εμφάνιση όλων των βάσεων"
 msgid "strnodatabases"
 msgstr "Δε βρέθηκαν βάσεις."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Δημιουργία βάσης"
 
 msgid "strdatabasename"

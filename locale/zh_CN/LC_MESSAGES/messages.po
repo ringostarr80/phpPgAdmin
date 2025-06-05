@@ -1018,7 +1018,7 @@ msgstr "显示所有数据库"
 msgid "strnodatabases"
 msgstr "查无数据库。"
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "创建数据库"
 
 msgid "strdatabasename"

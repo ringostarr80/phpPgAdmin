@@ -1012,7 +1012,7 @@ msgstr "Exibir todos os bancos de dados"
 msgid "strnodatabases"
 msgstr "Nenhum banco de dados encontrado."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Criar banco de dados"
 
 msgid "strdatabasename"

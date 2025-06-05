@@ -1015,7 +1015,7 @@ msgstr "Mostra totes les bases de dades"
 msgid "strnodatabases"
 msgstr "No s'han trobat bases de dades."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Crea una base de dades"
 
 msgid "strdatabasename"

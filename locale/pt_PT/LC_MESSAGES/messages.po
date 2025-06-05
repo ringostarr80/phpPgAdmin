@@ -568,7 +568,7 @@ msgstr "Base de dados não encontrada."
 msgid "strnodatabases"
 msgstr "Bases de dados não encontradas."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Criar base de dados"
 
 msgid "strdatabasename"

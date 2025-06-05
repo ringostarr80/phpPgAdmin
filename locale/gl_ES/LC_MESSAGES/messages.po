@@ -1015,7 +1015,7 @@ msgstr "Amosar todas as bases de datos"
 msgid "strnodatabases"
 msgstr "Non se atopou base de datos algunha."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Crear unha base de datos"
 
 msgid "strdatabasename"

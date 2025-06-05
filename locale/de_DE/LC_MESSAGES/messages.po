@@ -942,7 +942,7 @@ msgstr "Alle Datenbanken anzeigen"
 msgid "strnodatabases"
 msgstr "Keine Datenbanken gefunden."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Datenbank erstellen"
 
 msgid "strdatabasename"

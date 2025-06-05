@@ -842,7 +842,7 @@ msgstr "Nie znaleziono bazy danych."
 msgid "strnodatabases"
 msgstr "Nie znaleziono żadnej bazy danych."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Utwórz bazę danych"
 
 msgid "strdatabasename"

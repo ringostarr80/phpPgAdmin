@@ -19,6 +19,29 @@ abstract class WebsiteComponents
     }
 
     /**
+     * @param array{'url': string, 'url-params'?: array<string, string>, 'label': string}[] $navLinks
+     */
+    public static function buildNavLinks(\DOMDocument $dom, array $navLinks): \DOMElement
+    {
+        $ul = $dom->createElement('ul');
+        $ul->setAttribute('class', 'navlink');
+
+        foreach ($navLinks as $navLink) {
+            $li = $dom->createElement('li');
+            $a = $dom->createElement('a', $navLink['label']);
+            $href = $navLink['url'];
+            if (isset($navLink['url-params'])) {
+                $href .= '?' . http_build_query($navLink['url-params']);
+            }
+            $a->setAttribute('href', $href);
+            $li->appendChild($a);
+            $ul->appendChild($li);
+        }
+
+        return $ul;
+    }
+
+    /**
      * @param string $activeTab 'intro'|'servers'
      */
     public static function buildRootTabs(\DOMDocument $dom, string $activeTab): \DOMElement

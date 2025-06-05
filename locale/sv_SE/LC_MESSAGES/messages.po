@@ -701,7 +701,7 @@ msgstr "Hittade ingen databas."
 msgid "strnodatabases"
 msgstr "Hittade inga databaser."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Skapa databas"
 
 msgid "strdatabasename"

@@ -728,7 +728,7 @@ msgstr "בסיס נתונים לא נמצאה."
 msgid "strnodatabases"
 msgstr "לא נמצאו בסיסי נתונים."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "צור בסיס נתונים."
 
 msgid "strdatabasename"

@@ -725,7 +725,7 @@ msgstr "لم يوجد قاعدة بيانات."
 msgid "strnodatabases"
 msgstr "لم يوجد قواعد بيانات."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "إنشاء قاعدة بيانات جديدة"
 
 msgid "strdatabasename"

@@ -734,7 +734,7 @@ msgstr "Geen databasis gevind."
 msgid "strnodatabases"
 msgstr "Geen databasis gevind."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Skep databasis"
 
 msgid "strdatabasename"

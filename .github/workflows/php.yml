@@ -59,7 +59,7 @@ jobs:
           ini-values: xdebug.mode=coverage,error_reporting=E_ALL,display_errors=On
       - uses: browser-actions/setup-chrome@v1
         with:
-          chrome-version: 137
+          chrome-version: 136
           install-chromedriver: true
 
       - run: npm install
@@ -77,8 +77,8 @@ jobs:
       - run: composer run-script dev:lint:php
       - run: composer run-script dev:lint:phpcs
       - run: composer run-script dev:analyze:phpstan-${{ matrix.php-version }}
-      - run: node_modules/selenium-standalone/bin/selenium-standalone install --drivers.chrome.version=137
-      - run: node_modules/selenium-standalone/bin/selenium-standalone start --drivers.chrome.version=137 &
+      - run: node_modules/selenium-standalone/bin/selenium-standalone install --drivers.chrome.version=136
+      - run: node_modules/selenium-standalone/bin/selenium-standalone start --drivers.chrome.version=136 &
       - run: |
           while ! curl -sSL http://127.0.0.1:4444/wd/hub/status
           do

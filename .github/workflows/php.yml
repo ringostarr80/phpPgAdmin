@@ -11,15 +11,12 @@ permissions:
 
 jobs:
   build:
-    needs: set-matrix
     runs-on: ubuntu-latest
 
-    matrix:
-      php-version: [ '8.2', '8.3', '8.4' ]
-      pg-version: [ '17' ]
-
     strategy:
-      matrix: ${{ fromJson(needs.set-matrix.outputs.matrix) }}
+      matrix:
+        php-version: [ '8.1', '8.2', '8.3', '8.4' ]
+        pg-version: [ '17' ]
 
     services:
       postgres:

@@ -257,7 +257,7 @@ msgstr "\\N"
 msgid "stremptystring"
 msgstr "Chaîne/champ vide"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -320,7 +320,7 @@ msgstr "Étendre"
 msgid "strcollapse"
 msgstr "Réduire"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Rechercher"
 
 msgid "stroptions"
@@ -433,7 +433,7 @@ msgid "stradminontable"
 msgstr "Les actions d'administration suivantes s'appliquent à la table %s."
 
 # User-supplied SQL history
-msgid "strhistory"
+msgid "History"
 msgstr "Historique"
 
 msgid "strnohistory"
@@ -1018,7 +1018,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Base de données"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Bases de données"
 
 msgid "strshowalldatabases"
@@ -1027,7 +1027,7 @@ msgstr "Voir toutes les bases de données"
 msgid "strnodatabases"
 msgstr "Aucune base de données trouvée."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Créer une base de données"
 
 msgid "strdatabasename"
@@ -2204,13 +2204,13 @@ msgid "strtablespacealteredbad"
 msgstr "Échec lors de la modification du tablespace."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s lancé sur %s:%s -- Vous êtes connecté avec le profil « %s »"
 
 msgid "strtimefmt"
 msgstr "j M Y, H:i"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Aide"
 
 msgid "strhelpicon"

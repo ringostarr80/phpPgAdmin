@@ -257,7 +257,7 @@ msgstr "\\N"
 msgid "stremptystring"
 msgstr "Cadena o camp buit"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -320,7 +320,7 @@ msgstr "Expandeix"
 msgid "strcollapse"
 msgstr "Colapsa"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Cerca"
 
 msgid "stroptions"
@@ -430,7 +430,7 @@ msgid "stradminontable"
 msgstr "Les següents tasques administratives s'apliquen a la taula %s."
 
 # User-supplied SQL history
-msgid "strhistory"
+msgid "History"
 msgstr "Història"
 
 msgid "strnohistory"
@@ -1006,7 +1006,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Base de dades"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Bases de dades"
 
 msgid "strshowalldatabases"
@@ -1015,7 +1015,7 @@ msgstr "Mostra totes les bases de dades"
 msgid "strnodatabases"
 msgstr "No s'han trobat bases de dades."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Crea una base de dades"
 
 msgid "strdatabasename"
@@ -2189,13 +2189,13 @@ msgid "strtablespacealteredbad"
 msgstr "No s'ha pogut modifcar el tablespace."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s corrent a %s:%s -- Ha entrat com a usuari \"%s\""
 
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Ajuda"
 
 msgid "strhelpicon"

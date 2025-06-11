@@ -215,7 +215,7 @@ msgstr "تصدير Export"
 msgid "strimport"
 msgstr "إستيراد Import"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "strgo"
@@ -287,7 +287,7 @@ msgstr "Explain"
 msgid "strexplainanalyze"
 msgstr "Explain Analyze"
 
-msgid "strfind"
+msgid "Find"
 msgstr "بحث"
 
 msgid "stroptions"
@@ -713,7 +713,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "قاعدة بيانات"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "قواعد البيانات"
 
 msgid "strshowalldatabases"
@@ -725,7 +725,7 @@ msgstr "لم يوجد قاعدة بيانات."
 msgid "strnodatabases"
 msgstr "لم يوجد قواعد بيانات."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "إنشاء قاعدة بيانات جديدة"
 
 msgid "strdatabasename"
@@ -1568,11 +1568,11 @@ msgid "strrows2"
 msgstr "Rows"
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s يعمل على %s:%s -- You are logged in as user \"%s\""
 
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "مساعدة"

@@ -265,7 +265,7 @@ msgstr "\\N"
 msgid "stremptystring"
 msgstr "Tuščia eilutė/laukas"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -330,7 +330,7 @@ msgstr "Išskleisti"
 msgid "strcollapse"
 msgstr "Suskleisti"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Ieškoti"
 
 msgid "stroptions"
@@ -445,7 +445,7 @@ msgid "stradminontable"
 msgstr "Šios administracinės užduotys taikomos lentelei %s."
 
 # User-supplied SQL history
-msgid "strhistory"
+msgid "History"
 msgstr "Praeitis"
 
 msgid "strnohistory"
@@ -1025,7 +1025,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Duomenų bazė"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Duomenų bazės"
 
 msgid "strshowalldatabases"
@@ -1034,7 +1034,7 @@ msgstr "Rodyti duomenų bazes"
 msgid "strnodatabases"
 msgstr "Duomenų bazių nerasta."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Kurti duomenų bazę"
 
 msgid "strdatabasename"
@@ -2223,13 +2223,13 @@ msgid "strtablespacealteredbad"
 msgstr "Nepavyko pakeisti lentelių erdvės."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s veikia %s:%s -- Jūs esate prisijungęs kaip \"%s\""
 
 msgid "strtimefmt"
 msgstr "j M Y - g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Pagalba"
 
 msgid "strhelpicon"

@@ -215,7 +215,7 @@ msgstr "Exportera"
 msgid "strimport"
 msgstr "Importera"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "strgo"
@@ -275,7 +275,7 @@ msgstr "När"
 msgid "strexplain"
 msgstr "Förklara"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Sök"
 
 msgid "stroptions"
@@ -680,7 +680,7 @@ msgstr "Databas"
 msgid "strdatabasedropped"
 msgstr "Databas raderad."
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Databaser"
 
 msgid "strentersql"
@@ -701,7 +701,7 @@ msgstr "Hittade ingen databas."
 msgid "strnodatabases"
 msgstr "Hittade inga databaser."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Skapa databas"
 
 msgid "strdatabasename"
@@ -1281,7 +1281,7 @@ msgid "strschemadroppedbad"
 msgstr "Misslyckades att radera schema."
 
 # Reports
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s körs på %s:%s -- Du är inloggad som användare \"%s\""
 
 msgid "strtimefmt"
@@ -1525,5 +1525,5 @@ msgid "strrows2"
 msgstr "Rader"
 
 # Miscellaneous
-msgid "strhelp"
+msgid "Help"
 msgstr "Hjälp"

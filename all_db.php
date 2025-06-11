@@ -557,8 +557,8 @@ if ($action == 'tree') {
     doTree();
 }
 
-    $misc->printHeader($lang['strdatabases']);
-    $misc->printBody();
+$misc->printHeader($lang['strdatabases']);
+$misc->printBody();
 
 switch ($action) {
     case 'export':

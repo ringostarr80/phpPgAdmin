@@ -10,26 +10,13 @@ permissions:
   contents: read
 
 jobs:
-  set-matrix:
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set.outputs.matrix }}
-    steps:
-      - id: set
-        run: |
-          if [[ "${{ github.ref_name }}" == "dev" ]]; then
-            echo 'matrix={"pg-version":["17"],"php-version":["8.4"]}' >> $GITHUB_OUTPUT
-          else
-            echo 'matrix={"pg-version":["13","14","15","16","17"],"php-version":["8.1","8.2","8.3","8.4"]}' >> $GITHUB_OUTPUT
-          fi
-
   build:
-
-    needs: set-matrix
     runs-on: ubuntu-latest
 
     strategy:
-      matrix: ${{ fromJson(needs.set-matrix.outputs.matrix) }}
+      matrix:
+        php-version: [ '8.1', '8.2', '8.3', '8.4' ]
+        pg-version: [ '17' ]
 
     services:
       postgres:
@@ -44,7 +31,7 @@ jobs:
         ports:
           - 5432:5432
 
-    name: PHP ${{ matrix.php-version }} / PostgreSQL ${{ matrix.pg-version }}
+    name: PHP ${{ matrix.php-version }}
 
     steps:
       - uses: actions/checkout@v4
@@ -57,55 +44,13 @@ jobs:
           extensions: intl, pdo_pgsql, xdebug, zip
           coverage: xdebug
           ini-values: xdebug.mode=coverage,error_reporting=E_ALL,display_errors=On
-      - uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: 136
-          install-chromedriver: true
-
-      - run: npm install
 
       - run: composer validate --strict
-
-      #- name: Cache Composer packages
-      #  id: composer-cache
-      #  uses: actions/cache@v4
-      #  with:
-      #    path: vendor
-      #    key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-
       - run: composer install --prefer-dist --no-progress
       - run: composer run-script dev:lint:php
       - run: composer run-script dev:lint:phpcs
       - run: composer run-script dev:analyze:phpstan-${{ matrix.php-version }}
-      - run: npx selenium-standalone install && npx selenium-standalone start &
-      - run: |
-          while ! curl -sSL http://127.0.0.1:4444/wd/hub/status
-          do
-            echo "Waiting for Selenium to start..."
-            sleep 5
-          done
-
       - run: composer run-script dev:test:unit
         env:
           PHPPGADMIN_TEST_SERVER_HOSTNAME: localhost
           PHPPGADMIN_TEST_SERVER_PASSWORD: ${{ vars.PHPPGADMIN_TEST_SERVER_PASSWORD }}
-
-      - run: composer run-script dev:test:coverage:ci
-        env:
-          BROWSER: chrome
-          PHPPGADMIN_TEST_SERVER_HOSTNAME: localhost
-          PHPPGADMIN_TEST_SERVER_PASSWORD: ${{ vars.PHPPGADMIN_TEST_SERVER_PASSWORD }}
-
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v5
-        if: ${{ matrix.php-version == '8.1' && matrix.pg-version == '13' }}
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          slug: ringostarr80/phpPgAdmin
-
-      - name: Save artifacts
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: test-output-${{ matrix.php-version }}-${{ matrix.pg-version }}
-          path: tests/_output

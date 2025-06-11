@@ -236,7 +236,7 @@ msgstr "NULL (slovo)"
 msgid "stremptystring"
 msgstr "Prázdny reťazec/pole"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -308,7 +308,7 @@ msgstr "Vysvetliť"
 msgid "strexplainanalyze"
 msgstr "Vysvetliť Analyze"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Nájsť"
 
 msgid "stroptions"
@@ -769,7 +769,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Databáza"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Databázy"
 
 msgid "strshowalldatabases"
@@ -781,7 +781,7 @@ msgstr "Nenájdená žiadna Databáza."
 msgid "strnodatabases"
 msgstr "Nenájdené žiadne Databázy."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Vytvoriť databázu"
 
 msgid "strdatabasename"
@@ -1746,13 +1746,13 @@ msgid "strtablespacealteredbad"
 msgstr "Zmenenie priestoru tabuľky zlyhalo."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s beží na %s:%s -- si prihlásený ako \"%s\""
 
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Pomoc"
 
 msgid "strhelpicon"

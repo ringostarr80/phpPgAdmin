@@ -1,22 +1,22 @@
 <?php
 
-    /**
-     * Alternative SQL editing window
-     *
-     * $Id: sqledit.php,v 1.40 2008/01/10 19:37:07 xzilla Exp $
-     */
+/**
+ * Alternative SQL editing window
+ *
+ * $Id: sqledit.php,v 1.40 2008/01/10 19:37:07 xzilla Exp $
+ */
 
-    // Include application functions
-    include_once('./libraries/lib.inc.php');
+// Include application functions
+include_once('./libraries/lib.inc.php');
 
-    $action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : '';
+$action = (isset($_REQUEST['action'])) ? $_REQUEST['action'] : '';
 if (!isset($msg)) {
     $msg = '';
 }
 
-    /**
-     * Private function to display server and list of databases
-     */
+/**
+ * Private function to display server and list of databases
+ */
 function _printConnection()
 {
     global $data, $action, $misc;
@@ -96,9 +96,9 @@ function doFind()
     $misc->setFocus('forms[0].term');
 }
 
-    /**
-     * Allow execution of arbitrary SQL statements on a database
-     */
+/**
+ * Allow execution of arbitrary SQL statements on a database
+ */
 function doDefault()
 {
     global $data, $misc;
@@ -160,7 +160,7 @@ switch ($action) {
         break;
 }
 
-    // Set the name of the window
-    $misc->setWindowName('sqledit');
+// Set the name of the window
+$misc->setWindowName('sqledit');
 
-    $misc->printFooter();
+$misc->printFooter();

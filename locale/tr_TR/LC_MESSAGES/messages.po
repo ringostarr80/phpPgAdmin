@@ -236,7 +236,7 @@ msgstr "NULL (sözcük)"
 msgid "stremptystring"
 msgstr "Boş metin/alan"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -308,7 +308,7 @@ msgstr "Explain"
 msgid "strexplainanalyze"
 msgstr "Explain Analyze"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Bul"
 
 msgid "stroptions"
@@ -768,7 +768,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Veritabanı"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Veritabanları"
 
 msgid "strshowalldatabases"
@@ -780,7 +780,7 @@ msgstr "Veritabanı bulunamadı."
 msgid "strnodatabases"
 msgstr "Veritabanı bulunamadı."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Veritabanı yarat"
 
 msgid "strdatabasename"
@@ -1734,13 +1734,13 @@ msgid "strtablespacealteredbad"
 msgstr "Tablespace değiştirilemedi."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s, %s:%s üzerinde çalışıyor-- \"%s\" kullanıcısı ile sisteme giriş yaptınız."
 
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Yardım"
 
 msgid "strhelpicon"

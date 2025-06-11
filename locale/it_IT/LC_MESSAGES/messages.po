@@ -245,7 +245,7 @@ msgstr "\\N"
 msgid "stremptystring"
 msgstr "Stringa vuota"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -314,7 +314,7 @@ msgstr "Explain"
 msgid "strexplainanalyze"
 msgstr "Explain Analyze"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Trova"
 
 msgid "stroptions"
@@ -872,7 +872,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Database"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Database"
 
 msgid "strshowalldatabases"
@@ -881,7 +881,7 @@ msgstr "Mostra tutti i database"
 msgid "strnodatabases"
 msgstr "Nessun database trovato."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Crea database"
 
 msgid "strdatabasename"
@@ -1917,13 +1917,13 @@ msgid "strtablespacealteredbad"
 msgstr "Modifica del tablespace fallita."
 
 # Miscellaneous - Varie
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s in esecuzione su %s:%s -- Utente \"%s\""
 
 msgid "strtimefmt"
 msgstr "j M Y - g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Aiuto"
 
 msgid "strhelpicon"

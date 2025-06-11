@@ -215,7 +215,7 @@ msgstr "Експорт"
 msgid "strimport"
 msgstr "Імпорт"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "strgo"
@@ -284,7 +284,7 @@ msgstr "Пояснити"
 msgid "strexplainanalyze"
 msgstr "Пояснити аналіз"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Знайти"
 
 msgid "stroptions"
@@ -716,7 +716,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "База даних"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Бази даних"
 
 msgid "strshowalldatabases"
@@ -728,7 +728,7 @@ msgstr "Базу даних не виявлено."
 msgid "strnodatabases"
 msgstr "Жодної бази даних не виявлено."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Створити базу даних"
 
 msgid "strdatabasename"
@@ -1574,11 +1574,11 @@ msgid "strrows2"
 msgstr "Записи"
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s виконується на %s:%s -- Ви зареєструвались як \"%s\""
 
 msgid "strtimefmt"
 msgstr " j-m-Y  g:i"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Допомога"

@@ -245,7 +245,7 @@ msgstr "Null"
 msgid "stremptystring"
 msgstr "Pusty ciąg znaków/pole"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -317,7 +317,7 @@ msgstr "Explain"
 msgid "strexplainanalyze"
 msgstr "Explain Analyze"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Znajdź"
 
 msgid "stroptions"
@@ -830,7 +830,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Baza danych"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Bazy danych"
 
 msgid "strshowalldatabases"
@@ -842,7 +842,7 @@ msgstr "Nie znaleziono bazy danych."
 msgid "strnodatabases"
 msgstr "Nie znaleziono żadnej bazy danych."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Utwórz bazę danych"
 
 msgid "strdatabasename"
@@ -1944,13 +1944,13 @@ msgid "strtablespacealteredbad"
 msgstr "Próba modyfikacji przestrzeni tabel się nie powiodła."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s uruchomiony na %s:%s -- Jesteś zalogowany jako \"%s\""
 
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Pomoc"
 
 msgid "strhelpicon"

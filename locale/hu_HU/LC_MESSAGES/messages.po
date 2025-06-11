@@ -257,7 +257,7 @@ msgstr "\\N"
 msgid "stremptystring"
 msgstr "Üres szöveg/mező"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -320,7 +320,7 @@ msgstr "Kinyit"
 msgid "strcollapse"
 msgstr "Összecsuk"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Keres"
 
 msgid "stroptions"
@@ -430,7 +430,7 @@ msgid "stradminontable"
 msgstr "A következő adminisztratív feladatok %s táblára vonatkoznak."
 
 # User-supplied SQL history
-msgid "strhistory"
+msgid "History"
 msgstr "Előzmények"
 
 msgid "strnohistory"
@@ -1006,7 +1006,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Adatbázis"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Adatbázisok"
 
 msgid "strshowalldatabases"
@@ -1015,7 +1015,7 @@ msgstr "Minden adatbázist megjelenít"
 msgid "strnodatabases"
 msgstr "Nincs adatbázis."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Adatbázist teremt"
 
 msgid "strdatabasename"
@@ -2189,13 +2189,13 @@ msgid "strtablespacealteredbad"
 msgstr "Nem sikerült megváltoztatni a táblahelyet."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s fut %s:%s címen — Ön „%s” néven jelentkezett be."
 
 msgid "strtimefmt"
 msgstr "Y.m.d. H:i"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Súgó"
 
 msgid "strhelpicon"

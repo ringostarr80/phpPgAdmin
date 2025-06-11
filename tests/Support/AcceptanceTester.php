@@ -25,11 +25,20 @@ class AcceptanceTester extends \Codeception\Actor
 {
     use _generated\AcceptanceTesterActions;
 
+    public const LOGIN_FORM_SELECTOR = 'form[name="login_form"]';
+
     /**
      * Define custom actions here
      */
-    public function login($name, $password)
+    public function login(?string $name = null, ?string $password = null): void
     {
+        if (is_null($name)) {
+            $name = MyConfigExtension::getEnvVar('PHPPGADMIN_TEST_SERVER_USERNAME') ?? 'postgres';
+        }
+        if (is_null($password)) {
+            $password = MyConfigExtension::getEnvVar('PHPPGADMIN_TEST_SERVER_PASSWORD') ?? '';
+        }
+
         $i = $this;
 
         $i->amOnPage('/');
@@ -46,7 +55,7 @@ class AcceptanceTester extends \Codeception\Actor
         $i->switchToIframe('detail');
 
         $i->submitForm(
-            LoginPageCest::LOGIN_FORM_SELECTOR,
+            self::LOGIN_FORM_SELECTOR,
             [
                 'loginUsername' => $name,
                 'loginPassword_' . hash('sha256', MyConfigExtension::RUNNING_SERVER_DESC) => $password,

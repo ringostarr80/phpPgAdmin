@@ -245,7 +245,7 @@ msgstr "\\N"
 msgid "stremptystring"
 msgstr "Leere Zeichenkette / Leere Spalte"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -308,7 +308,7 @@ msgstr "Aufklappen"
 msgid "strcollapse"
 msgstr "Zuklappen"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Suchen"
 
 msgid "stroptions"
@@ -387,7 +387,7 @@ msgid "strcluster"
 msgstr "Cluster"
 
 # User-supplied SQL history
-msgid "strhistory"
+msgid "History"
 msgstr "Befehlsspeicher"
 
 msgid "strnohistory"
@@ -933,7 +933,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Datenbank"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Datenbanken"
 
 msgid "strshowalldatabases"
@@ -942,7 +942,7 @@ msgstr "Alle Datenbanken anzeigen"
 msgid "strnodatabases"
 msgstr "Keine Datenbanken gefunden."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Datenbank erstellen"
 
 msgid "strdatabasename"
@@ -2089,13 +2089,13 @@ msgid "strtablespacealteredbad"
 msgstr "Ändern des Tablespace fehlgeschlagen."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s läuft auf %s:%s -- Sie sind als \"%s\" angemeldet"
 
 msgid "strtimefmt"
 msgstr "D, j. n. Y, G:i"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Hilfe"
 
 msgid "strhelpicon"

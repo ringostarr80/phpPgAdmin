@@ -1460,27 +1460,27 @@ class Misc
             $history_window_id = htmlentities('history:' . $_REQUEST['server']);
 
             echo "<script type=\"text/javascript\">
-						$('#toplink_sql').on('click', function() {
-							window.open($(this).attr('href'),'{$sql_window_id}','toolbar=no,width=700,height=500,resizable=yes,scrollbars=yes').focus();
-							return false;
-						});
+                $('#toplink_sql').on('click', function() {
+                    window.open($(this).attr('href'),'{$sql_window_id}','toolbar=no,width=700,height=500,resizable=yes,scrollbars=yes').focus();
+                    return false;
+                });
 
-						$('#toplink_history').on('click', function() {
-							window.open($(this).attr('href'),'{$history_window_id}','toolbar=no,width=700,height=500,resizable=yes,scrollbars=yes').focus();
-							return false;
-						});
+                $('#toplink_history').on('click', function() {
+                    window.open($(this).attr('href'),'{$history_window_id}','toolbar=no,width=700,height=500,resizable=yes,scrollbars=yes').focus();
+                    return false;
+                });
 
-						$('#toplink_find').on('click', function() {
-							window.open($(this).attr('href'),'{$sql_window_id}','toolbar=no,width=700,height=500,resizable=yes,scrollbars=yes').focus();
-							return false;
-						});
-						";
+                $('#toplink_find').on('click', function() {
+                    window.open($(this).attr('href'),'{$sql_window_id}','toolbar=no,width=700,height=500,resizable=yes,scrollbars=yes').focus();
+                    return false;
+                });
+                ";
 
             if (isset($_SESSION['sharedUsername'])) {
                 printf("
-						$('#toplink_logout').on('click', function() {
-							return confirm('%s');
-						});", str_replace("'", "\'", $lang['strconfdropcred']));
+                    $('#toplink_logout').on('click', function() {
+                        return confirm('%s');
+                    });", str_replace("'", "\'", $lang['strconfdropcred']));
             }
 
             echo "
@@ -1488,26 +1488,7 @@ class Misc
         } else {
             echo "<span class=\"appname\">{$appName}</span> <span class=\"version\">{$appVersion}</span>";
         }
-/*
-        echo "<td style=\"text-align: right; width: 1%\">";
 
-        echo "<form method=\"get\"><select name=\"language\" onchange=\"this.form.submit()\">\n";
-        $language = isset($_SESSION['webdbLanguage']) ? $_SESSION['webdbLanguage'] : 'english';
-        foreach ($appLangFiles as $k => $v) {
-            echo "<option value=\"{$k}\"",
-                ($k == $language) ? ' selected="selected"' : '',
-                ">{$v}</option>\n";
-        }
-        echo "</select>\n";
-        echo "<noscript><input type=\"submit\" value=\"Set Language\"></noscript>\n";
-        foreach ($_GET as $key => $val) {
-            if ($key == 'language') continue;
-            echo "<input type=\"hidden\" name=\"$key\" value=\"", htmlspecialchars($val), "\" />\n";
-        }
-        echo "</form>\n";
-
-        echo "</td>";
-*/
         echo "</tr></table></div>\n";
     }
 

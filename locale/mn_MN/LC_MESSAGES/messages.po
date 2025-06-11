@@ -215,7 +215,7 @@ msgstr "ќЫгаЯвд"
 msgid "strimport"
 msgstr "щЭаЯвд"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "strgo"
@@ -281,7 +281,7 @@ msgstr "ѕЮСЬд"
 msgid "strexplain"
 msgstr "єСЪЬТСв"
 
-msgid "strfind"
+msgid "Find"
 msgstr "яЬЯШ"
 
 msgid "stroptions"
@@ -659,7 +659,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "тСкС ФСЮЮйШ"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "тСкй ФСЮЮйШ"
 
 msgid "strshowalldatabases"
@@ -671,7 +671,7 @@ msgstr "тСкС ФСЮЮйШ ЮХ ЯТЮСвежХЮС."
 msgid "strnodatabases"
 msgstr "юЩ ЯФЮЯЪ ТСкй ФСЮЮйШ ЮХ ЯТЮСвежХЮЯ."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "ѓЯкФСди ТСке ФСЮЮйШ"
 
 msgid "strdatabasename"
@@ -1412,7 +1412,7 @@ msgid "strchildtables"
 msgstr "фЯоХвЮЩХ дСТЬЩУй"
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s зйаЯЬЮбХдгб ЮС %s:%s -- їй кСвХЧЩгдвЩвЯзСЮй ЫСЫ \"%s\""
 
 msgid "strtimefmt"

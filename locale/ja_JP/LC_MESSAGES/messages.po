@@ -242,7 +242,7 @@ msgstr "\\N"
 msgid "stremptystring"
 msgstr "空の文字列/項目"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -305,7 +305,7 @@ msgstr "展開"
 msgid "strcollapse"
 msgstr "閉じる"
 
-msgid "strfind"
+msgid "Find"
 msgstr "検索"
 
 msgid "stroptions"
@@ -378,7 +378,7 @@ msgid "strlocale"
 msgstr "ロケール"
 
 # User-supplied SQL history
-msgid "strhistory"
+msgid "History"
 msgstr "履歴"
 
 msgid "strnohistory"
@@ -924,7 +924,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "データベース"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "データベース"
 
 msgid "strshowalldatabases"
@@ -933,7 +933,7 @@ msgstr "すべてのデータベースを表示する"
 msgid "strnodatabases"
 msgstr "データベースがまったくありません。"
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "データベースを作成する"
 
 msgid "strdatabasename"
@@ -2086,13 +2086,13 @@ msgid "strtablespacealteredbad"
 msgstr "テーブル空間の変更に失敗しました。"
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "サーバー %2$s のポート番号 %3$s で実行中の %1$s に接続中 -- ユーザー「%4$s」としてログイン中"
 
 msgid "strtimefmt"
 msgstr "Y 年 n 月 j 日 G:i"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "ヘルプ"
 
 msgid "strhelpicon"

@@ -4,6 +4,7 @@ modules:
         - WebDriver:
             url: http://127.0.0.1:9876/
             browser: 'chrome'
+            browserVersion: 136
             host: 127.0.0.1
             port: 4444
             capabilities:

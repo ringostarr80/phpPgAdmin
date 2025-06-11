@@ -257,7 +257,7 @@ msgstr "\\n"
 msgid "stremptystring"
 msgstr "Prázdné řetězce/pole"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -320,7 +320,7 @@ msgstr "Rozbalit"
 msgid "strcollapse"
 msgstr "Sbalit"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Hledat"
 
 msgid "stroptions"
@@ -430,7 +430,7 @@ msgid "stradminontable"
 msgstr "Následující úlohy správy použít na tabulku %s."
 
 # User-supplied SQL history
-msgid "strhistory"
+msgid "History"
 msgstr "Historie"
 
 msgid "strnohistory"
@@ -1006,7 +1006,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Databáze"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Databáze"
 
 msgid "strshowalldatabases"
@@ -1015,7 +1015,7 @@ msgstr "Zobrazit všechny databáze"
 msgid "strnodatabases"
 msgstr "Žádné databáze nenalezeny."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Vytvořit databázi"
 
 msgid "strdatabasename"
@@ -2189,13 +2189,13 @@ msgid "strtablespacealteredbad"
 msgstr "Nezdařilo se provést změny v prostoru tabulek."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s běžící na %s:%s -- Jste přihlášený jako uživatel „%s“"
 
 msgid "strtimefmt"
 msgstr "j. M Y G:i"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Nápověda"
 
 msgid "strhelpicon"

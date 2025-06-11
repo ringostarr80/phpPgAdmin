@@ -215,7 +215,7 @@ msgstr "יצוא"
 msgid "strimport"
 msgstr "יבוא"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "strgo"
@@ -287,7 +287,7 @@ msgstr "הסבק"
 msgid "strexplainanalyze"
 msgstr "הסבר נתיחה"
 
-msgid "strfind"
+msgid "Find"
 msgstr "מצא"
 
 msgid "stroptions"
@@ -716,7 +716,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "בסיס נתונים"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "בסיסי נתונים"
 
 msgid "strshowalldatabases"
@@ -728,7 +728,7 @@ msgstr "בסיס נתונים לא נמצאה."
 msgid "strnodatabases"
 msgstr "לא נמצאו בסיסי נתונים."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "צור בסיס נתונים."
 
 msgid "strdatabasename"
@@ -1665,11 +1665,11 @@ msgid "strtablespacealteredbad"
 msgstr "עריכת מרחבון מכשלה."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s רץ על %s:%s -- אתה מחובר כמשתמש - \"%s\""
 
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "עזרה"

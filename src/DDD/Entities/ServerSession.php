@@ -6,7 +6,7 @@ namespace PhpPgAdmin\DDD\Entities;
 
 use PhpPgAdmin\Config;
 use PhpPgAdmin\DDD\ValueObjects\Server\{DatabaseName, Filename, Host, Name, Port, SslMode};
-use PhpPgAdmin\DDD\ValueObjects\ServerSession\{Username, Password};
+use PhpPgAdmin\DDD\ValueObjects\ServerSession\{Username, Password, Platform};
 
 /**
  * @property-read DatabaseName $DefaultDb
@@ -15,6 +15,7 @@ use PhpPgAdmin\DDD\ValueObjects\ServerSession\{Username, Password};
  * @property-read Password $Password
  * @property-read Filename $PgDumpAllPath
  * @property-read Filename $PgDumpPath
+ * @property-read Platform $Platform
  * @property-read Port $Port
  * @property-read SslMode $SslMode
  * @property-read Username $Username
@@ -24,30 +25,102 @@ class ServerSession extends Server
     public function __construct(
         private Username $username,
         private Password $password,
-        private Name $name,
-        private Host $host = new Host(),
-        private Port $port = new Port(),
-        private SslMode $sslMode = SslMode::ALLOW,
-        private DatabaseName $defaultDb = new DatabaseName('template1'),
-        private Filename $pgDumpPath = new Filename('/usr/bin/pg_dump'),
-        private Filename $pgDumpAllPath = new Filename('/usr/bin/pg_dumpall')
+        Name $name,
+        Host $host = new Host(),
+        Port $port = new Port(),
+        SslMode $sslMode = SslMode::ALLOW,
+        DatabaseName $defaultDb = new DatabaseName('template1'),
+        Filename $pgDumpPath = new Filename('/usr/bin/pg_dump'),
+        Filename $pgDumpAllPath = new Filename('/usr/bin/pg_dumpall'),
+        private Platform $platform = new Platform('PostgreSQL')
     ) {
+        parent::__construct(
+            name: $name,
+            host: $host,
+            port: $port,
+            sslMode: $sslMode,
+            defaultDb: $defaultDb,
+            pgDumpPath: $pgDumpPath,
+            pgDumpAllPath: $pgDumpAllPath
+        );
     }
 
     public function __get(string $name): mixed
     {
         return match ($name) {
-            'DefaultDb' => $this->defaultDb,
-            'Host' => $this->host,
-            'Name' => $this->name,
             'Password' => $this->password,
-            'PgDumpAllPath' => $this->pgDumpAllPath,
-            'PgDumpPath' => $this->pgDumpPath,
-            'Port' => $this->port,
-            'SslMode' => $this->sslMode,
+            'Platform' => $this->platform,
             'Username' => $this->username,
             default => parent::__get($name),
         };
+    }
+
+    public static function fromServerId(string $serverId): ?self
+    {
+        $servers = Config::getServers();
+        foreach ($servers as $server) {
+            if ($server->id() !== $serverId) {
+                continue;
+            }
+
+            $sharedUsername = '';
+            $sharedPassword = '';
+
+            if (
+                isset($_SESSION['sharedUsername']) &&
+                is_string($_SESSION['sharedUsername']) &&
+                isset($_SESSION['sharedPassword']) &&
+                is_string($_SESSION['sharedPassword'])
+            ) {
+                $sharedUsername = $_SESSION['sharedUsername'];
+                $sharedPassword = $_SESSION['sharedPassword'];
+            }
+
+            $platform = 'Unknown';
+
+            if (
+                $sharedUsername === '' &&
+                $sharedPassword === '' &&
+                isset($_SESSION['webdbLogin']) &&
+                is_array($_SESSION['webdbLogin']) &&
+                isset($_SESSION['webdbLogin'][$serverId]) &&
+                is_array($_SESSION['webdbLogin'][$serverId])
+            ) {
+                if (
+                    isset($_SESSION['webdbLogin'][$serverId]['username']) &&
+                    is_string($_SESSION['webdbLogin'][$serverId]['username']) &&
+                    isset($_SESSION['webdbLogin'][$serverId]['password']) &&
+                    is_string($_SESSION['webdbLogin'][$serverId]['password'])
+                ) {
+                    $sharedUsername = $_SESSION['webdbLogin'][$serverId]['username'];
+                    $sharedPassword = $_SESSION['webdbLogin'][$serverId]['password'];
+                }
+
+                if (
+                    isset($_SESSION['webdbLogin'][$serverId]['platform']) &&
+                    is_string($_SESSION['webdbLogin'][$serverId]['platform'])
+                ) {
+                    $platform = $_SESSION['webdbLogin'][$serverId]['platform'];
+                }
+            }
+
+            if ($sharedUsername !== '' && $sharedPassword !== '') {
+                return new self(
+                    username: new Username($sharedUsername),
+                    password: new Password($sharedPassword),
+                    name: new Name((string)$server->Name),
+                    host: new Host((string)$server->Host),
+                    port: new Port($server->Port->Value),
+                    sslMode: $server->SslMode,
+                    defaultDb: new DatabaseName((string)$server->DefaultDb),
+                    pgDumpPath: new Filename((string)$server->PgDumpPath),
+                    pgDumpAllPath: new Filename((string)$server->PgDumpAllPath),
+                    platform: new Platform($platform)
+                );
+            }
+        }
+
+        return null;
     }
 
     public static function fromRequestParameter(): ?self
@@ -56,34 +129,7 @@ class ServerSession extends Server
             return null;
         }
 
-        $serverId = $_REQUEST['server'];
-        $servers = Config::getServers();
-        foreach ($servers as $server) {
-            if ($server->id() !== $serverId) {
-                continue;
-            }
-
-            if (
-                isset($_SESSION['sharedUsername']) &&
-                is_string($_SESSION['sharedUsername']) &&
-                isset($_SESSION['sharedPassword']) &&
-                is_string($_SESSION['sharedPassword'])
-            ) {
-                return new self(
-                    username: new Username($_SESSION['sharedUsername']),
-                    password: new Password($_SESSION['sharedPassword']),
-                    name: new Name((string)$server->Name),
-                    host: new Host((string)$server->Host),
-                    port: new Port($server->Port->Value),
-                    sslMode: $server->SslMode,
-                    defaultDb: new DatabaseName((string)$server->DefaultDb),
-                    pgDumpPath: new Filename((string)$server->PgDumpPath),
-                    pgDumpAllPath: new Filename((string)$server->PgDumpAllPath)
-                );
-            }
-        }
-
-        return null;
+        return self::fromServerId($_REQUEST['server']);
     }
 
     public static function isLoggedIn(string $serverId): bool

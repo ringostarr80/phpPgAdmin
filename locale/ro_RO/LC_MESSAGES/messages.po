@@ -245,7 +245,7 @@ msgstr "\\N"
 msgid "stremptystring"
 msgstr "Şir/câmp gol"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -314,7 +314,7 @@ msgstr "Explicare"
 msgid "strexplainanalyze"
 msgstr "Explicare & Analiză"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Căutare"
 
 msgid "stroptions"
@@ -866,7 +866,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Bază de date"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Baze de date"
 
 msgid "strshowalldatabases"
@@ -875,7 +875,7 @@ msgstr "Afişare toate bazele de date"
 msgid "strnodatabases"
 msgstr "Nici o bază de date găsită."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Creare bază de date"
 
 msgid "strdatabasename"
@@ -1977,13 +1977,13 @@ msgid "strtablespacealteredbad"
 msgstr "Modificare şpaţiu de tabele eşuată."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s rulând pe %s:%s -- Sunteţi autentificat ca utilizator \"%s\""
 
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Ajutor"
 
 msgid "strhelpicon"

@@ -215,7 +215,7 @@ msgstr "Eksporteer"
 msgid "strimport"
 msgstr "Importeer"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -284,7 +284,7 @@ msgstr "Verduidelik"
 msgid "strexplainanalyze"
 msgstr "Verduidelik Analise"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Soek"
 
 msgid "stroptions"
@@ -722,7 +722,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Databasis"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Databasisse"
 
 msgid "strshowalldatabases"
@@ -734,7 +734,7 @@ msgstr "Geen databasis gevind."
 msgid "strnodatabases"
 msgstr "Geen databasis gevind."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Skep databasis"
 
 msgid "strdatabasename"
@@ -1677,13 +1677,13 @@ msgid "strtablespacealteredbad"
 msgstr "Wysiging van tabelruimte het misluk."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s loop op %s:%s -- Jy is aangeteken as gebruiker \"%s\""
 
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Hulp"
 
 msgid "strhelpicon"

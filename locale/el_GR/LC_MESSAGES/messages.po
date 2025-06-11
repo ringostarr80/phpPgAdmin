@@ -245,7 +245,7 @@ msgstr "κενό"
 msgid "stremptystring"
 msgstr "κενή συμβολοσειρά/κενό πεδίο"
 
-msgid "strsql"
+msgid "SQL"
 msgstr "SQL"
 
 msgid "stradmin"
@@ -305,7 +305,7 @@ msgstr "Ανάπτυξη"
 msgid "strcollapse"
 msgstr "Σύμπτυξη"
 
-msgid "strfind"
+msgid "Find"
 msgstr "Αναζήτηση"
 
 msgid "stroptions"
@@ -845,7 +845,7 @@ msgstr "*"
 msgid "strdatabase"
 msgstr "Βάση"
 
-msgid "strdatabases"
+msgid "Databases"
 msgstr "Βάσεις"
 
 msgid "strshowalldatabases"
@@ -854,7 +854,7 @@ msgstr "Εμφάνιση όλων των βάσεων"
 msgid "strnodatabases"
 msgstr "Δε βρέθηκαν βάσεις."
 
-msgid "strcreatedatabase"
+msgid "Create database"
 msgstr "Δημιουργία βάσης"
 
 msgid "strdatabasename"
@@ -1947,13 +1947,13 @@ msgid "strtablespacealteredbad"
 msgstr "Η τροποποίηση της τοποθεσίας απέτυχε."
 
 # Miscellaneous
-msgid "strtopbar"
+msgid "%s running on %s:%s -- You are logged in as user \"%s\""
 msgstr "%s στο %s:%s -- Είστε συνδεδεμένος ως \"%s\""
 
 msgid "strtimefmt"
 msgstr "jS M, Y g:iA"
 
-msgid "strhelp"
+msgid "Help"
 msgstr "Βοήθεια"
 
 msgid "strhelpicon"

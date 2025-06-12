@@ -250,7 +250,7 @@ msgstr "Unikalus"
 msgid "strprimary"
 msgstr "Pirminis"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Eksportuoti"
 
 msgid "strimport"
@@ -932,7 +932,7 @@ msgstr "Nepavyko pašalinti nario."
 msgid "strrole"
 msgstr "Rolė"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Rolės"
 
 msgid "strshowallroles"
@@ -2180,7 +2180,7 @@ msgstr "Įrašai"
 msgid "strtablespace"
 msgstr "Lentelių erdvė"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Lentelių erdvės"
 
 msgid "strshowalltablespaces"

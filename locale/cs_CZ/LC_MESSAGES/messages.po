@@ -242,7 +242,7 @@ msgstr "Jedinečný"
 msgid "strprimary"
 msgstr "Primární"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Export"
 
 msgid "strimport"
@@ -914,7 +914,7 @@ msgstr "Nezdařilo se odebrat člena."
 msgid "strrole"
 msgstr "Role"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Role"
 
 msgid "strshowallroles"
@@ -2146,7 +2146,7 @@ msgstr "Řádků"
 msgid "strtablespace"
 msgstr "Prostor tabulek"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Prostory tabulek"
 
 msgid "strshowalltablespaces"

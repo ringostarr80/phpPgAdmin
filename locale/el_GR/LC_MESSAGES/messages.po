@@ -227,7 +227,7 @@ msgstr "Μοναδικό"
 msgid "strprimary"
 msgstr "Πρωτεύον"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Εξαγωγή"
 
 msgid "strimport"
@@ -759,7 +759,7 @@ msgstr "Η διαγραφή του μέλους απέτυχε."
 msgid "strrole"
 msgstr "Ρόλος"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Ρόλοι"
 
 msgid "strshowallroles"
@@ -1904,7 +1904,7 @@ msgstr "Γραμμές"
 msgid "strtablespace"
 msgstr "Τοποθεσία πίνακα"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Τοποθεσίες πινάκων"
 
 msgid "strshowalltablespaces"

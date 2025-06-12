@@ -242,7 +242,7 @@ msgstr "Único(a)"
 msgid "strprimary"
 msgstr "Primário(a)"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Exportar"
 
 msgid "strimport"
@@ -911,7 +911,7 @@ msgstr "Falha ao deletar membro."
 msgid "strrole"
 msgstr "Papel"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Papéis"
 
 msgid "strshowallroles"
@@ -2149,7 +2149,7 @@ msgstr "Linhas"
 msgid "strtablespace"
 msgstr "Tablespace"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Tablespaces"
 
 msgid "strshowalltablespaces"

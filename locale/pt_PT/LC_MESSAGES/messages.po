@@ -193,7 +193,7 @@ msgstr "Único"
 msgid "strprimary"
 msgstr "Primário"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Exportar"
 
 msgid "SQL"
@@ -1646,7 +1646,7 @@ msgstr "Linhas"
 msgid "strtablespace"
 msgstr "Espaço de Tabela"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Espaços de Tabela"
 
 msgid "strshowalltablespaces"

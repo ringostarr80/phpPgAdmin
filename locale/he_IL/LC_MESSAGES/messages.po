@@ -209,7 +209,7 @@ msgstr "מיוחד"
 msgid "strprimary"
 msgstr "ראשי"
 
-msgid "strexport"
+msgid "Export"
 msgstr "יצוא"
 
 msgid "strimport"
@@ -1622,7 +1622,7 @@ msgstr "שורה"
 msgid "strtablespace"
 msgstr "מרחבון"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "מרחבונים"
 
 msgid "strshowalltablespaces"

@@ -346,7 +346,7 @@ msgstr "U dient uw tabel een naam te geven."
 msgid "strtableneedscols"
 msgstr "U dient uw tabel een geldig aantal kolommen te geven."
 
-msgid "strexport"
+msgid "Export"
 msgstr "exporteer"
 
 msgid "strconstraints"

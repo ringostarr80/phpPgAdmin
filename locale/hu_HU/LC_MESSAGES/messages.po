@@ -242,7 +242,7 @@ msgstr "egyedi"
 msgid "strprimary"
 msgstr "Elsődleges"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Kivisz"
 
 msgid "strimport"
@@ -914,7 +914,7 @@ msgstr "Nem sikerült a tagot kicsapni."
 msgid "strrole"
 msgstr "Szerep"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Szerepek"
 
 msgid "strshowallroles"
@@ -2146,7 +2146,7 @@ msgstr "Sorok"
 msgid "strtablespace"
 msgstr "Táblahely"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Táblahelyek"
 
 msgid "strshowalltablespaces"

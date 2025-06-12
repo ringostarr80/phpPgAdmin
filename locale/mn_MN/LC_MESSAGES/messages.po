@@ -209,7 +209,7 @@ msgstr "яЮУЧЯЪ"
 msgid "strprimary"
 msgstr "?ЮФгмЮ"
 
-msgid "strexport"
+msgid "Export"
 msgstr "ќЫгаЯвд"
 
 msgid "strimport"

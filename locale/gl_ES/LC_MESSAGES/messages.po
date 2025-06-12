@@ -242,7 +242,7 @@ msgstr "Único"
 msgid "strprimary"
 msgstr "Primaria"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Exportar"
 
 msgid "strimport"
@@ -914,7 +914,7 @@ msgstr "Non se conseguiu eliminar o membro."
 msgid "strrole"
 msgstr "Rol"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Roles"
 
 msgid "strshowallroles"
@@ -2154,7 +2154,7 @@ msgstr "Filas"
 msgid "strtablespace"
 msgstr "Alias de ruta"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Alias de ruta"
 
 msgid "strshowalltablespaces"

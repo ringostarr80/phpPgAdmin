@@ -218,7 +218,7 @@ msgstr "Tekil"
 msgid "strprimary"
 msgstr "Birincil"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Export"
 
 msgid "strimport"
@@ -1691,7 +1691,7 @@ msgstr "Rows"
 msgid "strtablespace"
 msgstr "Tablespace"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Tablespaceler"
 
 msgid "strshowalltablespaces"

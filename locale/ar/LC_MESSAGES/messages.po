@@ -209,7 +209,7 @@ msgstr "فريد Unique"
 msgid "strprimary"
 msgstr "رئيسي Primary"
 
-msgid "strexport"
+msgid "Export"
 msgstr "تصدير Export"
 
 msgid "strimport"

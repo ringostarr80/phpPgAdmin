@@ -209,7 +209,7 @@ msgstr "Uniek"
 msgid "strprimary"
 msgstr "Primêr"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Eksporteer"
 
 msgid "strimport"
@@ -1634,7 +1634,7 @@ msgstr "Rye"
 msgid "strtablespace"
 msgstr "Tabelruimte"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Tabelruimtes"
 
 msgid "strshowalltablespaces"

@@ -230,7 +230,7 @@ msgstr "Eindeutig"
 msgid "strprimary"
 msgstr "Primär"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Exportieren"
 
 msgid "strimport"
@@ -841,7 +841,7 @@ msgstr "Löschen des Mitglieds fehlgeschlagen."
 msgid "strrole"
 msgstr "Rolle"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Rollen"
 
 msgid "strshowallroles"
@@ -2046,7 +2046,7 @@ msgstr "Zeilen"
 msgid "strtablespace"
 msgstr "Tablespace"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Tablespaces"
 
 msgid "strshowalltablespaces"

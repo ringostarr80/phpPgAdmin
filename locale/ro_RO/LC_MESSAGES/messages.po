@@ -230,7 +230,7 @@ msgstr "Unic"
 msgid "strprimary"
 msgstr "Primar"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Export"
 
 msgid "strimport"
@@ -771,7 +771,7 @@ msgstr "Ştergere membru eşuată."
 msgid "strrole"
 msgstr "Rol"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Roluri"
 
 msgid "strshowallroles"
@@ -1934,7 +1934,7 @@ msgstr "Rânduri"
 msgid "strtablespace"
 msgstr "Spaţiu de tabele"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Spaţii de tabele"
 
 msgid "strshowalltablespaces"

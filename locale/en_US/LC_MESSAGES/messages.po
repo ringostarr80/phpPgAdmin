@@ -258,7 +258,8 @@ msgstr "Unique"
 msgid "strprimary"
 msgstr "Primary"
 
-msgid "strexport"
+# original: "strexport"
+msgid "Export"
 msgstr "Export"
 
 msgid "strimport"
@@ -947,7 +948,8 @@ msgstr "Member drop failed."
 msgid "strrole"
 msgstr "Role"
 
-msgid "strroles"
+# original: "strroles"
+msgid "Roles"
 msgstr "Roles"
 
 msgid "strshowallroles"
@@ -2184,7 +2186,8 @@ msgstr "Rows"
 msgid "strtablespace"
 msgstr "Tablespace"
 
-msgid "strtablespaces"
+# original: "strtablespaces"
+msgid "Tablespaces"
 msgstr "Tablespaces"
 
 msgid "strshowalltablespaces"

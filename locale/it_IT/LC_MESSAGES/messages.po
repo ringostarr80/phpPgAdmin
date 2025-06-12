@@ -230,7 +230,7 @@ msgstr "Univoco"
 msgid "strprimary"
 msgstr "Primaria"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Esporta"
 
 msgid "strimport"
@@ -780,7 +780,7 @@ msgstr "Eliminazione del membro fallita."
 msgid "strrole"
 msgstr "Ruolo"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Ruoli"
 
 msgid "strshowallroles"
@@ -1874,7 +1874,7 @@ msgstr "Righe"
 msgid "strtablespace"
 msgstr "Tablespace"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Tablespace"
 
 msgid "strshowalltablespaces"

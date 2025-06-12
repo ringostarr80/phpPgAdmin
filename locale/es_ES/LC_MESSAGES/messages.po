@@ -242,7 +242,7 @@ msgstr "Único"
 msgid "strprimary"
 msgstr "Primaria"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Exportar"
 
 msgid "strimport"
@@ -920,7 +920,7 @@ msgstr "Falló al retirar un miembro del grupo."
 msgid "strrole"
 msgstr "Rol"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Roles"
 
 msgid "strshowallroles"
@@ -2155,7 +2155,7 @@ msgstr "Filas"
 msgid "strtablespace"
 msgstr "Tablespace"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Tablespaces"
 
 msgid "strshowalltablespaces"

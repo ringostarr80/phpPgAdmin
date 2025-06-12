@@ -90,6 +90,77 @@ abstract class WebsiteComponents
         return $tableTabs;
     }
 
+    /**
+     * @param array{
+     *  'url': string,
+     *  'url-params'?: array<string, string>,
+     *  'label': string,
+     *  'icon': string,
+     *  'active'?: bool,
+     *  'help'?: array{
+     *      'url': string,
+     *      'url-params'?: array<string, string>
+     *  }
+     * }[] $tabLinks
+     */
+    public static function buildServerDatabasesTabs(\DOMDocument $dom, array $tabLinks): \DOMElement
+    {
+        $table = $dom->createElement('table');
+        $table->setAttribute('class', 'tabs');
+
+        $tBody = $dom->createElement('tbody');
+        $tr = $dom->createElement('tr');
+
+        foreach ($tabLinks as $tabLink) {
+            $td = $dom->createElement('td');
+            $tdClass = 'tab';
+            if (isset($tabLink['active']) && $tabLink['active']) {
+                $tdClass .= ' active';
+            }
+            $td->setAttribute('class', $tdClass);
+            $td->setAttribute('style', 'width: 20%');
+
+            $href = $tabLink['url'];
+            if (isset($tabLink['url-params'])) {
+                $href .= '?' . http_build_query($tabLink['url-params']);
+            }
+            $a = $dom->createElement('a');
+            $a->setAttribute('href', $href);
+            $spanIcon = $dom->createElement('span');
+            $spanIcon->setAttribute('class', 'icon');
+            $imgIcon = $dom->createElement('img');
+            $imgIcon->setAttribute('src', Config::getIcon($tabLink['icon']));
+            $imgIcon->setAttribute('alt', $tabLink['label']);
+            $spanIcon->appendChild($imgIcon);
+            $spanLabel = $dom->createElement('span', $tabLink['label']);
+            $spanLabel->setAttribute('class', 'label');
+            $a->appendChild($spanIcon);
+            $a->appendChild($spanLabel);
+            $td->appendChild($a);
+
+            if (isset($tabLink['help'])) {
+                $aHelp = $dom->createElement('a', '?');
+                $helpHref = $tabLink['help']['url'];
+                if (isset($tabLink['help']['url-params'])) {
+                    $helpHref .= '?' . http_build_query($tabLink['help']['url-params']);
+                }
+                $aHelp->setAttribute('href', $helpHref);
+                $aHelp->setAttribute('class', 'help');
+                $aHelp->setAttribute('title', _('Help'));
+                $aHelp->setAttribute('target', 'phppgadminhelp');
+                $td->appendChild($aHelp);
+            }
+
+            $tr->appendChild($td);
+        }
+
+        $tBody->appendChild($tr);
+
+        $table->appendChild($tBody);
+
+        return $table;
+    }
+
     public static function buildTopBar(\DOMDocument $dom): \DOMElement
     {
         $divWrapper = $dom->createElement('div');

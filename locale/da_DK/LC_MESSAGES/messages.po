@@ -212,7 +212,7 @@ msgstr "Unik"
 msgid "strprimary"
 msgstr "Primær"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Eksportere"
 
 msgid "strimport"
@@ -1601,7 +1601,7 @@ msgstr "Rows"
 msgid "strtablespace"
 msgstr "Tabelområde"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Tabelområder"
 
 msgid "strshowalltablespaces"

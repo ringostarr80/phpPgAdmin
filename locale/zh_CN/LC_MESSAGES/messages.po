@@ -242,7 +242,7 @@ msgstr "唯一"
 msgid "strprimary"
 msgstr "主"
 
-msgid "strexport"
+msgid "Export"
 msgstr "导出"
 
 msgid "strimport"
@@ -917,7 +917,7 @@ msgstr "成员删除失败。"
 msgid "strrole"
 msgstr "角色"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "角色"
 
 msgid "strshowallroles"
@@ -2152,7 +2152,7 @@ msgstr "行"
 msgid "strtablespace"
 msgstr "表空间"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "表空间"
 
 msgid "strshowalltablespaces"

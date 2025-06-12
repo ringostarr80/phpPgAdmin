@@ -239,7 +239,7 @@ msgstr "Уникальный"
 msgid "strprimary"
 msgstr "Первичный"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Экспорт"
 
 msgid "strimport"
@@ -911,7 +911,7 @@ msgstr "Удаление участника прервано."
 msgid "strrole"
 msgstr "Роль"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Роли"
 
 msgid "strshowallroles"
@@ -2134,7 +2134,7 @@ msgstr "Записи"
 msgid "strtablespace"
 msgstr "Табличное пространство"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Табличные пространства"
 
 msgid "strshowalltablespaces"

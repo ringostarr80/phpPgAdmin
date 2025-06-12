@@ -227,7 +227,7 @@ msgstr "ユニーク"
 msgid "strprimary"
 msgstr "プライマリ"
 
-msgid "strexport"
+msgid "Export"
 msgstr "エクスポート"
 
 msgid "strimport"
@@ -832,7 +832,7 @@ msgstr "メンバーの破棄に失敗しました。"
 msgid "strrole"
 msgstr "ロール"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "ロール"
 
 msgid "strshowallroles"
@@ -2043,7 +2043,7 @@ msgstr "行"
 msgid "strtablespace"
 msgstr "テーブル空間"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "テーブル空間"
 
 msgid "strshowalltablespaces"

@@ -227,7 +227,7 @@ msgstr "Unikatowy"
 msgid "strprimary"
 msgstr "Główny"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Eksport"
 
 msgid "strimport"
@@ -768,7 +768,7 @@ msgstr "Próba usunięcia członka grupy się nie powiodła."
 msgid "strrole"
 msgstr "Rola"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Role"
 
 msgid "strinheritsprivs"
@@ -1901,7 +1901,7 @@ msgstr "Wiersze"
 msgid "strtablespace"
 msgstr "Przestrzeń tabel"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Przestrzenie tabel"
 
 msgid "strshowalltablespaces"

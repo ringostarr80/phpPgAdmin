@@ -209,7 +209,7 @@ msgstr "Унікальний"
 msgid "strprimary"
 msgstr "Первинний"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Експорт"
 
 msgid "strimport"

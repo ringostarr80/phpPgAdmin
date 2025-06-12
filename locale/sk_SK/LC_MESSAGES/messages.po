@@ -218,7 +218,7 @@ msgstr "Unikátny"
 msgid "strprimary"
 msgstr "Primárny"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Exportovať"
 
 msgid "strimport"
@@ -1703,7 +1703,7 @@ msgstr "Riadkov"
 msgid "strtablespace"
 msgstr "Priestor pre tabuľku"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Priestory tabuliek"
 
 msgid "strshowalltablespaces"

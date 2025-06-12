@@ -227,7 +227,7 @@ msgstr "唯一值"
 msgid "strprimary"
 msgstr "主鍵(PK)"
 
-msgid "strexport"
+msgid "Export"
 msgstr "匯出"
 
 msgid "strimport"
@@ -817,7 +817,7 @@ msgstr "成員移除已失敗。"
 msgid "strrole"
 msgstr "角色"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "角色"
 
 msgid "strshowallroles"
@@ -2025,7 +2025,7 @@ msgstr "資料列"
 msgid "strtablespace"
 msgstr "表空間"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "表空間"
 
 msgid "strshowalltablespaces"

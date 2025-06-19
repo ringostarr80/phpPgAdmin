@@ -77,7 +77,7 @@ msgstr "Kapu"
 msgid "Logout"
 msgstr "Kilépés"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Tulajdonos"
 
 msgid "straction"
@@ -137,7 +137,7 @@ msgstr "Teremt"
 msgid "strcreated"
 msgstr "Megteremtve"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Megjegyzés"
 
 msgid "strlength"
@@ -230,7 +230,7 @@ msgstr "Ürít"
 msgid "Language"
 msgstr "Nyelv"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Kódolás"
 
 msgid "strvalue"
@@ -395,10 +395,10 @@ msgstr "Semmit sem választ ki"
 msgid "strlocale"
 msgstr "Helyszín"
 
-msgid "strcollation"
+msgid "Collation"
 msgstr "Összerakás"
 
-msgid "strctype"
+msgid "Character Type"
 msgstr "Betűtípus"
 
 msgid "strdefaultvalues"
@@ -455,22 +455,22 @@ msgstr "Ki kell választani az adatbázist."
 msgid "strnoaccess"
 msgstr "Nincs hozzáférés"
 
-msgid "strsize"
+msgid "Size"
 msgstr "Méret"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "bájt"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -1003,7 +1003,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Adatbázis"
 
 msgid "Databases"
@@ -2143,7 +2143,7 @@ msgid "strrows2"
 msgstr "Sorok"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Táblahely"
 
 msgid "Tablespaces"

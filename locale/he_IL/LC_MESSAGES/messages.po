@@ -59,7 +59,7 @@ msgstr "שרת"
 msgid "Logout"
 msgstr "התנתקות"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "בעל"
 
 msgid "straction"
@@ -113,7 +113,7 @@ msgstr "צור"
 msgid "strcreated"
 msgstr "נוצר"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "הערה"
 
 msgid "strlength"
@@ -197,7 +197,7 @@ msgstr "רוקן"
 msgid "Language"
 msgstr "שפה"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "קידוד"
 
 msgid "strvalue"
@@ -713,7 +713,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "בסיס נתונים"
 
 msgid "Databases"
@@ -1619,7 +1619,7 @@ msgid "strrows2"
 msgstr "שורה"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "מרחבון"
 
 msgid "Tablespaces"

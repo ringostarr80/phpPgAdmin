@@ -59,7 +59,7 @@ msgstr "є?з ЫЯЭаиРдХв"
 msgid "Logout"
 msgstr "чСвСШ"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "ќкмЭлЩЧо"
 
 msgid "straction"
@@ -116,7 +116,7 @@ msgstr "??гЧмШ"
 msgid "strcreated"
 msgstr "??гЧмгмЮ"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "єСЪЬТСв"
 
 msgid "strlength"
@@ -197,7 +197,7 @@ msgstr "шЯЯгЬЯШ"
 msgid "Language"
 msgstr "шмЬ"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "ыЯФоЩЬЯШ"
 
 msgid "strvalue"
@@ -656,7 +656,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "тСкС ФСЮЮйШ"
 
 msgid "Databases"

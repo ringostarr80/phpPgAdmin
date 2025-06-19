@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace PhpPgAdmin;
 
 use PhpPgAdmin\DDD\Entities\ServerSession;
-use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
+use PhpPgAdmin\DDD\ValueObjects\{DbSize, TrailSubject};
 
 abstract class WebsiteComponents
 {
@@ -16,6 +16,148 @@ abstract class WebsiteComponents
         $a->setAttribute('class', 'bottom_link');
 
         return $a;
+    }
+
+    public static function buildDatabasesTable(\DOMDocument $dom, ?ServerSession $serverSession): \DOMElement
+    {
+        $db = $serverSession?->getDatabaseConnection();
+
+        $table = $dom->createElement('table');
+        $table->setAttribute('style', 'width: 100%;');
+
+        $tHead = $dom->createElement('thead');
+        $trHead = $dom->createElement('tr');
+        $thEmpty = $dom->createElement('th');
+        $thDatabase = $dom->createElement('th', _('Database'));
+        $thDatabase->setAttribute('class', 'data');
+        $thOwner = $dom->createElement('th', _('Owner'));
+        $thOwner->setAttribute('class', 'data');
+        $thEncoding = $dom->createElement('th', _('Encoding'));
+        $thEncoding->setAttribute('class', 'data');
+        $thCollation = $dom->createElement('th', _('Collation'));
+        $thCollation->setAttribute('class', 'data');
+        $thCharacterType = $dom->createElement('th', _('Character Type'));
+        $thCharacterType->setAttribute('class', 'data');
+        $thTablespace = $dom->createElement('th', _('Tablespace'));
+        $thTablespace->setAttribute('class', 'data');
+        $thSize = $dom->createElement('th', _('Size'));
+        $thSize->setAttribute('class', 'data');
+        $thActions = $dom->createElement('th', _('Actions'));
+        $thActions->setAttribute('class', 'data');
+        $thActions->setAttribute('colspan', '3');
+        $thComment = $dom->createElement('th', _('Comment'));
+        $thComment->setAttribute('class', 'data');
+        $trHead->appendChild($thEmpty);
+        $trHead->appendChild($thDatabase);
+        $trHead->appendChild($thOwner);
+        $trHead->appendChild($thEncoding);
+        $trHead->appendChild($thCollation);
+        $trHead->appendChild($thCharacterType);
+        $trHead->appendChild($thTablespace);
+        $trHead->appendChild($thSize);
+        $trHead->appendChild($thActions);
+        $trHead->appendChild($thComment);
+        $tHead->appendChild($trHead);
+
+        $tBody = $dom->createElement('tbody');
+
+        $dbs = $db?->getDatabases();
+        if ($dbs instanceof \ADORecordSet) {
+            $dbCounter = 0;
+            while (!$dbs->EOF) {
+                $dbCounter++;
+
+                $tr = $dom->createElement('tr');
+                $tr->setAttribute('class', "data{$dbCounter}");
+
+                $tdCheckbox = $dom->createElement('td');
+                $inputCheckbox = $dom->createElement('input');
+                $inputCheckbox->setAttribute('type', 'checkbox');
+                $inputCheckbox->setAttribute('name', 'ma[]');
+
+                $dbName = '';
+                $dbOwner = '';
+                $dbEncoding = '';
+                $dbCollation = '';
+                $dbCharacterType = '';
+                $dbTablespace = '';
+                $dbSize = new DbSize(0);
+                $dbComment = '';
+                $checkboxValue = '';
+                if (is_array($dbs->fields)) {
+                    if (isset($dbs->fields['datname']) && is_string($dbs->fields['datname'])) {
+                        $dbName = $dbs->fields['datname'];
+                        $checkboxValue = serialize(['database' => $dbName]);
+                    }
+                    if (isset($dbs->fields['datowner']) && is_string($dbs->fields['datowner'])) {
+                        $dbOwner = $dbs->fields['datowner'];
+                    }
+                    if (isset($dbs->fields['datencoding']) && is_string($dbs->fields['datencoding'])) {
+                        $dbEncoding = $dbs->fields['datencoding'];
+                    }
+                    if (isset($dbs->fields['datcollate']) && is_string($dbs->fields['datcollate'])) {
+                        $dbCollation = $dbs->fields['datcollate'];
+                    }
+                    if (isset($dbs->fields['datctype']) && is_string($dbs->fields['datctype'])) {
+                        $dbCharacterType = $dbs->fields['datctype'];
+                    }
+                    if (isset($dbs->fields['tablespace']) && is_string($dbs->fields['tablespace'])) {
+                        $dbTablespace = $dbs->fields['tablespace'];
+                    }
+                    if (isset($dbs->fields['dbsize']) && is_numeric($dbs->fields['dbsize'])) {
+                        $dbSize = new DbSize((int)$dbs->fields['dbsize']);
+                    }
+                    if (isset($dbs->fields['datcomment']) && is_string($dbs->fields['datcomment'])) {
+                        $dbComment = $dbs->fields['datcomment'];
+                    }
+                }
+                $inputCheckbox->setAttribute('value', $checkboxValue);
+                $tdCheckbox->appendChild($inputCheckbox);
+
+                $tdDatabase = $dom->createElement('td');
+                $aDatabase = $dom->createElement('a', $dbName);
+                $dbUrl = 'redirect.php';
+                $dbUrlParams = [
+                    'subject' => 'database',
+                    'server' => $serverSession?->id() ?? '',
+                    'database' => $dbName
+                ];
+                $aDatabase->setAttribute('href', $dbUrl . '?' . http_build_query($dbUrlParams));
+                $tdDatabase->appendChild($aDatabase);
+
+                $tdOwner = $dom->createElement('td', $dbOwner);
+                $tdEncoding = $dom->createElement('td', $dbEncoding);
+                $tdCollation = $dom->createElement('td', $dbCollation);
+                $tdCharacterType = $dom->createElement('td', $dbCharacterType);
+                $tdTablespace = $dom->createElement('td', $dbTablespace);
+                $tdSize = $dom->createElement('td', $dbSize->prettyFormat());
+
+                $tdActions = $dom->createElement('td');
+                $tdActions->setAttribute('colspan', '3');
+
+                $tdComment = $dom->createElement('td', $dbComment);
+
+                $tr->appendChild($tdCheckbox);
+                $tr->appendChild($tdDatabase);
+                $tr->appendChild($tdOwner);
+                $tr->appendChild($tdEncoding);
+                $tr->appendChild($tdCollation);
+                $tr->appendChild($tdCharacterType);
+                $tr->appendChild($tdTablespace);
+                $tr->appendChild($tdSize);
+                $tr->appendChild($tdActions);
+                $tr->appendChild($tdComment);
+
+                $tBody->appendChild($tr);
+
+                $dbs->MoveNext();
+            }
+        }
+
+        $table->appendChild($tHead);
+        $table->appendChild($tBody);
+
+        return $table;
     }
 
     /**

@@ -71,7 +71,7 @@ msgstr "Porta"
 msgid "Logout"
 msgstr "Logout"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Proprietario"
 
 msgid "straction"
@@ -131,7 +131,7 @@ msgstr "Crea"
 msgid "strcreated"
 msgstr "Creato"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Commento"
 
 msgid "strlength"
@@ -218,7 +218,7 @@ msgstr "Svuota"
 msgid "Language"
 msgstr "Lingua"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Codifica"
 
 msgid "strvalue"
@@ -384,22 +384,22 @@ msgid "strunselectall"
 msgstr "Deseleziona tutti"
 
 # Database sizes - Dimensioni dei database
-msgid "strsize"
+msgid "Size"
 msgstr "Dimensione"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "byte"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling - Gestione degli errori
@@ -869,7 +869,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases - Database
-msgid "strdatabase"
+msgid "Database"
 msgstr "Database"
 
 msgid "Databases"
@@ -1871,7 +1871,7 @@ msgid "strrows2"
 msgstr "Righe"
 
 # Tablespaces - Tablespace
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Tablespace"
 
 msgid "Tablespaces"

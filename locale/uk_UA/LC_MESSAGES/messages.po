@@ -59,7 +59,7 @@ msgstr "Сервер"
 msgid "Logout"
 msgstr "Перереєстрація"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Користувач"
 
 msgid "straction"
@@ -113,7 +113,7 @@ msgstr "Створити"
 msgid "strcreated"
 msgstr "Створено"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Коментар"
 
 msgid "strlength"
@@ -197,7 +197,7 @@ msgstr "Очистити"
 msgid "Language"
 msgstr "Мова"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Кодування"
 
 msgid "strvalue"
@@ -713,7 +713,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "База даних"
 
 msgid "Databases"

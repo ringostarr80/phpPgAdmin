@@ -52,7 +52,7 @@ msgstr "Servidor"
 msgid "Logout"
 msgstr "Sair"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Propietário"
 
 msgid "straction"
@@ -106,7 +106,7 @@ msgstr "Criar"
 msgid "strcreated"
 msgstr "Criado"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Comentário"
 
 msgid "strlength"
@@ -181,7 +181,7 @@ msgstr "Vazio"
 msgid "Language"
 msgstr "Linguagem"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Codificação"
 
 msgid "strvalue"
@@ -553,7 +553,7 @@ msgid "strgrantbad"
 msgstr "Deverá especificar um utilizador ou grupo e pelo menos um previlégio."
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Base de dados"
 
 msgid "Databases"
@@ -1643,7 +1643,7 @@ msgstr "Disco"
 msgid "strrows2"
 msgstr "Linhas"
 
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Espaço de Tabela"
 
 msgid "Tablespaces"

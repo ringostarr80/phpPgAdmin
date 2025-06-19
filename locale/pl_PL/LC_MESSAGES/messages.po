@@ -71,7 +71,7 @@ msgstr "Port"
 msgid "Logout"
 msgstr "Wyloguj się"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Właściciel"
 
 msgid "straction"
@@ -128,7 +128,7 @@ msgstr "Utwórz"
 msgid "strcreated"
 msgstr "Utworzony"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Komentarz"
 
 msgid "strlength"
@@ -215,7 +215,7 @@ msgstr "Wyczyść"
 msgid "Language"
 msgstr "Język"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Kodowanie"
 
 msgid "strvalue"
@@ -381,22 +381,22 @@ msgid "strexecute"
 msgstr "Wykonaj"
 
 # Database Sizes
-msgid "strsize"
+msgid "Size"
 msgstr "Rozmiar"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "bajtów"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -827,7 +827,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Baza danych"
 
 msgid "Databases"
@@ -1898,7 +1898,7 @@ msgid "strrows2"
 msgstr "Wiersze"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Przestrzeń tabel"
 
 msgid "Tablespaces"

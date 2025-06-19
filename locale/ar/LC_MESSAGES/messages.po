@@ -59,7 +59,7 @@ msgstr "الخادم"
 msgid "Logout"
 msgstr "خروج"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "مالك Owner"
 
 msgid "straction"
@@ -113,7 +113,7 @@ msgstr "إنشاء"
 msgid "strcreated"
 msgstr "تم الإنشاء"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "ملاحظات"
 
 msgid "strlength"
@@ -197,7 +197,7 @@ msgstr "إفراغ Empty"
 msgid "Language"
 msgstr "اللغة"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "الشيفرة Encoding"
 
 msgid "strvalue"
@@ -710,7 +710,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "قاعدة بيانات"
 
 msgid "Databases"

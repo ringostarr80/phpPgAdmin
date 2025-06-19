@@ -77,7 +77,7 @@ msgstr "Port"
 msgid "Logout"
 msgstr "Sortida"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Propietari"
 
 msgid "straction"
@@ -137,7 +137,7 @@ msgstr "Crea"
 msgid "strcreated"
 msgstr "Creat"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Comentari"
 
 msgid "strlength"
@@ -230,7 +230,7 @@ msgstr "Buida"
 msgid "Language"
 msgstr "Idioma"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Codificació"
 
 msgid "strvalue"
@@ -395,10 +395,10 @@ msgstr "No en seleccionis cap"
 msgid "strlocale"
 msgstr "Local"
 
-msgid "strcollation"
+msgid "Collation"
 msgstr "Col·lació"
 
-msgid "strctype"
+msgid "Character Type"
 msgstr "Tipus de caràcter"
 
 msgid "strdefaultvalues"
@@ -455,22 +455,22 @@ msgstr "Si us plau, seleccioni una base de dades."
 msgid "strnoaccess"
 msgstr "Sense Accés"
 
-msgid "strsize"
+msgid "Size"
 msgstr "Tamany"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "bytes"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -1003,7 +1003,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Base de dades"
 
 msgid "Databases"
@@ -2143,7 +2143,7 @@ msgid "strrows2"
 msgstr "Rows"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Tablespace"
 
 msgid "Tablespaces"

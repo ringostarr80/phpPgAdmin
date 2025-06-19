@@ -71,7 +71,7 @@ msgstr "Θύρα"
 msgid "Logout"
 msgstr "Εξοδος"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Κάτοχος"
 
 msgid "straction"
@@ -128,7 +128,7 @@ msgstr "Δημιουργία"
 msgid "strcreated"
 msgstr "Δημιουργήθηκε"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Σχόλιο"
 
 msgid "strlength"
@@ -215,7 +215,7 @@ msgstr "Αδειασμα"
 msgid "Language"
 msgstr "Γλώσσα"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Κωδικοποίηση"
 
 msgid "strvalue"
@@ -369,22 +369,22 @@ msgid "strexecute"
 msgstr "Εκτέλεση"
 
 # Database Sizes
-msgid "strsize"
+msgid "Size"
 msgstr "Μέγεθος"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "bytes"
 
-msgid "strkb"
+msgid "kB"
 msgstr "KB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -842,7 +842,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Βάση"
 
 msgid "Databases"
@@ -1901,7 +1901,7 @@ msgid "strrows2"
 msgstr "Γραμμές"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Τοποθεσία πίνακα"
 
 msgid "Tablespaces"

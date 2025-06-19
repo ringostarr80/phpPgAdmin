@@ -53,7 +53,7 @@ msgstr "Geen views gevonden."
 msgid "strnofunctions"
 msgstr "Geen functies gevonden."
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Eigenaar"
 
 msgid "straction"
@@ -134,7 +134,7 @@ msgstr "Deze PHP-installatie is zonder ondersteuning van dit type database gecom
 msgid "strcreate"
 msgstr "Creëer"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Commentaar"
 
 
@@ -228,7 +228,7 @@ msgid "strnousers"
 msgstr "Geen gebruikers gevonden."
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Database"
 
 msgid "Databases"
@@ -503,7 +503,7 @@ msgstr "Toon"
 msgid "strempty"
 msgstr "Leeg"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Encoding"
 
 msgid "SQL"

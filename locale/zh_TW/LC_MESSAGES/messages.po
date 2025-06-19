@@ -71,7 +71,7 @@ msgstr "埠號"
 msgid "Logout"
 msgstr "登出"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "擁有人"
 
 msgid "straction"
@@ -131,7 +131,7 @@ msgstr "建立"
 msgid "strcreated"
 msgstr "已建立"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "註釋"
 
 msgid "strlength"
@@ -218,7 +218,7 @@ msgstr "清空"
 msgid "Language"
 msgstr "語言"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "字元編碼"
 
 msgid "strunique"
@@ -400,22 +400,22 @@ msgid "strnodatabaseselected"
 msgstr "請選擇一個資料庫。"
 
 # Database sizes
-msgid "strsize"
+msgid "Size"
 msgstr "容量"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "位元組"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -909,7 +909,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "資料庫"
 
 msgid "Databases"
@@ -2022,7 +2022,7 @@ msgid "strrows2"
 msgstr "資料列"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "表空間"
 
 msgid "Tablespaces"

@@ -79,7 +79,7 @@ msgstr "Prievadas"
 msgid "Logout"
 msgstr "Atsijungti"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Valdytojas"
 
 # Savininkas
@@ -141,7 +141,7 @@ msgstr "Sukurti"
 msgid "strcreated"
 msgstr "Sukurta"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Komentaras"
 
 msgid "strlength"
@@ -238,7 +238,7 @@ msgstr "Išvalyti"
 msgid "Language"
 msgstr "Kalba"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Koduotė"
 
 msgid "strvalue"
@@ -409,10 +409,10 @@ msgstr "Nieko"
 msgid "strlocale"
 msgstr "Lokalė"
 
-msgid "strcollation"
+msgid "Collation"
 msgstr "Rikiavimas"
 
-msgid "strctype"
+msgid "Character Type"
 msgstr "Character Type"
 
 # Simbolių(ženklų) tipas
@@ -470,22 +470,22 @@ msgstr "Prašom pasirinkiti duomenų bazę."
 msgid "strnoaccess"
 msgstr "Nėra prieigos"
 
-msgid "strsize"
+msgid "Size"
 msgstr "Dydis"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "baitai"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -1022,7 +1022,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Duomenų bazė"
 
 msgid "Databases"
@@ -2177,7 +2177,7 @@ msgid "strrows2"
 msgstr "Įrašai"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Lentelių erdvė"
 
 msgid "Tablespaces"

@@ -59,7 +59,7 @@ msgstr "Bediener"
 msgid "Logout"
 msgstr "Teken af"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Eienaar"
 
 msgid "straction"
@@ -113,7 +113,7 @@ msgstr "Skep"
 msgid "strcreated"
 msgstr "Geskep"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Kommentaar"
 
 msgid "strlength"
@@ -197,7 +197,7 @@ msgstr "Leeg"
 msgid "Language"
 msgstr "Taal"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Enkodering"
 
 msgid "strvalue"
@@ -719,7 +719,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Databasis"
 
 msgid "Databases"
@@ -1631,7 +1631,7 @@ msgid "strrows2"
 msgstr "Rye"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Tabelruimte"
 
 msgid "Tablespaces"

@@ -77,7 +77,7 @@ msgstr "端口"
 msgid "Logout"
 msgstr "注销"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "所属人"
 
 msgid "straction"
@@ -137,7 +137,7 @@ msgstr "创建"
 msgid "strcreated"
 msgstr "已创建"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "注释"
 
 msgid "strlength"
@@ -230,7 +230,7 @@ msgstr "清空"
 msgid "Language"
 msgstr "语言"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "编码"
 
 msgid "strvalue"
@@ -395,10 +395,10 @@ msgstr "取消选择所有"
 msgid "strlocale"
 msgstr "本地"
 
-msgid "strcollation"
+msgid "Collation"
 msgstr "校对"
 
-msgid "strctype"
+msgid "Character Type"
 msgstr "字符类型"
 
 msgid "strdefaultvalues"
@@ -455,22 +455,22 @@ msgstr "请选择一个数据库."
 msgid "strnoaccess"
 msgstr "无法访问"
 
-msgid "strsize"
+msgid "Size"
 msgstr "大小"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "字节"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -1006,7 +1006,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "数据库"
 
 msgid "Databases"
@@ -2149,7 +2149,7 @@ msgid "strrows2"
 msgstr "行"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "表空间"
 
 msgid "Tablespaces"

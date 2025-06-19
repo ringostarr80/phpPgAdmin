@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace PhpPgAdmin\Website;
 
 use PhpPgAdmin\{RequestParameter, Website, WebsiteComponents};
+use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
 
 class AllDb extends Website
@@ -23,13 +24,14 @@ class AllDb extends Website
         $body->appendChild(WebsiteComponents::buildTopBar($dom));
         $body->appendChild(WebsiteComponents::buildTrail($dom, TrailSubject::Server));
 
+        $serverId = RequestParameter::getString('server') ?? '';
         $actionParam = RequestParameter::getString('action');
         $tabLinks = [
             [
                 'url' => 'all_db.php',
                 'url-params' => [
                     'subject' => 'server',
-                    'server' => RequestParameter::getString('server') ?? ''
+                    'server' => $serverId
                 ],
                 'label' => _('Databases'),
                 'icon' => 'Databases',
@@ -38,7 +40,7 @@ class AllDb extends Website
                     'url' => 'help.php',
                     'url-params' => [
                         'help' => 'pg.role',
-                        'server' => RequestParameter::getString('server') ?? ''
+                        'server' => $serverId
                     ]
                 ]
             ],
@@ -46,7 +48,7 @@ class AllDb extends Website
                 'url' => 'roles.php',
                 'url-params' => [
                     'subject' => 'server',
-                    'server' => RequestParameter::getString('server') ?? ''
+                    'server' => $serverId
                 ],
                 'label' => _('Roles'),
                 'icon' => 'Roles',
@@ -54,7 +56,7 @@ class AllDb extends Website
                     'url' => 'help.php',
                     'url-params' => [
                         'help' => 'pg.role',
-                        'server' => RequestParameter::getString('server') ?? ''
+                        'server' => $serverId
                     ]
                 ]
             ],
@@ -62,7 +64,7 @@ class AllDb extends Website
                 'url' => 'tablespaces.php',
                 'url-params' => [
                     'subject' => 'server',
-                    'server' => RequestParameter::getString('server') ?? ''
+                    'server' => $serverId
                 ],
                 'label' => _('Tablespaces'),
                 'icon' => 'Tablespaces',
@@ -70,7 +72,7 @@ class AllDb extends Website
                     'url' => 'help.php',
                     'url-params' => [
                         'help' => 'pg.tablespace',
-                        'server' => RequestParameter::getString('server') ?? ''
+                        'server' => $serverId
                     ]
                 ]
             ],
@@ -78,7 +80,7 @@ class AllDb extends Website
                 'url' => 'all_db.php',
                 'url-params' => [
                     'subject' => 'server',
-                    'server' => RequestParameter::getString('server') ?? '',
+                    'server' => $serverId,
                     'action' => 'export'
                 ],
                 'label' => _('Export'),
@@ -87,6 +89,14 @@ class AllDb extends Website
             ]
         ];
         $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $tabLinks));
+
+        $form = $dom->createElement('form');
+        $form->setAttribute('id', 'multi_form');
+        $form->setAttribute('action', 'all_db.php');
+        $form->setAttribute('method', 'post');
+        $form->setAttribute('enctype', 'multipart/form-data');
+        $form->appendChild(WebsiteComponents::buildDatabasesTable($dom, ServerSession::fromServerId($serverId)));
+        $body->appendChild($form);
 
         $navLinks = [
             [

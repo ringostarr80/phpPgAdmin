@@ -71,7 +71,7 @@ msgstr "Port"
 msgid "Logout"
 msgstr "Ieşire"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Proprietar"
 
 msgid "straction"
@@ -131,7 +131,7 @@ msgstr "Creare"
 msgid "strcreated"
 msgstr "Creat"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Comentariu"
 
 msgid "strlength"
@@ -218,7 +218,7 @@ msgstr "Golire"
 msgid "Language"
 msgstr "Limbă"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Codificare"
 
 msgid "strvalue"
@@ -378,22 +378,22 @@ msgid "strexecute"
 msgstr "Executare"
 
 # Database sizes
-msgid "strsize"
+msgid "Size"
 msgstr "Dimensiune"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "octeţi"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -863,7 +863,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Bază de date"
 
 msgid "Databases"
@@ -1931,7 +1931,7 @@ msgid "strrows2"
 msgstr "Rânduri"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Spaţiu de tabele"
 
 msgid "Tablespaces"

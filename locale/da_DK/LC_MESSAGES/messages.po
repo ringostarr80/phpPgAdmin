@@ -59,7 +59,7 @@ msgstr "Server"
 msgid "Logout"
 msgstr "Log ud"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Ejer"
 
 msgid "straction"
@@ -113,7 +113,7 @@ msgstr "Opret"
 msgid "strcreated"
 msgstr "Oprettet"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Kommentar"
 
 msgid "strlength"
@@ -200,7 +200,7 @@ msgstr "Tøm"
 msgid "Language"
 msgstr "Sprog"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Kodning"
 
 msgid "strvalue"
@@ -719,7 +719,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Database"
 
 msgid "Databases"
@@ -1598,7 +1598,7 @@ msgid "strrows2"
 msgstr "Rows"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Tabelområde"
 
 msgid "Tablespaces"

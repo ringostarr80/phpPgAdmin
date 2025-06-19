@@ -71,7 +71,7 @@ msgstr "Port"
 msgid "Logout"
 msgstr "Çıkış"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Sahibi"
 
 msgid "straction"
@@ -122,7 +122,7 @@ msgstr "Yarat"
 msgid "strcreated"
 msgstr "Yaratıldı"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Yorum"
 
 msgid "strlength"
@@ -206,7 +206,7 @@ msgstr "Boşalt"
 msgid "Language"
 msgstr "Dil"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Karakter kodlaması"
 
 msgid "strvalue"
@@ -765,7 +765,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Veritabanı"
 
 msgid "Databases"
@@ -1688,7 +1688,7 @@ msgid "strrows2"
 msgstr "Rows"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Tablespace"
 
 msgid "Tablespaces"

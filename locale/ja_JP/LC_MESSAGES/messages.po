@@ -71,7 +71,7 @@ msgstr "ポート"
 msgid "Logout"
 msgstr "ログアウト"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "所有者"
 
 msgid "straction"
@@ -131,7 +131,7 @@ msgstr "作成"
 msgid "strcreated"
 msgstr "作成しました。"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "コメント"
 
 msgid "strlength"
@@ -218,7 +218,7 @@ msgstr "空にする"
 msgid "Language"
 msgstr "言語"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "エンコード"
 
 msgid "strunique"
@@ -400,22 +400,22 @@ msgid "strnodatabaseselected"
 msgstr "データベースを選択してください。"
 
 # Database Sizes
-msgid "strsize"
+msgid "Size"
 msgstr "サイズ"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "バイト"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -921,7 +921,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "データベース"
 
 msgid "Databases"
@@ -2040,7 +2040,7 @@ msgid "strrows2"
 msgstr "行"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "テーブル空間"
 
 msgid "Tablespaces"

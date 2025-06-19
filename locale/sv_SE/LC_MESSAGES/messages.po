@@ -59,7 +59,7 @@ msgstr "Server"
 msgid "Logout"
 msgstr "Logga ut"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Ägare"
 
 msgid "straction"
@@ -113,7 +113,7 @@ msgstr "Skapa"
 msgid "strcreated"
 msgstr "Skapad"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Kommentar"
 
 msgid "strlength"
@@ -197,7 +197,7 @@ msgstr "Tom"
 msgid "Language"
 msgstr "Språk"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Kodning"
 
 msgid "strvalue"
@@ -674,7 +674,7 @@ msgstr "Misslyckades att ändra rättigheter."
 msgid "stralterprivs"
 msgstr "Ändra rättigheter"
 
-msgid "strdatabase"
+msgid "Database"
 msgstr "Databas"
 
 msgid "strdatabasedropped"

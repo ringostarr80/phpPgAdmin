@@ -77,7 +77,7 @@ msgstr "Port"
 msgid "Logout"
 msgstr "Odhlásit"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Vlastník"
 
 msgid "straction"
@@ -137,7 +137,7 @@ msgstr "Vytvořit"
 msgid "strcreated"
 msgstr "Vytvořeno"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Komentář"
 
 msgid "strlength"
@@ -230,7 +230,7 @@ msgstr "Vyprázdnit"
 msgid "Language"
 msgstr "Jazyk"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Kódování"
 
 msgid "strvalue"
@@ -395,10 +395,10 @@ msgstr "Zrušit výběr"
 msgid "strlocale"
 msgstr "Místní nastavení"
 
-msgid "strcollation"
+msgid "Collation"
 msgstr "Řazení"
 
-msgid "strctype"
+msgid "Character Type"
 msgstr "Typ znaku"
 
 msgid "strdefaultvalues"
@@ -455,22 +455,22 @@ msgstr "Zvolte prosím databázi."
 msgid "strnoaccess"
 msgstr "Bez přístupu"
 
-msgid "strsize"
+msgid "Size"
 msgstr "Velikost"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "B"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -1003,7 +1003,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Databáze"
 
 msgid "Databases"
@@ -2143,7 +2143,7 @@ msgid "strrows2"
 msgstr "Řádků"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Prostor tabulek"
 
 msgid "Tablespaces"

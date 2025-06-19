@@ -89,7 +89,8 @@ msgstr "Port"
 msgid "Logout"
 msgstr "Logout"
 
-msgid "strowner"
+# original: "strowner"
+msgid "Owner"
 msgstr "Owner"
 
 msgid "straction"
@@ -150,7 +151,8 @@ msgstr "Create"
 msgid "strcreated"
 msgstr "Created"
 
-msgid "strcomment"
+# original: "strcomment"
+msgid "Comment"
 msgstr "Comment"
 
 msgid "strlength"
@@ -246,7 +248,8 @@ msgstr "Empty"
 msgid "Language"
 msgstr "Language"
 
-msgid "strencoding"
+# original: "strencoding"
+msgid "Encoding"
 msgstr "Encoding"
 
 msgid "strvalue"
@@ -418,10 +421,12 @@ msgstr "Unselect all"
 msgid "strlocale"
 msgstr "Locale"
 
-msgid "strcollation"
+# original: "strcollation"
+msgid "Collation"
 msgstr "Collation"
 
-msgid "strctype"
+# original: "strctype"
+msgid "Character Type"
 msgstr "Character Type"
 
 msgid "strdefaultvalues"
@@ -481,22 +486,28 @@ msgstr "Please, select a database."
 msgid "strnoaccess"
 msgstr "No Access"
 
-msgid "strsize"
+# original: "strsize"
+msgid "Size"
 msgstr "Size"
 
-msgid "strbytes"
+# original: "strbytes"
+msgid "bytes"
 msgstr "bytes"
 
-msgid "strkb"
+# original: "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+# original: "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+# original: "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+# original: "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -1038,7 +1049,8 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+# original: "strdatabase"
+msgid "Database"
 msgstr "Database"
 
 # original: "strdatabases"
@@ -2183,7 +2195,8 @@ msgid "strrows2"
 msgstr "Rows"
 
 # Tablespaces
-msgid "strtablespace"
+# original: "strtablespace"
+msgid "Tablespace"
 msgstr "Tablespace"
 
 # original: "strtablespaces"

@@ -92,12 +92,12 @@ class Connection
     /**
      * Gets the name of the correct database driver to use.  As a side effect,
      * sets the platform.
-     * @param string $description A description of the database and version
+     * @param ?string $description A description of the database and version
      * @return string|int|null The class name of the driver eg. Postgres84
      * null if version is < 7.4
      * -3 Database-specific failure
      */
-    public function getDriver(string &$description): string|int|null
+    public function getDriver(?string &$description = null): string|int|null
     {
         $version = '';
         $v = pg_version($this->conn->_connectionID); // @phpstan-ignore-line

@@ -77,7 +77,7 @@ msgstr "Port"
 msgid "Logout"
 msgstr "Déconnexion"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Propriétaire"
 
 msgid "straction"
@@ -137,7 +137,7 @@ msgstr "Créer"
 msgid "strcreated"
 msgstr "Créé"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Commentaire"
 
 msgid "strlength"
@@ -230,7 +230,7 @@ msgstr "Vider"
 msgid "Language"
 msgstr "Langage"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Codage"
 
 msgid "strvalue"
@@ -398,10 +398,10 @@ msgstr "Desélectionner tout"
 msgid "strlocale"
 msgstr "Locale"
 
-msgid "strcollation"
+msgid "Collation"
 msgstr "Tri"
 
-msgid "strctype"
+msgid "Character Type"
 msgstr "Type de cartactère"
 
 msgid "strdefaultvalues"
@@ -458,22 +458,22 @@ msgstr "Veuillez sélectionner une base de données."
 msgid "strnoaccess"
 msgstr "Pas d'Accès"
 
-msgid "strsize"
+msgid "Size"
 msgstr "Taille"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "octets"
 
-msgid "strkb"
+msgid "kB"
 msgstr " Ko"
 
-msgid "strmb"
+msgid "MB"
 msgstr " Mo"
 
-msgid "strgb"
+msgid "GB"
 msgstr " Go"
 
-msgid "strtb"
+msgid "TB"
 msgstr " To"
 
 # Error handling
@@ -1015,7 +1015,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Base de données"
 
 msgid "Databases"
@@ -2158,7 +2158,7 @@ msgid "strrows2"
 msgstr "Enregistrements"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Tablespace"
 
 msgid "Tablespaces"

@@ -146,7 +146,7 @@ msgstr "长度"
 msgid "strdefault"
 msgstr "默认"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "变更"
 
 msgid "strok"
@@ -176,7 +176,7 @@ msgstr "插入"
 msgid "strselect"
 msgstr "选择"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "删除"
 
 msgid "strupdate"
@@ -278,7 +278,7 @@ msgstr "集群?"
 msgid "strreindex"
 msgstr "重建索引"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "执行"
 
 msgid "stradd"
@@ -383,13 +383,13 @@ msgstr "对所有服务器使用该用户名和密码"
 msgid "strconfdropcred"
 msgstr "因为安全原因，中断连接将会销毁你的登录信息。你确定要中断连接吗？"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "多行上的操作"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "选择所有"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "取消选择所有"
 
 msgid "strlocale"
@@ -978,7 +978,7 @@ msgstr "必须指定角色名称。"
 msgid "strprivilege"
 msgstr "权限"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "权限"
 
 msgid "strnoprivileges"

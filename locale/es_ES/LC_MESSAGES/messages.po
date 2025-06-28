@@ -146,7 +146,7 @@ msgstr "Longitud"
 msgid "strdefault"
 msgstr "Predeterminado"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Modificar"
 
 msgid "strok"
@@ -176,7 +176,7 @@ msgstr "Insertar"
 msgid "strselect"
 msgstr "Seleccionar"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Eliminar"
 
 msgid "strupdate"
@@ -278,7 +278,7 @@ msgstr "¿En Clúster?"
 msgid "strreindex"
 msgstr "Actualizar índices"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Ejecutar"
 
 msgid "stradd"
@@ -386,13 +386,13 @@ msgstr "Usar estas crendeciales para todos los servidores"
 msgid "strconfdropcred"
 msgstr "Por razones de seguridad, al desconectar se destruirá tu información compartida. ¿Estás seguro que desea desconectarse?"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Acciones en múltiples líneas"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "Seleccionar todos"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "Seleccionar ninguno"
 
 msgid "strlocale"
@@ -981,7 +981,7 @@ msgstr "Debes darle un nombre al rol."
 msgid "strprivilege"
 msgstr "Privilegio"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Privilegios"
 
 msgid "strnoprivileges"

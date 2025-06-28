@@ -90,12 +90,15 @@ class AllDb extends Website
         ];
         $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $tabLinks));
 
+        $serverSession = ServerSession::fromServerId($serverId);
         $form = $dom->createElement('form');
         $form->setAttribute('id', 'multi_form');
         $form->setAttribute('action', 'all_db.php');
         $form->setAttribute('method', 'post');
         $form->setAttribute('enctype', 'multipart/form-data');
-        $form->appendChild(WebsiteComponents::buildDatabasesTable($dom, ServerSession::fromServerId($serverId)));
+        $form->appendChild(WebsiteComponents::buildDatabasesTable($dom, $serverSession));
+        $form->appendChild($dom->createElement('br'));
+        $form->appendChild(WebsiteComponents::buildMultipleActionsTableForDatabases($dom, $serverSession));
         $body->appendChild($form);
 
         $navLinks = [

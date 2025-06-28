@@ -146,7 +146,7 @@ msgstr "Hossz"
 msgid "strdefault"
 msgstr "Alapértelmezés"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Módosít"
 
 msgid "strok"
@@ -176,7 +176,7 @@ msgstr "Beszúr"
 msgid "strselect"
 msgstr "Kiválaszt"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Töröl"
 
 msgid "strupdate"
@@ -278,7 +278,7 @@ msgstr "Fürtözve?"
 msgid "strreindex"
 msgstr "Újraindexel"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Végrehajt"
 
 msgid "stradd"
@@ -383,13 +383,13 @@ msgstr "Használja minden kiszolgálóhoz e beállításokat"
 msgid "strconfdropcred"
 msgstr "Biztonság okán a szétválás megszünteti a megosztott bejelentkező adatait. Biztosan szét akar válni?"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Több soros műveletek"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "Mindent kiválaszt"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "Semmit sem választ ki"
 
 msgid "strlocale"
@@ -975,7 +975,7 @@ msgstr "Nevet kell adni a szerepnek."
 msgid "strprivilege"
 msgstr "Jogosultság"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Jogosultságok"
 
 msgid "strnoprivileges"

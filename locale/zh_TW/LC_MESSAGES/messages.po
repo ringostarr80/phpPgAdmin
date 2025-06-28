@@ -140,7 +140,7 @@ msgstr "長度"
 msgid "strdefault"
 msgstr "預設值"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "修改"
 
 msgid "strok"
@@ -164,7 +164,7 @@ msgstr "插入"
 msgid "strselect"
 msgstr "選取"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "刪除"
 
 msgid "strupdate"
@@ -365,7 +365,7 @@ msgstr "檔案已匯入。"
 msgid "strtrycred"
 msgstr "使用這些憑證給全部伺服器"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "動作在多個行列上"
 
 msgid "strcheckall"
@@ -881,7 +881,7 @@ msgstr "您必需為這個角色命名。"
 msgid "strprivilege"
 msgstr "特權"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "特權"
 
 msgid "strnoprivileges"

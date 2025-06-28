@@ -140,7 +140,7 @@ msgstr "Lunghezza"
 msgid "strdefault"
 msgstr "Default"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Modifica"
 
 msgid "strok"
@@ -164,7 +164,7 @@ msgstr "Inserisci"
 msgid "strselect"
 msgstr "Seleziona"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Cancella"
 
 msgid "strupdate"
@@ -266,7 +266,7 @@ msgstr "Clusterizzato?"
 msgid "strreindex"
 msgstr "Reindicizza"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Esegui"
 
 msgid "stradd"
@@ -374,13 +374,13 @@ msgstr "File importato."
 msgid "strtrycred"
 msgstr "Usa queste credenziali per tutti i server"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Azioni su righe multiple"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "Seleziona tutti"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "Deseleziona tutti"
 
 # Database sizes - Dimensioni dei database
@@ -841,7 +841,7 @@ msgstr "È necessario specificare un nome per il ruolo."
 msgid "strprivilege"
 msgstr "Privilegio"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Privilegi"
 
 msgid "strnoprivileges"

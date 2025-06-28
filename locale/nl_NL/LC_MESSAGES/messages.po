@@ -144,13 +144,13 @@ msgstr "Lengte"
 msgid "strdefault"
 msgstr "Standaard"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Wijzig"
 
 msgid "strcancel"
 msgstr "Cancel"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Privileges"
 
 msgid "TRUE"
@@ -165,7 +165,7 @@ msgstr "Voeg in"
 msgid "strselect"
 msgstr "Selecteer"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Verwijder"
 
 msgid "strupdate"

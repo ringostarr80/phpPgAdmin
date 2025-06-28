@@ -131,7 +131,7 @@ msgstr "Uzunluk"
 msgid "strdefault"
 msgstr "Ön tanımlı değer"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Değiştir"
 
 msgid "strok"
@@ -152,7 +152,7 @@ msgstr "Ekle"
 msgid "strselect"
 msgstr "Seç"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Sil"
 
 msgid "strupdate"
@@ -368,7 +368,7 @@ msgstr "Dosya import edildi."
 msgid "strtrycred"
 msgstr "Giriş bilgilerini tüm sunucular için kullan"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Execute"
 
 # Error handling
@@ -736,7 +736,7 @@ msgstr "Üye silme başarısız oldu."
 msgid "strprivilege"
 msgstr "İzni"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "İzinler"
 
 msgid "strnoprivileges"

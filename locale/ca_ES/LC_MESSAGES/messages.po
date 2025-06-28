@@ -146,7 +146,7 @@ msgstr "Longitud"
 msgid "strdefault"
 msgstr "Predeterminat"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Modifica"
 
 msgid "strok"
@@ -176,7 +176,7 @@ msgstr "Inserta"
 msgid "strselect"
 msgstr "Selecciona"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Elimina"
 
 msgid "strupdate"
@@ -278,7 +278,7 @@ msgstr "Clusteritzat?"
 msgid "strreindex"
 msgstr "Reindex"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Executa"
 
 msgid "stradd"
@@ -383,13 +383,13 @@ msgstr "Usa aquestes credencials a tots els servidors"
 msgid "strconfdropcred"
 msgstr "Per raons de seguretat, la desconnexió eliminarà la informació d'entrada compartida. Està segur de voler desconnectar ?"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Accions a múltiples línies"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "Seleccina'ls tots"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "No en seleccionis cap"
 
 msgid "strlocale"
@@ -975,7 +975,7 @@ msgstr "Ha de donar un nom al rol."
 msgid "strprivilege"
 msgstr "Privilegi"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Privilegis"
 
 msgid "strnoprivileges"

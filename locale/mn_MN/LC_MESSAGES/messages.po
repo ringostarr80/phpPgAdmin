@@ -125,7 +125,7 @@ msgstr "ѕвд"
 msgid "strdefault"
 msgstr "єЯФЯвШЯЪ Тег"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "??воЩЬ?Ш"
 
 msgid "strok"
@@ -146,7 +146,7 @@ msgstr "явееЬЧС ШЩЪШ"
 msgid "strselect"
 msgstr "ѓЯЮЧЯШ"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "ѕгдЧСШ"
 
 msgid "strupdate"
@@ -625,7 +625,7 @@ msgstr "ѕФСЬХЮЩХ еоСгдЮЩЫС авХвзСЮЯ."
 msgid "strprivilege"
 msgstr "№вЩзЩЬХЧЩб"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "№вЩзЩЬХЧЩЩ"
 
 msgid "strnoprivileges"

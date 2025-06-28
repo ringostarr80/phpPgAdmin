@@ -140,7 +140,7 @@ msgstr "Länge"
 msgid "strdefault"
 msgstr "Standardwert"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Ändern"
 
 msgid "strok"
@@ -164,7 +164,7 @@ msgstr "Einfügen"
 msgid "strselect"
 msgstr "Abfrage"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Löschen"
 
 msgid "strupdate"
@@ -266,7 +266,7 @@ msgstr "Geclustert?"
 msgid "strreindex"
 msgstr "Reindexieren"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Ausführen"
 
 msgid "stradd"
@@ -371,13 +371,13 @@ msgstr "Diese Anmeldedaten für alle Server verwenden"
 msgid "strconfdropcred"
 msgstr "Aus Sicherheitsgründen werden gemeinsamme Anmeldedaten beim Abmelden gelöscht. Sind Sie sicher, dass sie sich abmelden wollen?"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Mehrzeilige Aktionen"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "Alle auswählen"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "Alle abwählen"
 
 msgid "strlocale"
@@ -902,7 +902,7 @@ msgstr "Sie müssen für die Rolle einen Namen angeben."
 msgid "strprivilege"
 msgstr "Recht"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Rechte"
 
 msgid "strnoprivileges"

@@ -115,7 +115,7 @@ msgstr "Extensão"
 msgid "strdefault"
 msgstr "Padrão"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Alterar"
 
 msgid "strok"
@@ -136,7 +136,7 @@ msgstr "Inserir"
 msgid "strselect"
 msgstr "Seleccionar"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Eliminar"
 
 msgid "strupdate"
@@ -531,7 +531,7 @@ msgstr "Membros"
 msgid "strprivilege"
 msgstr "Privilégio"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Privilégios"
 
 msgid "strnoprivileges"

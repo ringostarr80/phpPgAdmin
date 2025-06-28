@@ -132,8 +132,46 @@ abstract class WebsiteComponents
                 $tdTablespace = $dom->createElement('td', $dbTablespace);
                 $tdSize = $dom->createElement('td', $dbSize->prettyFormat());
 
-                $tdActions = $dom->createElement('td');
-                $tdActions->setAttribute('colspan', '3');
+                $tdActionDelete = $dom->createElement('td');
+                $tdActionDelete->setAttribute('class', 'opbutton1');
+                $aDelete = $dom->createElement('a');
+                $deleteUrl = 'all_db.php';
+                $deleteUrlParams = [
+                    'subject' => 'database',
+                    'action' => 'confirm_drop',
+                    'dropdatabase' => $dbName,
+                    'server' => $serverSession?->id() ?? ''
+                ];
+                $aDelete->setAttribute('href', $deleteUrl . '?' . http_build_query($deleteUrlParams));
+                $aDelete->appendChild($dom->createTextNode(_('Delete')));
+                $tdActionDelete->appendChild($aDelete);
+
+                $tdActionPrivileges = $dom->createElement('td');
+                $tdActionPrivileges->setAttribute('class', 'opbutton1');
+                $aPrivileges = $dom->createElement('a');
+                $privilegesUrl = 'privileges.php';
+                $privilegesUrlParams = [
+                    'subject' => 'database',
+                    'dropdatabase' => $dbName,
+                    'server' => $serverSession?->id() ?? ''
+                ];
+                $aPrivileges->setAttribute('href', $privilegesUrl . '?' . http_build_query($privilegesUrlParams));
+                $aPrivileges->appendChild($dom->createTextNode(_('Privileges')));
+                $tdActionPrivileges->appendChild($aPrivileges);
+
+                $tdActionAlter = $dom->createElement('td');
+                $tdActionAlter->setAttribute('class', 'opbutton1');
+                $aAlter = $dom->createElement('a');
+                $alterUrl = 'all_db.php';
+                $alterUrlParams = [
+                    'subject' => 'database',
+                    'action' => 'confirm_alter',
+                    'alterdatabase' => $dbName,
+                    'server' => $serverSession?->id() ?? ''
+                ];
+                $aAlter->setAttribute('href', $alterUrl . '?' . http_build_query($alterUrlParams));
+                $aAlter->appendChild($dom->createTextNode(_('Alter')));
+                $tdActionAlter->appendChild($aAlter);
 
                 $tdComment = $dom->createElement('td', $dbComment);
 
@@ -145,7 +183,9 @@ abstract class WebsiteComponents
                 $tr->appendChild($tdCharacterType);
                 $tr->appendChild($tdTablespace);
                 $tr->appendChild($tdSize);
-                $tr->appendChild($tdActions);
+                $tr->appendChild($tdActionDelete);
+                $tr->appendChild($tdActionPrivileges);
+                $tr->appendChild($tdActionAlter);
                 $tr->appendChild($tdComment);
 
                 $tBody->appendChild($tr);
@@ -153,6 +193,69 @@ abstract class WebsiteComponents
                 $dbs->MoveNext();
             }
         }
+
+        $table->appendChild($tHead);
+        $table->appendChild($tBody);
+
+        return $table;
+    }
+
+    public static function buildMultipleActionsTableForDatabases(\DOMDocument $dom, ?ServerSession $serverSession): \DOMElement
+    {
+        $table = $dom->createElement('table');
+
+        $tHead = $dom->createElement('thead');
+        $trHead = $dom->createElement('tr');
+        $tHead->appendChild($trHead);
+        $thAction = $dom->createElement('th');
+        $thAction->setAttribute('class', 'data');
+        $thAction->setAttribute('colspan', '3');
+        $thAction->appendChild($dom->createTextNode(_('Actions on multiple lines')));
+        $tHead->appendChild($thAction);
+
+        $tBody = $dom->createElement('tbody');
+        $trRow1 = $dom->createElement('tr');
+        $trRow1->setAttribute('class', 'row1');
+
+        $tdCol1 = $dom->createElement('td');
+        $aSelectAll = $dom->createElement('a');
+        $aSelectAll->setAttribute('href', '#');
+        $aSelectAll->setAttribute('onclick', 'javascript:checkAll(true);');
+        $aSelectAll->appendChild($dom->createTextNode(_('Select all')));
+        $aUnselectAll = $dom->createElement('a');
+        $aUnselectAll->setAttribute('href', '#');
+        $aUnselectAll->setAttribute('onclick', 'javascript:checkAll(false);');
+        $aUnselectAll->appendChild($dom->createTextNode(_('Unselect all')));
+        $tdCol1->appendChild($aSelectAll);
+        $tdCol1->appendChild($dom->createTextNode(' / '));
+        $tdCol1->appendChild($aUnselectAll);
+
+        $tdCol2 = $dom->createElement('td', '&nbsp;---&gt;&nbsp;');
+
+        $tdCol3 = $dom->createElement('td');
+        $selectMultiAction = $dom->createElement('select');
+        $selectMultiAction->setAttribute('name', 'action');
+        $optionEmpty = $dom->createElement('option', '--');
+        $optionEmpty->setAttribute('value', '');
+        $optionDelete = $dom->createElement('option', _('Delete'));
+        $optionDelete->setAttribute('value', 'confirm_drop');
+        $selectMultiAction->appendChild($optionEmpty);
+        $selectMultiAction->appendChild($optionDelete);
+        $inputSubmit = $dom->createElement('input');
+        $inputSubmit->setAttribute('type', 'submit');
+        $inputSubmit->setAttribute('value', _('Execute'));
+        $inputHiddenServer = $dom->createElement('input');
+        $inputHiddenServer->setAttribute('type', 'hidden');
+        $inputHiddenServer->setAttribute('name', 'server');
+        $inputHiddenServer->setAttribute('value', $serverSession?->id() ?? '');
+        $tdCol3->appendChild($selectMultiAction);
+        $tdCol3->appendChild($inputSubmit);
+        $tdCol3->appendChild($inputHiddenServer);
+
+        $trRow1->appendChild($tdCol1);
+        $trRow1->appendChild($tdCol2);
+        $trRow1->appendChild($tdCol3);
+        $tBody->appendChild($trRow1);
 
         $table->appendChild($tHead);
         $table->appendChild($tBody);

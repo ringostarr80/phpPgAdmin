@@ -131,7 +131,7 @@ msgstr "Dĺžka"
 msgid "strdefault"
 msgstr "Predvolené"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Zmeniť"
 
 msgid "strok"
@@ -152,7 +152,7 @@ msgstr "Vložiť"
 msgid "strselect"
 msgstr "Vybrať"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Zmazať"
 
 msgid "strupdate"
@@ -368,7 +368,7 @@ msgstr "Súbor importovaný."
 msgid "strtrycred"
 msgstr "Použiť tieto hodnoty pre všetky hodnoty"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Execute"
 
 # Error handling
@@ -738,7 +738,7 @@ msgstr "Člen nebol zmazaný."
 msgid "strprivilege"
 msgstr "Privilégiá"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Privilégiá"
 
 msgid "strnoprivileges"

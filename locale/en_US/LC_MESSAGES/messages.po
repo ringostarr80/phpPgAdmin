@@ -161,7 +161,8 @@ msgstr "Length"
 msgid "strdefault"
 msgstr "Default"
 
-msgid "stralter"
+# original: "stralter"
+msgid "Alter"
 msgstr "Alter"
 
 msgid "strok"
@@ -191,7 +192,8 @@ msgstr "Insert"
 msgid "strselect"
 msgstr "Select"
 
-msgid "strdelete"
+# original: "strdelete"
+msgid "Delete"
 msgstr "Delete"
 
 msgid "strupdate"
@@ -299,7 +301,8 @@ msgstr "Clustered?"
 msgid "strreindex"
 msgstr "Reindex"
 
-msgid "strexecute"
+# original: "strexecute"
+msgid "Execute"
 msgstr "Execute"
 
 msgid "stradd"
@@ -409,13 +412,16 @@ msgstr "Use these credentials for all servers"
 msgid "strconfdropcred"
 msgstr "For security reason, disconnecting will destroy your shared login information. Are you sure you want to disconnect ?"
 
-msgid "stractionsonmultiplelines"
+# original: "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Actions on multiple lines"
 
-msgid "strselectall"
+# original: "strselectall"
+msgid "Select all"
 msgstr "Select all"
 
-msgid "strunselectall"
+# original: "strunselectall"
+msgid "Unselect all"
 msgstr "Unselect all"
 
 msgid "strlocale"
@@ -1021,7 +1027,8 @@ msgstr "You must give a name for the role."
 msgid "strprivilege"
 msgstr "Privilege"
 
-msgid "strprivileges"
+# original: "strprivileges"
+msgid "Privileges"
 msgstr "Privileges"
 
 msgid "strnoprivileges"

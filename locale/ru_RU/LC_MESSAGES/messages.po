@@ -146,7 +146,7 @@ msgstr "Длина"
 msgid "strdefault"
 msgstr "По умолчанию"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Изменить"
 
 msgid "strok"
@@ -173,7 +173,7 @@ msgstr "Вставить"
 msgid "strselect"
 msgstr "Выбрать"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Удалить"
 
 msgid "strupdate"
@@ -275,7 +275,7 @@ msgstr "Кластеризован?"
 msgid "strreindex"
 msgstr "Перестроить индекс"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Выполнить"
 
 msgid "stradd"
@@ -380,13 +380,13 @@ msgstr "Использовать эти данные аутентификаци�
 msgid "strconfdropcred"
 msgstr "В целях безопасности отключение уничтожит общую аутентификационную информацию. Вы действительно хотите отключится?"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Действия над несколькими строками."
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "Выбрать все"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "Отменить выбор всех"
 
 msgid "strlocale"
@@ -972,7 +972,7 @@ msgstr "Вам необходимо определить имя роли."
 msgid "strprivilege"
 msgstr "Привилегия"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Привилегии"
 
 msgid "strnoprivileges"

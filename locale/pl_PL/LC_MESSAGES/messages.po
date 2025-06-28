@@ -137,7 +137,7 @@ msgstr "Długość"
 msgid "strdefault"
 msgstr "Domyślny"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Zmień"
 
 msgid "strok"
@@ -161,7 +161,7 @@ msgstr "Wstaw"
 msgid "strselect"
 msgstr "Wybierz"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Usuń"
 
 msgid "strupdate"
@@ -377,7 +377,7 @@ msgstr "Plik został zaimportowany."
 msgid "strtrycred"
 msgstr "Użyj tych parametrów dla wszystkich serwerów"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Wykonaj"
 
 # Database Sizes
@@ -799,7 +799,7 @@ msgstr "Próba usunięcia roli się nie powiodła."
 msgid "strprivilege"
 msgstr "Uprawnienie"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Uprawnienia"
 
 msgid "strnoprivileges"

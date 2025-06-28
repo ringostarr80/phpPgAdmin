@@ -146,7 +146,7 @@ msgstr "Délka"
 msgid "strdefault"
 msgstr "Výchozí"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Změnit"
 
 msgid "strok"
@@ -176,7 +176,7 @@ msgstr "Vložit"
 msgid "strselect"
 msgstr "Vybrat"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Smazat"
 
 msgid "strupdate"
@@ -278,7 +278,7 @@ msgstr "Přeskupeno?"
 msgid "strreindex"
 msgstr "Přeindexovat"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Provést"
 
 msgid "stradd"
@@ -383,13 +383,13 @@ msgstr "Použít tato prověření pro všechny servery"
 msgid "strconfdropcred"
 msgstr "Odpojením se z bezpečnostních důvodů smažou vaše sdílené připojovací informace. Opravdu se chcete odpojit?"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Akce pro víc řádků"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "Vybrat vše"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "Zrušit výběr"
 
 msgid "strlocale"
@@ -975,7 +975,7 @@ msgstr "Musíte zadat název pro roli."
 msgid "strprivilege"
 msgstr "Oprávnění"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Oprávnění"
 
 msgid "strnoprivileges"

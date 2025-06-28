@@ -146,7 +146,7 @@ msgstr "Longueur"
 msgid "strdefault"
 msgstr "Défaut"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Modifier"
 
 msgid "strok"
@@ -176,7 +176,7 @@ msgstr "Insérer"
 msgid "strselect"
 msgstr "Sélectionner"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Effacer"
 
 msgid "strupdate"
@@ -278,7 +278,7 @@ msgstr "En Cluster ?"
 msgid "strreindex"
 msgstr "Reindex"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Lancer"
 
 msgid "stradd"
@@ -386,13 +386,13 @@ msgstr "Utilisez ces identifiants pour tous les serveurs"
 msgid "strconfdropcred"
 msgstr "For security reason, disconnecting will destroy your shared login information. Are you sure you want to disconnect ?"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Actions sur plusieurs lignes"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "Sélectionner tout"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "Desélectionner tout"
 
 msgid "strlocale"
@@ -987,7 +987,7 @@ msgstr "Vous devez donner un nom à ce rôle."
 msgid "strprivilege"
 msgstr "Droit"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Droits"
 
 msgid "strnoprivileges"

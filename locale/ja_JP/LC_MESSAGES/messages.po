@@ -140,7 +140,7 @@ msgstr "長さ"
 msgid "strdefault"
 msgstr "デフォルト"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "変更"
 
 msgid "strok"
@@ -164,7 +164,7 @@ msgstr "挿入"
 msgid "strselect"
 msgstr "選択"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "削除"
 
 msgid "strupdate"
@@ -263,7 +263,7 @@ msgstr "Clustered?"
 msgid "strreindex"
 msgstr "再インデックス"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "実行する"
 
 msgid "stradd"
@@ -365,13 +365,13 @@ msgstr "ファイルをインポートしました。"
 msgid "strtrycred"
 msgstr "すべてのサーバーでこの情報を使う"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "複数行の操作"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "すべて選択する"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "すべて選択を解除する"
 
 msgid "strlocale"
@@ -893,7 +893,7 @@ msgstr "ロールの名前を指定しなければなりません。"
 msgid "strprivilege"
 msgstr "特権"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "特権"
 
 msgid "strnoprivileges"

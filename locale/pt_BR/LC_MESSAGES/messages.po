@@ -146,7 +146,7 @@ msgstr "Tamanho"
 msgid "strdefault"
 msgstr "Padrão"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Alterar"
 
 msgid "strok"
@@ -176,7 +176,7 @@ msgstr "Inserir"
 msgid "strselect"
 msgstr "Selecionar"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Deletar"
 
 msgid "strupdate"
@@ -278,7 +278,7 @@ msgstr "Clusterizado?"
 msgid "strreindex"
 msgstr "Reindexar"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Executar"
 
 msgid "stradd"
@@ -383,13 +383,13 @@ msgstr "Utilizar estas credenciais para todos os servidores"
 msgid "strconfdropcred"
 msgstr "Por motivos de segurança, a desconexão irá destruir suas informações de login compartilhado. Tem certeza que deseja se desconectar?"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Ações sobre múltiplas linhas"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "Selecionar tudo"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "Desmarcar tudo"
 
 msgid "strlocale"
@@ -972,7 +972,7 @@ msgstr "Você deve informar um nome para o papel."
 msgid "strprivilege"
 msgstr "Privilégio"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Privilégios"
 
 msgid "strnoprivileges"

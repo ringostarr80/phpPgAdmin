@@ -140,7 +140,7 @@ msgstr "Lungime"
 msgid "strdefault"
 msgstr "Implicit"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Modificare"
 
 msgid "strok"
@@ -164,7 +164,7 @@ msgstr "Inserare"
 msgid "strselect"
 msgstr "Selectare"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Ştergere"
 
 msgid "strupdate"
@@ -374,7 +374,7 @@ msgstr "Fişier importat"
 msgid "strtrycred"
 msgstr "Folosiţi aceste acreditări pentru toate serverele"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Executare"
 
 # Database sizes
@@ -835,7 +835,7 @@ msgstr "Specificaţi un nume pentru rol"
 msgid "strprivilege"
 msgstr "Privilegiu"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Privilegii"
 
 msgid "strnoprivileges"

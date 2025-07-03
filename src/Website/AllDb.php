@@ -13,6 +13,7 @@ class AllDb extends Website
     public function __construct()
     {
         $this->title = _('Databases');
+        $this->scripts['multiactionform'] = ['src' => 'multiactionform.js'];
 
         parent::__construct();
     }

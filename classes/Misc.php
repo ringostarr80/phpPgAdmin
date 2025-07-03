@@ -2253,7 +2253,7 @@ class Misc
      */
     public function printTreeXML(&$treedata, &$attrs)
     {
-        global $conf, $lang;
+        global $lang;
 
         header("Content-Type: text/xml; charset=UTF-8");
         header("Cache-Control: no-cache");

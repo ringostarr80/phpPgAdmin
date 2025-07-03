@@ -200,8 +200,10 @@ abstract class WebsiteComponents
         return $table;
     }
 
-    public static function buildMultipleActionsTableForDatabases(\DOMDocument $dom, ?ServerSession $serverSession): \DOMElement
-    {
+    public static function buildMultipleActionsTableForDatabases(
+        \DOMDocument $dom,
+        ?ServerSession $serverSession
+    ): \DOMElement {
         $table = $dom->createElement('table');
 
         $tHead = $dom->createElement('thead');

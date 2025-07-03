@@ -7,7 +7,7 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . 'autoload.php';
 
 $website = new AllDb();
 echo $website->buildHtmlString();
-//die();
+die();
 //*/
 
 /**
@@ -525,7 +525,7 @@ function doDefault($msg = '')
 
 function doTree()
 {
-    global $misc, $data, $lang;
+    global $misc, $data;
 
     $databases = $data->getDatabases();
 

@@ -86,7 +86,7 @@ msgstr "Művelet"
 msgid "Actions"
 msgstr "Műveletek"
 
-msgid "strname"
+msgid "Name"
 msgstr "Név"
 
 msgid "strdefinition"
@@ -131,7 +131,7 @@ msgstr "Utolsó >>"
 msgid "strfailed"
 msgstr "Sikertelen"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Teremt"
 
 msgid "strcreated"
@@ -152,7 +152,7 @@ msgstr "Módosít"
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Mégsem"
 
 msgid "strkill"
@@ -1021,13 +1021,13 @@ msgstr "Adatbázist teremt"
 msgid "strdatabasename"
 msgstr "Adatbázisnév"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Meg kell adni az adatbázis nevét."
 
 msgid "strdatabasecreated"
 msgstr "Az adatbázis megteremtve."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Nem sikerült megteremteni az adatbázist."
 
 msgid "strconfdropdatabase"
@@ -1090,7 +1090,7 @@ msgstr "Nem sikerült az adatbázist megváltoztatni."
 msgid "strspecifydatabasetodrop"
 msgstr "Meg kell adni a törlendő adatbázist"
 
-msgid "strtemplatedb"
+msgid "Template"
 msgstr "Sablon"
 
 msgid "strconfanalyzedatabase"

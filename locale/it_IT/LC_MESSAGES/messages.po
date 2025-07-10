@@ -80,7 +80,7 @@ msgstr "Azione"
 msgid "Actions"
 msgstr "Azioni"
 
-msgid "strname"
+msgid "Name"
 msgstr "Nome"
 
 msgid "strdefinition"
@@ -125,7 +125,7 @@ msgstr "Ultimo >>"
 msgid "strfailed"
 msgstr "Fallito"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Crea"
 
 msgid "strcreated"
@@ -146,7 +146,7 @@ msgstr "Modifica"
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Annulla"
 
 msgid "strac"
@@ -887,13 +887,13 @@ msgstr "Crea database"
 msgid "strdatabasename"
 msgstr "Nome del database"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "È necessario specificare un nome per il database."
 
 msgid "strdatabasecreated"
 msgstr "Database creato."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Creazione del database fallita."
 
 msgid "strconfdropdatabase"

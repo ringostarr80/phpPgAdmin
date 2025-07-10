@@ -62,7 +62,7 @@ msgstr "Actie"
 msgid "Actions"
 msgstr "Acties"
 
-msgid "strname"
+msgid "Name"
 msgstr "Naam"
 
 msgid "strtable"
@@ -131,7 +131,7 @@ msgstr "mislukt"
 msgid "strnotloaded"
 msgstr "Deze PHP-installatie is zonder ondersteuning van dit type database gecompileerd."
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Creëer"
 
 msgid "Comment"
@@ -147,7 +147,7 @@ msgstr "Standaard"
 msgid "Alter"
 msgstr "Wijzig"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Cancel"
 
 msgid "Privileges"
@@ -255,7 +255,7 @@ msgstr "Inklappen"
 msgid "strnodatabases"
 msgstr "Geen Databases gevonden."
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "U dient uw database een naam te geven."
 
 # Views
@@ -764,7 +764,7 @@ msgstr "Database naam"
 msgid "strdatabasecreated"
 msgstr "Database aangemaakt."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Het aanmaken van de database is misluk."
 
 msgid "strconfdropdatabase"

@@ -68,7 +68,7 @@ msgstr "Åtgärd"
 msgid "Actions"
 msgstr "Åtgärder"
 
-msgid "strname"
+msgid "Name"
 msgstr "Namn"
 
 msgid "strdefinition"
@@ -107,7 +107,7 @@ msgstr "Misslyckades"
 msgid "strnext"
 msgstr "Nästa"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Skapa"
 
 msgid "strcreated"
@@ -128,7 +128,7 @@ msgstr "Ändra"
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Ångra"
 
 msgid "strsave"
@@ -707,13 +707,13 @@ msgstr "Skapa databas"
 msgid "strdatabasename"
 msgstr "Databasnamn"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Du måste namnge databasen."
 
 msgid "strdatabasecreated"
 msgstr "Databas skapad."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Misslyckades att skapa databas."
 
 msgid "strconfdropdatabase"

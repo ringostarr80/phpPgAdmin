@@ -68,7 +68,7 @@ msgstr "פעולה"
 msgid "Actions"
 msgstr "פעולות"
 
-msgid "strname"
+msgid "Name"
 msgstr "שם"
 
 msgid "strdefinition"
@@ -107,7 +107,7 @@ msgstr "&gt;&gt; אחרון"
 msgid "strfailed"
 msgstr "נכשל"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "צור"
 
 msgid "strcreated"
@@ -128,7 +128,7 @@ msgstr "ערוך"
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "בטל"
 
 msgid "strsave"
@@ -734,13 +734,13 @@ msgstr "צור בסיס נתונים."
 msgid "strdatabasename"
 msgstr "שם בסיס הנתונים"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "אתה חייב לתת שם לבסיס הנתונים שלך"
 
 msgid "strdatabasecreated"
 msgstr "בסיס נתונים נוצר"
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "יצירת בסיס נתונים נכשלה."
 
 msgid "strconfdropdatabase"

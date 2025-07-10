@@ -68,7 +68,7 @@ msgstr "Дія"
 msgid "Actions"
 msgstr "Дії"
 
-msgid "strname"
+msgid "Name"
 msgstr "Ім\"я"
 
 msgid "strdefinition"
@@ -107,7 +107,7 @@ msgstr "Остан. >>"
 msgid "strfailed"
 msgstr "Перервано"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Створити"
 
 msgid "strcreated"
@@ -128,7 +128,7 @@ msgstr "Змінити"
 msgid "strok"
 msgstr "Гаразд"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Відмінити"
 
 msgid "strsave"
@@ -734,13 +734,13 @@ msgstr "Створити базу даних"
 msgid "strdatabasename"
 msgstr "Ім\"я бази даних"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Вам необхідно присвоїти ім\"я Вашій базі даних."
 
 msgid "strdatabasecreated"
 msgstr "Базу даних створено."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Створення бази даних перервано."
 
 msgid "strconfdropdatabase"

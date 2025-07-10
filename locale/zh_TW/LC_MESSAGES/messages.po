@@ -80,7 +80,7 @@ msgstr "動作"
 msgid "Actions"
 msgstr "動作"
 
-msgid "strname"
+msgid "Name"
 msgstr "名稱"
 
 msgid "strdefinition"
@@ -125,7 +125,7 @@ msgstr "最後一步 >>"
 msgid "strfailed"
 msgstr "失敗"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "建立"
 
 msgid "strcreated"
@@ -146,7 +146,7 @@ msgstr "修改"
 msgid "strok"
 msgstr "確定"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "取消"
 
 msgid "strac"
@@ -927,13 +927,13 @@ msgstr "建立資料庫"
 msgid "strdatabasename"
 msgstr "資料庫名稱"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "您必需為您的資料庫給一個名稱。"
 
 msgid "strdatabasecreated"
 msgstr "資料庫已建立。"
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "資料庫建立失敗。"
 
 msgid "strconfdropdatabase"

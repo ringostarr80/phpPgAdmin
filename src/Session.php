@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin;
 
-use PhpPgAdmin\Website;
-
-class Session extends Website
+class Session
 {
     public const NAME = 'PPA_ID';
 

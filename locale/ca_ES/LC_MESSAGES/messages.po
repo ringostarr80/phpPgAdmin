@@ -86,7 +86,7 @@ msgstr "Acció"
 msgid "Actions"
 msgstr "Accions"
 
-msgid "strname"
+msgid "Name"
 msgstr "Nom"
 
 msgid "strdefinition"
@@ -131,7 +131,7 @@ msgstr "Últim >>"
 msgid "strfailed"
 msgstr "Fallat"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Crea"
 
 msgid "strcreated"
@@ -152,7 +152,7 @@ msgstr "Modifica"
 msgid "strok"
 msgstr "D'acord"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Cancel·la"
 
 msgid "strkill"
@@ -1021,13 +1021,13 @@ msgstr "Crea una base de dades"
 msgid "strdatabasename"
 msgstr "Nom de la base de dades"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Ha de donar un nom a la base de dades."
 
 msgid "strdatabasecreated"
 msgstr "Base de dades creada."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "No s'ha pogut crear la base de dades."
 
 msgid "strconfdropdatabase"
@@ -1090,7 +1090,7 @@ msgstr "No s'ha pogut modificar la base de dades."
 msgid "strspecifydatabasetodrop"
 msgstr "Ha d'especificar almenys una base de dades per eliminar."
 
-msgid "strtemplatedb"
+msgid "Template"
 msgstr "Plantilla"
 
 msgid "strconfanalyzedatabase"

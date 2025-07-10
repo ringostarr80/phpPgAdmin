@@ -80,7 +80,7 @@ msgstr "Πράξη"
 msgid "Actions"
 msgstr "Ενέργειες"
 
-msgid "strname"
+msgid "Name"
 msgstr "Ονομα"
 
 msgid "strdefinition"
@@ -122,7 +122,7 @@ msgstr "Τελευταία >>"
 msgid "strfailed"
 msgstr "Απέτυχε"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Δημιουργία"
 
 msgid "strcreated"
@@ -143,7 +143,7 @@ msgstr "Τροποποίηση"
 msgid "strok"
 msgstr "Εντάξει"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Ακυρο"
 
 msgid "strac"
@@ -860,13 +860,13 @@ msgstr "Δημιουργία βάσης"
 msgid "strdatabasename"
 msgstr "Ονομα βάσης"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Πρέπει να δώσετε όνομα βάσης."
 
 msgid "strdatabasecreated"
 msgstr "Η βάση δημιουργήθηκε."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Η δημιουργία της βάσης απέτυχε."
 
 msgid "strconfdropdatabase"

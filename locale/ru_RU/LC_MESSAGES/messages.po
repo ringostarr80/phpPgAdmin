@@ -86,7 +86,7 @@ msgstr "Действие"
 msgid "Actions"
 msgstr "Действия"
 
-msgid "strname"
+msgid "Name"
 msgstr "Имя"
 
 msgid "strdefinition"
@@ -131,7 +131,7 @@ msgstr "Посл. >>"
 msgid "strfailed"
 msgstr "Прервано"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Создать"
 
 msgid "strcreated"
@@ -152,7 +152,7 @@ msgstr "Изменить"
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Отменить"
 
 msgid "strkill"
@@ -1018,13 +1018,13 @@ msgstr "Создать базу данных"
 msgid "strdatabasename"
 msgstr "Имя базы данных"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Вам необходимо присвоить имя Вашей базе данных."
 
 msgid "strdatabasecreated"
 msgstr "База данных создана."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Создание базы данных прервано."
 
 msgid "strconfdropdatabase"
@@ -1087,7 +1087,7 @@ msgstr "Изменение базы данных прервано."
 msgid "strspecifydatabasetodrop"
 msgstr "Вам необходимо указать как минимум одну базу данных для удаления."
 
-msgid "strtemplatedb"
+msgid "Template"
 msgstr "Шаблон"
 
 msgid "strconfanalyzedatabase"

@@ -86,7 +86,7 @@ msgstr "Action"
 msgid "Actions"
 msgstr "Actions"
 
-msgid "strname"
+msgid "Name"
 msgstr "Nom"
 
 msgid "strdefinition"
@@ -131,7 +131,7 @@ msgstr "Fin >>"
 msgid "strfailed"
 msgstr "Échec"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Créer"
 
 msgid "strcreated"
@@ -152,7 +152,7 @@ msgstr "Modifier"
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Annuler"
 
 msgid "strkill"
@@ -1033,13 +1033,13 @@ msgstr "Créer une base de données"
 msgid "strdatabasename"
 msgstr "Nom de la base de données"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Vous devez donner un nom pour votre base de données."
 
 msgid "strdatabasecreated"
 msgstr "Base de données créée."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Échec lors de la création de la base de données."
 
 msgid "strconfdropdatabase"
@@ -1102,7 +1102,7 @@ msgstr "Échec lors de la modification de la base de données."
 msgid "strspecifydatabasetodrop"
 msgstr "Vous devez spécifier au moins une base de données à supprimer"
 
-msgid "strtemplatedb"
+msgid "Template"
 msgstr "Modèle"
 
 msgid "strconfanalyzedatabase"

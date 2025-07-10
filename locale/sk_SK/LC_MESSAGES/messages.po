@@ -80,7 +80,7 @@ msgstr "Akcia"
 msgid "Actions"
 msgstr "Akcie"
 
-msgid "strname"
+msgid "Name"
 msgstr "Meno"
 
 msgid "strdefinition"
@@ -116,7 +116,7 @@ msgstr "Posledný >>"
 msgid "strfailed"
 msgstr "Chyba."
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Vytvoriť"
 
 msgid "strcreated"
@@ -137,7 +137,7 @@ msgstr "Zmeniť"
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Zrušiť"
 
 msgid "strsave"
@@ -787,13 +787,13 @@ msgstr "Vytvoriť databázu"
 msgid "strdatabasename"
 msgstr "Názov databázy"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Musíš zadať názov pre tvoju databázu."
 
 msgid "strdatabasecreated"
 msgstr "Databáza vytvorená."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Databáza nebola vytvorená."
 
 msgid "strconfdropdatabase"

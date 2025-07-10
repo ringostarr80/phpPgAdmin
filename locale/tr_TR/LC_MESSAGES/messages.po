@@ -80,7 +80,7 @@ msgstr "Eylem"
 msgid "Actions"
 msgstr "Eylemler"
 
-msgid "strname"
+msgid "Name"
 msgstr "Ad"
 
 msgid "strdefinition"
@@ -116,7 +116,7 @@ msgstr "Son >>"
 msgid "strfailed"
 msgstr "Başarısız oldu."
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Yarat"
 
 msgid "strcreated"
@@ -137,7 +137,7 @@ msgstr "Değiştir"
 msgid "strok"
 msgstr "Tamam"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "İptal Et"
 
 msgid "strsave"
@@ -786,13 +786,13 @@ msgstr "Veritabanı yarat"
 msgid "strdatabasename"
 msgstr "Veritabanı adı"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Veritabanınıza bir ad vermelisiniz."
 
 msgid "strdatabasecreated"
 msgstr "Veritabanı yaratıldı."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Veritabanı yaratılamadı."
 
 msgid "strconfdropdatabase"

@@ -86,7 +86,7 @@ msgstr "操作"
 msgid "Actions"
 msgstr "操作"
 
-msgid "strname"
+msgid "Name"
 msgstr "名字"
 
 msgid "strdefinition"
@@ -131,7 +131,7 @@ msgstr "最后一页 >>"
 msgid "strfailed"
 msgstr "失败"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "创建"
 
 msgid "strcreated"
@@ -152,7 +152,7 @@ msgstr "变更"
 msgid "strok"
 msgstr "确认"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "取消"
 
 msgid "strkill"
@@ -1024,13 +1024,13 @@ msgstr "创建数据库"
 msgid "strdatabasename"
 msgstr "数据库名称"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "必须指定数据库名称。"
 
 msgid "strdatabasecreated"
 msgstr "数据库已创建。"
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "数据库创建失败。"
 
 msgid "strconfdropdatabase"
@@ -1093,7 +1093,7 @@ msgstr "数据库变更失败。"
 msgid "strspecifydatabasetodrop"
 msgstr "必须至少指定一个要移除的数据库"
 
-msgid "strtemplatedb"
+msgid "Template"
 msgstr "模板"
 
 msgid "strconfanalyzedatabase"

@@ -68,7 +68,7 @@ msgstr "Aksie"
 msgid "Actions"
 msgstr "Aksies"
 
-msgid "strname"
+msgid "Name"
 msgstr "Naam"
 
 msgid "strdefinition"
@@ -107,7 +107,7 @@ msgstr "Laaste >>"
 msgid "strfailed"
 msgstr "Het misluk"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Skep"
 
 msgid "strcreated"
@@ -128,7 +128,7 @@ msgstr "Wysig"
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Kanselleer"
 
 msgid "strsave"
@@ -740,13 +740,13 @@ msgstr "Skep databasis"
 msgid "strdatabasename"
 msgstr "Databasisnaam"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Jy moet die databasis 'n naam gee."
 
 msgid "strdatabasecreated"
 msgstr "Databasis is geskep."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Die databasis kon nie geskep word nie."
 
 msgid "strconfdropdatabase"

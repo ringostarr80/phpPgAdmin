@@ -68,7 +68,7 @@ msgstr "Handling"
 msgid "Actions"
 msgstr "Handlinger"
 
-msgid "strname"
+msgid "Name"
 msgstr "Navn"
 
 msgid "strdefinition"
@@ -107,7 +107,7 @@ msgstr "Mislykkedes"
 msgid "strnext"
 msgstr "Næste"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Opret"
 
 msgid "strcreated"
@@ -128,7 +128,7 @@ msgstr "Ændre"
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Fortryd"
 
 msgid "strsave"
@@ -740,13 +740,13 @@ msgstr "Opret database"
 msgid "strdatabasename"
 msgstr "Databasenavn"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Databasen skal have et navn."
 
 msgid "strdatabasecreated"
 msgstr "Database oprettet."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Oprettelse af database mislykkedes."
 
 msgid "strconfdropdatabase"

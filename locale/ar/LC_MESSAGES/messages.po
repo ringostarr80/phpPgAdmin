@@ -68,7 +68,7 @@ msgstr "إجراء Action"
 msgid "Actions"
 msgstr "إجراءات Actions"
 
-msgid "strname"
+msgid "Name"
 msgstr "الإسم"
 
 msgid "strdefinition"
@@ -107,7 +107,7 @@ msgstr "الأخير<<"
 msgid "strfailed"
 msgstr "فشـل"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "إنشاء"
 
 msgid "strcreated"
@@ -128,7 +128,7 @@ msgstr "تعديلAlter"
 msgid "strok"
 msgstr "موافق"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "تراجع"
 
 msgid "strsave"
@@ -731,13 +731,13 @@ msgstr "إنشاء قاعدة بيانات جديدة"
 msgid "strdatabasename"
 msgstr "إسم قاعدة البيانات"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "يجب عليك إعطاء إسم لقاعدة البيانات."
 
 msgid "strdatabasecreated"
 msgstr "تم إنشاء قاعدة البيانات بنجاح."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "فشل إنشاء قاعدة البيانات."
 
 msgid "strconfdropdatabase"

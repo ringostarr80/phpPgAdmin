@@ -80,7 +80,7 @@ msgstr "Acţiune"
 msgid "Actions"
 msgstr "Acţiuni"
 
-msgid "strname"
+msgid "Name"
 msgstr "Nume"
 
 msgid "strdefinition"
@@ -125,7 +125,7 @@ msgstr "Sfârşit >>"
 msgid "strfailed"
 msgstr "Eşuat"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Creare"
 
 msgid "strcreated"
@@ -146,7 +146,7 @@ msgstr "Modificare"
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Anulare"
 
 msgid "strac"
@@ -881,13 +881,13 @@ msgstr "Creare bază de date"
 msgid "strdatabasename"
 msgstr "Nume bază de date"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Specificaţi un nume pentru baza de date."
 
 msgid "strdatabasecreated"
 msgstr "Bază de date creată."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Creare bază de date eşuată."
 
 msgid "strconfdropdatabase"

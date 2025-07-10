@@ -9,11 +9,6 @@ use PhpPgAdmin\DDD\Entities\ServerSession;
 
 class Postgres extends ADOdbBase
 {
-    public float $majorVersion = 14;
-    // Max object name length
-    public int $maxNameLen = 63;
-    // Store the current schema
-    public string $schema;
     /**
      * Map of database encoding names to HTTP encoding names.  If a
      * database encoding does not appear in this list, then its HTTP
@@ -21,7 +16,7 @@ class Postgres extends ADOdbBase
      *
      * @var array<string, string>
      */
-    public array $codemap = [
+    public const CODEMAP = [
         'BIG5' => 'BIG5',
         'EUC_CN' => 'GB2312',
         'EUC_JP' => 'EUC-JP',
@@ -57,6 +52,12 @@ class Postgres extends ADOdbBase
         'WIN1256' => 'CP1256',
         'WIN1258' => 'CP1258'
     ];
+    // Max object name length
+    public const MAX_NAME_LENGTH = 63;
+
+    public float $majorVersion = 14;
+    // Store the current schema
+    public string $schema;
     /**
      * @var string[]
      */
@@ -840,26 +841,26 @@ class Postgres extends ADOdbBase
         string $tablespace = '',
         string $comment = '',
         string $template = 'template1',
-        string $lc_collate = '',
-        string $lc_ctype = ''
+        string $lcCollate = '',
+        string $lcCType = ''
     ): int {
         $database = $this->fieldClean($database) ?? $database;
         $encoding = $this->clean($encoding);
         $tablespace = $this->fieldClean($tablespace);
         $template = $this->fieldClean($template);
-        $lc_collate = $this->clean($lc_collate);
-        $lc_ctype = $this->clean($lc_ctype);
+        $lcCollate = $this->clean($lcCollate);
+        $lcCType = $this->clean($lcCType);
 
         $sql = "CREATE DATABASE \"{$database}\" WITH TEMPLATE=\"{$template}\"";
 
         if ($encoding != '') {
             $sql .= " ENCODING='{$encoding}'";
         }
-        if ($lc_collate != '') {
-            $sql .= " LC_COLLATE='{$lc_collate}'";
+        if ($lcCollate != '') {
+            $sql .= " LC_COLLATE='{$lcCollate}'";
         }
-        if ($lc_ctype != '') {
-            $sql .= " LC_CTYPE='{$lc_ctype}'";
+        if ($lcCType != '') {
+            $sql .= " LC_CTYPE='{$lcCType}'";
         }
 
         if ($tablespace != '' && $this->hasTablespaces()) {

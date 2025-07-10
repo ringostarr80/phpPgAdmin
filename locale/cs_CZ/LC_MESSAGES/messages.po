@@ -86,7 +86,7 @@ msgstr "Akce"
 msgid "Actions"
 msgstr "Akce"
 
-msgid "strname"
+msgid "Name"
 msgstr "Název"
 
 msgid "strdefinition"
@@ -131,7 +131,7 @@ msgstr "Poslední >>"
 msgid "strfailed"
 msgstr "Nezdařilo se"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Vytvořit"
 
 msgid "strcreated"
@@ -152,7 +152,7 @@ msgstr "Změnit"
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Storno"
 
 msgid "strkill"
@@ -1021,13 +1021,13 @@ msgstr "Vytvořit databázi"
 msgid "strdatabasename"
 msgstr "Název databáze"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Musíte zadat název pro databázi."
 
 msgid "strdatabasecreated"
 msgstr "Databáze byla vytvořena."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Nezdařilo se vytvořit databázi."
 
 msgid "strconfdropdatabase"
@@ -1090,7 +1090,7 @@ msgstr "Nezdařilo se provést změny v databázi."
 msgid "strspecifydatabasetodrop"
 msgstr "Pokud chcete odstranit databáze, tak musíte nejméně jednu vybrat."
 
-msgid "strtemplatedb"
+msgid "Template"
 msgstr "Šablona"
 
 msgid "strconfanalyzedatabase"

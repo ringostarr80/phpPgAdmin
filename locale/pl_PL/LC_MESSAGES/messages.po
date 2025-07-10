@@ -80,7 +80,7 @@ msgstr "Akcja"
 msgid "Actions"
 msgstr "Akcje"
 
-msgid "strname"
+msgid "Name"
 msgstr "Nazwa"
 
 msgid "strdefinition"
@@ -122,7 +122,7 @@ msgstr "Ostatni >>"
 msgid "strfailed"
 msgstr "Nieudany"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Utwórz"
 
 msgid "strcreated"
@@ -143,7 +143,7 @@ msgstr "Zmień"
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Anuluj"
 
 msgid "strac"
@@ -848,13 +848,13 @@ msgstr "Utwórz bazę danych"
 msgid "strdatabasename"
 msgstr "Nazwa bazy danych"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Musisz nazwać bazę danych."
 
 msgid "strdatabasecreated"
 msgstr "Baza danych została utworzona."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Próba utworzenia bazy danych się nie powiodła."
 
 msgid "strconfdropdatabase"

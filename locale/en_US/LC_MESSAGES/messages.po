@@ -100,7 +100,8 @@ msgstr "Action"
 msgid "Actions"
 msgstr "Actions"
 
-msgid "strname"
+# original: "strname"
+msgid "Name"
 msgstr "Name"
 
 msgid "strdefinition"
@@ -145,7 +146,8 @@ msgstr "Last >>"
 msgid "strfailed"
 msgstr "Failed"
 
-msgid "strcreate"
+# original: "strcreate"
+msgid "Create"
 msgstr "Create"
 
 msgid "strcreated"
@@ -168,7 +170,8 @@ msgstr "Alter"
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+# original: "strcancel"
+msgid "Cancel"
 msgstr "Cancel"
 
 msgid "strkill"
@@ -1077,13 +1080,15 @@ msgstr "Create database"
 msgid "strdatabasename"
 msgstr "Database name"
 
-msgid "strdatabaseneedsname"
+# original: "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "You must give a name for your database."
 
 msgid "strdatabasecreated"
 msgstr "Database created."
 
-msgid "strdatabasecreatedbad"
+# original: "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Database creation failed."
 
 msgid "strconfdropdatabase"
@@ -1146,7 +1151,8 @@ msgstr "Database alter failed."
 msgid "strspecifydatabasetodrop"
 msgstr "You must specify at least one database to drop."
 
-msgid "strtemplatedb"
+# original: "strtemplatedb"
+msgid "Template"
 msgstr "Template"
 
 msgid "strconfanalyzedatabase"

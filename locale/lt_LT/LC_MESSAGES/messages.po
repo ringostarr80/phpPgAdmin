@@ -89,7 +89,7 @@ msgstr "Veiksmas"
 msgid "Actions"
 msgstr "Veiksmai"
 
-msgid "strname"
+msgid "Name"
 msgstr "Pavadinimas"
 
 msgid "strdefinition"
@@ -135,7 +135,7 @@ msgstr "Paskutinis >>"
 msgid "strfailed"
 msgstr "Nepavyko"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Sukurti"
 
 msgid "strcreated"
@@ -157,7 +157,7 @@ msgstr "Pakeisti"
 msgid "strok"
 msgstr "Gerai"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Atsisakyti"
 
 msgid "strkill"
@@ -1040,13 +1040,13 @@ msgstr "Kurti duomenų bazę"
 msgid "strdatabasename"
 msgstr "Duomenų bazės pavadinimas"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Turite suteikti duomenų bazei pavadinimą."
 
 msgid "strdatabasecreated"
 msgstr "Duomenų bazė sukurta."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Nepavyko sukurti duomenų bazės."
 
 msgid "strconfdropdatabase"
@@ -1109,7 +1109,7 @@ msgstr "Nepavyko pakeisti duomenų bazės."
 msgid "strspecifydatabasetodrop"
 msgstr "Turite nurodyti bent vieną duomenų bazę, kurią reikia šalinti."
 
-msgid "strtemplatedb"
+msgid "Template"
 msgstr "Šablonas"
 
 msgid "strconfanalyzedatabase"

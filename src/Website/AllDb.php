@@ -104,9 +104,8 @@ class AllDb extends Website
 
         $navLinks = [
             [
-                'url' => 'all_db.php',
+                'url' => 'create_db.php',
                 'url-params' => [
-                    'action' => 'create',
                     'server' => RequestParameter::getString('server') ?? ''
                 ],
                 'label' => _('Create database')

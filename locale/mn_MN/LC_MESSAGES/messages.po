@@ -68,7 +68,7 @@ msgstr "?ЪЬФмЬ"
 msgid "Actions"
 msgstr "?ЪЬФмЬ??Ф"
 
-msgid "strname"
+msgid "Name"
 msgstr "юмв"
 
 msgid "strdefinition"
@@ -110,7 +110,7 @@ msgstr "ѓ??ЬФ >>"
 msgid "strfailed"
 msgstr "сЬФСС"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "??гЧмШ"
 
 msgid "strcreated"
@@ -131,7 +131,7 @@ msgstr "??воЩЬ?Ш"
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "ш?оЩЮЧ?Ъ ТЯЬЧЯШ"
 
 msgid "strsave"
@@ -677,13 +677,13 @@ msgstr "ѓЯкФСди ТСке ФСЮЮйШ"
 msgid "strdatabasename"
 msgstr "щЭб ТСкй ФСЮЮйШ"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "їСЭ ЮХЯТШЯФЩЭЯ авЩгзЯЩди ЩЭб їСлХЪ ТСкХ ФСЮЮйШ."
 
 msgid "strdatabasecreated"
 msgstr "тСкС ФСЮЮйШ гЯкФСЮС."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "ѓЯкФСЮЩХ ТСкй ФСЮЮйШ авХвзСЮЯ."
 
 msgid "strconfdropdatabase"

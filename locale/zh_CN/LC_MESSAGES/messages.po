@@ -77,7 +77,7 @@ msgstr "端口"
 msgid "Logout"
 msgstr "注销"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "所属人"
 
 msgid "straction"
@@ -86,7 +86,7 @@ msgstr "操作"
 msgid "Actions"
 msgstr "操作"
 
-msgid "strname"
+msgid "Name"
 msgstr "名字"
 
 msgid "strdefinition"
@@ -104,7 +104,7 @@ msgstr "有效"
 msgid "strdisable"
 msgstr "无效"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "删除"
 
 msgid "strdropped"
@@ -131,13 +131,13 @@ msgstr "最后一页 >>"
 msgid "strfailed"
 msgstr "失败"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "创建"
 
 msgid "strcreated"
 msgstr "已创建"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "注释"
 
 msgid "strlength"
@@ -146,13 +146,13 @@ msgstr "长度"
 msgid "strdefault"
 msgstr "默认"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "变更"
 
 msgid "strok"
 msgstr "确认"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "取消"
 
 msgid "strkill"
@@ -176,7 +176,7 @@ msgstr "插入"
 msgid "strselect"
 msgstr "选择"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "删除"
 
 msgid "strupdate"
@@ -221,7 +221,7 @@ msgstr "返回"
 msgid "strqueryresults"
 msgstr "查询结果"
 
-msgid "strshow"
+msgid "Show"
 msgstr "显示"
 
 msgid "strempty"
@@ -230,7 +230,7 @@ msgstr "清空"
 msgid "Language"
 msgstr "语言"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "编码"
 
 msgid "strvalue"
@@ -242,7 +242,7 @@ msgstr "唯一"
 msgid "strprimary"
 msgstr "主"
 
-msgid "strexport"
+msgid "Export"
 msgstr "导出"
 
 msgid "strimport"
@@ -278,7 +278,7 @@ msgstr "集群?"
 msgid "strreindex"
 msgstr "重建索引"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "执行"
 
 msgid "stradd"
@@ -296,7 +296,7 @@ msgstr "Do Instead"
 msgid "strwhen"
 msgstr "当"
 
-msgid "strformat"
+msgid "Format"
 msgstr "格式"
 
 msgid "strdata"
@@ -323,13 +323,13 @@ msgstr "崩溃"
 msgid "Find"
 msgstr "查找"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "选项"
 
 msgid "Refresh"
 msgstr "刷新"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "下载"
 
 msgid "strdownloadgzipped"
@@ -383,22 +383,22 @@ msgstr "对所有服务器使用该用户名和密码"
 msgid "strconfdropcred"
 msgstr "因为安全原因，中断连接将会销毁你的登录信息。你确定要中断连接吗？"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "多行上的操作"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "选择所有"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "取消选择所有"
 
 msgid "strlocale"
 msgstr "本地"
 
-msgid "strcollation"
+msgid "Collation"
 msgstr "校对"
 
-msgid "strctype"
+msgid "Character Type"
 msgstr "字符类型"
 
 msgid "strdefaultvalues"
@@ -455,22 +455,22 @@ msgstr "请选择一个数据库."
 msgid "strnoaccess"
 msgstr "无法访问"
 
-msgid "strsize"
+msgid "Size"
 msgstr "大小"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "字节"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -709,13 +709,13 @@ msgstr "数据表已变更。"
 msgid "strtablealteredbad"
 msgstr "数据表变更失败。"
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "仅数据"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "仅结构"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "结构和数据"
 
 msgid "strtabbed"
@@ -917,7 +917,7 @@ msgstr "成员删除失败。"
 msgid "strrole"
 msgstr "角色"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "角色"
 
 msgid "strshowallroles"
@@ -978,7 +978,7 @@ msgstr "必须指定角色名称。"
 msgid "strprivilege"
 msgstr "权限"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "权限"
 
 msgid "strnoprivileges"
@@ -1006,7 +1006,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "数据库"
 
 msgid "Databases"
@@ -1024,22 +1024,22 @@ msgstr "创建数据库"
 msgid "strdatabasename"
 msgstr "数据库名称"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "必须指定数据库名称。"
 
 msgid "strdatabasecreated"
 msgstr "数据库已创建。"
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "数据库创建失败。"
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "确定要删除数据库\"%s\"吗？"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "数据库已删除。"
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "数据库删除失败"
 
 msgid "strentersql"
@@ -1087,13 +1087,13 @@ msgstr "所有对象"
 msgid "strdatabasealtered"
 msgstr "数据库已变更。"
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "数据库变更失败。"
 
 msgid "strspecifydatabasetodrop"
 msgstr "必须至少指定一个要移除的数据库"
 
-msgid "strtemplatedb"
+msgid "Template"
 msgstr "模板"
 
 msgid "strconfanalyzedatabase"
@@ -2149,10 +2149,10 @@ msgid "strrows2"
 msgstr "行"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "表空间"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "表空间"
 
 msgid "strshowalltablespaces"

@@ -59,7 +59,7 @@ msgstr "Server"
 msgid "Logout"
 msgstr "Log ud"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Ejer"
 
 msgid "straction"
@@ -68,7 +68,7 @@ msgstr "Handling"
 msgid "Actions"
 msgstr "Handlinger"
 
-msgid "strname"
+msgid "Name"
 msgstr "Navn"
 
 msgid "strdefinition"
@@ -80,7 +80,7 @@ msgstr "Egenskaber"
 msgid "strbrowse"
 msgstr "Bladre"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Fjern"
 
 msgid "strdropped"
@@ -107,13 +107,13 @@ msgstr "Mislykkedes"
 msgid "strnext"
 msgstr "Næste"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Opret"
 
 msgid "strcreated"
 msgstr "Oprettet"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Kommentar"
 
 msgid "strlength"
@@ -122,13 +122,13 @@ msgstr "Længde"
 msgid "strdefault"
 msgstr "Standardværdi"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Ændre"
 
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Fortryd"
 
 msgid "strsave"
@@ -143,7 +143,7 @@ msgstr "Indsæt"
 msgid "strselect"
 msgstr "Vælg"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Slet"
 
 msgid "strupdate"
@@ -191,7 +191,7 @@ msgstr "Tilbage"
 msgid "strqueryresults"
 msgstr "Søgeresultat"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Vise"
 
 msgid "strempty"
@@ -200,7 +200,7 @@ msgstr "Tøm"
 msgid "Language"
 msgstr "Sprog"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Kodning"
 
 msgid "strvalue"
@@ -212,7 +212,7 @@ msgstr "Unik"
 msgid "strprimary"
 msgstr "Primær"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Eksportere"
 
 msgid "strimport"
@@ -260,7 +260,7 @@ msgstr "Gør i stedet"
 msgid "strwhen"
 msgstr "Når"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strdata"
@@ -293,13 +293,13 @@ msgstr "Forklar analyze"
 msgid "Find"
 msgstr "Søg"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Alternativ"
 
 msgid "Refresh"
 msgstr "Opdater"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Download"
 
 msgid "strdownloadgzipped"
@@ -520,7 +520,7 @@ msgstr "Det lykkedes ikke at tilføje kolonne."
 msgid "strcascade"
 msgstr "KASKAD"
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Udelukkende data"
 
 msgid "strtablealtered"
@@ -688,7 +688,7 @@ msgstr "Det lykkedes ikke at fjerne medlem."
 msgid "strprivilege"
 msgstr "Rettighed"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Rettigheder"
 
 msgid "strnoprivileges"
@@ -709,7 +709,7 @@ msgstr "Ændring af rettigheder mislykkedes."
 msgid "stralterprivs"
 msgstr "Ændre rettigheder"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Database fjernet."
 
 msgid "strgrantor"
@@ -719,7 +719,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Database"
 
 msgid "Databases"
@@ -740,19 +740,19 @@ msgstr "Opret database"
 msgid "strdatabasename"
 msgstr "Databasenavn"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Databasen skal have et navn."
 
 msgid "strdatabasecreated"
 msgstr "Database oprettet."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Oprettelse af database mislykkedes."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Er du sikker på at du vil fjerne database \"%s\"?"
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Fjernelse af database mislykkedes."
 
 msgid "strentersql"
@@ -797,10 +797,10 @@ msgstr "Afsendelse af signal mislykkedes."
 msgid "strallobjects"
 msgstr "Alle objekter"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Kun struktur"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Struktur og data"
 
 # Views
@@ -1598,10 +1598,10 @@ msgid "strrows2"
 msgstr "Rows"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Tabelområde"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Tabelområder"
 
 msgid "strshowalltablespaces"

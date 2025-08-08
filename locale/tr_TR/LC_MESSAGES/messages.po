@@ -71,7 +71,7 @@ msgstr "Port"
 msgid "Logout"
 msgstr "Çıkış"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Sahibi"
 
 msgid "straction"
@@ -80,7 +80,7 @@ msgstr "Eylem"
 msgid "Actions"
 msgstr "Eylemler"
 
-msgid "strname"
+msgid "Name"
 msgstr "Ad"
 
 msgid "strdefinition"
@@ -92,7 +92,7 @@ msgstr "Özellikler"
 msgid "strbrowse"
 msgstr "Gözat"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Sil"
 
 msgid "strdropped"
@@ -116,13 +116,13 @@ msgstr "Son >>"
 msgid "strfailed"
 msgstr "Başarısız oldu."
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Yarat"
 
 msgid "strcreated"
 msgstr "Yaratıldı"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Yorum"
 
 msgid "strlength"
@@ -131,13 +131,13 @@ msgstr "Uzunluk"
 msgid "strdefault"
 msgstr "Ön tanımlı değer"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Değiştir"
 
 msgid "strok"
 msgstr "Tamam"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "İptal Et"
 
 msgid "strsave"
@@ -152,7 +152,7 @@ msgstr "Ekle"
 msgid "strselect"
 msgstr "Seç"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Sil"
 
 msgid "strupdate"
@@ -197,7 +197,7 @@ msgstr "Geri"
 msgid "strqueryresults"
 msgstr "Sorgu sonuçları"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Göster"
 
 msgid "strempty"
@@ -206,7 +206,7 @@ msgstr "Boşalt"
 msgid "Language"
 msgstr "Dil"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Karakter kodlaması"
 
 msgid "strvalue"
@@ -218,7 +218,7 @@ msgstr "Tekil"
 msgid "strprimary"
 msgstr "Birincil"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Export"
 
 msgid "strimport"
@@ -278,7 +278,7 @@ msgstr "Do Instead"
 msgid "strwhen"
 msgstr "When"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strdata"
@@ -311,13 +311,13 @@ msgstr "Explain Analyze"
 msgid "Find"
 msgstr "Bul"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Seçenekler"
 
 msgid "Refresh"
 msgstr "Yenile"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "İndir"
 
 msgid "strdownloadgzipped"
@@ -368,7 +368,7 @@ msgstr "Dosya import edildi."
 msgid "strtrycred"
 msgstr "Giriş bilgilerini tüm sunucular için kullan"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Execute"
 
 # Error handling
@@ -574,13 +574,13 @@ msgstr "Tablo alter edildi.."
 msgid "strtablealteredbad"
 msgstr "Tablo alteration işlemi başarısız oldu."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Sadece veri"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Sadece yapı"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Yapı ve veri"
 
 msgid "strtabbed"
@@ -736,7 +736,7 @@ msgstr "Üye silme başarısız oldu."
 msgid "strprivilege"
 msgstr "İzni"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "İzinler"
 
 msgid "strnoprivileges"
@@ -765,7 +765,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Veritabanı"
 
 msgid "Databases"
@@ -786,22 +786,22 @@ msgstr "Veritabanı yarat"
 msgid "strdatabasename"
 msgstr "Veritabanı adı"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Veritabanınıza bir ad vermelisiniz."
 
 msgid "strdatabasecreated"
 msgstr "Veritabanı yaratıldı."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Veritabanı yaratılamadı."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "\"%s\" veritabanını kaldırmak istediğinize emin misiniz?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Veritabanı kaldırıldı."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Veritabanı kaldırma başarısız oldu."
 
 msgid "strentersql"
@@ -849,7 +849,7 @@ msgstr "Tüm nesneler"
 msgid "strdatabasealtered"
 msgstr "Veritabanı değiştirildi."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Veritabanı değiştirme başarısız oldu."
 
 # Views
@@ -1688,10 +1688,10 @@ msgid "strrows2"
 msgstr "Rows"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Tablespace"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Tablespaceler"
 
 msgid "strshowalltablespaces"

@@ -53,7 +53,7 @@ msgstr "Geen views gevonden."
 msgid "strnofunctions"
 msgstr "Geen functies gevonden."
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Eigenaar"
 
 msgid "straction"
@@ -62,7 +62,7 @@ msgstr "Actie"
 msgid "Actions"
 msgstr "Acties"
 
-msgid "strname"
+msgid "Name"
 msgstr "Naam"
 
 msgid "strtable"
@@ -107,7 +107,7 @@ msgstr "Eigenschappen"
 msgid "strbrowse"
 msgstr "Bekijk"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Verwijder"
 
 msgid "strdropped"
@@ -131,10 +131,10 @@ msgstr "mislukt"
 msgid "strnotloaded"
 msgstr "Deze PHP-installatie is zonder ondersteuning van dit type database gecompileerd."
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Creëer"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Commentaar"
 
 
@@ -144,13 +144,13 @@ msgstr "Lengte"
 msgid "strdefault"
 msgstr "Standaard"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Wijzig"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Cancel"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Privileges"
 
 msgid "TRUE"
@@ -165,7 +165,7 @@ msgstr "Voeg in"
 msgid "strselect"
 msgstr "Selecteer"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Verwijder"
 
 msgid "strupdate"
@@ -228,7 +228,7 @@ msgid "strnousers"
 msgstr "Geen gebruikers gevonden."
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Database"
 
 msgid "Databases"
@@ -255,7 +255,7 @@ msgstr "Inklappen"
 msgid "strnodatabases"
 msgstr "Geen Databases gevonden."
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "U dient uw database een naam te geven."
 
 # Views
@@ -346,7 +346,7 @@ msgstr "U dient uw tabel een naam te geven."
 msgid "strtableneedscols"
 msgstr "U dient uw tabel een geldig aantal kolommen te geven."
 
-msgid "strexport"
+msgid "Export"
 msgstr "exporteer"
 
 msgid "strconstraints"
@@ -497,13 +497,13 @@ msgstr "Terug"
 msgid "strqueryresults"
 msgstr "Query resultaten"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Toon"
 
 msgid "strempty"
 msgstr "Leeg"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Encoding"
 
 msgid "SQL"
@@ -551,7 +551,7 @@ msgstr "Do Instead"
 msgid "strwhen"
 msgstr "zodra"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strbadconfig"
@@ -668,7 +668,7 @@ msgstr "Schema & Data"
 msgid "strschemaonly"
 msgstr "Enkel schema"
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Enkel data"
 
 msgid "strusers"
@@ -764,16 +764,16 @@ msgstr "Database naam"
 msgid "strdatabasecreated"
 msgstr "Database aangemaakt."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Het aanmaken van de database is misluk."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Weet u zeker dat u de database \"%s\" wilt verwijderen?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Database verwijderd."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Database verwijdering is mislukt."
 
 msgid "strentersql"
@@ -1147,13 +1147,13 @@ msgstr "Verklaring"
 msgid "Find"
 msgstr "Zoek"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Opties"
 
 msgid "Refresh"
 msgstr "Ververs"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Download"
 
 msgid "strrownotunique"

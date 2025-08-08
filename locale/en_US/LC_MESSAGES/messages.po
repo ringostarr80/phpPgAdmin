@@ -89,7 +89,8 @@ msgstr "Port"
 msgid "Logout"
 msgstr "Logout"
 
-msgid "strowner"
+# original: "strowner"
+msgid "Owner"
 msgstr "Owner"
 
 msgid "straction"
@@ -99,7 +100,8 @@ msgstr "Action"
 msgid "Actions"
 msgstr "Actions"
 
-msgid "strname"
+# original: "strname"
+msgid "Name"
 msgstr "Name"
 
 msgid "strdefinition"
@@ -117,7 +119,8 @@ msgstr "Enable"
 msgid "strdisable"
 msgstr "Disable"
 
-msgid "strdrop"
+# original: "strdrop"
+msgid "Drop"
 msgstr "Drop"
 
 msgid "strdropped"
@@ -144,13 +147,15 @@ msgstr "Last >>"
 msgid "strfailed"
 msgstr "Failed"
 
-msgid "strcreate"
+# original: "strcreate"
+msgid "Create"
 msgstr "Create"
 
 msgid "strcreated"
 msgstr "Created"
 
-msgid "strcomment"
+# original: "strcomment"
+msgid "Comment"
 msgstr "Comment"
 
 msgid "strlength"
@@ -159,13 +164,15 @@ msgstr "Length"
 msgid "strdefault"
 msgstr "Default"
 
-msgid "stralter"
+# original: "stralter"
+msgid "Alter"
 msgstr "Alter"
 
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+# original: "strcancel"
+msgid "Cancel"
 msgstr "Cancel"
 
 msgid "strkill"
@@ -189,7 +196,8 @@ msgstr "Insert"
 msgid "strselect"
 msgstr "Select"
 
-msgid "strdelete"
+# original: "strdelete"
+msgid "Delete"
 msgstr "Delete"
 
 msgid "strupdate"
@@ -236,7 +244,8 @@ msgstr "Back"
 msgid "strqueryresults"
 msgstr "Query Results"
 
-msgid "strshow"
+# original: "strshow"
+msgid "Show"
 msgstr "Show"
 
 msgid "strempty"
@@ -246,7 +255,8 @@ msgstr "Empty"
 msgid "Language"
 msgstr "Language"
 
-msgid "strencoding"
+# original: "strencoding"
+msgid "Encoding"
 msgstr "Encoding"
 
 msgid "strvalue"
@@ -258,7 +268,8 @@ msgstr "Unique"
 msgid "strprimary"
 msgstr "Primary"
 
-msgid "strexport"
+# original: "strexport"
+msgid "Export"
 msgstr "Export"
 
 msgid "strimport"
@@ -295,7 +306,8 @@ msgstr "Clustered?"
 msgid "strreindex"
 msgstr "Reindex"
 
-msgid "strexecute"
+# original: "strexecute"
+msgid "Execute"
 msgstr "Execute"
 
 msgid "stradd"
@@ -313,7 +325,8 @@ msgstr "Do Instead"
 msgid "strwhen"
 msgstr "When"
 
-msgid "strformat"
+# original: "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strdata"
@@ -341,14 +354,16 @@ msgstr "Collapse"
 msgid "Find"
 msgstr "Find"
 
-msgid "stroptions"
+# original: "stroptions"
+msgid "Options"
 msgstr "Options"
 
 # original: "strrefresh"
 msgid "Refresh"
 msgstr "Refresh"
 
-msgid "strdownload"
+# original: "strdownload"
+msgid "Download"
 msgstr "Download"
 
 msgid "strdownloadgzipped"
@@ -405,22 +420,27 @@ msgstr "Use these credentials for all servers"
 msgid "strconfdropcred"
 msgstr "For security reason, disconnecting will destroy your shared login information. Are you sure you want to disconnect ?"
 
-msgid "stractionsonmultiplelines"
+# original: "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Actions on multiple lines"
 
-msgid "strselectall"
+# original: "strselectall"
+msgid "Select all"
 msgstr "Select all"
 
-msgid "strunselectall"
+# original: "strunselectall"
+msgid "Unselect all"
 msgstr "Unselect all"
 
 msgid "strlocale"
 msgstr "Locale"
 
-msgid "strcollation"
+# original: "strcollation"
+msgid "Collation"
 msgstr "Collation"
 
-msgid "strctype"
+# original: "strctype"
+msgid "Character Type"
 msgstr "Character Type"
 
 msgid "strdefaultvalues"
@@ -480,22 +500,28 @@ msgstr "Please, select a database."
 msgid "strnoaccess"
 msgstr "No Access"
 
-msgid "strsize"
+# original: "strsize"
+msgid "Size"
 msgstr "Size"
 
-msgid "strbytes"
+# original: "strbytes"
+msgid "bytes"
 msgstr "bytes"
 
-msgid "strkb"
+# original: "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+# original: "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+# original: "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+# original: "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -737,13 +763,16 @@ msgstr "Table altered."
 msgid "strtablealteredbad"
 msgstr "Table alteration failed."
 
-msgid "strdataonly"
+# original: "strdataonly"
+msgid "Data only"
 msgstr "Data only"
 
-msgid "strstructureonly"
+# original: "strstructureonly"
+msgid "Structure only"
 msgstr "Structure only"
 
-msgid "strstructureanddata"
+# original: "strstructureanddata"
+msgid "Structure and data"
 msgstr "Structure and data"
 
 msgid "strtabbed"
@@ -947,7 +976,8 @@ msgstr "Member drop failed."
 msgid "strrole"
 msgstr "Role"
 
-msgid "strroles"
+# original: "strroles"
+msgid "Roles"
 msgstr "Roles"
 
 msgid "strshowallroles"
@@ -1008,7 +1038,8 @@ msgstr "You must give a name for the role."
 msgid "strprivilege"
 msgstr "Privilege"
 
-msgid "strprivileges"
+# original: "strprivileges"
+msgid "Privileges"
 msgstr "Privileges"
 
 msgid "strnoprivileges"
@@ -1036,7 +1067,8 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+# original: "strdatabase"
+msgid "Database"
 msgstr "Database"
 
 # original: "strdatabases"
@@ -1056,22 +1088,27 @@ msgstr "Create database"
 msgid "strdatabasename"
 msgstr "Database name"
 
-msgid "strdatabaseneedsname"
+# original: "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "You must give a name for your database."
 
 msgid "strdatabasecreated"
 msgstr "Database created."
 
-msgid "strdatabasecreatedbad"
+# original: "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Database creation failed."
 
-msgid "strconfdropdatabase"
+# original: "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Are you sure you want to drop the database \"%s\"?"
 
-msgid "strdatabasedropped"
+# original: "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Database dropped."
 
-msgid "strdatabasedroppedbad"
+# original: "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Database drop failed."
 
 msgid "strentersql"
@@ -1119,13 +1156,15 @@ msgstr "All objects"
 msgid "strdatabasealtered"
 msgstr "Database altered."
 
-msgid "strdatabasealteredbad"
+# original: "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Database alter failed."
 
 msgid "strspecifydatabasetodrop"
 msgstr "You must specify at least one database to drop."
 
-msgid "strtemplatedb"
+# original: "strtemplatedb"
+msgid "Template"
 msgstr "Template"
 
 msgid "strconfanalyzedatabase"
@@ -2181,10 +2220,12 @@ msgid "strrows2"
 msgstr "Rows"
 
 # Tablespaces
-msgid "strtablespace"
+# original: "strtablespace"
+msgid "Tablespace"
 msgstr "Tablespace"
 
-msgid "strtablespaces"
+# original: "strtablespaces"
+msgid "Tablespaces"
 msgstr "Tablespaces"
 
 msgid "strshowalltablespaces"

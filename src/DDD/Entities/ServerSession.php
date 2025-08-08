@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace PhpPgAdmin\DDD\Entities;
 
 use PhpPgAdmin\Config;
+use PhpPgAdmin\Database\{Connection, Postgres};
 use PhpPgAdmin\DDD\ValueObjects\Server\{DatabaseName, Filename, Host, Name, Port, SslMode};
 use PhpPgAdmin\DDD\ValueObjects\ServerSession\{Username, Password, Platform};
 
@@ -130,6 +131,40 @@ class ServerSession extends Server
         }
 
         return self::fromServerId($_REQUEST['server']);
+    }
+
+    public function getDatabaseConnection(): Postgres
+    {
+        $conn = new Connection(
+            host: (string)$this->Host,
+            port: $this->Port->Value,
+            sslmode: $this->SslMode->value,
+            user: (string)$this->Username,
+            password: (string)$this->Password,
+            database: 'postgres'
+        );
+
+        $driver = $conn->getDriver();
+        if (!is_string($driver)) {
+            throw new \Exception('Invalid database driver: ' . $driver);
+        }
+
+        $fqnDriver = '\\PhpPgAdmin\\Database\\' . $driver;
+        if (!class_exists($fqnDriver)) {
+            throw new \Exception("Database driver class not found: {$fqnDriver}");
+        }
+
+        $db = new $fqnDriver($conn->conn);
+        if (!($db instanceof Postgres)) {
+            throw new \Exception("Database driver class is not an instance of Postgres: {$fqnDriver}");
+        }
+
+        $db->execute("SET client_encoding TO 'UTF-8'");
+        if ($db->hasByteaHexDefault()) {
+            $db->execute("SET bytea_output TO escape");
+        }
+
+        return $db;
     }
 
     public static function isLoggedIn(string $serverId): bool

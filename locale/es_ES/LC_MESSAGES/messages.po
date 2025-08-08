@@ -77,7 +77,7 @@ msgstr "Puerto"
 msgid "Logout"
 msgstr "Cerrar sesión"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Dueño"
 
 msgid "straction"
@@ -86,7 +86,7 @@ msgstr "Acción"
 msgid "Actions"
 msgstr "Acciones"
 
-msgid "strname"
+msgid "Name"
 msgstr "Nombre"
 
 msgid "strdefinition"
@@ -104,7 +104,7 @@ msgstr "Activar"
 msgid "strdisable"
 msgstr "Desactivar"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Eliminar"
 
 msgid "strdropped"
@@ -131,13 +131,13 @@ msgstr "Fin >>"
 msgid "strfailed"
 msgstr "Falló"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Crear"
 
 msgid "strcreated"
 msgstr "Creado"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Comentario"
 
 msgid "strlength"
@@ -146,13 +146,13 @@ msgstr "Longitud"
 msgid "strdefault"
 msgstr "Predeterminado"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Modificar"
 
 msgid "strok"
 msgstr "Aceptar"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Cancelar"
 
 msgid "strkill"
@@ -176,7 +176,7 @@ msgstr "Insertar"
 msgid "strselect"
 msgstr "Seleccionar"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Eliminar"
 
 msgid "strupdate"
@@ -221,7 +221,7 @@ msgstr "Atrás"
 msgid "strqueryresults"
 msgstr "Resultado de la consulta"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Mostrar"
 
 msgid "strempty"
@@ -230,7 +230,7 @@ msgstr "Vaciar"
 msgid "Language"
 msgstr "Idioma"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Codificación"
 
 msgid "strvalue"
@@ -242,7 +242,7 @@ msgstr "Único"
 msgid "strprimary"
 msgstr "Primaria"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Exportar"
 
 msgid "strimport"
@@ -278,7 +278,7 @@ msgstr "¿En Clúster?"
 msgid "strreindex"
 msgstr "Actualizar índices"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Ejecutar"
 
 msgid "stradd"
@@ -296,7 +296,7 @@ msgstr "Hacer en su lugar"
 msgid "strwhen"
 msgstr "Cuándo"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Formato"
 
 msgid "strdata"
@@ -323,13 +323,13 @@ msgstr "Contraer"
 msgid "Find"
 msgstr "Buscar"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Opciones"
 
 msgid "Refresh"
 msgstr "Refrescar"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Descargar"
 
 msgid "strdownloadgzipped"
@@ -386,22 +386,22 @@ msgstr "Usar estas crendeciales para todos los servidores"
 msgid "strconfdropcred"
 msgstr "Por razones de seguridad, al desconectar se destruirá tu información compartida. ¿Estás seguro que desea desconectarse?"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Acciones en múltiples líneas"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "Seleccionar todos"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "Seleccionar ninguno"
 
 msgid "strlocale"
 msgstr "Localización"
 
-msgid "strcollation"
+msgid "Collation"
 msgstr "Colación"
 
-msgid "strctype"
+msgid "Character Type"
 msgstr "Tipo de caracter"
 
 msgid "strdefaultvalues"
@@ -458,22 +458,22 @@ msgstr "Por favor, seleccione una base de datos."
 msgid "strnoaccess"
 msgstr "Sin acceso"
 
-msgid "strsize"
+msgid "Size"
 msgstr "Tamaño"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "bytes"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -712,13 +712,13 @@ msgstr "Tabla modificada."
 msgid "strtablealteredbad"
 msgstr "Falló la modificación  de la Tabla."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Solamente datos"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Solo la estructura"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Estructura y datos"
 
 msgid "strtabbed"
@@ -920,7 +920,7 @@ msgstr "Falló al retirar un miembro del grupo."
 msgid "strrole"
 msgstr "Rol"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Roles"
 
 msgid "strshowallroles"
@@ -981,7 +981,7 @@ msgstr "Debes darle un nombre al rol."
 msgid "strprivilege"
 msgstr "Privilegio"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Privilegios"
 
 msgid "strnoprivileges"
@@ -1009,7 +1009,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Base de Datos"
 
 msgid "Databases"
@@ -1027,22 +1027,22 @@ msgstr "Crear base de datos"
 msgid "strdatabasename"
 msgstr "Nombre de la base de datos"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Debes darle un nombre a la base de datos."
 
 msgid "strdatabasecreated"
 msgstr "Base de datos creada."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Falló la creación de la base de datos."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "¿Estás seguro que quiere eliminar la base de datos \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Base de datos eliminada."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Falló al eliminar la base de datos."
 
 msgid "strentersql"
@@ -1090,13 +1090,13 @@ msgstr "Todos los objetos"
 msgid "strdatabasealtered"
 msgstr "Base de Datos modificada."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Falló al intentar modificar la base de datos."
 
 msgid "strspecifydatabasetodrop"
 msgstr "Debes especificar al menos una base de datos para eliminar."
 
-msgid "strtemplatedb"
+msgid "Template"
 msgstr "Plantilla"
 
 msgid "strconfanalyzedatabase"
@@ -2152,10 +2152,10 @@ msgid "strrows2"
 msgstr "Filas"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Tablespace"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Tablespaces"
 
 msgid "strshowalltablespaces"

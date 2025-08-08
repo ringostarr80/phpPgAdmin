@@ -244,9 +244,9 @@ function doAlter($msg = '')
         echo "\t\t<td class=\"data1\"><input type=\"checkbox\" id=\"formCanLogin\" name=\"formCanLogin\"",
             (isset($_POST['formCanLogin'])) ? ' checked="checked"' : '', " /></td>\n\t</tr>\n";
         echo "\t<tr>\n\t\t<th class=\"data left\">{$lang['strconnlimit']}</th>\n";
-        echo "\t\t<td class=\"data1\"><input size=\"4\" name=\"formConnLimit\" value=\"", htmlspecialchars($_POST['formConnLimit']), "\" /></td>\n\t</tr>\n";
+        echo "\t\t<td class=\"data1\"><input size=\"4\" name=\"formConnLimit\" value=\"", htmlspecialchars($_POST['formConnLimit'] ?? ''), "\" /></td>\n\t</tr>\n";
         echo "\t<tr>\n\t\t<th class=\"data left\">{$lang['strexpires']}</th>\n";
-        echo "\t\t<td class=\"data1\"><input size=\"23\" name=\"formExpires\" value=\"", htmlspecialchars($_POST['formExpires']), "\" /></td>\n\t</tr>\n";
+        echo "\t\t<td class=\"data1\"><input size=\"23\" name=\"formExpires\" value=\"", htmlspecialchars($_POST['formExpires'] ?? ''), "\" /></td>\n\t</tr>\n";
 
         if (!isset($_POST['memberof'])) {
             $memberof = $data->getMemberOf($_REQUEST['rolename']);

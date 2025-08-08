@@ -71,7 +71,7 @@ msgstr "Port"
 msgid "Logout"
 msgstr "Ieşire"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Proprietar"
 
 msgid "straction"
@@ -80,7 +80,7 @@ msgstr "Acţiune"
 msgid "Actions"
 msgstr "Acţiuni"
 
-msgid "strname"
+msgid "Name"
 msgstr "Nume"
 
 msgid "strdefinition"
@@ -98,7 +98,7 @@ msgstr "Activare"
 msgid "strdisable"
 msgstr "Dezactivare"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Ştergere"
 
 msgid "strdropped"
@@ -125,13 +125,13 @@ msgstr "Sfârşit >>"
 msgid "strfailed"
 msgstr "Eşuat"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Creare"
 
 msgid "strcreated"
 msgstr "Creat"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Comentariu"
 
 msgid "strlength"
@@ -140,13 +140,13 @@ msgstr "Lungime"
 msgid "strdefault"
 msgstr "Implicit"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Modificare"
 
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Anulare"
 
 msgid "strac"
@@ -164,7 +164,7 @@ msgstr "Inserare"
 msgid "strselect"
 msgstr "Selectare"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Ştergere"
 
 msgid "strupdate"
@@ -209,7 +209,7 @@ msgstr "Înapoi"
 msgid "strqueryresults"
 msgstr "Rezultatele interogării"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Afişare"
 
 msgid "strempty"
@@ -218,7 +218,7 @@ msgstr "Golire"
 msgid "Language"
 msgstr "Limbă"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Codificare"
 
 msgid "strvalue"
@@ -230,7 +230,7 @@ msgstr "Unic"
 msgid "strprimary"
 msgstr "Primar"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Export"
 
 msgid "strimport"
@@ -284,7 +284,7 @@ msgstr "Execută în schimb"
 msgid "strwhen"
 msgstr "Când"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strdata"
@@ -317,13 +317,13 @@ msgstr "Explicare & Analiză"
 msgid "Find"
 msgstr "Căutare"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Opţiuni"
 
 msgid "Refresh"
 msgstr "Reîmprospătare"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Transfer"
 
 msgid "strdownloadgzipped"
@@ -374,26 +374,26 @@ msgstr "Fişier importat"
 msgid "strtrycred"
 msgstr "Folosiţi aceste acreditări pentru toate serverele"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Executare"
 
 # Database sizes
-msgid "strsize"
+msgid "Size"
 msgstr "Dimensiune"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "octeţi"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -599,13 +599,13 @@ msgstr "Tabelă modificată."
 msgid "strtablealteredbad"
 msgstr "Modificare tabelă eşuată."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Numai date"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Numai structură"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Structură şi date"
 
 msgid "strtabbed"
@@ -771,7 +771,7 @@ msgstr "Ştergere membru eşuată."
 msgid "strrole"
 msgstr "Rol"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Roluri"
 
 msgid "strshowallroles"
@@ -835,7 +835,7 @@ msgstr "Specificaţi un nume pentru rol"
 msgid "strprivilege"
 msgstr "Privilegiu"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Privilegii"
 
 msgid "strnoprivileges"
@@ -863,7 +863,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Bază de date"
 
 msgid "Databases"
@@ -881,22 +881,22 @@ msgstr "Creare bază de date"
 msgid "strdatabasename"
 msgstr "Nume bază de date"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Specificaţi un nume pentru baza de date."
 
 msgid "strdatabasecreated"
 msgstr "Bază de date creată."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Creare bază de date eşuată."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Sigur ştergeţi baza de date \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Bază de date ştearsă."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Ştergere bază de date eşuată."
 
 msgid "strentersql"
@@ -944,7 +944,7 @@ msgstr "Toate obiectele"
 msgid "strdatabasealtered"
 msgstr "Bază de date modificată."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Modificarea bazei de date a eşuat."
 
 # Views
@@ -1931,10 +1931,10 @@ msgid "strrows2"
 msgstr "Rânduri"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Spaţiu de tabele"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Spaţii de tabele"
 
 msgid "strshowalltablespaces"

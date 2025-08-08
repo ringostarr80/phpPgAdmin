@@ -59,7 +59,7 @@ msgstr "الخادم"
 msgid "Logout"
 msgstr "خروج"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "مالك Owner"
 
 msgid "straction"
@@ -68,7 +68,7 @@ msgstr "إجراء Action"
 msgid "Actions"
 msgstr "إجراءات Actions"
 
-msgid "strname"
+msgid "Name"
 msgstr "الإسم"
 
 msgid "strdefinition"
@@ -80,7 +80,7 @@ msgstr "خصائص"
 msgid "strbrowse"
 msgstr "إستعراض Browse"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "حذف Drop"
 
 msgid "strdropped"
@@ -107,13 +107,13 @@ msgstr "الأخير<<"
 msgid "strfailed"
 msgstr "فشـل"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "إنشاء"
 
 msgid "strcreated"
 msgstr "تم الإنشاء"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "ملاحظات"
 
 msgid "strlength"
@@ -122,13 +122,13 @@ msgstr "طول"
 msgid "strdefault"
 msgstr "الإفتراضي"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "تعديلAlter"
 
 msgid "strok"
 msgstr "موافق"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "تراجع"
 
 msgid "strsave"
@@ -143,7 +143,7 @@ msgstr "إدراج Insert"
 msgid "strselect"
 msgstr "إختيار Select"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "حذف Delete"
 
 msgid "strupdate"
@@ -188,7 +188,7 @@ msgstr "رجوع للخلف"
 msgid "strqueryresults"
 msgstr "نتائج الإستعلام"
 
-msgid "strshow"
+msgid "Show"
 msgstr "اعرض"
 
 msgid "strempty"
@@ -197,7 +197,7 @@ msgstr "إفراغ Empty"
 msgid "Language"
 msgstr "اللغة"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "الشيفرة Encoding"
 
 msgid "strvalue"
@@ -209,7 +209,7 @@ msgstr "فريد Unique"
 msgid "strprimary"
 msgstr "رئيسي Primary"
 
-msgid "strexport"
+msgid "Export"
 msgstr "تصدير Export"
 
 msgid "strimport"
@@ -257,7 +257,7 @@ msgstr "Do Instead"
 msgid "strwhen"
 msgstr "When"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strdata"
@@ -290,13 +290,13 @@ msgstr "Explain Analyze"
 msgid "Find"
 msgstr "بحث"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "خيارات"
 
 msgid "Refresh"
 msgstr "تحديث Refresh"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "تنزيل"
 
 msgid "strdownloadgzipped"
@@ -526,13 +526,13 @@ msgstr "لقد تم تعديل الجدول بنجاح."
 msgid "strtablealteredbad"
 msgstr "لقد فشلت عملية تعديل الجدول."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "البيانات فقط"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "الهيكلية فقط"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "الهيكلية والبيانات"
 
 msgid "strtabbed"
@@ -682,7 +682,7 @@ msgstr "لقد فشل حذف العضو."
 msgid "strprivilege"
 msgstr "الصلاحيّة"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "الصلاحيات"
 
 msgid "strnoprivileges"
@@ -710,7 +710,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "قاعدة بيانات"
 
 msgid "Databases"
@@ -731,22 +731,22 @@ msgstr "إنشاء قاعدة بيانات جديدة"
 msgid "strdatabasename"
 msgstr "إسم قاعدة البيانات"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "يجب عليك إعطاء إسم لقاعدة البيانات."
 
 msgid "strdatabasecreated"
 msgstr "تم إنشاء قاعدة البيانات بنجاح."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "فشل إنشاء قاعدة البيانات."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "هل أنت متأكد تريد حذف قاعدة البيانات بإسم \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "تم حذف قاعدة البيانات."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "لقد فشلت عملية حذف قاعدة البيانات."
 
 msgid "strentersql"

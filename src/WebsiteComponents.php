@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace PhpPgAdmin;
 
 use PhpPgAdmin\DDD\Entities\ServerSession;
-use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
+use PhpPgAdmin\DDD\ValueObjects\{DbSize, TrailSubject};
 
 abstract class WebsiteComponents
 {
@@ -16,6 +16,275 @@ abstract class WebsiteComponents
         $a->setAttribute('class', 'bottom_link');
 
         return $a;
+    }
+
+    public static function buildDatabasesTable(\DOMDocument $dom, ?ServerSession $serverSession): \DOMElement
+    {
+        $db = $serverSession?->getDatabaseConnection();
+
+        $table = $dom->createElement('table');
+        $table->setAttribute('style', 'width: 100%;');
+
+        $tHead = $dom->createElement('thead');
+        $trHead = $dom->createElement('tr');
+        $thEmpty = $dom->createElement('th');
+        $thDatabase = $dom->createElement('th', _('Database'));
+        $thDatabase->setAttribute('class', 'data');
+        $thOwner = $dom->createElement('th', _('Owner'));
+        $thOwner->setAttribute('class', 'data');
+        $thEncoding = $dom->createElement('th', _('Encoding'));
+        $thEncoding->setAttribute('class', 'data');
+        $thCollation = $dom->createElement('th', _('Collation'));
+        $thCollation->setAttribute('class', 'data');
+        $thCharacterType = $dom->createElement('th', _('Character Type'));
+        $thCharacterType->setAttribute('class', 'data');
+        $thTablespace = $dom->createElement('th', _('Tablespace'));
+        $thTablespace->setAttribute('class', 'data');
+        $thSize = $dom->createElement('th', _('Size'));
+        $thSize->setAttribute('class', 'data');
+        $thActions = $dom->createElement('th', _('Actions'));
+        $thActions->setAttribute('class', 'data');
+        $thActions->setAttribute('colspan', '3');
+        $thComment = $dom->createElement('th', _('Comment'));
+        $thComment->setAttribute('class', 'data');
+        $trHead->appendChild($thEmpty);
+        $trHead->appendChild($thDatabase);
+        $trHead->appendChild($thOwner);
+        $trHead->appendChild($thEncoding);
+        $trHead->appendChild($thCollation);
+        $trHead->appendChild($thCharacterType);
+        $trHead->appendChild($thTablespace);
+        $trHead->appendChild($thSize);
+        $trHead->appendChild($thActions);
+        $trHead->appendChild($thComment);
+        $tHead->appendChild($trHead);
+
+        $tBody = $dom->createElement('tbody');
+
+        $dbs = $db?->getDatabases();
+        if ($dbs instanceof \ADORecordSet) {
+            $dbCounter = 0;
+            while (!$dbs->EOF) {
+                $dbCounter++;
+
+                $tr = $dom->createElement('tr');
+                $tr->setAttribute('class', "data" . ($dbCounter % 2 !== 0 ? '1' : '2'));
+
+                $tdCheckbox = $dom->createElement('td');
+                $inputCheckbox = $dom->createElement('input');
+                $inputCheckbox->setAttribute('type', 'checkbox');
+                $inputCheckbox->setAttribute('name', 'ma[]');
+
+                $dbName = '';
+                $dbOwner = '';
+                $dbEncoding = '';
+                $dbCollation = '';
+                $dbCharacterType = '';
+                $dbTablespace = '';
+                $dbSize = new DbSize(0);
+                $dbComment = '';
+                $checkboxValue = '';
+                if (is_array($dbs->fields)) {
+                    if (isset($dbs->fields['datname']) && is_string($dbs->fields['datname'])) {
+                        $dbName = $dbs->fields['datname'];
+                        $checkboxValue = serialize(['database' => $dbName]);
+                    }
+                    if (isset($dbs->fields['datowner']) && is_string($dbs->fields['datowner'])) {
+                        $dbOwner = $dbs->fields['datowner'];
+                    }
+                    if (isset($dbs->fields['datencoding']) && is_string($dbs->fields['datencoding'])) {
+                        $dbEncoding = $dbs->fields['datencoding'];
+                    }
+                    if (isset($dbs->fields['datcollate']) && is_string($dbs->fields['datcollate'])) {
+                        $dbCollation = $dbs->fields['datcollate'];
+                    }
+                    if (isset($dbs->fields['datctype']) && is_string($dbs->fields['datctype'])) {
+                        $dbCharacterType = $dbs->fields['datctype'];
+                    }
+                    if (isset($dbs->fields['tablespace']) && is_string($dbs->fields['tablespace'])) {
+                        $dbTablespace = $dbs->fields['tablespace'];
+                    }
+                    if (isset($dbs->fields['dbsize']) && is_numeric($dbs->fields['dbsize'])) {
+                        $dbSize = new DbSize((int)$dbs->fields['dbsize']);
+                    }
+                    if (isset($dbs->fields['datcomment']) && is_string($dbs->fields['datcomment'])) {
+                        $dbComment = $dbs->fields['datcomment'];
+                    }
+                }
+                $inputCheckbox->setAttribute('value', $checkboxValue);
+                $tdCheckbox->appendChild($inputCheckbox);
+
+                $tdDatabase = $dom->createElement('td');
+                $aDatabase = $dom->createElement('a', $dbName);
+                $dbUrl = 'redirect.php';
+                $dbUrlParams = [
+                    'subject' => 'database',
+                    'server' => $serverSession?->id() ?? '',
+                    'database' => $dbName
+                ];
+                $aDatabase->setAttribute('href', $dbUrl . '?' . http_build_query($dbUrlParams));
+                $tdDatabase->appendChild($aDatabase);
+
+                $tdOwner = $dom->createElement('td', $dbOwner);
+                $tdEncoding = $dom->createElement('td', $dbEncoding);
+                $tdCollation = $dom->createElement('td', $dbCollation);
+                $tdCharacterType = $dom->createElement('td', $dbCharacterType);
+                $tdTablespace = $dom->createElement('td', $dbTablespace);
+                $tdSize = $dom->createElement('td', $dbSize->prettyFormat());
+
+                $tdActionDelete = $dom->createElement('td');
+                $tdActionDelete->setAttribute('class', 'opbutton1');
+                $aDelete = $dom->createElement('a');
+                $deleteUrl = 'drop_db.php';
+                $deleteUrlParams = [
+                    'database' => $dbName,
+                    'server' => $serverSession?->id() ?? ''
+                ];
+                $aDelete->setAttribute('href', $deleteUrl . '?' . http_build_query($deleteUrlParams));
+                $aDelete->appendChild($dom->createTextNode(_('Delete')));
+                $tdActionDelete->appendChild($aDelete);
+
+                $tdActionPrivileges = $dom->createElement('td');
+                $tdActionPrivileges->setAttribute('class', 'opbutton1');
+                $aPrivileges = $dom->createElement('a');
+                $privilegesUrl = 'privileges.php';
+                $privilegesUrlParams = [
+                    'subject' => 'database',
+                    'dropdatabase' => $dbName,
+                    'server' => $serverSession?->id() ?? ''
+                ];
+                $aPrivileges->setAttribute('href', $privilegesUrl . '?' . http_build_query($privilegesUrlParams));
+                $aPrivileges->appendChild($dom->createTextNode(_('Privileges')));
+                $tdActionPrivileges->appendChild($aPrivileges);
+
+                $tdActionAlter = $dom->createElement('td');
+                $tdActionAlter->setAttribute('class', 'opbutton1');
+                $aAlter = $dom->createElement('a');
+                $alterUrl = 'alter_db.php';
+                $alterUrlParams = [
+                    'database' => $dbName,
+                    'server' => $serverSession?->id() ?? ''
+                ];
+                $aAlter->setAttribute('href', $alterUrl . '?' . http_build_query($alterUrlParams));
+                $aAlter->appendChild($dom->createTextNode(_('Alter')));
+                $tdActionAlter->appendChild($aAlter);
+
+                $tdComment = $dom->createElement('td', $dbComment);
+
+                $tr->appendChild($tdCheckbox);
+                $tr->appendChild($tdDatabase);
+                $tr->appendChild($tdOwner);
+                $tr->appendChild($tdEncoding);
+                $tr->appendChild($tdCollation);
+                $tr->appendChild($tdCharacterType);
+                $tr->appendChild($tdTablespace);
+                $tr->appendChild($tdSize);
+                $tr->appendChild($tdActionDelete);
+                $tr->appendChild($tdActionPrivileges);
+                $tr->appendChild($tdActionAlter);
+                $tr->appendChild($tdComment);
+
+                $tBody->appendChild($tr);
+
+                $dbs->MoveNext();
+            }
+        }
+
+        $table->appendChild($tHead);
+        $table->appendChild($tBody);
+
+        return $table;
+    }
+
+    /**
+     * @param array<mixed> $urlParams
+     */
+    public static function buildHelpLink(\DOMDocument $dom, string $url, ?array $urlParams = null): \DOMElement
+    {
+        $a = $dom->createElement('a', '?');
+        $href = $url;
+        if (!is_null($urlParams)) {
+            $href .= '?' . http_build_query($urlParams);
+        }
+        $a->setAttribute('href', $href);
+        $a->setAttribute('class', 'help');
+        $a->setAttribute('title', _('Help'));
+        $a->setAttribute('target', 'phppgadminhelp');
+
+        return $a;
+    }
+
+    public static function buildMessage(\DOMDocument $dom, string $message): \DOMElement
+    {
+        $pMessage = $dom->createElement('p');
+        $pMessage->setAttribute('class', 'message');
+        $pMessage->appendChild($dom->createTextNode($message));
+        return $pMessage;
+    }
+
+    public static function buildMultipleActionsTableForDatabases(
+        \DOMDocument $dom,
+        ?ServerSession $serverSession
+    ): \DOMElement {
+        $table = $dom->createElement('table');
+
+        $tHead = $dom->createElement('thead');
+        $trHead = $dom->createElement('tr');
+        $tHead->appendChild($trHead);
+        $thAction = $dom->createElement('th');
+        $thAction->setAttribute('class', 'data');
+        $thAction->setAttribute('colspan', '3');
+        $thAction->appendChild($dom->createTextNode(_('Actions on multiple lines')));
+        $tHead->appendChild($thAction);
+
+        $tBody = $dom->createElement('tbody');
+        $trRow1 = $dom->createElement('tr');
+        $trRow1->setAttribute('class', 'row1');
+
+        $tdCol1 = $dom->createElement('td');
+        $aSelectAll = $dom->createElement('a');
+        $aSelectAll->setAttribute('href', '#');
+        $aSelectAll->setAttribute('onclick', 'javascript:checkAll(true);');
+        $aSelectAll->appendChild($dom->createTextNode(_('Select all')));
+        $aUnselectAll = $dom->createElement('a');
+        $aUnselectAll->setAttribute('href', '#');
+        $aUnselectAll->setAttribute('onclick', 'javascript:checkAll(false);');
+        $aUnselectAll->appendChild($dom->createTextNode(_('Unselect all')));
+        $tdCol1->appendChild($aSelectAll);
+        $tdCol1->appendChild($dom->createTextNode(' / '));
+        $tdCol1->appendChild($aUnselectAll);
+
+        $tdCol2 = $dom->createElement('td', '&nbsp;---&gt;&nbsp;');
+
+        $tdCol3 = $dom->createElement('td');
+        $selectMultiAction = $dom->createElement('select');
+        $selectMultiAction->setAttribute('name', 'action');
+        $optionEmpty = $dom->createElement('option', '--');
+        $optionEmpty->setAttribute('value', '');
+        $optionDelete = $dom->createElement('option', _('Delete'));
+        $optionDelete->setAttribute('value', 'confirm_drop');
+        $selectMultiAction->appendChild($optionEmpty);
+        $selectMultiAction->appendChild($optionDelete);
+        $inputSubmit = $dom->createElement('input');
+        $inputSubmit->setAttribute('type', 'submit');
+        $inputSubmit->setAttribute('value', _('Execute'));
+        $inputHiddenServer = $dom->createElement('input');
+        $inputHiddenServer->setAttribute('type', 'hidden');
+        $inputHiddenServer->setAttribute('name', 'server');
+        $inputHiddenServer->setAttribute('value', $serverSession?->id() ?? '');
+        $tdCol3->appendChild($selectMultiAction);
+        $tdCol3->appendChild($inputSubmit);
+        $tdCol3->appendChild($inputHiddenServer);
+
+        $trRow1->appendChild($tdCol1);
+        $trRow1->appendChild($tdCol2);
+        $trRow1->appendChild($tdCol3);
+        $tBody->appendChild($trRow1);
+
+        $table->appendChild($tHead);
+        $table->appendChild($tBody);
+
+        return $table;
     }
 
     /**
@@ -88,6 +357,73 @@ abstract class WebsiteComponents
         $tableTabs->appendChild($trTabs);
 
         return $tableTabs;
+    }
+
+    /**
+     * @param array{
+     *  'url': string,
+     *  'url-params'?: array<string, string>,
+     *  'label': string,
+     *  'icon': string,
+     *  'active'?: bool,
+     *  'help'?: array{
+     *      'url': string,
+     *      'url-params'?: array<string, string>
+     *  }
+     * }[] $tabLinks
+     */
+    public static function buildServerDatabasesTabs(\DOMDocument $dom, array $tabLinks): \DOMElement
+    {
+        $table = $dom->createElement('table');
+        $table->setAttribute('class', 'tabs');
+
+        $tBody = $dom->createElement('tbody');
+        $tr = $dom->createElement('tr');
+
+        foreach ($tabLinks as $tabLink) {
+            $td = $dom->createElement('td');
+            $tdClass = 'tab';
+            if (isset($tabLink['active']) && $tabLink['active']) {
+                $tdClass .= ' active';
+            }
+            $td->setAttribute('class', $tdClass);
+            $td->setAttribute('style', 'width: 20%');
+
+            $href = $tabLink['url'];
+            if (isset($tabLink['url-params'])) {
+                $href .= '?' . http_build_query($tabLink['url-params']);
+            }
+            $a = $dom->createElement('a');
+            $a->setAttribute('href', $href);
+            $spanIcon = $dom->createElement('span');
+            $spanIcon->setAttribute('class', 'icon');
+            $imgIcon = $dom->createElement('img');
+            $imgIcon->setAttribute('src', Config::getIcon($tabLink['icon']));
+            $imgIcon->setAttribute('alt', $tabLink['label']);
+            $spanIcon->appendChild($imgIcon);
+            $spanLabel = $dom->createElement('span', $tabLink['label']);
+            $spanLabel->setAttribute('class', 'label');
+            $a->appendChild($spanIcon);
+            $a->appendChild($spanLabel);
+            $td->appendChild($a);
+
+            if (isset($tabLink['help'])) {
+                $aHelp = WebsiteComponents::buildHelpLink(
+                    dom: $dom,
+                    url: $tabLink['help']['url'],
+                    urlParams: $tabLink['help']['url-params'] ?? []
+                );
+                $td->appendChild($aHelp);
+            }
+
+            $tr->appendChild($td);
+        }
+
+        $tBody->appendChild($tr);
+
+        $table->appendChild($tBody);
+
+        return $table;
     }
 
     public static function buildTopBar(\DOMDocument $dom): \DOMElement
@@ -288,17 +624,14 @@ abstract class WebsiteComponents
 
         $td->appendChild($a);
 
-        $helpUrl = 'help.php';
-        $helpUrlParams = [
-            'help' => 'pg.server',
-            'server' => $serverId
-        ];
-        $aHelp = $dom->createElement('a', '?');
-        $aHelp->setAttribute('href', $helpUrl . '?' . http_build_query($helpUrlParams));
-        $aHelp->setAttribute('class', 'help');
-        $aHelp->setAttribute('title', _('Help'));
-        $aHelp->setAttribute('target', 'phppgadminhelp');
-
+        $aHelp = WebsiteComponents::buildHelpLink(
+            dom: $dom,
+            url: 'help.php',
+            urlParams: [
+                'help' => 'pg.server',
+                'server' => $serverId
+            ]
+        );
         $td->appendChild($aHelp);
         $td->appendChild($dom->createTextNode(': '));
 

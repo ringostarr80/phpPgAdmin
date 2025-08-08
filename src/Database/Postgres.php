@@ -9,11 +9,6 @@ use PhpPgAdmin\DDD\Entities\ServerSession;
 
 class Postgres extends ADOdbBase
 {
-    public float $majorVersion = 14;
-    // Max object name length
-    public int $maxNameLen = 63;
-    // Store the current schema
-    public string $schema;
     /**
      * Map of database encoding names to HTTP encoding names.  If a
      * database encoding does not appear in this list, then its HTTP
@@ -21,7 +16,7 @@ class Postgres extends ADOdbBase
      *
      * @var array<string, string>
      */
-    public array $codemap = [
+    public const CODEMAP = [
         'BIG5' => 'BIG5',
         'EUC_CN' => 'GB2312',
         'EUC_JP' => 'EUC-JP',
@@ -57,6 +52,12 @@ class Postgres extends ADOdbBase
         'WIN1256' => 'CP1256',
         'WIN1258' => 'CP1258'
     ];
+    // Max object name length
+    public const MAX_NAME_LENGTH = 63;
+
+    public float $majorVersion = 14;
+    // Store the current schema
+    public string $schema = '';
     /**
      * @var string[]
      */
@@ -796,15 +797,23 @@ class Postgres extends ADOdbBase
     /**
      * Return the database owner of a db
      * @param string $database the name of the database to get the owner for
-     * @return \ADORecordSet|int recordset of the db owner info
      */
-    public function getDatabaseOwner(string $database): \ADORecordSet|int
+    public function getDatabaseOwner(string $database): string
     {
-        $database = $this->clean($database);
+        $cleanedDbName = $this->clean($database);
         $sql = "SELECT usename
             FROM pg_user, pg_database
-            WHERE pg_user.usesysid = pg_database.datdba AND pg_database.datname = '{$database}' ";
-        return $this->selectSet($sql);
+            WHERE pg_user.usesysid = pg_database.datdba AND pg_database.datname = '{$cleanedDbName}' ";
+        $ds = $this->selectSet($sql);
+        if (is_int($ds)) {
+            throw new \Exception('A database error occurred while retrieving the database owner.');
+        }
+
+        if (!$ds->EOF && is_array($ds->fields) && isset($ds->fields['usename']) && is_string($ds->fields['usename'])) {
+            return $ds->fields['usename'];
+        }
+
+        throw new \Exception("Database owner for database '{$cleanedDbName}' not found.");
     }
 
     /**
@@ -840,26 +849,26 @@ class Postgres extends ADOdbBase
         string $tablespace = '',
         string $comment = '',
         string $template = 'template1',
-        string $lc_collate = '',
-        string $lc_ctype = ''
+        string $lcCollate = '',
+        string $lcCType = ''
     ): int {
         $database = $this->fieldClean($database) ?? $database;
         $encoding = $this->clean($encoding);
         $tablespace = $this->fieldClean($tablespace);
         $template = $this->fieldClean($template);
-        $lc_collate = $this->clean($lc_collate);
-        $lc_ctype = $this->clean($lc_ctype);
+        $lcCollate = $this->clean($lcCollate);
+        $lcCType = $this->clean($lcCType);
 
         $sql = "CREATE DATABASE \"{$database}\" WITH TEMPLATE=\"{$template}\"";
 
         if ($encoding != '') {
             $sql .= " ENCODING='{$encoding}'";
         }
-        if ($lc_collate != '') {
-            $sql .= " LC_COLLATE='{$lc_collate}'";
+        if ($lcCollate != '') {
+            $sql .= " LC_COLLATE='{$lcCollate}'";
         }
-        if ($lc_ctype != '') {
-            $sql .= " LC_CTYPE='{$lc_ctype}'";
+        if ($lcCType != '') {
+            $sql .= " LC_CTYPE='{$lcCType}'";
         }
 
         if ($tablespace != '' && $this->hasTablespaces()) {
@@ -949,23 +958,23 @@ class Postgres extends ADOdbBase
         string $comment = ''
     ): bool|int {
         $status = $this->beginTransaction();
-        if ($status != 0) {
+        if (!($status instanceof \PgSql\Result) && $status !== true) {
             $this->rollbackTransaction();
             return -1;
         }
 
-        if ($dbName != $newName) {
+        if ($dbName !== $newName) {
             $status = $this->alterDatabaseRename($dbName, $newName);
-            if ($status != 0) {
+            if ($status !== 0) {
                 $this->rollbackTransaction();
                 return -3;
             }
             $dbName = $newName;
         }
 
-        if ($newOwner != '') {
+        if ($newOwner !== '') {
             $status = $this->alterDatabaseOwner($newName, $newOwner);
-            if ($status != 0) {
+            if ($status !== 0) {
                 $this->rollbackTransaction();
                 return -2;
             }
@@ -973,11 +982,16 @@ class Postgres extends ADOdbBase
 
         $dbName = $this->fieldClean($dbName) ?? $dbName;
         $status = $this->setComment('DATABASE', $dbName, '', $comment);
-        if ($status != 0) {
+        if ($status !== 0) {
             $this->rollbackTransaction();
             return -4;
         }
-        return $this->endTransaction();
+        $status = $this->endTransaction();
+        if (is_bool($status)) {
+            return $status;
+        }
+
+        return true;
     }
 
     /**
@@ -1301,7 +1315,12 @@ class Postgres extends ADOdbBase
                 return -1;
             }
 
-            return $this->endTransaction();
+            $endTransactionResult = $this->endTransaction();
+            if (is_bool($endTransactionResult)) {
+                return $endTransactionResult ? 0 : -1;
+            }
+
+            return 0;
         }
 
         return 0;
@@ -1358,7 +1377,12 @@ class Postgres extends ADOdbBase
             }
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -2202,7 +2226,13 @@ class Postgres extends ADOdbBase
                 return -1;
             }
         }
-        return $this->endTransaction();
+
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -2275,7 +2305,12 @@ class Postgres extends ADOdbBase
             return -1;
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -2511,7 +2546,12 @@ class Postgres extends ADOdbBase
             return $status;
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -2687,7 +2727,12 @@ class Postgres extends ADOdbBase
             return -1;
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -2810,7 +2855,12 @@ class Postgres extends ADOdbBase
             return -5;
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -2957,7 +3007,12 @@ class Postgres extends ADOdbBase
      */
     public function endDump(): bool
     {
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult;
+        }
+
+        return true;
     }
 
     /**
@@ -3236,7 +3291,12 @@ class Postgres extends ADOdbBase
         }
 
         // End transaction
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -3266,7 +3326,12 @@ class Postgres extends ADOdbBase
         }
 
         // End transaction
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     // Sequence functions
@@ -3846,7 +3911,12 @@ class Postgres extends ADOdbBase
             return $status;
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -3962,7 +4032,12 @@ class Postgres extends ADOdbBase
             }
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -4126,7 +4201,12 @@ class Postgres extends ADOdbBase
             return $status;
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -4605,7 +4685,12 @@ class Postgres extends ADOdbBase
         }
 
         // Otherwise, close the transaction
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -5058,7 +5143,12 @@ class Postgres extends ADOdbBase
             return -4;
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -5365,7 +5455,12 @@ class Postgres extends ADOdbBase
             }
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -5474,7 +5569,12 @@ class Postgres extends ADOdbBase
             return -4;
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -5695,7 +5795,12 @@ class Postgres extends ADOdbBase
             }
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -5830,7 +5935,13 @@ class Postgres extends ADOdbBase
                 return -1;
             }
         }
-        return $this->endTransaction();
+
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -6516,7 +6627,12 @@ class Postgres extends ADOdbBase
                 return -1;
             }
 
-            return $this->endTransaction();
+            $endTransactionResult = $this->endTransaction();
+            if (is_bool($endTransactionResult)) {
+                return $endTransactionResult ? 0 : -1;
+            }
+
+            return 0;
         }
 
         return 0;
@@ -6792,7 +6908,12 @@ class Postgres extends ADOdbBase
             }
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -6875,7 +6996,12 @@ class Postgres extends ADOdbBase
             }
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -6915,7 +7041,12 @@ class Postgres extends ADOdbBase
             }
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -7167,7 +7298,12 @@ class Postgres extends ADOdbBase
             }
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -7370,7 +7506,12 @@ class Postgres extends ADOdbBase
             }
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     // Role, User/Group functions
@@ -7783,7 +7924,12 @@ class Postgres extends ADOdbBase
             return -2;
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -7935,7 +8081,12 @@ class Postgres extends ADOdbBase
             return -2;
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**
@@ -8611,7 +8762,12 @@ class Postgres extends ADOdbBase
             }
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**

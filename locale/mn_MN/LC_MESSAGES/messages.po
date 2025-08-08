@@ -59,7 +59,7 @@ msgstr "є?з ЫЯЭаиРдХв"
 msgid "Logout"
 msgstr "чСвСШ"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "ќкмЭлЩЧо"
 
 msgid "straction"
@@ -68,7 +68,7 @@ msgstr "?ЪЬФмЬ"
 msgid "Actions"
 msgstr "?ЪЬФмЬ??Ф"
 
-msgid "strname"
+msgid "Name"
 msgstr "юмв"
 
 msgid "strdefinition"
@@ -83,7 +83,7 @@ msgstr "є?Ь?з (лЩЮж оСЮСв)"
 msgid "strbrowse"
 msgstr "шСвСШ"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "шСгСШ"
 
 msgid "strdropped"
@@ -110,13 +110,13 @@ msgstr "ѓ??ЬФ >>"
 msgid "strfailed"
 msgstr "сЬФСС"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "??гЧмШ"
 
 msgid "strcreated"
 msgstr "??гЧмгмЮ"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "єСЪЬТСв"
 
 msgid "strlength"
@@ -125,13 +125,13 @@ msgstr "ѕвд"
 msgid "strdefault"
 msgstr "єЯФЯвШЯЪ Тег"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "??воЩЬ?Ш"
 
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "ш?оЩЮЧ?Ъ ТЯЬЧЯШ"
 
 msgid "strsave"
@@ -146,7 +146,7 @@ msgstr "явееЬЧС ШЩЪШ"
 msgid "strselect"
 msgstr "ѓЯЮЧЯШ"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "ѕгдЧСШ"
 
 msgid "strupdate"
@@ -188,7 +188,7 @@ msgstr "теУСШ"
 msgid "strqueryresults"
 msgstr "сгееЬЧйЮ ?в Ф?Ю"
 
-msgid "strshow"
+msgid "Show"
 msgstr "?кмШ"
 
 msgid "strempty"
@@ -197,7 +197,7 @@ msgstr "шЯЯгЬЯШ"
 msgid "Language"
 msgstr "шмЬ"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "ыЯФоЩЬЯШ"
 
 msgid "strvalue"
@@ -209,7 +209,7 @@ msgstr "яЮУЧЯЪ"
 msgid "strprimary"
 msgstr "?ЮФгмЮ"
 
-msgid "strexport"
+msgid "Export"
 msgstr "ќЫгаЯвд"
 
 msgid "strimport"
@@ -257,7 +257,7 @@ msgstr "явЯЮФ Юи "
 msgid "strwhen"
 msgstr "шмкмм"
 
-msgid "strformat"
+msgid "Format"
 msgstr "цЯвЭСд"
 
 msgid "strdata"
@@ -284,13 +284,13 @@ msgstr "єСЪЬТСв"
 msgid "Find"
 msgstr "яЬЯШ"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "ѓЯЮЧЯЬд"
 
 msgid "Refresh"
 msgstr "ѓмвЧммШ"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "єСдСж СзСШ"
 
 msgid "strinfo"
@@ -478,13 +478,13 @@ msgstr "єСТЬЩУС ЩкЭХЮХЮС."
 msgid "strtablealteredbad"
 msgstr "щкЭХЮХЮЩХ дСТЬЩУй авХвзСЮЯ."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "єЯЬиЫЯ ФСЮЮйХ"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "єЯЬиЫЯ гдвеЫдеве"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "ѓдвеЫдеве Щ ФСЮЮйХ"
 
 # Users
@@ -625,7 +625,7 @@ msgstr "ѕФСЬХЮЩХ еоСгдЮЩЫС авХвзСЮЯ."
 msgid "strprivilege"
 msgstr "№вЩзЩЬХЧЩб"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "№вЩзЩЬХЧЩЩ"
 
 msgid "strnoprivileges"
@@ -656,7 +656,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "тСкС ФСЮЮйШ"
 
 msgid "Databases"
@@ -677,22 +677,22 @@ msgstr "ѓЯкФСди ТСке ФСЮЮйШ"
 msgid "strdatabasename"
 msgstr "щЭб ТСкй ФСЮЮйШ"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "їСЭ ЮХЯТШЯФЩЭЯ авЩгзЯЩди ЩЭб їСлХЪ ТСкХ ФСЮЮйШ."
 
 msgid "strdatabasecreated"
 msgstr "тСкС ФСЮЮйШ гЯкФСЮС."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "ѓЯкФСЮЩХ ТСкй ФСЮЮйШ авХвзСЮЯ."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еЮЩодЯжЩди ТСке ФСЮЮйШ \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr " тСкС ФСЮЮйШ еЮЩодЯжХЮС."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "ѕЮЩодЯжХЮЩХ ТСкй ФСЮЮйШ авХвзСЮЯ."
 
 msgid "strentersql"

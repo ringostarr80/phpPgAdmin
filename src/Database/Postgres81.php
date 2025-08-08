@@ -140,7 +140,13 @@ class Postgres81 extends Postgres82
             $this->rollbackTransaction();
             return -2;
         }
-        return $this->endTransaction();
+
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     // Autovacuum functions

@@ -77,7 +77,7 @@ msgstr "Port"
 msgid "Logout"
 msgstr "Odhlásit"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Vlastník"
 
 msgid "straction"
@@ -86,7 +86,7 @@ msgstr "Akce"
 msgid "Actions"
 msgstr "Akce"
 
-msgid "strname"
+msgid "Name"
 msgstr "Název"
 
 msgid "strdefinition"
@@ -104,7 +104,7 @@ msgstr "Povolit"
 msgid "strdisable"
 msgstr "Zakázat"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Odstranit"
 
 msgid "strdropped"
@@ -131,13 +131,13 @@ msgstr "Poslední >>"
 msgid "strfailed"
 msgstr "Nezdařilo se"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Vytvořit"
 
 msgid "strcreated"
 msgstr "Vytvořeno"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Komentář"
 
 msgid "strlength"
@@ -146,13 +146,13 @@ msgstr "Délka"
 msgid "strdefault"
 msgstr "Výchozí"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Změnit"
 
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Storno"
 
 msgid "strkill"
@@ -176,7 +176,7 @@ msgstr "Vložit"
 msgid "strselect"
 msgstr "Vybrat"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Smazat"
 
 msgid "strupdate"
@@ -221,7 +221,7 @@ msgstr "Zpět"
 msgid "strqueryresults"
 msgstr "Výsledky dotazu"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Zobrazit"
 
 msgid "strempty"
@@ -230,7 +230,7 @@ msgstr "Vyprázdnit"
 msgid "Language"
 msgstr "Jazyk"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Kódování"
 
 msgid "strvalue"
@@ -242,7 +242,7 @@ msgstr "Jedinečný"
 msgid "strprimary"
 msgstr "Primární"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Export"
 
 msgid "strimport"
@@ -278,7 +278,7 @@ msgstr "Přeskupeno?"
 msgid "strreindex"
 msgstr "Přeindexovat"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Provést"
 
 msgid "stradd"
@@ -296,7 +296,7 @@ msgstr "Místo původního"
 msgid "strwhen"
 msgstr "Kdy"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Formát"
 
 msgid "strdata"
@@ -323,13 +323,13 @@ msgstr "Sbalit"
 msgid "Find"
 msgstr "Hledat"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Volby"
 
 msgid "Refresh"
 msgstr "Občerstvit"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Stáhnout"
 
 msgid "strdownloadgzipped"
@@ -383,22 +383,22 @@ msgstr "Použít tato prověření pro všechny servery"
 msgid "strconfdropcred"
 msgstr "Odpojením se z bezpečnostních důvodů smažou vaše sdílené připojovací informace. Opravdu se chcete odpojit?"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Akce pro víc řádků"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "Vybrat vše"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "Zrušit výběr"
 
 msgid "strlocale"
 msgstr "Místní nastavení"
 
-msgid "strcollation"
+msgid "Collation"
 msgstr "Řazení"
 
-msgid "strctype"
+msgid "Character Type"
 msgstr "Typ znaku"
 
 msgid "strdefaultvalues"
@@ -455,22 +455,22 @@ msgstr "Zvolte prosím databázi."
 msgid "strnoaccess"
 msgstr "Bez přístupu"
 
-msgid "strsize"
+msgid "Size"
 msgstr "Velikost"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "B"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -709,13 +709,13 @@ msgstr "Změny v tabulce byly provedeny."
 msgid "strtablealteredbad"
 msgstr "Nezdařilo se provést změny v tabulce."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Pouze data"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Pouze strukturu"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Strukturu a data"
 
 msgid "strtabbed"
@@ -914,7 +914,7 @@ msgstr "Nezdařilo se odebrat člena."
 msgid "strrole"
 msgstr "Role"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Role"
 
 msgid "strshowallroles"
@@ -975,7 +975,7 @@ msgstr "Musíte zadat název pro roli."
 msgid "strprivilege"
 msgstr "Oprávnění"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Oprávnění"
 
 msgid "strnoprivileges"
@@ -1003,7 +1003,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Databáze"
 
 msgid "Databases"
@@ -1021,22 +1021,22 @@ msgstr "Vytvořit databázi"
 msgid "strdatabasename"
 msgstr "Název databáze"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Musíte zadat název pro databázi."
 
 msgid "strdatabasecreated"
 msgstr "Databáze byla vytvořena."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Nezdařilo se vytvořit databázi."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Opravdu chcete odstranit databázi „%s“?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Databáze byla odstraněna."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Nezdařilo se odstranit databázi."
 
 msgid "strentersql"
@@ -1084,13 +1084,13 @@ msgstr "Všechny objekty"
 msgid "strdatabasealtered"
 msgstr "Změny v databázi byly provedeny."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Nezdařilo se provést změny v databázi."
 
 msgid "strspecifydatabasetodrop"
 msgstr "Pokud chcete odstranit databáze, tak musíte nejméně jednu vybrat."
 
-msgid "strtemplatedb"
+msgid "Template"
 msgstr "Šablona"
 
 msgid "strconfanalyzedatabase"
@@ -2143,10 +2143,10 @@ msgid "strrows2"
 msgstr "Řádků"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Prostor tabulek"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Prostory tabulek"
 
 msgid "strshowalltablespaces"

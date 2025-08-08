@@ -425,7 +425,12 @@ class Postgres74 extends Postgres80
             return -5;
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     /**

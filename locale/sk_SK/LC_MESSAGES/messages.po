@@ -92,7 +92,7 @@ msgstr "Vlastnosti"
 msgid "strbrowse"
 msgstr "Prehliadať"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Odstrániť"
 
 msgid "strdropped"
@@ -796,13 +796,13 @@ msgstr "Databáza vytvorená."
 msgid "Database creation failed."
 msgstr "Databáza nebola vytvorená."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Naozaj chceš zmazať databázu \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Databáze zmazaná."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Databáza nebola zmazaná."
 
 msgid "strentersql"
@@ -853,7 +853,7 @@ msgstr "Všetky objekty"
 msgid "strdatabasealtered"
 msgstr "Databáza zmenená."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Databáza nebola zmenená."
 
 # Views

@@ -104,7 +104,7 @@ msgstr "Povolit"
 msgid "strdisable"
 msgstr "Zakázat"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Odstranit"
 
 msgid "strdropped"
@@ -1030,13 +1030,13 @@ msgstr "Databáze byla vytvořena."
 msgid "Database creation failed."
 msgstr "Nezdařilo se vytvořit databázi."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Opravdu chcete odstranit databázi „%s“?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Databáze byla odstraněna."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Nezdařilo se odstranit databázi."
 
 msgid "strentersql"
@@ -1084,7 +1084,7 @@ msgstr "Všechny objekty"
 msgid "strdatabasealtered"
 msgstr "Změny v databázi byly provedeny."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Nezdařilo se provést změny v databázi."
 
 msgid "strspecifydatabasetodrop"

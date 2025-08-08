@@ -98,7 +98,7 @@ msgstr "Aktywuj"
 msgid "strdisable"
 msgstr "Deaktywuj"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Usuń"
 
 msgid "strdropped"
@@ -857,13 +857,13 @@ msgstr "Baza danych została utworzona."
 msgid "Database creation failed."
 msgstr "Próba utworzenia bazy danych się nie powiodła."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Czy na pewno chcesz usunąć bazę danych \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Baza danych została usunięta."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Próba usunięcia bazy danych się nie powiodła."
 
 msgid "strentersql"
@@ -911,7 +911,7 @@ msgstr "Wszystkie obiekty"
 msgid "strdatabasealtered"
 msgstr "Baza danych została zmieniona."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Próba modyfikacji bazy danych się nie powiodła."
 
 # Views

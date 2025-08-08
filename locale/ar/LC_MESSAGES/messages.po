@@ -80,7 +80,7 @@ msgstr "خصائص"
 msgid "strbrowse"
 msgstr "إستعراض Browse"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "حذف Drop"
 
 msgid "strdropped"
@@ -740,13 +740,13 @@ msgstr "تم إنشاء قاعدة البيانات بنجاح."
 msgid "Database creation failed."
 msgstr "فشل إنشاء قاعدة البيانات."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "هل أنت متأكد تريد حذف قاعدة البيانات بإسم \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "تم حذف قاعدة البيانات."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "لقد فشلت عملية حذف قاعدة البيانات."
 
 msgid "strentersql"

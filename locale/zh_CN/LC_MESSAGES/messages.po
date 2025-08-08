@@ -104,7 +104,7 @@ msgstr "有效"
 msgid "strdisable"
 msgstr "无效"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "删除"
 
 msgid "strdropped"
@@ -1033,13 +1033,13 @@ msgstr "数据库已创建。"
 msgid "Database creation failed."
 msgstr "数据库创建失败。"
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "确定要删除数据库\"%s\"吗？"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "数据库已删除。"
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "数据库删除失败"
 
 msgid "strentersql"
@@ -1087,7 +1087,7 @@ msgstr "所有对象"
 msgid "strdatabasealtered"
 msgstr "数据库已变更。"
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "数据库变更失败。"
 
 msgid "strspecifydatabasetodrop"

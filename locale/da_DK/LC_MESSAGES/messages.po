@@ -80,7 +80,7 @@ msgstr "Egenskaber"
 msgid "strbrowse"
 msgstr "Bladre"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Fjern"
 
 msgid "strdropped"
@@ -709,7 +709,7 @@ msgstr "Ændring af rettigheder mislykkedes."
 msgid "stralterprivs"
 msgstr "Ændre rettigheder"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Database fjernet."
 
 msgid "strgrantor"
@@ -749,10 +749,10 @@ msgstr "Database oprettet."
 msgid "Database creation failed."
 msgstr "Oprettelse af database mislykkedes."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Er du sikker på at du vil fjerne database \"%s\"?"
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Fjernelse af database mislykkedes."
 
 msgid "strentersql"

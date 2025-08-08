@@ -188,7 +188,7 @@ class Postgres82 extends Postgres83
      * @param $cost cost the planner should use in the function execution step
      * @param $comment The comment on the function
      * @param $replace (optional) True if OR REPLACE, false for normal
-     * @return bool|int 0 success, -1 create function failed, -4 set comment failed
+     * @return int 0 success, -1 create function failed, -4 set comment failed
      */
     public function createFunction(
         string $funcname,
@@ -272,7 +272,12 @@ class Postgres82 extends Postgres83
             return -4;
         }
 
-        return $this->endTransaction();
+        $endTransactionResult = $this->endTransaction();
+        if (is_bool($endTransactionResult)) {
+            return $endTransactionResult ? 0 : -1;
+        }
+
+        return 0;
     }
 
     // Index functions

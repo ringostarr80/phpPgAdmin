@@ -80,7 +80,7 @@ msgstr "העדפות"
 msgid "strbrowse"
 msgstr "דפדף"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "מחק"
 
 msgid "strdropped"
@@ -743,13 +743,13 @@ msgstr "בסיס נתונים נוצר"
 msgid "Database creation failed."
 msgstr "יצירת בסיס נתונים נכשלה."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "אתה בטוח שברצונך למחוק את בסיס הנתונים \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "מסד נתונים נמחק"
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "מחיקת מסד הנתונים נכשלה."
 
 msgid "strentersql"

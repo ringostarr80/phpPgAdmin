@@ -98,7 +98,7 @@ msgstr "Ενεργοποίηση"
 msgid "strdisable"
 msgstr "Απενεργοποίηση"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Διαγραφή"
 
 msgid "strdropped"
@@ -869,13 +869,13 @@ msgstr "Η βάση δημιουργήθηκε."
 msgid "Database creation failed."
 msgstr "Η δημιουργία της βάσης απέτυχε."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Διαγραφή της βάσης \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Η βάση διαγράφηκε."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Η δημιουργία της βάσης απέτυχε."
 
 msgid "strentersql"
@@ -923,7 +923,7 @@ msgstr "Ολα τα αντικείμενα"
 msgid "strdatabasealtered"
 msgstr "Η βάση τροποποιήθηκε."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Η τροποποίηση της βάσης απέτυχε."
 
 # Views

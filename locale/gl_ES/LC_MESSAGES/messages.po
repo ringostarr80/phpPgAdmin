@@ -104,7 +104,7 @@ msgstr "Activar"
 msgid "strdisable"
 msgstr "Desactivar"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Eliminar"
 
 msgid "strdropped"
@@ -1030,13 +1030,13 @@ msgstr "Creouse a base de datos."
 msgid "Database creation failed."
 msgstr "Non se conseguiu crear a base de datos."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Está seguro de que quere eliminar a base de datos «%s»?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Eliminouse a base de datos."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Non se conseguiu eliminar a base de datos."
 
 msgid "strentersql"
@@ -1084,7 +1084,7 @@ msgstr "Todos os obxectos"
 msgid "strdatabasealtered"
 msgstr "Modificouse a base de datos."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Non se conseguiu modificar a base de datos."
 
 msgid "strspecifydatabasetodrop"

@@ -80,7 +80,7 @@ msgstr "Egenskaper"
 msgid "strbrowse"
 msgstr "Bläddra"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Ta bort"
 
 msgid "strdropped"
@@ -677,7 +677,7 @@ msgstr "Ändra rättigheter"
 msgid "Database"
 msgstr "Databas"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Databas raderad."
 
 msgid "Databases"
@@ -716,10 +716,10 @@ msgstr "Databas skapad."
 msgid "Database creation failed."
 msgstr "Misslyckades att skapa databas."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Är du säker på att du vill radera databas \"%s\"?"
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Misslyckades att radera databas."
 
 msgid "strsqlexecuted"

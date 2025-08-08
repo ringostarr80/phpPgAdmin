@@ -98,7 +98,7 @@ msgstr "啟用"
 msgid "strdisable"
 msgstr "停用"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "移除"
 
 msgid "strdropped"
@@ -936,13 +936,13 @@ msgstr "資料庫已建立。"
 msgid "Database creation failed."
 msgstr "資料庫建立失敗。"
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "您確定您要移除這個資料庫 \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "資料庫已移除。"
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "資料庫移除失敗。"
 
 msgid "strentersql"
@@ -990,7 +990,7 @@ msgstr "全部物件"
 msgid "strdatabasealtered"
 msgstr "資料庫已修改。"
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "資料庫修改已失敗。"
 
 msgid "strspecifydatabasetodrop"

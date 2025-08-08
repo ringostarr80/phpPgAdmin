@@ -79,7 +79,7 @@ msgstr "Propriedades"
 msgid "strbrowse"
 msgstr "Navegar"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Eliminar"
 
 msgid "strdropped"
@@ -583,13 +583,13 @@ msgstr "Base de dados criada."
 msgid "Database creation failed."
 msgstr "Falhou na criação da Base de dados."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Tem certeza que quer eliminar a base de dados \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Base de dados eliminada."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Falha ao eliminar a base de dados."
 
 msgid "strentersql"

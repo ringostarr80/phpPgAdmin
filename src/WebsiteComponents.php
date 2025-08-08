@@ -68,7 +68,7 @@ abstract class WebsiteComponents
                 $dbCounter++;
 
                 $tr = $dom->createElement('tr');
-                $tr->setAttribute('class', "data{$dbCounter}");
+                $tr->setAttribute('class', "data" . ($dbCounter % 2 !== 0 ? '1' : '2'));
 
                 $tdCheckbox = $dom->createElement('td');
                 $inputCheckbox = $dom->createElement('input');
@@ -135,11 +135,9 @@ abstract class WebsiteComponents
                 $tdActionDelete = $dom->createElement('td');
                 $tdActionDelete->setAttribute('class', 'opbutton1');
                 $aDelete = $dom->createElement('a');
-                $deleteUrl = 'all_db.php';
+                $deleteUrl = 'drop_db.php';
                 $deleteUrlParams = [
-                    'subject' => 'database',
-                    'action' => 'confirm_drop',
-                    'dropdatabase' => $dbName,
+                    'database' => $dbName,
                     'server' => $serverSession?->id() ?? ''
                 ];
                 $aDelete->setAttribute('href', $deleteUrl . '?' . http_build_query($deleteUrlParams));
@@ -162,11 +160,9 @@ abstract class WebsiteComponents
                 $tdActionAlter = $dom->createElement('td');
                 $tdActionAlter->setAttribute('class', 'opbutton1');
                 $aAlter = $dom->createElement('a');
-                $alterUrl = 'all_db.php';
+                $alterUrl = 'alter_db.php';
                 $alterUrlParams = [
-                    'subject' => 'database',
-                    'action' => 'confirm_alter',
-                    'alterdatabase' => $dbName,
+                    'database' => $dbName,
                     'server' => $serverSession?->id() ?? ''
                 ];
                 $aAlter->setAttribute('href', $alterUrl . '?' . http_build_query($alterUrlParams));
@@ -198,6 +194,32 @@ abstract class WebsiteComponents
         $table->appendChild($tBody);
 
         return $table;
+    }
+
+    /**
+     * @param array<mixed> $urlParams
+     */
+    public static function buildHelpLink(\DOMDocument $dom, string $url, ?array $urlParams = null): \DOMElement
+    {
+        $a = $dom->createElement('a', '?');
+        $href = $url;
+        if (!is_null($urlParams)) {
+            $href .= '?' . http_build_query($urlParams);
+        }
+        $a->setAttribute('href', $href);
+        $a->setAttribute('class', 'help');
+        $a->setAttribute('title', _('Help'));
+        $a->setAttribute('target', 'phppgadminhelp');
+
+        return $a;
+    }
+
+    public static function buildMessage(\DOMDocument $dom, string $message): \DOMElement
+    {
+        $pMessage = $dom->createElement('p');
+        $pMessage->setAttribute('class', 'message');
+        $pMessage->appendChild($dom->createTextNode($message));
+        return $pMessage;
     }
 
     public static function buildMultipleActionsTableForDatabases(
@@ -386,15 +408,11 @@ abstract class WebsiteComponents
             $td->appendChild($a);
 
             if (isset($tabLink['help'])) {
-                $aHelp = $dom->createElement('a', '?');
-                $helpHref = $tabLink['help']['url'];
-                if (isset($tabLink['help']['url-params'])) {
-                    $helpHref .= '?' . http_build_query($tabLink['help']['url-params']);
-                }
-                $aHelp->setAttribute('href', $helpHref);
-                $aHelp->setAttribute('class', 'help');
-                $aHelp->setAttribute('title', _('Help'));
-                $aHelp->setAttribute('target', 'phppgadminhelp');
+                $aHelp = WebsiteComponents::buildHelpLink(
+                    dom: $dom,
+                    url: $tabLink['help']['url'],
+                    urlParams: $tabLink['help']['url-params'] ?? []
+                );
                 $td->appendChild($aHelp);
             }
 
@@ -606,17 +624,14 @@ abstract class WebsiteComponents
 
         $td->appendChild($a);
 
-        $helpUrl = 'help.php';
-        $helpUrlParams = [
-            'help' => 'pg.server',
-            'server' => $serverId
-        ];
-        $aHelp = $dom->createElement('a', '?');
-        $aHelp->setAttribute('href', $helpUrl . '?' . http_build_query($helpUrlParams));
-        $aHelp->setAttribute('class', 'help');
-        $aHelp->setAttribute('title', _('Help'));
-        $aHelp->setAttribute('target', 'phppgadminhelp');
-
+        $aHelp = WebsiteComponents::buildHelpLink(
+            dom: $dom,
+            url: 'help.php',
+            urlParams: [
+                'help' => 'pg.server',
+                'server' => $serverId
+            ]
+        );
         $td->appendChild($aHelp);
         $td->appendChild($dom->createTextNode(': '));
 

@@ -98,7 +98,7 @@ msgstr "有効"
 msgid "strdisable"
 msgstr "無効"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "破棄"
 
 msgid "strdropped"
@@ -948,13 +948,13 @@ msgstr "データベースを作成しました。"
 msgid "Database creation failed."
 msgstr "データベースの作成に失敗しました。"
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "本当にデータベース「%s」を破棄しますか?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "データベースを破棄しました。"
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "データベースの破棄に失敗しました。"
 
 msgid "strentersql"
@@ -1002,7 +1002,7 @@ msgstr "すべてのオブジェクト"
 msgid "strdatabasealtered"
 msgstr "データベースを変更しました。"
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "データベースの変更に失敗しました。"
 
 msgid "strspecifydatabasetodrop"

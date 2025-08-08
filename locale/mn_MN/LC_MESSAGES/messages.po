@@ -83,7 +83,7 @@ msgstr "є?Ь?з (лЩЮж оСЮСв)"
 msgid "strbrowse"
 msgstr "шСвСШ"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "шСгСШ"
 
 msgid "strdropped"
@@ -686,13 +686,13 @@ msgstr "тСкС ФСЮЮйШ гЯкФСЮС."
 msgid "Database creation failed."
 msgstr "ѓЯкФСЮЩХ ТСкй ФСЮЮйШ авХвзСЮЯ."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "їй езХвХЮй, одЯ ШЯдЩдХ еЮЩодЯжЩди ТСке ФСЮЮйШ \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr " тСкС ФСЮЮйШ еЮЩодЯжХЮС."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "ѕЮЩодЯжХЮЩХ ТСкй ФСЮЮйШ авХвзСЮЯ."
 
 msgid "strentersql"

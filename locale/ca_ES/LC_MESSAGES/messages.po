@@ -104,7 +104,7 @@ msgstr "Habilita"
 msgid "strdisable"
 msgstr "Inhabilita"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Elimina"
 
 msgid "strdropped"
@@ -1030,13 +1030,13 @@ msgstr "Base de dades creada."
 msgid "Database creation failed."
 msgstr "No s'ha pogut crear la base de dades."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Està segur de voler eliminar la base de dades \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Base de dades eliminada."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "No s'ha pogut eliminar la base de dades."
 
 msgid "strentersql"
@@ -1084,7 +1084,7 @@ msgstr "Tots els objectes"
 msgid "strdatabasealtered"
 msgstr "Base de dades modificada."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "No s'ha pogut modificar la base de dades."
 
 msgid "strspecifydatabasetodrop"

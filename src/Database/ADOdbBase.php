@@ -291,16 +291,12 @@ class ADOdbBase
         return $this->conn->ErrorNo();
     }
 
-    /**
-     * Begin a transaction
-     * @return bool true success
-     */
-    public function beginTransaction(): bool
+    public function beginTransaction(): bool|\PgSql\Result
     {
         return $this->conn->BeginTrans();
     }
 
-    public function endTransaction(): bool
+    public function endTransaction(): bool|\PgSql\Result
     {
         return $this->conn->CommitTrans();
     }
@@ -308,7 +304,7 @@ class ADOdbBase
     /**
      * Roll back a transaction
      */
-    public function rollbackTransaction(): bool
+    public function rollbackTransaction(): bool|\PgSql\Result
     {
         return $this->conn->RollbackTrans();
     }

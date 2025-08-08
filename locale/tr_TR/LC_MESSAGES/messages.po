@@ -92,7 +92,7 @@ msgstr "Özellikler"
 msgid "strbrowse"
 msgstr "Gözat"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Sil"
 
 msgid "strdropped"
@@ -795,13 +795,13 @@ msgstr "Veritabanı yaratıldı."
 msgid "Database creation failed."
 msgstr "Veritabanı yaratılamadı."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "\"%s\" veritabanını kaldırmak istediğinize emin misiniz?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Veritabanı kaldırıldı."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Veritabanı kaldırma başarısız oldu."
 
 msgid "strentersql"
@@ -849,7 +849,7 @@ msgstr "Tüm nesneler"
 msgid "strdatabasealtered"
 msgstr "Veritabanı değiştirildi."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Veritabanı değiştirme başarısız oldu."
 
 # Views

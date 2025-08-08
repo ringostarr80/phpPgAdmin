@@ -98,7 +98,7 @@ msgstr "Activare"
 msgid "strdisable"
 msgstr "Dezactivare"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Ştergere"
 
 msgid "strdropped"
@@ -890,13 +890,13 @@ msgstr "Bază de date creată."
 msgid "Database creation failed."
 msgstr "Creare bază de date eşuată."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Sigur ştergeţi baza de date \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Bază de date ştearsă."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Ştergere bază de date eşuată."
 
 msgid "strentersql"
@@ -944,7 +944,7 @@ msgstr "Toate obiectele"
 msgid "strdatabasealtered"
 msgstr "Bază de date modificată."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Modificarea bazei de date a eşuat."
 
 # Views

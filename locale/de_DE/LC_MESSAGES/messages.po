@@ -98,7 +98,7 @@ msgstr "Einschalten"
 msgid "strdisable"
 msgstr "Ausschalten"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Löschen"
 
 msgid "strdropped"
@@ -957,13 +957,13 @@ msgstr "Datenbank erstellt."
 msgid "Database creation failed."
 msgstr "Erstellen der Datenbank fehlgeschlagen."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Sind Sie sicher, dass Sie die Datenbank \"%s\" löschen möchten?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Datenbank gelöscht."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Löschen der Datenbank fehlgeschlagen."
 
 msgid "strentersql"
@@ -1011,7 +1011,7 @@ msgstr "Alle Objekte"
 msgid "strdatabasealtered"
 msgstr "Datenbank geändert."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Ändern der Datenbank fehlgeschlagen."
 
 msgid "strspecifydatabasetodrop"

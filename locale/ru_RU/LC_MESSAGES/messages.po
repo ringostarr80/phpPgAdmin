@@ -104,7 +104,7 @@ msgstr "Включить"
 msgid "strdisable"
 msgstr "Выключить"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Удалить"
 
 msgid "strdropped"
@@ -1027,13 +1027,13 @@ msgstr "База данных создана."
 msgid "Database creation failed."
 msgstr "Создание базы данных прервано."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Вы уверены, что хотите уничтожить базу данных \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "База данных уничтожена."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Уничтожение базы данных прервано."
 
 msgid "strentersql"
@@ -1081,7 +1081,7 @@ msgstr "Все объекты"
 msgid "strdatabasealtered"
 msgstr "База данных изменена."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Изменение базы данных прервано."
 
 msgid "strspecifydatabasetodrop"

@@ -98,9 +98,7 @@ class Login extends Website
         $body->appendChild($this->buildTitle($dom, sprintf(_('Login to %s'), (string)$server->Name)));
 
         if (!empty($this->message)) {
-            $p = $dom->createElement('p', $this->message);
-            $p->setAttribute('class', 'message');
-            $body->appendChild($p);
+            $body->appendChild(WebsiteComponents::buildMessage($dom, $this->message));
         }
 
         $form = $dom->createElement('form');

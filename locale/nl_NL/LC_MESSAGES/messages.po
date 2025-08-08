@@ -107,7 +107,7 @@ msgstr "Eigenschappen"
 msgid "strbrowse"
 msgstr "Bekijk"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Verwijder"
 
 msgid "strdropped"
@@ -767,13 +767,13 @@ msgstr "Database aangemaakt."
 msgid "Database creation failed."
 msgstr "Het aanmaken van de database is misluk."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Weet u zeker dat u de database \"%s\" wilt verwijderen?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Database verwijderd."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Database verwijdering is mislukt."
 
 msgid "strentersql"

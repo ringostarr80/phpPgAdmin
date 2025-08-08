@@ -80,7 +80,7 @@ msgstr "Властивості"
 msgid "strbrowse"
 msgstr "Переглянути"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Видалити"
 
 msgid "strdropped"
@@ -743,13 +743,13 @@ msgstr "Базу даних створено."
 msgid "Database creation failed."
 msgstr "Створення бази даних перервано."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Ви впевненні, що бажаєте видалити базу даних \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr " Базу даних видалено."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Видалення бази даних перервано."
 
 msgid "strentersql"

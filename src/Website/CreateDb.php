@@ -65,26 +65,21 @@ class CreateDb extends Website
         $serverSession = ServerSession::fromServerId($serverId);
 
         $h2 = $dom->createElement('h2', _('Create database'));
-        $helpLink = $dom->createElement('a', '?');
-        $helpLink->setAttribute('class', 'help');
-        $helpUrl = 'help.php';
-        $helpUrlParams = [
-            'help' => 'pg.database.create',
-            'server' => RequestParameter::getString('server') ?? ''
-        ];
-        $helpLink->setAttribute('href', $helpUrl . '?' . http_build_query($helpUrlParams));
-        $helpLink->setAttribute('title', _('Help'));
-        $helpLink->setAttribute('target', 'phppgadminhelp');
-        $h2->appendChild($helpLink);
+        $aHelp = WebsiteComponents::buildHelpLink(
+            dom: $dom,
+            url: 'help.php',
+            urlParams: [
+                'help' => 'pg.database.create',
+                'server' => $serverId
+            ]
+        );
+        $h2->appendChild($aHelp);
         $body->appendChild($h2);
 
         $formName = RequestParameter::getString('formName') ?? '';
 
         if ($this->message !== '') {
-            $pMessage = $dom->createElement('p');
-            $pMessage->setAttribute('class', 'message');
-            $pMessage->appendChild($dom->createTextNode($this->message));
-            $body->appendChild($pMessage);
+            $body->appendChild(WebsiteComponents::buildMessage($dom, $this->message));
         }
 
         $form = $dom->createElement('form');

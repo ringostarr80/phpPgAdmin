@@ -104,7 +104,7 @@ msgstr "Enged"
 msgid "strdisable"
 msgstr "Tilt"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Töröl"
 
 msgid "strdropped"
@@ -1030,13 +1030,13 @@ msgstr "Az adatbázis megteremtve."
 msgid "Database creation failed."
 msgstr "Nem sikerült megteremteni az adatbázist."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Biztosan törölni akarja „%s” adatbázist?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Az adatbázis törölve."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Nem sikerült törölni az adatbázist."
 
 msgid "strentersql"
@@ -1084,7 +1084,7 @@ msgstr "Minden objektum"
 msgid "strdatabasealtered"
 msgstr "Adatbázis megváltoztatva."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Nem sikerült az adatbázist megváltoztatni."
 
 msgid "strspecifydatabasetodrop"

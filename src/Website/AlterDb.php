@@ -1,0 +1,203 @@
+<?php
+
+declare(strict_types=1);
+
+namespace PhpPgAdmin\Website;
+
+use PhpPgAdmin\{RequestParameter, Website, WebsiteComponents};
+use PhpPgAdmin\DDD\Entities\ServerSession;
+use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
+
+class AlterDb extends Website
+{
+    private string $message = '';
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            $serverId = RequestParameter::getString('server') ?? '';
+
+            $oldName = RequestParameter::getString('oldname');
+            $newName = RequestParameter::getString('newname');
+            if (is_null($oldName) || is_null($newName)) {
+                $this->message = _('Database alter failed.');
+                return;
+            }
+
+            $serverSession = ServerSession::fromServerId($serverId);
+            if (!is_null($serverSession)) {
+                $db = $serverSession->getDatabaseConnection();
+                $alterDbResult = $db->alterDatabase(
+                    dbName: $oldName,
+                    newName: $newName,
+                    newOwner: RequestParameter::getString('owner') ?? '',
+                    comment: RequestParameter::getString('dbcomment') ?? '',
+                );
+                if ($alterDbResult === true || $alterDbResult === 0) {
+                    if (!headers_sent()) {
+                        $redirectUrl = 'all_db.php';
+                        $redirectUrlParams = [
+                            'subject' => 'server',
+                            'server' => $serverId
+                        ];
+                        header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
+                        die();
+                    }
+                }
+
+                $this->message = _('Database alter failed.');
+            }
+        }
+    }
+
+    protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
+    {
+        $body = parent::buildHtmlBody($dom);
+
+        $body->appendChild(WebsiteComponents::buildTopBar($dom));
+        $body->appendChild(WebsiteComponents::buildTrail($dom, TrailSubject::Server));
+
+        $database = RequestParameter::getString('database') ?? '';
+        $serverId = RequestParameter::getString('server') ?? '';
+
+        $serverSession = ServerSession::fromServerId($serverId);
+
+        $h2 = $dom->createElement('h2', _('Alter'));
+        $aHelp = WebsiteComponents::buildHelpLink(
+            dom: $dom,
+            url: 'help.php',
+            urlParams: [
+                'help' => 'pg.database.alter',
+                'server' => $serverId
+            ]
+        );
+        $h2->appendChild($aHelp);
+        $body->appendChild($h2);
+
+        if ($this->message !== '') {
+            $body->appendChild(WebsiteComponents::buildMessage($dom, $this->message));
+        }
+
+        $form = $dom->createElement('form');
+        $form->setAttribute('method', 'post');
+
+        $table = $dom->createElement('table');
+        $tBody = $dom->createElement('tbody');
+
+        $trName = $dom->createElement('tr');
+        $thName = $dom->createElement('th');
+        $thName->setAttribute('class', 'data left required');
+        $nameLabel = $dom->createElement('label', _('Name'));
+        $nameLabel->setAttribute('for', 'newname');
+        $thName->appendChild($nameLabel);
+        $tdName = $dom->createElement('td');
+        $tdName->setAttribute('class', 'data1');
+        $inputName = $dom->createElement('input');
+        $inputName->setAttribute('type', 'text');
+        $inputName->setAttribute('name', 'newname');
+        $inputName->setAttribute('id', 'newname');
+        $inputName->setAttribute('size', '32');
+        $inputName->setAttribute('maxlength', '63');
+        $inputName->setAttribute('value', $database);
+        $tdName->appendChild($inputName);
+        $trName->appendChild($thName);
+        $trName->appendChild($tdName);
+
+        $trOwner = $dom->createElement('tr');
+        $thOwner = $dom->createElement('th');
+        $thOwner->setAttribute('class', 'data left required');
+        $ownerLabel = $dom->createElement('label', _('Owner'));
+        $ownerLabel->setAttribute('for', 'owner');
+        $thOwner->appendChild($ownerLabel);
+        $tdOwner = $dom->createElement('td');
+        $tdOwner->setAttribute('class', 'data1');
+        $selectOwner = $dom->createElement('select');
+        $selectOwner->setAttribute('name', 'owner');
+        $selectOwner->setAttribute('id', 'owner');
+        $db = $serverSession?->getDatabaseConnection();
+        $dbOwner = $db?->getDatabaseOwner($database);
+        $dbUsers = $db?->getUsers();
+        if ($dbUsers instanceof \ADORecordSet) {
+            while (!$dbUsers->EOF) {
+                if (!is_array($dbUsers->fields)) {
+                    $dbUsers->MoveNext();
+                    continue;
+                }
+
+                if (
+                    isset($dbUsers->fields['usename']) &&
+                    is_string($dbUsers->fields['usename'])
+                ) {
+                    $username = $dbUsers->fields['usename'];
+                    $optionOwner = $dom->createElement('option', $username);
+                    $optionOwner->setAttribute('value', $username);
+                    if ($dbOwner === $username) {
+                        $optionOwner->setAttribute('selected', 'selected');
+                    }
+                    $selectOwner->appendChild($optionOwner);
+                }
+
+                $dbUsers->MoveNext();
+            }
+        }
+        $tdOwner->appendChild($selectOwner);
+        $trOwner->appendChild($thOwner);
+        $trOwner->appendChild($tdOwner);
+
+        $trComment = $dom->createElement('tr');
+        $thComment = $dom->createElement('th');
+        $thComment->setAttribute('class', 'data left');
+        $commentLabel = $dom->createElement('label', _('Comment'));
+        $commentLabel->setAttribute('for', 'dbcomment');
+        $thComment->appendChild($commentLabel);
+        $tdComment = $dom->createElement('td');
+        $tdComment->setAttribute('class', 'data1');
+        $textareaComment = $dom->createElement('textarea');
+        $textareaComment->setAttribute('name', 'dbcomment');
+        $textareaComment->setAttribute('id', 'dbcomment');
+        $textareaComment->setAttribute('rows', '3');
+        $textareaComment->setAttribute('cols', '32');
+        $tdComment->appendChild($textareaComment);
+        $trComment->appendChild($thComment);
+        $trComment->appendChild($tdComment);
+
+        $tBody->appendChild($trName);
+        $tBody->appendChild($trOwner);
+        $tBody->appendChild($trComment);
+        $table->appendChild($tBody);
+
+        $form->appendChild($table);
+
+        $inputServer = $dom->createElement('input');
+        $inputServer->setAttribute('type', 'hidden');
+        $inputServer->setAttribute('name', 'server');
+        $inputServer->setAttribute('value', $serverId);
+        $form->appendChild($inputServer);
+        $inputOldName = $dom->createElement('input');
+        $inputOldName->setAttribute('type', 'hidden');
+        $inputOldName->setAttribute('name', 'oldname');
+        $inputOldName->setAttribute('value', $database);
+        $form->appendChild($inputOldName);
+        $inputSubmit = $dom->createElement('input');
+        $inputSubmit->setAttribute('type', 'submit');
+        $inputSubmit->setAttribute('value', _('Alter'));
+        $form->appendChild($inputSubmit);
+
+        $inputCancel = $dom->createElement('a', _('Cancel'));
+        $inputCancel->setAttribute('class', 'button');
+        $cancelUrl = 'all_db.php';
+        $cancelUrlParams = [
+            'subject' => 'server',
+            'server' => $serverId
+        ];
+        $inputCancel->setAttribute('href', $cancelUrl . '?' . http_build_query($cancelUrlParams));
+        $form->appendChild($dom->createEntityReference('nbsp'));
+        $form->appendChild($inputCancel);
+
+        $body->appendChild($form);
+
+        return $body;
+    }
+}

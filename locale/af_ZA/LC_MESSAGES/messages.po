@@ -80,7 +80,7 @@ msgstr "Eienskappe"
 msgid "strbrowse"
 msgstr "Bekyk"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Verwyder"
 
 msgid "strdropped"
@@ -749,13 +749,13 @@ msgstr "Databasis is geskep."
 msgid "Database creation failed."
 msgstr "Die databasis kon nie geskep word nie."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Is jy seker dat jy die databasis \"%s\" wil verwyder?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Databasis is verwyder."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Databasisverwydering het misluk."
 
 msgid "strentersql"

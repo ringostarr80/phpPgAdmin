@@ -108,7 +108,7 @@ msgstr "Įjungti"
 msgid "strdisable"
 msgstr "Išjungti"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Šalinti"
 
 msgid "strdropped"
@@ -1049,13 +1049,13 @@ msgstr "Duomenų bazė sukurta."
 msgid "Database creation failed."
 msgstr "Nepavyko sukurti duomenų bazės."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Ar tikrai norite šalinti duomenų bazę \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Duomenų bazė pašalinta."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Nepavyko pašalinti duomenų bazės."
 
 msgid "strentersql"
@@ -1103,7 +1103,7 @@ msgstr "Visi objektai"
 msgid "strdatabasealtered"
 msgstr "Duomenų bazė pakeista."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Nepavyko pakeisti duomenų bazės."
 
 msgid "strspecifydatabasetodrop"

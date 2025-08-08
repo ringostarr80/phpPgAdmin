@@ -119,7 +119,8 @@ msgstr "Enable"
 msgid "strdisable"
 msgstr "Disable"
 
-msgid "strdrop"
+# original: "strdrop"
+msgid "Drop"
 msgstr "Drop"
 
 msgid "strdropped"
@@ -1091,13 +1092,16 @@ msgstr "Database created."
 msgid "Database creation failed."
 msgstr "Database creation failed."
 
-msgid "strconfdropdatabase"
+# original: "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Are you sure you want to drop the database \"%s\"?"
 
-msgid "strdatabasedropped"
+# original: "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Database dropped."
 
-msgid "strdatabasedroppedbad"
+# original: "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Database drop failed."
 
 msgid "strentersql"
@@ -1145,7 +1149,8 @@ msgstr "All objects"
 msgid "strdatabasealtered"
 msgstr "Database altered."
 
-msgid "strdatabasealteredbad"
+# original: "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Database alter failed."
 
 msgid "strspecifydatabasetodrop"

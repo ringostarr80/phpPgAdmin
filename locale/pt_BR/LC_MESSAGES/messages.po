@@ -104,7 +104,7 @@ msgstr "Habilitar"
 msgid "strdisable"
 msgstr "Desabilitar"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Deletar"
 
 msgid "strdropped"
@@ -1027,13 +1027,13 @@ msgstr "Banco de dados criado."
 msgid "Database creation failed."
 msgstr "Falha ao criar o banco de dados."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Você tem certeza que deseja deletar o banco de dados \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Banco de dados deletado."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Falha ao deletar o banco de dados."
 
 msgid "strentersql"
@@ -1081,7 +1081,7 @@ msgstr "Todos os objetos"
 msgid "strdatabasealtered"
 msgstr "Banco de dados alterado."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Falha ao alterar o banco de dados."
 
 msgid "strspecifydatabasetodrop"

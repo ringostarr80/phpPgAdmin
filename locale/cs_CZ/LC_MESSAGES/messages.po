@@ -221,7 +221,7 @@ msgstr "Zpět"
 msgid "strqueryresults"
 msgstr "Výsledky dotazu"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Zobrazit"
 
 msgid "strempty"
@@ -296,7 +296,7 @@ msgstr "Místo původního"
 msgid "strwhen"
 msgstr "Kdy"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Formát"
 
 msgid "strdata"
@@ -323,13 +323,13 @@ msgstr "Sbalit"
 msgid "Find"
 msgstr "Hledat"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Volby"
 
 msgid "Refresh"
 msgstr "Občerstvit"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Stáhnout"
 
 msgid "strdownloadgzipped"
@@ -709,13 +709,13 @@ msgstr "Změny v tabulce byly provedeny."
 msgid "strtablealteredbad"
 msgstr "Nezdařilo se provést změny v tabulce."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Pouze data"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Pouze strukturu"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Strukturu a data"
 
 msgid "strtabbed"

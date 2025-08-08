@@ -209,7 +209,7 @@ msgstr "返回"
 msgid "strqueryresults"
 msgstr "查詢結果"
 
-msgid "strshow"
+msgid "Show"
 msgstr "顯示"
 
 msgid "strempty"
@@ -281,7 +281,7 @@ msgstr "已被取代"
 msgid "strwhen"
 msgstr "當"
 
-msgid "strformat"
+msgid "Format"
 msgstr "格式"
 
 msgid "strdata"
@@ -308,13 +308,13 @@ msgstr "摺疊"
 msgid "Find"
 msgstr "尋找"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "選項"
 
 msgid "Refresh"
 msgstr "重新整理"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "下載"
 
 msgid "strdownloadgzipped"
@@ -627,13 +627,13 @@ msgstr "資料表已修改。"
 msgid "strtablealteredbad"
 msgstr "資料表修改已失敗。"
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "只有資料"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "只有結構"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "結構和資料"
 
 msgid "strtabbed"

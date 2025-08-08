@@ -209,7 +209,7 @@ msgstr "Indietro"
 msgid "strqueryresults"
 msgstr "Risultato Query"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Mostra"
 
 msgid "strempty"
@@ -284,7 +284,7 @@ msgstr "Invece fai"
 msgid "strwhen"
 msgstr "Quando"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Formato"
 
 msgid "strdata"
@@ -317,13 +317,13 @@ msgstr "Explain Analyze"
 msgid "Find"
 msgstr "Trova"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Opzioni"
 
 msgid "Refresh"
 msgstr "Ricarica"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Scarica"
 
 msgid "strdownloadgzipped"
@@ -605,13 +605,13 @@ msgstr "Tabella modificata."
 msgid "strtablealteredbad"
 msgstr "Modifica della tabella fallita."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Solo i dati"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Solo la struttura"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Struttura e dati"
 
 msgid "strtabbed"

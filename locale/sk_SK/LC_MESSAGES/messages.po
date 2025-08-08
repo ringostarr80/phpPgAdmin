@@ -197,7 +197,7 @@ msgstr "Späť"
 msgid "strqueryresults"
 msgstr "Výsledky Dotazu"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Ukázať"
 
 msgid "strempty"
@@ -278,7 +278,7 @@ msgstr "Urobiť Namiesto"
 msgid "strwhen"
 msgstr "Kedy"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Formát"
 
 msgid "strdata"
@@ -311,13 +311,13 @@ msgstr "Vysvetliť Analyze"
 msgid "Find"
 msgstr "Nájsť"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Nastavenia"
 
 msgid "Refresh"
 msgstr "Obnoviť"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Download"
 
 msgid "strdownloadgzipped"
@@ -574,13 +574,13 @@ msgstr "Tabuľka zmenená."
 msgid "strtablealteredbad"
 msgstr "Tabuľka nebola zmenená."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Iba Dáta"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Iba Štruktúra"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Štruktúra a Dáta"
 
 msgid "strtabbed"

@@ -197,7 +197,7 @@ msgstr "Geri"
 msgid "strqueryresults"
 msgstr "Sorgu sonuçları"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Göster"
 
 msgid "strempty"
@@ -278,7 +278,7 @@ msgstr "Do Instead"
 msgid "strwhen"
 msgstr "When"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strdata"
@@ -311,13 +311,13 @@ msgstr "Explain Analyze"
 msgid "Find"
 msgstr "Bul"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Seçenekler"
 
 msgid "Refresh"
 msgstr "Yenile"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "İndir"
 
 msgid "strdownloadgzipped"
@@ -574,13 +574,13 @@ msgstr "Tablo alter edildi.."
 msgid "strtablealteredbad"
 msgstr "Tablo alteration işlemi başarısız oldu."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Sadece veri"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Sadece yapı"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Yapı ve veri"
 
 msgid "strtabbed"

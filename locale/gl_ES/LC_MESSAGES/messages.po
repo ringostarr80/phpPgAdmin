@@ -221,7 +221,7 @@ msgstr "Volver"
 msgid "strqueryresults"
 msgstr "Resultados da consulta"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Amosar"
 
 msgid "strempty"
@@ -296,7 +296,7 @@ msgstr "En vez de iso"
 msgid "strwhen"
 msgstr "Cando"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Formato"
 
 msgid "strdata"
@@ -323,13 +323,13 @@ msgstr "Colapsar"
 msgid "Find"
 msgstr "Buscar"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Opcións"
 
 msgid "Refresh"
 msgstr "Actualizar"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Descargar"
 
 msgid "strdownloadgzipped"
@@ -709,13 +709,13 @@ msgstr "Modificouse a táboa."
 msgid "strtablealteredbad"
 msgstr "Non se conseguiu modificar a táboa."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Só datos"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Só estrutura"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Estrutura e datos"
 
 msgid "strtabbed"

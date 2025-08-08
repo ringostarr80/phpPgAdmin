@@ -188,7 +188,7 @@ msgstr "رجوع للخلف"
 msgid "strqueryresults"
 msgstr "نتائج الإستعلام"
 
-msgid "strshow"
+msgid "Show"
 msgstr "اعرض"
 
 msgid "strempty"
@@ -257,7 +257,7 @@ msgstr "Do Instead"
 msgid "strwhen"
 msgstr "When"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strdata"
@@ -290,13 +290,13 @@ msgstr "Explain Analyze"
 msgid "Find"
 msgstr "بحث"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "خيارات"
 
 msgid "Refresh"
 msgstr "تحديث Refresh"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "تنزيل"
 
 msgid "strdownloadgzipped"
@@ -526,13 +526,13 @@ msgstr "لقد تم تعديل الجدول بنجاح."
 msgid "strtablealteredbad"
 msgstr "لقد فشلت عملية تعديل الجدول."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "البيانات فقط"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "الهيكلية فقط"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "الهيكلية والبيانات"
 
 msgid "strtabbed"

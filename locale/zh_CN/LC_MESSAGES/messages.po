@@ -221,7 +221,7 @@ msgstr "返回"
 msgid "strqueryresults"
 msgstr "查询结果"
 
-msgid "strshow"
+msgid "Show"
 msgstr "显示"
 
 msgid "strempty"
@@ -296,7 +296,7 @@ msgstr "Do Instead"
 msgid "strwhen"
 msgstr "当"
 
-msgid "strformat"
+msgid "Format"
 msgstr "格式"
 
 msgid "strdata"
@@ -323,13 +323,13 @@ msgstr "崩溃"
 msgid "Find"
 msgstr "查找"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "选项"
 
 msgid "Refresh"
 msgstr "刷新"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "下载"
 
 msgid "strdownloadgzipped"
@@ -709,13 +709,13 @@ msgstr "数据表已变更。"
 msgid "strtablealteredbad"
 msgstr "数据表变更失败。"
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "仅数据"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "仅结构"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "结构和数据"
 
 msgid "strtabbed"

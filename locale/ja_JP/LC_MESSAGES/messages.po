@@ -209,7 +209,7 @@ msgstr "戻る"
 msgid "strqueryresults"
 msgstr "クエリ結果"
 
-msgid "strshow"
+msgid "Show"
 msgstr "表示"
 
 msgid "strempty"
@@ -281,7 +281,7 @@ msgstr "代行"
 msgid "strwhen"
 msgstr "When"
 
-msgid "strformat"
+msgid "Format"
 msgstr "フォーマット"
 
 msgid "strdata"
@@ -308,13 +308,13 @@ msgstr "閉じる"
 msgid "Find"
 msgstr "検索"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "オプション"
 
 msgid "Refresh"
 msgstr "再表示"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "ダウンロード"
 
 msgid "strdownloadgzipped"
@@ -642,13 +642,13 @@ msgstr "テーブルを変更しました。"
 msgid "strtablealteredbad"
 msgstr "テーブルの変更に失敗しました。"
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "データのみ"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "構造のみ"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "構造とデータ"
 
 msgid "strtabbed"

@@ -79,11 +79,9 @@ class AllDb extends Website
                 ]
             ],
             [
-                'url' => 'all_db.php',
+                'url' => 'all_db_export.php',
                 'url-params' => [
-                    'subject' => 'server',
-                    'server' => $serverId,
-                    'action' => 'export'
+                    'server' => $serverId
                 ],
                 'label' => _('Export'),
                 'icon' => 'Export',

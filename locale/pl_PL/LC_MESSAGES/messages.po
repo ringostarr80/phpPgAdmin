@@ -206,7 +206,7 @@ msgstr "Wstecz"
 msgid "strqueryresults"
 msgstr "Wyniki zapytania"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Pokaż"
 
 msgid "strempty"
@@ -287,7 +287,7 @@ msgstr "Wykonaj zamiast"
 msgid "strwhen"
 msgstr "Kiedy"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strdata"
@@ -320,13 +320,13 @@ msgstr "Explain Analyze"
 msgid "Find"
 msgstr "Znajdź"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Opcje"
 
 msgid "Refresh"
 msgstr "Odśwież"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Pobierz"
 
 msgid "strdownloadgzipped"
@@ -602,13 +602,13 @@ msgstr "Tabela została zmodyfikowana."
 msgid "strtablealteredbad"
 msgstr "Próba modyfikacji tabeli się nie powiodła."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Tylko dane"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Tylko struktura"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Struktura i dane"
 
 msgid "strtabbed"

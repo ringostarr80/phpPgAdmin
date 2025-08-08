@@ -188,7 +188,7 @@ msgstr "Terug"
 msgid "strqueryresults"
 msgstr "Navraagresultate"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Wys"
 
 msgid "strempty"
@@ -254,7 +254,7 @@ msgstr "Doen eerder"
 msgid "strwhen"
 msgstr "Wanneer"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Formaat"
 
 msgid "strdata"
@@ -287,13 +287,13 @@ msgstr "Verduidelik Analise"
 msgid "Find"
 msgstr "Soek"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Opsies"
 
 msgid "Refresh"
 msgstr "Verfris"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Laai af"
 
 msgid "strdownloadgzipped"
@@ -529,13 +529,13 @@ msgstr "Tabel is gewysig."
 msgid "strtablealteredbad"
 msgstr "Tabelwysiging het misluk."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Slegs data"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Slegs struktuur"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Struktuur en data"
 
 msgid "strtabbed"

@@ -221,7 +221,7 @@ msgstr "Vissza"
 msgid "strqueryresults"
 msgstr "Lekérdezés eredményei"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Megjelenít"
 
 msgid "strempty"
@@ -296,7 +296,7 @@ msgstr "Inkább"
 msgid "strwhen"
 msgstr "Mikor"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Alak"
 
 msgid "strdata"
@@ -323,13 +323,13 @@ msgstr "Összecsuk"
 msgid "Find"
 msgstr "Keres"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Részletek"
 
 msgid "Refresh"
 msgstr "Frissít"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Letöltés"
 
 msgid "strdownloadgzipped"
@@ -709,13 +709,13 @@ msgstr "A tábla megváltoztatva."
 msgid "strtablealteredbad"
 msgstr "Nem sikerült a táblát megváltoztatni."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Csak adatok"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Csak struktúra"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Struktúra és adatok"
 
 msgid "strtabbed"

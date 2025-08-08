@@ -209,7 +209,7 @@ msgstr "Înapoi"
 msgid "strqueryresults"
 msgstr "Rezultatele interogării"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Afişare"
 
 msgid "strempty"
@@ -284,7 +284,7 @@ msgstr "Execută în schimb"
 msgid "strwhen"
 msgstr "Când"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strdata"
@@ -317,13 +317,13 @@ msgstr "Explicare & Analiză"
 msgid "Find"
 msgstr "Căutare"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Opţiuni"
 
 msgid "Refresh"
 msgstr "Reîmprospătare"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Transfer"
 
 msgid "strdownloadgzipped"
@@ -599,13 +599,13 @@ msgstr "Tabelă modificată."
 msgid "strtablealteredbad"
 msgstr "Modificare tabelă eşuată."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Numai date"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Numai structură"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Structură şi date"
 
 msgid "strtabbed"

@@ -188,7 +188,7 @@ msgstr "קודם"
 msgid "strqueryresults"
 msgstr "תוצאות השאילתה"
 
-msgid "strshow"
+msgid "Show"
 msgstr "הראה"
 
 msgid "strempty"
@@ -257,7 +257,7 @@ msgstr "תעשה במקום"
 msgid "strwhen"
 msgstr "כש"
 
-msgid "strformat"
+msgid "Format"
 msgstr "סוג"
 
 msgid "strdata"
@@ -290,13 +290,13 @@ msgstr "הסבר נתיחה"
 msgid "Find"
 msgstr "מצא"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "אפשרויות"
 
 msgid "Refresh"
 msgstr "רענן"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "הורד"
 
 msgid "strdownloadgzipped"
@@ -529,13 +529,13 @@ msgstr "טבלה נערכה."
 msgid "strtablealteredbad"
 msgstr "עריכת טבלה נכשלה."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "מידע בלבד"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "מבנה בילבד"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "מבנה ונתונים"
 
 msgid "strtabbed"

@@ -228,7 +228,7 @@ msgstr "Atgal"
 msgid "strqueryresults"
 msgstr "Užklausos rezultatai"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Rodyti"
 
 msgid "strempty"
@@ -306,7 +306,7 @@ msgstr "Atlikti užuot"
 msgid "strwhen"
 msgstr "Kai"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Formatas"
 
 msgid "strdata"
@@ -333,13 +333,13 @@ msgstr "Suskleisti"
 msgid "Find"
 msgstr "Ieškoti"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Parinktys"
 
 msgid "Refresh"
 msgstr "Atnaujinti"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Parsisiųsti"
 
 msgid "strdownloadgzipped"
@@ -725,13 +725,13 @@ msgstr "Lentelė pakeista."
 msgid "strtablealteredbad"
 msgstr "Nepavyko pakeisti lentelės."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Tik duomenis"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Tik struktūrą"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Struktūrą ir duomenis"
 
 msgid "strtabbed"

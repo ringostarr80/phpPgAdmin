@@ -218,7 +218,7 @@ msgstr "Назад"
 msgid "strqueryresults"
 msgstr "Результаты запроса"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Показать"
 
 msgid "strempty"
@@ -293,7 +293,7 @@ msgstr "Делать вместо"
 msgid "strwhen"
 msgstr "Когда"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Формат"
 
 msgid "strdata"
@@ -320,13 +320,13 @@ msgstr "Свернуть"
 msgid "Find"
 msgstr "Найти"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Опции"
 
 msgid "Refresh"
 msgstr "Обновить"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Загрузить"
 
 msgid "strdownloadgzipped"
@@ -706,13 +706,13 @@ msgstr "Таблица изменена."
 msgid "strtablealteredbad"
 msgstr "Изменение таблицы прервано."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Только данные"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Только структуру"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Структуру и данные"
 
 msgid "strtabbed"

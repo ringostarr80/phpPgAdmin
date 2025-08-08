@@ -497,7 +497,7 @@ msgstr "Terug"
 msgid "strqueryresults"
 msgstr "Query resultaten"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Toon"
 
 msgid "strempty"
@@ -551,7 +551,7 @@ msgstr "Do Instead"
 msgid "strwhen"
 msgstr "zodra"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strbadconfig"
@@ -668,7 +668,7 @@ msgstr "Schema & Data"
 msgid "strschemaonly"
 msgstr "Enkel schema"
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Enkel data"
 
 msgid "strusers"
@@ -1147,13 +1147,13 @@ msgstr "Verklaring"
 msgid "Find"
 msgstr "Zoek"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Opties"
 
 msgid "Refresh"
 msgstr "Ververs"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Download"
 
 msgid "strrownotunique"

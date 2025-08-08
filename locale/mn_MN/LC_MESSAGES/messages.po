@@ -188,7 +188,7 @@ msgstr "теУСШ"
 msgid "strqueryresults"
 msgstr "сгееЬЧйЮ ?в Ф?Ю"
 
-msgid "strshow"
+msgid "Show"
 msgstr "?кмШ"
 
 msgid "strempty"
@@ -257,7 +257,7 @@ msgstr "явЯЮФ Юи "
 msgid "strwhen"
 msgstr "шмкмм"
 
-msgid "strformat"
+msgid "Format"
 msgstr "цЯвЭСд"
 
 msgid "strdata"
@@ -284,13 +284,13 @@ msgstr "єСЪЬТСв"
 msgid "Find"
 msgstr "яЬЯШ"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "ѓЯЮЧЯЬд"
 
 msgid "Refresh"
 msgstr "ѓмвЧммШ"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "єСдСж СзСШ"
 
 msgid "strinfo"
@@ -478,13 +478,13 @@ msgstr "єСТЬЩУС ЩкЭХЮХЮС."
 msgid "strtablealteredbad"
 msgstr "щкЭХЮХЮЩХ дСТЬЩУй авХвзСЮЯ."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "єЯЬиЫЯ ФСЮЮйХ"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "єЯЬиЫЯ гдвеЫдеве"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "ѓдвеЫдеве Щ ФСЮЮйХ"
 
 # Users

@@ -191,7 +191,7 @@ msgstr "Tilbage"
 msgid "strqueryresults"
 msgstr "Søgeresultat"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Vise"
 
 msgid "strempty"
@@ -260,7 +260,7 @@ msgstr "Gør i stedet"
 msgid "strwhen"
 msgstr "Når"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strdata"
@@ -293,13 +293,13 @@ msgstr "Forklar analyze"
 msgid "Find"
 msgstr "Søg"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Alternativ"
 
 msgid "Refresh"
 msgstr "Opdater"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Download"
 
 msgid "strdownloadgzipped"
@@ -520,7 +520,7 @@ msgstr "Det lykkedes ikke at tilføje kolonne."
 msgid "strcascade"
 msgstr "KASKAD"
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Udelukkende data"
 
 msgid "strtablealtered"
@@ -797,10 +797,10 @@ msgstr "Afsendelse af signal mislykkedes."
 msgid "strallobjects"
 msgstr "Alle objekter"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Kun struktur"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Struktur og data"
 
 # Views

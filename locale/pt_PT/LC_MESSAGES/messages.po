@@ -172,7 +172,7 @@ msgstr "Voltar"
 msgid "strqueryresults"
 msgstr "Resultados da pesquisa"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Exibir"
 
 msgid "strempty"
@@ -238,7 +238,7 @@ msgstr "Fazer ao invés"
 msgid "strwhen"
 msgstr "Quando"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Formato"
 
 msgid "strstart"
@@ -417,7 +417,7 @@ msgstr "Coluna adicionada."
 msgid "strcolumnaddedbad"
 msgstr "Adição de coluna falhou."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Dados apenas"
 
 # Users
@@ -1163,13 +1163,13 @@ msgstr "Explicação de Análise"
 msgid "Find"
 msgstr "Procurar"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Opções"
 
 msgid "Refresh"
 msgstr "Actualizar"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Descarreguar"
 
 msgid "strdownloadgzipped"
@@ -1259,10 +1259,10 @@ msgstr "Tabela alterada."
 msgid "strtablealteredbad"
 msgstr "Alteração da Tabela falhou."
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Só Estrutura"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Estrutura e dados"
 
 msgid "strtabbed"

@@ -188,7 +188,7 @@ msgstr "Назад"
 msgid "strqueryresults"
 msgstr "Результати запиту"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Показати"
 
 msgid "strempty"
@@ -257,7 +257,7 @@ msgstr "Робити замість"
 msgid "strwhen"
 msgstr "Коли"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Формат"
 
 msgid "strdata"
@@ -287,13 +287,13 @@ msgstr "Пояснити аналіз"
 msgid "Find"
 msgstr "Знайти"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Опції"
 
 msgid "Refresh"
 msgstr "Оновити"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Завантажити"
 
 msgid "strdownloadgzipped"
@@ -526,13 +526,13 @@ msgstr "Таблицю змінено."
 msgid "strtablealteredbad"
 msgstr "Зміну таблиці перервано."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Лише дані"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Лише структуру"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Структуру і дані"
 
 msgid "strtabbed"

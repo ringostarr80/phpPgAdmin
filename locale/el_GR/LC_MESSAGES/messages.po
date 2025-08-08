@@ -206,7 +206,7 @@ msgstr "Πίσω"
 msgid "strqueryresults"
 msgstr "Αποτελέσματα Ερωτήματος"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Εμφάνιση"
 
 msgid "strempty"
@@ -281,7 +281,7 @@ msgstr "Αντί να"
 msgid "strwhen"
 msgstr "Πότε"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Μορφή δεδομένων"
 
 msgid "strdata"
@@ -308,13 +308,13 @@ msgstr "Σύμπτυξη"
 msgid "Find"
 msgstr "Αναζήτηση"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Επιλογές"
 
 msgid "Refresh"
 msgstr "Ανανέωση"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Καταφόρτωση"
 
 msgid "strdownloadgzipped"
@@ -587,13 +587,13 @@ msgstr "Ο πίνακας τροποποιήθηκε."
 msgid "strtablealteredbad"
 msgstr "Η τροποποίηση του πίνακα απέτυχε."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Μόνο τα δεδομένα"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Μόνο τη δομή"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Δομή και δεδομένα"
 
 msgid "strtabbed"

@@ -209,7 +209,7 @@ msgstr "Zurück"
 msgid "strqueryresults"
 msgstr "Abfrageergebnis"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Anzeigen"
 
 msgid "strempty"
@@ -284,7 +284,7 @@ msgstr "Tu stattdessen"
 msgid "strwhen"
 msgstr "Wann"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strdata"
@@ -311,13 +311,13 @@ msgstr "Zuklappen"
 msgid "Find"
 msgstr "Suchen"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Optionen"
 
 msgid "Refresh"
 msgstr "Aktualisieren"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Herunterladen"
 
 msgid "strdownloadgzipped"
@@ -651,13 +651,13 @@ msgstr "Tabelle geändert."
 msgid "strtablealteredbad"
 msgstr "Ändern der Tabelle fehlgeschlagen."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Nur die Daten"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Nur die Struktur"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Struktur und Daten"
 
 msgid "strtabbed"

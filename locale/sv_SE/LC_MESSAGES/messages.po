@@ -188,7 +188,7 @@ msgstr "Bakåt"
 msgid "strqueryresults"
 msgstr "Sökresultat"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Visa"
 
 msgid "strempty"
@@ -251,7 +251,7 @@ msgstr "Gör Istället"
 msgid "strevent"
 msgstr "Händelse"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strwhen"
@@ -278,7 +278,7 @@ msgstr "Förklara"
 msgid "Find"
 msgstr "Sök"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Alternativ"
 
 msgid "Refresh"
@@ -290,7 +290,7 @@ msgstr "Förminska"
 msgid "strexpand"
 msgstr "Utöka"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Ladda ner"
 
 msgid "strdownloadgzipped"
@@ -490,7 +490,7 @@ msgstr "Misslyckades att lägga till kolumne."
 msgid "strcascade"
 msgstr "KASKAD"
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Endast Data"
 
 msgid "strtablealtered"
@@ -737,10 +737,10 @@ msgstr "Analysen lyckades."
 msgid "stranalyzebad"
 msgstr "Analysen misslyckades."
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Endast struktur"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Struktur och data"
 
 # Views

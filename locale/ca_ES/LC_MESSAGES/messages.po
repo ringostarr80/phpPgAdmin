@@ -221,7 +221,7 @@ msgstr "Enrere"
 msgid "strqueryresults"
 msgstr "Resultat de la Consulta"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Mostra"
 
 msgid "strempty"
@@ -296,7 +296,7 @@ msgstr "Fes en el seu lloc"
 msgid "strwhen"
 msgstr "Quan"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strdata"
@@ -323,13 +323,13 @@ msgstr "Colapsa"
 msgid "Find"
 msgstr "Cerca"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Opcions"
 
 msgid "Refresh"
 msgstr "Refresca"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Baixa"
 
 msgid "strdownloadgzipped"
@@ -709,13 +709,13 @@ msgstr "Taula modificada."
 msgid "strtablealteredbad"
 msgstr "No s'ha pogut modificar la columna."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Només dades"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Nomes estructura"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Estructura i dades"
 
 msgid "strtabbed"

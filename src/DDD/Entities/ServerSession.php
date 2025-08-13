@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace PhpPgAdmin\DDD\Entities;
 
 use PhpPgAdmin\Config;
-use PhpPgAdmin\Database\{Connection, PhpPgAdminConnection, Postgres};
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\ValueObjects\Server\{DatabaseName, Filename, Host, Name, Port, SslMode};
 use PhpPgAdmin\DDD\ValueObjects\ServerSession\{Username, Password, Platform};
 

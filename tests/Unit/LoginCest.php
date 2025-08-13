@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit;
 
 use PhpPgAdmin\Config;
-use PhpPgAdmin\Database\Connection;
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use Tests\Support\UnitTester;
 
 final class LoginCest
@@ -35,7 +35,7 @@ final class LoginCest
             if ((string)$server->Name !== 'Running Server') {
                 continue;
             }
-            $valid = Connection::loginDataIsValid(
+            $valid = PhpPgAdminConnection::loginDataIsValid(
                 host: (string)$server->Host,
                 port: $server->Port->Value,
                 sslmode: $server->SslMode,

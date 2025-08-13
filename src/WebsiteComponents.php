@@ -20,7 +20,7 @@ abstract class WebsiteComponents
 
     public static function buildDatabasesTable(\DOMDocument $dom, ?ServerSession $serverSession): \DOMElement
     {
-        $db = $serverSession?->getDatabaseConnection();
+        $dbConnection = $serverSession?->getDatabaseConnection();
 
         $table = $dom->createElement('table');
         $table->setAttribute('style', 'width: 100%;');
@@ -61,10 +61,10 @@ abstract class WebsiteComponents
 
         $tBody = $dom->createElement('tbody');
 
-        $dbs = $db?->getDatabases();
-        if ($dbs instanceof \ADORecordSet) {
+        $dbs = $dbConnection?->getDatabases();
+        if (is_iterable($dbs)) {
             $dbCounter = 0;
-            while (!$dbs->EOF) {
+            foreach ($dbs as $db) {
                 $dbCounter++;
 
                 $tr = $dom->createElement('tr');
@@ -75,42 +75,10 @@ abstract class WebsiteComponents
                 $inputCheckbox->setAttribute('type', 'checkbox');
                 $inputCheckbox->setAttribute('name', 'ma[]');
 
-                $dbName = '';
-                $dbOwner = '';
-                $dbEncoding = '';
-                $dbCollation = '';
-                $dbCharacterType = '';
-                $dbTablespace = '';
-                $dbSize = new DbSize(0);
-                $dbComment = '';
-                $checkboxValue = '';
-                if (is_array($dbs->fields)) {
-                    if (isset($dbs->fields['datname']) && is_string($dbs->fields['datname'])) {
-                        $dbName = $dbs->fields['datname'];
-                        $checkboxValue = serialize(['database' => $dbName]);
-                    }
-                    if (isset($dbs->fields['datowner']) && is_string($dbs->fields['datowner'])) {
-                        $dbOwner = $dbs->fields['datowner'];
-                    }
-                    if (isset($dbs->fields['datencoding']) && is_string($dbs->fields['datencoding'])) {
-                        $dbEncoding = $dbs->fields['datencoding'];
-                    }
-                    if (isset($dbs->fields['datcollate']) && is_string($dbs->fields['datcollate'])) {
-                        $dbCollation = $dbs->fields['datcollate'];
-                    }
-                    if (isset($dbs->fields['datctype']) && is_string($dbs->fields['datctype'])) {
-                        $dbCharacterType = $dbs->fields['datctype'];
-                    }
-                    if (isset($dbs->fields['tablespace']) && is_string($dbs->fields['tablespace'])) {
-                        $dbTablespace = $dbs->fields['tablespace'];
-                    }
-                    if (isset($dbs->fields['dbsize']) && is_numeric($dbs->fields['dbsize'])) {
-                        $dbSize = new DbSize((int)$dbs->fields['dbsize']);
-                    }
-                    if (isset($dbs->fields['datcomment']) && is_string($dbs->fields['datcomment'])) {
-                        $dbComment = $dbs->fields['datcomment'];
-                    }
-                }
+                $dbName = $db['datname'];
+                $dbSize = new DbSize($db['dbsize']);
+                $checkboxValue = serialize(['database' => $dbName]);
+
                 $inputCheckbox->setAttribute('value', $checkboxValue);
                 $tdCheckbox->appendChild($inputCheckbox);
 
@@ -125,11 +93,11 @@ abstract class WebsiteComponents
                 $aDatabase->setAttribute('href', $dbUrl . '?' . http_build_query($dbUrlParams));
                 $tdDatabase->appendChild($aDatabase);
 
-                $tdOwner = $dom->createElement('td', $dbOwner);
-                $tdEncoding = $dom->createElement('td', $dbEncoding);
-                $tdCollation = $dom->createElement('td', $dbCollation);
-                $tdCharacterType = $dom->createElement('td', $dbCharacterType);
-                $tdTablespace = $dom->createElement('td', $dbTablespace);
+                $tdOwner = $dom->createElement('td', $db['datowner']);
+                $tdEncoding = $dom->createElement('td', $db['datencoding']);
+                $tdCollation = $dom->createElement('td', $db['datcollate']);
+                $tdCharacterType = $dom->createElement('td', $db['datctype']);
+                $tdTablespace = $dom->createElement('td', $db['tablespace']);
                 $tdSize = $dom->createElement('td', $dbSize->prettyFormat());
 
                 $tdActionDelete = $dom->createElement('td');
@@ -169,7 +137,7 @@ abstract class WebsiteComponents
                 $aAlter->appendChild($dom->createTextNode(_('Alter')));
                 $tdActionAlter->appendChild($aAlter);
 
-                $tdComment = $dom->createElement('td', $dbComment);
+                $tdComment = $dom->createElement('td', $db['datcomment']);
 
                 $tr->appendChild($tdCheckbox);
                 $tr->appendChild($tdDatabase);
@@ -185,8 +153,6 @@ abstract class WebsiteComponents
                 $tr->appendChild($tdComment);
 
                 $tBody->appendChild($tr);
-
-                $dbs->MoveNext();
             }
         }
 

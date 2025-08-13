@@ -31,7 +31,7 @@ For an overview of the software quality over time and the evolving metrics, chec
 | admin.php          | ❌     | yyyy-mm-dd |
 | aggregates.php     | ❌     | yyyy-mm-dd |
 | ajax-ac-insert.php | ❌     | yyyy-mm-dd |
-| all_db.php         | ❌     | yyyy-mm-dd |
+| all_db.php         | ✅     | 2025-08-08 |
 | autoload.php       | ✅     | 2024-12-19 |
 | browser.php        | ✅     | 2024-12-29 |
 | casts.php          | ❌     | yyyy-mm-dd |

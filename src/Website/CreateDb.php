@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace PhpPgAdmin\Website;
 
 use PhpPgAdmin\{RequestParameter, Website, WebsiteComponents};
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\Database\Postgres;
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
@@ -25,7 +26,7 @@ class CreateDb extends Website
                 $serverSession = ServerSession::fromServerId($serverId);
                 if (!is_null($serverSession)) {
                     $db = $serverSession->getDatabaseConnection();
-                    $createDbResult = $db->createDatabase(
+                    $db->createDatabase(
                         database: $formName,
                         encoding: RequestParameter::getString('formEncoding') ?? '',
                         tablespace: RequestParameter::getString('formTablespace') ?? '',
@@ -34,16 +35,14 @@ class CreateDb extends Website
                         lcCollate: RequestParameter::getString('formCollate') ?? '',
                         lcCType: RequestParameter::getString('formCType') ?? ''
                     );
-                    if ($createDbResult === 0) {
-                        if (!headers_sent()) {
-                            $redirectUrl = 'all_db.php';
-                            $redirectUrlParams = [
-                                'subject' => 'server',
-                                'server' => $serverId
-                            ];
-                            header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
-                            die();
-                        }
+                    if (!headers_sent()) {
+                        $redirectUrl = 'all_db.php';
+                        $redirectUrlParams = [
+                            'subject' => 'server',
+                            'server' => $serverId
+                        ];
+                        header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
+                        die();
                     }
 
                     $this->message = _('Database creation failed.');
@@ -101,7 +100,7 @@ class CreateDb extends Website
         $inputName->setAttribute('value', $formName);
         $inputName->setAttribute('id', 'db-name');
         $inputName->setAttribute('size', '32');
-        $inputName->setAttribute('maxlength', (string)Postgres::MAX_NAME_LENGTH);
+        $inputName->setAttribute('maxlength', (string)PhpPgAdminConnection::MAX_NAME_LENGTH);
         $tdNameValue->appendChild($inputName);
         $trName->appendChild($thName);
         $trName->appendChild($tdNameValue);
@@ -120,7 +119,7 @@ class CreateDb extends Website
         $selectTemplate->setAttribute('id', 'db-template');
         $db = $serverSession?->getDatabaseConnection();
         $dbs = $db?->getDatabases();
-        if ($dbs instanceof \ADORecordSet) {
+        if (is_iterable($dbs)) {
             $formTemplate = RequestParameter::getString('formTemplate') ?? '';
             $optionTemplate0 = $dom->createElement('option', 'template0');
             $optionTemplate0->setAttribute('value', 'template0');
@@ -139,24 +138,16 @@ class CreateDb extends Website
             }
             $selectTemplate->appendChild($optionTemplate1);
 
-            while (!$dbs->EOF) {
-                if (is_array($dbs->fields)) {
-                    if (
-                        isset($dbs->fields['datname']) &&
-                        is_string($dbs->fields['datname']) &&
-                        $dbs->fields['datname'] !== 'template1'
-                    ) {
-                        $dbName = $dbs->fields['datname'];
-                        $optionTemplate = $dom->createElement('option', $dbName);
-                        $optionTemplate->setAttribute('value', $dbName);
-                        if ($formTemplate === $dbName) {
-                            $optionTemplate->setAttribute('selected', 'selected');
-                        }
-                        $selectTemplate->appendChild($optionTemplate);
+            foreach ($dbs as $dbData) {
+                $dbName = $dbData['datname'];
+                if ($dbName !== 'template1') {
+                    $optionTemplate = $dom->createElement('option', $dbName);
+                    $optionTemplate->setAttribute('value', $dbName);
+                    if ($formTemplate === $dbName) {
+                        $optionTemplate->setAttribute('selected', 'selected');
                     }
+                    $selectTemplate->appendChild($optionTemplate);
                 }
-
-                $dbs->MoveNext();
             }
         }
         $tdTemplateValue->appendChild($selectTemplate);
@@ -179,7 +170,7 @@ class CreateDb extends Website
         $emptyOption->setAttribute('value', '');
         $selectEncoding->appendChild($emptyOption);
         $formEncoding = RequestParameter::getString('formEncoding') ?? '';
-        foreach (Postgres::CODEMAP as $key => $value) {
+        foreach (PhpPgAdminConnection::CODEMAP as $key => $value) {
             $optionEncoding = $dom->createElement('option', $key);
             $optionEncoding->setAttribute('value', $key);
             if ($formEncoding === $key) {
@@ -201,12 +192,24 @@ class CreateDb extends Website
         $thCollation->appendChild($labelCollation);
         $tdCollationValue = $dom->createElement('td');
         $tdCollationValue->setAttribute('class', 'data1');
-        $inputCollation = $dom->createElement('input');
-        $inputCollation->setAttribute('type', 'text');
-        $inputCollation->setAttribute('name', 'formCollate');
-        $inputCollation->setAttribute('value', $formCollate);
-        $inputCollation->setAttribute('id', 'db-collation');
-        $tdCollationValue->appendChild($inputCollation);
+        $selectCollation = $dom->createElement('select');
+        $selectCollation->setAttribute('name', 'formCollate');
+        $selectCollation->setAttribute('id', 'db-collation');
+        $emptyOption = $dom->createElement('option');
+        $emptyOption->setAttribute('value', '');
+        $selectCollation->appendChild($emptyOption);
+        $availableCollations = $db?->getAvailableCollations();
+        if (!is_null($availableCollations)) {
+            foreach ($availableCollations as $collation) {
+                $option = $dom->createElement('option', $collation);
+                $option->setAttribute('value', $collation);
+                if ($formCollate === $collation) {
+                    $option->setAttribute('selected', 'selected');
+                }
+                $selectCollation->appendChild($option);
+            }
+        }
+        $tdCollationValue->appendChild($selectCollation);
         $trCollation->appendChild($thCollation);
         $trCollation->appendChild($tdCollationValue);
         $tBody->appendChild($trCollation);
@@ -220,12 +223,23 @@ class CreateDb extends Website
         $thCType->appendChild($labelCType);
         $tdCTypeValue = $dom->createElement('td');
         $tdCTypeValue->setAttribute('class', 'data1');
-        $inputCType = $dom->createElement('input');
-        $inputCType->setAttribute('type', 'text');
-        $inputCType->setAttribute('name', 'formCType');
-        $inputCType->setAttribute('value', $formCType);
-        $inputCType->setAttribute('id', 'db-ctype');
-        $tdCTypeValue->appendChild($inputCType);
+        $selectCType = $dom->createElement('select');
+        $selectCType->setAttribute('name', 'formCType');
+        $selectCType->setAttribute('id', 'db-ctype');
+        $emptyOption = $dom->createElement('option');
+        $emptyOption->setAttribute('value', '');
+        $selectCType->appendChild($emptyOption);
+        if (!is_null($availableCollations)) {
+            foreach ($availableCollations as $collation) {
+                $option = $dom->createElement('option', $collation);
+                $option->setAttribute('value', $collation);
+                if ($formCType === $collation) {
+                    $option->setAttribute('selected', 'selected');
+                }
+                $selectCType->appendChild($option);
+            }
+        }
+        $tdCTypeValue->appendChild($selectCType);
         $trCType->appendChild($thCType);
         $trCType->appendChild($tdCTypeValue);
         $tBody->appendChild($trCType);

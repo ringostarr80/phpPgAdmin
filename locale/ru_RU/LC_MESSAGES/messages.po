@@ -77,7 +77,7 @@ msgstr "Порт"
 msgid "Logout"
 msgstr "Выход"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Владелец"
 
 msgid "straction"
@@ -86,7 +86,7 @@ msgstr "Действие"
 msgid "Actions"
 msgstr "Действия"
 
-msgid "strname"
+msgid "Name"
 msgstr "Имя"
 
 msgid "strdefinition"
@@ -104,7 +104,7 @@ msgstr "Включить"
 msgid "strdisable"
 msgstr "Выключить"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Удалить"
 
 msgid "strdropped"
@@ -131,13 +131,13 @@ msgstr "Посл. >>"
 msgid "strfailed"
 msgstr "Прервано"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Создать"
 
 msgid "strcreated"
 msgstr "Создано"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Комментарий"
 
 msgid "strlength"
@@ -146,13 +146,13 @@ msgstr "Длина"
 msgid "strdefault"
 msgstr "По умолчанию"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Изменить"
 
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Отменить"
 
 msgid "strkill"
@@ -173,7 +173,7 @@ msgstr "Вставить"
 msgid "strselect"
 msgstr "Выбрать"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Удалить"
 
 msgid "strupdate"
@@ -218,7 +218,7 @@ msgstr "Назад"
 msgid "strqueryresults"
 msgstr "Результаты запроса"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Показать"
 
 msgid "strempty"
@@ -227,7 +227,7 @@ msgstr "Очистить"
 msgid "Language"
 msgstr "Язык"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Кодировка"
 
 msgid "strvalue"
@@ -239,7 +239,7 @@ msgstr "Уникальный"
 msgid "strprimary"
 msgstr "Первичный"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Экспорт"
 
 msgid "strimport"
@@ -275,7 +275,7 @@ msgstr "Кластеризован?"
 msgid "strreindex"
 msgstr "Перестроить индекс"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Выполнить"
 
 msgid "stradd"
@@ -293,7 +293,7 @@ msgstr "Делать вместо"
 msgid "strwhen"
 msgstr "Когда"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Формат"
 
 msgid "strdata"
@@ -320,13 +320,13 @@ msgstr "Свернуть"
 msgid "Find"
 msgstr "Найти"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Опции"
 
 msgid "Refresh"
 msgstr "Обновить"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Загрузить"
 
 msgid "strdownloadgzipped"
@@ -380,22 +380,22 @@ msgstr "Использовать эти данные аутентификаци�
 msgid "strconfdropcred"
 msgstr "В целях безопасности отключение уничтожит общую аутентификационную информацию. Вы действительно хотите отключится?"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Действия над несколькими строками."
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "Выбрать все"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "Отменить выбор всех"
 
 msgid "strlocale"
 msgstr "Локаль"
 
-msgid "strcollation"
+msgid "Collation"
 msgstr "Порядок сортировки строк (LC_COLLATE)"
 
-msgid "strctype"
+msgid "Character Type"
 msgstr "Классификация символов (LC_CTYPE)"
 
 msgid "strdefaultvalues"
@@ -452,22 +452,22 @@ msgstr "Пожалуйста, выберете базу данных."
 msgid "strnoaccess"
 msgstr "Нет доступа"
 
-msgid "strsize"
+msgid "Size"
 msgstr "Размер"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "байт"
 
-msgid "strkb"
+msgid "kB"
 msgstr "кБ"
 
-msgid "strmb"
+msgid "MB"
 msgstr "МБ"
 
-msgid "strgb"
+msgid "GB"
 msgstr "ГБ"
 
-msgid "strtb"
+msgid "TB"
 msgstr "ТБ"
 
 # Error handling
@@ -706,13 +706,13 @@ msgstr "Таблица изменена."
 msgid "strtablealteredbad"
 msgstr "Изменение таблицы прервано."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Только данные"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Только структуру"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Структуру и данные"
 
 msgid "strtabbed"
@@ -911,7 +911,7 @@ msgstr "Удаление участника прервано."
 msgid "strrole"
 msgstr "Роль"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Роли"
 
 msgid "strshowallroles"
@@ -972,7 +972,7 @@ msgstr "Вам необходимо определить имя роли."
 msgid "strprivilege"
 msgstr "Привилегия"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Привилегии"
 
 msgid "strnoprivileges"
@@ -1000,7 +1000,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "База данных"
 
 msgid "Databases"
@@ -1018,22 +1018,22 @@ msgstr "Создать базу данных"
 msgid "strdatabasename"
 msgstr "Имя базы данных"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Вам необходимо присвоить имя Вашей базе данных."
 
 msgid "strdatabasecreated"
 msgstr "База данных создана."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Создание базы данных прервано."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Вы уверены, что хотите уничтожить базу данных \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "База данных уничтожена."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Уничтожение базы данных прервано."
 
 msgid "strentersql"
@@ -1081,13 +1081,13 @@ msgstr "Все объекты"
 msgid "strdatabasealtered"
 msgstr "База данных изменена."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Изменение базы данных прервано."
 
 msgid "strspecifydatabasetodrop"
 msgstr "Вам необходимо указать как минимум одну базу данных для удаления."
 
-msgid "strtemplatedb"
+msgid "Template"
 msgstr "Шаблон"
 
 msgid "strconfanalyzedatabase"
@@ -2131,10 +2131,10 @@ msgid "strrows2"
 msgstr "Записи"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Табличное пространство"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Табличные пространства"
 
 msgid "strshowalltablespaces"

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace PhpPgAdmin\Website;
 
 use PhpPgAdmin\{Config, RequestParameter, Website, WebsiteComponents};
-use PhpPgAdmin\Database\Connection;
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 
 class Login extends Website
 {
@@ -41,7 +41,7 @@ class Login extends Website
             }
 
             if (
-                !Connection::loginDataIsValid(
+                !PhpPgAdminConnection::loginDataIsValid(
                     host: (string)$server->Host,
                     port: $server->Port->Value,
                     sslmode: $server->SslMode,
@@ -98,9 +98,7 @@ class Login extends Website
         $body->appendChild($this->buildTitle($dom, sprintf(_('Login to %s'), (string)$server->Name)));
 
         if (!empty($this->message)) {
-            $p = $dom->createElement('p', $this->message);
-            $p->setAttribute('class', 'message');
-            $body->appendChild($p);
+            $body->appendChild(WebsiteComponents::buildMessage($dom, $this->message));
         }
 
         $form = $dom->createElement('form');

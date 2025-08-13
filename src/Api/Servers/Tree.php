@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Api\Servers;
 
-use PhpPgAdmin\{Config, Session};
+use PhpPgAdmin\{Config, RequestParameter, Session};
+use PhpPgAdmin\DDD\Entities\ServerSession;
 
 class Tree
 {
@@ -16,49 +17,77 @@ class Tree
     public function outputXmlTree(): void
     {
         $domImpl = new \DOMImplementation();
-        $doctype = $domImpl->createDocumentType('tree', '', '');
-        $dom = $domImpl->createDocument('', '', $doctype);
+        $dom = $domImpl->createDocument();
         $dom->preserveWhiteSpace = false;
         $dom->formatOutput = true;
+        $dom->encoding = 'utf-8';
 
         $logins = isset($_SESSION['webdbLogin']) && is_array($_SESSION['webdbLogin']) ? $_SESSION['webdbLogin'] : [];
         $root = $dom->createElement('tree');
-        $configuredServers = Config::getServers();
-        foreach ($configuredServers as $configuredServer) {
-            $tree = $dom->createElement('tree');
-            $tree->setAttribute('text', (string)$configuredServer->Name);
-            $serverId = $configuredServer->id();
-            $actionUrlParams = [
-                'subject' => 'server',
-                'server' => $serverId
-            ];
-            $actionUrl = 'redirect.php?' . http_build_query($actionUrlParams);
-            $tree->setAttribute('action', $actionUrl);
 
-            $username = '';
-            if (
-                isset($logins[$serverId]) &&
-                is_array($logins[$serverId]) &&
-                isset($logins[$serverId]['username']) &&
-                is_string($logins[$serverId]['username'])
-            ) {
-                $username = $logins[$serverId]['username'];
+        $serverIdParam = RequestParameter::getString('server');
+        $serverSession = !is_null($serverIdParam) ? ServerSession::fromServerId($serverIdParam) : null;
+        if (!is_null($serverSession)) {
+            $dbConnection = $serverSession->getDatabaseConnection();
+            $dbs = $dbConnection->getDatabases();
+            foreach ($dbs as $dbData) {
+                $actionUrl = 'redirect.php';
+                $actionUrlParams = [
+                    'subject' => 'database',
+                    'server' => $serverSession->id(),
+                    'database' => $dbData['datname']
+                ];
+                $srcUrl = 'database.php';
+                $srcUrlParams = $actionUrlParams;
+                $srcUrlParams['action'] = 'tree';
 
-                $srcUrlParams = [
-                    'action' => 'tree',
+                $tree = $dom->createElement('tree');
+                $tree->setAttribute('text', $dbData['datname']);
+                $tree->setAttribute('action', $actionUrl . '?' . http_build_query($actionUrlParams));
+                $tree->setAttribute('src', $srcUrl . '?' . http_build_query($srcUrlParams));
+                $tree->setAttribute('icon', Config::getIcon('Database'));
+                $tree->setAttribute('openicon', Config::getIcon('Database'));
+                $tree->setAttribute('tooltip', $dbData['datcomment']);
+
+                $root->appendChild($tree);
+            }
+        } else {
+            $configuredServers = Config::getServers();
+            foreach ($configuredServers as $configuredServer) {
+                $tree = $dom->createElement('tree');
+                $tree->setAttribute('text', (string)$configuredServer->Name);
+                $serverId = $configuredServer->id();
+                $actionUrlParams = [
                     'subject' => 'server',
                     'server' => $serverId
                 ];
-                $srcUrl = 'all_db.php?' . http_build_query($srcUrlParams);
-                $tree->setAttribute('src', $srcUrl);
-            }
+                $actionUrl = 'redirect.php?' . http_build_query($actionUrlParams);
+                $tree->setAttribute('action', $actionUrl);
 
-            $iconName = $username !== '' ? 'Server' : 'DisconnectedServer';
-            $tree->setAttribute('icon', Config::getIcon($iconName));
-            $tree->setAttribute('openicon', Config::getIcon($iconName));
-            $tree->setAttribute('tooltip', $serverId);
-            $root->appendChild($tree);
+                $username = '';
+                if (
+                    isset($logins[$serverId]) &&
+                    is_array($logins[$serverId]) &&
+                    isset($logins[$serverId]['username']) &&
+                    is_string($logins[$serverId]['username'])
+                ) {
+                    $username = $logins[$serverId]['username'];
+
+                    $srcUrlParams = [
+                        'server' => $serverId
+                    ];
+                    $srcUrl = 'servers-tree.php?' . http_build_query($srcUrlParams);
+                    $tree->setAttribute('src', $srcUrl);
+                }
+
+                $iconName = $username !== '' ? 'Server' : 'DisconnectedServer';
+                $tree->setAttribute('icon', Config::getIcon($iconName));
+                $tree->setAttribute('openicon', Config::getIcon($iconName));
+                $tree->setAttribute('tooltip', $serverId);
+                $root->appendChild($tree);
+            }
         }
+
         $dom->appendChild($root);
 
         header('Content-Type: text/xml');

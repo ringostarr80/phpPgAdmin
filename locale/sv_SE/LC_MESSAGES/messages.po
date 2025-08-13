@@ -59,7 +59,7 @@ msgstr "Server"
 msgid "Logout"
 msgstr "Logga ut"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Ägare"
 
 msgid "straction"
@@ -68,7 +68,7 @@ msgstr "Åtgärd"
 msgid "Actions"
 msgstr "Åtgärder"
 
-msgid "strname"
+msgid "Name"
 msgstr "Namn"
 
 msgid "strdefinition"
@@ -80,7 +80,7 @@ msgstr "Egenskaper"
 msgid "strbrowse"
 msgstr "Bläddra"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Ta bort"
 
 msgid "strdropped"
@@ -107,13 +107,13 @@ msgstr "Misslyckades"
 msgid "strnext"
 msgstr "Nästa"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Skapa"
 
 msgid "strcreated"
 msgstr "Skapad"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Kommentar"
 
 msgid "strlength"
@@ -122,13 +122,13 @@ msgstr "Längd"
 msgid "strdefault"
 msgstr "Standardvärde"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Ändra"
 
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Ångra"
 
 msgid "strsave"
@@ -143,7 +143,7 @@ msgstr "Infoga"
 msgid "strselect"
 msgstr "Välj"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Radera"
 
 msgid "strupdate"
@@ -188,7 +188,7 @@ msgstr "Bakåt"
 msgid "strqueryresults"
 msgstr "Sökresultat"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Visa"
 
 msgid "strempty"
@@ -197,7 +197,7 @@ msgstr "Tom"
 msgid "Language"
 msgstr "Språk"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Kodning"
 
 msgid "strvalue"
@@ -209,7 +209,7 @@ msgstr "Unik"
 msgid "strprimary"
 msgstr "Primär"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Exportera"
 
 msgid "strimport"
@@ -251,7 +251,7 @@ msgstr "Gör Istället"
 msgid "strevent"
 msgstr "Händelse"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strwhen"
@@ -278,7 +278,7 @@ msgstr "Förklara"
 msgid "Find"
 msgstr "Sök"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Alternativ"
 
 msgid "Refresh"
@@ -290,7 +290,7 @@ msgstr "Förminska"
 msgid "strexpand"
 msgstr "Utöka"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Ladda ner"
 
 msgid "strdownloadgzipped"
@@ -490,7 +490,7 @@ msgstr "Misslyckades att lägga till kolumne."
 msgid "strcascade"
 msgstr "KASKAD"
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Endast Data"
 
 msgid "strtablealtered"
@@ -620,7 +620,7 @@ msgstr "Misslyckades att skapa grupp."
 msgid "strconfdropgroup"
 msgstr "Är du säker på att du vill radera grupp \"%s\"?"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Rättigheter"
 
 msgid "strgrant"
@@ -674,10 +674,10 @@ msgstr "Misslyckades att ändra rättigheter."
 msgid "stralterprivs"
 msgstr "Ändra rättigheter"
 
-msgid "strdatabase"
+msgid "Database"
 msgstr "Databas"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Databas raderad."
 
 msgid "Databases"
@@ -707,19 +707,19 @@ msgstr "Skapa databas"
 msgid "strdatabasename"
 msgstr "Databasnamn"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Du måste namnge databasen."
 
 msgid "strdatabasecreated"
 msgstr "Databas skapad."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Misslyckades att skapa databas."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Är du säker på att du vill radera databas \"%s\"?"
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Misslyckades att radera databas."
 
 msgid "strsqlexecuted"
@@ -737,10 +737,10 @@ msgstr "Analysen lyckades."
 msgid "stranalyzebad"
 msgstr "Analysen misslyckades."
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Endast struktur"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Struktur och data"
 
 # Views

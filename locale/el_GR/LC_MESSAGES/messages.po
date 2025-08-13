@@ -71,7 +71,7 @@ msgstr "Θύρα"
 msgid "Logout"
 msgstr "Εξοδος"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Κάτοχος"
 
 msgid "straction"
@@ -80,7 +80,7 @@ msgstr "Πράξη"
 msgid "Actions"
 msgstr "Ενέργειες"
 
-msgid "strname"
+msgid "Name"
 msgstr "Ονομα"
 
 msgid "strdefinition"
@@ -98,7 +98,7 @@ msgstr "Ενεργοποίηση"
 msgid "strdisable"
 msgstr "Απενεργοποίηση"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Διαγραφή"
 
 msgid "strdropped"
@@ -122,13 +122,13 @@ msgstr "Τελευταία >>"
 msgid "strfailed"
 msgstr "Απέτυχε"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Δημιουργία"
 
 msgid "strcreated"
 msgstr "Δημιουργήθηκε"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Σχόλιο"
 
 msgid "strlength"
@@ -137,13 +137,13 @@ msgstr "Μήκος"
 msgid "strdefault"
 msgstr "Αρχική τιμή"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Τροποποίηση"
 
 msgid "strok"
 msgstr "Εντάξει"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Ακυρο"
 
 msgid "strac"
@@ -161,7 +161,7 @@ msgstr "Εισαγωγή"
 msgid "strselect"
 msgstr "Επιλογή"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Διαγραφή"
 
 msgid "strupdate"
@@ -206,7 +206,7 @@ msgstr "Πίσω"
 msgid "strqueryresults"
 msgstr "Αποτελέσματα Ερωτήματος"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Εμφάνιση"
 
 msgid "strempty"
@@ -215,7 +215,7 @@ msgstr "Αδειασμα"
 msgid "Language"
 msgstr "Γλώσσα"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Κωδικοποίηση"
 
 msgid "strvalue"
@@ -227,7 +227,7 @@ msgstr "Μοναδικό"
 msgid "strprimary"
 msgstr "Πρωτεύον"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Εξαγωγή"
 
 msgid "strimport"
@@ -281,7 +281,7 @@ msgstr "Αντί να"
 msgid "strwhen"
 msgstr "Πότε"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Μορφή δεδομένων"
 
 msgid "strdata"
@@ -308,13 +308,13 @@ msgstr "Σύμπτυξη"
 msgid "Find"
 msgstr "Αναζήτηση"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Επιλογές"
 
 msgid "Refresh"
 msgstr "Ανανέωση"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Καταφόρτωση"
 
 msgid "strdownloadgzipped"
@@ -365,26 +365,26 @@ msgstr "Αρχείο εισήχθη."
 msgid "strtrycred"
 msgstr "Χρήση αυτών των διαπιστευτηρίων για όλους τους διακομιστές"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Εκτέλεση"
 
 # Database Sizes
-msgid "strsize"
+msgid "Size"
 msgstr "Μέγεθος"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "bytes"
 
-msgid "strkb"
+msgid "kB"
 msgstr "KB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -587,13 +587,13 @@ msgstr "Ο πίνακας τροποποιήθηκε."
 msgid "strtablealteredbad"
 msgstr "Η τροποποίηση του πίνακα απέτυχε."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Μόνο τα δεδομένα"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Μόνο τη δομή"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Δομή και δεδομένα"
 
 msgid "strtabbed"
@@ -759,7 +759,7 @@ msgstr "Η διαγραφή του μέλους απέτυχε."
 msgid "strrole"
 msgstr "Ρόλος"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Ρόλοι"
 
 msgid "strshowallroles"
@@ -814,7 +814,7 @@ msgstr "Πρέπει να δώσετε όνομα στο ρόλο."
 msgid "strprivilege"
 msgstr "Προνόμιο"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Προνόμια"
 
 msgid "strnoprivileges"
@@ -842,7 +842,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Βάση"
 
 msgid "Databases"
@@ -860,22 +860,22 @@ msgstr "Δημιουργία βάσης"
 msgid "strdatabasename"
 msgstr "Ονομα βάσης"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Πρέπει να δώσετε όνομα βάσης."
 
 msgid "strdatabasecreated"
 msgstr "Η βάση δημιουργήθηκε."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Η δημιουργία της βάσης απέτυχε."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Διαγραφή της βάσης \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Η βάση διαγράφηκε."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Η δημιουργία της βάσης απέτυχε."
 
 msgid "strentersql"
@@ -923,7 +923,7 @@ msgstr "Ολα τα αντικείμενα"
 msgid "strdatabasealtered"
 msgstr "Η βάση τροποποιήθηκε."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Η τροποποίηση της βάσης απέτυχε."
 
 # Views
@@ -1901,10 +1901,10 @@ msgid "strrows2"
 msgstr "Γραμμές"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Τοποθεσία πίνακα"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Τοποθεσίες πινάκων"
 
 msgid "strshowalltablespaces"

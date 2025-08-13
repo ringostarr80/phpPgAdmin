@@ -10,6 +10,13 @@ use PhpPgAdmin\DDD\Entities\ServerSession;
 
 class Redirect extends Website
 {
+    private function redirectToRoot(): void
+    {
+        $locationUrl = './intro.php';
+        header('Location: ' . $locationUrl);
+        exit;
+    }
+
     private function redirectToServer(): void
     {
         $server = RequestParameter::getString('server');
@@ -52,6 +59,7 @@ class Redirect extends Website
         }
 
         match ($subject) {
+            'root' => $this->redirectToRoot(),
             'server' => $this->redirectToServer(),
             default => trigger_error(
                 'Redirecting subject ("' . $subject . '") not found the new way. Continue the old way!',

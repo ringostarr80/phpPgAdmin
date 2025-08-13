@@ -77,7 +77,7 @@ msgstr "Kapu"
 msgid "Logout"
 msgstr "Kilépés"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Tulajdonos"
 
 msgid "straction"
@@ -86,7 +86,7 @@ msgstr "Művelet"
 msgid "Actions"
 msgstr "Műveletek"
 
-msgid "strname"
+msgid "Name"
 msgstr "Név"
 
 msgid "strdefinition"
@@ -104,7 +104,7 @@ msgstr "Enged"
 msgid "strdisable"
 msgstr "Tilt"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Töröl"
 
 msgid "strdropped"
@@ -131,13 +131,13 @@ msgstr "Utolsó >>"
 msgid "strfailed"
 msgstr "Sikertelen"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Teremt"
 
 msgid "strcreated"
 msgstr "Megteremtve"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Megjegyzés"
 
 msgid "strlength"
@@ -146,13 +146,13 @@ msgstr "Hossz"
 msgid "strdefault"
 msgstr "Alapértelmezés"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Módosít"
 
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Mégsem"
 
 msgid "strkill"
@@ -176,7 +176,7 @@ msgstr "Beszúr"
 msgid "strselect"
 msgstr "Kiválaszt"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Töröl"
 
 msgid "strupdate"
@@ -221,7 +221,7 @@ msgstr "Vissza"
 msgid "strqueryresults"
 msgstr "Lekérdezés eredményei"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Megjelenít"
 
 msgid "strempty"
@@ -230,7 +230,7 @@ msgstr "Ürít"
 msgid "Language"
 msgstr "Nyelv"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Kódolás"
 
 msgid "strvalue"
@@ -242,7 +242,7 @@ msgstr "egyedi"
 msgid "strprimary"
 msgstr "Elsődleges"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Kivisz"
 
 msgid "strimport"
@@ -278,7 +278,7 @@ msgstr "Fürtözve?"
 msgid "strreindex"
 msgstr "Újraindexel"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Végrehajt"
 
 msgid "stradd"
@@ -296,7 +296,7 @@ msgstr "Inkább"
 msgid "strwhen"
 msgstr "Mikor"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Alak"
 
 msgid "strdata"
@@ -323,13 +323,13 @@ msgstr "Összecsuk"
 msgid "Find"
 msgstr "Keres"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Részletek"
 
 msgid "Refresh"
 msgstr "Frissít"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Letöltés"
 
 msgid "strdownloadgzipped"
@@ -383,22 +383,22 @@ msgstr "Használja minden kiszolgálóhoz e beállításokat"
 msgid "strconfdropcred"
 msgstr "Biztonság okán a szétválás megszünteti a megosztott bejelentkező adatait. Biztosan szét akar válni?"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Több soros műveletek"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "Mindent kiválaszt"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "Semmit sem választ ki"
 
 msgid "strlocale"
 msgstr "Helyszín"
 
-msgid "strcollation"
+msgid "Collation"
 msgstr "Összerakás"
 
-msgid "strctype"
+msgid "Character Type"
 msgstr "Betűtípus"
 
 msgid "strdefaultvalues"
@@ -455,22 +455,22 @@ msgstr "Ki kell választani az adatbázist."
 msgid "strnoaccess"
 msgstr "Nincs hozzáférés"
 
-msgid "strsize"
+msgid "Size"
 msgstr "Méret"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "bájt"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -709,13 +709,13 @@ msgstr "A tábla megváltoztatva."
 msgid "strtablealteredbad"
 msgstr "Nem sikerült a táblát megváltoztatni."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Csak adatok"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Csak struktúra"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Struktúra és adatok"
 
 msgid "strtabbed"
@@ -914,7 +914,7 @@ msgstr "Nem sikerült a tagot kicsapni."
 msgid "strrole"
 msgstr "Szerep"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Szerepek"
 
 msgid "strshowallroles"
@@ -975,7 +975,7 @@ msgstr "Nevet kell adni a szerepnek."
 msgid "strprivilege"
 msgstr "Jogosultság"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Jogosultságok"
 
 msgid "strnoprivileges"
@@ -1003,7 +1003,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Adatbázis"
 
 msgid "Databases"
@@ -1021,22 +1021,22 @@ msgstr "Adatbázist teremt"
 msgid "strdatabasename"
 msgstr "Adatbázisnév"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Meg kell adni az adatbázis nevét."
 
 msgid "strdatabasecreated"
 msgstr "Az adatbázis megteremtve."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Nem sikerült megteremteni az adatbázist."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Biztosan törölni akarja „%s” adatbázist?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Az adatbázis törölve."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Nem sikerült törölni az adatbázist."
 
 msgid "strentersql"
@@ -1084,13 +1084,13 @@ msgstr "Minden objektum"
 msgid "strdatabasealtered"
 msgstr "Adatbázis megváltoztatva."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Nem sikerült az adatbázist megváltoztatni."
 
 msgid "strspecifydatabasetodrop"
 msgstr "Meg kell adni a törlendő adatbázist"
 
-msgid "strtemplatedb"
+msgid "Template"
 msgstr "Sablon"
 
 msgid "strconfanalyzedatabase"
@@ -2143,10 +2143,10 @@ msgid "strrows2"
 msgstr "Sorok"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Táblahely"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Táblahelyek"
 
 msgid "strshowalltablespaces"

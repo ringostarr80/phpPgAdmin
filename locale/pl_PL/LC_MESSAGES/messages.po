@@ -71,7 +71,7 @@ msgstr "Port"
 msgid "Logout"
 msgstr "Wyloguj się"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Właściciel"
 
 msgid "straction"
@@ -80,7 +80,7 @@ msgstr "Akcja"
 msgid "Actions"
 msgstr "Akcje"
 
-msgid "strname"
+msgid "Name"
 msgstr "Nazwa"
 
 msgid "strdefinition"
@@ -98,7 +98,7 @@ msgstr "Aktywuj"
 msgid "strdisable"
 msgstr "Deaktywuj"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Usuń"
 
 msgid "strdropped"
@@ -122,13 +122,13 @@ msgstr "Ostatni >>"
 msgid "strfailed"
 msgstr "Nieudany"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Utwórz"
 
 msgid "strcreated"
 msgstr "Utworzony"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Komentarz"
 
 msgid "strlength"
@@ -137,13 +137,13 @@ msgstr "Długość"
 msgid "strdefault"
 msgstr "Domyślny"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Zmień"
 
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Anuluj"
 
 msgid "strac"
@@ -161,7 +161,7 @@ msgstr "Wstaw"
 msgid "strselect"
 msgstr "Wybierz"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Usuń"
 
 msgid "strupdate"
@@ -206,7 +206,7 @@ msgstr "Wstecz"
 msgid "strqueryresults"
 msgstr "Wyniki zapytania"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Pokaż"
 
 msgid "strempty"
@@ -215,7 +215,7 @@ msgstr "Wyczyść"
 msgid "Language"
 msgstr "Język"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Kodowanie"
 
 msgid "strvalue"
@@ -227,7 +227,7 @@ msgstr "Unikatowy"
 msgid "strprimary"
 msgstr "Główny"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Eksport"
 
 msgid "strimport"
@@ -287,7 +287,7 @@ msgstr "Wykonaj zamiast"
 msgid "strwhen"
 msgstr "Kiedy"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strdata"
@@ -320,13 +320,13 @@ msgstr "Explain Analyze"
 msgid "Find"
 msgstr "Znajdź"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Opcje"
 
 msgid "Refresh"
 msgstr "Odśwież"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Pobierz"
 
 msgid "strdownloadgzipped"
@@ -377,26 +377,26 @@ msgstr "Plik został zaimportowany."
 msgid "strtrycred"
 msgstr "Użyj tych parametrów dla wszystkich serwerów"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Wykonaj"
 
 # Database Sizes
-msgid "strsize"
+msgid "Size"
 msgstr "Rozmiar"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "bajtów"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -602,13 +602,13 @@ msgstr "Tabela została zmodyfikowana."
 msgid "strtablealteredbad"
 msgstr "Próba modyfikacji tabeli się nie powiodła."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Tylko dane"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Tylko struktura"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Struktura i dane"
 
 msgid "strtabbed"
@@ -768,7 +768,7 @@ msgstr "Próba usunięcia członka grupy się nie powiodła."
 msgid "strrole"
 msgstr "Rola"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Role"
 
 msgid "strinheritsprivs"
@@ -799,7 +799,7 @@ msgstr "Próba usunięcia roli się nie powiodła."
 msgid "strprivilege"
 msgstr "Uprawnienie"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Uprawnienia"
 
 msgid "strnoprivileges"
@@ -827,7 +827,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Baza danych"
 
 msgid "Databases"
@@ -848,22 +848,22 @@ msgstr "Utwórz bazę danych"
 msgid "strdatabasename"
 msgstr "Nazwa bazy danych"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Musisz nazwać bazę danych."
 
 msgid "strdatabasecreated"
 msgstr "Baza danych została utworzona."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Próba utworzenia bazy danych się nie powiodła."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Czy na pewno chcesz usunąć bazę danych \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Baza danych została usunięta."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Próba usunięcia bazy danych się nie powiodła."
 
 msgid "strentersql"
@@ -911,7 +911,7 @@ msgstr "Wszystkie obiekty"
 msgid "strdatabasealtered"
 msgstr "Baza danych została zmieniona."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Próba modyfikacji bazy danych się nie powiodła."
 
 # Views
@@ -1898,10 +1898,10 @@ msgid "strrows2"
 msgstr "Wiersze"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Przestrzeń tabel"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Przestrzenie tabel"
 
 msgid "strshowalltablespaces"

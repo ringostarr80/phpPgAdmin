@@ -59,7 +59,7 @@ msgstr "Сервер"
 msgid "Logout"
 msgstr "Перереєстрація"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Користувач"
 
 msgid "straction"
@@ -68,7 +68,7 @@ msgstr "Дія"
 msgid "Actions"
 msgstr "Дії"
 
-msgid "strname"
+msgid "Name"
 msgstr "Ім\"я"
 
 msgid "strdefinition"
@@ -80,7 +80,7 @@ msgstr "Властивості"
 msgid "strbrowse"
 msgstr "Переглянути"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Видалити"
 
 msgid "strdropped"
@@ -107,13 +107,13 @@ msgstr "Остан. >>"
 msgid "strfailed"
 msgstr "Перервано"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Створити"
 
 msgid "strcreated"
 msgstr "Створено"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Коментар"
 
 msgid "strlength"
@@ -122,13 +122,13 @@ msgstr "Довжина"
 msgid "strdefault"
 msgstr "По замовчуванню"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Змінити"
 
 msgid "strok"
 msgstr "Гаразд"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Відмінити"
 
 msgid "strsave"
@@ -143,7 +143,7 @@ msgstr "Вставити"
 msgid "strselect"
 msgstr "Вибрати"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Видалити"
 
 msgid "strupdate"
@@ -188,7 +188,7 @@ msgstr "Назад"
 msgid "strqueryresults"
 msgstr "Результати запиту"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Показати"
 
 msgid "strempty"
@@ -197,7 +197,7 @@ msgstr "Очистити"
 msgid "Language"
 msgstr "Мова"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Кодування"
 
 msgid "strvalue"
@@ -209,7 +209,7 @@ msgstr "Унікальний"
 msgid "strprimary"
 msgstr "Первинний"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Експорт"
 
 msgid "strimport"
@@ -257,7 +257,7 @@ msgstr "Робити замість"
 msgid "strwhen"
 msgstr "Коли"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Формат"
 
 msgid "strdata"
@@ -287,13 +287,13 @@ msgstr "Пояснити аналіз"
 msgid "Find"
 msgstr "Знайти"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Опції"
 
 msgid "Refresh"
 msgstr "Оновити"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Завантажити"
 
 msgid "strdownloadgzipped"
@@ -526,13 +526,13 @@ msgstr "Таблицю змінено."
 msgid "strtablealteredbad"
 msgstr "Зміну таблиці перервано."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Лише дані"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Лише структуру"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Структуру і дані"
 
 msgid "strtabbed"
@@ -682,7 +682,7 @@ msgstr "Видалення учасника перервано."
 msgid "strprivilege"
 msgstr "Привілей"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Привілеї"
 
 msgid "strnoprivileges"
@@ -713,7 +713,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "База даних"
 
 msgid "Databases"
@@ -734,22 +734,22 @@ msgstr "Створити базу даних"
 msgid "strdatabasename"
 msgstr "Ім\"я бази даних"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Вам необхідно присвоїти ім\"я Вашій базі даних."
 
 msgid "strdatabasecreated"
 msgstr "Базу даних створено."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Створення бази даних перервано."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Ви впевненні, що бажаєте видалити базу даних \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr " Базу даних видалено."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Видалення бази даних перервано."
 
 msgid "strentersql"

@@ -77,7 +77,7 @@ msgstr "Port"
 msgid "Logout"
 msgstr "Sortida"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Propietari"
 
 msgid "straction"
@@ -86,7 +86,7 @@ msgstr "Acció"
 msgid "Actions"
 msgstr "Accions"
 
-msgid "strname"
+msgid "Name"
 msgstr "Nom"
 
 msgid "strdefinition"
@@ -104,7 +104,7 @@ msgstr "Habilita"
 msgid "strdisable"
 msgstr "Inhabilita"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Elimina"
 
 msgid "strdropped"
@@ -131,13 +131,13 @@ msgstr "Últim >>"
 msgid "strfailed"
 msgstr "Fallat"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Crea"
 
 msgid "strcreated"
 msgstr "Creat"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Comentari"
 
 msgid "strlength"
@@ -146,13 +146,13 @@ msgstr "Longitud"
 msgid "strdefault"
 msgstr "Predeterminat"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Modifica"
 
 msgid "strok"
 msgstr "D'acord"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Cancel·la"
 
 msgid "strkill"
@@ -176,7 +176,7 @@ msgstr "Inserta"
 msgid "strselect"
 msgstr "Selecciona"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Elimina"
 
 msgid "strupdate"
@@ -221,7 +221,7 @@ msgstr "Enrere"
 msgid "strqueryresults"
 msgstr "Resultat de la Consulta"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Mostra"
 
 msgid "strempty"
@@ -230,7 +230,7 @@ msgstr "Buida"
 msgid "Language"
 msgstr "Idioma"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Codificació"
 
 msgid "strvalue"
@@ -242,7 +242,7 @@ msgstr "Únic"
 msgid "strprimary"
 msgstr "Primari"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Exporta"
 
 msgid "strimport"
@@ -278,7 +278,7 @@ msgstr "Clusteritzat?"
 msgid "strreindex"
 msgstr "Reindex"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Executa"
 
 msgid "stradd"
@@ -296,7 +296,7 @@ msgstr "Fes en el seu lloc"
 msgid "strwhen"
 msgstr "Quan"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Format"
 
 msgid "strdata"
@@ -323,13 +323,13 @@ msgstr "Colapsa"
 msgid "Find"
 msgstr "Cerca"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Opcions"
 
 msgid "Refresh"
 msgstr "Refresca"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Baixa"
 
 msgid "strdownloadgzipped"
@@ -383,22 +383,22 @@ msgstr "Usa aquestes credencials a tots els servidors"
 msgid "strconfdropcred"
 msgstr "Per raons de seguretat, la desconnexió eliminarà la informació d'entrada compartida. Està segur de voler desconnectar ?"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Accions a múltiples línies"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "Seleccina'ls tots"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "No en seleccionis cap"
 
 msgid "strlocale"
 msgstr "Local"
 
-msgid "strcollation"
+msgid "Collation"
 msgstr "Col·lació"
 
-msgid "strctype"
+msgid "Character Type"
 msgstr "Tipus de caràcter"
 
 msgid "strdefaultvalues"
@@ -455,22 +455,22 @@ msgstr "Si us plau, seleccioni una base de dades."
 msgid "strnoaccess"
 msgstr "Sense Accés"
 
-msgid "strsize"
+msgid "Size"
 msgstr "Tamany"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "bytes"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -709,13 +709,13 @@ msgstr "Taula modificada."
 msgid "strtablealteredbad"
 msgstr "No s'ha pogut modificar la columna."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Només dades"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Nomes estructura"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Estructura i dades"
 
 msgid "strtabbed"
@@ -914,7 +914,7 @@ msgstr "No s'ha pogut eliminar el membre."
 msgid "strrole"
 msgstr "Rol"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Rols"
 
 msgid "strshowallroles"
@@ -975,7 +975,7 @@ msgstr "Ha de donar un nom al rol."
 msgid "strprivilege"
 msgstr "Privilegi"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Privilegis"
 
 msgid "strnoprivileges"
@@ -1003,7 +1003,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Base de dades"
 
 msgid "Databases"
@@ -1021,22 +1021,22 @@ msgstr "Crea una base de dades"
 msgid "strdatabasename"
 msgstr "Nom de la base de dades"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Ha de donar un nom a la base de dades."
 
 msgid "strdatabasecreated"
 msgstr "Base de dades creada."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "No s'ha pogut crear la base de dades."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Està segur de voler eliminar la base de dades \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Base de dades eliminada."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "No s'ha pogut eliminar la base de dades."
 
 msgid "strentersql"
@@ -1084,13 +1084,13 @@ msgstr "Tots els objectes"
 msgid "strdatabasealtered"
 msgstr "Base de dades modificada."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "No s'ha pogut modificar la base de dades."
 
 msgid "strspecifydatabasetodrop"
 msgstr "Ha d'especificar almenys una base de dades per eliminar."
 
-msgid "strtemplatedb"
+msgid "Template"
 msgstr "Plantilla"
 
 msgid "strconfanalyzedatabase"
@@ -2143,10 +2143,10 @@ msgid "strrows2"
 msgstr "Rows"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Tablespace"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Tablespaces"
 
 msgid "strshowalltablespaces"

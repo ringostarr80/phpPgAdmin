@@ -1,24 +1,24 @@
 <?php
 
-    /**
-     * Does an export of a database, schema, or table (via pg_dump)
-     * to the screen or as a download.
-     *
-     * $Id: dbexport.php,v 1.22 2007/03/25 03:15:09 xzilla Exp $
-     */
+/**
+ * Does an export of a database, schema, or table (via pg_dump)
+ * to the screen or as a download.
+ *
+ * $Id: dbexport.php,v 1.22 2007/03/25 03:15:09 xzilla Exp $
+ */
 
-    // Prevent timeouts on large exports (non-safe mode only)
+// Prevent timeouts on large exports (non-safe mode only)
 if (!ini_get('safe_mode')) {
     set_time_limit(0);
 }
 
-    // Include application functions
-    $_no_output = true;
-    $f_schema = $f_object = '';
-    include_once('./libraries/lib.inc.php');
+// Include application functions
+$_no_output = true;
+$f_schema = $f_object = '';
+include_once('./libraries/lib.inc.php');
 
-    // Are we doing a cluster-wide dump or just a per-database dump
-    $dumpall = ($_REQUEST['subject'] == 'server');
+// Are we doing a cluster-wide dump or just a per-database dump
+$dumpall = ($_REQUEST['subject'] == 'server');
 
     // Check that database dumps are enabled.
 if ($misc->isDumpEnabled($dumpall)) {

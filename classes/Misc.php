@@ -542,7 +542,10 @@ class Misc
         global $appName, $lang, $_no_output, $conf, $plugin_manager;
 
         if (!isset($_no_output)) {
-            header("Content-Type: text/html; charset=utf-8");
+            if (!headers_sent()) {
+                header("Content-Type: text/html; charset=utf-8");
+            }
+
             echo "<!DOCTYPE html>\n";
             echo "<html xml:lang=\"{$lang['applocale']}\" lang=\"{$lang['applocale']}\"";
             if (strcasecmp($lang['applangdir'], 'ltr') != 0) {
@@ -2250,7 +2253,7 @@ class Misc
      */
     public function printTreeXML(&$treedata, &$attrs)
     {
-        global $conf, $lang;
+        global $lang;
 
         header("Content-Type: text/xml; charset=UTF-8");
         header("Cache-Control: no-cache");

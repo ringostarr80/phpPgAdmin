@@ -79,7 +79,7 @@ msgstr "Prievadas"
 msgid "Logout"
 msgstr "Atsijungti"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Valdytojas"
 
 # Savininkas
@@ -89,7 +89,7 @@ msgstr "Veiksmas"
 msgid "Actions"
 msgstr "Veiksmai"
 
-msgid "strname"
+msgid "Name"
 msgstr "Pavadinimas"
 
 msgid "strdefinition"
@@ -108,7 +108,7 @@ msgstr "Įjungti"
 msgid "strdisable"
 msgstr "Išjungti"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Šalinti"
 
 msgid "strdropped"
@@ -135,13 +135,13 @@ msgstr "Paskutinis >>"
 msgid "strfailed"
 msgstr "Nepavyko"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Sukurti"
 
 msgid "strcreated"
 msgstr "Sukurta"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Komentaras"
 
 msgid "strlength"
@@ -151,13 +151,13 @@ msgid "strdefault"
 msgstr "Numatytoji reikšmė"
 
 # Numatytas(-a)
-msgid "stralter"
+msgid "Alter"
 msgstr "Pakeisti"
 
 msgid "strok"
 msgstr "Gerai"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Atsisakyti"
 
 msgid "strkill"
@@ -183,7 +183,7 @@ msgstr "Įterpti"
 msgid "strselect"
 msgstr "Atrinkti"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Šalinti"
 
 msgid "strupdate"
@@ -228,7 +228,7 @@ msgstr "Atgal"
 msgid "strqueryresults"
 msgstr "Užklausos rezultatai"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Rodyti"
 
 msgid "strempty"
@@ -238,7 +238,7 @@ msgstr "Išvalyti"
 msgid "Language"
 msgstr "Kalba"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Koduotė"
 
 msgid "strvalue"
@@ -250,7 +250,7 @@ msgstr "Unikalus"
 msgid "strprimary"
 msgstr "Pirminis"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Eksportuoti"
 
 msgid "strimport"
@@ -287,7 +287,7 @@ msgstr "Sutvarkyta?"
 msgid "strreindex"
 msgstr "Perindeksuoti"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "Vykdyti"
 
 msgid "stradd"
@@ -306,7 +306,7 @@ msgstr "Atlikti užuot"
 msgid "strwhen"
 msgstr "Kai"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Formatas"
 
 msgid "strdata"
@@ -333,13 +333,13 @@ msgstr "Suskleisti"
 msgid "Find"
 msgstr "Ieškoti"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Parinktys"
 
 msgid "Refresh"
 msgstr "Atnaujinti"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Parsisiųsti"
 
 msgid "strdownloadgzipped"
@@ -395,24 +395,24 @@ msgstr "Naudoti šiuos įgaliojimus visiems serveriams"
 msgid "strconfdropcred"
 msgstr "Dėl saugumo, ryšio nutraukimas panaikins jūsų bendrą prisijungimo informaciją. Ar tikrai norite nutraukti ryšį ?"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "Veiksmai keliose eilutėse"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "Visi"
 
 # Pažymėti visus
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "Nieko"
 
 # Panaikinti žymėjimą visiems
 msgid "strlocale"
 msgstr "Lokalė"
 
-msgid "strcollation"
+msgid "Collation"
 msgstr "Rikiavimas"
 
-msgid "strctype"
+msgid "Character Type"
 msgstr "Character Type"
 
 # Simbolių(ženklų) tipas
@@ -470,22 +470,22 @@ msgstr "Prašom pasirinkiti duomenų bazę."
 msgid "strnoaccess"
 msgstr "Nėra prieigos"
 
-msgid "strsize"
+msgid "Size"
 msgstr "Dydis"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "baitai"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -725,13 +725,13 @@ msgstr "Lentelė pakeista."
 msgid "strtablealteredbad"
 msgstr "Nepavyko pakeisti lentelės."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Tik duomenis"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Tik struktūrą"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Struktūrą ir duomenis"
 
 msgid "strtabbed"
@@ -932,7 +932,7 @@ msgstr "Nepavyko pašalinti nario."
 msgid "strrole"
 msgstr "Rolė"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "Rolės"
 
 msgid "strshowallroles"
@@ -993,7 +993,7 @@ msgstr "Turite suteikti rolei pavadinimą."
 msgid "strprivilege"
 msgstr "Privilegija"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Privilegijos"
 
 msgid "strnoprivileges"
@@ -1022,7 +1022,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Duomenų bazė"
 
 msgid "Databases"
@@ -1040,22 +1040,22 @@ msgstr "Kurti duomenų bazę"
 msgid "strdatabasename"
 msgstr "Duomenų bazės pavadinimas"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Turite suteikti duomenų bazei pavadinimą."
 
 msgid "strdatabasecreated"
 msgstr "Duomenų bazė sukurta."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Nepavyko sukurti duomenų bazės."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Ar tikrai norite šalinti duomenų bazę \"%s\"?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Duomenų bazė pašalinta."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Nepavyko pašalinti duomenų bazės."
 
 msgid "strentersql"
@@ -1103,13 +1103,13 @@ msgstr "Visi objektai"
 msgid "strdatabasealtered"
 msgstr "Duomenų bazė pakeista."
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "Nepavyko pakeisti duomenų bazės."
 
 msgid "strspecifydatabasetodrop"
 msgstr "Turite nurodyti bent vieną duomenų bazę, kurią reikia šalinti."
 
-msgid "strtemplatedb"
+msgid "Template"
 msgstr "Šablonas"
 
 msgid "strconfanalyzedatabase"
@@ -2177,10 +2177,10 @@ msgid "strrows2"
 msgstr "Įrašai"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Lentelių erdvė"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Lentelių erdvės"
 
 msgid "strshowalltablespaces"

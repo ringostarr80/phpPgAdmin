@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace PhpPgAdmin\DDD\Entities;
 
 use PhpPgAdmin\Config;
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\ValueObjects\Server\{DatabaseName, Filename, Host, Name, Port, SslMode};
 use PhpPgAdmin\DDD\ValueObjects\ServerSession\{Username, Password, Platform};
 
@@ -130,6 +131,23 @@ class ServerSession extends Server
         }
 
         return self::fromServerId($_REQUEST['server']);
+    }
+
+    public function getDatabaseConnection(): PhpPgAdminConnection
+    {
+        $connection = PhpPgAdminConnection::create(
+            host: (string)$this->Host,
+            port: $this->Port->Value,
+            sslmode: $this->SslMode->value,
+            user: (string)$this->Username,
+            password: (string)$this->Password,
+            database: 'postgres'
+        );
+
+        $connection->exec("SET client_encoding TO 'UTF-8'");
+        $connection->exec("SET bytea_output TO escape");
+
+        return $connection;
     }
 
     public static function isLoggedIn(string $serverId): bool

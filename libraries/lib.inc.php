@@ -75,7 +75,7 @@ if (($conf['extra_session_security'] ?? true) === true) {
                 session_start();
             }
         }
-    } else {
+    } elseif (session_status() !== PHP_SESSION_ACTIVE) {
         session_name($our_session_name);
         ini_set('session.cookie_samesite', 'Strict');
         session_start();
@@ -287,7 +287,7 @@ if (!isset($_no_db_connection)) {
     }
 
     include_once './classes/database/Connection.php';
-    
+
     // Connect to database and set the global $data variable
     $data = $misc->getDatabaseAccessor($_curr_db);
 

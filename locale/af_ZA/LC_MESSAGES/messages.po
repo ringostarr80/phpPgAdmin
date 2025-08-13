@@ -59,7 +59,7 @@ msgstr "Bediener"
 msgid "Logout"
 msgstr "Teken af"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "Eienaar"
 
 msgid "straction"
@@ -68,7 +68,7 @@ msgstr "Aksie"
 msgid "Actions"
 msgstr "Aksies"
 
-msgid "strname"
+msgid "Name"
 msgstr "Naam"
 
 msgid "strdefinition"
@@ -80,7 +80,7 @@ msgstr "Eienskappe"
 msgid "strbrowse"
 msgstr "Bekyk"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "Verwyder"
 
 msgid "strdropped"
@@ -107,13 +107,13 @@ msgstr "Laaste >>"
 msgid "strfailed"
 msgstr "Het misluk"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "Skep"
 
 msgid "strcreated"
 msgstr "Geskep"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "Kommentaar"
 
 msgid "strlength"
@@ -122,13 +122,13 @@ msgstr "Lengte"
 msgid "strdefault"
 msgstr "Standaard"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "Wysig"
 
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "Kanselleer"
 
 msgid "strsave"
@@ -143,7 +143,7 @@ msgstr "Voeg in"
 msgid "strselect"
 msgstr "Selekteer"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "Verwyder"
 
 msgid "strupdate"
@@ -188,7 +188,7 @@ msgstr "Terug"
 msgid "strqueryresults"
 msgstr "Navraagresultate"
 
-msgid "strshow"
+msgid "Show"
 msgstr "Wys"
 
 msgid "strempty"
@@ -197,7 +197,7 @@ msgstr "Leeg"
 msgid "Language"
 msgstr "Taal"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "Enkodering"
 
 msgid "strvalue"
@@ -209,7 +209,7 @@ msgstr "Uniek"
 msgid "strprimary"
 msgstr "Primêr"
 
-msgid "strexport"
+msgid "Export"
 msgstr "Eksporteer"
 
 msgid "strimport"
@@ -254,7 +254,7 @@ msgstr "Doen eerder"
 msgid "strwhen"
 msgstr "Wanneer"
 
-msgid "strformat"
+msgid "Format"
 msgstr "Formaat"
 
 msgid "strdata"
@@ -287,13 +287,13 @@ msgstr "Verduidelik Analise"
 msgid "Find"
 msgstr "Soek"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "Opsies"
 
 msgid "Refresh"
 msgstr "Verfris"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "Laai af"
 
 msgid "strdownloadgzipped"
@@ -529,13 +529,13 @@ msgstr "Tabel is gewysig."
 msgid "strtablealteredbad"
 msgstr "Tabelwysiging het misluk."
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "Slegs data"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "Slegs struktuur"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "Struktuur en data"
 
 msgid "strtabbed"
@@ -691,7 +691,7 @@ msgstr "Verwydering van groeplid het misluk."
 msgid "strprivilege"
 msgstr "Voorregte"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "Voorregte"
 
 msgid "strnoprivileges"
@@ -719,7 +719,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "Databasis"
 
 msgid "Databases"
@@ -740,22 +740,22 @@ msgstr "Skep databasis"
 msgid "strdatabasename"
 msgstr "Databasisnaam"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "Jy moet die databasis 'n naam gee."
 
 msgid "strdatabasecreated"
 msgstr "Databasis is geskep."
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "Die databasis kon nie geskep word nie."
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "Is jy seker dat jy die databasis \"%s\" wil verwyder?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "Databasis is verwyder."
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "Databasisverwydering het misluk."
 
 msgid "strentersql"
@@ -1631,10 +1631,10 @@ msgid "strrows2"
 msgstr "Rye"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "Tabelruimte"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "Tabelruimtes"
 
 msgid "strshowalltablespaces"

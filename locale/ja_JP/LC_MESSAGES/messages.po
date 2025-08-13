@@ -71,7 +71,7 @@ msgstr "ポート"
 msgid "Logout"
 msgstr "ログアウト"
 
-msgid "strowner"
+msgid "Owner"
 msgstr "所有者"
 
 msgid "straction"
@@ -80,7 +80,7 @@ msgstr "アクション"
 msgid "Actions"
 msgstr "操作"
 
-msgid "strname"
+msgid "Name"
 msgstr "名前"
 
 msgid "strdefinition"
@@ -98,7 +98,7 @@ msgstr "有効"
 msgid "strdisable"
 msgstr "無効"
 
-msgid "strdrop"
+msgid "Drop"
 msgstr "破棄"
 
 msgid "strdropped"
@@ -125,13 +125,13 @@ msgstr "最後 >>"
 msgid "strfailed"
 msgstr "失敗"
 
-msgid "strcreate"
+msgid "Create"
 msgstr "作成"
 
 msgid "strcreated"
 msgstr "作成しました。"
 
-msgid "strcomment"
+msgid "Comment"
 msgstr "コメント"
 
 msgid "strlength"
@@ -140,13 +140,13 @@ msgstr "長さ"
 msgid "strdefault"
 msgstr "デフォルト"
 
-msgid "stralter"
+msgid "Alter"
 msgstr "変更"
 
 msgid "strok"
 msgstr "OK"
 
-msgid "strcancel"
+msgid "Cancel"
 msgstr "取り消し"
 
 msgid "strac"
@@ -164,7 +164,7 @@ msgstr "挿入"
 msgid "strselect"
 msgstr "選択"
 
-msgid "strdelete"
+msgid "Delete"
 msgstr "削除"
 
 msgid "strupdate"
@@ -209,7 +209,7 @@ msgstr "戻る"
 msgid "strqueryresults"
 msgstr "クエリ結果"
 
-msgid "strshow"
+msgid "Show"
 msgstr "表示"
 
 msgid "strempty"
@@ -218,7 +218,7 @@ msgstr "空にする"
 msgid "Language"
 msgstr "言語"
 
-msgid "strencoding"
+msgid "Encoding"
 msgstr "エンコード"
 
 msgid "strunique"
@@ -227,7 +227,7 @@ msgstr "ユニーク"
 msgid "strprimary"
 msgstr "プライマリ"
 
-msgid "strexport"
+msgid "Export"
 msgstr "エクスポート"
 
 msgid "strimport"
@@ -263,7 +263,7 @@ msgstr "Clustered?"
 msgid "strreindex"
 msgstr "再インデックス"
 
-msgid "strexecute"
+msgid "Execute"
 msgstr "実行する"
 
 msgid "stradd"
@@ -281,7 +281,7 @@ msgstr "代行"
 msgid "strwhen"
 msgstr "When"
 
-msgid "strformat"
+msgid "Format"
 msgstr "フォーマット"
 
 msgid "strdata"
@@ -308,13 +308,13 @@ msgstr "閉じる"
 msgid "Find"
 msgstr "検索"
 
-msgid "stroptions"
+msgid "Options"
 msgstr "オプション"
 
 msgid "Refresh"
 msgstr "再表示"
 
-msgid "strdownload"
+msgid "Download"
 msgstr "ダウンロード"
 
 msgid "strdownloadgzipped"
@@ -365,13 +365,13 @@ msgstr "ファイルをインポートしました。"
 msgid "strtrycred"
 msgstr "すべてのサーバーでこの情報を使う"
 
-msgid "stractionsonmultiplelines"
+msgid "Actions on multiple lines"
 msgstr "複数行の操作"
 
-msgid "strselectall"
+msgid "Select all"
 msgstr "すべて選択する"
 
-msgid "strunselectall"
+msgid "Unselect all"
 msgstr "すべて選択を解除する"
 
 msgid "strlocale"
@@ -400,22 +400,22 @@ msgid "strnodatabaseselected"
 msgstr "データベースを選択してください。"
 
 # Database Sizes
-msgid "strsize"
+msgid "Size"
 msgstr "サイズ"
 
-msgid "strbytes"
+msgid "bytes"
 msgstr "バイト"
 
-msgid "strkb"
+msgid "kB"
 msgstr "kB"
 
-msgid "strmb"
+msgid "MB"
 msgstr "MB"
 
-msgid "strgb"
+msgid "GB"
 msgstr "GB"
 
-msgid "strtb"
+msgid "TB"
 msgstr "TB"
 
 # Error handling
@@ -642,13 +642,13 @@ msgstr "テーブルを変更しました。"
 msgid "strtablealteredbad"
 msgstr "テーブルの変更に失敗しました。"
 
-msgid "strdataonly"
+msgid "Data only"
 msgstr "データのみ"
 
-msgid "strstructureonly"
+msgid "Structure only"
 msgstr "構造のみ"
 
-msgid "strstructureanddata"
+msgid "Structure and data"
 msgstr "構造とデータ"
 
 msgid "strtabbed"
@@ -832,7 +832,7 @@ msgstr "メンバーの破棄に失敗しました。"
 msgid "strrole"
 msgstr "ロール"
 
-msgid "strroles"
+msgid "Roles"
 msgstr "ロール"
 
 msgid "strshowallroles"
@@ -893,7 +893,7 @@ msgstr "ロールの名前を指定しなければなりません。"
 msgid "strprivilege"
 msgstr "特権"
 
-msgid "strprivileges"
+msgid "Privileges"
 msgstr "特権"
 
 msgid "strnoprivileges"
@@ -921,7 +921,7 @@ msgid "strasterisk"
 msgstr "*"
 
 # Databases
-msgid "strdatabase"
+msgid "Database"
 msgstr "データベース"
 
 msgid "Databases"
@@ -939,22 +939,22 @@ msgstr "データベースを作成する"
 msgid "strdatabasename"
 msgstr "データベース名"
 
-msgid "strdatabaseneedsname"
+msgid "You must give a name for your database."
 msgstr "データベース名を指定しなければなりません。"
 
 msgid "strdatabasecreated"
 msgstr "データベースを作成しました。"
 
-msgid "strdatabasecreatedbad"
+msgid "Database creation failed."
 msgstr "データベースの作成に失敗しました。"
 
-msgid "strconfdropdatabase"
+msgid "Are you sure you want to drop the database \"%s\"?"
 msgstr "本当にデータベース「%s」を破棄しますか?"
 
-msgid "strdatabasedropped"
+msgid "Database dropped."
 msgstr "データベースを破棄しました。"
 
-msgid "strdatabasedroppedbad"
+msgid "Database drop failed."
 msgstr "データベースの破棄に失敗しました。"
 
 msgid "strentersql"
@@ -1002,7 +1002,7 @@ msgstr "すべてのオブジェクト"
 msgid "strdatabasealtered"
 msgstr "データベースを変更しました。"
 
-msgid "strdatabasealteredbad"
+msgid "Database alter failed."
 msgstr "データベースの変更に失敗しました。"
 
 msgid "strspecifydatabasetodrop"
@@ -2040,10 +2040,10 @@ msgid "strrows2"
 msgstr "行"
 
 # Tablespaces
-msgid "strtablespace"
+msgid "Tablespace"
 msgstr "テーブル空間"
 
-msgid "strtablespaces"
+msgid "Tablespaces"
 msgstr "テーブル空間"
 
 msgid "strshowalltablespaces"

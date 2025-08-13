@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace PhpPgAdmin\Website;
 
 use PhpPgAdmin\{RequestParameter, Website, WebsiteComponents};
+use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
 
 class AllDb extends Website
@@ -12,6 +13,8 @@ class AllDb extends Website
     public function __construct()
     {
         $this->title = _('Databases');
+        $this->scripts['multiactionform'] = ['src' => 'multiactionform.js'];
+        $this->scripts['all_db'] = ['src' => 'js/all_db.js'];
 
         parent::__construct();
     }
@@ -23,11 +26,90 @@ class AllDb extends Website
         $body->appendChild(WebsiteComponents::buildTopBar($dom));
         $body->appendChild(WebsiteComponents::buildTrail($dom, TrailSubject::Server));
 
-        $navLinks = [
+        $serverId = RequestParameter::getString('server') ?? '';
+        $actionParam = RequestParameter::getString('action');
+        $tabLinks = [
             [
                 'url' => 'all_db.php',
                 'url-params' => [
-                    'action' => 'create',
+                    'subject' => 'server',
+                    'server' => $serverId
+                ],
+                'label' => _('Databases'),
+                'icon' => 'Databases',
+                'active' => is_null($actionParam),
+                'help' => [
+                    'url' => 'help.php',
+                    'url-params' => [
+                        'help' => 'pg.role',
+                        'server' => $serverId
+                    ]
+                ]
+            ],
+            [
+                'url' => 'roles.php',
+                'url-params' => [
+                    'subject' => 'server',
+                    'server' => $serverId
+                ],
+                'label' => _('Roles'),
+                'icon' => 'Roles',
+                'help' => [
+                    'url' => 'help.php',
+                    'url-params' => [
+                        'help' => 'pg.role',
+                        'server' => $serverId
+                    ]
+                ]
+            ],
+            [
+                'url' => 'tablespaces.php',
+                'url-params' => [
+                    'subject' => 'server',
+                    'server' => $serverId
+                ],
+                'label' => _('Tablespaces'),
+                'icon' => 'Tablespaces',
+                'help' => [
+                    'url' => 'help.php',
+                    'url-params' => [
+                        'help' => 'pg.tablespace',
+                        'server' => $serverId
+                    ]
+                ]
+            ],
+            [
+                'url' => 'all_db_export.php',
+                'url-params' => [
+                    'server' => $serverId
+                ],
+                'label' => _('Export'),
+                'icon' => 'Export',
+                'active' => $actionParam === 'export'
+            ]
+        ];
+        $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $tabLinks));
+
+        $message = RequestParameter::getString('message') ?? '';
+        if (!empty($message)) {
+            $body->appendChild(WebsiteComponents::buildMessage($dom, $message));
+        }
+
+        $serverSession = ServerSession::fromServerId($serverId);
+        $form = $dom->createElement('form');
+        $form->setAttribute('id', 'multi_form');
+        $form->setAttribute('action', 'all_db.php');
+        $form->setAttribute('method', 'post');
+        $form->setAttribute('enctype', 'multipart/form-data');
+        $form->appendChild(WebsiteComponents::buildDatabasesTable($dom, $serverSession));
+        $form->appendChild($dom->createElement('br'));
+        $form->appendChild(WebsiteComponents::buildMultipleActionsTableForDatabases($dom, $serverSession));
+        $body->appendChild($form);
+
+        $navLinks = [
+            [
+                'url' => 'create_db.php',
+                'url-params' => [
                     'server' => RequestParameter::getString('server') ?? ''
                 ],
                 'label' => _('Create database')

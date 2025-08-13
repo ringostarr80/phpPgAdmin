@@ -19,18 +19,21 @@ class DropDb extends Website
             $serverId = RequestParameter::getString('server') ?? '';
             $serverSession = ServerSession::fromServerId($serverId);
             if (!is_null($serverSession) && !empty($database)) {
-                $db = $serverSession->getDatabaseConnection();
-                $dropResult = $db->dropDatabase($database);
-                if (!headers_sent()) {
-                    $redirectUrl = 'all_db.php';
-                    $redirectUrlParams = [
-                        'subject' => 'server',
-                        'server' => $serverId
-                    ];
-                    $redirectUrlParams['message'] = ($dropResult === 0) ?
-                        _('Database dropped.') :
-                        _('Database drop failed.');
+                $redirectUrl = 'all_db.php';
+                $redirectUrlParams = [
+                    'subject' => 'server',
+                    'server' => $serverId
+                ];
 
+                $db = $serverSession->getDatabaseConnection();
+                try {
+                    $db->dropDatabase($database);
+                    $redirectUrlParams['message'] = _('Database dropped.');
+                } catch (\Exception $e) {
+                    $redirectUrlParams['message'] = _('Database drop failed.');
+                }
+
+                if (!headers_sent()) {
                     header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
                     die();
                 }

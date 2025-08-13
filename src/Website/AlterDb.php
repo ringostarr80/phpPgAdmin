@@ -29,25 +29,27 @@ class AlterDb extends Website
             $serverSession = ServerSession::fromServerId($serverId);
             if (!is_null($serverSession)) {
                 $db = $serverSession->getDatabaseConnection();
-                $alterDbResult = $db->alterDatabase(
-                    dbName: $oldName,
-                    newName: $newName,
-                    newOwner: RequestParameter::getString('owner') ?? '',
-                    comment: RequestParameter::getString('dbcomment') ?? '',
-                );
-                if ($alterDbResult === true || $alterDbResult === 0) {
+                try {
+                    $db->alterDatabase(
+                        dbName: $oldName,
+                        newName: $newName,
+                        newOwner: RequestParameter::getString('owner'),
+                        comment: RequestParameter::getString('dbcomment'),
+                    );
+
                     if (!headers_sent()) {
                         $redirectUrl = 'all_db.php';
                         $redirectUrlParams = [
                             'subject' => 'server',
                             'server' => $serverId
                         ];
+
                         header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
                         die();
                     }
+                } catch (\PDOException $e) {
+                    $this->message = _('Database alter failed.');
                 }
-
-                $this->message = _('Database alter failed.');
             }
         }
     }
@@ -119,27 +121,15 @@ class AlterDb extends Website
         $db = $serverSession?->getDatabaseConnection();
         $dbOwner = $db?->getDatabaseOwner($database);
         $dbUsers = $db?->getUsers();
-        if ($dbUsers instanceof \ADORecordSet) {
-            while (!$dbUsers->EOF) {
-                if (!is_array($dbUsers->fields)) {
-                    $dbUsers->MoveNext();
-                    continue;
+        if (is_iterable($dbUsers)) {
+            foreach ($dbUsers as $dbUser) {
+                $username = $dbUser['usename'];
+                $optionOwner = $dom->createElement('option', $username);
+                $optionOwner->setAttribute('value', $username);
+                if ($dbOwner === $username) {
+                    $optionOwner->setAttribute('selected', 'selected');
                 }
-
-                if (
-                    isset($dbUsers->fields['usename']) &&
-                    is_string($dbUsers->fields['usename'])
-                ) {
-                    $username = $dbUsers->fields['usename'];
-                    $optionOwner = $dom->createElement('option', $username);
-                    $optionOwner->setAttribute('value', $username);
-                    if ($dbOwner === $username) {
-                        $optionOwner->setAttribute('selected', 'selected');
-                    }
-                    $selectOwner->appendChild($optionOwner);
-                }
-
-                $dbUsers->MoveNext();
+                $selectOwner->appendChild($optionOwner);
             }
         }
         $tdOwner->appendChild($selectOwner);
@@ -159,6 +149,7 @@ class AlterDb extends Website
         $textareaComment->setAttribute('id', 'dbcomment');
         $textareaComment->setAttribute('rows', '3');
         $textareaComment->setAttribute('cols', '32');
+        $textareaComment->appendChild($dom->createTextNode($db?->getDatabaseComment($database) ?? ''));
         $tdComment->appendChild($textareaComment);
         $trComment->appendChild($thComment);
         $trComment->appendChild($tdComment);

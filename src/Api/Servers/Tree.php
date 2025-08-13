@@ -28,40 +28,28 @@ class Tree
         $serverIdParam = RequestParameter::getString('server');
         $serverSession = !is_null($serverIdParam) ? ServerSession::fromServerId($serverIdParam) : null;
         if (!is_null($serverSession)) {
-            $db = $serverSession->getDatabaseConnection();
-            $dbs = $db->getDatabases();
-            if ($dbs instanceof \ADORecordSet) {
-                while (!$dbs->EOF) {
-                    if (
-                        is_array($dbs->fields) &&
-                        isset($dbs->fields['datname']) &&
-                        is_string($dbs->fields['datname'])
-                    ) {
-                        $actionUrl = 'redirect.php';
-                        $actionUrlParams = [
-                            'subject' => 'database',
-                            'server' => $serverSession->id(),
-                            'database' => $dbs->fields['datname']
-                        ];
-                        $srcUrl = 'database.php';
-                        $srcUrlParams = $actionUrlParams;
-                        $srcUrlParams['action'] = 'tree';
+            $dbConnection = $serverSession->getDatabaseConnection();
+            $dbs = $dbConnection->getDatabases();
+            foreach ($dbs as $dbData) {
+                $actionUrl = 'redirect.php';
+                $actionUrlParams = [
+                    'subject' => 'database',
+                    'server' => $serverSession->id(),
+                    'database' => $dbData['datname']
+                ];
+                $srcUrl = 'database.php';
+                $srcUrlParams = $actionUrlParams;
+                $srcUrlParams['action'] = 'tree';
 
-                        $tree = $dom->createElement('tree');
-                        $tree->setAttribute('text', $dbs->fields['datname']);
-                        $tree->setAttribute('action', $actionUrl . '?' . http_build_query($actionUrlParams));
-                        $tree->setAttribute('src', $srcUrl . '?' . http_build_query($srcUrlParams));
-                        $tree->setAttribute('icon', Config::getIcon('Database'));
-                        $tree->setAttribute('openicon', Config::getIcon('Database'));
-                        if (isset($dbs->fields['datcomment']) && is_string($dbs->fields['datcomment'])) {
-                            $tree->setAttribute('tooltip', $dbs->fields['datcomment']);
-                        }
+                $tree = $dom->createElement('tree');
+                $tree->setAttribute('text', $dbData['datname']);
+                $tree->setAttribute('action', $actionUrl . '?' . http_build_query($actionUrlParams));
+                $tree->setAttribute('src', $srcUrl . '?' . http_build_query($srcUrlParams));
+                $tree->setAttribute('icon', Config::getIcon('Database'));
+                $tree->setAttribute('openicon', Config::getIcon('Database'));
+                $tree->setAttribute('tooltip', $dbData['datcomment']);
 
-                        $root->appendChild($tree);
-                    }
-
-                    $dbs->MoveNext();
-                }
+                $root->appendChild($tree);
             }
         } else {
             $configuredServers = Config::getServers();

@@ -155,7 +155,7 @@ msgstr "自動補完を有効にする"
 msgid "strsave"
 msgstr "保存"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "リセット"
 
 msgid "strinsert"
@@ -191,7 +191,7 @@ msgstr "編集"
 msgid "strcolumn"
 msgstr "カラム"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "カラム"
 
 msgid "strrows"
@@ -347,10 +347,10 @@ msgstr "SQL 編集"
 msgid "strruntime"
 msgstr "総実行時間: %s ミリ秒"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "結果のページ分割処理を行う"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "または SQL スクリプトをアップロード:"
 
 msgid "strstarttime"
@@ -489,7 +489,7 @@ msgstr "サーバーが指定されていません!"
 msgid "strtable"
 msgstr "テーブル"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "テーブル"
 
 msgid "strshowalltables"
@@ -996,7 +996,7 @@ msgstr "シグナル送信"
 msgid "strsignalsentbad"
 msgstr "シグナル送信に失敗しました"
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "すべてのオブジェクト"
 
 msgid "strdatabasealtered"
@@ -1012,7 +1012,7 @@ msgstr "データベースを破棄するには少なくとも 1 つ指定しな
 msgid "strview"
 msgstr "ビュー"
 
-msgid "strviews"
+msgid "Views"
 msgstr "ビュー"
 
 msgid "strshowallviews"
@@ -1091,7 +1091,7 @@ msgstr "ビューを破棄するには少なくとも 1 つ指定しなければ
 msgid "strsequence"
 msgstr "シーケンス"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "シーケンス"
 
 msgid "strshowallsequences"
@@ -1188,7 +1188,7 @@ msgstr "シーケンスを破棄するには少なくとも 1 つ指定しなけ
 msgid "strindex"
 msgstr "インデックス"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "インデックス"
 
 msgid "strindexname"
@@ -1264,7 +1264,7 @@ msgid "strcluster"
 msgstr "クラスター"
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "ルール"
 
 msgid "strrule"
@@ -1307,7 +1307,7 @@ msgstr "ルールの破棄に失敗しました。"
 msgid "strconstraint"
 msgstr "検査制約"
 
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "検査制約"
 
 msgid "strshowallconstraints"
@@ -1401,7 +1401,7 @@ msgstr "ON UPDATE"
 msgid "strfunction"
 msgstr "関数"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "関数"
 
 msgid "strshowallfunctions"
@@ -1513,10 +1513,10 @@ msgid "strspecifyfunctiontodrop"
 msgstr "関数を破棄するには少なくとも 1 つ指定しなければなりません"
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "トリガー"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "トリガー"
 
 msgid "strshowalltriggers"
@@ -1692,7 +1692,7 @@ msgstr "Enum Values"
 msgid "strschema"
 msgstr "スキーマ"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "スキーマ"
 
 msgid "strshowallschemas"
@@ -1734,7 +1734,7 @@ msgstr "スキーマを変更しました。"
 msgid "strschemaalteredbad"
 msgstr "スキーマの変更に失敗しました。"
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "スキーマ検索パス"
 
 msgid "strspecifyschematodrop"
@@ -1746,7 +1746,7 @@ msgstr "スキーマを破棄するには少なくとも 1 つ指定しなけれ
 msgid "strdomain"
 msgstr "ドメイン"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "ドメイン"
 
 msgid "strshowalldomains"

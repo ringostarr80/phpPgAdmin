@@ -33,8 +33,8 @@ class Redirect extends Website
 
         $locationUrl = './login.php';
         $locationUrlParams = [
+            'server' => $server,
             'subject' => 'server',
-            'server' => $server
         ];
 
         if (ServerSession::isLoggedIn($server)) {

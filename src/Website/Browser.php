@@ -13,10 +13,10 @@ class Browser extends Website
         parent::__construct();
 
         $this->scripts['xloadtree/xtree2'] = [
-            'src' => 'xloadtree/xtree2.js'
+            'src' => 'xloadtree/xtree2.js',
         ];
         $this->scripts['xloadtree/xloadtree2'] = [
-            'src' => 'xloadtree/xloadtree2.js'
+            'src' => 'xloadtree/xloadtree2.js',
         ];
     }
 

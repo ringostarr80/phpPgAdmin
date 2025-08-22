@@ -14,8 +14,8 @@ abstract class Website
      */
     protected array $scripts = [
         'jquery' => [
-            'src' => 'libraries/js/jquery-3.7.1.min.js'
-        ]
+            'src' => 'libraries/js/jquery-3.7.1.min.js',
+        ],
     ];
     protected string $title = '';
 

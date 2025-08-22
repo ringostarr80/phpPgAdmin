@@ -11,4 +11,6 @@
     <arg name="ignore" value="vendor"/>
     <arg name="colors"/>
     <rule ref="PSR12"/>
+    <rule ref="SlevomatCodingStandard.Arrays.AlphabeticallySortedByKeys"/>
+    <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
 </ruleset>

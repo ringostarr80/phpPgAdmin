@@ -155,7 +155,7 @@ msgstr "Automatische Vervollständigung einschalten"
 msgid "strsave"
 msgstr "Speichern"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Zurücksetzen"
 
 msgid "strinsert"
@@ -191,7 +191,7 @@ msgstr "Bearbeiten"
 msgid "strcolumn"
 msgstr "Spalte"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Spalten"
 
 msgid "strrows"
@@ -350,10 +350,10 @@ msgstr "SQL bearbeiten"
 msgid "strruntime"
 msgstr "Laufzeit gesamt: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Ergebnisse seitenweise anzeigen"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "oder laden Sie ein SQL-Script hoch:"
 
 msgid "strstarttime"
@@ -498,7 +498,7 @@ msgstr "Kein Server angegeben!"
 msgid "strtable"
 msgstr "Tabelle"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Tabellen"
 
 msgid "strshowalltables"
@@ -1005,7 +1005,7 @@ msgstr "Signal gesendet."
 msgid "strsignalsentbad"
 msgstr "Senden des Signales fehlgeschlagen."
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "Alle Objekte"
 
 msgid "strdatabasealtered"
@@ -1021,7 +1021,7 @@ msgstr "Sie müssen mindestens eine Datenbank angeben, die gelöscht werden soll
 msgid "strview"
 msgstr "Sicht"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Sichten"
 
 msgid "strshowallviews"
@@ -1100,7 +1100,7 @@ msgstr "Sie müssen mindestens eine Sicht angeben, die gelöscht werden soll."
 msgid "strsequence"
 msgstr "Sequenz"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Sequenzen"
 
 msgid "strshowallsequences"
@@ -1197,7 +1197,7 @@ msgstr "Sie müssen mindestens eine Sequenz angeben, die gelöscht werden soll."
 msgid "strindex"
 msgstr "Index"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Indizes"
 
 msgid "strindexname"
@@ -1270,7 +1270,7 @@ msgid "strclusteredbad"
 msgstr "Clustern fehlgeschlagen."
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "Regeln"
 
 msgid "strrule"
@@ -1313,7 +1313,7 @@ msgstr "Löschen der Regel fehlgeschlagen."
 msgid "strconstraint"
 msgstr "Constraint"
 
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Constraints"
 
 msgid "strshowallconstraints"
@@ -1407,7 +1407,7 @@ msgstr "ON UPDATE"
 msgid "strfunction"
 msgstr "Funktion"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Funktionen"
 
 msgid "strshowallfunctions"
@@ -1519,10 +1519,10 @@ msgid "strspecifyfunctiontodrop"
 msgstr "Sie müssen mindestens eine Funktion angeben, die gelöscht werden soll."
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Trigger"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Trigger"
 
 msgid "strshowalltriggers"
@@ -1695,7 +1695,7 @@ msgstr "Wert"
 msgid "strschema"
 msgstr "Schema"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Schemata"
 
 msgid "strshowallschemas"
@@ -1737,7 +1737,7 @@ msgstr "Schema geändert."
 msgid "strschemaalteredbad"
 msgstr "Ändern des Schemas fehlgeschlagen."
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "Schemasuchpfad"
 
 msgid "strspecifyschematodrop"
@@ -1749,7 +1749,7 @@ msgstr "Sie müssen mindestens ein Schema angeben, das gelöscht werden soll."
 msgid "strdomain"
 msgstr "Domäne"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Domänen"
 
 msgid "strshowalldomains"

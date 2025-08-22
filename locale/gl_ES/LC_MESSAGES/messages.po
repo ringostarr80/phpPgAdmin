@@ -164,7 +164,7 @@ msgstr "Activar o completado automático"
 msgid "strsave"
 msgstr "Gardar"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Restablecer"
 
 msgid "strrestart"
@@ -203,7 +203,7 @@ msgstr "Editar"
 msgid "strcolumn"
 msgstr "Columna"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Columnas"
 
 msgid "strrows"
@@ -362,10 +362,10 @@ msgstr "Editar SQL"
 msgid "strruntime"
 msgstr "Tempo total funcionando: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Amosar os resultados por páxinas"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "ou cargue un guión en SQL:"
 
 msgid "strstarttime"
@@ -553,7 +553,7 @@ msgstr "Non se puido establecer a conexión co servidor."
 msgid "strtable"
 msgstr "Táboa"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Táboas"
 
 msgid "strshowalltables"
@@ -1078,7 +1078,7 @@ msgstr "Enviouse o sinal."
 msgid "strsignalsentbad"
 msgstr "Non se conseguiu enviar o sinal."
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "Todos os obxectos"
 
 msgid "strdatabasealtered"
@@ -1109,7 +1109,7 @@ msgstr "Está seguro de que quere concentrar todas as táboas da base de datos �
 msgid "strview"
 msgstr "Vista"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Vistas"
 
 msgid "strshowallviews"
@@ -1188,7 +1188,7 @@ msgstr "Debe especificar polo menos unha vista a borrar."
 msgid "strsequence"
 msgstr "Secuencia"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Secuencias"
 
 msgid "strshowallsequences"
@@ -1294,7 +1294,7 @@ msgstr "Debe especificar polo menos unha secuencia a eliminar."
 msgid "strindex"
 msgstr "Índice"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Índices"
 
 msgid "strindexname"
@@ -1373,7 +1373,7 @@ msgid "strnoclusteravailable"
 msgstr "A táboa non está concentrada nun índice."
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "Regras"
 
 msgid "strrule"
@@ -1416,7 +1416,7 @@ msgstr "Non se conseguiu eliminar a regra."
 msgid "strconstraint"
 msgstr "Restrición"
 
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Restricións"
 
 msgid "strshowallconstraints"
@@ -1512,7 +1512,7 @@ msgstr "AO BORRAR"
 msgid "strfunction"
 msgstr "Función"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Funcións"
 
 msgid "strshowallfunctions"
@@ -1624,10 +1624,10 @@ msgid "strspecifyfunctiontodrop"
 msgstr "Debe especificar polo menos unha función a eliminar."
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Disparador"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Disparadores"
 
 msgid "strshowalltriggers"
@@ -1801,7 +1801,7 @@ msgstr "Valores da enumeración"
 msgid "strschema"
 msgstr "Esquema"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Esquemas"
 
 msgid "strshowallschemas"
@@ -1843,7 +1843,7 @@ msgstr "Modificouse o esquema."
 msgid "strschemaalteredbad"
 msgstr "Non se conseguiu modificar o esquema."
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "Ruta de busca do esquema"
 
 msgid "strspecifyschematodrop"
@@ -1855,7 +1855,7 @@ msgstr "Debe especificar polo menos un esquema a eliminar."
 msgid "strdomain"
 msgstr "Dominio"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Dominios"
 
 msgid "strshowalldomains"

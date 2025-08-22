@@ -164,7 +164,7 @@ msgstr "Habilita AutoCompletat"
 msgid "strsave"
 msgstr "Desa"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Restableix"
 
 msgid "strrestart"
@@ -203,7 +203,7 @@ msgstr "Edita"
 msgid "strcolumn"
 msgstr "Columna"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Columnes"
 
 msgid "strrows"
@@ -362,10 +362,10 @@ msgstr "Edita SQL"
 msgid "strruntime"
 msgstr "Total temps d'execució: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Pagina els resultats"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "o carrega un script SQL:"
 
 msgid "strstarttime"
@@ -553,7 +553,7 @@ msgstr "No hi ha connexió amb el servidor."
 msgid "strtable"
 msgstr "Taula"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Taules"
 
 msgid "strshowalltables"
@@ -1078,7 +1078,7 @@ msgstr "Senyal enviat."
 msgid "strsignalsentbad"
 msgstr "L'enviament del senyal ha fallat."
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "Tots els objectes"
 
 msgid "strdatabasealtered"
@@ -1109,7 +1109,7 @@ msgstr "Està segur de voler un clúster de totes les taules de la base de dades
 msgid "strview"
 msgstr "Vista"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Vistes"
 
 msgid "strshowallviews"
@@ -1188,7 +1188,7 @@ msgstr "Ha d'especificar almenys una vista per eliminar."
 msgid "strsequence"
 msgstr "Seqüència"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Seqüències"
 
 msgid "strshowallsequences"
@@ -1294,7 +1294,7 @@ msgstr "Ha d'especificar almenys una seqüència per eliminar."
 msgid "strindex"
 msgstr "Índex"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Índexs"
 
 msgid "strindexname"
@@ -1370,7 +1370,7 @@ msgid "strnoclusteravailable"
 msgstr "No hi ha el clúster disponible en l'índex."
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "Regles"
 
 msgid "strrule"
@@ -1413,7 +1413,7 @@ msgstr "No s'ha pogut eliminar la regla."
 msgid "strconstraint"
 msgstr "Restricció"
 
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Restriccions"
 
 msgid "strshowallconstraints"
@@ -1507,7 +1507,7 @@ msgstr "A L'ACTUALITZAR"
 msgid "strfunction"
 msgstr "Funció"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Funcions"
 
 msgid "strshowallfunctions"
@@ -1619,10 +1619,10 @@ msgid "strspecifyfunctiontodrop"
 msgstr "Ha d'especificar almenys una funció per eliminar."
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Disparador"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Disparadors"
 
 msgid "strshowalltriggers"
@@ -1795,7 +1795,7 @@ msgstr "Valors de l'enumeració"
 msgid "strschema"
 msgstr "Esquema"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Esquemes"
 
 msgid "strshowallschemas"
@@ -1837,7 +1837,7 @@ msgstr "Esquema modificat."
 msgid "strschemaalteredbad"
 msgstr "No s'ha pogut modificar l'esquema."
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "Camí de cerca de l'esquema"
 
 msgid "strspecifyschematodrop"
@@ -1849,7 +1849,7 @@ msgstr "Ha d'especificar almenys un esquema per eliminar."
 msgid "strdomain"
 msgstr "Domini"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Dominis"
 
 msgid "strshowalldomains"

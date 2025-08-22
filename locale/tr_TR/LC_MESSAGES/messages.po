@@ -143,7 +143,7 @@ msgstr "İptal Et"
 msgid "strsave"
 msgstr "Kaydet"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Temizle"
 
 msgid "strinsert"
@@ -179,7 +179,7 @@ msgstr "Düzenle"
 msgid "strcolumn"
 msgstr "KolonF"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Kolonlar"
 
 msgid "strrows"
@@ -350,10 +350,10 @@ msgstr "SQL Düzenle"
 msgid "strruntime"
 msgstr "Toplam çalışma süresi: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Sonuçları sayfalandır."
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "ya da bir SQL betiği yükleyin:"
 
 msgid "strstarttime"
@@ -436,7 +436,7 @@ msgstr "Dumping of complex table and schema names on Windows is not supported."
 msgid "strtable"
 msgstr "Tablo"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Tablolar"
 
 msgid "strshowalltables"
@@ -843,7 +843,7 @@ msgstr "Sinyal gönderildi."
 msgid "strsignalsentbad"
 msgstr "Sinyal gönderme işlemi başarısız oldu"
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "Tüm nesneler"
 
 msgid "strdatabasealtered"
@@ -856,7 +856,7 @@ msgstr "Veritabanı değiştirme başarısız oldu."
 msgid "strview"
 msgstr "View"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Viewlar"
 
 msgid "strshowallviews"
@@ -917,7 +917,7 @@ msgstr "Sihirbaz ile view yaratın"
 msgid "strsequence"
 msgstr "Sequence"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Sequences"
 
 msgid "strshowallsequences"
@@ -984,7 +984,7 @@ msgstr "Sequence sıfırlama başarısız oldu."
 msgid "strindex"
 msgstr "Index"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Indeksler"
 
 msgid "strindexname"
@@ -1060,7 +1060,7 @@ msgid "strcluster"
 msgstr "Küme"
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "Rules"
 
 msgid "strrule"
@@ -1103,7 +1103,7 @@ msgstr "Rule silinme işlemi başarısız oldu."
 msgid "strconstraint"
 msgstr "Kısıtlama"
 
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Kısıtlamalar"
 
 msgid "strshowallconstraints"
@@ -1198,7 +1198,7 @@ msgstr "ON UPDATE"
 msgid "strfunction"
 msgstr "Fonksiyon"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Fonksiyonlar"
 
 msgid "strshowallfunctions"
@@ -1265,10 +1265,10 @@ msgid "strlinksymbol"
 msgstr "Bağlantı sembolü"
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Trigger"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Triggerlar"
 
 msgid "strshowalltriggers"
@@ -1408,7 +1408,7 @@ msgstr "Pseudo"
 msgid "strschema"
 msgstr "Şema"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Şemalar"
 
 msgid "strshowallschemas"
@@ -1450,14 +1450,14 @@ msgstr "Schema değiştirildi."
 msgid "strschemaalteredbad"
 msgstr "Schema değiştirilme işlemi başarısız oldu."
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "Şema arama yolu"
 
 # Reports
 msgid "strdomain"
 msgstr "Domain"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Domainler"
 
 msgid "strshowalldomains"

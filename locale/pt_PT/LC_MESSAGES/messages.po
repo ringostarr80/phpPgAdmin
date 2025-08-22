@@ -127,7 +127,7 @@ msgstr "Cancelar"
 msgid "strsave"
 msgstr "Gravar"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Reiniciar"
 
 msgid "strinsert"
@@ -154,7 +154,7 @@ msgstr "Não"
 msgid "stredit"
 msgstr "Editar"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Colunas"
 
 msgid "strrows"
@@ -300,7 +300,7 @@ msgstr "A conexão falhou."
 msgid "strtable"
 msgstr "Tabela"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Tabelas"
 
 msgid "strshowalltables"
@@ -614,7 +614,7 @@ msgstr "Falha ao executar análize."
 msgid "strview"
 msgstr "Visualização"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Visualizações"
 
 msgid "strshowallviews"
@@ -663,7 +663,7 @@ msgstr "Falha ao alterar visualização."
 msgid "strsequence"
 msgstr "Sequência"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Sequências"
 
 msgid "strshowallsequences"
@@ -721,7 +721,7 @@ msgid "strsequencedroppedbad"
 msgstr "Falha ao eliminar a sequência."
 
 # Indexes
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Índices"
 
 msgid "strshowallindexes"
@@ -785,7 +785,7 @@ msgid "strindexcolumnlist"
 msgstr "Colunas no índice"
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "Regras"
 
 msgid "strrule"
@@ -825,7 +825,7 @@ msgid "strruledroppedbad"
 msgstr "Falha ao eliminar a regra."
 
 # Constraints
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Restrição"
 
 msgid "strshowallconstraints"
@@ -919,7 +919,7 @@ msgstr "ALTERAR ACTIVO"
 msgid "strfunction"
 msgstr "Função"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Funções"
 
 msgid "strshowallfunctions"
@@ -971,10 +971,10 @@ msgid "strfunctionupdatedbad"
 msgstr "Falha na actualização da função."
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Gatilho"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Gatilhos"
 
 msgid "strshowalltriggers"
@@ -1078,7 +1078,7 @@ msgstr "Eliminação de tipo falhou."
 msgid "strschema"
 msgstr "Esquema"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Esquemas"
 
 msgid "strshowallschemas"
@@ -1202,10 +1202,10 @@ msgstr "Editar SQL"
 msgid "strruntime"
 msgstr "Tempo total decorrido: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Paginar resultados"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "ou upload um script SQL:"
 
 msgid "strstarttime"
@@ -1337,7 +1337,7 @@ msgstr "Sinal enviado."
 msgid "strsignalsentbad"
 msgstr "Falha ao enviar sinal."
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "Todos os objectos"
 
 msgid "strviewneedsfields"
@@ -1418,13 +1418,13 @@ msgstr "Esquema Alterado."
 msgid "strschemaalteredbad"
 msgstr "Falha ao alterar o esquema."
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "Caminho de pesquisa no esquema"
 
 msgid "strdomain"
 msgstr "Domínio"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Domínios"
 
 msgid "strshowalldomains"

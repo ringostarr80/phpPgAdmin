@@ -134,7 +134,7 @@ msgstr "تراجع"
 msgid "strsave"
 msgstr "حفظ"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "إعادة Reset"
 
 msgid "strinsert"
@@ -167,7 +167,7 @@ msgstr "خاطئ FALSE"
 msgid "stredit"
 msgstr "تحرير"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "أعمدة Columns"
 
 msgid "strrows"
@@ -329,10 +329,10 @@ msgstr "Edit SQL"
 msgid "strruntime"
 msgstr "Total runtime: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Paginate results"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "or upload an SQL script:"
 
 msgid "strstarttime"
@@ -391,7 +391,7 @@ msgstr "خطأ في الإستيراد عند السطر: %s."
 msgid "strtable"
 msgstr "جدول Table"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "جداول Tables"
 
 msgid "strshowalltables"
@@ -786,7 +786,7 @@ msgstr "Force"
 msgid "strview"
 msgstr "View عرض"
 
-msgid "strviews"
+msgid "Views"
 msgstr "عروض Views"
 
 msgid "strshowallviews"
@@ -847,7 +847,7 @@ msgstr "إنشاء عرض View بإستخدام الساحر Wizard."
 msgid "strsequence"
 msgstr "تسلسل Sequence"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "تسلسلات Sequences"
 
 msgid "strshowallsequences"
@@ -914,7 +914,7 @@ msgstr "لقد فشلت إعادة التسلسل."
 msgid "strindex"
 msgstr "فهرسIndex"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "فهارسIndexes"
 
 msgid "strindexname"
@@ -987,7 +987,7 @@ msgid "strclusteredbad"
 msgstr "Cluster failed."
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "قواعد Rules"
 
 msgid "strrule"
@@ -1027,7 +1027,7 @@ msgid "strruledroppedbad"
 msgstr "فشل حذف القاعدة."
 
 # Constraints
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "قيود Constraints"
 
 msgid "strshowallconstraints"
@@ -1121,7 +1121,7 @@ msgstr "ON UPDATE"
 msgid "strfunction"
 msgstr "دالة Function"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "دوال Functions"
 
 msgid "strshowallfunctions"
@@ -1173,10 +1173,10 @@ msgid "strfunctionupdatedbad"
 msgstr "لقد فشل تعديل الدالة function."
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "محفّز Trigger"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "محفّزات Triggers"
 
 msgid "strshowalltriggers"
@@ -1286,7 +1286,7 @@ msgstr "فشلت عملية حذف النوع."
 msgid "strschema"
 msgstr "مخطط Schema"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "المخططات Schemas"
 
 msgid "strshowallschemas"
@@ -1334,7 +1334,7 @@ msgstr "فشلت عملية تعديل المخطط، لم يتم التعديل
 msgid "strdomain"
 msgstr "نطاق Domain"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "نطاقات Domains"
 
 msgid "strshowalldomains"

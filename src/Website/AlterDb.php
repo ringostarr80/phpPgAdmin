@@ -40,8 +40,8 @@ class AlterDb extends Website
                     if (!headers_sent()) {
                         $redirectUrl = 'all_db.php';
                         $redirectUrlParams = [
+                            'server' => $serverId,
                             'subject' => 'server',
-                            'server' => $serverId
                         ];
 
                         header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
@@ -72,7 +72,7 @@ class AlterDb extends Website
             url: 'help.php',
             urlParams: [
                 'help' => 'pg.database.alter',
-                'server' => $serverId
+                'server' => $serverId,
             ]
         );
         $h2->appendChild($aHelp);
@@ -180,8 +180,8 @@ class AlterDb extends Website
         $inputCancel->setAttribute('class', 'button');
         $cancelUrl = 'all_db.php';
         $cancelUrlParams = [
+            'server' => $serverId,
             'subject' => 'server',
-            'server' => $serverId
         ];
         $inputCancel->setAttribute('href', $cancelUrl . '?' . http_build_query($cancelUrlParams));
         $form->appendChild($dom->createEntityReference('nbsp'));

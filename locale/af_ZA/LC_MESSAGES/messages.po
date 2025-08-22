@@ -134,7 +134,7 @@ msgstr "Kanselleer"
 msgid "strsave"
 msgstr "Bewaar"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Herstel"
 
 msgid "strinsert"
@@ -170,7 +170,7 @@ msgstr "Redigeer"
 msgid "strcolumn"
 msgstr "Kolom"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Kolomme"
 
 msgid "strrows"
@@ -326,10 +326,10 @@ msgstr "Redigeer SQL"
 msgid "strruntime"
 msgstr "Totale looptyd: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Resultate per bladsy"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "of laai 'n SQL skrip in:"
 
 msgid "strstarttime"
@@ -394,7 +394,7 @@ msgstr "Weergee van komplekse tabel- en skemaname word nie op Windows ondersteun
 msgid "strtable"
 msgstr "Tabel"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Tabelle"
 
 msgid "strshowalltables"
@@ -797,14 +797,14 @@ msgstr "Sein gestuur."
 msgid "strsignalsentbad"
 msgstr "Stuur van sein het misluk."
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "Alle objekte"
 
 # Views
 msgid "strview"
 msgstr "Aansig"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Aansigte"
 
 msgid "strshowallviews"
@@ -865,7 +865,7 @@ msgstr "Skep 'n aansig met behulp van 'n toergids"
 msgid "strsequence"
 msgstr "Reeks"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Reekse"
 
 msgid "strshowallsequences"
@@ -932,7 +932,7 @@ msgstr "Herstel van reeks het misluk."
 msgid "strindex"
 msgstr "Indeks"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Indekse"
 
 msgid "strindexname"
@@ -1005,7 +1005,7 @@ msgid "strclusteredbad"
 msgstr "Kluster het misluk."
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "Reëls"
 
 msgid "strrule"
@@ -1045,7 +1045,7 @@ msgid "strruledroppedbad"
 msgstr "Verwydering van die reël het misluk."
 
 # Constraints
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Beperkings"
 
 msgid "strshowallconstraints"
@@ -1139,7 +1139,7 @@ msgstr "ON UPDATE"
 msgid "strfunction"
 msgstr "Funksie"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Funksies"
 
 msgid "strshowallfunctions"
@@ -1206,10 +1206,10 @@ msgid "strlinksymbol"
 msgstr "Skakelsimbool"
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Snellers"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Snellers"
 
 msgid "strshowalltriggers"
@@ -1346,7 +1346,7 @@ msgstr "Pseudo"
 msgid "strschema"
 msgstr "Skema"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Skemas"
 
 msgid "strshowallschemas"
@@ -1388,7 +1388,7 @@ msgstr "Skema is gewysig."
 msgid "strschemaalteredbad"
 msgstr "Skemawysiging het misluk."
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "Skema-soekpad"
 
 # Reports
@@ -1397,7 +1397,7 @@ msgstr "Skema-soekpad"
 msgid "strdomain"
 msgstr "Domein"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Domeine"
 
 msgid "strshowalldomains"

@@ -40,7 +40,7 @@ class Language
             'spanish' => 'es_ES',
             'swedish' => 'sv_SE',
             'turkish' => 'tr_TR',
-            'ukrainian' => 'uk_UA'
+            'ukrainian' => 'uk_UA',
         ];
     }
 

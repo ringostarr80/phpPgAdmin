@@ -51,7 +51,7 @@ final class PhpPgAdminConnection extends \PDO
         'WIN1251' => 'CP1251',
         'WIN1252' => 'CP1252',
         'WIN1256' => 'CP1256',
-        'WIN1258' => 'CP1258'
+        'WIN1258' => 'CP1258',
     ];
     public const MAX_NAME_LENGTH = 63;
 
@@ -276,7 +276,7 @@ final class PhpPgAdminConnection extends \PDO
             FROM pg_user, pg_database
             WHERE pg_user.usesysid = pg_database.datdba AND pg_database.datname = :database";
         $sqlParams = [
-            'database' => $database
+            'database' => $database,
         ];
         $statement = $this->prepare($sql);
         if ($statement === false) {
@@ -367,15 +367,15 @@ final class PhpPgAdminConnection extends \PDO
                 isset($row['dbsize']) && is_int($row['dbsize'])
             ) {
                 $result[] = [
-                    'datname' => $row['datname'],
-                    'datowner' => $row['datowner'],
-                    'datencoding' => $row['datencoding'],
                     'datcollate' => $row['datcollate'],
-                    'datctype' => $row['datctype'],
-                    'tablespace' => $row['tablespace'],
-                    'dbsize' => $row['dbsize'],
                     'datcomment' => isset($row['datcomment']) && is_string($row['datcomment']) ?
                         $row['datcomment'] : '',
+                    'datctype' => $row['datctype'],
+                    'datencoding' => $row['datencoding'],
+                    'datname' => $row['datname'],
+                    'datowner' => $row['datowner'],
+                    'dbsize' => $row['dbsize'],
+                    'tablespace' => $row['tablespace'],
                 ];
             }
         }
@@ -417,13 +417,13 @@ final class PhpPgAdminConnection extends \PDO
                 isset($row['usecreatedb']) && is_bool($row['usecreatedb'])
             ) {
                 $result[] = [
-                    'usename' => $row['usename'],
-                    'usesuper' => $row['usesuper'],
+                    'useconfig' => isset($row['useconfig']) && is_string($row['useconfig']) ?
+                        $row['useconfig'] : '',
                     'usecreatedb' => $row['usecreatedb'],
                     'useexpires' => isset($row['useexpires']) && is_string($row['useexpires']) ?
                         $row['useexpires'] : '',
-                    'useconfig' => isset($row['useconfig']) && is_string($row['useconfig']) ?
-                        $row['useconfig'] : '',
+                    'usename' => $row['usename'],
+                    'usesuper' => $row['usesuper'],
                 ];
             }
         }

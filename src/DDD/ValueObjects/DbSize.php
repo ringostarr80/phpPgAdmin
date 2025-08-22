@@ -39,7 +39,7 @@ final class DbSize implements \Stringable
             _('kB'),
             _('MB'),
             _('GB'),
-            _('TB')
+            _('TB'),
         ];
         foreach ($unitStrings as $unitString) {
             if ($this->size < $limit * $multiplier) {

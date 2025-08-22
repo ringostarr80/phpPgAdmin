@@ -134,7 +134,7 @@ msgstr "Fortryd"
 msgid "strsave"
 msgstr "Gem"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Nulstil"
 
 msgid "strinsert"
@@ -170,7 +170,7 @@ msgstr "Redigere"
 msgid "strcolumn"
 msgstr "Kolonne"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Kolonner"
 
 msgid "strrows"
@@ -332,10 +332,10 @@ msgstr "Rediger SQL"
 msgid "strruntime"
 msgstr "Total runtime: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Paginere resultater"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "eller upload et SQL script:"
 
 msgid "strstarttime"
@@ -385,7 +385,7 @@ msgstr "Denne række har ingen unik nøgle."
 msgid "strtable"
 msgstr "Tabel"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Tabeller"
 
 msgid "strshowalltables"
@@ -794,7 +794,7 @@ msgstr "Signal sendt."
 msgid "strsignalsentbad"
 msgstr "Afsendelse af signal mislykkedes."
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "Alle objekter"
 
 msgid "Structure only"
@@ -807,7 +807,7 @@ msgstr "Struktur og data"
 msgid "strview"
 msgstr "View"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Views"
 
 msgid "strshowallviews"
@@ -865,7 +865,7 @@ msgstr "Opret view med hjælp af wizard"
 msgid "strsequence"
 msgstr "Sekvens"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Sekvenser"
 
 msgid "strshowallsequences"
@@ -926,7 +926,7 @@ msgstr "Fjernelse af sekvens mislykkedes."
 msgid "strindex"
 msgstr "Indeks"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Indekser"
 
 msgid "strshowallindexes"
@@ -1005,7 +1005,7 @@ msgid "strclusteredbad"
 msgstr "Cluster failed."
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "Regler"
 
 msgid "strrule"
@@ -1045,7 +1045,7 @@ msgid "strruledroppedbad"
 msgstr "Det lykkedes ikke at fjerne regel."
 
 # Constraints
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Afgrænsninger"
 
 msgid "strshowallconstraints"
@@ -1139,7 +1139,7 @@ msgstr "VED OPDATERING"
 msgid "strfunction"
 msgstr "Funktion"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Funktioner"
 
 msgid "strshowallfunctions"
@@ -1203,10 +1203,10 @@ msgid "strfunctionupdatedbad"
 msgstr "Opdatering af funktion mislykkedes."
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Trigger"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Triggere"
 
 msgid "strshowalltriggers"
@@ -1317,7 +1317,7 @@ msgstr "Det lykkedes ikke at fjerne typen."
 msgid "strschema"
 msgstr "Skema"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Skemaer"
 
 msgid "strshowallschemas"
@@ -1364,7 +1364,7 @@ msgstr "jS M, Y g:iA"
 msgid "strdomain"
 msgstr "Domæne"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Domæner"
 
 msgid "strshowalldomains"

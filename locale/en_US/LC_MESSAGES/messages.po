@@ -184,7 +184,8 @@ msgstr "Enable AutoComplete"
 msgid "strsave"
 msgstr "Save"
 
-msgid "strreset"
+# original: "strreset"
+msgid "Reset"
 msgstr "Reset"
 
 msgid "strrestart"
@@ -226,7 +227,8 @@ msgstr "Edit"
 msgid "strcolumn"
 msgstr "Column"
 
-msgid "strcolumns"
+# original: "strcolumns"
+msgid "Columns"
 msgstr "Columns"
 
 msgid "strrows"
@@ -399,10 +401,12 @@ msgstr "Edit SQL"
 msgid "strruntime"
 msgstr "Total runtime: %s ms"
 
-msgid "strpaginate"
+# original: "strpaginate"
+msgid "Paginate results"
 msgstr "Paginate results"
 
-msgid "struploadscript"
+# original: "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "or upload an SQL script:"
 
 msgid "strstarttime"
@@ -607,7 +611,8 @@ msgstr "Can not connect to server."
 msgid "strtable"
 msgstr "Table"
 
-msgid "strtables"
+# original: "strtables"
+msgid "Tables"
 msgstr "Tables"
 
 msgid "strshowalltables"
@@ -1150,7 +1155,8 @@ msgstr "Signal sent."
 msgid "strsignalsentbad"
 msgstr "Sending signal failed."
 
-msgid "strallobjects"
+# original: "strallobjects"
+msgid "All objects"
 msgstr "All objects"
 
 msgid "strdatabasealtered"
@@ -1183,7 +1189,8 @@ msgstr "Are you sure you want to cluster all tables in database \"%s\"?"
 msgid "strview"
 msgstr "View"
 
-msgid "strviews"
+# original: "strviews"
+msgid "Views"
 msgstr "Views"
 
 msgid "strshowallviews"
@@ -1262,7 +1269,8 @@ msgstr "You must specify at least one view to drop."
 msgid "strsequence"
 msgstr "Sequence"
 
-msgid "strsequences"
+# original: "strsequences"
+msgid "Sequences"
 msgstr "Sequences"
 
 msgid "strshowallsequences"
@@ -1368,7 +1376,8 @@ msgstr "You must specify at least one sequence to drop."
 msgid "strindex"
 msgstr "Index"
 
-msgid "strindexes"
+# original: "strindexes"
+msgid "Indexes"
 msgstr "Indexes"
 
 msgid "strindexname"
@@ -1447,7 +1456,8 @@ msgid "strnoclusteravailable"
 msgstr "Table not clustered on an index."
 
 # Rules
-msgid "strrules"
+# original: "strrules"
+msgid "Rules"
 msgstr "Rules"
 
 msgid "strrule"
@@ -1490,7 +1500,8 @@ msgstr "Rule drop failed."
 msgid "strconstraint"
 msgstr "Constraint"
 
-msgid "strconstraints"
+# original: "strconstraints"
+msgid "Constraints"
 msgstr "Constraints"
 
 msgid "strshowallconstraints"
@@ -1584,7 +1595,8 @@ msgstr "ON UPDATE"
 msgid "strfunction"
 msgstr "Function"
 
-msgid "strfunctions"
+# original: "strfunctions"
+msgid "Functions"
 msgstr "Functions"
 
 msgid "strshowallfunctions"
@@ -1696,10 +1708,12 @@ msgid "strspecifyfunctiontodrop"
 msgstr "You must specify at least one function to drop."
 
 # Triggers
-msgid "strtrigger"
+# original: "strtrigger"
+msgid "Trigger"
 msgstr "Trigger"
 
-msgid "strtriggers"
+# original: "strtriggers"
+msgid "Triggers"
 msgstr "Triggers"
 
 msgid "strshowalltriggers"
@@ -1872,7 +1886,8 @@ msgstr "Enum values"
 msgid "strschema"
 msgstr "Schema"
 
-msgid "strschemas"
+# original: "strschemas"
+msgid "Schemas"
 msgstr "Schemas"
 
 msgid "strshowallschemas"
@@ -1914,7 +1929,8 @@ msgstr "Schema altered."
 msgid "strschemaalteredbad"
 msgstr "Schema alteration failed."
 
-msgid "strsearchpath"
+# original: "strsearchpath"
+msgid "Schema search path"
 msgstr "Schema search path"
 
 msgid "strspecifyschematodrop"
@@ -1926,7 +1942,8 @@ msgstr "You must specify at least one schema to drop."
 msgid "strdomain"
 msgstr "Domain"
 
-msgid "strdomains"
+# original: "strdomains"
+msgid "Domains"
 msgstr "Domains"
 
 msgid "strshowalldomains"

@@ -164,7 +164,7 @@ msgstr "自动完成有效"
 msgid "strsave"
 msgstr "保存"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "重置"
 
 msgid "strrestart"
@@ -203,7 +203,7 @@ msgstr "编辑"
 msgid "strcolumn"
 msgstr "列"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "列"
 
 msgid "strrows"
@@ -362,10 +362,10 @@ msgstr "编辑 SQL"
 msgid "strruntime"
 msgstr "总执行时间: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "分页结果"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "或者上传一个 SQL 脚本:"
 
 msgid "strstarttime"
@@ -553,7 +553,7 @@ msgstr "无法连接服务器。"
 msgid "strtable"
 msgstr "数据表"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "数据表"
 
 msgid "strshowalltables"
@@ -1081,7 +1081,7 @@ msgstr "信号已发送。"
 msgid "strsignalsentbad"
 msgstr "信号发送失败。"
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "所有对象"
 
 msgid "strdatabasealtered"
@@ -1112,7 +1112,7 @@ msgstr "你确定要集群数据库\"%s\"中的所有表吗?"
 msgid "strview"
 msgstr "视图"
 
-msgid "strviews"
+msgid "Views"
 msgstr "视图"
 
 msgid "strshowallviews"
@@ -1191,7 +1191,7 @@ msgstr "必须至少指定一个要移除的视图"
 msgid "strsequence"
 msgstr "序列"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "序列"
 
 msgid "strshowallsequences"
@@ -1297,7 +1297,7 @@ msgstr "必须至少指定一个序列来删除"
 msgid "strindex"
 msgstr "索引"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "索引"
 
 msgid "strindexname"
@@ -1376,7 +1376,7 @@ msgid "strnoclusteravailable"
 msgstr "表中没有集群索引。"
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "规则"
 
 msgid "strrule"
@@ -1419,7 +1419,7 @@ msgstr "规则删除失败。"
 msgid "strconstraint"
 msgstr "约束"
 
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "约束"
 
 msgid "strshowallconstraints"
@@ -1513,7 +1513,7 @@ msgstr "ON UPDATE"
 msgid "strfunction"
 msgstr "函数"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "函数"
 
 msgid "strshowallfunctions"
@@ -1625,10 +1625,10 @@ msgid "strspecifyfunctiontodrop"
 msgstr "必须至少指定一个函数来删除"
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "触发器"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "触发器"
 
 msgid "strshowalltriggers"
@@ -1801,7 +1801,7 @@ msgstr "枚举类型"
 msgid "strschema"
 msgstr "模式"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "模式"
 
 msgid "strshowallschemas"
@@ -1843,7 +1843,7 @@ msgstr "模式已变更。"
 msgid "strschemaalteredbad"
 msgstr "模式变更失败。"
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "模式查找路径"
 
 msgid "strspecifyschematodrop"
@@ -1855,7 +1855,7 @@ msgstr "必须至少指定一个模式来删除"
 msgid "strdomain"
 msgstr "域"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "域"
 
 msgid "strshowalldomains"

@@ -137,7 +137,7 @@ msgstr "ш?оЩЮЧ?Ъ ТЯЬЧЯШ"
 msgid "strsave"
 msgstr "шСФЧСЬСШ"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "свЩЬЧСШ"
 
 msgid "strinsert"
@@ -170,7 +170,7 @@ msgstr "шеФСЬ"
 msgid "stredit"
 msgstr "њСгСШ"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "тСЧСЮС"
 
 msgid "strrows"
@@ -337,7 +337,7 @@ msgstr "юХд еЮЩЫСЬиЮЯЧЯ ЩФХЮдЩЦЩЫСдЯвС ФЬб мдЯ
 msgid "strtable"
 msgstr "єСТЬЩУС"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "єСТЬЩУй"
 
 msgid "strshowalltables"
@@ -714,7 +714,7 @@ msgstr " яаХвСУЩб СЮСЬЩкС кСзХвлХЮС."
 msgid "strview"
 msgstr "№вХФгдСзЬХЮЩХ"
 
-msgid "strviews"
+msgid "Views"
 msgstr "№вХФгдСзЬХЮЩб"
 
 msgid "strshowallviews"
@@ -763,7 +763,7 @@ msgstr "яТЮЯзЬХЮЩХ авХФгдСзЬХЮЩб авХвзСЮЯ."
 msgid "strsequence"
 msgstr "№ЯгЬХФЯзСдХЬиЮЯгди"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr " №ЯгЬХФЯзСдХЬиЮЯгдЩ"
 
 msgid "strshowallsequences"
@@ -827,7 +827,7 @@ msgid "strsequenceresetbad"
 msgstr "ѓТвЯг аЯгЬХФЯзСдХЬиЮЯгдЩ авХвзСЮ."
 
 # Indexes
-msgid "strindexes"
+msgid "Indexes"
 msgstr "щЮФХЫг"
 
 msgid "strshowallindexes"
@@ -900,7 +900,7 @@ msgid "strclusteredbad"
 msgstr "ыЬСгдХвЩкСУЩб авХвзСЮС."
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "№вСзЩЬС"
 
 msgid "strrule"
@@ -940,7 +940,7 @@ msgid "strruledroppedbad"
 msgstr "ѕЮЩодЯжХЮЩХ авСзЩЬС авХвзСЮЯ."
 
 # Constraints
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "яЧвСЮЩоХЮЩб"
 
 msgid "strshowallconstraints"
@@ -1034,7 +1034,7 @@ msgstr "ON UPDATE"
 msgid "strfunction"
 msgstr "цеЮЫУЩб"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr " цеЮЫУЩЩ"
 
 msgid "strshowallfunctions"
@@ -1089,10 +1089,10 @@ msgid "strfunctionupdatedbad"
 msgstr "яТЮЯзЬХЮЩХ ЦеЮЫУЩЩ авХвзСЮЯ."
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "євЩЧЧХв"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr " євЩЧЧХвй"
 
 msgid "strshowalltriggers"
@@ -1202,7 +1202,7 @@ msgstr "ѕЮЩодЯжХЮЩХ дЩаС ФСЮЮйШ авХвзСЮЯ."
 msgid "strschema"
 msgstr "ѓШХЭС"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "ѓШХЭй"
 
 msgid "strshowallschemas"
@@ -1244,7 +1244,7 @@ msgstr "ѕЮЩодЯжХЮЩХ гШХЭй авХвзСЮЯ."
 msgid "strdomain"
 msgstr "фЯЭХЮ"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "фЯЭХЮй"
 
 msgid "strshowalldomains"

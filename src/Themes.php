@@ -12,11 +12,11 @@ class Themes
     public static function available(): array
     {
         return [
-            'default' => 'Default',
-            'cappuccino' => 'Cappuccino',
-            'gotar' => 'Blue/Green',
             'bootstrap' => 'Bootstrap3',
-            'dark' => 'Dark'
+            'cappuccino' => 'Cappuccino',
+            'dark' => 'Dark',
+            'default' => 'Default',
+            'gotar' => 'Blue/Green',
         ];
     }
 

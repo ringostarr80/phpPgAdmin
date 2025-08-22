@@ -26,62 +26,62 @@ class AllDbExport extends Website
         $serverId = RequestParameter::getString('server') ?? '';
         $tabLinks = [
             [
+                'help' => [
+                    'url' => 'help.php',
+                    'url-params' => [
+                        'help' => 'pg.role',
+                        'server' => $serverId,
+                    ],
+                ],
+                'icon' => 'Databases',
+                'label' => _('Databases'),
                 'url' => 'all_db.php',
                 'url-params' => [
+                    'server' => $serverId,
                     'subject' => 'server',
-                    'server' => $serverId
                 ],
-                'label' => _('Databases'),
-                'icon' => 'Databases',
+            ],
+            [
                 'help' => [
                     'url' => 'help.php',
                     'url-params' => [
                         'help' => 'pg.role',
-                        'server' => $serverId
-                    ]
-                ]
-            ],
-            [
+                        'server' => $serverId,
+                    ],
+                ],
+                'icon' => 'Roles',
+                'label' => _('Roles'),
                 'url' => 'roles.php',
                 'url-params' => [
+                    'server' => $serverId,
                     'subject' => 'server',
-                    'server' => $serverId
                 ],
-                'label' => _('Roles'),
-                'icon' => 'Roles',
-                'help' => [
-                    'url' => 'help.php',
-                    'url-params' => [
-                        'help' => 'pg.role',
-                        'server' => $serverId
-                    ]
-                ]
             ],
             [
-                'url' => 'tablespaces.php',
-                'url-params' => [
-                    'subject' => 'server',
-                    'server' => $serverId
-                ],
-                'label' => _('Tablespaces'),
-                'icon' => 'Tablespaces',
                 'help' => [
                     'url' => 'help.php',
                     'url-params' => [
                         'help' => 'pg.tablespace',
-                        'server' => $serverId
-                    ]
-                ]
+                        'server' => $serverId,
+                    ],
+                ],
+                'icon' => 'Tablespaces',
+                'label' => _('Tablespaces'),
+                'url' => 'tablespaces.php',
+                'url-params' => [
+                    'server' => $serverId,
+                    'subject' => 'server',
+                ],
             ],
             [
+                'active' => true,
+                'icon' => 'Export',
+                'label' => _('Export'),
                 'url' => 'all_db_export.php',
                 'url-params' => [
-                    'server' => $serverId
+                    'server' => $serverId,
                 ],
-                'active' => true,
-                'label' => _('Export'),
-                'icon' => 'Export',
-            ]
+            ],
         ];
         $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $tabLinks));
 

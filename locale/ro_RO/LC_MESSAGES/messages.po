@@ -155,7 +155,7 @@ msgstr "Activare Auto-completare"
 msgid "strsave"
 msgstr "Salvare"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Reiniţializare"
 
 msgid "strinsert"
@@ -191,7 +191,7 @@ msgstr "Editare"
 msgid "strcolumn"
 msgstr "Coloană"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Coloane"
 
 msgid "strrows"
@@ -356,10 +356,10 @@ msgstr "Editare SQL"
 msgid "strruntime"
 msgstr "Timp total de rulare:%s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Paginare rezultate"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "sau încărcare script SQL:"
 
 msgid "strstarttime"
@@ -461,7 +461,7 @@ msgstr "Descărcarea de tabele complexe şi nume de scheme în Windows nu este s
 msgid "strtable"
 msgstr "Tabelă"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Tabele"
 
 msgid "strshowalltables"
@@ -938,7 +938,7 @@ msgstr "Semnal trimis."
 msgid "strsignalsentbad"
 msgstr "Trimitere semnal eşuată."
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "Toate obiectele"
 
 msgid "strdatabasealtered"
@@ -951,7 +951,7 @@ msgstr "Modificarea bazei de date a eşuat."
 msgid "strview"
 msgstr "Vizualizare"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Vizualizări"
 
 msgid "strshowallviews"
@@ -1012,7 +1012,7 @@ msgstr "Creare vizualizare folosind expertul"
 msgid "strsequence"
 msgstr "Secvenţă"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Secvenţe"
 
 msgid "strshowallsequences"
@@ -1106,7 +1106,7 @@ msgstr "Incremetare secvenţă eşuată"
 msgid "strindex"
 msgstr "Index"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Indexuri"
 
 msgid "strindexname"
@@ -1182,7 +1182,7 @@ msgid "strcluster"
 msgstr "Grupare"
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "Reguli"
 
 msgid "strrule"
@@ -1225,7 +1225,7 @@ msgstr "Ştergere regulă eşuată."
 msgid "strconstraint"
 msgstr "Restricţie"
 
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Restricţii"
 
 msgid "strshowallconstraints"
@@ -1319,7 +1319,7 @@ msgstr "ON UPDATE"
 msgid "strfunction"
 msgstr "Funcţie"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Funcţii"
 
 msgid "strshowallfunctions"
@@ -1419,10 +1419,10 @@ msgid "strargremoveconfirm"
 msgstr "Sigur eliminaţi acest argument? Această acţiune NU poate fi revocată."
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Declanşator"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Declanşatori"
 
 msgid "strshowalltriggers"
@@ -1580,7 +1580,7 @@ msgstr "Pseudo"
 msgid "strschema"
 msgstr "Schemă"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Scheme"
 
 msgid "strshowallschemas"
@@ -1622,7 +1622,7 @@ msgstr "Schemă modificată."
 msgid "strschemaalteredbad"
 msgstr "Modificare schemă eşuată."
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "Cale de căutare pentru schemă"
 
 # Reports
@@ -1631,7 +1631,7 @@ msgstr "Cale de căutare pentru schemă"
 msgid "strdomain"
 msgstr "Domeniu"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Domenii"
 
 msgid "strshowalldomains"

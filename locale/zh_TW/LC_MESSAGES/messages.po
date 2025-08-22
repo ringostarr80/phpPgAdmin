@@ -155,7 +155,7 @@ msgstr "啟用自動完成"
 msgid "strsave"
 msgstr "儲存"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "重設"
 
 msgid "strinsert"
@@ -191,7 +191,7 @@ msgstr "編輯"
 msgid "strcolumn"
 msgstr "欄位"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "欄位"
 
 msgid "strrows"
@@ -347,10 +347,10 @@ msgstr "編輯 SQL"
 msgid "strruntime"
 msgstr "總共執行時間: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "分頁顯示結果"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "或是上傳一個 SQL 稿本檔: "
 
 msgid "strstarttime"
@@ -489,7 +489,7 @@ msgstr "沒有選擇資料庫!"
 msgid "strtable"
 msgstr "資料表"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "資料表"
 
 msgid "strshowalltables"
@@ -984,7 +984,7 @@ msgstr "訊號傳遞。"
 msgid "strsignalsentbad"
 msgstr "傳遞訊號失敗。"
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "全部物件"
 
 msgid "strdatabasealtered"
@@ -1000,7 +1000,7 @@ msgstr "必須至少指定一個資料庫來移除"
 msgid "strview"
 msgstr "視觀表"
 
-msgid "strviews"
+msgid "Views"
 msgstr "視觀表"
 
 msgid "strshowallviews"
@@ -1073,7 +1073,7 @@ msgstr "必须至少指定一个视图来移除"
 msgid "strsequence"
 msgstr "序列數"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "序列數"
 
 msgid "strshowallsequences"
@@ -1173,7 +1173,7 @@ msgstr "必須至少指定一個序列數來刪除"
 msgid "strindex"
 msgstr "索引"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "索引"
 
 msgid "strindexname"
@@ -1246,7 +1246,7 @@ msgid "strclusteredbad"
 msgstr "叢集已失敗。"
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "規則"
 
 msgid "strrule"
@@ -1289,7 +1289,7 @@ msgstr "規則移除已失敗。"
 msgid "strconstraint"
 msgstr "約束限制"
 
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "約束限制"
 
 msgid "strshowallconstraints"
@@ -1383,7 +1383,7 @@ msgstr "ON UPDATE"
 msgid "strfunction"
 msgstr "函數"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "函數"
 
 msgid "strshowallfunctions"
@@ -1495,10 +1495,10 @@ msgid "strspecifyfunctiontodrop"
 msgstr "必須至少指定一個函數來刪除"
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "觸發器"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "觸發器"
 
 msgid "strshowalltriggers"
@@ -1674,7 +1674,7 @@ msgstr "列舉類型"
 msgid "strschema"
 msgstr "架構模式"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "架構模式"
 
 msgid "strshowallschemas"
@@ -1716,7 +1716,7 @@ msgstr "架構模式已修改。"
 msgid "strschemaalteredbad"
 msgstr "架構模式修改已失敗。"
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "架構模式搜尋路徑"
 
 msgid "strspecifyschematodrop"
@@ -1728,7 +1728,7 @@ msgstr "您必須至少指定一個架構模式來刪除"
 msgid "strdomain"
 msgstr "共同值域"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "共同值域"
 
 msgid "strshowalldomains"

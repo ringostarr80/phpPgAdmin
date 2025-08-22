@@ -21,8 +21,8 @@ class DropDb extends Website
             if (!is_null($serverSession) && !empty($database)) {
                 $redirectUrl = 'all_db.php';
                 $redirectUrlParams = [
+                    'server' => $serverId,
                     'subject' => 'server',
-                    'server' => $serverId
                 ];
 
                 $db = $serverSession->getDatabaseConnection();
@@ -57,7 +57,7 @@ class DropDb extends Website
             url: 'help.php',
             urlParams: [
                 'help' => 'pg.database.drop',
-                'server' => $serverId
+                'server' => $serverId,
             ]
         );
         $h2->appendChild($aHelp);
@@ -85,8 +85,8 @@ class DropDb extends Website
         $aButtonCancel->setAttribute('class', 'button');
         $cancelUrl = 'all_db.php';
         $cancelUrlParams = [
+            'server' => $serverId,
             'subject' => 'server',
-            'server' => $serverId
         ];
         $aButtonCancel->setAttribute('href', $cancelUrl . '?' . http_build_query($cancelUrlParams));
 

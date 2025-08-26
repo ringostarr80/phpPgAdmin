@@ -8,7 +8,7 @@ use PhpPgAdmin\{RequestParameter, Website, WebsiteComponents};
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
 
-class DropDb extends Website
+final class DropDb extends Website
 {
     public function __construct()
     {

@@ -9,7 +9,7 @@ use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
 
-class CreateDb extends Website
+final class CreateDb extends Website
 {
     private string $message = '';
 

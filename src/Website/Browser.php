@@ -6,7 +6,7 @@ namespace PhpPgAdmin\Website;
 
 use PhpPgAdmin\{Config, Website};
 
-class Browser extends Website
+final class Browser extends Website
 {
     public function __construct()
     {

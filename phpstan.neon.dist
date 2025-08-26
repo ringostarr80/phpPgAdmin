@@ -3,6 +3,7 @@ parameters:
     paths:
         - src/
         - autoload.php
+        - all_db.php
         - browser.php
         - index.php
         - intro.php
@@ -11,5 +12,6 @@ parameters:
         - server-logout.php
         - servers.php
         - servers-tree.php
+        - sqledit.php
     excludePaths:
         - vendor/

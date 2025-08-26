@@ -374,7 +374,7 @@ abstract class WebsiteComponents
             $td->appendChild($a);
 
             if (isset($tabLink['help'])) {
-                $aHelp = WebsiteComponents::buildHelpLink(
+                $aHelp = self::buildHelpLink(
                     dom: $dom,
                     url: $tabLink['help']['url'],
                     urlParams: $tabLink['help']['url-params'] ?? []
@@ -458,6 +458,44 @@ abstract class WebsiteComponents
         return $divWrapper;
     }
 
+    public static function buildTrail(\DOMDocument $dom, ?TrailSubject $subject = null): \DOMElement
+    {
+        $divTrail = $dom->createElement('div');
+        $divTrail->setAttribute('class', 'trail');
+        $tableTrail = $dom->createElement('table');
+        $trTrail = $dom->createElement('tr');
+        $tdTrail = $dom->createElement('td');
+        $tdTrail->setAttribute('class', 'crumb');
+        $aTrail = $dom->createElement('a');
+        $aTrail->setAttribute('href', 'redirect.php?subject=root');
+        $spanIcon = $dom->createElement('span');
+        $spanIcon->setAttribute('class', 'icon');
+        $imgIcon = $dom->createElement('img');
+        $imgIcon->setAttribute('src', Config::getIcon('Introduction'));
+        $imgIcon->setAttribute('alt', 'Database Root');
+        $spanIcon->appendChild($imgIcon);
+        $aTrail->appendChild($spanIcon);
+        $spanLabel = $dom->createElement('span', Website::APP_NAME);
+        $spanLabel->setAttribute('class', 'label');
+        $aTrail->appendChild($spanLabel);
+        $aTrail->appendChild($dom->createTextNode(':'));
+        $tdTrail->appendChild($aTrail);
+        $trTrail->appendChild($tdTrail);
+        $tableTrail->appendChild($trTrail);
+        $divTrail->appendChild($tableTrail);
+
+        $subTrail = match ($subject) {
+            TrailSubject::Server => self::buildTrailForServer($dom),
+            default => null
+        };
+
+        if (!is_null($subTrail)) {
+            $trTrail->appendChild($subTrail);
+        }
+
+        return $divTrail;
+    }
+
     private static function buildTopBarLinks(\DOMDocument $dom, ServerSession $serverSession): \DOMElement
     {
         $tableCell = $dom->createElement('td');
@@ -521,44 +559,6 @@ abstract class WebsiteComponents
         return $tableCell;
     }
 
-    public static function buildTrail(\DOMDocument $dom, ?TrailSubject $subject = null): \DOMElement
-    {
-        $divTrail = $dom->createElement('div');
-        $divTrail->setAttribute('class', 'trail');
-        $tableTrail = $dom->createElement('table');
-        $trTrail = $dom->createElement('tr');
-        $tdTrail = $dom->createElement('td');
-        $tdTrail->setAttribute('class', 'crumb');
-        $aTrail = $dom->createElement('a');
-        $aTrail->setAttribute('href', 'redirect.php?subject=root');
-        $spanIcon = $dom->createElement('span');
-        $spanIcon->setAttribute('class', 'icon');
-        $imgIcon = $dom->createElement('img');
-        $imgIcon->setAttribute('src', Config::getIcon('Introduction'));
-        $imgIcon->setAttribute('alt', 'Database Root');
-        $spanIcon->appendChild($imgIcon);
-        $aTrail->appendChild($spanIcon);
-        $spanLabel = $dom->createElement('span', Website::APP_NAME);
-        $spanLabel->setAttribute('class', 'label');
-        $aTrail->appendChild($spanLabel);
-        $aTrail->appendChild($dom->createTextNode(':'));
-        $tdTrail->appendChild($aTrail);
-        $trTrail->appendChild($tdTrail);
-        $tableTrail->appendChild($trTrail);
-        $divTrail->appendChild($tableTrail);
-
-        $subTrail = match ($subject) {
-            TrailSubject::Server => self::buildTrailForServer($dom),
-            default => null
-        };
-
-        if (!is_null($subTrail)) {
-            $trTrail->appendChild($subTrail);
-        }
-
-        return $divTrail;
-    }
-
     private static function buildTrailForServer(\DOMDocument $dom): \DOMElement
     {
         $td = $dom->createElement('td');
@@ -589,7 +589,7 @@ abstract class WebsiteComponents
 
         $td->appendChild($a);
 
-        $aHelp = WebsiteComponents::buildHelpLink(
+        $aHelp = self::buildHelpLink(
             dom: $dom,
             url: 'help.php',
             urlParams: [

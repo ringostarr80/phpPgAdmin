@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin;
 
-class Language
+final class Language
 {
     /**
      * @return array<string, string>

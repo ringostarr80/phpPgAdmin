@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\DDD\ValueObjects\Server;
 
-class Host implements \Stringable
+final class Host implements \Stringable
 {
     private string $host = '';
 

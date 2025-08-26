@@ -55,6 +55,21 @@ final class PhpPgAdminConnection extends \PDO
     ];
     public const MAX_NAME_LENGTH = 63;
 
+    public static function create(
+        string $host,
+        int $port,
+        string $sslmode,
+        string $user,
+        string $password,
+        string $database,
+    ): self {
+        $dsn = "pgsql:host={$host};port={$port};sslmode={$sslmode};dbname={$database}";
+        $pdo = new self(dsn: $dsn, username: $user, password: $password);
+        $pdo->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
+
+        return $pdo;
+    }
+
     public function alterDatabase(
         string $dbName,
         string $newName,
@@ -128,21 +143,6 @@ final class PhpPgAdminConnection extends \PDO
         }
     }
 
-    public static function create(
-        string $host,
-        int $port,
-        string $sslmode,
-        string $user,
-        string $password,
-        string $database,
-    ): self {
-        $dsn = "pgsql:host={$host};port={$port};sslmode={$sslmode};dbname={$database}";
-        $pdo = new self(dsn: $dsn, username: $user, password: $password);
-        $pdo->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
-
-        return $pdo;
-    }
-
     public function createDatabase(
         string $database,
         string $encoding,
@@ -204,15 +204,6 @@ final class PhpPgAdminConnection extends \PDO
         if ($this->exec($statement) === false) {
             throw new \PDOException('Failed to execute SQL statement for dropping database.');
         }
-    }
-
-    /**
-     * From PHP 8.4 on, there is a native escapeIdentifier function.
-     * @see https://www.php.net/manual/en/pdo-pgsql.escapeidentifier.php
-     */
-    private static function escapeIdentifier(string $identifier): string
-    {
-        return str_replace('"', '""', $identifier);
     }
 
     /**
@@ -470,6 +461,17 @@ final class PhpPgAdminConnection extends \PDO
         return false;
     }
 
+    public function setDatabaseComment(string $database, ?string $comment = null): void
+    {
+        $escapedDatabase = self::escapeIdentifier($database);
+        $statement = "COMMENT ON DATABASE \"{$escapedDatabase}\" IS ";
+        $statement .= !is_null($comment) ? $this->quote($comment) : 'NULL';
+
+        if ($this->exec($statement) === false) {
+            throw new \PDOException('Failed to execute SQL statement for setting database comment.');
+        }
+    }
+
     public static function loginDataIsValid(
         string $host,
         int $port,
@@ -486,14 +488,13 @@ final class PhpPgAdminConnection extends \PDO
         }
     }
 
-    public function setDatabaseComment(string $database, ?string $comment = null): void
+    /**
+     * From PHP 8.4 on, there is a native escapeIdentifier function.
+     *
+     * @see https://www.php.net/manual/en/pdo-pgsql.escapeidentifier.php
+     */
+    private static function escapeIdentifier(string $identifier): string
     {
-        $escapedDatabase = self::escapeIdentifier($database);
-        $statement = "COMMENT ON DATABASE \"{$escapedDatabase}\" IS ";
-        $statement .= !is_null($comment) ? $this->quote($comment) : 'NULL';
-
-        if ($this->exec($statement) === false) {
-            throw new \PDOException('Failed to execute SQL statement for setting database comment.');
-        }
+        return str_replace('"', '""', $identifier);
     }
 }

@@ -7,7 +7,7 @@ namespace PhpPgAdmin\Website;
 use PhpPgAdmin\{Config, RequestParameter, Website, WebsiteComponents};
 use PhpPgAdmin\Database\PhpPgAdminConnection;
 
-class Login extends Website
+final class Login extends Website
 {
     private string $message = '';
 

@@ -7,7 +7,7 @@ namespace PhpPgAdmin\Website;
 use PhpPgAdmin\{Config, RequestParameter, Website, WebsiteComponents};
 use PhpPgAdmin\DDD\Entities\ServerSession;
 
-class SqlEdit extends Website
+final class SqlEdit extends Website
 {
     protected string $title = 'SQL';
 
@@ -59,8 +59,16 @@ class SqlEdit extends Website
         ];
         $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $tabLinks));
 
+        $actionParam = RequestParameter::getString('action') ?? '';
+
+        $formAction = match ($actionParam) {
+            'find' => 'database.php',
+            'sql' => 'sql.php',
+            default => 'sql.php',
+        };
+
         $form = $dom->createElement('form');
-        $form->setAttribute('action', 'sql.php');
+        $form->setAttribute('action', $formAction);
         $form->setAttribute('method', 'post');
         $form->setAttribute('enctype', 'multipart/form-data');
         $form->setAttribute('target', 'detail');
@@ -150,8 +158,6 @@ class SqlEdit extends Website
         $table->appendChild($tBody);
 
         $form->appendChild($table);
-
-        $actionParam = RequestParameter::getString('action') ?? '';
 
         match ($actionParam) {
             'find' => $this->appendFindPart($form),

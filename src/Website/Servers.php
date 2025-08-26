@@ -6,7 +6,7 @@ namespace PhpPgAdmin\Website;
 
 use PhpPgAdmin\{Config, Website, WebsiteComponents};
 
-class Servers extends Website
+final class Servers extends Website
 {
     public function __construct()
     {

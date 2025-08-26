@@ -16,19 +16,6 @@ final class DbSize implements \Stringable
         }
     }
 
-    public function __get(string $name): mixed
-    {
-        return match ($name) {
-            'Value' => $this->size,
-            default => throw new \InvalidArgumentException("Property '$name' does not exist."),
-        };
-    }
-
-    public function __toString(): string
-    {
-        return (string)$this->size;
-    }
-
     public function prettyFormat(): string
     {
         $multiplier = 1;
@@ -50,5 +37,18 @@ final class DbSize implements \Stringable
 
         $multiplier /= 1_024;
         return sprintf('%d %s', floor(($this->size + $multiplier / 2) / $multiplier), $unitString);
+    }
+
+    public function __get(string $name): mixed
+    {
+        return match ($name) {
+            'Value' => $this->size,
+            default => throw new \InvalidArgumentException("Property '$name' does not exist."),
+        };
+    }
+
+    public function __toString(): string
+    {
+        return (string)$this->size;
     }
 }

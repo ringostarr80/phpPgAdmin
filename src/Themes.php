@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin;
 
-class Themes
+final class Themes
 {
     /**
      * @return array<string, string>

@@ -6,7 +6,7 @@ namespace PhpPgAdmin\Website;
 
 use PhpPgAdmin\{Config, Language, RequestParameter, Themes, Website, WebsiteComponents};
 
-class Intro extends Website
+final class Intro extends Website
 {
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {

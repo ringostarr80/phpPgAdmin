@@ -8,7 +8,7 @@ use PhpPgAdmin\{RequestParameter, Website, WebsiteComponents};
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
 
-class AllDb extends Website
+final class AllDb extends Website
 {
     public function __construct()
     {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\DDD\ValueObjects\ServerSession;
 
-class Password implements \Stringable
+final class Password implements \Stringable
 {
     private string $password = '';
 

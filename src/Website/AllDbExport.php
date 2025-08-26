@@ -7,7 +7,7 @@ namespace PhpPgAdmin\Website;
 use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
 use PhpPgAdmin\{RequestParameter, Website, WebsiteComponents};
 
-class AllDbExport extends Website
+final class AllDbExport extends Website
 {
     public function __construct()
     {

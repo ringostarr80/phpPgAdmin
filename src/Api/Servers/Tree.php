@@ -7,7 +7,7 @@ namespace PhpPgAdmin\Api\Servers;
 use PhpPgAdmin\{Config, RequestParameter, Session};
 use PhpPgAdmin\DDD\Entities\ServerSession;
 
-class Tree
+final class Tree
 {
     public function __construct()
     {

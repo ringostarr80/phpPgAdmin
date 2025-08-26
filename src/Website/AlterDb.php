@@ -8,7 +8,7 @@ use PhpPgAdmin\{RequestParameter, Website, WebsiteComponents};
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
 
-class AlterDb extends Website
+final class AlterDb extends Website
 {
     private string $message = '';
 

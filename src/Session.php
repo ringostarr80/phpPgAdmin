@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin;
 
-class Session
+final class Session
 {
     public const NAME = 'PPA_ID';
 

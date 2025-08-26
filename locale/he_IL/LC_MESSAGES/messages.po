@@ -134,7 +134,7 @@ msgstr "בטל"
 msgid "strsave"
 msgstr "שמור"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "שחזר"
 
 msgid "strinsert"
@@ -167,7 +167,7 @@ msgstr "שקר"
 msgid "stredit"
 msgstr "ערוך"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "עמודות"
 
 msgid "strrows"
@@ -329,10 +329,10 @@ msgstr "ערוך SQL"
 msgid "strruntime"
 msgstr "זמן-ריצה כולל: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Paginate results"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "או העלה תסריט SQL:"
 
 msgid "strstarttime"
@@ -394,7 +394,7 @@ msgstr "שגיאת יבוא בשורה: %s."
 msgid "strtable"
 msgstr "טבלה"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "טבלאות"
 
 msgid "strshowalltables"
@@ -791,14 +791,14 @@ msgstr "שלח אות."
 msgid "strsignalsentbad"
 msgstr "שליחת אות נכשלה."
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "כל העצמים"
 
 # Views
 msgid "strview"
 msgstr "צפייה"
 
-msgid "strviews"
+msgid "Views"
 msgstr "צפיות"
 
 msgid "strshowallviews"
@@ -859,7 +859,7 @@ msgstr "צור צפייה בעזרת אשף."
 msgid "strsequence"
 msgstr "נוסחה"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "נוסחאות"
 
 msgid "strshowallsequences"
@@ -926,7 +926,7 @@ msgstr "איתחול נוסחה נכשלה."
 msgid "strindex"
 msgstr "אינדקס"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "אינדקסים"
 
 msgid "strindexname"
@@ -999,7 +999,7 @@ msgid "strclusteredbad"
 msgstr "אשכול נכשל."
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "חוקים"
 
 msgid "strrule"
@@ -1039,7 +1039,7 @@ msgid "strruledroppedbad"
 msgstr "מחיקת חוק נכשלה."
 
 # Constraints
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "מבנים"
 
 msgid "strshowallconstraints"
@@ -1133,7 +1133,7 @@ msgstr "UPDATE ב"
 msgid "strfunction"
 msgstr "פונקציה"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "פונקציות"
 
 msgid "strshowallfunctions"
@@ -1200,10 +1200,10 @@ msgid "strlinksymbol"
 msgstr "קישור סימלי"
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "זרז"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "זרזים"
 
 msgid "strshowalltriggers"
@@ -1334,7 +1334,7 @@ msgstr "פאסדו"
 msgid "strschema"
 msgstr "תרשים"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "תרשמים"
 
 msgid "strshowallschemas"
@@ -1376,7 +1376,7 @@ msgstr "תרשים נערך."
 msgid "strschemaalteredbad"
 msgstr "עריכת תרשים נכשלה."
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "חיפוש מיקום התרשים."
 
 # Reports
@@ -1385,7 +1385,7 @@ msgstr "חיפוש מיקום התרשים."
 msgid "strdomain"
 msgstr "תחום"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "תחומים"
 
 msgid "strshowalldomains"

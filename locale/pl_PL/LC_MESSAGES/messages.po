@@ -152,7 +152,7 @@ msgstr "Włącz autouzupełnianie"
 msgid "strsave"
 msgstr "Zapisz"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Wyczyść"
 
 msgid "strinsert"
@@ -188,7 +188,7 @@ msgstr "Edycja"
 msgid "strcolumn"
 msgstr "Kolumna"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Kolumny"
 
 msgid "strrows"
@@ -359,10 +359,10 @@ msgstr "Edycja zapytania SQL"
 msgid "strruntime"
 msgstr "Całkowity czas pracy: %s ms."
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Wyświetl wyniki stronami"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "lub załaduj skrypt SQL:"
 
 msgid "strstarttime"
@@ -464,7 +464,7 @@ msgstr "Zrzucanie złożonych nazw tabel i schematów pod Windows jest nie wspie
 msgid "strtable"
 msgstr "Tabela"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Tabele"
 
 msgid "strshowalltables"
@@ -905,7 +905,7 @@ msgstr "Sygnał został wysłany."
 msgid "strsignalsentbad"
 msgstr "Próba wysłania sygnału się nie powiodła."
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "Wszystkie obiekty"
 
 msgid "strdatabasealtered"
@@ -918,7 +918,7 @@ msgstr "Próba modyfikacji bazy danych się nie powiodła."
 msgid "strview"
 msgstr "Widok"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Widoki"
 
 msgid "strshowallviews"
@@ -979,7 +979,7 @@ msgstr "Utwórz widok przy użyciu kreatora widoków"
 msgid "strsequence"
 msgstr "Sekwencja"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Sekwencje"
 
 msgid "strshowallsequences"
@@ -1073,7 +1073,7 @@ msgstr "Próba zwiększenia wartości sekwencji się nie powiodła."
 msgid "strindex"
 msgstr "Indeks"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Indeksy"
 
 msgid "strindexname"
@@ -1149,7 +1149,7 @@ msgid "strcluster"
 msgstr "Klaster"
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "Reguły"
 
 msgid "strrule"
@@ -1192,7 +1192,7 @@ msgstr "Próba usunięcia reguły się nie powiodła."
 msgid "strconstraint"
 msgstr "Więz integralności"
 
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Więzy integralności"
 
 msgid "strshowallconstraints"
@@ -1286,7 +1286,7 @@ msgstr "ON UPDATE"
 msgid "strfunction"
 msgstr "Funkcja"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Funkcje"
 
 msgid "strshowallfunctions"
@@ -1389,10 +1389,10 @@ msgid "strargremoveconfirm"
 msgstr "Czy na pewno chcesz usunąć ten argument? Tej operacji nie będzie można cofnąć."
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Procedura wyzwalana"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Procedury wyzwalane"
 
 msgid "strshowalltriggers"
@@ -1550,7 +1550,7 @@ msgstr "pseudo"
 msgid "strschema"
 msgstr "Schemat"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Schematy"
 
 msgid "strshowallschemas"
@@ -1592,7 +1592,7 @@ msgstr "Schemat został zmieniony."
 msgid "strschemaalteredbad"
 msgstr "Próba zmiany schematu się nie powiodła."
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "Ścieżka wyszukiwania schematu"
 
 # Reports
@@ -1601,7 +1601,7 @@ msgstr "Ścieżka wyszukiwania schematu"
 msgid "strdomain"
 msgstr "Domena"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Domeny"
 
 msgid "strshowalldomains"

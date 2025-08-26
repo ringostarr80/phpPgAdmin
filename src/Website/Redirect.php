@@ -8,8 +8,28 @@ use Locr\Lib\HTTP\StatusCode;
 use PhpPgAdmin\{Config, RequestParameter, Website};
 use PhpPgAdmin\DDD\Entities\ServerSession;
 
-class Redirect extends Website
+final class Redirect extends Website
 {
+    public function tryRedirect(): void
+    {
+        $subject = RequestParameter::getString('subject');
+        if (is_null($subject)) {
+            throw new \InvalidArgumentException(
+                'Missing required parameter: subject',
+                StatusCode::BadRequest->value
+            );
+        }
+
+        match ($subject) {
+            'root' => $this->redirectToRoot(),
+            'server' => $this->redirectToServer(),
+            default => trigger_error(
+                'Redirecting subject ("' . $subject . '") not found the new way. Continue the old way!',
+                E_USER_DEPRECATED
+            )
+        };
+    }
+
     private function redirectToRoot(): void
     {
         $locationUrl = './intro.php';
@@ -33,8 +53,8 @@ class Redirect extends Website
 
         $locationUrl = './login.php';
         $locationUrlParams = [
+            'server' => $server,
             'subject' => 'server',
-            'server' => $server
         ];
 
         if (ServerSession::isLoggedIn($server)) {
@@ -46,25 +66,5 @@ class Redirect extends Website
 
         header('Location: ' . $locationUrl);
         exit;
-    }
-
-    public function tryRedirect(): void
-    {
-        $subject = RequestParameter::getString('subject');
-        if (is_null($subject)) {
-            throw new \InvalidArgumentException(
-                'Missing required parameter: subject',
-                StatusCode::BadRequest->value
-            );
-        }
-
-        match ($subject) {
-            'root' => $this->redirectToRoot(),
-            'server' => $this->redirectToServer(),
-            default => trigger_error(
-                'Redirecting subject ("' . $subject . '") not found the new way. Continue the old way!',
-                E_USER_DEPRECATED
-            )
-        };
     }
 }

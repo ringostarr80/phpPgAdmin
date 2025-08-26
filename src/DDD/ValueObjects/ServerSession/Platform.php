@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\DDD\ValueObjects\ServerSession;
 
-class Platform implements \Stringable
+final class Platform implements \Stringable
 {
     private string $name = '';
 

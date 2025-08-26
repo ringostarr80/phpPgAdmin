@@ -7,7 +7,7 @@ namespace PhpPgAdmin\Website;
 use PhpPgAdmin\{Config, RequestParameter, Website, WebsiteComponents};
 use PhpPgAdmin\Database\PhpPgAdminConnection;
 
-class Login extends Website
+final class Login extends Website
 {
     private string $message = '';
 
@@ -57,21 +57,21 @@ class Login extends Website
                 $_SESSION['webdbLogin'] = [];
             }
             $_SESSION['webdbLogin'][$loginServer] = [
+                'defaultdb' => (string)$server->DefaultDb,
                 'desc' => (string)$server->Name,
                 'host' => (string)$server->Host,
+                'password' => $loginPassword,
+                'pg_dumpall_path' => '/usr/bin/pg_dumpall',
+                'pg_dump_path' => '/usr/bin/pg_dump',
+                //'pgVersion' => $server->Version->Value,
+                //'platform' => 'PostgreSQL ' . $server->Version->Value,
                 'port' => $server->Port->Value,
                 'sslmode' => $server->SslMode->value,
-                'defaultdb' => (string)$server->DefaultDb,
-                'pg_dump_path' => '/usr/bin/pg_dump',
-                'pg_dumpall_path' => '/usr/bin/pg_dumpall',
                 'username' => $loginUsername,
-                'password' => $loginPassword,
-                //'platform' => 'PostgreSQL ' . $server->Version->Value,
-                //'pgVersion' => $server->Version->Value
             ];
 
             $redirectLocationUrlParams = [
-                'server' => $loginServer
+                'server' => $loginServer,
             ];
             header('Location: ./all_db.php?' . http_build_query($redirectLocationUrlParams));
             exit;

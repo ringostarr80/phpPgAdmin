@@ -16,6 +16,29 @@ final class DbSize implements \Stringable
         }
     }
 
+    public function prettyFormat(): string
+    {
+        $multiplier = 1;
+        $limit = 10 * 1_024;
+
+        $unitStrings = [
+            _('bytes'),
+            _('kB'),
+            _('MB'),
+            _('GB'),
+            _('TB'),
+        ];
+        foreach ($unitStrings as $unitString) {
+            if ($this->size < $limit * $multiplier) {
+                return sprintf('%d %s', floor(($this->size + $multiplier / 2) / $multiplier), $unitString);
+            }
+            $multiplier *= 1_024;
+        }
+
+        $multiplier /= 1_024;
+        return sprintf('%d %s', floor(($this->size + $multiplier / 2) / $multiplier), $unitString);
+    }
+
     public function __get(string $name): mixed
     {
         return match ($name) {
@@ -27,28 +50,5 @@ final class DbSize implements \Stringable
     public function __toString(): string
     {
         return (string)$this->size;
-    }
-
-    public function prettyFormat(): string
-    {
-        $multiplier = 1;
-        $limit = 10 * 1_024;
-
-        $unitStrings = [
-            _('bytes'),
-            _('kB'),
-            _('MB'),
-            _('GB'),
-            _('TB')
-        ];
-        foreach ($unitStrings as $unitString) {
-            if ($this->size < $limit * $multiplier) {
-                return sprintf('%d %s', floor(($this->size + $multiplier / 2) / $multiplier), $unitString);
-            }
-            $multiplier *= 1_024;
-        }
-
-        $multiplier /= 1_024;
-        return sprintf('%d %s', floor(($this->size + $multiplier / 2) / $multiplier), $unitString);
     }
 }

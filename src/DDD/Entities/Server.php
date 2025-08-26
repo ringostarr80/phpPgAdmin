@@ -28,25 +28,6 @@ class Server
     ) {
     }
 
-    public function __get(string $name): mixed
-    {
-        return match ($name) {
-            'Name' => $this->name,
-            'Host' => $this->host,
-            'Port' => $this->port,
-            'SslMode' => $this->sslMode,
-            'DefaultDb' => $this->defaultDb,
-            'PgDumpPath' => $this->pgDumpPath,
-            'PgDumpAllPath' => $this->pgDumpAllPath,
-            default => null,
-        };
-    }
-
-    public function id(): string
-    {
-        return (string)$this->host . ':' . $this->port->Value . ':' . $this->sslMode->value;
-    }
-
     /**
      * @param array<mixed> $input
      */
@@ -91,5 +72,24 @@ class Server
             pgDumpPath: new Filename($pgDumpPath),
             pgDumpAllPath: new Filename($pgDumpAllPath)
         );
+    }
+
+    public function id(): string
+    {
+        return (string)$this->host . ':' . $this->port->Value . ':' . $this->sslMode->value;
+    }
+
+    public function __get(string $name): mixed
+    {
+        return match ($name) {
+            'Name' => $this->name,
+            'Host' => $this->host,
+            'Port' => $this->port,
+            'SslMode' => $this->sslMode,
+            'DefaultDb' => $this->defaultDb,
+            'PgDumpPath' => $this->pgDumpPath,
+            'PgDumpAllPath' => $this->pgDumpAllPath,
+            default => null,
+        };
     }
 }

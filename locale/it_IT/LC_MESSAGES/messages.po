@@ -155,7 +155,7 @@ msgstr "Abilita autocompletamento"
 msgid "strsave"
 msgstr "Salva"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Reset"
 
 msgid "strinsert"
@@ -191,7 +191,7 @@ msgstr "Modifica"
 msgid "strcolumn"
 msgstr "Colonna"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Colonne"
 
 msgid "strrows"
@@ -356,10 +356,10 @@ msgstr "Modifica SQL"
 msgid "strruntime"
 msgstr "Tempo di esecuzione totale: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Dividi in pagine i risultati"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "oppure esegui l'upload di uno script SQL:"
 
 msgid "strstarttime"
@@ -470,7 +470,7 @@ msgstr "Tentativo di connessione al server con parametri non validi, è possibil
 msgid "strtable"
 msgstr "Tabella"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Tabelle"
 
 msgid "strshowalltables"
@@ -944,7 +944,7 @@ msgstr "Segnale inviato."
 msgid "strsignalsentbad"
 msgstr "Invio del segnale fallito."
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "Tutti gli oggetti"
 
 msgid "strdatabasealtered"
@@ -957,7 +957,7 @@ msgstr "Modifica del database fallita."
 msgid "strview"
 msgstr "Vista"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Viste"
 
 msgid "strshowallviews"
@@ -1018,7 +1018,7 @@ msgstr "Crea vista tramite wizard"
 msgid "strsequence"
 msgstr "Sequenza"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Sequenze"
 
 msgid "strshowallsequences"
@@ -1109,7 +1109,7 @@ msgstr "Incremento della sequenza fallito."
 msgid "strindex"
 msgstr "Indice"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Indici"
 
 msgid "strindexname"
@@ -1185,7 +1185,7 @@ msgid "strcluster"
 msgstr "Cluster"
 
 # Rules - Regole
-msgid "strrules"
+msgid "Rules"
 msgstr "Regole"
 
 msgid "strrule"
@@ -1228,7 +1228,7 @@ msgstr "Eliminazione della regola fallita."
 msgid "strconstraint"
 msgstr "Vincolo"
 
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Vincoli"
 
 msgid "strshowallconstraints"
@@ -1322,7 +1322,7 @@ msgstr "ON UPDATE"
 msgid "strfunction"
 msgstr "Funzione"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Funzioni"
 
 msgid "strshowallfunctions"
@@ -1389,10 +1389,10 @@ msgid "strarguments"
 msgstr "Argomenti"
 
 # Triggers - Trigger
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Trigger"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Trigger"
 
 msgid "strshowalltriggers"
@@ -1532,7 +1532,7 @@ msgstr "Pseudo-tipo"
 msgid "strschema"
 msgstr "Schema"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Schemi"
 
 msgid "strshowallschemas"
@@ -1574,7 +1574,7 @@ msgstr "Schema modificato."
 msgid "strschemaalteredbad"
 msgstr "Modifica dello schema fallita."
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "Ordine di ricerca dello schema"
 
 # Reports - Rapporti
@@ -1583,7 +1583,7 @@ msgstr "Ordine di ricerca dello schema"
 msgid "strdomain"
 msgstr "Dominio"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Domini"
 
 msgid "strshowalldomains"

@@ -21,7 +21,7 @@ use PhpPgAdmin\DDD\ValueObjects\ServerSession\{Username, Password, Platform};
  * @property-read SslMode $SslMode
  * @property-read Username $Username
  */
-class ServerSession extends Server
+final class ServerSession extends Server
 {
     public function __construct(
         private Username $username,
@@ -44,16 +44,6 @@ class ServerSession extends Server
             pgDumpPath: $pgDumpPath,
             pgDumpAllPath: $pgDumpAllPath
         );
-    }
-
-    public function __get(string $name): mixed
-    {
-        return match ($name) {
-            'Password' => $this->password,
-            'Platform' => $this->platform,
-            'Username' => $this->username,
-            default => parent::__get($name),
-        };
     }
 
     public static function fromServerId(string $serverId): ?self
@@ -168,5 +158,15 @@ class ServerSession extends Server
         }
 
         return false;
+    }
+
+    public function __get(string $name): mixed
+    {
+        return match ($name) {
+            'Password' => $this->password,
+            'Platform' => $this->platform,
+            'Username' => $this->username,
+            default => parent::__get($name),
+        };
     }
 }

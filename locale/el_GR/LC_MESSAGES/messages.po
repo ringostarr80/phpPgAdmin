@@ -152,7 +152,7 @@ msgstr "Ενεργοποίηση Αυτόματης Συμπλήρωσης (Auto
 msgid "strsave"
 msgstr "Αποθήκευση"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Καθαρισμός"
 
 msgid "strinsert"
@@ -188,7 +188,7 @@ msgstr "Προσαρμογή"
 msgid "strcolumn"
 msgstr "Στήλη"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Στήλες"
 
 msgid "strrows"
@@ -347,10 +347,10 @@ msgstr "Επεξεργασία SQL"
 msgid "strruntime"
 msgstr "Συνολικός χρόνος εκτέλεσης: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Σελιδοποίηση"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "ή ανεβάστε σενάριο (script) SQL:"
 
 msgid "strstarttime"
@@ -452,7 +452,7 @@ msgstr "Η αποτύπωση (dumping) περίπλοκων πινάκων κα
 msgid "strtable"
 msgstr "Πίνακας"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Πίνακες"
 
 msgid "strshowalltables"
@@ -917,7 +917,7 @@ msgstr "Το σήμα εστάλη."
 msgid "strsignalsentbad"
 msgstr "Η αποστολή του σήματος απέτυχε."
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "Ολα τα αντικείμενα"
 
 msgid "strdatabasealtered"
@@ -930,7 +930,7 @@ msgstr "Η τροποποίηση της βάσης απέτυχε."
 msgid "strview"
 msgstr "Οψη"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Οψεις"
 
 msgid "strshowallviews"
@@ -991,7 +991,7 @@ msgstr "Δημιουργία όψης με βοηθό"
 msgid "strsequence"
 msgstr "Ακολουθία"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Ακολουθίες"
 
 msgid "strshowallsequences"
@@ -1085,7 +1085,7 @@ msgstr "Η προσαύξηση της ακολουθίας απέτυχε."
 msgid "strindex"
 msgstr "Ευρετήριο"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Ευρετήρια"
 
 msgid "strindexname"
@@ -1161,7 +1161,7 @@ msgid "strcluster"
 msgstr "Συστοιχία"
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "Κανόνες"
 
 msgid "strrule"
@@ -1204,7 +1204,7 @@ msgstr "Η διαγραφή του κανόνα απέτυχε."
 msgid "strconstraint"
 msgstr "Περιορισμός"
 
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Περιορισμοί"
 
 msgid "strshowallconstraints"
@@ -1298,7 +1298,7 @@ msgstr "ΚΑΤΑ ΤΗΝ ΕΝΗΜΕΡΩΣΗ"
 msgid "strfunction"
 msgstr "Συνάρτηση"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Συναρτήσεις"
 
 msgid "strshowallfunctions"
@@ -1398,10 +1398,10 @@ msgid "strargremoveconfirm"
 msgstr "Να διαγραφεί το όρισμα; Η ενέργεια είναι ΜΗ ΑΝΑΣΤΡΕΨΙΜΗ."
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Εναυσμα"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Εναύσματα"
 
 msgid "strshowalltriggers"
@@ -1556,7 +1556,7 @@ msgstr "Ψεύδο"
 msgid "strschema"
 msgstr "Σχήμα"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Σχήματα"
 
 msgid "strshowallschemas"
@@ -1598,7 +1598,7 @@ msgstr "Το σχήμα τροποποιήθηκε."
 msgid "strschemaalteredbad"
 msgstr "Η τροποποίηση του σχήματος απέτυχε."
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "Πορεία αναζήτησης σχήματος"
 
 # Reports
@@ -1607,7 +1607,7 @@ msgstr "Πορεία αναζήτησης σχήματος"
 msgid "strdomain"
 msgstr "Τομέας"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Τομείς"
 
 msgid "strshowalldomains"

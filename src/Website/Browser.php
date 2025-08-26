@@ -6,17 +6,17 @@ namespace PhpPgAdmin\Website;
 
 use PhpPgAdmin\{Config, Website};
 
-class Browser extends Website
+final class Browser extends Website
 {
     public function __construct()
     {
         parent::__construct();
 
         $this->scripts['xloadtree/xtree2'] = [
-            'src' => 'xloadtree/xtree2.js'
+            'src' => 'xloadtree/xtree2.js',
         ];
         $this->scripts['xloadtree/xloadtree2'] = [
-            'src' => 'xloadtree/xloadtree2.js'
+            'src' => 'xloadtree/xloadtree2.js',
         ];
     }
 

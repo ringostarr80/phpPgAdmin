@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\DDD\ValueObjects\Server;
 
-class DatabaseName implements \Stringable
+final class DatabaseName implements \Stringable
 {
     private string $name = '';
 

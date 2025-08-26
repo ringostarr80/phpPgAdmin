@@ -134,7 +134,7 @@ msgstr "Ångra"
 msgid "strsave"
 msgstr "Spara"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Nollställ"
 
 msgid "strinsert"
@@ -167,7 +167,7 @@ msgstr "Falskt"
 msgid "stredit"
 msgstr "Redigera"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Kolumner"
 
 msgid "strrows"
@@ -355,7 +355,7 @@ msgstr "Ingen unik nyckel för denna rad."
 msgid "strtable"
 msgstr "Tabell"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Tabeller"
 
 msgid "strshowalltables"
@@ -747,7 +747,7 @@ msgstr "Struktur och data"
 msgid "strview"
 msgstr "Vy"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Vyer"
 
 msgid "strshowallviews"
@@ -802,7 +802,7 @@ msgstr "Ytterligare villkor"
 msgid "strsequence"
 msgstr "Sekvens"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Sekvenser"
 
 msgid "strshowallsequences"
@@ -863,7 +863,7 @@ msgstr "Misslyckades att radera sekvens."
 msgid "strindex"
 msgstr "Index"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Index"
 
 msgid "strshowallindexes"
@@ -942,7 +942,7 @@ msgid "strclusteredbad"
 msgstr "Klustring misslyckades."
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "Regler"
 
 msgid "strrule"
@@ -982,7 +982,7 @@ msgid "strruledroppedbad"
 msgstr "Misslyckades att radera regel."
 
 # Constraints
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Begränsningar"
 
 msgid "strshowallconstraints"
@@ -1076,7 +1076,7 @@ msgstr "VID UPPDATERING"
 msgid "strfunction"
 msgstr "Funktion"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Funktioner"
 
 msgid "strshowallfunctions"
@@ -1131,10 +1131,10 @@ msgid "strfunctionupdatedbad"
 msgstr "Misslyckades att uppdatera funktion."
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Mekanism"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Mekanismer"
 
 msgid "strshowalltriggers"
@@ -1244,7 +1244,7 @@ msgstr "Misslyckades att radera typ."
 msgid "strschema"
 msgstr "Schema"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Scheman"
 
 msgid "strshowallschemas"
@@ -1291,7 +1291,7 @@ msgstr "jS M, Y g:iA"
 msgid "strdomain"
 msgstr "Domän"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Domäner"
 
 msgid "strshowalldomains"

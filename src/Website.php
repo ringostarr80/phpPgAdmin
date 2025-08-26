@@ -14,8 +14,8 @@ abstract class Website
      */
     protected array $scripts = [
         'jquery' => [
-            'src' => 'libraries/js/jquery-3.7.1.min.js'
-        ]
+            'src' => 'libraries/js/jquery-3.7.1.min.js',
+        ],
     ];
     protected string $title = '';
 
@@ -29,11 +29,6 @@ abstract class Website
 
         Language::setLocale(Config::locale());
         bindtextdomain('messages', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'locale');
-    }
-
-    protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
-    {
-        return $dom->createElement('body');
     }
 
     public function buildHtmlDocument(): \DOMDocument
@@ -51,6 +46,17 @@ abstract class Website
         $dom->appendChild($root);
 
         return $dom;
+    }
+
+    public function buildHtmlString(): string
+    {
+        $dom = $this->buildHtmlDocument();
+        return $dom->saveHTML() ?: '';
+    }
+
+    protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
+    {
+        return $dom->createElement('body');
     }
 
     protected function buildHtmlHead(\DOMDocument $dom): \DOMElement
@@ -101,12 +107,6 @@ abstract class Website
         }
 
         return $head;
-    }
-
-    public function buildHtmlString(): string
-    {
-        $dom = $this->buildHtmlDocument();
-        return $dom->saveHTML() ?: '';
     }
 
     protected function buildTitle(\DOMDocument $dom, string $title): \DOMElement

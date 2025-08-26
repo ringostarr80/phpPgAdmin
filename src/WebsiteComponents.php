@@ -86,9 +86,9 @@ abstract class WebsiteComponents
                 $aDatabase = $dom->createElement('a', $dbName);
                 $dbUrl = 'redirect.php';
                 $dbUrlParams = [
-                    'subject' => 'database',
+                    'database' => $dbName,
                     'server' => $serverSession?->id() ?? '',
-                    'database' => $dbName
+                    'subject' => 'database',
                 ];
                 $aDatabase->setAttribute('href', $dbUrl . '?' . http_build_query($dbUrlParams));
                 $tdDatabase->appendChild($aDatabase);
@@ -106,7 +106,7 @@ abstract class WebsiteComponents
                 $deleteUrl = 'drop_db.php';
                 $deleteUrlParams = [
                     'database' => $dbName,
-                    'server' => $serverSession?->id() ?? ''
+                    'server' => $serverSession?->id() ?? '',
                 ];
                 $aDelete->setAttribute('href', $deleteUrl . '?' . http_build_query($deleteUrlParams));
                 $aDelete->appendChild($dom->createTextNode(_('Delete')));
@@ -117,9 +117,9 @@ abstract class WebsiteComponents
                 $aPrivileges = $dom->createElement('a');
                 $privilegesUrl = 'privileges.php';
                 $privilegesUrlParams = [
-                    'subject' => 'database',
                     'dropdatabase' => $dbName,
-                    'server' => $serverSession?->id() ?? ''
+                    'server' => $serverSession?->id() ?? '',
+                    'subject' => 'database',
                 ];
                 $aPrivileges->setAttribute('href', $privilegesUrl . '?' . http_build_query($privilegesUrlParams));
                 $aPrivileges->appendChild($dom->createTextNode(_('Privileges')));
@@ -131,7 +131,7 @@ abstract class WebsiteComponents
                 $alterUrl = 'alter_db.php';
                 $alterUrlParams = [
                     'database' => $dbName,
-                    'server' => $serverSession?->id() ?? ''
+                    'server' => $serverSession?->id() ?? '',
                 ];
                 $aAlter->setAttribute('href', $alterUrl . '?' . http_build_query($alterUrlParams));
                 $aAlter->appendChild($dom->createTextNode(_('Alter')));
@@ -374,7 +374,7 @@ abstract class WebsiteComponents
             $td->appendChild($a);
 
             if (isset($tabLink['help'])) {
-                $aHelp = WebsiteComponents::buildHelpLink(
+                $aHelp = self::buildHelpLink(
                     dom: $dom,
                     url: $tabLink['help']['url'],
                     urlParams: $tabLink['help']['url-params'] ?? []
@@ -458,70 +458,6 @@ abstract class WebsiteComponents
         return $divWrapper;
     }
 
-    private static function buildTopBarLinks(\DOMDocument $dom, ServerSession $serverSession): \DOMElement
-    {
-        $tableCell = $dom->createElement('td');
-        $tableCell->setAttribute('style', 'text-align: right;');
-
-        $ulTopLinks = $dom->createElement('ul');
-        $ulTopLinks->setAttribute('class', 'toplink');
-
-        $topLinks = [
-            'sql' => [
-                'text' => _('SQL'),
-                'url' => 'sqledit.php',
-                'url-params' => [
-                    'subject' => 'table',
-                    'server' => $serverSession->id(),
-                    'action' => 'sql'
-                ],
-                'target' => 'sqledit'
-            ],
-            'history' => [
-                'text' => _('History'),
-                'url' => 'history.php',
-                'url-params' => [
-                    'subject' => 'table',
-                    'server' => $serverSession->id(),
-                    'action' => 'pophistory'
-                ],
-            ],
-            'find' => [
-                'text' => _('Find'),
-                'url' => 'sqledit.php',
-                'url-params' => [
-                    'subject' => 'table',
-                    'server' => $serverSession->id(),
-                    'action' => 'find'
-                ],
-                'target' => 'sqledit'
-            ],
-            'logout' => [
-                'text' => _('Logout'),
-                'url' => 'server-logout.php',
-                'url-params' => [
-                    'id' => $serverSession->id()
-                ]
-            ]
-        ];
-
-        foreach ($topLinks as $key => $link) {
-            $li = $dom->createElement('li');
-            $a = $dom->createElement('a', $link['text']);
-            $a->setAttribute('href', $link['url'] . '?' . http_build_query($link['url-params']));
-            if (isset($link['target'])) {
-                $a->setAttribute('target', $link['target']);
-            }
-            $a->setAttribute('id', 'toplink_' . $key);
-            $li->appendChild($a);
-            $ulTopLinks->appendChild($li);
-        }
-
-        $tableCell->appendChild($ulTopLinks);
-
-        return $tableCell;
-    }
-
     public static function buildTrail(\DOMDocument $dom, ?TrailSubject $subject = null): \DOMElement
     {
         $divTrail = $dom->createElement('div');
@@ -560,6 +496,69 @@ abstract class WebsiteComponents
         return $divTrail;
     }
 
+    private static function buildTopBarLinks(\DOMDocument $dom, ServerSession $serverSession): \DOMElement
+    {
+        $tableCell = $dom->createElement('td');
+        $tableCell->setAttribute('style', 'text-align: right;');
+
+        $ulTopLinks = $dom->createElement('ul');
+        $ulTopLinks->setAttribute('class', 'toplink');
+
+        $topLinks = [];
+        $topLinks['sql'] = [
+            'target' => 'sqledit',
+            'text' => _('SQL'),
+            'url' => 'sqledit.php',
+            'url-params' => [
+                'action' => 'sql',
+                'server' => $serverSession->id(),
+                'subject' => 'table',
+            ],
+        ];
+        $topLinks['history'] = [
+            'text' => _('History'),
+            'url' => 'history.php',
+            'url-params' => [
+                'action' => 'pophistory',
+                'server' => $serverSession->id(),
+                'subject' => 'table',
+            ],
+        ];
+        $topLinks['find'] = [
+            'target' => 'sqledit',
+            'text' => _('Find'),
+            'url' => 'sqledit.php',
+            'url-params' => [
+                'action' => 'find',
+                'server' => $serverSession->id(),
+                'subject' => 'table',
+            ],
+        ];
+        $topLinks['logout'] = [
+            'text' => _('Logout'),
+            'url' => 'server-logout.php',
+            'url-params' => [
+                'id' => $serverSession->id(),
+            ],
+        ];
+
+        foreach ($topLinks as $key => $link) {
+            $li = $dom->createElement('li');
+            $a = $dom->createElement('a', $link['text']);
+            $a->setAttribute('href', $link['url'] . '?' . http_build_query($link['url-params']));
+            if (isset($link['target'])) {
+                $a->setAttribute('target', $link['target']);
+            }
+            $a->setAttribute('id', 'toplink_' . $key);
+            $li->appendChild($a);
+            $ulTopLinks->appendChild($li);
+        }
+
+        $tableCell->appendChild($ulTopLinks);
+
+        return $tableCell;
+    }
+
     private static function buildTrailForServer(\DOMDocument $dom): \DOMElement
     {
         $td = $dom->createElement('td');
@@ -569,7 +568,7 @@ abstract class WebsiteComponents
         $serverSession = ServerSession::fromServerId($serverId);
         $link = 'all_db.php';
         $linkParams = [
-            'server' => $serverId
+            'server' => $serverId,
         ];
         $a = $dom->createElement('a');
         $a->setAttribute('href', $link . '?' . http_build_query($linkParams));
@@ -590,12 +589,12 @@ abstract class WebsiteComponents
 
         $td->appendChild($a);
 
-        $aHelp = WebsiteComponents::buildHelpLink(
+        $aHelp = self::buildHelpLink(
             dom: $dom,
             url: 'help.php',
             urlParams: [
                 'help' => 'pg.server',
-                'server' => $serverId
+                'server' => $serverId,
             ]
         );
         $td->appendChild($aHelp);

@@ -67,7 +67,7 @@ For an overview of the software quality over time and the evolving metrics, chec
 | sequences.php      | ❌     | yyyy-mm-dd |
 | servers.php        | ✅     | 2025-01-19 |
 | sql.php            | ❌     | yyyy-mm-dd |
-| sqledit.php        | ❌     | yyyy-mm-dd |
+| sqledit.php        | ✅     | 2025-08-26 |
 | tables.php         | ❌     | yyyy-mm-dd |
 | tablespaces.php    | ❌     | yyyy-mm-dd |
 | tblproperties.php  | ❌     | yyyy-mm-dd |

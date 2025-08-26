@@ -7,7 +7,7 @@ namespace PhpPgAdmin\Api\Servers;
 use PhpPgAdmin\{Config, RequestParameter, Session};
 use PhpPgAdmin\DDD\Entities\ServerSession;
 
-class Tree
+final class Tree
 {
     public function __construct()
     {
@@ -33,9 +33,9 @@ class Tree
             foreach ($dbs as $dbData) {
                 $actionUrl = 'redirect.php';
                 $actionUrlParams = [
-                    'subject' => 'database',
+                    'database' => $dbData['datname'],
                     'server' => $serverSession->id(),
-                    'database' => $dbData['datname']
+                    'subject' => 'database',
                 ];
                 $srcUrl = 'database.php';
                 $srcUrlParams = $actionUrlParams;
@@ -58,8 +58,8 @@ class Tree
                 $tree->setAttribute('text', (string)$configuredServer->Name);
                 $serverId = $configuredServer->id();
                 $actionUrlParams = [
+                    'server' => $serverId,
                     'subject' => 'server',
-                    'server' => $serverId
                 ];
                 $actionUrl = 'redirect.php?' . http_build_query($actionUrlParams);
                 $tree->setAttribute('action', $actionUrl);
@@ -74,7 +74,7 @@ class Tree
                     $username = $logins[$serverId]['username'];
 
                     $srcUrlParams = [
-                        'server' => $serverId
+                        'server' => $serverId,
                     ];
                     $srcUrl = 'servers-tree.php?' . http_build_query($srcUrlParams);
                     $tree->setAttribute('src', $srcUrl);

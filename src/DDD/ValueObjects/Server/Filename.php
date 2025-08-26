@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\DDD\ValueObjects\Server;
 
-class Filename implements \Stringable
+final class Filename implements \Stringable
 {
     public function __construct(private string $filename)
     {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin;
 
-class Language
+final class Language
 {
     /**
      * @return array<string, string>
@@ -40,7 +40,7 @@ class Language
             'spanish' => 'es_ES',
             'swedish' => 'sv_SE',
             'turkish' => 'tr_TR',
-            'ukrainian' => 'uk_UA'
+            'ukrainian' => 'uk_UA',
         ];
     }
 

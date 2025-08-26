@@ -6,7 +6,7 @@ namespace PhpPgAdmin\Website;
 
 use PhpPgAdmin\{Config, Website, WebsiteComponents};
 
-class Servers extends Website
+final class Servers extends Website
 {
     public function __construct()
     {
@@ -57,8 +57,8 @@ class Servers extends Website
             $a = $dom->createElement('a', (string)$server->Name);
             $serverId = $server->id();
             $redirectUrlParams = [
+                'server' => $serverId,
                 'subject' => 'server',
-                'server' => $serverId
             ];
             $redirectUrl = 'redirect.php?' . http_build_query($redirectUrlParams);
             $a->setAttribute('href', $redirectUrl);
@@ -84,7 +84,7 @@ class Servers extends Website
                 $td->setAttribute('class', 'opbutton' . ($index + 1));
                 $a = $dom->createElement('a', _('Logout'));
                 $logoutUrlParams = [
-                    'id' => $serverId
+                    'id' => $serverId,
                 ];
                 $logoutUrl = 'server-logout.php?' . http_build_query($logoutUrlParams);
                 $a->setAttribute('href', $logoutUrl);

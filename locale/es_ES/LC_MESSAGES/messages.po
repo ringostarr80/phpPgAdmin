@@ -164,7 +164,7 @@ msgstr "Activar AutoCompletado"
 msgid "strsave"
 msgstr "Guardar"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Reestablecer"
 
 msgid "strrestart"
@@ -203,7 +203,7 @@ msgstr "Editar"
 msgid "strcolumn"
 msgstr "Columna"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Columnas"
 
 msgid "strrows"
@@ -365,10 +365,10 @@ msgstr "Editar SQL"
 msgid "strruntime"
 msgstr "Tiempo total de ejecución: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Paginar resultados"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "o subir un script SQL:"
 
 msgid "strstarttime"
@@ -556,7 +556,7 @@ msgstr "No se puede conectar al servidor."
 msgid "strtable"
 msgstr "Tabla"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Tablas"
 
 msgid "strshowalltables"
@@ -1084,7 +1084,7 @@ msgstr "Señal enviada."
 msgid "strsignalsentbad"
 msgstr "Falló el envío de la señal."
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "Todos los objetos"
 
 msgid "strdatabasealtered"
@@ -1115,7 +1115,7 @@ msgstr "¿Estás seguro que desea ordenar todas las tablas en la base de datos  
 msgid "strview"
 msgstr "Vista"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Vistas"
 
 msgid "strshowallviews"
@@ -1194,7 +1194,7 @@ msgstr "Debes especificar al menos una vista a eliminar."
 msgid "strsequence"
 msgstr "Secuencia"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Secuencias"
 
 msgid "strshowallsequences"
@@ -1300,7 +1300,7 @@ msgstr "Debes especificar al menos una secuencia a eliminar."
 msgid "strindex"
 msgstr "Índice"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Índices"
 
 msgid "strindexname"
@@ -1379,7 +1379,7 @@ msgid "strnoclusteravailable"
 msgstr "Tabla no ordenada en un índice."
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "Reglas"
 
 msgid "strrule"
@@ -1422,7 +1422,7 @@ msgstr "Falló la eliminación de la regla."
 msgid "strconstraint"
 msgstr "Restricción"
 
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Restricciones"
 
 msgid "strshowallconstraints"
@@ -1516,7 +1516,7 @@ msgstr "AL ACTUALIZAR"
 msgid "strfunction"
 msgstr "Función"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Funciones"
 
 msgid "strshowallfunctions"
@@ -1628,10 +1628,10 @@ msgid "strspecifyfunctiontodrop"
 msgstr "Debes especificar al menos una función a eliminar."
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Disparador"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Disparadores"
 
 msgid "strshowalltriggers"
@@ -1804,7 +1804,7 @@ msgstr "Valores enumerados"
 msgid "strschema"
 msgstr "Esquema"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Esquemas"
 
 msgid "strshowallschemas"
@@ -1846,7 +1846,7 @@ msgstr "Esquema actualizado."
 msgid "strschemaalteredbad"
 msgstr "Falló la actualización del esquema."
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "Ruta de la búsqueda en los esquemas"
 
 msgid "strspecifyschematodrop"
@@ -1858,7 +1858,7 @@ msgstr "Debes especificar al menos un esquema a eliminar."
 msgid "strdomain"
 msgstr "Dominio"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Dominios"
 
 msgid "strshowalldomains"

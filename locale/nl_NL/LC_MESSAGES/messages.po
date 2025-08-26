@@ -68,31 +68,31 @@ msgstr "Naam"
 msgid "strtable"
 msgstr "Tabel"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Tabellen"
 
 msgid "strview"
 msgstr "View"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Views"
 
 msgid "strdefinition"
 msgstr "Definitie"
 
-msgid "strrules"
+msgid "Rules"
 msgstr "Regels"
 
 msgid "strsequence"
 msgstr "Sequence"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Sequences"
 
 msgid "strfunction"
 msgstr "Functie"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Functies"
 
 msgid "stroperators"
@@ -177,7 +177,7 @@ msgstr "Regel"
 msgid "strreferences"
 msgstr "Referenties"
 
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Triggers"
 
 msgid "stryes"
@@ -293,7 +293,7 @@ msgstr "log_cnt"
 msgid "striscycled"
 msgstr "is_cyclisch"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Reset"
 
 # Indicies
@@ -349,10 +349,10 @@ msgstr "U dient uw tabel een geldig aantal kolommen te geven."
 msgid "Export"
 msgstr "exporteer"
 
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "constraints"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "kolommen"
 
 # Functions
@@ -372,7 +372,7 @@ msgid "strfunctionneedsdef"
 msgstr "U dient uw functie te definiëren."
 
 # Triggers
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Triggers"
 
 msgid "strnotriggers"
@@ -857,7 +857,7 @@ msgstr "Sequence verwijderd."
 msgid "strsequencedroppedbad"
 msgstr "Verwijdering van de sequence mislukt."
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Indices"
 
 msgid "strshowallindexes"
@@ -1085,7 +1085,7 @@ msgstr "Type naam"
 msgid "strschema"
 msgstr "Schema"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Schema's"
 
 msgid "strshowallschemas"
@@ -1219,7 +1219,7 @@ msgstr "Trigger wijziging mislukt."
 msgid "strdomain"
 msgstr "Domein"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Domeinen"
 
 msgid "strshowalldomains"

@@ -164,7 +164,7 @@ msgstr "Habilitar AutoComplete"
 msgid "strsave"
 msgstr "Salvar"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Reiniciar"
 
 msgid "strrestart"
@@ -203,7 +203,7 @@ msgstr "Editar"
 msgid "strcolumn"
 msgstr "Coluna"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Colunas"
 
 msgid "strrows"
@@ -362,10 +362,10 @@ msgstr "Editar SQL"
 msgid "strruntime"
 msgstr "Tempo de execução total: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Paginar resultados"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "ou carregue o script SQL de um arquivo:"
 
 msgid "strstarttime"
@@ -550,7 +550,7 @@ msgstr "A conexão falhou."
 msgid "strtable"
 msgstr "Tabela"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Tabelas"
 
 msgid "strshowalltables"
@@ -1075,7 +1075,7 @@ msgstr "Sinal enviado."
 msgid "strsignalsentbad"
 msgstr "Falha ao enviar o sinal."
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "Todos os objetos"
 
 msgid "strdatabasealtered"
@@ -1106,7 +1106,7 @@ msgstr "Você têm certeza que deseja clusterizar todas as tabelas na base de da
 msgid "strview"
 msgstr "Visão"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Visões"
 
 msgid "strshowallviews"
@@ -1185,7 +1185,7 @@ msgstr "Você deve informar ao menos uma visão para deletar."
 msgid "strsequence"
 msgstr "Seqüência"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Seqüências"
 
 msgid "strshowallsequences"
@@ -1291,7 +1291,7 @@ msgstr "Você deve informar ao menos uma seqüência para deletar."
 msgid "strindex"
 msgstr "Índice"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Índices"
 
 msgid "strindexname"
@@ -1373,7 +1373,7 @@ msgid "strnoclusteravailable"
 msgstr "Tabela não clusterizada em um índice."
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "Regras"
 
 msgid "strrule"
@@ -1416,7 +1416,7 @@ msgstr "Falha ao deletar a regra."
 msgid "strconstraint"
 msgstr "Restrição"
 
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Restrições"
 
 msgid "strshowallconstraints"
@@ -1510,7 +1510,7 @@ msgstr "ON UPDATE"
 msgid "strfunction"
 msgstr "Função"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Funções"
 
 msgid "strshowallfunctions"
@@ -1622,10 +1622,10 @@ msgid "strspecifyfunctiontodrop"
 msgstr "Você deve informar ao menos uma função para deletar."
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Gatilho"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Gatilhos"
 
 msgid "strshowalltriggers"
@@ -1798,7 +1798,7 @@ msgstr "Valores enum"
 msgid "strschema"
 msgstr "Esquema"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Esquemas"
 
 msgid "strshowallschemas"
@@ -1840,7 +1840,7 @@ msgstr "Esquema alterado."
 msgid "strschemaalteredbad"
 msgstr "Falha ao alterar o esquema."
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "Diretório de pesquisa do esquema"
 
 msgid "strspecifyschematodrop"
@@ -1852,7 +1852,7 @@ msgstr "Você deve informar ao menos um esquema para deletar."
 msgid "strdomain"
 msgstr "Domínio"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Domínios"
 
 msgid "strshowalldomains"

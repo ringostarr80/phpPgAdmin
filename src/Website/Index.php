@@ -6,7 +6,7 @@ namespace PhpPgAdmin\Website;
 
 use PhpPgAdmin\{Config, Website};
 
-class Index extends Website
+final class Index extends Website
 {
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {

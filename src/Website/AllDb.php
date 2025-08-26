@@ -8,7 +8,7 @@ use PhpPgAdmin\{RequestParameter, Website, WebsiteComponents};
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
 
-class AllDb extends Website
+final class AllDb extends Website
 {
     public function __construct()
     {
@@ -30,63 +30,63 @@ class AllDb extends Website
         $actionParam = RequestParameter::getString('action');
         $tabLinks = [
             [
-                'url' => 'all_db.php',
-                'url-params' => [
-                    'subject' => 'server',
-                    'server' => $serverId
-                ],
-                'label' => _('Databases'),
-                'icon' => 'Databases',
                 'active' => is_null($actionParam),
                 'help' => [
                     'url' => 'help.php',
                     'url-params' => [
                         'help' => 'pg.role',
-                        'server' => $serverId
-                    ]
-                ]
+                        'server' => $serverId,
+                    ],
+                ],
+                'icon' => 'Databases',
+                'label' => _('Databases'),
+                'url' => 'all_db.php',
+                'url-params' => [
+                    'server' => $serverId,
+                    'subject' => 'server',
+                ],
             ],
             [
-                'url' => 'roles.php',
-                'url-params' => [
-                    'subject' => 'server',
-                    'server' => $serverId
-                ],
-                'label' => _('Roles'),
-                'icon' => 'Roles',
                 'help' => [
                     'url' => 'help.php',
                     'url-params' => [
                         'help' => 'pg.role',
-                        'server' => $serverId
-                    ]
-                ]
+                        'server' => $serverId,
+                    ],
+                ],
+                'icon' => 'Roles',
+                'label' => _('Roles'),
+                'url' => 'roles.php',
+                'url-params' => [
+                    'server' => $serverId,
+                    'subject' => 'server',
+                ],
             ],
             [
-                'url' => 'tablespaces.php',
-                'url-params' => [
-                    'subject' => 'server',
-                    'server' => $serverId
-                ],
-                'label' => _('Tablespaces'),
-                'icon' => 'Tablespaces',
                 'help' => [
                     'url' => 'help.php',
                     'url-params' => [
                         'help' => 'pg.tablespace',
-                        'server' => $serverId
-                    ]
-                ]
+                        'server' => $serverId,
+                    ],
+                ],
+                'icon' => 'Tablespaces',
+                'label' => _('Tablespaces'),
+                'url' => 'tablespaces.php',
+                'url-params' => [
+                    'server' => $serverId,
+                    'subject' => 'server',
+                ],
             ],
             [
+                'active' => $actionParam === 'export',
+                'icon' => 'Export',
+                'label' => _('Export'),
                 'url' => 'all_db_export.php',
                 'url-params' => [
-                    'server' => $serverId
+                    'server' => $serverId,
                 ],
-                'label' => _('Export'),
-                'icon' => 'Export',
-                'active' => $actionParam === 'export'
-            ]
+            ],
         ];
         $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $tabLinks));
 
@@ -108,12 +108,12 @@ class AllDb extends Website
 
         $navLinks = [
             [
+                'label' => _('Create database'),
                 'url' => 'create_db.php',
                 'url-params' => [
-                    'server' => RequestParameter::getString('server') ?? ''
+                    'server' => RequestParameter::getString('server') ?? '',
                 ],
-                'label' => _('Create database')
-            ]
+            ],
         ];
         $body->appendChild(WebsiteComponents::buildNavLinks($dom, $navLinks));
 

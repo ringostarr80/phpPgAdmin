@@ -6,7 +6,7 @@ namespace PhpPgAdmin\Website;
 
 use PhpPgAdmin\{RequestParameter, Website};
 
-class ServerLogout extends Website
+final class ServerLogout extends Website
 {
     public function __construct()
     {

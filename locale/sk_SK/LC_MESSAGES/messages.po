@@ -143,7 +143,7 @@ msgstr "Zrušiť"
 msgid "strsave"
 msgstr "Uložiť"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Reset"
 
 msgid "strinsert"
@@ -179,7 +179,7 @@ msgstr "Upraviť"
 msgid "strcolumn"
 msgstr "Stĺpec"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Stĺpce"
 
 msgid "strrows"
@@ -350,10 +350,10 @@ msgstr "Upraviť SQL"
 msgid "strruntime"
 msgstr "Celkový beh: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Výsledky stránkovania"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "alebo uploadni SQL skript:"
 
 msgid "strstarttime"
@@ -436,7 +436,7 @@ msgstr "Dump komplexných tabuliek a schém nie je na platforme Windows podporov
 msgid "strtable"
 msgstr "Tabuľka"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Tabuľky"
 
 msgid "strshowalltables"
@@ -847,7 +847,7 @@ msgstr "Signál odoslaný."
 msgid "strsignalsentbad"
 msgstr "Odoslanie signálu zlyhalo."
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "Všetky objekty"
 
 msgid "strdatabasealtered"
@@ -860,7 +860,7 @@ msgstr "Databáza nebola zmenená."
 msgid "strview"
 msgstr "Náhľad"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Náhľady"
 
 msgid "strshowallviews"
@@ -921,7 +921,7 @@ msgstr "Vytvoriť náhľad cez \"pomocníka\""
 msgid "strsequence"
 msgstr "Sekvencia"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Sekvencie"
 
 msgid "strshowallsequences"
@@ -988,7 +988,7 @@ msgstr "Sekvencia nebola resetovaná."
 msgid "strindex"
 msgstr "Index"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Indexy"
 
 msgid "strindexname"
@@ -1064,7 +1064,7 @@ msgid "strcluster"
 msgstr "Cluster"
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "Pravidlá"
 
 msgid "strrule"
@@ -1107,7 +1107,7 @@ msgstr "Pravidlo nebolo zmazané."
 msgid "strconstraint"
 msgstr "Obmedzenie"
 
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Obmedzenia"
 
 msgid "strshowallconstraints"
@@ -1201,7 +1201,7 @@ msgstr "ON UPDATE"
 msgid "strfunction"
 msgstr "Funkcia"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Funkcie"
 
 msgid "strshowallfunctions"
@@ -1268,11 +1268,11 @@ msgid "strlinksymbol"
 msgstr "Link symbol"
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Trigger"
 
 # su to medzipravidla ?? po cesky spouste..
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Trigger-y"
 
 msgid "strshowalltriggers"
@@ -1413,7 +1413,7 @@ msgstr "Pseudo"
 msgid "strschema"
 msgstr "Schéma"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Schémy"
 
 msgid "strshowallschemas"
@@ -1455,7 +1455,7 @@ msgstr "Schéma zmenená."
 msgid "strschemaalteredbad"
 msgstr "Schéma nebola zmenená."
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "Cesta k nájdeniu Schémy"
 
 # Reports
@@ -1464,7 +1464,7 @@ msgstr "Cesta k nájdeniu Schémy"
 msgid "strdomain"
 msgstr "Doména"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Domény"
 
 msgid "strshowalldomains"

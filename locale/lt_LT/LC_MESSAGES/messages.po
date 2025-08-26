@@ -170,7 +170,7 @@ msgstr "Įjungti automatinį baigimą"
 msgid "strsave"
 msgstr "Įrašyti"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Atstatyti į pradinę būseną"
 
 # Atkurti
@@ -210,7 +210,7 @@ msgstr "Taisyti"
 msgid "strcolumn"
 msgstr "Stulpelis"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Stulpeliai"
 
 msgid "strrows"
@@ -374,10 +374,10 @@ msgstr "Redaguoti SQL"
 msgid "strruntime"
 msgstr "Visa vykdymo trukmė: %s ms"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Rezultatus skaidyti į puslapius"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "arba nusiųsti SQL skriptą:"
 
 msgid "strstarttime"
@@ -568,7 +568,7 @@ msgstr "Nepavyksta prisijungti prie serverio."
 msgid "strtable"
 msgstr "Lentelė"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Lentelės"
 
 msgid "strshowalltables"
@@ -1097,7 +1097,7 @@ msgstr "Signalas išsiųstas."
 msgid "strsignalsentbad"
 msgstr "Nepavyko išsiųsti signalo."
 
-msgid "strallobjects"
+msgid "All objects"
 msgstr "Visi objektai"
 
 msgid "strdatabasealtered"
@@ -1128,7 +1128,7 @@ msgstr "Ar tikrai norite sutvarkyti visas lenteles duomenų bazėje \"%s\"?"
 msgid "strview"
 msgstr "Rodinys"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Rodiniai"
 
 msgid "strshowallviews"
@@ -1207,7 +1207,7 @@ msgstr "Turite nurodyti bent vieną rodinį, kurį norite pašalinti."
 msgid "strsequence"
 msgstr "Seka"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr "Sekos"
 
 msgid "strshowallsequences"
@@ -1314,7 +1314,7 @@ msgstr "Turite nurodyti bent vieną seką, kurią norite pašalinti."
 msgid "strindex"
 msgstr "Indeksas"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Indeksai"
 
 msgid "strindexname"
@@ -1394,7 +1394,7 @@ msgid "strnoclusteravailable"
 msgstr "Lentelė nesutvarkyta pagal indeksą."
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "Taisyklės"
 
 msgid "strrule"
@@ -1437,7 +1437,7 @@ msgstr "Nepavyko pašalinti taisyklės."
 msgid "strconstraint"
 msgstr "Ribojimas"
 
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Ribojimai"
 
 msgid "strshowallconstraints"
@@ -1531,7 +1531,7 @@ msgstr "atnaujinant"
 msgid "strfunction"
 msgstr "Funkcija"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr "Funkcijos"
 
 msgid "strshowallfunctions"
@@ -1643,10 +1643,10 @@ msgid "strspecifyfunctiontodrop"
 msgstr "Turite nurodyti bent vieną funkciją, kurią norite pašalinti."
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Trigeris"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr "Trigeriai"
 
 msgid "strshowalltriggers"
@@ -1819,7 +1819,7 @@ msgstr "Enum reikšmės"
 msgid "strschema"
 msgstr "Schema"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Schemos"
 
 msgid "strshowallschemas"
@@ -1861,7 +1861,7 @@ msgstr "Schema pakeista."
 msgid "strschemaalteredbad"
 msgstr "Nepavyko pakeisti schemos."
 
-msgid "strsearchpath"
+msgid "Schema search path"
 msgstr "Schemų paieškos kelias"
 
 msgid "strspecifyschematodrop"
@@ -1873,7 +1873,7 @@ msgstr "Turite nurodyti bent vieną schemą, kurią norite pašalinti."
 msgid "strdomain"
 msgstr "Domenas"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Domenai"
 
 msgid "strshowalldomains"

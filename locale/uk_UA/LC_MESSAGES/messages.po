@@ -134,7 +134,7 @@ msgstr "Відмінити"
 msgid "strsave"
 msgstr "Зберегти"
 
-msgid "strreset"
+msgid "Reset"
 msgstr "Скинути"
 
 msgid "strinsert"
@@ -167,7 +167,7 @@ msgstr "Фальш"
 msgid "stredit"
 msgstr "Редагувати"
 
-msgid "strcolumns"
+msgid "Columns"
 msgstr "Атрибути"
 
 msgid "strrows"
@@ -326,10 +326,10 @@ msgstr "Редагувати SQL"
 msgid "strruntime"
 msgstr "Час виконання: %s мсек"
 
-msgid "strpaginate"
+msgid "Paginate results"
 msgstr "Нумерувати сторінки з результатами"
 
-msgid "struploadscript"
+msgid "or upload an SQL script:"
 msgstr "чи завантажити SQL-скрипт:"
 
 msgid "strstarttime"
@@ -385,7 +385,7 @@ msgstr "Помилка каналу при імпортові %s."
 msgid "strtable"
 msgstr "Таблиця"
 
-msgid "strtables"
+msgid "Tables"
 msgstr "Таблиці"
 
 msgid "strshowalltables"
@@ -789,7 +789,7 @@ msgstr "Примусово"
 msgid "strview"
 msgstr "Показ"
 
-msgid "strviews"
+msgid "Views"
 msgstr "Покази"
 
 msgid "strshowallviews"
@@ -850,7 +850,7 @@ msgstr "Створити показ, скориставшись майстром
 msgid "strsequence"
 msgstr "Послідовність"
 
-msgid "strsequences"
+msgid "Sequences"
 msgstr " Послідовності"
 
 msgid "strshowallsequences"
@@ -917,7 +917,7 @@ msgstr "Скинення послідовності перервано."
 msgid "strindex"
 msgstr "Індекс"
 
-msgid "strindexes"
+msgid "Indexes"
 msgstr "Індекси"
 
 msgid "strshowallindexes"
@@ -990,7 +990,7 @@ msgid "strclusteredbad"
 msgstr "Кластеризацію перервано."
 
 # Rules
-msgid "strrules"
+msgid "Rules"
 msgstr "Правила"
 
 msgid "strrule"
@@ -1030,7 +1030,7 @@ msgid "strruledroppedbad"
 msgstr "Видалення правила перервано."
 
 # Constraints
-msgid "strconstraints"
+msgid "Constraints"
 msgstr "Обмеження"
 
 msgid "strshowallconstraints"
@@ -1124,7 +1124,7 @@ msgstr "ON UPDATE"
 msgid "strfunction"
 msgstr "Функція"
 
-msgid "strfunctions"
+msgid "Functions"
 msgstr " Функції"
 
 msgid "strshowallfunctions"
@@ -1179,10 +1179,10 @@ msgid "strfunctionupdatedbad"
 msgstr "Оновлення функції перервано."
 
 # Triggers
-msgid "strtrigger"
+msgid "Trigger"
 msgstr "Трігер"
 
-msgid "strtriggers"
+msgid "Triggers"
 msgstr " Трігери"
 
 msgid "strshowalltriggers"
@@ -1292,7 +1292,7 @@ msgstr "Видалення типу даних перервано."
 msgid "strschema"
 msgstr "Схема"
 
-msgid "strschemas"
+msgid "Schemas"
 msgstr "Схеми"
 
 msgid "strshowallschemas"
@@ -1340,7 +1340,7 @@ msgstr "Оновлення схеми перервано."
 msgid "strdomain"
 msgstr "Домен"
 
-msgid "strdomains"
+msgid "Domains"
 msgstr "Домени"
 
 msgid "strshowalldomains"

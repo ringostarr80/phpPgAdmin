@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin;
 
-class RequestParameter
+final class RequestParameter
 {
     public static function getString(string $name, ?string $default = null): ?string
     {

@@ -9,7 +9,7 @@ use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
 
-class CreateDb extends Website
+final class CreateDb extends Website
 {
     private string $message = '';
 
@@ -37,8 +37,8 @@ class CreateDb extends Website
                     if (!headers_sent()) {
                         $redirectUrl = 'all_db.php';
                         $redirectUrlParams = [
+                            'server' => $serverId,
                             'subject' => 'server',
-                            'server' => $serverId
                         ];
                         header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
                         die();
@@ -68,7 +68,7 @@ class CreateDb extends Website
             url: 'help.php',
             urlParams: [
                 'help' => 'pg.database.create',
-                'server' => $serverId
+                'server' => $serverId,
             ]
         );
         $h2->appendChild($aHelp);
@@ -285,8 +285,8 @@ class CreateDb extends Website
         $inputCancel->setAttribute('class', 'button');
         $cancelUrl = 'all_db.php';
         $cancelUrlParams = [
+            'server' => $serverId,
             'subject' => 'server',
-            'server' => $serverId
         ];
         $inputCancel->setAttribute('href', $cancelUrl . '?' . http_build_query($cancelUrlParams));
 

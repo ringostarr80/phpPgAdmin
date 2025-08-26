@@ -18,16 +18,18 @@ use Symfony\Component\Yaml\Parser as YamlParser;
  *  'show_system'?: bool
  * }
  */
-class Config
+final class Config
 {
     /**
      * @var array<string>|null
      */
     private static ?array $availableLocales = null;
+
     /**
      * @var ConfigData|null
      */
     private static ?array $conf = null;
+
     /**
      * @var array{'locale'?: string, 'theme'?: string}
      */
@@ -94,21 +96,6 @@ class Config
         }
 
         return '';
-    }
-
-    private static function getNormalizedLocaleFromLocaleOrLanguage(string $localeOrLanguage): ?string
-    {
-        if (preg_match('/^(?P<language>[a-z]{2})[_-](?P<region>[A-Z]{2})$/i', $localeOrLanguage, $matches)) {
-            return strtolower($matches['language']) . '_' . strtoupper($matches['region']);
-        }
-
-        $lowerCasedLocaleOrLanguage = strtolower($localeOrLanguage);
-        $languageIdsWithLocales = Language::getAvailableLanguageIdsWithLocales();
-        if (isset($languageIdsWithLocales[$lowerCasedLocaleOrLanguage])) {
-            return $languageIdsWithLocales[$lowerCasedLocaleOrLanguage];
-        }
-
-        return null;
     }
 
     /**
@@ -231,22 +218,6 @@ class Config
         return self::$data['locale'];
     }
 
-    private static function languageIsAvailable(string $language): bool
-    {
-        $normalizedLocale = self::getNormalizedLocaleFromLocaleOrLanguage($language);
-        if (is_null($normalizedLocale)) {
-            return false;
-        }
-        $availableLocales = self::getAvailableLocales();
-        foreach ($availableLocales as $locale) {
-            if ($locale === $normalizedLocale) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
     /**
      * @param string $serverId Server ID in the format host:port:sslmode
      */
@@ -340,6 +311,37 @@ class Config
         }
 
         return self::$data['theme'];
+    }
+
+    private static function getNormalizedLocaleFromLocaleOrLanguage(string $localeOrLanguage): ?string
+    {
+        if (preg_match('/^(?P<language>[a-z]{2})[_-](?P<region>[A-Z]{2})$/i', $localeOrLanguage, $matches)) {
+            return strtolower($matches['language']) . '_' . strtoupper($matches['region']);
+        }
+
+        $lowerCasedLocaleOrLanguage = strtolower($localeOrLanguage);
+        $languageIdsWithLocales = Language::getAvailableLanguageIdsWithLocales();
+        if (isset($languageIdsWithLocales[$lowerCasedLocaleOrLanguage])) {
+            return $languageIdsWithLocales[$lowerCasedLocaleOrLanguage];
+        }
+
+        return null;
+    }
+
+    private static function languageIsAvailable(string $language): bool
+    {
+        $normalizedLocale = self::getNormalizedLocaleFromLocaleOrLanguage($language);
+        if (is_null($normalizedLocale)) {
+            return false;
+        }
+        $availableLocales = self::getAvailableLocales();
+        foreach ($availableLocales as $locale) {
+            if ($locale === $normalizedLocale) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**

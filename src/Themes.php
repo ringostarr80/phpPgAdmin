@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin;
 
-class Themes
+final class Themes
 {
     /**
      * @return array<string, string>
@@ -12,11 +12,11 @@ class Themes
     public static function available(): array
     {
         return [
-            'default' => 'Default',
-            'cappuccino' => 'Cappuccino',
-            'gotar' => 'Blue/Green',
             'bootstrap' => 'Bootstrap3',
-            'dark' => 'Dark'
+            'cappuccino' => 'Cappuccino',
+            'dark' => 'Dark',
+            'default' => 'Default',
+            'gotar' => 'Blue/Green',
         ];
     }
 

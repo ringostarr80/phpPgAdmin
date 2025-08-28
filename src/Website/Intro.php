@@ -35,17 +35,21 @@ final class Intro extends Website
 
         $currentLocale = Config::locale();
         $languageIdsWithLocales = Language::getAvailableLanguageIdsWithLocales();
+
         foreach ($languageIdsWithLocales as $languageId => $locale) {
             Language::setLocale($locale);
             $option = $dom->createElement('option', _('applang'));
             $option->setAttribute('value', $languageId);
             $option->setAttribute('data-locale', $locale);
             $option->setAttribute('data-language-id', $languageId);
+
             if ($locale === $currentLocale) {
                 $option->setAttribute('selected', 'selected');
             }
+
             $select->appendChild($option);
         }
+
         // Reset locale
         Language::setLocale($currentLocale);
 
@@ -62,14 +66,18 @@ final class Intro extends Website
         $select->setAttribute('name', 'theme');
         $select->setAttribute('onchange', 'this.form.submit()');
         $themes = Themes::available();
+
         foreach ($themes as $theme => $label) {
             $option = $dom->createElement('option', $label);
             $option->setAttribute('value', $theme);
+
             if ($theme === Config::theme()) {
                 $option->setAttribute('selected', 'selected');
             }
+
             $select->appendChild($option);
         }
+
         $td->appendChild($select);
         $tr->appendChild($td);
         $table->appendChild($tr);
@@ -101,6 +109,7 @@ final class Intro extends Website
         $body->appendChild(WebsiteComponents::buildBackToTopLink($dom));
 
         $languageParam = RequestParameter::getString('language');
+
         if (!is_null($languageParam)) {
             $scriptElement = $dom->createElement('script');
             $scriptElement->setAttribute('type', 'text/javascript');

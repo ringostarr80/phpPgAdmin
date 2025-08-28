@@ -15,7 +15,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 
-spl_autoload_register(function ($class) {
+spl_autoload_register(static function ($class) {
     // project-specific namespace prefix
     $prefix = 'PhpPgAdmin\\';
 
@@ -24,6 +24,7 @@ spl_autoload_register(function ($class) {
 
     // does the class use the namespace prefix?
     $len = strlen($prefix);
+
     if (strncmp($prefix, $class, $len) !== 0) {
         // no, move to the next registered autoloader
         return;

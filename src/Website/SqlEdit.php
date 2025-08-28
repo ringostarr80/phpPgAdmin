@@ -89,7 +89,7 @@ final class SqlEdit extends Website
             urlParams: [
                 'help' => 'pg.server',
                 'server' => $serverId,
-            ]
+            ],
         );
         $labelForServer->appendChild($helpLink);
         $tdServerSelection->appendChild($labelForServer);
@@ -99,15 +99,19 @@ final class SqlEdit extends Website
         $serverSelection->setAttribute('id', 'server');
         $serverSelection->setAttribute('onchange', 'changeServer(event)');
         $servers = Config::getServers();
+
         foreach ($servers as $server) {
             $option = $dom->createElement('option');
             $option->setAttribute('value', $server->id());
+
             if ($server->id() === $serverId) {
                 $option->setAttribute('selected', 'selected');
             }
+
             $option->appendChild($dom->createTextNode($server->Name . ' (' . $server->id() . ')'));
             $serverSelection->appendChild($option);
         }
+
         $tdServerSelection->appendChild($serverSelection);
 
         $tdDatabaseSelection = $dom->createElement('td');
@@ -121,7 +125,7 @@ final class SqlEdit extends Website
             urlParams: [
                 'help' => 'pg.database',
                 'server' => $serverId,
-            ]
+            ],
         );
         $labelForDatabase->appendChild($helpLink);
         $labelForDatabase->appendChild($dom->createTextNode(': '));
@@ -134,21 +138,26 @@ final class SqlEdit extends Website
         $emptyOption->setAttribute('value', '');
         $databaseSelection->appendChild($emptyOption);
         $serverSession = ServerSession::fromServerId($serverId);
+
         if (!is_null($serverSession)) {
             $databaseParam = RequestParameter::getString('database');
 
             $db = $serverSession->getDatabaseConnection();
             $dbs = $db->getDatabases();
+
             foreach ($dbs as $dbMetaData) {
                 $option = $dom->createElement('option');
                 $option->setAttribute('value', $dbMetaData['datname']);
+
                 if ($dbMetaData['datname'] === $databaseParam) {
                     $option->setAttribute('selected', 'selected');
                 }
+
                 $option->appendChild($dom->createTextNode($dbMetaData['datname']));
                 $databaseSelection->appendChild($option);
             }
         }
+
         $tdDatabaseSelection->appendChild($databaseSelection);
 
         $tr->appendChild($tdServerSelection);
@@ -173,6 +182,7 @@ final class SqlEdit extends Website
     private function appendFindPart(\DOMElement $element): void
     {
         $dom = $element->ownerDocument;
+
         if (is_null($dom)) {
             throw new \RuntimeException('DOMDocument is not set for the element.');
         }
@@ -203,6 +213,7 @@ final class SqlEdit extends Website
             'TRIGGER' => _('Triggers'),
             'VIEW' => _('Views'),
         ];
+
         foreach ($filterArray as $key => $value) {
             $option = $dom->createElement('option');
             $option->setAttribute('value', $key);
@@ -233,6 +244,7 @@ final class SqlEdit extends Website
     private function appendSqlPart(\DOMElement $element, string $serverId): void
     {
         $dom = $element->ownerDocument;
+
         if (is_null($dom)) {
             throw new \RuntimeException('DOMDocument is not set for the element.');
         }
@@ -248,7 +260,7 @@ final class SqlEdit extends Website
             urlParams: [
                 'help' => 'pg.schema.search_path',
                 'server' => $serverId,
-            ]
+            ],
         );
         $pSchemaSearchPath->appendChild($searchPathHelp);
         $pSchemaSearchPath->appendChild($dom->createTextNode(': '));

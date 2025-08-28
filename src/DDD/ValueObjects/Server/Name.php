@@ -11,6 +11,7 @@ final class Name implements \Stringable
     public function __construct(string $name)
     {
         $name = trim($name);
+
         if (empty($name)) {
             throw new \InvalidArgumentException('Server name cannot be empty!');
         }

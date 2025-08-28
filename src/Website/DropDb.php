@@ -15,29 +15,7 @@ final class DropDb extends Website
         parent::__construct();
 
         if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
-            $database = RequestParameter::getString('database') ?? '';
-            $serverId = RequestParameter::getString('server') ?? '';
-            $serverSession = ServerSession::fromServerId($serverId);
-            if (!is_null($serverSession) && !empty($database)) {
-                $redirectUrl = 'all_db.php';
-                $redirectUrlParams = [
-                    'server' => $serverId,
-                    'subject' => 'server',
-                ];
-
-                $db = $serverSession->getDatabaseConnection();
-                try {
-                    $db->dropDatabase($database);
-                    $redirectUrlParams['message'] = _('Database dropped.');
-                } catch (\Exception $e) {
-                    $redirectUrlParams['message'] = _('Database drop failed.');
-                }
-
-                if (!headers_sent()) {
-                    header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
-                    die();
-                }
-            }
+            $this->handlePostRequest();
         }
     }
 
@@ -58,7 +36,7 @@ final class DropDb extends Website
             urlParams: [
                 'help' => 'pg.database.drop',
                 'server' => $serverId,
-            ]
+            ],
         );
         $h2->appendChild($aHelp);
         $body->appendChild($h2);
@@ -67,7 +45,7 @@ final class DropDb extends Website
         $form->setAttribute('method', 'post');
         $p = $dom->createElement(
             'p',
-            sprintf(_('Are you sure you want to drop the database "%s"?'), $database)
+            sprintf(_('Are you sure you want to drop the database "%s"?'), $database),
         );
         $inputHiddenDatabase = $dom->createElement('input');
         $inputHiddenDatabase->setAttribute('type', 'hidden');
@@ -100,5 +78,36 @@ final class DropDb extends Website
         $body->appendChild($form);
 
         return $body;
+    }
+
+    private function handlePostRequest(): void
+    {
+        $database = RequestParameter::getString('database') ?? '';
+        $serverId = RequestParameter::getString('server') ?? '';
+        $serverSession = ServerSession::fromServerId($serverId);
+
+        if (is_null($serverSession) || empty($database)) {
+            return;
+        }
+
+        $redirectUrl = 'all_db.php';
+        $redirectUrlParams = [
+            'server' => $serverId,
+            'subject' => 'server',
+        ];
+
+        $db = $serverSession->getDatabaseConnection();
+
+        try {
+            $db->dropDatabase($database);
+            $redirectUrlParams['message'] = _('Database dropped.');
+        } catch (\Throwable $e) {
+            $redirectUrlParams['message'] = _('Database drop failed.') . ' - ' . $e->getMessage();
+        }
+
+        if (!headers_sent()) {
+            header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
+            die;
+        }
     }
 }

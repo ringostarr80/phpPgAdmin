@@ -16,10 +16,12 @@ final class Exception extends Website
     public static function handle(\Throwable $exception): void
     {
         $exceptionCode = $exception->getCode();
+
         if (is_int($exceptionCode)) {
             $statusCode = StatusCode::tryFrom($exceptionCode) ?? StatusCode::InternalServerError;
             header($statusCode->buildHeader());
         }
+
         $website = new self($exception);
         print $website->buildHtmlString();
     }
@@ -30,7 +32,7 @@ final class Exception extends Website
 
         $h1 = $dom->createElement(
             'h1',
-            htmlentities($this->exception->getCode() . ': ' . $this->exception->getMessage())
+            htmlentities($this->exception->getCode() . ': ' . $this->exception->getMessage()),
         );
         $body->appendChild($h1);
 

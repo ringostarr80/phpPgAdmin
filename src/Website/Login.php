@@ -17,64 +17,8 @@ final class Login extends Website
 
         $this->title = _('Login');
 
-        if (
-            isset($_SERVER['REQUEST_METHOD']) &&
-            is_string($_SERVER['REQUEST_METHOD']) &&
-            $_SERVER['REQUEST_METHOD'] === 'POST'
-        ) {
-            $loginServer = RequestParameter::getString('loginServer');
-            if (is_null($loginServer)) {
-                throw new \InvalidArgumentException('Parameter "loginServer" is required');
-            }
-            $loginUsername = RequestParameter::getString('loginUsername');
-            if (is_null($loginUsername)) {
-                throw new \InvalidArgumentException('Parameter "loginUsername" is required');
-            }
-
-            $server = Config::getServerById($loginServer);
-            if (is_null($server)) {
-                throw new \InvalidArgumentException('Server not found');
-            }
-            $loginPassword = RequestParameter::getString('loginPassword_' . hash('sha256', (string)$server->Name));
-            if (is_null($loginPassword)) {
-                throw new \InvalidArgumentException('Parameter "loginPassword" is required');
-            }
-
-            if (
-                !PhpPgAdminConnection::loginDataIsValid(
-                    host: (string)$server->Host,
-                    port: $server->Port->Value,
-                    sslmode: $server->SslMode,
-                    user: $loginUsername,
-                    password: $loginPassword
-                )
-            ) {
-                $this->message = _('Login failed');
-                return;
-            }
-
-            if (!isset($_SESSION['webdbLogin']) || !is_array($_SESSION['webdbLogin'])) {
-                $_SESSION['webdbLogin'] = [];
-            }
-            $_SESSION['webdbLogin'][$loginServer] = [
-                'defaultdb' => (string)$server->DefaultDb,
-                'desc' => (string)$server->Name,
-                'host' => (string)$server->Host,
-                'password' => $loginPassword,
-                'pg_dumpall_path' => '/usr/bin/pg_dumpall',
-                'pg_dump_path' => '/usr/bin/pg_dump',
-                //'pgVersion' => $server->Version->Value,
-                //'platform' => 'PostgreSQL ' . $server->Version->Value,
-                'port' => $server->Port->Value,
-                'sslmode' => $server->SslMode->value,
-                'username' => $loginUsername,
-            ];
-
-            $redirectLocationUrlParams = [
-                'server' => $loginServer,
-            ];
-            header('Location: ./all_db.php?' . http_build_query($redirectLocationUrlParams));
-            exit;
+        if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->handlePostRequest();
         }
     }
 
@@ -86,11 +30,13 @@ final class Login extends Website
         $body->appendChild(WebsiteComponents::buildTrail($dom));
 
         $serverId = RequestParameter::getString('server');
+
         if (is_null($serverId)) {
             throw new \InvalidArgumentException('Parameter "server" is required');
         }
 
         $server = Config::getServerById($serverId);
+
         if (is_null($server)) {
             throw new \InvalidArgumentException('Server not found');
         }
@@ -104,9 +50,11 @@ final class Login extends Website
         $form = $dom->createElement('form');
         $form->setAttribute('id', 'login_form');
         $loginFormAction = '';
+
         if (isset($_SERVER['SCRIPT_NAME']) && is_string($_SERVER['SCRIPT_NAME'])) {
             $loginFormAction = $_SERVER['SCRIPT_NAME'];
         }
+
         $form->setAttribute('action', $loginFormAction);
         $form->setAttribute('method', 'post');
         $form->setAttribute('name', 'login_form');
@@ -177,5 +125,70 @@ final class Login extends Website
         $body->appendChild($form);
 
         return $body;
+    }
+
+    private function handlePostRequest(): void
+    {
+        $loginServer = RequestParameter::getString('loginServer');
+
+        if (is_null($loginServer)) {
+            throw new \InvalidArgumentException('Parameter "loginServer" is required');
+        }
+
+        $loginUsername = RequestParameter::getString('loginUsername');
+
+        if (is_null($loginUsername)) {
+            throw new \InvalidArgumentException('Parameter "loginUsername" is required');
+        }
+
+        $server = Config::getServerById($loginServer);
+
+        if (is_null($server)) {
+            throw new \InvalidArgumentException('Server not found');
+        }
+
+        $loginPassword = RequestParameter::getString('loginPassword_' . hash('sha256', (string)$server->Name));
+
+        if (is_null($loginPassword)) {
+            throw new \InvalidArgumentException('Parameter "loginPassword" is required');
+        }
+
+        $loginIsValid = PhpPgAdminConnection::loginDataIsValid(
+            host: (string)$server->Host,
+            port: $server->Port->Value,
+            sslmode: $server->SslMode,
+            user: $loginUsername,
+            password: $loginPassword,
+        );
+
+        if (!$loginIsValid) {
+            $this->message = _('Login failed');
+
+            return;
+        }
+
+        if (!isset($_SESSION['webdbLogin']) || !is_array($_SESSION['webdbLogin'])) {
+            $_SESSION['webdbLogin'] = [];
+        }
+
+        $_SESSION['webdbLogin'][$loginServer] = [
+            'defaultdb' => (string)$server->DefaultDb,
+            'desc' => (string)$server->Name,
+            'host' => (string)$server->Host,
+            'password' => $loginPassword,
+            'pg_dumpall_path' => '/usr/bin/pg_dumpall',
+            'pg_dump_path' => '/usr/bin/pg_dump',
+            //'pgVersion' => $server->Version->Value,
+            //'platform' => 'PostgreSQL ' . $server->Version->Value,
+            'port' => $server->Port->Value,
+            'sslmode' => $server->SslMode->value,
+            'username' => $loginUsername,
+        ];
+
+        $redirectLocationUrlParams = [
+            'server' => $loginServer,
+        ];
+        header('Location: ./all_db.php?' . http_build_query($redirectLocationUrlParams));
+        exit;
     }
 }

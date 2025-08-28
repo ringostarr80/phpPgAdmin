@@ -11,6 +11,7 @@ final class Username implements \Stringable
     public function __construct(string $name)
     {
         $name = trim($name);
+
         if (empty($name)) {
             throw new \InvalidArgumentException('ServerSession username cannot be empty!');
         }

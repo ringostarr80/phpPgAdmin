@@ -51,6 +51,7 @@ abstract class Website
     public function buildHtmlString(): string
     {
         $dom = $this->buildHtmlDocument();
+
         return $dom->saveHTML() ?: '';
     }
 
@@ -69,11 +70,11 @@ abstract class Website
         $head->appendChild($meta);
 
         $formatTitle = '';
-        if (!empty($this->title)) {
-            $formatTitle = self::APP_NAME . ' - ' . $this->title;
-        } else {
-            $formatTitle = self::APP_NAME;
-        }
+
+        $formatTitle = !empty($this->title)
+            ? self::APP_NAME . ' - ' . $this->title
+            : self::APP_NAME;
+
         $title = $dom->createElement('title');
         $title->appendChild($dom->createTextNode($formatTitle));
         $head->appendChild($title);

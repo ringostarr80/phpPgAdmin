@@ -16,41 +16,49 @@ final class AlterDb extends Website
     {
         parent::__construct();
 
-        if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
-            $serverId = RequestParameter::getString('server') ?? '';
+        if (!(isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST')) {
+            return;
+        }
 
-            $oldName = RequestParameter::getString('oldname');
-            $newName = RequestParameter::getString('newname');
-            if (is_null($oldName) || is_null($newName)) {
-                $this->message = _('Database alter failed.');
-                return;
+        $serverId = RequestParameter::getString('server') ?? '';
+
+        $oldName = RequestParameter::getString('oldname');
+        $newName = RequestParameter::getString('newname');
+
+        if (is_null($oldName) || is_null($newName)) {
+            $this->message = _('Database alter failed.');
+
+            return;
+        }
+
+        $serverSession = ServerSession::fromServerId($serverId);
+
+        if (is_null($serverSession)) {
+            return;
+        }
+
+        $db = $serverSession->getDatabaseConnection();
+
+        try {
+            $db->alterDatabase(
+                dbName: $oldName,
+                newName: $newName,
+                newOwner: RequestParameter::getString('owner'),
+                comment: RequestParameter::getString('dbcomment'),
+            );
+
+            if (!headers_sent()) {
+                $redirectUrl = 'all_db.php';
+                $redirectUrlParams = [
+                    'server' => $serverId,
+                    'subject' => 'server',
+                ];
+
+                header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
+                die;
             }
-
-            $serverSession = ServerSession::fromServerId($serverId);
-            if (!is_null($serverSession)) {
-                $db = $serverSession->getDatabaseConnection();
-                try {
-                    $db->alterDatabase(
-                        dbName: $oldName,
-                        newName: $newName,
-                        newOwner: RequestParameter::getString('owner'),
-                        comment: RequestParameter::getString('dbcomment'),
-                    );
-
-                    if (!headers_sent()) {
-                        $redirectUrl = 'all_db.php';
-                        $redirectUrlParams = [
-                            'server' => $serverId,
-                            'subject' => 'server',
-                        ];
-
-                        header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
-                        die();
-                    }
-                } catch (\PDOException $e) {
-                    $this->message = _('Database alter failed.');
-                }
-            }
+        } catch (\PDOException $e) {
+            $this->message = _('Database alter failed.') . ' - ' . $e->getMessage();
         }
     }
 
@@ -73,7 +81,7 @@ final class AlterDb extends Website
             urlParams: [
                 'help' => 'pg.database.alter',
                 'server' => $serverId,
-            ]
+            ],
         );
         $h2->appendChild($aHelp);
         $body->appendChild($h2);
@@ -121,17 +129,21 @@ final class AlterDb extends Website
         $db = $serverSession?->getDatabaseConnection();
         $dbOwner = $db?->getDatabaseOwner($database);
         $dbUsers = $db?->getUsers();
+
         if (is_iterable($dbUsers)) {
             foreach ($dbUsers as $dbUser) {
                 $username = $dbUser['usename'];
                 $optionOwner = $dom->createElement('option', $username);
                 $optionOwner->setAttribute('value', $username);
+
                 if ($dbOwner === $username) {
                     $optionOwner->setAttribute('selected', 'selected');
                 }
+
                 $selectOwner->appendChild($optionOwner);
             }
         }
+
         $tdOwner->appendChild($selectOwner);
         $trOwner->appendChild($thOwner);
         $trOwner->appendChild($tdOwner);

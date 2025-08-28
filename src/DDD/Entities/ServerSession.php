@@ -33,7 +33,7 @@ final class ServerSession extends Server
         DatabaseName $defaultDb = new DatabaseName('template1'),
         Filename $pgDumpPath = new Filename('/usr/bin/pg_dump'),
         Filename $pgDumpAllPath = new Filename('/usr/bin/pg_dumpall'),
-        private Platform $platform = new Platform('PostgreSQL')
+        private Platform $platform = new Platform('PostgreSQL'),
     ) {
         parent::__construct(
             name: $name,
@@ -42,13 +42,14 @@ final class ServerSession extends Server
             sslMode: $sslMode,
             defaultDb: $defaultDb,
             pgDumpPath: $pgDumpPath,
-            pgDumpAllPath: $pgDumpAllPath
+            pgDumpAllPath: $pgDumpAllPath,
         );
     }
 
     public static function fromServerId(string $serverId): ?self
     {
         $servers = Config::getServers();
+
         foreach ($servers as $server) {
             if ($server->id() !== $serverId) {
                 continue;
@@ -106,7 +107,7 @@ final class ServerSession extends Server
                     defaultDb: new DatabaseName((string)$server->DefaultDb),
                     pgDumpPath: new Filename((string)$server->PgDumpPath),
                     pgDumpAllPath: new Filename((string)$server->PgDumpAllPath),
-                    platform: new Platform($platform)
+                    platform: new Platform($platform),
                 );
             }
         }
@@ -131,7 +132,7 @@ final class ServerSession extends Server
             sslmode: $this->SslMode->value,
             user: (string)$this->Username,
             password: (string)$this->Password,
-            database: 'postgres'
+            database: 'postgres',
         );
 
         $connection->exec("SET client_encoding TO 'UTF-8'");
@@ -142,22 +143,29 @@ final class ServerSession extends Server
 
     public static function isLoggedIn(string $serverId): bool
     {
-        if (
-            isset($_SESSION['webdbLogin']) &&
-            is_array($_SESSION['webdbLogin']) &&
-            isset($_SESSION['webdbLogin'][$serverId]) &&
-            is_array($_SESSION['webdbLogin'][$serverId]) &&
-            isset($_SESSION['webdbLogin'][$serverId]['username']) &&
-            is_string($_SESSION['webdbLogin'][$serverId]['username']) &&
-            $_SESSION['webdbLogin'][$serverId]['username'] !== '' &&
-            isset($_SESSION['webdbLogin'][$serverId]['password']) &&
-            is_string($_SESSION['webdbLogin'][$serverId]['password']) &&
-            $_SESSION['webdbLogin'][$serverId]['password'] !== ''
-        ) {
-            return true;
+        if (!isset($_SESSION['webdbLogin']) || !is_array($_SESSION['webdbLogin'])) {
+            return false;
         }
 
-        return false;
+        if (!isset($_SESSION['webdbLogin'][$serverId]) || !is_array($_SESSION['webdbLogin'][$serverId])) {
+            return false;
+        }
+
+        if (
+            !isset($_SESSION['webdbLogin'][$serverId]['username']) ||
+            !isset($_SESSION['webdbLogin'][$serverId]['password'])
+        ) {
+            return false;
+        }
+
+        $sessionUsername = $_SESSION['webdbLogin'][$serverId]['username'];
+        $sessionPassword = $_SESSION['webdbLogin'][$serverId]['password'];
+
+        if (!is_string($sessionUsername) || !is_string($sessionPassword)) {
+            return false;
+        }
+
+        return $sessionUsername !== '' && $sessionPassword !== '';
     }
 
     public function __get(string $name): mixed

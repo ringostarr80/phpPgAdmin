@@ -11,6 +11,7 @@ final class Password implements \Stringable
     public function __construct(string $password)
     {
         $password = trim($password);
+
         if (empty($password)) {
             throw new \InvalidArgumentException('ServerSession password cannot be empty!');
         }

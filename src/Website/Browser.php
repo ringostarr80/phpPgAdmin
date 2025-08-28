@@ -99,7 +99,7 @@ final class Browser extends Website
         $style = $dom->createElement('style');
         $style->setAttribute('type', 'text/css');
         $style->appendChild($dom->createTextNode(
-            '.webfx-tree-children { background-image: url("' . Config::getIcon('I') . '"); }'
+            '.webfx-tree-children { background-image: url("' . Config::getIcon('I') . '"); }',
         ));
         $head->appendChild($style);
 

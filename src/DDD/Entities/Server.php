@@ -24,7 +24,7 @@ class Server
         protected SslMode $sslMode = SslMode::ALLOW,
         protected DatabaseName $defaultDb = new DatabaseName('template1'),
         protected Filename $pgDumpPath = new Filename('/usr/bin/pg_dump'),
-        protected Filename $pgDumpAllPath = new Filename('/usr/bin/pg_dumpall')
+        protected Filename $pgDumpAllPath = new Filename('/usr/bin/pg_dumpall'),
     ) {
     }
 
@@ -34,31 +34,37 @@ class Server
     public static function fromArray(array $input): self
     {
         $name = '';
+        $host = '127.0.0.1';
+        $port = 5_432;
+        $sslMode = 'allow';
+        $defaultDb = 'template1';
+        $pgDumpPath = '/usr/bin/pg_dump';
+        $pgDumpAllPath = '/usr/bin/pg_dumpall';
+
         if (isset($input['desc']) && is_string($input['desc'])) {
             $name = $input['desc'];
         }
 
-        $host = '127.0.0.1';
         if (isset($input['host']) && is_string($input['host'])) {
             $host = $input['host'];
         }
-        $port = 5432;
+
         if (isset($input['port']) && is_int($input['port'])) {
             $port = $input['port'];
         }
-        $sslMode = 'allow';
+
         if (isset($input['sslmode']) && is_string($input['sslmode'])) {
             $sslMode = strtolower($input['sslmode']);
         }
-        $defaultDb = 'template1';
+
         if (isset($input['defaultdb']) && is_string($input['defaultdb'])) {
             $defaultDb = $input['defaultdb'];
         }
-        $pgDumpPath = '/usr/bin/pg_dump';
+
         if (isset($input['pgdumppath']) && is_string($input['pgdumppath'])) {
             $pgDumpPath = $input['pgdumppath'];
         }
-        $pgDumpAllPath = '/usr/bin/pg_dumpall';
+
         if (isset($input['pg_dumpall_path']) && is_string($input['pg_dumpall_path'])) {
             $pgDumpAllPath = $input['pg_dumpall_path'];
         }
@@ -70,7 +76,7 @@ class Server
             sslMode: SslMode::from($sslMode),
             defaultDb: new DatabaseName($defaultDb),
             pgDumpPath: new Filename($pgDumpPath),
-            pgDumpAllPath: new Filename($pgDumpAllPath)
+            pgDumpAllPath: new Filename($pgDumpAllPath),
         );
     }
 

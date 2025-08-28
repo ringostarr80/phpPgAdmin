@@ -38,6 +38,7 @@ final class Config
     public static function extraSessionSecurity(): bool
     {
         $conf = self::tryGetConfigFileData();
+
         return ($conf['extra_session_security'] ?? true) === true;
     }
 
@@ -48,18 +49,22 @@ final class Config
     {
         $localeDir = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'locale';
         $langDir = dir($localeDir);
+
         if ($langDir === false) {
             return [];
         }
 
         self::$availableLocales = [];
-        while (false !== ($entry = $langDir->read())) {
+
+        while (($entry = $langDir->read()) !== false) {
             if ($entry === '.' || $entry === '..') {
                 continue;
             }
+
             if (!is_dir($localeDir . DIRECTORY_SEPARATOR . $entry)) {
                 continue;
             }
+
             if (preg_match('/^(?P<language>[a-z]{2})_(?P<region>[A-Z]{2})$/', $entry, $matches)) {
                 self::$availableLocales[] = $entry;
             }
@@ -74,6 +79,7 @@ final class Config
     public static function getIcon(string|array $icon): string
     {
         $possiblePaths = [];
+
         if (is_string($icon)) {
             $theme = self::theme();
             $path = "images/themes/{$theme}/{$icon}";
@@ -104,12 +110,14 @@ final class Config
     public static function getServers(): array
     {
         $conf = self::tryGetConfigFileData();
+
         return $conf['servers'] ?? [];
     }
 
     public static function leftWidth(): int
     {
         $conf = self::tryGetConfigFileData();
+
         return $conf['left_width'] ?? 200;
     }
 
@@ -117,17 +125,19 @@ final class Config
     {
         if (!isset(self::$data['locale'])) {
             $locale = null;
+
             if (
                 isset($_REQUEST['language']) &&
                 is_string($_REQUEST['language']) &&
                 self::languageIsAvailable($_REQUEST['language'])
             ) {
                 $locale = self::getNormalizedLocaleFromLocaleOrLanguage($_REQUEST['language']);
+
                 if (!is_null($locale)) {
                     setcookie(
                         name: 'webdbLanguage',
                         value: $locale,
-                        expires_or_options: time() + 31_536_000 // 1 year.
+                        expires_or_options: time() + 31_536_000, // 1 year.
                     );
                 }
             }
@@ -151,6 +161,7 @@ final class Config
             }
 
             $conf = self::tryGetConfigFileData();
+
             if (
                 is_null($locale) &&
                 isset($conf['default_lang']) &&
@@ -164,21 +175,26 @@ final class Config
                     '/\s*(?P<language>[a-z]{1,8}(?:-[a-z]{1,8})*)(?:;q=(?P<quality>[01](?:.\d{0,3})?))?\s*(?:,|$)/',
                     strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']),
                     $matches,
-                    PREG_SET_ORDER
+                    PREG_SET_ORDER,
                 );
 
                 $acceptLanguages = [];
+
                 foreach ($matches as $match) {  // $match[1] = language tag, [2] = quality
                     if (!isset($match['quality'])) {
                         $match['quality'] = 1;  // Default quality to 1
                     }
+
                     if ($match['quality'] <= 0 || $match['quality'] > 1) {
                         continue;
                     }
+
                     if (!self::languageIsAvailable($match['language'])) {
                         continue;
                     }
+
                     $normalizedLocale = self::getNormalizedLocaleFromLocaleOrLanguage($match['language']);
+
                     if (is_null($normalizedLocale)) {
                         continue;
                     }
@@ -224,6 +240,7 @@ final class Config
     public static function getServerById(string $serverId): ?Server
     {
         $servers = self::getServers();
+
         foreach ($servers as $server) {
             if ($serverId === $server->id()) {
                 return $server;
@@ -236,6 +253,7 @@ final class Config
     public static function ownedOnly(): bool
     {
         $conf = self::tryGetConfigFileData();
+
         return $conf['owned_only'] ?? false;
     }
 
@@ -245,6 +263,7 @@ final class Config
     public static function serverExists(string $serverId): bool
     {
         $servers = self::getServers();
+
         foreach ($servers as $server) {
             if ($serverId === $server->id()) {
                 return true;
@@ -257,12 +276,14 @@ final class Config
     public static function showAdvanced(): bool
     {
         $conf = self::tryGetConfigFileData();
+
         return $conf['show_advanced'] ?? false;
     }
 
     public static function showSystem(): bool
     {
         $conf = self::tryGetConfigFileData();
+
         return $conf['show_system'] ?? false;
     }
 
@@ -273,6 +294,7 @@ final class Config
 
             if (isset($_REQUEST['server']) && is_string($_REQUEST['server'])) {
                 $serverIdTheme = self::tryGetThemeByServerId($_REQUEST['server']);
+
                 if ($serverIdTheme !== '') {
                     self::$data['theme'] = $serverIdTheme;
                 }
@@ -294,15 +316,11 @@ final class Config
                 self::$data['theme'] = $_SESSION['ppaTheme'];
             }
 
-            if (
-                isset($_REQUEST['theme']) &&
-                is_string($_REQUEST['theme']) &&
-                Themes::cssExists($_REQUEST['theme'])
-            ) {
+            if (isset($_REQUEST['theme']) && is_string($_REQUEST['theme']) && Themes::cssExists($_REQUEST['theme'])) {
                 setcookie(
                     name: 'ppaTheme',
                     value: $_REQUEST['theme'],
-                    expires_or_options: time() + 31_536_000 // 1 year.
+                    expires_or_options: time() + 31_536_000, // 1 year.
                 );
                 self::$data['theme'] = $_REQUEST['theme'];
             }
@@ -321,6 +339,7 @@ final class Config
 
         $lowerCasedLocaleOrLanguage = strtolower($localeOrLanguage);
         $languageIdsWithLocales = Language::getAvailableLanguageIdsWithLocales();
+
         if (isset($languageIdsWithLocales[$lowerCasedLocaleOrLanguage])) {
             return $languageIdsWithLocales[$lowerCasedLocaleOrLanguage];
         }
@@ -331,10 +350,13 @@ final class Config
     private static function languageIsAvailable(string $language): bool
     {
         $normalizedLocale = self::getNormalizedLocaleFromLocaleOrLanguage($language);
+
         if (is_null($normalizedLocale)) {
             return false;
         }
+
         $availableLocales = self::getAvailableLocales();
+
         foreach ($availableLocales as $locale) {
             if ($locale === $normalizedLocale) {
                 return true;
@@ -354,29 +376,37 @@ final class Config
 
             $confDir = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'conf';
             $yamlConfigFile = $confDir . DIRECTORY_SEPARATOR . 'config.yaml';
+
             if (!file_exists($yamlConfigFile)) {
                 $yamlConfigFile = $confDir . DIRECTORY_SEPARATOR . 'config.yml';
             }
+
             $configYamlFileEnv = getenv('PHPPGADMIN_CONFIG_YAML_FILE');
+
             if (is_string($configYamlFileEnv) && $configYamlFileEnv !== '') {
                 $yamlConfigFile = $confDir . DIRECTORY_SEPARATOR . $configYamlFileEnv;
             }
 
             if (file_exists($yamlConfigFile)) {
                 $yaml = (new YamlParser())->parseFile($yamlConfigFile);
+
                 if (is_array($yaml)) {
                     if (isset($yaml['default_lang']) && is_string($yaml['default_lang'])) {
                         self::$conf['default_lang'] = $yaml['default_lang'];
                     }
+
                     if (isset($yaml['extra_session_security']) && is_bool($yaml['extra_session_security'])) {
                         self::$conf['extra_session_security'] = $yaml['extra_session_security'];
                     }
+
                     if (isset($yaml['left_width']) && is_int($yaml['left_width'])) {
                         self::$conf['left_width'] = $yaml['left_width'];
                     }
+
                     if (isset($yaml['owned_only']) && is_bool($yaml['owned_only'])) {
                         self::$conf['owned_only'] = $yaml['owned_only'];
                     }
+
                     if (isset($yaml['servers']) && is_array($yaml['servers'])) {
                         self::$conf['servers'] = [];
 
@@ -417,9 +447,11 @@ final class Config
                             */
                         }
                     }
+
                     if (isset($yaml['show_advanced']) && is_bool($yaml['show_advanced'])) {
                         self::$conf['show_advanced'] = $yaml['show_advanced'];
                     }
+
                     if (isset($yaml['show_system']) && is_bool($yaml['show_system'])) {
                         self::$conf['show_system'] = $yaml['show_system'];
                     }
@@ -438,6 +470,7 @@ final class Config
         $servers = self::getServers();
 
         $tmpTheme = '';
+
         foreach ($servers as $info) {
             if ($serverId !== $info->id()) {
                 continue;

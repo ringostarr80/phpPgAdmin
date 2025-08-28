@@ -18,37 +18,7 @@ final class CreateDb extends Website
         parent::__construct();
 
         if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
-            $formName = RequestParameter::getString('formName') ?? '';
-
-            if (!empty($formName)) {
-                $serverId = RequestParameter::getString('server') ?? '';
-                $serverSession = ServerSession::fromServerId($serverId);
-                if (!is_null($serverSession)) {
-                    $db = $serverSession->getDatabaseConnection();
-                    $db->createDatabase(
-                        database: $formName,
-                        encoding: RequestParameter::getString('formEncoding') ?? '',
-                        tablespace: RequestParameter::getString('formTablespace') ?? '',
-                        comment: RequestParameter::getString('formComment') ?? '',
-                        template: RequestParameter::getString('formTemplate') ?? 'template1',
-                        lcCollate: RequestParameter::getString('formCollate') ?? '',
-                        lcCType: RequestParameter::getString('formCType') ?? ''
-                    );
-                    if (!headers_sent()) {
-                        $redirectUrl = 'all_db.php';
-                        $redirectUrlParams = [
-                            'server' => $serverId,
-                            'subject' => 'server',
-                        ];
-                        header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
-                        die();
-                    }
-
-                    $this->message = _('Database creation failed.');
-                }
-            } else {
-                $this->message = _('You must give a name for your database.');
-            }
+            $this->handlePostRequest();
         }
     }
 
@@ -69,7 +39,7 @@ final class CreateDb extends Website
             urlParams: [
                 'help' => 'pg.database.create',
                 'server' => $serverId,
-            ]
+            ],
         );
         $h2->appendChild($aHelp);
         $body->appendChild($h2);
@@ -118,37 +88,50 @@ final class CreateDb extends Website
         $selectTemplate->setAttribute('id', 'db-template');
         $db = $serverSession?->getDatabaseConnection();
         $dbs = $db?->getDatabases();
+
         if (is_iterable($dbs)) {
             $formTemplate = RequestParameter::getString('formTemplate') ?? '';
             $optionTemplate0 = $dom->createElement('option', 'template0');
             $optionTemplate0->setAttribute('value', 'template0');
+
             if ($formTemplate === 'template0') {
                 $optionTemplate0->setAttribute('selected', 'selected');
             }
+
             $selectTemplate->appendChild($optionTemplate0);
             $optionTemplate1 = $dom->createElement('option', 'template1');
             $optionTemplate1->setAttribute('value', 'template1');
+
             if ($formTemplate === 'template1' || $formTemplate === '') {
                 $optionTemplate1->setAttribute('selected', 'selected');
             }
+
             $formTemplate1 = RequestParameter::getString('formTemplate') ?? '';
+
             if ($formTemplate1 === 'template1') {
                 $optionTemplate1->setAttribute('selected', 'selected');
             }
+
             $selectTemplate->appendChild($optionTemplate1);
 
             foreach ($dbs as $dbData) {
                 $dbName = $dbData['datname'];
-                if ($dbName !== 'template1') {
-                    $optionTemplate = $dom->createElement('option', $dbName);
-                    $optionTemplate->setAttribute('value', $dbName);
-                    if ($formTemplate === $dbName) {
-                        $optionTemplate->setAttribute('selected', 'selected');
-                    }
-                    $selectTemplate->appendChild($optionTemplate);
+
+                if ($dbName === 'template1') {
+                    continue;
                 }
+
+                $optionTemplate = $dom->createElement('option', $dbName);
+                $optionTemplate->setAttribute('value', $dbName);
+
+                if ($formTemplate === $dbName) {
+                    $optionTemplate->setAttribute('selected', 'selected');
+                }
+
+                $selectTemplate->appendChild($optionTemplate);
             }
         }
+
         $tdTemplateValue->appendChild($selectTemplate);
         $trTemplate->appendChild($thTemplate);
         $trTemplate->appendChild($tdTemplateValue);
@@ -169,14 +152,18 @@ final class CreateDb extends Website
         $emptyOption->setAttribute('value', '');
         $selectEncoding->appendChild($emptyOption);
         $formEncoding = RequestParameter::getString('formEncoding') ?? '';
+
         foreach (PhpPgAdminConnection::CODEMAP as $key => $value) {
             $optionEncoding = $dom->createElement('option', $key);
             $optionEncoding->setAttribute('value', $key);
+
             if ($formEncoding === $key) {
                 $optionEncoding->setAttribute('selected', 'selected');
             }
+
             $selectEncoding->appendChild($optionEncoding);
         }
+
         $tdEncodingValue->appendChild($selectEncoding);
         $trEncoding->appendChild($thEncoding);
         $trEncoding->appendChild($tdEncodingValue);
@@ -198,16 +185,20 @@ final class CreateDb extends Website
         $emptyOption->setAttribute('value', '');
         $selectCollation->appendChild($emptyOption);
         $availableCollations = $db?->getAvailableCollations();
+
         if (!is_null($availableCollations)) {
             foreach ($availableCollations as $collation) {
                 $option = $dom->createElement('option', $collation);
                 $option->setAttribute('value', $collation);
+
                 if ($formCollate === $collation) {
                     $option->setAttribute('selected', 'selected');
                 }
+
                 $selectCollation->appendChild($option);
             }
         }
+
         $tdCollationValue->appendChild($selectCollation);
         $trCollation->appendChild($thCollation);
         $trCollation->appendChild($tdCollationValue);
@@ -228,16 +219,20 @@ final class CreateDb extends Website
         $emptyOption = $dom->createElement('option');
         $emptyOption->setAttribute('value', '');
         $selectCType->appendChild($emptyOption);
+
         if (!is_null($availableCollations)) {
             foreach ($availableCollations as $collation) {
                 $option = $dom->createElement('option', $collation);
                 $option->setAttribute('value', $collation);
+
                 if ($formCType === $collation) {
                     $option->setAttribute('selected', 'selected');
                 }
+
                 $selectCType->appendChild($option);
             }
         }
+
         $tdCTypeValue->appendChild($selectCType);
         $trCType->appendChild($thCType);
         $trCType->appendChild($tdCTypeValue);
@@ -301,5 +296,42 @@ final class CreateDb extends Website
         $body->appendChild($form);
 
         return $body;
+    }
+
+    private function handlePostRequest(): void
+    {
+        $formName = RequestParameter::getString('formName') ?? '';
+
+        if (!empty($formName)) {
+            $serverId = RequestParameter::getString('server') ?? '';
+            $serverSession = ServerSession::fromServerId($serverId);
+
+            if (!is_null($serverSession)) {
+                $db = $serverSession->getDatabaseConnection();
+                $db->createDatabase(
+                    database: $formName,
+                    encoding: RequestParameter::getString('formEncoding') ?? '',
+                    tablespace: RequestParameter::getString('formTablespace') ?? '',
+                    comment: RequestParameter::getString('formComment') ?? '',
+                    template: RequestParameter::getString('formTemplate') ?? 'template1',
+                    lcCollate: RequestParameter::getString('formCollate') ?? '',
+                    lcCType: RequestParameter::getString('formCType') ?? '',
+                );
+
+                if (!headers_sent()) {
+                    $redirectUrl = 'all_db.php';
+                    $redirectUrlParams = [
+                        'server' => $serverId,
+                        'subject' => 'server',
+                    ];
+                    header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
+                    die;
+                }
+
+                $this->message = _('Database creation failed.');
+            }
+        } else {
+            $this->message = _('You must give a name for your database.');
+        }
     }
 }

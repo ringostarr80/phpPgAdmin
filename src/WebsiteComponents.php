@@ -165,7 +165,7 @@ abstract class WebsiteComponents
     }
 
     /**
-     * @param array<mixed> $urlParams
+     * @param array<string, string|int|float> $urlParams
      */
     public static function buildHelpLink(\DOMDocument $dom, string $url, ?array $urlParams = null): \DOMElement
     {
@@ -259,7 +259,7 @@ abstract class WebsiteComponents
     }
 
     /**
-     * @param array{'url': string, 'url-params'?: array<string, string>, 'label': string}[] $navLinks
+     * @param array<array{'url': string, 'url-params'?: array<string, string>, 'label': string}> $navLinks
      */
     public static function buildNavLinks(\DOMDocument $dom, array $navLinks): \DOMElement
     {
@@ -333,7 +333,7 @@ abstract class WebsiteComponents
     }
 
     /**
-     * @param array{
+     * @param array<array{
      *  'url': string,
      *  'url-params'?: array<string, string>,
      *  'label': string,
@@ -343,7 +343,7 @@ abstract class WebsiteComponents
      *      'url': string,
      *      'url-params'?: array<string, string>
      *  }
-     * }[] $tabLinks
+     * }> $tabLinks
      */
     public static function buildServerDatabasesTabs(\DOMDocument $dom, array $tabLinks): \DOMElement
     {

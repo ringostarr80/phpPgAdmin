@@ -11,11 +11,9 @@ use PhpPgAdmin\DDD\ValueObjects\Server\SslMode;
 final class PhpPgAdminConnection extends \PDO
 {
     /**
-     * Map of database encoding names to HTTP encoding names.  If a
+     * Map of database encoding names to HTTP encoding names. If a
      * database encoding does not appear in this list, then its HTTP
      * encoding name is the same as its database encoding name.
-     *
-     * @var array<string, string>
      */
     public const CODEMAP = [
         'BIG5' => 'BIG5',
@@ -214,7 +212,7 @@ final class PhpPgAdminConnection extends \PDO
     }
 
     /**
-     * @return string[]
+     * @return array<string>
      */
     public function getAvailableCollations(): array
     {
@@ -541,7 +539,7 @@ final class PhpPgAdminConnection extends \PDO
         $dsn = "pgsql:host={$host};port={$port};sslmode={$sslmode->value}";
 
         try {
-            $_ = new \PDO(dsn: $dsn, username: $user, password: $password);
+            new \PDO(dsn: $dsn, username: $user, password: $password);
 
             return true;
         } catch (\PDOException $e) {

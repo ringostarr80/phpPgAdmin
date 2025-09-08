@@ -13,7 +13,7 @@ use Symfony\Component\Yaml\Parser as YamlParser;
  *  'extra_session_security'?: bool,
  *  'left_width'?: int,
  *  'owned_only'?: bool,
- *  'servers'?: Server[],
+ *  'servers'?: array<Server>,
  *  'show_advanced'?: bool,
  *  'show_system'?: bool
  * }
@@ -105,7 +105,7 @@ final class Config
     }
 
     /**
-     * @return Server[]
+     * @return array<Server>
      */
     public static function getServers(): array
     {
@@ -180,9 +180,9 @@ final class Config
 
                 $acceptLanguages = [];
 
-                foreach ($matches as $match) {  // $match[1] = language tag, [2] = quality
+                foreach ($matches as $match) { // $match[1] = language tag, [2] = quality
                     if (!isset($match['quality'])) {
-                        $match['quality'] = 1;  // Default quality to 1
+                        $match['quality'] = 1; // Default quality to 1
                     }
 
                     if ($match['quality'] <= 0 || $match['quality'] > 1) {

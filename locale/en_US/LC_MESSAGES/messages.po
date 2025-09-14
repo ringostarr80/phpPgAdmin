@@ -207,10 +207,12 @@ msgstr "Update"
 msgid "strreferences"
 msgstr "References"
 
-msgid "stryes"
+# original: "stryes"
+msgid "Yes"
 msgstr "Yes"
 
-msgid "strno"
+# original: "strno"
+msgid "No"
 msgstr "No"
 
 # original: "strtrue"
@@ -482,22 +484,28 @@ msgstr "The following administrative tasks apply on the table %s."
 msgid "History"
 msgstr "History"
 
-msgid "strnohistory"
+# original: "strnohistory"
+msgid "No history."
 msgstr "No history."
 
-msgid "strclearhistory"
+# original: "strclearhistory"
+msgid "Clear history"
 msgstr "Clear history"
 
-msgid "strdelhistory"
+# original: "strdelhistory"
+msgid "Delete from history"
 msgstr "Delete from history"
 
-msgid "strconfdelhistory"
+# original: "strconfdelhistory"
+msgid "Really remove this request from history?"
 msgstr "Really remove this request from history?"
 
-msgid "strconfclearhistory"
+# original: "strconfclearhistory"
+msgid "Really clear history?"
 msgstr "Really clear history?"
 
-msgid "strnodatabaseselected"
+# original: "strnodatabaseselected"
+msgid "Please, select a database."
 msgstr "Please, select a database."
 
 # Database sizes

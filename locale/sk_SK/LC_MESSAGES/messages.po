@@ -161,10 +161,10 @@ msgstr "Aktualizovať"
 msgid "strreferences"
 msgstr "Referencie"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "Áno"
 
-msgid "strno"
+msgid "No"
 msgstr "Nie"
 
 msgid "TRUE"

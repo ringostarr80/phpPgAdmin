@@ -145,10 +145,10 @@ msgstr "Atualizar"
 msgid "strreferences"
 msgstr "Referências"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "Sim"
 
-msgid "strno"
+msgid "No"
 msgstr "Não"
 
 msgid "stredit"

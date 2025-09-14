@@ -531,7 +531,6 @@ abstract class WebsiteComponents
             'text' => _('History'),
             'url' => 'history.php',
             'url-params' => [
-                'action' => 'pophistory',
                 'server' => $serverSession->id(),
                 'subject' => 'table',
             ],

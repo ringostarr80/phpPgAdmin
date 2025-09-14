@@ -185,10 +185,10 @@ msgstr "更新"
 msgid "strreferences"
 msgstr "参考"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "是"
 
-msgid "strno"
+msgid "No"
 msgstr "否"
 
 msgid "TRUE"
@@ -433,22 +433,22 @@ msgstr "以下管理功能可应用于表 %s."
 msgid "History"
 msgstr "历史"
 
-msgid "strnohistory"
+msgid "No history."
 msgstr "无历史."
 
-msgid "strclearhistory"
+msgid "Clear history"
 msgstr "清空历史"
 
-msgid "strdelhistory"
+msgid "Delete from history"
 msgstr "从历史删除"
 
-msgid "strconfdelhistory"
+msgid "Really remove this request from history?"
 msgstr "确定要从历史删除吗 ?"
 
-msgid "strconfclearhistory"
+msgid "Really clear history?"
 msgstr "确定要清空历史吗 ?"
 
-msgid "strnodatabaseselected"
+msgid "Please, select a database."
 msgstr "请选择一个数据库."
 
 # Database sizes

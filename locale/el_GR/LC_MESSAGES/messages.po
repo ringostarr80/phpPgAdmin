@@ -170,10 +170,10 @@ msgstr "Ενημέρωση"
 msgid "strreferences"
 msgstr "Σχέσεις"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "Ναι"
 
-msgid "strno"
+msgid "No"
 msgstr "Οχι"
 
 msgid "TRUE"

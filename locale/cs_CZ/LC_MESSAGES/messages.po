@@ -185,10 +185,10 @@ msgstr "Aktualizovat"
 msgid "strreferences"
 msgstr "Odkazy"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "Ano"
 
-msgid "strno"
+msgid "No"
 msgstr "Ne"
 
 msgid "TRUE"
@@ -433,22 +433,22 @@ msgstr "Následující úlohy správy použít na tabulku %s."
 msgid "History"
 msgstr "Historie"
 
-msgid "strnohistory"
+msgid "No history."
 msgstr "Bez historie."
 
-msgid "strclearhistory"
+msgid "Clear history"
 msgstr "Smazat historii"
 
-msgid "strdelhistory"
+msgid "Delete from history"
 msgstr "Odebrat z historie"
 
-msgid "strconfdelhistory"
+msgid "Really remove this request from history?"
 msgstr "Opravdu tento požadavek odebrat z historie?"
 
-msgid "strconfclearhistory"
+msgid "Really clear history?"
 msgstr "Skutečně smazat historii?"
 
-msgid "strnodatabaseselected"
+msgid "Please, select a database."
 msgstr "Zvolte prosím databázi."
 
 # Database sizes

@@ -161,10 +161,10 @@ msgstr "Güncelle"
 msgid "strreferences"
 msgstr "References"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "Evet"
 
-msgid "strno"
+msgid "No"
 msgstr "Hayır"
 
 msgid "TRUE"

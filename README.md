@@ -48,7 +48,7 @@ For an overview of the software quality over time and the evolving metrics, chec
 | functions.php      | ❌     | yyyy-mm-dd |
 | groups.php         | ❌     | yyyy-mm-dd |
 | help.php           | ❌     | yyyy-mm-dd |
-| history.php        | ❌     | yyyy-mm-dd |
+| history.php        | ✅     | 2025-09-14 |
 | index.php          | ✅     | 2024-12-26 |
 | indexes.php        | ❌     | yyyy-mm-dd |
 | info.php           | ❌     | yyyy-mm-dd |

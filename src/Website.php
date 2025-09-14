@@ -64,10 +64,15 @@ abstract class Website
     {
         $head = $dom->createElement('head');
 
-        $meta = $dom->createElement('meta');
-        $meta->setAttribute('http-equiv', 'Content-Type');
-        $meta->setAttribute('content', 'text/html; charset=utf-8');
-        $head->appendChild($meta);
+        $metaContentType = $dom->createElement('meta');
+        $metaContentType->setAttribute('http-equiv', 'Content-Type');
+        $metaContentType->setAttribute('content', 'text/html; charset=utf-8');
+        $head->appendChild($metaContentType);
+
+        $metaColorScheme = $dom->createElement('meta');
+        $metaColorScheme->setAttribute('name', 'color-scheme');
+        $metaColorScheme->setAttribute('content', 'light dark');
+        $head->appendChild($metaColorScheme);
 
         $formatTitle = '';
 

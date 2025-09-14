@@ -170,10 +170,10 @@ msgstr "Zmień"
 msgid "strreferences"
 msgstr "Odnośniki"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "Tak"
 
-msgid "strno"
+msgid "No"
 msgstr "Nie"
 
 msgid "TRUE"

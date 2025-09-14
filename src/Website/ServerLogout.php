@@ -41,6 +41,7 @@ final class ServerLogout extends Website
         $head = parent::buildHtmlHead($dom);
 
         $redirectUrl = './servers.php';
+
         if (isset($_SERVER['HTTP_REFERER']) && is_string($_SERVER['HTTP_REFERER'])) {
             $redirectUrl = $_SERVER['HTTP_REFERER'];
         }

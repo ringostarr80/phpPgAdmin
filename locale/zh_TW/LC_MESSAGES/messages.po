@@ -173,10 +173,10 @@ msgstr "更新"
 msgid "strreferences"
 msgstr "參照"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "是"
 
-msgid "strno"
+msgid "No"
 msgstr "否"
 
 msgid "TRUE"
@@ -381,22 +381,22 @@ msgstr "叢集"
 msgid "History"
 msgstr "歷程"
 
-msgid "strnohistory"
+msgid "No history."
 msgstr "無歷程。"
 
-msgid "strclearhistory"
+msgid "Clear history"
 msgstr "清空歷程"
 
-msgid "strdelhistory"
+msgid "Delete from history"
 msgstr "從歷程刪除"
 
-msgid "strconfdelhistory"
+msgid "Really remove this request from history?"
 msgstr "確實要從歷程刪除嗎 ?"
 
-msgid "strconfclearhistory"
+msgid "Really clear history?"
 msgstr "確實要清空歷程嗎 ?"
 
-msgid "strnodatabaseselected"
+msgid "Please, select a database."
 msgstr "請選擇一個資料庫。"
 
 # Database sizes

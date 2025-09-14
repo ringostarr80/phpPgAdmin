@@ -22,14 +22,20 @@ final class Tree
         $dom->formatOutput = true;
         $dom->encoding = 'utf-8';
 
-        $logins = isset($_SESSION['webdbLogin']) && is_array($_SESSION['webdbLogin']) ? $_SESSION['webdbLogin'] : [];
+        $logins = isset($_SESSION['webdbLogin']) && is_array($_SESSION['webdbLogin'])
+            ? $_SESSION['webdbLogin']
+            : [];
         $root = $dom->createElement('tree');
 
         $serverIdParam = RequestParameter::getString('server');
-        $serverSession = !is_null($serverIdParam) ? ServerSession::fromServerId($serverIdParam) : null;
+        $serverSession = !is_null($serverIdParam)
+            ? ServerSession::fromServerId($serverIdParam)
+            : null;
+
         if (!is_null($serverSession)) {
             $dbConnection = $serverSession->getDatabaseConnection();
             $dbs = $dbConnection->getDatabases();
+
             foreach ($dbs as $dbData) {
                 $actionUrl = 'redirect.php';
                 $actionUrlParams = [
@@ -53,6 +59,7 @@ final class Tree
             }
         } else {
             $configuredServers = Config::getServers();
+
             foreach ($configuredServers as $configuredServer) {
                 $tree = $dom->createElement('tree');
                 $tree->setAttribute('text', (string)$configuredServer->Name);
@@ -65,6 +72,7 @@ final class Tree
                 $tree->setAttribute('action', $actionUrl);
 
                 $username = '';
+
                 if (
                     isset($logins[$serverId]) &&
                     is_array($logins[$serverId]) &&
@@ -80,7 +88,9 @@ final class Tree
                     $tree->setAttribute('src', $srcUrl);
                 }
 
-                $iconName = $username !== '' ? 'Server' : 'DisconnectedServer';
+                $iconName = $username !== ''
+                    ? 'Server'
+                    : 'DisconnectedServer';
                 $tree->setAttribute('icon', Config::getIcon($iconName));
                 $tree->setAttribute('openicon', Config::getIcon($iconName));
                 $tree->setAttribute('tooltip', $serverId);

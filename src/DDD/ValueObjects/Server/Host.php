@@ -11,6 +11,7 @@ final class Host implements \Stringable
     public function __construct(string $host = '127.0.0.1')
     {
         $host = trim($host);
+
         if (empty($host)) {
             throw new \InvalidArgumentException('Host cannot be empty!');
         }

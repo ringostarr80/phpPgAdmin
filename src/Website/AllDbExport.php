@@ -122,11 +122,13 @@ final class AllDbExport extends Website
         $formatSelect = $dom->createElement('select');
         $formatSelect->setAttribute('name', 'd_format');
         $formatOptions = ['copy', 'sql'];
+
         foreach ($formatOptions as $option) {
             $optionElement = $dom->createElement('option', strtoupper($option));
             $optionElement->setAttribute('value', $option);
             $formatSelect->appendChild($optionElement);
         }
+
         $rowOnlyDataColumnOptions->appendChild($formatSelect);
         $rowOnlyData->appendChild($rowOnlyDataColumnFormat);
         $rowOnlyData->appendChild($rowOnlyDataColumnOptions);
@@ -173,13 +175,16 @@ final class AllDbExport extends Website
         $rowStructureAndDataColumnOptions->appendChild($dom->createTextNode(_('Format')));
         $rowStructureAndDataColumnOptions->appendChild($dom->createEntityReference('nbsp'));
         $clonedFormatSelect = $formatSelect->cloneNode(true);
+
         if ($clonedFormatSelect instanceof \DOMElement) {
             $clonedFormatSelect->setAttribute('name', 'sd_format');
             $rowStructureAndDataColumnOptions->appendChild($clonedFormatSelect);
         }
+
         $rowStructureAndDataColumnOptions->appendChild($dom->createElement('br'));
         $clonedCleanInputForStructureOnly = $cleanInputForStructureOnly->cloneNode(true);
         $clonedCleanInputForStructureOnlyLabel = $cleanInputForStructureOnlyLabel->cloneNode(true);
+
         if (
             $clonedCleanInputForStructureOnly instanceof \DOMElement &&
             $clonedCleanInputForStructureOnlyLabel instanceof \DOMElement

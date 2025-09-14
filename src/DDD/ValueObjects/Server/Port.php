@@ -9,9 +9,9 @@ namespace PhpPgAdmin\DDD\ValueObjects\Server;
  */
 final class Port
 {
-    public function __construct(private int $port = 5432)
+    public function __construct(private int $port = 5_432)
     {
-        if ($port < 1 || $port > 65535) {
+        if ($port < 1 || $port > 65_535) {
             throw new \InvalidArgumentException('Port must be between 1 and 65535');
         }
     }

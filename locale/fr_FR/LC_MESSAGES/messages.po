@@ -185,10 +185,10 @@ msgstr "Modifier"
 msgid "strreferences"
 msgstr "Références"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "Oui"
 
-msgid "strno"
+msgid "No"
 msgstr "Non"
 
 msgid "TRUE"
@@ -436,22 +436,22 @@ msgstr "Les actions d'administration suivantes s'appliquent à la table %s."
 msgid "History"
 msgstr "Historique"
 
-msgid "strnohistory"
+msgid "No history."
 msgstr "Pas d'historique."
 
-msgid "strclearhistory"
+msgid "Clear history"
 msgstr "Éffacer l'historique"
 
-msgid "strdelhistory"
+msgid "Delete from history"
 msgstr "Supprimer de l'historique"
 
-msgid "strconfdelhistory"
+msgid "Really remove this request from history?"
 msgstr "Voulez-vous vraiment supprimer cette requête de l'historique ?"
 
-msgid "strconfclearhistory"
+msgid "Really clear history?"
 msgstr "Voulez-vous vraiment éffacer l'historique ?"
 
-msgid "strnodatabaseselected"
+msgid "Please, select a database."
 msgstr "Veuillez sélectionner une base de données."
 
 # Database Sizes

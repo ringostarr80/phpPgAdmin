@@ -152,10 +152,10 @@ msgstr "Uppdatera"
 msgid "strreferences"
 msgstr "Referencer"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "Ja"
 
-msgid "strno"
+msgid "No"
 msgstr "Nej"
 
 msgid "TRUE"

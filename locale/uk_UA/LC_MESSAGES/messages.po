@@ -152,10 +152,10 @@ msgstr "Оновити"
 msgid "strreferences"
 msgstr "Посилання"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "Так"
 
-msgid "strno"
+msgid "No"
 msgstr "Ні"
 
 msgid "TRUE"

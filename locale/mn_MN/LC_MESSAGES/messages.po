@@ -155,10 +155,10 @@ msgstr "ѓСЪжЩвееЬСШ"
 msgid "strreferences"
 msgstr "шСЭССвСЬ"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "єЩЪЭ"
 
-msgid "strno"
+msgid "No"
 msgstr "?Ч?Ъ"
 
 msgid "TRUE"

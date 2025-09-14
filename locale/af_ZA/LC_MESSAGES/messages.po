@@ -152,10 +152,10 @@ msgstr "Verfris"
 msgid "strreferences"
 msgstr "Verwysings"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "Ja"
 
-msgid "strno"
+msgid "No"
 msgstr "Nee"
 
 msgid "TRUE"

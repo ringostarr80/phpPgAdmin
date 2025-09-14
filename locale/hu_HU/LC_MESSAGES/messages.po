@@ -185,10 +185,10 @@ msgstr "Időszerűsít"
 msgid "strreferences"
 msgstr "Hivatkozások"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "Igen"
 
-msgid "strno"
+msgid "No"
 msgstr "Nem"
 
 msgid "TRUE"
@@ -433,22 +433,22 @@ msgstr "A következő adminisztratív feladatok %s táblára vonatkoznak."
 msgid "History"
 msgstr "Előzmények"
 
-msgid "strnohistory"
+msgid "No history."
 msgstr "Nincs előzmény."
 
-msgid "strclearhistory"
+msgid "Clear history"
 msgstr "Előzményeket töröl"
 
-msgid "strdelhistory"
+msgid "Delete from history"
 msgstr "Előzményekből töröl"
 
-msgid "strconfdelhistory"
+msgid "Really remove this request from history?"
 msgstr "Tényleg töröli e kérelmet az előzményekből?"
 
-msgid "strconfclearhistory"
+msgid "Really clear history?"
 msgstr "Tényleg töröli az előzményeket?"
 
-msgid "strnodatabaseselected"
+msgid "Please, select a database."
 msgstr "Ki kell választani az adatbázist."
 
 # Database sizes

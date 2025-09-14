@@ -180,10 +180,10 @@ msgstr "Referenties"
 msgid "Trigger"
 msgstr "Triggers"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "Ja"
 
-msgid "strno"
+msgid "No"
 msgstr "Nee"
 
 msgid "stredit"

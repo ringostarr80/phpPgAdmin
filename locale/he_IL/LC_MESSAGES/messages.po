@@ -152,10 +152,10 @@ msgstr "עדכן"
 msgid "strreferences"
 msgstr "תיעודים"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "כן"
 
-msgid "strno"
+msgid "No"
 msgstr "לא"
 
 msgid "TRUE"

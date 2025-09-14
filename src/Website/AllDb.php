@@ -91,6 +91,7 @@ final class AllDb extends Website
         $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $tabLinks));
 
         $message = RequestParameter::getString('message') ?? '';
+
         if (!empty($message)) {
             $body->appendChild(WebsiteComponents::buildMessage($dom, $message));
         }

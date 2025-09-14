@@ -28,14 +28,17 @@ final class DbSize implements \Stringable
             _('GB'),
             _('TB'),
         ];
+
         foreach ($unitStrings as $unitString) {
             if ($this->size < $limit * $multiplier) {
                 return sprintf('%d %s', floor(($this->size + $multiplier / 2) / $multiplier), $unitString);
             }
+
             $multiplier *= 1_024;
         }
 
         $multiplier /= 1_024;
+
         return sprintf('%d %s', floor(($this->size + $multiplier / 2) / $multiplier), $unitString);
     }
 

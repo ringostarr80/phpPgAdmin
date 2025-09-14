@@ -11,6 +11,7 @@ final class DatabaseName implements \Stringable
     public function __construct(string $name)
     {
         $name = trim($name);
+
         if (empty($name)) {
             throw new \InvalidArgumentException('Database name cannot be empty!');
         }

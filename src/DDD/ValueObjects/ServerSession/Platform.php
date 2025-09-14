@@ -11,6 +11,7 @@ final class Platform implements \Stringable
     public function __construct(string $name)
     {
         $name = trim($name);
+
         if (empty($name)) {
             throw new \InvalidArgumentException('ServerSession platform cannot be empty!');
         }

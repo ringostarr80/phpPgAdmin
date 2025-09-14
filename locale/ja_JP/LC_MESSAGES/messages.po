@@ -173,10 +173,10 @@ msgstr "更新"
 msgid "strreferences"
 msgstr "参照"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "はい"
 
-msgid "strno"
+msgid "No"
 msgstr "いいえ"
 
 msgid "TRUE"
@@ -381,22 +381,22 @@ msgstr "ロケール"
 msgid "History"
 msgstr "履歴"
 
-msgid "strnohistory"
+msgid "No history."
 msgstr "履歴がありません。"
 
-msgid "strclearhistory"
+msgid "Clear history"
 msgstr "履歴を消去するす"
 
-msgid "strdelhistory"
+msgid "Delete from history"
 msgstr "履歴から削除する"
 
-msgid "strconfdelhistory"
+msgid "Really remove this request from history?"
 msgstr "本当に履歴からこの要求を削除しますか?"
 
-msgid "strconfclearhistory"
+msgid "Really clear history?"
 msgstr "本当に履歴を消去しますか?"
 
-msgid "strnodatabaseselected"
+msgid "Please, select a database."
 msgstr "データベースを選択してください。"
 
 # Database Sizes

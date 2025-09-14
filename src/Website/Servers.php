@@ -48,8 +48,11 @@ final class Servers extends Website
         $table->appendChild($tHead);
 
         $tBody = $dom->createElement('tbody');
-        $logins = isset($_SESSION['webdbLogin']) && is_array($_SESSION['webdbLogin']) ? $_SESSION['webdbLogin'] : [];
+        $logins = isset($_SESSION['webdbLogin']) && is_array($_SESSION['webdbLogin'])
+            ? $_SESSION['webdbLogin']
+            : [];
         $servers = Config::getServers();
+
         foreach ($servers as $index => $server) {
             $tr = $dom->createElement('tr');
             $tr->setAttribute('class', 'data' . ($index + 1));
@@ -69,6 +72,7 @@ final class Servers extends Website
             $td = $dom->createElement('td', (string)$server->Port->Value);
             $tr->appendChild($td);
             $username = '';
+
             if (
                 isset($logins[$serverId]) &&
                 is_array($logins[$serverId]) &&
@@ -77,9 +81,11 @@ final class Servers extends Website
             ) {
                 $username = $logins[$serverId]['username'];
             }
+
             $td = $dom->createElement('td', $username);
             $tr->appendChild($td);
             $td = $dom->createElement('td');
+
             if ($username !== '') {
                 $td->setAttribute('class', 'opbutton' . ($index + 1));
                 $a = $dom->createElement('a', _('Logout'));
@@ -90,9 +96,11 @@ final class Servers extends Website
                 $a->setAttribute('href', $logoutUrl);
                 $td->appendChild($a);
             }
+
             $tr->appendChild($td);
             $tBody->appendChild($tr);
         }
+
         $table->appendChild($tBody);
 
         $body->appendChild($table);

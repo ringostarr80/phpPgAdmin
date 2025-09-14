@@ -173,10 +173,10 @@ msgstr "Actualizare"
 msgid "strreferences"
 msgstr "Referinţe"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "Da"
 
-msgid "strno"
+msgid "No"
 msgstr "Nu"
 
 msgid "TRUE"

@@ -173,10 +173,10 @@ msgstr "Ändern"
 msgid "strreferences"
 msgstr "Verweise"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "Ja"
 
-msgid "strno"
+msgid "No"
 msgstr "Nein"
 
 msgid "TRUE"
@@ -390,22 +390,22 @@ msgstr "Cluster"
 msgid "History"
 msgstr "Befehlsspeicher"
 
-msgid "strnohistory"
+msgid "No history."
 msgstr "Kein Befehlsspeicher."
 
-msgid "strclearhistory"
+msgid "Clear history"
 msgstr "Befehlsspeicher löschen"
 
-msgid "strdelhistory"
+msgid "Delete from history"
 msgstr "Aus dem Befehlsspeicher löschen"
 
-msgid "strconfdelhistory"
+msgid "Really remove this request from history?"
 msgstr "Diese Abfrage wirklich aus dem Befehlsspeicher löschen?"
 
-msgid "strconfclearhistory"
+msgid "Really clear history?"
 msgstr "Befehlsspeicher wirklich löschen?"
 
-msgid "strnodatabaseselected"
+msgid "Please, select a database."
 msgstr "Bitte wählen Sie eine Datenbank aus."
 
 # Database sizes

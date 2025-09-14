@@ -152,10 +152,10 @@ msgstr "تعديل Update"
 msgid "strreferences"
 msgstr "مراجع"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "نعم"
 
-msgid "strno"
+msgid "No"
 msgstr "لا"
 
 msgid "TRUE"

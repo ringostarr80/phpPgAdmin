@@ -11,11 +11,9 @@ use PhpPgAdmin\DDD\ValueObjects\Server\SslMode;
 final class PhpPgAdminConnection extends \PDO
 {
     /**
-     * Map of database encoding names to HTTP encoding names.  If a
+     * Map of database encoding names to HTTP encoding names. If a
      * database encoding does not appear in this list, then its HTTP
      * encoding name is the same as its database encoding name.
-     *
-     * @var array<string, string>
      */
     public const CODEMAP = [
         'BIG5' => 'BIG5',
@@ -74,7 +72,7 @@ final class PhpPgAdminConnection extends \PDO
         string $dbName,
         string $newName,
         ?string $newOwner = null,
-        ?string $comment = null
+        ?string $comment = null,
     ): void {
         if (!$this->beginTransaction()) {
             throw new \PDOException('Failed to begin transaction.');
@@ -150,7 +148,7 @@ final class PhpPgAdminConnection extends \PDO
         string $comment = '',
         string $template = 'template1',
         string $lcCollate = '',
-        string $lcCType = ''
+        string $lcCType = '',
     ): void {
         $escapedDatabase = self::escapeIdentifier($database);
         $escapedTemplate = self::escapeIdentifier($template);
@@ -158,23 +156,28 @@ final class PhpPgAdminConnection extends \PDO
         $sqlParams = [];
 
         if ($encoding !== '') {
-            if (!in_array($encoding, array_keys(self::CODEMAP))) {
+            if (!in_array(needle: $encoding, haystack: array_keys(self::CODEMAP), strict: true)) {
                 throw new \InvalidArgumentException("Invalid encoding: {$encoding}");
             }
+
             $sql .= " ENCODING = '{$encoding}'";
         }
 
         $availableCollations = $this->getAvailableCollations();
+
         if ($lcCollate !== '') {
-            if (!in_array($lcCollate, $availableCollations)) {
+            if (!in_array(needle: $lcCollate, haystack: $availableCollations, strict: true)) {
                 throw new \InvalidArgumentException("Invalid LC_COLLATE: {$lcCollate}");
             }
+
             $sql .= " LC_COLLATE = '{$lcCollate}'";
         }
+
         if ($lcCType !== '') {
-            if (!in_array($lcCType, $availableCollations)) {
+            if (!in_array(needle: $lcCType, haystack: $availableCollations, strict: true)) {
                 throw new \InvalidArgumentException("Invalid LC_CTYPE: {$lcCType}");
             }
+
             $sql .= " LC_CTYPE = '{$lcCType}'";
         }
 
@@ -184,6 +187,7 @@ final class PhpPgAdminConnection extends \PDO
         }
 
         $statement = $this->prepare($sql);
+
         if ($statement === false) {
             throw new \PDOException('Failed to prepare SQL statement for creating database.');
         }
@@ -201,26 +205,30 @@ final class PhpPgAdminConnection extends \PDO
     {
         $escapedDatabase = self::escapeIdentifier($database);
         $statement = "DROP DATABASE \"{$escapedDatabase}\"";
+
         if ($this->exec($statement) === false) {
             throw new \PDOException('Failed to execute SQL statement for dropping database.');
         }
     }
 
     /**
-     * @return string[]
+     * @return array<string>
      */
     public function getAvailableCollations(): array
     {
         $query = "SELECT collname FROM pg_collation WHERE collname LIKE '%.%' ORDER BY collname";
         $statement = $this->prepare($query);
+
         if ($statement === false) {
             throw new \PDOException('Failed to prepare SQL statement for getting available collations.');
         }
+
         if (!$statement->execute()) {
             throw new \PDOException('Failed to execute SQL statement for getting available collations.');
         }
 
         $collations = [];
+
         while ($row = $statement->fetch()) {
             if (is_array($row) && isset($row['collname']) && is_string($row['collname'])) {
                 $collations[] = $row['collname'];
@@ -238,14 +246,17 @@ final class PhpPgAdminConnection extends \PDO
             WHERE pg_database.datname = :database";
         $sqlParams = ['database' => $database];
         $statement = $this->prepare($sql);
+
         if ($statement === false) {
             throw new \PDOException('Failed to prepare SQL statement for getting database comment.');
         }
+
         if (!$statement->execute($sqlParams)) {
             throw new \PDOException('Failed to execute SQL statement for getting database comment.');
         }
 
         $result = $statement->fetch();
+
         if ($result === false) { // no comment found
             return '';
         }
@@ -270,14 +281,17 @@ final class PhpPgAdminConnection extends \PDO
             'database' => $database,
         ];
         $statement = $this->prepare($sql);
+
         if ($statement === false) {
             throw new \PDOException('Failed to prepare SQL statement for getting database owner.');
         }
+
         if (!$statement->execute($sqlParams)) {
             throw new \PDOException('Failed to execute SQL statement for getting database owner.');
         }
 
         $result = $statement->fetch();
+
         if (!is_array($result)) {
             throw new \PDOException('Failed to fetch database owner.');
         }
@@ -305,7 +319,9 @@ final class PhpPgAdminConnection extends \PDO
     {
         $serverInfo = ServerSession::fromRequestParameter();
 
-        $whereClause = Config::showSystem() ? 'pdb.datallowconn' : 'NOT pdb.datistemplate';
+        $whereClause = Config::showSystem()
+            ? 'pdb.datallowconn'
+            : 'NOT pdb.datistemplate';
 
         if (!is_null($serverInfo) && Config::ownedOnly() && !$this->isSuperUser()) {
             $whereClause = " AND pg_has_role('{$serverInfo->Username}'::name, pr.rolname, 'USAGE')";
@@ -334,6 +350,7 @@ final class PhpPgAdminConnection extends \PDO
             ORDER BY {$orderBy}";
 
         $statement = $this->prepare($sql);
+
         if ($statement === false) {
             throw new \PDOException('Failed to prepare SQL statement for getting databases.');
         }
@@ -343,32 +360,51 @@ final class PhpPgAdminConnection extends \PDO
         }
 
         $result = [];
+        $requiredFields = [
+            'datname',
+            'datowner',
+            'datencoding',
+            'datcollate',
+            'datctype',
+            'tablespace',
+            'dbsize',
+        ];
+
         while ($row = $statement->fetch()) {
             if (!is_array($row)) {
                 continue;
             }
 
-            if (
-                isset($row['datname']) && is_string($row['datname']) &&
-                isset($row['datowner']) && is_string($row['datowner']) &&
-                isset($row['datencoding']) && is_string($row['datencoding']) &&
-                isset($row['datcollate']) && is_string($row['datcollate']) &&
-                isset($row['datctype']) && is_string($row['datctype']) &&
-                isset($row['tablespace']) && is_string($row['tablespace']) &&
-                isset($row['dbsize']) && is_int($row['dbsize'])
-            ) {
-                $result[] = [
-                    'datcollate' => $row['datcollate'],
-                    'datcomment' => isset($row['datcomment']) && is_string($row['datcomment']) ?
-                        $row['datcomment'] : '',
-                    'datctype' => $row['datctype'],
-                    'datencoding' => $row['datencoding'],
-                    'datname' => $row['datname'],
-                    'datowner' => $row['datowner'],
-                    'dbsize' => $row['dbsize'],
-                    'tablespace' => $row['tablespace'],
-                ];
+            foreach ($requiredFields as $field) {
+                if (!isset($row[$field])) {
+                    continue 2;
+                }
             }
+
+            if (
+                !is_string($row['datname']) ||
+                !is_string($row['datowner']) ||
+                !is_string($row['datencoding']) ||
+                !is_string($row['datcollate']) ||
+                !is_string($row['datctype']) ||
+                !is_string($row['tablespace']) ||
+                !is_int($row['dbsize'])
+            ) {
+                continue;
+            }
+
+            $result[] = [
+                'datcollate' => $row['datcollate'],
+                'datcomment' => isset($row['datcomment']) && is_string($row['datcomment'])
+                    ? $row['datcomment']
+                    : '',
+                'datctype' => $row['datctype'],
+                'datencoding' => $row['datencoding'],
+                'datname' => $row['datname'],
+                'datowner' => $row['datowner'],
+                'dbsize' => $row['dbsize'],
+                'tablespace' => $row['tablespace'],
+            ];
         }
 
         return $result;
@@ -389,34 +425,48 @@ final class PhpPgAdminConnection extends \PDO
             FROM pg_user
             ORDER BY usename";
         $statement = $this->prepare($sql);
+
         if ($statement === false) {
             throw new \PDOException('Failed to prepare SQL statement for getting users.');
         }
+
         if (!$statement->execute()) {
             throw new \PDOException('Failed to execute SQL statement for getting users.');
         }
 
         $result = [];
+        $requiredFields = [
+            'usename',
+            'usesuper',
+            'usecreatedb',
+        ];
+
         while ($row = $statement->fetch()) {
             if (!is_array($row)) {
                 continue;
             }
 
-            if (
-                isset($row['usename']) && is_string($row['usename']) &&
-                isset($row['usesuper']) && is_bool($row['usesuper']) &&
-                isset($row['usecreatedb']) && is_bool($row['usecreatedb'])
-            ) {
-                $result[] = [
-                    'useconfig' => isset($row['useconfig']) && is_string($row['useconfig']) ?
-                        $row['useconfig'] : '',
-                    'usecreatedb' => $row['usecreatedb'],
-                    'useexpires' => isset($row['useexpires']) && is_string($row['useexpires']) ?
-                        $row['useexpires'] : '',
-                    'usename' => $row['usename'],
-                    'usesuper' => $row['usesuper'],
-                ];
+            foreach ($requiredFields as $field) {
+                if (!isset($row[$field])) {
+                    continue 2;
+                }
             }
+
+            if (!is_string($row['usename']) || !is_bool($row['usesuper']) || !is_bool($row['usecreatedb'])) {
+                continue;
+            }
+
+            $result[] = [
+                'useconfig' => isset($row['useconfig']) && is_string($row['useconfig'])
+                    ? $row['useconfig']
+                    : '',
+                'usecreatedb' => $row['usecreatedb'],
+                'useexpires' => isset($row['useexpires']) && is_string($row['useexpires'])
+                    ? $row['useexpires']
+                    : '',
+                'usename' => $row['usename'],
+                'usesuper' => $row['usesuper'],
+            ];
         }
 
         return $result;
@@ -432,22 +482,27 @@ final class PhpPgAdminConnection extends \PDO
     {
         if (empty($username)) {
             $statement = $this->query("SHOW is_superuser");
+
             if ($statement !== false) {
                 $isSuperUserColumn = $statement->fetchColumn();
+
                 return $isSuperUserColumn === 'on';
             }
         }
 
         $sql = "SELECT usesuper FROM pg_user WHERE usename = :username";
         $statement = $this->prepare($sql);
+
         if ($statement === false) {
             return false;
         }
+
         if (!$statement->execute(['username' => $username])) {
             return false;
         }
 
         $rows = $statement->fetchAll();
+
         if (empty($rows)) {
             return false;
         }
@@ -465,7 +520,9 @@ final class PhpPgAdminConnection extends \PDO
     {
         $escapedDatabase = self::escapeIdentifier($database);
         $statement = "COMMENT ON DATABASE \"{$escapedDatabase}\" IS ";
-        $statement .= !is_null($comment) ? $this->quote($comment) : 'NULL';
+        $statement .= !is_null($comment)
+            ? $this->quote($comment)
+            : 'NULL';
 
         if ($this->exec($statement) === false) {
             throw new \PDOException('Failed to execute SQL statement for setting database comment.');
@@ -477,13 +534,17 @@ final class PhpPgAdminConnection extends \PDO
         int $port,
         SslMode $sslmode,
         string $user,
-        string $password
+        string $password,
     ): bool {
         $dsn = "pgsql:host={$host};port={$port};sslmode={$sslmode->value}";
+
         try {
-            $_ = new \PDO(dsn: $dsn, username: $user, password: $password);
+            new \PDO(dsn: $dsn, username: $user, password: $password);
+
             return true;
         } catch (\PDOException $e) {
+            error_log($e->getMessage());
+
             return false;
         }
     }

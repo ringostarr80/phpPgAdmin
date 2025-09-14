@@ -192,10 +192,10 @@ msgstr "Atnaujinti"
 msgid "strreferences"
 msgstr "Rodyklės"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "Taip"
 
-msgid "strno"
+msgid "No"
 msgstr "Ne"
 
 msgid "TRUE"
@@ -448,22 +448,22 @@ msgstr "Šios administracinės užduotys taikomos lentelei %s."
 msgid "History"
 msgstr "Praeitis"
 
-msgid "strnohistory"
+msgid "No history."
 msgstr "Nėra praeities."
 
-msgid "strclearhistory"
+msgid "Clear history"
 msgstr "Išvalyti praeitį"
 
-msgid "strdelhistory"
+msgid "Delete from history"
 msgstr "Šalinti iš praeities sąrašo"
 
-msgid "strconfdelhistory"
+msgid "Really remove this request from history?"
 msgstr "Ar tikrai pašalinti šią užklausą iš preities sąrašo?"
 
-msgid "strconfclearhistory"
+msgid "Really clear history?"
 msgstr "Ar tikrai išvalyti praeitį?"
 
-msgid "strnodatabaseselected"
+msgid "Please, select a database."
 msgstr "Prašom pasirinkiti duomenų bazę."
 
 # Database sizes

@@ -182,10 +182,10 @@ msgstr "Обновить"
 msgid "strreferences"
 msgstr "Ссылки"
 
-msgid "stryes"
+msgid "Yes"
 msgstr "Да"
 
-msgid "strno"
+msgid "No"
 msgstr "Нет"
 
 msgid "TRUE"
@@ -430,22 +430,22 @@ msgstr "Следующие административные задачи при�
 msgid "History"
 msgstr "История"
 
-msgid "strnohistory"
+msgid "No history."
 msgstr "Нет истории."
 
-msgid "strclearhistory"
+msgid "Clear history"
 msgstr "Очистить историю"
 
-msgid "strdelhistory"
+msgid "Delete from history"
 msgstr "Удалить из истории"
 
-msgid "strconfdelhistory"
+msgid "Really remove this request from history?"
 msgstr "Вы действительно хотите удалить этот запрос из истории?"
 
-msgid "strconfclearhistory"
+msgid "Really clear history?"
 msgstr "Вы действительно хотите очистить историю?"
 
-msgid "strnodatabaseselected"
+msgid "Please, select a database."
 msgstr "Пожалуйста, выберете базу данных."
 
 # Database sizes

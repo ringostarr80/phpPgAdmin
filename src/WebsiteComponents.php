@@ -62,8 +62,10 @@ abstract class WebsiteComponents
         $tBody = $dom->createElement('tbody');
 
         $dbs = $dbConnection?->getDatabases();
+
         if (is_iterable($dbs)) {
             $dbCounter = 0;
+
             foreach ($dbs as $db) {
                 $dbCounter++;
 
@@ -163,15 +165,17 @@ abstract class WebsiteComponents
     }
 
     /**
-     * @param array<mixed> $urlParams
+     * @param array<string, string|int|float> $urlParams
      */
     public static function buildHelpLink(\DOMDocument $dom, string $url, ?array $urlParams = null): \DOMElement
     {
         $a = $dom->createElement('a', '?');
         $href = $url;
+
         if (!is_null($urlParams)) {
             $href .= '?' . http_build_query($urlParams);
         }
+
         $a->setAttribute('href', $href);
         $a->setAttribute('class', 'help');
         $a->setAttribute('title', _('Help'));
@@ -185,12 +189,13 @@ abstract class WebsiteComponents
         $pMessage = $dom->createElement('p');
         $pMessage->setAttribute('class', 'message');
         $pMessage->appendChild($dom->createTextNode($message));
+
         return $pMessage;
     }
 
     public static function buildMultipleActionsTableForDatabases(
         \DOMDocument $dom,
-        ?ServerSession $serverSession
+        ?ServerSession $serverSession,
     ): \DOMElement {
         $table = $dom->createElement('table');
 
@@ -254,7 +259,7 @@ abstract class WebsiteComponents
     }
 
     /**
-     * @param array{'url': string, 'url-params'?: array<string, string>, 'label': string}[] $navLinks
+     * @param array<array{'url': string, 'url-params'?: array<string, string>, 'label': string}> $navLinks
      */
     public static function buildNavLinks(\DOMDocument $dom, array $navLinks): \DOMElement
     {
@@ -265,9 +270,11 @@ abstract class WebsiteComponents
             $li = $dom->createElement('li');
             $a = $dom->createElement('a', $navLink['label']);
             $href = $navLink['url'];
+
             if (isset($navLink['url-params'])) {
                 $href .= '?' . http_build_query($navLink['url-params']);
             }
+
             $a->setAttribute('href', $href);
             $li->appendChild($a);
             $ul->appendChild($li);
@@ -326,7 +333,7 @@ abstract class WebsiteComponents
     }
 
     /**
-     * @param array{
+     * @param array<array{
      *  'url': string,
      *  'url-params'?: array<string, string>,
      *  'label': string,
@@ -336,7 +343,7 @@ abstract class WebsiteComponents
      *      'url': string,
      *      'url-params'?: array<string, string>
      *  }
-     * }[] $tabLinks
+     * }> $tabLinks
      */
     public static function buildServerDatabasesTabs(\DOMDocument $dom, array $tabLinks): \DOMElement
     {
@@ -349,16 +356,20 @@ abstract class WebsiteComponents
         foreach ($tabLinks as $tabLink) {
             $td = $dom->createElement('td');
             $tdClass = 'tab';
+
             if (isset($tabLink['active']) && $tabLink['active']) {
                 $tdClass .= ' active';
             }
+
             $td->setAttribute('class', $tdClass);
             $td->setAttribute('style', 'width: 20%');
 
             $href = $tabLink['url'];
+
             if (isset($tabLink['url-params'])) {
                 $href .= '?' . http_build_query($tabLink['url-params']);
             }
+
             $a = $dom->createElement('a');
             $a->setAttribute('href', $href);
             $spanIcon = $dom->createElement('span');
@@ -377,7 +388,7 @@ abstract class WebsiteComponents
                 $aHelp = self::buildHelpLink(
                     dom: $dom,
                     url: $tabLink['help']['url'],
-                    urlParams: $tabLink['help']['url-params'] ?? []
+                    urlParams: $tabLink['help']['url-params'] ?? [],
                 );
                 $td->appendChild($aHelp);
             }
@@ -403,12 +414,12 @@ abstract class WebsiteComponents
             $aAlertBanner = $dom->createElement('a');
             $aAlertBanner->setAttribute(
                 'href',
-                'https://www.php.net/manual/en/session.configuration.php#ini.session.cookie-samesite'
+                'https://www.php.net/manual/en/session.configuration.php#ini.session.cookie-samesite',
             );
             $aAlertBanner->setAttribute('target', '_blank');
             $aAlertBanner->setAttribute('rel', 'noopener noreferrer');
             $aAlertBanner->appendChild($dom->createTextNode(
-                _('You are running phpPgAdmin with session security disabled. This is a potential security risk!')
+                _('You are running phpPgAdmin with session security disabled. This is a potential security risk!'),
             ));
             $pAlertBanner->appendChild($aAlertBanner);
             $divAlertBanner->appendChild($pAlertBanner);
@@ -423,13 +434,14 @@ abstract class WebsiteComponents
         $trTopbar = $dom->createElement('tr');
 
         $serverSession = ServerSession::fromRequestParameter();
+
         if (!is_null($serverSession)) {
             $topLeftContent = sprintf(
                 _("%s running on %s:%s -- You are logged in as user \"%s\""),
                 '<span class="platform">' . htmlspecialchars((string)$serverSession->Platform) . '</span>',
                 '<span class="host">' . htmlspecialchars((string)$serverSession->Host) . '</span>',
                 '<span class="port">' . $serverSession->Port->Value . '</span>',
-                '<span class="username">' . htmlspecialchars((string)$serverSession->Username) . '</span>'
+                '<span class="username">' . htmlspecialchars((string)$serverSession->Username) . '</span>',
             );
             $fragment = $dom->createDocumentFragment();
             $fragment->appendXML($topLeftContent);
@@ -519,7 +531,6 @@ abstract class WebsiteComponents
             'text' => _('History'),
             'url' => 'history.php',
             'url-params' => [
-                'action' => 'pophistory',
                 'server' => $serverSession->id(),
                 'subject' => 'table',
             ],
@@ -546,9 +557,11 @@ abstract class WebsiteComponents
             $li = $dom->createElement('li');
             $a = $dom->createElement('a', $link['text']);
             $a->setAttribute('href', $link['url'] . '?' . http_build_query($link['url-params']));
+
             if (isset($link['target'])) {
                 $a->setAttribute('target', $link['target']);
             }
+
             $a->setAttribute('id', 'toplink_' . $key);
             $li->appendChild($a);
             $ulTopLinks->appendChild($li);
@@ -581,6 +594,7 @@ abstract class WebsiteComponents
         $imgIcon->setAttribute('alt', _('Server'));
         $spanIcon->appendChild($imgIcon);
         $a->appendChild($spanIcon);
+
         if (!is_null($serverSession)) {
             $spanLabel = $dom->createElement('span', (string)$serverSession->Name);
             $spanLabel->setAttribute('class', 'label');
@@ -595,7 +609,7 @@ abstract class WebsiteComponents
             urlParams: [
                 'help' => 'pg.server',
                 'server' => $serverId,
-            ]
+            ],
         );
         $td->appendChild($aHelp);
         $td->appendChild($dom->createTextNode(': '));

@@ -789,13 +789,13 @@ msgstr "Utilisateur"
 msgid "Password"
 msgstr "Mot de passe"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Super utilisateur ?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Créer base de données ?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Expiration"
 
 msgid "strsessiondefaults"
@@ -923,7 +923,7 @@ msgid "strmemberdroppedbad"
 msgstr "Échec lors de la suppression du membre."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Rôle"
 
 msgid "Roles"
@@ -935,13 +935,13 @@ msgstr "Afficher tous les rôles"
 msgid "strnoroles"
 msgstr "Aucun rôle trouvé."
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "Hérite des droits ?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Créer un rôle"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "Peut créer un rôle ?"
 
 msgid "strrolecreated"
@@ -956,10 +956,10 @@ msgstr "Rôle modifié."
 msgid "strrolealteredbad"
 msgstr "Échec lors de la modification du rôle."
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "Peut se connecter ?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Limite de connexion"
 
 msgid "strdroprole"
@@ -974,7 +974,7 @@ msgstr "Rôle supprimé."
 msgid "strroledroppedbad"
 msgstr "Échec lors de la suppression du rôle."
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Aucune limite"
 
 msgid "strnever"

@@ -563,13 +563,13 @@ msgstr "Gebruikersnaam"
 msgid "Password"
 msgstr "Wagwoord"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Supergebruiker?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Skep DB?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Verval"
 
 msgid "strsessiondefaults"

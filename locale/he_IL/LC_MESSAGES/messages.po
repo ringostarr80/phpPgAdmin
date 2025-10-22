@@ -557,13 +557,13 @@ msgstr "שם משתמש"
 msgid "Password"
 msgstr "סיסמה"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "משתמש על?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "יצירת בסיס נתונים?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Expires"
 
 msgid "strsessiondefaults"

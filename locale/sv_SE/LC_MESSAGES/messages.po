@@ -512,13 +512,13 @@ msgstr "Användarnamn"
 msgid "Password"
 msgstr "Lösenord"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Superanvändare?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Skapa Databas?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Utgångsdatum"
 
 msgid "strsessiondefaults"

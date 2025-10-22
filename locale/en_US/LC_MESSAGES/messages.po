@@ -852,13 +852,16 @@ msgstr "Username"
 msgid "Password"
 msgstr "Password"
 
-msgid "strsuper"
+# original: "strsuper"
+msgid "Superuser?"
 msgstr "Superuser?"
 
-msgid "strcreatedb"
+# original: "strcreatedb"
+msgid "Create DB?"
 msgstr "Create DB?"
 
-msgid "strexpires"
+# original: "strexpires"
+msgid "Expires"
 msgstr "Expires"
 
 msgid "strsessiondefaults"
@@ -986,7 +989,8 @@ msgid "strmemberdroppedbad"
 msgstr "Member drop failed."
 
 # Roles
-msgid "strrole"
+# original: "strrole"
+msgid "Role"
 msgstr "Role"
 
 # original: "strroles"
@@ -999,13 +1003,16 @@ msgstr "Show all roles"
 msgid "strnoroles"
 msgstr "No roles found."
 
-msgid "strinheritsprivs"
+# original: "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "Inherits privileges?"
 
-msgid "strcreaterole"
+# original: "strcreaterole"
+msgid "Create role"
 msgstr "Create role"
 
-msgid "strcancreaterole"
+# original: "strcancreaterole"
+msgid "Can create role?"
 msgstr "Can create role?"
 
 msgid "strrolecreated"
@@ -1020,10 +1027,12 @@ msgstr "Role altered."
 msgid "strrolealteredbad"
 msgstr "Role alter failed."
 
-msgid "strcanlogin"
+# original: "strcanlogin"
+msgid "Can login?"
 msgstr "Can login?"
 
-msgid "strconnlimit"
+# original: "strconnlimit"
+msgid "Connection limit"
 msgstr "Connection limit"
 
 msgid "strdroprole"
@@ -1038,7 +1047,8 @@ msgstr "Role dropped."
 msgid "strroledroppedbad"
 msgstr "Role drop failed."
 
-msgid "strnolimit"
+# original: "strnolimit"
+msgid "No limit"
 msgstr "No limit"
 
 msgid "strnever"

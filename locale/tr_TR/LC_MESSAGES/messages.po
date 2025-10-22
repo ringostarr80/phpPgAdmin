@@ -608,13 +608,13 @@ msgstr "Kullanıcı Adı"
 msgid "Password"
 msgstr "Şifresi"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Superuser mı?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Veritabanı yaratabilsin mi?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Expires"
 
 msgid "strsessiondefaults"

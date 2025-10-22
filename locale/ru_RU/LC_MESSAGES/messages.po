@@ -777,13 +777,13 @@ msgstr "Имя пользователя"
 msgid "Password"
 msgstr "Пароль"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Суперпользователь?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Создать базу данных?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Срок действия"
 
 msgid "strsessiondefaults"
@@ -908,7 +908,7 @@ msgid "strmemberdroppedbad"
 msgstr "Удаление участника прервано."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Роль"
 
 msgid "Roles"
@@ -920,13 +920,13 @@ msgstr "Показать все роли"
 msgid "strnoroles"
 msgstr "Роли не найдены."
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "Наследовать привилегии?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Создать роль"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "Может создавать роли?"
 
 msgid "strrolecreated"
@@ -941,10 +941,10 @@ msgstr "Роль изменена."
 msgid "strrolealteredbad"
 msgstr "Изменение роли прервано."
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "Может логиниться?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Лимит соединений"
 
 msgid "strdroprole"
@@ -959,7 +959,7 @@ msgstr "Роль удалена."
 msgid "strroledroppedbad"
 msgstr "Удаление роли прервано."
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Без ограничений"
 
 msgid "strnever"

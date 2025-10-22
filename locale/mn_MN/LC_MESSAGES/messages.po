@@ -500,13 +500,13 @@ msgstr "щЭб аЯЬикЯзСдХЬб"
 msgid "Password"
 msgstr "№СвЯЬи"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "ѓеаХваЯЬикЯзСдХЬи?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "ѓЯкФСди ТСке ФСЮЮйШ?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "ѓвЯЫ ФХЪгдзЩб"
 
 msgid "strnousers"

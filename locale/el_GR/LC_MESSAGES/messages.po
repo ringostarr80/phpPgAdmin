@@ -625,13 +625,13 @@ msgstr "Ονομα χρήστη"
 msgid "Password"
 msgstr "Κωδικός χρήστη"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Υπερχρήστης?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Δημιουργία βάσης?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Λήξη"
 
 msgid "strsessiondefaults"
@@ -756,7 +756,7 @@ msgid "strmemberdroppedbad"
 msgstr "Η διαγραφή του μέλους απέτυχε."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Ρόλος"
 
 msgid "Roles"
@@ -765,13 +765,13 @@ msgstr "Ρόλοι"
 msgid "strshowallroles"
 msgstr "Εμφάνιση όλων των ρόλων"
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "Κληρονομεί προνόμια?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Δημιουργία ρόλου"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "Δημιουργία ρόλου?"
 
 msgid "strrolecreated"
@@ -780,10 +780,10 @@ msgstr "Ο ρόλος δημιουργήθηκε."
 msgid "strrolecreatedbad"
 msgstr "Η δημιουργία του ρόλου απέτυχε."
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "Επιτρέπεται η σύνδεση?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Οριο συνδέσεων"
 
 msgid "strdroprole"
@@ -801,7 +801,7 @@ msgstr "Η διαγραφή του ρόλου απέτυχε."
 msgid "strnoroles"
 msgstr "Δε βρέθηκαν ρόλοι."
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Κανένα όριο"
 
 msgid "strnever"

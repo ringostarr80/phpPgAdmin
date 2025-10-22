@@ -637,13 +637,13 @@ msgstr "Nume utilizator"
 msgid "Password"
 msgstr "Parolă"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Utilizator privilegiat?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Creează BD?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Expiră la"
 
 msgid "strsessiondefaults"
@@ -768,7 +768,7 @@ msgid "strmemberdroppedbad"
 msgstr "Ştergere membru eşuată."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Rol"
 
 msgid "Roles"
@@ -780,13 +780,13 @@ msgstr "Afişare toate rolurile"
 msgid "strnoroles"
 msgstr "Nici un rol găsit"
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "Moştenire privilegii?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Creare rol"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "Creare rol posibilă?"
 
 msgid "strrolecreated"
@@ -804,10 +804,10 @@ msgstr "Rol modificat"
 msgid "strrolealteredbad"
 msgstr "Modificare rol eşuată"
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "Autentificare posibilă?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Limită conectare"
 
 msgid "strdroprole"
@@ -822,7 +822,7 @@ msgstr "Rol şters"
 msgid "strroledroppedbad"
 msgstr "Ştergere rol eşuată"
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Fără limită"
 
 msgid "strnever"

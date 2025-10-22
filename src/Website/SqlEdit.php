@@ -25,41 +25,9 @@ final class SqlEdit extends Website
         $body = parent::buildHtmlBody($dom);
 
         $serverId = RequestParameter::getString('server') ?? '';
-        $actionParam = RequestParameter::getString('action');
-        $tabLinks = [
-            [
-                'active' => !is_null($actionParam) && $actionParam === 'sql',
-                'help' => [
-                    'url' => 'help.php',
-                    'url-params' => [
-                        'help' => 'pg.sql',
-                        'server' => $serverId,
-                    ],
-                ],
-                'icon' => 'SqlEditor',
-                'label' => _('SQL'),
-                'url' => 'sqledit.php',
-                'url-params' => [
-                    'action' => 'sql',
-                    'server' => $serverId,
-                    'subject' => 'schema',
-                ],
-            ],
-            [
-                'active' => !is_null($actionParam) && $actionParam === 'find',
-                'icon' => 'Search',
-                'label' => _('Find'),
-                'url' => 'sqledit.php',
-                'url-params' => [
-                    'action' => 'find',
-                    'server' => $serverId,
-                    'subject' => 'schema',
-                ],
-            ],
-        ];
-        $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $tabLinks));
-
         $actionParam = RequestParameter::getString('action') ?? '';
+
+        $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $serverId, $actionParam));
 
         $formAction = match ($actionParam) {
             'find' => 'database.php',

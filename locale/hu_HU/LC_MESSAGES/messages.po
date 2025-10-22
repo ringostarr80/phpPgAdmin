@@ -780,13 +780,13 @@ msgstr "Használó neve"
 msgid "Password"
 msgstr "Jelszó"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Rendszergazda?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Létrehozhat AB-t?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Lejár"
 
 msgid "strsessiondefaults"
@@ -911,7 +911,7 @@ msgid "strmemberdroppedbad"
 msgstr "Nem sikerült a tagot kicsapni."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Szerep"
 
 msgid "Roles"
@@ -923,13 +923,13 @@ msgstr "Minden szerepet megjelenít"
 msgid "strnoroles"
 msgstr "Nincs szerep."
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "Jogosultságokat örököl?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Szerepet teremt"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "Teremthet szerepet?"
 
 msgid "strrolecreated"
@@ -944,10 +944,10 @@ msgstr "Szerep megváltoztatva."
 msgid "strrolealteredbad"
 msgstr "Nem sikerült szerepet változtatni."
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "Beléphet?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Kapcsolat korlátja"
 
 msgid "strdroprole"
@@ -962,7 +962,7 @@ msgstr "Szerep törölve."
 msgid "strroledroppedbad"
 msgstr "Nem sikerült szerepet törölni."
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Nincs korlát"
 
 msgid "strnever"

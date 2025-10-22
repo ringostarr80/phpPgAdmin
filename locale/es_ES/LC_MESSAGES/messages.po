@@ -783,13 +783,13 @@ msgstr "Nombre de usuario"
 msgid "Password"
 msgstr "Contraseña"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "¿Superusuario?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "¿Puede crear BD?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Expira"
 
 msgid "strsessiondefaults"
@@ -917,7 +917,7 @@ msgid "strmemberdroppedbad"
 msgstr "Falló al retirar un miembro del grupo."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Rol"
 
 msgid "Roles"
@@ -929,13 +929,13 @@ msgstr "Mostrar todas los roles"
 msgid "strnoroles"
 msgstr "No se encontraron roles."
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "¿Hereda privilegios?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Crear rol"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "¿Puede crear roles?"
 
 msgid "strrolecreated"
@@ -950,10 +950,10 @@ msgstr "Rol modificado."
 msgid "strrolealteredbad"
 msgstr "Falló la modificación del rol."
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "¿Puede iniciar sesión?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Límite de conexión"
 
 msgid "strdroprole"
@@ -968,7 +968,7 @@ msgstr "Rol eliminado."
 msgid "strroledroppedbad"
 msgstr "Falló la eliminación del rol."
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Sin límite"
 
 msgid "strnever"

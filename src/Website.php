@@ -72,7 +72,7 @@ abstract class Website
         $metaColorScheme = $dom->createElement('meta');
         $metaColorScheme->setAttribute('name', 'color-scheme');
         $metaColorScheme->setAttribute('content', 'light dark');
-        $head->appendChild($metaColorScheme);
+        //$head->appendChild($metaColorScheme);
 
         $formatTitle = '';
 

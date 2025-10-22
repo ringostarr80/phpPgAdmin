@@ -777,13 +777,13 @@ msgstr "Nome de usuário"
 msgid "Password"
 msgstr "Senha"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Super usuário?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Criar DB?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Expira"
 
 msgid "strsessiondefaults"
@@ -908,7 +908,7 @@ msgid "strmemberdroppedbad"
 msgstr "Falha ao deletar membro."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Papel"
 
 msgid "Roles"
@@ -920,13 +920,13 @@ msgstr "Exibir todos os papéis"
 msgid "strnoroles"
 msgstr "Nenhum papel encontrado."
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "Herdar privilégios?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Criar papel"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "Pode criar papéis?"
 
 msgid "strrolecreated"
@@ -941,10 +941,10 @@ msgstr "Papel alterado."
 msgid "strrolealteredbad"
 msgstr "Falha ao alterar o papel."
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "Pode logar?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Limite de conexões"
 
 msgid "strdroprole"
@@ -959,7 +959,7 @@ msgstr "Papel deletado."
 msgid "strroledroppedbad"
 msgstr "Falha ao deletar o papel."
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Sem limite"
 
 msgid "strnever"

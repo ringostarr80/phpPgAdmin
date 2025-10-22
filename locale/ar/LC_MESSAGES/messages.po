@@ -554,13 +554,13 @@ msgstr "إسم المستخدم"
 msgid "Password"
 msgstr "كلمة السر"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "مستخدم ذو صلاحيّات عليا؟"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "إنشاء قاعدة بيانات؟"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "ينتهي"
 
 msgid "strsessiondefaults"

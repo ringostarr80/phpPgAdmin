@@ -436,13 +436,13 @@ msgstr "Nome do utilizador"
 msgid "Password"
 msgstr "Palavra-chave"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Super-Utilizador?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Criar Base de Dados?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Expira"
 
 msgid "strnousers"

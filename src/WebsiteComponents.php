@@ -333,20 +333,73 @@ abstract class WebsiteComponents
     }
 
     /**
-     * @param array<array{
-     *  'url': string,
-     *  'url-params'?: array<string, string>,
-     *  'label': string,
-     *  'icon': string,
-     *  'active'?: bool,
-     *  'help'?: array{
-     *      'url': string,
-     *      'url-params'?: array<string, string>
-     *  }
-     * }> $tabLinks
+     * @param string $activeTab 'databases'|'roles'|'tablespaces'|'export'
      */
-    public static function buildServerDatabasesTabs(\DOMDocument $dom, array $tabLinks): \DOMElement
+    public static function buildServerDatabasesTabs(\DOMDocument $dom, string $serverId, string $activeTab): \DOMElement
     {
+        $tabLinks = [
+            [
+                'help' => [
+                    'url' => 'help.php',
+                    'url-params' => [
+                        'help' => 'pg.role',
+                        'server' => $serverId,
+                    ],
+                ],
+                'icon' => 'Databases',
+                'id' => 'tab_databases',
+                'label' => _('Databases'),
+                'url' => 'all_db.php',
+                'url-params' => [
+                    'server' => $serverId,
+                    'subject' => 'server',
+                ],
+            ],
+            [
+                'help' => [
+                    'url' => 'help.php',
+                    'url-params' => [
+                        'help' => 'pg.role',
+                        'server' => $serverId,
+                    ],
+                ],
+                'icon' => 'Roles',
+                'id' => 'roles',
+                'label' => _('Roles'),
+                'url' => 'roles.php',
+                'url-params' => [
+                    'server' => $serverId,
+                    'subject' => 'server',
+                ],
+            ],
+            [
+                'help' => [
+                    'url' => 'help.php',
+                    'url-params' => [
+                        'help' => 'pg.tablespace',
+                        'server' => $serverId,
+                    ],
+                ],
+                'icon' => 'Tablespaces',
+                'id' => 'tablespaces',
+                'label' => _('Tablespaces'),
+                'url' => 'tablespaces.php',
+                'url-params' => [
+                    'server' => $serverId,
+                    'subject' => 'server',
+                ],
+            ],
+            [
+                'icon' => 'Export',
+                'id' => 'export',
+                'label' => _('Export'),
+                'url' => 'all_db_export.php',
+                'url-params' => [
+                    'server' => $serverId,
+                ],
+            ],
+        ];
+
         $table = $dom->createElement('table');
         $table->setAttribute('class', 'tabs');
 
@@ -357,18 +410,14 @@ abstract class WebsiteComponents
             $td = $dom->createElement('td');
             $tdClass = 'tab';
 
-            if (isset($tabLink['active']) && $tabLink['active']) {
+            if ($tabLink['id'] === $activeTab) {
                 $tdClass .= ' active';
             }
 
             $td->setAttribute('class', $tdClass);
             $td->setAttribute('style', 'width: 20%');
 
-            $href = $tabLink['url'];
-
-            if (isset($tabLink['url-params'])) {
-                $href .= '?' . http_build_query($tabLink['url-params']);
-            }
+            $href = $tabLink['url'] . '?' . http_build_query($tabLink['url-params']);
 
             $a = $dom->createElement('a');
             $a->setAttribute('href', $href);
@@ -388,7 +437,7 @@ abstract class WebsiteComponents
                 $aHelp = self::buildHelpLink(
                     dom: $dom,
                     url: $tabLink['help']['url'],
-                    urlParams: $tabLink['help']['url-params'] ?? [],
+                    urlParams: $tabLink['help']['url-params'],
                 );
                 $td->appendChild($aHelp);
             }

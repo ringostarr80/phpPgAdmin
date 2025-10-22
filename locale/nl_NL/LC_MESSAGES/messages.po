@@ -215,13 +215,13 @@ msgstr "Gebruikersnaam"
 msgid "Password"
 msgstr "wachtwoord"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Superuser?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Creëer DB?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Verloopt"
 
 msgid "strnousers"

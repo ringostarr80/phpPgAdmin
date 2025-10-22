@@ -545,13 +545,13 @@ msgstr "Brugernavn"
 msgid "Password"
 msgstr "Password"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Superbruger?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Opret database?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Udløber"
 
 msgid "strsessiondefaults"

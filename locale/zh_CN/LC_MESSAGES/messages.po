@@ -780,13 +780,13 @@ msgstr "用名"
 msgid "Password"
 msgstr "密码"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "超级用户"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "创建数据库？"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "过期"
 
 msgid "strsessiondefaults"
@@ -914,7 +914,7 @@ msgid "strmemberdroppedbad"
 msgstr "成员删除失败。"
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "角色"
 
 msgid "Roles"
@@ -926,13 +926,13 @@ msgstr "显示所有角色"
 msgid "strnoroles"
 msgstr "查无角色。"
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "继承权限?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "创建角色"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "创建角色?"
 
 msgid "strrolecreated"
@@ -947,10 +947,10 @@ msgstr "角色已变更。"
 msgid "strrolealteredbad"
 msgstr "角色变更失败。"
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "可以登录?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "连接限制"
 
 msgid "strdroprole"
@@ -965,7 +965,7 @@ msgstr "角色已删除。"
 msgid "strroledroppedbad"
 msgstr "角色删除失败。"
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "无限制"
 
 msgid "strnever"

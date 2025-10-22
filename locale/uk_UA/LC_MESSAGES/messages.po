@@ -554,13 +554,13 @@ msgstr "Ім\"я користувача"
 msgid "Password"
 msgstr "Пароль"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Суперкористувач?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Створити базу даних?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Термін дії"
 
 msgid "strsessiondefaults"

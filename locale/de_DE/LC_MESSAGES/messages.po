@@ -707,13 +707,13 @@ msgstr "Benutzername"
 msgid "Password"
 msgstr "Passwort"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Superuser?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Datenbank erstellen?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Gültig bis"
 
 msgid "strsessiondefaults"
@@ -838,7 +838,7 @@ msgid "strmemberdroppedbad"
 msgstr "Löschen des Mitglieds fehlgeschlagen."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Rolle"
 
 msgid "Roles"
@@ -850,13 +850,13 @@ msgstr "Alle Rollen anzeigen"
 msgid "strnoroles"
 msgstr "Keine Rollen gefunden."
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "Rechte vererben?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Rolle anlegen"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "Darf Rollen anlegen?"
 
 msgid "strrolecreated"
@@ -871,10 +871,10 @@ msgstr "Rolle geändert."
 msgid "strrolealteredbad"
 msgstr "Ändern der Rolle fehlgeschlagen."
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "Darf sich anmelden?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Maximalzahl an Datenbankverbindungen"
 
 msgid "strdroprole"
@@ -889,7 +889,7 @@ msgstr "Rolle gelöscht."
 msgid "strroledroppedbad"
 msgstr "Löschen der Rolle fehlgeschlagen."
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Unbeschränkt"
 
 msgid "strnever"

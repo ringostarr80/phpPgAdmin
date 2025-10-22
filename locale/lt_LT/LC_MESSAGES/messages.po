@@ -798,13 +798,13 @@ msgstr "Naudotojo vardas"
 msgid "Password"
 msgstr "Slaptažodis"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Superuser?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Gali kurti DB?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Baigia galioti"
 
 msgid "strsessiondefaults"
@@ -929,7 +929,7 @@ msgid "strmemberdroppedbad"
 msgstr "Nepavyko pašalinti nario."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Rolė"
 
 msgid "Roles"
@@ -941,13 +941,13 @@ msgstr "Rodyti roles"
 msgid "strnoroles"
 msgstr "Rolių nerasta."
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?s"
 msgstr "Paveldi privilegijas?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Kurti rolę"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "Gali kurti rolę?"
 
 msgid "strrolecreated"
@@ -962,10 +962,10 @@ msgstr "Rolė pakeista."
 msgid "strrolealteredbad"
 msgstr "Nepavyko pakeisti rolės."
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "Gali prisijungti?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Sujungimų limitas"
 
 msgid "strdroprole"
@@ -980,7 +980,7 @@ msgstr "Rolė pašalinta."
 msgid "strroledroppedbad"
 msgstr "Nepavyko pašalinti rolės."
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Be ribojimų"
 
 msgid "strnever"

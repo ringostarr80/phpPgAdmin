@@ -27,68 +27,7 @@ final class AllDb extends Website
         $body->appendChild(WebsiteComponents::buildTrail($dom, TrailSubject::Server));
 
         $serverId = RequestParameter::getString('server') ?? '';
-        $actionParam = RequestParameter::getString('action');
-        $tabLinks = [
-            [
-                'active' => is_null($actionParam),
-                'help' => [
-                    'url' => 'help.php',
-                    'url-params' => [
-                        'help' => 'pg.role',
-                        'server' => $serverId,
-                    ],
-                ],
-                'icon' => 'Databases',
-                'label' => _('Databases'),
-                'url' => 'all_db.php',
-                'url-params' => [
-                    'server' => $serverId,
-                    'subject' => 'server',
-                ],
-            ],
-            [
-                'help' => [
-                    'url' => 'help.php',
-                    'url-params' => [
-                        'help' => 'pg.role',
-                        'server' => $serverId,
-                    ],
-                ],
-                'icon' => 'Roles',
-                'label' => _('Roles'),
-                'url' => 'roles.php',
-                'url-params' => [
-                    'server' => $serverId,
-                    'subject' => 'server',
-                ],
-            ],
-            [
-                'help' => [
-                    'url' => 'help.php',
-                    'url-params' => [
-                        'help' => 'pg.tablespace',
-                        'server' => $serverId,
-                    ],
-                ],
-                'icon' => 'Tablespaces',
-                'label' => _('Tablespaces'),
-                'url' => 'tablespaces.php',
-                'url-params' => [
-                    'server' => $serverId,
-                    'subject' => 'server',
-                ],
-            ],
-            [
-                'active' => $actionParam === 'export',
-                'icon' => 'Export',
-                'label' => _('Export'),
-                'url' => 'all_db_export.php',
-                'url-params' => [
-                    'server' => $serverId,
-                ],
-            ],
-        ];
-        $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $tabLinks));
+        $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $serverId, 'databases'));
 
         $message = RequestParameter::getString('message') ?? '';
 

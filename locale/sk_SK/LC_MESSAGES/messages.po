@@ -608,13 +608,13 @@ msgstr "Meno používateľa"
 msgid "Password"
 msgstr "Heslo"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Superuser?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Vytváranie DB?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Expiruje"
 
 msgid "strsessiondefaults"

@@ -780,13 +780,13 @@ msgstr "Nome"
 msgid "Password"
 msgstr "Contrasinal"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Administrador?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Crear bases de datos?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Caducidade"
 
 msgid "strsessiondefaults"
@@ -911,7 +911,7 @@ msgid "strmemberdroppedbad"
 msgstr "Non se conseguiu eliminar o membro."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Rol"
 
 msgid "Roles"
@@ -923,13 +923,13 @@ msgstr "Amosar todos os roles"
 msgid "strnoroles"
 msgstr "Non se atopou rol algún."
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "Herdar os privilexios?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Crear un rol"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "Pode crear roles?"
 
 msgid "strrolecreated"
@@ -944,10 +944,10 @@ msgstr "Modificouse o rol."
 msgid "strrolealteredbad"
 msgstr "Non se conseguiu modificar o rol."
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "Pode identificarse?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Límite da conexión"
 
 msgid "strdroprole"
@@ -962,7 +962,7 @@ msgstr "Eliminouse o rol."
 msgid "strroledroppedbad"
 msgstr "Non se conseguiu eliminar o rol."
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Sen límite"
 
 msgid "strnever"

@@ -6,6 +6,7 @@ namespace PhpPgAdmin\Database;
 
 use PhpPgAdmin\Config;
 use PhpPgAdmin\DDD\Entities\ServerSession;
+use PhpPgAdmin\DDD\ValueObjects\Role;
 use PhpPgAdmin\DDD\ValueObjects\Server\SslMode;
 
 final class PhpPgAdminConnection extends \PDO
@@ -405,6 +406,43 @@ final class PhpPgAdminConnection extends \PDO
                 'dbsize' => $row['dbsize'],
                 'tablespace' => $row['tablespace'],
             ];
+        }
+
+        return $result;
+    }
+
+    /**
+     * @return array<Role>
+     */
+    public function getRoles(string $excludeRolename = ''): array
+    {
+        $sql = 'SELECT rolname, rolsuper, rolcreatedb, rolcreaterole, rolinherit,
+			rolcanlogin, rolconnlimit, rolvaliduntil, rolconfig
+			FROM pg_catalog.pg_roles';
+
+        if ($excludeRolename) {
+            $sql .= " WHERE rolname!='{$excludeRolename}'";
+        }
+
+        $sql .= ' ORDER BY rolname';
+        $statement = $this->prepare($sql);
+
+        if ($statement === false) {
+            throw new \PDOException('Failed to prepare SQL statement for getting roles.');
+        }
+
+        if (!$statement->execute()) {
+            throw new \PDOException('Failed to execute SQL statement for getting roles.');
+        }
+
+        $result = [];
+
+        while ($row = $statement->fetch()) {
+            if (!is_array($row)) {
+                continue;
+            }
+
+            $result[] = Role::fromDbArray($row);
         }
 
         return $result;

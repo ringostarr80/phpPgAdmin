@@ -92,7 +92,7 @@ msgstr "Имя"
 msgid "strdefinition"
 msgstr "Определение"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Свойства"
 
 msgid "strbrowse"
@@ -786,7 +786,7 @@ msgstr "Создать базу данных?"
 msgid "Expires"
 msgstr "Срок действия"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Опции сеанса по умолчанию"
 
 msgid "strnousers"
@@ -877,13 +877,13 @@ msgstr "Группа удалена."
 msgid "strgroupdroppedbad"
 msgstr "Удаление группы прервано."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Участников"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Добавить в роли"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Admin-участников"
 
 msgid "straddmember"
@@ -914,7 +914,7 @@ msgstr "Роль"
 msgid "Roles"
 msgstr "Роли"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Показать все роли"
 
 msgid "strnoroles"

@@ -92,7 +92,7 @@ msgstr "Nome"
 msgid "strdefinition"
 msgstr "Definición"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Propiedades"
 
 msgid "strbrowse"
@@ -789,7 +789,7 @@ msgstr "Crear bases de datos?"
 msgid "Expires"
 msgstr "Caducidade"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Valores predeterminados da sesión"
 
 msgid "strnousers"
@@ -880,13 +880,13 @@ msgstr "Eliminouse o grupo."
 msgid "strgroupdroppedbad"
 msgstr "Non se conseguiu eliminar o grupo."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Membros"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Membros de"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Membros administradores"
 
 msgid "straddmember"
@@ -917,7 +917,7 @@ msgstr "Rol"
 msgid "Roles"
 msgstr "Roles"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Amosar todos os roles"
 
 msgid "strnoroles"

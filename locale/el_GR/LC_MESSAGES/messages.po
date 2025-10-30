@@ -86,7 +86,7 @@ msgstr "Ονομα"
 msgid "strdefinition"
 msgstr "Ορισμός"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Ιδιότητες"
 
 msgid "strbrowse"
@@ -634,7 +634,7 @@ msgstr "Δημιουργία βάσης?"
 msgid "Expires"
 msgstr "Λήξη"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Εξ ορισμού παράμετροι συνεδρίας"
 
 msgid "strnousers"
@@ -725,13 +725,13 @@ msgstr "Η ομάδα διαγράφηκε."
 msgid "strgroupdroppedbad"
 msgstr "Η διαγραφή της ομάδας απέτυχε."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Μέλη"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Μέλος της ομάδας"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Μέλη της ομάδας διαχειριστών"
 
 msgid "straddmember"
@@ -762,7 +762,7 @@ msgstr "Ρόλος"
 msgid "Roles"
 msgstr "Ρόλοι"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Εμφάνιση όλων των ρόλων"
 
 msgid "Inherits privileges?"

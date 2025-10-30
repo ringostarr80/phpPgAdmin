@@ -6,6 +6,7 @@ namespace PhpPgAdmin;
 
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\{DbSize, TrailSubject};
+use PhpPgAdmin\WebsiteComponents\TrailBuilder;
 
 abstract class WebsiteComponents
 {
@@ -519,7 +520,10 @@ abstract class WebsiteComponents
         return $divWrapper;
     }
 
-    public static function buildTrail(\DOMDocument $dom, ?TrailSubject $subject = null): \DOMElement
+    /**
+     * @param array<TrailSubject> $subjects
+     */
+    public static function buildTrail(\DOMDocument $dom, array $subjects = []): \DOMElement
     {
         $divTrail = $dom->createElement('div');
         $divTrail->setAttribute('class', 'trail');
@@ -545,12 +549,12 @@ abstract class WebsiteComponents
         $tableTrail->appendChild($trTrail);
         $divTrail->appendChild($tableTrail);
 
-        $subTrail = match ($subject) {
-            TrailSubject::Server => self::buildTrailForServer($dom),
-            default => null
-        };
+        foreach ($subjects as $subject) {
+            $subTrail = match ($subject) {
+                TrailSubject::Role => TrailBuilder::buildTrailFor(TrailSubject::Role, $dom),
+                TrailSubject::Server => self::buildTrailForServer($dom),
+            };
 
-        if (!is_null($subTrail)) {
             $trTrail->appendChild($subTrail);
         }
 

@@ -73,7 +73,7 @@ msgstr "Operadores"
 msgid "straggregates"
 msgstr "Agregados"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Propriedades"
 
 msgid "strbrowse"
@@ -524,7 +524,7 @@ msgstr "Grupo eliminado."
 msgid "strgroupdroppedbad"
 msgstr "Falha ao eliminar grupo."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Membros"
 
 # Privilges
@@ -1277,7 +1277,7 @@ msgstr "Tem a certeza que pretende aspirar \"%s\"?"
 msgid "strestimatedrowcount"
 msgstr "Contagem de linhas Estimada"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Configurações padrão da sessão"
 
 msgid "struserneedsname"

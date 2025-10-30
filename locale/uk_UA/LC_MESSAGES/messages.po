@@ -74,7 +74,7 @@ msgstr "Ім\"я"
 msgid "strdefinition"
 msgstr "Визначення"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Властивості"
 
 msgid "strbrowse"
@@ -563,7 +563,7 @@ msgstr "Створити базу даних?"
 msgid "Expires"
 msgstr "Термін дії"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Опції сеансу за замовчуванням"
 
 msgid "strnousers"
@@ -654,7 +654,7 @@ msgstr "Групу видалено."
 msgid "strgroupdroppedbad"
 msgstr "Видалення групи перервано."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Учасників"
 
 msgid "straddmember"

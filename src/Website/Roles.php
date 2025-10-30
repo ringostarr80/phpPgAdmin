@@ -15,11 +15,54 @@ final class Roles extends Website
         $body = parent::buildHtmlBody($dom);
 
         $body->appendChild(WebsiteComponents::buildTopBar($dom));
-        $body->appendChild(WebsiteComponents::buildTrail($dom, TrailSubject::Server));
+        $body->appendChild(WebsiteComponents::buildTrail($dom, [TrailSubject::Server, TrailSubject::Role]));
 
+        $action = RequestParameter::getString('action') ?? '';
         $serverId = RequestParameter::getString('server') ?? '';
+
+        match ($action) {
+            'properties' => $this->appendPropertiesPage($body, $serverId),
+            default => $this->appendRolesListPage($body, $serverId),
+        };
+
+        return $body;
+    }
+
+    private function appendPropertiesPage(\DOMElement $body, string $serverId): void
+    {
+        $dom = $body->ownerDocument;
+
+        if (is_null($dom)) {
+            return;
+        }
+
+        $h2 = $dom->createElement('h2');
+        $h2->appendChild($dom->createTextNode(_('Properties')));
+        $helpLink = WebsiteComponents::buildHelpLink(
+            dom: $dom,
+            url: 'help.php',
+            urlParams: [
+                'help' => 'pg.role',
+                'server' => $serverId,
+            ],
+        );
+        $h2->appendChild($helpLink);
+        $body->appendChild($h2);
+
+        $body->appendChild(self::buildPropertiesTable($dom, $serverId));
+        $body->appendChild(self::buildPropertiesNavLinkList($dom, $serverId));
+    }
+
+    private function appendRolesListPage(\DOMElement $body, string $serverId): void
+    {
+        $dom = $body->ownerDocument;
+
+        if (is_null($dom)) {
+            return;
+        }
+
         $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $serverId, 'roles'));
-        $body->appendChild($this->buildRolesTable($dom, $serverId));
+        $body->appendChild(self::buildRolesTable($dom, $serverId));
 
         $navLinks = [
             [
@@ -32,11 +75,156 @@ final class Roles extends Website
             ],
         ];
         $body->appendChild(WebsiteComponents::buildNavLinks($dom, $navLinks));
-
-        return $body;
     }
 
-    private function buildRolesTable(\DOMDocument $dom, string $serverId): \DOMElement
+    private static function buildPropertiesNavLinkList(\DOMDocument $dom, string $serverId): \DOMElement
+    {
+        $ul = $dom->createElement('ul');
+        $ul->setAttribute('class', 'navlink');
+
+        $liShowAllRoles = $dom->createElement('li');
+        $urlParamsShowAllRoles = [
+            'server' => $serverId,
+        ];
+        $urlShowAllRoles = 'roles.php?' . http_build_query($urlParamsShowAllRoles);
+        $aShowAllRoles = $dom->createElement('a');
+        $aShowAllRoles->setAttribute('href', $urlShowAllRoles);
+        $aShowAllRoles->appendChild($dom->createTextNode(_('Show all roles')));
+        $liShowAllRoles->appendChild($aShowAllRoles);
+
+        $liAlter = $dom->createElement('li');
+        $urlParamsAlter = [
+            'action' => 'alter',
+            'rolename' => RequestParameter::getString('rolename') ?? '',
+            'server' => $serverId,
+        ];
+        $urlAlter = 'roles.php?' . http_build_query($urlParamsAlter);
+        $aAlter = $dom->createElement('a');
+        $aAlter->setAttribute('href', $urlAlter);
+        $aAlter->appendChild($dom->createTextNode(_('Alter')));
+        $liAlter->appendChild($aAlter);
+
+        $liDrop = $dom->createElement('li');
+        $urlParamsDrop = [
+            'action' => 'confirm_drop',
+            'rolename' => RequestParameter::getString('rolename') ?? '',
+            'server' => $serverId,
+        ];
+        $urlDrop = 'roles.php?' . http_build_query($urlParamsDrop);
+        $aDrop = $dom->createElement('a');
+        $aDrop->setAttribute('href', $urlDrop);
+        $aDrop->appendChild($dom->createTextNode(_('Drop')));
+        $liDrop->appendChild($aDrop);
+
+        $ul->appendChild($liShowAllRoles);
+        $ul->appendChild($liAlter);
+        $ul->appendChild($liDrop);
+
+        return $ul;
+    }
+
+    private static function buildPropertiesTable(\DOMDocument $dom, string $serverId): \DOMElement
+    {
+        $table = $dom->createElement('table');
+
+        $tHead = $dom->createElement('thead');
+        $tHeadRow = $dom->createElement('tr');
+        $thDescription = $dom->createElement('th');
+        $thDescription->setAttribute('class', 'data');
+        $thDescription->setAttribute('style', 'width: 180px;');
+        $thDescription->appendChild($dom->createTextNode(_('Description')));
+        $thValue = $dom->createElement('th');
+        $thValue->setAttribute('class', 'data');
+        $thValue->setAttribute('style', 'width: 180px;');
+        $thValue->appendChild($dom->createTextNode(_('Value')));
+        $tHeadRow->appendChild($thDescription);
+        $tHeadRow->appendChild($thValue);
+
+        $rolename = RequestParameter::getString('rolename') ?? '';
+        $serverSession = ServerSession::fromServerId($serverId);
+        $db = $serverSession?->getDatabaseConnection();
+        $role = $db?->getRole($rolename);
+
+        if (is_null($role)) {
+            throw new \RuntimeException("Role '{$rolename}' not found.");
+        }
+
+        $tableData = [];
+        $tableData[] = [
+            'description' => _('Name'),
+            'value' => $rolename,
+        ];
+        $tableData[] = [
+            'description' => _('Superuser?'),
+            'value' => $role->IsSuperuser ? _('Yes') : _('No'),
+        ];
+        $tableData[] = [
+            'description' => _('Create DB?'),
+            'value' => $role->CanCreateDb ? _('Yes') : _('No'),
+        ];
+        $tableData[] = [
+            'description' => _('Can create role?'),
+            'value' => $role->CanCreateRole ? _('Yes') : _('No'),
+        ];
+        $tableData[] = [
+            'description' => _('Inherits privileges?'),
+            'value' => $role->CanInheritRights ? _('Yes') : _('No'),
+        ];
+        $tableData[] = [
+            'description' => _('Can login?'),
+            'value' => $role->CanLogin ? _('Yes') : _('No'),
+        ];
+        $tableData[] = [
+            'description' => _('Connection limit'),
+            'value' => $role->ConnectionLimit === -1 ? _('No limit') : (string)$role->ConnectionLimit,
+        ];
+        $tableData[] = [
+            'description' => _('Expires'),
+            'value' => $role->Expires?->format('c') ?? '',
+        ];
+        $tableData[] = [
+            'description' => _('Session defaults'),
+            'value' => 'unhandled',
+        ];
+        $tableData[] = [
+            'description' => _('Member of'),
+            'value' => 'unhandled',
+        ];
+        $tableData[] = [
+            'description' => _('Members'),
+            'value' => 'unhandled',
+        ];
+        $tableData[] = [
+            'description' => _('Admin members'),
+            'value' => 'unhandled',
+        ];
+        $tBody = $dom->createElement('tbody');
+
+        foreach ($tableData as $dataIndex => $dataRow) {
+            $tr = $dom->createElement('tr');
+
+            $tdClassName = 'data' . ($dataIndex % 2 ? '2' : '1');
+            $tdDescription = $dom->createElement('td');
+            $tdDescription->setAttribute('class', $tdClassName);
+            $tdDescription->appendChild($dom->createTextNode($dataRow['description']));
+            $tr->appendChild($tdDescription);
+
+            $tdValue = $dom->createElement('td');
+            $tdValue->setAttribute('class', $tdClassName);
+            $tdValue->appendChild($dom->createTextNode($dataRow['value']));
+            $tr->appendChild($tdValue);
+
+            $tBody->appendChild($tr);
+        }
+
+        $tHead->appendChild($tHeadRow);
+        $table->appendChild($tHead);
+        $table->appendChild($tBody);
+
+        return $table;
+    }
+
+    private static function buildRolesTable(\DOMDocument $dom, string $serverId): \DOMElement
     {
         $table = $dom->createElement('table');
         $table->setAttribute('style', 'width: 100%;');
@@ -80,13 +268,11 @@ final class Roles extends Website
             $tr = $dom->createElement('tr');
             $tr->setAttribute('class', 'data' . ($roleIndex % 2 ? '2' : '1'));
 
-            // <a href="redirect.php?subject=role&amp;action=properties&amp;server=127.0.0.1%3A5432%3Aallow&amp;rolename=pg_checkpoint&amp;">pg_checkpoint</a>
-            $rolenameUrl = 'redirect.php';
+            $rolenameUrl = 'roles.php';
             $rolenameUrlParams = [
                 'action' => 'properties',
                 'rolename' => $role->Name,
                 'server' => $serverId,
-                'subject' => 'role',
             ];
             $roleLink = $dom->createElement('a');
             $roleLink->setAttribute('href', $rolenameUrl . '?' . http_build_query($rolenameUrlParams));
@@ -103,7 +289,7 @@ final class Roles extends Website
                 $role->CanInheritRights ? _('Yes') : _('No'),
                 $role->CanLogin ? _('Yes') : _('No'),
                 $role->ConnectionLimit === -1 ? _('No limit') : (string)$role->ConnectionLimit,
-                $role->Expires?->format('Y-m-d') ?? '',
+                $role->Expires?->format('c') ?? '',
             ];
 
             foreach ($fields as $fieldValue) {

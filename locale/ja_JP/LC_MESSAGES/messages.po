@@ -86,7 +86,7 @@ msgstr "名前"
 msgid "strdefinition"
 msgstr "定義"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "プロパティ"
 
 msgid "strbrowse"
@@ -707,7 +707,7 @@ msgstr "データベースを作成しますか?"
 msgid "Expires"
 msgstr "有効期限"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "セッションデフォルト"
 
 msgid "strnousers"
@@ -798,13 +798,13 @@ msgstr "グループを破棄しました。"
 msgid "strgroupdroppedbad"
 msgstr "グループの破棄に失敗しました。"
 
-msgid "strmembers"
+msgid "Members"
 msgstr "メンバー"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "次のグループのメンバー:"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "管理メンバー"
 
 msgid "straddmember"
@@ -835,7 +835,7 @@ msgstr "ロール"
 msgid "Roles"
 msgstr "ロール"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "すべてのロールを表示する"
 
 msgid "strnoroles"

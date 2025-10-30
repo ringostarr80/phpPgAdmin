@@ -74,7 +74,7 @@ msgstr "Namn"
 msgid "strdefinition"
 msgstr "Definition"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Egenskaper"
 
 msgid "strbrowse"
@@ -521,7 +521,7 @@ msgstr "Skapa Databas?"
 msgid "Expires"
 msgstr "Utgångsdatum"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Sessionsinställningar"
 
 msgid "strnewname"
@@ -659,7 +659,7 @@ msgstr "Rättighet"
 msgid "strnoprivileges"
 msgstr "Detta objekt har standard ägarrättigheter."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Medelemmar"
 
 msgid "strrevoke"

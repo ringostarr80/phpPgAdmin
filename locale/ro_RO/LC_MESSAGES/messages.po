@@ -86,7 +86,7 @@ msgstr "Nume"
 msgid "strdefinition"
 msgstr "Definiţie"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Proprietăţi"
 
 msgid "strbrowse"
@@ -646,7 +646,7 @@ msgstr "Creează BD?"
 msgid "Expires"
 msgstr "Expiră la"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Valori implicite pentru sesiune"
 
 msgid "strnousers"
@@ -737,13 +737,13 @@ msgstr "Grup şters."
 msgid "strgroupdroppedbad"
 msgstr "Ştergere grup eşuată."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Membri"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Membru al"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Membri administratori"
 
 msgid "straddmember"
@@ -774,7 +774,7 @@ msgstr "Rol"
 msgid "Roles"
 msgstr "Roluri"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Afişare toate rolurile"
 
 msgid "strnoroles"

@@ -92,7 +92,7 @@ msgstr "Nombre"
 msgid "strdefinition"
 msgstr "Definición"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Propiedades"
 
 msgid "strbrowse"
@@ -792,7 +792,7 @@ msgstr "¿Puede crear BD?"
 msgid "Expires"
 msgstr "Expira"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Valores predeterminados de la sesión."
 
 msgid "strnousers"
@@ -886,13 +886,13 @@ msgstr "Grupo eliminado."
 msgid "strgroupdroppedbad"
 msgstr "Falló la eliminación del grupo."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Miembros"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Miembro de"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Administadores "
 
 msgid "straddmember"
@@ -923,7 +923,7 @@ msgstr "Rol"
 msgid "Roles"
 msgstr "Roles"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Mostrar todas los roles"
 
 msgid "strnoroles"

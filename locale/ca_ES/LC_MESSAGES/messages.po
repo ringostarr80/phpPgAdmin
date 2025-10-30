@@ -92,7 +92,7 @@ msgstr "Nom"
 msgid "strdefinition"
 msgstr "Definició"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Propietats"
 
 msgid "strbrowse"
@@ -789,7 +789,7 @@ msgstr "Crear DB?"
 msgid "Expires"
 msgstr "Expira"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Valors predeterminats de la sessió"
 
 msgid "strnousers"
@@ -880,13 +880,13 @@ msgstr "Grup eliminat."
 msgid "strgroupdroppedbad"
 msgstr "No s'ha pogut eliminar el grup."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Membres"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Membre de"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Membres administradors"
 
 msgid "straddmember"
@@ -917,7 +917,7 @@ msgstr "Rol"
 msgid "Roles"
 msgstr "Rols"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Mostra tots els rols"
 
 msgid "strnoroles"

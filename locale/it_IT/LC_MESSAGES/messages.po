@@ -86,7 +86,7 @@ msgstr "Nome"
 msgid "strdefinition"
 msgstr "Definizione"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Proprietà"
 
 msgid "strbrowse"
@@ -655,7 +655,7 @@ msgstr "Può creare DB?"
 msgid "Expires"
 msgstr "Scadenza"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Defaults della sessione"
 
 msgid "strnousers"
@@ -746,13 +746,13 @@ msgstr "Gruppo eliminato."
 msgid "strgroupdroppedbad"
 msgstr "Eliminazione del gruppo fallita."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Membri"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Membro di"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Membri amministratore"
 
 msgid "straddmember"
@@ -783,7 +783,7 @@ msgstr "Ruolo"
 msgid "Roles"
 msgstr "Ruoli"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Mostra tutti i ruoli"
 
 msgid "strnoroles"

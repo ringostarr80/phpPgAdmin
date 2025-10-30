@@ -74,7 +74,7 @@ msgstr "Navn"
 msgid "strdefinition"
 msgstr "Definition"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Egenskaber"
 
 msgid "strbrowse"
@@ -554,7 +554,7 @@ msgstr "Opret database?"
 msgid "Expires"
 msgstr "Udløber"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Sessionsindstillinger"
 
 msgid "strnewname"
@@ -694,7 +694,7 @@ msgstr "Rettigheder"
 msgid "strnoprivileges"
 msgstr "Dette objekt har standard ejerrettigheder."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Medlemmer"
 
 msgid "strrevoke"

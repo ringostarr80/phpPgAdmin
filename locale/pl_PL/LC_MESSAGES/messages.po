@@ -86,7 +86,7 @@ msgstr "Nazwa"
 msgid "strdefinition"
 msgstr "Definicja"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Właściwości"
 
 msgid "strbrowse"
@@ -649,7 +649,7 @@ msgstr "Tworzenie BD?"
 msgid "Expires"
 msgstr "Wygasa"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Wartości domyślne sesji"
 
 msgid "strnousers"
@@ -740,7 +740,7 @@ msgstr "Grupa została usunięta."
 msgid "strgroupdroppedbad"
 msgstr "Próba usunięcia grupy się nie powiodła."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Członkowie"
 
 msgid "straddmember"

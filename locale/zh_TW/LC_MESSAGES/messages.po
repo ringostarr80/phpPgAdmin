@@ -86,7 +86,7 @@ msgstr "名稱"
 msgid "strdefinition"
 msgstr "定義"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "屬性"
 
 msgid "strbrowse"
@@ -692,7 +692,7 @@ msgstr "能建立資料庫?"
 msgid "Expires"
 msgstr "失效逾期"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Session 預設"
 
 msgid "strnousers"
@@ -783,13 +783,13 @@ msgstr "群組已移除。"
 msgid "strgroupdroppedbad"
 msgstr "群組移除已失敗。"
 
-msgid "strmembers"
+msgid "Members"
 msgstr "成員"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "成員屬於"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "管理員成員"
 
 msgid "straddmember"
@@ -820,7 +820,7 @@ msgstr "角色"
 msgid "Roles"
 msgstr "角色"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "顯示全部角色"
 
 msgid "strnoroles"

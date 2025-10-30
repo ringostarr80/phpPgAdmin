@@ -74,7 +74,7 @@ msgstr "Naam"
 msgid "strdefinition"
 msgstr "Definisie"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Eienskappe"
 
 msgid "strbrowse"
@@ -572,7 +572,7 @@ msgstr "Skep DB?"
 msgid "Expires"
 msgstr "Verval"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Verstekwaardes van sessie"
 
 msgid "strnousers"
@@ -663,7 +663,7 @@ msgstr "Groep is verwyder."
 msgid "strgroupdroppedbad"
 msgstr "Verwydering van die groep het misluk."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Lede"
 
 msgid "straddmember"

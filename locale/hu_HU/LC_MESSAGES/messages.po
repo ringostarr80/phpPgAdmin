@@ -92,7 +92,7 @@ msgstr "Név"
 msgid "strdefinition"
 msgstr "Definíció"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Tulajdonságok"
 
 msgid "strbrowse"
@@ -789,7 +789,7 @@ msgstr "Létrehozhat AB-t?"
 msgid "Expires"
 msgstr "Lejár"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Munkamenet alapértékei"
 
 msgid "strnousers"
@@ -880,13 +880,13 @@ msgstr "A csoport törölve."
 msgid "strgroupdroppedbad"
 msgstr "Nem sikerült a csoportot törölni."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Tagok"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Tagja "
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Admin tagok"
 
 msgid "straddmember"
@@ -917,7 +917,7 @@ msgstr "Szerep"
 msgid "Roles"
 msgstr "Szerepek"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Minden szerepet megjelenít"
 
 msgid "strnoroles"

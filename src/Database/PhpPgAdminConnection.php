@@ -411,6 +411,34 @@ final class PhpPgAdminConnection extends \PDO
         return $result;
     }
 
+    public function getRole(string $rolename): ?Role
+    {
+        $sql = "SELECT rolname, rolsuper, rolcreatedb, rolcreaterole, rolinherit,
+            rolcanlogin, rolconnlimit, rolvaliduntil, rolconfig
+			FROM pg_catalog.pg_roles WHERE rolname=:rolename";
+        $sqlParams = [
+            'rolename' => $rolename,
+        ];
+
+        $statement = $this->prepare($sql);
+
+        if ($statement === false) {
+            throw new \PDOException('Failed to prepare SQL statement for getting role.');
+        }
+
+        if (!$statement->execute($sqlParams)) {
+            throw new \PDOException('Failed to execute SQL statement for getting role.');
+        }
+
+        $row = $statement->fetch();
+
+        if (!is_array($row)) {
+            return null;
+        }
+
+        return Role::fromDbArray($row);
+    }
+
     /**
      * @return array<Role>
      */
@@ -419,9 +447,11 @@ final class PhpPgAdminConnection extends \PDO
         $sql = 'SELECT rolname, rolsuper, rolcreatedb, rolcreaterole, rolinherit,
 			rolcanlogin, rolconnlimit, rolvaliduntil, rolconfig
 			FROM pg_catalog.pg_roles';
+        $sqlParams = [];
 
         if ($excludeRolename) {
-            $sql .= " WHERE rolname!='{$excludeRolename}'";
+            $sql .= " WHERE rolname!=':excludeRolename'";
+            $sqlParams['excludeRolename'] = $excludeRolename;
         }
 
         $sql .= ' ORDER BY rolname';
@@ -431,7 +461,7 @@ final class PhpPgAdminConnection extends \PDO
             throw new \PDOException('Failed to prepare SQL statement for getting roles.');
         }
 
-        if (!$statement->execute()) {
+        if (!$statement->execute($sqlParams)) {
             throw new \PDOException('Failed to execute SQL statement for getting roles.');
         }
 

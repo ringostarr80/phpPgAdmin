@@ -101,7 +101,7 @@ msgstr "Operatoren"
 msgid "straggregates"
 msgstr "Aggregaten"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Eigenschappen"
 
 msgid "strbrowse"
@@ -728,7 +728,7 @@ msgstr "Groep verwijderd."
 msgid "strgroupdroppedbad"
 msgstr "Verwijdering van de groep is mislukt."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Leden"
 
 msgid "strprivilege"

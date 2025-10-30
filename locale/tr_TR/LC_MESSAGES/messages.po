@@ -86,7 +86,7 @@ msgstr "Ad"
 msgid "strdefinition"
 msgstr "Tanım"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Özellikler"
 
 msgid "strbrowse"
@@ -617,7 +617,7 @@ msgstr "Veritabanı yaratabilsin mi?"
 msgid "Expires"
 msgstr "Expires"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Oturum varsayılanları"
 
 msgid "strnousers"
@@ -708,7 +708,7 @@ msgstr "Grup silindi."
 msgid "strgroupdroppedbad"
 msgstr "Grup silme işlemi başarısız oldu."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Üyeler"
 
 msgid "straddmember"

@@ -92,7 +92,7 @@ msgstr "名字"
 msgid "strdefinition"
 msgstr "定义"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "属性"
 
 msgid "strbrowse"
@@ -789,7 +789,7 @@ msgstr "创建数据库？"
 msgid "Expires"
 msgstr "过期"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "会话默认"
 
 msgid "strnousers"
@@ -883,13 +883,13 @@ msgstr "群组已删除。"
 msgid "strgroupdroppedbad"
 msgstr "群组删除失败。"
 
-msgid "strmembers"
+msgid "Members"
 msgstr "成员"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "所属成员"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "管理成员"
 
 msgid "straddmember"
@@ -920,7 +920,7 @@ msgstr "角色"
 msgid "Roles"
 msgstr "角色"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "显示所有角色"
 
 msgid "strnoroles"

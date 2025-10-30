@@ -86,7 +86,7 @@ msgstr "Meno"
 msgid "strdefinition"
 msgstr "Definícia"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Vlastnosti"
 
 msgid "strbrowse"
@@ -617,7 +617,7 @@ msgstr "Vytváranie DB?"
 msgid "Expires"
 msgstr "Expiruje"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Sessions defaults"
 
 # s cim to tak suvis??:)
@@ -710,7 +710,7 @@ msgstr "Skupina zmazaná."
 msgid "strgroupdroppedbad"
 msgstr "Skupina nebola zmazaná."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Členovia"
 
 msgid "straddmember"

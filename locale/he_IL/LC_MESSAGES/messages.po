@@ -74,7 +74,7 @@ msgstr "שם"
 msgid "strdefinition"
 msgstr "הגדרה"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "העדפות"
 
 msgid "strbrowse"
@@ -566,7 +566,7 @@ msgstr "יצירת בסיס נתונים?"
 msgid "Expires"
 msgstr "Expires"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "הפעלת ברירת מחדל"
 
 msgid "strnousers"
@@ -657,7 +657,7 @@ msgstr "קבוצה נמחקה."
 msgid "strgroupdroppedbad"
 msgstr "מחיקת קבוצה נכשלה."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "חברים"
 
 msgid "straddmember"

@@ -74,7 +74,7 @@ msgstr "الإسم"
 msgid "strdefinition"
 msgstr "التعريف"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "خصائص"
 
 msgid "strbrowse"
@@ -563,7 +563,7 @@ msgstr "إنشاء قاعدة بيانات؟"
 msgid "Expires"
 msgstr "ينتهي"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Session defaults"
 
 msgid "strnousers"
@@ -654,7 +654,7 @@ msgstr "تم حذف المجموعة بنجاح."
 msgid "strgroupdroppedbad"
 msgstr "لقد فشلت عملية حذف المجموعة."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "الأعضاء"
 
 msgid "straddmember"

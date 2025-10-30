@@ -95,7 +95,7 @@ msgstr "Pavadinimas"
 msgid "strdefinition"
 msgstr "Apibrėžtis"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Savybės"
 
 msgid "strbrowse"
@@ -807,7 +807,7 @@ msgstr "Gali kurti DB?"
 msgid "Expires"
 msgstr "Baigia galioti"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Seanso numatytosios reikšmės"
 
 msgid "strnousers"
@@ -898,13 +898,13 @@ msgstr "Grupė pašalinta."
 msgid "strgroupdroppedbad"
 msgstr "Nepavyko pašalinti grupės."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Nariai"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Yra narys"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Admin nariai"
 
 msgid "straddmember"
@@ -935,7 +935,7 @@ msgstr "Rolė"
 msgid "Roles"
 msgstr "Rolės"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Rodyti roles"
 
 msgid "strnoroles"

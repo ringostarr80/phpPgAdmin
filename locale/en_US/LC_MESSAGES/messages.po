@@ -107,7 +107,8 @@ msgstr "Name"
 msgid "strdefinition"
 msgstr "Definition"
 
-msgid "strproperties"
+# original: "strproperties"
+msgid "Properties"
 msgstr "Properties"
 
 msgid "strbrowse"
@@ -864,7 +865,8 @@ msgstr "Create DB?"
 msgid "Expires"
 msgstr "Expires"
 
-msgid "strsessiondefaults"
+# original: "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Session defaults"
 
 msgid "strnousers"
@@ -958,13 +960,16 @@ msgstr "Group dropped."
 msgid "strgroupdroppedbad"
 msgstr "Group drop failed."
 
-msgid "strmembers"
+# original: "strmembers"
+msgid "Members"
 msgstr "Members"
 
-msgid "strmemberof"
+# original: "strmemberof"
+msgid "Member of"
 msgstr "Member of"
 
-msgid "stradminmembers"
+# original: "stradminmembers"
+msgid "Admin members"
 msgstr "Admin members"
 
 msgid "straddmember"
@@ -997,7 +1002,8 @@ msgstr "Role"
 msgid "Roles"
 msgstr "Roles"
 
-msgid "strshowallroles"
+# original: "strshowallroles"
+msgid "Show all roles"
 msgstr "Show all roles"
 
 msgid "strnoroles"

@@ -77,7 +77,7 @@ msgstr "єЯФЯвШЯЪЬЯЬд"
 msgid "straggregates"
 msgstr "юмЧдЧмШ"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "є?Ь?з (лЩЮж оСЮСв)"
 
 msgid "strbrowse"
@@ -597,7 +597,7 @@ msgstr "чвеааС еФСЬХЮС."
 msgid "strgroupdroppedbad"
 msgstr "ѕФСЬХЮЩХ Чвеаай авХвзСЮЯ."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "ѕоСгдЮЩЫЯз"
 
 msgid "straddmember"

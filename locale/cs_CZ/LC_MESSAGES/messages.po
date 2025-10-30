@@ -92,7 +92,7 @@ msgstr "Název"
 msgid "strdefinition"
 msgstr "Definice"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Vlastnosti"
 
 msgid "strbrowse"
@@ -789,7 +789,7 @@ msgstr "Vytvářet DB?"
 msgid "Expires"
 msgstr "Ztratí platnost"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Výchozí hodnoty sezení"
 
 msgid "strnousers"
@@ -880,13 +880,13 @@ msgstr "Skupiny byla odstraněna."
 msgid "strgroupdroppedbad"
 msgstr "Nezdařilo se odstranit skupinu."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Členové"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Členem v"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Členové správci"
 
 msgid "straddmember"
@@ -917,7 +917,7 @@ msgstr "Role"
 msgid "Roles"
 msgstr "Role"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Zobrazit všechny role"
 
 msgid "strnoroles"

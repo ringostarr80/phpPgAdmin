@@ -290,7 +290,7 @@ msgstr "Format"
 msgid "strdata"
 msgstr "Daten"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Bestätigen"
 
 msgid "strexpression"
@@ -449,10 +449,10 @@ msgstr "Ungültiges Schema angegeben."
 msgid "strbadencoding"
 msgstr "Kann die Client-Zeichenkodierung nicht in der Datenbank setzen."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL-Fehler:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "In der Anweisung:"
 
 msgid "strinvalidparam"
@@ -767,7 +767,7 @@ msgstr "Ändern des Passwortes fehlgeschlagen."
 msgid "strpasswordshort"
 msgstr "Passwort ist zu kurz."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Passwort und Passwortbestätigung stimmen nicht überein."
 
 # Groups
@@ -859,10 +859,10 @@ msgstr "Rolle anlegen"
 msgid "Can create role?"
 msgstr "Darf Rollen anlegen?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Rolle angelegt."
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "Anlegen der Rolle fehlgeschlagen."
 
 msgid "strrolealtered"
@@ -877,16 +877,16 @@ msgstr "Darf sich anmelden?"
 msgid "Connection limit"
 msgstr "Maximalzahl an Datenbankverbindungen"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Rolle löschen"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Sind Sie sicher, dass Sie die Rolle \"%s\" löschen möchten?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Rolle gelöscht."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Löschen der Rolle fehlgeschlagen."
 
 msgid "No limit"
@@ -895,7 +895,7 @@ msgstr "Unbeschränkt"
 msgid "strnever"
 msgstr "Nie"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "Sie müssen für die Rolle einen Namen angeben."
 
 # Privileges

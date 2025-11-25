@@ -337,7 +337,8 @@ msgstr "Format"
 msgid "strdata"
 msgstr "Data"
 
-msgid "strconfirm"
+# original: "strconfirm"
+msgid "Confirm"
 msgstr "Confirm"
 
 msgid "strexpression"
@@ -562,10 +563,12 @@ msgstr "Invalid schema specified."
 msgid "strbadencoding"
 msgstr "Failed to set client encoding in database."
 
-msgid "strsqlerror"
+# original: "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL error:"
 
-msgid "strinstatement"
+# original: "strinstatement"
+msgid "In statement:"
 msgstr "In statement:"
 
 msgid "strinvalidparam"
@@ -917,7 +920,8 @@ msgstr "Failed to change password."
 msgid "strpasswordshort"
 msgstr "Password is too short."
 
-msgid "strpasswordconfirm"
+# original: "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Password does not match confirmation."
 
 # Groups
@@ -1021,10 +1025,12 @@ msgstr "Create role"
 msgid "Can create role?"
 msgstr "Can create role?"
 
-msgid "strrolecreated"
+# original: "strrolecreated"
+msgid "Role created."
 msgstr "Role created."
 
-msgid "strrolecreatedbad"
+# original: "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "Create role failed."
 
 msgid "strrolealtered"
@@ -1041,16 +1047,20 @@ msgstr "Can login?"
 msgid "Connection limit"
 msgstr "Connection limit"
 
-msgid "strdroprole"
+# original: "strdroprole"
+msgid "Drop role"
 msgstr "Drop role"
 
-msgid "strconfdroprole"
+# original: "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Are you sure you want to drop the role \"%s\"?"
 
-msgid "strroledropped"
+# original: "strroledropped"
+msgid "Role dropped."
 msgstr "Role dropped."
 
-msgid "strroledroppedbad"
+# original: "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Role drop failed."
 
 # original: "strnolimit"
@@ -1060,7 +1070,8 @@ msgstr "No limit"
 msgid "strnever"
 msgstr "Never"
 
-msgid "strroleneedsname"
+# original: "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "You must give a name for the role."
 
 # Privileges

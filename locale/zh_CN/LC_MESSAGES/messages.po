@@ -302,7 +302,7 @@ msgstr "格式"
 msgid "strdata"
 msgstr "数据"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "确认"
 
 msgid "strexpression"
@@ -495,10 +495,10 @@ msgstr "无效的模式。"
 msgid "strbadencoding"
 msgstr "设定客户端编码错误。"
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL:错误"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "在语句："
 
 msgid "strinvalidparam"
@@ -840,7 +840,7 @@ msgstr "密码修改失败。"
 msgid "strpasswordshort"
 msgstr "密码太短了。"
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "密码不匹配。"
 
 # Groups
@@ -935,10 +935,10 @@ msgstr "创建角色"
 msgid "Can create role?"
 msgstr "创建角色?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "角色已创建。"
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "角色创建失败。"
 
 msgid "strrolealtered"
@@ -953,16 +953,16 @@ msgstr "可以登录?"
 msgid "Connection limit"
 msgstr "连接限制"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "删除角色"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "确定要删除角色 \"%s\"吗?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "角色已删除。"
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "角色删除失败。"
 
 msgid "No limit"
@@ -971,7 +971,7 @@ msgstr "无限制"
 msgid "strnever"
 msgstr "从不"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "必须指定角色名称。"
 
 # Privileges

@@ -287,7 +287,7 @@ msgstr "フォーマット"
 msgid "strdata"
 msgstr "データ"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "確認"
 
 msgid "strexpression"
@@ -440,10 +440,10 @@ msgstr "無効のスキーマが指定されました。"
 msgid "strbadencoding"
 msgstr "データベースの中でクライアントエンコードを指定しませんでした。"
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL エラー:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "文:"
 
 msgid "strinvalidparam"
@@ -758,7 +758,7 @@ msgstr "パスワードの変更に失敗しました。"
 msgid "strpasswordshort"
 msgstr "パスワードが短すぎます。"
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "パスワードの確認が一致しませんでした。"
 
 # Groups
@@ -850,10 +850,10 @@ msgstr "ロールを作成する"
 msgid "Can create role?"
 msgstr "ロールを作成できますか?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "ロールを作成しました。"
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "ロールの作成に失敗しました。"
 
 msgid "strrolealtered"
@@ -868,16 +868,16 @@ msgstr "ログインできますか?"
 msgid "Connection limit"
 msgstr "接続制限"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "ロールを破棄する"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "本当にロール「%s」を破棄しますか?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "ロールを破棄しました。"
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "ロールの破棄に失敗しました。"
 
 msgid "No limit"
@@ -886,7 +886,7 @@ msgstr "制限なし"
 msgid "strnever"
 msgstr "Never"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "ロールの名前を指定しなければなりません。"
 
 # Privileges

@@ -4,13 +4,15 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\DDD\ValueObjects;
 
+use PhpPgAdmin\RequestParameter;
+
 /**
  * @property-read bool $CanCreateDb
  * @property-read bool $CanCreateRole
  * @property-read bool $CanInheritRights
  * @property-read bool $CanLogin
  * @property-read int $ConnectionLimit
- * @property-read ?\DateTimeImmutable $Expires
+ * @property-read ?\DateTimeInterface $Expires
  * @property-read bool $IsSuperuser
  * @property-read string $Name
  */
@@ -24,7 +26,7 @@ final class Role
         private bool $canInheritRights = true,
         private bool $canLogin = false,
         private int $connectionLimit = -1,
-        private ?\DateTimeImmutable $expires = null,
+        private ?\DateTimeInterface $expires = null,
     ) {
     }
 
@@ -79,7 +81,11 @@ final class Role
 
         $expires = null;
 
-        if (isset($data['rolvaliduntil']) && is_string($data['rolvaliduntil'])) {
+        if (
+            isset($data['rolvaliduntil']) &&
+            is_string($data['rolvaliduntil']) &&
+            $data['rolvaliduntil'] !== 'infinity'
+        ) {
             $expires = new \DateTimeImmutable($data['rolvaliduntil']);
         }
 
@@ -92,6 +98,35 @@ final class Role
             canLogin: $data['rolcanlogin'],
             connectionLimit: $data['rolconnlimit'],
             expires: $expires,
+        );
+    }
+
+    public static function fromForm(): self
+    {
+        $rolename = RequestParameter::getString('formRolename') ?? '';
+        $super = RequestParameter::getString('formSuper') ?? '';
+        $createDb = RequestParameter::getString('formCreateDB') ?? '';
+        $createRole = RequestParameter::getString('formCreateRole') ?? '';
+        $inherits = RequestParameter::getString('formInherits') ?? '';
+        $canLogin = RequestParameter::getString('formCanLogin') ?? '';
+        $connLimit = RequestParameter::getString('formConnLimit') ?? '';
+        $expires = RequestParameter::getString('formExpires') ?? '';
+
+        $expiry = null;
+
+        if (!empty($expires)) {
+            $expiry = \DateTimeImmutable::createFromFormat('Y-m-d\TH:i', $expires) ?: null;
+        }
+
+        return new self(
+            name: $rolename,
+            isSuperuser: $super === 'on',
+            canCreateDb: $createDb === 'on',
+            canCreateRole: $createRole === 'on',
+            canInheritRights: $inherits === 'on',
+            canLogin: $canLogin === 'on',
+            connectionLimit: is_numeric($connLimit) ? intval($connLimit) : -1,
+            expires: $expiry,
         );
     }
 

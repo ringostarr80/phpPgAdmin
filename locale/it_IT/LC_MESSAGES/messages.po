@@ -290,7 +290,7 @@ msgstr "Formato"
 msgid "strdata"
 msgstr "Dati"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Conferma"
 
 msgid "strexpression"
@@ -424,10 +424,10 @@ msgstr "Schema specificato non valido."
 msgid "strbadencoding"
 msgstr "Impostazione della codifica del client nel database fallito."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Errore SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "Nel costrutto:"
 
 msgid "strinvalidparam"
@@ -706,7 +706,7 @@ msgstr "Modifica della password fallita."
 msgid "strpasswordshort"
 msgstr "La password è troppo corta."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Le due password non coincidono."
 
 # Groups - Gruppi
@@ -798,10 +798,10 @@ msgstr "Crea ruolo"
 msgid "Can create role?"
 msgstr "Può creare ruoli?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Ruolo creato."
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "Creazione del ruolo fallita."
 
 msgid "strrolealtered"
@@ -816,16 +816,16 @@ msgstr "Può effettuare login?"
 msgid "Connection limit"
 msgstr "Limite alle connessioni"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Elimina ruolo"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Eliminare il ruolo \"%s\"?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Ruolo eliminato."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Eliminazione del ruolo fallita."
 
 msgid "No limit"
@@ -834,7 +834,7 @@ msgstr "Nessun limite"
 msgid "strnever"
 msgstr "Mai"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "È necessario specificare un nome per il ruolo."
 
 # Privileges - Privilegi

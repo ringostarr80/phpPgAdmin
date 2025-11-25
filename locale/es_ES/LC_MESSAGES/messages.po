@@ -302,7 +302,7 @@ msgstr "Formato"
 msgid "strdata"
 msgstr "Dato"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Confirmar"
 
 msgid "strexpression"
@@ -498,10 +498,10 @@ msgstr "El esquema especificado es inválido."
 msgid "strbadencoding"
 msgstr "No se pudo configurar la codificación del cliente en la base de datos."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Error de SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "En la setencia:"
 
 msgid "strinvalidparam"
@@ -843,7 +843,7 @@ msgstr "Falló al modificar contraseña."
 msgid "strpasswordshort"
 msgstr "La contraseña es muy corta."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Las contraseñas no coinciden."
 
 # Groups
@@ -938,10 +938,10 @@ msgstr "Crear rol"
 msgid "Can create role?"
 msgstr "¿Puede crear roles?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Rol creado."
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "Falló la creación del rol."
 
 msgid "strrolealtered"
@@ -956,16 +956,16 @@ msgstr "¿Puede iniciar sesión?"
 msgid "Connection limit"
 msgstr "Límite de conexión"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Eliminar rol"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "¿Estás seguro de que desea eliminar el rol \"%s\"?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Rol eliminado."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Falló la eliminación del rol."
 
 msgid "No limit"
@@ -974,7 +974,7 @@ msgstr "Sin límite"
 msgid "strnever"
 msgstr "Nunca"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "Debes darle un nombre al rol."
 
 # Privileges

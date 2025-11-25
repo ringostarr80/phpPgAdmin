@@ -453,6 +453,92 @@ abstract class WebsiteComponents
         return $table;
     }
 
+    /**
+     * @param array{
+     *  'id': string,
+     *  'label-text': string,
+     *  'value': array{
+     *      'content'?: bool|number|string|\DateTimeInterface|null,
+     *      'disabled'?: bool,
+     *      'max-length'?: number,
+     *      'readonly'?: bool,
+     *      'selection-values'?: array<string>,
+     *      'type': 'bool'|'date'|'datetime-local'|'number'|'password'|'selection'|'text',
+     *  },
+     * } $specs
+     */
+    public static function buildTableRowForFormular(\DOMDocument $dom, array $specs): \DOMElement
+    {
+        $tr = $dom->createElement('tr');
+        $tdCol1 = $dom->createElement('th');
+        $tdCol1->setAttribute('class', 'data left');
+        $label = $dom->createElement('label');
+        $label->setAttribute('for', $specs['id']);
+        $label->appendChild($dom->createTextNode($specs['label-text']));
+        $tdCol1->appendChild($label);
+        $tdCol2 = $dom->createElement('td');
+        $tdCol2->setAttribute('class', 'data1');
+        $valueType = match ($specs['value']['type']) {
+            'bool' => 'checkbox',
+            default => $specs['value']['type'],
+        };
+
+        if ($valueType !== 'selection') {
+            $input = $dom->createElement('input');
+            $input->setAttribute('type', $valueType);
+            $input->setAttribute('id', $specs['id']);
+            $input->setAttribute('name', $specs['id']);
+
+            if (isset($specs['value']['disabled']) && $specs['value']['disabled']) {
+                $input->setAttribute('disabled', 'disabled');
+            }
+
+            if (isset($specs['value']['readonly']) && $specs['value']['readonly']) {
+                $input->setAttribute('readonly', 'readonly');
+            }
+
+            if (isset($specs['value']['content'])) {
+                if ($valueType === 'checkbox' && is_bool($specs['value']['content']) && $specs['value']['content']) {
+                    $input->setAttribute('checked', 'checked');
+                } elseif ($valueType === 'date' && $specs['value']['content'] instanceof \DateTimeInterface) {
+                    $input->setAttribute('value', $specs['value']['content']->format('Y-m-d'));
+                } elseif ($valueType === 'datetime-local' && $specs['value']['content'] instanceof \DateTimeInterface) {
+                    $input->setAttribute('value', $specs['value']['content']->format('Y-m-d\Th:i'));
+                } elseif (
+                    ($valueType === 'text' || $valueType === 'password') &&
+                    is_string($specs['value']['content'])
+                ) {
+                    $input->setAttribute('value', $specs['value']['content']);
+                }
+            }
+
+            $tdCol2->appendChild($input);
+        } else {
+            $select = $dom->createElement('select');
+            $select->setAttribute('id', $specs['id']);
+            $select->setAttribute('name', $specs['id']);
+            $select->setAttribute('multiple', 'multiple');
+
+            if (isset($specs['value']['selection-values'])) {
+                $select->setAttribute('size', (string)min(10, count($specs['value']['selection-values'])));
+
+                foreach ($specs['value']['selection-values'] as $selectionValue) {
+                    $option = $dom->createElement('option');
+                    $option->setAttribute('value', $selectionValue);
+                    $option->appendChild($dom->createTextNode($selectionValue));
+                    $select->appendChild($option);
+                }
+            }
+
+            $tdCol2->appendChild($select);
+        }
+
+        $tr->appendChild($tdCol1);
+        $tr->appendChild($tdCol2);
+
+        return $tr;
+    }
+
     public static function buildTopBar(\DOMDocument $dom): \DOMElement
     {
         $divWrapper = $dom->createElement('div');

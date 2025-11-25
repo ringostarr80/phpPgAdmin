@@ -284,7 +284,7 @@ msgstr "Formát"
 msgid "strdata"
 msgstr "Dáta"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Potvrdiť"
 
 msgid "strexpression"
@@ -393,10 +393,10 @@ msgstr "Špecifikovaná chybná schéma."
 msgid "strbadencoding"
 msgstr "Nastavenie kódovania v databáze zlyhalo."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL chyba:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "Vo výraze:"
 
 msgid "strinvalidparam"
@@ -670,7 +670,7 @@ msgstr "Heslo NEBOLO zmenené."
 msgid "strpasswordshort"
 msgstr "Heslo je príliš krátke."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Heslo sa nezhoduje so zadaným overovacím heslom."
 
 # Groups

@@ -202,6 +202,69 @@ final class PhpPgAdminConnection extends \PDO
         }
     }
 
+    /**
+     * @param ?array<string> $memberOf Roles to which the new role will be immediately added as a new member
+     * @param ?array<string> $members Roles which are automatically added as members of the new role
+     * @param ?array<string> $adminMembers Roles which are automatically added as admin members of the new role
+     */
+    public function createRole(
+        Role $role,
+        string $password,
+        ?array $memberOf = null,
+        ?array $members = null,
+        ?array $adminMembers = null,
+    ): void {
+        $escapedEncryptedPassword = self::escapeIdentifier(self::encryptPassword($role->Name, $password));
+
+        $escapedRolename = self::escapeIdentifier($role->Name);
+        $sql = "CREATE ROLE \"{$escapedRolename}\"";
+
+        if ($password !== '') {
+            $sql .= " WITH ENCRYPTED PASSWORD '{$escapedEncryptedPassword}'";
+        }
+
+        $sql .= $role->IsSuperuser
+            ? ' SUPERUSER'
+            : ' NOSUPERUSER';
+        $sql .= $role->CanCreateDb
+            ? ' CREATEDB'
+            : ' NOCREATEDB';
+        $sql .= $role->CanCreateRole
+            ? ' CREATEROLE'
+            : ' NOCREATEROLE';
+        $sql .= $role->CanInheritRights
+            ? ' INHERIT'
+            : ' NOINHERIT';
+        $sql .= $role->CanLogin
+            ? ' LOGIN'
+            : ' NOLOGIN';
+
+        $sql .= " CONNECTION LIMIT {$role->ConnectionLimit}";
+
+        if (!is_null($role->Expires)) {
+            $formattedExpiration = $role->Expires->format('Y-m-d\TH:i:s');
+            $sql .= " VALID UNTIL '{$formattedExpiration}'";
+        } else {
+            $sql .= " VALID UNTIL 'infinity'";
+        }
+
+        if (is_array($memberOf) && !empty($memberOf)) {
+            $sql .= ' IN ROLE "' . join('", "', $memberOf) . '"';
+        }
+
+        if (is_array($members) && !empty($members)) {
+            $sql .= ' ROLE "' . join('", "', $members) . '"';
+        }
+
+        if (is_array($adminMembers) && !empty($adminMembers)) {
+            $sql .= ' ADMIN "' . join('", "', $adminMembers) . '"';
+        }
+
+        if ($this->exec($sql) === false) {
+            throw new \PDOException('Failed to execute SQL statement for creating role.');
+        }
+    }
+
     public function dropDatabase(string $database): void
     {
         $escapedDatabase = self::escapeIdentifier($database);
@@ -209,6 +272,17 @@ final class PhpPgAdminConnection extends \PDO
 
         if ($this->exec($statement) === false) {
             throw new \PDOException('Failed to execute SQL statement for dropping database.');
+        }
+    }
+
+    public function dropRole(string $rolename): void
+    {
+        $escapedRolename = self::escapeIdentifier($rolename);
+
+        $statement = "DROP ROLE \"{$escapedRolename}\"";
+
+        if ($this->exec($statement) === false) {
+            throw new \PDOException('Failed to execute SQL statement for dropping role.');
         }
     }
 
@@ -615,6 +689,14 @@ final class PhpPgAdminConnection extends \PDO
 
             return false;
         }
+    }
+
+    /**
+     * Helper function that computes encrypted PostgreSQL passwords
+     */
+    private static function encryptPassword(string $username, string $password): string
+    {
+        return 'md5' . md5($password . $username);
     }
 
     /**

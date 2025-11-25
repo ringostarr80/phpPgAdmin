@@ -266,7 +266,7 @@ msgstr "Format"
 msgid "strdata"
 msgstr "Data"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Bekræft"
 
 msgid "strexpression"
@@ -363,10 +363,10 @@ msgstr "Det lykkedes ikke at sætte klientkodning i databasen."
 msgid "strbadSchema"
 msgstr "Forkert Skema angivet."
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "I påstanden:"
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL fejl:"
 
 msgid "strinvalidparam"
@@ -617,7 +617,7 @@ msgstr "Ændring af password mislykkedes."
 msgid "strpasswordshort"
 msgstr "Password er for kort."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Password er forskellig fra bekræftelsen."
 
 # Groups

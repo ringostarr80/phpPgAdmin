@@ -263,7 +263,7 @@ msgstr "Format"
 msgid "strdata"
 msgstr "Data"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "تأكيد"
 
 msgid "strexpression"
@@ -360,10 +360,10 @@ msgstr "Invalid schema specified."
 msgid "strbadencoding"
 msgstr "لقد فشل ضبط شيفرة العميل client encoding في قاعدة البيانات."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "خطأ SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "في الجملة statement:"
 
 msgid "strinvalidparam"
@@ -614,7 +614,7 @@ msgstr "لم ينجح تغيير كلمة السر."
 msgid "strpasswordshort"
 msgstr "كلمة السر أقصر من الحد الأدنى."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "كلمة السر المدخلة لم تتطابق مع تأكيد كلمة السر."
 
 # Groups

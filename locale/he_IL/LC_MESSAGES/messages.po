@@ -263,7 +263,7 @@ msgstr "סוג"
 msgid "strdata"
 msgstr "מידע"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "אשר"
 
 msgid "strexpression"
@@ -363,10 +363,10 @@ msgstr "תרשים שגוי צויין"
 msgid "strbadencoding"
 msgstr "נכשל בהתאמת קידוד משתמש למסד הנתונים."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "שגיאת SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "בהצהרה:"
 
 msgid "strinvalidparam"
@@ -617,7 +617,7 @@ msgstr "נכשל בשינוי סיסמה."
 msgid "strpasswordshort"
 msgstr "סיסמה קצרה מידי."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "סיסמה אינה תואמת לאישורה."
 
 # Groups

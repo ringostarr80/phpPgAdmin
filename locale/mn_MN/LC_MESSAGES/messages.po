@@ -263,7 +263,7 @@ msgstr "цЯвЭСд"
 msgid "strdata"
 msgstr "?Ч?ЧФ?Ь"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "тСдСЬЧССжееЬСШ"
 
 msgid "strexpression"
@@ -315,10 +315,10 @@ msgstr "єЯШЩвЧЯЯ Тевее"
 msgid "strbadencoding"
 msgstr "Failed to set client encoding in database."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL СЬФСС:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "ї ЯаХвСдЯвХ:"
 
 msgid "strinvalidparam"
@@ -557,7 +557,7 @@ msgstr "щкЭХЮХЮЩХ аСвЯЬб авХвзСЮЯ."
 msgid "strpasswordshort"
 msgstr "№СвЯЬи гЬЩлЫЯЭ ЫЯвЯдЫЩЪ."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "№СвЯЬи ЮХ гЯЯдзХдгдзеХд аЯФдзХвжФХЮЩР."
 
 # Groups

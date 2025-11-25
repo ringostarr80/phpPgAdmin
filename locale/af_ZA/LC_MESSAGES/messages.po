@@ -260,7 +260,7 @@ msgstr "Formaat"
 msgid "strdata"
 msgstr "Data"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Bevestig"
 
 msgid "strexpression"
@@ -360,10 +360,10 @@ msgstr "Ongeldige skema gespesifiseer."
 msgid "strbadencoding"
 msgstr "Die kliëntenkodering kon nie in die databasis geplaas word nie."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL-fout:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "In stelling:"
 
 msgid "strinvalidparam"
@@ -623,7 +623,7 @@ msgstr "Wagwoordverandering het misluk."
 msgid "strpasswordshort"
 msgstr "Wagwoord is te kort."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Wagwoord verskil van bevestigings-wagwoord."
 
 # Groups

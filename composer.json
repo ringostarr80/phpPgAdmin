@@ -8,7 +8,8 @@
             "captainhook/hook-installer": true,
             "codeception/c3": true,
             "phpstan/extension-installer": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "cyclonedx/cyclonedx-php-composer": true
         },
         "platform": {
             "php": "8.1"
@@ -31,6 +32,7 @@
         "codeception/module-asserts": "*",
         "codeception/module-phpbrowser": "*",
         "codeception/module-webdriver": "^4.0",
+        "cyclonedx/cyclonedx-php-composer": "^6.0",
         "php-parallel-lint/php-parallel-lint": "^1.4",
         "phpmd/phpmd": "^2.15",
         "phpstan/phpstan": "^2.1",

@@ -290,7 +290,7 @@ msgstr "Format"
 msgid "strdata"
 msgstr "Dată"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Confirmare"
 
 msgid "strexpression"
@@ -418,10 +418,10 @@ msgstr "Schemă specificată incorectă."
 msgid "strbadencoding"
 msgstr "Imposibil de setat codificarea client în baza de date."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Eroare SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "În instrucţiunea:"
 
 msgid "strinvalidparam"
@@ -697,7 +697,7 @@ msgstr "Schimbare parolă eşuată."
 msgid "strpasswordshort"
 msgstr "Parola este prea scurtă."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Parola nu se confirmă."
 
 # Groups
@@ -789,10 +789,10 @@ msgstr "Creare rol"
 msgid "Can create role?"
 msgstr "Creare rol posibilă?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Rol creat"
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "Creare rol eşuată"
 
 msgid "stralterrole"
@@ -810,16 +810,16 @@ msgstr "Autentificare posibilă?"
 msgid "Connection limit"
 msgstr "Limită conectare"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Ştergere rol"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Sigur ştergeţi rolul \"%s\"?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Rol şters"
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Ştergere rol eşuată"
 
 msgid "No limit"
@@ -828,7 +828,7 @@ msgstr "Fără limită"
 msgid "strnever"
 msgstr "Niciodată"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "Specificaţi un nume pentru rol"
 
 # Privileges

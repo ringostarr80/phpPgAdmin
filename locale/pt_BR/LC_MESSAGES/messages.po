@@ -302,7 +302,7 @@ msgstr "Formato"
 msgid "strdata"
 msgstr "Data"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Confirma"
 
 msgid "strexpression"
@@ -492,10 +492,10 @@ msgstr "Esquema especificado inválido."
 msgid "strbadencoding"
 msgstr "Falha ao atribuir a codificação do cliente na base de dados."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Erro de SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "No bloco:"
 
 msgid "strinvalidparam"
@@ -837,7 +837,7 @@ msgstr "Falha ao alterar a senha."
 msgid "strpasswordshort"
 msgstr "A senha é muito curta."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "A confirmação de senha não confere."
 
 # Groups
@@ -929,10 +929,10 @@ msgstr "Criar papel"
 msgid "Can create role?"
 msgstr "Pode criar papéis?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Papel criado."
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "Falha ao criar o papel."
 
 msgid "strrolealtered"
@@ -947,16 +947,16 @@ msgstr "Pode logar?"
 msgid "Connection limit"
 msgstr "Limite de conexões"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Deletar papel"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Você têm certeza que deseja deletar o papel \"%s\"?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Papel deletado."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Falha ao deletar o papel."
 
 msgid "No limit"
@@ -965,7 +965,7 @@ msgstr "Sem limite"
 msgid "strnever"
 msgstr "Nunca"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "Você deve informar um nome para o papel."
 
 # Privileges

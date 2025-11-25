@@ -254,7 +254,7 @@ msgstr "Topo da página"
 msgid "strdata"
 msgstr "Data"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Confirmar"
 
 msgid "strexpression"
@@ -281,10 +281,10 @@ msgstr "Esquema inválido."
 msgid "strbadencoding"
 msgstr "Falha ao definir codificação do cliente na base de dados."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Erro de SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "Indicação de entrada :"
 
 msgid "strinvalidparam"
@@ -491,7 +491,7 @@ msgstr "Falha ao alterar palavra-passe."
 msgid "strpasswordshort"
 msgstr "Palavra-chave muito curta."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Palavra-chave não coincide com a confirmação."
 
 msgid "strgroup"

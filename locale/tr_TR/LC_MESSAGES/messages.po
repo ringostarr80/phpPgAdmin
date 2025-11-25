@@ -284,7 +284,7 @@ msgstr "Format"
 msgid "strdata"
 msgstr "Veri"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Onayla"
 
 msgid "strexpression"
@@ -393,10 +393,10 @@ msgstr "Geçersiz şema."
 msgid "strbadencoding"
 msgstr "İstemci dil kodlamasını ayarlamaya çalışırken bir hata oluştu."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL hatası:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "Üstteki hata, aşağıdaki ifade içinde oluştu:"
 
 msgid "strinvalidparam"
@@ -668,7 +668,7 @@ msgstr "Şifre değiştirme başarısız oldu."
 msgid "strpasswordshort"
 msgstr "Şifre çok kısa."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Şifreler uyuşmadı."
 
 # Groups

@@ -299,7 +299,7 @@ msgstr "Формат"
 msgid "strdata"
 msgstr "Данные"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Подтвердить"
 
 msgid "strexpression"
@@ -492,10 +492,10 @@ msgstr "Обнаружена неверная схема."
 msgid "strbadencoding"
 msgstr "Ошибка при установке кодировки клиента (client encoding)."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Ошибка SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "В операторе:"
 
 msgid "strinvalidparam"
@@ -837,7 +837,7 @@ msgstr "Изменение пароля прервано."
 msgid "strpasswordshort"
 msgstr "Пароль слишком короткий."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Пароль не соответствует подтверждению."
 
 # Groups
@@ -929,10 +929,10 @@ msgstr "Создать роль"
 msgid "Can create role?"
 msgstr "Может создавать роли?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Роль создана."
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "Создание роли прервано."
 
 msgid "strrolealtered"
@@ -947,16 +947,16 @@ msgstr "Может логиниться?"
 msgid "Connection limit"
 msgstr "Лимит соединений"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Удалить роль"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Вы действительно хотите удалить роль \"%s\"?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Роль удалена."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Удаление роли прервано."
 
 msgid "No limit"
@@ -965,7 +965,7 @@ msgstr "Без ограничений"
 msgid "strnever"
 msgstr "Никогда"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "Вам необходимо определить имя роли."
 
 # Privileges

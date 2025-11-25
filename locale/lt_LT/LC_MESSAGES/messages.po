@@ -312,7 +312,7 @@ msgstr "Formatas"
 msgid "strdata"
 msgstr "Duomenys"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Patvirtinti"
 
 msgid "strexpression"
@@ -510,10 +510,10 @@ msgstr "Nurodyta neteisinga schema."
 msgid "strbadencoding"
 msgstr "Nepavyko nustatyti kliento koduotės duomenų bazėje."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL klaida:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "Sakinyje:"
 
 msgid "strinvalidparam"
@@ -858,7 +858,7 @@ msgstr "Nepavyko pakeisti slaptažodžio."
 msgid "strpasswordshort"
 msgstr "Slaptažodis per trumpas."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Slaptažodis neatitinka patvirtinimo."
 
 # Groups
@@ -950,10 +950,10 @@ msgstr "Kurti rolę"
 msgid "Can create role?"
 msgstr "Gali kurti rolę?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Rolė sukurta."
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "Nepavyko sukurti rolės."
 
 msgid "strrolealtered"
@@ -968,16 +968,16 @@ msgstr "Gali prisijungti?"
 msgid "Connection limit"
 msgstr "Sujungimų limitas"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Šalinti rolę"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Ar tikrai norite šalinti rolę \"%s\"?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Rolė pašalinta."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Nepavyko pašalinti rolės."
 
 msgid "No limit"
@@ -986,7 +986,7 @@ msgstr "Be ribojimų"
 msgid "strnever"
 msgstr "Niekada"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "Turite suteikti rolei pavadinimą."
 
 # Privileges

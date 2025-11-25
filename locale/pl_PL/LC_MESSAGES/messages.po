@@ -293,7 +293,7 @@ msgstr "Format"
 msgid "strdata"
 msgstr "Dane"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Potwierdź"
 
 msgid "strexpression"
@@ -421,10 +421,10 @@ msgstr "Podano błędny schemat."
 msgid "strbadencoding"
 msgstr "Błędne kodowanie bazy."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Błąd SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "W poleceniu:"
 
 msgid "strinvalidparam"
@@ -700,7 +700,7 @@ msgstr "Próba zmiany hasła się nie powiodła."
 msgid "strpasswordshort"
 msgstr "Hasło jest za krótkie."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Hasło i potwierdzenie muszą być takie same."
 
 # Groups
@@ -786,13 +786,13 @@ msgstr "Może się logować?"
 msgid "strmaxconnections"
 msgstr "Maks. ilość połączeń"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Czy na pewno chcesz usunąć rolę \"%s\"?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Rola została usunięta."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Próba usunięcia roli się nie powiodła."
 
 # Privileges

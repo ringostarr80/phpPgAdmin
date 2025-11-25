@@ -302,7 +302,7 @@ msgstr "Formát"
 msgid "strdata"
 msgstr "Data"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Potvrzení"
 
 msgid "strexpression"
@@ -495,10 +495,10 @@ msgstr "Zadáno neplatné schéma."
 msgid "strbadencoding"
 msgstr "Nezdařilo se nastavit kódování klienta v databázi."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Chyba SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "Ve výrazu:"
 
 msgid "strinvalidparam"
@@ -840,7 +840,7 @@ msgstr "Nezdařilo se změnit heslo."
 msgid "strpasswordshort"
 msgstr "Heslo je příliš krátké."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Heslo a jeho potvrzení nejsou shodné."
 
 # Groups
@@ -932,10 +932,10 @@ msgstr "Vytvořit roli"
 msgid "Can create role?"
 msgstr "Vytvářet role?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Role byl vytvořena."
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "Nezdařilo se vytvořit roli."
 
 msgid "strrolealtered"
@@ -950,16 +950,16 @@ msgstr "Přihlašovat se?"
 msgid "Connection limit"
 msgstr "Omezení připojení"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Odstranit roli"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Opravdu chcete odstranit roli „%s“?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Role byla odstraněna."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Nezdařilo se odstranit roli."
 
 msgid "No limit"
@@ -968,7 +968,7 @@ msgstr "Bez omezení"
 msgid "strnever"
 msgstr "Nikdy"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "Musíte zadat název pro roli."
 
 # Privileges

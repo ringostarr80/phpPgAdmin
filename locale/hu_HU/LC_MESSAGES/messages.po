@@ -302,7 +302,7 @@ msgstr "Alak"
 msgid "strdata"
 msgstr "Adatok"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Megerősít"
 
 msgid "strexpression"
@@ -495,10 +495,10 @@ msgstr "A megadott séma érvénytelen."
 msgid "strbadencoding"
 msgstr "Az ügyfél oldali kódolás beállítása az adatbázisban nem sikerült."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL hiba:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "A következő kifejezésben:"
 
 msgid "strinvalidparam"
@@ -840,7 +840,7 @@ msgstr "Nem sikerült a jelszót megváltoztatni."
 msgid "strpasswordshort"
 msgstr "A jelszó túl rövid."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "A jelszó nem egyezik a megerősítéssel."
 
 # Groups
@@ -932,10 +932,10 @@ msgstr "Szerepet teremt"
 msgid "Can create role?"
 msgstr "Teremthet szerepet?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Szerep megteremtve."
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "Nem sikerült szerepet teremteni."
 
 msgid "strrolealtered"
@@ -950,16 +950,16 @@ msgstr "Beléphet?"
 msgid "Connection limit"
 msgstr "Kapcsolat korlátja"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Szerepet töröl"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Biztosan töröljük „%s” szerepet?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Szerep törölve."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Nem sikerült szerepet törölni."
 
 msgid "No limit"
@@ -968,7 +968,7 @@ msgstr "Nincs korlát"
 msgid "strnever"
 msgstr "Soha"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "Nevet kell adni a szerepnek."
 
 # Privileges

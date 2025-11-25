@@ -62,14 +62,20 @@ final class Roles extends Website
         }
 
         $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $serverId, 'roles'));
+
+        $message = RequestParameter::getString('message') ?? '';
+
+        if (!empty($message)) {
+            $body->appendChild(WebsiteComponents::buildMessage($dom, $message));
+        }
+
         $body->appendChild(self::buildRolesTable($dom, $serverId));
 
         $navLinks = [
             [
                 'label' => _('Create role'),
-                'url' => 'roles.php',
+                'url' => 'create_role.php',
                 'url-params' => [
-                    'action' => 'create',
                     'server' => $serverId,
                 ],
             ],
@@ -94,11 +100,10 @@ final class Roles extends Website
 
         $liAlter = $dom->createElement('li');
         $urlParamsAlter = [
-            'action' => 'alter',
             'rolename' => RequestParameter::getString('rolename') ?? '',
             'server' => $serverId,
         ];
-        $urlAlter = 'roles.php?' . http_build_query($urlParamsAlter);
+        $urlAlter = 'alter_role.php?' . http_build_query($urlParamsAlter);
         $aAlter = $dom->createElement('a');
         $aAlter->setAttribute('href', $urlAlter);
         $aAlter->appendChild($dom->createTextNode(_('Alter')));
@@ -307,9 +312,8 @@ final class Roles extends Website
             $alterTd = $dom->createElement('td');
             $alterTd->setAttribute('class', 'opbutton1');
             $alterLink = $dom->createElement('a');
-            $alterUrl = 'roles.php';
+            $alterUrl = 'alter_role.php';
             $alterUrlParams = [
-                'action' => 'alter',
                 'rolename' => $role->Name,
                 'server' => $serverId,
             ];
@@ -321,9 +325,8 @@ final class Roles extends Website
             $dropTd = $dom->createElement('td');
             $dropTd->setAttribute('class', 'opbutton1');
             $dropLink = $dom->createElement('a');
-            $dropUrl = 'roles.php';
+            $dropUrl = 'drop_role.php';
             $dropUrlParams = [
-                'action' => 'confirm_drop',
                 'rolename' => $role->Name,
                 'server' => $serverId,
             ];

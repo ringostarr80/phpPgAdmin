@@ -260,7 +260,7 @@ msgstr "När"
 msgid "strdata"
 msgstr "Data"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Bekräfta"
 
 msgid "strexpression"
@@ -333,10 +333,10 @@ msgstr "Misslyckades att sätta klientkodning i databasen."
 msgid "strbadschema"
 msgstr "Otillåtet schema angett."
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "I påstående:"
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL fel:"
 
 msgid "strinvalidparam"
@@ -584,7 +584,7 @@ msgstr "Misslyckades att ändra lösenord."
 msgid "strpasswordshort"
 msgstr "För få tecken i lösenordet."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Lösenordet är inte samma som bekräftelsen."
 
 msgid "strgroup"

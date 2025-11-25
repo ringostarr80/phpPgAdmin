@@ -302,7 +302,7 @@ msgstr "Format"
 msgid "strdata"
 msgstr "Dades"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Confirma"
 
 msgid "strexpression"
@@ -495,10 +495,10 @@ msgstr "Esquema especificat invàlid."
 msgid "strbadencoding"
 msgstr "Error al fixar la codificació del client a la base de dades."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Error SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "En la sentència:"
 
 msgid "strinvalidparam"
@@ -840,7 +840,7 @@ msgstr "Error al canviar la contrasenya."
 msgid "strpasswordshort"
 msgstr "Contrasenya massa curta."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "La contrasenya no coincideix amb la confirmació."
 
 # Groups
@@ -932,10 +932,10 @@ msgstr "Crea un rol"
 msgid "Can create role?"
 msgstr "Crear el rol?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Rol creat."
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "No s'ha pogut crear el rol."
 
 msgid "strrolealtered"
@@ -950,16 +950,16 @@ msgstr "Pot entrar?"
 msgid "Connection limit"
 msgstr "Límit de la connexió"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Elimina el rol"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Està segur de voler eliminar el rol '%s'?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Rol eliminat."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "No s'ha pogut eliminar el rol."
 
 msgid "No limit"
@@ -968,7 +968,7 @@ msgstr "Sense límit"
 msgid "strnever"
 msgstr "Mai"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "Ha de donar un nom al rol."
 
 # Privileges

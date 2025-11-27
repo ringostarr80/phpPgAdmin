@@ -1,0 +1,40 @@
+name: Generate and Upload SBOM
+
+permissions:
+  contents: read
+  pull-requests: write
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1 # v2.36.0
+      with:
+        php-version: 8.5
+        extensions: intl, pdo_pgsql, xdebug, zip
+
+    - name: Restore dependencies
+      run: composer install --prefer-dist --no-progress
+
+    - name: Generate SBOMs
+      run: composer CycloneDX:make-sbom --output-file=phppgadmin-sbom.xml --output-reproducible --validate --spec-version=1.7
+    
+    - name: Upload SBOM for phpPgAdmin to DependencyTrack
+      env:
+        DTRACK_API_KEY: ${{ secrets.DTRACK_API_KEY }}
+        DTRACK_URL: ${{ secrets.DTRACK_URL }}
+      run: |
+        curl -X "POST" \
+            "${DTRACK_URL}/api/v1/bom" \
+            -H "X-API-Key: ${DTRACK_API_KEY}" \
+            -H "Content-Type: multipart/form-data" \
+            -F "projectName=phpPgAdmin" \
+            -F "bom=@phppgadmin-sbom.xml"

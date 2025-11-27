@@ -7,27 +7,27 @@
         "allow-plugins": {
             "captainhook/hook-installer": true,
             "codeception/c3": true,
+            "cyclonedx/cyclonedx-php-composer": true,
             "phpstan/extension-installer": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "cyclonedx/cyclonedx-php-composer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true
         },
         "platform": {
-            "php": "8.1"
+            "php": "8.2"
         }
     },
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.2",
         "ext-gettext": "*",
         "ext-pgsql": "*",
         "ext-mbstring": "*",
         "adodb/adodb-php": "^5.22",
         "locr-company/http-status-code": "^1.0",
-        "symfony/yaml": "^6.4"
+        "symfony/yaml": "^7.3"
     },
     "require-dev": {
-        "captainhook/captainhook": "^5.25",
+        "captainhook/captainhook": "^5.27",
         "captainhook/hook-installer": "^1.0",
-        "codeception/codeception": "^5.2",
+        "codeception/codeception": "^5.3",
         "codeception/c3": "^2.9",
         "codeception/module-asserts": "*",
         "codeception/module-phpbrowser": "*",
@@ -38,8 +38,8 @@
         "phpstan/phpstan": "^2.1",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan-deprecation-rules": "^2.0",
-        "slevomat/coding-standard": "^8.20",
-        "squizlabs/php_codesniffer": "^3.11",
+        "slevomat/coding-standard": "^8.25",
+        "squizlabs/php_codesniffer": "^4.0",
         "vlucas/phpdotenv": "^5.6"
     },
     "minimum-stability": "stable",
@@ -47,11 +47,11 @@
         "dev:analyze": [
             "@dev:analyze:phpstan"
         ],
-        "dev:analyze:phpstan": "@dev:analyze:phpstan-8.1",
-        "dev:analyze:phpstan-8.1": "phpstan analyse --configuration=phpstan-8.1.neon --memory-limit=512M",
+        "dev:analyze:phpstan": "@dev:analyze:phpstan-8.2",
         "dev:analyze:phpstan-8.2": "phpstan analyse --configuration=phpstan-8.2.neon --memory-limit=512M",
         "dev:analyze:phpstan-8.3": "phpstan analyse --configuration=phpstan-8.3.neon --memory-limit=512M",
         "dev:analyze:phpstan-8.4": "phpstan analyse --configuration=phpstan-8.4.neon --memory-limit=512M",
+        "dev:analyze:phpstan-8.5": "phpstan analyse --configuration=phpstan-8.5.neon --memory-limit=512M",
         "dev:lint": [
             "@dev:lint:php",
             "@dev:lint:phpcs"

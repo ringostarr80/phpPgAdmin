@@ -2,4 +2,4 @@ includes:
 	- phpstan.neon.dist
 
 parameters:
-    phpVersion: 80100
+    phpVersion: 80500

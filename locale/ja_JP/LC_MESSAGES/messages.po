@@ -856,10 +856,10 @@ msgstr "ロールを作成しました。"
 msgid "Create role failed."
 msgstr "ロールの作成に失敗しました。"
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "ロールを変更しました。"
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "ロールの変更に失敗しました。"
 
 msgid "Can login?"

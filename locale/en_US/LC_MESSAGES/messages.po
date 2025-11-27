@@ -1033,10 +1033,12 @@ msgstr "Role created."
 msgid "Create role failed."
 msgstr "Create role failed."
 
-msgid "strrolealtered"
+# original: "strrolealtered"
+msgid "Role altered."
 msgstr "Role altered."
 
-msgid "strrolealteredbad"
+# original: "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "Role alter failed."
 
 # original: "strcanlogin"

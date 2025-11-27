@@ -935,10 +935,10 @@ msgstr "Роль создана."
 msgid "Create role failed."
 msgstr "Создание роли прервано."
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "Роль изменена."
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "Изменение роли прервано."
 
 msgid "Can login?"

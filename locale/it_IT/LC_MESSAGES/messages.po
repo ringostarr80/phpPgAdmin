@@ -804,10 +804,10 @@ msgstr "Ruolo creato."
 msgid "Create role failed."
 msgstr "Creazione del ruolo fallita."
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "Ruolo modificato."
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "Modifica del ruolo fallita."
 
 msgid "Can login?"

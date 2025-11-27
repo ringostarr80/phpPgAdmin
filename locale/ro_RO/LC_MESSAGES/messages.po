@@ -798,10 +798,10 @@ msgstr "Creare rol eşuată"
 msgid "stralterrole"
 msgstr "Modificare rol"
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "Rol modificat"
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "Modificare rol eşuată"
 
 msgid "Can login?"

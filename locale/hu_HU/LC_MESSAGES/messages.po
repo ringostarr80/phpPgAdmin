@@ -938,10 +938,10 @@ msgstr "Szerep megteremtve."
 msgid "Create role failed."
 msgstr "Nem sikerült szerepet teremteni."
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "Szerep megváltoztatva."
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "Nem sikerült szerepet változtatni."
 
 msgid "Can login?"

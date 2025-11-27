@@ -6,6 +6,7 @@ namespace PhpPgAdmin\Database;
 
 use PhpPgAdmin\Config;
 use PhpPgAdmin\DDD\Entities\ServerSession;
+use PhpPgAdmin\DDD\ValueObjects\RevokeType;
 use PhpPgAdmin\DDD\ValueObjects\Role;
 use PhpPgAdmin\DDD\ValueObjects\Server\SslMode;
 
@@ -214,12 +215,11 @@ final class PhpPgAdminConnection extends \PDO
         ?array $members = null,
         ?array $adminMembers = null,
     ): void {
-        $escapedEncryptedPassword = self::escapeIdentifier(self::encryptPassword($role->Name, $password));
-
         $escapedRolename = self::escapeIdentifier($role->Name);
         $sql = "CREATE ROLE \"{$escapedRolename}\"";
 
         if ($password !== '') {
+            $escapedEncryptedPassword = self::escapeIdentifier(self::encryptPassword($role->Name, $password));
             $sql .= " WITH ENCRYPTED PASSWORD '{$escapedEncryptedPassword}'";
         }
 
@@ -485,6 +485,87 @@ final class PhpPgAdminConnection extends \PDO
         return $result;
     }
 
+    /**
+     * Returns all role names which the role belongs to
+     *
+     * @return array<string>
+     */
+    public function getMemberOf(string $rolename): array
+    {
+        $sql = "SELECT rolname FROM pg_catalog.pg_roles R, pg_auth_members M
+			WHERE R.oid = M.roleid
+				AND member IN (
+					SELECT oid FROM pg_catalog.pg_roles
+					WHERE rolname = :rolename
+                )
+			ORDER BY rolname";
+        $sqlParams = [
+            'rolename' => $rolename,
+        ];
+        $statement = $this->prepare($sql);
+
+        if ($statement === false) {
+            throw new \PDOException('Failed to prepare SQL statement for getting members of role.');
+        }
+
+        if (!$statement->execute($sqlParams)) {
+            throw new \PDOException('Failed to execute SQL statement for getting members of role.');
+        }
+
+        $rolenames = [];
+
+        while ($row = $statement->fetch()) {
+            if (is_array($row) && isset($row['rolname']) && is_string($row['rolname'])) {
+                $rolenames[] = $row['rolname'];
+            }
+        }
+
+        return $rolenames;
+    }
+
+    /**
+     * Returns all role names that are members of a role
+     *
+     * @return array<string>
+     */
+    public function getMembers(string $rolename, bool $onlyAdminMembers = false): array
+    {
+        $adminOption = $onlyAdminMembers
+            ? 't'
+            : 'f';
+
+        $sql = "SELECT rolname FROM pg_catalog.pg_roles R, pg_auth_members M
+			WHERE R.oid = M.member AND admin_option = :admin_option
+				AND roleid IN (
+                    SELECT oid FROM pg_catalog.pg_roles
+					WHERE rolname = :rolename
+                )
+			ORDER BY rolname";
+        $sqlParams = [
+            'admin_option' => $adminOption,
+            'rolename' => $rolename,
+        ];
+        $statement = $this->prepare($sql);
+
+        if ($statement === false) {
+            throw new \PDOException('Failed to prepare SQL statement for getting rolenames, that are members of role.');
+        }
+
+        if (!$statement->execute($sqlParams)) {
+            throw new \PDOException('Failed to execute SQL statement for getting rolenames, that are members of role.');
+        }
+
+        $rolenames = [];
+
+        while ($row = $statement->fetch()) {
+            if (is_array($row) && isset($row['rolname']) && is_string($row['rolname'])) {
+                $rolenames[] = $row['rolname'];
+            }
+        }
+
+        return $rolenames;
+    }
+
     public function getRole(string $rolename): ?Role
     {
         $sql = "SELECT rolname, rolsuper, rolcreatedb, rolcreaterole, rolinherit,
@@ -671,6 +752,59 @@ final class PhpPgAdminConnection extends \PDO
         }
     }
 
+    /**
+     * @param array<string> $newMemberOf Roles to which the new role will be immediately added as a new member
+     * @param array<string> $newMembers Roles which are automatically added as members of the new role
+     * @param array<string> $newAdminMembers Roles which are automatically added as admin members of the new role
+     */
+    public function updateRole(
+        Role $role,
+        ?string $password = null,
+        array $newMemberOf = [],
+        array $newMembers = [],
+        array $newAdminMembers = [],
+    ): void {
+        $sql = "ALTER ROLE \"{$role->Name}\"";
+
+        if (!is_null($password) && $password !== '') {
+            $escapedEncryptedPassword = self::escapeIdentifier(self::encryptPassword($role->Name, $password));
+            $sql .= " WITH ENCRYPTED PASSWORD '{$escapedEncryptedPassword}'";
+        }
+
+        $sql .= $role->IsSuperuser
+            ? ' SUPERUSER'
+            : ' NOSUPERUSER';
+        $sql .= $role->CanCreateDb
+            ? ' CREATEDB'
+            : ' NOCREATEDB';
+        $sql .= $role->CanCreateRole
+            ? ' CREATEROLE'
+            : ' NOCREATEROLE';
+        $sql .= $role->CanInheritRights
+            ? ' INHERIT'
+            : ' NOINHERIT';
+        $sql .= $role->CanLogin
+            ? ' LOGIN'
+            : ' NOLOGIN';
+
+        $sql .= " CONNECTION LIMIT {$role->ConnectionLimit}";
+
+        if (!is_null($role->Expires)) {
+            $formattedExpiration = $role->Expires->format('Y-m-d\TH:i:s');
+            $sql .= " VALID UNTIL '{$formattedExpiration}'";
+        } else {
+            $sql .= " VALID UNTIL 'infinity'";
+        }
+
+        if ($this->exec($sql) === false) {
+            throw new \PDOException('Failed to execute SQL statement for updating role.');
+        }
+
+        $this->tryAlterMemberOf($newMemberOf, $role->Name);
+        $this->tryAlterMembers($newMembers, $role->Name);
+        $this->tryAlterAdminMembers($newAdminMembers, $role->Name);
+    }
+
     public static function loginDataIsValid(
         string $host,
         int $port,
@@ -688,6 +822,110 @@ final class PhpPgAdminConnection extends \PDO
             error_log($e->getMessage());
 
             return false;
+        }
+    }
+
+    /**
+     * Grants membership in a role
+     *
+     * @param $role The name of the target role
+     * @param $rolename The name of the role that will belong to the target role
+     */
+    private function grantRole(string $role, string $rolename, bool $onlyAdminOption = false): void
+    {
+        $escapedRole = self::escapeIdentifier($role);
+        $escapedRolename = self::escapeIdentifier($rolename);
+
+        $sql = "GRANT \"{$escapedRole}\" TO \"{$escapedRolename}\"";
+
+        if ($onlyAdminOption) {
+            $sql .= ' WITH ADMIN OPTION';
+        }
+
+        if ($this->exec($sql) === false) {
+            throw new \PDOException('Failed to execute SQL statement for grant role.');
+        }
+    }
+
+    /**
+     * Revokes membership in a role
+     *
+     * @param string $role The name of the target role
+     * @param string $rolename The name of the role that will not belong to the target role
+     */
+    private function revokeRole(
+        string $role,
+        string $rolename,
+        bool $onlyAdminOption = false,
+        RevokeType $type = RevokeType::Restrict,
+    ): void {
+        $escapedRole = self::escapeIdentifier($role);
+        $escapedRolename = self::escapeIdentifier($rolename);
+
+        $sql = "REVOKE ";
+
+        if ($onlyAdminOption) {
+            $sql .= 'ADMIN OPTION FOR ';
+        }
+
+        $sql .= "\"{$escapedRole}\" FROM \"{$escapedRolename}\" {$type->value}";
+
+        if ($this->exec($sql) === false) {
+            throw new \PDOException('Failed to execute SQL statement for revoke role.');
+        }
+    }
+
+    /**
+     * @param array<string> $newMemberOf Roles to which the new role will be immediately added as a new member
+     */
+    private function tryAlterMemberOf(array $newMemberOf, string $roleName): void
+    {
+        $oldMemberOf = $this->getMemberOf($roleName);
+        $memberOfToAdd = array_diff($newMemberOf, $oldMemberOf);
+        $memberOfToRemove = array_diff($oldMemberOf, $newMemberOf);
+
+        foreach ($memberOfToAdd as $addMember) {
+            $this->grantRole($addMember, $roleName);
+        }
+
+        foreach ($memberOfToRemove as $removeMember) {
+            $this->revokeRole($removeMember, $roleName, onlyAdminOption: false, type: RevokeType::Cascade);
+        }
+    }
+
+    /**
+     * @param array<string> $newMembers Roles which are automatically added as members of the new role
+     */
+    private function tryAlterMembers(array $newMembers, string $roleName): void
+    {
+        $oldMembers = $this->getMembers($roleName);
+        $membersToAdd = array_diff($newMembers, $oldMembers);
+        $membersToRemove = array_diff($oldMembers, $newMembers);
+
+        foreach ($membersToAdd as $addMember) {
+            $this->grantRole($roleName, $addMember);
+        }
+
+        foreach ($membersToRemove as $removeMember) {
+            $this->revokeRole($roleName, $removeMember, onlyAdminOption: false, type: RevokeType::Cascade);
+        }
+    }
+
+    /**
+     * @param array<string> $newAdminMembers Roles which are automatically added as admin members of the new role
+     */
+    private function tryAlterAdminMembers(array $newAdminMembers, string $roleName): void
+    {
+        $oldAdminMembers = $this->getMembers($roleName, onlyAdminMembers: true);
+        $adminMembersToAdd = array_diff($newAdminMembers, $oldAdminMembers);
+        $adminMembersToRemove = array_diff($oldAdminMembers, $newAdminMembers);
+
+        foreach ($adminMembersToAdd as $addMember) {
+            $this->grantRole($roleName, $addMember, onlyAdminOption: true);
+        }
+
+        foreach ($adminMembersToRemove as $removeMember) {
+            $this->revokeRole($roleName, $removeMember, onlyAdminOption: true, type: RevokeType::Cascade);
         }
     }
 

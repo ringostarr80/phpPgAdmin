@@ -941,10 +941,10 @@ msgstr "角色已创建。"
 msgid "Create role failed."
 msgstr "角色创建失败。"
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "角色已变更。"
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "角色变更失败。"
 
 msgid "Can login?"

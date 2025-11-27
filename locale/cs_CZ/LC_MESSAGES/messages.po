@@ -938,10 +938,10 @@ msgstr "Role byl vytvořena."
 msgid "Create role failed."
 msgstr "Nezdařilo se vytvořit roli."
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "Změny v roli byly provedeny."
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "Nezdařilo se provést změny v roli."
 
 msgid "Can login?"

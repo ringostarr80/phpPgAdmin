@@ -462,6 +462,7 @@ abstract class WebsiteComponents
      *      'disabled'?: bool,
      *      'max-length'?: number,
      *      'readonly'?: bool,
+     *      'selected-values'?: array<string>,
      *      'selection-values'?: array<string>,
      *      'type': 'bool'|'date'|'datetime-local'|'number'|'password'|'selection'|'text',
      *  },
@@ -503,7 +504,9 @@ abstract class WebsiteComponents
                 } elseif ($valueType === 'date' && $specs['value']['content'] instanceof \DateTimeInterface) {
                     $input->setAttribute('value', $specs['value']['content']->format('Y-m-d'));
                 } elseif ($valueType === 'datetime-local' && $specs['value']['content'] instanceof \DateTimeInterface) {
-                    $input->setAttribute('value', $specs['value']['content']->format('Y-m-d\Th:i'));
+                    $input->setAttribute('value', $specs['value']['content']->format('Y-m-d\TH:i'));
+                } elseif ($valueType === 'number' && is_numeric($specs['value']['content'])) {
+                    $input->setAttribute('value', (string)$specs['value']['content']);
                 } elseif (
                     ($valueType === 'text' || $valueType === 'password') &&
                     is_string($specs['value']['content'])
@@ -520,11 +523,18 @@ abstract class WebsiteComponents
             $select->setAttribute('multiple', 'multiple');
 
             if (isset($specs['value']['selection-values'])) {
+                $selectedValues = $specs['value']['selected-values'] ?? [];
+
                 $select->setAttribute('size', (string)min(10, count($specs['value']['selection-values'])));
 
                 foreach ($specs['value']['selection-values'] as $selectionValue) {
                     $option = $dom->createElement('option');
                     $option->setAttribute('value', $selectionValue);
+
+                    if (in_array($selectionValue, $selectedValues, true)) {
+                        $option->setAttribute('selected', 'selected');
+                    }
+
                     $option->appendChild($dom->createTextNode($selectionValue));
                     $select->appendChild($option);
                 }

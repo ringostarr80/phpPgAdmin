@@ -935,10 +935,10 @@ msgstr "Papel criado."
 msgid "Create role failed."
 msgstr "Falha ao criar o papel."
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "Papel alterado."
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "Falha ao alterar o papel."
 
 msgid "Can login?"

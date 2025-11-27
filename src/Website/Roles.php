@@ -14,8 +14,15 @@ final class Roles extends Website
     {
         $body = parent::buildHtmlBody($dom);
 
+        $trailSubjects = [TrailSubject::Server];
+        $rolenameParam = RequestParameter::getString('rolename') ?? '';
+
+        if ($rolenameParam !== '') {
+            $trailSubjects[] = TrailSubject::Role;
+        }
+
         $body->appendChild(WebsiteComponents::buildTopBar($dom));
-        $body->appendChild(WebsiteComponents::buildTrail($dom, [TrailSubject::Server, TrailSubject::Role]));
+        $body->appendChild(WebsiteComponents::buildTrail($dom, $trailSubjects));
 
         $action = RequestParameter::getString('action') ?? '';
         $serverId = RequestParameter::getString('server') ?? '';
@@ -111,11 +118,10 @@ final class Roles extends Website
 
         $liDrop = $dom->createElement('li');
         $urlParamsDrop = [
-            'action' => 'confirm_drop',
             'rolename' => RequestParameter::getString('rolename') ?? '',
             'server' => $serverId,
         ];
-        $urlDrop = 'roles.php?' . http_build_query($urlParamsDrop);
+        $urlDrop = 'drop_role.php?' . http_build_query($urlParamsDrop);
         $aDrop = $dom->createElement('a');
         $aDrop->setAttribute('href', $urlDrop);
         $aDrop->appendChild($dom->createTextNode(_('Drop')));

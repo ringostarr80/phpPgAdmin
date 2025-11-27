@@ -844,10 +844,10 @@ msgstr "角色建立已失敗。"
 msgid "stralterrole"
 msgstr "修改角色"
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "角色被修改。"
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "角色修改已失敗。"
 
 msgid "Can login?"

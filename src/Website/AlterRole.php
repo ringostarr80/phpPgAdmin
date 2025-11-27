@@ -4,29 +4,27 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{RequestParameter, WebsiteComponents};
+use PhpPgAdmin\{RequestParameter, Website, WebsiteComponents};
 use PhpPgAdmin\DDD\Entities\ServerSession;
-use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
+use PhpPgAdmin\DDD\ValueObjects\{Role, TrailSubject};
 
 final class AlterRole extends CreateRole
 {
-    //private string $message = '';
-
     public function __construct()
     {
         parent::__construct();
 
         if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
-            //$this->handlePostRequest();
+            $this->handlePostRequest();
         }
     }
 
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
-        $body = $dom->createElement('body');
+        $body = Website::buildHtmlBody($dom);
 
         $body->appendChild(WebsiteComponents::buildTopBar($dom));
-        $body->appendChild(WebsiteComponents::buildTrail($dom, [TrailSubject::Server]));
+        $body->appendChild(WebsiteComponents::buildTrail($dom, [TrailSubject::Server, TrailSubject::Role]));
 
         $serverId = RequestParameter::getString('server') ?? '';
         $rolename = RequestParameter::getString('rolename');
@@ -61,5 +59,80 @@ final class AlterRole extends CreateRole
         $body->append($form);
 
         return $body;
+    }
+
+    private function handlePostRequest(): void
+    {
+        $roleFromForm = Role::fromForm();
+
+        $password = RequestParameter::getString(Role::FORM_ID_PASSWORD) ?? '';
+        $passwordConfirmation = RequestParameter::getString(Role::FORM_ID_PASSWORD_CONFIRMATION) ?? '';
+
+        if ($password !== '' && $password !== $passwordConfirmation) {
+            $this->message = _('Password does not match confirmation.');
+
+            return;
+        }
+
+        $serverId = RequestParameter::getString('server') ?? '';
+        $serverSession = ServerSession::fromServerId($serverId);
+
+        if (is_null($serverSession)) {
+            return;
+        }
+
+        $formMemberOf = RequestParameter::getArray('memberof') ?? [];
+        $formMembers = RequestParameter::getArray('members') ?? [];
+        $formAdminMembers = RequestParameter::getArray('adminmembers') ?? [];
+
+        $newMemberOf = [];
+        $newMembers = [];
+        $newAdminMembers = [];
+
+        foreach ($formMemberOf as $member) {
+            if (is_string($member)) {
+                $newMemberOf[] = $member;
+            }
+        }
+
+        foreach ($formMembers as $member) {
+            if (is_string($member)) {
+                $newMembers[] = $member;
+            }
+        }
+
+        foreach ($formAdminMembers as $member) {
+            if (is_string($member)) {
+                $newAdminMembers[] = $member;
+            }
+        }
+
+        $db = $serverSession->getDatabaseConnection();
+
+        try {
+            $db->updateRole(
+                role: $roleFromForm,
+                password: $password,
+                newMemberOf: $newMemberOf,
+                newMembers: $newMembers,
+                newAdminMembers: $newAdminMembers,
+            );
+
+            if (!headers_sent()) {
+                $redirectUrl = 'roles.php';
+                $redirectUrlParams = [
+                    'message' => _('Role altered.'),
+                    'server' => $serverId,
+                    'subject' => 'server',
+                ];
+                header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
+                die;
+            }
+        } catch (\PDOException $e) {
+            $this->message = _('Role alter failed.');
+            $this->pdoException = $e;
+        } catch (\Throwable) {
+            $this->message = _('Role alter failed.');
+        }
     }
 }

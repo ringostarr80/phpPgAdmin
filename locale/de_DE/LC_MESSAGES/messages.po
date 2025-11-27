@@ -865,10 +865,10 @@ msgstr "Rolle angelegt."
 msgid "Create role failed."
 msgstr "Anlegen der Rolle fehlgeschlagen."
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "Rolle geändert."
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "Ändern der Rolle fehlgeschlagen."
 
 msgid "Can login?"

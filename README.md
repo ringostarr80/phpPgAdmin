@@ -61,7 +61,7 @@ For an overview of the software quality over time and the evolving metrics, chec
 | plugin.php         | ❌     | yyyy-mm-dd |
 | privileges.php     | ❌     | yyyy-mm-dd |
 | redirect.php       | ❌     | yyyy-mm-dd |
-| roles.php          | ❌     | yyyy-mm-dd |
+| roles.php          | ✅     | 2025-11-27 |
 | rules.php          | ❌     | yyyy-mm-dd |
 | schemas.php        | ❌     | yyyy-mm-dd |
 | sequences.php      | ❌     | yyyy-mm-dd |

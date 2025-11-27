@@ -944,10 +944,10 @@ msgstr "Rol creado."
 msgid "Create role failed."
 msgstr "Falló la creación del rol."
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "Rol modificado."
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "Falló la modificación del rol."
 
 msgid "Can login?"

@@ -10,8 +10,6 @@ use PhpPgAdmin\DDD\ValueObjects\{Role, TrailSubject};
 
 class CreateRole extends Website
 {
-    private string $message = '';
-
     public function __construct()
     {
         parent::__construct();
@@ -104,15 +102,14 @@ class CreateRole extends Website
             : '';
 
         if (empty($rolename)) {
-            $rolename = RequestParameter::getString('formRolename');
+            $rolename = RequestParameter::getString(Role::FORM_ID_NAME);
         }
 
         $nameSpecs = [
-            'id' => 'formRolename',
+            'id' => Role::FORM_ID_NAME,
             'label-text' => _('Name'),
             'value' => [
                 'content' => $rolename,
-                'disabled' => !is_null($role),
                 'max-length' => 63,
                 'readonly' => !is_null($role),
                 'type' => 'text',
@@ -121,20 +118,20 @@ class CreateRole extends Website
         $trName = WebsiteComponents::buildTableRowForFormular($dom, $nameSpecs);
 
         $passwordSpecs = [
-            'id' => 'formPassword',
+            'id' => Role::FORM_ID_PASSWORD,
             'label-text' => _('Password'),
             'value' => [
-                'content' => RequestParameter::getString('formPassword') ?? '',
+                'content' => RequestParameter::getString(Role::FORM_ID_PASSWORD) ?? '',
                 'type' => 'password',
             ],
         ];
         $trPassword = WebsiteComponents::buildTableRowForFormular($dom, $passwordSpecs);
 
         $confirmPasswordSpecs = [
-            'id' => 'formConfirm',
+            'id' => Role::FORM_ID_PASSWORD_CONFIRMATION,
             'label-text' => _('Confirm'),
             'value' => [
-                'content' => RequestParameter::getString('formConfirm') ?? '',
+                'content' => RequestParameter::getString(Role::FORM_ID_PASSWORD_CONFIRMATION) ?? '',
                 'type' => 'password',
             ],
         ];
@@ -219,10 +216,21 @@ class CreateRole extends Website
             $membersSelectionValues[] = $dbRole->Name;
         }
 
+        $currentMembersOf = [];
+        $currentMembers = [];
+        $currentAdminMembers = [];
+
+        if (!is_null($role) && !is_null($db)) {
+            $currentMembersOf = $db->getMemberOf($role->Name);
+            $currentMembers = $db->getMembers($role->Name);
+            $currentAdminMembers = $db->getMembers($role->Name, true);
+        }
+
         $memberOfSpecs = [
             'id' => 'memberof[]',
             'label-text' => _('Member of'),
             'value' => [
+                'selected-values' => $currentMembersOf,
                 'selection-values' => $membersSelectionValues,
                 'type' => 'selection',
             ],
@@ -233,6 +241,7 @@ class CreateRole extends Website
             'id' => 'members[]',
             'label-text' => _('Members'),
             'value' => [
+                'selected-values' => $currentMembers,
                 'selection-values' => $membersSelectionValues,
                 'type' => 'selection',
             ],
@@ -243,6 +252,7 @@ class CreateRole extends Website
             'id' => 'adminmembers[]',
             'label-text' => _('Admin members'),
             'value' => [
+                'selected-values' => $currentAdminMembers,
                 'selection-values' => $membersSelectionValues,
                 'type' => 'selection',
             ],
@@ -278,8 +288,8 @@ class CreateRole extends Website
             return;
         }
 
-        $formPassword = RequestParameter::getString('formPassword') ?? '';
-        $formConfirm = RequestParameter::getString('formConfirm') ?? '';
+        $formPassword = RequestParameter::getString(Role::FORM_ID_PASSWORD) ?? '';
+        $formConfirm = RequestParameter::getString(Role::FORM_ID_PASSWORD_CONFIRMATION) ?? '';
 
         if ($formPassword !== $formConfirm) {
             $this->message = _('Password does not match confirmation.');

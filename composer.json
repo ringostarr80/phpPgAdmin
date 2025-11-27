@@ -57,7 +57,7 @@
             "@dev:lint:phpcs"
         ],
         "dev:lint:php": "parallel-lint --exclude vendor .",
-        "dev:lint:phpcs": "phpcs -d memory_limit=256M src/ autoload.php all_db.php browser.php history.php history_clear.php history_delete.php history_download.php index.php intro.php login.php logout.php server-logout.php servers.php servers-tree.php sqledit.php",
+        "dev:lint:phpcs": "phpcs -d memory_limit=256M src/ autoload.php all_db.php alter_db.php alter_role.php browser.php create_db.php create_role.php drop_db.php drop_role.php history.php history_clear.php history_delete.php history_download.php index.php intro.php login.php logout.php roles.php server-logout.php servers.php servers-tree.php sqledit.php",
         "dev:test": [
             "@dev:test:acceptance"
         ],

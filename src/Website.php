@@ -9,6 +9,7 @@ abstract class Website
     public const APP_NAME = 'phpPgAdmin';
     public const APP_VERSION = '8.0.0-prealpha';
 
+    protected string $message = '';
     protected ?\PDOException $pdoException = null;
 
     /**
@@ -132,7 +133,7 @@ abstract class Website
     {
         $table = $dom->createElement('table');
         $table->setAttribute('class', 'error');
-        $table->setAttribute('style', 'margin-bottom: 10px');
+        $table->setAttribute('style', 'margin-bottom: 10px; width: 100%;');
         $table->setAttribute('cellpadding', '5');
 
         $tBody = $dom->createElement('tbody');

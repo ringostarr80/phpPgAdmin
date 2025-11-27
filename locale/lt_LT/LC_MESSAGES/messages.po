@@ -956,10 +956,10 @@ msgstr "Rolė sukurta."
 msgid "Create role failed."
 msgstr "Nepavyko sukurti rolės."
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "Rolė pakeista."
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "Nepavyko pakeisti rolės."
 
 msgid "Can login?"

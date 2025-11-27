@@ -18,6 +18,10 @@ use PhpPgAdmin\RequestParameter;
  */
 final class Role
 {
+    public const FORM_ID_NAME = 'name';
+    public const FORM_ID_PASSWORD = 'password';
+    public const FORM_ID_PASSWORD_CONFIRMATION = 'password_confirmation';
+
     public function __construct(
         private string $name,
         private bool $isSuperuser = false,
@@ -103,7 +107,7 @@ final class Role
 
     public static function fromForm(): self
     {
-        $rolename = RequestParameter::getString('formRolename') ?? '';
+        $rolename = RequestParameter::getString(self::FORM_ID_NAME) ?? '';
         $super = RequestParameter::getString('formSuper') ?? '';
         $createDb = RequestParameter::getString('formCreateDB') ?? '';
         $createRole = RequestParameter::getString('formCreateRole') ?? '';

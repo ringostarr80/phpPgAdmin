@@ -11,8 +11,6 @@ use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
 
 final class CreateDb extends Website
 {
-    private string $message = '';
-
     public function __construct()
     {
         parent::__construct();

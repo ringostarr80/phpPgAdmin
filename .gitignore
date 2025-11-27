@@ -7,3 +7,6 @@ vendor/
 
 .DS_Store
 .env
+
+sbom.xml
+*-sbom.xml

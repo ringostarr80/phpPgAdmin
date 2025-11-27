@@ -92,7 +92,7 @@ msgstr "Nombre"
 msgid "strdefinition"
 msgstr "Definición"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Propiedades"
 
 msgid "strbrowse"
@@ -302,7 +302,7 @@ msgstr "Formato"
 msgid "strdata"
 msgstr "Dato"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Confirmar"
 
 msgid "strexpression"
@@ -498,10 +498,10 @@ msgstr "El esquema especificado es inválido."
 msgid "strbadencoding"
 msgstr "No se pudo configurar la codificación del cliente en la base de datos."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Error de SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "En la setencia:"
 
 msgid "strinvalidparam"
@@ -783,16 +783,16 @@ msgstr "Nombre de usuario"
 msgid "Password"
 msgstr "Contraseña"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "¿Superusuario?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "¿Puede crear BD?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Expira"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Valores predeterminados de la sesión."
 
 msgid "strnousers"
@@ -843,7 +843,7 @@ msgstr "Falló al modificar contraseña."
 msgid "strpasswordshort"
 msgstr "La contraseña es muy corta."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Las contraseñas no coinciden."
 
 # Groups
@@ -886,13 +886,13 @@ msgstr "Grupo eliminado."
 msgid "strgroupdroppedbad"
 msgstr "Falló la eliminación del grupo."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Miembros"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Miembro de"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Administadores "
 
 msgid "straddmember"
@@ -917,64 +917,64 @@ msgid "strmemberdroppedbad"
 msgstr "Falló al retirar un miembro del grupo."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Rol"
 
 msgid "Roles"
 msgstr "Roles"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Mostrar todas los roles"
 
 msgid "strnoroles"
 msgstr "No se encontraron roles."
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "¿Hereda privilegios?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Crear rol"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "¿Puede crear roles?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Rol creado."
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "Falló la creación del rol."
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "Rol modificado."
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "Falló la modificación del rol."
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "¿Puede iniciar sesión?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Límite de conexión"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Eliminar rol"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "¿Estás seguro de que desea eliminar el rol \"%s\"?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Rol eliminado."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Falló la eliminación del rol."
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Sin límite"
 
 msgid "strnever"
 msgstr "Nunca"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "Debes darle un nombre al rol."
 
 # Privileges

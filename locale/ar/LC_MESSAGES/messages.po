@@ -74,7 +74,7 @@ msgstr "الإسم"
 msgid "strdefinition"
 msgstr "التعريف"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "خصائص"
 
 msgid "strbrowse"
@@ -263,7 +263,7 @@ msgstr "Format"
 msgid "strdata"
 msgstr "Data"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "تأكيد"
 
 msgid "strexpression"
@@ -360,10 +360,10 @@ msgstr "Invalid schema specified."
 msgid "strbadencoding"
 msgstr "لقد فشل ضبط شيفرة العميل client encoding في قاعدة البيانات."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "خطأ SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "في الجملة statement:"
 
 msgid "strinvalidparam"
@@ -554,16 +554,16 @@ msgstr "إسم المستخدم"
 msgid "Password"
 msgstr "كلمة السر"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "مستخدم ذو صلاحيّات عليا؟"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "إنشاء قاعدة بيانات؟"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "ينتهي"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Session defaults"
 
 msgid "strnousers"
@@ -614,7 +614,7 @@ msgstr "لم ينجح تغيير كلمة السر."
 msgid "strpasswordshort"
 msgstr "كلمة السر أقصر من الحد الأدنى."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "كلمة السر المدخلة لم تتطابق مع تأكيد كلمة السر."
 
 # Groups
@@ -654,7 +654,7 @@ msgstr "تم حذف المجموعة بنجاح."
 msgid "strgroupdroppedbad"
 msgstr "لقد فشلت عملية حذف المجموعة."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "الأعضاء"
 
 msgid "straddmember"

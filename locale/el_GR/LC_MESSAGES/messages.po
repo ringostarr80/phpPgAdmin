@@ -86,7 +86,7 @@ msgstr "Ονομα"
 msgid "strdefinition"
 msgstr "Ορισμός"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Ιδιότητες"
 
 msgid "strbrowse"
@@ -287,7 +287,7 @@ msgstr "Μορφή δεδομένων"
 msgid "strdata"
 msgstr "Δεδομένα"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Επιβεβαίωση"
 
 msgid "strexpression"
@@ -409,10 +409,10 @@ msgstr "Το σχήμα που δηλώθηκε δεν είναι έγκυρο."
 msgid "strbadencoding"
 msgstr "Αποτυχία ορισμού κωδικοποίησης στη βάση δεδομένων."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Σφάλμα στην SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "Στη δήλωση:"
 
 msgid "strinvalidparam"
@@ -625,16 +625,16 @@ msgstr "Ονομα χρήστη"
 msgid "Password"
 msgstr "Κωδικός χρήστη"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Υπερχρήστης?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Δημιουργία βάσης?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Λήξη"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Εξ ορισμού παράμετροι συνεδρίας"
 
 msgid "strnousers"
@@ -685,7 +685,7 @@ msgstr "Η αλλαγή του κωδικού απέτυχε."
 msgid "strpasswordshort"
 msgstr "Ο κωδικός έχει πολύ μικρό μήκος."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Σφάλμα στην επιβεβαίωση του κωδικού."
 
 # Groups
@@ -725,13 +725,13 @@ msgstr "Η ομάδα διαγράφηκε."
 msgid "strgroupdroppedbad"
 msgstr "Η διαγραφή της ομάδας απέτυχε."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Μέλη"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Μέλος της ομάδας"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Μέλη της ομάδας διαχειριστών"
 
 msgid "straddmember"
@@ -756,58 +756,58 @@ msgid "strmemberdroppedbad"
 msgstr "Η διαγραφή του μέλους απέτυχε."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Ρόλος"
 
 msgid "Roles"
 msgstr "Ρόλοι"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Εμφάνιση όλων των ρόλων"
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "Κληρονομεί προνόμια?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Δημιουργία ρόλου"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "Δημιουργία ρόλου?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Ο ρόλος δημιουργήθηκε."
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "Η δημιουργία του ρόλου απέτυχε."
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "Επιτρέπεται η σύνδεση?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Οριο συνδέσεων"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Διαγραφή ρόλου"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Διαγραφή του ρόλου \"%s\"?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Ο ρόλος διαγράφηκε."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Η διαγραφή του ρόλου απέτυχε."
 
 msgid "strnoroles"
 msgstr "Δε βρέθηκαν ρόλοι."
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Κανένα όριο"
 
 msgid "strnever"
 msgstr "Ποτέ"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "Πρέπει να δώσετε όνομα στο ρόλο."
 
 # Privileges

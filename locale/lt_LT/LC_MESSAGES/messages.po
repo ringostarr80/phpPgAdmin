@@ -95,7 +95,7 @@ msgstr "Pavadinimas"
 msgid "strdefinition"
 msgstr "Apibrėžtis"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Savybės"
 
 msgid "strbrowse"
@@ -312,7 +312,7 @@ msgstr "Formatas"
 msgid "strdata"
 msgstr "Duomenys"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Patvirtinti"
 
 msgid "strexpression"
@@ -510,10 +510,10 @@ msgstr "Nurodyta neteisinga schema."
 msgid "strbadencoding"
 msgstr "Nepavyko nustatyti kliento koduotės duomenų bazėje."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL klaida:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "Sakinyje:"
 
 msgid "strinvalidparam"
@@ -798,16 +798,16 @@ msgstr "Naudotojo vardas"
 msgid "Password"
 msgstr "Slaptažodis"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Superuser?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Gali kurti DB?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Baigia galioti"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Seanso numatytosios reikšmės"
 
 msgid "strnousers"
@@ -858,7 +858,7 @@ msgstr "Nepavyko pakeisti slaptažodžio."
 msgid "strpasswordshort"
 msgstr "Slaptažodis per trumpas."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Slaptažodis neatitinka patvirtinimo."
 
 # Groups
@@ -898,13 +898,13 @@ msgstr "Grupė pašalinta."
 msgid "strgroupdroppedbad"
 msgstr "Nepavyko pašalinti grupės."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Nariai"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Yra narys"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Admin nariai"
 
 msgid "straddmember"
@@ -929,64 +929,64 @@ msgid "strmemberdroppedbad"
 msgstr "Nepavyko pašalinti nario."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Rolė"
 
 msgid "Roles"
 msgstr "Rolės"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Rodyti roles"
 
 msgid "strnoroles"
 msgstr "Rolių nerasta."
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?s"
 msgstr "Paveldi privilegijas?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Kurti rolę"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "Gali kurti rolę?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Rolė sukurta."
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "Nepavyko sukurti rolės."
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "Rolė pakeista."
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "Nepavyko pakeisti rolės."
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "Gali prisijungti?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Sujungimų limitas"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Šalinti rolę"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Ar tikrai norite šalinti rolę \"%s\"?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Rolė pašalinta."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Nepavyko pašalinti rolės."
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Be ribojimų"
 
 msgid "strnever"
 msgstr "Niekada"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "Turite suteikti rolei pavadinimą."
 
 # Privileges

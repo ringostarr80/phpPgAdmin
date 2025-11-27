@@ -10,8 +10,6 @@ use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
 
 final class AlterDb extends Website
 {
-    private string $message = '';
-
     public function __construct()
     {
         parent::__construct();
@@ -67,7 +65,7 @@ final class AlterDb extends Website
         $body = parent::buildHtmlBody($dom);
 
         $body->appendChild(WebsiteComponents::buildTopBar($dom));
-        $body->appendChild(WebsiteComponents::buildTrail($dom, TrailSubject::Server));
+        $body->appendChild(WebsiteComponents::buildTrail($dom, [TrailSubject::Server]));
 
         $database = RequestParameter::getString('database') ?? '';
         $serverId = RequestParameter::getString('server') ?? '';

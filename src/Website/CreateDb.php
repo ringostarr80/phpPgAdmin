@@ -11,8 +11,6 @@ use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
 
 final class CreateDb extends Website
 {
-    private string $message = '';
-
     public function __construct()
     {
         parent::__construct();
@@ -27,7 +25,7 @@ final class CreateDb extends Website
         $body = parent::buildHtmlBody($dom);
 
         $body->appendChild(WebsiteComponents::buildTopBar($dom));
-        $body->appendChild(WebsiteComponents::buildTrail($dom, TrailSubject::Server));
+        $body->appendChild(WebsiteComponents::buildTrail($dom, [TrailSubject::Server]));
 
         $serverId = RequestParameter::getString('server') ?? '';
         $serverSession = ServerSession::fromServerId($serverId);

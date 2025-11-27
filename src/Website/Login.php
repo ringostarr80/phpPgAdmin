@@ -9,8 +9,6 @@ use PhpPgAdmin\Database\PhpPgAdminConnection;
 
 final class Login extends Website
 {
-    private string $message = '';
-
     public function __construct()
     {
         parent::__construct();

@@ -74,7 +74,7 @@ msgstr "Navn"
 msgid "strdefinition"
 msgstr "Definition"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Egenskaber"
 
 msgid "strbrowse"
@@ -266,7 +266,7 @@ msgstr "Format"
 msgid "strdata"
 msgstr "Data"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Bekræft"
 
 msgid "strexpression"
@@ -363,10 +363,10 @@ msgstr "Det lykkedes ikke at sætte klientkodning i databasen."
 msgid "strbadSchema"
 msgstr "Forkert Skema angivet."
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "I påstanden:"
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL fejl:"
 
 msgid "strinvalidparam"
@@ -545,16 +545,16 @@ msgstr "Brugernavn"
 msgid "Password"
 msgstr "Password"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Superbruger?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Opret database?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Udløber"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Sessionsindstillinger"
 
 msgid "strnewname"
@@ -617,7 +617,7 @@ msgstr "Ændring af password mislykkedes."
 msgid "strpasswordshort"
 msgstr "Password er for kort."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Password er forskellig fra bekræftelsen."
 
 # Groups
@@ -694,7 +694,7 @@ msgstr "Rettigheder"
 msgid "strnoprivileges"
 msgstr "Dette objekt har standard ejerrettigheder."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Medlemmer"
 
 msgid "strrevoke"

@@ -1874,14 +1874,14 @@ class Misc
             return false;
         }
 
-        $nSize = (double) $a_IniParts[1];
+        $nSize = (float) $a_IniParts[1];
         $strUnit = strtolower($a_IniParts[2]);
 
         switch ($strUnit) {
             case 'm':
-                return ($nSize * (double) 1048576);
+                return ($nSize * (float) 1048576);
             case 'k':
-                return ($nSize * (double) 1024);
+                return ($nSize * (float) 1024);
             case 'b':
             default:
                 return $nSize;

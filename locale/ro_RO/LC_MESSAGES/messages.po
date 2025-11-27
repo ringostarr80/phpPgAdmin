@@ -86,7 +86,7 @@ msgstr "Nume"
 msgid "strdefinition"
 msgstr "Definiţie"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Proprietăţi"
 
 msgid "strbrowse"
@@ -290,7 +290,7 @@ msgstr "Format"
 msgid "strdata"
 msgstr "Dată"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Confirmare"
 
 msgid "strexpression"
@@ -418,10 +418,10 @@ msgstr "Schemă specificată incorectă."
 msgid "strbadencoding"
 msgstr "Imposibil de setat codificarea client în baza de date."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Eroare SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "În instrucţiunea:"
 
 msgid "strinvalidparam"
@@ -637,16 +637,16 @@ msgstr "Nume utilizator"
 msgid "Password"
 msgstr "Parolă"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Utilizator privilegiat?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Creează BD?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Expiră la"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Valori implicite pentru sesiune"
 
 msgid "strnousers"
@@ -697,7 +697,7 @@ msgstr "Schimbare parolă eşuată."
 msgid "strpasswordshort"
 msgstr "Parola este prea scurtă."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Parola nu se confirmă."
 
 # Groups
@@ -737,13 +737,13 @@ msgstr "Grup şters."
 msgid "strgroupdroppedbad"
 msgstr "Ştergere grup eşuată."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Membri"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Membru al"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Membri administratori"
 
 msgid "straddmember"
@@ -768,67 +768,67 @@ msgid "strmemberdroppedbad"
 msgstr "Ştergere membru eşuată."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Rol"
 
 msgid "Roles"
 msgstr "Roluri"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Afişare toate rolurile"
 
 msgid "strnoroles"
 msgstr "Nici un rol găsit"
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "Moştenire privilegii?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Creare rol"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "Creare rol posibilă?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Rol creat"
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "Creare rol eşuată"
 
 msgid "stralterrole"
 msgstr "Modificare rol"
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "Rol modificat"
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "Modificare rol eşuată"
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "Autentificare posibilă?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Limită conectare"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Ştergere rol"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Sigur ştergeţi rolul \"%s\"?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Rol şters"
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Ştergere rol eşuată"
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Fără limită"
 
 msgid "strnever"
 msgstr "Niciodată"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "Specificaţi un nume pentru rol"
 
 # Privileges

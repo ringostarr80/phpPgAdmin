@@ -97,7 +97,7 @@
     <rule ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.UselessTernaryOperator"/>
     <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
-    <rule ref="SlevomatCodingStandard.Exceptions.DisallowNonCapturingCatch"/>
+    <!--<rule ref="SlevomatCodingStandard.Exceptions.DisallowNonCapturingCatch"/>-->
     <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>
     <rule ref="SlevomatCodingStandard.Exceptions.RequireNonCapturingCatch"/>
     <!--<rule ref="SlevomatCodingStandard.Files.FileLength"/>-->

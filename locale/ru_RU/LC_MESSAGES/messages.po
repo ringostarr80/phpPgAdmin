@@ -92,7 +92,7 @@ msgstr "Имя"
 msgid "strdefinition"
 msgstr "Определение"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Свойства"
 
 msgid "strbrowse"
@@ -299,7 +299,7 @@ msgstr "Формат"
 msgid "strdata"
 msgstr "Данные"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Подтвердить"
 
 msgid "strexpression"
@@ -492,10 +492,10 @@ msgstr "Обнаружена неверная схема."
 msgid "strbadencoding"
 msgstr "Ошибка при установке кодировки клиента (client encoding)."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Ошибка SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "В операторе:"
 
 msgid "strinvalidparam"
@@ -777,16 +777,16 @@ msgstr "Имя пользователя"
 msgid "Password"
 msgstr "Пароль"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Суперпользователь?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Создать базу данных?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Срок действия"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Опции сеанса по умолчанию"
 
 msgid "strnousers"
@@ -837,7 +837,7 @@ msgstr "Изменение пароля прервано."
 msgid "strpasswordshort"
 msgstr "Пароль слишком короткий."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Пароль не соответствует подтверждению."
 
 # Groups
@@ -877,13 +877,13 @@ msgstr "Группа удалена."
 msgid "strgroupdroppedbad"
 msgstr "Удаление группы прервано."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Участников"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Добавить в роли"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Admin-участников"
 
 msgid "straddmember"
@@ -908,64 +908,64 @@ msgid "strmemberdroppedbad"
 msgstr "Удаление участника прервано."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Роль"
 
 msgid "Roles"
 msgstr "Роли"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Показать все роли"
 
 msgid "strnoroles"
 msgstr "Роли не найдены."
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "Наследовать привилегии?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Создать роль"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "Может создавать роли?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Роль создана."
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "Создание роли прервано."
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "Роль изменена."
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "Изменение роли прервано."
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "Может логиниться?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Лимит соединений"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Удалить роль"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Вы действительно хотите удалить роль \"%s\"?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Роль удалена."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Удаление роли прервано."
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Без ограничений"
 
 msgid "strnever"
 msgstr "Никогда"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "Вам необходимо определить имя роли."
 
 # Privileges

@@ -86,7 +86,7 @@ msgstr "Nazwa"
 msgid "strdefinition"
 msgstr "Definicja"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Właściwości"
 
 msgid "strbrowse"
@@ -293,7 +293,7 @@ msgstr "Format"
 msgid "strdata"
 msgstr "Dane"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Potwierdź"
 
 msgid "strexpression"
@@ -421,10 +421,10 @@ msgstr "Podano błędny schemat."
 msgid "strbadencoding"
 msgstr "Błędne kodowanie bazy."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Błąd SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "W poleceniu:"
 
 msgid "strinvalidparam"
@@ -640,16 +640,16 @@ msgstr "Nazwa użytkownika"
 msgid "Password"
 msgstr "Hasło"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Administrator?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Tworzenie BD?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Wygasa"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Wartości domyślne sesji"
 
 msgid "strnousers"
@@ -700,7 +700,7 @@ msgstr "Próba zmiany hasła się nie powiodła."
 msgid "strpasswordshort"
 msgstr "Hasło jest za krótkie."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Hasło i potwierdzenie muszą być takie same."
 
 # Groups
@@ -740,7 +740,7 @@ msgstr "Grupa została usunięta."
 msgid "strgroupdroppedbad"
 msgstr "Próba usunięcia grupy się nie powiodła."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Członkowie"
 
 msgid "straddmember"
@@ -765,34 +765,34 @@ msgid "strmemberdroppedbad"
 msgstr "Próba usunięcia członka grupy się nie powiodła."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Rola"
 
 msgid "Roles"
 msgstr "Role"
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "Dziedziczyć uprawnienia?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Utwórz rolę"
 
 msgid "strcatupdate"
 msgstr "Modyfikacja katalogów?"
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "Może się logować?"
 
 msgid "strmaxconnections"
 msgstr "Maks. ilość połączeń"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Czy na pewno chcesz usunąć rolę \"%s\"?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Rola została usunięta."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Próba usunięcia roli się nie powiodła."
 
 # Privileges

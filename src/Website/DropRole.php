@@ -8,7 +8,7 @@ use PhpPgAdmin\{RequestParameter, Website, WebsiteComponents};
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
 
-final class DropDb extends Website
+final class DropRole extends Website
 {
     public function __construct()
     {
@@ -24,17 +24,17 @@ final class DropDb extends Website
         $body = parent::buildHtmlBody($dom);
 
         $body->appendChild(WebsiteComponents::buildTopBar($dom));
-        $body->appendChild(WebsiteComponents::buildTrail($dom, [TrailSubject::Server]));
+        $body->appendChild(WebsiteComponents::buildTrail($dom, [TrailSubject::Server, TrailSubject::Role]));
 
-        $database = RequestParameter::getString('database') ?? '';
+        $rolename = RequestParameter::getString('rolename') ?? '';
         $serverId = RequestParameter::getString('server') ?? '';
 
-        $h2 = $dom->createElement('h2', _('Drop'));
+        $h2 = $dom->createElement('h2', _('Drop role'));
         $aHelp = WebsiteComponents::buildHelpLink(
             dom: $dom,
             url: 'help.php',
             urlParams: [
-                'help' => 'pg.database.drop',
+                'help' => 'pg.role.drop',
                 'server' => $serverId,
             ],
         );
@@ -45,12 +45,12 @@ final class DropDb extends Website
         $form->setAttribute('method', 'post');
         $p = $dom->createElement(
             'p',
-            sprintf(_('Are you sure you want to drop the database "%s"?'), $database),
+            sprintf(_('Are you sure you want to drop the role "%s"?'), $rolename),
         );
-        $inputHiddenDatabase = $dom->createElement('input');
-        $inputHiddenDatabase->setAttribute('type', 'hidden');
-        $inputHiddenDatabase->setAttribute('name', 'database');
-        $inputHiddenDatabase->setAttribute('value', $database);
+        $inputHiddenRolename = $dom->createElement('input');
+        $inputHiddenRolename->setAttribute('type', 'hidden');
+        $inputHiddenRolename->setAttribute('name', 'rolename');
+        $inputHiddenRolename->setAttribute('value', $rolename);
         $inputHiddenServer = $dom->createElement('input');
         $inputHiddenServer->setAttribute('type', 'hidden');
         $inputHiddenServer->setAttribute('name', 'server');
@@ -69,7 +69,7 @@ final class DropDb extends Website
         $aButtonCancel->setAttribute('href', $cancelUrl . '?' . http_build_query($cancelUrlParams));
 
         $form->appendChild($p);
-        $form->appendChild($inputHiddenDatabase);
+        $form->appendChild($inputHiddenRolename);
         $form->appendChild($inputHiddenServer);
         $form->appendChild($inputSubmit);
         $form->appendChild($dom->createEntityReference('nbsp'));
@@ -82,16 +82,17 @@ final class DropDb extends Website
 
     private function handlePostRequest(): void
     {
-        $database = RequestParameter::getString('database') ?? '';
+        $rolename = RequestParameter::getString('rolename') ?? '';
         $serverId = RequestParameter::getString('server') ?? '';
         $serverSession = ServerSession::fromServerId($serverId);
 
-        if (is_null($serverSession) || empty($database)) {
+        if (is_null($serverSession) || empty($rolename)) {
             return;
         }
 
-        $redirectUrl = 'all_db.php';
+        $redirectUrl = 'roles.php';
         $redirectUrlParams = [
+            'message' => _('Role dropped.'),
             'server' => $serverId,
             'subject' => 'server',
         ];
@@ -99,10 +100,10 @@ final class DropDb extends Website
         $db = $serverSession->getDatabaseConnection();
 
         try {
-            $db->dropDatabase($database);
-            $redirectUrlParams['message'] = _('Database dropped.');
+            $db->dropRole($rolename);
+            $redirectUrlParams['message'] = _('Role dropped.');
         } catch (\Throwable $e) {
-            $redirectUrlParams['message'] = _('Database drop failed.') . ' - ' . $e->getMessage();
+            $redirectUrlParams['message'] = _('Role drop failed.') . ' - ' . $e->getMessage();
         }
 
         if (!headers_sent()) {

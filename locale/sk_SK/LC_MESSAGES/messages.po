@@ -86,7 +86,7 @@ msgstr "Meno"
 msgid "strdefinition"
 msgstr "Definícia"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Vlastnosti"
 
 msgid "strbrowse"
@@ -284,7 +284,7 @@ msgstr "Formát"
 msgid "strdata"
 msgstr "Dáta"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Potvrdiť"
 
 msgid "strexpression"
@@ -393,10 +393,10 @@ msgstr "Špecifikovaná chybná schéma."
 msgid "strbadencoding"
 msgstr "Nastavenie kódovania v databáze zlyhalo."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL chyba:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "Vo výraze:"
 
 msgid "strinvalidparam"
@@ -608,16 +608,16 @@ msgstr "Meno používateľa"
 msgid "Password"
 msgstr "Heslo"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Superuser?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Vytváranie DB?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Expiruje"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Sessions defaults"
 
 # s cim to tak suvis??:)
@@ -670,7 +670,7 @@ msgstr "Heslo NEBOLO zmenené."
 msgid "strpasswordshort"
 msgstr "Heslo je príliš krátke."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Heslo sa nezhoduje so zadaným overovacím heslom."
 
 # Groups
@@ -710,7 +710,7 @@ msgstr "Skupina zmazaná."
 msgid "strgroupdroppedbad"
 msgstr "Skupina nebola zmazaná."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Členovia"
 
 msgid "straddmember"

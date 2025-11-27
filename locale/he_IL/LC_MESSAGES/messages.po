@@ -74,7 +74,7 @@ msgstr "שם"
 msgid "strdefinition"
 msgstr "הגדרה"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "העדפות"
 
 msgid "strbrowse"
@@ -263,7 +263,7 @@ msgstr "סוג"
 msgid "strdata"
 msgstr "מידע"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "אשר"
 
 msgid "strexpression"
@@ -363,10 +363,10 @@ msgstr "תרשים שגוי צויין"
 msgid "strbadencoding"
 msgstr "נכשל בהתאמת קידוד משתמש למסד הנתונים."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "שגיאת SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "בהצהרה:"
 
 msgid "strinvalidparam"
@@ -557,16 +557,16 @@ msgstr "שם משתמש"
 msgid "Password"
 msgstr "סיסמה"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "משתמש על?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "יצירת בסיס נתונים?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Expires"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "הפעלת ברירת מחדל"
 
 msgid "strnousers"
@@ -617,7 +617,7 @@ msgstr "נכשל בשינוי סיסמה."
 msgid "strpasswordshort"
 msgstr "סיסמה קצרה מידי."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "סיסמה אינה תואמת לאישורה."
 
 # Groups
@@ -657,7 +657,7 @@ msgstr "קבוצה נמחקה."
 msgid "strgroupdroppedbad"
 msgstr "מחיקת קבוצה נכשלה."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "חברים"
 
 msgid "straddmember"

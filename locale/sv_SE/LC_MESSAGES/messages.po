@@ -74,7 +74,7 @@ msgstr "Namn"
 msgid "strdefinition"
 msgstr "Definition"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Egenskaper"
 
 msgid "strbrowse"
@@ -260,7 +260,7 @@ msgstr "När"
 msgid "strdata"
 msgstr "Data"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Bekräfta"
 
 msgid "strexpression"
@@ -333,10 +333,10 @@ msgstr "Misslyckades att sätta klientkodning i databasen."
 msgid "strbadschema"
 msgstr "Otillåtet schema angett."
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "I påstående:"
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL fel:"
 
 msgid "strinvalidparam"
@@ -512,16 +512,16 @@ msgstr "Användarnamn"
 msgid "Password"
 msgstr "Lösenord"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Superanvändare?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Skapa Databas?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Utgångsdatum"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Sessionsinställningar"
 
 msgid "strnewname"
@@ -584,7 +584,7 @@ msgstr "Misslyckades att ändra lösenord."
 msgid "strpasswordshort"
 msgstr "För få tecken i lösenordet."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Lösenordet är inte samma som bekräftelsen."
 
 msgid "strgroup"
@@ -659,7 +659,7 @@ msgstr "Rättighet"
 msgid "strnoprivileges"
 msgstr "Detta objekt har standard ägarrättigheter."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Medelemmar"
 
 msgid "strrevoke"

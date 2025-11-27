@@ -74,7 +74,7 @@ msgstr "Ім\"я"
 msgid "strdefinition"
 msgstr "Визначення"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Властивості"
 
 msgid "strbrowse"
@@ -263,7 +263,7 @@ msgstr "Формат"
 msgid "strdata"
 msgstr "Данні"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Підтвердити"
 
 msgid "strexpression"
@@ -354,10 +354,10 @@ msgstr "Виявлено неправильну схему."
 msgid "strbadencoding"
 msgstr "Неможливо встановити Ваше кодування в базі даних."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Помилка SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "В операторі:"
 
 msgid "strinvalidparam"
@@ -554,16 +554,16 @@ msgstr "Ім\"я користувача"
 msgid "Password"
 msgstr "Пароль"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Суперкористувач?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Створити базу даних?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Термін дії"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Опції сеансу за замовчуванням"
 
 msgid "strnousers"
@@ -614,7 +614,7 @@ msgstr "Зміну пароля перервано."
 msgid "strpasswordshort"
 msgstr "Пароль закороткий."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Пароль не відповідає підтвержденню."
 
 # Groups
@@ -654,7 +654,7 @@ msgstr "Групу видалено."
 msgid "strgroupdroppedbad"
 msgstr "Видалення групи перервано."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Учасників"
 
 msgid "straddmember"

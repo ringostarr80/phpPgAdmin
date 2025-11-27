@@ -101,7 +101,7 @@ msgstr "Operatoren"
 msgid "straggregates"
 msgstr "Aggregaten"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Eigenschappen"
 
 msgid "strbrowse"
@@ -193,10 +193,10 @@ msgid "strinvalidparam"
 msgstr "Ongeldige parameters."
 
 # Error handling
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL fout:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "In statement:"
 
 msgid "strimport"
@@ -215,13 +215,13 @@ msgstr "Gebruikersnaam"
 msgid "Password"
 msgstr "wachtwoord"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Superuser?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Creëer DB?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Verloopt"
 
 msgid "strnousers"
@@ -237,7 +237,7 @@ msgstr "Databases"
 msgid "strdata"
 msgstr "Data"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Bevestig"
 
 msgid "strexpression"
@@ -461,7 +461,7 @@ msgstr "Wachtwoord veranderen mislukt."
 msgid "strpasswordshort"
 msgstr "Wachtwoord is te kort."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Wachtwoord verschilt van bevestigings-wachtwoord."
 
 msgid "Login failed"
@@ -728,7 +728,7 @@ msgstr "Groep verwijderd."
 msgid "strgroupdroppedbad"
 msgstr "Verwijdering van de groep is mislukt."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Leden"
 
 msgid "strprivilege"

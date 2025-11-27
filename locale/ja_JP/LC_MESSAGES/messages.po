@@ -86,7 +86,7 @@ msgstr "名前"
 msgid "strdefinition"
 msgstr "定義"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "プロパティ"
 
 msgid "strbrowse"
@@ -287,7 +287,7 @@ msgstr "フォーマット"
 msgid "strdata"
 msgstr "データ"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "確認"
 
 msgid "strexpression"
@@ -440,10 +440,10 @@ msgstr "無効のスキーマが指定されました。"
 msgid "strbadencoding"
 msgstr "データベースの中でクライアントエンコードを指定しませんでした。"
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL エラー:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "文:"
 
 msgid "strinvalidparam"
@@ -698,16 +698,16 @@ msgstr "ユーザー名"
 msgid "Password"
 msgstr "パスワード"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "スーパーユーザーですか?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "データベースを作成しますか?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "有効期限"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "セッションデフォルト"
 
 msgid "strnousers"
@@ -758,7 +758,7 @@ msgstr "パスワードの変更に失敗しました。"
 msgid "strpasswordshort"
 msgstr "パスワードが短すぎます。"
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "パスワードの確認が一致しませんでした。"
 
 # Groups
@@ -798,13 +798,13 @@ msgstr "グループを破棄しました。"
 msgid "strgroupdroppedbad"
 msgstr "グループの破棄に失敗しました。"
 
-msgid "strmembers"
+msgid "Members"
 msgstr "メンバー"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "次のグループのメンバー:"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "管理メンバー"
 
 msgid "straddmember"
@@ -829,64 +829,64 @@ msgid "strmemberdroppedbad"
 msgstr "メンバーの破棄に失敗しました。"
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "ロール"
 
 msgid "Roles"
 msgstr "ロール"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "すべてのロールを表示する"
 
 msgid "strnoroles"
 msgstr "ロールが見つかりません。"
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "特権を引き継ぎますか?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "ロールを作成する"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "ロールを作成できますか?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "ロールを作成しました。"
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "ロールの作成に失敗しました。"
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "ロールを変更しました。"
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "ロールの変更に失敗しました。"
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "ログインできますか?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "接続制限"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "ロールを破棄する"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "本当にロール「%s」を破棄しますか?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "ロールを破棄しました。"
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "ロールの破棄に失敗しました。"
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "制限なし"
 
 msgid "strnever"
 msgstr "Never"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "ロールの名前を指定しなければなりません。"
 
 # Privileges

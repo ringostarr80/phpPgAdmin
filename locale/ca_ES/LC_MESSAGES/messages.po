@@ -92,7 +92,7 @@ msgstr "Nom"
 msgid "strdefinition"
 msgstr "Definició"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Propietats"
 
 msgid "strbrowse"
@@ -302,7 +302,7 @@ msgstr "Format"
 msgid "strdata"
 msgstr "Dades"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Confirma"
 
 msgid "strexpression"
@@ -495,10 +495,10 @@ msgstr "Esquema especificat invàlid."
 msgid "strbadencoding"
 msgstr "Error al fixar la codificació del client a la base de dades."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Error SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "En la sentència:"
 
 msgid "strinvalidparam"
@@ -780,16 +780,16 @@ msgstr "Usuari"
 msgid "Password"
 msgstr "Contrasenya"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Superusuari?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Crear DB?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Expira"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Valors predeterminats de la sessió"
 
 msgid "strnousers"
@@ -840,7 +840,7 @@ msgstr "Error al canviar la contrasenya."
 msgid "strpasswordshort"
 msgstr "Contrasenya massa curta."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "La contrasenya no coincideix amb la confirmació."
 
 # Groups
@@ -880,13 +880,13 @@ msgstr "Grup eliminat."
 msgid "strgroupdroppedbad"
 msgstr "No s'ha pogut eliminar el grup."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Membres"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Membre de"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Membres administradors"
 
 msgid "straddmember"
@@ -911,64 +911,64 @@ msgid "strmemberdroppedbad"
 msgstr "No s'ha pogut eliminar el membre."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Rol"
 
 msgid "Roles"
 msgstr "Rols"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Mostra tots els rols"
 
 msgid "strnoroles"
 msgstr "No s'han trobat rols."
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "Hereda privilegis?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Crea un rol"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "Crear el rol?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Rol creat."
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "No s'ha pogut crear el rol."
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "Rol modificat."
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "No s'ha pogut modificar el rol."
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "Pot entrar?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Límit de la connexió"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Elimina el rol"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Està segur de voler eliminar el rol '%s'?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Rol eliminat."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "No s'ha pogut eliminar el rol."
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Sense límit"
 
 msgid "strnever"
 msgstr "Mai"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "Ha de donar un nom al rol."
 
 # Privileges

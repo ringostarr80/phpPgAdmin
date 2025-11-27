@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use PhpPgAdmin\Website\Roles;
+use PhpPgAdmin\Website\CreateRole;
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'autoload.php';
 
-$website = new Roles();
+$website = new CreateRole();
 echo $website->buildHtmlString();

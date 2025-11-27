@@ -77,7 +77,7 @@ msgstr "єЯФЯвШЯЪЬЯЬд"
 msgid "straggregates"
 msgstr "юмЧдЧмШ"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "є?Ь?з (лЩЮж оСЮСв)"
 
 msgid "strbrowse"
@@ -263,7 +263,7 @@ msgstr "цЯвЭСд"
 msgid "strdata"
 msgstr "?Ч?ЧФ?Ь"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "тСдСЬЧССжееЬСШ"
 
 msgid "strexpression"
@@ -315,10 +315,10 @@ msgstr "єЯШЩвЧЯЯ Тевее"
 msgid "strbadencoding"
 msgstr "Failed to set client encoding in database."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL СЬФСС:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "ї ЯаХвСдЯвХ:"
 
 msgid "strinvalidparam"
@@ -500,13 +500,13 @@ msgstr "щЭб аЯЬикЯзСдХЬб"
 msgid "Password"
 msgstr "№СвЯЬи"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "ѓеаХваЯЬикЯзСдХЬи?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "ѓЯкФСди ТСке ФСЮЮйШ?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "ѓвЯЫ ФХЪгдзЩб"
 
 msgid "strnousers"
@@ -557,7 +557,7 @@ msgstr "щкЭХЮХЮЩХ аСвЯЬб авХвзСЮЯ."
 msgid "strpasswordshort"
 msgstr "№СвЯЬи гЬЩлЫЯЭ ЫЯвЯдЫЩЪ."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "№СвЯЬи ЮХ гЯЯдзХдгдзеХд аЯФдзХвжФХЮЩР."
 
 # Groups
@@ -597,7 +597,7 @@ msgstr "чвеааС еФСЬХЮС."
 msgid "strgroupdroppedbad"
 msgstr "ѕФСЬХЮЩХ Чвеаай авХвзСЮЯ."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "ѕоСгдЮЩЫЯз"
 
 msgid "straddmember"

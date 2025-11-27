@@ -4,11 +4,22 @@ parameters:
         - src/
         - autoload.php
         - all_db.php
+        - alter_db.php
+        - alter_role.php
         - browser.php
+        - create_db.php
+        - create_role.php
+        - drop_db.php
+        - drop_role.php
+        - history.php
+        - history_clear.php
+        - history_delete.php
+        - history_download.php
         - index.php
         - intro.php
         - login.php
         - logout.php
+        - roles.php
         - server-logout.php
         - servers.php
         - servers-tree.php

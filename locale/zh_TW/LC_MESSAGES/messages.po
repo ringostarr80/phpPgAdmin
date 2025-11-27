@@ -86,7 +86,7 @@ msgstr "名稱"
 msgid "strdefinition"
 msgstr "定義"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "屬性"
 
 msgid "strbrowse"
@@ -287,7 +287,7 @@ msgstr "格式"
 msgid "strdata"
 msgstr "資料"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "確認"
 
 msgid "strexpression"
@@ -440,10 +440,10 @@ msgstr "無效的架構模式被指定。"
 msgid "strbadencoding"
 msgstr "在資料庫中設定客戶端字元編碼失敗。"
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "SQL 錯誤: "
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "在區塊內: "
 
 msgid "strinvalidparam"
@@ -683,16 +683,16 @@ msgstr "使用者名稱"
 msgid "Password"
 msgstr "密碼"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "超級使用者?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "能建立資料庫?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "失效逾期"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Session 預設"
 
 msgid "strnousers"
@@ -743,7 +743,7 @@ msgstr "密碼變更已失敗。"
 msgid "strpasswordshort"
 msgstr "密碼太簡短。"
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "所輸入的確認密碼不符。"
 
 # Groups
@@ -783,13 +783,13 @@ msgstr "群組已移除。"
 msgid "strgroupdroppedbad"
 msgstr "群組移除已失敗。"
 
-msgid "strmembers"
+msgid "Members"
 msgstr "成員"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "成員屬於"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "管理員成員"
 
 msgid "straddmember"
@@ -814,67 +814,67 @@ msgid "strmemberdroppedbad"
 msgstr "成員移除已失敗。"
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "角色"
 
 msgid "Roles"
 msgstr "角色"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "顯示全部角色"
 
 msgid "strnoroles"
 msgstr "找不到任何角色。"
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "繼承特權?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "建立角色"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "能建立角色?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "角色已建立。"
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "角色建立已失敗。"
 
 msgid "stralterrole"
 msgstr "修改角色"
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "角色被修改。"
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "角色修改已失敗。"
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "可以登入?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "連線限制"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "移除角色"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "您確定您要移除這個角色 \"%s\"?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "角色已移除。"
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "角色移除已失敗。"
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "不限制"
 
 msgid "strnever"
 msgstr "從末"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "您必需為這個角色命名。"
 
 # Privileges

@@ -6,6 +6,7 @@ namespace PhpPgAdmin;
 
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\{DbSize, TrailSubject};
+use PhpPgAdmin\WebsiteComponents\TrailBuilder;
 
 abstract class WebsiteComponents
 {
@@ -333,20 +334,73 @@ abstract class WebsiteComponents
     }
 
     /**
-     * @param array<array{
-     *  'url': string,
-     *  'url-params'?: array<string, string>,
-     *  'label': string,
-     *  'icon': string,
-     *  'active'?: bool,
-     *  'help'?: array{
-     *      'url': string,
-     *      'url-params'?: array<string, string>
-     *  }
-     * }> $tabLinks
+     * @param string $activeTab 'databases'|'roles'|'tablespaces'|'export'
      */
-    public static function buildServerDatabasesTabs(\DOMDocument $dom, array $tabLinks): \DOMElement
+    public static function buildServerDatabasesTabs(\DOMDocument $dom, string $serverId, string $activeTab): \DOMElement
     {
+        $tabLinks = [
+            [
+                'help' => [
+                    'url' => 'help.php',
+                    'url-params' => [
+                        'help' => 'pg.role',
+                        'server' => $serverId,
+                    ],
+                ],
+                'icon' => 'Databases',
+                'id' => 'tab_databases',
+                'label' => _('Databases'),
+                'url' => 'all_db.php',
+                'url-params' => [
+                    'server' => $serverId,
+                    'subject' => 'server',
+                ],
+            ],
+            [
+                'help' => [
+                    'url' => 'help.php',
+                    'url-params' => [
+                        'help' => 'pg.role',
+                        'server' => $serverId,
+                    ],
+                ],
+                'icon' => 'Roles',
+                'id' => 'roles',
+                'label' => _('Roles'),
+                'url' => 'roles.php',
+                'url-params' => [
+                    'server' => $serverId,
+                    'subject' => 'server',
+                ],
+            ],
+            [
+                'help' => [
+                    'url' => 'help.php',
+                    'url-params' => [
+                        'help' => 'pg.tablespace',
+                        'server' => $serverId,
+                    ],
+                ],
+                'icon' => 'Tablespaces',
+                'id' => 'tablespaces',
+                'label' => _('Tablespaces'),
+                'url' => 'tablespaces.php',
+                'url-params' => [
+                    'server' => $serverId,
+                    'subject' => 'server',
+                ],
+            ],
+            [
+                'icon' => 'Export',
+                'id' => 'export',
+                'label' => _('Export'),
+                'url' => 'all_db_export.php',
+                'url-params' => [
+                    'server' => $serverId,
+                ],
+            ],
+        ];
+
         $table = $dom->createElement('table');
         $table->setAttribute('class', 'tabs');
 
@@ -357,18 +411,14 @@ abstract class WebsiteComponents
             $td = $dom->createElement('td');
             $tdClass = 'tab';
 
-            if (isset($tabLink['active']) && $tabLink['active']) {
+            if ($tabLink['id'] === $activeTab) {
                 $tdClass .= ' active';
             }
 
             $td->setAttribute('class', $tdClass);
             $td->setAttribute('style', 'width: 20%');
 
-            $href = $tabLink['url'];
-
-            if (isset($tabLink['url-params'])) {
-                $href .= '?' . http_build_query($tabLink['url-params']);
-            }
+            $href = $tabLink['url'] . '?' . http_build_query($tabLink['url-params']);
 
             $a = $dom->createElement('a');
             $a->setAttribute('href', $href);
@@ -388,7 +438,7 @@ abstract class WebsiteComponents
                 $aHelp = self::buildHelpLink(
                     dom: $dom,
                     url: $tabLink['help']['url'],
-                    urlParams: $tabLink['help']['url-params'] ?? [],
+                    urlParams: $tabLink['help']['url-params'],
                 );
                 $td->appendChild($aHelp);
             }
@@ -401,6 +451,102 @@ abstract class WebsiteComponents
         $table->appendChild($tBody);
 
         return $table;
+    }
+
+    /**
+     * @param array{
+     *  'id': string,
+     *  'label-text': string,
+     *  'value': array{
+     *      'content'?: bool|number|string|\DateTimeInterface|null,
+     *      'disabled'?: bool,
+     *      'max-length'?: number,
+     *      'readonly'?: bool,
+     *      'selected-values'?: array<string>,
+     *      'selection-values'?: array<string>,
+     *      'type': 'bool'|'date'|'datetime-local'|'number'|'password'|'selection'|'text',
+     *  },
+     * } $specs
+     */
+    public static function buildTableRowForFormular(\DOMDocument $dom, array $specs): \DOMElement
+    {
+        $tr = $dom->createElement('tr');
+        $tdCol1 = $dom->createElement('th');
+        $tdCol1->setAttribute('class', 'data left');
+        $label = $dom->createElement('label');
+        $label->setAttribute('for', $specs['id']);
+        $label->appendChild($dom->createTextNode($specs['label-text']));
+        $tdCol1->appendChild($label);
+        $tdCol2 = $dom->createElement('td');
+        $tdCol2->setAttribute('class', 'data1');
+        $valueType = match ($specs['value']['type']) {
+            'bool' => 'checkbox',
+            default => $specs['value']['type'],
+        };
+
+        if ($valueType !== 'selection') {
+            $input = $dom->createElement('input');
+            $input->setAttribute('type', $valueType);
+            $input->setAttribute('id', $specs['id']);
+            $input->setAttribute('name', $specs['id']);
+
+            if (isset($specs['value']['disabled']) && $specs['value']['disabled']) {
+                $input->setAttribute('disabled', 'disabled');
+            }
+
+            if (isset($specs['value']['readonly']) && $specs['value']['readonly']) {
+                $input->setAttribute('readonly', 'readonly');
+            }
+
+            if (isset($specs['value']['content'])) {
+                if ($valueType === 'checkbox' && is_bool($specs['value']['content']) && $specs['value']['content']) {
+                    $input->setAttribute('checked', 'checked');
+                } elseif ($valueType === 'date' && $specs['value']['content'] instanceof \DateTimeInterface) {
+                    $input->setAttribute('value', $specs['value']['content']->format('Y-m-d'));
+                } elseif ($valueType === 'datetime-local' && $specs['value']['content'] instanceof \DateTimeInterface) {
+                    $input->setAttribute('value', $specs['value']['content']->format('Y-m-d\TH:i'));
+                } elseif ($valueType === 'number' && is_numeric($specs['value']['content'])) {
+                    $input->setAttribute('value', (string)$specs['value']['content']);
+                } elseif (
+                    ($valueType === 'text' || $valueType === 'password') &&
+                    is_string($specs['value']['content'])
+                ) {
+                    $input->setAttribute('value', $specs['value']['content']);
+                }
+            }
+
+            $tdCol2->appendChild($input);
+        } else {
+            $select = $dom->createElement('select');
+            $select->setAttribute('id', $specs['id']);
+            $select->setAttribute('name', $specs['id']);
+            $select->setAttribute('multiple', 'multiple');
+
+            if (isset($specs['value']['selection-values'])) {
+                $selectedValues = $specs['value']['selected-values'] ?? [];
+
+                $select->setAttribute('size', (string)min(10, count($specs['value']['selection-values'])));
+
+                foreach ($specs['value']['selection-values'] as $selectionValue) {
+                    $option = $dom->createElement('option');
+                    $option->setAttribute('value', $selectionValue);
+
+                    if (in_array($selectionValue, $selectedValues, true)) {
+                        $option->setAttribute('selected', 'selected');
+                    }
+
+                    $option->appendChild($dom->createTextNode($selectionValue));
+                    $select->appendChild($option);
+                }
+            }
+
+            $tdCol2->appendChild($select);
+        }
+
+        $tr->appendChild($tdCol1);
+        $tr->appendChild($tdCol2);
+
+        return $tr;
     }
 
     public static function buildTopBar(\DOMDocument $dom): \DOMElement
@@ -470,7 +616,10 @@ abstract class WebsiteComponents
         return $divWrapper;
     }
 
-    public static function buildTrail(\DOMDocument $dom, ?TrailSubject $subject = null): \DOMElement
+    /**
+     * @param array<TrailSubject> $subjects
+     */
+    public static function buildTrail(\DOMDocument $dom, array $subjects = []): \DOMElement
     {
         $divTrail = $dom->createElement('div');
         $divTrail->setAttribute('class', 'trail');
@@ -496,12 +645,12 @@ abstract class WebsiteComponents
         $tableTrail->appendChild($trTrail);
         $divTrail->appendChild($tableTrail);
 
-        $subTrail = match ($subject) {
-            TrailSubject::Server => self::buildTrailForServer($dom),
-            default => null
-        };
+        foreach ($subjects as $subject) {
+            $subTrail = match ($subject) {
+                TrailSubject::Role => TrailBuilder::buildTrailFor(TrailSubject::Role, $dom),
+                TrailSubject::Server => self::buildTrailForServer($dom),
+            };
 
-        if (!is_null($subTrail)) {
             $trTrail->appendChild($subTrail);
         }
 

@@ -73,7 +73,7 @@ msgstr "Operadores"
 msgid "straggregates"
 msgstr "Agregados"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Propriedades"
 
 msgid "strbrowse"
@@ -254,7 +254,7 @@ msgstr "Topo da página"
 msgid "strdata"
 msgstr "Data"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Confirmar"
 
 msgid "strexpression"
@@ -281,10 +281,10 @@ msgstr "Esquema inválido."
 msgid "strbadencoding"
 msgstr "Falha ao definir codificação do cliente na base de dados."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Erro de SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "Indicação de entrada :"
 
 msgid "strinvalidparam"
@@ -436,13 +436,13 @@ msgstr "Nome do utilizador"
 msgid "Password"
 msgstr "Palavra-chave"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Super-Utilizador?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Criar Base de Dados?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Expira"
 
 msgid "strnousers"
@@ -491,7 +491,7 @@ msgstr "Falha ao alterar palavra-passe."
 msgid "strpasswordshort"
 msgstr "Palavra-chave muito curta."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Palavra-chave não coincide com a confirmação."
 
 msgid "strgroup"
@@ -524,7 +524,7 @@ msgstr "Grupo eliminado."
 msgid "strgroupdroppedbad"
 msgstr "Falha ao eliminar grupo."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Membros"
 
 # Privilges
@@ -1277,7 +1277,7 @@ msgstr "Tem a certeza que pretende aspirar \"%s\"?"
 msgid "strestimatedrowcount"
 msgstr "Contagem de linhas Estimada"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Configurações padrão da sessão"
 
 msgid "struserneedsname"

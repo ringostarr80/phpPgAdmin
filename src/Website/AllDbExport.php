@@ -21,69 +21,10 @@ final class AllDbExport extends Website
         $body = parent::buildHtmlBody($dom);
 
         $body->appendChild(WebsiteComponents::buildTopBar($dom));
-        $body->appendChild(WebsiteComponents::buildTrail($dom, TrailSubject::Server));
+        $body->appendChild(WebsiteComponents::buildTrail($dom, [TrailSubject::Server]));
 
         $serverId = RequestParameter::getString('server') ?? '';
-        $tabLinks = [
-            [
-                'help' => [
-                    'url' => 'help.php',
-                    'url-params' => [
-                        'help' => 'pg.role',
-                        'server' => $serverId,
-                    ],
-                ],
-                'icon' => 'Databases',
-                'label' => _('Databases'),
-                'url' => 'all_db.php',
-                'url-params' => [
-                    'server' => $serverId,
-                    'subject' => 'server',
-                ],
-            ],
-            [
-                'help' => [
-                    'url' => 'help.php',
-                    'url-params' => [
-                        'help' => 'pg.role',
-                        'server' => $serverId,
-                    ],
-                ],
-                'icon' => 'Roles',
-                'label' => _('Roles'),
-                'url' => 'roles.php',
-                'url-params' => [
-                    'server' => $serverId,
-                    'subject' => 'server',
-                ],
-            ],
-            [
-                'help' => [
-                    'url' => 'help.php',
-                    'url-params' => [
-                        'help' => 'pg.tablespace',
-                        'server' => $serverId,
-                    ],
-                ],
-                'icon' => 'Tablespaces',
-                'label' => _('Tablespaces'),
-                'url' => 'tablespaces.php',
-                'url-params' => [
-                    'server' => $serverId,
-                    'subject' => 'server',
-                ],
-            ],
-            [
-                'active' => true,
-                'icon' => 'Export',
-                'label' => _('Export'),
-                'url' => 'all_db_export.php',
-                'url-params' => [
-                    'server' => $serverId,
-                ],
-            ],
-        ];
-        $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $tabLinks));
+        $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $serverId, 'export'));
 
         $form = $dom->createElement('form');
         $form->setAttribute('action', 'dbexport.php');

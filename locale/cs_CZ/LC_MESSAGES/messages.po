@@ -92,7 +92,7 @@ msgstr "Název"
 msgid "strdefinition"
 msgstr "Definice"
 
-msgid "strproperties"
+msgid "Properties"
 msgstr "Vlastnosti"
 
 msgid "strbrowse"
@@ -302,7 +302,7 @@ msgstr "Formát"
 msgid "strdata"
 msgstr "Data"
 
-msgid "strconfirm"
+msgid "Confirm"
 msgstr "Potvrzení"
 
 msgid "strexpression"
@@ -495,10 +495,10 @@ msgstr "Zadáno neplatné schéma."
 msgid "strbadencoding"
 msgstr "Nezdařilo se nastavit kódování klienta v databázi."
 
-msgid "strsqlerror"
+msgid "SQL error:"
 msgstr "Chyba SQL:"
 
-msgid "strinstatement"
+msgid "In statement:"
 msgstr "Ve výrazu:"
 
 msgid "strinvalidparam"
@@ -780,16 +780,16 @@ msgstr "Jméno uživatele"
 msgid "Password"
 msgstr "Heslo"
 
-msgid "strsuper"
+msgid "Superuser?"
 msgstr "Superuživatel?"
 
-msgid "strcreatedb"
+msgid "Create DB?"
 msgstr "Vytvářet DB?"
 
-msgid "strexpires"
+msgid "Expires"
 msgstr "Ztratí platnost"
 
-msgid "strsessiondefaults"
+msgid "Session defaults"
 msgstr "Výchozí hodnoty sezení"
 
 msgid "strnousers"
@@ -840,7 +840,7 @@ msgstr "Nezdařilo se změnit heslo."
 msgid "strpasswordshort"
 msgstr "Heslo je příliš krátké."
 
-msgid "strpasswordconfirm"
+msgid "Password does not match confirmation."
 msgstr "Heslo a jeho potvrzení nejsou shodné."
 
 # Groups
@@ -880,13 +880,13 @@ msgstr "Skupiny byla odstraněna."
 msgid "strgroupdroppedbad"
 msgstr "Nezdařilo se odstranit skupinu."
 
-msgid "strmembers"
+msgid "Members"
 msgstr "Členové"
 
-msgid "strmemberof"
+msgid "Member of"
 msgstr "Členem v"
 
-msgid "stradminmembers"
+msgid "Admin members"
 msgstr "Členové správci"
 
 msgid "straddmember"
@@ -911,64 +911,64 @@ msgid "strmemberdroppedbad"
 msgstr "Nezdařilo se odebrat člena."
 
 # Roles
-msgid "strrole"
+msgid "Role"
 msgstr "Role"
 
 msgid "Roles"
 msgstr "Role"
 
-msgid "strshowallroles"
+msgid "Show all roles"
 msgstr "Zobrazit všechny role"
 
 msgid "strnoroles"
 msgstr "Nenalezena žádná role."
 
-msgid "strinheritsprivs"
+msgid "Inherits privileges?"
 msgstr "Dědit oprávnění?"
 
-msgid "strcreaterole"
+msgid "Create role"
 msgstr "Vytvořit roli"
 
-msgid "strcancreaterole"
+msgid "Can create role?"
 msgstr "Vytvářet role?"
 
-msgid "strrolecreated"
+msgid "Role created."
 msgstr "Role byl vytvořena."
 
-msgid "strrolecreatedbad"
+msgid "Create role failed."
 msgstr "Nezdařilo se vytvořit roli."
 
-msgid "strrolealtered"
+msgid "Role altered."
 msgstr "Změny v roli byly provedeny."
 
-msgid "strrolealteredbad"
+msgid "Role alter failed."
 msgstr "Nezdařilo se provést změny v roli."
 
-msgid "strcanlogin"
+msgid "Can login?"
 msgstr "Přihlašovat se?"
 
-msgid "strconnlimit"
+msgid "Connection limit"
 msgstr "Omezení připojení"
 
-msgid "strdroprole"
+msgid "Drop role"
 msgstr "Odstranit roli"
 
-msgid "strconfdroprole"
+msgid "Are you sure you want to drop the role \"%s\"?"
 msgstr "Opravdu chcete odstranit roli „%s“?"
 
-msgid "strroledropped"
+msgid "Role dropped."
 msgstr "Role byla odstraněna."
 
-msgid "strroledroppedbad"
+msgid "Role drop failed."
 msgstr "Nezdařilo se odstranit roli."
 
-msgid "strnolimit"
+msgid "No limit"
 msgstr "Bez omezení"
 
 msgid "strnever"
 msgstr "Nikdy"
 
-msgid "strroleneedsname"
+msgid "You must give a name for the role."
 msgstr "Musíte zadat název pro roli."
 
 # Privileges

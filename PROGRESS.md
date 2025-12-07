@@ -18,3 +18,4 @@ Below is an overview of how the software quality evolves over time, measured by 
 | 2025-01-19   | 2.2k |     5.5k    |      95k      |      C      |    E     |     83d        |        A        |        82       |
 | 2025-03-02   |  586 |     1.5k    |      64k      |      C      |    E     |     47d        |        A        |        77       |
 | 2025-08-13   |  587 |     1.4k    |      57k      |      C      |    E     |     32d        |        A        |        76       |
+| 2025-12-07   |  588 |     1.4k    |      59k      |      C      |    E     |     32d        |        A        |        72       |

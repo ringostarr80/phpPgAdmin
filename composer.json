@@ -8,8 +8,8 @@
             "captainhook/hook-installer": true,
             "codeception/c3": true,
             "cyclonedx/cyclonedx-php-composer": true,
-            "phpstan/extension-installer": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
         },
         "platform": {
             "php": "8.2"

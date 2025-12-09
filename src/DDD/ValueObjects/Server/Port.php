@@ -7,7 +7,7 @@ namespace PhpPgAdmin\DDD\ValueObjects\Server;
 /**
  * @property-read int $Value
  */
-final class Port
+final readonly class Port
 {
     public function __construct(private int $port = 5_432)
     {

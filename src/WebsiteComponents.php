@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin;
 
+use PhpPgAdmin\TrailSubject;
 use PhpPgAdmin\DDD\Entities\ServerSession;
-use PhpPgAdmin\DDD\ValueObjects\{DbSize, TrailSubject};
+use PhpPgAdmin\DDD\ValueObjects\DbSize;
 use PhpPgAdmin\WebsiteComponents\TrailBuilder;
 
 abstract class WebsiteComponents
@@ -348,7 +349,7 @@ abstract class WebsiteComponents
                     ],
                 ],
                 'icon' => 'Databases',
-                'id' => 'tab_databases',
+                'id' => 'databases',
                 'label' => _('Databases'),
                 'url' => 'all_db.php',
                 'url-params' => [

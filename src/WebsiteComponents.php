@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin;
 
-use PhpPgAdmin\TrailSubject;
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\DbSize;
 use PhpPgAdmin\WebsiteComponents\TrailBuilder;

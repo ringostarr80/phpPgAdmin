@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
-use PhpPgAdmin\{RequestParameter, Website, WebsiteComponents};
+use PhpPgAdmin\{RequestParameter, TrailSubject, Website, WebsiteComponents};
 
 final class AllDbExport extends Website
 {

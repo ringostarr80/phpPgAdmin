@@ -6,9 +6,9 @@ namespace PhpPgAdmin\Database;
 
 use PhpPgAdmin\Config;
 use PhpPgAdmin\DDD\Entities\ServerSession;
-use PhpPgAdmin\DDD\ValueObjects\RevokeType;
 use PhpPgAdmin\DDD\ValueObjects\Role;
-use PhpPgAdmin\DDD\ValueObjects\Server\SslMode;
+use PhpPgAdmin\Enums\RevokeType;
+use PhpPgAdmin\Enums\Server\SslMode;
 
 final class PhpPgAdminConnection extends \PDO
 {

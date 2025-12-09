@@ -2,6 +2,7 @@ parameters:
     level: max
     paths:
         - src/
+        - Tests/Architecture/
         - autoload.php
         - all_db.php
         - alter_db.php
@@ -26,3 +27,8 @@ parameters:
         - sqledit.php
     excludePaths:
         - vendor/
+services:
+    -
+        class: Tests\Architecture\DDD\ValueObjectsTest
+        tags:
+            - phpat.test

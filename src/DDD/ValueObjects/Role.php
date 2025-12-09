@@ -16,7 +16,7 @@ use PhpPgAdmin\RequestParameter;
  * @property-read bool $IsSuperuser
  * @property-read string $Name
  */
-final class Role
+final readonly class Role
 {
     public const FORM_ID_NAME = 'name';
     public const FORM_ID_PASSWORD = 'password';

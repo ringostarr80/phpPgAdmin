@@ -2,10 +2,10 @@
 
 /**
  * After registering this autoload function with SPL, the following line
- * would cause the function to attempt to load the \PhpPgAdmin\Example class
- * from /path/to/project/src/Example.php:
+ * would cause the function to attempt to load the \Tests\Architecture class
+ * from /path/to/project/Tests/Architecture.php:
  *
- *      new \PhpPgAdmin\Example;
+ *      new \Tests\Architecture();
  *
  * @param string $class The fully-qualified class name.
  * @return void
@@ -36,7 +36,6 @@ spl_autoload_register(static function ($class): void {
     // with .php
     $file = $baseDir . str_replace('\\', '/', $relativeClass) . '.php';
 
-    // if the file exists, require it
     if (file_exists($file)) {
         require_once $file;
     }

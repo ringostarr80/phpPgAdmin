@@ -47,6 +47,7 @@ jobs:
 
       - run: composer validate --strict
       - run: composer install --prefer-dist --no-progress
+      - run: composer dump-autoload
       - run: composer run-script dev:lint:php
       - run: composer run-script dev:lint:phpcs
       - run: composer run-script dev:analyze:phpstan-${{ matrix.php-version }}

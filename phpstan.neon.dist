@@ -26,6 +26,7 @@ parameters:
         - servers-tree.php
         - sqledit.php
     excludePaths:
+        - Tests/Architecture/
         - vendor/
 services:
     -

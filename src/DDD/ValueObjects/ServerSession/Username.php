@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\DDD\ValueObjects\ServerSession;
 
-final class Username implements \Stringable
+final readonly class Username implements \Stringable
 {
-    private string $name = '';
+    private string $name;
 
     public function __construct(string $name)
     {

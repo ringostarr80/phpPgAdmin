@@ -7,7 +7,7 @@ namespace PhpPgAdmin\DDD\ValueObjects;
 /**
  * @property-read int $Value
  */
-final class DbSize implements \Stringable
+final readonly class DbSize implements \Stringable
 {
     public function __construct(private readonly int $size)
     {

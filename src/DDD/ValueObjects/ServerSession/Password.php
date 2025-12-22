@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\DDD\ValueObjects\ServerSession;
 
-final class Password implements \Stringable
+final readonly class Password implements \Stringable
 {
-    private string $password = '';
+    private string $password;
 
     public function __construct(string $password)
     {

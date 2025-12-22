@@ -6,8 +6,9 @@ namespace PhpPgAdmin\DDD\Entities;
 
 use PhpPgAdmin\Config;
 use PhpPgAdmin\Database\PhpPgAdminConnection;
-use PhpPgAdmin\DDD\ValueObjects\Server\{DatabaseName, Filename, Host, Name, Port, SslMode};
+use PhpPgAdmin\DDD\ValueObjects\Server\{DatabaseName, Filename, Host, Name, Port};
 use PhpPgAdmin\DDD\ValueObjects\ServerSession\{Username, Password, Platform};
+use PhpPgAdmin\Enums\Server\SslMode;
 
 /**
  * @property-read DatabaseName $DefaultDb

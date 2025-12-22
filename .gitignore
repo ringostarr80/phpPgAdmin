@@ -1,8 +1,7 @@
 conf/config.yml
 conf/config.yaml
 node_modules/
-tests/_output/
-codeception-tests/_output/
+Tests/_output/
 vendor/
 
 .DS_Store

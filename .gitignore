@@ -1,9 +1,7 @@
 conf/config.yml
 conf/config.yaml
 node_modules/
-tests/_output/
 Tests/_output/
-Tests2/_output/
 vendor/
 
 .DS_Store

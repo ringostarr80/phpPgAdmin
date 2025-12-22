@@ -54,10 +54,10 @@
             "@dev:analyze:phpstan"
         ],
         "dev:analyze:phpstan": "@dev:analyze:phpstan-8.2",
-        "dev:analyze:phpstan-8.2": "phpstan analyse --configuration=phpstan-8.2.neon --autoload-file=autoload-tests.php --memory-limit=512M",
-        "dev:analyze:phpstan-8.3": "phpstan analyse --configuration=phpstan-8.3.neon --autoload-file=autoload-tests.php --memory-limit=512M",
-        "dev:analyze:phpstan-8.4": "phpstan analyse --configuration=phpstan-8.4.neon --autoload-file=autoload-tests.php --memory-limit=512M",
-        "dev:analyze:phpstan-8.5": "phpstan analyse --configuration=phpstan-8.5.neon --autoload-file=autoload-tests.php --memory-limit=512M",
+        "dev:analyze:phpstan-8.2": "phpstan analyse --debug --configuration=phpstan-8.2.neon --autoload-file=autoload-tests.php --memory-limit=512M",
+        "dev:analyze:phpstan-8.3": "phpstan analyse --debug --configuration=phpstan-8.3.neon --autoload-file=autoload-tests.php --memory-limit=512M",
+        "dev:analyze:phpstan-8.4": "phpstan analyse --debug --configuration=phpstan-8.4.neon --autoload-file=autoload-tests.php --memory-limit=512M",
+        "dev:analyze:phpstan-8.5": "phpstan analyse --debug --configuration=phpstan-8.5.neon --autoload-file=autoload-tests.php --memory-limit=512M",
         "dev:lint": [
             "@dev:lint:php",
             "@dev:lint:phpcs"

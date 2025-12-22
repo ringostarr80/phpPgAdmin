@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\DDD\ValueObjects\Server;
 
-final class DatabaseName implements \Stringable
+final readonly class DatabaseName implements \Stringable
 {
-    private string $name = '';
+    private string $name;
 
     public function __construct(string $name)
     {

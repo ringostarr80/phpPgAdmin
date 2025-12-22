@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\DDD\ValueObjects\Server;
 
-final class Host implements \Stringable
+final readonly class Host implements \Stringable
 {
-    private string $host = '';
+    private string $host;
 
     public function __construct(string $host = '127.0.0.1')
     {

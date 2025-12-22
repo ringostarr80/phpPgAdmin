@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{RequestParameter, Website, WebsiteComponents};
+use PhpPgAdmin\{RequestParameter, TrailSubject, Website, WebsiteComponents};
 use PhpPgAdmin\DDD\Entities\ServerSession;
-use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
 
 final class AlterDb extends Website
 {

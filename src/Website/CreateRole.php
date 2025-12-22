@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{RequestParameter, Website, WebsiteComponents};
+use PhpPgAdmin\{RequestParameter, TrailSubject, Website, WebsiteComponents};
 use PhpPgAdmin\DDD\Entities\ServerSession;
-use PhpPgAdmin\DDD\ValueObjects\{Role, TrailSubject};
+use PhpPgAdmin\DDD\ValueObjects\Role;
 
 class CreateRole extends Website
 {

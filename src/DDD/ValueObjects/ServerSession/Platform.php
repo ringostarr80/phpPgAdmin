@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\DDD\ValueObjects\ServerSession;
 
-final class Platform implements \Stringable
+final readonly class Platform implements \Stringable
 {
-    private string $name = '';
+    private string $name;
 
     public function __construct(string $name)
     {

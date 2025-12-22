@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\WebsiteComponents;
 
-use PhpPgAdmin\Config;
+use PhpPgAdmin\{Config, TrailSubject};
 use PhpPgAdmin\DDD\Entities\ServerSession;
-use PhpPgAdmin\DDD\ValueObjects\TrailSubject;
 use PhpPgAdmin\{RequestParameter, WebsiteComponents};
 
 abstract class TrailBuilder

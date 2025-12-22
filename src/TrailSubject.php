@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhpPgAdmin\DDD\ValueObjects;
+namespace PhpPgAdmin;
 
 enum TrailSubject: string
 {

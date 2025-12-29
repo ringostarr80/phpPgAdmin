@@ -2834,16 +2834,16 @@
         },
         {
             "name": "phpat/phpat",
-            "version": "0.12.0",
+            "version": "0.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/carlosas/phpat.git",
-                "reference": "f1d0eccdba0a6862b7a639cbd020147c35b63763"
+                "reference": "67b9e179757fbaa8b87e1469a66f103725858ee0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/carlosas/phpat/zipball/f1d0eccdba0a6862b7a639cbd020147c35b63763",
-                "reference": "f1d0eccdba0a6862b7a639cbd020147c35b63763",
+                "url": "https://api.github.com/repos/carlosas/phpat/zipball/67b9e179757fbaa8b87e1469a66f103725858ee0",
+                "reference": "67b9e179757fbaa8b87e1469a66f103725858ee0",
                 "shasum": ""
             },
             "require": {
@@ -2885,9 +2885,9 @@
             "description": "PHP Architecture Tester",
             "support": {
                 "issues": "https://github.com/carlosas/phpat/issues",
-                "source": "https://github.com/carlosas/phpat/tree/0.12.0"
+                "source": "https://github.com/carlosas/phpat/tree/0.12.1"
             },
-            "time": "2025-09-11T19:00:27+00:00"
+            "time": "2025-12-25T17:53:07+00:00"
         },
         {
             "name": "phpmd/phpmd",
@@ -7151,5 +7151,5 @@
     "platform-overrides": {
         "php": "8.2"
     },
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }

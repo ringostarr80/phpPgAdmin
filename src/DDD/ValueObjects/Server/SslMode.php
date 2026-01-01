@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhpPgAdmin\Enums\Server;
+namespace PhpPgAdmin\DDD\ValueObjects\Server;
 
 enum SslMode: string
 {

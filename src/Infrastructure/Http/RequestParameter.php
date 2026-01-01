@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhpPgAdmin;
+namespace PhpPgAdmin\Infrastructure\Http;
 
 final class RequestParameter
 {

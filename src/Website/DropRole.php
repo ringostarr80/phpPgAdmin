@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{RequestParameter, TrailSubject, Website, WebsiteComponents};
+use PhpPgAdmin\{Config, TrailSubject, Website, WebsiteComponents};
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\ServerSession;
+use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 
 final class DropRole extends Website
 {
@@ -83,11 +85,7 @@ final class DropRole extends Website
     {
         $rolename = RequestParameter::getString('rolename') ?? '';
         $serverId = RequestParameter::getString('server') ?? '';
-        $serverSession = ServerSession::fromServerId($serverId);
-
-        if (is_null($serverSession) || empty($rolename)) {
-            return;
-        }
+        $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
 
         $redirectUrl = 'roles.php';
         $redirectUrlParams = [
@@ -96,7 +94,11 @@ final class DropRole extends Website
             'subject' => 'server',
         ];
 
-        $db = $serverSession->getDatabaseConnection();
+        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
+
+        if (is_null($db) || empty($rolename)) {
+            return;
+        }
 
         try {
             $db->dropRole($rolename);

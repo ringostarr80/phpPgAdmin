@@ -27,8 +27,9 @@ parameters:
         - sqledit.php
     excludePaths:
         - vendor/
+    phpat:
+        ignore_built_in_classes: true
+        show_rule_names: true
 services:
-    -
-        class: Tests\Architecture\DDD\ValueObjectsTest
-        tags:
-            - phpat.test
+    - { tags: [phpat.test], class: Tests\Architecture\DDD\DomainTest }
+    - { tags: [phpat.test], class: Tests\Architecture\DDD\ValueObjectsTest }

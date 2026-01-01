@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{RequestParameter, TrailSubject, Website, WebsiteComponents};
+use PhpPgAdmin\{Config, TrailSubject, Website, WebsiteComponents};
+use PhpPgAdmin\Application\DTO\Role as DTORole;
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\Role;
+use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 
 class CreateRole extends Website
 {
@@ -48,7 +51,7 @@ class CreateRole extends Website
         $form = $dom->createElement('form');
         $form->setAttribute('method', 'post');
 
-        $form->appendChild(self::buildCreateOrEditRoleTable($dom, $serverId, Role::fromForm()));
+        $form->appendChild(self::buildCreateOrEditRoleTable($dom, $serverId, DTORole::createFromFormRequest()));
         $form->appendChild(self::buildCreateOrEditFormParagraphButtonsTable($dom, $serverId));
 
         $body->append($form);
@@ -207,8 +210,8 @@ class CreateRole extends Website
         ];
         $trExpires = WebsiteComponents::buildTableRowForFormular($dom, $expiresSpecs);
 
-        $serverSession = ServerSession::fromServerId($serverId);
-        $db = $serverSession?->getDatabaseConnection();
+        $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
+        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
         $roles = $db?->getRoles() ?? [];
         $membersSelectionValues = [];
 
@@ -280,7 +283,7 @@ class CreateRole extends Website
 
     private function handlePostRequest(): void
     {
-        $roleFromForm = Role::fromForm();
+        $roleFromForm = DTORole::createFromFormRequest();
 
         if ($roleFromForm->Name === '') {
             $this->message = _('You must give a name for the role.');
@@ -324,13 +327,12 @@ class CreateRole extends Website
         }
 
         $serverId = RequestParameter::getString('server') ?? '';
-        $serverSession = ServerSession::fromServerId($serverId);
+        $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
+        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
 
-        if (is_null($serverSession)) {
+        if (is_null($db)) {
             return;
         }
-
-        $db = $serverSession->getDatabaseConnection();
 
         try {
             $db->createRole(

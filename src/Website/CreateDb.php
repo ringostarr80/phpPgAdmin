@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{RequestParameter, TrailSubject, Website, WebsiteComponents};
+use PhpPgAdmin\{Config, TrailSubject, Website, WebsiteComponents};
 use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\ServerSession;
+use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 
 final class CreateDb extends Website
 {
@@ -27,7 +28,7 @@ final class CreateDb extends Website
         $body->appendChild(WebsiteComponents::buildTrail($dom, [TrailSubject::Server]));
 
         $serverId = RequestParameter::getString('server') ?? '';
-        $serverSession = ServerSession::fromServerId($serverId);
+        $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
 
         $h2 = $dom->createElement('h2', _('Create database'));
         $aHelp = WebsiteComponents::buildHelpLink(
@@ -83,7 +84,7 @@ final class CreateDb extends Website
         $selectTemplate = $dom->createElement('select');
         $selectTemplate->setAttribute('name', 'formTemplate');
         $selectTemplate->setAttribute('id', 'db-template');
-        $db = $serverSession?->getDatabaseConnection();
+        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
         $dbs = $db?->getDatabases();
 
         if (is_iterable($dbs)) {
@@ -301,10 +302,10 @@ final class CreateDb extends Website
 
         if (!empty($formName)) {
             $serverId = RequestParameter::getString('server') ?? '';
-            $serverSession = ServerSession::fromServerId($serverId);
+            $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
+            $db = PhpPgAdminConnection::createFromServerSession($serverSession);
 
-            if (!is_null($serverSession)) {
-                $db = $serverSession->getDatabaseConnection();
+            if (!is_null($db)) {
                 $db->createDatabase(
                     database: $formName,
                     encoding: RequestParameter::getString('formEncoding') ?? '',

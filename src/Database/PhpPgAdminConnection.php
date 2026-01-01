@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Database;
 
+use PhpPgAdmin\Application\DTO\{Role as DTORole, ServerSession as DTOServerSession};
 use PhpPgAdmin\Config;
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\Role;
+use PhpPgAdmin\DDD\ValueObjects\Server\SslMode;
 use PhpPgAdmin\Enums\RevokeType;
-use PhpPgAdmin\Enums\Server\SslMode;
 
 final class PhpPgAdminConnection extends \PDO
 {
@@ -68,6 +69,27 @@ final class PhpPgAdminConnection extends \PDO
         $pdo->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
 
         return $pdo;
+    }
+
+    public static function createFromServerSession(?ServerSession $serverSession): ?self
+    {
+        if ($serverSession === null) {
+            return null;
+        }
+
+        $connection = self::create(
+            host: (string)$serverSession->Host,
+            port: $serverSession->Port->Value,
+            sslmode: $serverSession->SslMode->value,
+            user: (string)$serverSession->Username,
+            password: (string)$serverSession->Password,
+            database: 'postgres',
+        );
+
+        $connection->exec("SET client_encoding TO 'UTF-8'");
+        $connection->exec("SET bytea_output TO escape");
+
+        return $connection;
     }
 
     public function alterDatabase(
@@ -392,7 +414,7 @@ final class PhpPgAdminConnection extends \PDO
      */
     public function getDatabases(): array
     {
-        $serverInfo = ServerSession::fromRequestParameter();
+        $serverInfo = DTOServerSession::createFromRequestParameter();
 
         $whereClause = Config::showSystem()
             ? 'pdb.datallowconn'
@@ -591,7 +613,7 @@ final class PhpPgAdminConnection extends \PDO
             return null;
         }
 
-        return Role::fromDbArray($row);
+        return DTORole::createFromDbArray($row);
     }
 
     /**
@@ -627,7 +649,7 @@ final class PhpPgAdminConnection extends \PDO
                 continue;
             }
 
-            $result[] = Role::fromDbArray($row);
+            $result[] = DTORole::createFromDbArray($row);
         }
 
         return $result;

@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{RequestParameter, TrailSubject, Website, WebsiteComponents};
+use PhpPgAdmin\{Config, TrailSubject, Website, WebsiteComponents};
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\ServerSession;
+use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 
 final class Roles extends Website
 {
@@ -151,8 +153,8 @@ final class Roles extends Website
         $tHeadRow->appendChild($thValue);
 
         $rolename = RequestParameter::getString('rolename') ?? '';
-        $serverSession = ServerSession::fromServerId($serverId);
-        $db = $serverSession?->getDatabaseConnection();
+        $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
+        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
         $role = $db?->getRole($rolename);
 
         if (is_null($role)) {
@@ -268,8 +270,8 @@ final class Roles extends Website
         $tHead->appendChild($tHeadRow);
         $table->appendChild($tHead);
 
-        $serverSession = ServerSession::fromServerId($serverId);
-        $db = $serverSession?->getDatabaseConnection();
+        $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
+        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
         $roles = $db?->getRoles() ?? [];
 
         $tBody = $dom->createElement('tbody');

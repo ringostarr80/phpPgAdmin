@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{RequestParameter, Website};
+use PhpPgAdmin\Infrastructure\Http\RequestParameter;
+use PhpPgAdmin\Website;
 
 final class ServerLogout extends Website
 {

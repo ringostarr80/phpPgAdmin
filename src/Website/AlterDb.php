@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{RequestParameter, TrailSubject, Website, WebsiteComponents};
+use PhpPgAdmin\{Config, TrailSubject, Website, WebsiteComponents};
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\ServerSession;
+use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 
 final class AlterDb extends Website
 {
@@ -28,13 +30,12 @@ final class AlterDb extends Website
             return;
         }
 
-        $serverSession = ServerSession::fromServerId($serverId);
+        $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
+        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
 
-        if (is_null($serverSession)) {
+        if (is_null($db)) {
             return;
         }
-
-        $db = $serverSession->getDatabaseConnection();
 
         try {
             $db->alterDatabase(
@@ -69,7 +70,7 @@ final class AlterDb extends Website
         $database = RequestParameter::getString('database') ?? '';
         $serverId = RequestParameter::getString('server') ?? '';
 
-        $serverSession = ServerSession::fromServerId($serverId);
+        $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
 
         $h2 = $dom->createElement('h2', _('Alter'));
         $aHelp = WebsiteComponents::buildHelpLink(
@@ -123,7 +124,7 @@ final class AlterDb extends Website
         $selectOwner = $dom->createElement('select');
         $selectOwner->setAttribute('name', 'owner');
         $selectOwner->setAttribute('id', 'owner');
-        $db = $serverSession?->getDatabaseConnection();
+        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
         $dbOwner = $db?->getDatabaseOwner($database);
         $dbUsers = $db?->getUsers();
 

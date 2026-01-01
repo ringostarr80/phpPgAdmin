@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{Config, RequestParameter, Website, WebsiteComponents};
+use PhpPgAdmin\{Config, Website, WebsiteComponents};
 use PhpPgAdmin\Database\PhpPgAdminConnection;
+use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 
 final class Login extends Website
 {

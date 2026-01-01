@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Api\Servers;
 
-use PhpPgAdmin\{Config, RequestParameter, Session};
+use PhpPgAdmin\{Config, Session};
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\ServerSession;
+use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 
 final class Tree
 {
@@ -29,11 +31,11 @@ final class Tree
 
         $serverIdParam = RequestParameter::getString('server');
         $serverSession = !is_null($serverIdParam)
-            ? ServerSession::fromServerId($serverIdParam)
+            ? ServerSession::fromServerId($serverIdParam, Config::getServers())
             : null;
+        $dbConnection = PhpPgAdminConnection::createFromServerSession($serverSession);
 
-        if (!is_null($serverSession)) {
-            $dbConnection = $serverSession->getDatabaseConnection();
+        if (!is_null($serverSession) && !is_null($dbConnection)) {
             $dbs = $dbConnection->getDatabases();
 
             foreach ($dbs as $dbData) {

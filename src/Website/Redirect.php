@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace PhpPgAdmin\Website;
 
 use Locr\Lib\HTTP\StatusCode;
-use PhpPgAdmin\{Config, RequestParameter, Website};
+use PhpPgAdmin\{Config, Website};
 use PhpPgAdmin\DDD\Entities\ServerSession;
+use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 
 final class Redirect extends Website
 {

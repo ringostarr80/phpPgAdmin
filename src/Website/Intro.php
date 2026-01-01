@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{Config, Language, RequestParameter, Themes, Website, WebsiteComponents};
+use PhpPgAdmin\{Config, Language, Themes, Website, WebsiteComponents};
+use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 
 final class Intro extends Website
 {

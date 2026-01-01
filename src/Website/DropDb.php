@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{RequestParameter, TrailSubject, Website, WebsiteComponents};
+use PhpPgAdmin\{Config, TrailSubject, Website, WebsiteComponents};
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\ServerSession;
+use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 
 final class DropDb extends Website
 {
@@ -83,11 +85,7 @@ final class DropDb extends Website
     {
         $database = RequestParameter::getString('database') ?? '';
         $serverId = RequestParameter::getString('server') ?? '';
-        $serverSession = ServerSession::fromServerId($serverId);
-
-        if (is_null($serverSession) || empty($database)) {
-            return;
-        }
+        $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
 
         $redirectUrl = 'all_db.php';
         $redirectUrlParams = [
@@ -95,7 +93,11 @@ final class DropDb extends Website
             'subject' => 'server',
         ];
 
-        $db = $serverSession->getDatabaseConnection();
+        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
+
+        if (is_null($db) || empty($database)) {
+            return;
+        }
 
         try {
             $db->dropDatabase($database);

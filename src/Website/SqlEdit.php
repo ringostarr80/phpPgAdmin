@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{Config, RequestParameter, Website, WebsiteComponents};
+use PhpPgAdmin\{Config, Website, WebsiteComponents};
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\ServerSession;
+use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 
 final class SqlEdit extends Website
 {
@@ -105,12 +107,12 @@ final class SqlEdit extends Website
         $emptyOption = $dom->createElement('option', '--');
         $emptyOption->setAttribute('value', '');
         $databaseSelection->appendChild($emptyOption);
-        $serverSession = ServerSession::fromServerId($serverId);
+        $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
+        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
 
-        if (!is_null($serverSession)) {
+        if (!is_null($db)) {
             $databaseParam = RequestParameter::getString('database');
 
-            $db = $serverSession->getDatabaseConnection();
             $dbs = $db->getDatabases();
 
             foreach ($dbs as $dbMetaData) {

@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{RequestParameter, TrailSubject, Website, WebsiteComponents};
+use PhpPgAdmin\{Config, TrailSubject, Website, WebsiteComponents};
+use PhpPgAdmin\Application\DTO\Role as DTORole;
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\Role;
+use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 
 final class AlterRole extends CreateRole
 {
@@ -48,8 +51,8 @@ final class AlterRole extends CreateRole
         $role = null;
 
         if (!is_null($rolename)) {
-            $serverSession = ServerSession::fromServerId($serverId);
-            $db = $serverSession?->getDatabaseConnection();
+            $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
+            $db = PhpPgAdminConnection::createFromServerSession($serverSession);
             $role = $db?->getRole($rolename);
         }
 
@@ -63,7 +66,7 @@ final class AlterRole extends CreateRole
 
     private function handlePostRequest(): void
     {
-        $roleFromForm = Role::fromForm();
+        $roleFromForm = DTORole::createFromFormRequest();
 
         $password = RequestParameter::getString(Role::FORM_ID_PASSWORD) ?? '';
         $passwordConfirmation = RequestParameter::getString(Role::FORM_ID_PASSWORD_CONFIRMATION) ?? '';
@@ -75,11 +78,7 @@ final class AlterRole extends CreateRole
         }
 
         $serverId = RequestParameter::getString('server') ?? '';
-        $serverSession = ServerSession::fromServerId($serverId);
-
-        if (is_null($serverSession)) {
-            return;
-        }
+        $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
 
         $formMemberOf = RequestParameter::getArray('memberof') ?? [];
         $formMembers = RequestParameter::getArray('members') ?? [];
@@ -107,7 +106,11 @@ final class AlterRole extends CreateRole
             }
         }
 
-        $db = $serverSession->getDatabaseConnection();
+        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
+
+        if (is_null($db)) {
+            return;
+        }
 
         try {
             $db->updateRole(

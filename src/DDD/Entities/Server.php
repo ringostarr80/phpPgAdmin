@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\DDD\Entities;
 
-use PhpPgAdmin\DDD\ValueObjects\Server\{DatabaseName, Filename, Host, Name, Port};
-use PhpPgAdmin\Enums\Server\SslMode;
+use PhpPgAdmin\DDD\ValueObjects\Server\{DatabaseName, Filename, Host, Name, Port, SslMode};
 
 /**
  * @property-read Name $Name

@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin;
 
+use PhpPgAdmin\Application\DTO\ServerSession as DTOServerSession;
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\DbSize;
+use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 use PhpPgAdmin\WebsiteComponents\TrailBuilder;
 
 abstract class WebsiteComponents
@@ -21,7 +24,7 @@ abstract class WebsiteComponents
 
     public static function buildDatabasesTable(\DOMDocument $dom, ?ServerSession $serverSession): \DOMElement
     {
-        $dbConnection = $serverSession?->getDatabaseConnection();
+        $dbConnection = PhpPgAdminConnection::createFromServerSession($serverSession);
 
         $table = $dom->createElement('table');
         $table->setAttribute('style', 'width: 100%;');
@@ -579,7 +582,7 @@ abstract class WebsiteComponents
         $tableTopbar->setAttribute('style', 'width: 100%');
         $trTopbar = $dom->createElement('tr');
 
-        $serverSession = ServerSession::fromRequestParameter();
+        $serverSession = DTOServerSession::createFromRequestParameter();
 
         if (!is_null($serverSession)) {
             $topLeftContent = sprintf(
@@ -727,7 +730,7 @@ abstract class WebsiteComponents
         $td->setAttribute('class', 'crumb');
 
         $serverId = RequestParameter::getString('server') ?? '';
-        $serverSession = ServerSession::fromServerId($serverId);
+        $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
         $link = 'all_db.php';
         $linkParams = [
             'server' => $serverId,

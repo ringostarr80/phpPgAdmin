@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\DDD\Entities;
 
-use PhpPgAdmin\Config;
-use PhpPgAdmin\Database\PhpPgAdminConnection;
-use PhpPgAdmin\DDD\ValueObjects\Server\{DatabaseName, Filename, Host, Name, Port};
+use PhpPgAdmin\DDD\ValueObjects\Server\{DatabaseName, Filename, Host, Name, Port, SslMode};
 use PhpPgAdmin\DDD\ValueObjects\ServerSession\{Username, Password, Platform};
-use PhpPgAdmin\Enums\Server\SslMode;
 
 /**
  * @property-read DatabaseName $DefaultDb
@@ -47,10 +44,11 @@ final class ServerSession extends Server
         );
     }
 
-    public static function fromServerId(string $serverId): ?self
+    /**
+     * @param array<Server> $servers
+     */
+    public static function fromServerId(string $serverId, array $servers): ?self
     {
-        $servers = Config::getServers();
-
         foreach ($servers as $server) {
             if ($server->id() !== $serverId) {
                 continue;
@@ -114,32 +112,6 @@ final class ServerSession extends Server
         }
 
         return null;
-    }
-
-    public static function fromRequestParameter(): ?self
-    {
-        if (!isset($_REQUEST['server']) || !is_string($_REQUEST['server'])) {
-            return null;
-        }
-
-        return self::fromServerId($_REQUEST['server']);
-    }
-
-    public function getDatabaseConnection(): PhpPgAdminConnection
-    {
-        $connection = PhpPgAdminConnection::create(
-            host: (string)$this->Host,
-            port: $this->Port->Value,
-            sslmode: $this->SslMode->value,
-            user: (string)$this->Username,
-            password: (string)$this->Password,
-            database: 'postgres',
-        );
-
-        $connection->exec("SET client_encoding TO 'UTF-8'");
-        $connection->exec("SET bytea_output TO escape");
-
-        return $connection;
     }
 
     public static function isLoggedIn(string $serverId): bool

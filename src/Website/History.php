@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{Config, RequestParameter, Website, WebsiteComponents};
+use PhpPgAdmin\{Config, Website, WebsiteComponents};
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\Repositories\History as HistoryRepository;
+use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 
 final class History extends Website
 {
@@ -29,8 +31,8 @@ final class History extends Website
         $form = $dom->createElement('form');
         $form->setAttribute('method', 'post');
 
-        $serverSession = ServerSession::fromServerId($serverId);
-        $db = $serverSession?->getDatabaseConnection();
+        $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
+        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
 
         $table = $dom->createElement('table');
         $table->setAttribute('style', 'width: 100%;');

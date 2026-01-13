@@ -5,6 +5,7 @@ parameters:
         - Tests/Architecture/
         - autoload.php
         - all_db.php
+        - all_db_export.php
         - alter_db.php
         - alter_role.php
         - browser.php

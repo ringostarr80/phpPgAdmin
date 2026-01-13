@@ -1,5 +1,8 @@
 {
   "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.8",
     "selenium-standalone": "^10.0.1"
-  }
+  },
+  "scripts": {}
 }

@@ -72,7 +72,8 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'frankenphp php-server --listen=127.0.0.1:9876',
+    // command: 'frankenphp php-server --listen=127.0.0.1:9876',
+    command: 'php -S 127.0.0.1:9876 > /dev/null 2>&1',
     url: 'http://localhost:9876',
     reuseExistingServer: !process.env.CI,
   },

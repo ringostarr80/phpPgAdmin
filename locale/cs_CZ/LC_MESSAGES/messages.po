@@ -540,10 +540,10 @@ msgstr "Pokus o připojení s neplatnými parametry serveru, možná se někdo s
 msgid "strnoserversupplied"
 msgstr "Není nabízen žádný server!"
 
-msgid "strbadpgdumppath"
+msgid "Export error: Failed to execute pg_dump (given path in your conf/config.inc.php : %s). Please, fix this path in your configuration and relog."
 msgstr "Chyba při exportu: Nezdařilo se spustit pg_dump (s cestou danou ve vašem conf/config.inc.php: %s). Opravte prosím cestu ve svém nastavení a zkuste to znovu."
 
-msgid "strbadpgdumpallpath"
+msgid "Export error: Failed to execute pg_dumpall (given path in your conf/config.inc.php : %s). Please, fix this path in your configuration and relog."
 msgstr "Chyba při exportu: Nezdařilo se spustit pg_dumpall (s cestou danou ve vašem conf/config.inc.php: %s). Opravte prosím cestu ve svém nastavení a zkuste to znovu."
 
 msgid "strconnectionfail"

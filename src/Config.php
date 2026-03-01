@@ -114,6 +114,22 @@ final class Config
         return $conf['servers'] ?? [];
     }
 
+    /**
+     * @param string $serverId Server ID in the format host:port:sslmode
+     */
+    public static function getServerById(string $serverId): ?Server
+    {
+        $servers = self::getServers();
+
+        foreach ($servers as $server) {
+            if ($serverId === $server->id()) {
+                return $server;
+            }
+        }
+
+        return null;
+    }
+
     public static function leftWidth(): int
     {
         $conf = self::tryGetConfigFileData();
@@ -232,22 +248,6 @@ final class Config
         }
 
         return self::$data['locale'];
-    }
-
-    /**
-     * @param string $serverId Server ID in the format host:port:sslmode
-     */
-    public static function getServerById(string $serverId): ?Server
-    {
-        $servers = self::getServers();
-
-        foreach ($servers as $server) {
-            if ($serverId === $server->id()) {
-                return $server;
-            }
-        }
-
-        return null;
     }
 
     public static function ownedOnly(): bool

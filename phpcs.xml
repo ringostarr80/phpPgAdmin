@@ -49,7 +49,7 @@
     <rule ref="SlevomatCodingStandard.Classes.RequireSingleLineMethodSignature"/>
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
-    <rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming"/>
+    <!--<rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming"/>-->
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousErrorNaming"/>
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousTraitNaming"/>
     <rule ref="SlevomatCodingStandard.Classes.TraitUseDeclaration"/>
@@ -81,7 +81,14 @@
     <!--<rule ref="SlevomatCodingStandard.ControlStructures.DisallowNullSafeObjectOperator"/>-->
     <!--<rule ref="SlevomatCodingStandard.ControlStructures.DisallowShortTernaryOperator"/>-->
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowTrailingMultiLineTernaryOperator"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.JumpStatementsSpacing"/>
+    <rule ref="SlevomatCodingStandard.ControlStructures.JumpStatementsSpacing">
+        <properties>
+            <property name="jumpStatements" type="array">
+                <element value="continue"/>
+                <element value="return"/>
+            </property>
+        </properties>
+    </rule>
     <rule ref="SlevomatCodingStandard.ControlStructures.LanguageConstructWithParentheses"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.NewWithParentheses"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.RequireMultiLineCondition"/>

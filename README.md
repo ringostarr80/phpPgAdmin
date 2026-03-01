@@ -40,7 +40,7 @@ For an overview of the software quality over time and the evolving metrics, chec
 | database.php       | ❌     | yyyy-mm-dd |
 | dataexport.php     | ❌     | yyyy-mm-dd |
 | dataimport.php     | ❌     | yyyy-mm-dd |
-| dbexport.php       | ❌     | yyyy-mm-dd |
+| dbexport.php       | ✅     | 2026-03-01 |
 | display.php        | ❌     | yyyy-mm-dd |
 | domains.php        | ❌     | yyyy-mm-dd |
 | fulltext.php       | ❌     | yyyy-mm-dd |

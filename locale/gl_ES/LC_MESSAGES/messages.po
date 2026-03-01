@@ -540,10 +540,10 @@ msgstr "Produciuse un intento de conexión cun servidor non permitido como pará
 msgid "strnoserversupplied"
 msgstr "Non se forneceu ningún servidor!"
 
-msgid "strbadpgdumppath"
+msgid "Export error: Failed to execute pg_dump (given path in your conf/config.inc.php : %s). Please, fix this path in your configuration and relog."
 msgstr "Produciuse un erro ao exportar: non se conseguiu executar pg_dump (a ruta indicada no seu ficheiro «conf/config.inc.php» é «%s»). Cambie a ruta no ficheiro de configuración e volva intentalo."
 
-msgid "strbadpgdumpallpath"
+msgid "Export error: Failed to execute pg_dumpall (given path in your conf/config.inc.php : %s). Please, fix this path in your configuration and relog."
 msgstr "Produciuse un erro ao exportar: non se conseguiu executar pg_dumpall (a ruta indicada no seu ficheiro «conf/config.inc.php» é «%s»). Cambie a ruta no ficheiro de configuración e volva intentalo."
 
 msgid "strconnectionfail"

@@ -610,10 +610,12 @@ msgstr "Attempt to connect with invalid server parameter, possibly someone is tr
 msgid "strnoserversupplied"
 msgstr "No server supplied!"
 
-msgid "strbadpgdumppath"
+# original: "strbadpgdumppath"
+msgid "Export error: Failed to execute pg_dump (given path in your conf/config.inc.php : %s). Please, fix this path in your configuration and relog."
 msgstr "Export error: Failed to execute pg_dump (given path in your conf/config.inc.php : %s). Please, fix this path in your configuration and relog."
 
-msgid "strbadpgdumpallpath"
+# original: "strbadpgdumpallpath"
+msgid "Export error: Failed to execute pg_dumpall (given path in your conf/config.inc.php : %s). Please, fix this path in your configuration and relog."
 msgstr "Export error: Failed to execute pg_dumpall (given path in your conf/config.inc.php : %s). Please, fix this path in your configuration and relog."
 
 msgid "strconnectionfail"

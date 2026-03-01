@@ -11,6 +11,7 @@ parameters:
         - browser.php
         - create_db.php
         - create_role.php
+        - dbexport.php
         - drop_db.php
         - drop_role.php
         - history.php

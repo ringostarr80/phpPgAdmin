@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use PhpPgAdmin\Website\Tablespaces;
+use PhpPgAdmin\Website\AlterTablespace;
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'autoload.php';
 
-$website = new Tablespaces();
+$website = new AlterTablespace();
 echo $website->buildHtmlString();

@@ -465,17 +465,28 @@ abstract class WebsiteComponents
      *      'disabled'?: bool,
      *      'max-length'?: number,
      *      'readonly'?: bool,
+     *      'required'?: bool,
+     *      'rows'?: number,
      *      'selected-values'?: array<string>,
+     *      'selection-is-multiple'?: bool,
      *      'selection-values'?: array<string>,
-     *      'type': 'bool'|'date'|'datetime-local'|'number'|'password'|'selection'|'text',
+     *      'size'?: number,
+     *      'type': 'bool'|'date'|'datetime-local'|'number'|'password'|'selection'|'text'|'textarea',
      *  },
      * } $specs
      */
     public static function buildTableRowForFormular(\DOMDocument $dom, array $specs): \DOMElement
     {
         $tr = $dom->createElement('tr');
+
+        $tdCol1Class = 'data left';
+
+        if ($specs['value']['required'] ?? false) {
+            $tdCol1Class .= ' required';
+        }
+
         $tdCol1 = $dom->createElement('th');
-        $tdCol1->setAttribute('class', 'data left');
+        $tdCol1->setAttribute('class', $tdCol1Class);
         $label = $dom->createElement('label');
         $label->setAttribute('for', $specs['id']);
         $label->appendChild($dom->createTextNode($specs['label-text']));
@@ -487,7 +498,64 @@ abstract class WebsiteComponents
             default => $specs['value']['type'],
         };
 
-        if ($valueType !== 'selection') {
+        if ($valueType === 'selection') {
+            $selectionIsMultiple = $specs['value']['selection-is-multiple'] ?? true;
+            $select = $dom->createElement('select');
+            $select->setAttribute('id', $specs['id']);
+            $select->setAttribute('name', $specs['id']);
+
+            if ($selectionIsMultiple) {
+                $select->setAttribute('multiple', 'multiple');
+            }
+
+            if (isset($specs['value']['selection-values'])) {
+                $selectedValues = $specs['value']['selected-values'] ?? [];
+
+                if ($selectionIsMultiple) {
+                    $select->setAttribute('size', (string)min(10, count($specs['value']['selection-values'])));
+                }
+
+                foreach ($specs['value']['selection-values'] as $selectionValue) {
+                    $option = $dom->createElement('option');
+                    $option->setAttribute('value', $selectionValue);
+
+                    if (in_array($selectionValue, $selectedValues, true)) {
+                        $option->setAttribute('selected', 'selected');
+                    }
+
+                    $option->appendChild($dom->createTextNode($selectionValue));
+                    $select->appendChild($option);
+                }
+            }
+
+            $tdCol2->appendChild($select);
+        } elseif ($valueType === 'textarea') {
+            $textarea = $dom->createElement('textarea');
+            $textarea->setAttribute('id', $specs['id']);
+            $textarea->setAttribute('name', $specs['id']);
+
+            if (isset($specs['value']['disabled']) && $specs['value']['disabled']) {
+                $textarea->setAttribute('disabled', 'disabled');
+            }
+
+            if (isset($specs['value']['readonly']) && $specs['value']['readonly']) {
+                $textarea->setAttribute('readonly', 'readonly');
+            }
+
+            if (isset($specs['value']['size'])) {
+                $textarea->setAttribute('size', (string)$specs['value']['size']);
+            }
+
+            if (isset($specs['value']['rows'])) {
+                $textarea->setAttribute('rows', (string)$specs['value']['rows']);
+            }
+
+            if (isset($specs['value']['content']) && is_string($specs['value']['content'])) {
+                $textarea->appendChild($dom->createTextNode($specs['value']['content']));
+            }
+
+            $tdCol2->appendChild($textarea);
+        } else {
             $input = $dom->createElement('input');
             $input->setAttribute('type', $valueType);
             $input->setAttribute('id', $specs['id']);
@@ -519,31 +587,6 @@ abstract class WebsiteComponents
             }
 
             $tdCol2->appendChild($input);
-        } else {
-            $select = $dom->createElement('select');
-            $select->setAttribute('id', $specs['id']);
-            $select->setAttribute('name', $specs['id']);
-            $select->setAttribute('multiple', 'multiple');
-
-            if (isset($specs['value']['selection-values'])) {
-                $selectedValues = $specs['value']['selected-values'] ?? [];
-
-                $select->setAttribute('size', (string)min(10, count($specs['value']['selection-values'])));
-
-                foreach ($specs['value']['selection-values'] as $selectionValue) {
-                    $option = $dom->createElement('option');
-                    $option->setAttribute('value', $selectionValue);
-
-                    if (in_array($selectionValue, $selectedValues, true)) {
-                        $option->setAttribute('selected', 'selected');
-                    }
-
-                    $option->appendChild($dom->createTextNode($selectionValue));
-                    $select->appendChild($option);
-                }
-            }
-
-            $tdCol2->appendChild($select);
         }
 
         $tr->appendChild($tdCol1);
@@ -650,8 +693,8 @@ abstract class WebsiteComponents
 
         foreach ($subjects as $subject) {
             $subTrail = match ($subject) {
-                TrailSubject::Role => TrailBuilder::buildTrailFor(TrailSubject::Role, $dom),
                 TrailSubject::Server => self::buildTrailForServer($dom),
+                default => TrailBuilder::buildTrailFor($subject, $dom),
             };
 
             $trTrail->appendChild($subTrail);

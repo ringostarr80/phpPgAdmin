@@ -8,4 +8,5 @@ enum TrailSubject: string
 {
     case Role = 'role';
     case Server = 'server';
+    case Tablespace = 'tablespace';
 }

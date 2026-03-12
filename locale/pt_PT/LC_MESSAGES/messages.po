@@ -1652,13 +1652,13 @@ msgstr "Espaços de Tabela"
 msgid "strshowalltablespaces"
 msgstr "Lista todos os espaços de tabela"
 
-msgid "strnotablespaces"
+msgid "No tablespaces found."
 msgstr "Não foram encontrados espaços de tabela."
 
-msgid "strcreatetablespace"
+msgid "Create tablespace"
 msgstr "Criar espaço de tabela"
 
-msgid "strlocation"
+msgid "Location"
 msgstr "Localização"
 
 msgid "strtablespaceneedsname"
@@ -1667,25 +1667,25 @@ msgstr "Tem de específicar um nome para o espaço de tabela."
 msgid "strtablespaceneedsloc"
 msgstr "Tem de específicar um directório no qual irá criar o espaço de tabela."
 
-msgid "strtablespacecreated"
+msgid "Tablespace created."
 msgstr "Espaço de Tabela criado."
 
-msgid "strtablespacecreatedbad"
+msgid "Tablespace creation failed."
 msgstr "Falha ao criar espaço de tabela."
 
-msgid "strconfdroptablespace"
+msgid "Are you sure you want to drop the tablespace \"%s\"?"
 msgstr "Tem a certeza que pretende eliminar o espaço de tabela \"%s\"?"
 
-msgid "strtablespacedropped"
+msgid "Tablespace dropped."
 msgstr "Espaço de tabela eliminado."
 
-msgid "strtablespacedroppedbad"
+msgid "Tablespace drop failed."
 msgstr "Falha ao eliminar o espaço de tabela."
 
-msgid "strtablespacealtered"
+msgid "Tablespace altered."
 msgstr "Espaço de tabela alterado."
 
-msgid "strtablespacealteredbad"
+msgid "Tablespace alteration failed."
 msgstr "Alteração do Espaçamento de Tabela falhou."
 
 msgid "Help"

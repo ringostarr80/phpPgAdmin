@@ -2160,13 +2160,13 @@ msgstr "Alias de ruta"
 msgid "strshowalltablespaces"
 msgstr "Listar todos os alias de ruta"
 
-msgid "strnotablespaces"
+msgid "No tablespaces found."
 msgstr "Non se atopou alias de ruta algún."
 
-msgid "strcreatetablespace"
+msgid "Create tablespace"
 msgstr "Crear un alias de ruta"
 
-msgid "strlocation"
+msgid "Location"
 msgstr "Lugar"
 
 msgid "strtablespaceneedsname"
@@ -2175,25 +2175,25 @@ msgstr "Debe fornecer un nome para o alias de ruta."
 msgid "strtablespaceneedsloc"
 msgstr "Debe fornecer unha ruta para a que crear o alias."
 
-msgid "strtablespacecreated"
+msgid "Tablespace created."
 msgstr "Creouse o alias de ruta."
 
-msgid "strtablespacecreatedbad"
+msgid "Tablespace creation failed."
 msgstr "non se conseguiu crear o alias de ruta."
 
-msgid "strconfdroptablespace"
+msgid "Are you sure you want to drop the tablespace \"%s\"?"
 msgstr "Está seguro de que quere borrar o alias de ruta «%s»?"
 
-msgid "strtablespacedropped"
+msgid "Tablespace dropped."
 msgstr "Eliminouse o alias de ruta."
 
-msgid "strtablespacedroppedbad"
+msgid "Tablespace drop failed."
 msgstr "Non se conseguiu eliminar o alias de ruta."
 
-msgid "strtablespacealtered"
+msgid "Tablespace altered."
 msgstr "Modificouse o alias de ruta."
 
-msgid "strtablespacealteredbad"
+msgid "Tablespace alteration failed."
 msgstr "Non se conseguiu modificar o alias de ruta."
 
 # Miscellaneous

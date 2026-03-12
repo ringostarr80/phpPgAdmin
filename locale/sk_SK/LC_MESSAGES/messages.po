@@ -1709,13 +1709,13 @@ msgstr "Priestory tabuliek"
 msgid "strshowalltablespaces"
 msgstr "Zobraziť všetky priestory pre tabuľky"
 
-msgid "strnotablespaces"
+msgid "No tablespaces found."
 msgstr "Nenájdené žiadne priestory tabuliek."
 
-msgid "strcreatetablespace"
+msgid "Create tablespace"
 msgstr "Vytvoriť priestor pre tabuľku"
 
-msgid "strlocation"
+msgid "Location"
 msgstr "Umiestnenie"
 
 msgid "strtablespaceneedsname"
@@ -1724,25 +1724,25 @@ msgstr "Musíš zadať názov priestoru tabuľky."
 msgid "strtablespaceneedsloc"
 msgstr "Musíš zadať adresár, vktorom sa má vytvoriť priestor pre tabuľku."
 
-msgid "strtablespacecreated"
+msgid "Tablespace created."
 msgstr "Priestor pre tabuľku bol vytvorený."
 
-msgid "strtablespacecreatedbad"
+msgid "Tablespace creation failed."
 msgstr "Vytvorenie priestoru pre tabuľku zlyhalo."
 
-msgid "strconfdroptablespace"
+msgid "Are you sure you want to drop the tablespace \"%s\"?"
 msgstr "Naozaj chceš odstrániť priestor tabuľky \"%s\"?"
 
-msgid "strtablespacedropped"
+msgid "Tablespace dropped."
 msgstr "Priestor pre tabuľku bol odstránený."
 
-msgid "strtablespacedroppedbad"
+msgid "Tablespace drop failed."
 msgstr "Odstránenie priestoru zlyhalo."
 
-msgid "strtablespacealtered"
+msgid "Tablespace altered."
 msgstr "Priestor tabuľky zmenený."
 
-msgid "strtablespacealteredbad"
+msgid "Tablespace alteration failed."
 msgstr "Zmenenie priestoru tabuľky zlyhalo."
 
 # Miscellaneous

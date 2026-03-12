@@ -1628,13 +1628,13 @@ msgstr "מרחבונים"
 msgid "strshowalltablespaces"
 msgstr "הראה את כל המרחבונים"
 
-msgid "strnotablespaces"
+msgid "No tablespaces found."
 msgstr "לא נמצאו מרחבונים."
 
-msgid "strcreatetablespace"
+msgid "Create tablespace"
 msgstr "צור מרחבון"
 
-msgid "strlocation"
+msgid "Location"
 msgstr "מיקום"
 
 msgid "strtablespaceneedsname"
@@ -1643,25 +1643,25 @@ msgstr "אתה חייב לציין שם למרחבון."
 msgid "strtablespaceneedsloc"
 msgstr "אתה חייב לציין תיקיה שבה יבצר המרחבון."
 
-msgid "strtablespacecreated"
+msgid "Tablespace created."
 msgstr "מרחבון נוצר."
 
-msgid "strtablespacecreatedbad"
+msgid "Tablespace creation failed."
 msgstr "יצירת מרחבון נכשלה."
 
-msgid "strconfdroptablespace"
+msgid "Are you sure you want to drop the tablespace \"%s\"?"
 msgstr "האם אתה בטוח שברצונך למחוק את המרחבון \"%s\"?"
 
-msgid "strtablespacedropped"
+msgid "Tablespace dropped."
 msgstr "מרחבון נמחק."
 
-msgid "strtablespacedroppedbad"
+msgid "Tablespace drop failed."
 msgstr "מחיקת מרחבון נכשלה."
 
-msgid "strtablespacealtered"
+msgid "Tablespace altered."
 msgstr "מרחבון נערך."
 
-msgid "strtablespacealteredbad"
+msgid "Tablespace alteration failed."
 msgstr "עריכת מרחבון מכשלה."
 
 # Miscellaneous

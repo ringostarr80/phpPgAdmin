@@ -2152,13 +2152,13 @@ msgstr "Táblahelyek"
 msgid "strshowalltablespaces"
 msgstr "Minden táblahelyet megjelenít"
 
-msgid "strnotablespaces"
+msgid "No tablespaces found."
 msgstr "Nincsenek táblahelyek."
 
-msgid "strcreatetablespace"
+msgid "Create tablespace"
 msgstr "Táblahelyet teremt"
 
-msgid "strlocation"
+msgid "Location"
 msgstr "Hely"
 
 msgid "strtablespaceneedsname"
@@ -2167,25 +2167,25 @@ msgstr "Nevet kell adnia a táblahelynek."
 msgid "strtablespaceneedsloc"
 msgstr "Meg kell adnia egy mappát, ahol a táblahelyet teremti."
 
-msgid "strtablespacecreated"
+msgid "Tablespace created."
 msgstr "Táblahely teremtve."
 
-msgid "strtablespacecreatedbad"
+msgid "Tablespace creation failed."
 msgstr "Nem sikerült táblahelyet teremteni."
 
-msgid "strconfdroptablespace"
+msgid "Are you sure you want to drop the tablespace \"%s\"?"
 msgstr "Biztosan ki akarja dobni „%s” táblahelyet?"
 
-msgid "strtablespacedropped"
+msgid "Tablespace dropped."
 msgstr "Táblahely kidobva."
 
-msgid "strtablespacedroppedbad"
+msgid "Tablespace drop failed."
 msgstr "Nem sikerült kidobni a táblahelyet."
 
-msgid "strtablespacealtered"
+msgid "Tablespace altered."
 msgstr "Táblahely megváltoztatva."
 
-msgid "strtablespacealteredbad"
+msgid "Tablespace alteration failed."
 msgstr "Nem sikerült megváltoztatni a táblahelyet."
 
 # Miscellaneous

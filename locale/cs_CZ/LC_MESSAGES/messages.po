@@ -2152,13 +2152,13 @@ msgstr "Prostory tabulek"
 msgid "strshowalltablespaces"
 msgstr "Zobrazit všechny prostory tabulek"
 
-msgid "strnotablespaces"
+msgid "No tablespaces found."
 msgstr "Nebyly nalezeny žádné prostory tabulek."
 
-msgid "strcreatetablespace"
+msgid "Create tablespace"
 msgstr "Vytvořit prostor tabulek"
 
-msgid "strlocation"
+msgid "Location"
 msgstr "Umístění"
 
 msgid "strtablespaceneedsname"
@@ -2167,25 +2167,25 @@ msgstr "Musíte zadat název pro prostor tabulek."
 msgid "strtablespaceneedsloc"
 msgstr "Musíte zadat složku, ve které se má prostor tabulek vytvořit."
 
-msgid "strtablespacecreated"
+msgid "Tablespace created."
 msgstr "Prostor tabulek byl vytvořen."
 
-msgid "strtablespacecreatedbad"
+msgid "Tablespace creation failed."
 msgstr "Nezdařilo se vytvořit prostor tabulek."
 
-msgid "strconfdroptablespace"
+msgid "Are you sure you want to drop the tablespace \"%s\"?"
 msgstr "Opravdu chcete odstranit prostor tabulek „%s“?"
 
-msgid "strtablespacedropped"
+msgid "Tablespace dropped."
 msgstr "Prostor tabulek byl odstraněn."
 
-msgid "strtablespacedroppedbad"
+msgid "Tablespace drop failed."
 msgstr "Nezdařilo se odstranit prostor tabulek."
 
-msgid "strtablespacealtered"
+msgid "Tablespace altered."
 msgstr "Změny v prostoru tabulek byly provedeny."
 
-msgid "strtablespacealteredbad"
+msgid "Tablespace alteration failed."
 msgstr "Nezdařilo se provést změny v prostoru tabulek."
 
 # Miscellaneous

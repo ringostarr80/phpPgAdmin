@@ -1607,13 +1607,13 @@ msgstr "Tabelområder"
 msgid "strshowalltablespaces"
 msgstr "Vis alle tabelområder"
 
-msgid "strnotablespaces"
+msgid "No tablespaces found."
 msgstr "Ingen tabelområder fundet."
 
-msgid "strcreatetablespace"
+msgid "Create tablespace"
 msgstr "Opret tabelområder"
 
-msgid "strlocation"
+msgid "Location"
 msgstr "Location"
 
 msgid "strtablespaceneedsname"
@@ -1622,25 +1622,25 @@ msgstr "Tabelområdet skal have et navn."
 msgid "strtablespaceneedsloc"
 msgstr "Du skal angive hvilken mappe tabelområdet skal oprettes i."
 
-msgid "strtablespacecreated"
+msgid "Tablespace created."
 msgstr "Tabelområde oprettet."
 
-msgid "strtablespacecreatedbad"
+msgid "Tablespace creation failed."
 msgstr "Oprettelse af tabelområde lykkedes ikke."
 
-msgid "strconfdroptablespace"
+msgid "Are you sure you want to drop the tablespace \"%s\"?"
 msgstr "Er du sikker på, at du vil fjerne tabelområde \"%s\"?"
 
-msgid "strtablespacedropped"
+msgid "Tablespace dropped."
 msgstr "Tabelområde fjernet."
 
-msgid "strtablespacedroppedbad"
+msgid "Tablespace drop failed."
 msgstr "Fjernelse af tabelområde lykkedes ikke."
 
-msgid "strtablespacealtered"
+msgid "Tablespace altered."
 msgstr "Tabelområde ændret."
 
-msgid "strtablespacealteredbad"
+msgid "Tablespace alteration failed."
 msgstr "Ændring af tabelområde lykkedes ikke."
 
 # Miscellaneous

@@ -8,12 +8,15 @@ parameters:
         - all_db_export.php
         - alter_db.php
         - alter_role.php
+        - alter_tablespace.php
         - browser.php
         - create_db.php
         - create_role.php
+        - create_tablespace.php
         - dbexport.php
         - drop_db.php
         - drop_role.php
+        - drop_tablespace.php
         - history.php
         - history_clear.php
         - history_delete.php
@@ -27,6 +30,7 @@ parameters:
         - servers.php
         - servers-tree.php
         - sqledit.php
+        - tablespaces.php
     excludePaths:
         - vendor/
     phpat:

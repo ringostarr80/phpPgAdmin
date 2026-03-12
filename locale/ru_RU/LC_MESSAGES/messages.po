@@ -2140,13 +2140,13 @@ msgstr "Табличные пространства"
 msgid "strshowalltablespaces"
 msgstr "Показать все табличные пространства"
 
-msgid "strnotablespaces"
+msgid "No tablespaces found."
 msgstr "Табличные пространства не найдены."
 
-msgid "strcreatetablespace"
+msgid "Create tablespace"
 msgstr "Создать табличное пространство"
 
-msgid "strlocation"
+msgid "Location"
 msgstr "Расположение"
 
 msgid "strtablespaceneedsname"
@@ -2155,25 +2155,25 @@ msgstr "Вам необходимо определить имя таблично
 msgid "strtablespaceneedsloc"
 msgstr "Вам необходимо определить директорию, в которой табличное пространство буде создано."
 
-msgid "strtablespacecreated"
+msgid "Tablespace created."
 msgstr "Табличное пространство создано."
 
-msgid "strtablespacecreatedbad"
+msgid "Tablespace creation failed."
 msgstr "Создание табличного пространства прервано."
 
-msgid "strconfdroptablespace"
+msgid "Are you sure you want to drop the tablespace \"%s\"?"
 msgstr "Вы действительно хотите удалить табличное пространство \"%s\"?"
 
-msgid "strtablespacedropped"
+msgid "Tablespace dropped."
 msgstr "Табличное пространство удалено."
 
-msgid "strtablespacedroppedbad"
+msgid "Tablespace drop failed."
 msgstr "Удаление табличного пространства прервано."
 
-msgid "strtablespacealtered"
+msgid "Tablespace altered."
 msgstr "Табличное пространство изменено."
 
-msgid "strtablespacealteredbad"
+msgid "Tablespace alteration failed."
 msgstr "Изменение табличного пространства прервано."
 
 # Miscellaneous

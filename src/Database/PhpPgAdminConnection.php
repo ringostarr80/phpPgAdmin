@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Database;
 
-use PhpPgAdmin\Application\DTO\{Role as DTORole, ServerSession as DTOServerSession};
+use PhpPgAdmin\Application\DTO\{Role as DTORole, ServerSession as DTOServerSession, Tablespace as DTOTablespace};
 use PhpPgAdmin\Config;
 use PhpPgAdmin\DDD\Entities\ServerSession;
-use PhpPgAdmin\DDD\ValueObjects\Role;
+use PhpPgAdmin\DDD\ValueObjects\{Role, Tablespace};
 use PhpPgAdmin\DDD\ValueObjects\Server\SslMode;
 use PhpPgAdmin\Enums\RevokeType;
 
@@ -287,6 +287,30 @@ final class PhpPgAdminConnection extends \PDO
         }
     }
 
+    public function createTablespace(Tablespace $tablespace): void
+    {
+        $escapedName = self::escapeIdentifier((string)$tablespace->Name);
+        $sql = "CREATE TABLESPACE \"{$escapedName}\"";
+
+        if ((string)$tablespace->Owner !== '') {
+            $escapedOwner = self::escapeIdentifier((string)$tablespace->Owner);
+            $sql .= " OWNER \"{$escapedOwner}\"";
+        }
+
+        $escapedLocation = self::escapeIdentifier((string)$tablespace->Location);
+        $sql .= " LOCATION '{$escapedLocation}'";
+
+        if ($this->exec($sql) === false) {
+            throw new \PDOException('Failed to execute SQL statement for creating tablespace.');
+        }
+
+        if ((string)$tablespace->Comment === '') {
+            return;
+        }
+
+        $this->setCommentForTablespace((string)$tablespace->Name, (string)$tablespace->Comment);
+    }
+
     public function dropDatabase(string $database): void
     {
         $escapedDatabase = self::escapeIdentifier($database);
@@ -305,6 +329,17 @@ final class PhpPgAdminConnection extends \PDO
 
         if ($this->exec($statement) === false) {
             throw new \PDOException('Failed to execute SQL statement for dropping role.');
+        }
+    }
+
+    public function dropTablespace(string $tablespace): void
+    {
+        $escapedTablespace = self::escapeIdentifier($tablespace);
+
+        $statement = "DROP TABLESPACE \"{$escapedTablespace}\"";
+
+        if ($this->exec($statement) === false) {
+            throw new \PDOException('Failed to execute SQL statement for dropping tablespace.');
         }
     }
 
@@ -655,6 +690,98 @@ final class PhpPgAdminConnection extends \PDO
         return $result;
     }
 
+    public function getTablespace(string $tablespace): ?Tablespace
+    {
+        $sql = "SELECT spcname, pg_catalog.pg_get_userbyid(spcowner) AS spcowner,
+                pg_catalog.pg_tablespace_location(oid) AS spclocation,
+                (
+                    SELECT description
+                    FROM pg_catalog.pg_shdescription pd
+                    WHERE pg_tablespace.oid=pd.objoid AND pd.classoid='pg_tablespace'::regclass
+                ) AS spccomment
+                FROM pg_catalog.pg_tablespace WHERE spcname=:tablespace";
+        $sqlParams = [
+            'tablespace' => $tablespace,
+        ];
+
+        $statement = $this->prepare($sql);
+
+        if ($statement === false) {
+            throw new \PDOException('Failed to prepare SQL statement for getting tablespace.');
+        }
+
+        if (!$statement->execute($sqlParams)) {
+            throw new \PDOException('Failed to execute SQL statement for getting tablespace.');
+        }
+
+        $row = $statement->fetch();
+
+        if (!is_array($row)) {
+            return null;
+        }
+
+        return DTOTablespace::createFromDbArray($row);
+    }
+
+    /**
+     * @return array<Tablespace>
+     */
+    public function getTablespaces(bool $all = false): array
+    {
+        $sql = "SELECT spcname,
+            pg_catalog.pg_get_userbyid(spcowner) AS spcowner,
+            pg_catalog.pg_tablespace_location(oid) AS spclocation,
+            (
+                SELECT description
+                FROM pg_catalog.pg_shdescription pd
+                WHERE pg_tablespace.oid=pd.objoid AND pd.classoid='pg_tablespace'::regclass
+            ) AS spccomment
+            FROM pg_catalog.pg_tablespace";
+
+        if (!Config::showSystem() && !$all) {
+            $sql .= ' WHERE spcname NOT LIKE $$pg\_%$$';
+        }
+
+        $sql .= " ORDER BY spcname";
+
+        $statement = $this->prepare($sql);
+
+        if ($statement === false) {
+            throw new \PDOException('Failed to prepare SQL statement for getting tablespaces.');
+        }
+
+        if (!$statement->execute()) {
+            throw new \PDOException('Failed to execute SQL statement for getting tablespaces.');
+        }
+
+        $result = [];
+        $requiredFields = [
+            'spcname',
+            'spcowner',
+            'spclocation',
+        ];
+
+        while ($row = $statement->fetch()) {
+            if (!is_array($row)) {
+                continue;
+            }
+
+            foreach ($requiredFields as $field) {
+                if (!isset($row[$field])) {
+                    continue 2;
+                }
+            }
+
+            if (!is_string($row['spcname']) || !is_string($row['spcowner']) || !is_string($row['spclocation'])) {
+                continue;
+            }
+
+            $result[] = DTOTablespace::createFromDbArray($row);
+        }
+
+        return $result;
+    }
+
     /**
      * @return array<array{
      *  'usename': string,
@@ -761,6 +888,22 @@ final class PhpPgAdminConnection extends \PDO
         return false;
     }
 
+    public function setCommentForTablespace(string $tablespaceName, string $comment): void
+    {
+        $sql = "COMMENT ON TABLESPACE ";
+        $sql .= "\"{$tablespaceName}\" IS ";
+
+        if ($comment !== '') {
+            $sql .= "'{$comment}';";
+        } else {
+            $sql .= 'NULL;';
+        }
+
+        if ($this->exec($sql) === false) {
+            throw new \PDOException('Failed to execute SQL statement for set comment.');
+        }
+    }
+
     public function setDatabaseComment(string $database, ?string $comment = null): void
     {
         $escapedDatabase = self::escapeIdentifier($database);
@@ -825,6 +968,44 @@ final class PhpPgAdminConnection extends \PDO
         $this->tryAlterMemberOf($newMemberOf, $role->Name);
         $this->tryAlterMembers($newMembers, $role->Name);
         $this->tryAlterAdminMembers($newAdminMembers, $role->Name);
+    }
+
+    public function updateTablespace(Tablespace $tablespace, string $oldTablespaceName): void
+    {
+        if (!$this->beginTransaction()) {
+            throw new \PDOException('Failed to begin transaction.');
+        }
+
+        $escapedTablespaceName = self::escapeIdentifier((string)$oldTablespaceName);
+        $escapedTablespaceOwner = self::escapeIdentifier((string)$tablespace->Owner);
+
+        $statement = "ALTER TABLESPACE \"{$escapedTablespaceName}\" OWNER TO \"{$escapedTablespaceOwner}\"";
+
+        if ($this->exec($statement) === false) {
+            if (!$this->rollBack()) {
+                throw new \PDOException('Failed to roll back transaction after altering tablespace owner.');
+            }
+
+            throw new \PDOException('Failed to execute SQL statement for altering tablespace owner.');
+        }
+
+        if ($oldTablespaceName !== (string)$tablespace->Name) {
+            $statement = "ALTER TABLESPACE \"{$oldTablespaceName}\" RENAME TO \"{$tablespace->Name}\"";
+
+            if ($this->exec($statement) === false) {
+                if (!$this->rollBack()) {
+                    throw new \PDOException('Failed to roll back transaction after renaming tablespace.');
+                }
+
+                throw new \PDOException('Failed to execute SQL statement for renaming tablespace.');
+            }
+        }
+
+        $this->setCommentForTablespace((string)$tablespace->Name, (string)$tablespace->Comment);
+
+        if (!$this->commit()) {
+            throw new \PDOException('Failed to commit transaction.');
+        }
     }
 
     public static function loginDataIsValid(

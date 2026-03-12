@@ -2031,13 +2031,13 @@ msgstr "表空間"
 msgid "strshowalltablespaces"
 msgstr "顯示全部表空間"
 
-msgid "strnotablespaces"
+msgid "No tablespaces found."
 msgstr "找不到任何表空間。"
 
-msgid "strcreatetablespace"
+msgid "Create tablespace"
 msgstr "建立表空間"
 
-msgid "strlocation"
+msgid "Location"
 msgstr "所在位置"
 
 msgid "strtablespaceneedsname"
@@ -2046,25 +2046,25 @@ msgstr "您必需為您的表空間給一個名稱。"
 msgid "strtablespaceneedsloc"
 msgstr "您必需給一個目錄夾來建立表空間。"
 
-msgid "strtablespacecreated"
+msgid "Tablespace created."
 msgstr "表空間已建立。"
 
-msgid "strtablespacecreatedbad"
+msgid "Tablespace creation failed."
 msgstr "表空間建立已失敗。"
 
-msgid "strconfdroptablespace"
+msgid "Are you sure you want to drop the tablespace \"%s\"?"
 msgstr "您確定您要移除這個表空間 \"%s\"?"
 
-msgid "strtablespacedropped"
+msgid "Tablespace dropped."
 msgstr "表空間已移除。"
 
-msgid "strtablespacedroppedbad"
+msgid "Tablespace drop failed."
 msgstr "表空間移除已失敗。"
 
-msgid "strtablespacealtered"
+msgid "Tablespace altered."
 msgstr "表空間已修改。"
 
-msgid "strtablespacealteredbad"
+msgid "Tablespace alteration failed."
 msgstr "表空間修改已失敗。"
 
 # Miscellaneous

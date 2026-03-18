@@ -1907,13 +1907,13 @@ msgstr "Przestrzenie tabel"
 msgid "strshowalltablespaces"
 msgstr "Pokaż wszystkie przestrzenie tabel"
 
-msgid "strnotablespaces"
+msgid "No tablespaces found."
 msgstr "Nie znaleziono przestrzeni tabel."
 
-msgid "strcreatetablespace"
+msgid "Create tablespace"
 msgstr "Utwórz przestrzeń tabel"
 
-msgid "strlocation"
+msgid "Location"
 msgstr "Położenie"
 
 msgid "strtablespaceneedsname"
@@ -1922,25 +1922,25 @@ msgstr "Musisz podać nazwę przestrzeni tabel."
 msgid "strtablespaceneedsloc"
 msgstr "Musisz podać nazwę katalogu, w którym chcesz utworzyć przestrzeń tabel."
 
-msgid "strtablespacecreated"
+msgid "Tablespace created."
 msgstr "Przestrzeń tabel została utworzona."
 
-msgid "strtablespacecreatedbad"
+msgid "Tablespace creation failed."
 msgstr "Próba utworzenia przestrzeni tabel się nie powiodła."
 
-msgid "strconfdroptablespace"
+msgid "Are you sure you want to drop the tablespace \"%s\"?"
 msgstr "Czy na pewno chcesz usunąć przestrzeń tabel \"%s\"?"
 
-msgid "strtablespacedropped"
+msgid "Tablespace dropped."
 msgstr "Przestrzeń tabel została usunięta."
 
-msgid "strtablespacedroppedbad"
+msgid "Tablespace drop failed."
 msgstr "Próba usunięcia przestrzeni tabel się nie powiodła."
 
-msgid "strtablespacealtered"
+msgid "Tablespace altered."
 msgstr "Przestrzeń tabel została zmieniona."
 
-msgid "strtablespacealteredbad"
+msgid "Tablespace alteration failed."
 msgstr "Próba modyfikacji przestrzeni tabel się nie powiodła."
 
 # Miscellaneous

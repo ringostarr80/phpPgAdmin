@@ -21,7 +21,7 @@ final class ValueObjectsTest
                     Selector::Not(Selector::isEnum()),
                 )
             )
-            ->shouldBeReadonly()
+            ->should()->beReadonly()
             ->because('ValueObjects are immutable by definition.');
     }
 }

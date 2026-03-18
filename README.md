@@ -68,7 +68,7 @@ For an overview of the software quality over time and the evolving metrics, chec
 | sql.php            | ❌     | yyyy-mm-dd |
 | sqledit.php        | ✅     | 2025-08-26 |
 | tables.php         | ❌     | yyyy-mm-dd |
-| tablespaces.php    | ❌     | yyyy-mm-dd |
+| tablespaces.php    | ✅     | 2026-03-18 |
 | tblproperties.php  | ❌     | yyyy-mm-dd |
 | triggers.php       | ❌     | yyyy-mm-dd |
 | types.php          | ❌     | yyyy-mm-dd |

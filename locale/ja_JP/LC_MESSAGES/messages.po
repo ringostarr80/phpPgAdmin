@@ -2049,13 +2049,13 @@ msgstr "テーブル空間"
 msgid "strshowalltablespaces"
 msgstr "すべてのテーブルスペースを表示する"
 
-msgid "strnotablespaces"
+msgid "No tablespaces found."
 msgstr "テーブル空間が見つかりません。"
 
-msgid "strcreatetablespace"
+msgid "Create tablespace"
 msgstr "テーブル空間を作成する"
 
-msgid "strlocation"
+msgid "Location"
 msgstr "ロケーション"
 
 msgid "strtablespaceneedsname"
@@ -2064,25 +2064,25 @@ msgstr "テーブル空間名を指定する必要があります。"
 msgid "strtablespaceneedsloc"
 msgstr "テーブル空間作成をするディレクトリを指定する必要があります。"
 
-msgid "strtablespacecreated"
+msgid "Tablespace created."
 msgstr "テーブル空間を作成しました。"
 
-msgid "strtablespacecreatedbad"
+msgid "Tablespace creation failed."
 msgstr "テーブル空間の作成に失敗しました。"
 
-msgid "strconfdroptablespace"
+msgid "Are you sure you want to drop the tablespace \"%s\"?"
 msgstr "本当にテーブル空間「%s」を破棄しますか?"
 
-msgid "strtablespacedropped"
+msgid "Tablespace dropped."
 msgstr "テーブル空間を破棄しました。"
 
-msgid "strtablespacedroppedbad"
+msgid "Tablespace drop failed."
 msgstr "テーブル空間の破棄に失敗しました。"
 
-msgid "strtablespacealtered"
+msgid "Tablespace altered."
 msgstr "テーブル空間を変更しました。"
 
-msgid "strtablespacealteredbad"
+msgid "Tablespace alteration failed."
 msgstr "テーブル空間の変更に失敗しました。"
 
 # Miscellaneous

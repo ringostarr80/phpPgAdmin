@@ -1910,13 +1910,13 @@ msgstr "Τοποθεσίες πινάκων"
 msgid "strshowalltablespaces"
 msgstr "Εμφάνιση όλων των τοποθεσιών"
 
-msgid "strnotablespaces"
+msgid "No tablespaces found."
 msgstr "Δε βρέθηκαν τοποθεσίες πινάκων."
 
-msgid "strcreatetablespace"
+msgid "Create tablespace"
 msgstr "Δημιουργία τοποθεσίας πίνακα"
 
-msgid "strlocation"
+msgid "Location"
 msgstr "Τοποθεσία"
 
 msgid "strtablespaceneedsname"
@@ -1925,25 +1925,25 @@ msgstr "Πρέπει να δώσετε όνομα στην τοποθεσία."
 msgid "strtablespaceneedsloc"
 msgstr "Πρέπει να δώσετε την ακριβή θέση του καταλόγου όπου θα δημιουργηθεί ο πίνακας."
 
-msgid "strtablespacecreated"
+msgid "Tablespace created."
 msgstr "Η τοποθεσία δημιουργήθηκε."
 
-msgid "strtablespacecreatedbad"
+msgid "Tablespace creation failed."
 msgstr "Η δημιουργία της τοποθεσίας απέτυχε."
 
-msgid "strconfdroptablespace"
+msgid "Are you sure you want to drop the tablespace \"%s\"?"
 msgstr "Να διαγραφεί η τοποθεσία \"%s\"?"
 
-msgid "strtablespacedropped"
+msgid "Tablespace dropped."
 msgstr "Η τοποθεσία διαγράφηκε."
 
-msgid "strtablespacedroppedbad"
+msgid "Tablespace drop failed."
 msgstr "Η διαγραφή της τοποθεσίας απέτυχε."
 
-msgid "strtablespacealtered"
+msgid "Tablespace altered."
 msgstr "Η τοποθεσία τροποποιήθηκε."
 
-msgid "strtablespacealteredbad"
+msgid "Tablespace alteration failed."
 msgstr "Η τροποποίηση της τοποθεσίας απέτυχε."
 
 # Miscellaneous

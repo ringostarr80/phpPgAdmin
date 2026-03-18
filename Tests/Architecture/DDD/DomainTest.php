@@ -16,7 +16,7 @@ final class DomainTest
     {
         return PHPat::rule()
             ->classes(Selector::inNamespace('PhpPgAdmin\DDD'))
-            ->canOnlyDependOn()
+            ->canOnly()->dependOn()
             ->classes(Selector::inNamespace('PhpPgAdmin\DDD'))
             ->because('Domain layer should only depend on itself and PHP standard classes.');
     }

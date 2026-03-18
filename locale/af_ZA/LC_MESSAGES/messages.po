@@ -1640,13 +1640,13 @@ msgstr "Tabelruimtes"
 msgid "strshowalltablespaces"
 msgstr "Wys alle tabelruimtes"
 
-msgid "strnotablespaces"
+msgid "No tablespaces found."
 msgstr "Geen tabelruimtes gevind."
 
-msgid "strcreatetablespace"
+msgid "Create tablespace"
 msgstr "Skep tabelruimte"
 
-msgid "strlocation"
+msgid "Location"
 msgstr "Plek"
 
 msgid "strtablespaceneedsname"
@@ -1655,25 +1655,25 @@ msgstr "Jy moet 'n naam gee vir jou tabelruimte."
 msgid "strtablespaceneedsloc"
 msgstr "Jy moet 'n gids gee om jou tabelruimte in te skep."
 
-msgid "strtablespacecreated"
+msgid "Tablespace created."
 msgstr "Tabelruimte geskep."
 
-msgid "strtablespacecreatedbad"
+msgid "Tablespace creation failed."
 msgstr "Skep van tabelruimte het misluk."
 
-msgid "strconfdroptablespace"
+msgid "Are you sure you want to drop the tablespace \"%s\"?"
 msgstr "Is jy seker jy wil die tabelruimte \"%s\" uitvee?"
 
-msgid "strtablespacedropped"
+msgid "Tablespace dropped."
 msgstr "Tabelruimte is uitgevee."
 
-msgid "strtablespacedroppedbad"
+msgid "Tablespace drop failed."
 msgstr "Uitvee van tabelruimte het misluk."
 
-msgid "strtablespacealtered"
+msgid "Tablespace altered."
 msgstr "Tabelruimte gewysig."
 
-msgid "strtablespacealteredbad"
+msgid "Tablespace alteration failed."
 msgstr "Wysiging van tabelruimte het misluk."
 
 # Miscellaneous

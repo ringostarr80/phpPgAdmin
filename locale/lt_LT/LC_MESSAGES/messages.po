@@ -2186,13 +2186,13 @@ msgstr "Lentelių erdvės"
 msgid "strshowalltablespaces"
 msgstr "Rodyti visas lentelių erdves"
 
-msgid "strnotablespaces"
+msgid "No tablespaces found."
 msgstr "Lentelių erdvių nerasta."
 
-msgid "strcreatetablespace"
+msgid "Create tablespace"
 msgstr "Kurti lentelių erdvę"
 
-msgid "strlocation"
+msgid "Location"
 msgstr "Vieta"
 
 msgid "strtablespaceneedsname"
@@ -2201,25 +2201,25 @@ msgstr "Turite suteikti lentelių erdvei pavadinimą."
 msgid "strtablespaceneedsloc"
 msgstr "Turite nurodyti katalogą, kuriame turi būti sukurta lentelių erdvė."
 
-msgid "strtablespacecreated"
+msgid "Tablespace created."
 msgstr "Lentelių erdvė sukurta."
 
-msgid "strtablespacecreatedbad"
+msgid "Tablespace creation failed."
 msgstr "Nepavyko sukurti lentelių erdvės."
 
-msgid "strconfdroptablespace"
+msgid "Are you sure you want to drop the tablespace \"%s\"?"
 msgstr "Ar tikrai norite šalinti lentelių erdvę \"%s\"?"
 
-msgid "strtablespacedropped"
+msgid "Tablespace dropped."
 msgstr "Lentelių erdvė pašalinta."
 
-msgid "strtablespacedroppedbad"
+msgid "Tablespace drop failed."
 msgstr "Nepavyko pašalinti lentelių erdvės."
 
-msgid "strtablespacealtered"
+msgid "Tablespace altered."
 msgstr "Lentelių erdvė pakeista."
 
-msgid "strtablespacealteredbad"
+msgid "Tablespace alteration failed."
 msgstr "Nepavyko pakeisti lentelių erdvės."
 
 # Miscellaneous

@@ -20,6 +20,7 @@ abstract class TrailBuilder
         $iconUrl = match ($subject) {
             TrailSubject::Role => Config::getIcon('Roles'),
             TrailSubject::Server => Config::getIcon('Servers'),
+            TrailSubject::Tablespace => Config::getIcon('Tablespaces'),
         };
 
         $spanIcon = $dom->createElement('span');
@@ -48,6 +49,7 @@ abstract class TrailBuilder
         $helpUrlParam = match ($subject) {
             TrailSubject::Role => 'pg.role',
             TrailSubject::Server => 'pg.server',
+            TrailSubject::Tablespace => 'pg.tablespace',
         };
 
         return WebsiteComponents::buildHelpLink(
@@ -71,6 +73,8 @@ abstract class TrailBuilder
             }
         } elseif ($subject === TrailSubject::Role) {
             return RequestParameter::getString('rolename') ?? '';
+        } elseif ($subject === TrailSubject::Tablespace) {
+            return RequestParameter::getString('tablespace') ?? '';
         }
 
         return '';
@@ -79,7 +83,12 @@ abstract class TrailBuilder
     private static function buildLinkFor(TrailSubject $subject, \DOMDocument $dom): \DOMElement
     {
         $a = $dom->createElement('a');
-        $a->setAttribute('href', self::buildUrlFor($subject));
+        $url = self::buildUrlFor($subject);
+
+        if (!is_null($url)) {
+            $a->setAttribute('href', $url);
+        }
+
         $a->setAttribute('title', self::buildLinkTitleFor($subject));
 
         return $a;
@@ -90,16 +99,18 @@ abstract class TrailBuilder
         return match ($subject) {
             TrailSubject::Role => _('Role'),
             TrailSubject::Server => _('Server'),
+            TrailSubject::Tablespace => _('Tablespace'),
         };
     }
 
-    private static function buildUrlFor(TrailSubject $subject): string
+    private static function buildUrlFor(TrailSubject $subject): ?string
     {
         $serverId = RequestParameter::getString('server') ?? '';
 
         $script = match ($subject) {
             TrailSubject::Role => 'roles.php',
             TrailSubject::Server => 'all_db.php',
+            TrailSubject::Tablespace => 'tablespaces.php',
         };
         $scriptParams = match ($subject) {
             TrailSubject::Role => [
@@ -110,7 +121,15 @@ abstract class TrailBuilder
             TrailSubject::Server => [
                 'server' => $serverId,
             ],
+            TrailSubject::Tablespace => [
+                'server' => $serverId,
+                'tablespace' => RequestParameter::getString('tablespace') ?? '',
+            ],
         };
+
+        if ($subject === TrailSubject::Tablespace) {
+            return null;
+        }
 
         return $script . '?' . http_build_query($scriptParams);
     }

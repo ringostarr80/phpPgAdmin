@@ -1940,13 +1940,13 @@ msgstr "Spaţii de tabele"
 msgid "strshowalltablespaces"
 msgstr "Afişare toate spaţiile de tabele"
 
-msgid "strnotablespaces"
+msgid "No tablespaces found."
 msgstr "Nici un spaţiu de tabele găsit."
 
-msgid "strcreatetablespace"
+msgid "Create tablespace"
 msgstr "Creare spaţiu de tabele"
 
-msgid "strlocation"
+msgid "Location"
 msgstr "Locaţie"
 
 msgid "strtablespaceneedsname"
@@ -1955,25 +1955,25 @@ msgstr "Specificaţi un nume pentru spaţiul de tabele."
 msgid "strtablespaceneedsloc"
 msgstr "Specificaţi directorul în care va fi creat spaţiul de tabele."
 
-msgid "strtablespacecreated"
+msgid "Tablespace created."
 msgstr "Spaţiu de tabele creat."
 
-msgid "strtablespacecreatedbad"
+msgid "Tablespace creation failed."
 msgstr "Creare spaţiu de tabele eşuată."
 
-msgid "strconfdroptablespace"
+msgid "Are you sure you want to drop the tablespace \"%s\"?"
 msgstr "Sigur ştergeţi spaţiul de tabele \"%s\"?"
 
-msgid "strtablespacedropped"
+msgid "Tablespace dropped."
 msgstr "Spaţiu de tabele şters."
 
-msgid "strtablespacedroppedbad"
+msgid "Tablespace drop failed."
 msgstr "Ştergere şpaţiu de tabele eşuată."
 
-msgid "strtablespacealtered"
+msgid "Tablespace altered."
 msgstr "Spaţiu de tabele modificat."
 
-msgid "strtablespacealteredbad"
+msgid "Tablespace alteration failed."
 msgstr "Modificare şpaţiu de tabele eşuată."
 
 # Miscellaneous

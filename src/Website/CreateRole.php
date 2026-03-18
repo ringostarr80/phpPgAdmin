@@ -98,6 +98,7 @@ class CreateRole extends Website
         ?Role $role = null,
     ): \DOMElement {
         $table = $dom->createElement('table');
+        $table->setAttribute('class', 'form-table');
         $tBody = $dom->createElement('tbody');
 
         $rolename = !is_null($role)
@@ -115,10 +116,9 @@ class CreateRole extends Website
                 'content' => $rolename,
                 'max-length' => 63,
                 'readonly' => !is_null($role),
-                'type' => 'text',
             ],
         ];
-        $trName = WebsiteComponents::buildTableRowForFormular($dom, $nameSpecs);
+        $trName = WebsiteComponents::buildTableRowForInputFormular($dom, $nameSpecs);
 
         $passwordSpecs = [
             'id' => Role::FORM_ID_PASSWORD,
@@ -128,7 +128,7 @@ class CreateRole extends Website
                 'type' => 'password',
             ],
         ];
-        $trPassword = WebsiteComponents::buildTableRowForFormular($dom, $passwordSpecs);
+        $trPassword = WebsiteComponents::buildTableRowForInputFormular($dom, $passwordSpecs);
 
         $confirmPasswordSpecs = [
             'id' => Role::FORM_ID_PASSWORD_CONFIRMATION,
@@ -138,7 +138,7 @@ class CreateRole extends Website
                 'type' => 'password',
             ],
         ];
-        $trConfirm = WebsiteComponents::buildTableRowForFormular($dom, $confirmPasswordSpecs);
+        $trConfirm = WebsiteComponents::buildTableRowForInputFormular($dom, $confirmPasswordSpecs);
 
         $isSuperuserSpecs = [
             'id' => 'formSuper',
@@ -148,7 +148,7 @@ class CreateRole extends Website
                 'type' => 'bool',
             ],
         ];
-        $trSuperuser = WebsiteComponents::buildTableRowForFormular($dom, $isSuperuserSpecs);
+        $trSuperuser = WebsiteComponents::buildTableRowForCheckboxFormular($dom, $isSuperuserSpecs);
 
         $canCreateDbSpecs = [
             'id' => 'formCreateDB',
@@ -158,7 +158,7 @@ class CreateRole extends Website
                 'type' => 'bool',
             ],
         ];
-        $trCreateDb = WebsiteComponents::buildTableRowForFormular($dom, $canCreateDbSpecs);
+        $trCreateDb = WebsiteComponents::buildTableRowForCheckboxFormular($dom, $canCreateDbSpecs);
 
         $canCeateRoleSpecs = [
             'id' => 'formCreateRole',
@@ -168,7 +168,7 @@ class CreateRole extends Website
                 'type' => 'bool',
             ],
         ];
-        $trCreateRole = WebsiteComponents::buildTableRowForFormular($dom, $canCeateRoleSpecs);
+        $trCreateRole = WebsiteComponents::buildTableRowForCheckboxFormular($dom, $canCeateRoleSpecs);
 
         $inheritsSpecs = [
             'id' => 'formInherits',
@@ -178,7 +178,7 @@ class CreateRole extends Website
                 'type' => 'bool',
             ],
         ];
-        $trInherits = WebsiteComponents::buildTableRowForFormular($dom, $inheritsSpecs);
+        $trInherits = WebsiteComponents::buildTableRowForCheckboxFormular($dom, $inheritsSpecs);
 
         $canLoginSpecs = [
             'id' => 'formCanLogin',
@@ -188,7 +188,7 @@ class CreateRole extends Website
                 'type' => 'bool',
             ],
         ];
-        $trCanLogin = WebsiteComponents::buildTableRowForFormular($dom, $canLoginSpecs);
+        $trCanLogin = WebsiteComponents::buildTableRowForCheckboxFormular($dom, $canLoginSpecs);
 
         $maxConnectionsSpecs = [
             'id' => 'formConnLimit',
@@ -198,7 +198,7 @@ class CreateRole extends Website
                 'type' => 'number',
             ],
         ];
-        $trMaxConnections = WebsiteComponents::buildTableRowForFormular($dom, $maxConnectionsSpecs);
+        $trMaxConnections = WebsiteComponents::buildTableRowForInputFormular($dom, $maxConnectionsSpecs);
 
         $expiresSpecs = [
             'id' => 'formExpires',
@@ -208,7 +208,7 @@ class CreateRole extends Website
                 'type' => 'datetime-local',
             ],
         ];
-        $trExpires = WebsiteComponents::buildTableRowForFormular($dom, $expiresSpecs);
+        $trExpires = WebsiteComponents::buildTableRowForInputFormular($dom, $expiresSpecs);
 
         $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
         $db = PhpPgAdminConnection::createFromServerSession($serverSession);
@@ -234,33 +234,30 @@ class CreateRole extends Website
             'label-text' => _('Member of'),
             'value' => [
                 'selected-values' => $currentMembersOf,
-                'selection-values' => $membersSelectionValues,
-                'type' => 'selection',
+                'values' => $membersSelectionValues,
             ],
         ];
-        $trMemberOf = WebsiteComponents::buildTableRowForFormular($dom, $memberOfSpecs);
+        $trMemberOf = WebsiteComponents::buildTableRowForSelectionFormular($dom, $memberOfSpecs);
 
         $membersSpecs = [
             'id' => 'members[]',
             'label-text' => _('Members'),
             'value' => [
                 'selected-values' => $currentMembers,
-                'selection-values' => $membersSelectionValues,
-                'type' => 'selection',
+                'values' => $membersSelectionValues,
             ],
         ];
-        $trMembers = WebsiteComponents::buildTableRowForFormular($dom, $membersSpecs);
+        $trMembers = WebsiteComponents::buildTableRowForSelectionFormular($dom, $membersSpecs);
 
         $adminMembersSpecs = [
             'id' => 'adminmembers[]',
             'label-text' => _('Admin members'),
             'value' => [
                 'selected-values' => $currentAdminMembers,
-                'selection-values' => $membersSelectionValues,
-                'type' => 'selection',
+                'values' => $membersSelectionValues,
             ],
         ];
-        $trAdminMembers = WebsiteComponents::buildTableRowForFormular($dom, $adminMembersSpecs);
+        $trAdminMembers = WebsiteComponents::buildTableRowForSelectionFormular($dom, $adminMembersSpecs);
 
         $tBody->appendChild($trName);
         $tBody->appendChild($trPassword);

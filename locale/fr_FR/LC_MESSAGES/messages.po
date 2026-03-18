@@ -2167,13 +2167,13 @@ msgstr "Tablespaces"
 msgid "strshowalltablespaces"
 msgstr "Voir tous les tablespaces"
 
-msgid "strnotablespaces"
+msgid "No tablespaces found."
 msgstr "Aucun tablespace trouvé."
 
-msgid "strcreatetablespace"
+msgid "Create tablespace"
 msgstr "Créer un tablespace"
 
-msgid "strlocation"
+msgid "Location"
 msgstr "Emplacement"
 
 msgid "strtablespaceneedsname"
@@ -2182,25 +2182,25 @@ msgstr "Vous devez donner un nom à votre tablespace."
 msgid "strtablespaceneedsloc"
 msgstr "Vous devez préciser un répertoire dans lequel sera créé le tablespace."
 
-msgid "strtablespacecreated"
+msgid "Tablespace created."
 msgstr "Tablespace créé."
 
-msgid "strtablespacecreatedbad"
+msgid "Tablespace creation failed."
 msgstr "Échec lors de la création du tablespace."
 
-msgid "strconfdroptablespace"
+msgid "Are you sure you want to drop the tablespace \"%s\"?"
 msgstr "Êtes-vous sûr de vouloir supprimer le tablespace « %s » ?"
 
-msgid "strtablespacedropped"
+msgid "Tablespace dropped."
 msgstr "Tablespace supprimé."
 
-msgid "strtablespacedroppedbad"
+msgid "Tablespace drop failed."
 msgstr "Échec lors de la suppression du tablespace."
 
-msgid "strtablespacealtered"
+msgid "Tablespace altered."
 msgstr "Tablespace modifié."
 
-msgid "strtablespacealteredbad"
+msgid "Tablespace alteration failed."
 msgstr "Échec lors de la modification du tablespace."
 
 # Miscellaneous

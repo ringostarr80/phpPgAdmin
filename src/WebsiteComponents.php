@@ -461,21 +461,14 @@ abstract class WebsiteComponents
      *  'id': string,
      *  'label-text': string,
      *  'value': array{
-     *      'content'?: bool|number|string|\DateTimeInterface|null,
+     *      'content'?: bool|null,
      *      'disabled'?: bool,
-     *      'max-length'?: number,
      *      'readonly'?: bool,
      *      'required'?: bool,
-     *      'rows'?: number,
-     *      'selected-values'?: array<string>,
-     *      'selection-is-multiple'?: bool,
-     *      'selection-values'?: array<string>,
-     *      'size'?: number,
-     *      'type': 'bool'|'date'|'datetime-local'|'number'|'password'|'selection'|'text'|'textarea',
      *  },
      * } $specs
      */
-    public static function buildTableRowForFormular(\DOMDocument $dom, array $specs): \DOMElement
+    public static function buildTableRowForCheckboxFormular(\DOMDocument $dom, array $specs): \DOMElement
     {
         $tr = $dom->createElement('tr');
 
@@ -493,101 +486,231 @@ abstract class WebsiteComponents
         $tdCol1->appendChild($label);
         $tdCol2 = $dom->createElement('td');
         $tdCol2->setAttribute('class', 'data1');
-        $valueType = match ($specs['value']['type']) {
-            'bool' => 'checkbox',
-            default => $specs['value']['type'],
-        };
 
-        if ($valueType === 'selection') {
-            $selectionIsMultiple = $specs['value']['selection-is-multiple'] ?? true;
-            $select = $dom->createElement('select');
-            $select->setAttribute('id', $specs['id']);
-            $select->setAttribute('name', $specs['id']);
+        $input = $dom->createElement('input');
+        $input->setAttribute('type', 'checkbox');
+        $input->setAttribute('id', $specs['id']);
+        $input->setAttribute('name', $specs['id']);
+
+        if (isset($specs['value']['disabled']) && $specs['value']['disabled']) {
+            $input->setAttribute('disabled', 'disabled');
+        }
+
+        if (isset($specs['value']['readonly']) && $specs['value']['readonly']) {
+            $input->setAttribute('readonly', 'readonly');
+        }
+
+        if (isset($specs['value']['content']) && $specs['value']['content']) {
+            $input->setAttribute('checked', 'checked');
+        }
+
+        $tdCol2->appendChild($input);
+
+        $tr->appendChild($tdCol1);
+        $tr->appendChild($tdCol2);
+
+        return $tr;
+    }
+
+    /**
+     * @param array{
+     *  'id': string,
+     *  'label-text': string,
+     *  'value': array{
+     *      'content'?: int|float|string|\DateTimeInterface|null,
+     *      'disabled'?: bool,
+     *      'max-length'?: int,
+     *      'readonly'?: bool,
+     *      'required'?: bool,
+     *      'type'?: 'date'|'datetime-local'|'number'|'password'|'text',
+     *  },
+     * } $specs
+     */
+    public static function buildTableRowForInputFormular(\DOMDocument $dom, array $specs): \DOMElement
+    {
+        $tr = $dom->createElement('tr');
+
+        $tdCol1Class = 'data left';
+
+        if ($specs['value']['required'] ?? false) {
+            $tdCol1Class .= ' required';
+        }
+
+        $tdCol1 = $dom->createElement('th');
+        $tdCol1->setAttribute('class', $tdCol1Class);
+        $label = $dom->createElement('label');
+        $label->setAttribute('for', $specs['id']);
+        $label->appendChild($dom->createTextNode($specs['label-text']));
+        $tdCol1->appendChild($label);
+        $tdCol2 = $dom->createElement('td');
+        $tdCol2->setAttribute('class', 'data1');
+        $valueType = $specs['value']['type'] ?? 'text';
+
+        $input = $dom->createElement('input');
+        $input->setAttribute('type', $valueType);
+        $input->setAttribute('id', $specs['id']);
+        $input->setAttribute('name', $specs['id']);
+
+        if (isset($specs['value']['max-length'])) {
+            $input->setAttribute('maxlength', (string)$specs['value']['max-length']);
+        }
+
+        if (isset($specs['value']['disabled']) && $specs['value']['disabled']) {
+            $input->setAttribute('disabled', 'disabled');
+        }
+
+        if (isset($specs['value']['readonly']) && $specs['value']['readonly']) {
+            $input->setAttribute('readonly', 'readonly');
+        }
+
+        if (isset($specs['value']['content'])) {
+            if ($valueType === 'date' && $specs['value']['content'] instanceof \DateTimeInterface) {
+                $input->setAttribute('value', $specs['value']['content']->format('Y-m-d'));
+            } elseif ($valueType === 'datetime-local' && $specs['value']['content'] instanceof \DateTimeInterface) {
+                $input->setAttribute('value', $specs['value']['content']->format('Y-m-d\TH:i'));
+            } elseif ($valueType === 'number' && is_numeric($specs['value']['content'])) {
+                $input->setAttribute('value', (string)$specs['value']['content']);
+            } elseif (is_string($specs['value']['content'])) {
+                $input->setAttribute('value', $specs['value']['content']);
+            }
+        }
+
+        $tdCol2->appendChild($input);
+
+        $tr->appendChild($tdCol1);
+        $tr->appendChild($tdCol2);
+
+        return $tr;
+    }
+
+    /**
+     * @param array{
+     *  'id': string,
+     *  'label-text': string,
+     *  'value': array{
+     *      'disabled'?: bool,
+     *      'is-multiple'?: bool,
+     *      'readonly'?: bool,
+     *      'required'?: bool,
+     *      'selected-values'?: array<string>,
+     *      'values'?: array<string>,
+     *  },
+     * } $specs
+     */
+    public static function buildTableRowForSelectionFormular(\DOMDocument $dom, array $specs): \DOMElement
+    {
+        $tr = $dom->createElement('tr');
+
+        $tdCol1Class = 'data left';
+
+        if ($specs['value']['required'] ?? false) {
+            $tdCol1Class .= ' required';
+        }
+
+        $tdCol1 = $dom->createElement('th');
+        $tdCol1->setAttribute('class', $tdCol1Class);
+        $label = $dom->createElement('label');
+        $label->setAttribute('for', $specs['id']);
+        $label->appendChild($dom->createTextNode($specs['label-text']));
+        $tdCol1->appendChild($label);
+        $tdCol2 = $dom->createElement('td');
+        $tdCol2->setAttribute('class', 'data1');
+
+        $selectionIsMultiple = $specs['value']['is-multiple'] ?? true;
+        $select = $dom->createElement('select');
+        $select->setAttribute('id', $specs['id']);
+        $select->setAttribute('name', $specs['id']);
+
+        if ($selectionIsMultiple) {
+            $select->setAttribute('multiple', 'multiple');
+        }
+
+        if (isset($specs['value']['values'])) {
+            $selectedValues = $specs['value']['selected-values'] ?? [];
 
             if ($selectionIsMultiple) {
-                $select->setAttribute('multiple', 'multiple');
+                $select->setAttribute('size', (string)min(10, count($specs['value']['values'])));
             }
 
-            if (isset($specs['value']['selection-values'])) {
-                $selectedValues = $specs['value']['selected-values'] ?? [];
+            foreach ($specs['value']['values'] as $selectionValue) {
+                $option = $dom->createElement('option');
+                $option->setAttribute('value', $selectionValue);
 
-                if ($selectionIsMultiple) {
-                    $select->setAttribute('size', (string)min(10, count($specs['value']['selection-values'])));
+                if (in_array($selectionValue, $selectedValues, true)) {
+                    $option->setAttribute('selected', 'selected');
                 }
 
-                foreach ($specs['value']['selection-values'] as $selectionValue) {
-                    $option = $dom->createElement('option');
-                    $option->setAttribute('value', $selectionValue);
-
-                    if (in_array($selectionValue, $selectedValues, true)) {
-                        $option->setAttribute('selected', 'selected');
-                    }
-
-                    $option->appendChild($dom->createTextNode($selectionValue));
-                    $select->appendChild($option);
-                }
+                $option->appendChild($dom->createTextNode($selectionValue));
+                $select->appendChild($option);
             }
-
-            $tdCol2->appendChild($select);
-        } elseif ($valueType === 'textarea') {
-            $textarea = $dom->createElement('textarea');
-            $textarea->setAttribute('id', $specs['id']);
-            $textarea->setAttribute('name', $specs['id']);
-
-            if (isset($specs['value']['disabled']) && $specs['value']['disabled']) {
-                $textarea->setAttribute('disabled', 'disabled');
-            }
-
-            if (isset($specs['value']['readonly']) && $specs['value']['readonly']) {
-                $textarea->setAttribute('readonly', 'readonly');
-            }
-
-            if (isset($specs['value']['size'])) {
-                $textarea->setAttribute('size', (string)$specs['value']['size']);
-            }
-
-            if (isset($specs['value']['rows'])) {
-                $textarea->setAttribute('rows', (string)$specs['value']['rows']);
-            }
-
-            if (isset($specs['value']['content']) && is_string($specs['value']['content'])) {
-                $textarea->appendChild($dom->createTextNode($specs['value']['content']));
-            }
-
-            $tdCol2->appendChild($textarea);
-        } else {
-            $input = $dom->createElement('input');
-            $input->setAttribute('type', $valueType);
-            $input->setAttribute('id', $specs['id']);
-            $input->setAttribute('name', $specs['id']);
-
-            if (isset($specs['value']['disabled']) && $specs['value']['disabled']) {
-                $input->setAttribute('disabled', 'disabled');
-            }
-
-            if (isset($specs['value']['readonly']) && $specs['value']['readonly']) {
-                $input->setAttribute('readonly', 'readonly');
-            }
-
-            if (isset($specs['value']['content'])) {
-                if ($valueType === 'checkbox' && is_bool($specs['value']['content']) && $specs['value']['content']) {
-                    $input->setAttribute('checked', 'checked');
-                } elseif ($valueType === 'date' && $specs['value']['content'] instanceof \DateTimeInterface) {
-                    $input->setAttribute('value', $specs['value']['content']->format('Y-m-d'));
-                } elseif ($valueType === 'datetime-local' && $specs['value']['content'] instanceof \DateTimeInterface) {
-                    $input->setAttribute('value', $specs['value']['content']->format('Y-m-d\TH:i'));
-                } elseif ($valueType === 'number' && is_numeric($specs['value']['content'])) {
-                    $input->setAttribute('value', (string)$specs['value']['content']);
-                } elseif (
-                    ($valueType === 'text' || $valueType === 'password') &&
-                    is_string($specs['value']['content'])
-                ) {
-                    $input->setAttribute('value', $specs['value']['content']);
-                }
-            }
-
-            $tdCol2->appendChild($input);
         }
+
+        $tdCol2->appendChild($select);
+
+        $tr->appendChild($tdCol1);
+        $tr->appendChild($tdCol2);
+
+        return $tr;
+    }
+
+    /**
+     * @param array{
+     *  'id': string,
+     *  'label-text': string,
+     *  'value': array{
+     *      'cols'?: int,
+     *      'content'?: string|null,
+     *      'disabled'?: bool,
+     *      'readonly'?: bool,
+     *      'required'?: bool,
+     *      'rows'?: int,
+     *  },
+     * } $specs
+     */
+    public static function buildTableRowForTextareaFormular(\DOMDocument $dom, array $specs): \DOMElement
+    {
+        $tr = $dom->createElement('tr');
+
+        $tdCol1Class = 'data left';
+
+        if ($specs['value']['required'] ?? false) {
+            $tdCol1Class .= ' required';
+        }
+
+        $tdCol1 = $dom->createElement('th');
+        $tdCol1->setAttribute('class', $tdCol1Class);
+        $label = $dom->createElement('label');
+        $label->setAttribute('for', $specs['id']);
+        $label->appendChild($dom->createTextNode($specs['label-text']));
+        $tdCol1->appendChild($label);
+        $tdCol2 = $dom->createElement('td');
+        $tdCol2->setAttribute('class', 'data1');
+
+        $textarea = $dom->createElement('textarea');
+        $textarea->setAttribute('id', $specs['id']);
+        $textarea->setAttribute('name', $specs['id']);
+
+        if (isset($specs['value']['disabled']) && $specs['value']['disabled']) {
+            $textarea->setAttribute('disabled', 'disabled');
+        }
+
+        if (isset($specs['value']['readonly']) && $specs['value']['readonly']) {
+            $textarea->setAttribute('readonly', 'readonly');
+        }
+
+        if (isset($specs['value']['cols'])) {
+            $textarea->setAttribute('cols', (string)$specs['value']['cols']);
+        }
+
+        if (isset($specs['value']['rows'])) {
+            $textarea->setAttribute('rows', (string)$specs['value']['rows']);
+        }
+
+        if (isset($specs['value']['content'])) {
+            $textarea->appendChild($dom->createTextNode($specs['value']['content']));
+        }
+
+        $tdCol2->appendChild($textarea);
 
         $tr->appendChild($tdCol1);
         $tr->appendChild($tdCol2);

@@ -115,6 +115,7 @@ class CreateTablespace extends Website
         ?Tablespace $tablespace = null,
     ): \DOMElement {
         $table = $dom->createElement('table');
+        $table->setAttribute('class', 'form-table');
         $tBody = $dom->createElement('tbody');
 
         $tablespaceName = '';
@@ -136,11 +137,9 @@ class CreateTablespace extends Website
                 'content' => $tablespaceName,
                 'max-length' => 63,
                 'required' => true,
-                'size' => 32,
-                'type' => 'text',
             ],
         ];
-        $trName = WebsiteComponents::buildTableRowForFormular($dom, $nameSpecs);
+        $trName = WebsiteComponents::buildTableRowForInputFormular($dom, $nameSpecs);
 
         $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
         $db = PhpPgAdminConnection::createFromServerSession($serverSession);
@@ -164,14 +163,13 @@ class CreateTablespace extends Website
             'id' => Tablespace::FORM_ID_OWNER,
             'label-text' => _('Owner'),
             'value' => [
+                'is-multiple' => false,
                 'required' => true,
                 'selected-values' => $ownerSelectedValues,
-                'selection-is-multiple' => false,
-                'selection-values' => $ownerSelectionValues,
-                'type' => 'selection',
+                'values' => $ownerSelectionValues,
             ],
         ];
-        $trOwner = WebsiteComponents::buildTableRowForFormular($dom, $ownerSpecs);
+        $trOwner = WebsiteComponents::buildTableRowForSelectionFormular($dom, $ownerSpecs);
 
         $locationSpecs = [
             'id' => Tablespace::FORM_ID_LOCATION,
@@ -180,23 +178,20 @@ class CreateTablespace extends Website
                 'content' => $tablespaceLocation,
                 'readonly' => !is_null($tablespace),
                 'required' => true,
-                'size' => 32,
-                'type' => 'text',
             ],
         ];
-        $trLocation = WebsiteComponents::buildTableRowForFormular($dom, $locationSpecs);
+        $trLocation = WebsiteComponents::buildTableRowForInputFormular($dom, $locationSpecs);
 
         $commentSpecs = [
             'id' => Tablespace::FORM_ID_COMMENT,
             'label-text' => _('Comment'),
             'value' => [
+                'cols' => 32,
                 'content' => $tablespaceComment,
                 'rows' => 3,
-                'size' => 32,
-                'type' => 'textarea',
             ],
         ];
-        $trComment = WebsiteComponents::buildTableRowForFormular($dom, $commentSpecs);
+        $trComment = WebsiteComponents::buildTableRowForTextareaFormular($dom, $commentSpecs);
 
         $tBody->appendChild($trName);
         $tBody->appendChild($trOwner);

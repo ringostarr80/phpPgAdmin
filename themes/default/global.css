@@ -41,6 +41,15 @@ h3 {
 	font-family: arial, tahoma, verdana, helvetica, sans-serif, serif;
 	font-weight: bold;
 }
+
+input[type=text], input[type=password], input[type=number], input[type=datetime-local], textarea, select {
+	box-sizing: border-box;
+}
+
+table.form-table input, table.form-table select, table.form-table textarea {
+	width: 100%;
+}
+
 table.error {background-color: #E6E6CC}
 table.error td {background-color: #E6E6CC}
 table.navbar {background-color: #E6E6CC}

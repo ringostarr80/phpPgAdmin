@@ -9,3 +9,10 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    # Wait before adopting freshly published releases to reduce the risk of
+    # pulling in a compromised or yanked package version.
+    cooldown:
+      default-days: 7        # baseline for anything without a specific rule (zizmor requires >= 7)
+      semver-patch-days: 2    # patches often carry security fixes — adopt them quickly
+      semver-minor-days: 7    # minor releases get a moderate soak period
+      semver-major-days: 14   # breaking changes / largest attack surface — longest soak

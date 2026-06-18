@@ -1,8 +1,11 @@
 {
   "devDependencies": {
-    "@playwright/test": "^1.57.0",
-    "@types/node": "^25.0.8",
-    "selenium-standalone": "^10.0.1"
+    "@playwright/test": "^1.61.0",
+    "@types/node": "^25.9.3",
+    "selenium-standalone": "^10.0.2"
   },
-  "scripts": {}
+  "scripts": {
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install"
+  }
 }

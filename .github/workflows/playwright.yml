@@ -32,11 +32,11 @@ jobs:
     - name: Install Composer dependencies
       run: composer install --prefer-dist --no-progress
     - name: Install dependencies
-      run: npm ci
+      run: npm ci --ignore-scripts
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: npm run test:e2e:install -- --with-deps
     - name: Run Playwright tests
-      run: npx playwright test
+      run: npm run test:e2e
     - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
       if: ${{ !cancelled() }}
       with:

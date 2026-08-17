@@ -141,13 +141,12 @@ final class Config
     {
         if (!isset(self::$data['locale'])) {
             $locale = null;
+            $requestLanguage = $_REQUEST['language'] ?? null;
+            $sessionLanguage = $_SESSION['webdbLanguage'] ?? null;
+            $cookieLanguage = $_COOKIE['webdbLanguage'] ?? null;
 
-            if (
-                isset($_REQUEST['language']) &&
-                is_string($_REQUEST['language']) &&
-                self::languageIsAvailable($_REQUEST['language'])
-            ) {
-                $locale = self::getNormalizedLocaleFromLocaleOrLanguage($_REQUEST['language']);
+            if (is_string($requestLanguage) && self::languageIsAvailable($requestLanguage)) {
+                $locale = self::getNormalizedLocaleFromLocaleOrLanguage($requestLanguage);
 
                 if (!is_null($locale)) {
                     setcookie(
@@ -158,22 +157,12 @@ final class Config
                 }
             }
 
-            if (
-                is_null($locale) &&
-                isset($_SESSION['webdbLanguage']) &&
-                is_string($_SESSION['webdbLanguage']) &&
-                self::languageIsAvailable($_SESSION['webdbLanguage'])
-            ) {
-                $locale = self::getNormalizedLocaleFromLocaleOrLanguage($_SESSION['webdbLanguage']);
+            if (is_null($locale) && is_string($sessionLanguage) && self::languageIsAvailable($sessionLanguage)) {
+                $locale = self::getNormalizedLocaleFromLocaleOrLanguage($sessionLanguage);
             }
 
-            if (
-                is_null($locale) &&
-                isset($_COOKIE['webdbLanguage']) &&
-                is_string($_COOKIE['webdbLanguage']) &&
-                self::languageIsAvailable($_COOKIE['webdbLanguage'])
-            ) {
-                $locale = self::getNormalizedLocaleFromLocaleOrLanguage($_COOKIE['webdbLanguage']);
+            if (is_null($locale) && is_string($cookieLanguage) && self::languageIsAvailable($cookieLanguage)) {
+                $locale = self::getNormalizedLocaleFromLocaleOrLanguage($cookieLanguage);
             }
 
             $conf = self::tryGetConfigFileData();
@@ -291,38 +280,34 @@ final class Config
     {
         if (!isset(self::$data['theme'])) {
             self::$data['theme'] = 'default';
+            $requestServer = $_REQUEST['server'] ?? null;
+            $cookieTheme = $_COOKIE['ppaTheme'] ?? null;
+            $sessionTheme = $_SESSION['ppaTheme'] ?? null;
+            $requestTheme = $_REQUEST['theme'] ?? null;
 
-            if (isset($_REQUEST['server']) && is_string($_REQUEST['server'])) {
-                $serverIdTheme = self::tryGetThemeByServerId($_REQUEST['server']);
+            if (is_string($requestServer)) {
+                $serverIdTheme = self::tryGetThemeByServerId($requestServer);
 
                 if ($serverIdTheme !== '') {
                     self::$data['theme'] = $serverIdTheme;
                 }
             }
 
-            if (
-                isset($_COOKIE['ppaTheme']) &&
-                is_string($_COOKIE['ppaTheme']) &&
-                Themes::cssExists($_COOKIE['ppaTheme'])
-            ) {
-                self::$data['theme'] = $_COOKIE['ppaTheme'];
+            if (is_string($cookieTheme) && Themes::cssExists($cookieTheme)) {
+                self::$data['theme'] = $cookieTheme;
             }
 
-            if (
-                isset($_SESSION['ppaTheme']) &&
-                is_string($_SESSION['ppaTheme']) &&
-                Themes::cssExists($_SESSION['ppaTheme'])
-            ) {
-                self::$data['theme'] = $_SESSION['ppaTheme'];
+            if (is_string($sessionTheme) && Themes::cssExists($sessionTheme)) {
+                self::$data['theme'] = $sessionTheme;
             }
 
-            if (isset($_REQUEST['theme']) && is_string($_REQUEST['theme']) && Themes::cssExists($_REQUEST['theme'])) {
+            if (is_string($requestTheme) && Themes::cssExists($requestTheme)) {
                 setcookie(
                     name: 'ppaTheme',
-                    value: $_REQUEST['theme'],
+                    value: $requestTheme,
                     expires_or_options: time() + 31_536_000, // 1 year.
                 );
-                self::$data['theme'] = $_REQUEST['theme'];
+                self::$data['theme'] = $requestTheme;
             }
 
             $_SESSION['ppaTheme'] = self::$data['theme'];

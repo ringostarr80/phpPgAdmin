@@ -6,6 +6,6 @@
   },
   "scripts": {
     "test:e2e": "playwright test",
-    "test:e2e:install": "playwright install"
+    "test:e2e:install": "playwright install chromium"
   }
 }

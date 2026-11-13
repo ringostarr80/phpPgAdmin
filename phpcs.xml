@@ -113,6 +113,7 @@
         <properties>
             <property name="rootNamespaces" type="array">
                 <element key="src" value="PhpPgAdmin"/>
+                <element key="Tests" value="Tests"/>
             </property>
         </properties>
     </rule>

@@ -17,11 +17,11 @@
             "phpstan/extension-installer": true
         },
         "platform": {
-            "php": "8.2"
+            "php": "8.3"
         }
     },
     "require": {
-        "php": ">=8.2",
+        "php": ">=8.3",
         "ext-gettext": "*",
         "ext-pgsql": "*",
         "ext-mbstring": "*",
@@ -46,15 +46,15 @@
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "slevomat/coding-standard": "^8.25",
         "squizlabs/php_codesniffer": "^4.0",
-        "vlucas/phpdotenv": "^5.6"
+        "vlucas/phpdotenv": "^5.6",
+        "phpunit/phpunit": "^12.5"
     },
     "minimum-stability": "stable",
     "scripts": {
         "dev:analyze": [
             "@dev:analyze:phpstan"
         ],
-        "dev:analyze:phpstan": "@dev:analyze:phpstan-8.2",
-        "dev:analyze:phpstan-8.2": "phpstan analyse --configuration=phpstan-8.2.neon --autoload-file=autoload-tests.php --memory-limit=512M",
+        "dev:analyze:phpstan": "@dev:analyze:phpstan-8.3",
         "dev:analyze:phpstan-8.3": "phpstan analyse --configuration=phpstan-8.3.neon --autoload-file=autoload-tests.php --memory-limit=512M",
         "dev:analyze:phpstan-8.4": "phpstan analyse --configuration=phpstan-8.4.neon --autoload-file=autoload-tests.php --memory-limit=512M",
         "dev:analyze:phpstan-8.5": "phpstan analyse --configuration=phpstan-8.5.neon --autoload-file=autoload-tests.php --memory-limit=512M",
@@ -63,14 +63,19 @@
             "@dev:lint:phpcs"
         ],
         "dev:lint:php": "parallel-lint --exclude vendor .",
-        "dev:lint:phpcs": "phpcs -d memory_limit=256M src/ Tests/Support/TestEnvironment.php Tests/test-environment.php autoload.php all_db.php all_db_export.php alter_db.php alter_role.php alter_tablespace.php browser.php create_db.php create_role.php create_tablespace.php dbexport.php drop_db.php drop_role.php drop_tablespace.php history.php history_clear.php history_delete.php history_download.php index.php intro.php login.php logout.php roles.php server-logout.php servers.php servers-tree.php sqledit.php tablespaces.php",
-        "dev:test": [
-            "@dev:test:acceptance"
-        ],
-        "dev:test:unit": "php -d register_argc_argv=On vendor/bin/codecept run Unit",
+        "dev:lint:phpcs": "phpcs -d memory_limit=256M src/ Tests/Integration/ Tests/Support/TestEnvironment.php Tests/Unit/ Tests/bootstrap.php Tests/test-environment.php autoload.php all_db.php all_db_export.php alter_db.php alter_role.php alter_tablespace.php browser.php create_db.php create_role.php create_tablespace.php dbexport.php drop_db.php drop_role.php drop_tablespace.php history.php history_clear.php history_delete.php history_download.php index.php intro.php login.php logout.php roles.php server-logout.php servers.php servers-tree.php sqledit.php tablespaces.php",
+        "dev:test": "phpunit",
+        "dev:test:unit": "phpunit --testsuite Unit",
+        "dev:test:integration": "phpunit --testsuite Integration",
         "dev:test:acceptance": "php -d register_argc_argv=On vendor/bin/codecept run Acceptance",
-        "dev:test:coverage:ci": "codecept run Unit,Acceptance --coverage --coverage-xml",
-        "dev:test:coverage:html": "codecept run Unit,Acceptance --coverage --coverage-html",
+        "dev:test:coverage:ci": [
+            "@putenv XDEBUG_MODE=coverage",
+            "phpunit --coverage-clover coverage/clover.xml"
+        ],
+        "dev:test:coverage:html": [
+            "@putenv XDEBUG_MODE=coverage",
+            "phpunit --coverage-html coverage/html"
+        ],
         "build-locales": [
             "@build-locale-af_ZA",
             "@build-locale-ar",

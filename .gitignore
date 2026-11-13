@@ -2,6 +2,8 @@ conf/config.yml
 conf/config.yaml
 node_modules/
 Tests/_output/
+.phpunit.cache/
+/coverage/
 vendor/
 
 .DS_Store

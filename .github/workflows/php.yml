@@ -19,7 +19,7 @@ jobs:
 
     strategy:
       matrix:
-        php-version: [ '8.2', '8.3', '8.4', '8.5' ]
+        php-version: [ '8.3', '8.4', '8.5' ]
         pg-version: [ '17' ]
 
     services:
@@ -59,7 +59,7 @@ jobs:
       - run: composer run-script "dev:analyze:phpstan-${PHP_VERSION}"
         env:
           PHP_VERSION: ${{ matrix.php-version }}
-      - run: composer run-script dev:test:unit
+      - run: composer run-script dev:test
         env:
           PHPPGADMIN_TEST_SERVER_HOSTNAME: localhost
           PHPPGADMIN_TEST_SERVER_PASSWORD: ${{ vars.PHPPGADMIN_TEST_SERVER_PASSWORD }}

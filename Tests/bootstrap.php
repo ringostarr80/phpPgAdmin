@@ -12,5 +12,12 @@ use Tests\Support\TestEnvironment;
 
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'autoload.php';
 
-TestEnvironment::setUp();
-register_shutdown_function(TestEnvironment::tearDown(...));
+// Infection runs the mutants in parallel and gives every thread its own TEST_TOKEN. One configuration file per thread
+// keeps a finished process from removing the file another one still reads.
+$testToken = getenv('TEST_TOKEN');
+$configYamlFile = is_string($testToken) && $testToken !== ''
+    ? "config-test-{$testToken}.yml"
+    : TestEnvironment::CONFIG_YAML_FILE;
+
+TestEnvironment::setUp($configYamlFile);
+register_shutdown_function(static fn () => TestEnvironment::tearDown($configYamlFile));

@@ -1,4 +1,6 @@
 [![CodeQL](https://github.com/ringostarr80/phpPgAdmin/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/ringostarr80/phpPgAdmin/actions/workflows/github-code-scanning/codeql)
+[![codecov](https://codecov.io/gh/ringostarr80/phpPgAdmin/graph/badge.svg)](https://codecov.io/gh/ringostarr80/phpPgAdmin)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fringostarr80%2FphpPgAdmin%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/ringostarr80/phpPgAdmin/main)
 
 # phpPgAdmin
 

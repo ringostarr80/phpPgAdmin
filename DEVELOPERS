@@ -91,6 +91,12 @@ Don't forget to make sure your changes still pass the existing test suites
 (PHPUnit: composer dev:test, Playwright: npm run test:e2e). Additionally, you
 should add or update the tests as needed to cover your new features.
 
+To see whether the tests actually check the code they cover, run the mutation
+tests (Infection: composer dev:test:mutation). They change the code in src/ in
+small ways and report every change no test notices; the HTML report ends up in
+infection/infection.html. The CI fails if the covered code MSI drops below
+the minimum set in infection.json5.
+
 If you are adding a new class function, be sure to use the "clean",
 "fieldClean", "arrayClean" and "fieldArrayClean" functions to properly escape
 odd characters in user input.  Examine existing functions that do similar

@@ -1,0 +1,11 @@
+# https://docs.codecov.com/docs/codecovyml-reference
+coverage:
+  status:
+    # Only src/ is measured (see phpunit.xml) and most of it is not tested yet, so the checks report the coverage
+    # without failing pull requests for now.
+    project:
+      default:
+        informational: true
+    patch:
+      default:
+        informational: true

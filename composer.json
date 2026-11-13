@@ -11,7 +11,6 @@
     "config": {
         "allow-plugins": {
             "captainhook/hook-installer": true,
-            "codeception/c3": true,
             "cyclonedx/cyclonedx-php-composer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "phpstan/extension-installer": true
@@ -32,11 +31,6 @@
     "require-dev": {
         "captainhook/captainhook": "^5.27",
         "captainhook/hook-installer": "^1.0",
-        "codeception/codeception": "^5.3",
-        "codeception/c3": "^2.9",
-        "codeception/module-asserts": "*",
-        "codeception/module-phpbrowser": "*",
-        "codeception/module-webdriver": "^4.0",
         "cyclonedx/cyclonedx-php-composer": "^6.0",
         "php-parallel-lint/php-parallel-lint": "^1.4",
         "phpat/phpat": "^0.12.0",
@@ -67,7 +61,6 @@
         "dev:test": "phpunit",
         "dev:test:unit": "phpunit --testsuite Unit",
         "dev:test:integration": "phpunit --testsuite Integration",
-        "dev:test:acceptance": "php -d register_argc_argv=On vendor/bin/codecept run Acceptance",
         "dev:test:coverage:ci": [
             "@putenv XDEBUG_MODE=coverage",
             "phpunit --coverage-clover coverage/clover.xml"

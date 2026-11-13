@@ -3,6 +3,9 @@ conf/config.yaml
 node_modules/
 .phpunit.cache/
 /coverage/
+/infection/
+# Left behind when Infection kills a timed-out test process (see Tests/bootstrap.php).
+/conf/config-test-*.yml
 vendor/
 
 .DS_Store

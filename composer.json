@@ -13,6 +13,7 @@
             "captainhook/hook-installer": true,
             "cyclonedx/cyclonedx-php-composer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
+            "infection/extension-installer": true,
             "phpstan/extension-installer": true
         },
         "platform": {
@@ -32,6 +33,7 @@
         "captainhook/captainhook": "^5.27",
         "captainhook/hook-installer": "^1.0",
         "cyclonedx/cyclonedx-php-composer": "^6.0",
+        "infection/infection": "^0.35",
         "php-parallel-lint/php-parallel-lint": "^1.4",
         "phpat/phpat": "^0.12.0",
         "phpmd/phpmd": "^2.15",
@@ -68,6 +70,10 @@
         "dev:test:coverage:html": [
             "@putenv XDEBUG_MODE=coverage",
             "phpunit --coverage-html coverage/html"
+        ],
+        "dev:test:mutation": [
+            "@putenv XDEBUG_MODE=coverage",
+            "infection --threads=max"
         ],
         "build-locales": [
             "@build-locale-af_ZA",

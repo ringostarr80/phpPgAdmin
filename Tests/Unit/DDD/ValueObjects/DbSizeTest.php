@@ -34,7 +34,9 @@ final class DbSizeTest extends TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
 
-        new DbSize(-1);
+        $dbSize = new DbSize(-1);
+
+        self::fail("Expected an exception for a negative size, got a DbSize of {$dbSize}.");
     }
 
     #[DataProvider('prettyFormats')]

@@ -11,6 +11,12 @@ use PHPUnit\Framework\TestCase;
 #[CoversClass(Config::class)]
 final class ConfigTest extends TestCase
 {
+    public function testExtraLoginSecurityIsReadFromTheConfiguration(): void
+    {
+        // Tests\Support\TestEnvironment disables it; the default would be true.
+        self::assertFalse(Config::extraLoginSecurity());
+    }
+
     public function testAvailableLocales(): void
     {
         $locales = Config::getAvailableLocales();

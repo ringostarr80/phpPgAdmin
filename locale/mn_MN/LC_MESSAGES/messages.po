@@ -50,7 +50,7 @@ msgstr "шЯЬТЯЧФЯШ"
 msgid "Login failed"
 msgstr "шЯЬТЯЬдйЮ СЬФСС"
 
-msgid "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "шЯЬТЯЧФЯШ ТЯЬЯЭжЧ?Ъ"
 
 msgid "Server"

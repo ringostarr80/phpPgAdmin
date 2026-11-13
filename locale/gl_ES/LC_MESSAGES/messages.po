@@ -50,7 +50,7 @@ msgstr "Identificarse"
 msgid "Login failed"
 msgstr "Non se puido levar a cabo a identificación."
 
-msgid "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "A identificación está desactivada por motivos de seguridade."
 
 msgid "Server"

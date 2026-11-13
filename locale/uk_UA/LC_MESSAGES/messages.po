@@ -50,7 +50,7 @@ msgstr "Логін"
 msgid "Login failed"
 msgstr "Неправильний пароль"
 
-msgid "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "Логін недопустимий із міркувань безпеки"
 
 msgid "Server"

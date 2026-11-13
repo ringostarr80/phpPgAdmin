@@ -50,7 +50,7 @@ msgstr "Autentificare"
 msgid "Login failed"
 msgstr "Autentificare eşuată"
 
-msgid "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "Autentificare nepermisă din motive de securitate."
 
 msgid "Server"

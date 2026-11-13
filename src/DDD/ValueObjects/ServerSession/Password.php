@@ -4,19 +4,14 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\DDD\ValueObjects\ServerSession;
 
+/**
+ * The password is kept as entered: it may be empty (e.g. trust authentication) and surrounding whitespace is part of
+ * it. Whether an empty password may log in is decided by ServerSession::loginIsAllowed().
+ */
 final readonly class Password implements \Stringable
 {
-    private string $password;
-
-    public function __construct(string $password)
+    public function __construct(private string $password)
     {
-        $password = trim($password);
-
-        if (empty($password)) {
-            throw new \InvalidArgumentException('ServerSession password cannot be empty!');
-        }
-
-        $this->password = $password;
     }
 
     public function __toString(): string

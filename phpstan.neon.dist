@@ -3,6 +3,8 @@ parameters:
     paths:
         - src/
         - Tests/Architecture/
+        - Tests/Support/TestEnvironment.php
+        - Tests/test-environment.php
         - autoload.php
         - all_db.php
         - all_db_export.php

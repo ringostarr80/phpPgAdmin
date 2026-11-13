@@ -18,6 +18,21 @@ jobs:
     name: Playwright
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        # Pinned by digest to postgres:17; keep in sync with php.yml.
+        image: postgres:17@sha256:2203e6282d9e7de7c24d7da234e2a744fb325df366a3fd8ed940e8abbee39527
+        env:
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
     steps:
     - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
       with:
@@ -28,7 +43,7 @@ jobs:
     - uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # v2.37.2
       with:
         php-version: 8.5
-        extensions: intl, pdo_pgsql, zip
+        extensions: intl, pgsql, pdo_pgsql, zip
     - name: Install Composer dependencies
       run: composer install --prefer-dist --no-progress
     - name: Install dependencies
@@ -37,6 +52,9 @@ jobs:
       run: npm run test:e2e:install -- --with-deps
     - name: Run Playwright tests
       run: npm run test:e2e
+      env:
+        PHPPGADMIN_TEST_SERVER_HOSTNAME: localhost
+        PHPPGADMIN_TEST_SERVER_PASSWORD: ${{ vars.PHPPGADMIN_TEST_SERVER_PASSWORD }}
     - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
       if: ${{ !cancelled() }}
       with:

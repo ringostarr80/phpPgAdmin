@@ -42,8 +42,8 @@ contribute is with the following guidelines:
 2. Create a new local branch for your changes. This helps to keep things tidy!
     : git checkout -b describe_my_fix 
 
-3. Make your changes, test them locally (use the Selenium tests), then push 
-   that branch up to origin on your fork.
+3. Make your changes, test them locally (composer dev:test and
+   npm run test:e2e), then push that branch up to origin on your fork.
 
     : git push origin describe_my_fix 
 
@@ -87,9 +87,9 @@ domains, try naming your domain all of the following:
 	* words with spaces
 	* <br><br><br>
 
-Don't forget to make sure your changes still pass the existing Selenium test 
-suite. Additionally, you should add or update the test suite as needed to 
-cover your new features. 
+Don't forget to make sure your changes still pass the existing test suites
+(PHPUnit: composer dev:test, Playwright: npm run test:e2e). Additionally, you
+should add or update the tests as needed to cover your new features.
 
 If you are adding a new class function, be sure to use the "clean",
 "fieldClean", "arrayClean" and "fieldArrayClean" functions to properly escape

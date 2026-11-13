@@ -3,7 +3,8 @@
 /**
  * Usage: php Tests/test-environment.php setup|teardown
  *
- * Called by the Playwright config (setup, as part of the web server command) and its global teardown.
+ * "setup" runs as part of the Playwright web server command; "teardown" is for manual cleanup
+ * (the Playwright global teardown does the same in TypeScript).
  */
 
 declare(strict_types=1);

@@ -50,7 +50,7 @@ msgstr "登入"
 msgid "Login failed"
 msgstr "登入失敗"
 
-msgid "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "出於安全原因禁止登入。"
 
 msgid "Server"

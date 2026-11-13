@@ -50,7 +50,7 @@ msgstr "ログイン"
 msgid "Login failed"
 msgstr "ログインに失敗しました"
 
-msgid "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "ログインが許可されませんでした。"
 
 msgid "Server"

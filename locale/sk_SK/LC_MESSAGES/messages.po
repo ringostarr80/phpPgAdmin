@@ -50,7 +50,7 @@ msgstr "Prihlásenie"
 msgid "Login failed"
 msgstr "Prihlásenie zlyhalo"
 
-msgid "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "Prihlásenie je vypnuté kôli bezpečnosti"
 
 msgid "Server"

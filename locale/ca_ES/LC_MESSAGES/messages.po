@@ -50,7 +50,7 @@ msgstr "Entrada"
 msgid "Login failed"
 msgstr "Entrada fallida"
 
-msgid "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "Entrada rebutjada per raons de seguretat."
 
 msgid "Server"

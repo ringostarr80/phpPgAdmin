@@ -50,7 +50,7 @@ msgstr "התחברות"
 msgid "Login failed"
 msgstr "התחברות נכשלה"
 
-msgid "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "התחברות מבוטלת בשל בעיות אבטחה."
 
 msgid "Server"

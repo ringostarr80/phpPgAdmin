@@ -82,6 +82,8 @@ final class TestEnvironment
     private static function writeConfigYaml(string $runningServerHost): void
     {
         $config = [
+            // The tests log in as "postgres", which extra login security refuses (same as in config.inc.php).
+            'extra_login_security' => false,
             'servers' => [
                 [
                     'desc' => self::NOT_RUNNING_SERVER_DESC,

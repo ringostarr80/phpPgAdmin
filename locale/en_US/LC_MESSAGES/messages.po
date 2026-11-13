@@ -56,7 +56,8 @@ msgstr "Login"
 msgid "Login failed"
 msgstr "Login failed"
 
-msgid "strlogindisallowed"
+# original: "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "Login disallowed for security reasons."
 
 # original: "strserver"

@@ -6,6 +6,7 @@ namespace PhpPgAdmin\Website;
 
 use PhpPgAdmin\{Config, Website, WebsiteComponents};
 use PhpPgAdmin\Database\PhpPgAdminConnection;
+use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 
 final class Login extends Website
@@ -150,6 +151,12 @@ final class Login extends Website
 
         if (is_null($loginPassword)) {
             throw new \InvalidArgumentException('Parameter "loginPassword" is required');
+        }
+
+        if (!ServerSession::loginIsAllowed($loginUsername, $loginPassword, Config::extraLoginSecurity())) {
+            $this->message = _('Login disallowed for security reasons.');
+
+            return;
         }
 
         $loginIsValid = PhpPgAdminConnection::loginDataIsValid(

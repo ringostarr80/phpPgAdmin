@@ -50,7 +50,7 @@ msgstr "Prisijungti"
 msgid "Login failed"
 msgstr "Nepavyko prisijungti"
 
-msgid "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "Prisijungti neleidžiama saugumo sumetimais."
 
 msgid "Server"

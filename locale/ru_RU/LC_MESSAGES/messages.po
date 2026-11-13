@@ -50,7 +50,7 @@ msgstr "Вход"
 msgid "Login failed"
 msgstr "Ошибка входа"
 
-msgid "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "Вход невозможен по соображениям безопасности"
 
 msgid "Server"

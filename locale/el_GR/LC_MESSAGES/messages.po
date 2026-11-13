@@ -50,7 +50,7 @@ msgstr "Είσοδος"
 msgid "Login failed"
 msgstr "Αποτυχία εισόδου"
 
-msgid "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "Η είσοδος δεν επιτρέπεται για λόγους ασφαλείας."
 
 msgid "Server"

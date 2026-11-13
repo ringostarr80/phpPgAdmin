@@ -21,6 +21,11 @@ use PhpPgAdmin\DDD\ValueObjects\ServerSession\{Username, Password, Platform};
  */
 final class ServerSession extends Server
 {
+    /**
+     * Refused with extra login security, compared in lowercase (as in the legacy Misc::getDatabaseAccessor()).
+     */
+    private const EXTRA_LOGIN_SECURITY_DISALLOWED_USERNAMES = ['administrator', 'pgsql', 'postgres', 'root'];
+
     public function __construct(
         private Username $username,
         private Password $password,
@@ -71,7 +76,6 @@ final class ServerSession extends Server
 
             if (
                 $sharedUsername === '' &&
-                $sharedPassword === '' &&
                 isset($_SESSION['webdbLogin']) &&
                 is_array($_SESSION['webdbLogin']) &&
                 isset($_SESSION['webdbLogin'][$serverId]) &&
@@ -95,7 +99,8 @@ final class ServerSession extends Server
                 }
             }
 
-            if ($sharedUsername !== '' && $sharedPassword !== '') {
+            // The password may be empty, e.g. with trust authentication; loginIsAllowed() decided that at login.
+            if ($sharedUsername !== '') {
                 return new self(
                     username: new Username($sharedUsername),
                     password: new Password($sharedPassword),
@@ -138,7 +143,21 @@ final class ServerSession extends Server
             return false;
         }
 
-        return $sessionUsername !== '' && $sessionPassword !== '';
+        return $sessionUsername !== '';
+    }
+
+    /**
+     * With extra login security (extra_login_security in conf/config.yml-dist), logins without a password or with
+     * one of the well-known superuser names are refused.
+     */
+    public static function loginIsAllowed(string $username, string $password, bool $extraLoginSecurity): bool
+    {
+        if (!$extraLoginSecurity) {
+            return true;
+        }
+
+        return $password !== ''
+            && !in_array(strtolower($username), self::EXTRA_LOGIN_SECURITY_DISALLOWED_USERNAMES, true);
     }
 
     public function __get(string $name): mixed

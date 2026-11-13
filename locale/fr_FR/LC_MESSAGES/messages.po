@@ -50,7 +50,7 @@ msgstr "Connexion"
 msgid "Login failed"
 msgstr "Échec de la connexion"
 
-msgid "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "Connexion désactivée pour raison de sécurité"
 
 msgid "Server"

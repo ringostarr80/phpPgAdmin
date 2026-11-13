@@ -1127,7 +1127,7 @@ msgstr "jS M, Y g:iA"
 msgid "strlocaldocs"
 msgstr "Documentação do PostgreSQL (local)"
 
-msgid "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "Autenticação não permitida por questões de sugurança."
 
 msgid "strfirst"

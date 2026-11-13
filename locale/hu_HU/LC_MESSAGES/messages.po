@@ -50,7 +50,7 @@ msgstr "Bejelentkezés"
 msgid "Login failed"
 msgstr "Nem sikerült bejelentkezni"
 
-msgid "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "Biztonsági okból engedélyezettlen a bejelentkezés."
 
 msgid "Server"

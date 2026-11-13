@@ -50,7 +50,7 @@ msgstr "Giriş"
 msgid "Login failed"
 msgstr "Giriş Başarısız"
 
-msgid "strlogindisallowed"
+msgid "Login disallowed for security reasons."
 msgstr "Güvenlik nedeniyle girişe izin verilmedi."
 
 msgid "Server"

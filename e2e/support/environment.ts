@@ -15,6 +15,11 @@ export function runningServerHost(): string {
   return process.env.PHPPGADMIN_TEST_SERVER_HOSTNAME || '127.0.0.1';
 }
 
+/** The `server` request parameter of the running server: `host:port:sslmode`. */
+export function runningServerId(): string {
+  return `${runningServerHost()}:${RUNNING_SERVER_PORT}:${SERVER_SSL_MODE}`;
+}
+
 export function testUsername(): string {
   return process.env.PHPPGADMIN_TEST_SERVER_USERNAME || 'postgres';
 }
@@ -36,9 +41,37 @@ export function serverTreeLink(page: Page, host: string, port: number) {
   return browserFrame(page).locator(`a[title="${host}:${port}:${SERVER_SSL_MODE}"]`);
 }
 
+/** The row of a browser tree node, found by its label. */
+export function browserTreeRow(page: Page, label: string) {
+  const browser = browserFrame(page);
+
+  return browser.locator('div.webfx-tree-row', {
+    has: browser.locator('.webfx-tree-item-label').getByText(label, { exact: true }),
+  });
+}
+
+/** The icon of a server in the browser tree, which shows whether one is logged in to it. */
+export function serverTreeIcon(page: Page, serverDesc: string) {
+  return browserTreeRow(page, serverDesc).locator('img.webfx-tree-icon');
+}
+
+export const LOGGED_IN_SERVER_ICON = /\/Server\.png$/;
+
 /** The password field name contains a hash of the server description. */
 export function passwordFieldName(serverDesc: string): string {
   return `loginPassword_${createHash('sha256').update(serverDesc).digest('hex')}`;
+}
+
+/** Logs in with the login form of the running server, which a page or a frame shows. */
+export async function submitLoginForm(
+  pageOrFrame: Page | FrameLocator,
+  username = testUsername(),
+  password = testPassword(),
+): Promise<void> {
+  const loginForm = pageOrFrame.locator(LOGIN_FORM_SELECTOR);
+  await loginForm.locator('input[name="loginUsername"]').fill(username);
+  await loginForm.locator(`input[name="${passwordFieldName(RUNNING_SERVER_DESC)}"]`).fill(password);
+  await loginForm.locator('#loginSubmit').click();
 }
 
 export async function login(page: Page, username = testUsername(), password = testPassword()): Promise<FrameLocator> {
@@ -46,12 +79,11 @@ export async function login(page: Page, username = testUsername(), password = te
   await serverTreeLink(page, runningServerHost(), RUNNING_SERVER_PORT).click();
 
   const detail = detailFrame(page);
-  const loginForm = detail.locator(LOGIN_FORM_SELECTOR);
-  await loginForm.locator('input[name="loginUsername"]').fill(username);
-  await loginForm.locator(`input[name="${passwordFieldName(RUNNING_SERVER_DESC)}"]`).fill(password);
-  await loginForm.locator('#loginSubmit').click();
+  await submitLoginForm(detail, username, password);
 
   await expect(detail.getByText(`You are logged in as user "${username}"`)).toBeVisible();
+  // The login reloads the browser tree. Waiting for it keeps the tests from using the tree from before the login.
+  await expect(serverTreeIcon(page, RUNNING_SERVER_DESC)).toHaveAttribute('src', LOGGED_IN_SERVER_ICON);
 
   return detail;
 }

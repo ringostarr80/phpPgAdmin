@@ -1,5 +1,11 @@
 import { test, expect, type Page } from '@playwright/test';
-import { RUNNING_SERVER_DESC, browserTreeRow, login, runningServerId } from './support/environment';
+import {
+  RUNNING_SERVER_DESC,
+  browserTreeRow,
+  expandBrowserTreeRow,
+  login,
+  runningServerId,
+} from './support/environment';
 
 const DATABASE = 'postgres';
 
@@ -144,7 +150,7 @@ test('Languages > the browser tree lists the languages of a database', async ({ 
 
   // The database node is loaded by the legacy database.php, its Languages node by languages.php.
   for (const label of [RUNNING_SERVER_DESC, DATABASE, 'Languages']) {
-    await browserTreeRow(page, label).locator('img.webfx-tree-expand-icon').click();
+    await expandBrowserTreeRow(page, label);
   }
 
   await expect(browserTreeRow(page, 'plpgsql')).toBeVisible();

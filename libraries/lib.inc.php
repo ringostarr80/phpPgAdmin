@@ -36,7 +36,9 @@ $configIncPhp = 'conf/' . (is_string($configIncPhpFile) && $configIncPhpFile !==
 
 if (file_exists($configIncPhp)) {
     $conf = array();
-    include './' . $configIncPhp;
+    // A plain include on purpose (Sonar php:S2003): the file only fills $conf. include_once would skip it if it was
+    // already loaded before, and $conf would stay empty.
+    include './' . $configIncPhp; // NOSONAR
 } else {
     echo 'Configuration error: Copy conf/config.inc.php-dist to conf/config.inc.php and edit appropriately.';
     exit;

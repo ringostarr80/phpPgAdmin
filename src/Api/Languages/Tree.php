@@ -46,7 +46,6 @@ final class Tree
     public static function buildXmlTree(array $languages): \DOMDocument
     {
         $dom = new \DOMDocument('1.0', 'utf-8');
-        $dom->formatOutput = true;
 
         $root = $dom->createElement('tree');
 

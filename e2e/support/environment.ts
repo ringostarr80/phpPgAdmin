@@ -50,6 +50,22 @@ export function browserTreeRow(page: Page, label: string) {
   });
 }
 
+/**
+ * Opens a browser tree node, found by its label. The tree opens the only child of a node by itself
+ * (see xloadtree/xloadtree2.js), e.g. the only database of a server, so a click would close it again.
+ */
+export async function expandBrowserTreeRow(page: Page, label: string): Promise<void> {
+  const expandIcon = browserTreeRow(page, label).locator('img.webfx-tree-expand-icon');
+
+  // The icon shows a plus while the node is closed and a minus while it is open. The tree opens the only child in
+  // the same step in which it adds it, so the icon is final once the row exists.
+  if (/plus\.png$/.test((await expandIcon.getAttribute('src')) ?? '')) {
+    await expandIcon.click();
+  }
+
+  await expect(expandIcon).toHaveAttribute('src', /minus\.png$/);
+}
+
 /** The icon of a server in the browser tree, which shows whether one is logged in to it. */
 export function serverTreeIcon(page: Page, serverDesc: string) {
   return browserTreeRow(page, serverDesc).locator('img.webfx-tree-icon');

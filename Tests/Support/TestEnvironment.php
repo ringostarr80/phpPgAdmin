@@ -163,7 +163,7 @@ final class TestEnvironment
         $configPath = self::confDir() . DIRECTORY_SEPARATOR . $configFile;
 
         if (file_put_contents($configPath, $content) === false) {
-            throw new \RuntimeException("Failed to write {$configPath}");
+            throw new ConfigFileNotWrittenException("Failed to write {$configPath}");
         }
     }
 

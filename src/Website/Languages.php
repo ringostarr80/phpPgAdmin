@@ -23,6 +23,23 @@ final class Languages extends Website
         $this->title = _('Languages');
     }
 
+    /**
+     * The table of the languages, or a note that the database has none.
+     *
+     * @param array<\PhpPgAdmin\DDD\ValueObjects\Language> $languages
+     */
+    public static function buildLanguageList(\DOMDocument $dom, array $languages): \DOMElement
+    {
+        if (empty($languages)) {
+            $p = $dom->createElement('p');
+            $p->appendChild($dom->createTextNode(_('No languages found.')));
+
+            return $p;
+        }
+
+        return self::buildLanguagesTable($dom, $languages);
+    }
+
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $serverId = RequestParameter::getString('server') ?? '';
@@ -41,13 +58,7 @@ final class Languages extends Website
         $serverSession = ServerSession::fromServerId($serverId, Config::getServers());
         $languages = PhpPgAdminConnection::createFromServerSession($serverSession, $database)?->getLanguages() ?? [];
 
-        if (empty($languages)) {
-            $p = $dom->createElement('p');
-            $p->appendChild($dom->createTextNode(_('No languages found.')));
-            $body->appendChild($p);
-        } else {
-            $body->appendChild(self::buildLanguagesTable($dom, $languages));
-        }
+        $body->appendChild(self::buildLanguageList($dom, $languages));
 
         return $body;
     }

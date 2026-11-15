@@ -9,6 +9,7 @@ import {
   RUNNING_SERVER_DESC,
   browserTreeRow,
   detailFrame,
+  expandBrowserTreeRow,
   login,
   passwordFieldName,
   runningServerId,
@@ -54,7 +55,7 @@ test('Login > reloads the browser tree, which then lists the databases of the se
 
   // Without clicking "Refresh" in the browser tree.
   await expect(serverTreeIcon(page, RUNNING_SERVER_DESC)).toHaveAttribute('src', LOGGED_IN_SERVER_ICON);
-  await browserTreeRow(page, RUNNING_SERVER_DESC).locator('img.webfx-tree-expand-icon').click();
+  await expandBrowserTreeRow(page, RUNNING_SERVER_DESC);
   await expect(browserTreeRow(page, 'postgres')).toBeVisible();
 });
 

@@ -7,6 +7,7 @@ namespace Tests\Unit\Support;
 use PhpPgAdmin\Config;
 use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\TestCase;
+use Tests\Support\{ConfigFileNotWrittenException, TestEnvironment};
 
 /**
  * The legacy pages read a PHP configuration file, the new ones a YAML file. The tests cross from new pages to legacy
@@ -15,6 +16,11 @@ use PHPUnit\Framework\TestCase;
 #[CoversNothing]
 final class TestEnvironmentTest extends TestCase
 {
+    /**
+     * @var array<mixed>|null
+     */
+    private static ?array $legacyConfiguration = null;
+
     public function testTheLegacyPagesReadTheirOwnTestConfiguration(): void
     {
         $configIncPhpFile = getenv('PHPPGADMIN_CONFIG_INC_PHP_FILE');
@@ -65,6 +71,17 @@ final class TestEnvironmentTest extends TestCase
         self::assertSame(Config::showSystem(), $conf['show_system'] ?? null);
     }
 
+    public function testAConfigurationThatCannotBeWrittenFailsWithItsPath(): void
+    {
+        $configYamlFile = 'missing-directory' . DIRECTORY_SEPARATOR . 'config-test.yml';
+
+        $this->expectException(ConfigFileNotWrittenException::class);
+        $this->expectExceptionMessage('Failed to write ' . self::confDir() . DIRECTORY_SEPARATOR . $configYamlFile);
+
+        // file_put_contents() warns about the missing directory before it fails.
+        @TestEnvironment::setUp($configYamlFile);
+    }
+
     private static function confDir(): string
     {
         return dirname(__DIR__, 3) . DIRECTORY_SEPARATOR . 'conf';
@@ -75,13 +92,17 @@ final class TestEnvironmentTest extends TestCase
      */
     private static function legacyConfiguration(): array
     {
-        $configIncPhpFile = getenv('PHPPGADMIN_CONFIG_INC_PHP_FILE');
-        self::assertIsString($configIncPhpFile);
+        // include_once includes the file only once per process, so its configuration is kept for the other tests.
+        if (is_null(self::$legacyConfiguration)) {
+            $configIncPhpFile = getenv('PHPPGADMIN_CONFIG_INC_PHP_FILE');
+            self::assertIsString($configIncPhpFile);
 
-        // Like libraries/lib.inc.php, which includes the file into an empty $conf.
-        $conf = [];
-        include self::confDir() . DIRECTORY_SEPARATOR . $configIncPhpFile;
+            // Like libraries/lib.inc.php, which includes the file into an empty $conf.
+            $conf = [];
+            include_once self::confDir() . DIRECTORY_SEPARATOR . $configIncPhpFile;
+            self::$legacyConfiguration = $conf;
+        }
 
-        return $conf;
+        return self::$legacyConfiguration;
     }
 }

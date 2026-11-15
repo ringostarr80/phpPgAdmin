@@ -80,7 +80,7 @@ final class LanguagesTest extends TestCase
         // Without its constructor, which starts a PHP session and needs a login. The tests have no request, so the
         // database parameter is missing. Only the body, which checks the parameters: buildHtmlDocument() would also
         // run the head of Website, which this test does not check.
-        $page = new \ReflectionClass(Languages::class)->newInstanceWithoutConstructor();
+        $page = (new \ReflectionClass(Languages::class))->newInstanceWithoutConstructor();
         $buildHtmlBody = new \ReflectionMethod($page, 'buildHtmlBody');
 
         $this->expectException(\InvalidArgumentException::class);

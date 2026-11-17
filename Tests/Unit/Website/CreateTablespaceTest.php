@@ -53,20 +53,21 @@ final class CreateTablespaceTest extends TestCase
 
     public function testAfterAFailedCreateTheFormShowsTheEnteredValues(): void
     {
-        // The constructor redirects to the tablespaces after a successful create, so the page only shows a posted form
-        // when the create failed.
-        $_SERVER['REQUEST_METHOD'] = 'POST';
-        $_POST = [
-            Tablespace::FORM_ID_COMMENT => 'Old data',
-            Tablespace::FORM_ID_LOCATION => '/srv/archive',
-            Tablespace::FORM_ID_NAME => 'archive',
-        ];
+        self::postTheForm();
 
         $form = self::form();
 
         self::assertSame('archive', self::fieldValue($form, Tablespace::FORM_ID_NAME));
         self::assertSame('/srv/archive', self::fieldValue($form, Tablespace::FORM_ID_LOCATION));
         self::assertSame('Old data', self::fieldValue($form, Tablespace::FORM_ID_COMMENT));
+    }
+
+    public function testAfterAFailedCreateTheLocationCanStillBeChanged(): void
+    {
+        // A wrong location is a common reason for the create to fail.
+        self::postTheForm();
+
+        self::assertFalse(self::field(self::form(), Tablespace::FORM_ID_LOCATION)->hasAttribute('readonly'));
     }
 
     public function testTheHiddenFieldsOfTheFormAreTheActionAndTheServer(): void
@@ -108,17 +109,24 @@ final class CreateTablespaceTest extends TestCase
         return $body;
     }
 
+    private static function field(\DOMElement $form, string $id): \DOMElement
+    {
+        $fields = self::query($form, ".//*[@id=\"{$id}\"]");
+        self::assertCount(1, $fields);
+
+        return $fields[0];
+    }
+
     /**
      * The value of the input field or the text of the textarea with the given id.
      */
     private static function fieldValue(\DOMElement $form, string $id): string
     {
-        $fields = self::query($form, ".//*[@id=\"{$id}\"]");
-        self::assertCount(1, $fields);
+        $field = self::field($form, $id);
 
-        return $fields[0]->tagName === 'textarea'
-            ? $fields[0]->textContent
-            : $fields[0]->getAttribute('value');
+        return $field->tagName === 'textarea'
+            ? $field->textContent
+            : $field->getAttribute('value');
     }
 
     private static function form(): \DOMElement
@@ -134,6 +142,20 @@ final class CreateTablespaceTest extends TestCase
         self::assertInstanceOf(\DOMElement::class, $element);
 
         return $element;
+    }
+
+    /**
+     * The request after a failed create: the constructor redirects to the tablespaces after a successful one, so the
+     * page only shows a posted form when the create failed.
+     */
+    private static function postTheForm(): void
+    {
+        $_SERVER['REQUEST_METHOD'] = 'POST';
+        $_POST = [
+            Tablespace::FORM_ID_COMMENT => 'Old data',
+            Tablespace::FORM_ID_LOCATION => '/srv/archive',
+            Tablespace::FORM_ID_NAME => 'archive',
+        ];
     }
 
     /**

@@ -53,7 +53,9 @@ class CreateTablespace extends Website
             $tablespace = DTOTablespace::createFromFormRequest();
         }
 
-        $form->appendChild(self::buildCreateOrEditTablespaceTable($dom, $serverId, $tablespace));
+        $form->appendChild(
+            self::buildCreateOrEditTablespaceTable($dom, $serverId, $tablespace, isLocationReadonly: false),
+        );
         $form->appendChild(self::buildCreateOrEditFormParagraphButtonsTable($dom, $serverId));
 
         $body->appendChild($form);
@@ -107,7 +109,8 @@ class CreateTablespace extends Website
     protected static function buildCreateOrEditTablespaceTable(
         \DOMDocument $dom,
         string $serverId,
-        ?Tablespace $tablespace = null,
+        ?Tablespace $tablespace,
+        bool $isLocationReadonly,
     ): \DOMElement {
         $table = $dom->createElement('table');
         $table->setAttribute('class', 'form-table');
@@ -171,7 +174,7 @@ class CreateTablespace extends Website
             'label-text' => _('Location'),
             'value' => [
                 'content' => $tablespaceLocation,
-                'readonly' => !is_null($tablespace),
+                'readonly' => $isLocationReadonly,
                 'required' => true,
             ],
         ];

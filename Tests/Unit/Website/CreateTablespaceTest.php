@@ -8,6 +8,7 @@ use PhpPgAdmin\DDD\ValueObjects\Tablespace;
 use PhpPgAdmin\Website\CreateTablespace;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
+use Tests\Support\PageBody;
 
 #[CoversMethod(CreateTablespace::class, 'buildHtmlBody')]
 final class CreateTablespaceTest extends TestCase
@@ -23,21 +24,21 @@ final class CreateTablespaceTest extends TestCase
     {
         $body = self::body();
 
-        self::assertCount(1, self::query($body, './/div[@class="topbar"]'));
+        self::assertCount(1, PageBody::query($body, './/div[@class="topbar"]'));
         self::assertCount(
             1,
-            self::query($body, './/div[@class="trail"]//a[@href="all_db.php?server=127.0.0.1%3A5432%3Aallow"]'),
+            PageBody::query($body, './/div[@class="trail"]//a[@href="all_db.php?server=127.0.0.1%3A5432%3Aallow"]'),
         );
     }
 
     public function testTheHeadingLinksToTheHelpOnCreatingATablespace(): void
     {
-        $h2 = self::onlyElement(self::body(), 'h2');
+        $h2 = PageBody::onlyElement(self::body(), 'h2');
 
         self::assertSame('Create tablespace', $h2->firstChild?->textContent);
         self::assertSame(
             'help.php?help=pg.tablespace.create&server=127.0.0.1%3A5432%3Aallow',
-            self::onlyElement($h2, 'a')->getAttribute('href'),
+            PageBody::onlyElement($h2, 'a')->getAttribute('href'),
         );
     }
 
@@ -46,9 +47,9 @@ final class CreateTablespaceTest extends TestCase
         $form = self::form();
 
         self::assertSame('post', $form->getAttribute('method'));
-        self::assertSame('', self::fieldValue($form, Tablespace::FORM_ID_NAME));
-        self::assertSame('', self::fieldValue($form, Tablespace::FORM_ID_LOCATION));
-        self::assertSame('', self::fieldValue($form, Tablespace::FORM_ID_COMMENT));
+        self::assertSame('', PageBody::fieldValue($form, Tablespace::FORM_ID_NAME));
+        self::assertSame('', PageBody::fieldValue($form, Tablespace::FORM_ID_LOCATION));
+        self::assertSame('', PageBody::fieldValue($form, Tablespace::FORM_ID_COMMENT));
     }
 
     public function testAfterAFailedCreateTheFormShowsTheEnteredValues(): void
@@ -57,9 +58,9 @@ final class CreateTablespaceTest extends TestCase
 
         $form = self::form();
 
-        self::assertSame('archive', self::fieldValue($form, Tablespace::FORM_ID_NAME));
-        self::assertSame('/srv/archive', self::fieldValue($form, Tablespace::FORM_ID_LOCATION));
-        self::assertSame('Old data', self::fieldValue($form, Tablespace::FORM_ID_COMMENT));
+        self::assertSame('archive', PageBody::fieldValue($form, Tablespace::FORM_ID_NAME));
+        self::assertSame('/srv/archive', PageBody::fieldValue($form, Tablespace::FORM_ID_LOCATION));
+        self::assertSame('Old data', PageBody::fieldValue($form, Tablespace::FORM_ID_COMMENT));
     }
 
     public function testAfterAFailedCreateTheLocationCanStillBeChanged(): void
@@ -67,18 +68,15 @@ final class CreateTablespaceTest extends TestCase
         // A wrong location is a common reason for the create to fail.
         self::postTheForm();
 
-        self::assertFalse(self::field(self::form(), Tablespace::FORM_ID_LOCATION)->hasAttribute('readonly'));
+        self::assertFalse(PageBody::field(self::form(), Tablespace::FORM_ID_LOCATION)->hasAttribute('readonly'));
     }
 
     public function testTheHiddenFieldsOfTheFormAreTheActionAndTheServer(): void
     {
-        $fields = [];
-
-        foreach (self::query(self::form(), './/input[@type="hidden"]') as $input) {
-            $fields[] = [$input->getAttribute('name'), $input->getAttribute('value')];
-        }
-
-        self::assertSame([['action', 'save_create'], ['server', self::SERVER_ID]], $fields);
+        self::assertSame(
+            [['action', 'save_create'], ['server', self::SERVER_ID]],
+            PageBody::hiddenFields(self::form()),
+        );
     }
 
     protected function setUp(): void
@@ -99,49 +97,13 @@ final class CreateTablespaceTest extends TestCase
 
     private static function body(): \DOMElement
     {
-        // Without its constructor, which starts a PHP session and needs a login. Without a login, the form has no
-        // owners to choose from, which these tests do not check.
-        $page = (new \ReflectionClass(CreateTablespace::class))->newInstanceWithoutConstructor();
-        $buildHtmlBody = new \ReflectionMethod($page, 'buildHtmlBody');
-        $body = $buildHtmlBody->invoke($page, new \DOMDocument());
-        self::assertInstanceOf(\DOMElement::class, $body);
-
-        return $body;
-    }
-
-    private static function field(\DOMElement $form, string $id): \DOMElement
-    {
-        $fields = self::query($form, ".//*[@id=\"{$id}\"]");
-        self::assertCount(1, $fields);
-
-        return $fields[0];
-    }
-
-    /**
-     * The value of the input field or the text of the textarea with the given id.
-     */
-    private static function fieldValue(\DOMElement $form, string $id): string
-    {
-        $field = self::field($form, $id);
-
-        return $field->tagName === 'textarea'
-            ? $field->textContent
-            : $field->getAttribute('value');
+        // Without a login, the form has no owners to choose from, which these tests do not check.
+        return PageBody::of(CreateTablespace::class);
     }
 
     private static function form(): \DOMElement
     {
-        return self::onlyElement(self::body(), 'form');
-    }
-
-    private static function onlyElement(\DOMElement $parent, string $tagName): \DOMElement
-    {
-        $elements = $parent->getElementsByTagName($tagName);
-        self::assertCount(1, $elements);
-        $element = $elements->item(0);
-        self::assertInstanceOf(\DOMElement::class, $element);
-
-        return $element;
+        return PageBody::onlyElement(self::body(), 'form');
     }
 
     /**
@@ -156,24 +118,5 @@ final class CreateTablespaceTest extends TestCase
             Tablespace::FORM_ID_LOCATION => '/srv/archive',
             Tablespace::FORM_ID_NAME => 'archive',
         ];
-    }
-
-    /**
-     * @return list<\DOMElement>
-     */
-    private static function query(\DOMElement $context, string $expression): array
-    {
-        self::assertInstanceOf(\DOMDocument::class, $context->ownerDocument);
-        $nodes = (new \DOMXPath($context->ownerDocument))->query($expression, $context);
-        self::assertInstanceOf(\DOMNodeList::class, $nodes);
-
-        $elements = [];
-
-        foreach ($nodes as $node) {
-            self::assertInstanceOf(\DOMElement::class, $node);
-            $elements[] = $node;
-        }
-
-        return $elements;
     }
 }

@@ -47,17 +47,12 @@ class CreateTablespace extends Website
         $form = $dom->createElement('form');
         $form->setAttribute('method', 'post');
 
-        $inputServer = $dom->createElement('input');
-        $inputServer->setAttribute('type', 'hidden');
-        $inputServer->setAttribute('name', $serverId);
-
         $tablespace = null;
 
         if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
             $tablespace = DTOTablespace::createFromFormRequest();
         }
 
-        $form->appendChild($inputServer);
         $form->appendChild(self::buildCreateOrEditTablespaceTable($dom, $serverId, $tablespace));
         $form->appendChild(self::buildCreateOrEditFormParagraphButtonsTable($dom, $serverId));
 

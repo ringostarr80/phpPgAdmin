@@ -106,17 +106,13 @@ final class PhpPgAdminConnection extends \PDO
         ?string $newOwner = null,
         ?string $comment = null,
     ): void {
-        if (!$this->beginTransaction()) {
-            throw new \PDOException('Failed to begin transaction.');
-        }
+        $this->beginTransaction();
 
         if ($dbName !== $newName) {
             try {
                 $this->alterDatabaseRename($dbName, $newName);
-            } catch (\PDOException $e) {
-                if (!$this->rollBack()) {
-                    throw new \PDOException('Failed to roll back transaction after renaming database.', 0, $e);
-                }
+            } catch (\PDOException) {
+                $this->rollBack();
 
                 return;
             }
@@ -127,10 +123,8 @@ final class PhpPgAdminConnection extends \PDO
         if (!is_null($newOwner) && $newOwner !== '') {
             try {
                 $this->alterDatabaseOwner($dbName, $newOwner);
-            } catch (\PDOException $e) {
-                if (!$this->rollBack()) {
-                    throw new \PDOException('Failed to roll back transaction after altering database owner.', 0, $e);
-                }
+            } catch (\PDOException) {
+                $this->rollBack();
 
                 return;
             }
@@ -138,17 +132,13 @@ final class PhpPgAdminConnection extends \PDO
 
         try {
             $this->setDatabaseComment($dbName, $comment);
-        } catch (\PDOException $e) {
-            if (!$this->rollBack()) {
-                throw new \PDOException('Failed to roll back transaction after setting database comment.', 0, $e);
-            }
+        } catch (\PDOException) {
+            $this->rollBack();
 
             return;
         }
 
-        if (!$this->commit()) {
-            throw new \PDOException('Failed to commit transaction.');
-        }
+        $this->commit();
     }
 
     public function alterDatabaseOwner(string $dbName, string $newOwner): void
@@ -157,9 +147,7 @@ final class PhpPgAdminConnection extends \PDO
         $escapedNewOwner = self::escapeIdentifier($newOwner);
         $statement = "ALTER DATABASE \"{$escapedDbName}\" OWNER TO \"{$escapedNewOwner}\"";
 
-        if ($this->exec($statement) === false) {
-            throw new \PDOException('Failed to execute SQL statement for altering database owner.');
-        }
+        $this->exec($statement);
     }
 
     public function alterDatabaseRename(string $oldName, string $newName): void
@@ -168,9 +156,7 @@ final class PhpPgAdminConnection extends \PDO
         $escapedNewName = self::escapeIdentifier($newName);
         $statement = "ALTER DATABASE \"{$escapedOldName}\" RENAME TO \"{$escapedNewName}\"";
 
-        if ($this->exec($statement) === false) {
-            throw new \PDOException('Failed to execute SQL statement for renaming database.');
-        }
+        $this->exec($statement);
     }
 
     public function createDatabase(
@@ -219,14 +205,7 @@ final class PhpPgAdminConnection extends \PDO
         }
 
         $statement = $this->prepare($sql);
-
-        if ($statement === false) {
-            throw new \PDOException('Failed to prepare SQL statement for creating database.');
-        }
-
-        if (!$statement->execute($sqlParams)) {
-            throw new \PDOException('Failed to execute SQL statement for creating database.');
-        }
+        $statement->execute($sqlParams);
 
         if ($comment !== '') {
             $this->setDatabaseComment($database, $comment);
@@ -290,9 +269,7 @@ final class PhpPgAdminConnection extends \PDO
             $sql .= ' ADMIN "' . join('", "', $adminMembers) . '"';
         }
 
-        if ($this->exec($sql) === false) {
-            throw new \PDOException('Failed to execute SQL statement for creating role.');
-        }
+        $this->exec($sql);
     }
 
     public function createTablespace(Tablespace $tablespace): void
@@ -307,9 +284,7 @@ final class PhpPgAdminConnection extends \PDO
 
         $sql .= ' LOCATION ' . $this->quote((string)$tablespace->Location);
 
-        if ($this->exec($sql) === false) {
-            throw new \PDOException('Failed to execute SQL statement for creating tablespace.');
-        }
+        $this->exec($sql);
 
         if ((string)$tablespace->Comment === '') {
             return;
@@ -323,9 +298,7 @@ final class PhpPgAdminConnection extends \PDO
         $escapedDatabase = self::escapeIdentifier($database);
         $statement = "DROP DATABASE \"{$escapedDatabase}\"";
 
-        if ($this->exec($statement) === false) {
-            throw new \PDOException('Failed to execute SQL statement for dropping database.');
-        }
+        $this->exec($statement);
     }
 
     public function dropRole(string $rolename): void
@@ -334,9 +307,7 @@ final class PhpPgAdminConnection extends \PDO
 
         $statement = "DROP ROLE \"{$escapedRolename}\"";
 
-        if ($this->exec($statement) === false) {
-            throw new \PDOException('Failed to execute SQL statement for dropping role.');
-        }
+        $this->exec($statement);
     }
 
     public function dropTablespace(string $tablespace): void
@@ -345,9 +316,7 @@ final class PhpPgAdminConnection extends \PDO
 
         $statement = "DROP TABLESPACE \"{$escapedTablespace}\"";
 
-        if ($this->exec($statement) === false) {
-            throw new \PDOException('Failed to execute SQL statement for dropping tablespace.');
-        }
+        $this->exec($statement);
     }
 
     /**
@@ -357,14 +326,7 @@ final class PhpPgAdminConnection extends \PDO
     {
         $query = "SELECT collname FROM pg_collation WHERE collname LIKE '%.%' ORDER BY collname";
         $statement = $this->prepare($query);
-
-        if ($statement === false) {
-            throw new \PDOException('Failed to prepare SQL statement for getting available collations.');
-        }
-
-        if (!$statement->execute()) {
-            throw new \PDOException('Failed to execute SQL statement for getting available collations.');
-        }
+        $statement->execute();
 
         $collations = [];
 
@@ -385,14 +347,7 @@ final class PhpPgAdminConnection extends \PDO
             WHERE pg_database.datname = :database";
         $sqlParams = ['database' => $database];
         $statement = $this->prepare($sql);
-
-        if ($statement === false) {
-            throw new \PDOException('Failed to prepare SQL statement for getting database comment.');
-        }
-
-        if (!$statement->execute($sqlParams)) {
-            throw new \PDOException('Failed to execute SQL statement for getting database comment.');
-        }
+        $statement->execute($sqlParams);
 
         $result = $statement->fetch();
 
@@ -420,14 +375,7 @@ final class PhpPgAdminConnection extends \PDO
             'database' => $database,
         ];
         $statement = $this->prepare($sql);
-
-        if ($statement === false) {
-            throw new \PDOException('Failed to prepare SQL statement for getting database owner.');
-        }
-
-        if (!$statement->execute($sqlParams)) {
-            throw new \PDOException('Failed to execute SQL statement for getting database owner.');
-        }
+        $statement->execute($sqlParams);
 
         $result = $statement->fetch();
 
@@ -488,14 +436,7 @@ final class PhpPgAdminConnection extends \PDO
             ORDER BY {$orderBy}";
 
         $statement = $this->prepare($sql);
-
-        if ($statement === false) {
-            throw new \PDOException('Failed to prepare SQL statement for getting databases.');
-        }
-
-        if (!$statement->execute()) {
-            throw new \PDOException('Failed to execute SQL statement for getting databases.');
-        }
+        $statement->execute();
 
         $result = [];
         $requiredFields = [
@@ -566,14 +507,7 @@ final class PhpPgAdminConnection extends \PDO
         $sql .= ' ORDER BY lanname';
 
         $statement = $this->prepare($sql);
-
-        if ($statement === false) {
-            throw new \PDOException('Failed to prepare SQL statement for getting languages.');
-        }
-
-        if (!$statement->execute()) {
-            throw new \PDOException('Failed to execute SQL statement for getting languages.');
-        }
+        $statement->execute();
 
         $languages = [];
 
@@ -606,14 +540,7 @@ final class PhpPgAdminConnection extends \PDO
             'rolename' => $rolename,
         ];
         $statement = $this->prepare($sql);
-
-        if ($statement === false) {
-            throw new \PDOException('Failed to prepare SQL statement for getting members of role.');
-        }
-
-        if (!$statement->execute($sqlParams)) {
-            throw new \PDOException('Failed to execute SQL statement for getting members of role.');
-        }
+        $statement->execute($sqlParams);
 
         $rolenames = [];
 
@@ -649,14 +576,7 @@ final class PhpPgAdminConnection extends \PDO
             'rolename' => $rolename,
         ];
         $statement = $this->prepare($sql);
-
-        if ($statement === false) {
-            throw new \PDOException('Failed to prepare SQL statement for getting rolenames, that are members of role.');
-        }
-
-        if (!$statement->execute($sqlParams)) {
-            throw new \PDOException('Failed to execute SQL statement for getting rolenames, that are members of role.');
-        }
+        $statement->execute($sqlParams);
 
         $rolenames = [];
 
@@ -679,14 +599,7 @@ final class PhpPgAdminConnection extends \PDO
         ];
 
         $statement = $this->prepare($sql);
-
-        if ($statement === false) {
-            throw new \PDOException('Failed to prepare SQL statement for getting role.');
-        }
-
-        if (!$statement->execute($sqlParams)) {
-            throw new \PDOException('Failed to execute SQL statement for getting role.');
-        }
+        $statement->execute($sqlParams);
 
         $row = $statement->fetch();
 
@@ -714,14 +627,7 @@ final class PhpPgAdminConnection extends \PDO
 
         $sql .= ' ORDER BY rolname';
         $statement = $this->prepare($sql);
-
-        if ($statement === false) {
-            throw new \PDOException('Failed to prepare SQL statement for getting roles.');
-        }
-
-        if (!$statement->execute($sqlParams)) {
-            throw new \PDOException('Failed to execute SQL statement for getting roles.');
-        }
+        $statement->execute($sqlParams);
 
         $result = [];
 
@@ -751,14 +657,7 @@ final class PhpPgAdminConnection extends \PDO
         ];
 
         $statement = $this->prepare($sql);
-
-        if ($statement === false) {
-            throw new \PDOException('Failed to prepare SQL statement for getting tablespace.');
-        }
-
-        if (!$statement->execute($sqlParams)) {
-            throw new \PDOException('Failed to execute SQL statement for getting tablespace.');
-        }
+        $statement->execute($sqlParams);
 
         $row = $statement->fetch();
 
@@ -791,14 +690,7 @@ final class PhpPgAdminConnection extends \PDO
         $sql .= " ORDER BY spcname";
 
         $statement = $this->prepare($sql);
-
-        if ($statement === false) {
-            throw new \PDOException('Failed to prepare SQL statement for getting tablespaces.');
-        }
-
-        if (!$statement->execute()) {
-            throw new \PDOException('Failed to execute SQL statement for getting tablespaces.');
-        }
+        $statement->execute();
 
         $result = [];
         $requiredFields = [
@@ -843,14 +735,7 @@ final class PhpPgAdminConnection extends \PDO
             FROM pg_user
             ORDER BY usename";
         $statement = $this->prepare($sql);
-
-        if ($statement === false) {
-            throw new \PDOException('Failed to prepare SQL statement for getting users.');
-        }
-
-        if (!$statement->execute()) {
-            throw new \PDOException('Failed to execute SQL statement for getting users.');
-        }
+        $statement->execute();
 
         $result = [];
         $requiredFields = [
@@ -910,14 +795,7 @@ final class PhpPgAdminConnection extends \PDO
 
         $sql = "SELECT usesuper FROM pg_user WHERE usename = :username";
         $statement = $this->prepare($sql);
-
-        if ($statement === false) {
-            return false;
-        }
-
-        if (!$statement->execute(['username' => $username])) {
-            return false;
-        }
+        $statement->execute(['username' => $username]);
 
         $rows = $statement->fetchAll();
 
@@ -942,9 +820,7 @@ final class PhpPgAdminConnection extends \PDO
             ? $this->quote($comment)
             : 'NULL';
 
-        if ($this->exec($sql) === false) {
-            throw new \PDOException('Failed to execute SQL statement for set comment.');
-        }
+        $this->exec($sql);
     }
 
     public function setDatabaseComment(string $database, ?string $comment = null): void
@@ -955,9 +831,7 @@ final class PhpPgAdminConnection extends \PDO
             ? $this->quote($comment)
             : 'NULL';
 
-        if ($this->exec($statement) === false) {
-            throw new \PDOException('Failed to execute SQL statement for setting database comment.');
-        }
+        $this->exec($statement);
     }
 
     /**
@@ -1004,9 +878,7 @@ final class PhpPgAdminConnection extends \PDO
             $sql .= " VALID UNTIL 'infinity'";
         }
 
-        if ($this->exec($sql) === false) {
-            throw new \PDOException('Failed to execute SQL statement for updating role.');
-        }
+        $this->exec($sql);
 
         $this->tryAlterMemberOf($newMemberOf, $role->Name);
         $this->tryAlterMembers($newMembers, $role->Name);
@@ -1015,9 +887,7 @@ final class PhpPgAdminConnection extends \PDO
 
     public function updateTablespace(Tablespace $tablespace, string $oldTablespaceName): void
     {
-        if (!$this->beginTransaction()) {
-            throw new \PDOException('Failed to begin transaction.');
-        }
+        $this->beginTransaction();
 
         $escapedTablespaceName = self::escapeIdentifier((string)$oldTablespaceName);
         $escapedTablespaceOwner = self::escapeIdentifier((string)$tablespace->Owner);
@@ -1038,9 +908,7 @@ final class PhpPgAdminConnection extends \PDO
             throw $e;
         }
 
-        if (!$this->commit()) {
-            throw new \PDOException('Failed to commit transaction.');
-        }
+        $this->commit();
     }
 
     public static function loginDataIsValid(
@@ -1080,9 +948,7 @@ final class PhpPgAdminConnection extends \PDO
             $sql .= ' WITH ADMIN OPTION';
         }
 
-        if ($this->exec($sql) === false) {
-            throw new \PDOException('Failed to execute SQL statement for grant role.');
-        }
+        $this->exec($sql);
     }
 
     /**
@@ -1108,9 +974,7 @@ final class PhpPgAdminConnection extends \PDO
 
         $sql .= "\"{$escapedRole}\" FROM \"{$escapedRolename}\" {$type->value}";
 
-        if ($this->exec($sql) === false) {
-            throw new \PDOException('Failed to execute SQL statement for revoke role.');
-        }
+        $this->exec($sql);
     }
 
     /**

@@ -460,7 +460,7 @@ final class PhpPgAdminConnectionTest extends TestCase
         $connection->createRole($role, self::ROLE_PASSWORD, memberOf: [], members: [], adminMembers: []);
 
         self::assertEquals($role, $connection->getRole(self::roleName()));
-        self::assertSame(self::encryptedRolePassword(), self::passwordOfTheRole($connection));
+        self::assertSame(self::encryptedRolePassword($connection), self::passwordOfTheRole($connection));
     }
 
     public function testUpdateRoleGivesItTheAttributesAndThePasswordThatAreGiven(): void
@@ -472,7 +472,7 @@ final class PhpPgAdminConnectionTest extends TestCase
         $connection->updateRole($role, self::ROLE_PASSWORD);
 
         self::assertEquals($role, $connection->getRole(self::roleName()));
-        self::assertSame(self::encryptedRolePassword(), self::passwordOfTheRole($connection));
+        self::assertSame(self::encryptedRolePassword($connection), self::passwordOfTheRole($connection));
     }
 
     public function testUpdateRoleKeepsTheRolesThatAreGivenAgain(): void
@@ -778,10 +778,14 @@ final class PhpPgAdminConnectionTest extends TestCase
 
     /**
      * PostgreSQL stores a password that it gets as an MD5 hash as it is.
+     * The hash that is expected is built with the md5() of PostgreSQL.
      */
-    private static function encryptedRolePassword(): string
+    private static function encryptedRolePassword(PhpPgAdminConnection $administrator): mixed
     {
-        return 'md5' . md5(self::ROLE_PASSWORD . self::roleName());
+        return self::queryValue(
+            $administrator,
+            "SELECT 'md5' || md5(" . $administrator->quote(self::ROLE_PASSWORD . self::roleName()) . ')',
+        );
     }
 
     private static function passwordOfTheRole(PhpPgAdminConnection $administrator): mixed

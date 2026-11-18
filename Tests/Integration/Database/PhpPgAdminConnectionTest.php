@@ -189,6 +189,29 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertSame(self::COMMENT_WITH_QUOTES, (string)$tablespace->Comment);
     }
 
+    public function testCreateTablespaceGivesItTheOwnerThatIsGiven(): void
+    {
+        $connection = $this->connectionForTablespaces();
+        $this->createTheUser();
+
+        $connection->createTablespace(self::tablespace(self::tablespaceName(), owner: self::user()));
+
+        $tablespace = $connection->getTablespace(self::tablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame(self::user(), (string)$tablespace->Owner);
+    }
+
+    public function testCreateTablespaceWithoutAnOwnerGivesItToTheConnectedUser(): void
+    {
+        $connection = $this->connectionForTablespaces();
+
+        $connection->createTablespace(self::tablespace(self::tablespaceName(), owner: ''));
+
+        $tablespace = $connection->getTablespace(self::tablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame(self::queryValue($connection, 'SELECT current_user'), (string)$tablespace->Owner);
+    }
+
     public function testUpdateTablespaceKeepsQuotesInTheNamesAndTheComment(): void
     {
         $connection = $this->connectionForTablespaces();
@@ -201,6 +224,22 @@ final class PhpPgAdminConnectionTest extends TestCase
 
         self::assertNull($connection->getTablespace(self::tablespaceName()));
         $tablespace = $connection->getTablespace(self::renamedTablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame(self::COMMENT_WITH_QUOTES, (string)$tablespace->Comment);
+    }
+
+    public function testUpdateTablespaceThatKeepsTheNameRunsNoRename(): void
+    {
+        $connection = $this->connectionForTablespaces();
+        $connection->createTablespace(self::tablespace(self::tablespaceName()));
+
+        // PostgreSQL refuses to rename a tablespace to its own name, as the name is taken.
+        $connection->updateTablespace(
+            self::tablespace(self::tablespaceName(), comment: self::COMMENT_WITH_QUOTES),
+            self::tablespaceName(),
+        );
+
+        $tablespace = $connection->getTablespace(self::tablespaceName());
         self::assertNotNull($tablespace);
         self::assertSame(self::COMMENT_WITH_QUOTES, (string)$tablespace->Comment);
     }
@@ -366,6 +405,9 @@ final class PhpPgAdminConnectionTest extends TestCase
 
     private static function dropTheUser(PhpPgAdminConnection $administrator): void
     {
+        // The user cannot be dropped while it owns a tablespace.
+        self::dropTheTablespaces($administrator);
+
         $database = self::databaseOfTheUser();
         $isTemplate = self::queryValue(
             $administrator,
@@ -392,13 +434,18 @@ final class PhpPgAdminConnectionTest extends TestCase
     }
 
     /**
-     * An empty location makes an in-place tablespace. The user of the tests owns it.
+     * An empty location makes an in-place tablespace. Unless another owner is given, the user of the tests owns it.
+     * An empty owner names none.
      */
-    private static function tablespace(string $name, string $location = '', string $comment = ''): Tablespace
-    {
+    private static function tablespace(
+        string $name,
+        string $location = '',
+        string $comment = '',
+        ?string $owner = null,
+    ): Tablespace {
         return new Tablespace(
             name: new TablespaceName($name),
-            owner: new Owner(TestEnvironment::getEnvVar('PHPPGADMIN_TEST_SERVER_USERNAME') ?? 'postgres'),
+            owner: new Owner($owner ?? TestEnvironment::getEnvVar('PHPPGADMIN_TEST_SERVER_USERNAME') ?? 'postgres'),
             location: new Location($location),
             comment: new Comment($comment),
         );

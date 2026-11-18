@@ -63,6 +63,43 @@ class CreateTablespace extends Website
         return $body;
     }
 
+    /**
+     * The constructor runs it for a posted form. It is protected, so the alter page, which inherits the constructor,
+     * handles its form with its own method and does not create a tablespace.
+     */
+    protected function handlePostRequest(): void
+    {
+        $tablespace = DTOTablespace::createFromFormRequest();
+
+        $serverId = RequestParameter::getString('server') ?? '';
+        $serverSession = Logins::serverSession($serverId, Config::getServers());
+        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
+
+        if (is_null($db)) {
+            return;
+        }
+
+        try {
+            $db->createTablespace(tablespace: $tablespace);
+
+            if (!headers_sent()) {
+                $redirectUrl = 'tablespaces.php';
+                $redirectUrlParams = [
+                    'message' => _('Tablespace created.'),
+                    'server' => $serverId,
+                    'subject' => 'server',
+                ];
+                header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
+                die;
+            }
+        } catch (\PDOException $e) {
+            $this->message = _('Tablespace creation failed.');
+            $this->pdoException = $e;
+        } catch (\Throwable) {
+            $this->message = _('Tablespace creation failed.');
+        }
+    }
+
     protected static function buildCreateOrEditFormParagraphButtonsTable(
         \DOMDocument $dom,
         string $serverId,
@@ -198,38 +235,5 @@ class CreateTablespace extends Website
         $table->appendChild($tBody);
 
         return $table;
-    }
-
-    private function handlePostRequest(): void
-    {
-        $tablespace = DTOTablespace::createFromFormRequest();
-
-        $serverId = RequestParameter::getString('server') ?? '';
-        $serverSession = Logins::serverSession($serverId, Config::getServers());
-        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
-
-        if (is_null($db)) {
-            return;
-        }
-
-        try {
-            $db->createTablespace(tablespace: $tablespace);
-
-            if (!headers_sent()) {
-                $redirectUrl = 'tablespaces.php';
-                $redirectUrlParams = [
-                    'message' => _('Tablespace created.'),
-                    'server' => $serverId,
-                    'subject' => 'server',
-                ];
-                header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
-                die;
-            }
-        } catch (\PDOException $e) {
-            $this->message = _('Tablespace creation failed.');
-            $this->pdoException = $e;
-        } catch (\Throwable) {
-            $this->message = _('Tablespace creation failed.');
-        }
     }
 }

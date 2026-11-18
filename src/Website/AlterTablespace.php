@@ -14,15 +14,6 @@ use PhpPgAdmin\Infrastructure\Session\Logins;
 
 final class AlterTablespace extends CreateTablespace
 {
-    public function __construct()
-    {
-        parent::__construct();
-
-        if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->handlePostRequest();
-        }
-    }
-
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $body = Website::buildHtmlBody($dom);
@@ -72,7 +63,10 @@ final class AlterTablespace extends CreateTablespace
         return $body;
     }
 
-    private function handlePostRequest(): void
+    /**
+     * The constructor inherited from the create page runs it in place of the create.
+     */
+    protected function handlePostRequest(): void
     {
         $serverId = RequestParameter::getString('server') ?? '';
         $serverSession = Logins::serverSession($serverId, Config::getServers());

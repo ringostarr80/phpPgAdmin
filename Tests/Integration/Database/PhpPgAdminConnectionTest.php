@@ -505,6 +505,16 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertSame([], $connection->getMembers(self::roleName(), onlyAdminMembers: true));
     }
 
+    public function testGetRolesLeavesOutTheRoleThatIsGiven(): void
+    {
+        $connection = $this->connectionForRoles();
+
+        $rolenames = array_map(static fn (Role $role): string => $role->Name, $connection->getRoles(self::groupName()));
+
+        self::assertNotContains(self::groupName(), $rolenames);
+        self::assertContains(self::memberName(), $rolenames);
+    }
+
     protected function tearDown(): void
     {
         // Config reads the configuration file again.

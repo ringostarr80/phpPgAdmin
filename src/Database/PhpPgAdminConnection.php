@@ -590,8 +590,8 @@ final class PhpPgAdminConnection extends \PDO
 			FROM pg_catalog.pg_roles';
         $sqlParams = [];
 
-        if ($excludeRolename) {
-            $sql .= " WHERE rolname!=':excludeRolename'";
+        if ($excludeRolename !== '') {
+            $sql .= ' WHERE rolname != :excludeRolename';
             $sqlParams['excludeRolename'] = $excludeRolename;
         }
 

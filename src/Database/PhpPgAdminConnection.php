@@ -305,8 +305,7 @@ final class PhpPgAdminConnection extends \PDO
             $sql .= " OWNER \"{$escapedOwner}\"";
         }
 
-        $escapedLocation = self::escapeIdentifier((string)$tablespace->Location);
-        $sql .= " LOCATION '{$escapedLocation}'";
+        $sql .= ' LOCATION ' . $this->quote((string)$tablespace->Location);
 
         if ($this->exec($sql) === false) {
             throw new \PDOException('Failed to execute SQL statement for creating tablespace.');
@@ -937,14 +936,11 @@ final class PhpPgAdminConnection extends \PDO
 
     public function setCommentForTablespace(string $tablespaceName, string $comment): void
     {
-        $sql = "COMMENT ON TABLESPACE ";
-        $sql .= "\"{$tablespaceName}\" IS ";
-
-        if ($comment !== '') {
-            $sql .= "'{$comment}';";
-        } else {
-            $sql .= 'NULL;';
-        }
+        $escapedTablespaceName = self::escapeIdentifier($tablespaceName);
+        $sql = "COMMENT ON TABLESPACE \"{$escapedTablespaceName}\" IS ";
+        $sql .= $comment !== ''
+            ? $this->quote($comment)
+            : 'NULL';
 
         if ($this->exec($sql) === false) {
             throw new \PDOException('Failed to execute SQL statement for set comment.');
@@ -1037,7 +1033,8 @@ final class PhpPgAdminConnection extends \PDO
         }
 
         if ($oldTablespaceName !== (string)$tablespace->Name) {
-            $statement = "ALTER TABLESPACE \"{$oldTablespaceName}\" RENAME TO \"{$tablespace->Name}\"";
+            $escapedNewTablespaceName = self::escapeIdentifier((string)$tablespace->Name);
+            $statement = "ALTER TABLESPACE \"{$escapedTablespaceName}\" RENAME TO \"{$escapedNewTablespaceName}\"";
 
             if ($this->exec($statement) === false) {
                 if (!$this->rollBack()) {

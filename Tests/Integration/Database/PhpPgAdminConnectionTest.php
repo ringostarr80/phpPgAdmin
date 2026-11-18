@@ -9,6 +9,8 @@ use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\{Server, ServerSession};
 use PhpPgAdmin\DDD\ValueObjects\Server\{Host, Name, Port};
 use PhpPgAdmin\DDD\ValueObjects\ServerSession\{Password, Username};
+use PhpPgAdmin\DDD\ValueObjects\Tablespace;
+use PhpPgAdmin\DDD\ValueObjects\Tablespace\{Comment, Location, Name as TablespaceName, Owner};
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Tests\Support\TestEnvironment;
@@ -20,10 +22,27 @@ final class PhpPgAdminConnectionTest extends TestCase
 
     private const COMMENT_OF_THE_DATABASE = 'The database of the user';
 
+    private const COMMENT_WITH_QUOTES = 'It\'s "quoted"';
+
+    /**
+     * PostgreSQL rejects a location with a single quote itself, with this SQLSTATE (invalid_name).
+     */
+    private const SQLSTATE_INVALID_NAME = '42602';
+
+    /**
+     * The SQLSTATE of a missing directory (undefined_file).
+     */
+    private const SQLSTATE_UNDEFINED_FILE = '58P01';
+
     /**
      * The connection that created the user, which drops it again after the test.
      */
     private ?PhpPgAdminConnection $administrator = null;
+
+    /**
+     * Whether the test created tablespaces, which are dropped again after it.
+     */
+    private bool $createsTablespaces = false;
 
     public function testLoginDataIsValidForTheRunningServer(): void
     {
@@ -159,6 +178,63 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertFalse(self::logInAs(self::user(), self::USER_PASSWORD)->isSuperUser());
     }
 
+    public function testCreateTablespaceKeepsQuotesInTheNameAndTheComment(): void
+    {
+        $connection = $this->connectionForTablespaces();
+
+        $connection->createTablespace(self::tablespace(self::tablespaceName(), comment: self::COMMENT_WITH_QUOTES));
+
+        $tablespace = $connection->getTablespace(self::tablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame(self::COMMENT_WITH_QUOTES, (string)$tablespace->Comment);
+    }
+
+    public function testUpdateTablespaceKeepsQuotesInTheNamesAndTheComment(): void
+    {
+        $connection = $this->connectionForTablespaces();
+        $connection->createTablespace(self::tablespace(self::tablespaceName()));
+
+        $connection->updateTablespace(
+            self::tablespace(self::renamedTablespaceName(), comment: self::COMMENT_WITH_QUOTES),
+            self::tablespaceName(),
+        );
+
+        self::assertNull($connection->getTablespace(self::tablespaceName()));
+        $tablespace = $connection->getTablespace(self::renamedTablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame(self::COMMENT_WITH_QUOTES, (string)$tablespace->Comment);
+    }
+
+    public function testSetCommentForTablespaceWithAnEmptyCommentRemovesTheComment(): void
+    {
+        $connection = $this->connectionForTablespaces();
+        $connection->createTablespace(self::tablespace(self::tablespaceName(), comment: self::COMMENT_WITH_QUOTES));
+
+        $connection->setCommentForTablespace(self::tablespaceName(), '');
+
+        $tablespace = $connection->getTablespace(self::tablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame('', (string)$tablespace->Comment);
+    }
+
+    public function testCreateTablespaceLeavesASingleQuoteInTheLocationToPostgreSql(): void
+    {
+        $exception = $this->exceptionOfCreatingTheTablespaceAt("/ppa_test_missing/it's");
+
+        self::assertSame(self::SQLSTATE_INVALID_NAME, $exception->errorInfo[0] ?? null);
+    }
+
+    public function testCreateTablespaceLooksForTheLocationAsItIsGiven(): void
+    {
+        $location = '/ppa_test_missing/"quoted"';
+
+        $exception = $this->exceptionOfCreatingTheTablespaceAt($location);
+
+        self::assertSame(self::SQLSTATE_UNDEFINED_FILE, $exception->errorInfo[0] ?? null);
+        // The message names the directory in every language.
+        self::assertStringContainsString($location, $exception->getMessage());
+    }
+
     protected function tearDown(): void
     {
         // Config reads the configuration file again.
@@ -166,6 +242,11 @@ final class PhpPgAdminConnectionTest extends TestCase
 
         if (!is_null($this->administrator)) {
             self::dropTheUser($this->administrator);
+        }
+
+        // A failed statement can leave the connection of the test in an aborted transaction, so a new one drops them.
+        if ($this->createsTablespaces) {
+            self::dropTheTablespaces(self::connection());
         }
     }
 
@@ -224,6 +305,36 @@ final class PhpPgAdminConnectionTest extends TestCase
         $this->administrator->exec('ALTER DATABASE "' . self::databaseOfTheUser() . '" IS_TEMPLATE true');
     }
 
+    /**
+     * A tablespace needs an empty directory on the database server, unless it is an in-place tablespace, which
+     * PostgreSQL keeps in its data directory. The tests use those, which takes PostgreSQL 15 or later.
+     */
+    private function connectionForTablespaces(): PhpPgAdminConnection
+    {
+        $connection = self::connection();
+        $this->createsTablespaces = true;
+
+        // Removes what an aborted run of this thread left behind.
+        self::dropTheTablespaces($connection);
+
+        $connection->exec('SET allow_in_place_tablespaces = true');
+
+        return $connection;
+    }
+
+    private function exceptionOfCreatingTheTablespaceAt(string $location): \PDOException
+    {
+        $connection = $this->connectionForTablespaces();
+
+        try {
+            $connection->createTablespace(self::tablespace(self::tablespaceName(), location: $location));
+        } catch (\PDOException $e) {
+            return $e;
+        }
+
+        self::fail("The tablespace was created at {$location}.");
+    }
+
     private static function connection(?string $database = null): PhpPgAdminConnection
     {
         $serverSession = self::serverSession(
@@ -268,6 +379,36 @@ final class PhpPgAdminConnectionTest extends TestCase
 
         $administrator->exec('DROP DATABASE IF EXISTS "' . $database . '"');
         $administrator->exec('DROP ROLE IF EXISTS "' . self::user() . '"');
+    }
+
+    private static function tablespaceName(): string
+    {
+        return TestEnvironment::perThread('ppa_test_"tablespace"');
+    }
+
+    private static function renamedTablespaceName(): string
+    {
+        return TestEnvironment::perThread('ppa_test_"renamed"');
+    }
+
+    /**
+     * An empty location makes an in-place tablespace. The user of the tests owns it.
+     */
+    private static function tablespace(string $name, string $location = '', string $comment = ''): Tablespace
+    {
+        return new Tablespace(
+            name: new TablespaceName($name),
+            owner: new Owner(TestEnvironment::getEnvVar('PHPPGADMIN_TEST_SERVER_USERNAME') ?? 'postgres'),
+            location: new Location($location),
+            comment: new Comment($comment),
+        );
+    }
+
+    private static function dropTheTablespaces(PhpPgAdminConnection $administrator): void
+    {
+        foreach ([self::tablespaceName(), self::renamedTablespaceName()] as $name) {
+            $administrator->exec('DROP TABLESPACE IF EXISTS "' . str_replace('"', '""', $name) . '"');
+        }
     }
 
     /**

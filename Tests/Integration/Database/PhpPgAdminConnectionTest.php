@@ -9,7 +9,7 @@ use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\{Server, ServerSession};
 use PhpPgAdmin\DDD\ValueObjects\Server\{Host, Name, Port};
 use PhpPgAdmin\DDD\ValueObjects\ServerSession\{Password, Username};
-use PhpPgAdmin\DDD\ValueObjects\Tablespace;
+use PhpPgAdmin\DDD\ValueObjects\{Role, Tablespace};
 use PhpPgAdmin\DDD\ValueObjects\Tablespace\{Comment, Location, Name as TablespaceName, Owner};
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
@@ -55,6 +55,11 @@ final class PhpPgAdminConnectionTest extends TestCase
      * Whether the test created tablespaces, which are dropped again after it.
      */
     private bool $createsTablespaces = false;
+
+    /**
+     * Whether the test created roles, which are dropped again after it.
+     */
+    private bool $createsRoles = false;
 
     public function testLoginDataIsValidForTheRunningServer(): void
     {
@@ -406,6 +411,44 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertStringContainsString($location, $exception->getMessage());
     }
 
+    public function testCreateRoleKeepsQuotesInTheNamesOfTheRolesItIsGiven(): void
+    {
+        $connection = $this->connectionForRoles();
+
+        $connection->createRole(
+            role: new Role(self::roleName()),
+            password: '',
+            memberOf: [self::groupName()],
+            members: [self::memberName()],
+            adminMembers: [self::adminMemberName()],
+        );
+
+        self::assertSame([self::groupName()], $connection->getMemberOf(self::roleName()));
+        self::assertSame([self::memberName()], $connection->getMembers(self::roleName()));
+        self::assertSame([self::adminMemberName()], $connection->getMembers(self::roleName(), onlyAdminMembers: true));
+    }
+
+    public function testUpdateRoleKeepsQuotesInTheNamesOfTheRoles(): void
+    {
+        $connection = $this->connectionForRoles();
+        $connection->exec('CREATE ROLE ' . self::quoteIdentifier(self::roleName()) . ' NOCREATEDB');
+
+        $connection->updateRole(
+            role: new Role(self::roleName(), canCreateDb: true),
+            newMemberOf: [self::groupName()],
+            newMembers: [self::memberName()],
+            newAdminMembers: [self::adminMemberName()],
+        );
+
+        $role = $connection->getRole(self::roleName());
+        self::assertNotNull($role);
+        self::assertTrue($role->CanCreateDb);
+        // Seen from the group, which lists a member with the admin option among its admin members instead.
+        self::assertSame([self::roleName()], $connection->getMembers(self::groupName()));
+        self::assertSame([self::memberName()], $connection->getMembers(self::roleName()));
+        self::assertSame([self::adminMemberName()], $connection->getMembers(self::roleName(), onlyAdminMembers: true));
+    }
+
     protected function tearDown(): void
     {
         // Config reads the configuration file again.
@@ -418,6 +461,10 @@ final class PhpPgAdminConnectionTest extends TestCase
         // A failed statement can leave the connection of the test in an aborted transaction, so a new one drops them.
         if ($this->createsTablespaces) {
             self::dropTheTablespaces(self::connection());
+        }
+
+        if ($this->createsRoles) {
+            self::dropTheRoles(self::connection());
         }
     }
 
@@ -504,6 +551,24 @@ final class PhpPgAdminConnectionTest extends TestCase
         }
 
         self::fail("The tablespace was created at {$location}.");
+    }
+
+    /**
+     * Creates the roles that the role of the tests is given, which are dropped again after the test.
+     */
+    private function connectionForRoles(): PhpPgAdminConnection
+    {
+        $connection = self::connection();
+        $this->createsRoles = true;
+
+        // Removes what an aborted run of this thread left behind.
+        self::dropTheRoles($connection);
+
+        foreach ([self::groupName(), self::memberName(), self::adminMemberName()] as $name) {
+            $connection->exec('CREATE ROLE ' . self::quoteIdentifier($name));
+        }
+
+        return $connection;
     }
 
     private static function connection(?string $database = null): PhpPgAdminConnection
@@ -595,6 +660,41 @@ final class PhpPgAdminConnectionTest extends TestCase
         foreach ([self::tablespaceName(), self::renamedTablespaceName()] as $name) {
             $administrator->exec('DROP TABLESPACE IF EXISTS "' . str_replace('"', '""', $name) . '"');
         }
+    }
+
+    /**
+     * A role belongs to no database, so the tests create roles without the checkpoint that a dropped database forces.
+     */
+    private static function roleName(): string
+    {
+        return TestEnvironment::perThread('ppa_test_"role"');
+    }
+
+    private static function groupName(): string
+    {
+        return TestEnvironment::perThread('ppa_test_"group"');
+    }
+
+    private static function memberName(): string
+    {
+        return TestEnvironment::perThread('ppa_test_"member"');
+    }
+
+    private static function adminMemberName(): string
+    {
+        return TestEnvironment::perThread('ppa_test_"admin"');
+    }
+
+    private static function dropTheRoles(PhpPgAdminConnection $administrator): void
+    {
+        foreach ([self::roleName(), self::groupName(), self::memberName(), self::adminMemberName()] as $name) {
+            $administrator->exec('DROP ROLE IF EXISTS ' . self::quoteIdentifier($name));
+        }
+    }
+
+    private static function quoteIdentifier(string $identifier): string
+    {
+        return '"' . str_replace('"', '""', $identifier) . '"';
     }
 
     /**

@@ -228,15 +228,15 @@ final class PhpPgAdminConnection extends \PDO
         }
 
         if (is_array($memberOf) && !empty($memberOf)) {
-            $sql .= ' IN ROLE "' . join('", "', $memberOf) . '"';
+            $sql .= ' IN ROLE "' . join('", "', array_map(self::escapeIdentifier(...), $memberOf)) . '"';
         }
 
         if (is_array($members) && !empty($members)) {
-            $sql .= ' ROLE "' . join('", "', $members) . '"';
+            $sql .= ' ROLE "' . join('", "', array_map(self::escapeIdentifier(...), $members)) . '"';
         }
 
         if (is_array($adminMembers) && !empty($adminMembers)) {
-            $sql .= ' ADMIN "' . join('", "', $adminMembers) . '"';
+            $sql .= ' ADMIN "' . join('", "', array_map(self::escapeIdentifier(...), $adminMembers)) . '"';
         }
 
         $this->exec($sql);
@@ -805,7 +805,8 @@ final class PhpPgAdminConnection extends \PDO
         array $newMembers = [],
         array $newAdminMembers = [],
     ): void {
-        $sql = "ALTER ROLE \"{$role->Name}\"";
+        $escapedRolename = self::escapeIdentifier($role->Name);
+        $sql = "ALTER ROLE \"{$escapedRolename}\"";
 
         if (!is_null($password) && $password !== '') {
             $escapedEncryptedPassword = self::escapeIdentifier(self::encryptPassword($role->Name, $password));

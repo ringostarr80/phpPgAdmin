@@ -74,6 +74,17 @@ final class AlterTablespaceTest extends TestCase
         self::assertSame(self::TABLESPACE, PageBody::fieldValue(self::form(), Tablespace::FORM_ID_NAME));
     }
 
+    public function testAfterAnAlterWithoutANameThePageSaysItFailed(): void
+    {
+        // The alter fails before it reaches PostgreSQL, so pg_default stays as it is and no SQL error is shown.
+        self::postTheForm(name: ' ');
+
+        self::assertSame(
+            ['Tablespace alteration failed.'],
+            PageBody::messages(PageBody::afterPost(AlterTablespace::class)),
+        );
+    }
+
     protected function setUp(): void
     {
         $_GET = [

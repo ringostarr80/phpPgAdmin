@@ -1,0 +1,64 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Tests\Integration\Website;
+
+use PhpPgAdmin\DDD\ValueObjects\Tablespace;
+use PhpPgAdmin\Website\CreateTablespace;
+use PHPUnit\Framework\Attributes\CoversMethod;
+use PHPUnit\Framework\TestCase;
+use Tests\Support\{PageBody, RunningServer, TestEnvironment};
+
+#[CoversMethod(CreateTablespace::class, 'buildHtmlBody')]
+final class CreateTablespaceTest extends TestCase
+{
+    /**
+     * PostgreSQL creates a tablespace only in a directory that exists on the database server, and this one does not.
+     */
+    private const MISSING_LOCATION = '/ppa_test_missing/tablespace';
+
+    /**
+     * @var array<mixed>
+     */
+    private array $server = [];
+
+    public function testAfterAFailedCreateThePageSaysSo(): void
+    {
+        self::assertSame(['Tablespace creation failed.'], PageBody::messages(self::bodyAfterTheCreate()));
+    }
+
+    public function testAfterAFailedCreateThePageStillShowsTheErrorOfPostgreSql(): void
+    {
+        $errors = PageBody::query(self::bodyAfterTheCreate(), './/pre[@class="error"]');
+
+        self::assertCount(1, $errors);
+        // The error names the directory in every language.
+        self::assertStringContainsString(self::MISSING_LOCATION, $errors[0]->textContent);
+    }
+
+    protected function setUp(): void
+    {
+        $this->server = $_SERVER;
+        $_SERVER['REQUEST_METHOD'] = 'POST';
+        $_GET = ['server' => RunningServer::id()];
+        $_POST = [
+            Tablespace::FORM_ID_LOCATION => self::MISSING_LOCATION,
+            Tablespace::FORM_ID_NAME => TestEnvironment::perThread('ppa_test_tablespace'),
+        ];
+        RunningServer::logIn();
+    }
+
+    protected function tearDown(): void
+    {
+        $_SERVER = $this->server;
+        $_GET = [];
+        $_POST = [];
+        $_SESSION = [];
+    }
+
+    private static function bodyAfterTheCreate(): \DOMElement
+    {
+        return PageBody::afterPost(CreateTablespace::class);
+    }
+}

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Support;
 
+use PhpPgAdmin\Website;
 use PHPUnit\Framework\Assert;
 
 /**
@@ -14,16 +15,25 @@ final class PageBody
     /**
      * Without the constructor of the page, which starts a PHP session and needs a login.
      *
-     * @param class-string<\PhpPgAdmin\Website> $page
+     * @param class-string<Website> $page
      */
     public static function of(string $page): \DOMElement
     {
-        $website = (new \ReflectionClass($page))->newInstanceWithoutConstructor();
-        $buildHtmlBody = new \ReflectionMethod($website, 'buildHtmlBody');
-        $body = $buildHtmlBody->invoke($website, new \DOMDocument());
-        Assert::assertInstanceOf(\DOMElement::class, $body);
+        return self::bodyOf((new \ReflectionClass($page))->newInstanceWithoutConstructor());
+    }
 
-        return $body;
+    /**
+     * After the page handled the posted form, as its constructor does for a POST request. A form that the page can
+     * carry out changes the database.
+     *
+     * @param class-string<Website> $page
+     */
+    public static function afterPost(string $page): \DOMElement
+    {
+        $website = (new \ReflectionClass($page))->newInstanceWithoutConstructor();
+        (new \ReflectionMethod($website, 'handlePostRequest'))->invoke($website);
+
+        return self::bodyOf($website);
     }
 
     public static function field(\DOMElement $form, string $id): \DOMElement
@@ -60,6 +70,19 @@ final class PageBody
         }
 
         return $fields;
+    }
+
+    /**
+     * The texts of the messages of the page, in their order.
+     *
+     * @return list<string>
+     */
+    public static function messages(\DOMElement $body): array
+    {
+        return array_map(
+            static fn (\DOMElement $message): string => $message->textContent,
+            self::query($body, './/p[@class="message"]'),
+        );
     }
 
     /**
@@ -102,5 +125,14 @@ final class PageBody
         }
 
         return $elements;
+    }
+
+    private static function bodyOf(Website $website): \DOMElement
+    {
+        $buildHtmlBody = new \ReflectionMethod($website, 'buildHtmlBody');
+        $body = $buildHtmlBody->invoke($website, new \DOMDocument());
+        Assert::assertInstanceOf(\DOMElement::class, $body);
+
+        return $body;
     }
 }

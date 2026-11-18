@@ -44,6 +44,10 @@ class CreateTablespace extends Website
         $h2->appendChild($helpLink);
         $body->appendChild($h2);
 
+        if ($this->message !== '') {
+            $body->appendChild(WebsiteComponents::buildMessage($dom, $this->message));
+        }
+
         $form = $dom->createElement('form');
         $form->setAttribute('method', 'post');
 

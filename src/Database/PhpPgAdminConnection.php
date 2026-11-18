@@ -129,24 +129,6 @@ final class PhpPgAdminConnection extends \PDO
         $this->commit();
     }
 
-    public function alterDatabaseOwner(string $dbName, string $newOwner): void
-    {
-        $escapedDbName = self::escapeIdentifier($dbName);
-        $escapedNewOwner = self::escapeIdentifier($newOwner);
-        $statement = "ALTER DATABASE \"{$escapedDbName}\" OWNER TO \"{$escapedNewOwner}\"";
-
-        $this->exec($statement);
-    }
-
-    public function alterDatabaseRename(string $oldName, string $newName): void
-    {
-        $escapedOldName = self::escapeIdentifier($oldName);
-        $escapedNewName = self::escapeIdentifier($newName);
-        $statement = "ALTER DATABASE \"{$escapedOldName}\" RENAME TO \"{$escapedNewName}\"";
-
-        $this->exec($statement);
-    }
-
     public function createDatabase(
         string $database,
         string $encoding,
@@ -811,17 +793,6 @@ final class PhpPgAdminConnection extends \PDO
         $this->exec($sql);
     }
 
-    public function setDatabaseComment(string $database, ?string $comment = null): void
-    {
-        $escapedDatabase = self::escapeIdentifier($database);
-        $statement = "COMMENT ON DATABASE \"{$escapedDatabase}\" IS ";
-        $statement .= !is_null($comment)
-            ? $this->quote($comment)
-            : 'NULL';
-
-        $this->exec($statement);
-    }
-
     /**
      * @param array<string> $newMemberOf Roles to which the new role will be immediately added as a new member
      * @param array<string> $newMembers Roles which are automatically added as members of the new role
@@ -919,6 +890,24 @@ final class PhpPgAdminConnection extends \PDO
         }
     }
 
+    private function alterDatabaseOwner(string $dbName, string $newOwner): void
+    {
+        $escapedDbName = self::escapeIdentifier($dbName);
+        $escapedNewOwner = self::escapeIdentifier($newOwner);
+        $statement = "ALTER DATABASE \"{$escapedDbName}\" OWNER TO \"{$escapedNewOwner}\"";
+
+        $this->exec($statement);
+    }
+
+    private function alterDatabaseRename(string $oldName, string $newName): void
+    {
+        $escapedOldName = self::escapeIdentifier($oldName);
+        $escapedNewName = self::escapeIdentifier($newName);
+        $statement = "ALTER DATABASE \"{$escapedOldName}\" RENAME TO \"{$escapedNewName}\"";
+
+        $this->exec($statement);
+    }
+
     /**
      * Grants membership in a role
      *
@@ -963,6 +952,17 @@ final class PhpPgAdminConnection extends \PDO
         $sql .= "\"{$escapedRole}\" FROM \"{$escapedRolename}\" {$type->value}";
 
         $this->exec($sql);
+    }
+
+    private function setDatabaseComment(string $database, ?string $comment = null): void
+    {
+        $escapedDatabase = self::escapeIdentifier($database);
+        $statement = "COMMENT ON DATABASE \"{$escapedDatabase}\" IS ";
+        $statement .= !is_null($comment)
+            ? $this->quote($comment)
+            : 'NULL';
+
+        $this->exec($statement);
     }
 
     /**

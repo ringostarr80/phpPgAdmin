@@ -8,15 +8,12 @@ final readonly class Location implements \Stringable
 {
     private string $location;
 
+    /**
+     * An empty location stands for the data directory, where PostgreSQL keeps pg_default and pg_global.
+     */
     public function __construct(string $location)
     {
-        $location = trim($location);
-
-        if (empty($location)) {
-            throw new \InvalidArgumentException('Tablespace location cannot be empty!');
-        }
-
-        $this->location = $location;
+        $this->location = trim($location);
     }
 
     public function __toString(): string

@@ -37,6 +37,17 @@ final class TablespaceTest extends TestCase
         self::assertSame('', (string)$tablespace->Comment);
     }
 
+    public function testCreateFromDbArrayWithoutALocationGivesAnEmptyLocation(): void
+    {
+        // pg_tablespace_location() gives an empty location for the tablespaces in the data directory.
+        $tablespace = DTOTablespace::createFromDbArray(
+            ['spclocation' => '', 'spcname' => 'pg_default'] + self::VALID_DB_ARRAY,
+        );
+
+        self::assertSame('pg_default', (string)$tablespace->Name);
+        self::assertSame('', (string)$tablespace->Location);
+    }
+
     /**
      * @param array<string, mixed> $data
      */

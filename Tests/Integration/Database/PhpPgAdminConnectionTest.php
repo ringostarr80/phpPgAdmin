@@ -505,6 +505,47 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertSame([], $connection->getMembers(self::roleName(), onlyAdminMembers: true));
     }
 
+    public function testUpdateRoleCommitsWhatItChanged(): void
+    {
+        $connection = $this->connectionForRoles();
+        $connection->exec('CREATE ROLE ' . self::quoteIdentifier(self::roleName()));
+
+        $connection->updateRole(
+            role: new Role(self::roleName(), canCreateDb: true),
+            newMemberOf: [self::groupName()],
+        );
+
+        // Another connection sees only what was committed.
+        $administrator = self::connection();
+        $role = $administrator->getRole(self::roleName());
+        self::assertNotNull($role);
+        self::assertTrue($role->CanCreateDb);
+        self::assertSame([self::groupName()], $administrator->getMemberOf(self::roleName()));
+    }
+
+    public function testUpdateRoleThatFailsUndoesWhatItChangedAndKeepsTheConnectionUsable(): void
+    {
+        $connection = $this->connectionForRoles();
+        self::createTheRoleWithItsRoles($connection);
+
+        // The attributes change and the group is revoked, then the grant fails, as there is no such role.
+        try {
+            $connection->updateRole(
+                role: new Role(self::roleName(), canCreateDb: true),
+                newMembers: [self::MISSING_ROLE],
+            );
+            self::fail('The role got a member that does not exist.');
+        } catch (\PDOException $e) {
+            self::assertSame(self::SQLSTATE_UNDEFINED_OBJECT, $e->errorInfo[0] ?? null);
+        }
+
+        // An aborted transaction would refuse these queries.
+        $role = $connection->getRole(self::roleName());
+        self::assertNotNull($role);
+        self::assertFalse($role->CanCreateDb);
+        self::assertSame([self::groupName()], $connection->getMemberOf(self::roleName()));
+    }
+
     public function testGetRolesLeavesOutTheRoleThatIsGiven(): void
     {
         $connection = $this->connectionForRoles();

@@ -108,34 +108,22 @@ final class PhpPgAdminConnection extends \PDO
     ): void {
         $this->beginTransaction();
 
-        if ($dbName !== $newName) {
-            try {
-                $this->alterDatabaseRename($dbName, $newName);
-            } catch (\PDOException) {
-                $this->rollBack();
-
-                return;
-            }
-
-            $dbName = $newName;
-        }
-
-        if (!is_null($newOwner) && $newOwner !== '') {
-            try {
-                $this->alterDatabaseOwner($dbName, $newOwner);
-            } catch (\PDOException) {
-                $this->rollBack();
-
-                return;
-            }
-        }
-
+        // The caller reports the error, the rollback keeps the connection out of the aborted transaction.
         try {
+            if ($dbName !== $newName) {
+                $this->alterDatabaseRename($dbName, $newName);
+                $dbName = $newName;
+            }
+
+            if (!is_null($newOwner) && $newOwner !== '') {
+                $this->alterDatabaseOwner($dbName, $newOwner);
+            }
+
             $this->setDatabaseComment($dbName, $comment);
-        } catch (\PDOException) {
+        } catch (\Throwable $e) {
             $this->rollBack();
 
-            return;
+            throw $e;
         }
 
         $this->commit();

@@ -40,6 +40,13 @@ final class PhpPgAdminConnectionTest extends TestCase
     private const SQLSTATE_DUPLICATE_OBJECT = '42710';
 
     /**
+     * The SQLSTATE of a role that does not exist (undefined_object).
+     */
+    private const SQLSTATE_UNDEFINED_OBJECT = '42704';
+
+    private const MISSING_ROLE = 'ppa_test_missing_role';
+
+    /**
      * The connection that created the user, which drops it again after the test.
      */
     private ?PhpPgAdminConnection $administrator = null;
@@ -181,6 +188,30 @@ final class PhpPgAdminConnectionTest extends TestCase
         $this->createTheUser();
 
         self::assertFalse(self::logInAs(self::user(), self::USER_PASSWORD)->isSuperUser());
+    }
+
+    public function testAlterDatabaseThatFailsUndoesWhatItChangedAndKeepsTheConnectionUsable(): void
+    {
+        $this->createTheUser();
+        $this->createADatabaseOfTheUser();
+        $connection = self::connection();
+
+        // The rename works, then the owner fails, as there is no such role.
+        try {
+            $connection->alterDatabase(
+                dbName: self::databaseOfTheUser(),
+                newName: self::renamedDatabaseOfTheUser(),
+                newOwner: self::MISSING_ROLE,
+            );
+            self::fail('The database got an owner that does not exist.');
+        } catch (\PDOException $e) {
+            self::assertSame(self::SQLSTATE_UNDEFINED_OBJECT, $e->errorInfo[0] ?? null);
+        }
+
+        // An aborted transaction would refuse this query.
+        $databases = array_column($connection->getDatabases(), 'datname');
+        self::assertContains(self::databaseOfTheUser(), $databases);
+        self::assertNotContains(self::renamedDatabaseOfTheUser(), $databases);
     }
 
     public function testCreateTablespaceKeepsQuotesInTheNameAndTheComment(): void
@@ -464,6 +495,11 @@ final class PhpPgAdminConnectionTest extends TestCase
         return TestEnvironment::perThread('ppa_test_user_database');
     }
 
+    private static function renamedDatabaseOfTheUser(): string
+    {
+        return TestEnvironment::perThread('ppa_test_renamed_database');
+    }
+
     private static function dropTheUser(PhpPgAdminConnection $administrator): void
     {
         // The user cannot be dropped while it owns a tablespace.
@@ -481,6 +517,8 @@ final class PhpPgAdminConnectionTest extends TestCase
         }
 
         $administrator->exec('DROP DATABASE IF EXISTS "' . $database . '"');
+        // The user cannot be dropped either while it owns a renamed database.
+        $administrator->exec('DROP DATABASE IF EXISTS "' . self::renamedDatabaseOfTheUser() . '"');
         $administrator->exec('DROP ROLE IF EXISTS "' . self::user() . '"');
     }
 

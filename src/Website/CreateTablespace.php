@@ -58,7 +58,15 @@ class CreateTablespace extends Website
         }
 
         $form->appendChild(
-            self::buildCreateOrEditTablespaceTable($dom, $serverId, $tablespace, isLocationReadonly: false),
+            self::buildCreateOrEditTablespaceTable(
+                $dom,
+                $serverId,
+                name: (string)$tablespace?->Name,
+                owner: (string)$tablespace?->Owner,
+                location: (string)$tablespace?->Location,
+                comment: (string)$tablespace?->Comment,
+                isLocationReadonly: false,
+            ),
         );
         $form->appendChild(self::buildCreateOrEditFormParagraphButtonsTable($dom, $serverId));
 
@@ -147,33 +155,28 @@ class CreateTablespace extends Website
         return $p;
     }
 
+    /**
+     * Takes the values as text, so the form can show what was entered even when no tablespace can have it, like a
+     * blank name. Without an owner, it selects the user who is logged in.
+     */
     protected static function buildCreateOrEditTablespaceTable(
         \DOMDocument $dom,
         string $serverId,
-        ?Tablespace $tablespace,
+        string $name,
+        string $owner,
+        string $location,
+        string $comment,
         bool $isLocationReadonly,
     ): \DOMElement {
         $table = $dom->createElement('table');
         $table->setAttribute('class', 'form-table');
         $tBody = $dom->createElement('tbody');
 
-        $tablespaceName = '';
-        $tablespaceOwner = '';
-        $tablespaceLocation = '';
-        $tablespaceComment = '';
-
-        if (!is_null($tablespace)) {
-            $tablespaceName = (string)$tablespace->Name;
-            $tablespaceOwner = (string)$tablespace->Owner;
-            $tablespaceLocation = (string)$tablespace->Location;
-            $tablespaceComment = (string)$tablespace->Comment;
-        }
-
         $nameSpecs = [
             'id' => Tablespace::FORM_ID_NAME,
             'label-text' => _('Name'),
             'value' => [
-                'content' => $tablespaceName,
+                'content' => $name,
                 'max-length' => 63,
                 'required' => true,
             ],
@@ -186,15 +189,15 @@ class CreateTablespace extends Website
         $ownerSelectionValues = [];
         $ownerSelectedValues = [];
 
-        if ($tablespaceOwner === '' && !is_null($serverSession)) {
-            $tablespaceOwner = (string)$serverSession->Username;
+        if ($owner === '' && !is_null($serverSession)) {
+            $owner = (string)$serverSession->Username;
         }
 
         foreach ($dbUsers as $dbUser) {
             $ownerSelectionValues[] = $dbUser['usename'];
 
-            if ($dbUser['usename'] === $tablespaceOwner) {
-                $ownerSelectedValues[] = $tablespaceOwner;
+            if ($dbUser['usename'] === $owner) {
+                $ownerSelectedValues[] = $owner;
             }
         }
 
@@ -214,7 +217,7 @@ class CreateTablespace extends Website
             'id' => Tablespace::FORM_ID_LOCATION,
             'label-text' => _('Location'),
             'value' => [
-                'content' => $tablespaceLocation,
+                'content' => $location,
                 'readonly' => $isLocationReadonly,
                 'required' => true,
             ],
@@ -226,7 +229,7 @@ class CreateTablespace extends Website
             'label-text' => _('Comment'),
             'value' => [
                 'cols' => 32,
-                'content' => $tablespaceComment,
+                'content' => $comment,
                 'rows' => 3,
             ],
         ];

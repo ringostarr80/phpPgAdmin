@@ -58,7 +58,15 @@ final class AlterTablespace extends CreateTablespace
 
         // PostgreSQL cannot move a tablespace.
         $form->appendChild(
-            self::buildCreateOrEditTablespaceTable($dom, $serverId, $tablespace, isLocationReadonly: true),
+            self::buildCreateOrEditTablespaceTable(
+                $dom,
+                $serverId,
+                name: (string)$tablespace?->Name,
+                owner: (string)$tablespace?->Owner,
+                location: (string)$tablespace?->Location,
+                comment: (string)$tablespace?->Comment,
+                isLocationReadonly: true,
+            ),
         );
         $form->appendChild(self::buildCreateOrEditFormParagraphButtonsTable($dom, $serverId, $tablespace));
 

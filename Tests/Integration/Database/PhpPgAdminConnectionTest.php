@@ -475,6 +475,36 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertSame(self::encryptedRolePassword(), self::passwordOfTheRole($connection));
     }
 
+    public function testUpdateRoleKeepsTheRolesThatAreGivenAgain(): void
+    {
+        $connection = $this->connectionForRoles();
+        self::createTheRoleWithItsRoles($connection);
+
+        $connection->updateRole(
+            role: new Role(self::roleName()),
+            newMemberOf: [self::groupName()],
+            newMembers: [self::memberName()],
+            newAdminMembers: [self::adminMemberName()],
+        );
+
+        self::assertSame([self::groupName()], $connection->getMemberOf(self::roleName()));
+        self::assertSame([self::memberName()], $connection->getMembers(self::roleName()));
+        self::assertSame([self::adminMemberName()], $connection->getMembers(self::roleName(), onlyAdminMembers: true));
+    }
+
+    public function testUpdateRoleRemovesTheRolesThatAreNotGivenAnyMore(): void
+    {
+        $connection = $this->connectionForRoles();
+        self::createTheRoleWithItsRoles($connection);
+
+        $connection->updateRole(new Role(self::roleName()));
+
+        self::assertSame([], $connection->getMemberOf(self::roleName()));
+        // An admin member that is removed loses only the admin option and stays a member.
+        self::assertSame([self::adminMemberName()], $connection->getMembers(self::roleName()));
+        self::assertSame([], $connection->getMembers(self::roleName(), onlyAdminMembers: true));
+    }
+
     protected function tearDown(): void
     {
         // Config reads the configuration file again.
@@ -723,6 +753,16 @@ final class PhpPgAdminConnectionTest extends TestCase
             canInheritRights: false,
             canLogin: true,
             connectionLimit: 3,
+        );
+    }
+
+    private static function createTheRoleWithItsRoles(PhpPgAdminConnection $administrator): void
+    {
+        $administrator->exec(
+            'CREATE ROLE ' . self::quoteIdentifier(self::roleName())
+                . ' IN ROLE ' . self::quoteIdentifier(self::groupName())
+                . ' ROLE ' . self::quoteIdentifier(self::memberName())
+                . ' ADMIN ' . self::quoteIdentifier(self::adminMemberName()),
         );
     }
 

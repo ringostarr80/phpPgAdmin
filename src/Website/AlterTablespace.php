@@ -7,6 +7,8 @@ namespace PhpPgAdmin\Website;
 use PhpPgAdmin\{Config, TrailSubject, Website, WebsiteComponents};
 use PhpPgAdmin\Application\DTO\Tablespace as DTOTablespace;
 use PhpPgAdmin\Database\PhpPgAdminConnection;
+use PhpPgAdmin\DDD\ValueObjects\Tablespace;
+use PhpPgAdmin\DDD\ValueObjects\Tablespace\{Comment, Name, Owner};
 use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 use PhpPgAdmin\Infrastructure\Session\Logins;
 
@@ -55,6 +57,10 @@ final class AlterTablespace extends CreateTablespace
             $tablespace = $db?->getTablespace($tablespaceName);
         }
 
+        if (!is_null($tablespace)) {
+            $tablespace = self::withEnteredValues($tablespace);
+        }
+
         // PostgreSQL cannot move a tablespace.
         $form->appendChild(
             self::buildCreateOrEditTablespaceTable($dom, $serverId, $tablespace, isLocationReadonly: true),
@@ -98,5 +104,24 @@ final class AlterTablespace extends CreateTablespace
         } catch (\Throwable) {
             $this->message = _('Tablespace alteration failed.');
         }
+    }
+
+    /**
+     * After a failed alter, the form keeps the values that were entered, like the legacy page did. PostgreSQL cannot
+     * move a tablespace, so the location stays the loaded one.
+     */
+    private static function withEnteredValues(Tablespace $loaded): Tablespace
+    {
+        $enteredName = RequestParameter::getString(Tablespace::FORM_ID_NAME) ?? '';
+        $enteredOwner = RequestParameter::getString(Tablespace::FORM_ID_OWNER) ?? (string)$loaded->Owner;
+        $enteredComment = RequestParameter::getString(Tablespace::FORM_ID_COMMENT) ?? (string)$loaded->Comment;
+
+        return new Tablespace(
+            // A tablespace needs a name.
+            name: trim($enteredName) === '' ? $loaded->Name : new Name($enteredName),
+            owner: new Owner($enteredOwner),
+            location: $loaded->Location,
+            comment: new Comment($enteredComment),
+        );
     }
 }

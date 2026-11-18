@@ -14,6 +14,7 @@ use PHPUnit\Framework\TestCase;
 use Tests\Support\{PageBody, TestEnvironment};
 
 #[CoversMethod(AlterTablespace::class, 'buildHtmlBody')]
+#[CoversMethod(AlterTablespace::class, 'withEnteredValues')]
 final class AlterTablespaceTest extends TestCase
 {
     /**
@@ -21,6 +22,11 @@ final class AlterTablespaceTest extends TestCase
      * on the database server.
      */
     private const TABLESPACE = 'pg_default';
+
+    /**
+     * The connection that created the other owner, which drops it again after the test.
+     */
+    private ?PhpPgAdminConnection $administrator = null;
 
     public function testTheFormShowsTheNameAndTheOwnerOfTheTablespace(): void
     {
@@ -38,6 +44,34 @@ final class AlterTablespaceTest extends TestCase
         );
 
         self::assertSame([['alter', 'Alter'], ['cancel', 'Cancel']], $buttons);
+    }
+
+    public function testAfterAFailedAlterTheFormKeepsTheEnteredNameOwnerAndComment(): void
+    {
+        $this->createTheOtherOwner();
+        self::postTheForm(name: 'ppa_test_renamed', owner: self::otherOwner(), comment: 'Entered comment');
+
+        $form = self::form();
+
+        self::assertSame('ppa_test_renamed', PageBody::fieldValue($form, Tablespace::FORM_ID_NAME));
+        self::assertSame([self::otherOwner()], PageBody::selectedValues($form, Tablespace::FORM_ID_OWNER));
+        self::assertSame('Entered comment', PageBody::fieldValue($form, Tablespace::FORM_ID_COMMENT));
+    }
+
+    public function testAfterAFailedAlterTheFormKeepsTheLoadedLocation(): void
+    {
+        // PostgreSQL cannot move a tablespace. pg_default lies in the data directory, which has an empty location.
+        self::postTheForm(location: '/srv/elsewhere');
+
+        self::assertSame('', PageBody::fieldValue(self::form(), Tablespace::FORM_ID_LOCATION));
+    }
+
+    public function testAfterAFailedAlterWithoutANameTheFormShowsTheLoadedName(): void
+    {
+        // A tablespace needs a name, and blanks are none.
+        self::postTheForm(name: ' ');
+
+        self::assertSame(self::TABLESPACE, PageBody::fieldValue(self::form(), Tablespace::FORM_ID_NAME));
     }
 
     protected function setUp(): void
@@ -61,9 +95,56 @@ final class AlterTablespaceTest extends TestCase
 
     protected function tearDown(): void
     {
+        if (!is_null($this->administrator)) {
+            self::dropTheOtherOwner($this->administrator);
+        }
+
         $_GET = [];
         $_POST = [];
         $_SESSION = [];
+    }
+
+    /**
+     * A user who does not own pg_default, so the entered owner differs from the loaded one.
+     */
+    private function createTheOtherOwner(): void
+    {
+        $administrator = self::connection();
+        $this->administrator = $administrator;
+
+        // Removes what an aborted run of this thread left behind.
+        self::dropTheOtherOwner($administrator);
+
+        // The owners to choose from are the roles that can log in.
+        $administrator->exec('CREATE ROLE "' . self::otherOwner() . '" LOGIN');
+    }
+
+    /**
+     * The form as it comes back after a failed alter. PageBody::of() leaves out the constructor, so pg_default is not
+     * altered. A value that is not given is the one the form showed.
+     */
+    private static function postTheForm(
+        string $name = self::TABLESPACE,
+        ?string $owner = null,
+        string $location = '',
+        string $comment = '',
+    ): void {
+        $_POST = [
+            Tablespace::FORM_ID_COMMENT => $comment,
+            Tablespace::FORM_ID_LOCATION => $location,
+            Tablespace::FORM_ID_NAME => $name,
+            Tablespace::FORM_ID_OWNER => $owner ?? self::bootstrapSuperuser(),
+        ];
+    }
+
+    private static function otherOwner(): string
+    {
+        return TestEnvironment::perThread('ppa_test_tablespace_owner');
+    }
+
+    private static function dropTheOtherOwner(PhpPgAdminConnection $administrator): void
+    {
+        $administrator->exec('DROP ROLE IF EXISTS "' . self::otherOwner() . '"');
     }
 
     private static function form(): \DOMElement

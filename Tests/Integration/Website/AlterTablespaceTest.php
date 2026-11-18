@@ -27,13 +27,7 @@ final class AlterTablespaceTest extends TestCase
         $form = self::form();
 
         self::assertSame(self::TABLESPACE, PageBody::fieldValue($form, Tablespace::FORM_ID_NAME));
-
-        $selectedOwners = PageBody::query(
-            $form,
-            './/select[@id="' . Tablespace::FORM_ID_OWNER . '"]/option[@selected]',
-        );
-        self::assertCount(1, $selectedOwners);
-        self::assertSame(self::bootstrapSuperuser(), $selectedOwners[0]->getAttribute('value'));
+        self::assertSame([self::bootstrapSuperuser()], PageBody::selectedValues($form, Tablespace::FORM_ID_OWNER));
     }
 
     public function testTheFormAltersTheTablespaceInsteadOfCreatingOne(): void
@@ -82,18 +76,26 @@ final class AlterTablespaceTest extends TestCase
      */
     private static function bootstrapSuperuser(): string
     {
-        $connection = PhpPgAdminConnection::createFromServerSession(
-            Logins::serverSession(self::runningServerId(), Config::getServers()),
-        );
-        self::assertNotNull($connection);
-
         // PostgreSQL gives the bootstrap superuser the fixed oid 10.
-        $statement = $connection->query('SELECT rolname FROM pg_catalog.pg_roles WHERE oid = 10');
+        $statement = self::connection()->query('SELECT rolname FROM pg_catalog.pg_roles WHERE oid = 10');
         self::assertNotFalse($statement);
         $rolname = $statement->fetchColumn();
         self::assertIsString($rolname);
 
         return $rolname;
+    }
+
+    /**
+     * A connection as the user the page logs in as.
+     */
+    private static function connection(): PhpPgAdminConnection
+    {
+        $connection = PhpPgAdminConnection::createFromServerSession(
+            Logins::serverSession(self::runningServerId(), Config::getServers()),
+        );
+        self::assertNotNull($connection);
+
+        return $connection;
     }
 
     private static function runningServerId(): string

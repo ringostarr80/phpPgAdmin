@@ -97,6 +97,19 @@ final class TestEnvironment
     }
 
     /**
+     * Infection runs the tests in parallel threads, which it numbers in TEST_TOKEN, so each thread needs its own roles
+     * and databases.
+     */
+    public static function perThread(string $name): string
+    {
+        $thread = self::getEnvVar('TEST_TOKEN');
+
+        return is_null($thread)
+            ? $name
+            : "{$name}_{$thread}";
+    }
+
+    /**
      * @return list<array{desc: string, host: string, port: int}>
      */
     private static function servers(string $runningServerHost): array

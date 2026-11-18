@@ -62,6 +62,19 @@ final class PageBody
         return $fields;
     }
 
+    /**
+     * The values of the selected options of the select with the given id, in their order.
+     *
+     * @return list<string>
+     */
+    public static function selectedValues(\DOMElement $form, string $id): array
+    {
+        return array_map(
+            static fn (\DOMElement $option): string => $option->getAttribute('value'),
+            self::query($form, ".//select[@id=\"{$id}\"]/option[@selected]"),
+        );
+    }
+
     public static function onlyElement(\DOMElement $parent, string $tagName): \DOMElement
     {
         $elements = $parent->getElementsByTagName($tagName);

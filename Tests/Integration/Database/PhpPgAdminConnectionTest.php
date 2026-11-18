@@ -245,25 +245,12 @@ final class PhpPgAdminConnectionTest extends TestCase
      */
     private static function user(): string
     {
-        return self::perThread("ppa_test_o'user");
+        return TestEnvironment::perThread("ppa_test_o'user");
     }
 
     private static function databaseOfTheUser(): string
     {
-        return self::perThread('ppa_test_user_database');
-    }
-
-    /**
-     * Infection runs the tests in parallel threads, which it numbers in TEST_TOKEN, so each thread gets its own role
-     * and databases.
-     */
-    private static function perThread(string $name): string
-    {
-        $thread = TestEnvironment::getEnvVar('TEST_TOKEN');
-
-        return is_null($thread)
-            ? $name
-            : "{$name}_{$thread}";
+        return TestEnvironment::perThread('ppa_test_user_database');
     }
 
     private static function dropTheUser(PhpPgAdminConnection $administrator): void

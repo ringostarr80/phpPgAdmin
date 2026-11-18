@@ -1022,30 +1022,21 @@ final class PhpPgAdminConnection extends \PDO
         $escapedTablespaceName = self::escapeIdentifier((string)$oldTablespaceName);
         $escapedTablespaceOwner = self::escapeIdentifier((string)$tablespace->Owner);
 
-        $statement = "ALTER TABLESPACE \"{$escapedTablespaceName}\" OWNER TO \"{$escapedTablespaceOwner}\"";
+        // PDO throws when a statement fails, which would leave the connection in the aborted transaction.
+        try {
+            $this->exec("ALTER TABLESPACE \"{$escapedTablespaceName}\" OWNER TO \"{$escapedTablespaceOwner}\"");
 
-        if ($this->exec($statement) === false) {
-            if (!$this->rollBack()) {
-                throw new \PDOException('Failed to roll back transaction after altering tablespace owner.');
+            if ($oldTablespaceName !== (string)$tablespace->Name) {
+                $escapedNewTablespaceName = self::escapeIdentifier((string)$tablespace->Name);
+                $this->exec("ALTER TABLESPACE \"{$escapedTablespaceName}\" RENAME TO \"{$escapedNewTablespaceName}\"");
             }
 
-            throw new \PDOException('Failed to execute SQL statement for altering tablespace owner.');
+            $this->setCommentForTablespace((string)$tablespace->Name, (string)$tablespace->Comment);
+        } catch (\Throwable $e) {
+            $this->rollBack();
+
+            throw $e;
         }
-
-        if ($oldTablespaceName !== (string)$tablespace->Name) {
-            $escapedNewTablespaceName = self::escapeIdentifier((string)$tablespace->Name);
-            $statement = "ALTER TABLESPACE \"{$escapedTablespaceName}\" RENAME TO \"{$escapedNewTablespaceName}\"";
-
-            if ($this->exec($statement) === false) {
-                if (!$this->rollBack()) {
-                    throw new \PDOException('Failed to roll back transaction after renaming tablespace.');
-                }
-
-                throw new \PDOException('Failed to execute SQL statement for renaming tablespace.');
-            }
-        }
-
-        $this->setCommentForTablespace((string)$tablespace->Name, (string)$tablespace->Comment);
 
         if (!$this->commit()) {
             throw new \PDOException('Failed to commit transaction.');

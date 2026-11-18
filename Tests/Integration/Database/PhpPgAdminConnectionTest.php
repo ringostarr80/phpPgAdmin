@@ -35,6 +35,11 @@ final class PhpPgAdminConnectionTest extends TestCase
     private const SQLSTATE_UNDEFINED_FILE = '58P01';
 
     /**
+     * The SQLSTATE of a name that is taken (duplicate_object).
+     */
+    private const SQLSTATE_DUPLICATE_OBJECT = '42710';
+
+    /**
      * The connection that created the user, which drops it again after the test.
      */
     private ?PhpPgAdminConnection $administrator = null;
@@ -242,6 +247,30 @@ final class PhpPgAdminConnectionTest extends TestCase
         $tablespace = $connection->getTablespace(self::tablespaceName());
         self::assertNotNull($tablespace);
         self::assertSame(self::COMMENT_WITH_QUOTES, (string)$tablespace->Comment);
+    }
+
+    public function testUpdateTablespaceThatFailsUndoesWhatItChangedAndKeepsTheConnectionUsable(): void
+    {
+        $connection = $this->connectionForTablespaces();
+        $this->createTheUser();
+        $connection->createTablespace(self::tablespace(self::tablespaceName()));
+        $connection->createTablespace(self::tablespace(self::renamedTablespaceName()));
+
+        // The new name is taken, so the rename fails after the owner has changed.
+        try {
+            $connection->updateTablespace(
+                self::tablespace(self::renamedTablespaceName(), owner: self::user()),
+                self::tablespaceName(),
+            );
+            self::fail('The tablespace was renamed to a name that is taken.');
+        } catch (\PDOException $e) {
+            self::assertSame(self::SQLSTATE_DUPLICATE_OBJECT, $e->errorInfo[0] ?? null);
+        }
+
+        // An aborted transaction would refuse these queries.
+        $tablespace = $connection->getTablespace(self::tablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame(self::queryValue($connection, 'SELECT current_user'), (string)$tablespace->Owner);
     }
 
     public function testSetCommentForTablespaceWithAnEmptyCommentRemovesTheComment(): void

@@ -190,6 +190,46 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertFalse(self::logInAs(self::user(), self::USER_PASSWORD)->isSuperUser());
     }
 
+    public function testAlterDatabaseCommitsTheNewNameAndTheComment(): void
+    {
+        $this->createTheUser();
+        $this->createADatabaseOfTheUser();
+        $connection = self::connection();
+
+        $connection->alterDatabase(
+            dbName: self::databaseOfTheUser(),
+            newName: self::renamedDatabaseOfTheUser(),
+            comment: self::COMMENT_WITH_QUOTES,
+        );
+
+        // Another connection sees only what was committed.
+        $comments = array_column(self::connection()->getDatabases(), 'datcomment', 'datname');
+        self::assertArrayNotHasKey(self::databaseOfTheUser(), $comments);
+        self::assertSame(self::COMMENT_WITH_QUOTES, $comments[self::renamedDatabaseOfTheUser()] ?? null);
+    }
+
+    public function testAlterDatabaseThatKeepsTheNameChangesOnlyTheOwnerAndTheComment(): void
+    {
+        $this->createTheUser();
+        $this->createADatabaseOfTheUser();
+        $connection = self::connection();
+        $administrator = self::queryValue($connection, 'SELECT current_user');
+        self::assertIsString($administrator);
+
+        // PostgreSQL refuses to rename a database to its own name, as the name is taken. A comment of null removes it.
+        $connection->alterDatabase(
+            dbName: self::databaseOfTheUser(),
+            newName: self::databaseOfTheUser(),
+            newOwner: $administrator,
+            comment: null,
+        );
+
+        $database = array_column($connection->getDatabases(), null, 'datname')[self::databaseOfTheUser()] ?? null;
+        self::assertNotNull($database);
+        self::assertSame($administrator, $database['datowner']);
+        self::assertSame('', $database['datcomment']);
+    }
+
     public function testAlterDatabaseThatFailsUndoesWhatItChangedAndKeepsTheConnectionUsable(): void
     {
         $this->createTheUser();

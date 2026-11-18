@@ -265,6 +265,22 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertSame(self::user(), (string)$tablespace->Owner);
     }
 
+    public function testUpdateTablespaceCommitsWhatItChanged(): void
+    {
+        $connection = $this->connectionForTablespaces();
+        $connection->createTablespace(self::tablespace(self::tablespaceName()));
+
+        $connection->updateTablespace(
+            self::tablespace(self::tablespaceName(), comment: self::COMMENT_WITH_QUOTES),
+            self::tablespaceName(),
+        );
+
+        // Another connection sees only what was committed.
+        $tablespace = self::connection()->getTablespace(self::tablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame(self::COMMENT_WITH_QUOTES, (string)$tablespace->Comment);
+    }
+
     public function testUpdateTablespaceThatFailsUndoesWhatItChangedAndKeepsTheConnectionUsable(): void
     {
         $connection = $this->connectionForTablespaces();

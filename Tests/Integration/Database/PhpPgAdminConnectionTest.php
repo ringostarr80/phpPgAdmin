@@ -20,6 +20,8 @@ final class PhpPgAdminConnectionTest extends TestCase
 {
     private const USER_PASSWORD = 'ppa_test_user';
 
+    private const ROLE_PASSWORD = 'ppa_test_role';
+
     private const COMMENT_OF_THE_DATABASE = 'The database of the user';
 
     private const COMMENT_WITH_QUOTES = 'It\'s "quoted"';
@@ -449,6 +451,30 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertSame([self::adminMemberName()], $connection->getMembers(self::roleName(), onlyAdminMembers: true));
     }
 
+    public function testCreateRoleGivesItTheAttributesAndThePasswordThatAreGiven(): void
+    {
+        $connection = $this->connectionForRoles();
+        $role = self::roleThatDiffersFromTheDefaults();
+
+        // The form passes no roles as empty lists.
+        $connection->createRole($role, self::ROLE_PASSWORD, memberOf: [], members: [], adminMembers: []);
+
+        self::assertEquals($role, $connection->getRole(self::roleName()));
+        self::assertSame(self::encryptedRolePassword(), self::passwordOfTheRole($connection));
+    }
+
+    public function testUpdateRoleGivesItTheAttributesAndThePasswordThatAreGiven(): void
+    {
+        $connection = $this->connectionForRoles();
+        $connection->exec('CREATE ROLE ' . self::quoteIdentifier(self::roleName()));
+        $role = self::roleThatDiffersFromTheDefaults();
+
+        $connection->updateRole($role, self::ROLE_PASSWORD);
+
+        self::assertEquals($role, $connection->getRole(self::roleName()));
+        self::assertSame(self::encryptedRolePassword(), self::passwordOfTheRole($connection));
+    }
+
     protected function tearDown(): void
     {
         // Config reads the configuration file again.
@@ -683,6 +709,37 @@ final class PhpPgAdminConnectionTest extends TestCase
     private static function adminMemberName(): string
     {
         return TestEnvironment::perThread('ppa_test_"admin"');
+    }
+
+    /**
+     * Every attribute differs from the defaults of PostgreSQL, but the role is no superuser.
+     */
+    private static function roleThatDiffersFromTheDefaults(): Role
+    {
+        return new Role(
+            name: self::roleName(),
+            canCreateDb: true,
+            canCreateRole: true,
+            canInheritRights: false,
+            canLogin: true,
+            connectionLimit: 3,
+        );
+    }
+
+    /**
+     * PostgreSQL stores a password that it gets as an MD5 hash as it is.
+     */
+    private static function encryptedRolePassword(): string
+    {
+        return 'md5' . md5(self::ROLE_PASSWORD . self::roleName());
+    }
+
+    private static function passwordOfTheRole(PhpPgAdminConnection $administrator): mixed
+    {
+        return self::queryValue(
+            $administrator,
+            'SELECT rolpassword FROM pg_catalog.pg_authid WHERE rolname = ' . $administrator->quote(self::roleName()),
+        );
     }
 
     private static function dropTheRoles(PhpPgAdminConnection $administrator): void

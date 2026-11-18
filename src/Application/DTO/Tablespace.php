@@ -19,7 +19,6 @@ abstract readonly class Tablespace
             'spcname',
             'spcowner',
             'spclocation',
-            'spccomment',
         ];
 
         foreach ($requiredFields as $field) {
@@ -40,7 +39,10 @@ abstract readonly class Tablespace
             throw new \InvalidArgumentException("Type of field 'spclocation' is not string.");
         }
 
-        if (!is_string($data['spccomment'])) {
+        // NULL for a tablespace without a comment.
+        $comment = $data['spccomment'] ?? '';
+
+        if (!is_string($comment)) {
             throw new \InvalidArgumentException("Type of field 'spccomment' is not string.");
         }
 
@@ -48,7 +50,7 @@ abstract readonly class Tablespace
             name: new Name($data['spcname']),
             owner: new Owner($data['spcowner']),
             location: new Location($data['spclocation']),
-            comment: new Comment($data['spccomment']),
+            comment: new Comment($comment),
         );
     }
 

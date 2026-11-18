@@ -838,11 +838,22 @@ final class PhpPgAdminConnection extends \PDO
             $sql .= " VALID UNTIL 'infinity'";
         }
 
-        $this->exec($sql);
+        $this->beginTransaction();
 
-        $this->tryAlterMemberOf($newMemberOf, $role->Name);
-        $this->tryAlterMembers($newMembers, $role->Name);
-        $this->tryAlterAdminMembers($newAdminMembers, $role->Name);
+        // A failed grant or revoke must not leave the role partly altered.
+        try {
+            $this->exec($sql);
+
+            $this->tryAlterMemberOf($newMemberOf, $role->Name);
+            $this->tryAlterMembers($newMembers, $role->Name);
+            $this->tryAlterAdminMembers($newAdminMembers, $role->Name);
+        } catch (\Throwable $e) {
+            $this->rollBack();
+
+            throw $e;
+        }
+
+        $this->commit();
     }
 
     public function updateTablespace(Tablespace $tablespace, string $oldTablespaceName): void

@@ -11,7 +11,7 @@ use PhpPgAdmin\Infrastructure\Session\Logins;
 use PhpPgAdmin\Website\AlterTablespace;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
-use Tests\Support\{PageBody, TestEnvironment};
+use Tests\Support\{PageBody, RunningServer, TestEnvironment};
 
 #[CoversMethod(AlterTablespace::class, 'buildHtmlBody')]
 #[CoversMethod(AlterTablespace::class, 'withEnteredValues')]
@@ -76,21 +76,12 @@ final class AlterTablespaceTest extends TestCase
 
     protected function setUp(): void
     {
-        $serverId = self::runningServerId();
-
         $_GET = [
-            'server' => $serverId,
+            'server' => RunningServer::id(),
             'tablespace' => self::TABLESPACE,
         ];
         $_POST = [];
-        $_SESSION = [
-            'webdbLogin' => [
-                $serverId => [
-                    'password' => TestEnvironment::getEnvVar('PHPPGADMIN_TEST_SERVER_PASSWORD') ?? '',
-                    'username' => TestEnvironment::getEnvVar('PHPPGADMIN_TEST_SERVER_USERNAME') ?? 'postgres',
-                ],
-            ],
-        ];
+        RunningServer::logIn();
     }
 
     protected function tearDown(): void
@@ -172,21 +163,10 @@ final class AlterTablespaceTest extends TestCase
     private static function connection(): PhpPgAdminConnection
     {
         $connection = PhpPgAdminConnection::createFromServerSession(
-            Logins::serverSession(self::runningServerId(), Config::getServers()),
+            Logins::serverSession(RunningServer::id(), Config::getServers()),
         );
         self::assertNotNull($connection);
 
         return $connection;
-    }
-
-    private static function runningServerId(): string
-    {
-        foreach (Config::getServers() as $server) {
-            if ((string)$server->Name === TestEnvironment::RUNNING_SERVER_DESC) {
-                return $server->id();
-            }
-        }
-
-        self::fail('No server "' . TestEnvironment::RUNNING_SERVER_DESC . '" in the test configuration.');
     }
 }

@@ -68,6 +68,14 @@ final class AlterTablespaceTest extends TestCase
         self::assertSame(self::TABLESPACE, PageBody::fieldValue(self::form(), Tablespace::FORM_ID_NAME));
     }
 
+    public function testAfterAFailedAlterTheFormKeepsTheNameZero(): void
+    {
+        // PHP's empty() takes "0" for an empty string, PostgreSQL takes it as a name.
+        self::postTheForm(name: '0');
+
+        self::assertSame('0', PageBody::fieldValue(self::form(), Tablespace::FORM_ID_NAME));
+    }
+
     public function testAfterAnAlterWithoutANameThePageSaysItFailed(): void
     {
         // The alter fails before it reaches PostgreSQL, so pg_default stays as it is and no SQL error is shown.

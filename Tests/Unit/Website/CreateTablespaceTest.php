@@ -93,6 +93,14 @@ final class CreateTablespaceTest extends TestCase
         self::assertSame('Old data', PageBody::fieldValue($form, Tablespace::FORM_ID_COMMENT));
     }
 
+    public function testACreateNamedZeroDoesNotAskForAName(): void
+    {
+        // PHP's empty() takes "0" for an empty string, PostgreSQL takes it as a name.
+        self::postTheForm(name: '0');
+
+        self::assertSame([], PageBody::messages(PageBody::afterPost(CreateTablespace::class)));
+    }
+
     public function testTheHiddenFieldsOfTheFormAreTheActionAndTheServer(): void
     {
         self::assertSame(

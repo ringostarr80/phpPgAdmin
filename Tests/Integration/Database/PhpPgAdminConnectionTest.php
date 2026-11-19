@@ -7,7 +7,7 @@ namespace Tests\Integration\Database;
 use PhpPgAdmin\Config;
 use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\{Server, ServerSession};
-use PhpPgAdmin\DDD\ValueObjects\Server\{Host, Name, Port};
+use PhpPgAdmin\DDD\ValueObjects\Server\{DatabaseName, Host, Name, Port};
 use PhpPgAdmin\DDD\ValueObjects\ServerSession\{Password, Username};
 use PhpPgAdmin\DDD\ValueObjects\{Role, Tablespace};
 use PhpPgAdmin\DDD\ValueObjects\Tablespace\{Comment, Location, Name as TablespaceName, Owner};
@@ -90,9 +90,10 @@ final class PhpPgAdminConnectionTest extends TestCase
         ));
     }
 
-    public function testCreateFromServerSessionConnectsToPostgresByDefault(): void
+    public function testCreateFromServerSessionConnectsToTheDefaultDatabaseOfTheServerByDefault(): void
     {
-        self::assertSame('postgres', self::currentDatabase(self::connection()));
+        // Like the legacy pages and the login check, so a user who may not connect to postgres can use the pages.
+        self::assertSame('template1', self::currentDatabase(self::connection(defaultDb: 'template1')));
     }
 
     public function testCreateFromServerSessionConnectsToTheGivenDatabase(): void
@@ -714,11 +715,12 @@ final class PhpPgAdminConnectionTest extends TestCase
         return $connection;
     }
 
-    private static function connection(?string $database = null): PhpPgAdminConnection
+    private static function connection(?string $database = null, string $defaultDb = 'postgres'): PhpPgAdminConnection
     {
         $serverSession = self::serverSession(
             TestEnvironment::getEnvVar('PHPPGADMIN_TEST_SERVER_USERNAME') ?? 'postgres',
             TestEnvironment::getEnvVar('PHPPGADMIN_TEST_SERVER_PASSWORD') ?? '',
+            $defaultDb,
         );
 
         $connection = is_null($database)
@@ -915,8 +917,14 @@ final class PhpPgAdminConnectionTest extends TestCase
         return $connection;
     }
 
-    private static function serverSession(string $username, string $password): ServerSession
-    {
+    /**
+     * By default for postgres, so the tests do not leave anything in template1, which new databases copy.
+     */
+    private static function serverSession(
+        string $username,
+        string $password,
+        string $defaultDb = 'postgres',
+    ): ServerSession {
         return new ServerSession(
             username: new Username($username),
             password: new Password($password),
@@ -926,6 +934,7 @@ final class PhpPgAdminConnectionTest extends TestCase
                     ?? TestEnvironment::RUNNING_SERVER_DEFAULT_HOST,
             ),
             port: new Port(TestEnvironment::RUNNING_SERVER_PORT),
+            defaultDb: new DatabaseName($defaultDb),
         );
     }
 

@@ -76,10 +76,11 @@ final class PhpPgAdminConnection extends \PDO
     }
 
     /**
-     * @param string $database Pages about objects inside a database (languages, schemas, …) need a connection to that
-     *                         database, the server-wide objects can be read from any database.
+     * @param ?string $database Pages about objects inside a database (languages, schemas, …) need a connection to that
+     *                          database, the server-wide objects can be read from any database. Without one, it
+     *                          connects to the default database of the server, like the legacy pages and the login.
      */
-    public static function createFromServerSession(?ServerSession $serverSession, string $database = 'postgres'): ?self
+    public static function createFromServerSession(?ServerSession $serverSession, ?string $database = null): ?self
     {
         if ($serverSession === null) {
             return null;
@@ -91,7 +92,7 @@ final class PhpPgAdminConnection extends \PDO
             sslmode: $serverSession->SslMode->value,
             user: (string)$serverSession->Username,
             password: (string)$serverSession->Password,
-            database: $database,
+            database: $database ?? (string)$serverSession->DefaultDb,
         );
 
         $connection->exec("SET client_encoding TO 'UTF-8'");

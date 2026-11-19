@@ -40,6 +40,19 @@ final class CreateTablespaceTest extends TestCase
         self::assertStringContainsString(self::MISSING_LOCATION, $errors[0]->textContent);
     }
 
+    public function testACreateLeavesOutTheBlanksAroundTheEnteredName(): void
+    {
+        // Blanks around a typed name are mostly slips. PostgreSQL would keep them, and with them it takes the name,
+        // while it refuses the reserved pg_default before it looks for the directory.
+        $_POST[Tablespace::FORM_ID_NAME] = ' pg_default ';
+
+        $errors = PageBody::query(self::bodyAfterTheCreate(), './/pre[@class="error"]');
+
+        self::assertCount(1, $errors);
+        // The error names the tablespace in every language.
+        self::assertStringContainsString('pg_default', $errors[0]->textContent);
+    }
+
     public function testAfterACreateWithoutANameTheFormKeepsTheEnteredOwner(): void
     {
         // Without an entered owner, the form selects the user of the tests.

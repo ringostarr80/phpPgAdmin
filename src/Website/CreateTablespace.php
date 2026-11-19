@@ -8,6 +8,7 @@ use PhpPgAdmin\{Config, TrailSubject, Website, WebsiteComponents};
 use PhpPgAdmin\Application\DTO\Tablespace as DTOTablespace;
 use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\ValueObjects\Tablespace;
+use PhpPgAdmin\DDD\ValueObjects\Tablespace\Name;
 use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 use PhpPgAdmin\Infrastructure\Session\Logins;
 
@@ -78,14 +79,24 @@ class CreateTablespace extends Website
      */
     protected function handlePostRequest(): void
     {
-        // No tablespace can have a blank name, so nothing is sent to PostgreSQL.
-        if (trim(RequestParameter::getString(Tablespace::FORM_ID_NAME) ?? '') === '') {
+        // Blanks around a typed name are mostly slips, although PostgreSQL would keep them. The name of an existing
+        // tablespace, which the alter page shows, keeps them.
+        $name = trim(RequestParameter::getString(Tablespace::FORM_ID_NAME) ?? '');
+
+        // A blank name counts as none, so nothing is sent to PostgreSQL.
+        if ($name === '') {
             $this->message = _('You must give a name for your tablespace.');
 
             return;
         }
 
-        $tablespace = DTOTablespace::createFromFormRequest();
+        $entered = DTOTablespace::createFromFormRequest();
+        $tablespace = new Tablespace(
+            name: new Name($name),
+            owner: $entered->Owner,
+            location: $entered->Location,
+            comment: $entered->Comment,
+        );
 
         $serverId = RequestParameter::getString('server') ?? '';
         $serverSession = Logins::serverSession($serverId, Config::getServers());

@@ -17,6 +17,12 @@ final class NameTest extends TestCase
         self::assertSame('0', (string)new Name('0'));
     }
 
+    public function testTheBlanksAroundANameArePartOfIt(): void
+    {
+        // PostgreSQL keeps them in a quoted name, so without them the name is the one of another tablespace.
+        self::assertSame(' archive ', (string)new Name(' archive '));
+    }
+
     public function testABlankNameIsRejected(): void
     {
         $this->expectException(\InvalidArgumentException::class);

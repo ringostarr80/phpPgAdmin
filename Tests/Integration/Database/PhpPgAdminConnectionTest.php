@@ -284,6 +284,30 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertSame(self::COMMENT_WITH_QUOTES, (string)$tablespace->Comment);
     }
 
+    public function testGetTablespaceKeepsTheBlanksAroundTheName(): void
+    {
+        $connection = $this->connectionForTablespaces();
+        $connection->createTablespace(self::tablespace(self::paddedTablespaceName()));
+
+        $tablespace = $connection->getTablespace(self::paddedTablespaceName());
+
+        self::assertNotNull($tablespace);
+        self::assertSame(self::paddedTablespaceName(), (string)$tablespace->Name);
+    }
+
+    public function testGetTablespacesKeepsTheBlanksAroundTheNames(): void
+    {
+        $connection = $this->connectionForTablespaces();
+        $connection->createTablespace(self::tablespace(self::paddedTablespaceName()));
+
+        $names = array_map(
+            static fn (Tablespace $tablespace): string => (string)$tablespace->Name,
+            $connection->getTablespaces(),
+        );
+
+        self::assertContains(self::paddedTablespaceName(), $names);
+    }
+
     public function testCreateTablespaceGivesItTheOwnerThatIsGiven(): void
     {
         $connection = $this->connectionForTablespaces();
@@ -757,6 +781,14 @@ final class PhpPgAdminConnectionTest extends TestCase
     }
 
     /**
+     * PostgreSQL keeps blanks around a quoted name.
+     */
+    private static function paddedTablespaceName(): string
+    {
+        return ' ' . TestEnvironment::perThread('ppa_test_"padded"') . ' ';
+    }
+
+    /**
      * An empty location makes an in-place tablespace. Unless another owner is given, the user of the tests owns it.
      * An empty owner names none.
      */
@@ -776,7 +808,7 @@ final class PhpPgAdminConnectionTest extends TestCase
 
     private static function dropTheTablespaces(PhpPgAdminConnection $administrator): void
     {
-        foreach ([self::tablespaceName(), self::renamedTablespaceName()] as $name) {
+        foreach ([self::tablespaceName(), self::renamedTablespaceName(), self::paddedTablespaceName()] as $name) {
             $administrator->exec('DROP TABLESPACE IF EXISTS "' . str_replace('"', '""', $name) . '"');
         }
     }

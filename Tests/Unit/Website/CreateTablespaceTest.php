@@ -11,6 +11,7 @@ use PHPUnit\Framework\TestCase;
 use Tests\Support\PageBody;
 
 #[CoversMethod(CreateTablespace::class, 'buildHtmlBody')]
+#[CoversMethod(CreateTablespace::class, 'handlePostRequest')]
 final class CreateTablespaceTest extends TestCase
 {
     private const SERVER_ID = '127.0.0.1:5432:allow';
@@ -71,6 +72,27 @@ final class CreateTablespaceTest extends TestCase
         self::assertFalse(PageBody::field(self::form(), Tablespace::FORM_ID_LOCATION)->hasAttribute('readonly'));
     }
 
+    public function testAfterACreateWithoutANameThePageAsksForOne(): void
+    {
+        // The browser only requires the field to be filled, so blanks get past it.
+        self::postTheForm(name: ' ');
+
+        self::assertSame(
+            ['You must give a name for your tablespace.'],
+            PageBody::messages(PageBody::afterPost(CreateTablespace::class)),
+        );
+    }
+
+    public function testAfterACreateWithoutANameTheFormKeepsTheEnteredValues(): void
+    {
+        self::postTheForm(name: ' ');
+
+        $form = PageBody::onlyElement(PageBody::afterPost(CreateTablespace::class), 'form');
+
+        self::assertSame('/srv/archive', PageBody::fieldValue($form, Tablespace::FORM_ID_LOCATION));
+        self::assertSame('Old data', PageBody::fieldValue($form, Tablespace::FORM_ID_COMMENT));
+    }
+
     public function testTheHiddenFieldsOfTheFormAreTheActionAndTheServer(): void
     {
         self::assertSame(
@@ -110,13 +132,13 @@ final class CreateTablespaceTest extends TestCase
      * The request after a failed create: the constructor redirects to the tablespaces after a successful one, so the
      * page only shows a posted form when the create failed.
      */
-    private static function postTheForm(): void
+    private static function postTheForm(string $name = 'archive'): void
     {
         $_SERVER['REQUEST_METHOD'] = 'POST';
         $_POST = [
             Tablespace::FORM_ID_COMMENT => 'Old data',
             Tablespace::FORM_ID_LOCATION => '/srv/archive',
-            Tablespace::FORM_ID_NAME => 'archive',
+            Tablespace::FORM_ID_NAME => $name,
         ];
     }
 }

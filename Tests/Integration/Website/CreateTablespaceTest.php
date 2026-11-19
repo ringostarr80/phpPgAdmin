@@ -11,6 +11,7 @@ use PHPUnit\Framework\TestCase;
 use Tests\Support\{PageBody, RunningServer, TestEnvironment};
 
 #[CoversMethod(CreateTablespace::class, 'buildHtmlBody')]
+#[CoversMethod(CreateTablespace::class, 'handlePostRequest')]
 final class CreateTablespaceTest extends TestCase
 {
     /**

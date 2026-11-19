@@ -51,20 +51,17 @@ class CreateTablespace extends Website
         $form = $dom->createElement('form');
         $form->setAttribute('method', 'post');
 
-        $tablespace = null;
-
-        if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
-            $tablespace = DTOTablespace::createFromFormRequest();
-        }
+        // After a failed create, the form shows what was entered, even a blank name, like the legacy page did.
+        $entered = static fn (string $formId): string => RequestParameter::getString($formId) ?? '';
 
         $form->appendChild(
             self::buildCreateOrEditTablespaceTable(
                 $dom,
                 $serverId,
-                name: (string)$tablespace?->Name,
-                owner: (string)$tablespace?->Owner,
-                location: (string)$tablespace?->Location,
-                comment: (string)$tablespace?->Comment,
+                name: $entered(Tablespace::FORM_ID_NAME),
+                owner: $entered(Tablespace::FORM_ID_OWNER),
+                location: $entered(Tablespace::FORM_ID_LOCATION),
+                comment: $entered(Tablespace::FORM_ID_COMMENT),
                 isLocationReadonly: false,
             ),
         );
@@ -81,6 +78,13 @@ class CreateTablespace extends Website
      */
     protected function handlePostRequest(): void
     {
+        // No tablespace can have a blank name, so nothing is sent to PostgreSQL.
+        if (trim(RequestParameter::getString(Tablespace::FORM_ID_NAME) ?? '') === '') {
+            $this->message = _('You must give a name for your tablespace.');
+
+            return;
+        }
+
         $tablespace = DTOTablespace::createFromFormRequest();
 
         $serverId = RequestParameter::getString('server') ?? '';

@@ -22,4 +22,8 @@
     minCoveredMsi: 85,
     // Pull requests only mutate the lines they change (see php.yml); lines that give no mutants leave no MSI to check.
     ignoreMsiWithNoMutations: true,
+    // Infection skips a mutant, without a warning, when even its fastest test runs longer than this. It takes a test's
+    // time from its whole test class, and Tests/Integration/Database/PhpPgAdminConnectionTest runs about 20 seconds
+    // on some machines, longer than the default of 10 seconds.
+    timeout: 60,
 }

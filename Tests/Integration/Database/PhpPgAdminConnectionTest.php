@@ -27,6 +27,11 @@ final class PhpPgAdminConnectionTest extends TestCase
     private const COMMENT_WITH_QUOTES = 'It\'s "quoted"';
 
     /**
+     * PostgreSQL stores a comment as it is given, with the blanks and line breaks around it.
+     */
+    private const COMMENT_WITH_BLANKS = "  Old data\n";
+
+    /**
      * PostgreSQL rejects a location with a single quote itself, with this SQLSTATE (invalid_name).
      */
     private const SQLSTATE_INVALID_NAME = '42602';
@@ -285,6 +290,17 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertSame(self::COMMENT_WITH_QUOTES, (string)$tablespace->Comment);
     }
 
+    public function testCreateTablespaceKeepsTheBlanksAroundTheComment(): void
+    {
+        $connection = $this->connectionForTablespaces();
+
+        $connection->createTablespace(self::tablespace(self::tablespaceName(), comment: self::COMMENT_WITH_BLANKS));
+
+        $tablespace = $connection->getTablespace(self::tablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame(self::COMMENT_WITH_BLANKS, (string)$tablespace->Comment);
+    }
+
     public function testGetTablespaceKeepsTheBlanksAroundTheName(): void
     {
         $connection = $this->connectionForTablespaces();
@@ -358,6 +374,21 @@ final class PhpPgAdminConnectionTest extends TestCase
         $tablespace = $connection->getTablespace(self::renamedTablespaceName());
         self::assertNotNull($tablespace);
         self::assertSame(self::COMMENT_WITH_QUOTES, (string)$tablespace->Comment);
+    }
+
+    public function testUpdateTablespaceKeepsTheBlanksAroundTheComment(): void
+    {
+        $connection = $this->connectionForTablespaces();
+        $connection->createTablespace(self::tablespace(self::tablespaceName()));
+
+        $connection->updateTablespace(
+            self::tablespace(self::tablespaceName(), comment: self::COMMENT_WITH_BLANKS),
+            self::tablespaceName(),
+        );
+
+        $tablespace = $connection->getTablespace(self::tablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame(self::COMMENT_WITH_BLANKS, (string)$tablespace->Comment);
     }
 
     public function testUpdateTablespaceThatKeepsTheNameRunsNoRename(): void

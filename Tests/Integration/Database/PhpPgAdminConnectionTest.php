@@ -27,6 +27,11 @@ final class PhpPgAdminConnectionTest extends TestCase
     private const COMMENT_WITH_QUOTES = 'It\'s "quoted"';
 
     /**
+     * PostgreSQL stores a comment as it is given, with the blanks and line breaks around it.
+     */
+    private const COMMENT_WITH_BLANKS = "  Old data\n";
+
+    /**
      * PostgreSQL rejects a location with a single quote itself, with this SQLSTATE (invalid_name).
      */
     private const SQLSTATE_INVALID_NAME = '42602';
@@ -285,6 +290,17 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertSame(self::COMMENT_WITH_QUOTES, (string)$tablespace->Comment);
     }
 
+    public function testCreateTablespaceKeepsTheBlanksAroundTheComment(): void
+    {
+        $connection = $this->connectionForTablespaces();
+
+        $connection->createTablespace(self::tablespace(self::tablespaceName(), comment: self::COMMENT_WITH_BLANKS));
+
+        $tablespace = $connection->getTablespace(self::tablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame(self::COMMENT_WITH_BLANKS, (string)$tablespace->Comment);
+    }
+
     public function testGetTablespaceKeepsTheBlanksAroundTheName(): void
     {
         $connection = $this->connectionForTablespaces();
@@ -321,6 +337,18 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertSame(self::user(), (string)$tablespace->Owner);
     }
 
+    public function testCreateTablespaceKeepsTheBlanksAroundTheOwner(): void
+    {
+        $connection = $this->connectionForTablespaces();
+        $this->createThePaddedOwner($connection);
+
+        $connection->createTablespace(self::tablespace(self::tablespaceName(), owner: self::paddedOwnerName()));
+
+        $tablespace = $connection->getTablespace(self::tablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame(self::paddedOwnerName(), (string)$tablespace->Owner);
+    }
+
     public function testCreateTablespaceWithoutAnOwnerGivesItToTheConnectedUser(): void
     {
         $connection = $this->connectionForTablespaces();
@@ -346,6 +374,21 @@ final class PhpPgAdminConnectionTest extends TestCase
         $tablespace = $connection->getTablespace(self::renamedTablespaceName());
         self::assertNotNull($tablespace);
         self::assertSame(self::COMMENT_WITH_QUOTES, (string)$tablespace->Comment);
+    }
+
+    public function testUpdateTablespaceKeepsTheBlanksAroundTheComment(): void
+    {
+        $connection = $this->connectionForTablespaces();
+        $connection->createTablespace(self::tablespace(self::tablespaceName()));
+
+        $connection->updateTablespace(
+            self::tablespace(self::tablespaceName(), comment: self::COMMENT_WITH_BLANKS),
+            self::tablespaceName(),
+        );
+
+        $tablespace = $connection->getTablespace(self::tablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame(self::COMMENT_WITH_BLANKS, (string)$tablespace->Comment);
     }
 
     public function testUpdateTablespaceThatKeepsTheNameRunsNoRename(): void
@@ -378,6 +421,22 @@ final class PhpPgAdminConnectionTest extends TestCase
         $tablespace = $connection->getTablespace(self::tablespaceName());
         self::assertNotNull($tablespace);
         self::assertSame(self::user(), (string)$tablespace->Owner);
+    }
+
+    public function testUpdateTablespaceKeepsTheBlanksAroundTheOwner(): void
+    {
+        $connection = $this->connectionForTablespaces();
+        $this->createThePaddedOwner($connection);
+        $connection->createTablespace(self::tablespace(self::tablespaceName()));
+
+        $connection->updateTablespace(
+            self::tablespace(self::tablespaceName(), owner: self::paddedOwnerName()),
+            self::tablespaceName(),
+        );
+
+        $tablespace = $connection->getTablespace(self::tablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame(self::paddedOwnerName(), (string)$tablespace->Owner);
     }
 
     public function testUpdateTablespaceCommitsWhatItChanged(): void
@@ -701,6 +760,20 @@ final class PhpPgAdminConnectionTest extends TestCase
         return $connection;
     }
 
+    /**
+     * Comes after connectionForTablespaces(), as a role cannot be dropped while it owns a tablespace that an aborted
+     * run of this thread left behind.
+     */
+    private function createThePaddedOwner(PhpPgAdminConnection $connection): void
+    {
+        $this->createsRoles = true;
+        $quotedName = self::quoteIdentifier(self::paddedOwnerName());
+
+        // Removes what an aborted run of this thread left behind.
+        $connection->exec("DROP ROLE IF EXISTS {$quotedName}");
+        $connection->exec("CREATE ROLE {$quotedName}");
+    }
+
     private function exceptionOfCreatingTheTablespaceAt(string $location): \PDOException
     {
         $connection = $this->connectionForTablespaces();
@@ -856,6 +929,14 @@ final class PhpPgAdminConnectionTest extends TestCase
     }
 
     /**
+     * PostgreSQL keeps blanks around a quoted role name.
+     */
+    private static function paddedOwnerName(): string
+    {
+        return ' ' . TestEnvironment::perThread('ppa_test_"owner"') . ' ';
+    }
+
+    /**
      * Every attribute differs from the defaults of PostgreSQL, but the role is no superuser.
      */
     private static function roleThatDiffersFromTheDefaults(): Role
@@ -902,7 +983,15 @@ final class PhpPgAdminConnectionTest extends TestCase
 
     private static function dropTheRoles(PhpPgAdminConnection $administrator): void
     {
-        foreach ([self::roleName(), self::groupName(), self::memberName(), self::adminMemberName()] as $name) {
+        $names = [
+            self::roleName(),
+            self::groupName(),
+            self::memberName(),
+            self::adminMemberName(),
+            self::paddedOwnerName(),
+        ];
+
+        foreach ($names as $name) {
             $administrator->exec('DROP ROLE IF EXISTS ' . self::quoteIdentifier($name));
         }
     }

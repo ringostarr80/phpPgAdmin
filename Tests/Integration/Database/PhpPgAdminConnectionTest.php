@@ -78,6 +78,18 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertFalse(self::loginDataIsValid($server));
     }
 
+    public function testLoginDataIsValidForARoleWithoutADatabaseOfItsOwnName(): void
+    {
+        // A connection that names no database goes to the database named like the role, which most roles do not have.
+        $this->createTheUser();
+
+        self::assertTrue(self::loginDataIsValid(
+            self::configuredServer(TestEnvironment::RUNNING_SERVER_DESC),
+            self::user(),
+            self::USER_PASSWORD,
+        ));
+    }
+
     public function testCreateFromServerSessionConnectsToPostgresByDefault(): void
     {
         self::assertSame('postgres', self::currentDatabase(self::connection()));
@@ -916,14 +928,23 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::fail("No server \"{$description}\" in the test configuration.");
     }
 
-    private static function loginDataIsValid(Server $server): bool
+    /**
+     * Without a user, the login data of the superuser that runs the tests.
+     */
+    private static function loginDataIsValid(Server $server, ?string $user = null, string $password = ''): bool
     {
+        if (is_null($user)) {
+            $user = TestEnvironment::getEnvVar('PHPPGADMIN_TEST_SERVER_USERNAME') ?? 'postgres';
+            $password = TestEnvironment::getEnvVar('PHPPGADMIN_TEST_SERVER_PASSWORD') ?? '';
+        }
+
         return PhpPgAdminConnection::loginDataIsValid(
             host: (string)$server->Host,
             port: $server->Port->Value,
             sslmode: $server->SslMode,
-            user: TestEnvironment::getEnvVar('PHPPGADMIN_TEST_SERVER_USERNAME') ?? 'postgres',
-            password: TestEnvironment::getEnvVar('PHPPGADMIN_TEST_SERVER_PASSWORD') ?? '',
+            user: $user,
+            password: $password,
+            database: (string)$server->DefaultDb,
         );
     }
 

@@ -882,14 +882,19 @@ final class PhpPgAdminConnection extends \PDO
         $this->commit();
     }
 
+    /**
+     * @param string $database Without one, PostgreSQL connects to the database named like the user, which most roles
+     *                         do not have.
+     */
     public static function loginDataIsValid(
         string $host,
         int $port,
         SslMode $sslmode,
         string $user,
         string $password,
+        string $database,
     ): bool {
-        $dsn = "pgsql:host={$host};port={$port};sslmode={$sslmode->value}";
+        $dsn = "pgsql:host={$host};port={$port};sslmode={$sslmode->value};dbname={$database}";
 
         try {
             new \PDO(dsn: $dsn, username: $user, password: $password);

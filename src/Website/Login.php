@@ -239,6 +239,7 @@ final class Login extends Website
             sslmode: $server->SslMode,
             user: $loginUsername,
             password: $loginPassword,
+            database: (string)$server->DefaultDb,
         );
 
         if (!$loginIsValid) {

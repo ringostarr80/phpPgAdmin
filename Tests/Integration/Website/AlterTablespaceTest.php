@@ -4,14 +4,11 @@ declare(strict_types=1);
 
 namespace Tests\Integration\Website;
 
-use PhpPgAdmin\Config;
-use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\ValueObjects\Tablespace;
-use PhpPgAdmin\Infrastructure\Session\Logins;
 use PhpPgAdmin\Website\AlterTablespace;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
-use Tests\Support\{PageBody, RunningServer, TestEnvironment};
+use Tests\Support\{OtherOwner, PageBody, RunningServer};
 
 #[CoversMethod(AlterTablespace::class, 'buildHtmlBody')]
 #[CoversMethod(AlterTablespace::class, 'withEnteredValues')]
@@ -23,10 +20,7 @@ final class AlterTablespaceTest extends TestCase
      */
     private const TABLESPACE = 'pg_default';
 
-    /**
-     * The connection that created the other owner, which drops it again after the test.
-     */
-    private ?PhpPgAdminConnection $administrator = null;
+    private ?OtherOwner $otherOwner = null;
 
     public function testTheFormShowsTheNameAndTheOwnerOfTheTablespace(): void
     {
@@ -48,13 +42,13 @@ final class AlterTablespaceTest extends TestCase
 
     public function testAfterAFailedAlterTheFormKeepsTheEnteredNameOwnerAndComment(): void
     {
-        $this->createTheOtherOwner();
-        self::postTheForm(name: 'ppa_test_renamed', owner: self::otherOwner(), comment: 'Entered comment');
+        $this->otherOwner = OtherOwner::create();
+        self::postTheForm(name: 'ppa_test_renamed', owner: OtherOwner::name(), comment: 'Entered comment');
 
         $form = self::form();
 
         self::assertSame('ppa_test_renamed', PageBody::fieldValue($form, Tablespace::FORM_ID_NAME));
-        self::assertSame([self::otherOwner()], PageBody::selectedValues($form, Tablespace::FORM_ID_OWNER));
+        self::assertSame([OtherOwner::name()], PageBody::selectedValues($form, Tablespace::FORM_ID_OWNER));
         self::assertSame('Entered comment', PageBody::fieldValue($form, Tablespace::FORM_ID_COMMENT));
     }
 
@@ -97,28 +91,11 @@ final class AlterTablespaceTest extends TestCase
 
     protected function tearDown(): void
     {
-        if (!is_null($this->administrator)) {
-            self::dropTheOtherOwner($this->administrator);
-        }
+        $this->otherOwner?->drop();
 
         $_GET = [];
         $_POST = [];
         $_SESSION = [];
-    }
-
-    /**
-     * A user who does not own pg_default, so the entered owner differs from the loaded one.
-     */
-    private function createTheOtherOwner(): void
-    {
-        $administrator = self::connection();
-        $this->administrator = $administrator;
-
-        // Removes what an aborted run of this thread left behind.
-        self::dropTheOtherOwner($administrator);
-
-        // The owners to choose from are the roles that can log in.
-        $administrator->exec('CREATE ROLE "' . self::otherOwner() . '" LOGIN');
     }
 
     /**
@@ -139,16 +116,6 @@ final class AlterTablespaceTest extends TestCase
         ];
     }
 
-    private static function otherOwner(): string
-    {
-        return TestEnvironment::perThread('ppa_test_tablespace_owner');
-    }
-
-    private static function dropTheOtherOwner(PhpPgAdminConnection $administrator): void
-    {
-        $administrator->exec('DROP ROLE IF EXISTS "' . self::otherOwner() . '"');
-    }
-
     private static function form(): \DOMElement
     {
         return PageBody::onlyElement(PageBody::of(AlterTablespace::class), 'form');
@@ -160,24 +127,11 @@ final class AlterTablespaceTest extends TestCase
     private static function bootstrapSuperuser(): string
     {
         // PostgreSQL gives the bootstrap superuser the fixed oid 10.
-        $statement = self::connection()->query('SELECT rolname FROM pg_catalog.pg_roles WHERE oid = 10');
+        $statement = RunningServer::connection()->query('SELECT rolname FROM pg_catalog.pg_roles WHERE oid = 10');
         self::assertNotFalse($statement);
         $rolname = $statement->fetchColumn();
         self::assertIsString($rolname);
 
         return $rolname;
-    }
-
-    /**
-     * A connection as the user the page logs in as.
-     */
-    private static function connection(): PhpPgAdminConnection
-    {
-        $connection = PhpPgAdminConnection::createFromServerSession(
-            Logins::serverSession(RunningServer::id(), Config::getServers()),
-        );
-        self::assertNotNull($connection);
-
-        return $connection;
     }
 }

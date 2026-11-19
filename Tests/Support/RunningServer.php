@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Tests\Support;
 
 use PhpPgAdmin\Config;
+use PhpPgAdmin\Database\PhpPgAdminConnection;
+use PhpPgAdmin\Infrastructure\Session\Logins;
 use PHPUnit\Framework\Assert;
 
 /**
@@ -36,5 +38,18 @@ final class RunningServer
                 ],
             ],
         ];
+    }
+
+    /**
+     * A connection as the user of the tests, after logIn().
+     */
+    public static function connection(): PhpPgAdminConnection
+    {
+        $connection = PhpPgAdminConnection::createFromServerSession(
+            Logins::serverSession(self::id(), Config::getServers()),
+        );
+        Assert::assertNotNull($connection);
+
+        return $connection;
     }
 }

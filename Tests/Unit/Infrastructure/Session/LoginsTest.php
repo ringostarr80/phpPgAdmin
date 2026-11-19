@@ -26,6 +26,17 @@ final class LoginsTest extends TestCase
         self::assertSame('', (string)$serverSession->Password);
     }
 
+    public function testServerSessionKeepsTheUsernameAsEntered(): void
+    {
+        // The login checks the name with its blanks, so the pages connect with it.
+        $this->logIn(' alice ', 'secret');
+
+        $serverSession = Logins::serverSession($this->server->id(), [$this->server]);
+
+        self::assertNotNull($serverSession);
+        self::assertSame(' alice ', (string)$serverSession->Username);
+    }
+
     public function testServerSessionKeepsThePasswordAsEntered(): void
     {
         $this->logIn('alice', ' secret ');

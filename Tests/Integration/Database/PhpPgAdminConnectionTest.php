@@ -118,6 +118,16 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertSame(['one' => 1], $statement->fetch(), 'Rows are fetched as associative arrays.');
     }
 
+    public function testCreateFromServerSessionConnectsAsTheRoleWithTheBlanksAroundItsName(): void
+    {
+        // The login checks the name with its blanks, so the pages connect with them too.
+        $this->createThePaddedUser();
+
+        $connection = self::logInAs(self::paddedUserName(), self::USER_PASSWORD);
+
+        self::assertSame(self::paddedUserName(), self::queryValue($connection, 'SELECT current_user'));
+    }
+
     public function testGetLanguagesListsTheProceduralLanguages(): void
     {
         $languages = self::languagesByName(self::connection()->getLanguages());
@@ -774,6 +784,17 @@ final class PhpPgAdminConnectionTest extends TestCase
         $connection->exec("CREATE ROLE {$quotedName}");
     }
 
+    private function createThePaddedUser(): void
+    {
+        $this->createsRoles = true;
+        $administrator = self::connection();
+        $quotedName = self::quoteIdentifier(self::paddedUserName());
+
+        // Removes what an aborted run of this thread left behind.
+        $administrator->exec("DROP ROLE IF EXISTS {$quotedName}");
+        $administrator->exec("CREATE ROLE {$quotedName} LOGIN PASSWORD '" . self::USER_PASSWORD . "'");
+    }
+
     private function exceptionOfCreatingTheTablespaceAt(string $location): \PDOException
     {
         $connection = $this->connectionForTablespaces();
@@ -937,6 +958,14 @@ final class PhpPgAdminConnectionTest extends TestCase
     }
 
     /**
+     * PostgreSQL keeps blanks around a quoted role name.
+     */
+    private static function paddedUserName(): string
+    {
+        return ' ' . TestEnvironment::perThread('ppa_test_"login"') . ' ';
+    }
+
+    /**
      * Every attribute differs from the defaults of PostgreSQL, but the role is no superuser.
      */
     private static function roleThatDiffersFromTheDefaults(): Role
@@ -989,6 +1018,7 @@ final class PhpPgAdminConnectionTest extends TestCase
             self::memberName(),
             self::adminMemberName(),
             self::paddedOwnerName(),
+            self::paddedUserName(),
         ];
 
         foreach ($names as $name) {

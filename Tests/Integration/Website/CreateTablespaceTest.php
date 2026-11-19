@@ -8,7 +8,7 @@ use PhpPgAdmin\DDD\ValueObjects\Tablespace;
 use PhpPgAdmin\Website\CreateTablespace;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
-use Tests\Support\{PageBody, RunningServer, TestEnvironment};
+use Tests\Support\{OtherOwner, PageBody, RunningServer, TestEnvironment};
 
 #[CoversMethod(CreateTablespace::class, 'buildHtmlBody')]
 #[CoversMethod(CreateTablespace::class, 'handlePostRequest')]
@@ -24,6 +24,8 @@ final class CreateTablespaceTest extends TestCase
      */
     private array $server = [];
 
+    private ?OtherOwner $otherOwner = null;
+
     public function testAfterAFailedCreateThePageSaysSo(): void
     {
         self::assertSame(['Tablespace creation failed.'], PageBody::messages(self::bodyAfterTheCreate()));
@@ -36,6 +38,18 @@ final class CreateTablespaceTest extends TestCase
         self::assertCount(1, $errors);
         // The error names the directory in every language.
         self::assertStringContainsString(self::MISSING_LOCATION, $errors[0]->textContent);
+    }
+
+    public function testAfterACreateWithoutANameTheFormKeepsTheEnteredOwner(): void
+    {
+        // Without an entered owner, the form selects the user of the tests.
+        $this->otherOwner = OtherOwner::create();
+        $_POST[Tablespace::FORM_ID_NAME] = ' ';
+        $_POST[Tablespace::FORM_ID_OWNER] = OtherOwner::name();
+
+        $form = PageBody::onlyElement(self::bodyAfterTheCreate(), 'form');
+
+        self::assertSame([OtherOwner::name()], PageBody::selectedValues($form, Tablespace::FORM_ID_OWNER));
     }
 
     protected function setUp(): void
@@ -52,6 +66,8 @@ final class CreateTablespaceTest extends TestCase
 
     protected function tearDown(): void
     {
+        $this->otherOwner?->drop();
+
         $_SERVER = $this->server;
         $_GET = [];
         $_POST = [];

@@ -12,7 +12,8 @@ final readonly class Name implements \Stringable
     {
         $name = trim($name);
 
-        if (empty($name)) {
+        // Not empty(), which takes "0" for an empty string.
+        if ($name === '') {
             throw new \InvalidArgumentException('Server name cannot be empty!');
         }
 

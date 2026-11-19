@@ -12,7 +12,8 @@ final readonly class Host implements \Stringable
     {
         $host = trim($host);
 
-        if (empty($host)) {
+        // Not empty(), which takes "0" for an empty string.
+        if ($host === '') {
             throw new \InvalidArgumentException('Host cannot be empty!');
         }
 

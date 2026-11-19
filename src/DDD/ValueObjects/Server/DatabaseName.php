@@ -12,7 +12,8 @@ final readonly class DatabaseName implements \Stringable
     {
         $name = trim($name);
 
-        if (empty($name)) {
+        // Not empty(), which takes "0" for an empty string, although PostgreSQL takes it as a database name.
+        if ($name === '') {
             throw new \InvalidArgumentException('Database name cannot be empty!');
         }
 

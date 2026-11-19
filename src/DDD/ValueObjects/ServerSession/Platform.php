@@ -12,7 +12,8 @@ final readonly class Platform implements \Stringable
     {
         $name = trim($name);
 
-        if (empty($name)) {
+        // Not empty(), which takes "0" for an empty string.
+        if ($name === '') {
             throw new \InvalidArgumentException('ServerSession platform cannot be empty!');
         }
 

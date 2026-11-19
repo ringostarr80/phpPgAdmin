@@ -12,7 +12,8 @@ final readonly class Username implements \Stringable
     {
         $name = trim($name);
 
-        if (empty($name)) {
+        // Not empty(), which takes "0" for an empty string, although PostgreSQL takes it as a role name.
+        if ($name === '') {
             throw new \InvalidArgumentException('ServerSession username cannot be empty!');
         }
 

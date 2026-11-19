@@ -15,11 +15,12 @@ test('Alter Tablespace > posting the form runs no create first', async ({ page }
   await login(page);
   await page.goto(alterTablespaceUrl());
 
-  // A blank name passes the required check of the browser. The create page throws on it, the alter page fails on it.
-  // Neither of them reaches the database with it, so pg_default stays as it is.
+  // A blank name passes the required check of the browser. Neither the create nor the alter handling reaches the
+  // database with it, so pg_default stays as it is, but each of them answers with its own message.
   await page.locator(NAME_FIELD).fill(' ');
   await page.locator('input[name="alter"]').click();
 
+  await expect(page.locator('p.message')).toHaveText('Tablespace alteration failed.');
   // The alter page shows its form again, with the loaded name, as a tablespace needs one.
   await expect(page.locator(NAME_FIELD)).toHaveValue(TABLESPACE);
 });

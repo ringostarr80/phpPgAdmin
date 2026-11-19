@@ -17,6 +17,12 @@
     },
     mutators: {
         '@default': true,
+        ProtectedVisibility: {
+            // As a private method, it would make the constructor that the alter page inherits create a tablespace
+            // instead of altering it. Tests cannot run the constructor of a page, which starts a session, so
+            // e2e/alter-tablespace.spec.ts checks it.
+            ignore: ['PhpPgAdmin\\Website\\CreateTablespace::handlePostRequest'],
+        },
     },
     // The current value, so it can only go up: raise it whenever tests kill more mutants.
     minCoveredMsi: 85,

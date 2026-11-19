@@ -721,7 +721,7 @@ abstract class WebsiteComponents
         $tdCol2 = $dom->createElement('td');
         $tdCol2->setAttribute('class', 'data1');
 
-        $textarea = $dom->createElement('textarea');
+        $textarea = self::buildTextarea($dom, $specs['value']['content'] ?? '');
         $textarea->setAttribute('id', $specs['id']);
         $textarea->setAttribute('name', $specs['id']);
 
@@ -741,16 +741,24 @@ abstract class WebsiteComponents
             $textarea->setAttribute('rows', (string)$specs['value']['rows']);
         }
 
-        if (isset($specs['value']['content'])) {
-            $textarea->appendChild($dom->createTextNode($specs['value']['content']));
-        }
-
         $tdCol2->appendChild($textarea);
 
         $tr->appendChild($tdCol1);
         $tr->appendChild($tdCol2);
 
         return $tr;
+    }
+
+    /**
+     * The HTML parser drops a line break right after the start tag of a textarea, so the text starts with an extra
+     * one. Without it, a text that starts with a line break would lose it.
+     */
+    public static function buildTextarea(\DOMDocument $dom, string $text): \DOMElement
+    {
+        $textarea = $dom->createElement('textarea');
+        $textarea->appendChild($dom->createTextNode("\n" . $text));
+
+        return $textarea;
     }
 
     /**

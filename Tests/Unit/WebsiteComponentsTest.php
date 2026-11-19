@@ -8,7 +8,7 @@ use PhpPgAdmin\{Website, WebsiteComponents};
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Tests\Support\TestEnvironment;
+use Tests\Support\{PageBody, TestEnvironment};
 
 #[CoversClass(WebsiteComponents::class)]
 final class WebsiteComponentsTest extends TestCase
@@ -446,6 +446,15 @@ final class WebsiteComponentsTest extends TestCase
         self::assertSame('parent.frames.browser.location.reload();', $script->textContent);
     }
 
+    #[DataProvider('textsThatStartWithALineBreak')]
+    public function testTextareaKeepsTheLineBreakItsTextStartsWith(string $text): void
+    {
+        $textarea = WebsiteComponents::buildTextarea(new \DOMDocument(), $text);
+
+        self::assertSame('textarea', $textarea->tagName);
+        self::assertSame($text, PageBody::textareaText($textarea));
+    }
+
     /**
      * @return iterable<string, array{string, string, string, string, array<string, string>}>
      */
@@ -464,6 +473,18 @@ final class WebsiteComponentsTest extends TestCase
         foreach (self::DATABASE_TABS as [$id, , , , , $help]) {
             yield $id => [$id, $help];
         }
+    }
+
+    /**
+     * @return array<string, array{string}>
+     */
+    public static function textsThatStartWithALineBreak(): array
+    {
+        return [
+            // A browser posts the line breaks of a textarea like this.
+            'carriage return and line feed' => ["\r\nfirst line"],
+            'line feed' => ["\nfirst line"],
+        ];
     }
 
     protected function setUp(): void

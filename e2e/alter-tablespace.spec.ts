@@ -5,6 +5,7 @@ import { login, runningServerId } from './support/environment';
 // the database server.
 const TABLESPACE = 'pg_default';
 
+const COMMENT_FIELD = '#formComment';
 const NAME_FIELD = '#formSpcname';
 
 function alterTablespaceUrl(): string {
@@ -23,4 +24,17 @@ test('Alter Tablespace > posting the form runs no create first', async ({ page }
   await expect(page.locator('p.message')).toHaveText('Tablespace alteration failed.');
   // The alter page shows its form again, with the loaded name, as a tablespace needs one.
   await expect(page.locator(NAME_FIELD)).toHaveValue(TABLESPACE);
+});
+
+test('Alter Tablespace > the form keeps the line break the entered comment starts with', async ({ page }) => {
+  await login(page);
+  await page.goto(alterTablespaceUrl());
+
+  // A blank name lets the alter fail before it reaches the database, and the page shows the entered comment again.
+  await page.locator(NAME_FIELD).fill(' ');
+  await page.locator(COMMENT_FIELD).fill('\nEntered comment');
+  await page.locator('input[name="alter"]').click();
+
+  await expect(page.locator('p.message')).toHaveText('Tablespace alteration failed.');
+  await expect(page.locator(COMMENT_FIELD)).toHaveValue('\nEntered comment');
 });

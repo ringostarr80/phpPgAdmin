@@ -45,14 +45,14 @@ final class PageBody
     }
 
     /**
-     * The value of the input field or the text of the textarea with the given id.
+     * The value of the input field or the text of the textarea with the given id, as the browser shows it.
      */
     public static function fieldValue(\DOMElement $form, string $id): string
     {
         $field = self::field($form, $id);
 
         return $field->tagName === 'textarea'
-            ? $field->textContent
+            ? self::textareaText($field)
             : $field->getAttribute('value');
     }
 
@@ -96,6 +96,23 @@ final class PageBody
             static fn (\DOMElement $option): string => $option->getAttribute('value'),
             self::query($form, ".//select[@id=\"{$id}\"]/option[@selected]"),
         );
+    }
+
+    /**
+     * The text of the textarea as the browser shows it. The HTML parser drops a line break right after the start tag,
+     * and takes a carriage return with or without a line feed for one.
+     */
+    public static function textareaText(\DOMElement $textarea): string
+    {
+        $text = $textarea->textContent;
+
+        foreach (["\r\n", "\r", "\n"] as $lineBreak) {
+            if (str_starts_with($text, $lineBreak)) {
+                return substr($text, strlen($lineBreak));
+            }
+        }
+
+        return $text;
     }
 
     public static function onlyElement(\DOMElement $parent, string $tagName): \DOMElement

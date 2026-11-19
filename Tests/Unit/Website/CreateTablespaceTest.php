@@ -64,6 +64,14 @@ final class CreateTablespaceTest extends TestCase
         self::assertSame('Old data', PageBody::fieldValue($form, Tablespace::FORM_ID_COMMENT));
     }
 
+    public function testAfterAFailedCreateTheFormKeepsTheLineBreakTheCommentStartsWith(): void
+    {
+        // The browser posts a line break as a carriage return and a line feed.
+        self::postTheForm(comment: "\r\nOld data");
+
+        self::assertSame("\r\nOld data", PageBody::fieldValue(self::form(), Tablespace::FORM_ID_COMMENT));
+    }
+
     public function testAfterAFailedCreateTheLocationCanStillBeChanged(): void
     {
         // A wrong location is a common reason for the create to fail.
@@ -140,11 +148,11 @@ final class CreateTablespaceTest extends TestCase
      * The request after a failed create: the constructor redirects to the tablespaces after a successful one, so the
      * page only shows a posted form when the create failed.
      */
-    private static function postTheForm(string $name = 'archive'): void
+    private static function postTheForm(string $name = 'archive', string $comment = 'Old data'): void
     {
         $_SERVER['REQUEST_METHOD'] = 'POST';
         $_POST = [
-            Tablespace::FORM_ID_COMMENT => 'Old data',
+            Tablespace::FORM_ID_COMMENT => $comment,
             Tablespace::FORM_ID_LOCATION => '/srv/archive',
             Tablespace::FORM_ID_NAME => $name,
         ];

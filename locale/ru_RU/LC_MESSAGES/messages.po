@@ -2143,7 +2143,7 @@ msgstr "Создать табличное пространство"
 msgid "Location"
 msgstr "Расположение"
 
-msgid "strtablespaceneedsname"
+msgid "You must give a name for your tablespace."
 msgstr "Вам необходимо определить имя табличного пространства."
 
 msgid "strtablespaceneedsloc"

@@ -2163,7 +2163,7 @@ msgstr "Crear un alias de ruta"
 msgid "Location"
 msgstr "Lugar"
 
-msgid "strtablespaceneedsname"
+msgid "You must give a name for your tablespace."
 msgstr "Debe fornecer un nome para o alias de ruta."
 
 msgid "strtablespaceneedsloc"

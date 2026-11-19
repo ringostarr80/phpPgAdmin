@@ -2055,7 +2055,7 @@ msgstr "テーブル空間を作成する"
 msgid "Location"
 msgstr "ロケーション"
 
-msgid "strtablespaceneedsname"
+msgid "You must give a name for your tablespace."
 msgstr "テーブル空間名を指定する必要があります。"
 
 msgid "strtablespaceneedsloc"

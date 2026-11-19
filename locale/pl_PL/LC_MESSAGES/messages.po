@@ -1913,7 +1913,7 @@ msgstr "Utwórz przestrzeń tabel"
 msgid "Location"
 msgstr "Położenie"
 
-msgid "strtablespaceneedsname"
+msgid "You must give a name for your tablespace."
 msgstr "Musisz podać nazwę przestrzeni tabel."
 
 msgid "strtablespaceneedsloc"

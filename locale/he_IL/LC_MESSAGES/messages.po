@@ -1637,7 +1637,7 @@ msgstr "צור מרחבון"
 msgid "Location"
 msgstr "מיקום"
 
-msgid "strtablespaceneedsname"
+msgid "You must give a name for your tablespace."
 msgstr "אתה חייב לציין שם למרחבון."
 
 msgid "strtablespaceneedsloc"

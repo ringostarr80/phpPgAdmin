@@ -2155,7 +2155,7 @@ msgstr "Táblahelyet teremt"
 msgid "Location"
 msgstr "Hely"
 
-msgid "strtablespaceneedsname"
+msgid "You must give a name for your tablespace."
 msgstr "Nevet kell adnia a táblahelynek."
 
 msgid "strtablespaceneedsloc"

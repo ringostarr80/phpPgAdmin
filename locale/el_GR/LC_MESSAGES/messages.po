@@ -1916,7 +1916,7 @@ msgstr "Δημιουργία τοποθεσίας πίνακα"
 msgid "Location"
 msgstr "Τοποθεσία"
 
-msgid "strtablespaceneedsname"
+msgid "You must give a name for your tablespace."
 msgstr "Πρέπει να δώσετε όνομα στην τοποθεσία."
 
 msgid "strtablespaceneedsloc"

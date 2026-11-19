@@ -1703,7 +1703,7 @@ msgstr "Tablespace yarat"
 msgid "Location"
 msgstr "Yer"
 
-msgid "strtablespaceneedsname"
+msgid "You must give a name for your tablespace."
 msgstr "Tablespace'e bir ad vermelisiniz."
 
 msgid "strtablespaceneedsloc"

@@ -1616,7 +1616,7 @@ msgstr "Opret tabelområder"
 msgid "Location"
 msgstr "Location"
 
-msgid "strtablespaceneedsname"
+msgid "You must give a name for your tablespace."
 msgstr "Tabelområdet skal have et navn."
 
 msgid "strtablespaceneedsloc"

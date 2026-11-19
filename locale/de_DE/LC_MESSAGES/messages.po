@@ -2055,7 +2055,7 @@ msgstr "Tablespace erstellen"
 msgid "Location"
 msgstr "Pfad"
 
-msgid "strtablespaceneedsname"
+msgid "You must give a name for your tablespace."
 msgstr "Sie müssen einen Namen für den Tablespace angeben."
 
 msgid "strtablespaceneedsloc"

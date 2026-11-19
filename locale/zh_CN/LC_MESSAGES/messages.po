@@ -2161,7 +2161,7 @@ msgstr "创建表空间"
 msgid "Location"
 msgstr "位置"
 
-msgid "strtablespaceneedsname"
+msgid "You must give a name for your tablespace."
 msgstr "必须指定表空间名称。"
 
 msgid "strtablespaceneedsloc"

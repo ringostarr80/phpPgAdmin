@@ -1946,7 +1946,7 @@ msgstr "Creare spaţiu de tabele"
 msgid "Location"
 msgstr "Locaţie"
 
-msgid "strtablespaceneedsname"
+msgid "You must give a name for your tablespace."
 msgstr "Specificaţi un nume pentru spaţiul de tabele."
 
 msgid "strtablespaceneedsloc"

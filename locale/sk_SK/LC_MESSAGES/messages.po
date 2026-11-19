@@ -1715,7 +1715,7 @@ msgstr "Vytvoriť priestor pre tabuľku"
 msgid "Location"
 msgstr "Umiestnenie"
 
-msgid "strtablespaceneedsname"
+msgid "You must give a name for your tablespace."
 msgstr "Musíš zadať názov priestoru tabuľky."
 
 msgid "strtablespaceneedsloc"

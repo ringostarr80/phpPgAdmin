@@ -2189,7 +2189,7 @@ msgstr "Kurti lentelių erdvę"
 msgid "Location"
 msgstr "Vieta"
 
-msgid "strtablespaceneedsname"
+msgid "You must give a name for your tablespace."
 msgstr "Turite suteikti lentelių erdvei pavadinimą."
 
 msgid "strtablespaceneedsloc"

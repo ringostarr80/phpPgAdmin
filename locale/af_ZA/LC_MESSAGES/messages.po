@@ -1649,7 +1649,7 @@ msgstr "Skep tabelruimte"
 msgid "Location"
 msgstr "Plek"
 
-msgid "strtablespaceneedsname"
+msgid "You must give a name for your tablespace."
 msgstr "Jy moet 'n naam gee vir jou tabelruimte."
 
 msgid "strtablespaceneedsloc"

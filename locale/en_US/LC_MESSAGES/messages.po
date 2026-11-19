@@ -2303,7 +2303,8 @@ msgstr "Create tablespace"
 msgid "Location"
 msgstr "Location"
 
-msgid "strtablespaceneedsname"
+# original: "strtablespaceneedsname"
+msgid "You must give a name for your tablespace."
 msgstr "You must give a name for your tablespace."
 
 msgid "strtablespaceneedsloc"

@@ -42,6 +42,6 @@ final readonly class OtherOwner
 
     public static function name(): string
     {
-        return TestEnvironment::perThread('ppa_test_tablespace_owner');
+        return ' ' . TestEnvironment::perThread('ppa_test_tablespace_owner') . ' ';
     }
 }

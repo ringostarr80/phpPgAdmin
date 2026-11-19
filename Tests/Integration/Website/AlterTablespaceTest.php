@@ -8,7 +8,7 @@ use PhpPgAdmin\DDD\ValueObjects\Tablespace;
 use PhpPgAdmin\Website\AlterTablespace;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
-use Tests\Support\{OtherOwner, PageBody, RunningServer};
+use Tests\Support\{OtherOwner, PageBody, RunningServer, TestEnvironment};
 
 #[CoversMethod(AlterTablespace::class, 'buildHtmlBody')]
 #[CoversMethod(AlterTablespace::class, 'withEnteredValues')]
@@ -28,6 +28,29 @@ final class AlterTablespaceTest extends TestCase
 
         self::assertSame(self::TABLESPACE, PageBody::fieldValue($form, Tablespace::FORM_ID_NAME));
         self::assertSame([self::bootstrapSuperuser()], PageBody::selectedValues($form, Tablespace::FORM_ID_OWNER));
+    }
+
+    public function testTheFormShowsTheExactStoredOwnerAndComment(): void
+    {
+        $this->otherOwner = OtherOwner::create();
+        $db = RunningServer::connection();
+        $name = TestEnvironment::perThread('ppa_test_alter_whitespace');
+        $owner = OtherOwner::name();
+        $comment = "  First line\nSecond line  \n";
+        $db->exec('SET allow_in_place_tablespaces = true');
+        $db->exec("DROP TABLESPACE IF EXISTS \"{$name}\"");
+        $db->exec("CREATE TABLESPACE \"{$name}\" OWNER \"{$owner}\" LOCATION ''");
+
+        try {
+            $db->setCommentForTablespace($name, $comment);
+            $_GET['tablespace'] = $name;
+
+            $form = self::form();
+            self::assertSame([$owner], PageBody::selectedValues($form, Tablespace::FORM_ID_OWNER));
+            self::assertSame($comment, PageBody::fieldValue($form, Tablespace::FORM_ID_COMMENT));
+        } finally {
+            $db->dropTablespace($name);
+        }
     }
 
     public function testTheFormAltersTheTablespaceInsteadOfCreatingOne(): void

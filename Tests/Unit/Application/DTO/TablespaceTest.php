@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace Tests\Unit\Application\DTO;
 
 use PhpPgAdmin\Application\DTO\Tablespace as DTOTablespace;
+use PhpPgAdmin\DDD\ValueObjects\Tablespace;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 #[CoversMethod(DTOTablespace::class, 'createFromDbArray')]
+#[CoversMethod(DTOTablespace::class, 'createFromFormRequest')]
 final class TablespaceTest extends TestCase
 {
     private const VALID_DB_ARRAY = [
@@ -27,6 +29,39 @@ final class TablespaceTest extends TestCase
         self::assertSame('postgres', (string)$tablespace->Owner);
         self::assertSame('/srv/archive', (string)$tablespace->Location);
         self::assertSame('Old data', (string)$tablespace->Comment);
+    }
+
+    public function testCreateFromDbArrayKeepsTheOwnerAndCommentVerbatim(): void
+    {
+        $owner = ' archive admin ';
+        $comment = "\n  Old data\r\nRetention notes  \n";
+        $tablespace = DTOTablespace::createFromDbArray(
+            ['spcowner' => $owner, 'spccomment' => $comment] + self::VALID_DB_ARRAY,
+        );
+
+        self::assertSame($owner, (string)$tablespace->Owner);
+        self::assertSame($comment, (string)$tablespace->Comment);
+    }
+
+    public function testCreateFromFormRequestKeepsTheOwnerAndCommentVerbatim(): void
+    {
+        $owner = ' archive admin ';
+        $comment = "\r\n  Old data\r\nRetention notes  \r\n";
+        $original = $_POST;
+        $_POST = [
+            Tablespace::FORM_ID_COMMENT => $comment,
+            Tablespace::FORM_ID_NAME => 'archive',
+            Tablespace::FORM_ID_OWNER => $owner,
+        ];
+
+        try {
+            $tablespace = DTOTablespace::createFromFormRequest();
+        } finally {
+            $_POST = $original;
+        }
+
+        self::assertSame($owner, (string)$tablespace->Owner);
+        self::assertSame($comment, (string)$tablespace->Comment);
     }
 
     public function testCreateFromDbArrayWithoutACommentGivesAnEmptyComment(): void

@@ -92,7 +92,13 @@ final class AlterTablespace extends CreateTablespace
         try {
             $tablespaceName = RequestParameter::getString('tablespace') ?? '';
             $tablespaceFromForm = DTOTablespace::createFromFormRequest();
-            $db->updateTablespace($tablespaceFromForm, $tablespaceName);
+            $loaded = $db->getTablespace($tablespaceName);
+            // A browser normalizes textarea line endings when it submits the form.
+            $lineEndings = ["\r\n" => "\n", "\r" => "\n"];
+            $updateComment = is_null($loaded)
+                || strtr((string)$tablespaceFromForm->Comment, $lineEndings)
+                    !== strtr((string)$loaded->Comment, $lineEndings);
+            $db->updateTablespace($tablespaceFromForm, $tablespaceName, updateComment: $updateComment);
 
             if (!headers_sent()) {
                 $redirectUrl = 'tablespaces.php';

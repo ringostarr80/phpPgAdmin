@@ -6,6 +6,7 @@ import { login, runningServerId } from './support/environment';
 const TABLESPACE = 'pg_default';
 
 const NAME_FIELD = '#formSpcname';
+const COMMENT_FIELD = '#formComment';
 
 function alterTablespaceUrl(): string {
   return `/alter_tablespace.php?${new URLSearchParams({ server: runningServerId(), tablespace: TABLESPACE })}`;
@@ -18,9 +19,12 @@ test('Alter Tablespace > posting the form runs no create first', async ({ page }
   // A blank name passes the required check of the browser. Neither the create nor the alter handling reaches the
   // database with it, so pg_default stays as it is, but each of them answers with its own message.
   await page.locator(NAME_FIELD).fill(' ');
+  const comment = '\n  First line\nSecond line  \n';
+  await page.locator(COMMENT_FIELD).fill(comment);
   await page.locator('input[name="alter"]').click();
 
   await expect(page.locator('p.message')).toHaveText('Tablespace alteration failed.');
   // The alter page shows its form again, with the loaded name, as a tablespace needs one.
   await expect(page.locator(NAME_FIELD)).toHaveValue(TABLESPACE);
+  await expect(page.locator(COMMENT_FIELD)).toHaveValue(comment);
 });

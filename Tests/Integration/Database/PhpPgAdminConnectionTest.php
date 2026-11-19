@@ -396,6 +396,23 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertSame(self::COMMENT_WITH_QUOTES, (string)$tablespace->Comment);
     }
 
+    public function testUpdateTablespaceCanKeepTheStoredCommentWhenItRenamesTheTablespace(): void
+    {
+        $connection = $this->connectionForTablespaces();
+        $comment = "\n  Stored comment  \n";
+        $connection->createTablespace(self::tablespace(self::tablespaceName(), comment: $comment));
+
+        $connection->updateTablespace(
+            self::tablespace(self::renamedTablespaceName(), comment: "\r\n  Stored comment  \r\n"),
+            self::tablespaceName(),
+            updateComment: false,
+        );
+
+        $tablespace = self::connection()->getTablespace(self::renamedTablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame($comment, (string)$tablespace->Comment);
+    }
+
     public function testUpdateTablespaceThatFailsUndoesWhatItChangedAndKeepsTheConnectionUsable(): void
     {
         $connection = $this->connectionForTablespaces();

@@ -742,7 +742,14 @@ abstract class WebsiteComponents
         }
 
         if (isset($specs['value']['content'])) {
-            $textarea->appendChild($dom->createTextNode($specs['value']['content']));
+            $content = $specs['value']['content'];
+
+            // The HTML parser drops the first newline after the opening textarea tag.
+            if (str_starts_with($content, "\n") || str_starts_with($content, "\r")) {
+                $content = "\n" . $content;
+            }
+
+            $textarea->appendChild($dom->createTextNode($content));
         }
 
         $tdCol2->appendChild($textarea);

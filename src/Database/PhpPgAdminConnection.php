@@ -857,8 +857,11 @@ final class PhpPgAdminConnection extends \PDO
         $this->commit();
     }
 
-    public function updateTablespace(Tablespace $tablespace, string $oldTablespaceName): void
-    {
+    public function updateTablespace(
+        Tablespace $tablespace,
+        string $oldTablespaceName,
+        bool $updateComment = true,
+    ): void {
         $this->beginTransaction();
 
         $escapedTablespaceName = self::escapeIdentifier((string)$oldTablespaceName);
@@ -873,7 +876,9 @@ final class PhpPgAdminConnection extends \PDO
                 $this->exec("ALTER TABLESPACE \"{$escapedTablespaceName}\" RENAME TO \"{$escapedNewTablespaceName}\"");
             }
 
-            $this->setCommentForTablespace((string)$tablespace->Name, (string)$tablespace->Comment);
+            if ($updateComment) {
+                $this->setCommentForTablespace((string)$tablespace->Name, (string)$tablespace->Comment);
+            }
         } catch (\Throwable $e) {
             $this->rollBack();
 

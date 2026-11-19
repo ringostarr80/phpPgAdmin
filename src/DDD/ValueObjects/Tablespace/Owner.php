@@ -6,11 +6,8 @@ namespace PhpPgAdmin\DDD\ValueObjects\Tablespace;
 
 final readonly class Owner implements \Stringable
 {
-    private string $owner;
-
-    public function __construct(string $owner)
+    public function __construct(private string $owner)
     {
-        $this->owner = trim($owner);
     }
 
     public function __toString(): string

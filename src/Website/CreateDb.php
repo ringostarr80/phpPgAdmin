@@ -305,27 +305,32 @@ final class CreateDb extends Website
             $db = PhpPgAdminConnection::createFromServerSession($serverSession);
 
             if (!is_null($db)) {
-                $db->createDatabase(
-                    database: $formName,
-                    encoding: RequestParameter::getString('formEncoding') ?? '',
-                    tablespace: RequestParameter::getString('formTablespace') ?? '',
-                    comment: RequestParameter::getString('formComment') ?? '',
-                    template: RequestParameter::getString('formTemplate') ?? 'template1',
-                    lcCollate: RequestParameter::getString('formCollate') ?? '',
-                    lcCType: RequestParameter::getString('formCType') ?? '',
-                );
+                try {
+                    $db->createDatabase(
+                        database: $formName,
+                        encoding: RequestParameter::getString('formEncoding') ?? '',
+                        tablespace: RequestParameter::getString('formTablespace') ?? '',
+                        comment: RequestParameter::getString('formComment') ?? '',
+                        template: RequestParameter::getString('formTemplate') ?? 'template1',
+                        lcCollate: RequestParameter::getString('formCollate') ?? '',
+                        lcCType: RequestParameter::getString('formCType') ?? '',
+                    );
 
-                if (!headers_sent()) {
-                    $redirectUrl = 'all_db.php';
-                    $redirectUrlParams = [
-                        'server' => $serverId,
-                        'subject' => 'server',
-                    ];
-                    header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
-                    die;
+                    if (!headers_sent()) {
+                        $redirectUrl = 'all_db.php';
+                        $redirectUrlParams = [
+                            'server' => $serverId,
+                            'subject' => 'server',
+                        ];
+                        header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
+                        die;
+                    }
+
+                    $this->message = _('Database creation failed.');
+                } catch (\PDOException $e) {
+                    $this->message = _('Database creation failed.');
+                    $this->pdoException = $e;
                 }
-
-                $this->message = _('Database creation failed.');
             }
         } else {
             $this->message = _('You must give a name for your database.');

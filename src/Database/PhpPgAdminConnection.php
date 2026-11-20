@@ -120,7 +120,10 @@ final class PhpPgAdminConnection extends \PDO
                 $this->alterDatabaseOwner($dbName, $newOwner);
             }
 
-            $this->setDatabaseComment($dbName, $comment);
+            // A comment of null removes the comment.
+            if (is_null($comment) || !self::differOnlyInLineBreaks($comment, $this->getDatabaseComment($dbName))) {
+                $this->setDatabaseComment($dbName, $comment);
+            }
         } catch (\Throwable $e) {
             $this->rollBack();
 

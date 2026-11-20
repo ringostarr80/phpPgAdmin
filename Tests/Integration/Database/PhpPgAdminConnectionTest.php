@@ -272,6 +272,53 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertSame('', $database['datcomment']);
     }
 
+    #[TestWith([self::COMMENT_WITH_LF])]
+    #[TestWith(["Line 1\rLine 2"])]
+    public function testAlterDatabaseKeepsTheLineBreaksOfAnUnchangedComment(string $storedComment): void
+    {
+        $this->createTheUser();
+        $this->createADatabaseOfTheUser($storedComment);
+        $connection = self::connection();
+
+        $connection->alterDatabase(
+            dbName: self::databaseOfTheUser(),
+            newName: self::databaseOfTheUser(),
+            comment: self::COMMENT_AS_POSTED,
+        );
+
+        self::assertSame($storedComment, $connection->getDatabaseComment(self::databaseOfTheUser()));
+    }
+
+    public function testAlterDatabaseThatRenamesItKeepsTheLineBreaksOfAnUnchangedComment(): void
+    {
+        $this->createTheUser();
+        $this->createADatabaseOfTheUser(self::COMMENT_WITH_LF);
+        $connection = self::connection();
+
+        $connection->alterDatabase(
+            dbName: self::databaseOfTheUser(),
+            newName: self::renamedDatabaseOfTheUser(),
+            comment: self::COMMENT_AS_POSTED,
+        );
+
+        self::assertSame(self::COMMENT_WITH_LF, $connection->getDatabaseComment(self::renamedDatabaseOfTheUser()));
+    }
+
+    public function testAlterDatabaseStoresAnEditedCommentWithTheLineBreaksItIsGiven(): void
+    {
+        $this->createTheUser();
+        $this->createADatabaseOfTheUser(self::COMMENT_WITH_LF);
+        $connection = self::connection();
+
+        $connection->alterDatabase(
+            dbName: self::databaseOfTheUser(),
+            newName: self::databaseOfTheUser(),
+            comment: "Line 1\r\nLine 3",
+        );
+
+        self::assertSame("Line 1\r\nLine 3", $connection->getDatabaseComment(self::databaseOfTheUser()));
+    }
+
     public function testAlterDatabaseThatFailsUndoesWhatItChangedAndKeepsTheConnectionUsable(): void
     {
         $this->createTheUser();
@@ -766,7 +813,7 @@ final class PhpPgAdminConnectionTest extends TestCase
      * Every dropped database forces a checkpoint, which the parallel threads of Infection wait for in turn, so the
      * tests create as few databases as they can.
      */
-    private function createADatabaseOfTheUser(): void
+    private function createADatabaseOfTheUser(string $comment = self::COMMENT_OF_THE_DATABASE): void
     {
         self::assertNotNull($this->administrator, 'Create the user first.');
 
@@ -778,7 +825,7 @@ final class PhpPgAdminConnectionTest extends TestCase
                 . " ENCODING 'UTF8' LOCALE_PROVIDER libc LOCALE 'C'",
         );
         $this->administrator->exec(
-            'COMMENT ON DATABASE "' . $database . '" IS \'' . self::COMMENT_OF_THE_DATABASE . '\'',
+            'COMMENT ON DATABASE "' . $database . '" IS ' . $this->administrator->quote($comment),
         );
     }
 

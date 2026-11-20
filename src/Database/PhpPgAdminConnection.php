@@ -866,6 +866,9 @@ final class PhpPgAdminConnection extends \PDO
 
         // PDO throws when a statement fails, which would leave the connection in the aborted transaction.
         try {
+            // Read before the rename, which takes the old name away.
+            $storedComment = (string)$this->getTablespace($oldTablespaceName)?->Comment;
+
             $this->exec("ALTER TABLESPACE \"{$escapedTablespaceName}\" OWNER TO \"{$escapedTablespaceOwner}\"");
 
             if ($oldTablespaceName !== (string)$tablespace->Name) {
@@ -873,7 +876,9 @@ final class PhpPgAdminConnection extends \PDO
                 $this->exec("ALTER TABLESPACE \"{$escapedTablespaceName}\" RENAME TO \"{$escapedNewTablespaceName}\"");
             }
 
-            $this->setCommentForTablespace((string)$tablespace->Name, (string)$tablespace->Comment);
+            if (!self::differOnlyInLineBreaks((string)$tablespace->Comment, $storedComment)) {
+                $this->setCommentForTablespace((string)$tablespace->Name, (string)$tablespace->Comment);
+            }
         } catch (\Throwable $e) {
             $this->rollBack();
 
@@ -1035,6 +1040,19 @@ final class PhpPgAdminConnection extends \PDO
         foreach ($adminMembersToRemove as $removeMember) {
             $this->revokeRole($roleName, $removeMember, onlyAdminOption: true, type: RevokeType::Cascade);
         }
+    }
+
+    /**
+     * Browsers post every line break of a textarea as CRLF, whatever line breaks it had when the page showed it. A
+     * comment that differs from the stored one only in its line breaks was not edited, and writing it would change the
+     * stored line breaks.
+     */
+    private static function differOnlyInLineBreaks(string $comment, string $storedComment): bool
+    {
+        // CRLF first, as "\r" would otherwise turn it into two line breaks.
+        $lineBreaks = ["\r\n", "\r"];
+
+        return str_replace($lineBreaks, "\n", $comment) === str_replace($lineBreaks, "\n", $storedComment);
     }
 
     /**

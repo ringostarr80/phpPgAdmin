@@ -11,7 +11,7 @@ use PhpPgAdmin\DDD\ValueObjects\Server\{DatabaseName, Host, Name, Port};
 use PhpPgAdmin\DDD\ValueObjects\ServerSession\{Password, Username};
 use PhpPgAdmin\DDD\ValueObjects\{Role, Tablespace};
 use PhpPgAdmin\DDD\ValueObjects\Tablespace\{Comment, Location, Name as TablespaceName, Owner};
-use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\{CoversClass, TestWith};
 use PHPUnit\Framework\TestCase;
 use Tests\Support\TestEnvironment;
 
@@ -30,6 +30,13 @@ final class PhpPgAdminConnectionTest extends TestCase
      * PostgreSQL stores a comment as it is given, with the blanks and line breaks around it.
      */
     private const COMMENT_WITH_BLANKS = "  Old data\n";
+
+    /**
+     * Browsers post every line break of a textarea as CRLF, whatever line breaks the comment had before.
+     */
+    private const COMMENT_AS_POSTED = "Line 1\r\nLine 2";
+
+    private const COMMENT_WITH_LF = "Line 1\nLine 2";
 
     /**
      * PostgreSQL rejects a location with a single quote itself, with this SQLSTATE (invalid_name).
@@ -401,6 +408,53 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertSame(self::COMMENT_WITH_BLANKS, (string)$tablespace->Comment);
     }
 
+    #[TestWith([self::COMMENT_WITH_LF])]
+    #[TestWith(["Line 1\rLine 2"])]
+    public function testUpdateTablespaceKeepsTheLineBreaksOfAnUnchangedComment(string $storedComment): void
+    {
+        $connection = $this->connectionForTablespaces();
+        $connection->createTablespace(self::tablespace(self::tablespaceName(), comment: $storedComment));
+
+        $connection->updateTablespace(
+            self::tablespace(self::tablespaceName(), comment: self::COMMENT_AS_POSTED),
+            self::tablespaceName(),
+        );
+
+        $tablespace = $connection->getTablespace(self::tablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame($storedComment, (string)$tablespace->Comment);
+    }
+
+    public function testUpdateTablespaceThatRenamesItKeepsTheLineBreaksOfAnUnchangedComment(): void
+    {
+        $connection = $this->connectionForTablespaces();
+        $connection->createTablespace(self::tablespace(self::tablespaceName(), comment: self::COMMENT_WITH_LF));
+
+        $connection->updateTablespace(
+            self::tablespace(self::renamedTablespaceName(), comment: self::COMMENT_AS_POSTED),
+            self::tablespaceName(),
+        );
+
+        $tablespace = $connection->getTablespace(self::renamedTablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame(self::COMMENT_WITH_LF, (string)$tablespace->Comment);
+    }
+
+    public function testUpdateTablespaceStoresAnEditedCommentWithTheLineBreaksItIsGiven(): void
+    {
+        $connection = $this->connectionForTablespaces();
+        $connection->createTablespace(self::tablespace(self::tablespaceName(), comment: self::COMMENT_WITH_LF));
+
+        $connection->updateTablespace(
+            self::tablespace(self::tablespaceName(), comment: "Line 1\r\nLine 3"),
+            self::tablespaceName(),
+        );
+
+        $tablespace = $connection->getTablespace(self::tablespaceName());
+        self::assertNotNull($tablespace);
+        self::assertSame("Line 1\r\nLine 3", (string)$tablespace->Comment);
+    }
+
     public function testUpdateTablespaceThatKeepsTheNameRunsNoRename(): void
     {
         $connection = $this->connectionForTablespaces();
@@ -487,6 +541,19 @@ final class PhpPgAdminConnectionTest extends TestCase
         $tablespace = $connection->getTablespace(self::tablespaceName());
         self::assertNotNull($tablespace);
         self::assertSame(self::queryValue($connection, 'SELECT current_user'), (string)$tablespace->Owner);
+    }
+
+    public function testUpdateTablespaceThatDoesNotExistLeavesTheErrorToPostgreSql(): void
+    {
+        $connection = $this->connectionForTablespaces();
+
+        // The alter page shows the error of PostgreSQL, which names the tablespace.
+        try {
+            $connection->updateTablespace(self::tablespace(self::tablespaceName()), self::tablespaceName());
+            self::fail('A tablespace that does not exist was altered.');
+        } catch (\PDOException $e) {
+            self::assertSame(self::SQLSTATE_UNDEFINED_OBJECT, $e->errorInfo[0] ?? null);
+        }
     }
 
     public function testSetCommentForTablespaceWithAnEmptyCommentRemovesTheComment(): void

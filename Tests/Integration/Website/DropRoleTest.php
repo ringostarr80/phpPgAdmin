@@ -7,12 +7,14 @@ namespace Tests\Integration\Website;
 use PhpPgAdmin\Website\DropRole;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
-use Tests\Support\{PageRedirect, RunningServer, TestEnvironment};
+use Tests\Support\{NameZero, PageRedirect, RunningServer, TestEnvironment};
 
 #[CoversMethod(DropRole::class, 'handlePostRequest')]
 final class DropRoleTest extends TestCase
 {
     private const MISSING_ROLE = 'ppa_test_missing_role';
+
+    private ?NameZero $nameZero = null;
 
     public function testADropRemovesTheRoleAndLeadsToTheListWithAMessage(): void
     {
@@ -23,6 +25,17 @@ final class DropRoleTest extends TestCase
 
         self::assertFalse(self::exists(self::role()));
         self::assertSame(self::theList('Role dropped.'), $redirect);
+    }
+
+    public function testADropRemovesTheRoleZero(): void
+    {
+        $this->nameZero = NameZero::take();
+        $this->nameZero->createRole();
+        $_POST['rolename'] = NameZero::NAME;
+
+        PageRedirect::afterPost(DropRole::class);
+
+        self::assertFalse(self::exists(NameZero::NAME));
     }
 
     public function testAFailedDropLeadsToTheListWithTheErrorOfPostgreSql(): void
@@ -53,6 +66,7 @@ final class DropRoleTest extends TestCase
     {
         // The role is left behind when the page did not drop it.
         RunningServer::connection()->exec('DROP ROLE IF EXISTS "' . self::role() . '"');
+        $this->nameZero?->release();
 
         $_GET = [];
         $_POST = [];

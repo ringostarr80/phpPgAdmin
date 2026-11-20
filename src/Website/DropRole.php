@@ -108,7 +108,7 @@ final class DropRole extends Website
 
         $db = PhpPgAdminConnection::createFromServerSession($serverSession);
 
-        if (is_null($db) || empty($rolename)) {
+        if (is_null($db) || $rolename === '') {
             return null;
         }
 

@@ -58,6 +58,11 @@ final class NameZero
         $this->create('TABLESPACE', "LOCATION ''");
     }
 
+    public function createRole(): void
+    {
+        $this->create('ROLE');
+    }
+
     /**
      * Drops the objects that it created and ends the turn of this thread.
      */

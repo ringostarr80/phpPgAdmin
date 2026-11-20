@@ -7,12 +7,14 @@ namespace Tests\Integration\Website;
 use PhpPgAdmin\Website\DropTablespace;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
-use Tests\Support\{PageRedirect, RunningServer, TestEnvironment};
+use Tests\Support\{NameZero, PageRedirect, RunningServer, TestEnvironment};
 
 #[CoversMethod(DropTablespace::class, 'handlePostRequest')]
 final class DropTablespaceTest extends TestCase
 {
     private const MISSING_TABLESPACE = 'ppa_test_missing_tablespace';
+
+    private ?NameZero $nameZero = null;
 
     public function testADropRemovesTheTablespaceAndLeadsToTheListWithAMessage(): void
     {
@@ -23,6 +25,17 @@ final class DropTablespaceTest extends TestCase
 
         self::assertFalse(self::exists(self::tablespace()));
         self::assertSame(self::theList('Tablespace dropped.'), $redirect);
+    }
+
+    public function testADropRemovesTheTablespaceZero(): void
+    {
+        $this->nameZero = NameZero::take();
+        $this->nameZero->createTablespace();
+        $_POST['tablespace'] = NameZero::NAME;
+
+        PageRedirect::afterPost(DropTablespace::class);
+
+        self::assertFalse(self::exists(NameZero::NAME));
     }
 
     public function testAFailedDropLeadsToTheListWithTheErrorOfPostgreSql(): void
@@ -53,6 +66,7 @@ final class DropTablespaceTest extends TestCase
     {
         // The tablespace is left behind when the page did not drop it.
         RunningServer::connection()->exec('DROP TABLESPACE IF EXISTS "' . self::tablespace() . '"');
+        $this->nameZero?->release();
 
         $_GET = [];
         $_POST = [];

@@ -108,7 +108,7 @@ final class DropTablespace extends Website
 
         $db = PhpPgAdminConnection::createFromServerSession($serverSession);
 
-        if (is_null($db) || empty($tablespace)) {
+        if (is_null($db) || $tablespace === '') {
             return null;
         }
 

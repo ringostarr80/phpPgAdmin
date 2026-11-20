@@ -50,6 +50,15 @@ final class NameZero
     }
 
     /**
+     * An in-place tablespace, which PostgreSQL keeps in its data directory and which takes PostgreSQL 15 or later.
+     */
+    public function createTablespace(): void
+    {
+        $this->connection->exec('SET allow_in_place_tablespaces = true');
+        $this->create('TABLESPACE', "LOCATION ''");
+    }
+
+    /**
      * Drops the objects that it created and ends the turn of this thread.
      */
     public function release(): void

@@ -15,8 +15,15 @@ final class DropRole extends Website
     {
         parent::__construct();
 
-        if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->handlePostRequest();
+        if (!(isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST')) {
+            return;
+        }
+
+        $redirectUrl = $this->handlePostRequest();
+
+        if (!is_null($redirectUrl) && !headers_sent()) {
+            header('Location: ' . $redirectUrl);
+            die;
         }
     }
 
@@ -81,7 +88,12 @@ final class DropRole extends Website
         return $body;
     }
 
-    private function handlePostRequest(): void
+    /**
+     * Leaves leading to the next page to the constructor, whose die would end the tests.
+     *
+     * @return ?string The page to lead to, or null to show this page again.
+     */
+    private function handlePostRequest(): ?string
     {
         $rolename = RequestParameter::getString('rolename') ?? '';
         $serverId = RequestParameter::getString('server') ?? '';
@@ -97,7 +109,7 @@ final class DropRole extends Website
         $db = PhpPgAdminConnection::createFromServerSession($serverSession);
 
         if (is_null($db) || empty($rolename)) {
-            return;
+            return null;
         }
 
         try {
@@ -107,9 +119,6 @@ final class DropRole extends Website
             $redirectUrlParams['message'] = _('Role drop failed.') . ' - ' . $e->getMessage();
         }
 
-        if (!headers_sent()) {
-            header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
-            die;
-        }
+        return $redirectUrl . '?' . http_build_query($redirectUrlParams);
     }
 }

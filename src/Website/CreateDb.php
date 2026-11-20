@@ -299,7 +299,7 @@ final class CreateDb extends Website
     {
         $formName = RequestParameter::getString('formName') ?? '';
 
-        if (!empty($formName)) {
+        if ($formName !== '') {
             $serverId = RequestParameter::getString('server') ?? '';
             $serverSession = Logins::serverSession($serverId, Config::getServers());
             $db = PhpPgAdminConnection::createFromServerSession($serverSession);

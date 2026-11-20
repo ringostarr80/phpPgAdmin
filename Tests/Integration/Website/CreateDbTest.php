@@ -50,6 +50,19 @@ final class CreateDbTest extends TestCase
         self::assertStringContainsString($value, self::errorOfPostgreSql());
     }
 
+    public function testACreateHandsTheNameZeroOnToPostgreSql(): void
+    {
+        // PHP's empty() takes "0" for an empty string, PostgreSQL takes it as a name. A page that takes "0" for no
+        // name says so instead of handing the create on to PostgreSQL.
+        $_POST['formName'] = '0';
+        // The page would end the tests with die after a create, so PostgreSQL has to reject this one. Each of them
+        // keeps it from creating the database.
+        $_POST['formTemplate'] = 'ppa_test_missing_template';
+        $_POST['formTablespace'] = 'ppa_test_missing_tablespace';
+
+        self::assertSame(['Database creation failed.'], PageBody::messages(self::bodyAfterTheCreate()));
+    }
+
     #[TestWith(['formCollate'])]
     #[TestWith(['formCType'])]
     public function testACreateHandsTheChosenLocaleOnToPostgreSql(string $field): void

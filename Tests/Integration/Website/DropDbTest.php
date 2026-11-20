@@ -7,12 +7,14 @@ namespace Tests\Integration\Website;
 use PhpPgAdmin\Website\DropDb;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
-use Tests\Support\{PageRedirect, RunningServer, TestEnvironment};
+use Tests\Support\{NameZero, PageRedirect, RunningServer, TestEnvironment};
 
 #[CoversMethod(DropDb::class, 'handlePostRequest')]
 final class DropDbTest extends TestCase
 {
     private const MISSING_DATABASE = 'ppa_test_missing_database';
+
+    private ?NameZero $nameZero = null;
 
     public function testADropRemovesTheDatabaseAndLeadsToTheListWithAMessage(): void
     {
@@ -23,6 +25,17 @@ final class DropDbTest extends TestCase
 
         self::assertFalse(self::exists(self::database()));
         self::assertSame(self::theList('Database dropped.'), $redirect);
+    }
+
+    public function testADropRemovesTheDatabaseZero(): void
+    {
+        $this->nameZero = NameZero::take();
+        $this->nameZero->createDatabase();
+        $_POST['database'] = NameZero::NAME;
+
+        PageRedirect::afterPost(DropDb::class);
+
+        self::assertFalse(self::exists(NameZero::NAME));
     }
 
     public function testAFailedDropLeadsToTheListWithTheErrorOfPostgreSql(): void
@@ -53,6 +66,7 @@ final class DropDbTest extends TestCase
     {
         // The database is left behind when the page did not drop it.
         RunningServer::connection()->exec('DROP DATABASE IF EXISTS "' . self::database() . '"');
+        $this->nameZero?->release();
 
         $_GET = [];
         $_POST = [];

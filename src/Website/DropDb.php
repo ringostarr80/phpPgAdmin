@@ -107,7 +107,7 @@ final class DropDb extends Website
 
         $db = PhpPgAdminConnection::createFromServerSession($serverSession);
 
-        if (is_null($db) || empty($database)) {
+        if (is_null($db) || $database === '') {
             return null;
         }
 

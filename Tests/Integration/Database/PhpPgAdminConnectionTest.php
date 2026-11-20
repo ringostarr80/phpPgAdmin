@@ -13,7 +13,7 @@ use PhpPgAdmin\DDD\ValueObjects\{Role, Tablespace};
 use PhpPgAdmin\DDD\ValueObjects\Tablespace\{Comment, Location, Name as TablespaceName, Owner};
 use PHPUnit\Framework\Attributes\{CoversClass, TestWith};
 use PHPUnit\Framework\TestCase;
-use Tests\Support\TestEnvironment;
+use Tests\Support\{NameZero, RunningServer, TestEnvironment};
 
 #[CoversClass(PhpPgAdminConnection::class)]
 final class PhpPgAdminConnectionTest extends TestCase
@@ -74,6 +74,8 @@ final class PhpPgAdminConnectionTest extends TestCase
      * Whether the test created roles, which are dropped again after it.
      */
     private bool $createsRoles = false;
+
+    private ?NameZero $nameZero = null;
 
     public function testLoginDataIsValidForTheRunningServer(): void
     {
@@ -251,6 +253,17 @@ final class PhpPgAdminConnectionTest extends TestCase
     public function testIsSuperUserWithTheNameOfARoleThatDoesNotExistIsFalse(): void
     {
         self::assertFalse(self::connection()->isSuperUser(self::MISSING_ROLE));
+    }
+
+    public function testIsSuperUserWithTheNameZeroAsksForTheUserZero(): void
+    {
+        // PHP's empty() takes "0" for an empty string, PostgreSQL takes it as a name.
+        RunningServer::logIn();
+        $this->nameZero = NameZero::take();
+        $this->nameZero->createUser();
+
+        // The user of the tests is a superuser, the user "0" is none.
+        self::assertFalse(self::connection()->isSuperUser(NameZero::NAME));
     }
 
     public function testAlterDatabaseCommitsTheNewNameAndTheComment(): void
@@ -814,6 +827,10 @@ final class PhpPgAdminConnectionTest extends TestCase
         if ($this->createsRoles) {
             self::dropTheRoles(self::connection());
         }
+
+        $this->nameZero?->release();
+        // NameZero connects with the login of the session.
+        $_SESSION = [];
     }
 
     /**

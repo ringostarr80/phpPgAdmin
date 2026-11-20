@@ -64,6 +64,14 @@ final class NameZero
     }
 
     /**
+     * A role that can log in, as only those are users, which pg_user lists.
+     */
+    public function createUser(): void
+    {
+        $this->create('USER');
+    }
+
+    /**
      * Drops the objects that it created and ends the turn of this thread.
      */
     public function release(): void

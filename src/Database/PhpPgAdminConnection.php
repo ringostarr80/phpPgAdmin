@@ -757,7 +757,7 @@ final class PhpPgAdminConnection extends \PDO
      */
     public function isSuperUser(string $username = ''): bool
     {
-        if (empty($username)) {
+        if ($username === '') {
             $statement = $this->query("SHOW is_superuser");
 
             if ($statement !== false) {

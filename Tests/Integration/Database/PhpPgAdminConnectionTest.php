@@ -232,6 +232,27 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertFalse(self::logInAs(self::user(), self::USER_PASSWORD)->isSuperUser());
     }
 
+    public function testIsSuperUserWithTheNameOfASuperuserIsTrueForAUserWhoIsNone(): void
+    {
+        $administrator = self::queryValue(self::connection(), 'SELECT current_user');
+        self::assertIsString($administrator);
+        $this->createTheUser();
+
+        self::assertTrue(self::logInAs(self::user(), self::USER_PASSWORD)->isSuperUser($administrator));
+    }
+
+    public function testIsSuperUserWithTheNameOfAUserWhoIsNoSuperuserIsFalseForASuperuser(): void
+    {
+        $this->createTheUser();
+
+        self::assertFalse(self::connection()->isSuperUser(self::user()));
+    }
+
+    public function testIsSuperUserWithTheNameOfARoleThatDoesNotExistIsFalse(): void
+    {
+        self::assertFalse(self::connection()->isSuperUser(self::MISSING_ROLE));
+    }
+
     public function testAlterDatabaseCommitsTheNewNameAndTheComment(): void
     {
         $this->createTheUser();

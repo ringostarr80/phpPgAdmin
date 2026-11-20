@@ -243,14 +243,13 @@ final class SqlEdit extends Website
         $inputSearchPath->setAttribute('value', $searchPathParam);
         $pSchemaSearchPath->appendChild($inputSearchPath);
 
-        $textareaQuery = $dom->createElement('textarea');
+        $queryParam = RequestParameter::getString('query') ?? '';
+        $textareaQuery = WebsiteComponents::buildTextarea($dom, $queryParam);
         $textareaQuery->setAttribute('style', 'width: 98%;');
         $textareaQuery->setAttribute('rows', '10');
         $textareaQuery->setAttribute('cols', '50');
         $textareaQuery->setAttribute('name', 'query');
         $textareaQuery->setAttribute('id', 'query');
-        $queryParam = RequestParameter::getString('query') ?? '';
-        $textareaQuery->appendChild($dom->createTextNode($queryParam));
 
         $pUpload = $dom->createElement('p');
         $inputMaxFileSize = $dom->createElement('input');

@@ -154,12 +154,11 @@ final class AlterDb extends Website
         $thComment->appendChild($commentLabel);
         $tdComment = $dom->createElement('td');
         $tdComment->setAttribute('class', 'data1');
-        $textareaComment = $dom->createElement('textarea');
+        $textareaComment = WebsiteComponents::buildTextarea($dom, $db?->getDatabaseComment($database) ?? '');
         $textareaComment->setAttribute('name', 'dbcomment');
         $textareaComment->setAttribute('id', 'dbcomment');
         $textareaComment->setAttribute('rows', '3');
         $textareaComment->setAttribute('cols', '32');
-        $textareaComment->appendChild($dom->createTextNode($db?->getDatabaseComment($database) ?? ''));
         $tdComment->appendChild($textareaComment);
         $trComment->appendChild($thComment);
         $trComment->appendChild($tdComment);

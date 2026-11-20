@@ -244,12 +244,11 @@ final class CreateDb extends Website
         $labelComment->setAttribute('for', 'db-comment');
         $thComment->appendChild($labelComment);
         $tdCommentValue = $dom->createElement('td');
-        $textareaComment = $dom->createElement('textarea');
+        $textareaComment = WebsiteComponents::buildTextarea($dom, $formComment);
         $textareaComment->setAttribute('name', 'formComment');
         $textareaComment->setAttribute('id', 'db-comment');
         $textareaComment->setAttribute('cols', '32');
         $textareaComment->setAttribute('rows', '3');
-        $textareaComment->appendChild($dom->createTextNode($formComment));
         $tdCommentValue->appendChild($textareaComment);
         $trComment->appendChild($thComment);
         $trComment->appendChild($tdCommentValue);

@@ -8,7 +8,7 @@ use PhpPgAdmin\DDD\ValueObjects\Role;
 use PhpPgAdmin\Website\{AlterRole, CreateRole};
 use PHPUnit\Framework\Attributes\{CoversMethod, TestWith};
 use PHPUnit\Framework\TestCase;
-use Tests\Support\{PageBody, RunningServer, TestEnvironment};
+use Tests\Support\{NameZero, PageBody, RunningServer, TestEnvironment};
 
 #[CoversMethod(CreateRole::class, 'buildCreateOrEditRoleTable')]
 final class AlterRoleTest extends TestCase
@@ -24,6 +24,8 @@ final class AlterRoleTest extends TestCase
      */
     private const ATTRIBUTES = ['SUPERUSER', 'CREATEDB', 'CREATEROLE', 'INHERIT', 'LOGIN'];
 
+    private ?NameZero $nameZero = null;
+
     public function testTheFormShowsTheNameOfTheRoleWithoutLettingItBeChanged(): void
     {
         $role = self::createRole(self::ALTERED_ROLE);
@@ -34,6 +36,16 @@ final class AlterRoleTest extends TestCase
         self::assertTrue($name->hasAttribute('readonly'));
         // PostgreSQL keeps no more than 63 bytes of a name.
         self::assertSame('63', $name->getAttribute('maxlength'));
+    }
+
+    public function testTheFormShowsTheNameZero(): void
+    {
+        // PHP's empty() takes "0" for an empty string, PostgreSQL takes it as a name.
+        $this->nameZero = NameZero::take();
+        $this->nameZero->createRole();
+        $_GET['rolename'] = NameZero::NAME;
+
+        self::assertSame(NameZero::NAME, PageBody::fieldValue(self::form(), Role::FORM_ID_NAME));
     }
 
     #[TestWith(['SUPERUSER', 'formSuper'])]
@@ -128,6 +140,8 @@ final class AlterRoleTest extends TestCase
         foreach ([self::ALTERED_ROLE, self::GROUP_ROLE, self::MEMBER_ROLE, self::ADMIN_MEMBER_ROLE] as $role) {
             RunningServer::connection()->exec('DROP ROLE IF EXISTS "' . TestEnvironment::perThread($role) . '"');
         }
+
+        $this->nameZero?->release();
 
         $_GET = [];
         $_POST = [];

@@ -101,13 +101,9 @@ class CreateRole extends Website
         $table->setAttribute('class', 'form-table');
         $tBody = $dom->createElement('tbody');
 
-        $rolename = !is_null($role)
-            ? $role->Name
-            : '';
-
-        if (empty($rolename)) {
-            $rolename = RequestParameter::getString(Role::FORM_ID_NAME);
-        }
+        $rolename = is_null($role)
+            ? RequestParameter::getString(Role::FORM_ID_NAME)
+            : $role->Name;
 
         $nameSpecs = [
             'id' => Role::FORM_ID_NAME,

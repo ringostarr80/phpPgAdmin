@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Integration\Website;
 
 use PhpPgAdmin\Website\CreateDb;
-use PHPUnit\Framework\Attributes\CoversMethod;
+use PHPUnit\Framework\Attributes\{CoversMethod, DataProvider, TestWith};
 use PHPUnit\Framework\TestCase;
 use Tests\Support\{PageBody, RunningServer};
 
@@ -30,11 +30,8 @@ final class CreateDbTest extends TestCase
 
     public function testAfterAFailedCreateThePageShowsTheErrorOfPostgreSql(): void
     {
-        $errors = PageBody::query(self::bodyAfterTheCreate(), './/pre[@class="error"]');
-
-        self::assertCount(1, $errors);
         // The error names the database in every language.
-        self::assertStringContainsString(self::EXISTING_DATABASE, $errors[0]->textContent);
+        self::assertStringContainsString(self::EXISTING_DATABASE, self::errorOfPostgreSql());
     }
 
     public function testAfterAFailedCreateTheFormShowsTheEnteredValues(): void
@@ -43,6 +40,39 @@ final class CreateDbTest extends TestCase
 
         self::assertSame(self::EXISTING_DATABASE, PageBody::fieldValue($form, 'db-name'));
         self::assertSame('Old data', PageBody::fieldValue($form, 'db-comment'));
+    }
+
+    #[DataProvider('choicesPostgreSqlRejects')]
+    public function testACreateHandsTheChoiceOnToPostgreSql(string $field, string $value): void
+    {
+        $_POST[$field] = $value;
+
+        self::assertStringContainsString($value, self::errorOfPostgreSql());
+    }
+
+    #[TestWith(['formCollate'])]
+    #[TestWith(['formCType'])]
+    public function testACreateHandsTheChosenLocaleOnToPostgreSql(string $field): void
+    {
+        // PostgreSQL copies a template database other than template0 only with its own locales.
+        $locale = self::aLocaleTheTemplateDoesNotUse();
+        $_POST[$field] = $locale;
+
+        self::assertStringContainsString($locale, self::errorOfPostgreSql());
+    }
+
+    /**
+     * PostgreSQL checks these choices before it looks for a database with the name, and its error names the choice it
+     * rejects.
+     *
+     * @return iterable<string, array{string, string}>
+     */
+    public static function choicesPostgreSqlRejects(): iterable
+    {
+        yield 'a template that does not exist' => ['formTemplate', 'ppa_test_missing_template'];
+        yield 'a tablespace that does not exist' => ['formTablespace', 'ppa_test_missing_tablespace'];
+        // The template database of the test servers uses UTF-8, and PostgreSQL copies it into no other encoding.
+        yield 'an encoding other than that of the template' => ['formEncoding', 'LATIN1'];
     }
 
     protected function setUp(): void
@@ -68,5 +98,34 @@ final class CreateDbTest extends TestCase
     private static function bodyAfterTheCreate(): \DOMElement
     {
         return PageBody::afterPost(CreateDb::class);
+    }
+
+    private static function errorOfPostgreSql(): string
+    {
+        $errors = PageBody::query(self::bodyAfterTheCreate(), './/pre[@class="error"]');
+
+        self::assertCount(1, $errors);
+
+        return $errors[0]->textContent;
+    }
+
+    /**
+     * One of the locales that the form offers, other than those of template1, the template of a create without one.
+     */
+    private static function aLocaleTheTemplateDoesNotUse(): string
+    {
+        $connection = RunningServer::connection();
+        $statement = $connection->prepare(
+            'SELECT datcollate, datctype FROM pg_catalog.pg_database WHERE datname = :template',
+        );
+        $statement->execute(['template' => 'template1']);
+        $templateRow = $statement->fetch(\PDO::FETCH_NUM);
+        self::assertIsArray($templateRow);
+        $templateLocales = array_filter($templateRow, is_string(...));
+
+        $locales = array_values(array_diff($connection->getAvailableCollations(), $templateLocales));
+        self::assertNotSame([], $locales);
+
+        return $locales[0];
     }
 }

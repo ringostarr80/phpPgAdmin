@@ -13,15 +13,6 @@ use PhpPgAdmin\Infrastructure\Session\Logins;
 
 final class AlterRole extends CreateRole
 {
-    public function __construct()
-    {
-        parent::__construct();
-
-        if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->handlePostRequest();
-        }
-    }
-
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $body = Website::buildHtmlBody($dom);
@@ -65,7 +56,10 @@ final class AlterRole extends CreateRole
         return $body;
     }
 
-    private function handlePostRequest(): void
+    /**
+     * The constructor inherited from the create page runs it in place of the create.
+     */
+    protected function handlePostRequest(): void
     {
         $roleFromForm = DTORole::createFromFormRequest();
 

@@ -62,6 +62,90 @@ class CreateRole extends Website
         return $body;
     }
 
+    /**
+     * The constructor runs it for a posted form. It is protected, so the alter page, which inherits the constructor,
+     * handles its form with its own method and does not create a role.
+     */
+    protected function handlePostRequest(): void
+    {
+        $roleFromForm = DTORole::createFromFormRequest();
+
+        if ($roleFromForm->Name === '') {
+            $this->message = _('You must give a name for the role.');
+
+            return;
+        }
+
+        $formPassword = RequestParameter::getString(Role::FORM_ID_PASSWORD) ?? '';
+        $formConfirm = RequestParameter::getString(Role::FORM_ID_PASSWORD_CONFIRMATION) ?? '';
+
+        if ($formPassword !== $formConfirm) {
+            $this->message = _('Password does not match confirmation.');
+
+            return;
+        }
+
+        $formMemberOf = RequestParameter::getArray('memberof') ?? [];
+        $formMembers = RequestParameter::getArray('members') ?? [];
+        $formAdminMembers = RequestParameter::getArray('adminmembers') ?? [];
+
+        $memberOf = [];
+        $members = [];
+        $adminMembers = [];
+
+        foreach ($formMemberOf as $member) {
+            if (is_string($member)) {
+                $memberOf[] = $member;
+            }
+        }
+
+        foreach ($formMembers as $member) {
+            if (is_string($member)) {
+                $members[] = $member;
+            }
+        }
+
+        foreach ($formAdminMembers as $member) {
+            if (is_string($member)) {
+                $adminMembers[] = $member;
+            }
+        }
+
+        $serverId = RequestParameter::getString('server') ?? '';
+        $serverSession = Logins::serverSession($serverId, Config::getServers());
+        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
+
+        if (is_null($db)) {
+            return;
+        }
+
+        try {
+            $db->createRole(
+                role: $roleFromForm,
+                password: $formPassword,
+                memberOf: $memberOf,
+                members: $members,
+                adminMembers: $adminMembers,
+            );
+
+            if (!headers_sent()) {
+                $redirectUrl = 'roles.php';
+                $redirectUrlParams = [
+                    'message' => _('Role created.'),
+                    'server' => $serverId,
+                    'subject' => 'server',
+                ];
+                header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
+                die;
+            }
+        } catch (\PDOException $e) {
+            $this->message = _('Create role failed.');
+            $this->pdoException = $e;
+        } catch (\Throwable) {
+            $this->message = _('Create role failed.');
+        }
+    }
+
     protected static function buildCreateOrEditFormParagraphButtonsTable(
         \DOMDocument $dom,
         string $serverId,
@@ -276,85 +360,5 @@ class CreateRole extends Website
         $table->appendChild($tBody);
 
         return $table;
-    }
-
-    private function handlePostRequest(): void
-    {
-        $roleFromForm = DTORole::createFromFormRequest();
-
-        if ($roleFromForm->Name === '') {
-            $this->message = _('You must give a name for the role.');
-
-            return;
-        }
-
-        $formPassword = RequestParameter::getString(Role::FORM_ID_PASSWORD) ?? '';
-        $formConfirm = RequestParameter::getString(Role::FORM_ID_PASSWORD_CONFIRMATION) ?? '';
-
-        if ($formPassword !== $formConfirm) {
-            $this->message = _('Password does not match confirmation.');
-
-            return;
-        }
-
-        $formMemberOf = RequestParameter::getArray('memberof') ?? [];
-        $formMembers = RequestParameter::getArray('members') ?? [];
-        $formAdminMembers = RequestParameter::getArray('adminmembers') ?? [];
-
-        $memberOf = [];
-        $members = [];
-        $adminMembers = [];
-
-        foreach ($formMemberOf as $member) {
-            if (is_string($member)) {
-                $memberOf[] = $member;
-            }
-        }
-
-        foreach ($formMembers as $member) {
-            if (is_string($member)) {
-                $members[] = $member;
-            }
-        }
-
-        foreach ($formAdminMembers as $member) {
-            if (is_string($member)) {
-                $adminMembers[] = $member;
-            }
-        }
-
-        $serverId = RequestParameter::getString('server') ?? '';
-        $serverSession = Logins::serverSession($serverId, Config::getServers());
-        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
-
-        if (is_null($db)) {
-            return;
-        }
-
-        try {
-            $db->createRole(
-                role: $roleFromForm,
-                password: $formPassword,
-                memberOf: $memberOf,
-                members: $members,
-                adminMembers: $adminMembers,
-            );
-
-            if (!headers_sent()) {
-                $redirectUrl = 'roles.php';
-                $redirectUrlParams = [
-                    'message' => _('Role created.'),
-                    'server' => $serverId,
-                    'subject' => 'server',
-                ];
-                header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
-                die;
-            }
-        } catch (\PDOException $e) {
-            $this->message = _('Create role failed.');
-            $this->pdoException = $e;
-        } catch (\Throwable) {
-            $this->message = _('Create role failed.');
-        }
     }
 }

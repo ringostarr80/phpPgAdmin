@@ -18,7 +18,7 @@ class CreateRole extends Website
         parent::__construct();
 
         if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->handlePostRequest();
+            self::redirectTo($this->handlePostRequest());
         }
     }
 
@@ -64,16 +64,19 @@ class CreateRole extends Website
 
     /**
      * The constructor runs it for a posted form. It is protected, so the alter page, which inherits the constructor,
-     * handles its form with its own method and does not create a role.
+     * handles its form with its own method and does not create a role. It leaves leading to the next page to the
+     * constructor, whose die would end the tests.
+     *
+     * @return ?string The page to lead to, or null to show this page again.
      */
-    protected function handlePostRequest(): void
+    protected function handlePostRequest(): ?string
     {
         $roleFromForm = DTORole::createFromFormRequest();
 
         if ($roleFromForm->Name === '') {
             $this->message = _('You must give a name for the role.');
 
-            return;
+            return null;
         }
 
         $formPassword = RequestParameter::getString(Role::FORM_ID_PASSWORD) ?? '';
@@ -82,7 +85,7 @@ class CreateRole extends Website
         if ($formPassword !== $formConfirm) {
             $this->message = _('Password does not match confirmation.');
 
-            return;
+            return null;
         }
 
         $formMemberOf = RequestParameter::getArray('memberof') ?? [];
@@ -116,7 +119,7 @@ class CreateRole extends Website
         $db = PhpPgAdminConnection::createFromServerSession($serverSession);
 
         if (is_null($db)) {
-            return;
+            return null;
         }
 
         try {
@@ -128,22 +131,22 @@ class CreateRole extends Website
                 adminMembers: $adminMembers,
             );
 
-            if (!headers_sent()) {
-                $redirectUrl = 'roles.php';
-                $redirectUrlParams = [
-                    'message' => _('Role created.'),
-                    'server' => $serverId,
-                    'subject' => 'server',
-                ];
-                header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
-                die;
-            }
+            $redirectUrl = 'roles.php';
+            $redirectUrlParams = [
+                'message' => _('Role created.'),
+                'server' => $serverId,
+                'subject' => 'server',
+            ];
+
+            return $redirectUrl . '?' . http_build_query($redirectUrlParams);
         } catch (\PDOException $e) {
             $this->message = _('Create role failed.');
             $this->pdoException = $e;
         } catch (\Throwable) {
             $this->message = _('Create role failed.');
         }
+
+        return null;
     }
 
     protected static function buildCreateOrEditFormParagraphButtonsTable(

@@ -58,8 +58,10 @@ final class AlterRole extends CreateRole
 
     /**
      * The constructor inherited from the create page runs it in place of the create.
+     *
+     * @return ?string The page to lead to, or null to show this page again.
      */
-    protected function handlePostRequest(): void
+    protected function handlePostRequest(): ?string
     {
         $roleFromForm = DTORole::createFromFormRequest();
 
@@ -69,7 +71,7 @@ final class AlterRole extends CreateRole
         if ($password !== '' && $password !== $passwordConfirmation) {
             $this->message = _('Password does not match confirmation.');
 
-            return;
+            return null;
         }
 
         $serverId = RequestParameter::getString('server') ?? '';
@@ -104,7 +106,7 @@ final class AlterRole extends CreateRole
         $db = PhpPgAdminConnection::createFromServerSession($serverSession);
 
         if (is_null($db)) {
-            return;
+            return null;
         }
 
         try {
@@ -116,21 +118,21 @@ final class AlterRole extends CreateRole
                 newAdminMembers: $newAdminMembers,
             );
 
-            if (!headers_sent()) {
-                $redirectUrl = 'roles.php';
-                $redirectUrlParams = [
-                    'message' => _('Role altered.'),
-                    'server' => $serverId,
-                    'subject' => 'server',
-                ];
-                header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
-                die;
-            }
+            $redirectUrl = 'roles.php';
+            $redirectUrlParams = [
+                'message' => _('Role altered.'),
+                'server' => $serverId,
+                'subject' => 'server',
+            ];
+
+            return $redirectUrl . '?' . http_build_query($redirectUrlParams);
         } catch (\PDOException $e) {
             $this->message = _('Role alter failed.');
             $this->pdoException = $e;
         } catch (\Throwable) {
             $this->message = _('Role alter failed.');
         }
+
+        return null;
     }
 }

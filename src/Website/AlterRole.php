@@ -56,7 +56,8 @@ final class AlterRole extends CreateRole
             $role = $db?->getRole($rolename);
         }
 
-        $form->appendChild(self::buildCreateOrEditRoleTable($dom, $serverId, $role));
+        // The form alters the role with this name, it cannot rename the role.
+        $form->appendChild(self::buildCreateOrEditRoleTable($dom, $serverId, $role, isNameReadonly: true));
         $form->appendChild(self::buildCreateOrEditFormParagraphButtonsTable($dom, $serverId, $role));
 
         $body->append($form);

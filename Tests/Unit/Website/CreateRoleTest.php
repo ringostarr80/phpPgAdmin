@@ -49,6 +49,11 @@ final class CreateRoleTest extends TestCase
         self::assertSame([], self::checkedCheckboxes($form));
     }
 
+    public function testTheNameOfTheRoleCanBeEntered(): void
+    {
+        self::assertFalse(PageBody::field(self::form(), Role::FORM_ID_NAME)->hasAttribute('readonly'));
+    }
+
     public function testAfterAFailedCreateTheFormKeepsTheEnteredNameAndPasswords(): void
     {
         self::postTheForm();
@@ -58,6 +63,14 @@ final class CreateRoleTest extends TestCase
         self::assertSame('auditor', PageBody::fieldValue($form, Role::FORM_ID_NAME));
         self::assertSame('Entered password', PageBody::fieldValue($form, Role::FORM_ID_PASSWORD));
         self::assertSame('Entered confirmation', PageBody::fieldValue($form, Role::FORM_ID_PASSWORD_CONFIRMATION));
+    }
+
+    public function testAfterAFailedCreateTheNameCanStillBeChanged(): void
+    {
+        // A name that another role already has is a common reason for the create to fail.
+        self::postTheForm();
+
+        self::assertFalse(PageBody::field(self::form(), Role::FORM_ID_NAME)->hasAttribute('readonly'));
     }
 
     #[TestWith(['formSuper'])]

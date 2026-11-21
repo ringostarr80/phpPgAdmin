@@ -51,7 +51,10 @@ class CreateRole extends Website
         $form = $dom->createElement('form');
         $form->setAttribute('method', 'post');
 
-        $form->appendChild(self::buildCreateOrEditRoleTable($dom, $serverId, DTORole::createFromFormRequest()));
+        // After a failed create, the form shows what was entered.
+        $form->appendChild(
+            self::buildCreateOrEditRoleTable($dom, $serverId, DTORole::createFromFormRequest(), isNameReadonly: false),
+        );
         $form->appendChild(self::buildCreateOrEditFormParagraphButtonsTable($dom, $serverId));
 
         $body->append($form);
@@ -95,7 +98,8 @@ class CreateRole extends Website
     protected static function buildCreateOrEditRoleTable(
         \DOMDocument $dom,
         string $serverId,
-        ?Role $role = null,
+        ?Role $role,
+        bool $isNameReadonly,
     ): \DOMElement {
         $table = $dom->createElement('table');
         $table->setAttribute('class', 'form-table');
@@ -111,7 +115,7 @@ class CreateRole extends Website
             'value' => [
                 'content' => $rolename,
                 'max-length' => 63,
-                'readonly' => !is_null($role),
+                'readonly' => $isNameReadonly,
             ],
         ];
         $trName = WebsiteComponents::buildTableRowForInputFormular($dom, $nameSpecs);

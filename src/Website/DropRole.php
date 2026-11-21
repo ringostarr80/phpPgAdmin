@@ -15,15 +15,8 @@ final class DropRole extends Website
     {
         parent::__construct();
 
-        if (!(isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST')) {
-            return;
-        }
-
-        $redirectUrl = $this->handlePostRequest();
-
-        if (!is_null($redirectUrl) && !headers_sent()) {
-            header('Location: ' . $redirectUrl);
-            die;
+        if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            self::redirectTo($this->handlePostRequest());
         }
     }
 

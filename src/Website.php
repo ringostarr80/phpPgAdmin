@@ -227,6 +227,19 @@ abstract class Website
     }
 
     /**
+     * Leads to the page that a posted form led to, unless the form shows this page again.
+     *
+     * @param ?string $url The page to lead to, or null to show this page again.
+     */
+    protected static function redirectTo(?string $url): void
+    {
+        if (!is_null($url) && !headers_sent()) {
+            header('Location: ' . $url);
+            die;
+        }
+    }
+
+    /**
      * The legacy pages show the login form in place. Here a page leads to it, like the browser tree does (see
      * Website\Redirect): showing it in place would need a second page, which would start the session again.
      */

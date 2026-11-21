@@ -11,6 +11,7 @@ use PhpPgAdmin\Infrastructure\Session\Logins;
 
 final class Tablespaces extends Website
 {
+    #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $body = parent::buildHtmlBody($dom);

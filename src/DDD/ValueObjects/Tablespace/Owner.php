@@ -13,6 +13,7 @@ final readonly class Owner implements \Stringable
     {
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->owner;

@@ -86,11 +86,13 @@ final class Login extends Website
     /**
      * The login form, which is shown while one is not logged in to the server.
      */
+    #[\Override]
     public static function requiresServerLogin(): bool
     {
         return false;
     }
 
+    #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $body = parent::buildHtmlBody($dom);

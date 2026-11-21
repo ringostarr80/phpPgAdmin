@@ -20,6 +20,7 @@ final readonly class Host implements \Stringable
         $this->host = $host;
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->host;

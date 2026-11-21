@@ -79,6 +79,7 @@ final class ServerSession extends Server
             && !in_array(strtolower($username), self::EXTRA_LOGIN_SECURITY_DISALLOWED_USERNAMES, true);
     }
 
+    #[\Override]
     public function __get(string $name): mixed
     {
         return match ($name) {

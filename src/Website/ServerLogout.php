@@ -28,11 +28,13 @@ final class ServerLogout extends Website
     /**
      * The logout, which has its own parameter for the server (like the legacy servers.php?action=logout).
      */
+    #[\Override]
     public static function requiresServerLogin(): bool
     {
         return false;
     }
 
+    #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $body = $dom->createElement('body');
@@ -41,6 +43,7 @@ final class ServerLogout extends Website
         return $body;
     }
 
+    #[\Override]
     protected function buildHtmlHead(\DOMDocument $dom): \DOMElement
     {
         $head = parent::buildHtmlHead($dom);

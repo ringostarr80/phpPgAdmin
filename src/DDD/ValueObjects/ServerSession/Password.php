@@ -14,6 +14,7 @@ final readonly class Password implements \Stringable
     {
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->password;

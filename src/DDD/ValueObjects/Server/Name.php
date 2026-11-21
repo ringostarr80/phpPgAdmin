@@ -20,6 +20,7 @@ final readonly class Name implements \Stringable
         $this->name = $name;
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->name;

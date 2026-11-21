@@ -22,6 +22,7 @@ final class SqlEdit extends Website
         ];
     }
 
+    #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $body = parent::buildHtmlBody($dom);

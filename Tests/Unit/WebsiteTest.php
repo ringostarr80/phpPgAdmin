@@ -162,11 +162,13 @@ final class WebsiteTest extends TestCase
         }
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $_SESSION = [];
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $_SESSION = [];
@@ -183,6 +185,7 @@ final class WebsiteTest extends TestCase
                 // Skips the constructor of Website, which starts a PHP session: the tests set $_SESSION themselves.
             }
 
+            #[\Override]
             protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
             {
                 $body = parent::buildHtmlBody($dom);

@@ -131,6 +131,7 @@ final class LoginsTest extends TestCase
         self::assertFalse(Logins::isLoggedIn($this->server->id()));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $_SESSION = [];
@@ -138,6 +139,7 @@ final class LoginsTest extends TestCase
         $this->server = new Server(name: new Name('Test Server'));
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $_SESSION = [];

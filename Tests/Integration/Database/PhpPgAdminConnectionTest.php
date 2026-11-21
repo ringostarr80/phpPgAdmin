@@ -810,6 +810,7 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertContains(self::memberName(), $rolenames);
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         // Config reads the configuration file again.

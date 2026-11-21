@@ -83,12 +83,14 @@ final class RequestParameterTest extends TestCase
         self::assertSame(['default'], RequestParameter::getArray('ids', ['default']));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $_GET = [];
         $_POST = [];
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $_GET = [];

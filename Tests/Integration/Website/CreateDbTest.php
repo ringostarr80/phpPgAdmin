@@ -88,6 +88,7 @@ final class CreateDbTest extends TestCase
         yield 'an encoding other than that of the template' => ['formEncoding', 'LATIN1'];
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->server = $_SERVER;
@@ -100,6 +101,7 @@ final class CreateDbTest extends TestCase
         RunningServer::logIn();
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $_SERVER = $this->server;

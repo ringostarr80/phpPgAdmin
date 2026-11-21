@@ -13,6 +13,7 @@ use PhpPgAdmin\Infrastructure\Session\Logins;
 
 final class AlterRole extends CreateRole
 {
+    #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $body = Website::buildHtmlBody($dom);
@@ -61,6 +62,7 @@ final class AlterRole extends CreateRole
      *
      * @return ?string The page to lead to, or null to show this page again.
      */
+    #[\Override]
     protected function handlePostRequest(): ?string
     {
         $roleFromForm = DTORole::createFromFormRequest();

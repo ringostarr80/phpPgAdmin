@@ -15,6 +15,7 @@ final readonly class Name implements \Stringable
         }
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->name;

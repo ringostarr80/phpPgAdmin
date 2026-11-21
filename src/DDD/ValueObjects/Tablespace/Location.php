@@ -16,6 +16,7 @@ final readonly class Location implements \Stringable
         $this->location = trim($location);
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->location;

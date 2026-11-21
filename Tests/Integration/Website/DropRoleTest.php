@@ -55,6 +55,7 @@ final class DropRoleTest extends TestCase
         self::assertNull(PageRedirect::afterPost(DropRole::class));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $_GET = [];
@@ -62,6 +63,7 @@ final class DropRoleTest extends TestCase
         RunningServer::logIn();
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         // The role is left behind when the page did not drop it.

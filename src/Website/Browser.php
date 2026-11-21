@@ -23,11 +23,13 @@ final class Browser extends Website
     /**
      * The browser tree, which lists all servers, also the ones one is not logged in to.
      */
+    #[\Override]
     public static function requiresServerLogin(): bool
     {
         return false;
     }
 
+    #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $body = parent::buildHtmlBody($dom);
@@ -100,6 +102,7 @@ final class Browser extends Website
         return $body;
     }
 
+    #[\Override]
     protected function buildHtmlHead(\DOMDocument $dom): \DOMElement
     {
         $head = parent::buildHtmlHead($dom);

@@ -191,11 +191,13 @@ final class ConfigTest extends TestCase
         yield 'another language' => ['fr_FR'];
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         self::startANewRequest();
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         self::startANewRequest();

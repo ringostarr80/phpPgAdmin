@@ -17,6 +17,7 @@ final readonly class Username implements \Stringable
         }
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->name;

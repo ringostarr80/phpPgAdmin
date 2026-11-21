@@ -117,6 +117,7 @@ final class CreateTablespaceTest extends TestCase
         );
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->server = $_SERVER;
@@ -125,6 +126,7 @@ final class CreateTablespaceTest extends TestCase
         $_SESSION = [];
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $_SERVER = $this->server;

@@ -40,6 +40,7 @@ final class Languages extends Website
         return self::buildLanguagesTable($dom, $languages);
     }
 
+    #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $serverId = RequestParameter::getString('server') ?? '';

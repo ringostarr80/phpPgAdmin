@@ -17,6 +17,7 @@ final class AllDbExport extends Website
         $this->title = _('Databases');
     }
 
+    #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $body = parent::buildHtmlBody($dom);

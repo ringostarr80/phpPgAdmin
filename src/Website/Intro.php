@@ -12,11 +12,13 @@ final class Intro extends Website
     /**
      * The introduction, which belongs to no server.
      */
+    #[\Override]
     public static function requiresServerLogin(): bool
     {
         return false;
     }
 
+    #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $body = parent::buildHtmlBody($dom);

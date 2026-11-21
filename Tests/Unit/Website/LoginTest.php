@@ -206,11 +206,13 @@ final class LoginTest extends TestCase
         yield 'a space in the query string' => ['./all_db.php?server=a b'];
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->server = $_SERVER;
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $_SERVER = $this->server;

@@ -11,11 +11,13 @@ final class Index extends Website
     /**
      * The frames of the browser tree and of the pages, which belong to no server.
      */
+    #[\Override]
     public static function requiresServerLogin(): bool
     {
         return false;
     }
 
+    #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $body = parent::buildHtmlBody($dom);
@@ -52,6 +54,7 @@ final class Index extends Website
         return $body;
     }
 
+    #[\Override]
     protected function buildHtmlHead(\DOMDocument $dom): \DOMElement
     {
         $head = parent::buildHtmlHead($dom);

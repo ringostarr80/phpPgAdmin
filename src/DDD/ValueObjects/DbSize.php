@@ -50,6 +50,7 @@ final readonly class DbSize implements \Stringable
         };
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return (string)$this->size;

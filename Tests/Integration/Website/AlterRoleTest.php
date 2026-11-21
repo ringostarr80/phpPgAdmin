@@ -124,6 +124,7 @@ final class AlterRoleTest extends TestCase
         self::assertSame('Entered confirmation', PageBody::fieldValue($form, Role::FORM_ID_PASSWORD_CONFIRMATION));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $_GET = [
@@ -134,6 +135,7 @@ final class AlterRoleTest extends TestCase
         RunningServer::logIn();
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         // Dropping a role revokes its memberships as well.

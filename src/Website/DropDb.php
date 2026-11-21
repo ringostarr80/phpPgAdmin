@@ -20,6 +20,7 @@ final class DropDb extends Website
         }
     }
 
+    #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $body = parent::buildHtmlBody($dom);

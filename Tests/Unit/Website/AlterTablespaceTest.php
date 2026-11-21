@@ -61,6 +61,7 @@ final class AlterTablespaceTest extends TestCase
         );
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $_GET = [
@@ -71,6 +72,7 @@ final class AlterTablespaceTest extends TestCase
         $_SESSION = [];
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $_GET = [];

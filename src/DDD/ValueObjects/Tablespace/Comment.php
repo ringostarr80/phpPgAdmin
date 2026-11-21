@@ -14,6 +14,7 @@ final readonly class Comment implements \Stringable
     {
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->comment;

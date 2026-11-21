@@ -46,6 +46,7 @@ final class HistoryDelete extends Website
         header('Location: ' . $redirectUrl . '?' . http_build_query($redirectUrlParams));
     }
 
+    #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $body = parent::buildHtmlBody($dom);

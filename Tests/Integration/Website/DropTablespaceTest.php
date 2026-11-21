@@ -55,6 +55,7 @@ final class DropTablespaceTest extends TestCase
         self::assertNull(PageRedirect::afterPost(DropTablespace::class));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $_GET = [];
@@ -62,6 +63,7 @@ final class DropTablespaceTest extends TestCase
         RunningServer::logIn();
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         // The tablespace is left behind when the page did not drop it.

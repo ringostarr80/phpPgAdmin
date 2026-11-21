@@ -114,6 +114,7 @@ final class CreateRoleTest extends TestCase
         );
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $_GET = ['server' => self::SERVER_ID];
@@ -121,6 +122,7 @@ final class CreateRoleTest extends TestCase
         $_SESSION = [];
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $_GET = [];

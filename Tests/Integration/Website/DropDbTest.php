@@ -55,6 +55,7 @@ final class DropDbTest extends TestCase
         self::assertNull(PageRedirect::afterPost(DropDb::class));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $_GET = [];
@@ -62,6 +63,7 @@ final class DropDbTest extends TestCase
         RunningServer::logIn();
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         // The database is left behind when the page did not drop it.

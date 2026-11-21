@@ -87,12 +87,14 @@ final class HistoryTest extends TestCase
         );
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $_SESSION = [];
         $this->history = [];
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $_SESSION = [];

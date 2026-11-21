@@ -32,6 +32,7 @@ final class Redirect extends Website
     /**
      * Leads to the login form itself while one is not logged in to the server (see redirectToServer()).
      */
+    #[\Override]
     public static function requiresServerLogin(): bool
     {
         return false;

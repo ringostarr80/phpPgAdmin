@@ -487,11 +487,13 @@ final class WebsiteComponentsTest extends TestCase
         ];
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $_GET = [];
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $_GET = [];

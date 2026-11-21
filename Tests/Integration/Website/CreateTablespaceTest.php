@@ -65,6 +65,7 @@ final class CreateTablespaceTest extends TestCase
         self::assertSame([OtherOwner::name()], PageBody::selectedValues($form, Tablespace::FORM_ID_OWNER));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->server = $_SERVER;
@@ -77,6 +78,7 @@ final class CreateTablespaceTest extends TestCase
         RunningServer::logIn();
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $this->otherOwner?->drop();

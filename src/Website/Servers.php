@@ -18,11 +18,13 @@ final class Servers extends Website
     /**
      * The list of all servers, also the ones one is not logged in to.
      */
+    #[\Override]
     public static function requiresServerLogin(): bool
     {
         return false;
     }
 
+    #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $body = parent::buildHtmlBody($dom);

@@ -34,11 +34,13 @@ final class SessionTest extends TestCase
         self::assertSame(['webdbLogin' => ['127.0.0.1:5432:allow' => ['username' => 'postgres']]], $_SESSION);
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $_SESSION = [];
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $_SESSION = [];

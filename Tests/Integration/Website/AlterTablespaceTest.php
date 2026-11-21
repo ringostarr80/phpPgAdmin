@@ -87,6 +87,7 @@ final class AlterTablespaceTest extends TestCase
         );
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $_GET = [
@@ -97,6 +98,7 @@ final class AlterTablespaceTest extends TestCase
         RunningServer::logIn();
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         $this->otherOwner?->drop();

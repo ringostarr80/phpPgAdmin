@@ -14,6 +14,7 @@ use PhpPgAdmin\Infrastructure\Session\Logins;
 
 final class AlterTablespace extends CreateTablespace
 {
+    #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $body = Website::buildHtmlBody($dom);
@@ -78,6 +79,7 @@ final class AlterTablespace extends CreateTablespace
     /**
      * The constructor inherited from the create page runs it in place of the create.
      */
+    #[\Override]
     protected function handlePostRequest(): void
     {
         $serverId = RequestParameter::getString('server') ?? '';

@@ -26,6 +26,7 @@ final class Exception extends Website
         print $website->buildHtmlString();
     }
 
+    #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
         $body = parent::buildHtmlBody($dom);

@@ -64,6 +64,7 @@ final class PgDumpTest extends TestCase
         self::assertNull(PgDump::tryGetFilename($this->server(), false));
     }
 
+    #[\Override]
     protected function setUp(): void
     {
         $this->pgDump = $this->tempFile();
@@ -73,6 +74,7 @@ final class PgDumpTest extends TestCase
         $this->writeProgram($this->pgDumpAll, 'pg_dumpall (PostgreSQL) 18.1');
     }
 
+    #[\Override]
     protected function tearDown(): void
     {
         foreach ($this->tempFiles as $tempFile) {

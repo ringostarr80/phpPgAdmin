@@ -10,6 +10,7 @@ use PHPUnit\Framework\Attributes\{CoversMethod, TestWith};
 use PHPUnit\Framework\TestCase;
 use Tests\Support\{NameZero, PageBody, RunningServer, TestEnvironment};
 
+#[CoversMethod(AlterRole::class, 'buildHtmlBody')]
 #[CoversMethod(CreateRole::class, 'buildCreateOrEditRoleTable')]
 final class AlterRoleTest extends TestCase
 {

@@ -3,6 +3,10 @@ includes:
 
 parameters:
     level: max
+    # Requires #[\Override] on every overriding method, so PHP fails when the method it should override is missing.
+    checkMissingOverrideMethodAttribute: true
+    # Not on properties: PHP allows the attribute there only from 8.5 on, and the code still runs on PHP 8.3.
+    checkMissingOverridePropertyAttribute: false
     paths:
         - src/
         - Tests/Architecture/

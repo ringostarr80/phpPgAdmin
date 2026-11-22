@@ -125,6 +125,29 @@ final class AlterRoleTest extends TestCase
         self::assertSame('Entered confirmation', PageBody::fieldValue($form, Role::FORM_ID_PASSWORD_CONFIRMATION));
     }
 
+    public function testAfterAnAlterWithAPasswordThatDoesNotMatchItsConfirmationThePageSaysSo(): void
+    {
+        $role = self::createRole(self::ALTERED_ROLE);
+        $_POST = [
+            Role::FORM_ID_NAME => $role,
+            Role::FORM_ID_PASSWORD => 'Entered password',
+            Role::FORM_ID_PASSWORD_CONFIRMATION => 'Entered confirmation',
+        ];
+
+        self::assertSame(
+            ['Password does not match confirmation.'],
+            PageBody::messages(PageBody::afterPost(AlterRole::class)),
+        );
+    }
+
+    public function testAfterAFailedAlterThePageSaysItFailed(): void
+    {
+        // PostgreSQL cannot alter a role that does not exist.
+        $_POST = [Role::FORM_ID_NAME => self::MISSING_ROLE];
+
+        self::assertSame(['Role alter failed.'], PageBody::messages(PageBody::afterPost(AlterRole::class)));
+    }
+
     #[\Override]
     protected function setUp(): void
     {

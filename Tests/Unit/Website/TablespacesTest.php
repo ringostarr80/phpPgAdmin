@@ -37,6 +37,19 @@ final class TablespacesTest extends TestCase
         );
     }
 
+    public function testThePageShowsTheMessageItIsLedToWith(): void
+    {
+        // The pages to create, alter and drop a tablespace lead to this page with a message.
+        $_GET['message'] = 'Tablespace dropped.';
+
+        self::assertSame(['Tablespace dropped.'], PageBody::messages(self::body()));
+    }
+
+    public function testWithoutAMessageThePageShowsNone(): void
+    {
+        self::assertSame([], PageBody::messages(self::body()));
+    }
+
     public function testWithoutTablespacesThePageSaysSo(): void
     {
         $texts = array_map(

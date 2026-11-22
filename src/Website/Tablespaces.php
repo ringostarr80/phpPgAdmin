@@ -36,6 +36,12 @@ final class Tablespaces extends Website
 
         $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $serverId, 'tablespaces'));
 
+        $message = RequestParameter::getString('message') ?? '';
+
+        if ($message !== '') {
+            $body->appendChild(WebsiteComponents::buildMessage($dom, $message));
+        }
+
         $serverSession = Logins::serverSession($serverId, Config::getServers());
         $db = PhpPgAdminConnection::createFromServerSession($serverSession);
 

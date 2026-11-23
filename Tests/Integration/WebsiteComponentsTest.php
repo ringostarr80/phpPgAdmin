@@ -19,6 +19,8 @@ final class WebsiteComponentsTest extends TestCase
      */
     private const COMMENT = 'R&D, written R&amp;D in HTML';
 
+    private const USER_PASSWORD = 'ppa_test_user';
+
     public function testDatabasesTableShowsTheValuesOfADatabase(): void
     {
         self::assertSame(
@@ -42,6 +44,17 @@ final class WebsiteComponentsTest extends TestCase
                 PageBody::query(self::rowOfTheDatabase(), './td'),
             ),
         );
+    }
+
+    public function testDatabasesTableShowsNoAccessAsTheSizeOfADatabaseTheLoginMayNotConnectTo(): void
+    {
+        self::logInAsTheUser();
+
+        // The column of the size.
+        $sizes = PageBody::query(self::rowOfTheDatabase(), './td[8]');
+
+        self::assertCount(1, $sizes);
+        self::assertSame('No Access', $sizes[0]->textContent);
     }
 
     public function testDatabasesTableNamesADatabaseInTheValueOfItsCheckbox(): void
@@ -134,6 +147,9 @@ final class WebsiteComponentsTest extends TestCase
             . ' LC_COLLATE \'C\' LC_CTYPE \'en_US.UTF-8\'',
         );
         $connection->exec('COMMENT ON DATABASE "' . self::database() . '" IS \'' . self::COMMENT . '\'');
+        // Only its owner and the superusers may connect to it.
+        $connection->exec('REVOKE CONNECT ON DATABASE "' . self::database() . '" FROM PUBLIC');
+        $connection->exec('CREATE ROLE "' . self::user() . '" LOGIN PASSWORD \'' . self::USER_PASSWORD . '\'');
 
         $_SESSION = [];
     }
@@ -182,6 +198,26 @@ final class WebsiteComponentsTest extends TestCase
     }
 
     /**
+     * A role that is no superuser, as a superuser may connect to every database.
+     */
+    private static function user(): string
+    {
+        return TestEnvironment::perThread('ppa_test_user_without_connect');
+    }
+
+    /**
+     * Logs in to the running server as the user, in a session that has no other login.
+     */
+    private static function logInAsTheUser(): void
+    {
+        $_SESSION = [
+            'webdbLogin' => [
+                RunningServer::id() => ['password' => self::USER_PASSWORD, 'username' => self::user()],
+            ],
+        ];
+    }
+
+    /**
      * Every dropped database forces a checkpoint, which the parallel threads of Infection wait for in turn, so the
      * tests share one database.
      */
@@ -192,6 +228,7 @@ final class WebsiteComponentsTest extends TestCase
         $connection->exec('DROP DATABASE IF EXISTS "' . self::database() . '"');
         $connection->exec('DROP TABLESPACE IF EXISTS "' . self::tablespace() . '"');
         $connection->exec('DROP ROLE IF EXISTS "' . self::owner() . '"');
+        $connection->exec('DROP ROLE IF EXISTS "' . self::user() . '"');
     }
 
     private static function sizeOfTheDatabase(): int

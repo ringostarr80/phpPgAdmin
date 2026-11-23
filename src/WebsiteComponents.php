@@ -166,7 +166,6 @@ abstract class WebsiteComponents
                 $inputCheckbox->setAttribute('name', 'ma[]');
 
                 $dbName = $db['datname'];
-                $dbSize = new DbSize($db['dbsize']);
                 $checkboxValue = serialize(['database' => $dbName]);
 
                 $inputCheckbox->setAttribute('value', $checkboxValue);
@@ -194,7 +193,11 @@ abstract class WebsiteComponents
                 $tdCharacterType->appendChild($dom->createTextNode($db['datctype']));
                 $tdTablespace = $dom->createElement('td');
                 $tdTablespace->appendChild($dom->createTextNode($db['tablespace']));
-                $tdSize = $dom->createElement('td', $dbSize->prettyFormat());
+                // getDatabases() gives -1 as the size of a database the user may not connect to.
+                $tdSize = $dom->createElement(
+                    'td',
+                    $db['dbsize'] === -1 ? _('No Access') : (new DbSize($db['dbsize']))->prettyFormat(),
+                );
 
                 $tdActionDelete = $dom->createElement('td');
                 $tdActionDelete->setAttribute('class', 'opbutton1');

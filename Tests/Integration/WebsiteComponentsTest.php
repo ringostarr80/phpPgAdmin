@@ -95,15 +95,15 @@ final class WebsiteComponentsTest extends TestCase
             'drop_db.php?' . http_build_query(['database' => self::database(), 'server' => RunningServer::id()]),
             $links[0]->getAttribute('href'),
         );
-
-        $privilegesUrl = $links[1]->getAttribute('href');
-        $privilegesParams = [];
-        parse_str((string)parse_url($privilegesUrl, PHP_URL_QUERY), $privilegesParams);
-
-        self::assertSame('privileges.php', parse_url($privilegesUrl, PHP_URL_PATH));
-        self::assertSame(RunningServer::id(), $privilegesParams['server'] ?? null);
-        self::assertSame('database', $privilegesParams['subject'] ?? null);
-
+        // privileges.php takes the object from the parameter that the subject names.
+        self::assertSame(
+            'privileges.php?' . http_build_query([
+                'database' => self::database(),
+                'server' => RunningServer::id(),
+                'subject' => 'database',
+            ]),
+            $links[1]->getAttribute('href'),
+        );
         self::assertSame(
             'alter_db.php?' . http_build_query(['database' => self::database(), 'server' => RunningServer::id()]),
             $links[2]->getAttribute('href'),

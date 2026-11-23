@@ -216,7 +216,7 @@ abstract class WebsiteComponents
                 $aPrivileges = $dom->createElement('a');
                 $privilegesUrl = 'privileges.php';
                 $privilegesUrlParams = [
-                    'dropdatabase' => $dbName,
+                    'database' => $dbName,
                     'server' => $serverSession?->id() ?? '',
                     'subject' => 'database',
                 ];

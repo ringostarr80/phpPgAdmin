@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Unit;
 
-use PhpPgAdmin\{Website, WebsiteComponents};
+use PhpPgAdmin\{Config, TrailSubject, Website, WebsiteComponents};
+use PhpPgAdmin\DDD\Entities\Server;
+use PhpPgAdmin\DDD\ValueObjects\Server\Name;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
@@ -477,6 +479,76 @@ final class WebsiteComponentsTest extends TestCase
         self::assertCount(0, $topBar->getElementsByTagName('script'));
     }
 
+    public function testTrailStartsWithTheRootOfPhpPgAdmin(): void
+    {
+        $crumbs = self::trailCrumbs([]);
+
+        self::assertCount(1, $crumbs);
+
+        $link = PageBody::onlyElement($crumbs[0], 'a');
+        $icons = PageBody::query($link, './span[@class="icon"]/img');
+
+        self::assertSame('redirect.php?subject=root', $link->getAttribute('href'));
+        self::assertCount(1, $icons);
+        self::assertSame('images/themes/default/Introduction.png', $icons[0]->getAttribute('src'));
+        self::assertSame('Database Root', $icons[0]->getAttribute('alt'));
+        self::assertSame([Website::APP_NAME], self::labelsOf($crumbs[0]));
+        self::assertSame(Website::APP_NAME . ':', $link->textContent);
+    }
+
+    public function testTrailOfAServerLinksToItsDatabasesAndNamesTheServerOfTheLogin(): void
+    {
+        self::logInToAServerNamed('Production');
+
+        $crumbs = self::trailCrumbs([TrailSubject::Server]);
+
+        self::assertCount(2, $crumbs);
+
+        $links = PageBody::query($crumbs[1], './a');
+
+        self::assertCount(2, $links);
+
+        $icons = PageBody::query($links[0], './span[@class="icon"]/img');
+
+        self::assertSame('all_db.php?server=127.0.0.1%3A5432%3Aallow', $links[0]->getAttribute('href'));
+        self::assertSame('Server', $links[0]->getAttribute('title'));
+        self::assertCount(1, $icons);
+        self::assertSame('images/themes/default/Servers.png', $icons[0]->getAttribute('src'));
+        self::assertSame('Server', $icons[0]->getAttribute('alt'));
+        self::assertSame(['Production'], self::labelsOf($crumbs[1]));
+        self::assertSame('help', $links[1]->getAttribute('class'));
+        self::assertSame('help.php?help=pg.server&server=127.0.0.1%3A5432%3Aallow', $links[1]->getAttribute('href'));
+        self::assertSame(': ', $crumbs[1]->lastChild?->textContent);
+    }
+
+    public function testTrailOfAServerWithoutALoginNamesNoServer(): void
+    {
+        $_GET['server'] = self::SERVER_ID;
+
+        $crumbs = self::trailCrumbs([TrailSubject::Server]);
+
+        self::assertCount(2, $crumbs);
+        self::assertSame(
+            'all_db.php?server=127.0.0.1%3A5432%3Aallow',
+            PageBody::query($crumbs[1], './a')[0]->getAttribute('href'),
+        );
+        self::assertSame([], self::labelsOf($crumbs[1]));
+    }
+
+    public function testTrailHasTheCrumbsOfTheSubjectsInTheirOrder(): void
+    {
+        $_GET = ['database' => self::DATABASE, 'server' => self::SERVER_ID];
+
+        // The crumb of the root has no title.
+        self::assertSame(
+            ['', 'Server', 'Database'],
+            array_map(
+                static fn (\DOMElement $crumb): string => PageBody::query($crumb, './a')[0]->getAttribute('title'),
+                self::trailCrumbs([TrailSubject::Server, TrailSubject::Database]),
+            ),
+        );
+    }
+
     public function testBrowserReloadScriptReloadsTheBrowserFrame(): void
     {
         $dom = new \DOMDocument();
@@ -540,6 +612,8 @@ final class WebsiteComponentsTest extends TestCase
     {
         $_GET = [];
         $_SESSION = [];
+        // Config reads the configuration file again.
+        (new \ReflectionProperty(Config::class, 'conf'))->setValue(null, null);
     }
 
     /**
@@ -721,5 +795,52 @@ final class WebsiteComponentsTest extends TestCase
         self::assertCount(1, $labels);
 
         return $labels[0]->textContent;
+    }
+
+    /**
+     * Replaces the servers of the test configuration with one of the given name, so the trail does not depend on the
+     * names of the test configuration, and logs in to it. Config reads the configuration file only once, so this
+     * changes what it read.
+     */
+    private static function logInToAServerNamed(string $name): void
+    {
+        $server = new Server(name: new Name($name));
+        $conf = new \ReflectionProperty(Config::class, 'conf');
+        // Reads the configuration file.
+        Config::getServers();
+        $configuration = $conf->getValue();
+        self::assertIsArray($configuration);
+        $conf->setValue(null, ['servers' => [$server]] + $configuration);
+
+        $_GET['server'] = $server->id();
+        $_SESSION['webdbLogin'] = [$server->id() => ['password' => '', 'username' => 'postgres']];
+    }
+
+    /**
+     * The crumbs of the trail, the one of the root first.
+     *
+     * @param array<TrailSubject> $subjects
+     * @return list<\DOMElement>
+     */
+    private static function trailCrumbs(array $subjects): array
+    {
+        $dom = new \DOMDocument();
+        $trail = WebsiteComponents::buildTrail($dom, $subjects);
+        $dom->appendChild($trail);
+
+        self::assertSame('trail', $trail->getAttribute('class'));
+
+        return PageBody::query($trail, './table/tr/td[@class="crumb"]');
+    }
+
+    /**
+     * @return list<string>
+     */
+    private static function labelsOf(\DOMElement $crumb): array
+    {
+        return array_map(
+            static fn (\DOMElement $label): string => $label->textContent,
+            PageBody::query($crumb, './a/span[@class="label"]'),
+        );
     }
 }

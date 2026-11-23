@@ -132,7 +132,8 @@ final class AlterDb extends Website
         if (is_iterable($dbUsers)) {
             foreach ($dbUsers as $dbUser) {
                 $username = $dbUser['usename'];
-                $optionOwner = $dom->createElement('option', $username);
+                $optionOwner = $dom->createElement('option');
+                $optionOwner->appendChild($dom->createTextNode($username));
                 $optionOwner->setAttribute('value', $username);
 
                 if ($dbOwner === $username) {

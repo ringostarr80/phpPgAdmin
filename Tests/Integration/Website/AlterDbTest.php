@@ -12,7 +12,10 @@ use Tests\Support\{PageBody, RunningServer, TestEnvironment};
 #[CoversMethod(AlterDb::class, 'buildHtmlBody')]
 final class AlterDbTest extends TestCase
 {
-    private const COMMENT = 'The comment of the database';
+    /**
+     * With a bare & and an entity reference, which the form shows as they are.
+     */
+    private const COMMENT = 'R&D, written R&amp;D in HTML';
 
     public function testTheFormShowsTheNameTheOwnerAndTheCommentOfTheDatabase(): void
     {
@@ -86,17 +89,17 @@ final class AlterDbTest extends TestCase
     }
 
     /**
-     * Every dropped database forces a checkpoint, which the parallel threads of Infection wait for in turn, so the
-     * tests share one database.
+     * Like its owner, named with an &, which the form shows as it is. Every dropped database forces a checkpoint,
+     * which the parallel threads of Infection wait for in turn, so the tests share one database.
      */
     private static function database(): string
     {
-        return TestEnvironment::perThread('ppa_test_altered_database');
+        return TestEnvironment::perThread('ppa_test_R&D_altered_database');
     }
 
     private static function owner(): string
     {
-        return TestEnvironment::perThread('ppa_test_altered_owner');
+        return TestEnvironment::perThread('ppa_test_R&D_altered_owner');
     }
 
     private static function dropTheDatabase(): void

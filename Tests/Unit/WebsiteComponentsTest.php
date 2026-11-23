@@ -561,6 +561,17 @@ final class WebsiteComponentsTest extends TestCase
         self::assertSame('parent.frames.browser.location.reload();', $script->textContent);
     }
 
+    public function testMessageIsAParagraphThatShowsItsTextAsItIs(): void
+    {
+        $message = WebsiteComponents::buildMessage(new \DOMDocument(), 'Database "R&D" <dropped>.');
+
+        self::assertSame('p', $message->tagName);
+        // The themes style the messages by this class.
+        self::assertSame('message', $message->getAttribute('class'));
+        self::assertSame('Database "R&D" <dropped>.', $message->textContent);
+        self::assertSame(0, $message->childElementCount);
+    }
+
     #[DataProvider('textsThatStartWithALineBreak')]
     public function testTextareaKeepsTheLineBreakItsTextStartsWith(string $text): void
     {

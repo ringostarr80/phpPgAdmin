@@ -4,10 +4,15 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Website;
 
+use PhpPgAdmin\{Config, Website};
+use PhpPgAdmin\DDD\Entities\Server;
+use PhpPgAdmin\DDD\ValueObjects\Server\Name;
 use PhpPgAdmin\Website\Login;
 use PHPUnit\Framework\Attributes\{CoversMethod, DataProvider};
 use PHPUnit\Framework\TestCase;
+use Tests\Support\PageBody;
 
+#[CoversMethod(Website::class, 'buildTitle')]
 #[CoversMethod(Login::class, 'buildReturnUrl')]
 #[CoversMethod(Login::class, 'buildUrl')]
 #[CoversMethod(Login::class, 'buildUrlAfterLogin')]
@@ -155,6 +160,19 @@ final class LoginTest extends TestCase
         self::assertFalse(Login::isLoginFormSent());
     }
 
+    #[DataProvider('serverNamesWithAnAmpersand')]
+    public function testTheHeadingOfTheFormNamesTheServerAsItIs(string $serverName): void
+    {
+        $server = new Server(name: new Name($serverName));
+        self::configureTheServer($server);
+        $_GET = ['server' => $server->id()];
+
+        self::assertSame(
+            'Login to ' . $serverName,
+            PageBody::onlyElement(PageBody::of(Login::class), 'h2')->textContent,
+        );
+    }
+
     /**
      * @return iterable<string, array{?string}>
      */
@@ -206,6 +224,15 @@ final class LoginTest extends TestCase
         yield 'a space in the query string' => ['./all_db.php?server=a b'];
     }
 
+    /**
+     * @return iterable<string, array{string}>
+     */
+    public static function serverNamesWithAnAmpersand(): iterable
+    {
+        yield 'a bare &' => ['R&D'];
+        yield 'an entity reference' => ['R&amp;D'];
+    }
+
     #[\Override]
     protected function setUp(): void
     {
@@ -216,5 +243,23 @@ final class LoginTest extends TestCase
     protected function tearDown(): void
     {
         $_SERVER = $this->server;
+        $_GET = [];
+        $_SESSION = [];
+        // Config reads the configuration file again.
+        (new \ReflectionProperty(Config::class, 'conf'))->setValue(null, null);
+    }
+
+    /**
+     * Replaces the servers of the test configuration. Config reads the configuration file only once, so this changes
+     * what it read.
+     */
+    private static function configureTheServer(Server $server): void
+    {
+        $conf = new \ReflectionProperty(Config::class, 'conf');
+        // Reads the configuration file.
+        Config::getServers();
+        $configuration = $conf->getValue();
+        self::assertIsArray($configuration);
+        $conf->setValue(null, ['servers' => [$server]] + $configuration);
     }
 }

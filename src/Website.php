@@ -153,7 +153,10 @@ abstract class Website
 
     protected function buildTitle(\DOMDocument $dom, string $title): \DOMElement
     {
-        return $dom->createElement('h2', $title);
+        $h2 = $dom->createElement('h2');
+        $h2->appendChild($dom->createTextNode($title));
+
+        return $h2;
     }
 
     protected function buildPdoExceptionMessage(\DOMDocument $dom, \PDOException $exc): \DOMElement

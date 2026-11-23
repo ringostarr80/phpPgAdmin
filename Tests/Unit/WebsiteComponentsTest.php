@@ -572,6 +572,19 @@ final class WebsiteComponentsTest extends TestCase
         self::assertSame(0, $message->childElementCount);
     }
 
+    public function testMessageShowsEachLineOnALineOfItsOwn(): void
+    {
+        $message = WebsiteComponents::buildMessage(new \DOMDocument(), "first line\nsecond line");
+
+        self::assertSame(
+            [['#text', 'first line'], ['br', ''], ['#text', 'second line']],
+            array_map(
+                static fn (\DOMNode $node): array => [$node->nodeName, $node->textContent],
+                iterator_to_array($message->childNodes),
+            ),
+        );
+    }
+
     #[DataProvider('textsThatStartWithALineBreak')]
     public function testTextareaKeepsTheLineBreakItsTextStartsWith(string $text): void
     {

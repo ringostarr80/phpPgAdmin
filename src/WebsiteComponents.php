@@ -286,7 +286,15 @@ abstract class WebsiteComponents
     {
         $pMessage = $dom->createElement('p');
         $pMessage->setAttribute('class', 'message');
-        $pMessage->appendChild($dom->createTextNode($message));
+
+        // Each line on a line of its own, like the legacy messages, which separated their lines by <br />.
+        foreach (explode("\n", $message) as $index => $line) {
+            if ($index > 0) {
+                $pMessage->appendChild($dom->createElement('br'));
+            }
+
+            $pMessage->appendChild($dom->createTextNode($line));
+        }
 
         return $pMessage;
     }

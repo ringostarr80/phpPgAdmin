@@ -446,7 +446,7 @@ msgid "Please, select a database."
 msgstr "Ki kell választani az adatbázist."
 
 # Database sizes
-msgid "strnoaccess"
+msgid "No Access"
 msgstr "Nincs hozzáférés"
 
 msgid "Size"

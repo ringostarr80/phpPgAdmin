@@ -449,7 +449,7 @@ msgid "Please, select a database."
 msgstr "Veuillez sélectionner une base de données."
 
 # Database Sizes
-msgid "strnoaccess"
+msgid "No Access"
 msgstr "Pas d'Accès"
 
 msgid "Size"

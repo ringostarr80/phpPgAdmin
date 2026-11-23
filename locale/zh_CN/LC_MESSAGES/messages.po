@@ -446,7 +446,7 @@ msgid "Please, select a database."
 msgstr "请选择一个数据库."
 
 # Database sizes
-msgid "strnoaccess"
+msgid "No Access"
 msgstr "无法访问"
 
 msgid "Size"

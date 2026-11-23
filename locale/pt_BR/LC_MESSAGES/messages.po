@@ -443,7 +443,7 @@ msgid "Please, select a database."
 msgstr "Por favor, selecione uma base de dados."
 
 # Database sizes
-msgid "strnoaccess"
+msgid "No Access"
 msgstr "Sem acesso"
 
 msgid "Size"

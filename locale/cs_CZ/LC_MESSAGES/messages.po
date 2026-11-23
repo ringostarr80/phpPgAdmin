@@ -446,7 +446,7 @@ msgid "Please, select a database."
 msgstr "Zvolte prosím databázi."
 
 # Database sizes
-msgid "strnoaccess"
+msgid "No Access"
 msgstr "Bez přístupu"
 
 msgid "Size"

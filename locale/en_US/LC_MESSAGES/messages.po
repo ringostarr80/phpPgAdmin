@@ -509,7 +509,8 @@ msgid "Please, select a database."
 msgstr "Please, select a database."
 
 # Database sizes
-msgid "strnoaccess"
+# original: "strnoaccess"
+msgid "No Access"
 msgstr "No Access"
 
 # original: "strsize"

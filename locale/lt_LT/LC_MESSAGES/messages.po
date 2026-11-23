@@ -461,7 +461,7 @@ msgid "Please, select a database."
 msgstr "Prašom pasirinkiti duomenų bazę."
 
 # Database sizes
-msgid "strnoaccess"
+msgid "No Access"
 msgstr "Nėra prieigos"
 
 msgid "Size"

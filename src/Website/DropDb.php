@@ -28,7 +28,6 @@ final class DropDb extends Website
         $body->appendChild(WebsiteComponents::buildTopBar($dom));
         $body->appendChild(WebsiteComponents::buildTrail($dom, [TrailSubject::Server]));
 
-        $database = RequestParameter::getString('database') ?? '';
         $serverId = RequestParameter::getString('server') ?? '';
 
         $h2 = $dom->createElement('h2', _('Drop'));
@@ -45,14 +44,19 @@ final class DropDb extends Website
 
         $form = $dom->createElement('form');
         $form->setAttribute('method', 'post');
-        $p = $dom->createElement(
-            'p',
-            sprintf(_('Are you sure you want to drop the database "%s"?'), $database),
-        );
-        $inputHiddenDatabase = $dom->createElement('input');
-        $inputHiddenDatabase->setAttribute('type', 'hidden');
-        $inputHiddenDatabase->setAttribute('name', 'database');
-        $inputHiddenDatabase->setAttribute('value', $database);
+
+        foreach (self::databases() as $database) {
+            $form->appendChild($dom->createElement(
+                'p',
+                sprintf(_('Are you sure you want to drop the database "%s"?'), $database),
+            ));
+            $inputHiddenDatabase = $dom->createElement('input');
+            $inputHiddenDatabase->setAttribute('type', 'hidden');
+            $inputHiddenDatabase->setAttribute('name', 'database[]');
+            $inputHiddenDatabase->setAttribute('value', $database);
+            $form->appendChild($inputHiddenDatabase);
+        }
+
         $inputHiddenServer = $dom->createElement('input');
         $inputHiddenServer->setAttribute('type', 'hidden');
         $inputHiddenServer->setAttribute('name', 'server');
@@ -70,8 +74,6 @@ final class DropDb extends Website
         ];
         $aButtonCancel->setAttribute('href', $cancelUrl . '?' . http_build_query($cancelUrlParams));
 
-        $form->appendChild($p);
-        $form->appendChild($inputHiddenDatabase);
         $form->appendChild($inputHiddenServer);
         $form->appendChild($inputSubmit);
         $form->appendChild($dom->createEntityReference('nbsp'));
@@ -89,7 +91,7 @@ final class DropDb extends Website
      */
     private function handlePostRequest(): ?string
     {
-        $database = RequestParameter::getString('database') ?? '';
+        $databases = self::databases();
         $serverId = RequestParameter::getString('server') ?? '';
         $serverSession = Logins::serverSession($serverId, Config::getServers());
 
@@ -101,17 +103,49 @@ final class DropDb extends Website
 
         $db = PhpPgAdminConnection::createFromServerSession($serverSession);
 
-        if (is_null($db) || $database === '') {
+        if (is_null($db) || $databases === []) {
             return null;
         }
 
-        try {
-            $db->dropDatabase($database);
-            $redirectUrlParams['message'] = _('Database dropped.');
-        } catch (\Throwable $e) {
-            $redirectUrlParams['message'] = _('Database drop failed.') . ' - ' . $e->getMessage();
+        $messages = [];
+        // Like the legacy list did for the checked databases.
+        $namesEach = count($databases) > 1;
+
+        foreach ($databases as $database) {
+            $prefix = $namesEach
+                ? $database . ': '
+                : '';
+
+            try {
+                $db->dropDatabase($database);
+                $messages[] = $prefix . _('Database dropped.');
+            } catch (\Throwable $e) {
+                $messages[] = $prefix . _('Database drop failed.') . ' - ' . $e->getMessage();
+
+                // Like the legacy list, which dropped none after the first that failed.
+                break;
+            }
         }
 
+        $redirectUrlParams['message'] = implode("\n", $messages);
+
         return $redirectUrl . '?' . http_build_query($redirectUrlParams);
+    }
+
+    /**
+     * One from the link of a database in the list, or several from the actions on multiple lines of the list.
+     *
+     * @return list<string>
+     */
+    private static function databases(): array
+    {
+        $databases = RequestParameter::getArray('database') ?? [RequestParameter::getString('database') ?? ''];
+
+        return array_values(
+            array_filter(
+                $databases,
+                static fn (mixed $database): bool => is_string($database) && $database !== '',
+            ),
+        );
     }
 }

@@ -16,6 +16,8 @@ final class DropDbTest extends TestCase
 
     private const DATABASE = 'ppa_test_database';
 
+    private const OTHER_DATABASE = 'ppa_test_other_database';
+
     public function testThePageHasTheTopBarAndATrailToTheServer(): void
     {
         $body = self::body();
@@ -49,10 +51,46 @@ final class DropDbTest extends TestCase
         );
     }
 
+    public function testTheFormAsksWhetherToDropEachOfSeveralDatabases(): void
+    {
+        $_GET['database'] = [self::DATABASE, self::OTHER_DATABASE];
+
+        self::assertSame(
+            [
+                'Are you sure you want to drop the database "' . self::DATABASE . '"?',
+                'Are you sure you want to drop the database "' . self::OTHER_DATABASE . '"?',
+            ],
+            array_map(
+                static fn (\DOMElement $question): string => $question->textContent,
+                PageBody::query(self::form(), './p'),
+            ),
+        );
+    }
+
     public function testTheFormPostsTheDatabaseAndTheServer(): void
     {
         self::assertSame(
-            [['database', self::DATABASE], ['server', self::SERVER_ID]],
+            [['database[]', self::DATABASE], ['server', self::SERVER_ID]],
+            PageBody::hiddenFields(self::form()),
+        );
+    }
+
+    public function testTheFormPostsEachOfSeveralDatabases(): void
+    {
+        $_GET['database'] = [self::DATABASE, self::OTHER_DATABASE];
+
+        self::assertSame(
+            [['database[]', self::DATABASE], ['database[]', self::OTHER_DATABASE], ['server', self::SERVER_ID]],
+            PageBody::hiddenFields(self::form()),
+        );
+    }
+
+    public function testTheFormLeavesOutAnEmptyDatabase(): void
+    {
+        $_GET['database'] = ['', self::DATABASE];
+
+        self::assertSame(
+            [['database[]', self::DATABASE], ['server', self::SERVER_ID]],
             PageBody::hiddenFields(self::form()),
         );
     }

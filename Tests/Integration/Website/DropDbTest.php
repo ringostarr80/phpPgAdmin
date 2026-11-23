@@ -48,6 +48,39 @@ final class DropDbTest extends TestCase
         );
     }
 
+    public function testADropOfSeveralDatabasesNamesEachInTheMessage(): void
+    {
+        self::createTheDatabase();
+        $_POST['database'] = [self::database(), self::MISSING_DATABASE];
+
+        $redirect = PageRedirect::afterPost(DropDb::class);
+
+        self::assertFalse(self::exists(self::database()));
+        self::assertSame(
+            self::theList(
+                self::database() . ': Database dropped.' . "\n"
+                . self::MISSING_DATABASE . ': Database drop failed. - ' . self::errorOfDropping(self::MISSING_DATABASE),
+            ),
+            $redirect,
+        );
+    }
+
+    public function testADropOfSeveralDatabasesStopsAtTheFirstThatFails(): void
+    {
+        self::createTheDatabase();
+        $_POST['database'] = [self::MISSING_DATABASE, self::database()];
+
+        $redirect = PageRedirect::afterPost(DropDb::class);
+
+        self::assertTrue(self::exists(self::database()));
+        self::assertSame(
+            self::theList(
+                self::MISSING_DATABASE . ': Database drop failed. - ' . self::errorOfDropping(self::MISSING_DATABASE),
+            ),
+            $redirect,
+        );
+    }
+
     public function testWithoutADatabaseThePageShowsItselfAgain(): void
     {
         $_POST['database'] = '';

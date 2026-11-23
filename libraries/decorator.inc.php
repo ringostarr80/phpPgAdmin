@@ -57,7 +57,7 @@ function replace($str, $params)
 
 function value(&$var, &$fields, $esc = null)
 {
-    if (is_a($var, 'Decorator')) {
+    if ($var instanceof Decorator) {
         $val = $var->value($fields);
     } else {
         $val =& $var;

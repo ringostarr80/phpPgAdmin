@@ -15,7 +15,10 @@ use Tests\Support\PageBody;
 #[CoversMethod(Servers::class, 'buildHtmlBody')]
 final class ServersTest extends TestCase
 {
-    private const USERNAME = 'admin';
+    /**
+     * With a bare &, which the list shows as it is.
+     */
+    private const USERNAME = 'R&D admin';
 
     public function testThePageHasTheTopBarAndATrailToTheRootOnly(): void
     {
@@ -58,8 +61,8 @@ final class ServersTest extends TestCase
     {
         self::assertSame(
             [
-                ['Local', '/run/postgresql', '5432', '', ''],
-                ['Production', 'db.example.org', '5433', self::USERNAME, 'Logout'],
+                ['R&amp;D local', '/run/R&D/postgresql', '5432', '', ''],
+                ['R&D production', 'db.example.org', '5433', self::USERNAME, 'Logout'],
             ],
             self::textsOfTheRows(),
         );
@@ -71,8 +74,8 @@ final class ServersTest extends TestCase
 
         self::assertSame(
             [
-                ['Local', '/run/postgresql', '5432', '', ''],
-                ['Production', 'db.example.org', '5433', '', ''],
+                ['R&amp;D local', '/run/R&D/postgresql', '5432', '', ''],
+                ['R&D production', 'db.example.org', '5433', '', ''],
             ],
             self::textsOfTheRows(),
         );
@@ -90,7 +93,7 @@ final class ServersTest extends TestCase
     {
         self::assertSame(
             [
-                'redirect.php?server=%2Frun%2Fpostgresql%3A5432%3Aallow&subject=server',
+                'redirect.php?server=%2Frun%2FR%26D%2Fpostgresql%3A5432%3Aallow&subject=server',
                 'redirect.php?server=db.example.org%3A5433%3Arequire&subject=server',
             ],
             array_map(
@@ -152,17 +155,21 @@ final class ServersTest extends TestCase
     }
 
     /**
-     * A server on the same machine, reached through the socket in the directory given as its host.
+     * A server on the same machine, reached through the socket in the directory given as its host. Its name holds an
+     * entity reference and its host a bare &, which the list shows as they are.
      */
     private static function local(): Server
     {
-        return new Server(name: new Name('Local'), host: new Host('/run/postgresql'));
+        return new Server(name: new Name('R&amp;D local'), host: new Host('/run/R&D/postgresql'));
     }
 
+    /**
+     * Its name holds a bare &, which the list shows as it is.
+     */
     private static function production(): Server
     {
         return new Server(
-            name: new Name('Production'),
+            name: new Name('R&D production'),
             host: new Host('db.example.org'),
             port: new Port(5_433),
             sslMode: SslMode::REQUIRE,

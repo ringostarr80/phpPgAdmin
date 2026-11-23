@@ -67,7 +67,8 @@ final class Servers extends Website
             $tr = $dom->createElement('tr');
             $tr->setAttribute('class', 'data' . ($index + 1));
             $td = $dom->createElement('td');
-            $a = $dom->createElement('a', (string)$server->Name);
+            $a = $dom->createElement('a');
+            $a->appendChild($dom->createTextNode((string)$server->Name));
             $serverId = $server->id();
             $redirectUrlParams = [
                 'server' => $serverId,
@@ -77,7 +78,8 @@ final class Servers extends Website
             $a->setAttribute('href', $redirectUrl);
             $td->appendChild($a);
             $tr->appendChild($td);
-            $td = $dom->createElement('td', (string)$server->Host);
+            $td = $dom->createElement('td');
+            $td->appendChild($dom->createTextNode((string)$server->Host));
             $tr->appendChild($td);
             $td = $dom->createElement('td', (string)$server->Port->Value);
             $tr->appendChild($td);
@@ -92,7 +94,8 @@ final class Servers extends Website
                 $username = $logins[$serverId]['username'];
             }
 
-            $td = $dom->createElement('td', $username);
+            $td = $dom->createElement('td');
+            $td->appendChild($dom->createTextNode($username));
             $tr->appendChild($td);
             $td = $dom->createElement('td');
 

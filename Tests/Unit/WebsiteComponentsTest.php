@@ -197,6 +197,48 @@ final class WebsiteComponentsTest extends TestCase
         self::assertSame(['database' => 'languages'], $_SESSION['webdbLastTab']);
     }
 
+    public function testDatabasesTableHasAColumnForEachValueAndThreeForTheActions(): void
+    {
+        $table = self::databasesTableWithoutALogin();
+
+        self::assertSame('width: 100%;', $table->getAttribute('style'));
+
+        $headings = PageBody::query($table, './thead/tr/th');
+
+        self::assertSame(
+            [
+                '',
+                'Database',
+                'Owner',
+                'Encoding',
+                'Collation',
+                'Character Type',
+                'Tablespace',
+                'Size',
+                'Actions',
+                'Comment',
+            ],
+            array_map(static fn (\DOMElement $heading): string => $heading->textContent, $headings),
+        );
+        // The first column holds the checkboxes of the rows.
+        self::assertSame(
+            ['', 'data', 'data', 'data', 'data', 'data', 'data', 'data', 'data', 'data'],
+            array_map(static fn (\DOMElement $heading): string => $heading->getAttribute('class'), $headings),
+        );
+        self::assertSame(
+            ['', '', '', '', '', '', '', '', '3', ''],
+            array_map(static fn (\DOMElement $heading): string => $heading->getAttribute('colspan'), $headings),
+        );
+    }
+
+    public function testDatabasesTableWithoutALoginHasNoRows(): void
+    {
+        $table = self::databasesTableWithoutALogin();
+
+        self::assertCount(1, PageBody::query($table, './tbody'));
+        self::assertSame([], PageBody::query($table, './tbody/tr'));
+    }
+
     /**
      * Characterizes the server tabs, which share the rendering with the database tabs.
      */
@@ -532,6 +574,15 @@ final class WebsiteComponentsTest extends TestCase
         }
 
         self::fail("No database tab labelled \"{$label}\".");
+    }
+
+    private static function databasesTableWithoutALogin(): \DOMElement
+    {
+        $dom = new \DOMDocument();
+        $table = WebsiteComponents::buildDatabasesTable($dom, null);
+        $dom->appendChild($table);
+
+        return $table;
     }
 
     /**

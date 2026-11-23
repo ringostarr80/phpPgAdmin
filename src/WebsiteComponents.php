@@ -173,7 +173,8 @@ abstract class WebsiteComponents
                 $tdCheckbox->appendChild($inputCheckbox);
 
                 $tdDatabase = $dom->createElement('td');
-                $aDatabase = $dom->createElement('a', $dbName);
+                $aDatabase = $dom->createElement('a');
+                $aDatabase->appendChild($dom->createTextNode($dbName));
                 $dbUrl = 'redirect.php';
                 $dbUrlParams = [
                     'database' => $dbName,
@@ -183,11 +184,16 @@ abstract class WebsiteComponents
                 $aDatabase->setAttribute('href', $dbUrl . '?' . http_build_query($dbUrlParams));
                 $tdDatabase->appendChild($aDatabase);
 
-                $tdOwner = $dom->createElement('td', $db['datowner']);
-                $tdEncoding = $dom->createElement('td', $db['datencoding']);
-                $tdCollation = $dom->createElement('td', $db['datcollate']);
-                $tdCharacterType = $dom->createElement('td', $db['datctype']);
-                $tdTablespace = $dom->createElement('td', $db['tablespace']);
+                $tdOwner = $dom->createElement('td');
+                $tdOwner->appendChild($dom->createTextNode($db['datowner']));
+                $tdEncoding = $dom->createElement('td');
+                $tdEncoding->appendChild($dom->createTextNode($db['datencoding']));
+                $tdCollation = $dom->createElement('td');
+                $tdCollation->appendChild($dom->createTextNode($db['datcollate']));
+                $tdCharacterType = $dom->createElement('td');
+                $tdCharacterType->appendChild($dom->createTextNode($db['datctype']));
+                $tdTablespace = $dom->createElement('td');
+                $tdTablespace->appendChild($dom->createTextNode($db['tablespace']));
                 $tdSize = $dom->createElement('td', $dbSize->prettyFormat());
 
                 $tdActionDelete = $dom->createElement('td');
@@ -227,7 +233,8 @@ abstract class WebsiteComponents
                 $aAlter->appendChild($dom->createTextNode(_('Alter')));
                 $tdActionAlter->appendChild($aAlter);
 
-                $tdComment = $dom->createElement('td', $db['datcomment']);
+                $tdComment = $dom->createElement('td');
+                $tdComment->appendChild($dom->createTextNode($db['datcomment']));
 
                 $tr->appendChild($tdCheckbox);
                 $tr->appendChild($tdDatabase);

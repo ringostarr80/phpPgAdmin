@@ -14,7 +14,10 @@ use Tests\Support\{PageBody, RunningServer, TestEnvironment};
 #[CoversMethod(WebsiteComponents::class, 'buildDatabasesTable')]
 final class WebsiteComponentsTest extends TestCase
 {
-    private const COMMENT = 'The database of the list';
+    /**
+     * With a bare & and an entity reference, which the list shows as they are.
+     */
+    private const COMMENT = 'R&D, written R&amp;D in HTML';
 
     public function testDatabasesTableShowsTheValuesOfADatabase(): void
     {
@@ -158,19 +161,22 @@ final class WebsiteComponentsTest extends TestCase
         $_SESSION = [];
     }
 
+    /**
+     * Like its owner and its tablespace, named with an &, which the list shows as it is.
+     */
     private static function database(): string
     {
-        return TestEnvironment::perThread('ppa_test_listed_database');
+        return TestEnvironment::perThread('ppa_test_R&D_database');
     }
 
     private static function owner(): string
     {
-        return TestEnvironment::perThread('ppa_test_listed_database_owner');
+        return TestEnvironment::perThread('ppa_test_R&D_owner');
     }
 
     private static function tablespace(): string
     {
-        return TestEnvironment::perThread('ppa_test_listed_database_tablespace');
+        return TestEnvironment::perThread('ppa_test_R&D_tablespace');
     }
 
     /**

@@ -120,7 +120,8 @@ final class CreateDb extends Website
                     continue;
                 }
 
-                $optionTemplate = $dom->createElement('option', $dbName);
+                $optionTemplate = $dom->createElement('option');
+                $optionTemplate->appendChild($dom->createTextNode($dbName));
                 $optionTemplate->setAttribute('value', $dbName);
 
                 if ($formTemplate === $dbName) {
@@ -187,7 +188,8 @@ final class CreateDb extends Website
 
         if (!is_null($availableCollations)) {
             foreach ($availableCollations as $collation) {
-                $option = $dom->createElement('option', $collation);
+                $option = $dom->createElement('option');
+                $option->appendChild($dom->createTextNode($collation));
                 $option->setAttribute('value', $collation);
 
                 if ($formCollate === $collation) {
@@ -221,7 +223,8 @@ final class CreateDb extends Website
 
         if (!is_null($availableCollations)) {
             foreach ($availableCollations as $collation) {
-                $option = $dom->createElement('option', $collation);
+                $option = $dom->createElement('option');
+                $option->appendChild($dom->createTextNode($collation));
                 $option->setAttribute('value', $collation);
 
                 if ($formCType === $collation) {

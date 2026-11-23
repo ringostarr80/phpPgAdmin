@@ -20,9 +20,9 @@ final class CreateDbTest extends TestCase
 {
     /**
      * A collation of the database of the tests, which only exists there. The form offers only collations with a dot in
-     * their names, like those of the locales of the operating system.
+     * their names, like those of the locales of the operating system. Named with an &, which the form shows as it is.
      */
-    private const COLLATION = 'ppa_test.collation';
+    private const COLLATION = 'ppa_test_R&D.collation';
 
     /**
      * PostgreSQL does not create a database with the name of one that exists, and initdb creates this one in every
@@ -210,12 +210,13 @@ final class CreateDbTest extends TestCase
     }
 
     /**
-     * The database of the tests, which the form offers as a template. Every dropped database forces a checkpoint,
-     * which the parallel threads of Infection wait for in turn, so the tests share one database.
+     * The database of the tests, which the form offers as a template. Named with an &, which the form shows as it is.
+     * Every dropped database forces a checkpoint, which the parallel threads of Infection wait for in turn, so the
+     * tests share one database.
      */
     private static function database(): string
     {
-        return TestEnvironment::perThread('ppa_test_default_database');
+        return TestEnvironment::perThread('ppa_test_R&D_default_database');
     }
 
     private static function dropTheDatabase(): void

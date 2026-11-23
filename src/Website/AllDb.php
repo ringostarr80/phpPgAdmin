@@ -18,6 +18,10 @@ final class AllDb extends Website
 
         // After the parent constructor, which sets the locale for the translation.
         $this->title = _('Databases');
+
+        if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            self::redirectTo($this->handlePostRequest());
+        }
     }
 
     #[\Override]
@@ -60,5 +64,39 @@ final class AllDb extends Website
         $body->appendChild(WebsiteComponents::buildNavLinks($dom, $navLinks));
 
         return $body;
+    }
+
+    /**
+     * Carries out the actions on multiple lines. Leaves leading to the next page to the constructor, whose die would
+     * end the tests.
+     *
+     * @return ?string The page to lead to, or null to show this page again.
+     */
+    private function handlePostRequest(): ?string
+    {
+        // Delete is the only action, "--" is none.
+        if (RequestParameter::getString('action') !== 'confirm_drop') {
+            return null;
+        }
+
+        $serverId = RequestParameter::getString('server') ?? '';
+        // The checked databases.
+        $databases = array_values(
+            array_filter(
+                RequestParameter::getArray('ma') ?? [],
+                static fn (mixed $database): bool => is_string($database) && $database !== '',
+            ),
+        );
+
+        if ($databases === []) {
+            return 'all_db.php?' . http_build_query([
+                'message' => _('You must specify at least one database to drop.'),
+                'server' => $serverId,
+                'subject' => 'server',
+            ]);
+        }
+
+        // drop_db.php asks whether to drop them.
+        return 'drop_db.php?' . http_build_query(['database' => $databases, 'server' => $serverId]);
     }
 }

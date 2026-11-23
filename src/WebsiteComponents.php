@@ -166,9 +166,7 @@ abstract class WebsiteComponents
                 $inputCheckbox->setAttribute('name', 'ma[]');
 
                 $dbName = $db['datname'];
-                $checkboxValue = serialize(['database' => $dbName]);
-
-                $inputCheckbox->setAttribute('value', $checkboxValue);
+                $inputCheckbox->setAttribute('value', $dbName);
                 $tdCheckbox->appendChild($inputCheckbox);
 
                 $tdDatabase = $dom->createElement('td');

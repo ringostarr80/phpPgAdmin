@@ -64,7 +64,7 @@ final class WebsiteComponentsTest extends TestCase
         self::assertSame('checkbox', $checkbox->getAttribute('type'));
         // The actions on multiple lines take the checked databases from it, like in the legacy list.
         self::assertSame('ma[]', $checkbox->getAttribute('name'));
-        self::assertSame(serialize(['database' => self::database()]), $checkbox->getAttribute('value'));
+        self::assertSame(self::database(), $checkbox->getAttribute('value'));
     }
 
     public function testDatabasesTableLinksTheNameOfADatabaseToTheDatabase(): void

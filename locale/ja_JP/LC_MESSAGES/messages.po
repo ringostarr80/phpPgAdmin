@@ -1002,7 +1002,7 @@ msgstr "データベースを変更しました。"
 msgid "Database alter failed."
 msgstr "データベースの変更に失敗しました。"
 
-msgid "strspecifydatabasetodrop"
+msgid "You must specify at least one database to drop."
 msgstr "データベースを破棄するには少なくとも 1 つ指定しなければなりません"
 
 # Views

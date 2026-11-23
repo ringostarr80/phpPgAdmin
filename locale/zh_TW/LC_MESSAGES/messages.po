@@ -990,7 +990,7 @@ msgstr "資料庫已修改。"
 msgid "Database alter failed."
 msgstr "資料庫修改已失敗。"
 
-msgid "strspecifydatabasetodrop"
+msgid "You must specify at least one database to drop."
 msgstr "必須至少指定一個資料庫來移除"
 
 # Views

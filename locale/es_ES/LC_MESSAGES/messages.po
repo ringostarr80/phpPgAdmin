@@ -1087,7 +1087,7 @@ msgstr "Base de Datos modificada."
 msgid "Database alter failed."
 msgstr "Falló al intentar modificar la base de datos."
 
-msgid "strspecifydatabasetodrop"
+msgid "You must specify at least one database to drop."
 msgstr "Debes especificar al menos una base de datos para eliminar."
 
 msgid "Template"

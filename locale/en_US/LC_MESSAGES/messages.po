@@ -1205,7 +1205,8 @@ msgstr "Database altered."
 msgid "Database alter failed."
 msgstr "Database alter failed."
 
-msgid "strspecifydatabasetodrop"
+# original: "strspecifydatabasetodrop"
+msgid "You must specify at least one database to drop."
 msgstr "You must specify at least one database to drop."
 
 # original: "strtemplatedb"

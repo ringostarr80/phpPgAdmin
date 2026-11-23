@@ -1081,7 +1081,7 @@ msgstr "Změny v databázi byly provedeny."
 msgid "Database alter failed."
 msgstr "Nezdařilo se provést změny v databázi."
 
-msgid "strspecifydatabasetodrop"
+msgid "You must specify at least one database to drop."
 msgstr "Pokud chcete odstranit databáze, tak musíte nejméně jednu vybrat."
 
 msgid "Template"

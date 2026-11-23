@@ -1008,7 +1008,7 @@ msgstr "Datenbank geändert."
 msgid "Database alter failed."
 msgstr "Ändern der Datenbank fehlgeschlagen."
 
-msgid "strspecifydatabasetodrop"
+msgid "You must specify at least one database to drop."
 msgstr "Sie müssen mindestens eine Datenbank angeben, die gelöscht werden soll."
 
 # Views

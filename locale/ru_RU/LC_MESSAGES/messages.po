@@ -1078,7 +1078,7 @@ msgstr "База данных изменена."
 msgid "Database alter failed."
 msgstr "Изменение базы данных прервано."
 
-msgid "strspecifydatabasetodrop"
+msgid "You must specify at least one database to drop."
 msgstr "Вам необходимо указать как минимум одну базу данных для удаления."
 
 msgid "Template"

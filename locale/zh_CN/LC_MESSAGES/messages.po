@@ -1084,7 +1084,7 @@ msgstr "数据库已变更。"
 msgid "Database alter failed."
 msgstr "数据库变更失败。"
 
-msgid "strspecifydatabasetodrop"
+msgid "You must specify at least one database to drop."
 msgstr "必须至少指定一个要移除的数据库"
 
 msgid "Template"

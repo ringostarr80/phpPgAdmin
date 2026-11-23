@@ -1081,7 +1081,7 @@ msgstr "Adatbázis megváltoztatva."
 msgid "Database alter failed."
 msgstr "Nem sikerült az adatbázist megváltoztatni."
 
-msgid "strspecifydatabasetodrop"
+msgid "You must specify at least one database to drop."
 msgstr "Meg kell adni a törlendő adatbázist"
 
 msgid "Template"

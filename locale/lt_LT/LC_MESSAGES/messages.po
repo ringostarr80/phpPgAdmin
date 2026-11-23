@@ -1100,7 +1100,7 @@ msgstr "Duomenų bazė pakeista."
 msgid "Database alter failed."
 msgstr "Nepavyko pakeisti duomenų bazės."
 
-msgid "strspecifydatabasetodrop"
+msgid "You must specify at least one database to drop."
 msgstr "Turite nurodyti bent vieną duomenų bazę, kurią reikia šalinti."
 
 msgid "Template"

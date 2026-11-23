@@ -112,9 +112,10 @@ final class TrailBuilderTest extends TestCase
 
     public function testCrumbLabelOfAServerNamesTheServerOfTheLogin(): void
     {
-        self::logInToAServerNamed('Production');
+        // With an entity reference, which the label shows as it is.
+        self::logInToAServerNamed('R&amp;D production');
 
-        self::assertSame('Production', self::label(TrailSubject::Server));
+        self::assertSame('R&amp;D production', self::label(TrailSubject::Server));
     }
 
     /**
@@ -158,15 +159,16 @@ final class TrailBuilderTest extends TestCase
     }
 
     /**
-     * The subjects whose labels are the values of request parameters.
+     * The subjects whose labels are the values of request parameters, named with a bare & or an entity reference,
+     * which the labels show as they are.
      *
      * @return iterable<string, array{TrailSubject, string, string}>
      */
     public static function subjectsOfTheRequest(): iterable
     {
-        yield 'database' => [TrailSubject::Database, 'database', 'ppa_test_database'];
-        yield 'role' => [TrailSubject::Role, 'rolename', 'ppa_test_role'];
-        yield 'tablespace' => [TrailSubject::Tablespace, 'tablespace', 'ppa_test_tablespace'];
+        yield 'database' => [TrailSubject::Database, 'database', 'R&D database'];
+        yield 'role' => [TrailSubject::Role, 'rolename', 'R&amp;D role'];
+        yield 'tablespace' => [TrailSubject::Tablespace, 'tablespace', 'R&D tablespace'];
     }
 
     /**

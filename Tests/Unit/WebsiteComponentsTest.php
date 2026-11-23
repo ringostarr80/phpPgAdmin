@@ -498,7 +498,8 @@ final class WebsiteComponentsTest extends TestCase
 
     public function testTrailOfAServerLinksToItsDatabasesAndNamesTheServerOfTheLogin(): void
     {
-        self::logInToAServerNamed('Production');
+        // With a bare &, which the trail shows as it is.
+        self::logInToAServerNamed('R&D production');
 
         $crumbs = self::trailCrumbs([TrailSubject::Server]);
 
@@ -515,7 +516,7 @@ final class WebsiteComponentsTest extends TestCase
         self::assertCount(1, $icons);
         self::assertSame('images/themes/default/Servers.png', $icons[0]->getAttribute('src'));
         self::assertSame('Server', $icons[0]->getAttribute('alt'));
-        self::assertSame(['Production'], self::labelsOf($crumbs[1]));
+        self::assertSame(['R&D production'], self::labelsOf($crumbs[1]));
         self::assertSame('help', $links[1]->getAttribute('class'));
         self::assertSame('help.php?help=pg.server&server=127.0.0.1%3A5432%3Aallow', $links[1]->getAttribute('href'));
         self::assertSame(': ', $crumbs[1]->lastChild?->textContent);

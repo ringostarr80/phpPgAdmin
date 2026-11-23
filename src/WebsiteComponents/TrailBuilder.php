@@ -32,7 +32,8 @@ abstract class TrailBuilder
         $spanIcon->appendChild($imgIcon);
         $a->appendChild($spanIcon);
 
-        $spanLabel = $dom->createElement('span', self::buildLabelTextFor($subject));
+        $spanLabel = $dom->createElement('span');
+        $spanLabel->appendChild($dom->createTextNode(self::buildLabelTextFor($subject)));
         $spanLabel->setAttribute('class', 'label');
         $a->appendChild($spanLabel);
 

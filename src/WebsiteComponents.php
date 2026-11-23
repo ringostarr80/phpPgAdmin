@@ -1050,7 +1050,8 @@ abstract class WebsiteComponents
         $a->appendChild($spanIcon);
 
         if (!is_null($serverSession)) {
-            $spanLabel = $dom->createElement('span', (string)$serverSession->Name);
+            $spanLabel = $dom->createElement('span');
+            $spanLabel->appendChild($dom->createTextNode((string)$serverSession->Name));
             $spanLabel->setAttribute('class', 'label');
             $a->appendChild($spanLabel);
         }

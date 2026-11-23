@@ -29,7 +29,7 @@ final class WebsiteComponentsTest extends TestCase
                 self::owner(),
                 'UTF8',
                 'C',
-                'POSIX',
+                'en_US.UTF-8',
                 self::tablespace(),
                 (new DbSize(self::sizeOfTheDatabase()))->prettyFormat(),
                 'Delete',
@@ -126,10 +126,12 @@ final class WebsiteComponentsTest extends TestCase
         $connection->exec('SET allow_in_place_tablespaces = true');
         $connection->exec('CREATE TABLESPACE "' . self::tablespace() . '" LOCATION \'\'');
         // template0 takes no connections, so the tests running at the same time do not keep it from being copied.
+        // Two different locales tell the column of the collation from the one of the character type. Not POSIX, which
+        // PostgreSQL on Linux keeps as C.
         $connection->exec(
             'CREATE DATABASE "' . self::database() . '" TEMPLATE template0 OWNER "' . self::owner() . '"'
             . ' TABLESPACE "' . self::tablespace() . '" ENCODING \'UTF8\' LOCALE_PROVIDER libc'
-            . ' LC_COLLATE \'C\' LC_CTYPE \'POSIX\'',
+            . ' LC_COLLATE \'C\' LC_CTYPE \'en_US.UTF-8\'',
         );
         $connection->exec('COMMENT ON DATABASE "' . self::database() . '" IS \'' . self::COMMENT . '\'');
 

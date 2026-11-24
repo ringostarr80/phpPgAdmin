@@ -278,8 +278,12 @@ final class Roles extends Website
         $tBody = $dom->createElement('tbody');
 
         foreach ($roles as $roleIndex => $role) {
+            // The themes style opbutton1 in the rows with data1 and opbutton2 in those with data2.
+            $rowNumber = $roleIndex % 2
+                ? '2'
+                : '1';
             $tr = $dom->createElement('tr');
-            $tr->setAttribute('class', 'data' . ($roleIndex % 2 ? '2' : '1'));
+            $tr->setAttribute('class', 'data' . $rowNumber);
 
             $rolenameUrl = 'roles.php';
             $rolenameUrlParams = [
@@ -318,7 +322,7 @@ final class Roles extends Website
             }
 
             $alterTd = $dom->createElement('td');
-            $alterTd->setAttribute('class', 'opbutton1');
+            $alterTd->setAttribute('class', 'opbutton' . $rowNumber);
             $alterLink = $dom->createElement('a');
             $alterUrl = 'alter_role.php';
             $alterUrlParams = [
@@ -331,7 +335,7 @@ final class Roles extends Website
             $tr->appendChild($alterTd);
 
             $dropTd = $dom->createElement('td');
-            $dropTd->setAttribute('class', 'opbutton1');
+            $dropTd->setAttribute('class', 'opbutton' . $rowNumber);
             $dropLink = $dom->createElement('a');
             $dropUrl = 'drop_role.php';
             $dropUrlParams = [

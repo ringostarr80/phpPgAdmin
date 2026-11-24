@@ -149,6 +149,30 @@ final class RolesTest extends TestCase
         );
     }
 
+    public function testTheListGivesTheActionsOfARowTheNumberOfTheRowClass(): void
+    {
+        // Like in the legacy list, as the themes style opbutton1 in the rows with data1 and opbutton2 in those with
+        // data2.
+        $classes = array_map(
+            static fn (\DOMElement $row): array => array_map(
+                static fn (\DOMElement $cell): string => $cell->getAttribute('class'),
+                // The columns of the actions.
+                PageBody::query($row, './td[position() >= 9]'),
+            ),
+            PageBody::query(self::rolesList(), './tbody/tr'),
+        );
+
+        // Besides the login of the tests, the server has its predefined roles, like pg_monitor.
+        self::assertGreaterThanOrEqual(3, count($classes));
+        self::assertSame(
+            array_map(
+                static fn (int $index): array => array_fill(0, 2, $index % 2 === 0 ? 'opbutton1' : 'opbutton2'),
+                array_keys($classes),
+            ),
+            $classes,
+        );
+    }
+
     public function testForAServerThatIsNotConfiguredTheListHasNoRoles(): void
     {
         $_GET['server'] = 'ppa-test-unknown-host:5432:allow';

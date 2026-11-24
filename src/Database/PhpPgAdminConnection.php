@@ -694,61 +694,6 @@ final class PhpPgAdminConnection extends \PDO
     }
 
     /**
-     * @return array<array{
-     *  'usename': string,
-     *  'usesuper': bool,
-     *  'usecreatedb': bool,
-     *  'useexpires': string,
-     *  'useconfig': string
-     * }> The list of databases.
-     */
-    public function getUsers(): array
-    {
-        $sql = "SELECT usename, usesuper, usecreatedb, valuntil AS useexpires, useconfig
-            FROM pg_user
-            ORDER BY usename";
-        $statement = $this->prepare($sql);
-        $statement->execute();
-
-        $result = [];
-        $requiredFields = [
-            'usename',
-            'usesuper',
-            'usecreatedb',
-        ];
-
-        while ($row = $statement->fetch()) {
-            if (!is_array($row)) {
-                continue;
-            }
-
-            foreach ($requiredFields as $field) {
-                if (!isset($row[$field])) {
-                    continue 2;
-                }
-            }
-
-            if (!is_string($row['usename']) || !is_bool($row['usesuper']) || !is_bool($row['usecreatedb'])) {
-                continue;
-            }
-
-            $result[] = [
-                'useconfig' => isset($row['useconfig']) && is_string($row['useconfig'])
-                    ? $row['useconfig']
-                    : '',
-                'usecreatedb' => $row['usecreatedb'],
-                'useexpires' => isset($row['useexpires']) && is_string($row['useexpires'])
-                    ? $row['useexpires']
-                    : '',
-                'usename' => $row['usename'],
-                'usesuper' => $row['usesuper'],
-            ];
-        }
-
-        return $result;
-    }
-
-    /**
      * Determines whether or not a user is a super user
      *
      * @param string $username The username of the user

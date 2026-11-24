@@ -533,7 +533,7 @@ final class WebsiteComponentsTest extends TestCase
             'all_db.php?server=127.0.0.1%3A5432%3Aallow',
             PageBody::query($crumbs[1], './a')[0]->getAttribute('href'),
         );
-        self::assertSame([], self::labelsOf($crumbs[1]));
+        self::assertSame([''], self::labelsOf($crumbs[1]));
     }
 
     public function testTrailHasTheCrumbsOfTheSubjectsInTheirOrder(): void

@@ -8,8 +8,6 @@ use PhpPgAdmin\Application\DTO\ServerSession as DTOServerSession;
 use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\DbSize;
-use PhpPgAdmin\Infrastructure\Http\RequestParameter;
-use PhpPgAdmin\Infrastructure\Session\Logins;
 use PhpPgAdmin\WebsiteComponents\TrailBuilder;
 
 abstract class WebsiteComponents
@@ -881,12 +879,7 @@ abstract class WebsiteComponents
         $divTrail->appendChild($tableTrail);
 
         foreach ($subjects as $subject) {
-            $subTrail = match ($subject) {
-                TrailSubject::Server => self::buildTrailForServer($dom),
-                default => TrailBuilder::buildTrailFor($subject, $dom),
-            };
-
-            $trTrail->appendChild($subTrail);
+            $trTrail->appendChild(TrailBuilder::buildTrailFor($subject, $dom));
         }
 
         return $divTrail;
@@ -1037,51 +1030,5 @@ abstract class WebsiteComponents
         $tableCell->appendChild($script);
 
         return $tableCell;
-    }
-
-    private static function buildTrailForServer(\DOMDocument $dom): \DOMElement
-    {
-        $td = $dom->createElement('td');
-        $td->setAttribute('class', 'crumb');
-
-        $serverId = RequestParameter::getString('server') ?? '';
-        $serverSession = Logins::serverSession($serverId, Config::getServers());
-        $link = 'all_db.php';
-        $linkParams = [
-            'server' => $serverId,
-        ];
-        $a = $dom->createElement('a');
-        $a->setAttribute('href', $link . '?' . http_build_query($linkParams));
-        $a->setAttribute('title', _('Server'));
-
-        $spanIcon = $dom->createElement('span');
-        $spanIcon->setAttribute('class', 'icon');
-        $imgIcon = $dom->createElement('img');
-        $imgIcon->setAttribute('src', Config::getIcon('Servers'));
-        $imgIcon->setAttribute('alt', _('Server'));
-        $spanIcon->appendChild($imgIcon);
-        $a->appendChild($spanIcon);
-
-        if (!is_null($serverSession)) {
-            $spanLabel = $dom->createElement('span');
-            $spanLabel->appendChild($dom->createTextNode((string)$serverSession->Name));
-            $spanLabel->setAttribute('class', 'label');
-            $a->appendChild($spanLabel);
-        }
-
-        $td->appendChild($a);
-
-        $aHelp = self::buildHelpLink(
-            dom: $dom,
-            url: 'help.php',
-            urlParams: [
-                'help' => 'pg.server',
-                'server' => $serverId,
-            ],
-        );
-        $td->appendChild($aHelp);
-        $td->appendChild($dom->createTextNode(': '));
-
-        return $td;
     }
 }

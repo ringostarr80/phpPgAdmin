@@ -67,24 +67,14 @@ abstract class TrailBuilder
 
     private static function buildLabelTextFor(TrailSubject $subject): string
     {
-        if ($subject === TrailSubject::Database) {
-            return RequestParameter::getString('database') ?? '';
-        }
+        $serverId = RequestParameter::getString('server') ?? '';
 
-        if ($subject === TrailSubject::Server) {
-            $serverId = RequestParameter::getString('server') ?? '';
-            $serverSession = Logins::serverSession($serverId, Config::getServers());
-
-            if (!is_null($serverSession)) {
-                return (string)$serverSession->Name;
-            }
-        } elseif ($subject === TrailSubject::Role) {
-            return RequestParameter::getString('rolename') ?? '';
-        } elseif ($subject === TrailSubject::Tablespace) {
-            return RequestParameter::getString('tablespace') ?? '';
-        }
-
-        return '';
+        return match ($subject) {
+            TrailSubject::Database => RequestParameter::getString('database') ?? '',
+            TrailSubject::Role => RequestParameter::getString('rolename') ?? '',
+            TrailSubject::Server => (string)Logins::serverSession($serverId, Config::getServers())?->Name,
+            TrailSubject::Tablespace => RequestParameter::getString('tablespace') ?? '',
+        };
     }
 
     private static function buildLinkFor(TrailSubject $subject, \DOMDocument $dom): \DOMElement

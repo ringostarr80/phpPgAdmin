@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Integration\Database;
 
 use PhpPgAdmin\Config;
-use PhpPgAdmin\Database\PhpPgAdminConnection;
+use PhpPgAdmin\Database\{PhpPgAdminConnection, ScramSha256};
 use PhpPgAdmin\DDD\Entities\{Server, ServerSession};
 use PhpPgAdmin\DDD\ValueObjects\Server\{DatabaseName, Host, Name, Port};
 use PhpPgAdmin\DDD\ValueObjects\ServerSession\{Password, Username};
@@ -714,7 +714,30 @@ final class PhpPgAdminConnectionTest extends TestCase
         $connection->createRole($role, self::ROLE_PASSWORD, memberOf: [], members: [], adminMembers: []);
 
         self::assertEquals($role, $connection->getRole(self::roleName()));
-        self::assertSame(self::encryptedRolePassword($connection), self::passwordOfTheRole($connection));
+        $secret = self::passwordOfTheRole($connection);
+        self::assertSame(self::scramSecretOfTheRolePassword($secret), $secret);
+    }
+
+    public function testCreateRoleHashesThePasswordWithMd5WhenTheServerDoes(): void
+    {
+        $connection = $this->connectionForRoles();
+        $connection->exec("SET password_encryption = 'md5'");
+
+        $connection->createRole(new Role(self::roleName()), self::ROLE_PASSWORD);
+
+        self::assertSame(self::md5PasswordOfTheRole($connection), self::passwordOfTheRole($connection));
+    }
+
+    public function testCreateRoleHashesThePasswordWithTheIterationsThatTheServerSets(): void
+    {
+        $connection = $this->connectionForRoles();
+        $connection->exec('SET scram_iterations = 5000');
+
+        $connection->createRole(new Role(self::roleName()), self::ROLE_PASSWORD);
+
+        $secret = self::passwordOfTheRole($connection);
+        self::assertIsString($secret);
+        self::assertStringStartsWith('SCRAM-SHA-256$5000:', $secret);
     }
 
     public function testUpdateRoleGivesItTheAttributesAndThePasswordThatAreGiven(): void
@@ -726,7 +749,8 @@ final class PhpPgAdminConnectionTest extends TestCase
         $connection->updateRole($role, self::ROLE_PASSWORD);
 
         self::assertEquals($role, $connection->getRole(self::roleName()));
-        self::assertSame(self::encryptedRolePassword($connection), self::passwordOfTheRole($connection));
+        $secret = self::passwordOfTheRole($connection);
+        self::assertSame(self::scramSecretOfTheRolePassword($secret), $secret);
     }
 
     public function testUpdateRoleKeepsTheRolesThatAreGivenAgain(): void
@@ -959,6 +983,9 @@ final class PhpPgAdminConnectionTest extends TestCase
             $connection->exec('CREATE ROLE ' . self::quoteIdentifier($name));
         }
 
+        // The default since PostgreSQL 14, but a server can still be set to MD5.
+        $connection->exec("SET password_encryption = 'scram-sha-256'");
+
         return $connection;
     }
 
@@ -1130,12 +1157,27 @@ final class PhpPgAdminConnectionTest extends TestCase
      * PostgreSQL stores a password that it gets as an MD5 hash as it is.
      * The hash that is expected is built with the md5() of PostgreSQL.
      */
-    private static function encryptedRolePassword(PhpPgAdminConnection $administrator): mixed
+    private static function md5PasswordOfTheRole(PhpPgAdminConnection $administrator): mixed
     {
         return self::queryValue(
             $administrator,
             "SELECT 'md5' || md5(" . $administrator->quote(self::ROLE_PASSWORD . self::roleName()) . ')',
         );
+    }
+
+    /**
+     * The SCRAM-SHA-256 secret that ROLE_PASSWORD gives with the salt and the iterations of the stored secret, as each
+     * secret gets a random salt.
+     */
+    private static function scramSecretOfTheRolePassword(mixed $storedSecret): string
+    {
+        self::assertIsString($storedSecret);
+
+        if (preg_match('/^SCRAM-SHA-256\$(\d+):([^$]+)\$/', $storedSecret, $matches) !== 1) {
+            self::fail("The role has no SCRAM-SHA-256 secret, but {$storedSecret}.");
+        }
+
+        return ScramSha256::secret(self::ROLE_PASSWORD, (int)$matches[1], (string)base64_decode($matches[2], true));
     }
 
     private static function passwordOfTheRole(PhpPgAdminConnection $administrator): mixed

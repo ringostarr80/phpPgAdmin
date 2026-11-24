@@ -202,7 +202,7 @@ final class PhpPgAdminConnection extends \PDO
         $sql = "CREATE ROLE \"{$escapedRolename}\"";
 
         if ($password !== '') {
-            $escapedEncryptedPassword = self::escapeIdentifier(self::encryptPassword($role->Name, $password));
+            $escapedEncryptedPassword = self::escapeIdentifier($this->encryptPassword($role->Name, $password));
             $sql .= " WITH ENCRYPTED PASSWORD '{$escapedEncryptedPassword}'";
         }
 
@@ -757,7 +757,7 @@ final class PhpPgAdminConnection extends \PDO
         $sql = "ALTER ROLE \"{$escapedRolename}\"";
 
         if (!is_null($password) && $password !== '') {
-            $escapedEncryptedPassword = self::escapeIdentifier(self::encryptPassword($role->Name, $password));
+            $escapedEncryptedPassword = self::escapeIdentifier($this->encryptPassword($role->Name, $password));
             $sql .= " WITH ENCRYPTED PASSWORD '{$escapedEncryptedPassword}'";
         }
 
@@ -876,6 +876,29 @@ final class PhpPgAdminConnection extends \PDO
         $statement = "ALTER DATABASE \"{$escapedOldName}\" RENAME TO \"{$escapedNewName}\"";
 
         $this->exec($statement);
+    }
+
+    /**
+     * Hashes the password with the method that the server sets in password_encryption, like libpq's
+     * PQencryptPasswordConn() does, so the password does not reach the server in plain text.
+     */
+    private function encryptPassword(string $username, string $password): string
+    {
+        $statement = $this->query(
+            "SELECT current_setting('password_encryption'), "
+            // Before PostgreSQL 16, the server had no scram_iterations, and libpq took 4096.
+            . "COALESCE((SELECT setting FROM pg_catalog.pg_settings WHERE name = 'scram_iterations'), '4096')::integer",
+        );
+        $settings = $statement !== false
+            ? $statement->fetch(\PDO::FETCH_NUM)
+            : false;
+
+        if (is_array($settings) && $settings[0] === 'scram-sha-256' && is_int($settings[1])) {
+            return ScramSha256::secret($password, $settings[1]);
+        }
+
+        // Otherwise it is md5, or before PostgreSQL 10, on or off, and libpq hashes with MD5 for all of them.
+        return self::md5Password($username, $password);
     }
 
     /**
@@ -1003,9 +1026,9 @@ final class PhpPgAdminConnection extends \PDO
     }
 
     /**
-     * Helper function that computes encrypted PostgreSQL passwords
+     * The hash that PostgreSQL stores for a password with MD5, salted with the name of the role.
      */
-    private static function encryptPassword(string $username, string $password): string
+    private static function md5Password(string $username, string $password): string
     {
         return 'md5' . md5($password . $username);
     }

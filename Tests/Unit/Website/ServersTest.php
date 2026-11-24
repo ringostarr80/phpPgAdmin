@@ -81,11 +81,28 @@ final class ServersTest extends TestCase
         );
     }
 
-    public function testTheRowsOfTheFirstAndTheSecondServerHaveTheClassesData1AndData2(): void
+    public function testTheListAlternatesTheClassOfTheRows(): void
     {
+        self::configureThreeServersWithALogin();
+
         self::assertSame(
-            ['data1', 'data2'],
+            ['data1', 'data2', 'data1'],
             array_map(static fn (\DOMElement $row): string => $row->getAttribute('class'), self::rows()),
+        );
+    }
+
+    public function testTheListGivesTheActionOfARowTheNumberOfTheRowClass(): void
+    {
+        self::configureThreeServersWithALogin();
+
+        // Like in the legacy list, as the themes style opbutton1 in the rows with data1 and opbutton2 in those with
+        // data2.
+        self::assertSame(
+            ['opbutton1', 'opbutton2', 'opbutton1'],
+            array_map(
+                static fn (\DOMElement $cell): string => $cell->getAttribute('class'),
+                PageBody::query(self::serverList(), './tbody/tr/td[5]'),
+            ),
         );
     }
 
@@ -133,7 +150,7 @@ final class ServersTest extends TestCase
     #[\Override]
     protected function setUp(): void
     {
-        self::configureTheServers();
+        self::configureTheServers(self::local(), self::production());
 
         $_GET = [];
         $_POST = [];
@@ -180,14 +197,37 @@ final class ServersTest extends TestCase
      * Replaces the servers of the test configuration. Config reads the configuration file only once, so this changes
      * what it read.
      */
-    private static function configureTheServers(): void
+    private static function configureTheServers(Server ...$servers): void
     {
         $conf = new \ReflectionProperty(Config::class, 'conf');
         // Reads the configuration file.
         Config::getServers();
         $configuration = $conf->getValue();
         self::assertIsArray($configuration);
-        $conf->setValue(null, ['servers' => [self::local(), self::production()]] + $configuration);
+        $conf->setValue(null, ['servers' => $servers] + $configuration);
+    }
+
+    /**
+     * Only a third server tells whether the list alternates the classes or counts them up.
+     */
+    private static function configureThreeServersWithALogin(): void
+    {
+        $servers = array_map(
+            static fn (int $port): Server => new Server(
+                name: new Name("Server on port {$port}"),
+                host: new Host('db.example.org'),
+                port: new Port($port),
+            ),
+            [5_433, 5_434, 5_435],
+        );
+        self::configureTheServers(...$servers);
+
+        $_SESSION = [
+            'webdbLogin' => array_fill_keys(
+                array_map(static fn (Server $server): string => $server->id(), $servers),
+                ['password' => 'secret', 'username' => self::USERNAME],
+            ),
+        ];
     }
 
     private static function body(): \DOMElement

@@ -64,8 +64,12 @@ final class Servers extends Website
         $servers = Config::getServers();
 
         foreach ($servers as $index => $server) {
+            // The themes style opbutton1 in the rows with data1 and opbutton2 in those with data2.
+            $rowNumber = $index % 2 === 0
+                ? '1'
+                : '2';
             $tr = $dom->createElement('tr');
-            $tr->setAttribute('class', 'data' . ($index + 1));
+            $tr->setAttribute('class', 'data' . $rowNumber);
             $td = $dom->createElement('td');
             $a = $dom->createElement('a');
             $a->appendChild($dom->createTextNode((string)$server->Name));
@@ -100,7 +104,7 @@ final class Servers extends Website
             $td = $dom->createElement('td');
 
             if ($username !== '') {
-                $td->setAttribute('class', 'opbutton' . ($index + 1));
+                $td->setAttribute('class', 'opbutton' . $rowNumber);
                 $a = $dom->createElement('a', _('Logout'));
                 $logoutUrlParams = [
                     'id' => $serverId,

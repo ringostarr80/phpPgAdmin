@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Website;
 
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\ValueObjects\Tablespace;
 use PhpPgAdmin\Website\CreateTablespace;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
 use Tests\Support\PageBody;
 
+#[CoversMethod(CreateTablespace::class, 'buildCreateOrEditTablespaceTable')]
 #[CoversMethod(CreateTablespace::class, 'buildHtmlBody')]
 #[CoversMethod(CreateTablespace::class, 'handlePostRequest')]
 final class CreateTablespaceTest extends TestCase
@@ -51,6 +53,57 @@ final class CreateTablespaceTest extends TestCase
         self::assertSame('', PageBody::fieldValue($form, Tablespace::FORM_ID_NAME));
         self::assertSame('', PageBody::fieldValue($form, Tablespace::FORM_ID_LOCATION));
         self::assertSame('', PageBody::fieldValue($form, Tablespace::FORM_ID_COMMENT));
+    }
+
+    public function testEachRowOfTheFormLabelsItsFieldAndMarksTheRequiredOnes(): void
+    {
+        $rows = array_map(
+            static fn (\DOMElement $row): array => [
+                PageBody::onlyElement($row, 'th')->getAttribute('class'),
+                PageBody::onlyElement($row, 'label')->textContent,
+                PageBody::onlyElement($row, 'label')->getAttribute('for'),
+                PageBody::query($row, './td/*')[0]->getAttribute('id'),
+            ],
+            PageBody::query(self::form(), './table/tbody/tr'),
+        );
+
+        self::assertSame(
+            [
+                ['data left required', 'Name', Tablespace::FORM_ID_NAME, Tablespace::FORM_ID_NAME],
+                ['data left required', 'Owner', Tablespace::FORM_ID_OWNER, Tablespace::FORM_ID_OWNER],
+                ['data left required', 'Location', Tablespace::FORM_ID_LOCATION, Tablespace::FORM_ID_LOCATION],
+                ['data left', 'Comment', Tablespace::FORM_ID_COMMENT, Tablespace::FORM_ID_COMMENT],
+            ],
+            $rows,
+        );
+    }
+
+    public function testTheFieldsOfTheFormTakeTheWholeWidthOfTheirColumn(): void
+    {
+        // The default theme stretches the fields of a form table.
+        self::assertSame('form-table', PageBody::onlyElement(self::form(), 'table')->getAttribute('class'));
+    }
+
+    public function testTheNameFieldTakesNoLongerNameThanPostgreSql(): void
+    {
+        self::assertSame(
+            (string)PhpPgAdminConnection::MAX_NAME_LENGTH,
+            PageBody::field(self::form(), Tablespace::FORM_ID_NAME)->getAttribute('maxlength'),
+        );
+    }
+
+    public function testOnlyOneOwnerCanBeChosen(): void
+    {
+        // A tablespace has a single owner.
+        self::assertFalse(PageBody::field(self::form(), Tablespace::FORM_ID_OWNER)->hasAttribute('multiple'));
+    }
+
+    public function testTheCommentFieldHasThreeLinesOf32Characters(): void
+    {
+        $commentField = PageBody::field(self::form(), Tablespace::FORM_ID_COMMENT);
+
+        self::assertSame('32', $commentField->getAttribute('cols'));
+        self::assertSame('3', $commentField->getAttribute('rows'));
     }
 
     public function testAfterAFailedCreateTheFormShowsTheEnteredValues(): void

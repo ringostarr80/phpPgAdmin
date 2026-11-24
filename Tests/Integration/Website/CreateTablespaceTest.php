@@ -10,6 +10,7 @@ use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
 use Tests\Support\{OtherOwner, PageBody, RunningServer, TestEnvironment};
 
+#[CoversMethod(CreateTablespace::class, 'buildCreateOrEditTablespaceTable')]
 #[CoversMethod(CreateTablespace::class, 'buildHtmlBody')]
 #[CoversMethod(CreateTablespace::class, 'handlePostRequest')]
 final class CreateTablespaceTest extends TestCase
@@ -65,6 +66,16 @@ final class CreateTablespaceTest extends TestCase
         self::assertSame([OtherOwner::name()], PageBody::selectedValues($form, Tablespace::FORM_ID_OWNER));
     }
 
+    public function testWithoutAnEnteredOwnerTheFormSelectsTheUserWhoIsLoggedIn(): void
+    {
+        // Like the form of a new tablespace, before anything was entered.
+        $_POST = [];
+
+        $form = PageBody::onlyElement(PageBody::of(CreateTablespace::class), 'form');
+
+        self::assertSame([self::userOfTheTests()], PageBody::selectedValues($form, Tablespace::FORM_ID_OWNER));
+    }
+
     #[\Override]
     protected function setUp(): void
     {
@@ -92,5 +103,15 @@ final class CreateTablespaceTest extends TestCase
     private static function bodyAfterTheCreate(): \DOMElement
     {
         return PageBody::afterPost(CreateTablespace::class);
+    }
+
+    private static function userOfTheTests(): string
+    {
+        $statement = RunningServer::connection()->query('SELECT current_user');
+        self::assertNotFalse($statement);
+        $user = $statement->fetchColumn();
+        self::assertIsString($user);
+
+        return $user;
     }
 }

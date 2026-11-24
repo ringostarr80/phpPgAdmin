@@ -5,13 +5,14 @@ declare(strict_types=1);
 namespace Tests\Integration\Website;
 
 use PhpPgAdmin\DDD\ValueObjects\Tablespace;
-use PhpPgAdmin\Website\AlterTablespace;
+use PhpPgAdmin\Website\{AlterTablespace, CreateTablespace};
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
 use Tests\Support\{OtherOwner, PageBody, RunningServer};
 
 #[CoversMethod(AlterTablespace::class, 'buildHtmlBody')]
 #[CoversMethod(AlterTablespace::class, 'withEnteredValues')]
+#[CoversMethod(CreateTablespace::class, 'buildCreateOrEditTablespaceTable')]
 final class AlterTablespaceTest extends TestCase
 {
     /**

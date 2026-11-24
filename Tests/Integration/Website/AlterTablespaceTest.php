@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Integration\Website;
 
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\ValueObjects\Tablespace;
 use PhpPgAdmin\Website\{AlterTablespace, CreateTablespace};
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
-use Tests\Support\{OtherOwner, PageBody, RunningServer};
+use Tests\Support\{OtherOwner, PageBody, RunningServer, TestEnvironment};
 
 #[CoversMethod(AlterTablespace::class, 'buildHtmlBody')]
 #[CoversMethod(AlterTablespace::class, 'withEnteredValues')]
@@ -16,7 +17,7 @@ use Tests\Support\{OtherOwner, PageBody, RunningServer};
 final class AlterTablespaceTest extends TestCase
 {
     /**
-     * Every database cluster has it, so the tests do not need to create a tablespace, which needs an empty directory
+     * Every database cluster has it, so most tests do not need to create a tablespace, which needs an empty directory
      * on the database server.
      */
     private const TABLESPACE = 'pg_default';
@@ -29,6 +30,27 @@ final class AlterTablespaceTest extends TestCase
 
         self::assertSame(self::TABLESPACE, PageBody::fieldValue($form, Tablespace::FORM_ID_NAME));
         self::assertSame([self::bootstrapSuperuser()], PageBody::selectedValues($form, Tablespace::FORM_ID_OWNER));
+    }
+
+    public function testTheFormShowsAnOwnerThatCannotLogIn(): void
+    {
+        $connection = RunningServer::connection();
+        // Removes what an aborted run of this thread left behind.
+        self::dropTheTablespaceOfAGroup($connection);
+        // Like a group role, which cannot log in and still can own a tablespace.
+        $connection->exec('CREATE ROLE "' . self::group() . '" NOLOGIN');
+        // PostgreSQL puts an in-place tablespace into its data directory, so it needs no empty directory.
+        $connection->exec('SET allow_in_place_tablespaces = true');
+        $connection->exec(
+            'CREATE TABLESPACE "' . self::tablespaceOfAGroup() . '" OWNER "' . self::group() . '" LOCATION \'\'',
+        );
+        $_GET['tablespace'] = self::tablespaceOfAGroup();
+
+        try {
+            self::assertSame([self::group()], PageBody::selectedValues(self::form(), Tablespace::FORM_ID_OWNER));
+        } finally {
+            self::dropTheTablespaceOfAGroup($connection);
+        }
     }
 
     public function testTheFormAltersTheTablespaceInsteadOfCreatingOne(): void
@@ -144,5 +166,22 @@ final class AlterTablespaceTest extends TestCase
         self::assertIsString($rolname);
 
         return $rolname;
+    }
+
+    private static function group(): string
+    {
+        return TestEnvironment::perThread('ppa_test_tablespace_group');
+    }
+
+    private static function tablespaceOfAGroup(): string
+    {
+        return TestEnvironment::perThread('ppa_test_tablespace_of_a_group');
+    }
+
+    private static function dropTheTablespaceOfAGroup(PhpPgAdminConnection $connection): void
+    {
+        // The group cannot be dropped while it owns the tablespace.
+        $connection->exec('DROP TABLESPACE IF EXISTS "' . self::tablespaceOfAGroup() . '"');
+        $connection->exec('DROP ROLE IF EXISTS "' . self::group() . '"');
     }
 }

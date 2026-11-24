@@ -7,7 +7,7 @@ namespace PhpPgAdmin\Website;
 use PhpPgAdmin\{Config, TrailSubject, Website, WebsiteComponents};
 use PhpPgAdmin\Application\DTO\Tablespace as DTOTablespace;
 use PhpPgAdmin\Database\PhpPgAdminConnection;
-use PhpPgAdmin\DDD\ValueObjects\Tablespace;
+use PhpPgAdmin\DDD\ValueObjects\{Role, Tablespace};
 use PhpPgAdmin\DDD\ValueObjects\Tablespace\Name;
 use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 use PhpPgAdmin\Infrastructure\Session\Logins;
@@ -201,20 +201,9 @@ class CreateTablespace extends Website
 
         $serverSession = Logins::serverSession($serverId, Config::getServers());
         $db = PhpPgAdminConnection::createFromServerSession($serverSession);
-        $dbUsers = $db?->getUsers() ?? [];
-        $ownerSelectionValues = [];
-        $ownerSelectedValues = [];
 
         if ($owner === '' && !is_null($serverSession)) {
             $owner = (string)$serverSession->Username;
-        }
-
-        foreach ($dbUsers as $dbUser) {
-            $ownerSelectionValues[] = $dbUser['usename'];
-
-            if ($dbUser['usename'] === $owner) {
-                $ownerSelectedValues[] = $owner;
-            }
         }
 
         $ownerSpecs = [
@@ -223,8 +212,10 @@ class CreateTablespace extends Website
             'value' => [
                 'is-multiple' => false,
                 'required' => true,
-                'selected-values' => $ownerSelectedValues,
-                'values' => $ownerSelectionValues,
+                // Selects only an owner that is offered.
+                'selected-values' => [$owner],
+                // Any role can own a tablespace, also one that cannot log in.
+                'values' => array_map(static fn (Role $role): string => $role->Name, $db?->getRoles() ?? []),
             ],
         ];
         $trOwner = WebsiteComponents::buildTableRowForSelectionFormular($dom, $ownerSpecs);

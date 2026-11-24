@@ -76,6 +76,26 @@ final class CreateTablespaceTest extends TestCase
         self::assertSame([self::userOfTheTests()], PageBody::selectedValues($form, Tablespace::FORM_ID_OWNER));
     }
 
+    public function testTheFormOffersTheRolesOfTheServerAsOwnersInTheOrderOfTheirNames(): void
+    {
+        // It cannot log in, and still it can own a tablespace.
+        $this->otherOwner = OtherOwner::create();
+        $_POST = [];
+
+        $form = PageBody::onlyElement(PageBody::of(CreateTablespace::class), 'form');
+        $values = array_map(
+            static fn (\DOMElement $option): string => $option->getAttribute('value'),
+            PageBody::query($form, './/select[@id="' . Tablespace::FORM_ID_OWNER . '"]/option'),
+        );
+        $sortedValues = $values;
+        sort($sortedValues, SORT_STRING);
+
+        // Besides these two, the server has the roles of the tests running at the same time.
+        self::assertContains(self::userOfTheTests(), $values);
+        self::assertContains(OtherOwner::name(), $values);
+        self::assertSame($sortedValues, $values);
+    }
+
     #[\Override]
     protected function setUp(): void
     {

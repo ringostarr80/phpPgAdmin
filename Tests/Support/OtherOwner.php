@@ -7,7 +7,7 @@ namespace Tests\Support;
 use PhpPgAdmin\Database\PhpPgAdminConnection;
 
 /**
- * A user besides the one of the tests, so the owner entered in a tablespace form differs from the one the form selects
+ * A role besides the user of the tests, so the owner entered in a tablespace form differs from the one the form selects
  * by itself. Each thread of the tests has its own.
  */
 final readonly class OtherOwner
@@ -29,8 +29,8 @@ final readonly class OtherOwner
         // Removes what an aborted run of this thread left behind.
         $otherOwner->drop();
 
-        // The owners to choose from are the roles that can log in.
-        $otherOwner->administrator->exec('CREATE ROLE "' . self::name() . '" LOGIN');
+        // Any role can own a tablespace, also one that cannot log in, like a group role.
+        $otherOwner->administrator->exec('CREATE ROLE "' . self::name() . '" NOLOGIN');
 
         return $otherOwner;
     }

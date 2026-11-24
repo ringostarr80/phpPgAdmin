@@ -115,37 +115,22 @@ abstract class TrailBuilder
     {
         $serverId = RequestParameter::getString('server') ?? '';
 
-        $script = match ($subject) {
-            TrailSubject::Database => 'redirect.php',
-            TrailSubject::Role => 'roles.php',
-            TrailSubject::Server => 'all_db.php',
-            TrailSubject::Tablespace => 'tablespaces.php',
-        };
-        $scriptParams = match ($subject) {
+        return match ($subject) {
             // Like the legacy Misc::getTrail(): redirect.php opens the database tab that was used last.
-            TrailSubject::Database => [
+            TrailSubject::Database => 'redirect.php?' . http_build_query([
                 'database' => RequestParameter::getString('database') ?? '',
                 'server' => $serverId,
                 'subject' => 'database',
-            ],
-            TrailSubject::Role => [
+            ]),
+            TrailSubject::Role => 'roles.php?' . http_build_query([
                 'action' => 'properties',
                 'rolename' => RequestParameter::getString('rolename') ?? '',
                 'server' => $serverId,
-            ],
-            TrailSubject::Server => [
+            ]),
+            TrailSubject::Server => 'all_db.php?' . http_build_query([
                 'server' => $serverId,
-            ],
-            TrailSubject::Tablespace => [
-                'server' => $serverId,
-                'tablespace' => RequestParameter::getString('tablespace') ?? '',
-            ],
+            ]),
+            TrailSubject::Tablespace => null,
         };
-
-        if ($subject === TrailSubject::Tablespace) {
-            return null;
-        }
-
-        return $script . '?' . http_build_query($scriptParams);
     }
 }

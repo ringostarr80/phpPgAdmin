@@ -95,7 +95,6 @@ final class DropRole extends Website
 
         $redirectUrl = 'roles.php';
         $redirectUrlParams = [
-            'message' => _('Role dropped.'),
             'server' => $serverId,
             'subject' => 'server',
         ];

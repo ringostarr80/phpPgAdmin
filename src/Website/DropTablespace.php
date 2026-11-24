@@ -95,7 +95,6 @@ final class DropTablespace extends Website
 
         $redirectUrl = 'tablespaces.php';
         $redirectUrlParams = [
-            'message' => _('Tablespace dropped.'),
             'server' => $serverId,
             'subject' => 'server',
         ];

@@ -30,6 +30,19 @@ final class AlterDbTest extends TestCase
         self::assertSame(self::COMMENT, PageBody::fieldValue($form, 'dbcomment'));
     }
 
+    public function testTheFormShowsAnOwnerThatCannotLogIn(): void
+    {
+        $connection = RunningServer::connection();
+        // Like a group role that owns the database.
+        $connection->exec('ALTER ROLE "' . self::owner() . '" NOLOGIN');
+
+        try {
+            self::assertSame([self::owner()], PageBody::selectedValues(self::form(), 'owner'));
+        } finally {
+            $connection->exec('ALTER ROLE "' . self::owner() . '" LOGIN');
+        }
+    }
+
     public function testTheFormForADatabaseThatDoesNotExistHasNoOwnerSelected(): void
     {
         // Like a database that was dropped after the list of databases was shown.

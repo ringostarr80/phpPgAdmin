@@ -345,9 +345,10 @@ final class PhpPgAdminConnection extends \PDO
      */
     public function getDatabaseOwner(string $database): ?string
     {
-        $sql = "SELECT usename
-            FROM pg_user, pg_database
-            WHERE pg_user.usesysid = pg_database.datdba AND pg_database.datname = :database";
+        // Any role can own a database, also one that cannot log in, which pg_user leaves out.
+        $sql = "SELECT pg_catalog.pg_get_userbyid(datdba)
+            FROM pg_catalog.pg_database
+            WHERE datname = :database";
         $sqlParams = [
             'database' => $database,
         ];

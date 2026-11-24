@@ -340,7 +340,10 @@ final class PhpPgAdminConnection extends \PDO
         return '';
     }
 
-    public function getDatabaseOwner(string $database): string
+    /**
+     * @return ?string The name of the owner, or null for a database that does not exist.
+     */
+    public function getDatabaseOwner(string $database): ?string
     {
         $sql = "SELECT usename
             FROM pg_user, pg_database
@@ -351,17 +354,12 @@ final class PhpPgAdminConnection extends \PDO
         $statement = $this->prepare($sql);
         $statement->execute($sqlParams);
 
-        $result = $statement->fetch();
+        // No row comes back for a database that does not exist.
+        $owner = $statement->fetchColumn();
 
-        if (!is_array($result)) {
-            throw new \PDOException('Failed to fetch database owner.');
-        }
-
-        if (isset($result['usename']) && is_string($result['usename'])) {
-            return $result['usename'];
-        }
-
-        return '';
+        return is_string($owner)
+            ? $owner
+            : null;
     }
 
     /**

@@ -4,18 +4,22 @@ declare(strict_types=1);
 
 namespace Tests\Integration\Website;
 
+use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\Website\AlterDb;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
 use Tests\Support\{PageBody, RunningServer, TestEnvironment};
 
 #[CoversMethod(AlterDb::class, 'buildHtmlBody')]
+#[CoversMethod(PhpPgAdminConnection::class, 'getDatabaseOwner')]
 final class AlterDbTest extends TestCase
 {
     /**
      * With a bare & and an entity reference, which the form shows as they are.
      */
     private const COMMENT = 'R&D, written R&amp;D in HTML';
+
+    private const MISSING_DATABASE = 'ppa_test_missing_database';
 
     public function testTheFormShowsTheNameTheOwnerAndTheCommentOfTheDatabase(): void
     {
@@ -24,6 +28,17 @@ final class AlterDbTest extends TestCase
         self::assertSame(self::database(), PageBody::fieldValue($form, 'newname'));
         self::assertSame([self::owner()], PageBody::selectedValues($form, 'owner'));
         self::assertSame(self::COMMENT, PageBody::fieldValue($form, 'dbcomment'));
+    }
+
+    public function testTheFormForADatabaseThatDoesNotExistHasNoOwnerSelected(): void
+    {
+        // Like a database that was dropped after the list of databases was shown.
+        $_GET['database'] = self::MISSING_DATABASE;
+
+        $form = self::form();
+
+        self::assertSame(self::MISSING_DATABASE, PageBody::fieldValue($form, 'newname'));
+        self::assertSame([], PageBody::selectedValues($form, 'owner'));
     }
 
     public function testTheFormOffersTheRolesOfTheServerAsOwnersInTheOrderOfTheirNames(): void

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ded9b76fb2d255cb114ff9834cfb0765",
+    "content-hash": "14bf04d88b964d3232d5af8f0ff7c7a3",
     "packages": [
         {
             "name": "adodb/adodb-php",
@@ -6626,7 +6626,8 @@
         "php": ">=8.3",
         "ext-gettext": "*",
         "ext-pgsql": "*",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "ext-intl": "*"
     },
     "platform-dev": {},
     "platform-overrides": {

@@ -25,6 +25,7 @@
         "ext-gettext": "*",
         "ext-pgsql": "*",
         "ext-mbstring": "*",
+        "ext-intl": "*",
         "adodb/adodb-php": "^5.22",
         "locr-company/http-status-code": "^1.0",
         "symfony/yaml": "^7.3"

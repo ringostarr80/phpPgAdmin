@@ -33,6 +33,26 @@ final class ScramSha256Test extends TestCase
         );
     }
 
+    public function testTheSecretIsTheOneLibpqBuildsForAPasswordThatSaslPrepNormalizes(): void
+    {
+        // A u with a combining diaeresis, which SASLprep composes to an ü.
+        self::assertSame(
+            'SCRAM-SHA-256$4096:lCTIgZl23MXntLd8gr6bLQ=='
+            . '$eoKoPbgnjDhMuwWfTBEK+LzZvMstFI8dZvpUE8ivMq8=:KPKNmcY9k64vyATOC1zQOvS6xzHn5UPdVb212GM6EeA=',
+            ScramSha256::secret("gru\u{308}n", 4_096, self::salt('lCTIgZl23MXntLd8gr6bLQ==')),
+        );
+    }
+
+    public function testTheSecretIsTheOneLibpqBuildsForAPasswordThatSaslPrepRefuses(): void
+    {
+        // SASLprep prohibits the private use character, so libpq takes the password as it is, with its ligature.
+        self::assertSame(
+            'SCRAM-SHA-256$4096:ZkviUMk1ISAVksmi/N5cCQ=='
+            . '$KxTMMXuUqAUjl4jtUFqSWBAcBvdu7RCM6Zjj1iT238o=:D992cDTaUuKm2tj7Taz0kaJRD1QPQ5EKrLqqUsRK5LM=',
+            ScramSha256::secret("\u{E000}\u{FB01}", 4_096, self::salt('ZkviUMk1ISAVksmi/N5cCQ==')),
+        );
+    }
+
     public function testTheSecretIsTheOneLibpqBuildsWithASingleIteration(): void
     {
         // The fewest iterations that the server takes in scram_iterations.

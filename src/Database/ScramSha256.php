@@ -25,9 +25,11 @@ final class ScramSha256
         }
 
         $salt ??= random_bytes(self::SALT_LENGTH);
+        // Like libpq, takes the password as it is when SASLprep refuses it.
+        $preparedPassword = SaslPrep::prepare($password) ?? $password;
 
         // RFC 5802, section 3.
-        $saltedPassword = hash_pbkdf2('sha256', $password, $salt, $iterations, 0, true);
+        $saltedPassword = hash_pbkdf2('sha256', $preparedPassword, $salt, $iterations, 0, true);
         $storedKey = hash('sha256', hash_hmac('sha256', 'Client Key', $saltedPassword, true), true);
         $serverKey = hash_hmac('sha256', 'Server Key', $saltedPassword, true);
 

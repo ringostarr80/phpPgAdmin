@@ -127,21 +127,18 @@ final class AlterDb extends Website
         $selectOwner->setAttribute('id', 'owner');
         $db = PhpPgAdminConnection::createFromServerSession($serverSession);
         $dbOwner = $db?->getDatabaseOwner($database);
-        $dbUsers = $db?->getUsers();
 
-        if (is_iterable($dbUsers)) {
-            foreach ($dbUsers as $dbUser) {
-                $username = $dbUser['usename'];
-                $optionOwner = $dom->createElement('option');
-                $optionOwner->appendChild($dom->createTextNode($username));
-                $optionOwner->setAttribute('value', $username);
+        // Any role can own a database, also one that cannot log in.
+        foreach ($db?->getRoles() ?? [] as $role) {
+            $optionOwner = $dom->createElement('option');
+            $optionOwner->appendChild($dom->createTextNode($role->Name));
+            $optionOwner->setAttribute('value', $role->Name);
 
-                if ($dbOwner === $username) {
-                    $optionOwner->setAttribute('selected', 'selected');
-                }
-
-                $selectOwner->appendChild($optionOwner);
+            if ($dbOwner === $role->Name) {
+                $optionOwner->setAttribute('selected', 'selected');
             }
+
+            $selectOwner->appendChild($optionOwner);
         }
 
         $tdOwner->appendChild($selectOwner);

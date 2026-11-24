@@ -26,7 +26,7 @@ final class AlterDbTest extends TestCase
         self::assertSame(self::COMMENT, PageBody::fieldValue($form, 'dbcomment'));
     }
 
-    public function testTheFormOffersTheUsersOfTheServerAsOwnersInTheOrderOfTheirNames(): void
+    public function testTheFormOffersTheRolesOfTheServerAsOwnersInTheOrderOfTheirNames(): void
     {
         $options = PageBody::query(self::form(), './/select[@id="owner"]/option');
         $values = array_map(static fn (\DOMElement $option): string => $option->getAttribute('value'), $options);
@@ -34,8 +34,9 @@ final class AlterDbTest extends TestCase
         $sortedValues = $values;
         sort($sortedValues, SORT_STRING);
 
-        // Besides the owner of the database, the server has the users of the tests running at the same time.
+        // Besides these two, the server has the roles of the tests running at the same time.
         self::assertContains(self::owner(), $values);
+        self::assertContains(self::roleWithoutLogin(), $values);
         self::assertSame($sortedValues, $values);
         self::assertSame($values, $texts);
     }
@@ -49,8 +50,9 @@ final class AlterDbTest extends TestCase
         // Removes what an aborted run of this thread left behind.
         self::dropTheDatabase();
 
-        // The owners to choose from are the roles that can log in.
         $connection->exec('CREATE ROLE "' . self::owner() . '" LOGIN');
+        // Any role can own a database, so the form offers this one as well.
+        $connection->exec('CREATE ROLE "' . self::roleWithoutLogin() . '" NOLOGIN');
         // template0 takes no connections, so the tests running at the same time do not keep it from being copied.
         $connection->exec(
             'CREATE DATABASE "' . self::database() . '" TEMPLATE template0 OWNER "' . self::owner() . '"',
@@ -102,12 +104,18 @@ final class AlterDbTest extends TestCase
         return TestEnvironment::perThread('ppa_test_R&D_altered_owner');
     }
 
+    private static function roleWithoutLogin(): string
+    {
+        return TestEnvironment::perThread('ppa_test_altered_role_without_login');
+    }
+
     private static function dropTheDatabase(): void
     {
         $connection = RunningServer::connection();
 
         $connection->exec('DROP DATABASE IF EXISTS "' . self::database() . '"');
         $connection->exec('DROP ROLE IF EXISTS "' . self::owner() . '"');
+        $connection->exec('DROP ROLE IF EXISTS "' . self::roleWithoutLogin() . '"');
     }
 
     private static function form(): \DOMElement

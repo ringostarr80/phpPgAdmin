@@ -156,9 +156,13 @@ abstract class WebsiteComponents
 
             foreach ($dbs as $db) {
                 $dbCounter++;
+                // The themes style opbutton1 in the rows with data1 and opbutton2 in those with data2.
+                $rowNumber = $dbCounter % 2 !== 0
+                    ? '1'
+                    : '2';
 
                 $tr = $dom->createElement('tr');
-                $tr->setAttribute('class', "data" . ($dbCounter % 2 !== 0 ? '1' : '2'));
+                $tr->setAttribute('class', 'data' . $rowNumber);
 
                 $tdCheckbox = $dom->createElement('td');
                 $inputCheckbox = $dom->createElement('input');
@@ -198,7 +202,7 @@ abstract class WebsiteComponents
                 );
 
                 $tdActionDelete = $dom->createElement('td');
-                $tdActionDelete->setAttribute('class', 'opbutton1');
+                $tdActionDelete->setAttribute('class', 'opbutton' . $rowNumber);
                 $aDelete = $dom->createElement('a');
                 $deleteUrl = 'drop_db.php';
                 $deleteUrlParams = [
@@ -210,7 +214,7 @@ abstract class WebsiteComponents
                 $tdActionDelete->appendChild($aDelete);
 
                 $tdActionPrivileges = $dom->createElement('td');
-                $tdActionPrivileges->setAttribute('class', 'opbutton1');
+                $tdActionPrivileges->setAttribute('class', 'opbutton' . $rowNumber);
                 $aPrivileges = $dom->createElement('a');
                 $privilegesUrl = 'privileges.php';
                 $privilegesUrlParams = [
@@ -223,7 +227,7 @@ abstract class WebsiteComponents
                 $tdActionPrivileges->appendChild($aPrivileges);
 
                 $tdActionAlter = $dom->createElement('td');
-                $tdActionAlter->setAttribute('class', 'opbutton1');
+                $tdActionAlter->setAttribute('class', 'opbutton' . $rowNumber);
                 $aAlter = $dom->createElement('a');
                 $alterUrl = 'alter_db.php';
                 $alterUrlParams = [

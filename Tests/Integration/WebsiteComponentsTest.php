@@ -125,6 +125,30 @@ final class WebsiteComponentsTest extends TestCase
         );
     }
 
+    public function testDatabasesTableGivesTheActionsOfARowTheNumberOfTheRowClass(): void
+    {
+        // Like in the legacy list, as the themes style opbutton1 in the rows with data1 and opbutton2 in those with
+        // data2.
+        $classes = array_map(
+            static fn (\DOMElement $row): array => array_map(
+                static fn (\DOMElement $cell): string => $cell->getAttribute('class'),
+                // The columns of the actions.
+                PageBody::query($row, './td[position() >= 9 and position() <= 11]'),
+            ),
+            PageBody::query(self::databasesTable(), './tbody/tr'),
+        );
+
+        // Besides the database of the tests, the server has at least the database postgres.
+        self::assertGreaterThanOrEqual(2, count($classes));
+        self::assertSame(
+            array_map(
+                static fn (int $index): array => array_fill(0, 3, $index % 2 === 0 ? 'opbutton1' : 'opbutton2'),
+                array_keys($classes),
+            ),
+            $classes,
+        );
+    }
+
     #[\Override]
     public static function setUpBeforeClass(): void
     {

@@ -36,10 +36,13 @@ use PhpPgAdmin\Website\{
 };
 use PHPUnit\Framework\Attributes\{CoversMethod, DataProvider};
 use PHPUnit\Framework\TestCase;
+use Tests\Support\PageBody;
 
 #[CoversMethod(Website::class, 'buildHtmlDocument')]
+#[CoversMethod(Website::class, 'buildHtmlHead')]
 #[CoversMethod(Website::class, 'requiresServerLogin')]
 #[CoversMethod(Browser::class, 'requiresServerLogin')]
+#[CoversMethod(Index::class, 'buildHtmlHead')]
 #[CoversMethod(Index::class, 'requiresServerLogin')]
 #[CoversMethod(Intro::class, 'requiresServerLogin')]
 #[CoversMethod(Login::class, 'requiresServerLogin')]
@@ -60,6 +63,87 @@ final class WebsiteTest extends TestCase
         // The locale en_US of the test configuration, as a language tag.
         self::assertSame('en-US', $html->getAttribute('lang'));
         self::assertSame(['head', 'body'], self::childElementNames($html));
+    }
+
+    public function testHead(): void
+    {
+        self::assertSame(
+            [
+                ['meta', ['content' => 'text/html; charset=utf-8', 'http-equiv' => 'Content-Type']],
+                ['title', []],
+                [
+                    'link',
+                    [
+                        'href' => 'themes/default/global.css',
+                        'id' => 'csstheme',
+                        'rel' => 'stylesheet',
+                        'type' => 'text/css',
+                    ],
+                ],
+                [
+                    'link',
+                    [
+                        'href' => 'images/themes/default/Favicon.ico',
+                        'rel' => 'shortcut icon',
+                        'type' => 'image/vnd.microsoft.icon',
+                    ],
+                ],
+                [
+                    'link',
+                    [
+                        'href' => 'images/themes/default/Introduction.png',
+                        'rel' => 'icon',
+                        'type' => 'image/png',
+                    ],
+                ],
+                ['script', ['src' => 'libraries/js/jquery-3.7.1.min.js', 'type' => 'text/javascript']],
+            ],
+            self::childElements(self::head(self::page())),
+        );
+    }
+
+    public function testAPageLoadsItsOwnScriptsAfterTheOneOfAllPages(): void
+    {
+        $head = self::head(
+            self::page(
+                scripts: [
+                    'classic' => ['src' => 'js/classic.js'],
+                    'module' => ['src' => 'js/module.js', 'type' => 'module'],
+                ],
+            ),
+        );
+
+        self::assertSame(
+            [
+                ['script', ['src' => 'libraries/js/jquery-3.7.1.min.js', 'type' => 'text/javascript']],
+                ['script', ['src' => 'js/classic.js', 'type' => 'text/javascript']],
+                ['script', ['src' => 'js/module.js', 'type' => 'module']],
+            ],
+            array_slice(self::childElements($head), -3),
+        );
+    }
+
+    public function testThePageOfTheFramesAddsTheScriptOfItsSeparatorToTheHead(): void
+    {
+        $elements = self::childElements(self::head(self::pageOf(Index::class)));
+
+        self::assertSame(
+            [
+                ...self::childElements(self::head(self::page())),
+                ['script', ['src' => 'js/main.js', 'type' => 'text/javascript']],
+            ],
+            $elements,
+        );
+    }
+
+    public function testTheTitleOfTheWindowEndsWithTheTitleOfThePage(): void
+    {
+        self::assertSame('phpPgAdmin - R&D <1>', self::windowTitle(self::page('R&D <1>')));
+    }
+
+    public function testTheTitleOfTheWindowIsTheNameOfTheApplicationForAPageWithoutATitle(): void
+    {
+        self::assertSame('phpPgAdmin', self::windowTitle(self::page()));
     }
 
     public function testAPageReloadsTheBrowserTreeWhenAnEarlierRequestAskedForIt(): void
@@ -176,13 +260,20 @@ final class WebsiteTest extends TestCase
 
     /**
      * A page with one paragraph as its content.
+     *
+     * @param array<string, array{'src': string, 'type'?: 'text/javascript'|'module'}> $scripts
      */
-    private static function page(): Website
+    private static function page(string $title = '', array $scripts = []): Website
     {
-        return new class extends Website {
-            public function __construct()
+        return new class ($title, $scripts) extends Website {
+            /**
+             * @param array<string, array{'src': string, 'type'?: 'text/javascript'|'module'}> $scripts
+             */
+            public function __construct(string $title, array $scripts)
             {
                 // Skips the constructor of Website, which starts a PHP session: the tests set $_SESSION themselves.
+                $this->title = $title;
+                $this->scripts = [...$this->scripts, ...$scripts];
             }
 
             #[\Override]
@@ -194,6 +285,29 @@ final class WebsiteTest extends TestCase
                 return $body;
             }
         };
+    }
+
+    /**
+     * Without the constructor of the page, which starts a PHP session and needs a login.
+     *
+     * @param class-string<Website> $page
+     */
+    private static function pageOf(string $page): Website
+    {
+        return (new \ReflectionClass($page))->newInstanceWithoutConstructor();
+    }
+
+    private static function windowTitle(Website $page): string
+    {
+        return PageBody::onlyElement(self::head($page), 'title')->textContent;
+    }
+
+    private static function head(Website $page): \DOMElement
+    {
+        $head = $page->buildHtmlDocument()->getElementsByTagName('head')->item(0);
+        self::assertInstanceOf(\DOMElement::class, $head);
+
+        return $head;
     }
 
     private static function body(\DOMDocument $dom): \DOMElement
@@ -209,14 +323,33 @@ final class WebsiteTest extends TestCase
      */
     private static function childElementNames(\DOMElement $element): array
     {
-        $names = [];
+        return array_column(self::childElements($element), 0);
+    }
+
+    /**
+     * The child elements in their order, each with its name and its attributes, which are sorted by name.
+     *
+     * @return list<array{string, array<string, string>}>
+     */
+    private static function childElements(\DOMElement $element): array
+    {
+        $elements = [];
 
         foreach ($element->childNodes as $child) {
-            if ($child instanceof \DOMElement) {
-                $names[] = $child->tagName;
+            if (!($child instanceof \DOMElement)) {
+                continue;
             }
+
+            $attributes = [];
+
+            foreach ($child->attributes as $attribute) {
+                $attributes[$attribute->nodeName] = (string)$attribute->nodeValue;
+            }
+
+            ksort($attributes);
+            $elements[] = [$child->tagName, $attributes];
         }
 
-        return $names;
+        return $elements;
     }
 }

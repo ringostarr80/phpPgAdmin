@@ -3,6 +3,7 @@
 let initialX = 0;
 let initialBrowserWidth = 0;
 const minBrowserWidth = 20;
+const ownTitle = document.title;
 
 document.addEventListener('DOMContentLoaded', function() {
     const separator = document.getElementById('separator');
@@ -11,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
         separator.addEventListener('mousedown', mouseDownEventHandler);
     }
 });
+
+// Captured, as load events don't bubble. On the document, as the frames don't exist yet when the script runs.
+document.addEventListener('load', frameLoadEventHandler, true);
 
 function adjustDetailWidth() {
     let separatorWidth = 0;
@@ -41,6 +45,19 @@ function currentBrowserWidth() {
     }
 
     return 0;
+}
+
+/**
+ * Gives the window the title of the page in the detail frame. Its own title, if the page has none or is one of another
+ * site, whose title can't be read.
+ *
+ * @param {Event} evt
+ */
+function frameLoadEventHandler(evt) {
+    const frame = evt.target;
+    if (frame instanceof HTMLIFrameElement && frame.name === 'detail') {
+        document.title = frame.contentDocument?.title || ownTitle;
+    }
 }
 
 /**

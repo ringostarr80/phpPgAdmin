@@ -365,8 +365,8 @@ final class WebsiteComponentsTest extends TestCase
                 ],
                 [
                     'icon' => 'images/themes/default/Servers.png',
-                    'iconText' => 'Server',
-                    'label' => 'Server',
+                    'iconText' => 'Servers',
+                    'label' => 'Servers',
                     'style' => 'width: 50%',
                     'url' => 'servers.php',
                 ],

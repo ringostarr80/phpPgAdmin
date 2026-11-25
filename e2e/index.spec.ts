@@ -29,7 +29,7 @@ test('Landing Page > Introduction Tab (default)', async ({ page }) => {
 
   const detail = detailFrame(page);
   await expect(detail.locator('table.tabs tr:first-child td:first-child.active span.label')).toHaveText('Introduction');
-  await expect(detail.locator('table.tabs tr:first-child td:nth-child(2) span.label')).toHaveText('Server');
+  await expect(detail.locator('table.tabs tr:first-child td:nth-child(2) span.label')).toHaveText('Servers');
 
   await expect(detail.locator('select[name="language"] option')).toHaveCount(29);
   await expect(detail.locator('select[name="theme"] option')).toHaveCount(5);
@@ -37,13 +37,13 @@ test('Landing Page > Introduction Tab (default)', async ({ page }) => {
   await expect(detail.locator('select[name="language"] option[value="german"]')).toHaveText('Deutsch');
 });
 
-test('Landing Page > Server Tab', async ({ page }) => {
+test('Landing Page > Servers Tab', async ({ page }) => {
   await page.goto('/');
 
   const detail = detailFrame(page);
-  await detail.locator('table.tabs span.label', { hasText: /^Server$/ }).click();
+  await detail.locator('table.tabs span.label', { hasText: /^Servers$/ }).click();
 
-  await expect(detail.locator('table.tabs tr:first-child td:nth-child(2).active span.label')).toHaveText('Server');
+  await expect(detail.locator('table.tabs tr:first-child td:nth-child(2).active span.label')).toHaveText('Servers');
   await expect(detail.locator('table.tabs tr:first-child td:first-child span.label')).toHaveText('Introduction');
 
   const rows = detail.locator('table#server-list tbody tr');

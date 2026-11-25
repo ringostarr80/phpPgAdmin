@@ -421,10 +421,10 @@ abstract class WebsiteComponents
         $spanIcon->setAttribute('class', 'icon');
         $imgIcon = $dom->createElement('img');
         $imgIcon->setAttribute('src', Config::getIcon('Servers'));
-        $imgIcon->setAttribute('alt', _('Server'));
+        $imgIcon->setAttribute('alt', _('Servers'));
         $spanIcon->appendChild($imgIcon);
         $aTab->appendChild($spanIcon);
-        $spanLabel = $dom->createElement('span', _('Server'));
+        $spanLabel = $dom->createElement('span', _('Servers'));
         $spanLabel->setAttribute('class', 'label');
         $aTab->appendChild($spanLabel);
         $tdTab->appendChild($aTab);

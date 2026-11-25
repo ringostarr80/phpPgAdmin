@@ -24,7 +24,6 @@ abstract class Website
             'src' => 'libraries/js/jquery-3.7.1.min.js',
         ],
     ];
-    protected string $title = '';
 
     public function __construct()
     {
@@ -110,10 +109,9 @@ abstract class Website
         $metaColorScheme->setAttribute('content', 'light dark');
         //$head->appendChild($metaColorScheme);
 
-        $formatTitle = '';
-
-        $formatTitle = !empty($this->title)
-            ? self::APP_NAME . ' - ' . $this->title
+        $pageTitle = $this->title();
+        $formatTitle = $pageTitle !== ''
+            ? self::APP_NAME . ' - ' . $pageTitle
             : self::APP_NAME;
 
         $title = $dom->createElement('title');
@@ -149,6 +147,15 @@ abstract class Website
         }
 
         return $head;
+    }
+
+    /**
+     * The title of the page, which the title of the window ends with. Asked for while the page is built, when the
+     * constructor has set the locale for its translation.
+     */
+    protected function title(): string
+    {
+        return '';
     }
 
     protected function buildTitle(\DOMDocument $dom, string $title): \DOMElement

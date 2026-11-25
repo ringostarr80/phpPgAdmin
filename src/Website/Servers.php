@@ -8,13 +8,6 @@ use PhpPgAdmin\{Config, Website, WebsiteComponents};
 
 final class Servers extends Website
 {
-    public function __construct()
-    {
-        parent::__construct();
-
-        $this->title = _('Servers');
-    }
-
     /**
      * The list of all servers, also the ones one is not logged in to.
      */
@@ -125,5 +118,11 @@ final class Servers extends Website
         $body->appendChild(WebsiteComponents::buildBackToTopLink($dom));
 
         return $body;
+    }
+
+    #[\Override]
+    protected function title(): string
+    {
+        return _('Servers');
     }
 }

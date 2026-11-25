@@ -16,9 +16,6 @@ final class AllDb extends Website
 
         parent::__construct();
 
-        // After the parent constructor, which sets the locale for the translation.
-        $this->title = _('Databases');
-
         if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
             self::redirectTo($this->handlePostRequest());
         }
@@ -64,6 +61,12 @@ final class AllDb extends Website
         $body->appendChild(WebsiteComponents::buildNavLinks($dom, $navLinks));
 
         return $body;
+    }
+
+    #[\Override]
+    protected function title(): string
+    {
+        return _('Databases');
     }
 
     /**

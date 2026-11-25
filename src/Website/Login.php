@@ -17,8 +17,6 @@ final class Login extends Website
     {
         parent::__construct();
 
-        $this->title = _('Login');
-
         if (self::isLoginFormSent()) {
             $this->handlePostRequest();
         }
@@ -202,6 +200,12 @@ final class Login extends Website
         $body->appendChild($form);
 
         return $body;
+    }
+
+    #[\Override]
+    protected function title(): string
+    {
+        return _('Login');
     }
 
     private function handlePostRequest(): void

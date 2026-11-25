@@ -15,14 +15,6 @@ use PhpPgAdmin\Infrastructure\Session\Logins;
  */
 final class Languages extends Website
 {
-    public function __construct()
-    {
-        parent::__construct();
-
-        // After the parent constructor, which sets the locale for the translation.
-        $this->title = _('Languages');
-    }
-
     /**
      * The table of the languages, or a note that the database has none.
      *
@@ -62,6 +54,12 @@ final class Languages extends Website
         $body->appendChild(self::buildLanguageList($dom, $languages));
 
         return $body;
+    }
+
+    #[\Override]
+    protected function title(): string
+    {
+        return _('Languages');
     }
 
     /**

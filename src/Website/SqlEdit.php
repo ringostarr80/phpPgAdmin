@@ -11,8 +11,6 @@ use PhpPgAdmin\Infrastructure\Session\Logins;
 
 final class SqlEdit extends Website
 {
-    protected string $title = 'SQL';
-
     public function __construct()
     {
         parent::__construct();
@@ -148,6 +146,12 @@ final class SqlEdit extends Website
         $body->appendChild($form);
 
         return $body;
+    }
+
+    #[\Override]
+    protected function title(): string
+    {
+        return 'SQL';
     }
 
     private function appendFindPart(\DOMElement $element): void

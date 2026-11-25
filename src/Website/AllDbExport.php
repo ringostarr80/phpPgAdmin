@@ -9,14 +9,6 @@ use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 
 final class AllDbExport extends Website
 {
-    public function __construct()
-    {
-        parent::__construct();
-
-        // After the parent constructor, which sets the locale for the translation.
-        $this->title = _('Databases');
-    }
-
     #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
@@ -208,5 +200,11 @@ final class AllDbExport extends Website
         $body->appendChild($form);
 
         return $body;
+    }
+
+    #[\Override]
+    protected function title(): string
+    {
+        return _('Databases');
     }
 }

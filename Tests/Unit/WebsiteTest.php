@@ -41,14 +41,21 @@ use Tests\Support\PageBody;
 #[CoversMethod(Website::class, 'buildHtmlDocument')]
 #[CoversMethod(Website::class, 'buildHtmlHead')]
 #[CoversMethod(Website::class, 'requiresServerLogin')]
+#[CoversMethod(Website::class, 'title')]
+#[CoversMethod(AllDb::class, 'title')]
+#[CoversMethod(AllDbExport::class, 'title')]
 #[CoversMethod(Browser::class, 'requiresServerLogin')]
 #[CoversMethod(Index::class, 'buildHtmlHead')]
 #[CoversMethod(Index::class, 'requiresServerLogin')]
 #[CoversMethod(Intro::class, 'requiresServerLogin')]
+#[CoversMethod(Languages::class, 'title')]
 #[CoversMethod(Login::class, 'requiresServerLogin')]
+#[CoversMethod(Login::class, 'title')]
 #[CoversMethod(Redirect::class, 'requiresServerLogin')]
 #[CoversMethod(ServerLogout::class, 'requiresServerLogin')]
 #[CoversMethod(Servers::class, 'requiresServerLogin')]
+#[CoversMethod(Servers::class, 'title')]
+#[CoversMethod(SqlEdit::class, 'title')]
 final class WebsiteTest extends TestCase
 {
     public function testDocument(): void
@@ -141,6 +148,15 @@ final class WebsiteTest extends TestCase
         self::assertSame('phpPgAdmin - R&D <1>', self::windowTitle(self::page('R&D <1>')));
     }
 
+    /**
+     * @param class-string<Website> $page
+     */
+    #[DataProvider('pagesWithATitle')]
+    public function testAPageHasTheTitleOfItsLegacyPage(string $page, string $title): void
+    {
+        self::assertSame("phpPgAdmin - {$title}", self::windowTitle(self::pageOf($page)));
+    }
+
     public function testTheTitleOfTheWindowIsTheNameOfTheApplicationForAPageWithoutATitle(): void
     {
         self::assertSame('phpPgAdmin', self::windowTitle(self::page()));
@@ -186,6 +202,27 @@ final class WebsiteTest extends TestCase
     public function testAPageWithoutAServerIsShownWithoutALogin(string $page): void
     {
         self::assertFalse($page::requiresServerLogin());
+    }
+
+    /**
+     * Like the legacy pages, which handed their title to Misc::printHeader().
+     *
+     * @return iterable<string, array{class-string<Website>, string}>
+     */
+    public static function pagesWithATitle(): iterable
+    {
+        $titles = [
+            AllDb::class => 'Databases',
+            AllDbExport::class => 'Databases',
+            Languages::class => 'Languages',
+            Login::class => 'Login',
+            Servers::class => 'Servers',
+            SqlEdit::class => 'SQL',
+        ];
+
+        foreach ($titles as $page => $title) {
+            yield $page => [$page, $title];
+        }
     }
 
     /**
@@ -269,10 +306,9 @@ final class WebsiteTest extends TestCase
             /**
              * @param array<string, array{'src': string, 'type'?: 'text/javascript'|'module'}> $scripts
              */
-            public function __construct(string $title, array $scripts)
+            public function __construct(private readonly string $pageTitle, array $scripts)
             {
                 // Skips the constructor of Website, which starts a PHP session: the tests set $_SESSION themselves.
-                $this->title = $title;
                 $this->scripts = [...$this->scripts, ...$scripts];
             }
 
@@ -283,6 +319,12 @@ final class WebsiteTest extends TestCase
                 $body->appendChild($dom->createElement('p', 'Content'));
 
                 return $body;
+            }
+
+            #[\Override]
+            protected function title(): string
+            {
+                return $this->pageTitle;
             }
         };
     }
@@ -302,9 +344,12 @@ final class WebsiteTest extends TestCase
         return PageBody::onlyElement(self::head($page), 'title')->textContent;
     }
 
+    /**
+     * Without the body of the page, which may need a request with parameters.
+     */
     private static function head(Website $page): \DOMElement
     {
-        $head = $page->buildHtmlDocument()->getElementsByTagName('head')->item(0);
+        $head = (new \ReflectionMethod($page, 'buildHtmlHead'))->invoke($page, new \DOMDocument());
         self::assertInstanceOf(\DOMElement::class, $head);
 
         return $head;

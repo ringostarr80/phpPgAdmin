@@ -11,6 +11,37 @@ use PHPUnit\Framework\TestCase;
 #[CoversClass(LastTabs::class)]
 final class LastTabsTest extends TestCase
 {
+    public function testTheTabOfASectionIsTheOneThatWasUsedLast(): void
+    {
+        LastTabs::remember('database', 'languages');
+        LastTabs::remember('server', 'roles');
+
+        self::assertSame('languages', LastTabs::of('database'));
+        self::assertSame('roles', LastTabs::of('server'));
+    }
+
+    public function testASectionWhoseTabsWereNotUsedHasNoLastTab(): void
+    {
+        LastTabs::remember('database', 'languages');
+
+        self::assertNull(LastTabs::of('server'));
+    }
+
+    #[DataProvider('noLastTabs')]
+    public function testWithoutLastTabsASectionHasNoLastTab(mixed $noLastTabs): void
+    {
+        $_SESSION['webdbLastTab'] = $noLastTabs;
+
+        self::assertNull(LastTabs::of('database'));
+    }
+
+    public function testALastTabThatIsNoTextIsNone(): void
+    {
+        $_SESSION['webdbLastTab'] = ['database' => ['languages']];
+
+        self::assertNull(LastTabs::of('database'));
+    }
+
     public function testTheTabOfASectionReplacesTheOneBefore(): void
     {
         LastTabs::remember('database', 'schemas');

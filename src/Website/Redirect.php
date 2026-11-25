@@ -7,7 +7,7 @@ namespace PhpPgAdmin\Website;
 use Locr\Lib\HTTP\StatusCode;
 use PhpPgAdmin\{Config, Website};
 use PhpPgAdmin\Infrastructure\Http\RequestParameter;
-use PhpPgAdmin\Infrastructure\Session\Logins;
+use PhpPgAdmin\Infrastructure\Session\{LastTabs, Logins};
 
 final class Redirect extends Website
 {
@@ -30,6 +30,33 @@ final class Redirect extends Website
     }
 
     /**
+     * The tab of the root that was used last, or else its first one, like the legacy Misc::getLastTabURL().
+     */
+    public static function buildRootUrl(): string
+    {
+        return match (LastTabs::of('root')) {
+            'servers' => './servers.php',
+            default => './intro.php',
+        };
+    }
+
+    /**
+     * The tab of a server that was used last, or else its first one, like the legacy Misc::getLastTabURL(). The
+     * servers share it.
+     */
+    public static function buildServerUrl(string $serverId): string
+    {
+        $page = match (LastTabs::of('server')) {
+            'export' => 'all_db_export.php',
+            'roles' => 'roles.php',
+            'tablespaces' => 'tablespaces.php',
+            default => 'all_db.php',
+        };
+
+        return "./{$page}?" . http_build_query(['server' => $serverId]);
+    }
+
+    /**
      * Leads to the login form itself while one is not logged in to the server (see redirectToServer()).
      */
     #[\Override]
@@ -40,8 +67,7 @@ final class Redirect extends Website
 
     private function redirectToRoot(): void
     {
-        $locationUrl = './intro.php';
-        header('Location: ' . $locationUrl);
+        header('Location: ' . self::buildRootUrl());
         exit;
     }
 
@@ -61,7 +87,7 @@ final class Redirect extends Website
         }
 
         $locationUrl = Logins::isLoggedIn($server)
-            ? './all_db.php?' . http_build_query(['server' => $server])
+            ? self::buildServerUrl($server)
             : Login::buildUrl($server);
 
         header('Location: ' . $locationUrl);

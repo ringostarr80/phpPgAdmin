@@ -332,6 +332,73 @@ final class WebsiteComponentsTest extends TestCase
         );
     }
 
+    /**
+     * Characterizes the tabs of intro.php and servers.php.
+     */
+    public function testRootTabs(): void
+    {
+        $tabs = [];
+
+        foreach (self::buildRootTabs(activeTab: 'intro') as $tab) {
+            $link = PageBody::onlyElement($tab, 'a');
+            $icons = PageBody::query($link, './span[@class="icon"]/img');
+
+            self::assertCount(1, $icons);
+
+            $tabs[] = [
+                'icon' => $icons[0]->getAttribute('src'),
+                'iconText' => $icons[0]->getAttribute('alt'),
+                'label' => self::tabLabel($tab),
+                'style' => $tab->getAttribute('style'),
+                'url' => $link->getAttribute('href'),
+            ];
+        }
+
+        self::assertSame(
+            [
+                [
+                    'icon' => 'images/themes/default/Introduction.png',
+                    'iconText' => 'Introduction',
+                    'label' => 'Introduction',
+                    'style' => 'width: 50%',
+                    'url' => 'intro.php',
+                ],
+                [
+                    'icon' => 'images/themes/default/Servers.png',
+                    'iconText' => 'Server',
+                    'label' => 'Server',
+                    'style' => 'width: 50%',
+                    'url' => 'servers.php',
+                ],
+            ],
+            $tabs,
+        );
+    }
+
+    /**
+     * @param list<string> $expectedClasses
+     */
+    #[DataProvider('rootTabClasses')]
+    public function testRootTabsMarkOnlyTheActiveTab(string $activeTab, array $expectedClasses): void
+    {
+        self::assertSame(
+            $expectedClasses,
+            array_map(
+                static fn (\DOMElement $tab): string => $tab->getAttribute('class'),
+                self::buildRootTabs($activeTab),
+            ),
+        );
+    }
+
+    public function testRootTabsRememberTheActiveTabInANewSession(): void
+    {
+        $_SESSION = [];
+
+        self::buildRootTabs(activeTab: 'servers');
+
+        self::assertSame(['root' => 'servers'], $_SESSION['webdbLastTab']);
+    }
+
     public function testTopBarLinksOfADatabasePageOpenTheDatabase(): void
     {
         // Like the legacy Misc::printTopbar(), whose links take the database of the request (getRequestVars()).
@@ -615,6 +682,19 @@ final class WebsiteComponentsTest extends TestCase
     }
 
     /**
+     * The classes of the tabs of intro.php and servers.php for each active tab.
+     *
+     * @return array<string, array{string, list<string>}>
+     */
+    public static function rootTabClasses(): array
+    {
+        return [
+            'intro' => ['intro', ['tab active', 'tab']],
+            'servers' => ['servers', ['tab', 'tab active']],
+        ];
+    }
+
+    /**
      * @return array<string, array{string}>
      */
     public static function textsThatStartWithALineBreak(): array
@@ -654,6 +734,21 @@ final class WebsiteComponentsTest extends TestCase
             activeTab: $activeTab,
             showAdvanced: $showAdvanced,
         );
+        $dom->appendChild($table);
+
+        self::assertSame('table', $table->tagName);
+        self::assertSame('tabs', $table->getAttribute('class'));
+
+        return self::elementsByClass($table, 'td', 'tab');
+    }
+
+    /**
+     * @return list<\DOMElement>
+     */
+    private static function buildRootTabs(string $activeTab): array
+    {
+        $dom = new \DOMDocument();
+        $table = WebsiteComponents::buildRootTabs($dom, $activeTab);
         $dom->appendChild($table);
 
         self::assertSame('table', $table->tagName);

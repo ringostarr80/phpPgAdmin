@@ -111,10 +111,10 @@ final class LoginTest extends TestCase
     }
 
     #[DataProvider('noPagesOfPhpPgAdmin')]
-    public function testWithoutAPageOfPhpPgAdminTheLoginLeadsToTheDatabasesOfTheServer(?string $returnUrl): void
+    public function testWithoutAPageOfPhpPgAdminTheLoginLeadsToTheServer(?string $returnUrl): void
     {
         self::assertSame(
-            './all_db.php?server=127.0.0.1%3A5432%3Aallow',
+            './redirect.php?server=127.0.0.1%3A5432%3Aallow&subject=server',
             Login::buildUrlAfterLogin(self::SERVER_ID, $returnUrl),
         );
     }

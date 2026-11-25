@@ -71,8 +71,9 @@ final class Login extends Website
     }
 
     /**
-     * Back to the page of $returnUrl, or else to the databases of the server. Only to a page of phpPgAdmin itself,
-     * so that a link to the login form cannot lead to another site after the login (open redirect).
+     * Back to the page of $returnUrl, or else like a link to the server to its tab that was used last (see Redirect).
+     * Only to a page of phpPgAdmin itself, so that a link to the login form cannot lead to another site after the
+     * login (open redirect).
      */
     public static function buildUrlAfterLogin(string $serverId, ?string $returnUrl): string
     {
@@ -80,7 +81,7 @@ final class Login extends Website
             return $returnUrl;
         }
 
-        return './all_db.php?' . http_build_query(['server' => $serverId]);
+        return './redirect.php?' . http_build_query(['server' => $serverId, 'subject' => 'server']);
     }
 
     /**

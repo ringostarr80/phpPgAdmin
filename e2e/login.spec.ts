@@ -26,6 +26,10 @@ function databaseParams(serverId = runningServerId()): string {
   return `${new URLSearchParams({ server: serverId, database: DATABASE, subject: 'database' })}`;
 }
 
+function serverParams(): string {
+  return `${new URLSearchParams({ server: runningServerId() })}`;
+}
+
 test('Login > fails for a server that is not running', async ({ page }) => {
   await page.goto('/');
   await serverTreeLink(page, NOT_RUNNING_SERVER_HOST, NOT_RUNNING_SERVER_PORT).click();
@@ -109,8 +113,23 @@ test('Login > after it expired, a form of a legacy page leads to the login form'
   // In place of the form, like for a page that is opened without a login.
   await expect(page.locator('h2')).toHaveText(`Login to ${RUNNING_SERVER_DESC}`);
   await submitLoginForm(page);
-  // The login does not send the form again, so it leads to the databases of the server.
-  await expect(page).toHaveURL(`/all_db.php?${new URLSearchParams({ server: runningServerId() })}`);
+  // The login does not send the form again, so it leads to the server, whose first tab shows the databases.
+  await expect(page).toHaveURL(`/all_db.php?${serverParams()}`);
+});
+
+test('Login > from a link to a server opens the tab of the server that was used last', async ({ page }) => {
+  await login(page);
+  await page.goto(`/roles.php?${serverParams()}`);
+  // Without opening the page of the logout, which leads on by itself.
+  await page.request.get(`/server-logout.php?${new URLSearchParams({ id: runningServerId() })}`);
+  // Like the servers in the browser tree.
+  await page.goto(`/redirect.php?${serverParams()}&subject=server`);
+  await expect(page.locator('h2')).toHaveText(`Login to ${RUNNING_SERVER_DESC}`);
+
+  await submitLoginForm(page);
+
+  await expect(page).toHaveURL(`/roles.php?${serverParams()}`);
+  await expect(page.locator('table.tabs td.tab.active span.label')).toHaveText(['Roles']);
 });
 
 test('Login > from a link to a database leads to the database', async ({ page }) => {
@@ -145,6 +164,6 @@ test('Login > does not lead to another site', async ({ page }) => {
 
   await submitLoginForm(page);
 
-  // Instead to the databases of the server, like a login from the browser tree.
-  await expect(page).toHaveURL(`/all_db.php?${new URLSearchParams({ server: runningServerId() })}`);
+  // Instead to the server, like a login from the browser tree.
+  await expect(page).toHaveURL(`/all_db.php?${serverParams()}`);
 });

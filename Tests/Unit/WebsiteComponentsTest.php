@@ -613,7 +613,7 @@ final class WebsiteComponentsTest extends TestCase
         self::assertSame(Website::APP_NAME . ':', $link->textContent);
     }
 
-    public function testTrailOfAServerLinksToItsDatabasesAndNamesTheServerOfTheLogin(): void
+    public function testTrailOfAServerLinksToTheServerAndNamesTheServerOfTheLogin(): void
     {
         // With a bare &, which the trail shows as it is.
         self::logInToAServerNamed('R&D production');
@@ -628,7 +628,10 @@ final class WebsiteComponentsTest extends TestCase
 
         $icons = PageBody::query($links[0], './span[@class="icon"]/img');
 
-        self::assertSame('all_db.php?server=127.0.0.1%3A5432%3Aallow', $links[0]->getAttribute('href'));
+        self::assertSame(
+            'redirect.php?server=127.0.0.1%3A5432%3Aallow&subject=server',
+            $links[0]->getAttribute('href'),
+        );
         self::assertSame('Server', $links[0]->getAttribute('title'));
         self::assertCount(1, $icons);
         self::assertSame('images/themes/default/Server.png', $icons[0]->getAttribute('src'));
@@ -647,7 +650,7 @@ final class WebsiteComponentsTest extends TestCase
 
         self::assertCount(2, $crumbs);
         self::assertSame(
-            'all_db.php?server=127.0.0.1%3A5432%3Aallow',
+            'redirect.php?server=127.0.0.1%3A5432%3Aallow&subject=server',
             PageBody::query($crumbs[1], './a')[0]->getAttribute('href'),
         );
         self::assertSame([''], self::labelsOf($crumbs[1]));

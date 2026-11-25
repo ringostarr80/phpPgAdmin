@@ -117,8 +117,10 @@ abstract class TrailBuilder
                 'rolename' => RequestParameter::getString('rolename') ?? '',
                 'server' => $serverId,
             ]),
-            TrailSubject::Server => 'all_db.php?' . http_build_query([
+            // Like the legacy Misc::getTrail(): redirect.php opens the server tab that was used last.
+            TrailSubject::Server => 'redirect.php?' . http_build_query([
                 'server' => $serverId,
+                'subject' => 'server',
             ]),
             TrailSubject::Tablespace => null,
         };

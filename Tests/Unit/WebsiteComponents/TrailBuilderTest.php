@@ -145,8 +145,9 @@ final class TrailBuilderTest extends TestCase
             'Server',
             'Server',
             'pg.server',
-            'all_db.php',
-            ['server' => ''],
+            // Like the legacy Misc::getTrail(): redirect.php opens the server tab that was used last.
+            'redirect.php',
+            ['server' => '', 'subject' => 'server'],
         ];
         yield 'tablespace' => [
             TrailSubject::Tablespace,
@@ -190,7 +191,7 @@ final class TrailBuilderTest extends TestCase
         ];
         yield 'server' => [
             TrailSubject::Server,
-            'all_db.php?server=127.0.0.1%3A5432%3Aallow',
+            'redirect.php?server=127.0.0.1%3A5432%3Aallow&subject=server',
             'help.php?help=pg.server&server=127.0.0.1%3A5432%3Aallow',
         ];
         yield 'tablespace' => [

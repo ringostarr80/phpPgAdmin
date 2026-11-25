@@ -20,7 +20,7 @@ abstract class TrailBuilder
         $iconUrl = match ($subject) {
             TrailSubject::Database => Config::getIcon('Database'),
             TrailSubject::Role => Config::getIcon('Roles'),
-            TrailSubject::Server => Config::getIcon('Servers'),
+            TrailSubject::Server => Config::getIcon('Server'),
             TrailSubject::Tablespace => Config::getIcon('Tablespaces'),
         };
 

@@ -600,7 +600,7 @@ final class WebsiteComponentsTest extends TestCase
         self::assertSame('all_db.php?server=127.0.0.1%3A5432%3Aallow', $links[0]->getAttribute('href'));
         self::assertSame('Server', $links[0]->getAttribute('title'));
         self::assertCount(1, $icons);
-        self::assertSame('images/themes/default/Servers.png', $icons[0]->getAttribute('src'));
+        self::assertSame('images/themes/default/Server.png', $icons[0]->getAttribute('src'));
         self::assertSame('Server', $icons[0]->getAttribute('alt'));
         self::assertSame(['R&D production'], self::labelsOf($crumbs[1]));
         self::assertSame('help', $links[1]->getAttribute('class'));

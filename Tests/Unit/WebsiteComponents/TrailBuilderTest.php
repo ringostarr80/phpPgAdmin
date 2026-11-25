@@ -143,7 +143,7 @@ final class TrailBuilderTest extends TestCase
         yield 'server' => [
             TrailSubject::Server,
             'Server',
-            'Servers',
+            'Server',
             'pg.server',
             'all_db.php',
             ['server' => ''],

@@ -390,7 +390,7 @@ abstract class WebsiteComponents
      */
     public static function buildRootTabs(\DOMDocument $dom, string $activeTab): \DOMElement
     {
-        $_SESSION['webdbLastTab'] = ['root' => $activeTab];
+        self::rememberLastTab('root', $activeTab);
 
         $tableTabs = $dom->createElement('table');
         $tableTabs->setAttribute('class', 'tabs');

@@ -390,6 +390,25 @@ final class WebsiteComponentsTest extends TestCase
         );
     }
 
+    public function testRootTabsRememberTheActiveTabAndKeepTheTabsOfOtherSections(): void
+    {
+        $_SESSION = [
+            'webdbLastTab' => [
+                'database' => 'processes',
+                'root' => 'intro',
+                'table' => 'indexes',
+            ],
+        ];
+
+        self::buildRootTabs(activeTab: 'servers');
+
+        // redirect.php returns to the tabs of the other sections, like after the legacy Misc::printTabs().
+        self::assertSame(
+            ['database' => 'processes', 'root' => 'servers', 'table' => 'indexes'],
+            $_SESSION['webdbLastTab'],
+        );
+    }
+
     public function testRootTabsRememberTheActiveTabInANewSession(): void
     {
         $_SESSION = [];

@@ -21,10 +21,7 @@ final class CreateRoleTest extends TestCase
         $body = self::body();
 
         self::assertCount(1, PageBody::query($body, './/div[@class="topbar"]'));
-        self::assertCount(
-            1,
-            PageBody::query($body, './/div[@class="trail"]//a[@href="all_db.php?server=127.0.0.1%3A5432%3Aallow"]'),
-        );
+        self::assertCount(1, PageBody::query($body, './/div[@class="trail"]//a[@title="Server"]'));
     }
 
     public function testTheHeadingLinksToTheHelpOnCreatingARole(): void

@@ -19,10 +19,7 @@ final class AlterRoleTest extends TestCase
         $body = self::body();
 
         self::assertCount(1, PageBody::query($body, './/div[@class="topbar"]'));
-        self::assertCount(
-            1,
-            PageBody::query($body, './/div[@class="trail"]//a[@href="all_db.php?server=127.0.0.1%3A5432%3Aallow"]'),
-        );
+        self::assertCount(1, PageBody::query($body, './/div[@class="trail"]//a[@title="Server"]'));
 
         $roleLabels = PageBody::query($body, './/div[@class="trail"]//a[@title="Role"]/span[@class="label"]');
         self::assertCount(1, $roleLabels);

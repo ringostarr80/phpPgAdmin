@@ -503,6 +503,11 @@ abstract class WebsiteComponents
             ],
         ];
 
+        // Only a tab that redirect.php can open again: sqledit.php shows the tabs too, but is none of them.
+        if (in_array($activeTab, array_column($tabLinks, 'id'), true)) {
+            LastTabs::remember('server', $activeTab);
+        }
+
         return self::buildTabs($dom, $tabLinks, $activeTab, '20%');
     }
 

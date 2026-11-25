@@ -246,9 +246,7 @@ final class WebsiteComponentsTest extends TestCase
      */
     public function testServerTabs(): void
     {
-        $dom = new \DOMDocument();
-        $table = WebsiteComponents::buildServerDatabasesTabs($dom, self::SERVER_ID, 'roles');
-        $dom->appendChild($table);
+        $table = self::buildServerTabs(activeTab: 'roles');
 
         self::assertSame('tabs', $table->getAttribute('class'));
 
@@ -330,6 +328,39 @@ final class WebsiteComponentsTest extends TestCase
             ],
             $tabs,
         );
+    }
+
+    #[DataProvider('serverTabs')]
+    public function testServerTabsRememberTheActiveTabAndKeepTheTabsOfOtherSections(string $activeTab): void
+    {
+        $_SESSION = [
+            'webdbLastTab' => [
+                'database' => 'processes',
+                'server' => 'users',
+            ],
+        ];
+
+        self::buildServerTabs($activeTab);
+
+        // Like after the legacy Misc::printTabs().
+        self::assertSame(['database' => 'processes', 'server' => $activeTab], $_SESSION['webdbLastTab']);
+    }
+
+    /**
+     * sqledit.php shows the server tabs too, but is none of them.
+     */
+    #[DataProvider('actionsOfTheSqlEditor')]
+    public function testServerTabsKeepTheRememberedTabWhenNoneOfThemIsActive(string $action): void
+    {
+        $_SESSION = [
+            'webdbLastTab' => [
+                'server' => 'roles',
+            ],
+        ];
+
+        self::buildServerTabs($action);
+
+        self::assertSame(['server' => 'roles'], $_SESSION['webdbLastTab']);
     }
 
     /**
@@ -714,6 +745,27 @@ final class WebsiteComponentsTest extends TestCase
     }
 
     /**
+     * @return iterable<string, array{string}>
+     */
+    public static function serverTabs(): iterable
+    {
+        yield 'all_db.php' => ['databases'];
+        yield 'roles.php' => ['roles'];
+        yield 'tablespaces.php' => ['tablespaces'];
+        yield 'all_db_export.php' => ['export'];
+    }
+
+    /**
+     * @return iterable<string, array{string}>
+     */
+    public static function actionsOfTheSqlEditor(): iterable
+    {
+        yield 'SQL' => ['sql'];
+        yield 'Find' => ['find'];
+        yield 'none' => [''];
+    }
+
+    /**
      * @return array<string, array{string}>
      */
     public static function textsThatStartWithALineBreak(): array
@@ -774,6 +826,15 @@ final class WebsiteComponentsTest extends TestCase
         self::assertSame('tabs', $table->getAttribute('class'));
 
         return self::elementsByClass($table, 'td', 'tab');
+    }
+
+    private static function buildServerTabs(string $activeTab): \DOMElement
+    {
+        $dom = new \DOMDocument();
+        $table = WebsiteComponents::buildServerDatabasesTabs($dom, self::SERVER_ID, $activeTab);
+        $dom->appendChild($table);
+
+        return $table;
     }
 
     private static function databaseTab(string $id): \DOMElement

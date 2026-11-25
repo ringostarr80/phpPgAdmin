@@ -48,11 +48,7 @@ abstract class WebsiteComponents
         ?bool $showAdvanced = null,
     ): \DOMElement {
         // redirect.php?subject=database opens the tab that was used last.
-        $lastTabs = isset($_SESSION['webdbLastTab']) && is_array($_SESSION['webdbLastTab'])
-            ? $_SESSION['webdbLastTab']
-            : [];
-        $lastTabs['database'] = $activeTab;
-        $_SESSION['webdbLastTab'] = $lastTabs;
+        self::rememberLastTab('database', $activeTab);
 
         $urlParams = [
             'database' => $database,
@@ -1030,5 +1026,19 @@ abstract class WebsiteComponents
         $tableCell->appendChild($script);
 
         return $tableCell;
+    }
+
+    /**
+     * Remembers the active tab of a section for Misc::getLastTabURL(), like the legacy Misc::printTabs().
+     *
+     * @param string $section A section of the legacy Misc::getNavTabs(), such as 'database'.
+     */
+    private static function rememberLastTab(string $section, string $activeTab): void
+    {
+        $lastTabs = isset($_SESSION['webdbLastTab']) && is_array($_SESSION['webdbLastTab'])
+            ? $_SESSION['webdbLastTab']
+            : [];
+        $lastTabs[$section] = $activeTab;
+        $_SESSION['webdbLastTab'] = $lastTabs;
     }
 }

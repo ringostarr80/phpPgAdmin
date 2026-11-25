@@ -151,7 +151,10 @@ final class SqlEdit extends Website
     #[\Override]
     protected function title(): string
     {
-        return 'SQL';
+        return match (RequestParameter::getString('action')) {
+            'find' => _('Find'),
+            default => _('SQL'),
+        };
     }
 
     private function appendFindPart(\DOMElement $element): void

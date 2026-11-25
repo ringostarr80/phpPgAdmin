@@ -4,8 +4,8 @@ import { login, runningServerId, testUsername } from './support/environment';
 const DATABASE = 'postgres';
 const TABLESPACE = 'pg_default';
 
-// The pages that come from the same legacy page share its title. In French, as the titles are English without a
-// translation (only "Tablespaces" is the same word in both).
+// The pages that come from the same legacy page share its title, only sqledit.php has one for each of its actions. In
+// French, as the titles are English without a translation (only "SQL" and "Tablespaces" are the same word in both).
 const pagesByTitle: Record<string, Record<string, Record<string, string>>> = {
   'Bases de données': {
     'alter_db.php': { database: DATABASE },
@@ -17,11 +17,17 @@ const pagesByTitle: Record<string, Record<string, Record<string, string>>> = {
     'history_clear.php': { database: DATABASE },
     'history_delete.php': { database: DATABASE, queryid: 'none' },
   },
+  Rechercher: {
+    'sqledit.php': { action: 'find' },
+  },
   Rôles: {
     'alter_role.php': { rolename: testUsername() },
     'create_role.php': {},
     'drop_role.php': { rolename: testUsername() },
     'roles.php': {},
+  },
+  SQL: {
+    'sqledit.php': { action: 'sql' },
   },
   Tablespaces: {
     'alter_tablespace.php': { tablespace: TABLESPACE },

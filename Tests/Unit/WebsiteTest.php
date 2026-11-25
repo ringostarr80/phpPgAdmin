@@ -169,6 +169,14 @@ final class WebsiteTest extends TestCase
         self::assertSame("phpPgAdmin - {$title}", self::windowTitle(self::pageOf($page)));
     }
 
+    #[DataProvider('titlesOfTheSqlWindow')]
+    public function testTheSqlWindowHasTheTitleOfItsAction(string $action, string $title): void
+    {
+        $_GET = ['action' => $action];
+
+        self::assertSame("phpPgAdmin - {$title}", self::windowTitle(self::pageOf(SqlEdit::class)));
+    }
+
     public function testTheTitleOfTheWindowIsTheNameOfTheApplicationForAPageWithoutATitle(): void
     {
         self::assertSame('phpPgAdmin', self::windowTitle(self::page()));
@@ -242,13 +250,23 @@ final class WebsiteTest extends TestCase
             Login::class => 'Login',
             Roles::class => 'Roles',
             Servers::class => 'Servers',
-            SqlEdit::class => 'SQL',
             Tablespaces::class => 'Tablespaces',
         ];
 
         foreach ($titles as $page => $title) {
             yield $page => [$page, $title];
         }
+    }
+
+    /**
+     * Like the legacy page, where doFind() and doDefault() each handed a title of their own to Misc::printHeader().
+     *
+     * @return iterable<string, array{string, string}>
+     */
+    public static function titlesOfTheSqlWindow(): iterable
+    {
+        yield 'find' => ['find', 'Find'];
+        yield 'sql' => ['sql', 'SQL'];
     }
 
     /**
@@ -312,12 +330,14 @@ final class WebsiteTest extends TestCase
     #[\Override]
     protected function setUp(): void
     {
+        $_GET = [];
         $_SESSION = [];
     }
 
     #[\Override]
     protected function tearDown(): void
     {
+        $_GET = [];
         $_SESSION = [];
     }
 

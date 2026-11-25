@@ -88,4 +88,10 @@ final class HistoryClear extends Website
 
         return $body;
     }
+
+    #[\Override]
+    protected function title(): string
+    {
+        return _('History');
+    }
 }

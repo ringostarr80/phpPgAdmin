@@ -37,6 +37,12 @@ final class Roles extends Website
         return $body;
     }
 
+    #[\Override]
+    protected function title(): string
+    {
+        return _('Roles');
+    }
+
     private function appendPropertiesPage(\DOMElement $body, string $serverId): void
     {
         $dom = $body->ownerDocument;

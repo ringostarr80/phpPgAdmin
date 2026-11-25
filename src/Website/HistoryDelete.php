@@ -105,4 +105,10 @@ final class HistoryDelete extends Website
 
         return $body;
     }
+
+    #[\Override]
+    protected function title(): string
+    {
+        return _('History');
+    }
 }

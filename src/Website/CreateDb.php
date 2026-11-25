@@ -299,6 +299,12 @@ final class CreateDb extends Website
         return $body;
     }
 
+    #[\Override]
+    protected function title(): string
+    {
+        return _('Databases');
+    }
+
     private function handlePostRequest(): void
     {
         $formName = RequestParameter::getString('formName') ?? '';

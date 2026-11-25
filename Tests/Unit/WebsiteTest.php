@@ -44,7 +44,17 @@ use Tests\Support\PageBody;
 #[CoversMethod(Website::class, 'title')]
 #[CoversMethod(AllDb::class, 'title')]
 #[CoversMethod(AllDbExport::class, 'title')]
+#[CoversMethod(AlterDb::class, 'title')]
 #[CoversMethod(Browser::class, 'requiresServerLogin')]
+#[CoversMethod(CreateDb::class, 'title')]
+#[CoversMethod(CreateRole::class, 'title')]
+#[CoversMethod(CreateTablespace::class, 'title')]
+#[CoversMethod(DropDb::class, 'title')]
+#[CoversMethod(DropRole::class, 'title')]
+#[CoversMethod(DropTablespace::class, 'title')]
+#[CoversMethod(History::class, 'title')]
+#[CoversMethod(HistoryClear::class, 'title')]
+#[CoversMethod(HistoryDelete::class, 'title')]
 #[CoversMethod(Index::class, 'buildHtmlHead')]
 #[CoversMethod(Index::class, 'requiresServerLogin')]
 #[CoversMethod(Intro::class, 'requiresServerLogin')]
@@ -52,10 +62,12 @@ use Tests\Support\PageBody;
 #[CoversMethod(Login::class, 'requiresServerLogin')]
 #[CoversMethod(Login::class, 'title')]
 #[CoversMethod(Redirect::class, 'requiresServerLogin')]
+#[CoversMethod(Roles::class, 'title')]
 #[CoversMethod(ServerLogout::class, 'requiresServerLogin')]
 #[CoversMethod(Servers::class, 'requiresServerLogin')]
 #[CoversMethod(Servers::class, 'title')]
 #[CoversMethod(SqlEdit::class, 'title')]
+#[CoversMethod(Tablespaces::class, 'title')]
 final class WebsiteTest extends TestCase
 {
     public function testDocument(): void
@@ -214,10 +226,24 @@ final class WebsiteTest extends TestCase
         $titles = [
             AllDb::class => 'Databases',
             AllDbExport::class => 'Databases',
+            AlterDb::class => 'Databases',
+            AlterRole::class => 'Roles',
+            AlterTablespace::class => 'Tablespaces',
+            CreateDb::class => 'Databases',
+            CreateRole::class => 'Roles',
+            CreateTablespace::class => 'Tablespaces',
+            DropDb::class => 'Databases',
+            DropRole::class => 'Roles',
+            DropTablespace::class => 'Tablespaces',
+            History::class => 'History',
+            HistoryClear::class => 'History',
+            HistoryDelete::class => 'History',
             Languages::class => 'Languages',
             Login::class => 'Login',
+            Roles::class => 'Roles',
             Servers::class => 'Servers',
             SqlEdit::class => 'SQL',
+            Tablespaces::class => 'Tablespaces',
         ];
 
         foreach ($titles as $page => $title) {

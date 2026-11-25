@@ -199,4 +199,10 @@ final class AlterDb extends Website
 
         return $body;
     }
+
+    #[\Override]
+    protected function title(): string
+    {
+        return _('Databases');
+    }
 }

@@ -74,6 +74,12 @@ class CreateTablespace extends Website
         return $body;
     }
 
+    #[\Override]
+    protected function title(): string
+    {
+        return _('Tablespaces');
+    }
+
     /**
      * The constructor runs it for a posted form. It is protected, so the alter page, which inherits the constructor,
      * handles its form with its own method and does not create a tablespace.

@@ -82,6 +82,12 @@ final class DropTablespace extends Website
         return $body;
     }
 
+    #[\Override]
+    protected function title(): string
+    {
+        return _('Tablespaces');
+    }
+
     /**
      * Leaves leading to the next page to the constructor, whose die would end the tests.
      *

@@ -196,6 +196,12 @@ final class History extends Website
         return $body;
     }
 
+    #[\Override]
+    protected function title(): string
+    {
+        return _('History');
+    }
+
     /**
      * @param array<string, array{'query': string, 'paginate': bool}> $history
      */

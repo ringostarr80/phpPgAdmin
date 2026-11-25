@@ -84,6 +84,12 @@ final class DropDb extends Website
         return $body;
     }
 
+    #[\Override]
+    protected function title(): string
+    {
+        return _('Databases');
+    }
+
     /**
      * Leaves leading to the next page to the constructor, whose die would end the tests.
      *

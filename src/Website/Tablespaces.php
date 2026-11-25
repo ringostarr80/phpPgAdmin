@@ -26,6 +26,12 @@ final class Tablespaces extends Website
         return $body;
     }
 
+    #[\Override]
+    protected function title(): string
+    {
+        return _('Tablespaces');
+    }
+
     private function appendTablespacesListPage(\DOMElement $body, string $serverId): void
     {
         $dom = $body->ownerDocument;

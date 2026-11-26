@@ -34,6 +34,25 @@ final class SessionTest extends TestCase
         self::assertSame(['webdbLogin' => ['127.0.0.1:5432:allow' => ['username' => 'postgres']]], $_SESSION);
     }
 
+    public function testTheLastSqlQueryIsTheStoredOne(): void
+    {
+        $_SESSION['sqlquery'] = 'SELECT 1';
+
+        self::assertSame('SELECT 1', Session::lastSqlQuery());
+    }
+
+    public function testWithoutAStoredQueryTheLastSqlQueryIsEmpty(): void
+    {
+        self::assertSame('', Session::lastSqlQuery());
+    }
+
+    public function testAStoredValueThatIsNotAStringGivesNoLastSqlQuery(): void
+    {
+        $_SESSION['sqlquery'] = ['SELECT 1'];
+
+        self::assertSame('', Session::lastSqlQuery());
+    }
+
     #[\Override]
     protected function setUp(): void
     {

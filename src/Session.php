@@ -10,6 +10,9 @@ final class Session
 
     private const BROWSER_RELOAD_REQUESTED = 'browserReloadRequested';
 
+    /** The key under which the legacy pages store the query executed last. */
+    private const LAST_SQL_QUERY = 'sqlquery';
+
     /**
      * Whether an earlier request asked for a reload of the browser tree (see requestBrowserReload()). Answers true
      * only once, so only the next page reloads it.
@@ -29,6 +32,18 @@ final class Session
     public static function requestBrowserReload(): void
     {
         $_SESSION[self::BROWSER_RELOAD_REQUESTED] = true;
+    }
+
+    /**
+     * The query executed last, as sql.php (also one from the history) and display.php store it. Empty without one.
+     */
+    public static function lastSqlQuery(): string
+    {
+        $query = $_SESSION[self::LAST_SQL_QUERY] ?? null;
+
+        return is_string($query)
+            ? $query
+            : '';
     }
 
     public static function destroy(): void

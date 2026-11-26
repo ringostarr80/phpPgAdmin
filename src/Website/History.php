@@ -56,7 +56,8 @@ final class History extends Website
         $serverSelect->setAttribute('name', 'server');
         $serverSelect->setAttribute('id', 'server');
         $serverSelect->setAttribute('onchange', 'changeServer(event)');
-        $servers = Config::getServers();
+        // Like the legacy page, it offers only the servers with a login; any other one would lead to the login form.
+        $servers = Logins::loggedInServers(Config::getServers());
 
         foreach ($servers as $server) {
             $options = $dom->createElement('option');

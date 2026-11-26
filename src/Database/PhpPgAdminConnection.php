@@ -615,6 +615,31 @@ final class PhpPgAdminConnection extends \PDO
         return $result;
     }
 
+    /**
+     * Like the legacy Postgres::getSearchPath(), it leaves out the schemas that do not exist, and the ones that
+     * PostgreSQL searches without them being in the search path (pg_catalog, pg_temp).
+     *
+     * @return array<string> The names of the schemas, in the order of the search path.
+     */
+    public function getSearchPath(): array
+    {
+        // unnest() gives every name as it is, the text of the array would quote a name with a comma or a quote.
+        $sql = 'SELECT schema_name
+            FROM unnest(pg_catalog.current_schemas(false)) WITH ORDINALITY AS search_path(schema_name, position)
+            ORDER BY position';
+        $statement = $this->prepare($sql);
+        $statement->execute();
+
+        $schemas = [];
+
+        // fetchColumn() gives false after the last row.
+        while (is_string($schema = $statement->fetchColumn())) {
+            $schemas[] = $schema;
+        }
+
+        return $schemas;
+    }
+
     public function getTablespace(string $tablespace): ?Tablespace
     {
         $sql = "SELECT spcname, pg_catalog.pg_get_userbyid(spcowner) AS spcowner,

@@ -221,6 +221,23 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertNotContains('template0', $databases);
     }
 
+    public function testGetSearchPathListsTheSchemasInTheOrderOfTheSearchPath(): void
+    {
+        $connection = self::connection();
+        $connection->exec('SET search_path TO public, information_schema');
+
+        self::assertSame(['public', 'information_schema'], $connection->getSearchPath());
+    }
+
+    public function testGetSearchPathLeavesOutTheMissingSchemasAndTheImplicitOnes(): void
+    {
+        $connection = self::connection();
+        // PostgreSQL searches pg_catalog first, although it is not in this search path.
+        $connection->exec('SET search_path TO ppa_test_missing_schema, public');
+
+        self::assertSame(['public'], $connection->getSearchPath());
+    }
+
     public function testIsSuperUserIsTrueForASuperuser(): void
     {
         // The tests connect as a superuser, as they create roles and databases.

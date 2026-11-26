@@ -3,6 +3,7 @@ import { login, runningServerId } from './support/environment';
 
 const DATABASE = 'postgres';
 const FILTER_FIELD = '#filter';
+const PAGINATE_FIELD = '#paginate';
 const QUERY_FIELD = '#query';
 const SCHEMA = 'public';
 const TERM_FIELD = '#term';
@@ -61,6 +62,20 @@ test('SQL Editor > choosing a database keeps the line break the query starts wit
   await expect(page).toHaveURL(new RegExp(`[?&]database=${DATABASE}(&|$)`));
   await expect(page.locator(QUERY_FIELD)).toHaveValue('\nSELECT 1');
 });
+
+for (const checked of [true, false]) {
+  test(`SQL Editor > choosing a database keeps "Paginate results" ${checked ? 'checked' : 'unchecked'}`, async ({ page }) => {
+    await login(page);
+    await page.goto(`/sqledit.php?${new URLSearchParams({ action: 'sql', server: runningServerId() })}`);
+
+    await page.locator(PAGINATE_FIELD).setChecked(checked);
+    // js/sqledit.js opens the editor again for the chosen database, with paginate=on only if the box is checked.
+    await page.locator('#database').selectOption(DATABASE);
+
+    await expect(page).toHaveURL(new RegExp(`[?&]database=${DATABASE}(&|$)`));
+    await expect(page.locator(PAGINATE_FIELD)).toBeChecked({ checked });
+  });
+}
 
 test('SQL Editor > choosing a database keeps the term and the filter of the Find form', async ({ page }) => {
   await login(page);

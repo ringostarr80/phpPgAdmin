@@ -294,6 +294,11 @@ final class SqlEdit extends Website
         $inputPaginate->setAttribute('type', 'checkbox');
         $inputPaginate->setAttribute('id', 'paginate');
         $inputPaginate->setAttribute('name', 'paginate');
+
+        if (RequestParameter::getString('paginate') !== null) {
+            $inputPaginate->setAttribute('checked', 'checked');
+        }
+
         $labelForPaginate = $dom->createElement('label');
         $labelForPaginate->setAttribute('for', 'paginate');
         $labelForPaginate->appendChild($dom->createTextNode(_('Paginate results')));

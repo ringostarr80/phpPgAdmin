@@ -11,6 +11,9 @@ const SERVER_SSL_MODE = 'allow';
 
 export const LOGIN_FORM_SELECTOR = 'form[name="login_form"]';
 
+/** The upload_max_filesize in MB that playwright.config.ts starts PHP with: not its default of 2M. */
+export const UPLOAD_MAX_FILESIZE_MB = 3;
+
 export function runningServerHost(): string {
   return process.env.PHPPGADMIN_TEST_SERVER_HOSTNAME || '127.0.0.1';
 }

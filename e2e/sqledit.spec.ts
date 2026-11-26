@@ -1,5 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
-import { login, RUNNING_SERVER_DESC, runningServerId } from './support/environment';
+import { login, RUNNING_SERVER_DESC, runningServerId, UPLOAD_MAX_FILESIZE_MB } from './support/environment';
 
 const DATABASE = 'postgres';
 const FILTER_FIELD = '#filter';
@@ -69,6 +69,16 @@ test('SQL Editor > the server list only has the servers the user is logged in to
 
   // The test configuration also has the Not Running Server, which nobody can log in to.
   await expect(page.locator('#server option')).toHaveText([`${RUNNING_SERVER_DESC} (${runningServerId()})`]);
+});
+
+test('SQL Editor > the upload takes scripts as large as PHP accepts', async ({ page }) => {
+  await login(page);
+
+  await page.goto(`/sqledit.php?${new URLSearchParams({ action: 'sql', server: runningServerId() })}`);
+
+  await expect(page.locator('#script')).toBeVisible();
+  // PHP rejects a larger file than the form field MAX_FILE_SIZE, which comes before the file field.
+  await expect(page.locator('input[name="MAX_FILE_SIZE"]')).toHaveValue(String(UPLOAD_MAX_FILESIZE_MB * 1024 * 1024));
 });
 
 // The search path of the database is public. The legacy page put the schema in front of it, but only once.

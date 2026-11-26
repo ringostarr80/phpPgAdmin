@@ -6,7 +6,7 @@ namespace PhpPgAdmin\Website;
 
 use PhpPgAdmin\{Config, Session, Website, WebsiteComponents};
 use PhpPgAdmin\Database\PhpPgAdminConnection;
-use PhpPgAdmin\Infrastructure\Http\RequestParameter;
+use PhpPgAdmin\Infrastructure\Http\{FileUpload, RequestParameter};
 use PhpPgAdmin\Infrastructure\Session\Logins;
 
 final class SqlEdit extends Website
@@ -279,23 +279,6 @@ final class SqlEdit extends Website
         $textareaQuery->setAttribute('name', 'query');
         $textareaQuery->setAttribute('id', 'query');
 
-        $pUpload = $dom->createElement('p');
-        $inputMaxFileSize = $dom->createElement('input');
-        $inputMaxFileSize->setAttribute('type', 'hidden');
-        $inputMaxFileSize->setAttribute('name', 'MAX_FILE_SIZE');
-        $inputMaxFileSize->setAttribute('value', '2097152');
-        $labelForScript = $dom->createElement('label');
-        $labelForScript->setAttribute('for', 'script');
-        $labelForScript->appendChild($dom->createTextNode(_('or upload an SQL script:')));
-        $labelForScript->appendChild($dom->createTextNode(' '));
-        $inputScript = $dom->createElement('input');
-        $inputScript->setAttribute('id', 'script');
-        $inputScript->setAttribute('name', 'script');
-        $inputScript->setAttribute('type', 'file');
-        $pUpload->appendChild($inputMaxFileSize);
-        $pUpload->appendChild($labelForScript);
-        $pUpload->appendChild($inputScript);
-
         $pPaginate = $dom->createElement('p');
         $inputPaginate = $dom->createElement('input');
         $inputPaginate->setAttribute('type', 'checkbox');
@@ -329,9 +312,41 @@ final class SqlEdit extends Website
 
         $element->appendChild($pSchemaSearchPath);
         $element->appendChild($textareaQuery);
-        $element->appendChild($pUpload);
+
+        // Like the legacy page, it offers the upload only if PHP accepts one, and only up to the size PHP accepts.
+        $maxUploadSize = FileUpload::maxSize();
+
+        if ($maxUploadSize !== null) {
+            $element->appendChild(self::buildUploadPart($dom, $maxUploadSize));
+        }
+
         $element->appendChild($pPaginate);
         $element->appendChild($pButtons);
+    }
+
+    /**
+     * The upload of an SQL script, which PHP rejects if it is larger than $maxSize bytes (0 for any size).
+     */
+    private static function buildUploadPart(\DOMDocument $dom, int $maxSize): \DOMElement
+    {
+        $pUpload = $dom->createElement('p');
+        $inputMaxFileSize = $dom->createElement('input');
+        $inputMaxFileSize->setAttribute('type', 'hidden');
+        $inputMaxFileSize->setAttribute('name', 'MAX_FILE_SIZE');
+        $inputMaxFileSize->setAttribute('value', (string)$maxSize);
+        $labelForScript = $dom->createElement('label');
+        $labelForScript->setAttribute('for', 'script');
+        $labelForScript->appendChild($dom->createTextNode(_('or upload an SQL script:')));
+        $labelForScript->appendChild($dom->createTextNode(' '));
+        $inputScript = $dom->createElement('input');
+        $inputScript->setAttribute('id', 'script');
+        $inputScript->setAttribute('name', 'script');
+        $inputScript->setAttribute('type', 'file');
+        $pUpload->appendChild($inputMaxFileSize);
+        $pUpload->appendChild($labelForScript);
+        $pUpload->appendChild($inputScript);
+
+        return $pUpload;
     }
 
     /**

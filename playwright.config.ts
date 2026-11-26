@@ -1,5 +1,6 @@
 import { existsSync } from 'node:fs';
 import { defineConfig, devices } from '@playwright/test';
+import { UPLOAD_MAX_FILESIZE_MB } from './e2e/support/environment';
 
 // Same .env the PHP side reads (see .env.sample); variables already set in the environment take precedence.
 if (existsSync('.env')) {
@@ -40,9 +41,12 @@ export default defineConfig({
   ],
 
   /* Writes the test configuration (Tests/test-environment.php), then starts the PHP built-in server.
-     The setup runs here and not in globalSetup, because Playwright starts the web server first. */
+     The setup runs here and not in globalSetup, because Playwright starts the web server first.
+     With an upload_max_filesize other than the default, the tests see whether the SQL window takes it from PHP. */
   webServer: {
-    command: 'php Tests/test-environment.php setup && php -S 127.0.0.1:9876 > /dev/null 2>&1',
+    command:
+      'php Tests/test-environment.php setup'
+      + ` && php -d upload_max_filesize=${UPLOAD_MAX_FILESIZE_MB}M -S 127.0.0.1:9876 > /dev/null 2>&1`,
     url: baseURL,
     env: {
       PHPPGADMIN_CONFIG_YAML_FILE: 'config-test.yml',

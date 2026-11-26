@@ -26,7 +26,10 @@ final class SqlEdit extends Website
         $body = parent::buildHtmlBody($dom);
 
         $serverId = RequestParameter::getString('server') ?? '';
-        $actionParam = RequestParameter::getString('action') ?? '';
+        // Like the legacy page, it shows the SQL form for any action other than find.
+        $actionParam = RequestParameter::getString('action') === 'find'
+            ? 'find'
+            : 'sql';
 
         $body->appendChild(WebsiteComponents::buildSqlWindowTabs(
             dom: $dom,
@@ -39,7 +42,6 @@ final class SqlEdit extends Website
         $formAction = match ($actionParam) {
             'find' => 'database.php',
             'sql' => 'sql.php',
-            default => 'sql.php',
         };
 
         $form = $dom->createElement('form');
@@ -151,7 +153,6 @@ final class SqlEdit extends Website
         match ($actionParam) {
             'find' => $this->appendFindPart($form),
             'sql' => $this->appendSqlPart($form, $serverId, $db),
-            default => throw new \InvalidArgumentException("Unknown action: {$actionParam}"),
         };
 
         $body->appendChild($form);

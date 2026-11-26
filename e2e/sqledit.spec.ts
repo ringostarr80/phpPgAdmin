@@ -47,6 +47,17 @@ for (const action of Object.keys(TABS)) {
   });
 }
 
+// Like the legacy page, the window shows the SQL form for any action other than find.
+for (const [description, params] of Object.entries({ 'an unknown action': { action: 'unknown' }, 'no action': {} })) {
+  test(`SQL Editor > the window shows the SQL form for ${description}`, async ({ page }) => {
+    await login(page);
+
+    await page.goto(`/sqledit.php?${new URLSearchParams({ ...params, server: runningServerId() })}`);
+
+    await expectForm(page, 'sql');
+  });
+}
+
 test('SQL Editor > the tabs switch between the forms and keep the database and the schema', async ({ page }) => {
   const params = { action: 'sql', database: DATABASE, schema: SCHEMA, server: runningServerId() };
   await login(page);

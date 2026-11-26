@@ -1,5 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
-import { login, runningServerId } from './support/environment';
+import { login, RUNNING_SERVER_DESC, runningServerId } from './support/environment';
 
 const DATABASE = 'postgres';
 const FILTER_FIELD = '#filter';
@@ -60,6 +60,15 @@ test('SQL Editor > the tabs switch between the forms and keep the database and t
     await expect(page.locator('#database')).toHaveValue(DATABASE);
     await expect(page).toHaveURL(new RegExp(`[?&]schema=${SCHEMA}(&|$)`));
   }
+});
+
+test('SQL Editor > the server list only has the servers the user is logged in to', async ({ page }) => {
+  await login(page);
+
+  await page.goto(`/sqledit.php?${new URLSearchParams({ action: 'sql', server: runningServerId() })}`);
+
+  // The test configuration also has the Not Running Server, which nobody can log in to.
+  await expect(page.locator('#server option')).toHaveText([`${RUNNING_SERVER_DESC} (${runningServerId()})`]);
 });
 
 // The search path of the database is public. The legacy page put the schema in front of it, but only once.

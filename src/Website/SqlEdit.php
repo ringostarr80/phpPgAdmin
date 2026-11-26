@@ -73,7 +73,8 @@ final class SqlEdit extends Website
         $serverSelection->setAttribute('name', 'server');
         $serverSelection->setAttribute('id', 'server');
         $serverSelection->setAttribute('onchange', 'changeServer(event)');
-        $servers = Config::getServers();
+        // Like the legacy page, it offers only the servers with a login; any other one would lead to the login form.
+        $servers = Logins::loggedInServers(Config::getServers());
 
         foreach ($servers as $server) {
             $option = $dom->createElement('option');

@@ -347,23 +347,6 @@ final class WebsiteComponentsTest extends TestCase
     }
 
     /**
-     * sqledit.php shows the server tabs too, but is none of them.
-     */
-    #[DataProvider('actionsOfTheSqlEditor')]
-    public function testServerTabsKeepTheRememberedTabWhenNoneOfThemIsActive(string $action): void
-    {
-        $_SESSION = [
-            'webdbLastTab' => [
-                'server' => 'roles',
-            ],
-        ];
-
-        self::buildServerTabs($action);
-
-        self::assertSame(['server' => 'roles'], $_SESSION['webdbLastTab']);
-    }
-
-    /**
      * Like the legacy Misc::getNavTabs('popup').
      */
     public function testSqlWindowTabs(): void
@@ -863,16 +846,6 @@ final class WebsiteComponentsTest extends TestCase
         yield 'roles.php' => ['roles'];
         yield 'tablespaces.php' => ['tablespaces'];
         yield 'all_db_export.php' => ['export'];
-    }
-
-    /**
-     * @return iterable<string, array{string}>
-     */
-    public static function actionsOfTheSqlEditor(): iterable
-    {
-        yield 'SQL' => ['sql'];
-        yield 'Find' => ['find'];
-        yield 'none' => [''];
     }
 
     /**

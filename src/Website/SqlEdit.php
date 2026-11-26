@@ -176,7 +176,7 @@ final class SqlEdit extends Website
         $inputTerm = $dom->createElement('input');
         $inputTerm->setAttribute('name', 'term');
         $inputTerm->setAttribute('id', 'term');
-        $inputTerm->setAttribute('value', '');
+        $inputTerm->setAttribute('value', RequestParameter::getString('term') ?? '');
         $inputTerm->setAttribute('size', '32');
         $inputTerm->setAttribute('maxlength', '63');
 
@@ -198,9 +198,16 @@ final class SqlEdit extends Website
             'VIEW' => _('Views'),
         ];
 
+        $filterParam = RequestParameter::getString('filter') ?? '';
+
         foreach ($filterArray as $key => $value) {
             $option = $dom->createElement('option');
             $option->setAttribute('value', $key);
+
+            if ($key === $filterParam) {
+                $option->setAttribute('selected', 'selected');
+            }
+
             $option->appendChild($dom->createTextNode($value));
             $filterSelection->appendChild($option);
         }

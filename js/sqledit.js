@@ -1,17 +1,27 @@
 'use strict';
 
 /**
+ * Opens the window again for the chosen server and database, with what was entered in its form.
+ *
  * @param {Event} evt
  */
 function changeServer(evt) {
+    const find = new URLSearchParams(location.search).get('action') === 'find';
     const urlParams = new URLSearchParams();
-    urlParams.set('action', 'sql');
+    urlParams.set('action', find ? 'find' : 'sql');
     urlParams.set('server', server.options[server.selectedIndex].value);
     urlParams.set('database', database.options[database.selectedIndex].value);
-    urlParams.set('query', query.value);
-    urlParams.set('search_path', search_path.value);
-    if (paginate.checked) {
-        urlParams.set('paginate', 'on');
+
+    // The forms of both actions have fields of their own, as in the legacy page.
+    if (find) {
+        urlParams.set('term', term.value);
+        urlParams.set('filter', filter.value);
+    } else {
+        urlParams.set('query', query.value);
+        urlParams.set('search_path', search_path.value);
+        if (paginate.checked) {
+            urlParams.set('paginate', 'on');
+        }
     }
 
     location.href = `sqledit.php?${urlParams.toString()}`;

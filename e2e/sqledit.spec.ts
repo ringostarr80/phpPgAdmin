@@ -2,6 +2,7 @@ import { test, expect, type Page } from '@playwright/test';
 import { login, runningServerId } from './support/environment';
 
 const DATABASE = 'postgres';
+const FILTER_FIELD = '#filter';
 const QUERY_FIELD = '#query';
 const SCHEMA = 'public';
 const TERM_FIELD = '#term';
@@ -59,4 +60,19 @@ test('SQL Editor > choosing a database keeps the line break the query starts wit
 
   await expect(page).toHaveURL(new RegExp(`[?&]database=${DATABASE}(&|$)`));
   await expect(page.locator(QUERY_FIELD)).toHaveValue('\nSELECT 1');
+});
+
+test('SQL Editor > choosing a database keeps the term and the filter of the Find form', async ({ page }) => {
+  await login(page);
+  await page.goto(`/sqledit.php?${new URLSearchParams({ action: 'find', server: runningServerId() })}`);
+
+  await page.locator(TERM_FIELD).fill('pg_');
+  await page.locator(FILTER_FIELD).selectOption('TABLE');
+  // js/sqledit.js opens the window again for the chosen database, with the entered term and filter.
+  await page.locator('#database').selectOption(DATABASE);
+
+  await expect(page).toHaveURL(new RegExp(`[?&]database=${DATABASE}(&|$)`));
+  await expectForm(page, 'find');
+  await expect(page.locator(TERM_FIELD)).toHaveValue('pg_');
+  await expect(page.locator(FILTER_FIELD)).toHaveValue('TABLE');
 });

@@ -1583,7 +1583,7 @@ msgstr "Für alle"
 msgid "strtype"
 msgstr "Datentyp"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Datentypen"
 
 msgid "strshowalltypes"
@@ -1783,7 +1783,7 @@ msgstr "Ändern der Domäne fehlgeschlagen."
 msgid "stroperator"
 msgstr "Operator"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Operatoren"
 
 msgid "strshowalloperators"
@@ -1875,7 +1875,7 @@ msgid "strbinarycompat"
 msgstr "(Binärkompatibel)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Konvertierungen"
 
 msgid "strnoconversions"
@@ -1914,7 +1914,7 @@ msgstr "Kindtabellen"
 msgid "straggregate"
 msgstr "Aggregatsfunktion"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Aggregatsfunktionen"
 
 msgid "strnoaggregates"
@@ -1981,7 +1981,7 @@ msgid "straggrshowall"
 msgstr "Alle Aggregatsfunktionen anzeigen"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Operatorklassen"
 
 msgid "strnoopclasses"

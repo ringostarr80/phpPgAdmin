@@ -1456,7 +1456,7 @@ msgstr "Dla wszystkich"
 msgid "strtype"
 msgstr "Typ"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Typy"
 
 msgid "strshowalltypes"
@@ -1638,7 +1638,7 @@ msgstr "Próba modyfikacji domeny się nie powiodła."
 msgid "stroperator"
 msgstr "Operator"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Operatory"
 
 msgid "strshowalloperators"
@@ -1730,7 +1730,7 @@ msgid "strbinarycompat"
 msgstr "(Kompatybilny binarnie)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Konwersje"
 
 msgid "strnoconversions"
@@ -1769,7 +1769,7 @@ msgstr "Tabela podrzędna"
 msgid "straggregate"
 msgstr "Funkcja agregująca"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Funkcje agregujące"
 
 msgid "strnoaggregates"
@@ -1839,7 +1839,7 @@ msgid "straggrshowall"
 msgstr "Pokaż wszystkie funkcje agregujące"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Klasy operatorów"
 
 msgid "strnoopclasses"

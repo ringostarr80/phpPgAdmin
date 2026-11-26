@@ -1821,7 +1821,8 @@ msgstr "For each"
 msgid "strtype"
 msgstr "Type"
 
-msgid "strtypes"
+# original: "strtypes"
+msgid "Types"
 msgstr "Types"
 
 msgid "strshowalltypes"
@@ -2024,7 +2025,8 @@ msgstr "Domain alteration failed."
 msgid "stroperator"
 msgstr "Operator"
 
-msgid "stroperators"
+# original: "stroperators"
+msgid "Operators"
 msgstr "Operators"
 
 msgid "strshowalloperators"
@@ -2117,7 +2119,8 @@ msgid "strbinarycompat"
 msgstr "(Binary compatible)"
 
 # Conversions
-msgid "strconversions"
+# original: "strconversions"
+msgid "Conversions"
 msgstr "Conversions"
 
 msgid "strnoconversions"
@@ -2159,7 +2162,8 @@ msgstr "Child tables"
 msgid "straggregate"
 msgstr "Aggregate"
 
-msgid "straggregates"
+# original: "straggregates"
+msgid "Aggregates"
 msgstr "Aggregates"
 
 msgid "strnoaggregates"
@@ -2226,7 +2230,8 @@ msgid "straggrshowall"
 msgstr "Show all aggregates"
 
 # Operator Classes
-msgid "stropclasses"
+# original: "stropclasses"
+msgid "Op Classes"
 msgstr "Op Classes"
 
 msgid "strnoopclasses"

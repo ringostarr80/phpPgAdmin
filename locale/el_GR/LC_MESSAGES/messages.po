@@ -1465,7 +1465,7 @@ msgstr "Για κάθε"
 msgid "strtype"
 msgstr "Τύπος"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Τύποι"
 
 msgid "strshowalltypes"
@@ -1644,7 +1644,7 @@ msgstr "Η τροποποίηση του τομέα απέτυχε."
 msgid "stroperator"
 msgstr "Τελεστής"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Τελεστές"
 
 msgid "strshowalloperators"
@@ -1736,7 +1736,7 @@ msgid "strbinarycompat"
 msgstr "(Δυαδική συμβατότητα)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Μετατροπές"
 
 msgid "strnoconversions"
@@ -1775,7 +1775,7 @@ msgstr "Θυγατρικοί πίνακες"
 msgid "straggregate"
 msgstr "Συγκεντρωτική συνάρτηση"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Συγκεντρωτικές συναρτήσεις"
 
 msgid "strnoaggregates"
@@ -1842,7 +1842,7 @@ msgid "straggrshowall"
 msgstr "Εμφάνιση όλων των συγκεντρωτικών συναρτήσεων"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Κλάσεις τελεστών"
 
 msgid "strnoopclasses"

@@ -1314,7 +1314,7 @@ msgstr "Her bir"
 msgid "strtype"
 msgstr "Veri tipi"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Veri tipleri"
 
 msgid "strshowalltypes"
@@ -1493,7 +1493,7 @@ msgstr "Domain alter işlemi başarısız oldu."
 msgid "stroperator"
 msgstr "Operatör"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Operatörler"
 
 msgid "strshowalloperators"
@@ -1585,7 +1585,7 @@ msgid "strbinarycompat"
 msgstr "(Binary uyumlu)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Dönüşümleri"
 
 msgid "strnoconversions"
@@ -1621,7 +1621,7 @@ msgid "strchildtables"
 msgstr "Child tablolar"
 
 # Aggregates
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Aggregate"
 
 msgid "strnoaggregates"
@@ -1630,7 +1630,7 @@ msgstr "Hiç aggregate bulunamadı."
 msgid "stralltypes"
 msgstr "(Tüm veri tipleri)"
 
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Op sınıfları"
 
 msgid "strnoopclasses"

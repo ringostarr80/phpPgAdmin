@@ -1683,7 +1683,7 @@ msgstr "Per cada"
 msgid "strtype"
 msgstr "Tipus"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Tipus"
 
 msgid "strshowalltypes"
@@ -1883,7 +1883,7 @@ msgstr "No s'ha pogut modificar el domini."
 msgid "stroperator"
 msgstr "Operador"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Operadors"
 
 msgid "strshowalloperators"
@@ -1975,7 +1975,7 @@ msgid "strbinarycompat"
 msgstr "(Compatible amb binari)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Conversions"
 
 msgid "strnoconversions"
@@ -2014,7 +2014,7 @@ msgstr "Taules fill"
 msgid "straggregate"
 msgstr "Agregat"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Agregats"
 
 msgid "strnoaggregates"
@@ -2081,7 +2081,7 @@ msgid "straggrshowall"
 msgstr "Mostra tots els agregats"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Classes d'operadors"
 
 msgid "strnoopclasses"

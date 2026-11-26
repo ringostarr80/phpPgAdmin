@@ -1683,7 +1683,7 @@ msgstr "Mindegyik"
 msgid "strtype"
 msgstr "Típus"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Típusok"
 
 msgid "strshowalltypes"
@@ -1883,7 +1883,7 @@ msgstr "Nem sikerült megváltoztatni a tartományt."
 msgid "stroperator"
 msgstr "Operátor"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Operátorok"
 
 msgid "strshowalloperators"
@@ -1975,7 +1975,7 @@ msgid "strbinarycompat"
 msgstr "(Binárisan kompatibilis)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Átalakítások"
 
 msgid "strnoconversions"
@@ -2014,7 +2014,7 @@ msgstr "Gyerektáblák"
 msgid "straggregate"
 msgstr "Aggregálás"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Aggregálások"
 
 msgid "strnoaggregates"
@@ -2081,7 +2081,7 @@ msgid "straggrshowall"
 msgstr "Minden aggregálás megjelenítése"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Operátor-osztályok"
 
 msgid "strnoopclasses"

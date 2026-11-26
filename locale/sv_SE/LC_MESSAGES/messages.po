@@ -1183,7 +1183,7 @@ msgstr "Mekanism ändrad."
 msgid "strtriggeralteredbad"
 msgstr "Misslyckades att ändra mekanism."
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Typer"
 
 msgid "strtypeneedslen"
@@ -1331,7 +1331,7 @@ msgstr "Misslyckades att ändra domän."
 msgid "stroperator"
 msgstr "Operand"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Operander"
 
 msgid "strshowalloperators"
@@ -1423,7 +1423,7 @@ msgid "strbinarycompat"
 msgstr "(Binärt kompatibel)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Omkodningar"
 
 msgid "strnoconversions"
@@ -1459,7 +1459,7 @@ msgid "strchildtables"
 msgstr "Underliggande tabeller"
 
 # Aggregates
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Sammanslagningar"
 
 msgid "strnoaggregates"
@@ -1469,7 +1469,7 @@ msgid "stralltypes"
 msgstr "(Alla typer)"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Op Klasser"
 
 msgid "strnoopclasses"

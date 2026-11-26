@@ -95,10 +95,10 @@ msgstr "Functie"
 msgid "Functions"
 msgstr "Functies"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Operatoren"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Aggregaten"
 
 msgid "Properties"
@@ -385,7 +385,7 @@ msgstr "Creëer trigger"
 msgid "strtype"
 msgstr "Type"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Types"
 
 msgid "strcascade"

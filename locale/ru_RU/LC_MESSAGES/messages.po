@@ -1671,7 +1671,7 @@ msgstr "Для каждого"
 msgid "strtype"
 msgstr "Тип данных"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Типы данных"
 
 msgid "strshowalltypes"
@@ -1871,7 +1871,7 @@ msgstr "Изменение домена прервано."
 msgid "stroperator"
 msgstr "Оператор"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Операторы"
 
 msgid "strshowalloperators"
@@ -1963,7 +1963,7 @@ msgid "strbinarycompat"
 msgstr "(двоично совместимый)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Преобразование"
 
 msgid "strnoconversions"
@@ -2002,7 +2002,7 @@ msgstr "Дочерние таблицы"
 msgid "straggregate"
 msgstr "Агрегатное выражение"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Агрегатные выражения"
 
 msgid "strnoaggregates"
@@ -2069,7 +2069,7 @@ msgid "straggrshowall"
 msgstr "Показать все агрегатные выражения"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Классы операторов"
 
 msgid "strnoopclasses"

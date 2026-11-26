@@ -1689,7 +1689,7 @@ msgstr "Por cada"
 msgid "strtype"
 msgstr "Tipo"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Tipos"
 
 msgid "strshowalltypes"
@@ -1889,7 +1889,7 @@ msgstr "Non se conseguiu modificar o dominio."
 msgid "stroperator"
 msgstr "Operador"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Operadores"
 
 msgid "strshowalloperators"
@@ -1982,7 +1982,7 @@ msgid "strbinarycompat"
 msgstr "(Compatible a nivel binario)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Conversións"
 
 msgid "strnoconversions"
@@ -2021,7 +2021,7 @@ msgstr "Táboas subordinadas"
 msgid "straggregate"
 msgstr "Conxunto"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Conxuntos"
 
 msgid "strnoaggregates"
@@ -2088,7 +2088,7 @@ msgid "straggrshowall"
 msgstr "Listar todos os conxuntos"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Clases de operador"
 
 msgid "strnoopclasses"

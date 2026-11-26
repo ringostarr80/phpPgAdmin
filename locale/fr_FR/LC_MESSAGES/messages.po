@@ -1698,7 +1698,7 @@ msgstr "Pour chaque"
 msgid "strtype"
 msgstr "Type"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Types"
 
 msgid "strshowalltypes"
@@ -1898,7 +1898,7 @@ msgstr "Échec lors de la modification du domaine."
 msgid "stroperator"
 msgstr "Opérateur"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Opérateurs"
 
 msgid "strshowalloperators"
@@ -1990,7 +1990,7 @@ msgid "strbinarycompat"
 msgstr "(binaire compatible)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Conversions"
 
 msgid "strnoconversions"
@@ -2029,7 +2029,7 @@ msgstr "Tables enfants"
 msgid "straggregate"
 msgstr "Agrégat"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Agrégats"
 
 msgid "strnoaggregates"
@@ -2096,7 +2096,7 @@ msgid "straggrshowall"
 msgstr "Afficher tous les agrégats"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Classes d'opérateur"
 
 msgid "strnoopclasses"

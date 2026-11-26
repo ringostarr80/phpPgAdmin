@@ -1255,7 +1255,7 @@ msgstr "Snellerwysiging het misluk."
 msgid "strtype"
 msgstr "Tipe"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Tipes"
 
 msgid "strshowalltypes"
@@ -1437,7 +1437,7 @@ msgstr "Wysiging van die domein het misluk."
 msgid "stroperator"
 msgstr "Operator"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Operatore"
 
 msgid "strshowalloperators"
@@ -1529,7 +1529,7 @@ msgid "strbinarycompat"
 msgstr "(Binêr-versoenbaar)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Omskakelings"
 
 msgid "strnoconversions"
@@ -1565,7 +1565,7 @@ msgid "strchildtables"
 msgstr "Child-tabelle"
 
 # Aggregates
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Opsommers"
 
 msgid "strnoaggregates"
@@ -1575,7 +1575,7 @@ msgid "stralltypes"
 msgstr "(Alle tipes)"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Operatorklasse"
 
 msgid "strnoopclasses"

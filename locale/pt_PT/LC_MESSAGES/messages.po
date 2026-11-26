@@ -67,10 +67,10 @@ msgstr "Nome"
 msgid "strdefinition"
 msgstr "Definição"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Operadores"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Agregados"
 
 msgid "Properties"
@@ -1014,7 +1014,7 @@ msgstr "Falha ao eliminar o gatilho."
 msgid "strtype"
 msgstr "Tipo"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Tipos"
 
 msgid "strshowalltypes"
@@ -1550,7 +1550,7 @@ msgstr "Em assignamento"
 msgid "strbinarycompat"
 msgstr "(Binario compativél)"
 
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Conversões"
 
 msgid "strnoconversions"
@@ -1589,7 +1589,7 @@ msgstr "Não foram encontrados agregados."
 msgid "stralltypes"
 msgstr "(Todos os tipos)"
 
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Classes Op"
 
 msgid "strnoopclasses"

@@ -1222,7 +1222,7 @@ msgstr "فشلت عملية تعديل المحفز. لم يتم التعديل.
 msgid "strtype"
 msgstr "نوع Type"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "أنواع Types"
 
 msgid "strshowalltypes"
@@ -1374,7 +1374,7 @@ msgstr "فشلت عملية تعديل النطاق."
 msgid "stroperator"
 msgstr "Operator"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Operators"
 
 msgid "strshowalloperators"
@@ -1466,7 +1466,7 @@ msgid "strbinarycompat"
 msgstr "(Binary compatible)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Conversions"
 
 msgid "strnoconversions"
@@ -1502,7 +1502,7 @@ msgid "strchildtables"
 msgstr "Child tables"
 
 # Aggregates
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Aggregates"
 
 msgid "strnoaggregates"
@@ -1512,7 +1512,7 @@ msgid "stralltypes"
 msgstr "(All types)"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Op Classes"
 
 msgid "strnoopclasses"

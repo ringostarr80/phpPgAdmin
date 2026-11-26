@@ -1228,7 +1228,7 @@ msgstr "Зміну трігера перервано."
 msgid "strtype"
 msgstr "Тип даних"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Типи даних"
 
 msgid "strshowalltypes"
@@ -1380,7 +1380,7 @@ msgstr "Зміну домена перервано."
 msgid "stroperator"
 msgstr "Оператор"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Оператори"
 
 msgid "strshowalloperators"
@@ -1472,7 +1472,7 @@ msgid "strbinarycompat"
 msgstr "(двійково сумісний)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Перетворення"
 
 msgid "strnoconversions"
@@ -1508,7 +1508,7 @@ msgid "strchildtables"
 msgstr "Дочірні таблиці"
 
 # Aggregates
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Агрегатні вирази"
 
 msgid "strnoaggregates"
@@ -1518,7 +1518,7 @@ msgid "stralltypes"
 msgstr "(Всі типи)"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Класи операторів"
 
 msgid "strnoopclasses"

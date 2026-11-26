@@ -1562,7 +1562,7 @@ msgstr "給每個"
 msgid "strtype"
 msgstr "類型"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "類型"
 
 msgid "strshowalltypes"
@@ -1765,7 +1765,7 @@ msgstr "共同值域修改已失敗。"
 msgid "stroperator"
 msgstr "運算子"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "運算子"
 
 msgid "strshowalloperators"
@@ -1857,7 +1857,7 @@ msgid "strbinarycompat"
 msgstr "(二進制碼相容)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "編碼轉換"
 
 msgid "strnoconversions"
@@ -1896,7 +1896,7 @@ msgstr "子資料表"
 msgid "straggregate"
 msgstr "聚集函數"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "聚集函數"
 
 msgid "strnoaggregates"
@@ -1963,7 +1963,7 @@ msgid "straggrshowall"
 msgstr "顯示全部聚集函數"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "運算子類別"
 
 msgid "strnoopclasses"

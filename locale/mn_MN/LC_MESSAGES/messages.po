@@ -74,7 +74,7 @@ msgstr "юмв"
 msgid "strdefinition"
 msgstr "єЯФЯвШЯЪЬЯЬд"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "юмЧдЧмШ"
 
 msgid "Properties"
@@ -1138,7 +1138,7 @@ msgstr "щкЭХЮХЮЩХ двЩЧЧХвС авХвзСЮЯ."
 msgid "strtype"
 msgstr "єЩа ФСЮЮйШ"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "єЩай ФСЮЮйШ"
 
 msgid "strshowalltypes"
@@ -1284,7 +1284,7 @@ msgstr "щкЭХЮХЮЩХ ФЯЭХЮС авХвзСЮЯ."
 msgid "stroperator"
 msgstr "яаХвСдЯв"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "яаХвСдЯвй"
 
 msgid "strshowalloperators"
@@ -1376,7 +1376,7 @@ msgid "strbinarycompat"
 msgstr "(ФзЯЩоЮЯ гЯзЭХгдЩЭйЪ)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "№вХЯТвСкЯзСЮЩХ"
 
 msgid "strnoconversions"

@@ -1683,7 +1683,7 @@ msgstr "Pro každý"
 msgid "strtype"
 msgstr "Typ"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Typy"
 
 msgid "strshowalltypes"
@@ -1883,7 +1883,7 @@ msgstr "Nezdařilo se provést změny v doméně."
 msgid "stroperator"
 msgstr "Operátor"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Operátory"
 
 msgid "strshowalloperators"
@@ -1975,7 +1975,7 @@ msgid "strbinarycompat"
 msgstr "(Binárně zaměnitelné)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Konverze"
 
 msgid "strnoconversions"
@@ -2014,7 +2014,7 @@ msgstr "Dceřiné tabulky"
 msgid "straggregate"
 msgstr "Agregační funkce"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Agregační funkce"
 
 msgid "strnoaggregates"
@@ -2081,7 +2081,7 @@ msgid "straggrshowall"
 msgstr "Zobrazit všechny agregační funkce"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Třídy operátorů"
 
 msgid "strnoopclasses"

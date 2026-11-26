@@ -1255,7 +1255,7 @@ msgstr "Det lykkedes ikke at ændre trigger."
 msgid "strtype"
 msgstr "Type"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Typer"
 
 msgid "strshowalltypes"
@@ -1404,7 +1404,7 @@ msgstr "Det lykkedes ikke at ændre domæne."
 msgid "stroperator"
 msgstr "Operator"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Operatorer"
 
 msgid "strshowalloperators"
@@ -1496,7 +1496,7 @@ msgid "strbinarycompat"
 msgstr "(Binært kompatibel)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Konverteringer"
 
 msgid "strnoconversions"
@@ -1532,7 +1532,7 @@ msgid "strchildtables"
 msgstr "Underordnede tabeller"
 
 # Aggregates
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Sammenlægninger"
 
 msgid "strnoaggregates"
@@ -1542,7 +1542,7 @@ msgid "stralltypes"
 msgstr "(Alle typer)"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Operatorklasser"
 
 msgid "strnoopclasses"

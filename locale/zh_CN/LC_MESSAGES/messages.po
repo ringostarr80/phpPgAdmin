@@ -1689,7 +1689,7 @@ msgstr "给每一个"
 msgid "strtype"
 msgstr "类型"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "类型"
 
 msgid "strshowalltypes"
@@ -1889,7 +1889,7 @@ msgstr "域变更失败。"
 msgid "stroperator"
 msgstr "操作符"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "操作符"
 
 msgid "strshowalloperators"
@@ -1981,7 +1981,7 @@ msgid "strbinarycompat"
 msgstr "(二进制兼容)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "编码转换"
 
 msgid "strnoconversions"
@@ -2020,7 +2020,7 @@ msgstr "子表"
 msgid "straggregate"
 msgstr "聚集"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "聚集"
 
 msgid "strnoaggregates"
@@ -2087,7 +2087,7 @@ msgid "straggrshowall"
 msgstr "显示所有聚集"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "操作符类"
 
 msgid "strnoopclasses"

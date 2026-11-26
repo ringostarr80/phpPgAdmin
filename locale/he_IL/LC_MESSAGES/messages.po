@@ -1249,7 +1249,7 @@ msgstr "עריכת זרז נכשלה."
 msgid "strtype"
 msgstr "סוג"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "סוגים"
 
 msgid "strshowalltypes"
@@ -1425,7 +1425,7 @@ msgstr "עריכת תחום נכשלה."
 msgid "stroperator"
 msgstr "מפעיל"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "מפעילים"
 
 msgid "strshowalloperators"
@@ -1517,7 +1517,7 @@ msgid "strbinarycompat"
 msgstr "(Binary compatible)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "המרה"
 
 msgid "strnoconversions"
@@ -1553,7 +1553,7 @@ msgid "strchildtables"
 msgstr "Child tables"
 
 # Aggregates
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Aggregates"
 
 msgid "strnoaggregates"
@@ -1563,7 +1563,7 @@ msgid "stralltypes"
 msgstr "(כל הסוגים)"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Op Classes"
 
 msgid "strnoopclasses"

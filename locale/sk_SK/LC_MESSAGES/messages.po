@@ -1318,7 +1318,7 @@ msgstr "Pre každých"
 msgid "strtype"
 msgstr "Typ"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Typy"
 
 msgid "strshowalltypes"
@@ -1501,7 +1501,7 @@ msgstr "Doména nebola zmenená."
 msgid "stroperator"
 msgstr "Operátor"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Operátory"
 
 msgid "strshowalloperators"
@@ -1593,7 +1593,7 @@ msgid "strbinarycompat"
 msgstr "(Binárne identické)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Konverzie"
 
 msgid "strnoconversions"
@@ -1629,7 +1629,7 @@ msgid "strchildtables"
 msgstr "Dcérske tabuľky"
 
 # Aggregates
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Agregáty"
 
 msgid "strnoaggregates"
@@ -1639,7 +1639,7 @@ msgid "stralltypes"
 msgstr "(Všetky typy)"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Op Triedy"
 
 msgid "strnoopclasses"

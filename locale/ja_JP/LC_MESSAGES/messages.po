@@ -1580,7 +1580,7 @@ msgstr "For each"
 msgid "strtype"
 msgstr "データ型"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "データ型"
 
 msgid "strshowalltypes"
@@ -1783,7 +1783,7 @@ msgstr "ドメインの変更に失敗しました。"
 msgid "stroperator"
 msgstr "演算子"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "演算子"
 
 msgid "strshowalloperators"
@@ -1875,7 +1875,7 @@ msgid "strbinarycompat"
 msgstr "(バイナリー互換)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "変換"
 
 msgid "strnoconversions"
@@ -1914,7 +1914,7 @@ msgstr "子テーブル"
 msgid "straggregate"
 msgstr "集計"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "集計"
 
 msgid "strnoaggregates"
@@ -1981,7 +1981,7 @@ msgid "straggrshowall"
 msgstr "すべての集計を表示する"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "演算子クラス"
 
 msgid "strnoopclasses"

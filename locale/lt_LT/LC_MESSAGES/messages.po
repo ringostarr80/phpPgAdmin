@@ -1707,7 +1707,7 @@ msgstr "Kiekvienam(-ai)"
 msgid "strtype"
 msgstr "Duomenų tipas"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Duomenų tipai"
 
 msgid "strshowalltypes"
@@ -1907,7 +1907,7 @@ msgstr "Nepavyko pakeisti domeno."
 msgid "stroperator"
 msgstr "Operatorius"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Operatoriai"
 
 msgid "strshowalloperators"
@@ -2006,7 +2006,7 @@ msgstr "(Binary compatible)"
 # suderintas(-a) su dvejetainė sistema
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Konvertavimai"
 
 msgid "strnoconversions"
@@ -2048,7 +2048,7 @@ msgstr "Polentelės"
 msgid "straggregate"
 msgstr "Agregavimo funkcija"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Agregavimo funkcijos"
 
 msgid "strnoaggregates"
@@ -2115,7 +2115,7 @@ msgid "straggrshowall"
 msgstr "Rodyti visas agregavimo funkcijas"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Operatorių klasės"
 
 msgid "strnoopclasses"

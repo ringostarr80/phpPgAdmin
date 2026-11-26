@@ -1486,7 +1486,7 @@ msgstr "Pentru fiecare"
 msgid "strtype"
 msgstr "Tip"
 
-msgid "strtypes"
+msgid "Types"
 msgstr "Tipuri"
 
 msgid "strshowalltypes"
@@ -1668,7 +1668,7 @@ msgstr "Modificare domeniu eşuată."
 msgid "stroperator"
 msgstr "Operator"
 
-msgid "stroperators"
+msgid "Operators"
 msgstr "Operatori"
 
 msgid "strshowalloperators"
@@ -1760,7 +1760,7 @@ msgid "strbinarycompat"
 msgstr "(Compatibil binar)"
 
 # Conversions
-msgid "strconversions"
+msgid "Conversions"
 msgstr "Conversii"
 
 msgid "strnoconversions"
@@ -1799,7 +1799,7 @@ msgstr "Tabele copii"
 msgid "straggregate"
 msgstr "Agregare"
 
-msgid "straggregates"
+msgid "Aggregates"
 msgstr "Agregări"
 
 msgid "strnoaggregates"
@@ -1872,7 +1872,7 @@ msgid "straggrshowall"
 msgstr "Afişare toate agregările"
 
 # Operator Classes
-msgid "stropclasses"
+msgid "Op Classes"
 msgstr "Clase de operatori"
 
 msgid "strnoopclasses"

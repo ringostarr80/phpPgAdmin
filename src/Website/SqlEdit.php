@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhpPgAdmin\Website;
 
-use PhpPgAdmin\{Config, Website, WebsiteComponents};
+use PhpPgAdmin\{Config, Session, Website, WebsiteComponents};
 use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\Infrastructure\Http\RequestParameter;
 use PhpPgAdmin\Infrastructure\Session\Logins;
@@ -268,7 +268,9 @@ final class SqlEdit extends Website
         $inputSearchPath->setAttribute('value', $searchPathParam);
         $pSchemaSearchPath->appendChild($inputSearchPath);
 
-        $queryParam = RequestParameter::getString('query') ?? '';
+        // Like the legacy page, it starts with the query executed last. Unlike the legacy page, it keeps the entered
+        // query, even an empty one, when js/sqledit.js opens it again for another server or database.
+        $queryParam = RequestParameter::getString('query') ?? Session::lastSqlQuery();
         $textareaQuery = WebsiteComponents::buildTextarea($dom, $queryParam);
         $textareaQuery->setAttribute('style', 'width: 98%;');
         $textareaQuery->setAttribute('rows', '10');

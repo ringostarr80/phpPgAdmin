@@ -19,6 +19,16 @@ function tabLabels(page: Page) {
   return page.locator('table.tabs td.tab span.label');
 }
 
+/** Executes the query from the SQL window, whereupon sql.php stores it in the session. */
+async function executeQuery(page: Page, query: string): Promise<void> {
+  await page.goto(`/sqledit.php?${new URLSearchParams({ action: 'sql', database: DATABASE, server: runningServerId() })}`);
+  await page.locator(QUERY_FIELD).fill(query);
+  // The form shows the result in the window named detail, which is a new one outside of the frames.
+  const result = page.waitForEvent('popup');
+  await page.locator('input[name="execute"]').click();
+  await (await result).waitForLoadState();
+}
+
 async function expectForm(page: Page, action: string): Promise<void> {
   const { field, label } = TABS[action];
 
@@ -84,6 +94,28 @@ test('SQL Editor > choosing a database keeps the line break the query starts wit
 
   await expect(page).toHaveURL(new RegExp(`[?&]database=${DATABASE}(&|$)`));
   await expect(page.locator(QUERY_FIELD)).toHaveValue('\nSELECT 1');
+});
+
+test('SQL Editor > the query field starts with the query executed last', async ({ page }) => {
+  await login(page);
+  await executeQuery(page, 'SELECT 1');
+
+  await page.goto(`/sqledit.php?${new URLSearchParams({ action: 'sql', server: runningServerId() })}`);
+
+  await expect(page.locator(QUERY_FIELD)).toHaveValue('SELECT 1');
+});
+
+test('SQL Editor > choosing a database keeps the cleared query field', async ({ page }) => {
+  await login(page);
+  await executeQuery(page, 'SELECT 1');
+  await page.goto(`/sqledit.php?${new URLSearchParams({ action: 'sql', server: runningServerId() })}`);
+
+  await page.locator(QUERY_FIELD).fill('');
+  // js/sqledit.js opens the editor again for the chosen database, with the empty query, not the one executed last.
+  await page.locator('#database').selectOption(DATABASE);
+
+  await expect(page).toHaveURL(new RegExp(`[?&]database=${DATABASE}(&|$)`));
+  await expect(page.locator(QUERY_FIELD)).toHaveValue('');
 });
 
 for (const checked of [true, false]) {

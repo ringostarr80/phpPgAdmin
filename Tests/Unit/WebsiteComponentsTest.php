@@ -364,6 +364,113 @@ final class WebsiteComponentsTest extends TestCase
     }
 
     /**
+     * Like the legacy Misc::getNavTabs('popup').
+     */
+    public function testSqlWindowTabs(): void
+    {
+        $tabs = [];
+
+        foreach (self::buildSqlWindowTabs(activeTab: 'sql') as $tab) {
+            $link = self::firstElement($tab, 'a');
+
+            $tabs[] = [
+                'help' => array_map(
+                    static fn (\DOMElement $helpLink): array => self::parseUrl($helpLink->getAttribute('href')),
+                    self::elementsByClass($tab, 'a', 'help'),
+                ),
+                'icon' => self::firstElement($link, 'img')->getAttribute('src'),
+                'label' => self::tabLabel($tab),
+                'style' => $tab->getAttribute('style'),
+                'url' => self::parseUrl($link->getAttribute('href')),
+            ];
+        }
+
+        self::assertSame(
+            [
+                [
+                    'help' => [
+                        [
+                            'params' => ['help' => 'pg.sql', 'server' => self::SERVER_ID],
+                            'path' => 'help.php',
+                        ],
+                    ],
+                    'icon' => 'images/themes/default/SqlEditor.png',
+                    'label' => 'SQL',
+                    'style' => 'width: 50%',
+                    'url' => [
+                        'params' => ['action' => 'sql', 'server' => self::SERVER_ID, 'subject' => 'schema'],
+                        'path' => 'sqledit.php',
+                    ],
+                ],
+                [
+                    'help' => [],
+                    'icon' => 'images/themes/default/Search.png',
+                    'label' => 'Find',
+                    'style' => 'width: 50%',
+                    'url' => [
+                        'params' => ['action' => 'find', 'server' => self::SERVER_ID, 'subject' => 'schema'],
+                        'path' => 'sqledit.php',
+                    ],
+                ],
+            ],
+            $tabs,
+        );
+    }
+
+    /**
+     * @param array<string, string> $urlParams
+     */
+    #[DataProvider('databasesAndSchemasOfTheSqlWindow')]
+    public function testSqlWindowTabsKeepTheDatabaseAndTheSchema(
+        ?string $database,
+        ?string $schema,
+        array $urlParams,
+    ): void {
+        $tabs = [];
+
+        foreach (self::buildSqlWindowTabs(activeTab: 'sql', database: $database, schema: $schema) as $tab) {
+            $tabs[] = self::parseUrl(self::firstElement($tab, 'a')->getAttribute('href'))['params'];
+        }
+
+        self::assertSame(
+            [
+                ['action' => 'sql', ...$urlParams, 'server' => self::SERVER_ID, 'subject' => 'schema'],
+                ['action' => 'find', ...$urlParams, 'server' => self::SERVER_ID, 'subject' => 'schema'],
+            ],
+            $tabs,
+        );
+    }
+
+    /**
+     * @param list<string> $expectedClasses
+     */
+    #[DataProvider('sqlWindowTabClasses')]
+    public function testSqlWindowTabsMarkOnlyTheActiveTab(string $activeTab, array $expectedClasses): void
+    {
+        self::assertSame(
+            $expectedClasses,
+            array_map(
+                static fn (\DOMElement $tab): string => $tab->getAttribute('class'),
+                self::buildSqlWindowTabs($activeTab),
+            ),
+        );
+    }
+
+    public function testSqlWindowTabsAreNotRemembered(): void
+    {
+        $_SESSION = [
+            'webdbLastTab' => [
+                'server' => 'roles',
+            ],
+        ];
+
+        self::buildSqlWindowTabs(activeTab: 'sql');
+
+        // redirect.php leads to none of them, so the legacy Misc::printTabs() didn't remember them either.
+        self::assertSame(['server' => 'roles'], $_SESSION['webdbLastTab']);
+    }
+
+    /**
      * Characterizes the tabs of intro.php and servers.php.
      */
     public function testRootTabs(): void
@@ -769,6 +876,37 @@ final class WebsiteComponentsTest extends TestCase
     }
 
     /**
+     * The database and the schema of the request, and the parameters the tabs of the SQL window keep.
+     *
+     * @return array<string, array{?string, ?string, array<string, string>}>
+     */
+    public static function databasesAndSchemasOfTheSqlWindow(): array
+    {
+        return [
+            'database' => [self::DATABASE, null, ['database' => self::DATABASE]],
+            'database and schema' => [
+                self::DATABASE,
+                'my schema',
+                ['database' => self::DATABASE, 'schema' => 'my schema'],
+            ],
+            'neither' => [null, null, []],
+        ];
+    }
+
+    /**
+     * The classes of the tabs of sqledit.php for each active tab.
+     *
+     * @return array<string, array{string, list<string>}>
+     */
+    public static function sqlWindowTabClasses(): array
+    {
+        return [
+            'find' => ['find', ['tab', 'tab active']],
+            'sql' => ['sql', ['tab active', 'tab']],
+        ];
+    }
+
+    /**
      * @return array<string, array{string}>
      */
     public static function textsThatStartWithALineBreak(): array
@@ -838,6 +976,30 @@ final class WebsiteComponentsTest extends TestCase
         $dom->appendChild($table);
 
         return $table;
+    }
+
+    /**
+     * @return list<\DOMElement>
+     */
+    private static function buildSqlWindowTabs(
+        string $activeTab,
+        ?string $database = null,
+        ?string $schema = null,
+    ): array {
+        $dom = new \DOMDocument();
+        $table = WebsiteComponents::buildSqlWindowTabs(
+            dom: $dom,
+            serverId: self::SERVER_ID,
+            activeTab: $activeTab,
+            database: $database,
+            schema: $schema,
+        );
+        $dom->appendChild($table);
+
+        self::assertSame('table', $table->tagName);
+        self::assertSame('tabs', $table->getAttribute('class'));
+
+        return self::elementsByClass($table, 'td', 'tab');
     }
 
     private static function databaseTab(string $id): \DOMElement

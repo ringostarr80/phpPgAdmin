@@ -1,8 +1,53 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 import { login, runningServerId } from './support/environment';
 
 const DATABASE = 'postgres';
 const QUERY_FIELD = '#query';
+const SCHEMA = 'public';
+const TERM_FIELD = '#term';
+
+/** The tab of each action, and the field of its form. */
+const TABS: Record<string, { field: string; label: string }> = {
+  find: { field: TERM_FIELD, label: 'Find' },
+  sql: { field: QUERY_FIELD, label: 'SQL' },
+};
+
+function tabLabels(page: Page) {
+  return page.locator('table.tabs td.tab span.label');
+}
+
+async function expectForm(page: Page, action: string): Promise<void> {
+  const { field, label } = TABS[action];
+
+  await expect(page.locator(field)).toBeVisible();
+  await expect(page.locator('table.tabs td.tab.active span.label')).toHaveText([label]);
+}
+
+for (const action of Object.keys(TABS)) {
+  test(`SQL Editor > the window has tabs of its own (${action})`, async ({ page }) => {
+    await login(page);
+
+    await page.goto(`/sqledit.php?${new URLSearchParams({ action, server: runningServerId() })}`);
+
+    await expectForm(page, action);
+    await expect(tabLabels(page)).toHaveText(['SQL', 'Find']);
+  });
+}
+
+test('SQL Editor > the tabs switch between the forms and keep the database and the schema', async ({ page }) => {
+  const params = { action: 'sql', database: DATABASE, schema: SCHEMA, server: runningServerId() };
+  await login(page);
+  await page.goto(`/sqledit.php?${new URLSearchParams(params)}`);
+
+  for (const action of ['find', 'sql']) {
+    await tabLabels(page).getByText(TABS[action].label, { exact: true }).click();
+
+    await expectForm(page, action);
+    await expect(page.locator('#server')).toHaveValue(runningServerId());
+    await expect(page.locator('#database')).toHaveValue(DATABASE);
+    await expect(page).toHaveURL(new RegExp(`[?&]schema=${SCHEMA}(&|$)`));
+  }
+});
 
 test('SQL Editor > choosing a database keeps the line break the query starts with', async ({ page }) => {
   await login(page);

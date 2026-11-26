@@ -512,6 +512,59 @@ abstract class WebsiteComponents
     }
 
     /**
+     * The tabs of the window that the SQL and the Find link of the top bar open, as in the legacy
+     * Misc::getNavTabs('popup'). Not remembered like the tabs of other pages, as redirect.php leads to none of them.
+     *
+     * @param string $activeTab 'sql'|'find'
+     */
+    public static function buildSqlWindowTabs(
+        \DOMDocument $dom,
+        string $serverId,
+        string $activeTab,
+        ?string $database = null,
+        ?string $schema = null,
+    ): \DOMElement {
+        $urlParams = [
+            'server' => $serverId,
+            'subject' => 'schema',
+        ];
+
+        if (!is_null($database)) {
+            $urlParams['database'] = $database;
+        }
+
+        if (!is_null($schema)) {
+            $urlParams['schema'] = $schema;
+        }
+
+        $tabLinks = [
+            [
+                'help' => [
+                    'url' => 'help.php',
+                    'url-params' => [
+                        'help' => 'pg.sql',
+                        'server' => $serverId,
+                    ],
+                ],
+                'icon' => 'SqlEditor',
+                'id' => 'sql',
+                'label' => _('SQL'),
+                'url' => 'sqledit.php',
+                'url-params' => array_merge($urlParams, ['action' => 'sql']),
+            ],
+            [
+                'icon' => 'Search',
+                'id' => 'find',
+                'label' => _('Find'),
+                'url' => 'sqledit.php',
+                'url-params' => array_merge($urlParams, ['action' => 'find']),
+            ],
+        ];
+
+        return self::buildTabs($dom, $tabLinks, $activeTab, '50%');
+    }
+
+    /**
      * @param array{
      *  'id': string,
      *  'label-text': string,

@@ -21,7 +21,7 @@ test('Redirect > a link to a server opens the tab of the server that was used la
   await expect(page).toHaveURL(`/all_db.php?${serverParams()}`);
 
   await page.goto(`/roles.php?${serverParams()}`);
-  // Not a tab of the server, although it shows them.
+  // Has tabs of its own, none of which is one of the server.
   await page.goto(`/sqledit.php?${serverParams()}&action=sql`);
   await openServer(page);
 

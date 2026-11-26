@@ -28,7 +28,13 @@ final class SqlEdit extends Website
         $serverId = RequestParameter::getString('server') ?? '';
         $actionParam = RequestParameter::getString('action') ?? '';
 
-        $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $serverId, $actionParam));
+        $body->appendChild(WebsiteComponents::buildSqlWindowTabs(
+            dom: $dom,
+            serverId: $serverId,
+            activeTab: $actionParam,
+            database: RequestParameter::getString('database'),
+            schema: RequestParameter::getString('schema'),
+        ));
 
         $formAction = match ($actionParam) {
             'find' => 'database.php',

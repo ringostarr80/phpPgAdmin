@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\Infrastructure\Session;
 
 use PhpPgAdmin\DDD\Entities\Server;
-use PhpPgAdmin\DDD\ValueObjects\Server\Name;
+use PhpPgAdmin\DDD\ValueObjects\Server\{Host, Name};
 use PhpPgAdmin\Infrastructure\Session\Logins;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
@@ -129,6 +129,30 @@ final class LoginsTest extends TestCase
     public function testIsLoggedInWithoutLogin(): void
     {
         self::assertFalse(Logins::isLoggedIn($this->server->id()));
+    }
+
+    public function testLoggedInServersSkipTheServersWithoutLogin(): void
+    {
+        $otherServer = new Server(name: new Name('Other Server'), host: new Host('db.example.org'));
+        $this->logIn('alice', 'secret');
+
+        self::assertSame([$this->server], Logins::loggedInServers([$otherServer, $this->server]));
+    }
+
+    public function testLoggedInServersKeepTheOrderOfTheServers(): void
+    {
+        $otherServer = new Server(name: new Name('Other Server'), host: new Host('db.example.org'));
+        $_SESSION['webdbLogin'] = [
+            $otherServer->id() => ['password' => 'secret', 'username' => 'bob'],
+            $this->server->id() => ['password' => 'secret', 'username' => 'alice'],
+        ];
+
+        self::assertSame([$this->server, $otherServer], Logins::loggedInServers([$this->server, $otherServer]));
+    }
+
+    public function testWithoutLoginThereAreNoLoggedInServers(): void
+    {
+        self::assertSame([], Logins::loggedInServers([$this->server]));
     }
 
     #[\Override]

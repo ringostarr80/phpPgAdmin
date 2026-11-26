@@ -90,4 +90,19 @@ final class Logins
 
         return $sessionUsername !== '';
     }
+
+    /**
+     * The servers of $servers that the user is logged in to, in their order. The server lists of the popups offer only
+     * these, like the legacy Misc::printConnection() did.
+     *
+     * @param array<Server> $servers
+     * @return list<Server>
+     */
+    public static function loggedInServers(array $servers): array
+    {
+        return array_values(array_filter(
+            $servers,
+            static fn (Server $server): bool => self::isLoggedIn($server->id()),
+        ));
+    }
 }

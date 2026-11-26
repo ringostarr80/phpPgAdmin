@@ -6,6 +6,7 @@ const FILTER_FIELD = '#filter';
 const PAGINATE_FIELD = '#paginate';
 const QUERY_FIELD = '#query';
 const SCHEMA = 'public';
+const SEARCH_PATH_FIELD = '#search_path';
 const TERM_FIELD = '#term';
 
 /** The tab of each action, and the field of its form. */
@@ -49,6 +50,28 @@ test('SQL Editor > the tabs switch between the forms and keep the database and t
     await expect(page.locator('#database')).toHaveValue(DATABASE);
     await expect(page).toHaveURL(new RegExp(`[?&]schema=${SCHEMA}(&|$)`));
   }
+});
+
+// The search path of the database is public. The legacy page put the schema in front of it, but only once.
+for (const [schema, searchPath] of [['information_schema', 'information_schema,public'], ['public', 'public']]) {
+  test(`SQL Editor > the search path starts with the schema the window is opened from (${schema})`, async ({ page }) => {
+    await login(page);
+    await page.goto(`/sqledit.php?${new URLSearchParams({ action: 'sql', database: DATABASE, schema, server: runningServerId() })}`);
+
+    await expect(page.locator(SEARCH_PATH_FIELD)).toHaveValue(searchPath);
+  });
+}
+
+test('SQL Editor > choosing a database keeps the entered search path', async ({ page }) => {
+  await login(page);
+  await page.goto(`/sqledit.php?${new URLSearchParams({ action: 'sql', server: runningServerId() })}`);
+
+  await page.locator(SEARCH_PATH_FIELD).fill('information_schema');
+  // js/sqledit.js opens the editor again for the chosen database, with the entered search path instead of its own.
+  await page.locator('#database').selectOption(DATABASE);
+
+  await expect(page).toHaveURL(new RegExp(`[?&]database=${DATABASE}(&|$)`));
+  await expect(page.locator(SEARCH_PATH_FIELD)).toHaveValue('information_schema');
 });
 
 test('SQL Editor > choosing a database keeps the line break the query starts with', async ({ page }) => {

@@ -113,11 +113,15 @@ final class SqlEdit extends Website
         $emptyOption->setAttribute('value', '');
         $databaseSelection->appendChild($emptyOption);
         $serverSession = Logins::serverSession($serverId, Config::getServers());
-        $db = PhpPgAdminConnection::createFromServerSession($serverSession);
+        $databaseParam = RequestParameter::getString('database');
+        // Like the legacy page, it connects to the chosen database, whose search path the SQL form starts with.
+        // Every database lists the same databases.
+        $db = PhpPgAdminConnection::createFromServerSession(
+            $serverSession,
+            $databaseParam === '' ? null : $databaseParam,
+        );
 
         if (!is_null($db)) {
-            $databaseParam = RequestParameter::getString('database');
-
             $dbs = $db->getDatabases();
 
             foreach ($dbs as $dbMetaData) {
@@ -145,7 +149,7 @@ final class SqlEdit extends Website
 
         match ($actionParam) {
             'find' => $this->appendFindPart($form),
-            'sql' => $this->appendSqlPart($form, $serverId),
+            'sql' => $this->appendSqlPart($form, $serverId, $db),
             default => throw new \InvalidArgumentException("Unknown action: {$actionParam}"),
         };
 
@@ -232,7 +236,7 @@ final class SqlEdit extends Website
         $element->appendChild($pFind);
     }
 
-    private function appendSqlPart(\DOMElement $element, string $serverId): void
+    private function appendSqlPart(\DOMElement $element, string $serverId, ?PhpPgAdminConnection $db): void
     {
         $dom = $element->ownerDocument;
 
@@ -260,7 +264,7 @@ final class SqlEdit extends Website
         $inputSearchPath->setAttribute('name', 'search_path');
         $inputSearchPath->setAttribute('id', 'search_path');
         $inputSearchPath->setAttribute('size', '50');
-        $searchPathParam = RequestParameter::getString('search_path') ?? 'public';
+        $searchPathParam = RequestParameter::getString('search_path') ?? self::searchPathOf($db);
         $inputSearchPath->setAttribute('value', $searchPathParam);
         $pSchemaSearchPath->appendChild($inputSearchPath);
 
@@ -325,5 +329,22 @@ final class SqlEdit extends Website
         $element->appendChild($pUpload);
         $element->appendChild($pPaginate);
         $element->appendChild($pButtons);
+    }
+
+    /**
+     * The search path the SQL form starts with, like in the legacy page: the one of the connection, with the schema
+     * the window was opened from in front of it.
+     */
+    private static function searchPathOf(?PhpPgAdminConnection $db): string
+    {
+        $searchPath = $db?->getSearchPath() ?? [];
+        $schema = RequestParameter::getString('schema') ?? '';
+
+        if ($schema !== '') {
+            // PostgreSQL searches a schema only at its first place, so the legacy page showed it only once.
+            $searchPath = array_unique([$schema, ...$searchPath]);
+        }
+
+        return implode(',', $searchPath);
     }
 }

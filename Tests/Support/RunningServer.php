@@ -30,11 +30,22 @@ final class RunningServer
      */
     public static function logIn(): void
     {
+        self::logInAs(
+            TestEnvironment::getEnvVar('PHPPGADMIN_TEST_SERVER_USERNAME') ?? 'postgres',
+            TestEnvironment::getEnvVar('PHPPGADMIN_TEST_SERVER_PASSWORD') ?? '',
+        );
+    }
+
+    /**
+     * Logs in to it as the given role, in a session that has no other login. connection() then connects as that role.
+     */
+    public static function logInAs(string $username, string $password): void
+    {
         $_SESSION = [
             'webdbLogin' => [
                 self::id() => [
-                    'password' => TestEnvironment::getEnvVar('PHPPGADMIN_TEST_SERVER_PASSWORD') ?? '',
-                    'username' => TestEnvironment::getEnvVar('PHPPGADMIN_TEST_SERVER_USERNAME') ?? 'postgres',
+                    'password' => $password,
+                    'username' => $username,
                 ],
             ],
         ];

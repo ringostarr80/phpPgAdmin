@@ -30,6 +30,7 @@ const pagesByTitle: Record<string, Record<string, Record<string, string>>> = {
     'sqledit.php': { action: 'find' },
   },
   Rôles: {
+    'account.php': {},
     'alter_role.php': { rolename: testUsername() },
     'create_role.php': {},
     'drop_role.php': { rolename: testUsername() },

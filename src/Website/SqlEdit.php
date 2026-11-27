@@ -20,6 +20,44 @@ final class SqlEdit extends Website
         ];
     }
 
+    /**
+     * The filters of the Find form, as in the legacy page: the advanced object types only with show_advanced, after the
+     * others.
+     *
+     * @param ?bool $showAdvanced Whether to offer the advanced object types; show_advanced by default.
+     * @return array<string, string> The labels by the filter value, which database.php takes; '' for all objects.
+     */
+    public static function findFilters(?bool $showAdvanced = null): array
+    {
+        $filters = [
+            '' => _('All objects'),
+            'COLUMN' => _('Columns'),
+            'CONSTRAINT' => _('Constraints'),
+            'DOMAIN' => _('Domains'),
+            'FUNCTION' => _('Functions'),
+            'INDEX' => _('Indexes'),
+            'RULE' => _('Rules'),
+            'SCHEMA' => _('Schemas'),
+            'SEQUENCE' => _('Sequences'),
+            'TABLE' => _('Tables'),
+            'TRIGGER' => _('Triggers'),
+            'VIEW' => _('Views'),
+        ];
+
+        if ($showAdvanced ?? Config::showAdvanced()) {
+            $filters += [
+                'AGGREGATE' => _('Aggregates'),
+                'CONVERSION' => _('Conversions'),
+                'LANGUAGE' => _('Languages'),
+                'OPCLASS' => _('Op Classes'),
+                'OPERATOR' => _('Operators'),
+                'TYPE' => _('Types'),
+            ];
+        }
+
+        return $filters;
+    }
+
     #[\Override]
     protected function buildHtmlBody(\DOMDocument $dom): \DOMElement
     {
@@ -189,24 +227,10 @@ final class SqlEdit extends Website
         $filterSelection = $dom->createElement('select');
         $filterSelection->setAttribute('name', 'filter');
         $filterSelection->setAttribute('id', 'filter');
-        $filterArray = [
-            '' => _('All objects'),
-            'COLUMN' => _('Columns'),
-            'CONSTRAINT' => _('Constraints'),
-            'DOMAIN' => _('Domains'),
-            'FUNCTION' => _('Functions'),
-            'INDEX' => _('Indexes'),
-            'RULE' => _('Rules'),
-            'SCHEMA' => _('Schemas'),
-            'SEQUENCE' => _('Sequences'),
-            'TABLE' => _('Tables'),
-            'TRIGGER' => _('Triggers'),
-            'VIEW' => _('Views'),
-        ];
 
         $filterParam = RequestParameter::getString('filter') ?? '';
 
-        foreach ($filterArray as $key => $value) {
+        foreach (self::findFilters() as $key => $value) {
             $option = $dom->createElement('option');
             $option->setAttribute('value', $key);
 

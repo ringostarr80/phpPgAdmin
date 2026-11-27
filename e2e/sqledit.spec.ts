@@ -162,6 +162,34 @@ for (const checked of [true, false]) {
   });
 }
 
+test('SQL Editor > the Find form offers the advanced object types after the others', async ({ page }) => {
+  await login(page);
+
+  await page.goto(`/sqledit.php?${new URLSearchParams({ action: 'find', server: runningServerId() })}`);
+
+  // show_advanced is on in the test configuration, which offers the object types after Views, as the legacy page did.
+  await expect(page.locator(`${FILTER_FIELD} option`)).toHaveText([
+    'All objects',
+    'Columns',
+    'Constraints',
+    'Domains',
+    'Functions',
+    'Indexes',
+    'Rules',
+    'Schemas',
+    'Sequences',
+    'Tables',
+    'Triggers',
+    'Views',
+    'Aggregates',
+    'Conversions',
+    'Languages',
+    'Op Classes',
+    'Operators',
+    'Types',
+  ]);
+});
+
 test('SQL Editor > choosing a database keeps the term and the filter of the Find form', async ({ page }) => {
   await login(page);
   await page.goto(`/sqledit.php?${new URLSearchParams({ action: 'find', server: runningServerId() })}`);

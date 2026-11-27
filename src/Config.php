@@ -14,6 +14,7 @@ use Symfony\Component\Yaml\Parser as YamlParser;
  *  'extra_login_security'?: bool,
  *  'extra_session_security'?: bool,
  *  'left_width'?: int,
+ *  'min_password_length'?: int,
  *  'owned_only'?: bool,
  *  'servers'?: array<Server>,
  *  'show_advanced'?: bool,
@@ -253,6 +254,17 @@ final class Config
         return self::$data['locale'];
     }
 
+    /**
+     * The shortest password that a login may give itself. Without one in the configuration, 1, like in
+     * config.yml-dist, so the password cannot be empty.
+     */
+    public static function minPasswordLength(): int
+    {
+        $conf = self::tryGetConfigFileData();
+
+        return $conf['min_password_length'] ?? 1;
+    }
+
     public static function ownedOnly(): bool
     {
         $conf = self::tryGetConfigFileData();
@@ -404,6 +416,10 @@ final class Config
 
                     if (isset($yaml['left_width']) && is_int($yaml['left_width'])) {
                         self::$conf['left_width'] = $yaml['left_width'];
+                    }
+
+                    if (isset($yaml['min_password_length']) && is_int($yaml['min_password_length'])) {
+                        self::$conf['min_password_length'] = $yaml['min_password_length'];
                     }
 
                     if (isset($yaml['owned_only']) && is_bool($yaml['owned_only'])) {

@@ -36,6 +36,8 @@ final class TestEnvironment
     private const SETTINGS = [
         // The tests log in as "postgres", which extra login security refuses.
         'extra_login_security' => false,
+        // Longer than the default of 1, so the tests see that the pages read it.
+        'min_password_length' => 8,
         // Shows the advanced database tabs (Languages, Casts) and Find filters, so the E2E tests can reach them.
         'show_advanced' => true,
     ];

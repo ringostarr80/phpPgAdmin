@@ -20,6 +20,20 @@ final class ConfigTest extends TestCase
         self::assertFalse(Config::extraLoginSecurity());
     }
 
+    public function testMinPasswordLengthIsReadFromTheConfiguration(): void
+    {
+        // Tests\Support\TestEnvironment sets it longer than the default.
+        self::assertSame(8, Config::minPasswordLength());
+    }
+
+    public function testWithoutAMinPasswordLengthAPasswordNeedsOneCharacter(): void
+    {
+        // Like config.yml-dist, so the password cannot be empty.
+        self::configureNothing();
+
+        self::assertSame(1, Config::minPasswordLength());
+    }
+
     public function testShowAdvancedIsReadFromTheConfiguration(): void
     {
         // Tests\Support\TestEnvironment enables it for the E2E tests of the advanced tabs; the default would be false.
@@ -224,6 +238,14 @@ final class ConfigTest extends TestCase
     protected function tearDown(): void
     {
         self::startANewRequest();
+    }
+
+    /**
+     * Config reads the configuration file only once, so this replaces what it read.
+     */
+    private static function configureNothing(): void
+    {
+        (new \ReflectionProperty(Config::class, 'conf'))->setValue(null, []);
     }
 
     /**

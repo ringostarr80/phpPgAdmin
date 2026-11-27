@@ -67,6 +67,7 @@ final class TestEnvironmentTest extends TestCase
         $conf = self::legacyConfiguration();
 
         self::assertSame(Config::extraLoginSecurity(), $conf['extra_login_security'] ?? null);
+        self::assertSame(Config::minPasswordLength(), $conf['min_password_length'] ?? null);
         self::assertSame(Config::showAdvanced(), $conf['show_advanced'] ?? null);
         self::assertSame(Config::showSystem(), $conf['show_system'] ?? null);
     }

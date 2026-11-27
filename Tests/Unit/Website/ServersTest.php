@@ -61,8 +61,8 @@ final class ServersTest extends TestCase
     {
         self::assertSame(
             [
-                ['R&amp;D local', '/run/R&D/postgresql', '5432', '', ''],
                 ['R&D production', 'db.example.org', '5433', self::USERNAME, 'Logout'],
+                ['R&amp;D local', '/run/R&D/postgresql', '5432', '', ''],
             ],
             self::textsOfTheRows(),
         );
@@ -74,8 +74,8 @@ final class ServersTest extends TestCase
 
         self::assertSame(
             [
-                ['R&amp;D local', '/run/R&D/postgresql', '5432', '', ''],
                 ['R&D production', 'db.example.org', '5433', '', ''],
+                ['R&amp;D local', '/run/R&D/postgresql', '5432', '', ''],
             ],
             self::textsOfTheRows(),
         );
@@ -110,8 +110,8 @@ final class ServersTest extends TestCase
     {
         self::assertSame(
             [
-                'redirect.php?server=%2Frun%2FR%26D%2Fpostgresql%3A5432%3Aallow&subject=server',
                 'redirect.php?server=db.example.org%3A5433%3Arequire&subject=server',
+                'redirect.php?server=%2Frun%2FR%26D%2Fpostgresql%3A5432%3Aallow&subject=server',
             ],
             array_map(
                 static fn (\DOMElement $link): string => $link->getAttribute('href'),
@@ -122,7 +122,7 @@ final class ServersTest extends TestCase
 
     public function testOnlyAServerWithALoginHasALinkToLogOut(): void
     {
-        [$localActions, $productionActions] = array_map(
+        [$productionActions, $localActions] = array_map(
             static fn (\DOMElement $row): \DOMElement => PageBody::query($row, './td[5]')[0],
             self::rows(),
         );
@@ -130,7 +130,7 @@ final class ServersTest extends TestCase
         self::assertFalse($localActions->hasAttribute('class'));
         self::assertNull($localActions->firstChild);
         // Styled as a button like the actions of the legacy list, with the number of the row.
-        self::assertSame('opbutton2', $productionActions->getAttribute('class'));
+        self::assertSame('opbutton1', $productionActions->getAttribute('class'));
         self::assertSame(
             'server-logout.php?id=db.example.org%3A5433%3Arequire',
             PageBody::onlyElement($productionActions, 'a')->getAttribute('href'),
@@ -150,6 +150,7 @@ final class ServersTest extends TestCase
     #[\Override]
     protected function setUp(): void
     {
+        // The list sorts them by name like the legacy one, with strcmp(): R&D production comes before R&amp;D local.
         self::configureTheServers(self::local(), self::production());
 
         $_GET = [];

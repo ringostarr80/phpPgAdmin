@@ -114,13 +114,18 @@ final class Config
     }
 
     /**
+     * Sorted by their name (desc in the configuration) like in the legacy Misc::getServers(), for the lists of the
+     * servers. Servers with the same name keep the order of the configuration.
+     *
      * @return array<Server>
      */
     public static function getServers(): array
     {
         $conf = self::tryGetConfigFileData();
+        $servers = $conf['servers'] ?? [];
+        usort($servers, static fn (Server $a, Server $b): int => strcmp((string)$a->Name, (string)$b->Name));
 
-        return $conf['servers'] ?? [];
+        return $servers;
     }
 
     /**

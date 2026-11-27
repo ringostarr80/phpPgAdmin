@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Tests\Unit;
 
 use PhpPgAdmin\Config;
+use PhpPgAdmin\DDD\Entities\Server;
+use PhpPgAdmin\DDD\ValueObjects\Server\{Name, Port};
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
@@ -22,6 +24,27 @@ final class ConfigTest extends TestCase
     {
         // Tests\Support\TestEnvironment enables it for the E2E tests of the advanced tabs; the default would be false.
         self::assertTrue(Config::showAdvanced());
+    }
+
+    public function testTheServersAreSortedByTheirName(): void
+    {
+        self::configureTheServers(self::server('Staging', 5_433), self::server('Production', 5_434));
+
+        // Like the legacy Misc::getServers(), for the lists of the servers.
+        self::assertSame(
+            ['Production', 'Staging'],
+            array_map(static fn (Server $server): string => (string)$server->Name, Config::getServers()),
+        );
+    }
+
+    public function testServersWithTheSameNameKeepTheOrderOfTheConfiguration(): void
+    {
+        self::configureTheServers(self::server('Replica', 5_434), self::server('Replica', 5_433));
+
+        self::assertSame(
+            [5_434, 5_433],
+            array_map(static fn (Server $server): int => $server->Port->Value, Config::getServers()),
+        );
     }
 
     public function testAvailableLocales(): void
@@ -209,6 +232,19 @@ final class ConfigTest extends TestCase
     private static function configureTheLanguage(string $language): void
     {
         (new \ReflectionProperty(Config::class, 'conf'))->setValue(null, ['default_lang' => $language]);
+    }
+
+    /**
+     * Config reads the configuration file only once, so this replaces what it read.
+     */
+    private static function configureTheServers(Server ...$servers): void
+    {
+        (new \ReflectionProperty(Config::class, 'conf'))->setValue(null, ['servers' => $servers]);
+    }
+
+    private static function server(string $name, int $port): Server
+    {
+        return new Server(name: new Name($name), port: new Port($port));
     }
 
     /**

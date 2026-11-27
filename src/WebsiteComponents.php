@@ -8,7 +8,7 @@ use PhpPgAdmin\Application\DTO\ServerSession as DTOServerSession;
 use PhpPgAdmin\Database\PhpPgAdminConnection;
 use PhpPgAdmin\DDD\Entities\ServerSession;
 use PhpPgAdmin\DDD\ValueObjects\DbSize;
-use PhpPgAdmin\Infrastructure\Session\LastTabs;
+use PhpPgAdmin\Infrastructure\Session\{LastTabs, Logins};
 use PhpPgAdmin\WebsiteComponents\TrailBuilder;
 
 abstract class WebsiteComponents
@@ -436,10 +436,18 @@ abstract class WebsiteComponents
     }
 
     /**
-     * @param string $activeTab 'databases'|'roles'|'tablespaces'|'export'
+     * Like the legacy Misc::getNavTabs('server'), which showed a login without the superuser attribute the tab of its
+     * account in place of the one of the roles.
+     *
+     * @param string $activeTab 'databases'|'roles'|'account'|'tablespaces'|'export'
      */
     public static function buildServerDatabasesTabs(\DOMDocument $dom, string $serverId, string $activeTab): \DOMElement
     {
+        // Without a login, which the page leads to before it shows the tabs, like for a superuser.
+        $isSuperUser = PhpPgAdminConnection::createFromServerSession(
+            Logins::serverSession($serverId, Config::getServers()),
+        )?->isSuperUser() ?? true;
+
         $tabLinks = [
             [
                 'help' => [
@@ -458,23 +466,41 @@ abstract class WebsiteComponents
                     'subject' => 'server',
                 ],
             ],
-            [
-                'help' => [
-                    'url' => 'help.php',
+            $isSuperUser
+                ? [
+                    'help' => [
+                        'url' => 'help.php',
+                        'url-params' => [
+                            'help' => 'pg.role',
+                            'server' => $serverId,
+                        ],
+                    ],
+                    'icon' => 'Roles',
+                    'id' => 'roles',
+                    'label' => _('Roles'),
+                    'url' => 'roles.php',
                     'url-params' => [
-                        'help' => 'pg.role',
                         'server' => $serverId,
+                        'subject' => 'server',
+                    ],
+                ]
+                : [
+                    'help' => [
+                        'url' => 'help.php',
+                        'url-params' => [
+                            'help' => 'pg.role',
+                            'server' => $serverId,
+                        ],
+                    ],
+                    'icon' => 'User',
+                    'id' => 'account',
+                    'label' => _('Account'),
+                    'url' => 'account.php',
+                    'url-params' => [
+                        'server' => $serverId,
+                        'subject' => 'server',
                     ],
                 ],
-                'icon' => 'Roles',
-                'id' => 'roles',
-                'label' => _('Roles'),
-                'url' => 'roles.php',
-                'url-params' => [
-                    'server' => $serverId,
-                    'subject' => 'server',
-                ],
-            ],
             [
                 'help' => [
                     'url' => 'help.php',
@@ -505,6 +531,7 @@ abstract class WebsiteComponents
 
         LastTabs::remember('server', $activeTab);
 
+        // Like the legacy Misc::printTabs(), which counted the hidden tab of the roles or of the account.
         return self::buildTabs($dom, $tabLinks, $activeTab, '20%');
     }
 

@@ -242,7 +242,8 @@ final class WebsiteComponentsTest extends TestCase
     }
 
     /**
-     * Characterizes the server tabs, which share the rendering with the database tabs.
+     * Characterizes the server tabs, which share the rendering with the database tabs. Without a login, they are the
+     * ones of a superuser.
      */
     public function testServerTabs(): void
     {
@@ -844,6 +845,7 @@ final class WebsiteComponentsTest extends TestCase
     {
         yield 'all_db.php' => ['databases'];
         yield 'roles.php' => ['roles'];
+        yield 'account.php' => ['account'];
         yield 'tablespaces.php' => ['tablespaces'];
         yield 'all_db_export.php' => ['export'];
     }

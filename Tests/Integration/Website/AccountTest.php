@@ -79,6 +79,23 @@ final class AccountTest extends TestCase
         );
     }
 
+    public function testForALoginWithoutTheSuperuserAttributeTheTabOfTheAccountIsActive(): void
+    {
+        self::logInAsTheRole();
+
+        // The tab links to its page with its first link, the second one leads to the help.
+        $activeTabs = PageBody::query(
+            PageBody::of(Account::class),
+            './/table[@class="tabs"]//td[contains(@class, "active")]/a[1]',
+        );
+
+        self::assertCount(1, $activeTabs);
+        self::assertSame(
+            'account.php?' . http_build_query(['server' => RunningServer::id(), 'subject' => 'server']),
+            $activeTabs[0]->getAttribute('href'),
+        );
+    }
+
     public function testWithoutALoginTheAccountShowsNoRows(): void
     {
         $_GET['server'] = 'ppa-test-unknown-host:5432:allow';

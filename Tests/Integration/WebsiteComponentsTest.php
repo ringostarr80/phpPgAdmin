@@ -12,6 +12,7 @@ use PHPUnit\Framework\TestCase;
 use Tests\Support\{PageBody, RunningServer, TestEnvironment};
 
 #[CoversMethod(WebsiteComponents::class, 'buildDatabasesTable')]
+#[CoversMethod(WebsiteComponents::class, 'buildServerDatabasesTabs')]
 final class WebsiteComponentsTest extends TestCase
 {
     /**
@@ -149,6 +150,41 @@ final class WebsiteComponentsTest extends TestCase
         );
     }
 
+    public function testServerTabsOfASuperuserLeadToTheRoles(): void
+    {
+        // The user of the tests is a superuser.
+        self::assertSame(['Databases', 'Roles', 'Tablespaces', 'Export'], self::labelsOfTheServerTabs());
+    }
+
+    public function testServerTabsOfALoginWithoutTheSuperuserAttributeLeadToItsAccountInPlaceOfTheRoles(): void
+    {
+        self::logInAsTheUser();
+
+        self::assertSame(['Databases', 'Account', 'Tablespaces', 'Export'], self::labelsOfTheServerTabs());
+    }
+
+    public function testServerTabOfTheAccountLeadsToTheAccountAndToTheHelpOnRoles(): void
+    {
+        self::logInAsTheUser();
+
+        $tab = self::serverTabs('account')[1];
+
+        self::assertSame('tab active', $tab->getAttribute('class'));
+        // Like the other tabs, as wide as if the hidden tab of the roles was shown too.
+        self::assertSame('width: 20%', $tab->getAttribute('style'));
+        self::assertSame('images/themes/default/User.png', PageBody::onlyElement($tab, 'img')->getAttribute('src'));
+        self::assertSame(
+            [
+                'account.php?' . http_build_query(['server' => RunningServer::id(), 'subject' => 'server']),
+                'help.php?' . http_build_query(['help' => 'pg.role', 'server' => RunningServer::id()]),
+            ],
+            array_map(
+                static fn (\DOMElement $link): string => $link->getAttribute('href'),
+                PageBody::query($tab, './a'),
+            ),
+        );
+    }
+
     #[\Override]
     public static function setUpBeforeClass(): void
     {
@@ -222,7 +258,7 @@ final class WebsiteComponentsTest extends TestCase
     }
 
     /**
-     * A role that is no superuser, as a superuser may connect to every database.
+     * A role that is no superuser, as a superuser may connect to every database and has the tab of the roles.
      */
     private static function user(): string
     {
@@ -276,6 +312,34 @@ final class WebsiteComponentsTest extends TestCase
         $dom->appendChild($table);
 
         return $table;
+    }
+
+    /**
+     * @return list<string>
+     */
+    private static function labelsOfTheServerTabs(): array
+    {
+        return array_map(
+            static function (\DOMElement $tab): string {
+                $labels = PageBody::query($tab, './a/span[@class="label"]');
+                self::assertCount(1, $labels);
+
+                return $labels[0]->textContent;
+            },
+            self::serverTabs('databases'),
+        );
+    }
+
+    /**
+     * @return list<\DOMElement>
+     */
+    private static function serverTabs(string $activeTab): array
+    {
+        $dom = new \DOMDocument();
+        $table = WebsiteComponents::buildServerDatabasesTabs($dom, RunningServer::id(), $activeTab);
+        $dom->appendChild($table);
+
+        return PageBody::query($table, './/td');
     }
 
     private static function rowOfTheDatabase(): \DOMElement

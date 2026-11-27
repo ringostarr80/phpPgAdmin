@@ -47,6 +47,7 @@ final class Redirect extends Website
     public static function buildServerUrl(string $serverId): string
     {
         $page = match (LastTabs::of('server')) {
+            'account' => 'account.php',
             'export' => 'all_db_export.php',
             'roles' => 'roles.php',
             'tablespaces' => 'tablespaces.php',

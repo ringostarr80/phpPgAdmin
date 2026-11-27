@@ -62,7 +62,8 @@ final class RedirectTest extends TestCase
     }
 
     /**
-     * So that a new tab is not forgotten in the redirect.
+     * So that a new tab is not forgotten in the redirect. Without a login, the tabs are the ones of a superuser, which
+     * lack the tab of the account.
      */
     public function testEachTabOfAServerCanBeOpenedAgain(): void
     {
@@ -70,7 +71,7 @@ final class RedirectTest extends TestCase
 
         self::assertSame(
             self::pagesOfTheTabs(WebsiteComponents::buildServerDatabasesTabs($dom, self::SERVER_ID, 'databases')),
-            self::pages(self::serverTabs()),
+            array_values(array_diff(self::pages(self::serverTabs()), ['account.php'])),
         );
     }
 
@@ -97,6 +98,8 @@ final class RedirectTest extends TestCase
         return [
             ['databases', './all_db.php?server=127.0.0.1%3A5432%3Aallow'],
             ['roles', './roles.php?server=127.0.0.1%3A5432%3Aallow'],
+            // In place of the roles for a login without the superuser attribute.
+            ['account', './account.php?server=127.0.0.1%3A5432%3Aallow'],
             ['tablespaces', './tablespaces.php?server=127.0.0.1%3A5432%3Aallow'],
             ['export', './all_db_export.php?server=127.0.0.1%3A5432%3Aallow'],
         ];

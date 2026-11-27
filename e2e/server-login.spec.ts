@@ -4,11 +4,13 @@ import { RUNNING_SERVER_DESC, runningServerId } from './support/environment';
 // The pages of a server, which are only shown while one is logged in to it. Like the legacy pages, which need a login
 // unless they set $_no_db_connection (see libraries/lib.inc.php).
 const SERVER_PAGES = [
+  'account.php',
   'all_db.php',
   'all_db_export.php',
   'alter_db.php',
   'alter_role.php',
   'alter_tablespace.php',
+  'change_password.php',
   'create_db.php',
   'create_role.php',
   'create_tablespace.php',

@@ -27,6 +27,13 @@ final class Account extends Website
         $serverId = RequestParameter::getString('server') ?? '';
         $body->appendChild(WebsiteComponents::buildServerDatabasesTabs($dom, $serverId, 'account'));
 
+        // From the page that changed the password.
+        $message = RequestParameter::getString('message') ?? '';
+
+        if ($message !== '') {
+            $body->appendChild(WebsiteComponents::buildMessage($dom, $message));
+        }
+
         $role = self::roleOfTheLogin($serverId);
 
         if (is_null($role)) {
@@ -36,6 +43,16 @@ final class Account extends Website
         } else {
             $body->appendChild(self::buildRoleTable($dom, $role));
         }
+
+        $body->appendChild(WebsiteComponents::buildNavLinks($dom, [
+            [
+                'label' => _('Change password'),
+                'url' => 'change_password.php',
+                'url-params' => [
+                    'server' => $serverId,
+                ],
+            ],
+        ]));
 
         return $body;
     }

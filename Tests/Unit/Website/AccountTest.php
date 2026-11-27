@@ -33,6 +33,27 @@ final class AccountTest extends TestCase
         );
     }
 
+    public function testThePageShowsTheMessageOfTheRequest(): void
+    {
+        $_GET['message'] = 'Password changed.';
+
+        self::assertSame(['Password changed.'], PageBody::messages(self::body()));
+    }
+
+    public function testWithoutAMessageThePageShowsNone(): void
+    {
+        self::assertSame([], PageBody::messages(self::body()));
+    }
+
+    public function testThePageLinksToTheChangeOfThePassword(): void
+    {
+        $links = PageBody::query(self::body(), './/ul[@class="navlink"]/li/a');
+
+        self::assertCount(1, $links);
+        self::assertSame('Change password', $links[0]->textContent);
+        self::assertSame('change_password.php?server=127.0.0.1%3A5432%3Aallow', $links[0]->getAttribute('href'));
+    }
+
     #[\Override]
     protected function setUp(): void
     {

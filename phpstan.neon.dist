@@ -16,12 +16,14 @@ parameters:
         - Tests/bootstrap.php
         - Tests/test-environment.php
         - autoload.php
+        - account.php
         - all_db.php
         - all_db_export.php
         - alter_db.php
         - alter_role.php
         - alter_tablespace.php
         - browser.php
+        - change_password.php
         - create_db.php
         - create_role.php
         - create_tablespace.php

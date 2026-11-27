@@ -32,6 +32,7 @@ const pagesByTitle: Record<string, Record<string, Record<string, string>>> = {
   Rôles: {
     'account.php': {},
     'alter_role.php': { rolename: testUsername() },
+    'change_password.php': {},
     'create_role.php': {},
     'drop_role.php': { rolename: testUsername() },
     'roles.php': {},

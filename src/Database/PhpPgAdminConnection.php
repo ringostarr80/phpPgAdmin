@@ -133,6 +133,18 @@ final class PhpPgAdminConnection extends \PDO
         $this->commit();
     }
 
+    /**
+     * Sets nothing but the password, like the legacy Postgres::changePassword(). PostgreSQL lets every role do that
+     * for itself, while updateRole() sets all the attributes, and only a superuser may set SUPERUSER or NOSUPERUSER.
+     */
+    public function changePassword(string $rolename, string $password): void
+    {
+        $escapedRolename = self::escapeIdentifier($rolename);
+        $quotedEncryptedPassword = $this->quote($this->encryptPassword($rolename, $password));
+
+        $this->exec("ALTER ROLE \"{$escapedRolename}\" WITH ENCRYPTED PASSWORD {$quotedEncryptedPassword}");
+    }
+
     public function createDatabase(
         string $database,
         string $encoding,

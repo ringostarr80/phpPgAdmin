@@ -841,6 +841,45 @@ final class PhpPgAdminConnectionTest extends TestCase
         self::assertSame([self::groupName()], $connection->getMemberOf(self::roleName()));
     }
 
+    public function testChangePasswordLetsARoleThatIsNoSuperuserChangeItsOwnPassword(): void
+    {
+        $administrator = $this->connectionForRoles();
+        $administrator->exec(
+            'CREATE ROLE ' . self::quoteIdentifier(self::roleName()) . " LOGIN PASSWORD '" . self::USER_PASSWORD . "'",
+        );
+        $connection = self::logInAs(self::roleName(), self::USER_PASSWORD);
+        $connection->exec("SET password_encryption = 'scram-sha-256'");
+
+        // PostgreSQL refuses updateRole() to it, as that sets NOSUPERUSER.
+        $connection->changePassword(self::roleName(), self::ROLE_PASSWORD);
+
+        $secret = self::passwordOfTheRole($administrator);
+        self::assertSame(self::scramSecretOfTheRolePassword($secret), $secret);
+    }
+
+    public function testChangePasswordChangesNothingButThePassword(): void
+    {
+        $connection = $this->connectionForRoles();
+        $role = self::roleThatDiffersFromTheDefaults();
+        $connection->createRole($role, '');
+
+        $connection->changePassword(self::roleName(), self::ROLE_PASSWORD);
+
+        self::assertEquals($role, $connection->getRole(self::roleName()));
+    }
+
+    public function testChangePasswordHashesThePasswordWithMd5WhenTheServerDoes(): void
+    {
+        $connection = $this->connectionForRoles();
+        $connection->exec('CREATE ROLE ' . self::quoteIdentifier(self::roleName()));
+        $connection->exec("SET password_encryption = 'md5'");
+
+        $connection->changePassword(self::roleName(), self::ROLE_PASSWORD);
+
+        // The MD5 hash takes the name of the role, which has quotes.
+        self::assertSame(self::md5PasswordOfTheRole($connection), self::passwordOfTheRole($connection));
+    }
+
     public function testGetRolesLeavesOutTheRoleThatIsGiven(): void
     {
         $connection = $this->connectionForRoles();

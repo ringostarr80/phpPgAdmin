@@ -64,6 +64,22 @@ final class Logins
         return null;
     }
 
+    /**
+     * Keeps the password that the login changed its own one to, as the pages connect with the password of the session.
+     */
+    public static function changePassword(string $serverId, string $password): void
+    {
+        $logins = $_SESSION['webdbLogin'] ?? null;
+
+        // Without a login to the server, there is no password to keep.
+        if (!is_array($logins) || !isset($logins[$serverId]) || !is_array($logins[$serverId])) {
+            return;
+        }
+
+        $logins[$serverId]['password'] = $password;
+        $_SESSION['webdbLogin'] = $logins;
+    }
+
     public static function isLoggedIn(string $serverId): bool
     {
         if (!isset($_SESSION['webdbLogin']) || !is_array($_SESSION['webdbLogin'])) {

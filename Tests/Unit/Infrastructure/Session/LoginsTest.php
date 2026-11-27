@@ -112,6 +112,43 @@ final class LoginsTest extends TestCase
         self::assertNull(Logins::serverSession('db.example.org:5432:allow', [$this->server]));
     }
 
+    public function testChangePasswordKeepsTheNewPasswordInTheLoginToTheServer(): void
+    {
+        $otherServer = new Server(name: new Name('Other Server'), host: new Host('db.example.org'));
+        $_SESSION['webdbLogin'] = [
+            $otherServer->id() => ['password' => 'secret', 'username' => 'bob'],
+            $this->server->id() => ['password' => 'secret', 'platform' => 'PostgreSQL 18', 'username' => 'alice'],
+        ];
+
+        Logins::changePassword($this->server->id(), 'changed');
+
+        self::assertSame(
+            [
+                $otherServer->id() => ['password' => 'secret', 'username' => 'bob'],
+                $this->server->id() => ['password' => 'changed', 'platform' => 'PostgreSQL 18', 'username' => 'alice'],
+            ],
+            $_SESSION['webdbLogin'],
+        );
+    }
+
+    public function testChangePasswordWithoutALoginToTheServerLogsInToNone(): void
+    {
+        $otherServer = new Server(name: new Name('Other Server'), host: new Host('db.example.org'));
+        $logins = [$otherServer->id() => ['password' => 'secret', 'username' => 'bob']];
+        $_SESSION['webdbLogin'] = $logins;
+
+        Logins::changePassword($this->server->id(), 'changed');
+
+        self::assertSame($logins, $_SESSION['webdbLogin']);
+    }
+
+    public function testChangePasswordWithoutAnyLoginLeavesTheSessionAlone(): void
+    {
+        Logins::changePassword($this->server->id(), 'changed');
+
+        self::assertSame([], $_SESSION);
+    }
+
     public function testIsLoggedInWithAnEmptyPassword(): void
     {
         $this->logIn('alice', '');

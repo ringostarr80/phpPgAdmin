@@ -149,7 +149,7 @@ msgstr "Predeterminat"
 msgid "Alter"
 msgstr "Modifica"
 
-msgid "strok"
+msgid "OK"
 msgstr "D'acord"
 
 msgid "Cancel"
@@ -498,7 +498,7 @@ msgstr "En la sentència:"
 msgid "strinvalidparam"
 msgstr "Paràmetres del script invàlids."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "No s'han trobat files."
 
 msgid "No objects found."
@@ -819,19 +819,19 @@ msgstr "Usuari eliminat."
 msgid "struserdroppedbad"
 msgstr "Error a l'eliminar l'usuari."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Compte"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Canvia la contrasenya"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Contrasenya canviada."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Error al canviar la contrasenya."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "Contrasenya massa curta."
 
 msgid "Password does not match confirmation."
@@ -959,7 +959,7 @@ msgstr "No s'ha pogut eliminar el rol."
 msgid "No limit"
 msgstr "Sense límit"
 
-msgid "strnever"
+msgid "Never"
 msgstr "Mai"
 
 msgid "You must give a name for the role."

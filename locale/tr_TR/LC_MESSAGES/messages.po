@@ -134,7 +134,7 @@ msgstr "Ön tanımlı değer"
 msgid "Alter"
 msgstr "Değiştir"
 
-msgid "strok"
+msgid "OK"
 msgstr "Tamam"
 
 msgid "Cancel"
@@ -399,7 +399,7 @@ msgstr "Üstteki hata, aşağıdaki ifade içinde oluştu:"
 msgid "strinvalidparam"
 msgstr "Geçersiz betik parametreleri."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Satır bulunamadı."
 
 msgid "No objects found."
@@ -650,19 +650,19 @@ msgstr "Kullanıcı silindi."
 msgid "struserdroppedbad"
 msgstr "Kullanıcı silme işlemi başarısız oldu."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Hesap"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Şifre Değiştir"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Şifre değiştirildi."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Şifre değiştirme başarısız oldu."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "Şifre çok kısa."
 
 msgid "Password does not match confirmation."

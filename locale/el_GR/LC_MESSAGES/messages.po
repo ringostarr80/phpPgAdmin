@@ -140,7 +140,7 @@ msgstr "Αρχική τιμή"
 msgid "Alter"
 msgstr "Τροποποίηση"
 
-msgid "strok"
+msgid "OK"
 msgstr "Εντάξει"
 
 msgid "Cancel"
@@ -415,7 +415,7 @@ msgstr "Στη δήλωση:"
 msgid "strinvalidparam"
 msgstr "Λάθος παράμετροι."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Δε βρέθηκαν γραμμές."
 
 msgid "No objects found."
@@ -667,19 +667,19 @@ msgstr "Ο χρήστης διαγράφηκε."
 msgid "struserdroppedbad"
 msgstr "Η διαγραφή του χρήστη απέτυχε."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Λογαριασμός"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Αλλαγή κωδικού"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Ο κωδικός αλλάχθηκε."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Η αλλαγή του κωδικού απέτυχε."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "Ο κωδικός έχει πολύ μικρό μήκος."
 
 msgid "Password does not match confirmation."
@@ -801,7 +801,7 @@ msgstr "Δε βρέθηκαν ρόλοι."
 msgid "No limit"
 msgstr "Κανένα όριο"
 
-msgid "strnever"
+msgid "Never"
 msgstr "Ποτέ"
 
 msgid "You must give a name for the role."

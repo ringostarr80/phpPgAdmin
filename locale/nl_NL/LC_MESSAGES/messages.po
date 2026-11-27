@@ -446,19 +446,19 @@ msgstr "U dient uw type een lengte te geven."
 msgid "Welcome to phpPgAdmin."
 msgstr "Welkom bij phpPgAdmin."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Account"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Verander wachtwoord"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Wachtwoord veranderd."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Wachtwoord veranderen mislukt."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "Wachtwoord is te kort."
 
 msgid "Password does not match confirmation."
@@ -476,7 +476,7 @@ msgstr "Log uit"
 msgid "strcreated"
 msgstr "Aangemaakt"
 
-msgid "strok"
+msgid "OK"
 msgstr "OK"
 
 msgid "strsave"
@@ -563,7 +563,7 @@ msgstr "Ongeldig schema gespecificeerd."
 msgid "strbadencoding"
 msgstr "Het zetten van de client encoding in de database is mislukt."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Geen rijen gevonden."
 
 msgid "strtablename"

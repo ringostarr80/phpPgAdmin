@@ -143,7 +143,7 @@ msgstr "Standardwert"
 msgid "Alter"
 msgstr "Ändern"
 
-msgid "strok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Cancel"
@@ -452,7 +452,7 @@ msgstr "In der Anweisung:"
 msgid "strinvalidparam"
 msgstr "Unzulässige Script-Parameter."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Keine Datensätze gefunden."
 
 msgid "No objects found."
@@ -746,19 +746,19 @@ msgstr "Benutzer gelöscht."
 msgid "struserdroppedbad"
 msgstr "Löschen des Benutzers fehlgeschlagen."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Benutzerkonto"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Passwort ändern"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Passwort geändert."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Ändern des Passwortes fehlgeschlagen."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "Passwort ist zu kurz."
 
 msgid "Password does not match confirmation."
@@ -886,7 +886,7 @@ msgstr "Löschen der Rolle fehlgeschlagen."
 msgid "No limit"
 msgstr "Unbeschränkt"
 
-msgid "strnever"
+msgid "Never"
 msgstr "Nie"
 
 msgid "You must give a name for the role."

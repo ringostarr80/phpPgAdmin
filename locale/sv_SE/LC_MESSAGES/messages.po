@@ -125,7 +125,7 @@ msgstr "Standardvärde"
 msgid "Alter"
 msgstr "Ändra"
 
-msgid "strok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Cancel"
@@ -342,7 +342,7 @@ msgstr "SQL fel:"
 msgid "strinvalidparam"
 msgstr "Otillåtna scriptparametrar."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Hittade inga rader."
 
 msgid "No objects found."
@@ -569,19 +569,19 @@ msgstr "Användare raderad."
 msgid "struserdroppedbad"
 msgstr "Misslyckades att radera användare."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Konton"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Ändra lösenord"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Lösenord ändrat."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Misslyckades att ändra lösenord."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "För få tecken i lösenordet."
 
 msgid "Password does not match confirmation."

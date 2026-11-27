@@ -149,7 +149,7 @@ msgstr "По умолчанию"
 msgid "Alter"
 msgstr "Изменить"
 
-msgid "strok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Cancel"
@@ -495,7 +495,7 @@ msgstr "В операторе:"
 msgid "strinvalidparam"
 msgstr "Неверный параметр скрипта."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Данных не найдено."
 
 msgid "No objects found."
@@ -816,19 +816,19 @@ msgstr "Пользователь удален."
 msgid "struserdroppedbad"
 msgstr "Удаление пользователя прервано."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Аккаунт"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Изменить пароль"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Пароль изменен."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Изменение пароля прервано."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "Пароль слишком короткий."
 
 msgid "Password does not match confirmation."
@@ -956,7 +956,7 @@ msgstr "Удаление роли прервано."
 msgid "No limit"
 msgstr "Без ограничений"
 
-msgid "strnever"
+msgid "Never"
 msgstr "Никогда"
 
 msgid "You must give a name for the role."

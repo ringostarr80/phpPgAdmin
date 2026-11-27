@@ -125,7 +125,7 @@ msgstr "По замовчуванню"
 msgid "Alter"
 msgstr "Змінити"
 
-msgid "strok"
+msgid "OK"
 msgstr "Гаразд"
 
 msgid "Cancel"
@@ -363,7 +363,7 @@ msgstr "В операторі:"
 msgid "strinvalidparam"
 msgstr "Неправильний параметр скрипта."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Даних не виявлено."
 
 msgid "No objects found."
@@ -599,19 +599,19 @@ msgstr "Користувача видалено."
 msgid "struserdroppedbad"
 msgstr "Видалення користувача перервано."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Обліковий запис"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Змінити пароль"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Пароль змінено."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Зміну пароля перервано."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "Пароль закороткий."
 
 msgid "Password does not match confirmation."

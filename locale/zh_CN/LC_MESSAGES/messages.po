@@ -149,7 +149,7 @@ msgstr "默认"
 msgid "Alter"
 msgstr "变更"
 
-msgid "strok"
+msgid "OK"
 msgstr "确认"
 
 msgid "Cancel"
@@ -498,7 +498,7 @@ msgstr "在语句："
 msgid "strinvalidparam"
 msgstr "无效的脚本参数。"
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "查无数据行。"
 
 msgid "No objects found."
@@ -819,19 +819,19 @@ msgstr "用户已删除。"
 msgid "struserdroppedbad"
 msgstr "用户删除失败。"
 
-msgid "straccount"
+msgid "Account"
 msgstr "帐户"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "修改密码"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "密码已修改。"
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "密码修改失败。"
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "密码太短了。"
 
 msgid "Password does not match confirmation."
@@ -962,7 +962,7 @@ msgstr "角色删除失败。"
 msgid "No limit"
 msgstr "无限制"
 
-msgid "strnever"
+msgid "Never"
 msgstr "从不"
 
 msgid "You must give a name for the role."

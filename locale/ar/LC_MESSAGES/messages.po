@@ -125,7 +125,7 @@ msgstr "الإفتراضي"
 msgid "Alter"
 msgstr "تعديلAlter"
 
-msgid "strok"
+msgid "OK"
 msgstr "موافق"
 
 msgid "Cancel"
@@ -369,7 +369,7 @@ msgstr "في الجملة statement:"
 msgid "strinvalidparam"
 msgstr "Invalid script parameters."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "لم توجد سجلات."
 
 msgid "No objects found."
@@ -599,19 +599,19 @@ msgstr "تم حذف المستخدم بنجاح."
 msgid "struserdroppedbad"
 msgstr "فشلت عملية حذف المستخدم."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Account"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "تغيير كلمة السر"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "تم تغيير كلمة السر بنجاح."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "لم ينجح تغيير كلمة السر."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "كلمة السر أقصر من الحد الأدنى."
 
 msgid "Password does not match confirmation."

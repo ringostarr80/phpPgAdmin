@@ -149,7 +149,7 @@ msgstr "Výchozí"
 msgid "Alter"
 msgstr "Změnit"
 
-msgid "strok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Cancel"
@@ -498,7 +498,7 @@ msgstr "Ve výrazu:"
 msgid "strinvalidparam"
 msgstr "Neplatné parametry skriptu."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Nenalezen žádný řádek."
 
 msgid "No objects found."
@@ -819,19 +819,19 @@ msgstr "Uživatel byl odstraněn."
 msgid "struserdroppedbad"
 msgstr "Nezdařilo se odstranit uživatele."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Účet"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Změnit heslo"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Heslo bylo změněno."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Nezdařilo se změnit heslo."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "Heslo je příliš krátké."
 
 msgid "Password does not match confirmation."
@@ -959,7 +959,7 @@ msgstr "Nezdařilo se odstranit roli."
 msgid "No limit"
 msgstr "Bez omezení"
 
-msgid "strnever"
+msgid "Never"
 msgstr "Nikdy"
 
 msgid "You must give a name for the role."

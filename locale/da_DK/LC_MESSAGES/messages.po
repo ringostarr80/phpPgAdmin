@@ -125,7 +125,7 @@ msgstr "Standardværdi"
 msgid "Alter"
 msgstr "Ændre"
 
-msgid "strok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Cancel"
@@ -372,7 +372,7 @@ msgstr "SQL fejl:"
 msgid "strinvalidparam"
 msgstr "Ugyldig scriptparam."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Ingen rækker fundet."
 
 msgid "No objects found."
@@ -602,19 +602,19 @@ msgstr "Bruger slettet."
 msgid "struserdroppedbad"
 msgstr "Sletning af bruger mislykkedes."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Konto"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Ændre password"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Password ændret."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Ændring af password mislykkedes."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "Password er for kort."
 
 msgid "Password does not match confirmation."

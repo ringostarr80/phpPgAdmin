@@ -149,7 +149,7 @@ msgstr "Predeterminado"
 msgid "Alter"
 msgstr "Modificar"
 
-msgid "strok"
+msgid "OK"
 msgstr "Aceptar"
 
 msgid "Cancel"
@@ -501,7 +501,7 @@ msgstr "En la setencia:"
 msgid "strinvalidparam"
 msgstr "Parámetros inválidos del script."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "No se encontraron filas."
 
 msgid "No objects found."
@@ -822,19 +822,19 @@ msgstr "Usuario eliminado."
 msgid "struserdroppedbad"
 msgstr "Falló la eliminación del usuario."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Cuenta"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Cambiar Contraseña"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Contraseña modificada."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Falló al modificar contraseña."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "La contraseña es muy corta."
 
 msgid "Password does not match confirmation."
@@ -965,7 +965,7 @@ msgstr "Falló la eliminación del rol."
 msgid "No limit"
 msgstr "Sin límite"
 
-msgid "strnever"
+msgid "Never"
 msgstr "Nunca"
 
 msgid "You must give a name for the role."

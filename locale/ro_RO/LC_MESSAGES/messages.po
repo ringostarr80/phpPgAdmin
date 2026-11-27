@@ -143,7 +143,7 @@ msgstr "Implicit"
 msgid "Alter"
 msgstr "Modificare"
 
-msgid "strok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Cancel"
@@ -424,7 +424,7 @@ msgstr "În instrucţiunea:"
 msgid "strinvalidparam"
 msgstr "Parametrii scriptului sunt incorecţi."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Nici un rând găsit."
 
 msgid "No objects found."
@@ -679,19 +679,19 @@ msgstr "Utilizator şters."
 msgid "struserdroppedbad"
 msgstr "Ştergere utilizator eşuată."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Cont"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Schimbare parolă"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Parolă schimbată."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Schimbare parolă eşuată."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "Parola este prea scurtă."
 
 msgid "Password does not match confirmation."
@@ -822,7 +822,7 @@ msgstr "Ştergere rol eşuată"
 msgid "No limit"
 msgstr "Fără limită"
 
-msgid "strnever"
+msgid "Never"
 msgstr "Niciodată"
 
 msgid "You must give a name for the role."

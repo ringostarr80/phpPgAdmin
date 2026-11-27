@@ -134,7 +134,7 @@ msgstr "Predvolené"
 msgid "Alter"
 msgstr "Zmeniť"
 
-msgid "strok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Cancel"
@@ -399,7 +399,7 @@ msgstr "Vo výraze:"
 msgid "strinvalidparam"
 msgstr "Chybné parametre skriptu."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Nenájdené žiadne záznamy."
 
 msgid "No objects found."
@@ -652,19 +652,19 @@ msgid "struserdroppedbad"
 msgstr "Používateľ nebol zmazaný."
 
 # Groups
-msgid "straccount"
+msgid "Account"
 msgstr "Konto"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Zmeniť Heslo"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Heslo zmenené."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Heslo NEBOLO zmenené."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "Heslo je príliš krátke."
 
 msgid "Password does not match confirmation."

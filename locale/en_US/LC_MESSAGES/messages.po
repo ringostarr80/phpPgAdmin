@@ -170,7 +170,8 @@ msgstr "Default"
 msgid "Alter"
 msgstr "Alter"
 
-msgid "strok"
+# original: "strok"
+msgid "OK"
 msgstr "OK"
 
 # original: "strcancel"
@@ -573,7 +574,8 @@ msgstr "In statement:"
 msgid "strinvalidparam"
 msgstr "Invalid script parameters."
 
-msgid "strnodata"
+# original: "strnodata"
+msgid "No rows found."
 msgstr "No rows found."
 
 # original: "strnoobjects"
@@ -907,19 +909,24 @@ msgstr "User dropped."
 msgid "struserdroppedbad"
 msgstr "Failed to drop user."
 
-msgid "straccount"
+# original: "straccount"
+msgid "Account"
 msgstr "Account"
 
-msgid "strchangepassword"
+# original: "strchangepassword"
+msgid "Change password"
 msgstr "Change password"
 
-msgid "strpasswordchanged"
+# original: "strpasswordchanged"
+msgid "Password changed."
 msgstr "Password changed."
 
-msgid "strpasswordchangedbad"
+# original: "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Failed to change password."
 
-msgid "strpasswordshort"
+# original: "strpasswordshort"
+msgid "Password is too short."
 msgstr "Password is too short."
 
 # original: "strpasswordconfirm"
@@ -1071,7 +1078,8 @@ msgstr "Role drop failed."
 msgid "No limit"
 msgstr "No limit"
 
-msgid "strnever"
+# original: "strnever"
+msgid "Never"
 msgstr "Never"
 
 # original: "strroleneedsname"

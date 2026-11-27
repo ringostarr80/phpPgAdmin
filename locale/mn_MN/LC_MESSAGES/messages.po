@@ -128,7 +128,7 @@ msgstr "єЯФЯвШЯЪ Тег"
 msgid "Alter"
 msgstr "??воЩЬ?Ш"
 
-msgid "strok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Cancel"
@@ -324,7 +324,7 @@ msgstr "ї ЯаХвСдЯвХ:"
 msgid "strinvalidparam"
 msgstr "юХзХвЮйЪ аСвСЭХдв гЫвЩадС."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "фСЮЮйШ ЮХ ЯТЮСвежХЮЯ."
 
 msgid "No objects found."
@@ -542,19 +542,19 @@ msgstr "№ЯЬикЯзСдХЬи еФСЬХЮ."
 msgid "struserdroppedbad"
 msgstr "ѕФСЬХЮЩХ аЯЬикЯзСдХЬб авХвзСЮЯ."
 
-msgid "straccount"
+msgid "Account"
 msgstr "сЫЫСеЮд"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "щкЭХЮЩди аСвЯЬи"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "№СвЯЬи ЩкЭХЮХЮ."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "щкЭХЮХЮЩХ аСвЯЬб авХвзСЮЯ."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "№СвЯЬи гЬЩлЫЯЭ ЫЯвЯдЫЩЪ."
 
 msgid "Password does not match confirmation."

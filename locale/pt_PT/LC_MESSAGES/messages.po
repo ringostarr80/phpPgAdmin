@@ -118,7 +118,7 @@ msgstr "Padrão"
 msgid "Alter"
 msgstr "Alterar"
 
-msgid "strok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Cancel"
@@ -290,7 +290,7 @@ msgstr "Indicação de entrada :"
 msgid "strinvalidparam"
 msgstr "Parâmetros de script inválidos."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Não foram encontradas linhas."
 
 msgid "strconnectionfail"
@@ -476,19 +476,19 @@ msgid "struserdroppedbad"
 msgstr "Falha ao eliminar utilizador."
 
 # Groups
-msgid "straccount"
+msgid "Account"
 msgstr "Conta"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Alterar palavra-chave"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Palavra-chave alterada."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Falha ao alterar palavra-passe."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "Palavra-chave muito curta."
 
 msgid "Password does not match confirmation."

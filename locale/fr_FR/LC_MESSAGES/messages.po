@@ -149,7 +149,7 @@ msgstr "Défaut"
 msgid "Alter"
 msgstr "Modifier"
 
-msgid "strok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Cancel"
@@ -507,7 +507,7 @@ msgstr "Dans l'instruction :"
 msgid "strinvalidparam"
 msgstr "Paramètres de script invalides."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Pas de résultats."
 
 msgid "No objects found."
@@ -828,19 +828,19 @@ msgstr "Utilisateur supprimé."
 msgid "struserdroppedbad"
 msgstr "Échec lors de la suppression de l'utilisateur."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Comptes"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Modifier le mot de passe"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Mot de passe modifié."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Échec lors de la modification du mot de passe."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "Le mot de passe est trop court."
 
 msgid "Password does not match confirmation."
@@ -971,7 +971,7 @@ msgstr "Échec lors de la suppression du rôle."
 msgid "No limit"
 msgstr "Aucune limite"
 
-msgid "strnever"
+msgid "Never"
 msgstr "Jamais"
 
 msgid "You must give a name for the role."

@@ -125,7 +125,7 @@ msgstr "Standaard"
 msgid "Alter"
 msgstr "Wysig"
 
-msgid "strok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Cancel"
@@ -369,7 +369,7 @@ msgstr "In stelling:"
 msgid "strinvalidparam"
 msgstr "Ongeldige parameters."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Geen rye gevind."
 
 msgid "No objects found."
@@ -608,19 +608,19 @@ msgstr "Gebruiker is verwyder."
 msgid "struserdroppedbad"
 msgstr "Verwydering van die gebruiker het misluk."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Gebruiker"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Verander wagwoord"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Wagwoord is verander."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Wagwoordverandering het misluk."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "Wagwoord is te kort."
 
 msgid "Password does not match confirmation."

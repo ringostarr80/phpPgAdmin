@@ -125,7 +125,7 @@ msgstr "ברירת מחדל"
 msgid "Alter"
 msgstr "ערוך"
 
-msgid "strok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Cancel"
@@ -372,7 +372,7 @@ msgstr "בהצהרה:"
 msgid "strinvalidparam"
 msgstr "ממדי תסריט שגוי."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "לא נמצאו שורות."
 
 msgid "No objects found."
@@ -602,19 +602,19 @@ msgstr "משתמש נמחק."
 msgid "struserdroppedbad"
 msgstr "מחיקת משתמש נכשל."
 
-msgid "straccount"
+msgid "Account"
 msgstr "חשבון"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "שנה סיסמה"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "סיסמה שונתה."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "נכשל בשינוי סיסמה."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "סיסמה קצרה מידי."
 
 msgid "Password does not match confirmation."

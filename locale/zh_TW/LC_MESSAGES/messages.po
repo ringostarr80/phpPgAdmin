@@ -143,7 +143,7 @@ msgstr "預設值"
 msgid "Alter"
 msgstr "修改"
 
-msgid "strok"
+msgid "OK"
 msgstr "確定"
 
 msgid "Cancel"
@@ -446,7 +446,7 @@ msgstr "在區塊內: "
 msgid "strinvalidparam"
 msgstr "無效的稿本變數。"
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "找不到資料列。"
 
 msgid "No objects found."
@@ -725,19 +725,19 @@ msgstr "使用者已移除。"
 msgid "struserdroppedbad"
 msgstr "使用者移除已失敗。"
 
-msgid "straccount"
+msgid "Account"
 msgstr "帳戶"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "變更密碼"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "密碼已變更。"
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "密碼變更已失敗。"
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "密碼太簡短。"
 
 msgid "Password does not match confirmation."
@@ -868,7 +868,7 @@ msgstr "角色移除已失敗。"
 msgid "No limit"
 msgstr "不限制"
 
-msgid "strnever"
+msgid "Never"
 msgstr "從末"
 
 msgid "You must give a name for the role."

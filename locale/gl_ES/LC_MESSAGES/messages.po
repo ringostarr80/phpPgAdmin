@@ -149,7 +149,7 @@ msgstr "Predeterminado"
 msgid "Alter"
 msgstr "Cambiar"
 
-msgid "strok"
+msgid "OK"
 msgstr "Aceptar"
 
 msgid "Cancel"
@@ -498,7 +498,7 @@ msgstr "Na instrución:"
 msgid "strinvalidparam"
 msgstr "Os parámetros fornecidos ao guión non son correctos."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Non se atopou fila algunha."
 
 msgid "No objects found."
@@ -819,19 +819,19 @@ msgstr "Eliminouse o usuario."
 msgid "struserdroppedbad"
 msgstr "Non se conseguiu eliminar o usuario."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Conta"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Cambiar de contrasinal"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Cambiouse o contrasinal."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Non se conseguiu cambiar o contrasinal."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "O contrasinal é curto de máis."
 
 msgid "Password does not match confirmation."
@@ -959,7 +959,7 @@ msgstr "Non se conseguiu eliminar o rol."
 msgid "No limit"
 msgstr "Sen límite"
 
-msgid "strnever"
+msgid "Never"
 msgstr "Nunca"
 
 msgid "You must give a name for the role."

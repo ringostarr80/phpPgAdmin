@@ -149,7 +149,7 @@ msgstr "Padrão"
 msgid "Alter"
 msgstr "Alterar"
 
-msgid "strok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Cancel"
@@ -495,7 +495,7 @@ msgstr "No bloco:"
 msgid "strinvalidparam"
 msgstr "Parâmetros de script inválidos."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Nenhuma linha encontrada."
 
 msgid "No objects found."
@@ -816,19 +816,19 @@ msgstr "Usuário deletado."
 msgid "struserdroppedbad"
 msgstr "Falha ao deletar usuário."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Conta"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Alterar senha"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Senha alterada."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Falha ao alterar a senha."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "A senha é muito curta."
 
 msgid "Password does not match confirmation."
@@ -956,7 +956,7 @@ msgstr "Falha ao deletar o papel."
 msgid "No limit"
 msgstr "Sem limite"
 
-msgid "strnever"
+msgid "Never"
 msgstr "Nunca"
 
 msgid "You must give a name for the role."

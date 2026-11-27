@@ -149,7 +149,7 @@ msgstr "Alapértelmezés"
 msgid "Alter"
 msgstr "Módosít"
 
-msgid "strok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Cancel"
@@ -498,7 +498,7 @@ msgstr "A következő kifejezésben:"
 msgid "strinvalidparam"
 msgstr "Érvénytelen paraméterek."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Nincsenek sorok."
 
 msgid "No objects found."
@@ -819,19 +819,19 @@ msgstr "A használó törölve."
 msgid "struserdroppedbad"
 msgstr "Nem sikerült a használót törölni."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Számla"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Jelszó megváltoztatása"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "A jelszó megváltoztatva."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Nem sikerült a jelszót megváltoztatni."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "A jelszó túl rövid."
 
 msgid "Password does not match confirmation."
@@ -959,7 +959,7 @@ msgstr "Nem sikerült szerepet törölni."
 msgid "No limit"
 msgstr "Nincs korlát"
 
-msgid "strnever"
+msgid "Never"
 msgstr "Soha"
 
 msgid "You must give a name for the role."

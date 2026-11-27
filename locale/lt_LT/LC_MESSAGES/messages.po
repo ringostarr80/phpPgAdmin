@@ -154,7 +154,7 @@ msgstr "Numatytoji reikšmė"
 msgid "Alter"
 msgstr "Pakeisti"
 
-msgid "strok"
+msgid "OK"
 msgstr "Gerai"
 
 msgid "Cancel"
@@ -513,7 +513,7 @@ msgstr "Sakinyje:"
 msgid "strinvalidparam"
 msgstr "Neteisingi skripto parametrai."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Įrašų nerasta."
 
 msgid "No objects found."
@@ -837,19 +837,19 @@ msgstr "Naudotojas pašalintas."
 msgid "struserdroppedbad"
 msgstr "Nepavyko pašalinti naudotojo."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Paskyra"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Keisti slaptažodį"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Slaptažodis pakeistas."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Nepavyko pakeisti slaptažodžio."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "Slaptažodis per trumpas."
 
 msgid "Password does not match confirmation."
@@ -977,7 +977,7 @@ msgstr "Nepavyko pašalinti rolės."
 msgid "No limit"
 msgstr "Be ribojimų"
 
-msgid "strnever"
+msgid "Never"
 msgstr "Niekada"
 
 msgid "You must give a name for the role."

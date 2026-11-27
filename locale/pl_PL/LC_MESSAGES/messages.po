@@ -140,7 +140,7 @@ msgstr "Domyślny"
 msgid "Alter"
 msgstr "Zmień"
 
-msgid "strok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Cancel"
@@ -427,7 +427,7 @@ msgstr "W poleceniu:"
 msgid "strinvalidparam"
 msgstr "Błędny parametr."
 
-msgid "strnodata"
+msgid "No rows found."
 msgstr "Nie znaleziono danych."
 
 msgid "No objects found."
@@ -682,19 +682,19 @@ msgstr "Użytkownik został usunięty."
 msgid "struserdroppedbad"
 msgstr "Próba usunięcia użytkownika się nie powiodła."
 
-msgid "straccount"
+msgid "Account"
 msgstr "Konto"
 
-msgid "strchangepassword"
+msgid "Change password"
 msgstr "Zmień hasło"
 
-msgid "strpasswordchanged"
+msgid "Password changed."
 msgstr "Hasło zostało zmienione."
 
-msgid "strpasswordchangedbad"
+msgid "Failed to change password."
 msgstr "Próba zmiany hasła się nie powiodła."
 
-msgid "strpasswordshort"
+msgid "Password is too short."
 msgstr "Hasło jest za krótkie."
 
 msgid "Password does not match confirmation."

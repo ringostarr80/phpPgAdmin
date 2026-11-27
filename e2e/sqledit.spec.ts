@@ -47,6 +47,28 @@ for (const action of Object.keys(TABS)) {
   });
 }
 
+// Like the legacy page, the window puts the cursor in the field of its form, so one can type right away.
+for (const [action, { field }] of Object.entries(TABS)) {
+  test(`SQL Editor > the cursor starts in the field of the form (${action})`, async ({ page }) => {
+    await login(page);
+
+    await page.goto(`/sqledit.php?${new URLSearchParams({ action, server: runningServerId() })}`);
+
+    await expect(page.locator(field)).toBeFocused();
+  });
+
+  test(`SQL Editor > choosing a database puts the cursor back in the form (${action})`, async ({ page }) => {
+    await login(page);
+    await page.goto(`/sqledit.php?${new URLSearchParams({ action, server: runningServerId() })}`);
+
+    // js/sqledit.js opens the window again for the chosen database, which the legacy page focused like any other load.
+    await page.locator('#database').selectOption(DATABASE);
+
+    await expect(page).toHaveURL(new RegExp(`[?&]database=${DATABASE}(&|$)`));
+    await expect(page.locator(field)).toBeFocused();
+  });
+}
+
 // Like the legacy page, the window shows the SQL form for any action other than find.
 for (const [description, params] of Object.entries({ 'an unknown action': { action: 'unknown' }, 'no action': {} })) {
   test(`SQL Editor > the window shows the SQL form for ${description}`, async ({ page }) => {

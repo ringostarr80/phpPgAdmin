@@ -223,6 +223,8 @@ final class SqlEdit extends Website
         $inputTerm->setAttribute('value', RequestParameter::getString('term') ?? '');
         $inputTerm->setAttribute('size', '32');
         $inputTerm->setAttribute('maxlength', '63');
+        // Like the legacy page, it puts the cursor in the term, so one can type it right away.
+        $inputTerm->setAttribute('autofocus', 'autofocus');
 
         $filterSelection = $dom->createElement('select');
         $filterSelection->setAttribute('name', 'filter');
@@ -303,6 +305,8 @@ final class SqlEdit extends Website
         $textareaQuery->setAttribute('cols', '50');
         $textareaQuery->setAttribute('name', 'query');
         $textareaQuery->setAttribute('id', 'query');
+        // Like the legacy page, it puts the cursor in the query, so one can type it right away.
+        $textareaQuery->setAttribute('autofocus', 'autofocus');
 
         $pPaginate = $dom->createElement('p');
         $inputPaginate = $dom->createElement('input');

@@ -1,5 +1,10 @@
 'use strict';
 
+// Like the legacy page, the window takes the name of its server on every load, under which js/topbar.js opens the SQL
+// and the Find link (see WebsiteComponents::buildTopBar()). So the links of a server open in its window, even after
+// another server was chosen in it.
+window.name = `sqledit:${new URLSearchParams(location.search).get('server') ?? ''}`;
+
 /**
  * Opens the window again for the chosen server and database, with what was entered in its form.
  *

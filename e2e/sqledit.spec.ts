@@ -47,6 +47,17 @@ for (const action of Object.keys(TABS)) {
   });
 }
 
+// Like the legacy page, the window takes the name of its server, under which js/topbar.js opens SQL and Find.
+for (const action of Object.keys(TABS)) {
+  test(`SQL Editor > the window takes the name of its server (${action})`, async ({ page }) => {
+    await login(page);
+
+    await page.goto(`/sqledit.php?${new URLSearchParams({ action, server: runningServerId() })}`);
+
+    expect(await page.evaluate(() => window.name)).toBe(`sqledit:${runningServerId()}`);
+  });
+}
+
 // Like the legacy page, the window puts the cursor in the field of its form, so one can type right away.
 for (const [action, { field }] of Object.entries(TABS)) {
   test(`SQL Editor > the cursor starts in the field of the form (${action})`, async ({ page }) => {
